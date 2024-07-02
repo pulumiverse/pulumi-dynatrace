@@ -197,13 +197,11 @@ class AzureCredentialsArgs:
 
     @property
     @pulumi.getter(name="supportingServices")
+    @_utilities.deprecated("""Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.""")
     def supporting_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]]:
         """
         A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
         """
-        warnings.warn("""Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.""", DeprecationWarning)
-        pulumi.log.warn("""supporting_services is deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.""")
-
         return pulumi.get(self, "supporting_services")
 
     @supporting_services.setter
@@ -212,10 +210,8 @@ class AzureCredentialsArgs:
 
     @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
+    @_utilities.deprecated("""This attribute is deprecated and has no effect any more. It always defaults to `true`.""")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[bool]]:
-        warnings.warn("""This attribute is deprecated and has no effect any more. It always defaults to `true`.""", DeprecationWarning)
-        pulumi.log.warn("""supporting_services_managed_in_dynatrace is deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.""")
-
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -421,13 +417,11 @@ class _AzureCredentialsState:
 
     @property
     @pulumi.getter(name="supportingServices")
+    @_utilities.deprecated("""Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.""")
     def supporting_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]]:
         """
         A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
         """
-        warnings.warn("""Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.""", DeprecationWarning)
-        pulumi.log.warn("""supporting_services is deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.""")
-
         return pulumi.get(self, "supporting_services")
 
     @supporting_services.setter
@@ -436,10 +430,8 @@ class _AzureCredentialsState:
 
     @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
+    @_utilities.deprecated("""This attribute is deprecated and has no effect any more. It always defaults to `true`.""")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[bool]]:
-        warnings.warn("""This attribute is deprecated and has no effect any more. It always defaults to `true`.""", DeprecationWarning)
-        pulumi.log.warn("""supporting_services_managed_in_dynatrace is deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.""")
-
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -703,21 +695,17 @@ class AzureCredentials(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="supportingServices")
+    @_utilities.deprecated("""Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.""")
     def supporting_services(self) -> pulumi.Output[Optional[Sequence['outputs.AzureCredentialsSupportingService']]]:
         """
         A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
         """
-        warnings.warn("""Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.""", DeprecationWarning)
-        pulumi.log.warn("""supporting_services is deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.""")
-
         return pulumi.get(self, "supporting_services")
 
     @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
+    @_utilities.deprecated("""This attribute is deprecated and has no effect any more. It always defaults to `true`.""")
     def supporting_services_managed_in_dynatrace(self) -> pulumi.Output[Optional[bool]]:
-        warnings.warn("""This attribute is deprecated and has no effect any more. It always defaults to `true`.""", DeprecationWarning)
-        pulumi.log.warn("""supporting_services_managed_in_dynatrace is deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.""")
-
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @property

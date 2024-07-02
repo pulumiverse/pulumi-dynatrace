@@ -18,7 +18,8 @@ class DocumentArgs:
                  type: pulumi.Input[str],
                  actor: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 owner: Optional[pulumi.Input[str]] = None):
+                 owner: Optional[pulumi.Input[str]] = None,
+                 private: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a Document resource.
         :param pulumi.Input[str] content: Document content as JSON
@@ -26,6 +27,7 @@ class DocumentArgs:
         :param pulumi.Input[str] actor: The user context the executions of the document will happen with
         :param pulumi.Input[str] name: The name/name of the document
         :param pulumi.Input[str] owner: The ID of the owner of this document
+        :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody
         """
         pulumi.set(__self__, "content", content)
         pulumi.set(__self__, "type", type)
@@ -35,6 +37,8 @@ class DocumentArgs:
             pulumi.set(__self__, "name", name)
         if owner is not None:
             pulumi.set(__self__, "owner", owner)
+        if private is not None:
+            pulumi.set(__self__, "private", private)
 
     @property
     @pulumi.getter
@@ -96,6 +100,18 @@ class DocumentArgs:
     def owner(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "owner", value)
 
+    @property
+    @pulumi.getter
+    def private(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies whether the document is private or readable by everybody
+        """
+        return pulumi.get(self, "private")
+
+    @private.setter
+    def private(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "private", value)
+
 
 @pulumi.input_type
 class _DocumentState:
@@ -104,6 +120,7 @@ class _DocumentState:
                  content: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  owner: Optional[pulumi.Input[str]] = None,
+                 private: Optional[pulumi.Input[bool]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[int]] = None):
         """
@@ -112,6 +129,7 @@ class _DocumentState:
         :param pulumi.Input[str] content: Document content as JSON
         :param pulumi.Input[str] name: The name/name of the document
         :param pulumi.Input[str] owner: The ID of the owner of this document
+        :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody
         :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard` and `notebook`
         :param pulumi.Input[int] version: The version of the document
         """
@@ -123,6 +141,8 @@ class _DocumentState:
             pulumi.set(__self__, "name", name)
         if owner is not None:
             pulumi.set(__self__, "owner", owner)
+        if private is not None:
+            pulumi.set(__self__, "private", private)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if version is not None:
@@ -178,6 +198,18 @@ class _DocumentState:
 
     @property
     @pulumi.getter
+    def private(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies whether the document is private or readable by everybody
+        """
+        return pulumi.get(self, "private")
+
+    @private.setter
+    def private(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "private", value)
+
+    @property
+    @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
         Type of the document. Possible Values are `dashboard` and `notebook`
@@ -210,6 +242,7 @@ class Document(pulumi.CustomResource):
                  content: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  owner: Optional[pulumi.Input[str]] = None,
+                 private: Optional[pulumi.Input[bool]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -239,6 +272,7 @@ class Document(pulumi.CustomResource):
         :param pulumi.Input[str] content: Document content as JSON
         :param pulumi.Input[str] name: The name/name of the document
         :param pulumi.Input[str] owner: The ID of the owner of this document
+        :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody
         :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard` and `notebook`
         """
         ...
@@ -287,6 +321,7 @@ class Document(pulumi.CustomResource):
                  content: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  owner: Optional[pulumi.Input[str]] = None,
+                 private: Optional[pulumi.Input[bool]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -303,6 +338,7 @@ class Document(pulumi.CustomResource):
             __props__.__dict__["content"] = content
             __props__.__dict__["name"] = name
             __props__.__dict__["owner"] = owner
+            __props__.__dict__["private"] = private
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
@@ -321,6 +357,7 @@ class Document(pulumi.CustomResource):
             content: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             owner: Optional[pulumi.Input[str]] = None,
+            private: Optional[pulumi.Input[bool]] = None,
             type: Optional[pulumi.Input[str]] = None,
             version: Optional[pulumi.Input[int]] = None) -> 'Document':
         """
@@ -334,6 +371,7 @@ class Document(pulumi.CustomResource):
         :param pulumi.Input[str] content: Document content as JSON
         :param pulumi.Input[str] name: The name/name of the document
         :param pulumi.Input[str] owner: The ID of the owner of this document
+        :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody
         :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard` and `notebook`
         :param pulumi.Input[int] version: The version of the document
         """
@@ -345,6 +383,7 @@ class Document(pulumi.CustomResource):
         __props__.__dict__["content"] = content
         __props__.__dict__["name"] = name
         __props__.__dict__["owner"] = owner
+        __props__.__dict__["private"] = private
         __props__.__dict__["type"] = type
         __props__.__dict__["version"] = version
         return Document(resource_name, opts=opts, __props__=__props__)
@@ -380,6 +419,14 @@ class Document(pulumi.CustomResource):
         The ID of the owner of this document
         """
         return pulumi.get(self, "owner")
+
+    @property
+    @pulumi.getter
+    def private(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Specifies whether the document is private or readable by everybody
+        """
+        return pulumi.get(self, "private")
 
     @property
     @pulumi.getter

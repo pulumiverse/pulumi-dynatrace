@@ -46,6 +46,10 @@ export class AutotagV2 extends pulumi.CustomResource {
      * Rules
      */
     public readonly rules!: pulumi.Output<outputs.AutotagV2Rules | undefined>;
+    /**
+     * If `true` this resource will not
+     */
+    public readonly rulesMaintainedExternally!: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a AutotagV2 resource with the given unique name, arguments, and options.
@@ -63,11 +67,13 @@ export class AutotagV2 extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["rules"] = state ? state.rules : undefined;
+            resourceInputs["rulesMaintainedExternally"] = state ? state.rulesMaintainedExternally : undefined;
         } else {
             const args = argsOrState as AutotagV2Args | undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["rulesMaintainedExternally"] = args ? args.rulesMaintainedExternally : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutotagV2.__pulumiType, name, resourceInputs, opts);
@@ -90,6 +96,10 @@ export interface AutotagV2State {
      * Rules
      */
     rules?: pulumi.Input<inputs.AutotagV2Rules>;
+    /**
+     * If `true` this resource will not
+     */
+    rulesMaintainedExternally?: pulumi.Input<boolean>;
 }
 
 /**
@@ -108,4 +118,8 @@ export interface AutotagV2Args {
      * Rules
      */
     rules?: pulumi.Input<inputs.AutotagV2Rules>;
+    /**
+     * If `true` this resource will not
+     */
+    rulesMaintainedExternally?: pulumi.Input<boolean>;
 }

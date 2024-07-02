@@ -70,6 +70,10 @@ export class Document extends pulumi.CustomResource {
      */
     public readonly owner!: pulumi.Output<string>;
     /**
+     * Specifies whether the document is private or readable by everybody
+     */
+    public readonly private!: pulumi.Output<boolean | undefined>;
+    /**
      * Type of the document. Possible Values are `dashboard` and `notebook`
      */
     public readonly type!: pulumi.Output<string>;
@@ -95,6 +99,7 @@ export class Document extends pulumi.CustomResource {
             resourceInputs["content"] = state ? state.content : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["owner"] = state ? state.owner : undefined;
+            resourceInputs["private"] = state ? state.private : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
         } else {
@@ -109,6 +114,7 @@ export class Document extends pulumi.CustomResource {
             resourceInputs["content"] = args ? args.content : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["owner"] = args ? args.owner : undefined;
+            resourceInputs["private"] = args ? args.private : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
             resourceInputs["version"] = undefined /*out*/;
         }
@@ -137,6 +143,10 @@ export interface DocumentState {
      * The ID of the owner of this document
      */
     owner?: pulumi.Input<string>;
+    /**
+     * Specifies whether the document is private or readable by everybody
+     */
+    private?: pulumi.Input<boolean>;
     /**
      * Type of the document. Possible Values are `dashboard` and `notebook`
      */
@@ -167,6 +177,10 @@ export interface DocumentArgs {
      * The ID of the owner of this document
      */
     owner?: pulumi.Input<string>;
+    /**
+     * Specifies whether the document is private or readable by everybody
+     */
+    private?: pulumi.Input<boolean>;
     /**
      * Type of the document. Possible Values are `dashboard` and `notebook`
      */

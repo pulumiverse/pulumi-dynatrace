@@ -212,13 +212,11 @@ class WebApplicationArgs:
 
     @property
     @pulumi.getter(name="keyUserActions")
+    @_utilities.deprecated("""Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""")
     def key_user_actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]]:
         """
         User Action names to be flagged as Key User Actions
         """
-        warnings.warn("""Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""", DeprecationWarning)
-        pulumi.log.warn("""key_user_actions is deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""")
-
         return pulumi.get(self, "key_user_actions")
 
     @key_user_actions.setter
@@ -446,13 +444,11 @@ class _WebApplicationState:
 
     @property
     @pulumi.getter(name="keyUserActions")
+    @_utilities.deprecated("""Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""")
     def key_user_actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]]:
         """
         User Action names to be flagged as Key User Actions
         """
-        warnings.warn("""Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""", DeprecationWarning)
-        pulumi.log.warn("""key_user_actions is deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""")
-
         return pulumi.get(self, "key_user_actions")
 
     @key_user_actions.setter
@@ -884,13 +880,11 @@ class WebApplication(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="keyUserActions")
+    @_utilities.deprecated("""Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""")
     def key_user_actions(self) -> pulumi.Output[Optional[Sequence['outputs.WebApplicationKeyUserAction']]]:
         """
         User Action names to be flagged as Key User Actions
         """
-        warnings.warn("""Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""", DeprecationWarning)
-        pulumi.log.warn("""key_user_actions is deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""")
-
         return pulumi.get(self, "key_user_actions")
 
     @property

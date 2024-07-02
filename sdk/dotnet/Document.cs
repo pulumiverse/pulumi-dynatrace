@@ -65,6 +65,12 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Owner { get; private set; } = null!;
 
         /// <summary>
+        /// Specifies whether the document is private or readable by everybody
+        /// </summary>
+        [Output("private")]
+        public Output<bool?> Private { get; private set; } = null!;
+
+        /// <summary>
         /// Type of the document. Possible Values are `dashboard` and `notebook`
         /// </summary>
         [Output("type")]
@@ -148,6 +154,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Owner { get; set; }
 
         /// <summary>
+        /// Specifies whether the document is private or readable by everybody
+        /// </summary>
+        [Input("private")]
+        public Input<bool>? Private { get; set; }
+
+        /// <summary>
         /// Type of the document. Possible Values are `dashboard` and `notebook`
         /// </summary>
         [Input("type", required: true)]
@@ -184,6 +196,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
+
+        /// <summary>
+        /// Specifies whether the document is private or readable by everybody
+        /// </summary>
+        [Input("private")]
+        public Input<bool>? Private { get; set; }
 
         /// <summary>
         /// Type of the document. Possible Values are `dashboard` and `notebook`

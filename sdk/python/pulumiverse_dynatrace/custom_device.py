@@ -162,13 +162,11 @@ class CustomDeviceArgs:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Please use the attribute `props` instead""")
     def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         The list of key-value pair properties that will be shown beneath the infographics of your custom device.
         """
-        warnings.warn("""Please use the attribute `props` instead""", DeprecationWarning)
-        pulumi.log.warn("""properties is deprecated: Please use the attribute `props` instead""")
-
         return pulumi.get(self, "properties")
 
     @properties.setter
@@ -380,13 +378,11 @@ class _CustomDeviceState:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Please use the attribute `props` instead""")
     def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         The list of key-value pair properties that will be shown beneath the infographics of your custom device.
         """
-        warnings.warn("""Please use the attribute `props` instead""", DeprecationWarning)
-        pulumi.log.warn("""properties is deprecated: Please use the attribute `props` instead""")
-
         return pulumi.get(self, "properties")
 
     @properties.setter
@@ -688,13 +684,11 @@ class CustomDevice(pulumi.CustomResource):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Please use the attribute `props` instead""")
     def properties(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         The list of key-value pair properties that will be shown beneath the infographics of your custom device.
         """
-        warnings.warn("""Please use the attribute `props` instead""", DeprecationWarning)
-        pulumi.log.warn("""properties is deprecated: Please use the attribute `props` instead""")
-
         return pulumi.get(self, "properties")
 
     @property

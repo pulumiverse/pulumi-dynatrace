@@ -6604,13 +6604,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="applicationTypeComparisons")
+    @_utilities.deprecated("""You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""")
     def application_type_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionApplicationTypeComparison']]:
         """
         Comparison for `APPLICATION_TYPE` attributes
         """
-        warnings.warn("""You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""application_type_comparisons is deprecated: You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "application_type_comparisons")
 
     @property
@@ -6631,24 +6629,20 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="azureComputeModes")
+    @_utilities.deprecated("""You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""")
     def azure_compute_modes(self) -> Optional[Sequence['outputs.AutotagRuleConditionAzureComputeMode']]:
         """
         Comparison for `AZURE_COMPUTE_MODE` attributes
         """
-        warnings.warn("""You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""azure_compute_modes is deprecated: You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "azure_compute_modes")
 
     @property
     @pulumi.getter(name="azureSkuComparisions")
+    @_utilities.deprecated("""You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""")
     def azure_sku_comparisions(self) -> Optional[Sequence['outputs.AutotagRuleConditionAzureSkuComparision']]:
         """
         Comparison for `AZURE_SKU` attributes
         """
-        warnings.warn("""You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""azure_sku_comparisions is deprecated: You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "azure_sku_comparisions")
 
     @property
@@ -6661,35 +6655,29 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="baseComparisonBasics")
+    @_utilities.deprecated("""You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""")
     def base_comparison_basics(self) -> Optional[Sequence['outputs.AutotagRuleConditionBaseComparisonBasic']]:
         """
         A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
         """
-        warnings.warn("""You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""base_comparison_basics is deprecated: You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "base_comparison_basics")
 
     @property
     @pulumi.getter(name="baseConditionKeys")
+    @_utilities.deprecated("""'base_condition_key' is deprecated. You should use 'key'""")
     def base_condition_keys(self) -> Optional[Sequence['outputs.AutotagRuleConditionBaseConditionKey']]:
         """
         Fallback for not yet known type
         """
-        warnings.warn("""'base_condition_key' is deprecated. You should use 'key'""", DeprecationWarning)
-        pulumi.log.warn("""base_condition_keys is deprecated: 'base_condition_key' is deprecated. You should use 'key'""")
-
         return pulumi.get(self, "base_condition_keys")
 
     @property
     @pulumi.getter(name="bitnessComparisions")
+    @_utilities.deprecated("""You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""")
     def bitness_comparisions(self) -> Optional[Sequence['outputs.AutotagRuleConditionBitnessComparision']]:
         """
         Comparison for `BITNESS` attributes
         """
-        warnings.warn("""You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""bitness_comparisions is deprecated: You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "bitness_comparisions")
 
     @property
@@ -6702,13 +6690,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="cloudTypeComparisons")
+    @_utilities.deprecated("""You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""")
     def cloud_type_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionCloudTypeComparison']]:
         """
         Comparison for `CLOUD_TYPE` attributes
         """
-        warnings.warn("""You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""cloud_type_comparisons is deprecated: You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "cloud_type_comparisons")
 
     @property
@@ -6729,13 +6715,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="customApplicationTypeComparisons")
+    @_utilities.deprecated("""You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""")
     def custom_application_type_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionCustomApplicationTypeComparison']]:
         """
         Comparison for `CUSTOM_APPLICATION_TYPE` attributes
         """
-        warnings.warn("""You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""custom_application_type_comparisons is deprecated: You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "custom_application_type_comparisons")
 
     @property
@@ -6748,13 +6732,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="customHostMetadataConditionKeys")
+    @_utilities.deprecated("""'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""")
     def custom_host_metadata_condition_keys(self) -> Optional[Sequence['outputs.AutotagRuleConditionCustomHostMetadataConditionKey']]:
         """
         Key for Custom Host Metadata
         """
-        warnings.warn("""'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""custom_host_metadata_condition_keys is deprecated: 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""")
-
         return pulumi.get(self, "custom_host_metadata_condition_keys")
 
     @property
@@ -6767,13 +6749,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="customProcessMetadataConditionKeys")
+    @_utilities.deprecated("""'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""")
     def custom_process_metadata_condition_keys(self) -> Optional[Sequence['outputs.AutotagRuleConditionCustomProcessMetadataConditionKey']]:
         """
         Key for Custom Process Metadata
         """
-        warnings.warn("""'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""custom_process_metadata_condition_keys is deprecated: 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""")
-
         return pulumi.get(self, "custom_process_metadata_condition_keys")
 
     @property
@@ -6794,24 +6774,20 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="databaseTopologyComparisons")
+    @_utilities.deprecated("""You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""")
     def database_topology_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionDatabaseTopologyComparison']]:
         """
         Comparison for `DATABASE_TOPOLOGY` attributes
         """
-        warnings.warn("""You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""database_topology_comparisons is deprecated: You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "database_topology_comparisons")
 
     @property
     @pulumi.getter(name="dcrumDecoderComparisons")
+    @_utilities.deprecated("""You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""")
     def dcrum_decoder_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionDcrumDecoderComparison']]:
         """
         Comparison for `DCRUM_DECODER_TYPE` attributes
         """
-        warnings.warn("""You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""dcrum_decoder_comparisons is deprecated: You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "dcrum_decoder_comparisons")
 
     @property
@@ -6832,13 +6808,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="entityIdComparisons")
+    @_utilities.deprecated("""You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""")
     def entity_id_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionEntityIdComparison']]:
         """
         Comparison for `ENTITY_ID` attributes
         """
-        warnings.warn("""You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""entity_id_comparisons is deprecated: You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "entity_id_comparisons")
 
     @property
@@ -6851,13 +6825,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="hypervisorTypeComparisions")
+    @_utilities.deprecated("""`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""")
     def hypervisor_type_comparisions(self) -> Optional[Sequence['outputs.AutotagRuleConditionHypervisorTypeComparision']]:
         """
         `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
         """
-        warnings.warn("""`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""", DeprecationWarning)
-        pulumi.log.warn("""hypervisor_type_comparisions is deprecated: `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""")
-
         return pulumi.get(self, "hypervisor_type_comparisions")
 
     @property
@@ -6870,13 +6842,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="indexedNameComparisons")
+    @_utilities.deprecated("""You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_name_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionIndexedNameComparison']]:
         """
         Comparison for `INDEXED_NAME` attributes
         """
-        warnings.warn("""You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_name_comparisons is deprecated: You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_name_comparisons")
 
     @property
@@ -6889,13 +6859,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="indexedStringComparisons")
+    @_utilities.deprecated("""You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_string_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionIndexedStringComparison']]:
         """
         Comparison for `INDEXED_STRING` attributes
         """
-        warnings.warn("""You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_string_comparisons is deprecated: You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_string_comparisons")
 
     @property
@@ -6908,13 +6876,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="indexedTagComparisons")
+    @_utilities.deprecated("""You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_tag_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionIndexedTagComparison']]:
         """
         Comparison for `INDEXED_TAG` attributes
         """
-        warnings.warn("""You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_tag_comparisons is deprecated: You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_tag_comparisons")
 
     @property
@@ -6927,13 +6893,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="integerComparisons")
+    @_utilities.deprecated("""You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""")
     def integer_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionIntegerComparison']]:
         """
         Comparison for `INTEGER` attributes
         """
-        warnings.warn("""You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""integer_comparisons is deprecated: You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "integer_comparisons")
 
     @property
@@ -6946,13 +6910,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="ipaddressComparisons")
+    @_utilities.deprecated("""You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""")
     def ipaddress_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionIpaddressComparison']]:
         """
         Comparison for `IP_ADDRESS` attributes
         """
-        warnings.warn("""You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""ipaddress_comparisons is deprecated: You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "ipaddress_comparisons")
 
     @property
@@ -6973,13 +6935,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="mobilePlatformComparisons")
+    @_utilities.deprecated("""You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""")
     def mobile_platform_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionMobilePlatformComparison']]:
         """
         Comparison for `MOBILE_PLATFORM` attributes
         """
-        warnings.warn("""You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""mobile_platform_comparisons is deprecated: You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "mobile_platform_comparisons")
 
     @property
@@ -7008,35 +6968,29 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="osarchitectureComparisons")
+    @_utilities.deprecated("""You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""")
     def osarchitecture_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionOsarchitectureComparison']]:
         """
         Comparison for `OS_ARCHITECTURE` attributes
         """
-        warnings.warn("""You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""osarchitecture_comparisons is deprecated: You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "osarchitecture_comparisons")
 
     @property
     @pulumi.getter(name="ostypeComparisons")
+    @_utilities.deprecated("""You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""")
     def ostype_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionOstypeComparison']]:
         """
         Comparison for `OS_TYPE` attributes
         """
-        warnings.warn("""You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""ostype_comparisons is deprecated: You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "ostype_comparisons")
 
     @property
     @pulumi.getter(name="paasTypeComparisons")
+    @_utilities.deprecated("""You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""")
     def paas_type_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionPaasTypeComparison']]:
         """
         Comparison for `PAAS_TYPE` attributes
         """
-        warnings.warn("""You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""paas_type_comparisons is deprecated: You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "paas_type_comparisons")
 
     @property
@@ -7049,13 +7003,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="processMetadataConditionKeys")
+    @_utilities.deprecated("""'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""")
     def process_metadata_condition_keys(self) -> Optional[Sequence['outputs.AutotagRuleConditionProcessMetadataConditionKey']]:
         """
         The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
         """
-        warnings.warn("""'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""process_metadata_condition_keys is deprecated: 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""")
-
         return pulumi.get(self, "process_metadata_condition_keys")
 
     @property
@@ -7076,24 +7028,20 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="serviceTopologyComparisons")
+    @_utilities.deprecated("""You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""")
     def service_topology_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionServiceTopologyComparison']]:
         """
         Comparison for `SERVICE_TOPOLOGY` attributes
         """
-        warnings.warn("""You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""service_topology_comparisons is deprecated: You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "service_topology_comparisons")
 
     @property
     @pulumi.getter(name="serviceTypeComparisons")
+    @_utilities.deprecated("""You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""")
     def service_type_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionServiceTypeComparison']]:
         """
         Comparison for `SERVICE_TYPE` attributes
         """
-        warnings.warn("""You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""service_type_comparisons is deprecated: You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "service_type_comparisons")
 
     @property
@@ -7106,46 +7054,38 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="simpleHostTechComparisons")
+    @_utilities.deprecated("""You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""")
     def simple_host_tech_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionSimpleHostTechComparison']]:
         """
         Comparison for `SIMPLE_HOST_TECH` attributes
         """
-        warnings.warn("""You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""simple_host_tech_comparisons is deprecated: You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "simple_host_tech_comparisons")
 
     @property
     @pulumi.getter(name="simpleTechComparisons")
+    @_utilities.deprecated("""You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""")
     def simple_tech_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionSimpleTechComparison']]:
         """
         Comparison for `SIMPLE_TECH` attributes
         """
-        warnings.warn("""You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""simple_tech_comparisons is deprecated: You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "simple_tech_comparisons")
 
     @property
     @pulumi.getter(name="stringComparisons")
+    @_utilities.deprecated("""You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""")
     def string_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionStringComparison']]:
         """
         Comparison for `STRING` attributes
         """
-        warnings.warn("""You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""string_comparisons is deprecated: You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "string_comparisons")
 
     @property
     @pulumi.getter(name="stringConditionKeys")
+    @_utilities.deprecated("""'string_condition_key' is deprecated. You should use 'string_key'""")
     def string_condition_keys(self) -> Optional[Sequence['outputs.AutotagRuleConditionStringConditionKey']]:
         """
         The key for dynamic attributes of the `STRING` type
         """
-        warnings.warn("""'string_condition_key' is deprecated. You should use 'string_key'""", DeprecationWarning)
-        pulumi.log.warn("""string_condition_keys is deprecated: 'string_condition_key' is deprecated. You should use 'string_key'""")
-
         return pulumi.get(self, "string_condition_keys")
 
     @property
@@ -7166,13 +7106,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="syntheticEngineTypeComparisons")
+    @_utilities.deprecated("""You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""")
     def synthetic_engine_type_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionSyntheticEngineTypeComparison']]:
         """
         Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
         """
-        warnings.warn("""You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""synthetic_engine_type_comparisons is deprecated: You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "synthetic_engine_type_comparisons")
 
     @property
@@ -7185,13 +7123,11 @@ class AutotagRuleCondition(dict):
 
     @property
     @pulumi.getter(name="tagComparisons")
+    @_utilities.deprecated("""You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""")
     def tag_comparisons(self) -> Optional[Sequence['outputs.AutotagRuleConditionTagComparison']]:
         """
         Comparison for `TAG` attributes
         """
-        warnings.warn("""You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""tag_comparisons is deprecated: You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "tag_comparisons")
 
     @property
@@ -7316,13 +7252,11 @@ class AutotagRuleConditionApplicationTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be APPLICATION_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -7493,13 +7427,11 @@ class AutotagRuleConditionAzureSkuComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be AZURE_SKU
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -7754,13 +7686,11 @@ class AutotagRuleConditionBitnessComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be BITNESS
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -7877,13 +7807,11 @@ class AutotagRuleConditionCloudTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be CLOUD_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -8042,13 +7970,11 @@ class AutotagRuleConditionCustomApplicationTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be CUSTOM_APPLICATION_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -8181,13 +8107,11 @@ class AutotagRuleConditionCustomHostMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be HOST_CUSTOM_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -8394,13 +8318,11 @@ class AutotagRuleConditionCustomProcessMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -8591,13 +8513,11 @@ class AutotagRuleConditionDatabaseTopologyComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be DATABASE_TOPOLOGY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -8714,13 +8634,11 @@ class AutotagRuleConditionDcrumDecoderComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be DCRUM_DECODER_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -8837,13 +8755,11 @@ class AutotagRuleConditionEntityIdComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be ENTITY_ID
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -9074,13 +8990,11 @@ class AutotagRuleConditionHypervisorTypeComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be HYPERVISOR_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -9197,13 +9111,11 @@ class AutotagRuleConditionIndexedNameComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_NAME
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -9320,13 +9232,11 @@ class AutotagRuleConditionIndexedStringComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_STRING
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -9443,13 +9353,11 @@ class AutotagRuleConditionIndexedTagComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_TAG
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -9672,13 +9580,11 @@ class AutotagRuleConditionIntegerComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INTEGER
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -9853,13 +9759,11 @@ class AutotagRuleConditionIpaddressComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be IP_ADDRESS
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -10018,13 +9922,11 @@ class AutotagRuleConditionMobilePlatformComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be MOBILE_PLATFORM
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -10195,13 +10097,11 @@ class AutotagRuleConditionOsarchitectureComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be OS_ARCHITECTURE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -10264,13 +10164,11 @@ class AutotagRuleConditionOstypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be OS_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -10387,13 +10285,11 @@ class AutotagRuleConditionPaasTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PAAS_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -10526,13 +10422,11 @@ class AutotagRuleConditionProcessMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -10641,13 +10535,11 @@ class AutotagRuleConditionServiceTopologyComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SERVICE_TOPOLOGY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -10764,13 +10656,11 @@ class AutotagRuleConditionServiceTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SERVICE_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -10833,13 +10723,11 @@ class AutotagRuleConditionSimpleHostTechComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SIMPLE_HOST_TECH
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -10962,13 +10850,11 @@ class AutotagRuleConditionSimpleTechComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SIMPLE_TECH
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -11203,13 +11089,11 @@ class AutotagRuleConditionStringComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be STRING
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -11470,13 +11354,11 @@ class AutotagRuleConditionStringConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be `STRING`
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -11829,13 +11711,11 @@ class AutotagRuleConditionSyntheticEngineTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SYNTHETIC_ENGINE_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -11952,13 +11832,11 @@ class AutotagRuleConditionTagComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be TAG
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -26555,24 +26433,20 @@ class DashboardDashboardMetadata(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Please use the resource `DashboardSharing` to configure share settings""")
     def shared(self) -> Optional[bool]:
         """
         the dashboard is shared (`true`) or private (`false`)
         """
-        warnings.warn("""Please use the resource `DashboardSharing` to configure share settings""", DeprecationWarning)
-        pulumi.log.warn("""shared is deprecated: Please use the resource `DashboardSharing` to configure share settings""")
-
         return pulumi.get(self, "shared")
 
     @property
     @pulumi.getter(name="sharingDetails")
+    @_utilities.deprecated("""Please use the resource `DashboardSharing` to configure share settings""")
     def sharing_details(self) -> Optional['outputs.DashboardDashboardMetadataSharingDetails']:
         """
         represents sharing configuration of a dashboard
         """
-        warnings.warn("""Please use the resource `DashboardSharing` to configure share settings""", DeprecationWarning)
-        pulumi.log.warn("""sharing_details is deprecated: Please use the resource `DashboardSharing` to configure share settings""")
-
         return pulumi.get(self, "sharing_details")
 
     @property
@@ -28632,26 +28506,22 @@ class DataPrivacyMasking(dict):
 
     @property
     @pulumi.getter(name="ipAddressMasking")
+    @_utilities.deprecated("""This property is not supported anymore by the Dynatrace REST API (since schema version 4)""")
     def ip_address_masking(self) -> Optional[str]:
         """
         Possible Values: `All`, `Public`
         """
-        warnings.warn("""This property is not supported anymore by the Dynatrace REST API (since schema version 4)""", DeprecationWarning)
-        pulumi.log.warn("""ip_address_masking is deprecated: This property is not supported anymore by the Dynatrace REST API (since schema version 4)""")
-
         return pulumi.get(self, "ip_address_masking")
 
     @property
     @pulumi.getter(name="ipAddressMaskingEnabled")
+    @_utilities.deprecated("""This property is not supported anymore by the Dynatrace REST API (since schema version 4)""")
     def ip_address_masking_enabled(self) -> Optional[bool]:
         """
         Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
 
         Once enabled, IP address masking sets the last octet of monitored IPv4 addresses and the last 80 bits of IPv6 addresses to zeroes. GPS coordinates are rounded up to 1 decimal place (~10 km). This masking occurs in memory. Full IP addresses are never written to disk. Location lookups are made using anonymized IP addresses and GPS coordinates.
         """
-        warnings.warn("""This property is not supported anymore by the Dynatrace REST API (since schema version 4)""", DeprecationWarning)
-        pulumi.log.warn("""ip_address_masking_enabled is deprecated: This property is not supported anymore by the Dynatrace REST API (since schema version 4)""")
-
         return pulumi.get(self, "ip_address_masking_enabled")
 
 
@@ -37859,13 +37729,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="applicationTypeComparisons")
+    @_utilities.deprecated("""You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""")
     def application_type_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionApplicationTypeComparison']]:
         """
         Comparison for `APPLICATION_TYPE` attributes
         """
-        warnings.warn("""You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""application_type_comparisons is deprecated: You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "application_type_comparisons")
 
     @property
@@ -37886,24 +37754,20 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="azureComputeModes")
+    @_utilities.deprecated("""You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""")
     def azure_compute_modes(self) -> Optional[Sequence['outputs.HostNamingConditionConditionAzureComputeMode']]:
         """
         Comparison for `AZURE_COMPUTE_MODE` attributes
         """
-        warnings.warn("""You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""azure_compute_modes is deprecated: You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "azure_compute_modes")
 
     @property
     @pulumi.getter(name="azureSkuComparisions")
+    @_utilities.deprecated("""You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""")
     def azure_sku_comparisions(self) -> Optional[Sequence['outputs.HostNamingConditionConditionAzureSkuComparision']]:
         """
         Comparison for `AZURE_SKU` attributes
         """
-        warnings.warn("""You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""azure_sku_comparisions is deprecated: You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "azure_sku_comparisions")
 
     @property
@@ -37916,35 +37780,29 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="baseComparisonBasics")
+    @_utilities.deprecated("""You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""")
     def base_comparison_basics(self) -> Optional[Sequence['outputs.HostNamingConditionConditionBaseComparisonBasic']]:
         """
         A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
         """
-        warnings.warn("""You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""base_comparison_basics is deprecated: You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "base_comparison_basics")
 
     @property
     @pulumi.getter(name="baseConditionKeys")
+    @_utilities.deprecated("""'base_condition_key' is deprecated. You should use 'key'""")
     def base_condition_keys(self) -> Optional[Sequence['outputs.HostNamingConditionConditionBaseConditionKey']]:
         """
         Fallback for not yet known type
         """
-        warnings.warn("""'base_condition_key' is deprecated. You should use 'key'""", DeprecationWarning)
-        pulumi.log.warn("""base_condition_keys is deprecated: 'base_condition_key' is deprecated. You should use 'key'""")
-
         return pulumi.get(self, "base_condition_keys")
 
     @property
     @pulumi.getter(name="bitnessComparisions")
+    @_utilities.deprecated("""You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""")
     def bitness_comparisions(self) -> Optional[Sequence['outputs.HostNamingConditionConditionBitnessComparision']]:
         """
         Comparison for `BITNESS` attributes
         """
-        warnings.warn("""You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""bitness_comparisions is deprecated: You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "bitness_comparisions")
 
     @property
@@ -37957,13 +37815,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="cloudTypeComparisons")
+    @_utilities.deprecated("""You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""")
     def cloud_type_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionCloudTypeComparison']]:
         """
         Comparison for `CLOUD_TYPE` attributes
         """
-        warnings.warn("""You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""cloud_type_comparisons is deprecated: You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "cloud_type_comparisons")
 
     @property
@@ -37984,13 +37840,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="customApplicationTypeComparisons")
+    @_utilities.deprecated("""You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""")
     def custom_application_type_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionCustomApplicationTypeComparison']]:
         """
         Comparison for `CUSTOM_APPLICATION_TYPE` attributes
         """
-        warnings.warn("""You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""custom_application_type_comparisons is deprecated: You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "custom_application_type_comparisons")
 
     @property
@@ -38003,13 +37857,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="customHostMetadataConditionKeys")
+    @_utilities.deprecated("""'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""")
     def custom_host_metadata_condition_keys(self) -> Optional[Sequence['outputs.HostNamingConditionConditionCustomHostMetadataConditionKey']]:
         """
         Key for Custom Host Metadata
         """
-        warnings.warn("""'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""custom_host_metadata_condition_keys is deprecated: 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""")
-
         return pulumi.get(self, "custom_host_metadata_condition_keys")
 
     @property
@@ -38022,13 +37874,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="customProcessMetadataConditionKeys")
+    @_utilities.deprecated("""'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""")
     def custom_process_metadata_condition_keys(self) -> Optional[Sequence['outputs.HostNamingConditionConditionCustomProcessMetadataConditionKey']]:
         """
         Key for Custom Process Metadata
         """
-        warnings.warn("""'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""custom_process_metadata_condition_keys is deprecated: 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""")
-
         return pulumi.get(self, "custom_process_metadata_condition_keys")
 
     @property
@@ -38049,24 +37899,20 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="databaseTopologyComparisons")
+    @_utilities.deprecated("""You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""")
     def database_topology_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionDatabaseTopologyComparison']]:
         """
         Comparison for `DATABASE_TOPOLOGY` attributes
         """
-        warnings.warn("""You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""database_topology_comparisons is deprecated: You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "database_topology_comparisons")
 
     @property
     @pulumi.getter(name="dcrumDecoderComparisons")
+    @_utilities.deprecated("""You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""")
     def dcrum_decoder_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionDcrumDecoderComparison']]:
         """
         Comparison for `DCRUM_DECODER_TYPE` attributes
         """
-        warnings.warn("""You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""dcrum_decoder_comparisons is deprecated: You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "dcrum_decoder_comparisons")
 
     @property
@@ -38087,13 +37933,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="entityIdComparisons")
+    @_utilities.deprecated("""You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""")
     def entity_id_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionEntityIdComparison']]:
         """
         Comparison for `ENTITY_ID` attributes
         """
-        warnings.warn("""You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""entity_id_comparisons is deprecated: You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "entity_id_comparisons")
 
     @property
@@ -38106,13 +37950,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="hypervisorTypeComparisions")
+    @_utilities.deprecated("""`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""")
     def hypervisor_type_comparisions(self) -> Optional[Sequence['outputs.HostNamingConditionConditionHypervisorTypeComparision']]:
         """
         `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
         """
-        warnings.warn("""`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""", DeprecationWarning)
-        pulumi.log.warn("""hypervisor_type_comparisions is deprecated: `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""")
-
         return pulumi.get(self, "hypervisor_type_comparisions")
 
     @property
@@ -38125,13 +37967,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="indexedNameComparisons")
+    @_utilities.deprecated("""You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_name_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionIndexedNameComparison']]:
         """
         Comparison for `INDEXED_NAME` attributes
         """
-        warnings.warn("""You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_name_comparisons is deprecated: You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_name_comparisons")
 
     @property
@@ -38144,13 +37984,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="indexedStringComparisons")
+    @_utilities.deprecated("""You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_string_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionIndexedStringComparison']]:
         """
         Comparison for `INDEXED_STRING` attributes
         """
-        warnings.warn("""You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_string_comparisons is deprecated: You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_string_comparisons")
 
     @property
@@ -38163,13 +38001,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="indexedTagComparisons")
+    @_utilities.deprecated("""You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_tag_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionIndexedTagComparison']]:
         """
         Comparison for `INDEXED_TAG` attributes
         """
-        warnings.warn("""You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_tag_comparisons is deprecated: You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_tag_comparisons")
 
     @property
@@ -38182,13 +38018,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="integerComparisons")
+    @_utilities.deprecated("""You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""")
     def integer_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionIntegerComparison']]:
         """
         Comparison for `INTEGER` attributes
         """
-        warnings.warn("""You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""integer_comparisons is deprecated: You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "integer_comparisons")
 
     @property
@@ -38201,13 +38035,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="ipaddressComparisons")
+    @_utilities.deprecated("""You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""")
     def ipaddress_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionIpaddressComparison']]:
         """
         Comparison for `IP_ADDRESS` attributes
         """
-        warnings.warn("""You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""ipaddress_comparisons is deprecated: You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "ipaddress_comparisons")
 
     @property
@@ -38228,13 +38060,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="mobilePlatformComparisons")
+    @_utilities.deprecated("""You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""")
     def mobile_platform_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionMobilePlatformComparison']]:
         """
         Comparison for `MOBILE_PLATFORM` attributes
         """
-        warnings.warn("""You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""mobile_platform_comparisons is deprecated: You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "mobile_platform_comparisons")
 
     @property
@@ -38263,35 +38093,29 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="osarchitectureComparisons")
+    @_utilities.deprecated("""You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""")
     def osarchitecture_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionOsarchitectureComparison']]:
         """
         Comparison for `OS_ARCHITECTURE` attributes
         """
-        warnings.warn("""You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""osarchitecture_comparisons is deprecated: You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "osarchitecture_comparisons")
 
     @property
     @pulumi.getter(name="ostypeComparisons")
+    @_utilities.deprecated("""You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""")
     def ostype_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionOstypeComparison']]:
         """
         Comparison for `OS_TYPE` attributes
         """
-        warnings.warn("""You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""ostype_comparisons is deprecated: You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "ostype_comparisons")
 
     @property
     @pulumi.getter(name="paasTypeComparisons")
+    @_utilities.deprecated("""You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""")
     def paas_type_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionPaasTypeComparison']]:
         """
         Comparison for `PAAS_TYPE` attributes
         """
-        warnings.warn("""You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""paas_type_comparisons is deprecated: You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "paas_type_comparisons")
 
     @property
@@ -38304,13 +38128,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="processMetadataConditionKeys")
+    @_utilities.deprecated("""'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""")
     def process_metadata_condition_keys(self) -> Optional[Sequence['outputs.HostNamingConditionConditionProcessMetadataConditionKey']]:
         """
         The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
         """
-        warnings.warn("""'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""process_metadata_condition_keys is deprecated: 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""")
-
         return pulumi.get(self, "process_metadata_condition_keys")
 
     @property
@@ -38331,24 +38153,20 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="serviceTopologyComparisons")
+    @_utilities.deprecated("""You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""")
     def service_topology_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionServiceTopologyComparison']]:
         """
         Comparison for `SERVICE_TOPOLOGY` attributes
         """
-        warnings.warn("""You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""service_topology_comparisons is deprecated: You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "service_topology_comparisons")
 
     @property
     @pulumi.getter(name="serviceTypeComparisons")
+    @_utilities.deprecated("""You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""")
     def service_type_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionServiceTypeComparison']]:
         """
         Comparison for `SERVICE_TYPE` attributes
         """
-        warnings.warn("""You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""service_type_comparisons is deprecated: You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "service_type_comparisons")
 
     @property
@@ -38361,46 +38179,38 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="simpleHostTechComparisons")
+    @_utilities.deprecated("""You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""")
     def simple_host_tech_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionSimpleHostTechComparison']]:
         """
         Comparison for `SIMPLE_HOST_TECH` attributes
         """
-        warnings.warn("""You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""simple_host_tech_comparisons is deprecated: You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "simple_host_tech_comparisons")
 
     @property
     @pulumi.getter(name="simpleTechComparisons")
+    @_utilities.deprecated("""You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""")
     def simple_tech_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionSimpleTechComparison']]:
         """
         Comparison for `SIMPLE_TECH` attributes
         """
-        warnings.warn("""You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""simple_tech_comparisons is deprecated: You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "simple_tech_comparisons")
 
     @property
     @pulumi.getter(name="stringComparisons")
+    @_utilities.deprecated("""You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""")
     def string_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionStringComparison']]:
         """
         Comparison for `STRING` attributes
         """
-        warnings.warn("""You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""string_comparisons is deprecated: You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "string_comparisons")
 
     @property
     @pulumi.getter(name="stringConditionKeys")
+    @_utilities.deprecated("""'string_condition_key' is deprecated. You should use 'string_key'""")
     def string_condition_keys(self) -> Optional[Sequence['outputs.HostNamingConditionConditionStringConditionKey']]:
         """
         The key for dynamic attributes of the `STRING` type
         """
-        warnings.warn("""'string_condition_key' is deprecated. You should use 'string_key'""", DeprecationWarning)
-        pulumi.log.warn("""string_condition_keys is deprecated: 'string_condition_key' is deprecated. You should use 'string_key'""")
-
         return pulumi.get(self, "string_condition_keys")
 
     @property
@@ -38421,13 +38231,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="syntheticEngineTypeComparisons")
+    @_utilities.deprecated("""You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""")
     def synthetic_engine_type_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionSyntheticEngineTypeComparison']]:
         """
         Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
         """
-        warnings.warn("""You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""synthetic_engine_type_comparisons is deprecated: You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "synthetic_engine_type_comparisons")
 
     @property
@@ -38440,13 +38248,11 @@ class HostNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="tagComparisons")
+    @_utilities.deprecated("""You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""")
     def tag_comparisons(self) -> Optional[Sequence['outputs.HostNamingConditionConditionTagComparison']]:
         """
         Comparison for `TAG` attributes
         """
-        warnings.warn("""You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""tag_comparisons is deprecated: You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "tag_comparisons")
 
     @property
@@ -38571,13 +38377,11 @@ class HostNamingConditionConditionApplicationTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be APPLICATION_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -38748,13 +38552,11 @@ class HostNamingConditionConditionAzureSkuComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be AZURE_SKU
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -39009,13 +38811,11 @@ class HostNamingConditionConditionBitnessComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be BITNESS
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -39132,13 +38932,11 @@ class HostNamingConditionConditionCloudTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be CLOUD_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -39297,13 +39095,11 @@ class HostNamingConditionConditionCustomApplicationTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be CUSTOM_APPLICATION_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -39436,13 +39232,11 @@ class HostNamingConditionConditionCustomHostMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be HOST_CUSTOM_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -39649,13 +39443,11 @@ class HostNamingConditionConditionCustomProcessMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -39846,13 +39638,11 @@ class HostNamingConditionConditionDatabaseTopologyComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be DATABASE_TOPOLOGY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -39969,13 +39759,11 @@ class HostNamingConditionConditionDcrumDecoderComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be DCRUM_DECODER_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -40092,13 +39880,11 @@ class HostNamingConditionConditionEntityIdComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be ENTITY_ID
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -40329,13 +40115,11 @@ class HostNamingConditionConditionHypervisorTypeComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be HYPERVISOR_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -40452,13 +40236,11 @@ class HostNamingConditionConditionIndexedNameComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_NAME
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -40575,13 +40357,11 @@ class HostNamingConditionConditionIndexedStringComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_STRING
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -40698,13 +40478,11 @@ class HostNamingConditionConditionIndexedTagComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_TAG
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -40927,13 +40705,11 @@ class HostNamingConditionConditionIntegerComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INTEGER
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -41108,13 +40884,11 @@ class HostNamingConditionConditionIpaddressComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be IP_ADDRESS
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -41273,13 +41047,11 @@ class HostNamingConditionConditionMobilePlatformComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be MOBILE_PLATFORM
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -41450,13 +41222,11 @@ class HostNamingConditionConditionOsarchitectureComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be OS_ARCHITECTURE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -41519,13 +41289,11 @@ class HostNamingConditionConditionOstypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be OS_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -41642,13 +41410,11 @@ class HostNamingConditionConditionPaasTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PAAS_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -41781,13 +41547,11 @@ class HostNamingConditionConditionProcessMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -41896,13 +41660,11 @@ class HostNamingConditionConditionServiceTopologyComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SERVICE_TOPOLOGY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -42019,13 +41781,11 @@ class HostNamingConditionConditionServiceTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SERVICE_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -42088,13 +41848,11 @@ class HostNamingConditionConditionSimpleHostTechComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SIMPLE_HOST_TECH
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -42217,13 +41975,11 @@ class HostNamingConditionConditionSimpleTechComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SIMPLE_TECH
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -42458,13 +42214,11 @@ class HostNamingConditionConditionStringComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be STRING
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -42725,13 +42479,11 @@ class HostNamingConditionConditionStringConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be `STRING`
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -43084,13 +42836,11 @@ class HostNamingConditionConditionSyntheticEngineTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SYNTHETIC_ENGINE_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -43207,13 +42957,11 @@ class HostNamingConditionConditionTagComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be TAG
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -50356,13 +50104,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="applicationTypeComparisons")
+    @_utilities.deprecated("""You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""")
     def application_type_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionApplicationTypeComparison']]:
         """
         Comparison for `APPLICATION_TYPE` attributes
         """
-        warnings.warn("""You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""application_type_comparisons is deprecated: You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "application_type_comparisons")
 
     @property
@@ -50383,24 +50129,20 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="azureComputeModes")
+    @_utilities.deprecated("""You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""")
     def azure_compute_modes(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionAzureComputeMode']]:
         """
         Comparison for `AZURE_COMPUTE_MODE` attributes
         """
-        warnings.warn("""You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""azure_compute_modes is deprecated: You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "azure_compute_modes")
 
     @property
     @pulumi.getter(name="azureSkuComparisions")
+    @_utilities.deprecated("""You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""")
     def azure_sku_comparisions(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionAzureSkuComparision']]:
         """
         Comparison for `AZURE_SKU` attributes
         """
-        warnings.warn("""You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""azure_sku_comparisions is deprecated: You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "azure_sku_comparisions")
 
     @property
@@ -50413,35 +50155,29 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="baseComparisonBasics")
+    @_utilities.deprecated("""You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""")
     def base_comparison_basics(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionBaseComparisonBasic']]:
         """
         A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
         """
-        warnings.warn("""You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""base_comparison_basics is deprecated: You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "base_comparison_basics")
 
     @property
     @pulumi.getter(name="baseConditionKeys")
+    @_utilities.deprecated("""'base_condition_key' is deprecated. You should use 'key'""")
     def base_condition_keys(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionBaseConditionKey']]:
         """
         Fallback for not yet known type
         """
-        warnings.warn("""'base_condition_key' is deprecated. You should use 'key'""", DeprecationWarning)
-        pulumi.log.warn("""base_condition_keys is deprecated: 'base_condition_key' is deprecated. You should use 'key'""")
-
         return pulumi.get(self, "base_condition_keys")
 
     @property
     @pulumi.getter(name="bitnessComparisions")
+    @_utilities.deprecated("""You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""")
     def bitness_comparisions(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionBitnessComparision']]:
         """
         Comparison for `BITNESS` attributes
         """
-        warnings.warn("""You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""bitness_comparisions is deprecated: You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "bitness_comparisions")
 
     @property
@@ -50454,13 +50190,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="cloudTypeComparisons")
+    @_utilities.deprecated("""You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""")
     def cloud_type_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionCloudTypeComparison']]:
         """
         Comparison for `CLOUD_TYPE` attributes
         """
-        warnings.warn("""You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""cloud_type_comparisons is deprecated: You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "cloud_type_comparisons")
 
     @property
@@ -50481,13 +50215,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="customApplicationTypeComparisons")
+    @_utilities.deprecated("""You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""")
     def custom_application_type_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionCustomApplicationTypeComparison']]:
         """
         Comparison for `CUSTOM_APPLICATION_TYPE` attributes
         """
-        warnings.warn("""You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""custom_application_type_comparisons is deprecated: You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "custom_application_type_comparisons")
 
     @property
@@ -50500,13 +50232,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="customHostMetadataConditionKeys")
+    @_utilities.deprecated("""'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""")
     def custom_host_metadata_condition_keys(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionCustomHostMetadataConditionKey']]:
         """
         Key for Custom Host Metadata
         """
-        warnings.warn("""'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""custom_host_metadata_condition_keys is deprecated: 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""")
-
         return pulumi.get(self, "custom_host_metadata_condition_keys")
 
     @property
@@ -50519,13 +50249,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="customProcessMetadataConditionKeys")
+    @_utilities.deprecated("""'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""")
     def custom_process_metadata_condition_keys(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionCustomProcessMetadataConditionKey']]:
         """
         Key for Custom Process Metadata
         """
-        warnings.warn("""'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""custom_process_metadata_condition_keys is deprecated: 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""")
-
         return pulumi.get(self, "custom_process_metadata_condition_keys")
 
     @property
@@ -50546,24 +50274,20 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="databaseTopologyComparisons")
+    @_utilities.deprecated("""You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""")
     def database_topology_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionDatabaseTopologyComparison']]:
         """
         Comparison for `DATABASE_TOPOLOGY` attributes
         """
-        warnings.warn("""You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""database_topology_comparisons is deprecated: You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "database_topology_comparisons")
 
     @property
     @pulumi.getter(name="dcrumDecoderComparisons")
+    @_utilities.deprecated("""You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""")
     def dcrum_decoder_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionDcrumDecoderComparison']]:
         """
         Comparison for `DCRUM_DECODER_TYPE` attributes
         """
-        warnings.warn("""You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""dcrum_decoder_comparisons is deprecated: You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "dcrum_decoder_comparisons")
 
     @property
@@ -50584,13 +50308,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="entityIdComparisons")
+    @_utilities.deprecated("""You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""")
     def entity_id_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionEntityIdComparison']]:
         """
         Comparison for `ENTITY_ID` attributes
         """
-        warnings.warn("""You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""entity_id_comparisons is deprecated: You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "entity_id_comparisons")
 
     @property
@@ -50603,13 +50325,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="hypervisorTypeComparisions")
+    @_utilities.deprecated("""`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""")
     def hypervisor_type_comparisions(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionHypervisorTypeComparision']]:
         """
         `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
         """
-        warnings.warn("""`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""", DeprecationWarning)
-        pulumi.log.warn("""hypervisor_type_comparisions is deprecated: `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""")
-
         return pulumi.get(self, "hypervisor_type_comparisions")
 
     @property
@@ -50622,13 +50342,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="indexedNameComparisons")
+    @_utilities.deprecated("""You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_name_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionIndexedNameComparison']]:
         """
         Comparison for `INDEXED_NAME` attributes
         """
-        warnings.warn("""You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_name_comparisons is deprecated: You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_name_comparisons")
 
     @property
@@ -50641,13 +50359,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="indexedStringComparisons")
+    @_utilities.deprecated("""You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_string_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionIndexedStringComparison']]:
         """
         Comparison for `INDEXED_STRING` attributes
         """
-        warnings.warn("""You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_string_comparisons is deprecated: You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_string_comparisons")
 
     @property
@@ -50660,13 +50376,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="indexedTagComparisons")
+    @_utilities.deprecated("""You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_tag_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionIndexedTagComparison']]:
         """
         Comparison for `INDEXED_TAG` attributes
         """
-        warnings.warn("""You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_tag_comparisons is deprecated: You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_tag_comparisons")
 
     @property
@@ -50679,13 +50393,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="integerComparisons")
+    @_utilities.deprecated("""You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""")
     def integer_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionIntegerComparison']]:
         """
         Comparison for `INTEGER` attributes
         """
-        warnings.warn("""You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""integer_comparisons is deprecated: You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "integer_comparisons")
 
     @property
@@ -50698,13 +50410,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="ipaddressComparisons")
+    @_utilities.deprecated("""You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""")
     def ipaddress_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionIpaddressComparison']]:
         """
         Comparison for `IP_ADDRESS` attributes
         """
-        warnings.warn("""You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""ipaddress_comparisons is deprecated: You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "ipaddress_comparisons")
 
     @property
@@ -50725,13 +50435,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="mobilePlatformComparisons")
+    @_utilities.deprecated("""You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""")
     def mobile_platform_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionMobilePlatformComparison']]:
         """
         Comparison for `MOBILE_PLATFORM` attributes
         """
-        warnings.warn("""You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""mobile_platform_comparisons is deprecated: You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "mobile_platform_comparisons")
 
     @property
@@ -50760,35 +50468,29 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="osarchitectureComparisons")
+    @_utilities.deprecated("""You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""")
     def osarchitecture_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionOsarchitectureComparison']]:
         """
         Comparison for `OS_ARCHITECTURE` attributes
         """
-        warnings.warn("""You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""osarchitecture_comparisons is deprecated: You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "osarchitecture_comparisons")
 
     @property
     @pulumi.getter(name="ostypeComparisons")
+    @_utilities.deprecated("""You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""")
     def ostype_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionOstypeComparison']]:
         """
         Comparison for `OS_TYPE` attributes
         """
-        warnings.warn("""You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""ostype_comparisons is deprecated: You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "ostype_comparisons")
 
     @property
     @pulumi.getter(name="paasTypeComparisons")
+    @_utilities.deprecated("""You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""")
     def paas_type_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionPaasTypeComparison']]:
         """
         Comparison for `PAAS_TYPE` attributes
         """
-        warnings.warn("""You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""paas_type_comparisons is deprecated: You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "paas_type_comparisons")
 
     @property
@@ -50801,13 +50503,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="processMetadataConditionKeys")
+    @_utilities.deprecated("""'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""")
     def process_metadata_condition_keys(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionProcessMetadataConditionKey']]:
         """
         The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
         """
-        warnings.warn("""'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""process_metadata_condition_keys is deprecated: 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""")
-
         return pulumi.get(self, "process_metadata_condition_keys")
 
     @property
@@ -50828,24 +50528,20 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="serviceTopologyComparisons")
+    @_utilities.deprecated("""You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""")
     def service_topology_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionServiceTopologyComparison']]:
         """
         Comparison for `SERVICE_TOPOLOGY` attributes
         """
-        warnings.warn("""You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""service_topology_comparisons is deprecated: You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "service_topology_comparisons")
 
     @property
     @pulumi.getter(name="serviceTypeComparisons")
+    @_utilities.deprecated("""You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""")
     def service_type_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionServiceTypeComparison']]:
         """
         Comparison for `SERVICE_TYPE` attributes
         """
-        warnings.warn("""You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""service_type_comparisons is deprecated: You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "service_type_comparisons")
 
     @property
@@ -50858,46 +50554,38 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="simpleHostTechComparisons")
+    @_utilities.deprecated("""You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""")
     def simple_host_tech_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionSimpleHostTechComparison']]:
         """
         Comparison for `SIMPLE_HOST_TECH` attributes
         """
-        warnings.warn("""You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""simple_host_tech_comparisons is deprecated: You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "simple_host_tech_comparisons")
 
     @property
     @pulumi.getter(name="simpleTechComparisons")
+    @_utilities.deprecated("""You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""")
     def simple_tech_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionSimpleTechComparison']]:
         """
         Comparison for `SIMPLE_TECH` attributes
         """
-        warnings.warn("""You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""simple_tech_comparisons is deprecated: You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "simple_tech_comparisons")
 
     @property
     @pulumi.getter(name="stringComparisons")
+    @_utilities.deprecated("""You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""")
     def string_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionStringComparison']]:
         """
         Comparison for `STRING` attributes
         """
-        warnings.warn("""You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""string_comparisons is deprecated: You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "string_comparisons")
 
     @property
     @pulumi.getter(name="stringConditionKeys")
+    @_utilities.deprecated("""'string_condition_key' is deprecated. You should use 'string_key'""")
     def string_condition_keys(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionStringConditionKey']]:
         """
         The key for dynamic attributes of the `STRING` type
         """
-        warnings.warn("""'string_condition_key' is deprecated. You should use 'string_key'""", DeprecationWarning)
-        pulumi.log.warn("""string_condition_keys is deprecated: 'string_condition_key' is deprecated. You should use 'string_key'""")
-
         return pulumi.get(self, "string_condition_keys")
 
     @property
@@ -50918,13 +50606,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="syntheticEngineTypeComparisons")
+    @_utilities.deprecated("""You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""")
     def synthetic_engine_type_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionSyntheticEngineTypeComparison']]:
         """
         Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
         """
-        warnings.warn("""You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""synthetic_engine_type_comparisons is deprecated: You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "synthetic_engine_type_comparisons")
 
     @property
@@ -50937,13 +50623,11 @@ class ManagementZoneRuleCondition(dict):
 
     @property
     @pulumi.getter(name="tagComparisons")
+    @_utilities.deprecated("""You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""")
     def tag_comparisons(self) -> Optional[Sequence['outputs.ManagementZoneRuleConditionTagComparison']]:
         """
         Comparison for `TAG` attributes
         """
-        warnings.warn("""You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""tag_comparisons is deprecated: You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "tag_comparisons")
 
     @property
@@ -51068,13 +50752,11 @@ class ManagementZoneRuleConditionApplicationTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be APPLICATION_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -51245,13 +50927,11 @@ class ManagementZoneRuleConditionAzureSkuComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be AZURE_SKU
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -51506,13 +51186,11 @@ class ManagementZoneRuleConditionBitnessComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be BITNESS
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -51629,13 +51307,11 @@ class ManagementZoneRuleConditionCloudTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be CLOUD_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -51794,13 +51470,11 @@ class ManagementZoneRuleConditionCustomApplicationTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be CUSTOM_APPLICATION_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -51933,13 +51607,11 @@ class ManagementZoneRuleConditionCustomHostMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be HOST_CUSTOM_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -52146,13 +51818,11 @@ class ManagementZoneRuleConditionCustomProcessMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -52343,13 +52013,11 @@ class ManagementZoneRuleConditionDatabaseTopologyComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be DATABASE_TOPOLOGY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -52466,13 +52134,11 @@ class ManagementZoneRuleConditionDcrumDecoderComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be DCRUM_DECODER_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -52589,13 +52255,11 @@ class ManagementZoneRuleConditionEntityIdComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be ENTITY_ID
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -52826,13 +52490,11 @@ class ManagementZoneRuleConditionHypervisorTypeComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be HYPERVISOR_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -52949,13 +52611,11 @@ class ManagementZoneRuleConditionIndexedNameComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_NAME
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -53072,13 +52732,11 @@ class ManagementZoneRuleConditionIndexedStringComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_STRING
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -53195,13 +52853,11 @@ class ManagementZoneRuleConditionIndexedTagComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_TAG
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -53424,13 +53080,11 @@ class ManagementZoneRuleConditionIntegerComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INTEGER
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -53605,13 +53259,11 @@ class ManagementZoneRuleConditionIpaddressComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be IP_ADDRESS
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -53770,13 +53422,11 @@ class ManagementZoneRuleConditionMobilePlatformComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be MOBILE_PLATFORM
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -53947,13 +53597,11 @@ class ManagementZoneRuleConditionOsarchitectureComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be OS_ARCHITECTURE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -54016,13 +53664,11 @@ class ManagementZoneRuleConditionOstypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be OS_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -54139,13 +53785,11 @@ class ManagementZoneRuleConditionPaasTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PAAS_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -54278,13 +53922,11 @@ class ManagementZoneRuleConditionProcessMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -54393,13 +54035,11 @@ class ManagementZoneRuleConditionServiceTopologyComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SERVICE_TOPOLOGY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -54516,13 +54156,11 @@ class ManagementZoneRuleConditionServiceTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SERVICE_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -54585,13 +54223,11 @@ class ManagementZoneRuleConditionSimpleHostTechComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SIMPLE_HOST_TECH
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -54714,13 +54350,11 @@ class ManagementZoneRuleConditionSimpleTechComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SIMPLE_TECH
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -54955,13 +54589,11 @@ class ManagementZoneRuleConditionStringComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be STRING
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -55222,13 +54854,11 @@ class ManagementZoneRuleConditionStringConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be `STRING`
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -55581,13 +55211,11 @@ class ManagementZoneRuleConditionSyntheticEngineTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SYNTHETIC_ENGINE_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -55704,13 +55332,11 @@ class ManagementZoneRuleConditionTagComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be TAG
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -56108,11 +55734,11 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
         :param bool azure_to_pgpropagation: Apply to process groups connected to matching Azure entities
         :param bool azure_to_service_propagation: Apply to services provided by matching Azure entities
         :param bool custom_device_group_to_custom_device_propagation: Apply to custom devices in a custom device group
-        :param bool host_to_pgpropagation: Apply to processes running on matching hosts
-        :param bool pg_to_host_propagation: Apply to underlying hosts of matching process groups
-        :param bool pg_to_service_propagation: Apply to all services provided by the process groups
-        :param bool service_to_host_propagation: Apply to underlying hosts of matching services
-        :param bool service_to_pgpropagation: Apply to underlying process groups of matching services
+        :param bool host_to_pgpropagation: Apply to processes running on matching hosts. `entity_type` must be set to `HOST`
+        :param bool pg_to_host_propagation: Apply to underlying hosts of matching process groups. `entity_type` must be set to `PROCESS_GROUP`
+        :param bool pg_to_service_propagation: Apply to all services provided by the process groups. `entity_type` must be set to `PROCESS_GROUP`
+        :param bool service_to_host_propagation: Apply to underlying hosts of matching services. `entity_type` must be set to `SERVICE`
+        :param bool service_to_pgpropagation: Apply to underlying process groups of matching services. `entity_type` must be set to `SERVICE`
         """
         pulumi.set(__self__, "attribute_conditions", attribute_conditions)
         pulumi.set(__self__, "entity_type", entity_type)
@@ -56177,7 +55803,7 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
     @pulumi.getter(name="hostToPgpropagation")
     def host_to_pgpropagation(self) -> Optional[bool]:
         """
-        Apply to processes running on matching hosts
+        Apply to processes running on matching hosts. `entity_type` must be set to `HOST`
         """
         return pulumi.get(self, "host_to_pgpropagation")
 
@@ -56185,7 +55811,7 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
     @pulumi.getter(name="pgToHostPropagation")
     def pg_to_host_propagation(self) -> Optional[bool]:
         """
-        Apply to underlying hosts of matching process groups
+        Apply to underlying hosts of matching process groups. `entity_type` must be set to `PROCESS_GROUP`
         """
         return pulumi.get(self, "pg_to_host_propagation")
 
@@ -56193,7 +55819,7 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
     @pulumi.getter(name="pgToServicePropagation")
     def pg_to_service_propagation(self) -> Optional[bool]:
         """
-        Apply to all services provided by the process groups
+        Apply to all services provided by the process groups. `entity_type` must be set to `PROCESS_GROUP`
         """
         return pulumi.get(self, "pg_to_service_propagation")
 
@@ -56201,7 +55827,7 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
     @pulumi.getter(name="serviceToHostPropagation")
     def service_to_host_propagation(self) -> Optional[bool]:
         """
-        Apply to underlying hosts of matching services
+        Apply to underlying hosts of matching services. `entity_type` must be set to `SERVICE`
         """
         return pulumi.get(self, "service_to_host_propagation")
 
@@ -56209,7 +55835,7 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
     @pulumi.getter(name="serviceToPgpropagation")
     def service_to_pgpropagation(self) -> Optional[bool]:
         """
-        Apply to underlying process groups of matching services
+        Apply to underlying process groups of matching services. `entity_type` must be set to `SERVICE`
         """
         return pulumi.get(self, "service_to_pgpropagation")
 
@@ -62553,13 +62179,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="applicationTypeComparisons")
+    @_utilities.deprecated("""You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""")
     def application_type_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionApplicationTypeComparison']]:
         """
         Comparison for `APPLICATION_TYPE` attributes
         """
-        warnings.warn("""You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""application_type_comparisons is deprecated: You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "application_type_comparisons")
 
     @property
@@ -62580,24 +62204,20 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="azureComputeModes")
+    @_utilities.deprecated("""You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""")
     def azure_compute_modes(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionAzureComputeMode']]:
         """
         Comparison for `AZURE_COMPUTE_MODE` attributes
         """
-        warnings.warn("""You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""azure_compute_modes is deprecated: You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "azure_compute_modes")
 
     @property
     @pulumi.getter(name="azureSkuComparisions")
+    @_utilities.deprecated("""You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""")
     def azure_sku_comparisions(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionAzureSkuComparision']]:
         """
         Comparison for `AZURE_SKU` attributes
         """
-        warnings.warn("""You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""azure_sku_comparisions is deprecated: You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "azure_sku_comparisions")
 
     @property
@@ -62610,35 +62230,29 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="baseComparisonBasics")
+    @_utilities.deprecated("""You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""")
     def base_comparison_basics(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionBaseComparisonBasic']]:
         """
         A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
         """
-        warnings.warn("""You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""base_comparison_basics is deprecated: You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "base_comparison_basics")
 
     @property
     @pulumi.getter(name="baseConditionKeys")
+    @_utilities.deprecated("""'base_condition_key' is deprecated. You should use 'key'""")
     def base_condition_keys(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionBaseConditionKey']]:
         """
         Fallback for not yet known type
         """
-        warnings.warn("""'base_condition_key' is deprecated. You should use 'key'""", DeprecationWarning)
-        pulumi.log.warn("""base_condition_keys is deprecated: 'base_condition_key' is deprecated. You should use 'key'""")
-
         return pulumi.get(self, "base_condition_keys")
 
     @property
     @pulumi.getter(name="bitnessComparisions")
+    @_utilities.deprecated("""You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""")
     def bitness_comparisions(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionBitnessComparision']]:
         """
         Comparison for `BITNESS` attributes
         """
-        warnings.warn("""You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""bitness_comparisions is deprecated: You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "bitness_comparisions")
 
     @property
@@ -62651,13 +62265,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="cloudTypeComparisons")
+    @_utilities.deprecated("""You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""")
     def cloud_type_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionCloudTypeComparison']]:
         """
         Comparison for `CLOUD_TYPE` attributes
         """
-        warnings.warn("""You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""cloud_type_comparisons is deprecated: You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "cloud_type_comparisons")
 
     @property
@@ -62678,13 +62290,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="customApplicationTypeComparisons")
+    @_utilities.deprecated("""You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""")
     def custom_application_type_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionCustomApplicationTypeComparison']]:
         """
         Comparison for `CUSTOM_APPLICATION_TYPE` attributes
         """
-        warnings.warn("""You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""custom_application_type_comparisons is deprecated: You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "custom_application_type_comparisons")
 
     @property
@@ -62697,13 +62307,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="customHostMetadataConditionKeys")
+    @_utilities.deprecated("""'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""")
     def custom_host_metadata_condition_keys(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionCustomHostMetadataConditionKey']]:
         """
         Key for Custom Host Metadata
         """
-        warnings.warn("""'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""custom_host_metadata_condition_keys is deprecated: 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""")
-
         return pulumi.get(self, "custom_host_metadata_condition_keys")
 
     @property
@@ -62716,13 +62324,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="customProcessMetadataConditionKeys")
+    @_utilities.deprecated("""'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""")
     def custom_process_metadata_condition_keys(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionCustomProcessMetadataConditionKey']]:
         """
         Key for Custom Process Metadata
         """
-        warnings.warn("""'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""custom_process_metadata_condition_keys is deprecated: 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""")
-
         return pulumi.get(self, "custom_process_metadata_condition_keys")
 
     @property
@@ -62743,24 +62349,20 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="databaseTopologyComparisons")
+    @_utilities.deprecated("""You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""")
     def database_topology_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionDatabaseTopologyComparison']]:
         """
         Comparison for `DATABASE_TOPOLOGY` attributes
         """
-        warnings.warn("""You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""database_topology_comparisons is deprecated: You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "database_topology_comparisons")
 
     @property
     @pulumi.getter(name="dcrumDecoderComparisons")
+    @_utilities.deprecated("""You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""")
     def dcrum_decoder_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionDcrumDecoderComparison']]:
         """
         Comparison for `DCRUM_DECODER_TYPE` attributes
         """
-        warnings.warn("""You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""dcrum_decoder_comparisons is deprecated: You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "dcrum_decoder_comparisons")
 
     @property
@@ -62781,13 +62383,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="entityIdComparisons")
+    @_utilities.deprecated("""You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""")
     def entity_id_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionEntityIdComparison']]:
         """
         Comparison for `ENTITY_ID` attributes
         """
-        warnings.warn("""You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""entity_id_comparisons is deprecated: You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "entity_id_comparisons")
 
     @property
@@ -62800,13 +62400,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="hypervisorTypeComparisions")
+    @_utilities.deprecated("""`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""")
     def hypervisor_type_comparisions(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionHypervisorTypeComparision']]:
         """
         `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
         """
-        warnings.warn("""`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""", DeprecationWarning)
-        pulumi.log.warn("""hypervisor_type_comparisions is deprecated: `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""")
-
         return pulumi.get(self, "hypervisor_type_comparisions")
 
     @property
@@ -62819,13 +62417,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="indexedNameComparisons")
+    @_utilities.deprecated("""You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_name_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionIndexedNameComparison']]:
         """
         Comparison for `INDEXED_NAME` attributes
         """
-        warnings.warn("""You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_name_comparisons is deprecated: You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_name_comparisons")
 
     @property
@@ -62838,13 +62434,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="indexedStringComparisons")
+    @_utilities.deprecated("""You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_string_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionIndexedStringComparison']]:
         """
         Comparison for `INDEXED_STRING` attributes
         """
-        warnings.warn("""You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_string_comparisons is deprecated: You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_string_comparisons")
 
     @property
@@ -62857,13 +62451,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="indexedTagComparisons")
+    @_utilities.deprecated("""You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_tag_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionIndexedTagComparison']]:
         """
         Comparison for `INDEXED_TAG` attributes
         """
-        warnings.warn("""You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_tag_comparisons is deprecated: You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_tag_comparisons")
 
     @property
@@ -62876,13 +62468,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="integerComparisons")
+    @_utilities.deprecated("""You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""")
     def integer_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionIntegerComparison']]:
         """
         Comparison for `INTEGER` attributes
         """
-        warnings.warn("""You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""integer_comparisons is deprecated: You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "integer_comparisons")
 
     @property
@@ -62895,13 +62485,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="ipaddressComparisons")
+    @_utilities.deprecated("""You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""")
     def ipaddress_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionIpaddressComparison']]:
         """
         Comparison for `IP_ADDRESS` attributes
         """
-        warnings.warn("""You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""ipaddress_comparisons is deprecated: You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "ipaddress_comparisons")
 
     @property
@@ -62922,13 +62510,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="mobilePlatformComparisons")
+    @_utilities.deprecated("""You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""")
     def mobile_platform_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionMobilePlatformComparison']]:
         """
         Comparison for `MOBILE_PLATFORM` attributes
         """
-        warnings.warn("""You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""mobile_platform_comparisons is deprecated: You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "mobile_platform_comparisons")
 
     @property
@@ -62957,35 +62543,29 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="osarchitectureComparisons")
+    @_utilities.deprecated("""You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""")
     def osarchitecture_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionOsarchitectureComparison']]:
         """
         Comparison for `OS_ARCHITECTURE` attributes
         """
-        warnings.warn("""You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""osarchitecture_comparisons is deprecated: You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "osarchitecture_comparisons")
 
     @property
     @pulumi.getter(name="ostypeComparisons")
+    @_utilities.deprecated("""You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""")
     def ostype_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionOstypeComparison']]:
         """
         Comparison for `OS_TYPE` attributes
         """
-        warnings.warn("""You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""ostype_comparisons is deprecated: You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "ostype_comparisons")
 
     @property
     @pulumi.getter(name="paasTypeComparisons")
+    @_utilities.deprecated("""You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""")
     def paas_type_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionPaasTypeComparison']]:
         """
         Comparison for `PAAS_TYPE` attributes
         """
-        warnings.warn("""You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""paas_type_comparisons is deprecated: You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "paas_type_comparisons")
 
     @property
@@ -62998,13 +62578,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="processMetadataConditionKeys")
+    @_utilities.deprecated("""'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""")
     def process_metadata_condition_keys(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionProcessMetadataConditionKey']]:
         """
         The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
         """
-        warnings.warn("""'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""process_metadata_condition_keys is deprecated: 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""")
-
         return pulumi.get(self, "process_metadata_condition_keys")
 
     @property
@@ -63025,24 +62603,20 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="serviceTopologyComparisons")
+    @_utilities.deprecated("""You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""")
     def service_topology_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionServiceTopologyComparison']]:
         """
         Comparison for `SERVICE_TOPOLOGY` attributes
         """
-        warnings.warn("""You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""service_topology_comparisons is deprecated: You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "service_topology_comparisons")
 
     @property
     @pulumi.getter(name="serviceTypeComparisons")
+    @_utilities.deprecated("""You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""")
     def service_type_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionServiceTypeComparison']]:
         """
         Comparison for `SERVICE_TYPE` attributes
         """
-        warnings.warn("""You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""service_type_comparisons is deprecated: You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "service_type_comparisons")
 
     @property
@@ -63055,46 +62629,38 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="simpleHostTechComparisons")
+    @_utilities.deprecated("""You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""")
     def simple_host_tech_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionSimpleHostTechComparison']]:
         """
         Comparison for `SIMPLE_HOST_TECH` attributes
         """
-        warnings.warn("""You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""simple_host_tech_comparisons is deprecated: You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "simple_host_tech_comparisons")
 
     @property
     @pulumi.getter(name="simpleTechComparisons")
+    @_utilities.deprecated("""You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""")
     def simple_tech_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionSimpleTechComparison']]:
         """
         Comparison for `SIMPLE_TECH` attributes
         """
-        warnings.warn("""You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""simple_tech_comparisons is deprecated: You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "simple_tech_comparisons")
 
     @property
     @pulumi.getter(name="stringComparisons")
+    @_utilities.deprecated("""You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""")
     def string_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionStringComparison']]:
         """
         Comparison for `STRING` attributes
         """
-        warnings.warn("""You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""string_comparisons is deprecated: You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "string_comparisons")
 
     @property
     @pulumi.getter(name="stringConditionKeys")
+    @_utilities.deprecated("""'string_condition_key' is deprecated. You should use 'string_key'""")
     def string_condition_keys(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionStringConditionKey']]:
         """
         The key for dynamic attributes of the `STRING` type
         """
-        warnings.warn("""'string_condition_key' is deprecated. You should use 'string_key'""", DeprecationWarning)
-        pulumi.log.warn("""string_condition_keys is deprecated: 'string_condition_key' is deprecated. You should use 'string_key'""")
-
         return pulumi.get(self, "string_condition_keys")
 
     @property
@@ -63115,13 +62681,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="syntheticEngineTypeComparisons")
+    @_utilities.deprecated("""You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""")
     def synthetic_engine_type_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionSyntheticEngineTypeComparison']]:
         """
         Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
         """
-        warnings.warn("""You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""synthetic_engine_type_comparisons is deprecated: You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "synthetic_engine_type_comparisons")
 
     @property
@@ -63134,13 +62698,11 @@ class ProcessgroupNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="tagComparisons")
+    @_utilities.deprecated("""You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""")
     def tag_comparisons(self) -> Optional[Sequence['outputs.ProcessgroupNamingConditionConditionTagComparison']]:
         """
         Comparison for `TAG` attributes
         """
-        warnings.warn("""You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""tag_comparisons is deprecated: You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "tag_comparisons")
 
     @property
@@ -63265,13 +62827,11 @@ class ProcessgroupNamingConditionConditionApplicationTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be APPLICATION_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -63442,13 +63002,11 @@ class ProcessgroupNamingConditionConditionAzureSkuComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be AZURE_SKU
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -63703,13 +63261,11 @@ class ProcessgroupNamingConditionConditionBitnessComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be BITNESS
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -63826,13 +63382,11 @@ class ProcessgroupNamingConditionConditionCloudTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be CLOUD_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -63991,13 +63545,11 @@ class ProcessgroupNamingConditionConditionCustomApplicationTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be CUSTOM_APPLICATION_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -64130,13 +63682,11 @@ class ProcessgroupNamingConditionConditionCustomHostMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be HOST_CUSTOM_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -64343,13 +63893,11 @@ class ProcessgroupNamingConditionConditionCustomProcessMetadataConditionKey(dict
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -64540,13 +64088,11 @@ class ProcessgroupNamingConditionConditionDatabaseTopologyComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be DATABASE_TOPOLOGY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -64663,13 +64209,11 @@ class ProcessgroupNamingConditionConditionDcrumDecoderComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be DCRUM_DECODER_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -64786,13 +64330,11 @@ class ProcessgroupNamingConditionConditionEntityIdComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be ENTITY_ID
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -65023,13 +64565,11 @@ class ProcessgroupNamingConditionConditionHypervisorTypeComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be HYPERVISOR_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -65146,13 +64686,11 @@ class ProcessgroupNamingConditionConditionIndexedNameComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_NAME
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -65269,13 +64807,11 @@ class ProcessgroupNamingConditionConditionIndexedStringComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_STRING
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -65392,13 +64928,11 @@ class ProcessgroupNamingConditionConditionIndexedTagComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_TAG
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -65621,13 +65155,11 @@ class ProcessgroupNamingConditionConditionIntegerComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INTEGER
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -65802,13 +65334,11 @@ class ProcessgroupNamingConditionConditionIpaddressComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be IP_ADDRESS
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -65967,13 +65497,11 @@ class ProcessgroupNamingConditionConditionMobilePlatformComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be MOBILE_PLATFORM
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -66144,13 +65672,11 @@ class ProcessgroupNamingConditionConditionOsarchitectureComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be OS_ARCHITECTURE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -66213,13 +65739,11 @@ class ProcessgroupNamingConditionConditionOstypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be OS_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -66336,13 +65860,11 @@ class ProcessgroupNamingConditionConditionPaasTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PAAS_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -66475,13 +65997,11 @@ class ProcessgroupNamingConditionConditionProcessMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -66590,13 +66110,11 @@ class ProcessgroupNamingConditionConditionServiceTopologyComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SERVICE_TOPOLOGY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -66713,13 +66231,11 @@ class ProcessgroupNamingConditionConditionServiceTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SERVICE_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -66782,13 +66298,11 @@ class ProcessgroupNamingConditionConditionSimpleHostTechComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SIMPLE_HOST_TECH
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -66911,13 +66425,11 @@ class ProcessgroupNamingConditionConditionSimpleTechComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SIMPLE_TECH
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -67152,13 +66664,11 @@ class ProcessgroupNamingConditionConditionStringComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be STRING
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -67419,13 +66929,11 @@ class ProcessgroupNamingConditionConditionStringConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be `STRING`
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -67778,13 +67286,11 @@ class ProcessgroupNamingConditionConditionSyntheticEngineTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SYNTHETIC_ENGINE_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -67901,13 +67407,11 @@ class ProcessgroupNamingConditionConditionTagComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be TAG
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -78496,13 +78000,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="applicationTypeComparisons")
+    @_utilities.deprecated("""You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""")
     def application_type_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionApplicationTypeComparison']]:
         """
         Comparison for `APPLICATION_TYPE` attributes
         """
-        warnings.warn("""You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""application_type_comparisons is deprecated: You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "application_type_comparisons")
 
     @property
@@ -78523,24 +78025,20 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="azureComputeModes")
+    @_utilities.deprecated("""You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""")
     def azure_compute_modes(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionAzureComputeMode']]:
         """
         Comparison for `AZURE_COMPUTE_MODE` attributes
         """
-        warnings.warn("""You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""azure_compute_modes is deprecated: You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "azure_compute_modes")
 
     @property
     @pulumi.getter(name="azureSkuComparisions")
+    @_utilities.deprecated("""You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""")
     def azure_sku_comparisions(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionAzureSkuComparision']]:
         """
         Comparison for `AZURE_SKU` attributes
         """
-        warnings.warn("""You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""azure_sku_comparisions is deprecated: You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "azure_sku_comparisions")
 
     @property
@@ -78553,35 +78051,29 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="baseComparisonBasics")
+    @_utilities.deprecated("""You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""")
     def base_comparison_basics(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionBaseComparisonBasic']]:
         """
         A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
         """
-        warnings.warn("""You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""base_comparison_basics is deprecated: You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "base_comparison_basics")
 
     @property
     @pulumi.getter(name="baseConditionKeys")
+    @_utilities.deprecated("""'base_condition_key' is deprecated. You should use 'key'""")
     def base_condition_keys(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionBaseConditionKey']]:
         """
         Fallback for not yet known type
         """
-        warnings.warn("""'base_condition_key' is deprecated. You should use 'key'""", DeprecationWarning)
-        pulumi.log.warn("""base_condition_keys is deprecated: 'base_condition_key' is deprecated. You should use 'key'""")
-
         return pulumi.get(self, "base_condition_keys")
 
     @property
     @pulumi.getter(name="bitnessComparisions")
+    @_utilities.deprecated("""You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""")
     def bitness_comparisions(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionBitnessComparision']]:
         """
         Comparison for `BITNESS` attributes
         """
-        warnings.warn("""You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""bitness_comparisions is deprecated: You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "bitness_comparisions")
 
     @property
@@ -78594,13 +78086,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="cloudTypeComparisons")
+    @_utilities.deprecated("""You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""")
     def cloud_type_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionCloudTypeComparison']]:
         """
         Comparison for `CLOUD_TYPE` attributes
         """
-        warnings.warn("""You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""cloud_type_comparisons is deprecated: You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "cloud_type_comparisons")
 
     @property
@@ -78621,13 +78111,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="customApplicationTypeComparisons")
+    @_utilities.deprecated("""You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""")
     def custom_application_type_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionCustomApplicationTypeComparison']]:
         """
         Comparison for `CUSTOM_APPLICATION_TYPE` attributes
         """
-        warnings.warn("""You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""custom_application_type_comparisons is deprecated: You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "custom_application_type_comparisons")
 
     @property
@@ -78640,13 +78128,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="customHostMetadataConditionKeys")
+    @_utilities.deprecated("""'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""")
     def custom_host_metadata_condition_keys(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionCustomHostMetadataConditionKey']]:
         """
         Key for Custom Host Metadata
         """
-        warnings.warn("""'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""custom_host_metadata_condition_keys is deprecated: 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'""")
-
         return pulumi.get(self, "custom_host_metadata_condition_keys")
 
     @property
@@ -78659,13 +78145,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="customProcessMetadataConditionKeys")
+    @_utilities.deprecated("""'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""")
     def custom_process_metadata_condition_keys(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionCustomProcessMetadataConditionKey']]:
         """
         Key for Custom Process Metadata
         """
-        warnings.warn("""'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""custom_process_metadata_condition_keys is deprecated: 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'""")
-
         return pulumi.get(self, "custom_process_metadata_condition_keys")
 
     @property
@@ -78686,24 +78170,20 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="databaseTopologyComparisons")
+    @_utilities.deprecated("""You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""")
     def database_topology_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionDatabaseTopologyComparison']]:
         """
         Comparison for `DATABASE_TOPOLOGY` attributes
         """
-        warnings.warn("""You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""database_topology_comparisons is deprecated: You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "database_topology_comparisons")
 
     @property
     @pulumi.getter(name="dcrumDecoderComparisons")
+    @_utilities.deprecated("""You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""")
     def dcrum_decoder_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionDcrumDecoderComparison']]:
         """
         Comparison for `DCRUM_DECODER_TYPE` attributes
         """
-        warnings.warn("""You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""dcrum_decoder_comparisons is deprecated: You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "dcrum_decoder_comparisons")
 
     @property
@@ -78724,13 +78204,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="entityIdComparisons")
+    @_utilities.deprecated("""You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""")
     def entity_id_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionEntityIdComparison']]:
         """
         Comparison for `ENTITY_ID` attributes
         """
-        warnings.warn("""You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""entity_id_comparisons is deprecated: You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "entity_id_comparisons")
 
     @property
@@ -78743,13 +78221,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="hypervisorTypeComparisions")
+    @_utilities.deprecated("""`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""")
     def hypervisor_type_comparisions(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionHypervisorTypeComparision']]:
         """
         `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
         """
-        warnings.warn("""`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""", DeprecationWarning)
-        pulumi.log.warn("""hypervisor_type_comparisions is deprecated: `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead""")
-
         return pulumi.get(self, "hypervisor_type_comparisions")
 
     @property
@@ -78762,13 +78238,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="indexedNameComparisons")
+    @_utilities.deprecated("""You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_name_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionIndexedNameComparison']]:
         """
         Comparison for `INDEXED_NAME` attributes
         """
-        warnings.warn("""You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_name_comparisons is deprecated: You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_name_comparisons")
 
     @property
@@ -78781,13 +78255,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="indexedStringComparisons")
+    @_utilities.deprecated("""You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_string_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionIndexedStringComparison']]:
         """
         Comparison for `INDEXED_STRING` attributes
         """
-        warnings.warn("""You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_string_comparisons is deprecated: You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_string_comparisons")
 
     @property
@@ -78800,13 +78272,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="indexedTagComparisons")
+    @_utilities.deprecated("""You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""")
     def indexed_tag_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionIndexedTagComparison']]:
         """
         Comparison for `INDEXED_TAG` attributes
         """
-        warnings.warn("""You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""indexed_tag_comparisons is deprecated: You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "indexed_tag_comparisons")
 
     @property
@@ -78819,13 +78289,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="integerComparisons")
+    @_utilities.deprecated("""You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""")
     def integer_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionIntegerComparison']]:
         """
         Comparison for `INTEGER` attributes
         """
-        warnings.warn("""You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""integer_comparisons is deprecated: You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "integer_comparisons")
 
     @property
@@ -78838,13 +78306,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="ipaddressComparisons")
+    @_utilities.deprecated("""You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""")
     def ipaddress_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionIpaddressComparison']]:
         """
         Comparison for `IP_ADDRESS` attributes
         """
-        warnings.warn("""You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""ipaddress_comparisons is deprecated: You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "ipaddress_comparisons")
 
     @property
@@ -78865,13 +78331,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="mobilePlatformComparisons")
+    @_utilities.deprecated("""You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""")
     def mobile_platform_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionMobilePlatformComparison']]:
         """
         Comparison for `MOBILE_PLATFORM` attributes
         """
-        warnings.warn("""You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""mobile_platform_comparisons is deprecated: You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "mobile_platform_comparisons")
 
     @property
@@ -78900,35 +78364,29 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="osarchitectureComparisons")
+    @_utilities.deprecated("""You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""")
     def osarchitecture_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionOsarchitectureComparison']]:
         """
         Comparison for `OS_ARCHITECTURE` attributes
         """
-        warnings.warn("""You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""osarchitecture_comparisons is deprecated: You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "osarchitecture_comparisons")
 
     @property
     @pulumi.getter(name="ostypeComparisons")
+    @_utilities.deprecated("""You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""")
     def ostype_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionOstypeComparison']]:
         """
         Comparison for `OS_TYPE` attributes
         """
-        warnings.warn("""You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""ostype_comparisons is deprecated: You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "ostype_comparisons")
 
     @property
     @pulumi.getter(name="paasTypeComparisons")
+    @_utilities.deprecated("""You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""")
     def paas_type_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionPaasTypeComparison']]:
         """
         Comparison for `PAAS_TYPE` attributes
         """
-        warnings.warn("""You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""paas_type_comparisons is deprecated: You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "paas_type_comparisons")
 
     @property
@@ -78941,13 +78399,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="processMetadataConditionKeys")
+    @_utilities.deprecated("""'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""")
     def process_metadata_condition_keys(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionProcessMetadataConditionKey']]:
         """
         The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
         """
-        warnings.warn("""'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""", DeprecationWarning)
-        pulumi.log.warn("""process_metadata_condition_keys is deprecated: 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'""")
-
         return pulumi.get(self, "process_metadata_condition_keys")
 
     @property
@@ -78968,24 +78424,20 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="serviceTopologyComparisons")
+    @_utilities.deprecated("""You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""")
     def service_topology_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionServiceTopologyComparison']]:
         """
         Comparison for `SERVICE_TOPOLOGY` attributes
         """
-        warnings.warn("""You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""service_topology_comparisons is deprecated: You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "service_topology_comparisons")
 
     @property
     @pulumi.getter(name="serviceTypeComparisons")
+    @_utilities.deprecated("""You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""")
     def service_type_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionServiceTypeComparison']]:
         """
         Comparison for `SERVICE_TYPE` attributes
         """
-        warnings.warn("""You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""service_type_comparisons is deprecated: You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "service_type_comparisons")
 
     @property
@@ -78998,46 +78450,38 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="simpleHostTechComparisons")
+    @_utilities.deprecated("""You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""")
     def simple_host_tech_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionSimpleHostTechComparison']]:
         """
         Comparison for `SIMPLE_HOST_TECH` attributes
         """
-        warnings.warn("""You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""simple_host_tech_comparisons is deprecated: You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "simple_host_tech_comparisons")
 
     @property
     @pulumi.getter(name="simpleTechComparisons")
+    @_utilities.deprecated("""You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""")
     def simple_tech_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionSimpleTechComparison']]:
         """
         Comparison for `SIMPLE_TECH` attributes
         """
-        warnings.warn("""You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""simple_tech_comparisons is deprecated: You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "simple_tech_comparisons")
 
     @property
     @pulumi.getter(name="stringComparisons")
+    @_utilities.deprecated("""You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""")
     def string_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionStringComparison']]:
         """
         Comparison for `STRING` attributes
         """
-        warnings.warn("""You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""string_comparisons is deprecated: You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "string_comparisons")
 
     @property
     @pulumi.getter(name="stringConditionKeys")
+    @_utilities.deprecated("""'string_condition_key' is deprecated. You should use 'string_key'""")
     def string_condition_keys(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionStringConditionKey']]:
         """
         The key for dynamic attributes of the `STRING` type
         """
-        warnings.warn("""'string_condition_key' is deprecated. You should use 'string_key'""", DeprecationWarning)
-        pulumi.log.warn("""string_condition_keys is deprecated: 'string_condition_key' is deprecated. You should use 'string_key'""")
-
         return pulumi.get(self, "string_condition_keys")
 
     @property
@@ -79058,13 +78502,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="syntheticEngineTypeComparisons")
+    @_utilities.deprecated("""You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""")
     def synthetic_engine_type_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionSyntheticEngineTypeComparison']]:
         """
         Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
         """
-        warnings.warn("""You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""synthetic_engine_type_comparisons is deprecated: You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "synthetic_engine_type_comparisons")
 
     @property
@@ -79077,13 +78519,11 @@ class ServiceNamingConditionCondition(dict):
 
     @property
     @pulumi.getter(name="tagComparisons")
+    @_utilities.deprecated("""You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""")
     def tag_comparisons(self) -> Optional[Sequence['outputs.ServiceNamingConditionConditionTagComparison']]:
         """
         Comparison for `TAG` attributes
         """
-        warnings.warn("""You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""", DeprecationWarning)
-        pulumi.log.warn("""tag_comparisons is deprecated: You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.""")
-
         return pulumi.get(self, "tag_comparisons")
 
     @property
@@ -79208,13 +78648,11 @@ class ServiceNamingConditionConditionApplicationTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be APPLICATION_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -79385,13 +78823,11 @@ class ServiceNamingConditionConditionAzureSkuComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be AZURE_SKU
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -79646,13 +79082,11 @@ class ServiceNamingConditionConditionBitnessComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be BITNESS
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -79769,13 +79203,11 @@ class ServiceNamingConditionConditionCloudTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be CLOUD_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -79934,13 +79366,11 @@ class ServiceNamingConditionConditionCustomApplicationTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be CUSTOM_APPLICATION_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -80073,13 +79503,11 @@ class ServiceNamingConditionConditionCustomHostMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be HOST_CUSTOM_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -80286,13 +79714,11 @@ class ServiceNamingConditionConditionCustomProcessMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -80483,13 +79909,11 @@ class ServiceNamingConditionConditionDatabaseTopologyComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be DATABASE_TOPOLOGY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -80606,13 +80030,11 @@ class ServiceNamingConditionConditionDcrumDecoderComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be DCRUM_DECODER_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -80729,13 +80151,11 @@ class ServiceNamingConditionConditionEntityIdComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be ENTITY_ID
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -80966,13 +80386,11 @@ class ServiceNamingConditionConditionHypervisorTypeComparision(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be HYPERVISOR_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -81089,13 +80507,11 @@ class ServiceNamingConditionConditionIndexedNameComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_NAME
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -81212,13 +80628,11 @@ class ServiceNamingConditionConditionIndexedStringComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_STRING
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -81335,13 +80749,11 @@ class ServiceNamingConditionConditionIndexedTagComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INDEXED_TAG
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -81564,13 +80976,11 @@ class ServiceNamingConditionConditionIntegerComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be INTEGER
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -81745,13 +81155,11 @@ class ServiceNamingConditionConditionIpaddressComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be IP_ADDRESS
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -81910,13 +81318,11 @@ class ServiceNamingConditionConditionMobilePlatformComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be MOBILE_PLATFORM
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -82087,13 +81493,11 @@ class ServiceNamingConditionConditionOsarchitectureComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be OS_ARCHITECTURE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -82156,13 +81560,11 @@ class ServiceNamingConditionConditionOstypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be OS_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -82279,13 +81681,11 @@ class ServiceNamingConditionConditionPaasTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PAAS_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -82418,13 +81818,11 @@ class ServiceNamingConditionConditionProcessMetadataConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -82533,13 +81931,11 @@ class ServiceNamingConditionConditionServiceTopologyComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SERVICE_TOPOLOGY
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -82656,13 +82052,11 @@ class ServiceNamingConditionConditionServiceTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SERVICE_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -82725,13 +82119,11 @@ class ServiceNamingConditionConditionSimpleHostTechComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SIMPLE_HOST_TECH
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -82854,13 +82246,11 @@ class ServiceNamingConditionConditionSimpleTechComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SIMPLE_TECH
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -83095,13 +82485,11 @@ class ServiceNamingConditionConditionStringComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be STRING
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -83362,13 +82750,11 @@ class ServiceNamingConditionConditionStringConditionKey(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be `STRING`
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -83721,13 +83107,11 @@ class ServiceNamingConditionConditionSyntheticEngineTypeComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be SYNTHETIC_ENGINE_TYPE
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property
@@ -83844,13 +83228,11 @@ class ServiceNamingConditionConditionTagComparison(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The value of the attribute type is implicit, therefore shouldn't get specified""")
     def type(self) -> Optional[str]:
         """
         if specified, needs to be TAG
         """
-        warnings.warn("""The value of the attribute type is implicit, therefore shouldn't get specified""", DeprecationWarning)
-        pulumi.log.warn("""type is deprecated: The value of the attribute type is implicit, therefore shouldn't get specified""")
-
         return pulumi.get(self, "type")
 
     @property

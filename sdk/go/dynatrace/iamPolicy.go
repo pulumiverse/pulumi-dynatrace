@@ -14,7 +14,7 @@ import (
 
 // > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
 //
-// > This resource requires the API token scope **Allow IAM policy configuration for environments** (`iam-policies-management`)
+// > This resource requires the OAuth client permissions **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`)
 //
 // ## Dynatrace Documentation
 //
@@ -105,6 +105,8 @@ type IamPolicy struct {
 	// An optional description text for the policy
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
+	//
+	// Deprecated: Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead
 	Environment pulumi.StringPtrOutput `pulumi:"environment"`
 	// The name of the policy
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -154,6 +156,8 @@ type iamPolicyState struct {
 	// An optional description text for the policy
 	Description *string `pulumi:"description"`
 	// The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
+	//
+	// Deprecated: Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead
 	Environment *string `pulumi:"environment"`
 	// The name of the policy
 	Name *string `pulumi:"name"`
@@ -171,6 +175,8 @@ type IamPolicyState struct {
 	// An optional description text for the policy
 	Description pulumi.StringPtrInput
 	// The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
+	//
+	// Deprecated: Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead
 	Environment pulumi.StringPtrInput
 	// The name of the policy
 	Name pulumi.StringPtrInput
@@ -192,6 +198,8 @@ type iamPolicyArgs struct {
 	// An optional description text for the policy
 	Description *string `pulumi:"description"`
 	// The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
+	//
+	// Deprecated: Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead
 	Environment *string `pulumi:"environment"`
 	// The name of the policy
 	Name *string `pulumi:"name"`
@@ -208,6 +216,8 @@ type IamPolicyArgs struct {
 	// An optional description text for the policy
 	Description pulumi.StringPtrInput
 	// The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
+	//
+	// Deprecated: Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead
 	Environment pulumi.StringPtrInput
 	// The name of the policy
 	Name pulumi.StringPtrInput
@@ -315,6 +325,8 @@ func (o IamPolicyOutput) Description() pulumi.StringPtrOutput {
 }
 
 // The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
+//
+// Deprecated: Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead
 func (o IamPolicyOutput) Environment() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IamPolicy) pulumi.StringPtrOutput { return v.Environment }).(pulumi.StringPtrOutput)
 }

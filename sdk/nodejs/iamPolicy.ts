@@ -7,7 +7,7 @@ import * as utilities from "./utilities";
 /**
  * > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
  *
- * > This resource requires the API token scope **Allow IAM policy configuration for environments** (`iam-policies-management`)
+ * > This resource requires the OAuth client permissions **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`)
  *
  * ## Dynatrace Documentation
  *
@@ -86,6 +86,8 @@ export class IamPolicy extends pulumi.CustomResource {
     public readonly description!: pulumi.Output<string | undefined>;
     /**
      * The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
+     *
+     * @deprecated Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead
      */
     public readonly environment!: pulumi.Output<string | undefined>;
     /**
@@ -157,6 +159,8 @@ export interface IamPolicyState {
     description?: pulumi.Input<string>;
     /**
      * The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
+     *
+     * @deprecated Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead
      */
     environment?: pulumi.Input<string>;
     /**
@@ -191,6 +195,8 @@ export interface IamPolicyArgs {
     description?: pulumi.Input<string>;
     /**
      * The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
+     *
+     * @deprecated Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead
      */
     environment?: pulumi.Input<string>;
     /**

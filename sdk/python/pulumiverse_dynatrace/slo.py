@@ -221,13 +221,11 @@ class SloArgs:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""`numerator` and `denominator` have been replaced by `metric_expression`""")
     def numerator(self) -> Optional[pulumi.Input[str]]:
         """
         The metric for the count of successes (the numerator in rate calculation)
         """
-        warnings.warn("""`numerator` and `denominator` have been replaced by `metric_expression`""", DeprecationWarning)
-        pulumi.log.warn("""numerator is deprecated: `numerator` and `denominator` have been replaced by `metric_expression`""")
-
         return pulumi.get(self, "numerator")
 
     @numerator.setter
@@ -423,13 +421,11 @@ class _SloState:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""`numerator` and `denominator` have been replaced by `metric_expression`""")
     def numerator(self) -> Optional[pulumi.Input[str]]:
         """
         The metric for the count of successes (the numerator in rate calculation)
         """
-        warnings.warn("""`numerator` and `denominator` have been replaced by `metric_expression`""", DeprecationWarning)
-        pulumi.log.warn("""numerator is deprecated: `numerator` and `denominator` have been replaced by `metric_expression`""")
-
         return pulumi.get(self, "numerator")
 
     @numerator.setter
@@ -732,13 +728,11 @@ class Slo(pulumi.CustomResource):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""`numerator` and `denominator` have been replaced by `metric_expression`""")
     def numerator(self) -> pulumi.Output[Optional[str]]:
         """
         The metric for the count of successes (the numerator in rate calculation)
         """
-        warnings.warn("""`numerator` and `denominator` have been replaced by `metric_expression`""", DeprecationWarning)
-        pulumi.log.warn("""numerator is deprecated: `numerator` and `denominator` have been replaced by `metric_expression`""")
-
         return pulumi.get(self, "numerator")
 
     @property

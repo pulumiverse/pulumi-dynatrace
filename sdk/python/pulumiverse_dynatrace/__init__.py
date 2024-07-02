@@ -112,6 +112,7 @@ from .get_alerting_profile import *
 from .get_alerting_profiles import *
 from .get_application import *
 from .get_attack_alerting import *
+from .get_autotag import *
 from .get_aws_credentials import *
 from .get_aws_iam_external import *
 from .get_aws_supported_services import *

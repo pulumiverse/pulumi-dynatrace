@@ -22,6 +22,46 @@ namespace Pulumiverse.Dynatrace
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tags.auto-tagging`)
     /// 
     /// The full documentation of the export feature is available here.
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var sampleAutotagV2 = new Dynatrace.AutotagV2("sampleAutotagV2", new()
+    ///     {
+    ///         RulesMaintainedExternally = true,
+    ///     });
+    /// 
+    ///     //Be careful when maintaining `dynatrace_autotag_rules` in separate modules.
+    ///     //Do not execute `pulumi up` in parallel when several modules contain 
+    ///     //`dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
+    ///     var sampleAutotagRules = new Dynatrace.AutotagRules("sampleAutotagRules", new()
+    ///     {
+    ///         AutoTagId = sampleAutotagV2.Id,
+    ///         Rules = new Dynatrace.Inputs.AutotagRulesRulesArgs
+    ///         {
+    ///             Rules = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.AutotagRulesRulesRuleArgs
+    ///                 {
+    ///                     Type = "SELECTOR",
+    ///                     Enabled = true,
+    ///                     EntitySelector = "type(SERVICE),tag(sample)",
+    ///                     ValueFormat = "disabled",
+    ///                     ValueNormalization = "Leave text as-is",
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/autotagRules:AutotagRules")]
     public partial class AutotagRules : global::Pulumi.CustomResource

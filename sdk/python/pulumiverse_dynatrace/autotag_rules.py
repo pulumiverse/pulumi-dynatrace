@@ -146,6 +146,29 @@ class AutotagRules(pulumi.CustomResource):
 
         The full documentation of the export feature is available here.
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        sample_autotag_v2 = dynatrace.AutotagV2("sampleAutotagV2", rules_maintained_externally=True)
+        #Be careful when maintaining `dynatrace_autotag_rules` in separate modules.
+        #Do not execute `pulumi up` in parallel when several modules contain 
+        #`dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
+        sample_autotag_rules = dynatrace.AutotagRules("sampleAutotagRules",
+            auto_tag_id=sample_autotag_v2.id,
+            rules=dynatrace.AutotagRulesRulesArgs(
+                rules=[dynatrace.AutotagRulesRulesRuleArgs(
+                    type="SELECTOR",
+                    enabled=True,
+                    entity_selector="type(SERVICE),tag(sample)",
+                    value_format="disabled",
+                    value_normalization="Leave text as-is",
+                )],
+            ))
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] auto_tag_id: Automatically applied tag ID
@@ -170,6 +193,29 @@ class AutotagRules(pulumi.CustomResource):
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tags.auto-tagging`)
 
         The full documentation of the export feature is available here.
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        sample_autotag_v2 = dynatrace.AutotagV2("sampleAutotagV2", rules_maintained_externally=True)
+        #Be careful when maintaining `dynatrace_autotag_rules` in separate modules.
+        #Do not execute `pulumi up` in parallel when several modules contain 
+        #`dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
+        sample_autotag_rules = dynatrace.AutotagRules("sampleAutotagRules",
+            auto_tag_id=sample_autotag_v2.id,
+            rules=dynatrace.AutotagRulesRulesArgs(
+                rules=[dynatrace.AutotagRulesRulesRuleArgs(
+                    type="SELECTOR",
+                    enabled=True,
+                    entity_selector="type(SERVICE),tag(sample)",
+                    value_format="disabled",
+                    value_normalization="Leave text as-is",
+                )],
+            ))
+        ```
 
         :param str resource_name: The name of the resource.
         :param AutotagRulesArgs args: The arguments to use to populate this resource's properties.

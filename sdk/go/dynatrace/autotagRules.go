@@ -23,6 +23,49 @@ import (
 // - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tags.auto-tagging`)
 //
 // The full documentation of the export feature is available here.
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			sampleAutotagV2, err := dynatrace.NewAutotagV2(ctx, "sampleAutotagV2", &dynatrace.AutotagV2Args{
+//				RulesMaintainedExternally: pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewAutotagRules(ctx, "sampleAutotagRules", &dynatrace.AutotagRulesArgs{
+//				AutoTagId: sampleAutotagV2.ID(),
+//				Rules: &dynatrace.AutotagRulesRulesArgs{
+//					Rules: dynatrace.AutotagRulesRulesRuleArray{
+//						&dynatrace.AutotagRulesRulesRuleArgs{
+//							Type:               pulumi.String("SELECTOR"),
+//							Enabled:            pulumi.Bool(true),
+//							EntitySelector:     pulumi.String("type(SERVICE),tag(sample)"),
+//							ValueFormat:        pulumi.String("disabled"),
+//							ValueNormalization: pulumi.String("Leave text as-is"),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AutotagRules struct {
 	pulumi.CustomResourceState
 
