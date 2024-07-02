@@ -31,6 +31,12 @@ namespace Pulumiverse.Dynatrace
         [Output("rules")]
         public Output<Outputs.AutotagV2Rules?> Rules { get; private set; } = null!;
 
+        /// <summary>
+        /// If `true` this resource will not
+        /// </summary>
+        [Output("rulesMaintainedExternally")]
+        public Output<bool?> RulesMaintainedExternally { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a AutotagV2 resource with the given unique name, arguments, and options.
@@ -96,6 +102,12 @@ namespace Pulumiverse.Dynatrace
         [Input("rules")]
         public Input<Inputs.AutotagV2RulesArgs>? Rules { get; set; }
 
+        /// <summary>
+        /// If `true` this resource will not
+        /// </summary>
+        [Input("rulesMaintainedExternally")]
+        public Input<bool>? RulesMaintainedExternally { get; set; }
+
         public AutotagV2Args()
         {
         }
@@ -121,6 +133,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("rules")]
         public Input<Inputs.AutotagV2RulesGetArgs>? Rules { get; set; }
+
+        /// <summary>
+        /// If `true` this resource will not
+        /// </summary>
+        [Input("rulesMaintainedExternally")]
+        public Input<bool>? RulesMaintainedExternally { get; set; }
 
         public AutotagV2State()
         {

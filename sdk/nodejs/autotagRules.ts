@@ -18,6 +18,30 @@ import * as utilities from "./utilities";
  * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tags.auto-tagging`)
  *
  * The full documentation of the export feature is available here.
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const sampleAutotagV2 = new dynatrace.AutotagV2("sampleAutotagV2", {rulesMaintainedExternally: true});
+ * //Be careful when maintaining `dynatrace_autotag_rules` in separate modules.
+ * //Do not execute `pulumi up` in parallel when several modules contain 
+ * //`dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
+ * const sampleAutotagRules = new dynatrace.AutotagRules("sampleAutotagRules", {
+ *     autoTagId: sampleAutotagV2.id,
+ *     rules: {
+ *         rules: [{
+ *             type: "SELECTOR",
+ *             enabled: true,
+ *             entitySelector: "type(SERVICE),tag(sample)",
+ *             valueFormat: "disabled",
+ *             valueNormalization: "Leave text as-is",
+ *         }],
+ *     },
+ * });
+ * ```
  */
 export class AutotagRules extends pulumi.CustomResource {
     /**

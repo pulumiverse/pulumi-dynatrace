@@ -540,6 +540,11 @@ export const getAttackAlerting: typeof import("./getAttackAlerting").getAttackAl
 export const getAttackAlertingOutput: typeof import("./getAttackAlerting").getAttackAlertingOutput = null as any;
 utilities.lazyLoad(exports, ["getAttackAlerting","getAttackAlertingOutput"], () => require("./getAttackAlerting"));
 
+export { GetAutotagArgs, GetAutotagResult, GetAutotagOutputArgs } from "./getAutotag";
+export const getAutotag: typeof import("./getAutotag").getAutotag = null as any;
+export const getAutotagOutput: typeof import("./getAutotag").getAutotagOutput = null as any;
+utilities.lazyLoad(exports, ["getAutotag","getAutotagOutput"], () => require("./getAutotag"));
+
 export { GetAwsCredentialsArgs, GetAwsCredentialsResult, GetAwsCredentialsOutputArgs } from "./getAwsCredentials";
 export const getAwsCredentials: typeof import("./getAwsCredentials").getAwsCredentials = null as any;
 export const getAwsCredentialsOutput: typeof import("./getAwsCredentials").getAwsCredentialsOutput = null as any;

@@ -72,13 +72,11 @@ class AlertingProfileArgs:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""")
     def metadata(self) -> Optional[pulumi.Input['AlertingProfileMetadataArgs']]:
         """
         `metadata` exists for backwards compatibility but shouldn't get specified anymore
         """
-        warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-        pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -182,13 +180,11 @@ class _AlertingProfileState:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""")
     def metadata(self) -> Optional[pulumi.Input['AlertingProfileMetadataArgs']]:
         """
         `metadata` exists for backwards compatibility but shouldn't get specified anymore
         """
-        warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-        pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -633,13 +629,11 @@ class AlertingProfile(pulumi.CustomResource):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""")
     def metadata(self) -> pulumi.Output[Optional['outputs.AlertingProfileMetadata']]:
         """
         `metadata` exists for backwards compatibility but shouldn't get specified anymore
         """
-        warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-        pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-
         return pulumi.get(self, "metadata")
 
     @property

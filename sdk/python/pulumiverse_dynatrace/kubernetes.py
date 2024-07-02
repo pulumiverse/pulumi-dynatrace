@@ -188,13 +188,11 @@ class KubernetesArgs:
 
     @property
     @pulumi.getter(name="cloudApplicationPipelineEnabled")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def cloud_application_pipeline_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         Monitor Kubernetes namespaces, services, workloads, and pods
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""cloud_application_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "cloud_application_pipeline_enabled")
 
     @cloud_application_pipeline_enabled.setter
@@ -227,13 +225,11 @@ class KubernetesArgs:
 
     @property
     @pulumi.getter(name="eventPatterns")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def event_patterns(self) -> Optional[pulumi.Input['KubernetesEventPatternsArgs']]:
         """
         Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""event_patterns is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "event_patterns")
 
     @event_patterns.setter
@@ -242,13 +238,11 @@ class KubernetesArgs:
 
     @property
     @pulumi.getter(name="eventProcessingActive")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def event_processing_active(self) -> Optional[pulumi.Input[bool]]:
         """
         All events are monitored by default unless event filters are specified.
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""event_processing_active is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "event_processing_active")
 
     @event_processing_active.setter
@@ -257,13 +251,11 @@ class KubernetesArgs:
 
     @property
     @pulumi.getter(name="filterEvents")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def filter_events(self) -> Optional[pulumi.Input[bool]]:
         """
         Include only events specified by Events Field Selectors
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""filter_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "filter_events")
 
     @filter_events.setter
@@ -284,13 +276,11 @@ class KubernetesArgs:
 
     @property
     @pulumi.getter(name="includeAllFdiEvents")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def include_all_fdi_events(self) -> Optional[pulumi.Input[bool]]:
         """
         For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""include_all_fdi_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "include_all_fdi_events")
 
     @include_all_fdi_events.setter
@@ -299,14 +289,12 @@ class KubernetesArgs:
 
     @property
     @pulumi.getter(name="openMetricsBuiltinEnabled")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def open_metrics_builtin_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
         may increase the CPU/memory resource consumption of your ActiveGate.
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""open_metrics_builtin_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "open_metrics_builtin_enabled")
 
     @open_metrics_builtin_enabled.setter
@@ -315,13 +303,11 @@ class KubernetesArgs:
 
     @property
     @pulumi.getter(name="openMetricsPipelineEnabled")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def open_metrics_pipeline_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""open_metrics_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "open_metrics_pipeline_enabled")
 
     @open_metrics_pipeline_enabled.setter
@@ -330,13 +316,11 @@ class KubernetesArgs:
 
     @property
     @pulumi.getter(name="pvcMonitoringEnabled")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def pvc_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""pvc_monitoring_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "pvc_monitoring_enabled")
 
     @pvc_monitoring_enabled.setter
@@ -498,13 +482,11 @@ class _KubernetesState:
 
     @property
     @pulumi.getter(name="cloudApplicationPipelineEnabled")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def cloud_application_pipeline_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         Monitor Kubernetes namespaces, services, workloads, and pods
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""cloud_application_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "cloud_application_pipeline_enabled")
 
     @cloud_application_pipeline_enabled.setter
@@ -561,13 +543,11 @@ class _KubernetesState:
 
     @property
     @pulumi.getter(name="eventPatterns")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def event_patterns(self) -> Optional[pulumi.Input['KubernetesEventPatternsArgs']]:
         """
         Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""event_patterns is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "event_patterns")
 
     @event_patterns.setter
@@ -576,13 +556,11 @@ class _KubernetesState:
 
     @property
     @pulumi.getter(name="eventProcessingActive")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def event_processing_active(self) -> Optional[pulumi.Input[bool]]:
         """
         All events are monitored by default unless event filters are specified.
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""event_processing_active is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "event_processing_active")
 
     @event_processing_active.setter
@@ -591,13 +569,11 @@ class _KubernetesState:
 
     @property
     @pulumi.getter(name="filterEvents")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def filter_events(self) -> Optional[pulumi.Input[bool]]:
         """
         Include only events specified by Events Field Selectors
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""filter_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "filter_events")
 
     @filter_events.setter
@@ -618,13 +594,11 @@ class _KubernetesState:
 
     @property
     @pulumi.getter(name="includeAllFdiEvents")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def include_all_fdi_events(self) -> Optional[pulumi.Input[bool]]:
         """
         For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""include_all_fdi_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "include_all_fdi_events")
 
     @include_all_fdi_events.setter
@@ -645,14 +619,12 @@ class _KubernetesState:
 
     @property
     @pulumi.getter(name="openMetricsBuiltinEnabled")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def open_metrics_builtin_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
         may increase the CPU/memory resource consumption of your ActiveGate.
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""open_metrics_builtin_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "open_metrics_builtin_enabled")
 
     @open_metrics_builtin_enabled.setter
@@ -661,13 +633,11 @@ class _KubernetesState:
 
     @property
     @pulumi.getter(name="openMetricsPipelineEnabled")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def open_metrics_pipeline_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""open_metrics_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "open_metrics_pipeline_enabled")
 
     @open_metrics_pipeline_enabled.setter
@@ -676,13 +646,11 @@ class _KubernetesState:
 
     @property
     @pulumi.getter(name="pvcMonitoringEnabled")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def pvc_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""pvc_monitoring_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "pvc_monitoring_enabled")
 
     @pvc_monitoring_enabled.setter
@@ -931,13 +899,11 @@ class Kubernetes(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="cloudApplicationPipelineEnabled")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def cloud_application_pipeline_enabled(self) -> pulumi.Output[Optional[bool]]:
         """
         Monitor Kubernetes namespaces, services, workloads, and pods
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""cloud_application_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "cloud_application_pipeline_enabled")
 
     @property
@@ -974,35 +940,29 @@ class Kubernetes(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="eventPatterns")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def event_patterns(self) -> pulumi.Output[Optional['outputs.KubernetesEventPatterns']]:
         """
         Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""event_patterns is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "event_patterns")
 
     @property
     @pulumi.getter(name="eventProcessingActive")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def event_processing_active(self) -> pulumi.Output[Optional[bool]]:
         """
         All events are monitored by default unless event filters are specified.
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""event_processing_active is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "event_processing_active")
 
     @property
     @pulumi.getter(name="filterEvents")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def filter_events(self) -> pulumi.Output[Optional[bool]]:
         """
         Include only events specified by Events Field Selectors
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""filter_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "filter_events")
 
     @property
@@ -1015,13 +975,11 @@ class Kubernetes(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="includeAllFdiEvents")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def include_all_fdi_events(self) -> pulumi.Output[Optional[bool]]:
         """
         For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""include_all_fdi_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "include_all_fdi_events")
 
     @property
@@ -1034,36 +992,30 @@ class Kubernetes(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="openMetricsBuiltinEnabled")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def open_metrics_builtin_enabled(self) -> pulumi.Output[Optional[bool]]:
         """
         The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
         may increase the CPU/memory resource consumption of your ActiveGate.
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""open_metrics_builtin_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "open_metrics_builtin_enabled")
 
     @property
     @pulumi.getter(name="openMetricsPipelineEnabled")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def open_metrics_pipeline_enabled(self) -> pulumi.Output[Optional[bool]]:
         """
         For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""open_metrics_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "open_metrics_pipeline_enabled")
 
     @property
     @pulumi.getter(name="pvcMonitoringEnabled")
+    @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def pvc_monitoring_enabled(self) -> pulumi.Output[Optional[bool]]:
         """
         To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         """
-        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
-        pulumi.log.warn("""pvc_monitoring_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-
         return pulumi.get(self, "pvc_monitoring_enabled")
 
     @property

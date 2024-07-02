@@ -107,13 +107,11 @@ class CredentialsArgs:
 
     @property
     @pulumi.getter(name="credentialUsageSummaries")
+    @_utilities.deprecated("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
     def credential_usage_summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]:
         """
         The list contains summary data related to the use of credentials
         """
-        warnings.warn("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""", DeprecationWarning)
-        pulumi.log.warn("""credential_usage_summaries is deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
-
         return pulumi.get(self, "credential_usage_summaries")
 
     @credential_usage_summaries.setter
@@ -203,13 +201,11 @@ class CredentialsArgs:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Deprecated(v279), please use `scopes` instead.""")
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
         The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
         """
-        warnings.warn("""Deprecated(v279), please use `scopes` instead.""", DeprecationWarning)
-        pulumi.log.warn("""scope is deprecated: Deprecated(v279), please use `scopes` instead.""")
-
         return pulumi.get(self, "scope")
 
     @scope.setter
@@ -347,13 +343,11 @@ class _CredentialsState:
 
     @property
     @pulumi.getter(name="credentialUsageSummaries")
+    @_utilities.deprecated("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
     def credential_usage_summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]:
         """
         The list contains summary data related to the use of credentials
         """
-        warnings.warn("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""", DeprecationWarning)
-        pulumi.log.warn("""credential_usage_summaries is deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
-
         return pulumi.get(self, "credential_usage_summaries")
 
     @credential_usage_summaries.setter
@@ -443,13 +437,11 @@ class _CredentialsState:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Deprecated(v279), please use `scopes` instead.""")
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
         The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
         """
-        warnings.warn("""Deprecated(v279), please use `scopes` instead.""", DeprecationWarning)
-        pulumi.log.warn("""scope is deprecated: Deprecated(v279), please use `scopes` instead.""")
-
         return pulumi.get(self, "scope")
 
     @scope.setter
@@ -676,13 +668,11 @@ class Credentials(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="credentialUsageSummaries")
+    @_utilities.deprecated("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
     def credential_usage_summaries(self) -> pulumi.Output[Optional[Sequence['outputs.CredentialsCredentialUsageSummary']]]:
         """
         The list contains summary data related to the use of credentials
         """
-        warnings.warn("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""", DeprecationWarning)
-        pulumi.log.warn("""credential_usage_summaries is deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
-
         return pulumi.get(self, "credential_usage_summaries")
 
     @property
@@ -740,13 +730,11 @@ class Credentials(pulumi.CustomResource):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Deprecated(v279), please use `scopes` instead.""")
     def scope(self) -> pulumi.Output[Optional[str]]:
         """
         The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
         """
-        warnings.warn("""Deprecated(v279), please use `scopes` instead.""", DeprecationWarning)
-        pulumi.log.warn("""scope is deprecated: Deprecated(v279), please use `scopes` instead.""")
-
         return pulumi.get(self, "scope")
 
     @property

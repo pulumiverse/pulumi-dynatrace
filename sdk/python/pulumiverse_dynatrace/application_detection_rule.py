@@ -63,13 +63,11 @@ class ApplicationDetectionRuleArgs:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""")
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         The unique name of the Application detection rule
         """
-        warnings.warn("""Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""", DeprecationWarning)
-        pulumi.log.warn("""name is deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""")
-
         return pulumi.get(self, "name")
 
     @name.setter
@@ -141,13 +139,11 @@ class _ApplicationDetectionRuleState:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""")
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         The unique name of the Application detection rule
         """
-        warnings.warn("""Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""", DeprecationWarning)
-        pulumi.log.warn("""name is deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""")
-
         return pulumi.get(self, "name")
 
     @name.setter
@@ -284,13 +280,11 @@ class ApplicationDetectionRule(pulumi.CustomResource):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""")
     def name(self) -> pulumi.Output[str]:
         """
         The unique name of the Application detection rule
         """
-        warnings.warn("""Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""", DeprecationWarning)
-        pulumi.log.warn("""name is deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""")
-
         return pulumi.get(self, "name")
 
     @property

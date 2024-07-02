@@ -120,10 +120,8 @@ class AwsCredentialsArgs:
 
     @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
+    @_utilities.deprecated("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[bool]]:
-        warnings.warn("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""", DeprecationWarning)
-        pulumi.log.warn("""supporting_services_managed_in_dynatrace is deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
-
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -132,13 +130,11 @@ class AwsCredentialsArgs:
 
     @property
     @pulumi.getter(name="supportingServicesToMonitors")
+    @_utilities.deprecated("""Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""")
     def supporting_services_to_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]]:
         """
         supporting services to be monitored
         """
-        warnings.warn("""Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""", DeprecationWarning)
-        pulumi.log.warn("""supporting_services_to_monitors is deprecated: Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""")
-
         return pulumi.get(self, "supporting_services_to_monitors")
 
     @supporting_services_to_monitors.setter
@@ -268,10 +264,8 @@ class _AwsCredentialsState:
 
     @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
+    @_utilities.deprecated("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[bool]]:
-        warnings.warn("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""", DeprecationWarning)
-        pulumi.log.warn("""supporting_services_managed_in_dynatrace is deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
-
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -280,13 +274,11 @@ class _AwsCredentialsState:
 
     @property
     @pulumi.getter(name="supportingServicesToMonitors")
+    @_utilities.deprecated("""Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""")
     def supporting_services_to_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]]:
         """
         supporting services to be monitored
         """
-        warnings.warn("""Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""", DeprecationWarning)
-        pulumi.log.warn("""supporting_services_to_monitors is deprecated: Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""")
-
         return pulumi.get(self, "supporting_services_to_monitors")
 
     @supporting_services_to_monitors.setter
@@ -498,21 +490,17 @@ class AwsCredentials(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
+    @_utilities.deprecated("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
     def supporting_services_managed_in_dynatrace(self) -> pulumi.Output[Optional[bool]]:
-        warnings.warn("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""", DeprecationWarning)
-        pulumi.log.warn("""supporting_services_managed_in_dynatrace is deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
-
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @property
     @pulumi.getter(name="supportingServicesToMonitors")
+    @_utilities.deprecated("""Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""")
     def supporting_services_to_monitors(self) -> pulumi.Output[Optional[Sequence['outputs.AwsCredentialsSupportingServicesToMonitor']]]:
         """
         supporting services to be monitored
         """
-        warnings.warn("""Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""", DeprecationWarning)
-        pulumi.log.warn("""supporting_services_to_monitors is deprecated: Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""")
-
         return pulumi.get(self, "supporting_services_to_monitors")
 
     @property

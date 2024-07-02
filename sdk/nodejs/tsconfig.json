@@ -122,6 +122,7 @@
         "getAlertingProfiles.ts",
         "getApplication.ts",
         "getAttackAlerting.ts",
+        "getAutotag.ts",
         "getAwsCredentials.ts",
         "getAwsIamExternal.ts",
         "getAwsSupportedServices.ts",

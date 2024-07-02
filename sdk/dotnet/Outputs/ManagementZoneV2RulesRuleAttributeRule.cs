@@ -35,23 +35,23 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string EntityType;
         /// <summary>
-        /// Apply to processes running on matching hosts
+        /// Apply to processes running on matching hosts. `entity_type` must be set to `HOST`
         /// </summary>
         public readonly bool? HostToPgpropagation;
         /// <summary>
-        /// Apply to underlying hosts of matching process groups
+        /// Apply to underlying hosts of matching process groups. `entity_type` must be set to `PROCESS_GROUP`
         /// </summary>
         public readonly bool? PgToHostPropagation;
         /// <summary>
-        /// Apply to all services provided by the process groups
+        /// Apply to all services provided by the process groups. `entity_type` must be set to `PROCESS_GROUP`
         /// </summary>
         public readonly bool? PgToServicePropagation;
         /// <summary>
-        /// Apply to underlying hosts of matching services
+        /// Apply to underlying hosts of matching services. `entity_type` must be set to `SERVICE`
         /// </summary>
         public readonly bool? ServiceToHostPropagation;
         /// <summary>
-        /// Apply to underlying process groups of matching services
+        /// Apply to underlying process groups of matching services. `entity_type` must be set to `SERVICE`
         /// </summary>
         public readonly bool? ServiceToPgpropagation;
 

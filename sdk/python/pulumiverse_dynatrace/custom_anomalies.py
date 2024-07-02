@@ -141,13 +141,11 @@ class CustomAnomaliesArgs:
 
     @property
     @pulumi.getter(name="disabledReason")
+    @_utilities.deprecated("""This property is not meant to be configured from the outside. It will get removed completely in future versions""")
     def disabled_reason(self) -> Optional[pulumi.Input[str]]:
         """
         The reason of automatic disabling.  The `NONE` means config was not disabled automatically. Possible values are `METRIC_DEFINITION_INCONSISTENCY`, `NONE`, `TOO_MANY_DIMS` and `TOPX_FORCIBLY_DEACTIVATED`
         """
-        warnings.warn("""This property is not meant to be configured from the outside. It will get removed completely in future versions""", DeprecationWarning)
-        pulumi.log.warn("""disabled_reason is deprecated: This property is not meant to be configured from the outside. It will get removed completely in future versions""")
-
         return pulumi.get(self, "disabled_reason")
 
     @disabled_reason.setter
@@ -240,13 +238,11 @@ class CustomAnomaliesArgs:
 
     @property
     @pulumi.getter(name="warningReason")
+    @_utilities.deprecated("""This property is not meant to be configured from the outside. It will get removed completely in future versions""")
     def warning_reason(self) -> Optional[pulumi.Input[str]]:
         """
         The reason of a warning set on the config. The `NONE` means config has no warnings. The other supported value is `TOO_MANY_DIMS`
         """
-        warnings.warn("""This property is not meant to be configured from the outside. It will get removed completely in future versions""", DeprecationWarning)
-        pulumi.log.warn("""warning_reason is deprecated: This property is not meant to be configured from the outside. It will get removed completely in future versions""")
-
         return pulumi.get(self, "warning_reason")
 
     @warning_reason.setter
@@ -361,13 +357,11 @@ class _CustomAnomaliesState:
 
     @property
     @pulumi.getter(name="disabledReason")
+    @_utilities.deprecated("""This property is not meant to be configured from the outside. It will get removed completely in future versions""")
     def disabled_reason(self) -> Optional[pulumi.Input[str]]:
         """
         The reason of automatic disabling.  The `NONE` means config was not disabled automatically. Possible values are `METRIC_DEFINITION_INCONSISTENCY`, `NONE`, `TOO_MANY_DIMS` and `TOPX_FORCIBLY_DEACTIVATED`
         """
-        warnings.warn("""This property is not meant to be configured from the outside. It will get removed completely in future versions""", DeprecationWarning)
-        pulumi.log.warn("""disabled_reason is deprecated: This property is not meant to be configured from the outside. It will get removed completely in future versions""")
-
         return pulumi.get(self, "disabled_reason")
 
     @disabled_reason.setter
@@ -484,13 +478,11 @@ class _CustomAnomaliesState:
 
     @property
     @pulumi.getter(name="warningReason")
+    @_utilities.deprecated("""This property is not meant to be configured from the outside. It will get removed completely in future versions""")
     def warning_reason(self) -> Optional[pulumi.Input[str]]:
         """
         The reason of a warning set on the config. The `NONE` means config has no warnings. The other supported value is `TOO_MANY_DIMS`
         """
-        warnings.warn("""This property is not meant to be configured from the outside. It will get removed completely in future versions""", DeprecationWarning)
-        pulumi.log.warn("""warning_reason is deprecated: This property is not meant to be configured from the outside. It will get removed completely in future versions""")
-
         return pulumi.get(self, "warning_reason")
 
     @warning_reason.setter
@@ -695,13 +687,11 @@ class CustomAnomalies(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="disabledReason")
+    @_utilities.deprecated("""This property is not meant to be configured from the outside. It will get removed completely in future versions""")
     def disabled_reason(self) -> pulumi.Output[Optional[str]]:
         """
         The reason of automatic disabling.  The `NONE` means config was not disabled automatically. Possible values are `METRIC_DEFINITION_INCONSISTENCY`, `NONE`, `TOO_MANY_DIMS` and `TOPX_FORCIBLY_DEACTIVATED`
         """
-        warnings.warn("""This property is not meant to be configured from the outside. It will get removed completely in future versions""", DeprecationWarning)
-        pulumi.log.warn("""disabled_reason is deprecated: This property is not meant to be configured from the outside. It will get removed completely in future versions""")
-
         return pulumi.get(self, "disabled_reason")
 
     @property
@@ -778,12 +768,10 @@ class CustomAnomalies(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="warningReason")
+    @_utilities.deprecated("""This property is not meant to be configured from the outside. It will get removed completely in future versions""")
     def warning_reason(self) -> pulumi.Output[Optional[str]]:
         """
         The reason of a warning set on the config. The `NONE` means config has no warnings. The other supported value is `TOO_MANY_DIMS`
         """
-        warnings.warn("""This property is not meant to be configured from the outside. It will get removed completely in future versions""", DeprecationWarning)
-        pulumi.log.warn("""warning_reason is deprecated: This property is not meant to be configured from the outside. It will get removed completely in future versions""")
-
         return pulumi.get(self, "warning_reason")
 

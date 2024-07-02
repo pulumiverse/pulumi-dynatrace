@@ -35,6 +35,9 @@ class IamPolicyArgs:
         if description is not None:
             pulumi.set(__self__, "description", description)
         if environment is not None:
+            warnings.warn("""Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead""", DeprecationWarning)
+            pulumi.log.warn("""environment is deprecated: Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead""")
+        if environment is not None:
             pulumi.set(__self__, "environment", environment)
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -79,6 +82,7 @@ class IamPolicyArgs:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead""")
     def environment(self) -> Optional[pulumi.Input[str]]:
         """
         The ID of the environment (https://\\n\\n.live.dynatrace.com) if the policy should be applied to a specific environment
@@ -139,6 +143,9 @@ class _IamPolicyState:
         if description is not None:
             pulumi.set(__self__, "description", description)
         if environment is not None:
+            warnings.warn("""Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead""", DeprecationWarning)
+            pulumi.log.warn("""environment is deprecated: Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead""")
+        if environment is not None:
             pulumi.set(__self__, "environment", environment)
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -175,6 +182,7 @@ class _IamPolicyState:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead""")
     def environment(self) -> Optional[pulumi.Input[str]]:
         """
         The ID of the environment (https://\\n\\n.live.dynatrace.com) if the policy should be applied to a specific environment
@@ -249,7 +257,7 @@ class IamPolicy(pulumi.CustomResource):
         """
         > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
 
-        > This resource requires the API token scope **Allow IAM policy configuration for environments** (`iam-policies-management`)
+        > This resource requires the OAuth client permissions **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`)
 
         ## Dynatrace Documentation
 
@@ -306,7 +314,7 @@ class IamPolicy(pulumi.CustomResource):
         """
         > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
 
-        > This resource requires the API token scope **Allow IAM policy configuration for environments** (`iam-policies-management`)
+        > This resource requires the OAuth client permissions **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`)
 
         ## Dynatrace Documentation
 
@@ -447,6 +455,7 @@ class IamPolicy(pulumi.CustomResource):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead""")
     def environment(self) -> pulumi.Output[Optional[str]]:
         """
         The ID of the environment (https://\\n\\n.live.dynatrace.com) if the policy should be applied to a specific environment

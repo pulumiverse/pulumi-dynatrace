@@ -17075,23 +17075,23 @@ export interface ManagementZoneV2RulesRuleAttributeRule {
      */
     entityType: string;
     /**
-     * Apply to processes running on matching hosts
+     * Apply to processes running on matching hosts. `entityType` must be set to `HOST`
      */
     hostToPgpropagation?: boolean;
     /**
-     * Apply to underlying hosts of matching process groups
+     * Apply to underlying hosts of matching process groups. `entityType` must be set to `PROCESS_GROUP`
      */
     pgToHostPropagation?: boolean;
     /**
-     * Apply to all services provided by the process groups
+     * Apply to all services provided by the process groups. `entityType` must be set to `PROCESS_GROUP`
      */
     pgToServicePropagation?: boolean;
     /**
-     * Apply to underlying hosts of matching services
+     * Apply to underlying hosts of matching services. `entityType` must be set to `SERVICE`
      */
     serviceToHostPropagation?: boolean;
     /**
-     * Apply to underlying process groups of matching services
+     * Apply to underlying process groups of matching services. `entityType` must be set to `SERVICE`
      */
     serviceToPgpropagation?: boolean;
 }
