@@ -144,7 +144,7 @@ class AutotagRules(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tags.auto-tagging`)
 
-        The full documentation of the export feature is available here.
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
         ## Resource Example Usage
 
@@ -192,7 +192,7 @@ class AutotagRules(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tags.auto-tagging`)
 
-        The full documentation of the export feature is available here.
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
         ## Resource Example Usage
 

@@ -13,6 +13,4916 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings struct {
+	// Additional event handlers and wrappers
+	AdditionalEventHandlers WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers `pulumi:"additionalEventHandlers"`
+	// In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
+	EventWrapperSettings *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings `pulumi:"eventWrapperSettings"`
+	// Global event capture settings
+	GlobalEventCaptureSettings *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings `pulumi:"globalEventCaptureSettings"`
+	// Instrumentation of unsupported Ajax frameworks enabled/disabled
+	InstrumentUnsupportedAjaxFrameworks *bool `pulumi:"instrumentUnsupportedAjaxFrameworks"`
+	// Maximum character length for action names. Valid values range from 5 to 10000.
+	MaxActionNameLength int `pulumi:"maxActionNameLength"`
+	// Maximum number of errors to be captured per page. Valid values range from 0 to 50.
+	MaxErrorsToCapture int `pulumi:"maxErrorsToCapture"`
+	// Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `<` and `>`.
+	SpecialCharactersToEscape *string `pulumi:"specialCharactersToEscape"`
+	// Send the beacon signal as a synchronous XMLHttpRequest using Firefox enabled/disabled
+	SyncBeaconFirefox *bool `pulumi:"syncBeaconFirefox"`
+	// Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
+	SyncBeaconInternetExplorer *bool `pulumi:"syncBeaconInternetExplorer"`
+}
+
+// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsInput` via:
+//
+//	WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs{...}
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs struct {
+	// Additional event handlers and wrappers
+	AdditionalEventHandlers WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersInput `pulumi:"additionalEventHandlers"`
+	// In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
+	EventWrapperSettings WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput `pulumi:"eventWrapperSettings"`
+	// Global event capture settings
+	GlobalEventCaptureSettings WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput `pulumi:"globalEventCaptureSettings"`
+	// Instrumentation of unsupported Ajax frameworks enabled/disabled
+	InstrumentUnsupportedAjaxFrameworks pulumi.BoolPtrInput `pulumi:"instrumentUnsupportedAjaxFrameworks"`
+	// Maximum character length for action names. Valid values range from 5 to 10000.
+	MaxActionNameLength pulumi.IntInput `pulumi:"maxActionNameLength"`
+	// Maximum number of errors to be captured per page. Valid values range from 0 to 50.
+	MaxErrorsToCapture pulumi.IntInput `pulumi:"maxErrorsToCapture"`
+	// Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `<` and `>`.
+	SpecialCharactersToEscape pulumi.StringPtrInput `pulumi:"specialCharactersToEscape"`
+	// Send the beacon signal as a synchronous XMLHttpRequest using Firefox enabled/disabled
+	SyncBeaconFirefox pulumi.BoolPtrInput `pulumi:"syncBeaconFirefox"`
+	// Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
+	SyncBeaconInternetExplorer pulumi.BoolPtrInput `pulumi:"syncBeaconInternetExplorer"`
+}
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput).ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs, WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtr and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput
+}
+
+type webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrType WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs
+
+func WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtr(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrInput {
+	return (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings {
+		return &v
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput)
+}
+
+// Additional event handlers and wrappers
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) AdditionalEventHandlers() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers {
+		return v.AdditionalEventHandlers
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput)
+}
+
+// In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) EventWrapperSettings() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings {
+		return v.EventWrapperSettings
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput)
+}
+
+// Global event capture settings
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) GlobalEventCaptureSettings() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings {
+		return v.GlobalEventCaptureSettings
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput)
+}
+
+// Instrumentation of unsupported Ajax frameworks enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) InstrumentUnsupportedAjaxFrameworks() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
+		return v.InstrumentUnsupportedAjaxFrameworks
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Maximum character length for action names. Valid values range from 5 to 10000.
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) MaxActionNameLength() pulumi.IntOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) int {
+		return v.MaxActionNameLength
+	}).(pulumi.IntOutput)
+}
+
+// Maximum number of errors to be captured per page. Valid values range from 0 to 50.
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) MaxErrorsToCapture() pulumi.IntOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) int { return v.MaxErrorsToCapture }).(pulumi.IntOutput)
+}
+
+// Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `<` and `>`.
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) SpecialCharactersToEscape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *string {
+		return v.SpecialCharactersToEscape
+	}).(pulumi.StringPtrOutput)
+}
+
+// Send the beacon signal as a synchronous XMLHttpRequest using Firefox enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) SyncBeaconFirefox() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
+		return v.SyncBeaconFirefox
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) SyncBeaconInternetExplorer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
+		return v.SyncBeaconInternetExplorer
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings
+		return ret
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput)
+}
+
+// Additional event handlers and wrappers
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) AdditionalEventHandlers() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers {
+		if v == nil {
+			return nil
+		}
+		return &v.AdditionalEventHandlers
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput)
+}
+
+// In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) EventWrapperSettings() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings {
+		if v == nil {
+			return nil
+		}
+		return v.EventWrapperSettings
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput)
+}
+
+// Global event capture settings
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) GlobalEventCaptureSettings() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings {
+		if v == nil {
+			return nil
+		}
+		return v.GlobalEventCaptureSettings
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput)
+}
+
+// Instrumentation of unsupported Ajax frameworks enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) InstrumentUnsupportedAjaxFrameworks() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.InstrumentUnsupportedAjaxFrameworks
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Maximum character length for action names. Valid values range from 5 to 10000.
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) MaxActionNameLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.MaxActionNameLength
+	}).(pulumi.IntPtrOutput)
+}
+
+// Maximum number of errors to be captured per page. Valid values range from 0 to 50.
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) MaxErrorsToCapture() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.MaxErrorsToCapture
+	}).(pulumi.IntPtrOutput)
+}
+
+// Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `<` and `>`.
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) SpecialCharactersToEscape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SpecialCharactersToEscape
+	}).(pulumi.StringPtrOutput)
+}
+
+// Send the beacon signal as a synchronous XMLHttpRequest using Firefox enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) SyncBeaconFirefox() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SyncBeaconFirefox
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) SyncBeaconInternetExplorer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SyncBeaconInternetExplorer
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers struct {
+	// Blur event handler enabled/disabled
+	Blur *bool `pulumi:"blur"`
+	// Change event handler enabled/disabled
+	Change *bool `pulumi:"change"`
+	// Click event handler enabled/disabled
+	Click *bool `pulumi:"click"`
+	// Max. number of DOM nodes to instrument. Valid values range from 0 to 100000.
+	MaxDomNodes int `pulumi:"maxDomNodes"`
+	// Mouseup event handler enabled/disabled
+	Mouseup *bool `pulumi:"mouseup"`
+	// toString method enabled/disabled
+	ToStringMethod *bool `pulumi:"toStringMethod"`
+	// Use mouseup event for clicks enabled/disabled
+	UseMouseUpEventForClicks *bool `pulumi:"useMouseUpEventForClicks"`
+}
+
+// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersInput` via:
+//
+//	WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs{...}
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs struct {
+	// Blur event handler enabled/disabled
+	Blur pulumi.BoolPtrInput `pulumi:"blur"`
+	// Change event handler enabled/disabled
+	Change pulumi.BoolPtrInput `pulumi:"change"`
+	// Click event handler enabled/disabled
+	Click pulumi.BoolPtrInput `pulumi:"click"`
+	// Max. number of DOM nodes to instrument. Valid values range from 0 to 100000.
+	MaxDomNodes pulumi.IntInput `pulumi:"maxDomNodes"`
+	// Mouseup event handler enabled/disabled
+	Mouseup pulumi.BoolPtrInput `pulumi:"mouseup"`
+	// toString method enabled/disabled
+	ToStringMethod pulumi.BoolPtrInput `pulumi:"toStringMethod"`
+	// Use mouseup event for clicks enabled/disabled
+	UseMouseUpEventForClicks pulumi.BoolPtrInput `pulumi:"useMouseUpEventForClicks"`
+}
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput)
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput).ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs, WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtr and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput
+}
+
+type webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrType WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs
+
+func WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtr(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrInput {
+	return (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers {
+		return &v
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput)
+}
+
+// Blur event handler enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) Blur() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
+		return v.Blur
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Change event handler enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) Change() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
+		return v.Change
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Click event handler enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) Click() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
+		return v.Click
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Max. number of DOM nodes to instrument. Valid values range from 0 to 100000.
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) MaxDomNodes() pulumi.IntOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) int {
+		return v.MaxDomNodes
+	}).(pulumi.IntOutput)
+}
+
+// Mouseup event handler enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) Mouseup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
+		return v.Mouseup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// toString method enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) ToStringMethod() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
+		return v.ToStringMethod
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Use mouseup event for clicks enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) UseMouseUpEventForClicks() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
+		return v.UseMouseUpEventForClicks
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) Elem() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers
+		return ret
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput)
+}
+
+// Blur event handler enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) Blur() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Blur
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Change event handler enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) Change() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Change
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Click event handler enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) Click() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Click
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Max. number of DOM nodes to instrument. Valid values range from 0 to 100000.
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) MaxDomNodes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.MaxDomNodes
+	}).(pulumi.IntPtrOutput)
+}
+
+// Mouseup event handler enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) Mouseup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Mouseup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// toString method enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) ToStringMethod() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ToStringMethod
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Use mouseup event for clicks enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) UseMouseUpEventForClicks() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.UseMouseUpEventForClicks
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings struct {
+	// Blur enabled/disabled
+	Blur *bool `pulumi:"blur"`
+	// Change enabled/disabled
+	Change *bool `pulumi:"change"`
+	// Click enabled/disabled
+	Click *bool `pulumi:"click"`
+	// MouseUp enabled/disabled
+	Mouseup *bool `pulumi:"mouseup"`
+	// TouchEnd enabled/disabled
+	TouchEnd *bool `pulumi:"touchEnd"`
+	// TouchStart enabled/disabled
+	TouchStart *bool `pulumi:"touchStart"`
+}
+
+// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsInput` via:
+//
+//	WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs{...}
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs struct {
+	// Blur enabled/disabled
+	Blur pulumi.BoolPtrInput `pulumi:"blur"`
+	// Change enabled/disabled
+	Change pulumi.BoolPtrInput `pulumi:"change"`
+	// Click enabled/disabled
+	Click pulumi.BoolPtrInput `pulumi:"click"`
+	// MouseUp enabled/disabled
+	Mouseup pulumi.BoolPtrInput `pulumi:"mouseup"`
+	// TouchEnd enabled/disabled
+	TouchEnd pulumi.BoolPtrInput `pulumi:"touchEnd"`
+	// TouchStart enabled/disabled
+	TouchStart pulumi.BoolPtrInput `pulumi:"touchStart"`
+}
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput).ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs, WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtr and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput
+}
+
+type webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs
+
+func WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtr(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput {
+	return (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings {
+		return &v
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput)
+}
+
+// Blur enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) Blur() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		return v.Blur
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Change enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) Change() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		return v.Change
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Click enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) Click() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		return v.Click
+	}).(pulumi.BoolPtrOutput)
+}
+
+// MouseUp enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) Mouseup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		return v.Mouseup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchEnd enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) TouchEnd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		return v.TouchEnd
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchStart enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) TouchStart() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		return v.TouchStart
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings
+		return ret
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput)
+}
+
+// Blur enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Blur() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Blur
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Change enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Change() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Change
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Click enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Click() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Click
+	}).(pulumi.BoolPtrOutput)
+}
+
+// MouseUp enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Mouseup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Mouseup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchEnd enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) TouchEnd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.TouchEnd
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchStart enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) TouchStart() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.TouchStart
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings struct {
+	// Additional events to be captured globally as user input.
+	AdditionalEventCapturedAsUserInput *string `pulumi:"additionalEventCapturedAsUserInput"`
+	// Change enabled/disabled
+	Change *bool `pulumi:"change"`
+	// Click enabled/disabled
+	Click *bool `pulumi:"click"`
+	// DoubleClick enabled/disabled
+	Doubleclick *bool `pulumi:"doubleclick"`
+	// KeyDown enabled/disabled
+	Keydown *bool `pulumi:"keydown"`
+	// KeyUp enabled/disabled
+	Keyup *bool `pulumi:"keyup"`
+	// MouseDown enabled/disabled
+	Mousedown *bool `pulumi:"mousedown"`
+	// MouseUp enabled/disabled
+	Mouseup *bool `pulumi:"mouseup"`
+	// Scroll enabled/disabled
+	Scroll *bool `pulumi:"scroll"`
+	// TouchEnd enabled/disabled
+	TouchEnd *bool `pulumi:"touchEnd"`
+	// TouchStart enabled/disabled
+	TouchStart *bool `pulumi:"touchStart"`
+}
+
+// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsInput` via:
+//
+//	WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs{...}
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs struct {
+	// Additional events to be captured globally as user input.
+	AdditionalEventCapturedAsUserInput pulumi.StringPtrInput `pulumi:"additionalEventCapturedAsUserInput"`
+	// Change enabled/disabled
+	Change pulumi.BoolPtrInput `pulumi:"change"`
+	// Click enabled/disabled
+	Click pulumi.BoolPtrInput `pulumi:"click"`
+	// DoubleClick enabled/disabled
+	Doubleclick pulumi.BoolPtrInput `pulumi:"doubleclick"`
+	// KeyDown enabled/disabled
+	Keydown pulumi.BoolPtrInput `pulumi:"keydown"`
+	// KeyUp enabled/disabled
+	Keyup pulumi.BoolPtrInput `pulumi:"keyup"`
+	// MouseDown enabled/disabled
+	Mousedown pulumi.BoolPtrInput `pulumi:"mousedown"`
+	// MouseUp enabled/disabled
+	Mouseup pulumi.BoolPtrInput `pulumi:"mouseup"`
+	// Scroll enabled/disabled
+	Scroll pulumi.BoolPtrInput `pulumi:"scroll"`
+	// TouchEnd enabled/disabled
+	TouchEnd pulumi.BoolPtrInput `pulumi:"touchEnd"`
+	// TouchStart enabled/disabled
+	TouchStart pulumi.BoolPtrInput `pulumi:"touchStart"`
+}
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput).ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs, WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtr and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput
+}
+
+type webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs
+
+func WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtr(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput {
+	return (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings {
+		return &v
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput)
+}
+
+// Additional events to be captured globally as user input.
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) AdditionalEventCapturedAsUserInput() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *string {
+		return v.AdditionalEventCapturedAsUserInput
+	}).(pulumi.StringPtrOutput)
+}
+
+// Change enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Change() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Change
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Click enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Click() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Click
+	}).(pulumi.BoolPtrOutput)
+}
+
+// DoubleClick enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Doubleclick() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Doubleclick
+	}).(pulumi.BoolPtrOutput)
+}
+
+// KeyDown enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Keydown() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Keydown
+	}).(pulumi.BoolPtrOutput)
+}
+
+// KeyUp enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Keyup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Keyup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// MouseDown enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Mousedown() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Mousedown
+	}).(pulumi.BoolPtrOutput)
+}
+
+// MouseUp enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Mouseup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Mouseup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Scroll enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Scroll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Scroll
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchEnd enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) TouchEnd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.TouchEnd
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchStart enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) TouchStart() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.TouchStart
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings
+		return ret
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput)
+}
+
+// Additional events to be captured globally as user input.
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) AdditionalEventCapturedAsUserInput() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AdditionalEventCapturedAsUserInput
+	}).(pulumi.StringPtrOutput)
+}
+
+// Change enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Change() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Change
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Click enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Click() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Click
+	}).(pulumi.BoolPtrOutput)
+}
+
+// DoubleClick enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Doubleclick() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Doubleclick
+	}).(pulumi.BoolPtrOutput)
+}
+
+// KeyDown enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Keydown() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Keydown
+	}).(pulumi.BoolPtrOutput)
+}
+
+// KeyUp enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Keyup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Keyup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// MouseDown enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Mousedown() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Mousedown
+	}).(pulumi.BoolPtrOutput)
+}
+
+// MouseUp enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Mouseup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Mouseup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Scroll enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Scroll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Scroll
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchEnd enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) TouchEnd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.TouchEnd
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchStart enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) TouchStart() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.TouchStart
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettings struct {
+	// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+	Mode string `pulumi:"mode"`
+	// A list of browser restrictions
+	Restrictions *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions `pulumi:"restrictions"`
+}
+
+// WebApplicationMonitoringSettingsBrowserRestrictionSettingsInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs and WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsInput` via:
+//
+//	WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs{...}
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs struct {
+	// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// A list of browser restrictions
+	Restrictions WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput `pulumi:"restrictions"`
+}
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettings)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput).ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs, WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtr and WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput
+}
+
+type webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs
+
+func WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtr(v *WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput {
+	return (*webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsBrowserRestrictionSettings)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsBrowserRestrictionSettings) *WebApplicationMonitoringSettingsBrowserRestrictionSettings {
+		return &v
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput)
+}
+
+// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettings) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// A list of browser restrictions
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) Restrictions() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettings) *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
+		return v.Restrictions
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsBrowserRestrictionSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettings) WebApplicationMonitoringSettingsBrowserRestrictionSettings {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsBrowserRestrictionSettings
+		return ret
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput)
+}
+
+// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Mode
+	}).(pulumi.StringPtrOutput)
+}
+
+// A list of browser restrictions
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) Restrictions() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettings) *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
+		if v == nil {
+			return nil
+		}
+		return v.Restrictions
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions struct {
+	// Browser exclusion rules for the browsers that are to be excluded
+	Restrictions []WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction `pulumi:"restrictions"`
+}
+
+// WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs and WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsInput` via:
+//
+//	WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs{...}
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs struct {
+	// Browser exclusion rules for the browsers that are to be excluded
+	Restrictions WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput `pulumi:"restrictions"`
+}
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput).ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs, WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtr and WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput
+}
+
+type webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs
+
+func WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtr(v *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput {
+	return (*webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions) *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
+		return &v
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput)
+}
+
+// Browser exclusion rules for the browsers that are to be excluded
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) Restrictions() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions) []WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction {
+		return v.Restrictions
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) Elem() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions
+		return ret
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput)
+}
+
+// Browser exclusion rules for the browsers that are to be excluded
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) Restrictions() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions) []WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction {
+		if v == nil {
+			return nil
+		}
+		return v.Restrictions
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction struct {
+	// The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`and`SAFARI`
+	BrowserType string `pulumi:"browserType"`
+	// The version of the browser that is used
+	BrowserVersion *string `pulumi:"browserVersion"`
+	// No documentation available. Possible values are `EQUALS`, `GREATER_THAN_OR_EQUAL` and `LOWER_THAN_OR_EQUAL`.
+	Comparator *string `pulumi:"comparator"`
+	// The platform on which the browser is being used. Possible values are `ALL`, `DESKTOP` and `MOBILE`
+	Platform *string `pulumi:"platform"`
+}
+
+// WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs and WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput` via:
+//
+//	WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs{...}
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs struct {
+	// The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`and`SAFARI`
+	BrowserType pulumi.StringInput `pulumi:"browserType"`
+	// The version of the browser that is used
+	BrowserVersion pulumi.StringPtrInput `pulumi:"browserVersion"`
+	// No documentation available. Possible values are `EQUALS`, `GREATER_THAN_OR_EQUAL` and `LOWER_THAN_OR_EQUAL`.
+	Comparator pulumi.StringPtrInput `pulumi:"comparator"`
+	// The platform on which the browser is being used. Possible values are `ALL`, `DESKTOP` and `MOBILE`
+	Platform pulumi.StringPtrInput `pulumi:"platform"`
+}
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput)
+}
+
+// WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray and WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput` via:
+//
+//	WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray{ WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs{...} }
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray []WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
+	return o
+}
+
+// The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`and`SAFARI`
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) BrowserType() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction) string {
+		return v.BrowserType
+	}).(pulumi.StringOutput)
+}
+
+// The version of the browser that is used
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) BrowserVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction) *string {
+		return v.BrowserVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+// No documentation available. Possible values are `EQUALS`, `GREATER_THAN_OR_EQUAL` and `LOWER_THAN_OR_EQUAL`.
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) Comparator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction) *string {
+		return v.Comparator
+	}).(pulumi.StringPtrOutput)
+}
+
+// The platform on which the browser is being used. Possible values are `ALL`, `DESKTOP` and `MOBILE`
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) Platform() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction) *string {
+		return v.Platform
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput) Index(i pulumi.IntInput) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction {
+		return vs[0].([]WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)[vs[1].(int)]
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput)
+}
+
+type WebApplicationMonitoringSettingsContentCapture struct {
+	// JavaScript errors monitoring enabled/disabled
+	JavascriptErrors *bool `pulumi:"javascriptErrors"`
+	// Settings for resource timings capture
+	ResourceTimingSettings WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings `pulumi:"resourceTimingSettings"`
+	// Settings for timed action capture
+	TimeoutSettings WebApplicationMonitoringSettingsContentCaptureTimeoutSettings `pulumi:"timeoutSettings"`
+	// Visually complete and Speed index support enabled/disabled
+	VisuallyCompleteAndSpeedIndex *bool `pulumi:"visuallyCompleteAndSpeedIndex"`
+	// Settings for VisuallyComplete
+	VisuallyCompleteSettings *WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings `pulumi:"visuallyCompleteSettings"`
+}
+
+// WebApplicationMonitoringSettingsContentCaptureInput is an input type that accepts WebApplicationMonitoringSettingsContentCaptureArgs and WebApplicationMonitoringSettingsContentCaptureOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsContentCaptureInput` via:
+//
+//	WebApplicationMonitoringSettingsContentCaptureArgs{...}
+type WebApplicationMonitoringSettingsContentCaptureInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsContentCaptureOutput() WebApplicationMonitoringSettingsContentCaptureOutput
+	ToWebApplicationMonitoringSettingsContentCaptureOutputWithContext(context.Context) WebApplicationMonitoringSettingsContentCaptureOutput
+}
+
+type WebApplicationMonitoringSettingsContentCaptureArgs struct {
+	// JavaScript errors monitoring enabled/disabled
+	JavascriptErrors pulumi.BoolPtrInput `pulumi:"javascriptErrors"`
+	// Settings for resource timings capture
+	ResourceTimingSettings WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsInput `pulumi:"resourceTimingSettings"`
+	// Settings for timed action capture
+	TimeoutSettings WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsInput `pulumi:"timeoutSettings"`
+	// Visually complete and Speed index support enabled/disabled
+	VisuallyCompleteAndSpeedIndex pulumi.BoolPtrInput `pulumi:"visuallyCompleteAndSpeedIndex"`
+	// Settings for VisuallyComplete
+	VisuallyCompleteSettings WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrInput `pulumi:"visuallyCompleteSettings"`
+}
+
+func (WebApplicationMonitoringSettingsContentCaptureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsContentCapture)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureArgs) ToWebApplicationMonitoringSettingsContentCaptureOutput() WebApplicationMonitoringSettingsContentCaptureOutput {
+	return i.ToWebApplicationMonitoringSettingsContentCaptureOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureArgs) ToWebApplicationMonitoringSettingsContentCaptureOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsContentCaptureOutput)
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureArgs) ToWebApplicationMonitoringSettingsContentCapturePtrOutput() WebApplicationMonitoringSettingsContentCapturePtrOutput {
+	return i.ToWebApplicationMonitoringSettingsContentCapturePtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureArgs) ToWebApplicationMonitoringSettingsContentCapturePtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCapturePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsContentCaptureOutput).ToWebApplicationMonitoringSettingsContentCapturePtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsContentCapturePtrInput is an input type that accepts WebApplicationMonitoringSettingsContentCaptureArgs, WebApplicationMonitoringSettingsContentCapturePtr and WebApplicationMonitoringSettingsContentCapturePtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsContentCapturePtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsContentCaptureArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsContentCapturePtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsContentCapturePtrOutput() WebApplicationMonitoringSettingsContentCapturePtrOutput
+	ToWebApplicationMonitoringSettingsContentCapturePtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsContentCapturePtrOutput
+}
+
+type webApplicationMonitoringSettingsContentCapturePtrType WebApplicationMonitoringSettingsContentCaptureArgs
+
+func WebApplicationMonitoringSettingsContentCapturePtr(v *WebApplicationMonitoringSettingsContentCaptureArgs) WebApplicationMonitoringSettingsContentCapturePtrInput {
+	return (*webApplicationMonitoringSettingsContentCapturePtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsContentCapturePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsContentCapture)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsContentCapturePtrType) ToWebApplicationMonitoringSettingsContentCapturePtrOutput() WebApplicationMonitoringSettingsContentCapturePtrOutput {
+	return i.ToWebApplicationMonitoringSettingsContentCapturePtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsContentCapturePtrType) ToWebApplicationMonitoringSettingsContentCapturePtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCapturePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsContentCapturePtrOutput)
+}
+
+type WebApplicationMonitoringSettingsContentCaptureOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsContentCaptureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsContentCapture)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureOutput) ToWebApplicationMonitoringSettingsContentCaptureOutput() WebApplicationMonitoringSettingsContentCaptureOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureOutput) ToWebApplicationMonitoringSettingsContentCaptureOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureOutput) ToWebApplicationMonitoringSettingsContentCapturePtrOutput() WebApplicationMonitoringSettingsContentCapturePtrOutput {
+	return o.ToWebApplicationMonitoringSettingsContentCapturePtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureOutput) ToWebApplicationMonitoringSettingsContentCapturePtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCapturePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsContentCapture) *WebApplicationMonitoringSettingsContentCapture {
+		return &v
+	}).(WebApplicationMonitoringSettingsContentCapturePtrOutput)
+}
+
+// JavaScript errors monitoring enabled/disabled
+func (o WebApplicationMonitoringSettingsContentCaptureOutput) JavascriptErrors() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCapture) *bool { return v.JavascriptErrors }).(pulumi.BoolPtrOutput)
+}
+
+// Settings for resource timings capture
+func (o WebApplicationMonitoringSettingsContentCaptureOutput) ResourceTimingSettings() WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCapture) WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings {
+		return v.ResourceTimingSettings
+	}).(WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput)
+}
+
+// Settings for timed action capture
+func (o WebApplicationMonitoringSettingsContentCaptureOutput) TimeoutSettings() WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCapture) WebApplicationMonitoringSettingsContentCaptureTimeoutSettings {
+		return v.TimeoutSettings
+	}).(WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput)
+}
+
+// Visually complete and Speed index support enabled/disabled
+func (o WebApplicationMonitoringSettingsContentCaptureOutput) VisuallyCompleteAndSpeedIndex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCapture) *bool { return v.VisuallyCompleteAndSpeedIndex }).(pulumi.BoolPtrOutput)
+}
+
+// Settings for VisuallyComplete
+func (o WebApplicationMonitoringSettingsContentCaptureOutput) VisuallyCompleteSettings() WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCapture) *WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings {
+		return v.VisuallyCompleteSettings
+	}).(WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsContentCapturePtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsContentCapturePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsContentCapture)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsContentCapturePtrOutput) ToWebApplicationMonitoringSettingsContentCapturePtrOutput() WebApplicationMonitoringSettingsContentCapturePtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCapturePtrOutput) ToWebApplicationMonitoringSettingsContentCapturePtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCapturePtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCapturePtrOutput) Elem() WebApplicationMonitoringSettingsContentCaptureOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCapture) WebApplicationMonitoringSettingsContentCapture {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsContentCapture
+		return ret
+	}).(WebApplicationMonitoringSettingsContentCaptureOutput)
+}
+
+// JavaScript errors monitoring enabled/disabled
+func (o WebApplicationMonitoringSettingsContentCapturePtrOutput) JavascriptErrors() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCapture) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.JavascriptErrors
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Settings for resource timings capture
+func (o WebApplicationMonitoringSettingsContentCapturePtrOutput) ResourceTimingSettings() WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCapture) *WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings {
+		if v == nil {
+			return nil
+		}
+		return &v.ResourceTimingSettings
+	}).(WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput)
+}
+
+// Settings for timed action capture
+func (o WebApplicationMonitoringSettingsContentCapturePtrOutput) TimeoutSettings() WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCapture) *WebApplicationMonitoringSettingsContentCaptureTimeoutSettings {
+		if v == nil {
+			return nil
+		}
+		return &v.TimeoutSettings
+	}).(WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput)
+}
+
+// Visually complete and Speed index support enabled/disabled
+func (o WebApplicationMonitoringSettingsContentCapturePtrOutput) VisuallyCompleteAndSpeedIndex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCapture) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.VisuallyCompleteAndSpeedIndex
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Settings for VisuallyComplete
+func (o WebApplicationMonitoringSettingsContentCapturePtrOutput) VisuallyCompleteSettings() WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCapture) *WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings {
+		if v == nil {
+			return nil
+		}
+		return v.VisuallyCompleteSettings
+	}).(WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings struct {
+	// Instrumentation delay for monitoring resource and image resource impact in browsers that don't offer W3C resource timings.
+	InstrumentationDelay int `pulumi:"instrumentationDelay"`
+	// Timing for JavaScript files and images on non-W3C supported browsers enabled/disabled
+	NonW3cResourceTimings *bool `pulumi:"nonW3cResourceTimings"`
+	// Defines how detailed resource timings are captured.
+	//
+	// Only effective if **w3cResourceTimings** or **nonW3cResourceTimings** is enabled. Possible values are `CAPTURE_ALL_SUMMARIES`, `CAPTURE_FULL_DETAILS` and `CAPTURE_LIMITED_SUMMARIES`
+	ResourceTimingCaptureType *string `pulumi:"resourceTimingCaptureType"`
+	// Limits the number of domains for which W3C resource timings are captured.
+	//
+	// Only effective if **resourceTimingCaptureType** is `CAPTURE_LIMITED_SUMMARIES`. Valid values range from 0 to 50.
+	ResourceTimingsDomainLimit *int `pulumi:"resourceTimingsDomainLimit"`
+	// W3C resource timings for third party/CDN enabled/disabled
+	W3cResourceTimings *bool `pulumi:"w3cResourceTimings"`
+}
+
+// WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsInput is an input type that accepts WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs and WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsInput` via:
+//
+//	WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs{...}
+type WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput() WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput
+	ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput
+}
+
+type WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs struct {
+	// Instrumentation delay for monitoring resource and image resource impact in browsers that don't offer W3C resource timings.
+	InstrumentationDelay pulumi.IntInput `pulumi:"instrumentationDelay"`
+	// Timing for JavaScript files and images on non-W3C supported browsers enabled/disabled
+	NonW3cResourceTimings pulumi.BoolPtrInput `pulumi:"nonW3cResourceTimings"`
+	// Defines how detailed resource timings are captured.
+	//
+	// Only effective if **w3cResourceTimings** or **nonW3cResourceTimings** is enabled. Possible values are `CAPTURE_ALL_SUMMARIES`, `CAPTURE_FULL_DETAILS` and `CAPTURE_LIMITED_SUMMARIES`
+	ResourceTimingCaptureType pulumi.StringPtrInput `pulumi:"resourceTimingCaptureType"`
+	// Limits the number of domains for which W3C resource timings are captured.
+	//
+	// Only effective if **resourceTimingCaptureType** is `CAPTURE_LIMITED_SUMMARIES`. Valid values range from 0 to 50.
+	ResourceTimingsDomainLimit pulumi.IntPtrInput `pulumi:"resourceTimingsDomainLimit"`
+	// W3C resource timings for third party/CDN enabled/disabled
+	W3cResourceTimings pulumi.BoolPtrInput `pulumi:"w3cResourceTimings"`
+}
+
+func (WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs) ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput() WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput {
+	return i.ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs) ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs) ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs) ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput).ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs, WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtr and WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput
+	ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput
+}
+
+type webApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrType WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs
+
+func WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtr(v *WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs) WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrInput {
+	return (*webApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrType) ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrType) ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput) ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput() WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput) ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput) ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput) ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings) *WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings {
+		return &v
+	}).(WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput)
+}
+
+// Instrumentation delay for monitoring resource and image resource impact in browsers that don't offer W3C resource timings.
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput) InstrumentationDelay() pulumi.IntOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings) int {
+		return v.InstrumentationDelay
+	}).(pulumi.IntOutput)
+}
+
+// Timing for JavaScript files and images on non-W3C supported browsers enabled/disabled
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput) NonW3cResourceTimings() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings) *bool {
+		return v.NonW3cResourceTimings
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Defines how detailed resource timings are captured.
+//
+// Only effective if **w3cResourceTimings** or **nonW3cResourceTimings** is enabled. Possible values are `CAPTURE_ALL_SUMMARIES`, `CAPTURE_FULL_DETAILS` and `CAPTURE_LIMITED_SUMMARIES`
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput) ResourceTimingCaptureType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings) *string {
+		return v.ResourceTimingCaptureType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Limits the number of domains for which W3C resource timings are captured.
+//
+// Only effective if **resourceTimingCaptureType** is `CAPTURE_LIMITED_SUMMARIES`. Valid values range from 0 to 50.
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput) ResourceTimingsDomainLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings) *int {
+		return v.ResourceTimingsDomainLimit
+	}).(pulumi.IntPtrOutput)
+}
+
+// W3C resource timings for third party/CDN enabled/disabled
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput) W3cResourceTimings() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings) *bool {
+		return v.W3cResourceTimings
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput) ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput) ToWebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings) WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings
+		return ret
+	}).(WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput)
+}
+
+// Instrumentation delay for monitoring resource and image resource impact in browsers that don't offer W3C resource timings.
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput) InstrumentationDelay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.InstrumentationDelay
+	}).(pulumi.IntPtrOutput)
+}
+
+// Timing for JavaScript files and images on non-W3C supported browsers enabled/disabled
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput) NonW3cResourceTimings() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.NonW3cResourceTimings
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Defines how detailed resource timings are captured.
+//
+// Only effective if **w3cResourceTimings** or **nonW3cResourceTimings** is enabled. Possible values are `CAPTURE_ALL_SUMMARIES`, `CAPTURE_FULL_DETAILS` and `CAPTURE_LIMITED_SUMMARIES`
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput) ResourceTimingCaptureType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceTimingCaptureType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Limits the number of domains for which W3C resource timings are captured.
+//
+// Only effective if **resourceTimingCaptureType** is `CAPTURE_LIMITED_SUMMARIES`. Valid values range from 0 to 50.
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput) ResourceTimingsDomainLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceTimingsDomainLimit
+	}).(pulumi.IntPtrOutput)
+}
+
+// W3C resource timings for third party/CDN enabled/disabled
+func (o WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput) W3cResourceTimings() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.W3cResourceTimings
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsContentCaptureTimeoutSettings struct {
+	// Defines how deep temporary actions may cascade. 0 disables temporary actions completely. Recommended value if enabled is 3
+	TemporaryActionLimit int `pulumi:"temporaryActionLimit"`
+	// The total timeout of all cascaded timeouts that should still be able to create a temporary action
+	TemporaryActionTotalTimeout int `pulumi:"temporaryActionTotalTimeout"`
+	// Timed action support enabled/disabled.
+	TimedActionSupport *bool `pulumi:"timedActionSupport"`
+}
+
+// WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsInput is an input type that accepts WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs and WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsInput` via:
+//
+//	WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs{...}
+type WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput() WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput
+	ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput
+}
+
+type WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs struct {
+	// Defines how deep temporary actions may cascade. 0 disables temporary actions completely. Recommended value if enabled is 3
+	TemporaryActionLimit pulumi.IntInput `pulumi:"temporaryActionLimit"`
+	// The total timeout of all cascaded timeouts that should still be able to create a temporary action
+	TemporaryActionTotalTimeout pulumi.IntInput `pulumi:"temporaryActionTotalTimeout"`
+	// Timed action support enabled/disabled.
+	TimedActionSupport pulumi.BoolPtrInput `pulumi:"timedActionSupport"`
+}
+
+func (WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureTimeoutSettings)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs) ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput() WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput {
+	return i.ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs) ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs) ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs) ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput).ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs, WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtr and WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput
+	ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput
+}
+
+type webApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrType WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs
+
+func WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtr(v *WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs) WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrInput {
+	return (*webApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsContentCaptureTimeoutSettings)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrType) ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrType) ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureTimeoutSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput) ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput() WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput) ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput) ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput) ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsContentCaptureTimeoutSettings) *WebApplicationMonitoringSettingsContentCaptureTimeoutSettings {
+		return &v
+	}).(WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput)
+}
+
+// Defines how deep temporary actions may cascade. 0 disables temporary actions completely. Recommended value if enabled is 3
+func (o WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput) TemporaryActionLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCaptureTimeoutSettings) int {
+		return v.TemporaryActionLimit
+	}).(pulumi.IntOutput)
+}
+
+// The total timeout of all cascaded timeouts that should still be able to create a temporary action
+func (o WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput) TemporaryActionTotalTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCaptureTimeoutSettings) int {
+		return v.TemporaryActionTotalTimeout
+	}).(pulumi.IntOutput)
+}
+
+// Timed action support enabled/disabled.
+func (o WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput) TimedActionSupport() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCaptureTimeoutSettings) *bool {
+		return v.TimedActionSupport
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsContentCaptureTimeoutSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput) ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput) ToWebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureTimeoutSettings) WebApplicationMonitoringSettingsContentCaptureTimeoutSettings {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsContentCaptureTimeoutSettings
+		return ret
+	}).(WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput)
+}
+
+// Defines how deep temporary actions may cascade. 0 disables temporary actions completely. Recommended value if enabled is 3
+func (o WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput) TemporaryActionLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureTimeoutSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.TemporaryActionLimit
+	}).(pulumi.IntPtrOutput)
+}
+
+// The total timeout of all cascaded timeouts that should still be able to create a temporary action
+func (o WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput) TemporaryActionTotalTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureTimeoutSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.TemporaryActionTotalTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Timed action support enabled/disabled.
+func (o WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput) TimedActionSupport() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureTimeoutSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.TimedActionSupport
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings struct {
+	// A RegularExpression used to exclude images and iframes from being detected by the VC module
+	ExcludeUrlRegex *string `pulumi:"excludeUrlRegex"`
+	// Query selector for mutation nodes to ignore in VC and SI calculation
+	IgnoredMutationsList *string `pulumi:"ignoredMutationsList"`
+	// The time in ms the VC module waits for no mutations happening on the page after the load action. Defaults to 1000. Valid values range from 0 to 30000.
+	InactivityTimeout *int `pulumi:"inactivityTimeout"`
+	// Determines the time in ms VC waits after an action closes to start calculation. Defaults to 50. Valid values range from 0 to 5000.
+	MutationTimeout *int `pulumi:"mutationTimeout"`
+	// Minimum visible area in pixels of elements to be counted towards VC and SI. Defaults to 50. Valid values range from 0 to 10000.
+	Threshold *int `pulumi:"threshold"`
+}
+
+// WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsInput is an input type that accepts WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs and WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsInput` via:
+//
+//	WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs{...}
+type WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput() WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput
+	ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput
+}
+
+type WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs struct {
+	// A RegularExpression used to exclude images and iframes from being detected by the VC module
+	ExcludeUrlRegex pulumi.StringPtrInput `pulumi:"excludeUrlRegex"`
+	// Query selector for mutation nodes to ignore in VC and SI calculation
+	IgnoredMutationsList pulumi.StringPtrInput `pulumi:"ignoredMutationsList"`
+	// The time in ms the VC module waits for no mutations happening on the page after the load action. Defaults to 1000. Valid values range from 0 to 30000.
+	InactivityTimeout pulumi.IntPtrInput `pulumi:"inactivityTimeout"`
+	// Determines the time in ms VC waits after an action closes to start calculation. Defaults to 50. Valid values range from 0 to 5000.
+	MutationTimeout pulumi.IntPtrInput `pulumi:"mutationTimeout"`
+	// Minimum visible area in pixels of elements to be counted towards VC and SI. Defaults to 50. Valid values range from 0 to 10000.
+	Threshold pulumi.IntPtrInput `pulumi:"threshold"`
+}
+
+func (WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs) ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput() WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput {
+	return i.ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs) ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs) ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs) ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput).ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs, WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtr and WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput
+	ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput
+}
+
+type webApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrType WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs
+
+func WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtr(v *WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs) WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrInput {
+	return (*webApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrType) ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrType) ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput) ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput() WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput) ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput) ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput) ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings) *WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings {
+		return &v
+	}).(WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput)
+}
+
+// A RegularExpression used to exclude images and iframes from being detected by the VC module
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput) ExcludeUrlRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings) *string {
+		return v.ExcludeUrlRegex
+	}).(pulumi.StringPtrOutput)
+}
+
+// Query selector for mutation nodes to ignore in VC and SI calculation
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput) IgnoredMutationsList() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings) *string {
+		return v.IgnoredMutationsList
+	}).(pulumi.StringPtrOutput)
+}
+
+// The time in ms the VC module waits for no mutations happening on the page after the load action. Defaults to 1000. Valid values range from 0 to 30000.
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput) InactivityTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings) *int {
+		return v.InactivityTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Determines the time in ms VC waits after an action closes to start calculation. Defaults to 50. Valid values range from 0 to 5000.
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput) MutationTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings) *int {
+		return v.MutationTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Minimum visible area in pixels of elements to be counted towards VC and SI. Defaults to 50. Valid values range from 0 to 10000.
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput) Threshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings) *int {
+		return v.Threshold
+	}).(pulumi.IntPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput) ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput() WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput) ToWebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings) WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings
+		return ret
+	}).(WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput)
+}
+
+// A RegularExpression used to exclude images and iframes from being detected by the VC module
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput) ExcludeUrlRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludeUrlRegex
+	}).(pulumi.StringPtrOutput)
+}
+
+// Query selector for mutation nodes to ignore in VC and SI calculation
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput) IgnoredMutationsList() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IgnoredMutationsList
+	}).(pulumi.StringPtrOutput)
+}
+
+// The time in ms the VC module waits for no mutations happening on the page after the load action. Defaults to 1000. Valid values range from 0 to 30000.
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput) InactivityTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InactivityTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Determines the time in ms VC waits after an action closes to start calculation. Defaults to 50. Valid values range from 0 to 5000.
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput) MutationTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MutationTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Minimum visible area in pixels of elements to be counted towards VC and SI. Defaults to 50. Valid values range from 0 to 10000.
+func (o WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput) Threshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Threshold
+	}).(pulumi.IntPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettings struct {
+	// The mode of the list of ip address restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+	Mode string `pulumi:"mode"`
+	// The IP addresses or the IP address ranges to be mapped to the location
+	Restrictions *WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions `pulumi:"restrictions"`
+}
+
+// WebApplicationMonitoringSettingsIpAddressRestrictionSettingsInput is an input type that accepts WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs and WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsIpAddressRestrictionSettingsInput` via:
+//
+//	WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs{...}
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput
+	ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput
+}
+
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs struct {
+	// The mode of the list of ip address restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// The IP addresses or the IP address ranges to be mapped to the location
+	Restrictions WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrInput `pulumi:"restrictions"`
+}
+
+func (WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsIpAddressRestrictionSettings)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput {
+	return i.ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput).ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs, WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtr and WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput
+	ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput
+}
+
+type webApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrType WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs
+
+func WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtr(v *WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrInput {
+	return (*webApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsIpAddressRestrictionSettings)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrType) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrType) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsIpAddressRestrictionSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsIpAddressRestrictionSettings) *WebApplicationMonitoringSettingsIpAddressRestrictionSettings {
+		return &v
+	}).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput)
+}
+
+// The mode of the list of ip address restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsIpAddressRestrictionSettings) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// The IP addresses or the IP address ranges to be mapped to the location
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput) Restrictions() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsIpAddressRestrictionSettings) *WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions {
+		return v.Restrictions
+	}).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsIpAddressRestrictionSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsIpAddressRestrictionSettings) WebApplicationMonitoringSettingsIpAddressRestrictionSettings {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsIpAddressRestrictionSettings
+		return ret
+	}).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput)
+}
+
+// The mode of the list of ip address restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsIpAddressRestrictionSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Mode
+	}).(pulumi.StringPtrOutput)
+}
+
+// The IP addresses or the IP address ranges to be mapped to the location
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput) Restrictions() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsIpAddressRestrictionSettings) *WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions {
+		if v == nil {
+			return nil
+		}
+		return v.Restrictions
+	}).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions struct {
+	// The IP address or the IP address range to be mapped to the location
+	Ranges []WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange `pulumi:"ranges"`
+}
+
+// WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsInput is an input type that accepts WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs and WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsInput` via:
+//
+//	WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs{...}
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput
+	ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutputWithContext(context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput
+}
+
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs struct {
+	// The IP address or the IP address range to be mapped to the location
+	Ranges WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayInput `pulumi:"ranges"`
+}
+
+func (WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput {
+	return i.ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput).ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrInput is an input type that accepts WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs, WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtr and WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput
+	ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput
+}
+
+type webApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrType WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs
+
+func WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtr(v *WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrInput {
+	return (*webApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrType) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrType) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions) *WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions {
+		return &v
+	}).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput)
+}
+
+// The IP address or the IP address range to be mapped to the location
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput) Ranges() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions) []WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange {
+		return v.Ranges
+	}).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput)
+}
+
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput) Elem() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions
+		return ret
+	}).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput)
+}
+
+// The IP address or the IP address range to be mapped to the location
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput) Ranges() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions) []WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange {
+		if v == nil {
+			return nil
+		}
+		return v.Ranges
+	}).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput)
+}
+
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange struct {
+	// The IP address to be mapped.
+	Address string `pulumi:"address"`
+	// The **to** address of the IP address range.
+	AddressTo *string `pulumi:"addressTo"`
+	// The subnet mask of the IP address range. Valid values range from 0 to 128.
+	SubnetMask *int `pulumi:"subnetMask"`
+}
+
+// WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeInput is an input type that accepts WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArgs and WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeInput` via:
+//
+//	WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArgs{...}
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput
+	ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutputWithContext(context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput
+}
+
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArgs struct {
+	// The IP address to be mapped.
+	Address pulumi.StringInput `pulumi:"address"`
+	// The **to** address of the IP address range.
+	AddressTo pulumi.StringPtrInput `pulumi:"addressTo"`
+	// The subnet mask of the IP address range. Valid values range from 0 to 128.
+	SubnetMask pulumi.IntPtrInput `pulumi:"subnetMask"`
+}
+
+func (WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArgs) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput {
+	return i.ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArgs) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput)
+}
+
+// WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayInput is an input type that accepts WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArray and WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayInput` via:
+//
+//	WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArray{ WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArgs{...} }
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput
+	ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutputWithContext(context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput
+}
+
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArray []WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeInput
+
+func (WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArray) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput {
+	return i.ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArray) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput)
+}
+
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput {
+	return o
+}
+
+// The IP address to be mapped.
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange) string {
+		return v.Address
+	}).(pulumi.StringOutput)
+}
+
+// The **to** address of the IP address range.
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput) AddressTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange) *string {
+		return v.AddressTo
+	}).(pulumi.StringPtrOutput)
+}
+
+// The subnet mask of the IP address range. Valid values range from 0 to 128.
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput) SubnetMask() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange) *int {
+		return v.SubnetMask
+	}).(pulumi.IntPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput) ToWebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput) Index(i pulumi.IntInput) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange {
+		return vs[0].([]WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange)[vs[1].(int)]
+	}).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput)
+}
+
+type WebApplicationMonitoringSettingsJavascriptFrameworkSupport struct {
+	// ActiveXObject support enabled/disabled
+	ActiveXObject *bool `pulumi:"activeXObject"`
+	// AngularJS and Angular support enabled/disabled
+	Angular *bool `pulumi:"angular"`
+	// Dojo support enabled/disabled
+	Dojo *bool `pulumi:"dojo"`
+	// ExtJS, Sencha Touch support enabled/disabled
+	Extjs *bool `pulumi:"extjs"`
+	// ICEfaces support enabled/disabled
+	Icefaces *bool `pulumi:"icefaces"`
+	// jQuery, Backbone.js support enabled/disabled
+	Jquery *bool `pulumi:"jquery"`
+	// MooTools support enabled/disabled
+	MooTools *bool `pulumi:"mooTools"`
+	// Prototype support enabled/disabled
+	Prototype *bool `pulumi:"prototype"`
+}
+
+// WebApplicationMonitoringSettingsJavascriptFrameworkSupportInput is an input type that accepts WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs and WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsJavascriptFrameworkSupportInput` via:
+//
+//	WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs{...}
+type WebApplicationMonitoringSettingsJavascriptFrameworkSupportInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput() WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput
+	ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportOutputWithContext(context.Context) WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput
+}
+
+type WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs struct {
+	// ActiveXObject support enabled/disabled
+	ActiveXObject pulumi.BoolPtrInput `pulumi:"activeXObject"`
+	// AngularJS and Angular support enabled/disabled
+	Angular pulumi.BoolPtrInput `pulumi:"angular"`
+	// Dojo support enabled/disabled
+	Dojo pulumi.BoolPtrInput `pulumi:"dojo"`
+	// ExtJS, Sencha Touch support enabled/disabled
+	Extjs pulumi.BoolPtrInput `pulumi:"extjs"`
+	// ICEfaces support enabled/disabled
+	Icefaces pulumi.BoolPtrInput `pulumi:"icefaces"`
+	// jQuery, Backbone.js support enabled/disabled
+	Jquery pulumi.BoolPtrInput `pulumi:"jquery"`
+	// MooTools support enabled/disabled
+	MooTools pulumi.BoolPtrInput `pulumi:"mooTools"`
+	// Prototype support enabled/disabled
+	Prototype pulumi.BoolPtrInput `pulumi:"prototype"`
+}
+
+func (WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsJavascriptFrameworkSupport)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs) ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput() WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput {
+	return i.ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs) ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput)
+}
+
+func (i WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs) ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput() WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs) ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput).ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrInput is an input type that accepts WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs, WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtr and WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput() WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput
+	ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput
+}
+
+type webApplicationMonitoringSettingsJavascriptFrameworkSupportPtrType WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs
+
+func WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtr(v *WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs) WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrInput {
+	return (*webApplicationMonitoringSettingsJavascriptFrameworkSupportPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsJavascriptFrameworkSupportPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsJavascriptFrameworkSupport)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsJavascriptFrameworkSupportPtrType) ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput() WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsJavascriptFrameworkSupportPtrType) ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsJavascriptFrameworkSupport)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput) ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput() WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput) ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput) ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput() WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput) ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *WebApplicationMonitoringSettingsJavascriptFrameworkSupport {
+		return &v
+	}).(WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput)
+}
+
+// ActiveXObject support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput) ActiveXObject() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool { return v.ActiveXObject }).(pulumi.BoolPtrOutput)
+}
+
+// AngularJS and Angular support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput) Angular() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool { return v.Angular }).(pulumi.BoolPtrOutput)
+}
+
+// Dojo support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput) Dojo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool { return v.Dojo }).(pulumi.BoolPtrOutput)
+}
+
+// ExtJS, Sencha Touch support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput) Extjs() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool { return v.Extjs }).(pulumi.BoolPtrOutput)
+}
+
+// ICEfaces support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput) Icefaces() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool { return v.Icefaces }).(pulumi.BoolPtrOutput)
+}
+
+// jQuery, Backbone.js support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput) Jquery() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool { return v.Jquery }).(pulumi.BoolPtrOutput)
+}
+
+// MooTools support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput) MooTools() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool { return v.MooTools }).(pulumi.BoolPtrOutput)
+}
+
+// Prototype support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput) Prototype() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool { return v.Prototype }).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsJavascriptFrameworkSupport)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput) ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput() WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput) ToWebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput) Elem() WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsJavascriptFrameworkSupport) WebApplicationMonitoringSettingsJavascriptFrameworkSupport {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsJavascriptFrameworkSupport
+		return ret
+	}).(WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput)
+}
+
+// ActiveXObject support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput) ActiveXObject() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ActiveXObject
+	}).(pulumi.BoolPtrOutput)
+}
+
+// AngularJS and Angular support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput) Angular() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Angular
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Dojo support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput) Dojo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Dojo
+	}).(pulumi.BoolPtrOutput)
+}
+
+// ExtJS, Sencha Touch support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput) Extjs() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Extjs
+	}).(pulumi.BoolPtrOutput)
+}
+
+// ICEfaces support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput) Icefaces() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Icefaces
+	}).(pulumi.BoolPtrOutput)
+}
+
+// jQuery, Backbone.js support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput) Jquery() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Jquery
+	}).(pulumi.BoolPtrOutput)
+}
+
+// MooTools support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput) MooTools() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.MooTools
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Prototype support enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput) Prototype() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsJavascriptFrameworkSupport) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Prototype
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsJavascriptInjectionRules struct {
+	// Java script injection rule
+	Rules []WebApplicationMonitoringSettingsJavascriptInjectionRulesRule `pulumi:"rules"`
+}
+
+// WebApplicationMonitoringSettingsJavascriptInjectionRulesInput is an input type that accepts WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs and WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsJavascriptInjectionRulesInput` via:
+//
+//	WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs{...}
+type WebApplicationMonitoringSettingsJavascriptInjectionRulesInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsJavascriptInjectionRulesOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput
+	ToWebApplicationMonitoringSettingsJavascriptInjectionRulesOutputWithContext(context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput
+}
+
+type WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs struct {
+	// Java script injection rule
+	Rules WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayInput `pulumi:"rules"`
+}
+
+func (WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsJavascriptInjectionRules)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput {
+	return i.ToWebApplicationMonitoringSettingsJavascriptInjectionRulesOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput)
+}
+
+func (i WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput).ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrInput is an input type that accepts WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs, WebApplicationMonitoringSettingsJavascriptInjectionRulesPtr and WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput
+	ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput
+}
+
+type webApplicationMonitoringSettingsJavascriptInjectionRulesPtrType WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs
+
+func WebApplicationMonitoringSettingsJavascriptInjectionRulesPtr(v *WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs) WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrInput {
+	return (*webApplicationMonitoringSettingsJavascriptInjectionRulesPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsJavascriptInjectionRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsJavascriptInjectionRules)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsJavascriptInjectionRulesPtrType) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsJavascriptInjectionRulesPtrType) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsJavascriptInjectionRules)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsJavascriptInjectionRules) *WebApplicationMonitoringSettingsJavascriptInjectionRules {
+		return &v
+	}).(WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput)
+}
+
+// Java script injection rule
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput) Rules() WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptInjectionRules) []WebApplicationMonitoringSettingsJavascriptInjectionRulesRule {
+		return v.Rules
+	}).(WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput)
+}
+
+type WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsJavascriptInjectionRules)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput) Elem() WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsJavascriptInjectionRules) WebApplicationMonitoringSettingsJavascriptInjectionRules {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsJavascriptInjectionRules
+		return ret
+	}).(WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput)
+}
+
+// Java script injection rule
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput) Rules() WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsJavascriptInjectionRules) []WebApplicationMonitoringSettingsJavascriptInjectionRulesRule {
+		if v == nil {
+			return nil
+		}
+		return v.Rules
+	}).(WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput)
+}
+
+type WebApplicationMonitoringSettingsJavascriptInjectionRulesRule struct {
+	// `fetch()` request capture enabled/disabled
+	Enabled *bool `pulumi:"enabled"`
+	// The HTML pattern of the java script injection
+	HtmlPattern *string `pulumi:"htmlPattern"`
+	// The url rule of the java script injection. Possible values are `AFTER_SPECIFIC_HTML`, `AUTOMATIC_INJECTION`, `BEFORE_SPECIFIC_HTML` and `DO_NOT_INJECT`.
+	Rule string `pulumi:"rule"`
+	// The target against which the rule of the java script injection should be matched. Possible values are `PAGE_QUERY` and `URL`.
+	Target *string `pulumi:"target"`
+	// The url operator of the java script injection. Possible values are `ALL_PAGES`, `CONTAINS`, `ENDS_WITH`, `EQUALS` and `STARTS_WITH`.
+	UrlOperator string `pulumi:"urlOperator"`
+	// The url pattern of the java script injection
+	UrlPattern *string `pulumi:"urlPattern"`
+}
+
+// WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleInput is an input type that accepts WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArgs and WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleInput` via:
+//
+//	WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArgs{...}
+type WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput
+	ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutputWithContext(context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput
+}
+
+type WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArgs struct {
+	// `fetch()` request capture enabled/disabled
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The HTML pattern of the java script injection
+	HtmlPattern pulumi.StringPtrInput `pulumi:"htmlPattern"`
+	// The url rule of the java script injection. Possible values are `AFTER_SPECIFIC_HTML`, `AUTOMATIC_INJECTION`, `BEFORE_SPECIFIC_HTML` and `DO_NOT_INJECT`.
+	Rule pulumi.StringInput `pulumi:"rule"`
+	// The target against which the rule of the java script injection should be matched. Possible values are `PAGE_QUERY` and `URL`.
+	Target pulumi.StringPtrInput `pulumi:"target"`
+	// The url operator of the java script injection. Possible values are `ALL_PAGES`, `CONTAINS`, `ENDS_WITH`, `EQUALS` and `STARTS_WITH`.
+	UrlOperator pulumi.StringInput `pulumi:"urlOperator"`
+	// The url pattern of the java script injection
+	UrlPattern pulumi.StringPtrInput `pulumi:"urlPattern"`
+}
+
+func (WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsJavascriptInjectionRulesRule)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArgs) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput {
+	return i.ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArgs) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput)
+}
+
+// WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayInput is an input type that accepts WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArray and WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayInput` via:
+//
+//	WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArray{ WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArgs{...} }
+type WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput
+	ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutputWithContext(context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput
+}
+
+type WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArray []WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleInput
+
+func (WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationMonitoringSettingsJavascriptInjectionRulesRule)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArray) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput {
+	return i.ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArray) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput)
+}
+
+type WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsJavascriptInjectionRulesRule)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput {
+	return o
+}
+
+// `fetch()` request capture enabled/disabled
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptInjectionRulesRule) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The HTML pattern of the java script injection
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput) HtmlPattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptInjectionRulesRule) *string { return v.HtmlPattern }).(pulumi.StringPtrOutput)
+}
+
+// The url rule of the java script injection. Possible values are `AFTER_SPECIFIC_HTML`, `AUTOMATIC_INJECTION`, `BEFORE_SPECIFIC_HTML` and `DO_NOT_INJECT`.
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput) Rule() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptInjectionRulesRule) string { return v.Rule }).(pulumi.StringOutput)
+}
+
+// The target against which the rule of the java script injection should be matched. Possible values are `PAGE_QUERY` and `URL`.
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptInjectionRulesRule) *string { return v.Target }).(pulumi.StringPtrOutput)
+}
+
+// The url operator of the java script injection. Possible values are `ALL_PAGES`, `CONTAINS`, `ENDS_WITH`, `EQUALS` and `STARTS_WITH`.
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput) UrlOperator() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptInjectionRulesRule) string { return v.UrlOperator }).(pulumi.StringOutput)
+}
+
+// The url pattern of the java script injection
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput) UrlPattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsJavascriptInjectionRulesRule) *string { return v.UrlPattern }).(pulumi.StringPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationMonitoringSettingsJavascriptInjectionRulesRule)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput() WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput) ToWebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput) Index(i pulumi.IntInput) WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationMonitoringSettingsJavascriptInjectionRulesRule {
+		return vs[0].([]WebApplicationMonitoringSettingsJavascriptInjectionRulesRule)[vs[1].(int)]
+	}).(WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput)
+}
+
+type WebApplicationSessionReplayConfig struct {
+	// (Field has overlap with `WebAppEnablement`) Session replay sampling rating in percent
+	CostControlPercentage int `pulumi:"costControlPercentage"`
+	// (Field has overlap with `SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
+	CssResourceCapturingExclusionRules []string `pulumi:"cssResourceCapturingExclusionRules"`
+	// (Field has overlap with `SessionReplayResourceCapture`) Capture (`true`) or don't capture (`false`) CSS resources from the session
+	EnableCssResourceCapturing *bool `pulumi:"enableCssResourceCapturing"`
+	// (Field has overlap with `WebAppEnablement`) SessionReplay Enabled/Disabled
+	Enabled *bool `pulumi:"enabled"`
+}
+
+// WebApplicationSessionReplayConfigInput is an input type that accepts WebApplicationSessionReplayConfigArgs and WebApplicationSessionReplayConfigOutput values.
+// You can construct a concrete instance of `WebApplicationSessionReplayConfigInput` via:
+//
+//	WebApplicationSessionReplayConfigArgs{...}
+type WebApplicationSessionReplayConfigInput interface {
+	pulumi.Input
+
+	ToWebApplicationSessionReplayConfigOutput() WebApplicationSessionReplayConfigOutput
+	ToWebApplicationSessionReplayConfigOutputWithContext(context.Context) WebApplicationSessionReplayConfigOutput
+}
+
+type WebApplicationSessionReplayConfigArgs struct {
+	// (Field has overlap with `WebAppEnablement`) Session replay sampling rating in percent
+	CostControlPercentage pulumi.IntInput `pulumi:"costControlPercentage"`
+	// (Field has overlap with `SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
+	CssResourceCapturingExclusionRules pulumi.StringArrayInput `pulumi:"cssResourceCapturingExclusionRules"`
+	// (Field has overlap with `SessionReplayResourceCapture`) Capture (`true`) or don't capture (`false`) CSS resources from the session
+	EnableCssResourceCapturing pulumi.BoolPtrInput `pulumi:"enableCssResourceCapturing"`
+	// (Field has overlap with `WebAppEnablement`) SessionReplay Enabled/Disabled
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+}
+
+func (WebApplicationSessionReplayConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationSessionReplayConfig)(nil)).Elem()
+}
+
+func (i WebApplicationSessionReplayConfigArgs) ToWebApplicationSessionReplayConfigOutput() WebApplicationSessionReplayConfigOutput {
+	return i.ToWebApplicationSessionReplayConfigOutputWithContext(context.Background())
+}
+
+func (i WebApplicationSessionReplayConfigArgs) ToWebApplicationSessionReplayConfigOutputWithContext(ctx context.Context) WebApplicationSessionReplayConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationSessionReplayConfigOutput)
+}
+
+func (i WebApplicationSessionReplayConfigArgs) ToWebApplicationSessionReplayConfigPtrOutput() WebApplicationSessionReplayConfigPtrOutput {
+	return i.ToWebApplicationSessionReplayConfigPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationSessionReplayConfigArgs) ToWebApplicationSessionReplayConfigPtrOutputWithContext(ctx context.Context) WebApplicationSessionReplayConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationSessionReplayConfigOutput).ToWebApplicationSessionReplayConfigPtrOutputWithContext(ctx)
+}
+
+// WebApplicationSessionReplayConfigPtrInput is an input type that accepts WebApplicationSessionReplayConfigArgs, WebApplicationSessionReplayConfigPtr and WebApplicationSessionReplayConfigPtrOutput values.
+// You can construct a concrete instance of `WebApplicationSessionReplayConfigPtrInput` via:
+//
+//	        WebApplicationSessionReplayConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationSessionReplayConfigPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationSessionReplayConfigPtrOutput() WebApplicationSessionReplayConfigPtrOutput
+	ToWebApplicationSessionReplayConfigPtrOutputWithContext(context.Context) WebApplicationSessionReplayConfigPtrOutput
+}
+
+type webApplicationSessionReplayConfigPtrType WebApplicationSessionReplayConfigArgs
+
+func WebApplicationSessionReplayConfigPtr(v *WebApplicationSessionReplayConfigArgs) WebApplicationSessionReplayConfigPtrInput {
+	return (*webApplicationSessionReplayConfigPtrType)(v)
+}
+
+func (*webApplicationSessionReplayConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationSessionReplayConfig)(nil)).Elem()
+}
+
+func (i *webApplicationSessionReplayConfigPtrType) ToWebApplicationSessionReplayConfigPtrOutput() WebApplicationSessionReplayConfigPtrOutput {
+	return i.ToWebApplicationSessionReplayConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationSessionReplayConfigPtrType) ToWebApplicationSessionReplayConfigPtrOutputWithContext(ctx context.Context) WebApplicationSessionReplayConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationSessionReplayConfigPtrOutput)
+}
+
+type WebApplicationSessionReplayConfigOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationSessionReplayConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationSessionReplayConfig)(nil)).Elem()
+}
+
+func (o WebApplicationSessionReplayConfigOutput) ToWebApplicationSessionReplayConfigOutput() WebApplicationSessionReplayConfigOutput {
+	return o
+}
+
+func (o WebApplicationSessionReplayConfigOutput) ToWebApplicationSessionReplayConfigOutputWithContext(ctx context.Context) WebApplicationSessionReplayConfigOutput {
+	return o
+}
+
+func (o WebApplicationSessionReplayConfigOutput) ToWebApplicationSessionReplayConfigPtrOutput() WebApplicationSessionReplayConfigPtrOutput {
+	return o.ToWebApplicationSessionReplayConfigPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationSessionReplayConfigOutput) ToWebApplicationSessionReplayConfigPtrOutputWithContext(ctx context.Context) WebApplicationSessionReplayConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationSessionReplayConfig) *WebApplicationSessionReplayConfig {
+		return &v
+	}).(WebApplicationSessionReplayConfigPtrOutput)
+}
+
+// (Field has overlap with `WebAppEnablement`) Session replay sampling rating in percent
+func (o WebApplicationSessionReplayConfigOutput) CostControlPercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v WebApplicationSessionReplayConfig) int { return v.CostControlPercentage }).(pulumi.IntOutput)
+}
+
+// (Field has overlap with `SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
+func (o WebApplicationSessionReplayConfigOutput) CssResourceCapturingExclusionRules() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v WebApplicationSessionReplayConfig) []string { return v.CssResourceCapturingExclusionRules }).(pulumi.StringArrayOutput)
+}
+
+// (Field has overlap with `SessionReplayResourceCapture`) Capture (`true`) or don't capture (`false`) CSS resources from the session
+func (o WebApplicationSessionReplayConfigOutput) EnableCssResourceCapturing() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationSessionReplayConfig) *bool { return v.EnableCssResourceCapturing }).(pulumi.BoolPtrOutput)
+}
+
+// (Field has overlap with `WebAppEnablement`) SessionReplay Enabled/Disabled
+func (o WebApplicationSessionReplayConfigOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationSessionReplayConfig) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationSessionReplayConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationSessionReplayConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationSessionReplayConfig)(nil)).Elem()
+}
+
+func (o WebApplicationSessionReplayConfigPtrOutput) ToWebApplicationSessionReplayConfigPtrOutput() WebApplicationSessionReplayConfigPtrOutput {
+	return o
+}
+
+func (o WebApplicationSessionReplayConfigPtrOutput) ToWebApplicationSessionReplayConfigPtrOutputWithContext(ctx context.Context) WebApplicationSessionReplayConfigPtrOutput {
+	return o
+}
+
+func (o WebApplicationSessionReplayConfigPtrOutput) Elem() WebApplicationSessionReplayConfigOutput {
+	return o.ApplyT(func(v *WebApplicationSessionReplayConfig) WebApplicationSessionReplayConfig {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationSessionReplayConfig
+		return ret
+	}).(WebApplicationSessionReplayConfigOutput)
+}
+
+// (Field has overlap with `WebAppEnablement`) Session replay sampling rating in percent
+func (o WebApplicationSessionReplayConfigPtrOutput) CostControlPercentage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WebApplicationSessionReplayConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.CostControlPercentage
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Field has overlap with `SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
+func (o WebApplicationSessionReplayConfigPtrOutput) CssResourceCapturingExclusionRules() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *WebApplicationSessionReplayConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.CssResourceCapturingExclusionRules
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Field has overlap with `SessionReplayResourceCapture`) Capture (`true`) or don't capture (`false`) CSS resources from the session
+func (o WebApplicationSessionReplayConfigPtrOutput) EnableCssResourceCapturing() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationSessionReplayConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableCssResourceCapturing
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Field has overlap with `WebAppEnablement`) SessionReplay Enabled/Disabled
+func (o WebApplicationSessionReplayConfigPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationSessionReplayConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationUserActionAndSessionProperties struct {
+	// User action and session properties settings
+	Properties []WebApplicationUserActionAndSessionPropertiesProperty `pulumi:"properties"`
+}
+
+// WebApplicationUserActionAndSessionPropertiesInput is an input type that accepts WebApplicationUserActionAndSessionPropertiesArgs and WebApplicationUserActionAndSessionPropertiesOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionAndSessionPropertiesInput` via:
+//
+//	WebApplicationUserActionAndSessionPropertiesArgs{...}
+type WebApplicationUserActionAndSessionPropertiesInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionAndSessionPropertiesOutput() WebApplicationUserActionAndSessionPropertiesOutput
+	ToWebApplicationUserActionAndSessionPropertiesOutputWithContext(context.Context) WebApplicationUserActionAndSessionPropertiesOutput
+}
+
+type WebApplicationUserActionAndSessionPropertiesArgs struct {
+	// User action and session properties settings
+	Properties WebApplicationUserActionAndSessionPropertiesPropertyArrayInput `pulumi:"properties"`
+}
+
+func (WebApplicationUserActionAndSessionPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionAndSessionProperties)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionAndSessionPropertiesArgs) ToWebApplicationUserActionAndSessionPropertiesOutput() WebApplicationUserActionAndSessionPropertiesOutput {
+	return i.ToWebApplicationUserActionAndSessionPropertiesOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionAndSessionPropertiesArgs) ToWebApplicationUserActionAndSessionPropertiesOutputWithContext(ctx context.Context) WebApplicationUserActionAndSessionPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionAndSessionPropertiesOutput)
+}
+
+func (i WebApplicationUserActionAndSessionPropertiesArgs) ToWebApplicationUserActionAndSessionPropertiesPtrOutput() WebApplicationUserActionAndSessionPropertiesPtrOutput {
+	return i.ToWebApplicationUserActionAndSessionPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionAndSessionPropertiesArgs) ToWebApplicationUserActionAndSessionPropertiesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionAndSessionPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionAndSessionPropertiesOutput).ToWebApplicationUserActionAndSessionPropertiesPtrOutputWithContext(ctx)
+}
+
+// WebApplicationUserActionAndSessionPropertiesPtrInput is an input type that accepts WebApplicationUserActionAndSessionPropertiesArgs, WebApplicationUserActionAndSessionPropertiesPtr and WebApplicationUserActionAndSessionPropertiesPtrOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionAndSessionPropertiesPtrInput` via:
+//
+//	        WebApplicationUserActionAndSessionPropertiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationUserActionAndSessionPropertiesPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionAndSessionPropertiesPtrOutput() WebApplicationUserActionAndSessionPropertiesPtrOutput
+	ToWebApplicationUserActionAndSessionPropertiesPtrOutputWithContext(context.Context) WebApplicationUserActionAndSessionPropertiesPtrOutput
+}
+
+type webApplicationUserActionAndSessionPropertiesPtrType WebApplicationUserActionAndSessionPropertiesArgs
+
+func WebApplicationUserActionAndSessionPropertiesPtr(v *WebApplicationUserActionAndSessionPropertiesArgs) WebApplicationUserActionAndSessionPropertiesPtrInput {
+	return (*webApplicationUserActionAndSessionPropertiesPtrType)(v)
+}
+
+func (*webApplicationUserActionAndSessionPropertiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionAndSessionProperties)(nil)).Elem()
+}
+
+func (i *webApplicationUserActionAndSessionPropertiesPtrType) ToWebApplicationUserActionAndSessionPropertiesPtrOutput() WebApplicationUserActionAndSessionPropertiesPtrOutput {
+	return i.ToWebApplicationUserActionAndSessionPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationUserActionAndSessionPropertiesPtrType) ToWebApplicationUserActionAndSessionPropertiesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionAndSessionPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionAndSessionPropertiesPtrOutput)
+}
+
+type WebApplicationUserActionAndSessionPropertiesOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionAndSessionPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionAndSessionProperties)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionAndSessionPropertiesOutput) ToWebApplicationUserActionAndSessionPropertiesOutput() WebApplicationUserActionAndSessionPropertiesOutput {
+	return o
+}
+
+func (o WebApplicationUserActionAndSessionPropertiesOutput) ToWebApplicationUserActionAndSessionPropertiesOutputWithContext(ctx context.Context) WebApplicationUserActionAndSessionPropertiesOutput {
+	return o
+}
+
+func (o WebApplicationUserActionAndSessionPropertiesOutput) ToWebApplicationUserActionAndSessionPropertiesPtrOutput() WebApplicationUserActionAndSessionPropertiesPtrOutput {
+	return o.ToWebApplicationUserActionAndSessionPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationUserActionAndSessionPropertiesOutput) ToWebApplicationUserActionAndSessionPropertiesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionAndSessionPropertiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationUserActionAndSessionProperties) *WebApplicationUserActionAndSessionProperties {
+		return &v
+	}).(WebApplicationUserActionAndSessionPropertiesPtrOutput)
+}
+
+// User action and session properties settings
+func (o WebApplicationUserActionAndSessionPropertiesOutput) Properties() WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionProperties) []WebApplicationUserActionAndSessionPropertiesProperty {
+		return v.Properties
+	}).(WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput)
+}
+
+type WebApplicationUserActionAndSessionPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionAndSessionPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionAndSessionProperties)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionAndSessionPropertiesPtrOutput) ToWebApplicationUserActionAndSessionPropertiesPtrOutput() WebApplicationUserActionAndSessionPropertiesPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionAndSessionPropertiesPtrOutput) ToWebApplicationUserActionAndSessionPropertiesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionAndSessionPropertiesPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionAndSessionPropertiesPtrOutput) Elem() WebApplicationUserActionAndSessionPropertiesOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionAndSessionProperties) WebApplicationUserActionAndSessionProperties {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationUserActionAndSessionProperties
+		return ret
+	}).(WebApplicationUserActionAndSessionPropertiesOutput)
+}
+
+// User action and session properties settings
+func (o WebApplicationUserActionAndSessionPropertiesPtrOutput) Properties() WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionAndSessionProperties) []WebApplicationUserActionAndSessionPropertiesProperty {
+		if v == nil {
+			return nil
+		}
+		return v.Properties
+	}).(WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput)
+}
+
+type WebApplicationUserActionAndSessionPropertiesProperty struct {
+	// The aggregation type of the property.
+	Aggregation *string `pulumi:"aggregation"`
+	// The cleanup rule of the property.
+	//
+	// Defines how to extract the data you need from a string value. Specify the [regular expression](https://dt-url.net/k9e0iaq) for the data you need there
+	CleanupRule *string `pulumi:"cleanupRule"`
+	// The display name of the property
+	DisplayName *string `pulumi:"displayName"`
+	// Unique id among all userTags and properties of this application
+	Id int `pulumi:"id"`
+	// If `true`, the value of this property will always be stored in lower case. Defaults to `false`.
+	IgnoreCase *bool `pulumi:"ignoreCase"`
+	// Key of the property
+	Key string `pulumi:"key"`
+	// If the `type` is `LONG_STRING`, the max length for this property. Must be a multiple of `100`. Defaults to `200`. Maximum is `1000`.
+	LongStringLength *int `pulumi:"longStringLength"`
+	// If the origin is `META_DATA`, metaData id of the property
+	MetadataId *int `pulumi:"metadataId"`
+	// The origin of the property. Possible values are `JAVASCRIPT_API`, `META_DATA` and `SERVER_SIDE_REQUEST_ATTRIBUTE`.
+	Origin string `pulumi:"origin"`
+	// The ID of the request attribute.
+	//
+	// Only applicable when the **origin** is set to `SERVER_SIDE_REQUEST_ATTRIBUTE`
+	ServerSideRequestAttribute *string `pulumi:"serverSideRequestAttribute"`
+	// If `true`, the property is stored as a session property
+	StoreAsSessionProperty *bool `pulumi:"storeAsSessionProperty"`
+	// If `true`, the property is stored as a user action property
+	StoreAsUserActionProperty *bool `pulumi:"storeAsUserActionProperty"`
+	// The data type of the property. Possible values are `DATE`, `DOUBLE`, `LONG`, `LONG_STRING` and `STRING`.
+	Type string `pulumi:"type"`
+}
+
+// WebApplicationUserActionAndSessionPropertiesPropertyInput is an input type that accepts WebApplicationUserActionAndSessionPropertiesPropertyArgs and WebApplicationUserActionAndSessionPropertiesPropertyOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionAndSessionPropertiesPropertyInput` via:
+//
+//	WebApplicationUserActionAndSessionPropertiesPropertyArgs{...}
+type WebApplicationUserActionAndSessionPropertiesPropertyInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionAndSessionPropertiesPropertyOutput() WebApplicationUserActionAndSessionPropertiesPropertyOutput
+	ToWebApplicationUserActionAndSessionPropertiesPropertyOutputWithContext(context.Context) WebApplicationUserActionAndSessionPropertiesPropertyOutput
+}
+
+type WebApplicationUserActionAndSessionPropertiesPropertyArgs struct {
+	// The aggregation type of the property.
+	Aggregation pulumi.StringPtrInput `pulumi:"aggregation"`
+	// The cleanup rule of the property.
+	//
+	// Defines how to extract the data you need from a string value. Specify the [regular expression](https://dt-url.net/k9e0iaq) for the data you need there
+	CleanupRule pulumi.StringPtrInput `pulumi:"cleanupRule"`
+	// The display name of the property
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Unique id among all userTags and properties of this application
+	Id pulumi.IntInput `pulumi:"id"`
+	// If `true`, the value of this property will always be stored in lower case. Defaults to `false`.
+	IgnoreCase pulumi.BoolPtrInput `pulumi:"ignoreCase"`
+	// Key of the property
+	Key pulumi.StringInput `pulumi:"key"`
+	// If the `type` is `LONG_STRING`, the max length for this property. Must be a multiple of `100`. Defaults to `200`. Maximum is `1000`.
+	LongStringLength pulumi.IntPtrInput `pulumi:"longStringLength"`
+	// If the origin is `META_DATA`, metaData id of the property
+	MetadataId pulumi.IntPtrInput `pulumi:"metadataId"`
+	// The origin of the property. Possible values are `JAVASCRIPT_API`, `META_DATA` and `SERVER_SIDE_REQUEST_ATTRIBUTE`.
+	Origin pulumi.StringInput `pulumi:"origin"`
+	// The ID of the request attribute.
+	//
+	// Only applicable when the **origin** is set to `SERVER_SIDE_REQUEST_ATTRIBUTE`
+	ServerSideRequestAttribute pulumi.StringPtrInput `pulumi:"serverSideRequestAttribute"`
+	// If `true`, the property is stored as a session property
+	StoreAsSessionProperty pulumi.BoolPtrInput `pulumi:"storeAsSessionProperty"`
+	// If `true`, the property is stored as a user action property
+	StoreAsUserActionProperty pulumi.BoolPtrInput `pulumi:"storeAsUserActionProperty"`
+	// The data type of the property. Possible values are `DATE`, `DOUBLE`, `LONG`, `LONG_STRING` and `STRING`.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (WebApplicationUserActionAndSessionPropertiesPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionAndSessionPropertiesProperty)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionAndSessionPropertiesPropertyArgs) ToWebApplicationUserActionAndSessionPropertiesPropertyOutput() WebApplicationUserActionAndSessionPropertiesPropertyOutput {
+	return i.ToWebApplicationUserActionAndSessionPropertiesPropertyOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionAndSessionPropertiesPropertyArgs) ToWebApplicationUserActionAndSessionPropertiesPropertyOutputWithContext(ctx context.Context) WebApplicationUserActionAndSessionPropertiesPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionAndSessionPropertiesPropertyOutput)
+}
+
+// WebApplicationUserActionAndSessionPropertiesPropertyArrayInput is an input type that accepts WebApplicationUserActionAndSessionPropertiesPropertyArray and WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionAndSessionPropertiesPropertyArrayInput` via:
+//
+//	WebApplicationUserActionAndSessionPropertiesPropertyArray{ WebApplicationUserActionAndSessionPropertiesPropertyArgs{...} }
+type WebApplicationUserActionAndSessionPropertiesPropertyArrayInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionAndSessionPropertiesPropertyArrayOutput() WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput
+	ToWebApplicationUserActionAndSessionPropertiesPropertyArrayOutputWithContext(context.Context) WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput
+}
+
+type WebApplicationUserActionAndSessionPropertiesPropertyArray []WebApplicationUserActionAndSessionPropertiesPropertyInput
+
+func (WebApplicationUserActionAndSessionPropertiesPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionAndSessionPropertiesProperty)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionAndSessionPropertiesPropertyArray) ToWebApplicationUserActionAndSessionPropertiesPropertyArrayOutput() WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput {
+	return i.ToWebApplicationUserActionAndSessionPropertiesPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionAndSessionPropertiesPropertyArray) ToWebApplicationUserActionAndSessionPropertiesPropertyArrayOutputWithContext(ctx context.Context) WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput)
+}
+
+type WebApplicationUserActionAndSessionPropertiesPropertyOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionAndSessionPropertiesPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionAndSessionPropertiesProperty)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) ToWebApplicationUserActionAndSessionPropertiesPropertyOutput() WebApplicationUserActionAndSessionPropertiesPropertyOutput {
+	return o
+}
+
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) ToWebApplicationUserActionAndSessionPropertiesPropertyOutputWithContext(ctx context.Context) WebApplicationUserActionAndSessionPropertiesPropertyOutput {
+	return o
+}
+
+// The aggregation type of the property.
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) Aggregation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionPropertiesProperty) *string { return v.Aggregation }).(pulumi.StringPtrOutput)
+}
+
+// The cleanup rule of the property.
+//
+// Defines how to extract the data you need from a string value. Specify the [regular expression](https://dt-url.net/k9e0iaq) for the data you need there
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) CleanupRule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionPropertiesProperty) *string { return v.CleanupRule }).(pulumi.StringPtrOutput)
+}
+
+// The display name of the property
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionPropertiesProperty) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// Unique id among all userTags and properties of this application
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) Id() pulumi.IntOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionPropertiesProperty) int { return v.Id }).(pulumi.IntOutput)
+}
+
+// If `true`, the value of this property will always be stored in lower case. Defaults to `false`.
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) IgnoreCase() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionPropertiesProperty) *bool { return v.IgnoreCase }).(pulumi.BoolPtrOutput)
+}
+
+// Key of the property
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionPropertiesProperty) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// If the `type` is `LONG_STRING`, the max length for this property. Must be a multiple of `100`. Defaults to `200`. Maximum is `1000`.
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) LongStringLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionPropertiesProperty) *int { return v.LongStringLength }).(pulumi.IntPtrOutput)
+}
+
+// If the origin is `META_DATA`, metaData id of the property
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) MetadataId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionPropertiesProperty) *int { return v.MetadataId }).(pulumi.IntPtrOutput)
+}
+
+// The origin of the property. Possible values are `JAVASCRIPT_API`, `META_DATA` and `SERVER_SIDE_REQUEST_ATTRIBUTE`.
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) Origin() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionPropertiesProperty) string { return v.Origin }).(pulumi.StringOutput)
+}
+
+// The ID of the request attribute.
+//
+// Only applicable when the **origin** is set to `SERVER_SIDE_REQUEST_ATTRIBUTE`
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) ServerSideRequestAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionPropertiesProperty) *string {
+		return v.ServerSideRequestAttribute
+	}).(pulumi.StringPtrOutput)
+}
+
+// If `true`, the property is stored as a session property
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) StoreAsSessionProperty() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionPropertiesProperty) *bool { return v.StoreAsSessionProperty }).(pulumi.BoolPtrOutput)
+}
+
+// If `true`, the property is stored as a user action property
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) StoreAsUserActionProperty() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionPropertiesProperty) *bool { return v.StoreAsUserActionProperty }).(pulumi.BoolPtrOutput)
+}
+
+// The data type of the property. Possible values are `DATE`, `DOUBLE`, `LONG`, `LONG_STRING` and `STRING`.
+func (o WebApplicationUserActionAndSessionPropertiesPropertyOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionAndSessionPropertiesProperty) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionAndSessionPropertiesProperty)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput) ToWebApplicationUserActionAndSessionPropertiesPropertyArrayOutput() WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput) ToWebApplicationUserActionAndSessionPropertiesPropertyArrayOutputWithContext(ctx context.Context) WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput) Index(i pulumi.IntInput) WebApplicationUserActionAndSessionPropertiesPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationUserActionAndSessionPropertiesProperty {
+		return vs[0].([]WebApplicationUserActionAndSessionPropertiesProperty)[vs[1].(int)]
+	}).(WebApplicationUserActionAndSessionPropertiesPropertyOutput)
+}
+
+type WebApplicationUserActionNamingSettings struct {
+	// User action naming rules for custom actions
+	CustomActionNamingRules *WebApplicationUserActionNamingSettingsCustomActionNamingRules `pulumi:"customActionNamingRules"`
+	// Case insensitive naming
+	IgnoreCase *bool `pulumi:"ignoreCase"`
+	// User action naming rules for loading actions
+	LoadActionNamingRules *WebApplicationUserActionNamingSettingsLoadActionNamingRules `pulumi:"loadActionNamingRules"`
+	// User action placeholders
+	Placeholders *WebApplicationUserActionNamingSettingsPlaceholders `pulumi:"placeholders"`
+	// User action naming rules for custom actions. If not specified Dynatrace assumes `__sid`, `cfid`, `cftoken`, `phpsessid` and `sid`.
+	QueryParameterCleanups []string `pulumi:"queryParameterCleanups"`
+	// Deactivate this setting if different domains should not result in separate user actions
+	SplitUserActionsByDomain *bool `pulumi:"splitUserActionsByDomain"`
+	// First load action found under an XHR action should be used when true. Else the deepest one under the xhr action is used
+	UseFirstDetectedLoadAction *bool `pulumi:"useFirstDetectedLoadAction"`
+	// User action naming rules for XHR actions
+	XhrActionNamingRules *WebApplicationUserActionNamingSettingsXhrActionNamingRules `pulumi:"xhrActionNamingRules"`
+}
+
+// WebApplicationUserActionNamingSettingsInput is an input type that accepts WebApplicationUserActionNamingSettingsArgs and WebApplicationUserActionNamingSettingsOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsInput` via:
+//
+//	WebApplicationUserActionNamingSettingsArgs{...}
+type WebApplicationUserActionNamingSettingsInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsOutput() WebApplicationUserActionNamingSettingsOutput
+	ToWebApplicationUserActionNamingSettingsOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsOutput
+}
+
+type WebApplicationUserActionNamingSettingsArgs struct {
+	// User action naming rules for custom actions
+	CustomActionNamingRules WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrInput `pulumi:"customActionNamingRules"`
+	// Case insensitive naming
+	IgnoreCase pulumi.BoolPtrInput `pulumi:"ignoreCase"`
+	// User action naming rules for loading actions
+	LoadActionNamingRules WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrInput `pulumi:"loadActionNamingRules"`
+	// User action placeholders
+	Placeholders WebApplicationUserActionNamingSettingsPlaceholdersPtrInput `pulumi:"placeholders"`
+	// User action naming rules for custom actions. If not specified Dynatrace assumes `__sid`, `cfid`, `cftoken`, `phpsessid` and `sid`.
+	QueryParameterCleanups pulumi.StringArrayInput `pulumi:"queryParameterCleanups"`
+	// Deactivate this setting if different domains should not result in separate user actions
+	SplitUserActionsByDomain pulumi.BoolPtrInput `pulumi:"splitUserActionsByDomain"`
+	// First load action found under an XHR action should be used when true. Else the deepest one under the xhr action is used
+	UseFirstDetectedLoadAction pulumi.BoolPtrInput `pulumi:"useFirstDetectedLoadAction"`
+	// User action naming rules for XHR actions
+	XhrActionNamingRules WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrInput `pulumi:"xhrActionNamingRules"`
+}
+
+func (WebApplicationUserActionNamingSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettings)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsArgs) ToWebApplicationUserActionNamingSettingsOutput() WebApplicationUserActionNamingSettingsOutput {
+	return i.ToWebApplicationUserActionNamingSettingsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsArgs) ToWebApplicationUserActionNamingSettingsOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsOutput)
+}
+
+func (i WebApplicationUserActionNamingSettingsArgs) ToWebApplicationUserActionNamingSettingsPtrOutput() WebApplicationUserActionNamingSettingsPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsArgs) ToWebApplicationUserActionNamingSettingsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsOutput).ToWebApplicationUserActionNamingSettingsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationUserActionNamingSettingsPtrInput is an input type that accepts WebApplicationUserActionNamingSettingsArgs, WebApplicationUserActionNamingSettingsPtr and WebApplicationUserActionNamingSettingsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsPtrInput` via:
+//
+//	        WebApplicationUserActionNamingSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationUserActionNamingSettingsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsPtrOutput() WebApplicationUserActionNamingSettingsPtrOutput
+	ToWebApplicationUserActionNamingSettingsPtrOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsPtrOutput
+}
+
+type webApplicationUserActionNamingSettingsPtrType WebApplicationUserActionNamingSettingsArgs
+
+func WebApplicationUserActionNamingSettingsPtr(v *WebApplicationUserActionNamingSettingsArgs) WebApplicationUserActionNamingSettingsPtrInput {
+	return (*webApplicationUserActionNamingSettingsPtrType)(v)
+}
+
+func (*webApplicationUserActionNamingSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettings)(nil)).Elem()
+}
+
+func (i *webApplicationUserActionNamingSettingsPtrType) ToWebApplicationUserActionNamingSettingsPtrOutput() WebApplicationUserActionNamingSettingsPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationUserActionNamingSettingsPtrType) ToWebApplicationUserActionNamingSettingsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettings)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsOutput) ToWebApplicationUserActionNamingSettingsOutput() WebApplicationUserActionNamingSettingsOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsOutput) ToWebApplicationUserActionNamingSettingsOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsOutput) ToWebApplicationUserActionNamingSettingsPtrOutput() WebApplicationUserActionNamingSettingsPtrOutput {
+	return o.ToWebApplicationUserActionNamingSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationUserActionNamingSettingsOutput) ToWebApplicationUserActionNamingSettingsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationUserActionNamingSettings) *WebApplicationUserActionNamingSettings {
+		return &v
+	}).(WebApplicationUserActionNamingSettingsPtrOutput)
+}
+
+// User action naming rules for custom actions
+func (o WebApplicationUserActionNamingSettingsOutput) CustomActionNamingRules() WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettings) *WebApplicationUserActionNamingSettingsCustomActionNamingRules {
+		return v.CustomActionNamingRules
+	}).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput)
+}
+
+// Case insensitive naming
+func (o WebApplicationUserActionNamingSettingsOutput) IgnoreCase() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettings) *bool { return v.IgnoreCase }).(pulumi.BoolPtrOutput)
+}
+
+// User action naming rules for loading actions
+func (o WebApplicationUserActionNamingSettingsOutput) LoadActionNamingRules() WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettings) *WebApplicationUserActionNamingSettingsLoadActionNamingRules {
+		return v.LoadActionNamingRules
+	}).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput)
+}
+
+// User action placeholders
+func (o WebApplicationUserActionNamingSettingsOutput) Placeholders() WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettings) *WebApplicationUserActionNamingSettingsPlaceholders {
+		return v.Placeholders
+	}).(WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput)
+}
+
+// User action naming rules for custom actions. If not specified Dynatrace assumes `__sid`, `cfid`, `cftoken`, `phpsessid` and `sid`.
+func (o WebApplicationUserActionNamingSettingsOutput) QueryParameterCleanups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettings) []string { return v.QueryParameterCleanups }).(pulumi.StringArrayOutput)
+}
+
+// Deactivate this setting if different domains should not result in separate user actions
+func (o WebApplicationUserActionNamingSettingsOutput) SplitUserActionsByDomain() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettings) *bool { return v.SplitUserActionsByDomain }).(pulumi.BoolPtrOutput)
+}
+
+// First load action found under an XHR action should be used when true. Else the deepest one under the xhr action is used
+func (o WebApplicationUserActionNamingSettingsOutput) UseFirstDetectedLoadAction() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettings) *bool { return v.UseFirstDetectedLoadAction }).(pulumi.BoolPtrOutput)
+}
+
+// User action naming rules for XHR actions
+func (o WebApplicationUserActionNamingSettingsOutput) XhrActionNamingRules() WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettings) *WebApplicationUserActionNamingSettingsXhrActionNamingRules {
+		return v.XhrActionNamingRules
+	}).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettings)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsPtrOutput) ToWebApplicationUserActionNamingSettingsPtrOutput() WebApplicationUserActionNamingSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPtrOutput) ToWebApplicationUserActionNamingSettingsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPtrOutput) Elem() WebApplicationUserActionNamingSettingsOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettings) WebApplicationUserActionNamingSettings {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationUserActionNamingSettings
+		return ret
+	}).(WebApplicationUserActionNamingSettingsOutput)
+}
+
+// User action naming rules for custom actions
+func (o WebApplicationUserActionNamingSettingsPtrOutput) CustomActionNamingRules() WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettings) *WebApplicationUserActionNamingSettingsCustomActionNamingRules {
+		if v == nil {
+			return nil
+		}
+		return v.CustomActionNamingRules
+	}).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput)
+}
+
+// Case insensitive naming
+func (o WebApplicationUserActionNamingSettingsPtrOutput) IgnoreCase() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IgnoreCase
+	}).(pulumi.BoolPtrOutput)
+}
+
+// User action naming rules for loading actions
+func (o WebApplicationUserActionNamingSettingsPtrOutput) LoadActionNamingRules() WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettings) *WebApplicationUserActionNamingSettingsLoadActionNamingRules {
+		if v == nil {
+			return nil
+		}
+		return v.LoadActionNamingRules
+	}).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput)
+}
+
+// User action placeholders
+func (o WebApplicationUserActionNamingSettingsPtrOutput) Placeholders() WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettings) *WebApplicationUserActionNamingSettingsPlaceholders {
+		if v == nil {
+			return nil
+		}
+		return v.Placeholders
+	}).(WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput)
+}
+
+// User action naming rules for custom actions. If not specified Dynatrace assumes `__sid`, `cfid`, `cftoken`, `phpsessid` and `sid`.
+func (o WebApplicationUserActionNamingSettingsPtrOutput) QueryParameterCleanups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettings) []string {
+		if v == nil {
+			return nil
+		}
+		return v.QueryParameterCleanups
+	}).(pulumi.StringArrayOutput)
+}
+
+// Deactivate this setting if different domains should not result in separate user actions
+func (o WebApplicationUserActionNamingSettingsPtrOutput) SplitUserActionsByDomain() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SplitUserActionsByDomain
+	}).(pulumi.BoolPtrOutput)
+}
+
+// First load action found under an XHR action should be used when true. Else the deepest one under the xhr action is used
+func (o WebApplicationUserActionNamingSettingsPtrOutput) UseFirstDetectedLoadAction() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.UseFirstDetectedLoadAction
+	}).(pulumi.BoolPtrOutput)
+}
+
+// User action naming rules for XHR actions
+func (o WebApplicationUserActionNamingSettingsPtrOutput) XhrActionNamingRules() WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettings) *WebApplicationUserActionNamingSettingsXhrActionNamingRules {
+		if v == nil {
+			return nil
+		}
+		return v.XhrActionNamingRules
+	}).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRules struct {
+	// The settings of naming rule
+	Rules []WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule `pulumi:"rules"`
+}
+
+// WebApplicationUserActionNamingSettingsCustomActionNamingRulesInput is an input type that accepts WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs and WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsCustomActionNamingRulesInput` via:
+//
+//	WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs{...}
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs struct {
+	// The settings of naming rule
+	Rules WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayInput `pulumi:"rules"`
+}
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRules)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput {
+	return i.ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput)
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput).ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutputWithContext(ctx)
+}
+
+// WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrInput is an input type that accepts WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs, WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtr and WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrInput` via:
+//
+//	        WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput
+}
+
+type webApplicationUserActionNamingSettingsCustomActionNamingRulesPtrType WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs
+
+func WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtr(v *WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs) WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrInput {
+	return (*webApplicationUserActionNamingSettingsCustomActionNamingRulesPtrType)(v)
+}
+
+func (*webApplicationUserActionNamingSettingsCustomActionNamingRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsCustomActionNamingRules)(nil)).Elem()
+}
+
+func (i *webApplicationUserActionNamingSettingsCustomActionNamingRulesPtrType) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationUserActionNamingSettingsCustomActionNamingRulesPtrType) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRules)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput {
+	return o.ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationUserActionNamingSettingsCustomActionNamingRules) *WebApplicationUserActionNamingSettingsCustomActionNamingRules {
+		return &v
+	}).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput)
+}
+
+// The settings of naming rule
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput) Rules() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsCustomActionNamingRules) []WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule {
+		return v.Rules
+	}).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsCustomActionNamingRules)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput) Elem() WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsCustomActionNamingRules) WebApplicationUserActionNamingSettingsCustomActionNamingRules {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationUserActionNamingSettingsCustomActionNamingRules
+		return ret
+	}).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput)
+}
+
+// The settings of naming rule
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput) Rules() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsCustomActionNamingRules) []WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule {
+		if v == nil {
+			return nil
+		}
+		return v.Rules
+	}).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule struct {
+	// Defines the conditions when the naming rule should apply
+	Conditions *WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions `pulumi:"conditions"`
+	// Naming pattern. Use Curly brackets `{}` to select placeholders
+	Template string `pulumi:"template"`
+	// If set to `true` the conditions will be connected by logical OR instead of logical AND
+	UseOrConditions *bool `pulumi:"useOrConditions"`
+}
+
+// WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleInput is an input type that accepts WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArgs and WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleInput` via:
+//
+//	WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArgs{...}
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArgs struct {
+	// Defines the conditions when the naming rule should apply
+	Conditions WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrInput `pulumi:"conditions"`
+	// Naming pattern. Use Curly brackets `{}` to select placeholders
+	Template pulumi.StringInput `pulumi:"template"`
+	// If set to `true` the conditions will be connected by logical OR instead of logical AND
+	UseOrConditions pulumi.BoolPtrInput `pulumi:"useOrConditions"`
+}
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArgs) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput {
+	return i.ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArgs) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput)
+}
+
+// WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayInput is an input type that accepts WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArray and WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayInput` via:
+//
+//	WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArray{ WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArgs{...} }
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArray []WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleInput
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArray) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput {
+	return i.ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArray) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput {
+	return o
+}
+
+// Defines the conditions when the naming rule should apply
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput) Conditions() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule) *WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions {
+		return v.Conditions
+	}).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput)
+}
+
+// Naming pattern. Use Curly brackets `{}` to select placeholders
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput) Template() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule) string { return v.Template }).(pulumi.StringOutput)
+}
+
+// If set to `true` the conditions will be connected by logical OR instead of logical AND
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput) UseOrConditions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule) *bool {
+		return v.UseOrConditions
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput) Index(i pulumi.IntInput) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule {
+		return vs[0].([]WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule)[vs[1].(int)]
+	}).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput)
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions struct {
+	// Defines the conditions when the naming rule should apply
+	Conditions []WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition `pulumi:"conditions"`
+}
+
+// WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsInput is an input type that accepts WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs and WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsInput` via:
+//
+//	WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs{...}
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs struct {
+	// Defines the conditions when the naming rule should apply
+	Conditions WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayInput `pulumi:"conditions"`
+}
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput {
+	return i.ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput)
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput).ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrInput is an input type that accepts WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs, WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtr and WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrInput` via:
+//
+//	        WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput
+}
+
+type webApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrType WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs
+
+func WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtr(v *WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrInput {
+	return (*webApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrType)(v)
+}
+
+func (*webApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions)(nil)).Elem()
+}
+
+func (i *webApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrType) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrType) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput {
+	return o.ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions) *WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions {
+		return &v
+	}).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput)
+}
+
+// Defines the conditions when the naming rule should apply
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput) Conditions() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions) []WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition {
+		return v.Conditions
+	}).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput) Elem() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions
+		return ret
+	}).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput)
+}
+
+// Defines the conditions when the naming rule should apply
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput) Conditions() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions) []WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition {
+		if v == nil {
+			return nil
+		}
+		return v.Conditions
+	}).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition struct {
+	// Must be a defined placeholder wrapped in curly braces
+	Operand1 string `pulumi:"operand1"`
+	// Must be null if operator is `IS_EMPTY`, a regex if operator is `MATCHES_REGULAR_ERPRESSION`. In all other cases the value can be a freetext or a placeholder wrapped in curly braces
+	Operand2 *string `pulumi:"operand2"`
+	// The operator of the condition. Possible values are `CONTAINS`, `ENDS_WITH`, `EQUALS`, `IS_EMPTY`, `IS_NOT_EMPTY`, `MATCHES_REGULAR_EXPRESSION`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_MATCHES_REGULAR_EXPRESSION`, `NOT_STARTS_WITH` and `STARTS_WITH`.
+	Operator string `pulumi:"operator"`
+}
+
+// WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionInput is an input type that accepts WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArgs and WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionInput` via:
+//
+//	WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArgs{...}
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArgs struct {
+	// Must be a defined placeholder wrapped in curly braces
+	Operand1 pulumi.StringInput `pulumi:"operand1"`
+	// Must be null if operator is `IS_EMPTY`, a regex if operator is `MATCHES_REGULAR_ERPRESSION`. In all other cases the value can be a freetext or a placeholder wrapped in curly braces
+	Operand2 pulumi.StringPtrInput `pulumi:"operand2"`
+	// The operator of the condition. Possible values are `CONTAINS`, `ENDS_WITH`, `EQUALS`, `IS_EMPTY`, `IS_NOT_EMPTY`, `MATCHES_REGULAR_EXPRESSION`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_MATCHES_REGULAR_EXPRESSION`, `NOT_STARTS_WITH` and `STARTS_WITH`.
+	Operator pulumi.StringInput `pulumi:"operator"`
+}
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArgs) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput {
+	return i.ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArgs) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput)
+}
+
+// WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayInput is an input type that accepts WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArray and WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayInput` via:
+//
+//	WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArray{ WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArgs{...} }
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput
+	ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArray []WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionInput
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArray) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput {
+	return i.ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArray) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput {
+	return o
+}
+
+// Must be a defined placeholder wrapped in curly braces
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput) Operand1() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition) string {
+		return v.Operand1
+	}).(pulumi.StringOutput)
+}
+
+// Must be null if operator is `IS_EMPTY`, a regex if operator is `MATCHES_REGULAR_ERPRESSION`. In all other cases the value can be a freetext or a placeholder wrapped in curly braces
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput) Operand2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition) *string {
+		return v.Operand2
+	}).(pulumi.StringPtrOutput)
+}
+
+// The operator of the condition. Possible values are `CONTAINS`, `ENDS_WITH`, `EQUALS`, `IS_EMPTY`, `IS_NOT_EMPTY`, `MATCHES_REGULAR_EXPRESSION`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_MATCHES_REGULAR_EXPRESSION`, `NOT_STARTS_WITH` and `STARTS_WITH`.
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition) string {
+		return v.Operator
+	}).(pulumi.StringOutput)
+}
+
+type WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput() WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput) ToWebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput) Index(i pulumi.IntInput) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition {
+		return vs[0].([]WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition)[vs[1].(int)]
+	}).(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput)
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRules struct {
+	// The settings of naming rule
+	Rules []WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule `pulumi:"rules"`
+}
+
+// WebApplicationUserActionNamingSettingsLoadActionNamingRulesInput is an input type that accepts WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs and WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsLoadActionNamingRulesInput` via:
+//
+//	WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs{...}
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs struct {
+	// The settings of naming rule
+	Rules WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayInput `pulumi:"rules"`
+}
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRules)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput {
+	return i.ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput)
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput).ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutputWithContext(ctx)
+}
+
+// WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrInput is an input type that accepts WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs, WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtr and WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrInput` via:
+//
+//	        WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput
+}
+
+type webApplicationUserActionNamingSettingsLoadActionNamingRulesPtrType WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs
+
+func WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtr(v *WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs) WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrInput {
+	return (*webApplicationUserActionNamingSettingsLoadActionNamingRulesPtrType)(v)
+}
+
+func (*webApplicationUserActionNamingSettingsLoadActionNamingRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsLoadActionNamingRules)(nil)).Elem()
+}
+
+func (i *webApplicationUserActionNamingSettingsLoadActionNamingRulesPtrType) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationUserActionNamingSettingsLoadActionNamingRulesPtrType) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRules)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput {
+	return o.ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationUserActionNamingSettingsLoadActionNamingRules) *WebApplicationUserActionNamingSettingsLoadActionNamingRules {
+		return &v
+	}).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput)
+}
+
+// The settings of naming rule
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput) Rules() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsLoadActionNamingRules) []WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule {
+		return v.Rules
+	}).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsLoadActionNamingRules)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput) Elem() WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsLoadActionNamingRules) WebApplicationUserActionNamingSettingsLoadActionNamingRules {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationUserActionNamingSettingsLoadActionNamingRules
+		return ret
+	}).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput)
+}
+
+// The settings of naming rule
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput) Rules() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsLoadActionNamingRules) []WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule {
+		if v == nil {
+			return nil
+		}
+		return v.Rules
+	}).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput)
+}
+
 type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule struct {
 	// Defines the conditions when the naming rule should apply
 	Conditions *WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions `pulumi:"conditions"`
@@ -2054,15 +6964,17 @@ func (o WebApplicationWaterfallSettingsPtrOutput) UncompressedResourcesThreshold
 
 type WebApplicationXhrActionApdexSettings struct {
 	// Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
-	FrustratingFallbackThreshold *int `pulumi:"frustratingFallbackThreshold"`
+	FrustratingFallbackThreshold int `pulumi:"frustratingFallbackThreshold"`
 	// Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-	FrustratingThreshold *int `pulumi:"frustratingThreshold"`
+	FrustratingThreshold int `pulumi:"frustratingThreshold"`
 	// no documentation available
+	//
+	// Deprecated: The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
 	Threshold *int `pulumi:"threshold"`
 	// Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
-	ToleratedFallbackThreshold *int `pulumi:"toleratedFallbackThreshold"`
+	ToleratedFallbackThreshold int `pulumi:"toleratedFallbackThreshold"`
 	// Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
-	ToleratedThreshold *int `pulumi:"toleratedThreshold"`
+	ToleratedThreshold int `pulumi:"toleratedThreshold"`
 }
 
 // WebApplicationXhrActionApdexSettingsInput is an input type that accepts WebApplicationXhrActionApdexSettingsArgs and WebApplicationXhrActionApdexSettingsOutput values.
@@ -2078,15 +6990,17 @@ type WebApplicationXhrActionApdexSettingsInput interface {
 
 type WebApplicationXhrActionApdexSettingsArgs struct {
 	// Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
-	FrustratingFallbackThreshold pulumi.IntPtrInput `pulumi:"frustratingFallbackThreshold"`
+	FrustratingFallbackThreshold pulumi.IntInput `pulumi:"frustratingFallbackThreshold"`
 	// Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-	FrustratingThreshold pulumi.IntPtrInput `pulumi:"frustratingThreshold"`
+	FrustratingThreshold pulumi.IntInput `pulumi:"frustratingThreshold"`
 	// no documentation available
+	//
+	// Deprecated: The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
 	Threshold pulumi.IntPtrInput `pulumi:"threshold"`
 	// Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
-	ToleratedFallbackThreshold pulumi.IntPtrInput `pulumi:"toleratedFallbackThreshold"`
+	ToleratedFallbackThreshold pulumi.IntInput `pulumi:"toleratedFallbackThreshold"`
 	// Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
-	ToleratedThreshold pulumi.IntPtrInput `pulumi:"toleratedThreshold"`
+	ToleratedThreshold pulumi.IntInput `pulumi:"toleratedThreshold"`
 }
 
 func (WebApplicationXhrActionApdexSettingsArgs) ElementType() reflect.Type {
@@ -2167,28 +7081,30 @@ func (o WebApplicationXhrActionApdexSettingsOutput) ToWebApplicationXhrActionApd
 }
 
 // Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
-func (o WebApplicationXhrActionApdexSettingsOutput) FrustratingFallbackThreshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v WebApplicationXhrActionApdexSettings) *int { return v.FrustratingFallbackThreshold }).(pulumi.IntPtrOutput)
+func (o WebApplicationXhrActionApdexSettingsOutput) FrustratingFallbackThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v WebApplicationXhrActionApdexSettings) int { return v.FrustratingFallbackThreshold }).(pulumi.IntOutput)
 }
 
 // Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-func (o WebApplicationXhrActionApdexSettingsOutput) FrustratingThreshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v WebApplicationXhrActionApdexSettings) *int { return v.FrustratingThreshold }).(pulumi.IntPtrOutput)
+func (o WebApplicationXhrActionApdexSettingsOutput) FrustratingThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v WebApplicationXhrActionApdexSettings) int { return v.FrustratingThreshold }).(pulumi.IntOutput)
 }
 
 // no documentation available
+//
+// Deprecated: The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
 func (o WebApplicationXhrActionApdexSettingsOutput) Threshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WebApplicationXhrActionApdexSettings) *int { return v.Threshold }).(pulumi.IntPtrOutput)
 }
 
 // Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
-func (o WebApplicationXhrActionApdexSettingsOutput) ToleratedFallbackThreshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v WebApplicationXhrActionApdexSettings) *int { return v.ToleratedFallbackThreshold }).(pulumi.IntPtrOutput)
+func (o WebApplicationXhrActionApdexSettingsOutput) ToleratedFallbackThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v WebApplicationXhrActionApdexSettings) int { return v.ToleratedFallbackThreshold }).(pulumi.IntOutput)
 }
 
 // Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
-func (o WebApplicationXhrActionApdexSettingsOutput) ToleratedThreshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v WebApplicationXhrActionApdexSettings) *int { return v.ToleratedThreshold }).(pulumi.IntPtrOutput)
+func (o WebApplicationXhrActionApdexSettingsOutput) ToleratedThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v WebApplicationXhrActionApdexSettings) int { return v.ToleratedThreshold }).(pulumi.IntOutput)
 }
 
 type WebApplicationXhrActionApdexSettingsPtrOutput struct{ *pulumi.OutputState }
@@ -2221,7 +7137,7 @@ func (o WebApplicationXhrActionApdexSettingsPtrOutput) FrustratingFallbackThresh
 		if v == nil {
 			return nil
 		}
-		return v.FrustratingFallbackThreshold
+		return &v.FrustratingFallbackThreshold
 	}).(pulumi.IntPtrOutput)
 }
 
@@ -2231,11 +7147,13 @@ func (o WebApplicationXhrActionApdexSettingsPtrOutput) FrustratingThreshold() pu
 		if v == nil {
 			return nil
 		}
-		return v.FrustratingThreshold
+		return &v.FrustratingThreshold
 	}).(pulumi.IntPtrOutput)
 }
 
 // no documentation available
+//
+// Deprecated: The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
 func (o WebApplicationXhrActionApdexSettingsPtrOutput) Threshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WebApplicationXhrActionApdexSettings) *int {
 		if v == nil {
@@ -2251,7 +7169,7 @@ func (o WebApplicationXhrActionApdexSettingsPtrOutput) ToleratedFallbackThreshol
 		if v == nil {
 			return nil
 		}
-		return v.ToleratedFallbackThreshold
+		return &v.ToleratedFallbackThreshold
 	}).(pulumi.IntPtrOutput)
 }
 
@@ -2261,7 +7179,7 @@ func (o WebApplicationXhrActionApdexSettingsPtrOutput) ToleratedThreshold() pulu
 		if v == nil {
 			return nil
 		}
-		return v.ToleratedThreshold
+		return &v.ToleratedThreshold
 	}).(pulumi.IntPtrOutput)
 }
 
@@ -4674,6 +9592,58 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureInput)(nil)).Elem(), WebApplicationMonitoringSettingsContentCaptureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsContentCapturePtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsContentCaptureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsIpAddressRestrictionSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsInput)(nil)).Elem(), WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeInput)(nil)).Elem(), WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayInput)(nil)).Elem(), WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsJavascriptFrameworkSupportInput)(nil)).Elem(), WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsJavascriptInjectionRulesInput)(nil)).Elem(), WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleInput)(nil)).Elem(), WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayInput)(nil)).Elem(), WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationSessionReplayConfigInput)(nil)).Elem(), WebApplicationSessionReplayConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationSessionReplayConfigPtrInput)(nil)).Elem(), WebApplicationSessionReplayConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionAndSessionPropertiesInput)(nil)).Elem(), WebApplicationUserActionAndSessionPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionAndSessionPropertiesPtrInput)(nil)).Elem(), WebApplicationUserActionAndSessionPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionAndSessionPropertiesPropertyInput)(nil)).Elem(), WebApplicationUserActionAndSessionPropertiesPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionAndSessionPropertiesPropertyArrayInput)(nil)).Elem(), WebApplicationUserActionAndSessionPropertiesPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsPtrInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsCustomActionNamingRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs{})
@@ -4736,6 +9706,58 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsContentCaptureOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsContentCapturePtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArrayOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsJavascriptFrameworkSupportOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsJavascriptInjectionRulesOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArrayOutput{})
+	pulumi.RegisterOutputType(WebApplicationSessionReplayConfigOutput{})
+	pulumi.RegisterOutputType(WebApplicationSessionReplayConfigPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionAndSessionPropertiesOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionAndSessionPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionAndSessionPropertiesPropertyOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionAndSessionPropertiesPropertyArrayOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsCustomActionNamingRulesOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsCustomActionNamingRulesPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArrayOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsConditionArrayOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsLoadActionNamingRulesOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsLoadActionNamingRulesPtrOutput{})
 	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput{})
 	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput{})
 	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput{})

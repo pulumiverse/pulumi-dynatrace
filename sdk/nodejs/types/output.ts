@@ -5673,6 +5673,134 @@ export interface BusinessEventsOneagentEventType {
     sourceType: string;
 }
 
+export interface BusinessEventsOneagentOutgoingEvent {
+    /**
+     * Event category
+     */
+    category: outputs.BusinessEventsOneagentOutgoingEventCategory;
+    /**
+     * Additional attributes for the business event.
+     */
+    data?: outputs.BusinessEventsOneagentOutgoingEventData;
+    /**
+     * Event provider
+     */
+    provider: outputs.BusinessEventsOneagentOutgoingEventProvider;
+    /**
+     * Event type
+     */
+    type: outputs.BusinessEventsOneagentOutgoingEventType;
+}
+
+export interface BusinessEventsOneagentOutgoingEventCategory {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
+    path?: string;
+    /**
+     * Fixed value
+     */
+    source?: string;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
+    sourceType: string;
+}
+
+export interface BusinessEventsOneagentOutgoingEventData {
+    eventDataFieldComplexes: outputs.BusinessEventsOneagentOutgoingEventDataEventDataFieldComplex[];
+}
+
+export interface BusinessEventsOneagentOutgoingEventDataEventDataFieldComplex {
+    /**
+     * Field name to be added to data.
+     */
+    name: string;
+    /**
+     * no documentation available
+     */
+    source: outputs.BusinessEventsOneagentOutgoingEventDataEventDataFieldComplexSource;
+}
+
+export interface BusinessEventsOneagentOutgoingEventDataEventDataFieldComplexSource {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
+    path?: string;
+    /**
+     * Fixed value
+     */
+    source?: string;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
+    sourceType: string;
+}
+
+export interface BusinessEventsOneagentOutgoingEventProvider {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
+    path?: string;
+    /**
+     * Fixed value
+     */
+    source?: string;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
+    sourceType: string;
+}
+
+export interface BusinessEventsOneagentOutgoingEventType {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
+    path?: string;
+    /**
+     * Fixed value
+     */
+    source?: string;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
+    sourceType: string;
+}
+
+export interface BusinessEventsOneagentOutgoingTriggers {
+    triggers: outputs.BusinessEventsOneagentOutgoingTriggersTrigger[];
+}
+
+export interface BusinessEventsOneagentOutgoingTriggersTrigger {
+    /**
+     * Case sensitive
+     */
+    caseSensitive?: boolean;
+    /**
+     * no documentation available
+     */
+    source: outputs.BusinessEventsOneagentOutgoingTriggersTriggerSource;
+    /**
+     * Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `N_CONTAINS`, `N_ENDS_WITH`, `N_EQUALS`, `N_EXISTS`, `N_STARTS_WITH`, `STARTS_WITH`
+     */
+    type: string;
+    /**
+     * no documentation available
+     */
+    value?: string;
+}
+
+export interface BusinessEventsOneagentOutgoingTriggersTriggerSource {
+    /**
+     * Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
+    dataSource: string;
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
+    path?: string;
+}
+
 export interface BusinessEventsOneagentTriggers {
     triggers: outputs.BusinessEventsOneagentTriggersTrigger[];
 }
@@ -6935,6 +7063,24 @@ export interface CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter {
      * Namespace name
      */
     namespace?: string;
+}
+
+export interface CredentialsAllowedEntities {
+    /**
+     * The set of entities allowed to use the credential.
+     */
+    entities: outputs.CredentialsAllowedEntitiesEntity[];
+}
+
+export interface CredentialsAllowedEntitiesEntity {
+    /**
+     * ID of the entity
+     */
+    id?: string;
+    /**
+     * Type of entity. Possible values: `USER`, `APPLICATION`, `UNKNOWN`
+     */
+    type?: string;
 }
 
 export interface CredentialsCredentialUsageSummary {
@@ -9166,6 +9312,10 @@ export interface DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataCondi
 }
 
 export interface DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMetadataCondition {
+    /**
+     * When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+     */
+    keyMustExist?: boolean;
     /**
      * This string has to match a required format.
      */
@@ -17735,6 +17885,188 @@ export interface MobileApplicationPropertiesRequestAttribute {
     type: string;
 }
 
+export interface NetworkMonitorOutageHandling {
+    /**
+     * Number of consecutive failures for all locations
+     */
+    globalConsecutiveOutageCountThreshold?: number;
+    /**
+     * Generate a problem and send an alert when the monitor is unavailable at all configured locations
+     */
+    globalOutages?: boolean;
+    /**
+     * Number of consecutive failures
+     */
+    localConsecutiveOutageCountThreshold?: number;
+    /**
+     * Number of failing locations
+     */
+    localLocationOutageCountThreshold?: number;
+    /**
+     * Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
+     */
+    localOutages?: boolean;
+}
+
+export interface NetworkMonitorPerformanceThresholds {
+    /**
+     * Performance threshold is enabled (true) or disabled (false)
+     */
+    enabled?: boolean;
+    /**
+     * The list of performance threshold rules
+     */
+    thresholds?: outputs.NetworkMonitorPerformanceThresholdsThresholds;
+}
+
+export interface NetworkMonitorPerformanceThresholdsThresholds {
+    /**
+     * The list of performance threshold rules
+     */
+    thresholds?: outputs.NetworkMonitorPerformanceThresholdsThresholdsThreshold[];
+}
+
+export interface NetworkMonitorPerformanceThresholdsThresholdsThreshold {
+    /**
+     * Aggregation type, possible values: `AVG`, `MAX`, `MIN`
+     */
+    aggregation?: string;
+    /**
+     * Number of most recent non-violating request executions that closes the problem
+     */
+    dealertingSamples?: number;
+    /**
+     * Number of request executions in analyzed sliding window (sliding window size)
+     */
+    samples?: number;
+    /**
+     * Specify the step's index to which a threshold applies
+     */
+    stepIndex?: number;
+    /**
+     * Notify if monitor request takes longer than X milliseconds to execute
+     */
+    threshold?: number;
+    /**
+     * Number of violating request executions in analyzed sliding window
+     */
+    violatingSamples?: number;
+}
+
+export interface NetworkMonitorStep {
+    /**
+     * The step of a network availability monitor
+     */
+    steps: outputs.NetworkMonitorStepStep[];
+}
+
+export interface NetworkMonitorStepStep {
+    /**
+     * The list of constraints which apply to all requests in the step
+     */
+    constraints: outputs.NetworkMonitorStepStepConstraint[];
+    /**
+     * Step name
+     */
+    name: string;
+    /**
+     * Key/value pairs of properties which apply to all requests in the step
+     */
+    properties: {[key: string]: string};
+    /**
+     * Request configurations
+     */
+    requestConfigurations?: outputs.NetworkMonitorStepStepRequestConfiguration[];
+    /**
+     * Request type, possible values `ICMP`, `TCP`, `DNS`
+     */
+    requestType: string;
+    /**
+     * Target filter
+     */
+    targetFilter?: string;
+    /**
+     * Target list
+     */
+    targetLists: string[];
+}
+
+export interface NetworkMonitorStepStepConstraint {
+    /**
+     * The network availability monitor constraint
+     */
+    constraints: outputs.NetworkMonitorStepStepConstraintConstraint[];
+}
+
+export interface NetworkMonitorStepStepConstraintConstraint {
+    /**
+     * Key/value pairs of constraint properties
+     */
+    properties: {[key: string]: string};
+    /**
+     * Constraint type
+     */
+    type: string;
+}
+
+export interface NetworkMonitorStepStepRequestConfiguration {
+    /**
+     * The configuration of a network availability monitor request
+     */
+    requestConfigurations: outputs.NetworkMonitorStepStepRequestConfigurationRequestConfiguration[];
+}
+
+export interface NetworkMonitorStepStepRequestConfigurationRequestConfiguration {
+    /**
+     * Request constraints
+     */
+    constraints?: outputs.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraint[];
+}
+
+export interface NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraint {
+    /**
+     * The network availability monitor constraint
+     */
+    constraints: outputs.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintConstraint[];
+}
+
+export interface NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintConstraint {
+    /**
+     * Key/value pairs of constraint properties
+     */
+    properties: {[key: string]: string};
+    /**
+     * Constraint type
+     */
+    type: string;
+}
+
+export interface NetworkMonitorTag {
+    /**
+     * Tag with source of a Dynatrace entity.
+     */
+    tags?: outputs.NetworkMonitorTagTag[];
+}
+
+export interface NetworkMonitorTagTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry.
+     */
+    context?: string;
+    /**
+     * The key of the tag
+     */
+    key: string;
+    /**
+     * The source of the tag, possible values: `AUTO`, `RULE_BASED` or `USER`
+     */
+    source?: string;
+    /**
+     * The value of the tag
+     */
+    value?: string;
+}
+
 export interface NetworkTrafficExcludeIp {
     ipAddressForms: outputs.NetworkTrafficExcludeIpIpAddressForm[];
 }
@@ -18310,7 +18642,11 @@ export interface OsServicesDetectionConditionsLinuxLinuxDetectionCondition {
 
 export interface OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition {
     /**
-     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     * When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+     */
+    keyMustExist?: boolean;
+    /**
+     * This string has to match a required format.
      */
     metadataCondition: string;
     /**
@@ -18364,7 +18700,11 @@ export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindow {
 
 export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition {
     /**
-     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     * When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+     */
+    keyMustExist?: boolean;
+    /**
+     * This string has to match a required format.
      */
     metadataCondition: string;
     /**
@@ -18574,6 +18914,10 @@ export interface ProcessAvailabilityRulesRule {
 }
 
 export interface ProcessAvailabilityRulesRuleHostMetadataCondition {
+    /**
+     * When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+     */
+    keyMustExist?: boolean;
     /**
      * This string has to match a required format.
      *
@@ -26910,23 +27254,25 @@ export interface WebApplicationCustomActionApdexSettings {
     /**
      * Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
      */
-    frustratingFallbackThreshold?: number;
+    frustratingFallbackThreshold: number;
     /**
      * Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
      */
-    frustratingThreshold?: number;
+    frustratingThreshold: number;
     /**
      * no documentation available
+     *
+     * @deprecated The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
      */
     threshold?: number;
     /**
      * Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
      */
-    toleratedFallbackThreshold?: number;
+    toleratedFallbackThreshold: number;
     /**
      * Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
      */
-    toleratedThreshold?: number;
+    toleratedThreshold: number;
 }
 
 export interface WebApplicationKeyUserAction {
@@ -26955,23 +27301,25 @@ export interface WebApplicationLoadActionApdexSettings {
     /**
      * Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
      */
-    frustratingFallbackThreshold?: number;
+    frustratingFallbackThreshold: number;
     /**
      * Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
      */
-    frustratingThreshold?: number;
+    frustratingThreshold: number;
     /**
      * no documentation available
+     *
+     * @deprecated The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
      */
     threshold?: number;
     /**
      * Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
      */
-    toleratedFallbackThreshold?: number;
+    toleratedFallbackThreshold: number;
     /**
      * Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
      */
-    toleratedThreshold?: number;
+    toleratedThreshold: number;
 }
 
 export interface WebApplicationMetaDataCaptureSettings {
@@ -27016,7 +27364,7 @@ export interface WebApplicationMonitoringSettings {
     /**
      * Advanced JavaScript tag settings
      */
-    advancedJavascriptTagSettings?: outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings;
+    advancedJavascriptTagSettings: outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings;
     /**
      * The name of the angular package
      */
@@ -27127,7 +27475,7 @@ export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings {
     /**
      * Additional event handlers and wrappers
      */
-    additionalEventHandlers?: outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers;
+    additionalEventHandlers: outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers;
     /**
      * In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
      */
@@ -27312,11 +27660,11 @@ export interface WebApplicationMonitoringSettingsContentCapture {
     /**
      * Settings for resource timings capture
      */
-    resourceTimingSettings?: outputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings;
+    resourceTimingSettings: outputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings;
     /**
      * Settings for timed action capture
      */
-    timeoutSettings?: outputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings;
+    timeoutSettings: outputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings;
     /**
      * Visually complete and Speed index support enabled/disabled
      */
@@ -27894,23 +28242,25 @@ export interface WebApplicationXhrActionApdexSettings {
     /**
      * Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
      */
-    frustratingFallbackThreshold?: number;
+    frustratingFallbackThreshold: number;
     /**
      * Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
      */
-    frustratingThreshold?: number;
+    frustratingThreshold: number;
     /**
      * no documentation available
+     *
+     * @deprecated The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
      */
     threshold?: number;
     /**
      * Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
      */
-    toleratedFallbackThreshold?: number;
+    toleratedFallbackThreshold: number;
     /**
      * Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
      */
-    toleratedThreshold?: number;
+    toleratedThreshold: number;
 }
 
 export interface WebhookNotificationHeaders {

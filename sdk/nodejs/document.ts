@@ -70,7 +70,7 @@ export class Document extends pulumi.CustomResource {
      */
     public readonly owner!: pulumi.Output<string>;
     /**
-     * Specifies whether the document is private or readable by everybody
+     * Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
      */
     public readonly private!: pulumi.Output<boolean | undefined>;
     /**
@@ -144,7 +144,7 @@ export interface DocumentState {
      */
     owner?: pulumi.Input<string>;
     /**
-     * Specifies whether the document is private or readable by everybody
+     * Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
      */
     private?: pulumi.Input<boolean>;
     /**
@@ -178,7 +178,7 @@ export interface DocumentArgs {
      */
     owner?: pulumi.Input<string>;
     /**
-     * Specifies whether the document is private or readable by everybody
+     * Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
      */
     private?: pulumi.Input<boolean>;
     /**

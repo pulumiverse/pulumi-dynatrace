@@ -34,6 +34,7 @@ from .automation_business_calendar import *
 from .automation_scheduling_rule import *
 from .automation_workflow import *
 from .automation_workflow_jira import *
+from .automation_workflow_k8s_connections import *
 from .automation_workflow_slack import *
 from .autotag import *
 from .autotag_rules import *
@@ -50,6 +51,7 @@ from .builtin_process_monitoring import *
 from .business_events_buckets import *
 from .business_events_metrics import *
 from .business_events_oneagent import *
+from .business_events_oneagent_outgoing import *
 from .business_events_processing import *
 from .business_events_security_context import *
 from .calculated_mobile_metric import *
@@ -167,6 +169,7 @@ from .http_monitor_performance import *
 from .http_monitor_script import *
 from .hub_extension_active_version import *
 from .hub_extension_config import *
+from .hub_permissions import *
 from .hub_subscriptions import *
 from .iam_group import *
 from .iam_permission import *
@@ -244,10 +247,13 @@ from .monitored_technologies_varnish import *
 from .monitored_technologies_wsmb import *
 from .muted_requests import *
 from .nettracer import *
+from .network_monitor import *
+from .network_monitor_outage import *
 from .network_traffic import *
 from .network_zone import *
 from .network_zones import *
 from .notification import *
+from .oneagent_default_mode import *
 from .oneagent_default_version import *
 from .oneagent_features import *
 from .oneagent_side_masking import *
@@ -598,6 +604,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/automationWorkflowK8sConnections",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/automationWorkflowK8sConnections:AutomationWorkflowK8sConnections": "AutomationWorkflowK8sConnections"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/automationWorkflowSlack",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -722,6 +736,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/businessEventsOneagent:BusinessEventsOneagent": "BusinessEventsOneagent"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/businessEventsOneagentOutgoing",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/businessEventsOneagentOutgoing:BusinessEventsOneagentOutgoing": "BusinessEventsOneagentOutgoing"
   }
  },
  {
@@ -1322,6 +1344,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/hubExtensionConfig:HubExtensionConfig": "HubExtensionConfig"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/hubPermissions",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/hubPermissions:HubPermissions": "HubPermissions"
   }
  },
  {
@@ -1942,6 +1972,22 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/networkMonitor",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/networkMonitor:NetworkMonitor": "NetworkMonitor"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/networkMonitorOutage",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/networkMonitorOutage:NetworkMonitorOutage": "NetworkMonitorOutage"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/networkTraffic",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -1970,6 +2016,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/notification:Notification": "Notification"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/oneagentDefaultMode",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/oneagentDefaultMode:OneagentDefaultMode": "OneagentDefaultMode"
   }
  },
  {

@@ -16,8 +16,8 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Additional event handlers and wrappers
         /// </summary>
-        [Input("additionalEventHandlers")]
-        public Input<Inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs>? AdditionalEventHandlers { get; set; }
+        [Input("additionalEventHandlers", required: true)]
+        public Input<Inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs> AdditionalEventHandlers { get; set; } = null!;
 
         /// <summary>
         /// In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page

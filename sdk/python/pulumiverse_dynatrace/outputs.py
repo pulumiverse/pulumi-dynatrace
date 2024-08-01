@@ -328,6 +328,16 @@ __all__ = [
     'BusinessEventsOneagentEventDataEventDataFieldComplexSource',
     'BusinessEventsOneagentEventProvider',
     'BusinessEventsOneagentEventType',
+    'BusinessEventsOneagentOutgoingEvent',
+    'BusinessEventsOneagentOutgoingEventCategory',
+    'BusinessEventsOneagentOutgoingEventData',
+    'BusinessEventsOneagentOutgoingEventDataEventDataFieldComplex',
+    'BusinessEventsOneagentOutgoingEventDataEventDataFieldComplexSource',
+    'BusinessEventsOneagentOutgoingEventProvider',
+    'BusinessEventsOneagentOutgoingEventType',
+    'BusinessEventsOneagentOutgoingTriggers',
+    'BusinessEventsOneagentOutgoingTriggersTrigger',
+    'BusinessEventsOneagentOutgoingTriggersTriggerSource',
     'BusinessEventsOneagentTriggers',
     'BusinessEventsOneagentTriggersTrigger',
     'BusinessEventsOneagentTriggersTriggerSource',
@@ -390,6 +400,8 @@ __all__ = [
     'CloudappWorkloaddetectionKubernetesFiltersFilter',
     'CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles',
     'CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter',
+    'CredentialsAllowedEntities',
+    'CredentialsAllowedEntitiesEntity',
     'CredentialsCredentialUsageSummary',
     'CredentialsExternal',
     'CustomAnomaliesDimension',
@@ -1002,6 +1014,20 @@ __all__ = [
     'MobileApplicationProperties',
     'MobileApplicationPropertiesApiValue',
     'MobileApplicationPropertiesRequestAttribute',
+    'NetworkMonitorOutageHandling',
+    'NetworkMonitorPerformanceThresholds',
+    'NetworkMonitorPerformanceThresholdsThresholds',
+    'NetworkMonitorPerformanceThresholdsThresholdsThreshold',
+    'NetworkMonitorStep',
+    'NetworkMonitorStepStep',
+    'NetworkMonitorStepStepConstraint',
+    'NetworkMonitorStepStepConstraintConstraint',
+    'NetworkMonitorStepStepRequestConfiguration',
+    'NetworkMonitorStepStepRequestConfigurationRequestConfiguration',
+    'NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraint',
+    'NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintConstraint',
+    'NetworkMonitorTag',
+    'NetworkMonitorTagTag',
     'NetworkTrafficExcludeIp',
     'NetworkTrafficExcludeIpIpAddressForm',
     'NetworkTrafficExcludeNic',
@@ -19386,6 +19412,481 @@ class BusinessEventsOneagentEventType(dict):
 
 
 @pulumi.output_type
+class BusinessEventsOneagentOutgoingEvent(dict):
+    def __init__(__self__, *,
+                 category: 'outputs.BusinessEventsOneagentOutgoingEventCategory',
+                 provider: 'outputs.BusinessEventsOneagentOutgoingEventProvider',
+                 type: 'outputs.BusinessEventsOneagentOutgoingEventType',
+                 data: Optional['outputs.BusinessEventsOneagentOutgoingEventData'] = None):
+        """
+        :param 'BusinessEventsOneagentOutgoingEventCategoryArgs' category: Event category
+        :param 'BusinessEventsOneagentOutgoingEventProviderArgs' provider: Event provider
+        :param 'BusinessEventsOneagentOutgoingEventTypeArgs' type: Event type
+        :param 'BusinessEventsOneagentOutgoingEventDataArgs' data: Additional attributes for the business event.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "provider", provider)
+        pulumi.set(__self__, "type", type)
+        if data is not None:
+            pulumi.set(__self__, "data", data)
+
+    @property
+    @pulumi.getter
+    def category(self) -> 'outputs.BusinessEventsOneagentOutgoingEventCategory':
+        """
+        Event category
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter
+    def provider(self) -> 'outputs.BusinessEventsOneagentOutgoingEventProvider':
+        """
+        Event provider
+        """
+        return pulumi.get(self, "provider")
+
+    @property
+    @pulumi.getter
+    def type(self) -> 'outputs.BusinessEventsOneagentOutgoingEventType':
+        """
+        Event type
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def data(self) -> Optional['outputs.BusinessEventsOneagentOutgoingEventData']:
+        """
+        Additional attributes for the business event.
+        """
+        return pulumi.get(self, "data")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentOutgoingEventCategory(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentOutgoingEventCategory. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentOutgoingEventCategory.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentOutgoingEventCategory.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_type: str,
+                 path: Optional[str] = None,
+                 source: Optional[str] = None):
+        """
+        :param str source_type: Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+        :param str path: [See our documentation](https://dt-url.net/ei034bx)
+        :param str source: Fixed value
+        """
+        pulumi.set(__self__, "source_type", source_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+        """
+        return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[str]:
+        """
+        [See our documentation](https://dt-url.net/ei034bx)
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[str]:
+        """
+        Fixed value
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentOutgoingEventData(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventDataFieldComplexes":
+            suggest = "event_data_field_complexes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentOutgoingEventData. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentOutgoingEventData.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentOutgoingEventData.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 event_data_field_complexes: Sequence['outputs.BusinessEventsOneagentOutgoingEventDataEventDataFieldComplex']):
+        pulumi.set(__self__, "event_data_field_complexes", event_data_field_complexes)
+
+    @property
+    @pulumi.getter(name="eventDataFieldComplexes")
+    def event_data_field_complexes(self) -> Sequence['outputs.BusinessEventsOneagentOutgoingEventDataEventDataFieldComplex']:
+        return pulumi.get(self, "event_data_field_complexes")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentOutgoingEventDataEventDataFieldComplex(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 source: 'outputs.BusinessEventsOneagentOutgoingEventDataEventDataFieldComplexSource'):
+        """
+        :param str name: Field name to be added to data.
+        :param 'BusinessEventsOneagentOutgoingEventDataEventDataFieldComplexSourceArgs' source: no documentation available
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Field name to be added to data.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def source(self) -> 'outputs.BusinessEventsOneagentOutgoingEventDataEventDataFieldComplexSource':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentOutgoingEventDataEventDataFieldComplexSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentOutgoingEventDataEventDataFieldComplexSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentOutgoingEventDataEventDataFieldComplexSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentOutgoingEventDataEventDataFieldComplexSource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_type: str,
+                 path: Optional[str] = None,
+                 source: Optional[str] = None):
+        """
+        :param str source_type: Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+        :param str path: [See our documentation](https://dt-url.net/ei034bx)
+        :param str source: Fixed value
+        """
+        pulumi.set(__self__, "source_type", source_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+        """
+        return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[str]:
+        """
+        [See our documentation](https://dt-url.net/ei034bx)
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[str]:
+        """
+        Fixed value
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentOutgoingEventProvider(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentOutgoingEventProvider. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentOutgoingEventProvider.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentOutgoingEventProvider.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_type: str,
+                 path: Optional[str] = None,
+                 source: Optional[str] = None):
+        """
+        :param str source_type: Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+        :param str path: [See our documentation](https://dt-url.net/ei034bx)
+        :param str source: Fixed value
+        """
+        pulumi.set(__self__, "source_type", source_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+        """
+        return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[str]:
+        """
+        [See our documentation](https://dt-url.net/ei034bx)
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[str]:
+        """
+        Fixed value
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentOutgoingEventType(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentOutgoingEventType. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentOutgoingEventType.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentOutgoingEventType.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_type: str,
+                 path: Optional[str] = None,
+                 source: Optional[str] = None):
+        """
+        :param str source_type: Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+        :param str path: [See our documentation](https://dt-url.net/ei034bx)
+        :param str source: Fixed value
+        """
+        pulumi.set(__self__, "source_type", source_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+        """
+        return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[str]:
+        """
+        [See our documentation](https://dt-url.net/ei034bx)
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[str]:
+        """
+        Fixed value
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentOutgoingTriggers(dict):
+    def __init__(__self__, *,
+                 triggers: Sequence['outputs.BusinessEventsOneagentOutgoingTriggersTrigger']):
+        pulumi.set(__self__, "triggers", triggers)
+
+    @property
+    @pulumi.getter
+    def triggers(self) -> Sequence['outputs.BusinessEventsOneagentOutgoingTriggersTrigger']:
+        return pulumi.get(self, "triggers")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentOutgoingTriggersTrigger(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "caseSensitive":
+            suggest = "case_sensitive"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentOutgoingTriggersTrigger. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentOutgoingTriggersTrigger.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentOutgoingTriggersTrigger.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source: 'outputs.BusinessEventsOneagentOutgoingTriggersTriggerSource',
+                 type: str,
+                 case_sensitive: Optional[bool] = None,
+                 value: Optional[str] = None):
+        """
+        :param 'BusinessEventsOneagentOutgoingTriggersTriggerSourceArgs' source: no documentation available
+        :param str type: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `N_CONTAINS`, `N_ENDS_WITH`, `N_EQUALS`, `N_EXISTS`, `N_STARTS_WITH`, `STARTS_WITH`
+        :param bool case_sensitive: Case sensitive
+        :param str value: no documentation available
+        """
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "type", type)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def source(self) -> 'outputs.BusinessEventsOneagentOutgoingTriggersTriggerSource':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "source")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `N_CONTAINS`, `N_ENDS_WITH`, `N_EQUALS`, `N_EXISTS`, `N_STARTS_WITH`, `STARTS_WITH`
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        """
+        Case sensitive
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentOutgoingTriggersTriggerSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dataSource":
+            suggest = "data_source"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentOutgoingTriggersTriggerSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentOutgoingTriggersTriggerSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentOutgoingTriggersTriggerSource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 data_source: str,
+                 path: Optional[str] = None):
+        """
+        :param str data_source: Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+        :param str path: [See our documentation](https://dt-url.net/ei034bx)
+        """
+        pulumi.set(__self__, "data_source", data_source)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+
+    @property
+    @pulumi.getter(name="dataSource")
+    def data_source(self) -> str:
+        """
+        Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+        """
+        return pulumi.get(self, "data_source")
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[str]:
+        """
+        [See our documentation](https://dt-url.net/ei034bx)
+        """
+        return pulumi.get(self, "path")
+
+
+@pulumi.output_type
 class BusinessEventsOneagentTriggers(dict):
     def __init__(__self__, *,
                  triggers: Sequence['outputs.BusinessEventsOneagentTriggersTrigger']):
@@ -23642,6 +24143,55 @@ class CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter(dict):
         Namespace name
         """
         return pulumi.get(self, "namespace")
+
+
+@pulumi.output_type
+class CredentialsAllowedEntities(dict):
+    def __init__(__self__, *,
+                 entities: Sequence['outputs.CredentialsAllowedEntitiesEntity']):
+        """
+        :param Sequence['CredentialsAllowedEntitiesEntityArgs'] entities: The set of entities allowed to use the credential.
+        """
+        pulumi.set(__self__, "entities", entities)
+
+    @property
+    @pulumi.getter
+    def entities(self) -> Sequence['outputs.CredentialsAllowedEntitiesEntity']:
+        """
+        The set of entities allowed to use the credential.
+        """
+        return pulumi.get(self, "entities")
+
+
+@pulumi.output_type
+class CredentialsAllowedEntitiesEntity(dict):
+    def __init__(__self__, *,
+                 id: Optional[str] = None,
+                 type: Optional[str] = None):
+        """
+        :param str id: ID of the entity
+        :param str type: Type of entity. Possible values: `USER`, `APPLICATION`, `UNKNOWN`
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        ID of the entity
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        Type of entity. Possible values: `USER`, `APPLICATION`, `UNKNOWN`
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -31511,6 +32061,8 @@ class DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMet
             suggest = "metadata_condition"
         elif key == "metadataKey":
             suggest = "metadata_key"
+        elif key == "keyMustExist":
+            suggest = "key_must_exist"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMetadataCondition. Access the value via the '{suggest}' property getter instead.")
@@ -31525,13 +32077,17 @@ class DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMet
 
     def __init__(__self__, *,
                  metadata_condition: str,
-                 metadata_key: str):
+                 metadata_key: str,
+                 key_must_exist: Optional[bool] = None):
         """
         :param str metadata_condition: This string has to match a required format.
         :param str metadata_key: Key
+        :param bool key_must_exist: When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
         """
         pulumi.set(__self__, "metadata_condition", metadata_condition)
         pulumi.set(__self__, "metadata_key", metadata_key)
+        if key_must_exist is not None:
+            pulumi.set(__self__, "key_must_exist", key_must_exist)
 
     @property
     @pulumi.getter(name="metadataCondition")
@@ -31548,6 +32104,14 @@ class DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMet
         Key
         """
         return pulumi.get(self, "metadata_key")
+
+    @property
+    @pulumi.getter(name="keyMustExist")
+    def key_must_exist(self) -> Optional[bool]:
+        """
+        When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+        """
+        return pulumi.get(self, "key_must_exist")
 
 
 @pulumi.output_type
@@ -58328,6 +58892,596 @@ class MobileApplicationPropertiesRequestAttribute(dict):
 
 
 @pulumi.output_type
+class NetworkMonitorOutageHandling(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "globalConsecutiveOutageCountThreshold":
+            suggest = "global_consecutive_outage_count_threshold"
+        elif key == "globalOutages":
+            suggest = "global_outages"
+        elif key == "localConsecutiveOutageCountThreshold":
+            suggest = "local_consecutive_outage_count_threshold"
+        elif key == "localLocationOutageCountThreshold":
+            suggest = "local_location_outage_count_threshold"
+        elif key == "localOutages":
+            suggest = "local_outages"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkMonitorOutageHandling. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkMonitorOutageHandling.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkMonitorOutageHandling.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 global_consecutive_outage_count_threshold: Optional[int] = None,
+                 global_outages: Optional[bool] = None,
+                 local_consecutive_outage_count_threshold: Optional[int] = None,
+                 local_location_outage_count_threshold: Optional[int] = None,
+                 local_outages: Optional[bool] = None):
+        """
+        :param int global_consecutive_outage_count_threshold: Number of consecutive failures for all locations
+        :param bool global_outages: Generate a problem and send an alert when the monitor is unavailable at all configured locations
+        :param int local_consecutive_outage_count_threshold: Number of consecutive failures
+        :param int local_location_outage_count_threshold: Number of failing locations
+        :param bool local_outages: Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
+        """
+        if global_consecutive_outage_count_threshold is not None:
+            pulumi.set(__self__, "global_consecutive_outage_count_threshold", global_consecutive_outage_count_threshold)
+        if global_outages is not None:
+            pulumi.set(__self__, "global_outages", global_outages)
+        if local_consecutive_outage_count_threshold is not None:
+            pulumi.set(__self__, "local_consecutive_outage_count_threshold", local_consecutive_outage_count_threshold)
+        if local_location_outage_count_threshold is not None:
+            pulumi.set(__self__, "local_location_outage_count_threshold", local_location_outage_count_threshold)
+        if local_outages is not None:
+            pulumi.set(__self__, "local_outages", local_outages)
+
+    @property
+    @pulumi.getter(name="globalConsecutiveOutageCountThreshold")
+    def global_consecutive_outage_count_threshold(self) -> Optional[int]:
+        """
+        Number of consecutive failures for all locations
+        """
+        return pulumi.get(self, "global_consecutive_outage_count_threshold")
+
+    @property
+    @pulumi.getter(name="globalOutages")
+    def global_outages(self) -> Optional[bool]:
+        """
+        Generate a problem and send an alert when the monitor is unavailable at all configured locations
+        """
+        return pulumi.get(self, "global_outages")
+
+    @property
+    @pulumi.getter(name="localConsecutiveOutageCountThreshold")
+    def local_consecutive_outage_count_threshold(self) -> Optional[int]:
+        """
+        Number of consecutive failures
+        """
+        return pulumi.get(self, "local_consecutive_outage_count_threshold")
+
+    @property
+    @pulumi.getter(name="localLocationOutageCountThreshold")
+    def local_location_outage_count_threshold(self) -> Optional[int]:
+        """
+        Number of failing locations
+        """
+        return pulumi.get(self, "local_location_outage_count_threshold")
+
+    @property
+    @pulumi.getter(name="localOutages")
+    def local_outages(self) -> Optional[bool]:
+        """
+        Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
+        """
+        return pulumi.get(self, "local_outages")
+
+
+@pulumi.output_type
+class NetworkMonitorPerformanceThresholds(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 thresholds: Optional['outputs.NetworkMonitorPerformanceThresholdsThresholds'] = None):
+        """
+        :param bool enabled: Performance threshold is enabled (true) or disabled (false)
+        :param 'NetworkMonitorPerformanceThresholdsThresholdsArgs' thresholds: The list of performance threshold rules
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if thresholds is not None:
+            pulumi.set(__self__, "thresholds", thresholds)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Performance threshold is enabled (true) or disabled (false)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def thresholds(self) -> Optional['outputs.NetworkMonitorPerformanceThresholdsThresholds']:
+        """
+        The list of performance threshold rules
+        """
+        return pulumi.get(self, "thresholds")
+
+
+@pulumi.output_type
+class NetworkMonitorPerformanceThresholdsThresholds(dict):
+    def __init__(__self__, *,
+                 thresholds: Optional[Sequence['outputs.NetworkMonitorPerformanceThresholdsThresholdsThreshold']] = None):
+        """
+        :param Sequence['NetworkMonitorPerformanceThresholdsThresholdsThresholdArgs'] thresholds: The list of performance threshold rules
+        """
+        if thresholds is not None:
+            pulumi.set(__self__, "thresholds", thresholds)
+
+    @property
+    @pulumi.getter
+    def thresholds(self) -> Optional[Sequence['outputs.NetworkMonitorPerformanceThresholdsThresholdsThreshold']]:
+        """
+        The list of performance threshold rules
+        """
+        return pulumi.get(self, "thresholds")
+
+
+@pulumi.output_type
+class NetworkMonitorPerformanceThresholdsThresholdsThreshold(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "stepIndex":
+            suggest = "step_index"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkMonitorPerformanceThresholdsThresholdsThreshold. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkMonitorPerformanceThresholdsThresholdsThreshold.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkMonitorPerformanceThresholdsThresholdsThreshold.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 aggregation: Optional[str] = None,
+                 dealerting_samples: Optional[int] = None,
+                 samples: Optional[int] = None,
+                 step_index: Optional[int] = None,
+                 threshold: Optional[int] = None,
+                 violating_samples: Optional[int] = None):
+        """
+        :param str aggregation: Aggregation type, possible values: `AVG`, `MAX`, `MIN`
+        :param int dealerting_samples: Number of most recent non-violating request executions that closes the problem
+        :param int samples: Number of request executions in analyzed sliding window (sliding window size)
+        :param int step_index: Specify the step's index to which a threshold applies
+        :param int threshold: Notify if monitor request takes longer than X milliseconds to execute
+        :param int violating_samples: Number of violating request executions in analyzed sliding window
+        """
+        if aggregation is not None:
+            pulumi.set(__self__, "aggregation", aggregation)
+        if dealerting_samples is not None:
+            pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        if samples is not None:
+            pulumi.set(__self__, "samples", samples)
+        if step_index is not None:
+            pulumi.set(__self__, "step_index", step_index)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+        if violating_samples is not None:
+            pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter
+    def aggregation(self) -> Optional[str]:
+        """
+        Aggregation type, possible values: `AVG`, `MAX`, `MIN`
+        """
+        return pulumi.get(self, "aggregation")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> Optional[int]:
+        """
+        Number of most recent non-violating request executions that closes the problem
+        """
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter
+    def samples(self) -> Optional[int]:
+        """
+        Number of request executions in analyzed sliding window (sliding window size)
+        """
+        return pulumi.get(self, "samples")
+
+    @property
+    @pulumi.getter(name="stepIndex")
+    def step_index(self) -> Optional[int]:
+        """
+        Specify the step's index to which a threshold applies
+        """
+        return pulumi.get(self, "step_index")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> Optional[int]:
+        """
+        Notify if monitor request takes longer than X milliseconds to execute
+        """
+        return pulumi.get(self, "threshold")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> Optional[int]:
+        """
+        Number of violating request executions in analyzed sliding window
+        """
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class NetworkMonitorStep(dict):
+    def __init__(__self__, *,
+                 steps: Sequence['outputs.NetworkMonitorStepStep']):
+        """
+        :param Sequence['NetworkMonitorStepStepArgs'] steps: The step of a network availability monitor
+        """
+        pulumi.set(__self__, "steps", steps)
+
+    @property
+    @pulumi.getter
+    def steps(self) -> Sequence['outputs.NetworkMonitorStepStep']:
+        """
+        The step of a network availability monitor
+        """
+        return pulumi.get(self, "steps")
+
+
+@pulumi.output_type
+class NetworkMonitorStepStep(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "requestType":
+            suggest = "request_type"
+        elif key == "targetLists":
+            suggest = "target_lists"
+        elif key == "requestConfigurations":
+            suggest = "request_configurations"
+        elif key == "targetFilter":
+            suggest = "target_filter"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkMonitorStepStep. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkMonitorStepStep.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkMonitorStepStep.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 constraints: Sequence['outputs.NetworkMonitorStepStepConstraint'],
+                 name: str,
+                 properties: Mapping[str, str],
+                 request_type: str,
+                 target_lists: Sequence[str],
+                 request_configurations: Optional[Sequence['outputs.NetworkMonitorStepStepRequestConfiguration']] = None,
+                 target_filter: Optional[str] = None):
+        """
+        :param Sequence['NetworkMonitorStepStepConstraintArgs'] constraints: The list of constraints which apply to all requests in the step
+        :param str name: Step name
+        :param Mapping[str, str] properties: Key/value pairs of properties which apply to all requests in the step
+        :param str request_type: Request type, possible values `ICMP`, `TCP`, `DNS`
+        :param Sequence[str] target_lists: Target list
+        :param Sequence['NetworkMonitorStepStepRequestConfigurationArgs'] request_configurations: Request configurations
+        :param str target_filter: Target filter
+        """
+        pulumi.set(__self__, "constraints", constraints)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "request_type", request_type)
+        pulumi.set(__self__, "target_lists", target_lists)
+        if request_configurations is not None:
+            pulumi.set(__self__, "request_configurations", request_configurations)
+        if target_filter is not None:
+            pulumi.set(__self__, "target_filter", target_filter)
+
+    @property
+    @pulumi.getter
+    def constraints(self) -> Sequence['outputs.NetworkMonitorStepStepConstraint']:
+        """
+        The list of constraints which apply to all requests in the step
+        """
+        return pulumi.get(self, "constraints")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Step name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Mapping[str, str]:
+        """
+        Key/value pairs of properties which apply to all requests in the step
+        """
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter(name="requestType")
+    def request_type(self) -> str:
+        """
+        Request type, possible values `ICMP`, `TCP`, `DNS`
+        """
+        return pulumi.get(self, "request_type")
+
+    @property
+    @pulumi.getter(name="targetLists")
+    def target_lists(self) -> Sequence[str]:
+        """
+        Target list
+        """
+        return pulumi.get(self, "target_lists")
+
+    @property
+    @pulumi.getter(name="requestConfigurations")
+    def request_configurations(self) -> Optional[Sequence['outputs.NetworkMonitorStepStepRequestConfiguration']]:
+        """
+        Request configurations
+        """
+        return pulumi.get(self, "request_configurations")
+
+    @property
+    @pulumi.getter(name="targetFilter")
+    def target_filter(self) -> Optional[str]:
+        """
+        Target filter
+        """
+        return pulumi.get(self, "target_filter")
+
+
+@pulumi.output_type
+class NetworkMonitorStepStepConstraint(dict):
+    def __init__(__self__, *,
+                 constraints: Sequence['outputs.NetworkMonitorStepStepConstraintConstraint']):
+        """
+        :param Sequence['NetworkMonitorStepStepConstraintConstraintArgs'] constraints: The network availability monitor constraint
+        """
+        pulumi.set(__self__, "constraints", constraints)
+
+    @property
+    @pulumi.getter
+    def constraints(self) -> Sequence['outputs.NetworkMonitorStepStepConstraintConstraint']:
+        """
+        The network availability monitor constraint
+        """
+        return pulumi.get(self, "constraints")
+
+
+@pulumi.output_type
+class NetworkMonitorStepStepConstraintConstraint(dict):
+    def __init__(__self__, *,
+                 properties: Mapping[str, str],
+                 type: str):
+        """
+        :param Mapping[str, str] properties: Key/value pairs of constraint properties
+        :param str type: Constraint type
+        """
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Mapping[str, str]:
+        """
+        Key/value pairs of constraint properties
+        """
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Constraint type
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class NetworkMonitorStepStepRequestConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "requestConfigurations":
+            suggest = "request_configurations"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkMonitorStepStepRequestConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkMonitorStepStepRequestConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkMonitorStepStepRequestConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 request_configurations: Sequence['outputs.NetworkMonitorStepStepRequestConfigurationRequestConfiguration']):
+        """
+        :param Sequence['NetworkMonitorStepStepRequestConfigurationRequestConfigurationArgs'] request_configurations: The configuration of a network availability monitor request
+        """
+        pulumi.set(__self__, "request_configurations", request_configurations)
+
+    @property
+    @pulumi.getter(name="requestConfigurations")
+    def request_configurations(self) -> Sequence['outputs.NetworkMonitorStepStepRequestConfigurationRequestConfiguration']:
+        """
+        The configuration of a network availability monitor request
+        """
+        return pulumi.get(self, "request_configurations")
+
+
+@pulumi.output_type
+class NetworkMonitorStepStepRequestConfigurationRequestConfiguration(dict):
+    def __init__(__self__, *,
+                 constraints: Optional[Sequence['outputs.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraint']] = None):
+        """
+        :param Sequence['NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintArgs'] constraints: Request constraints
+        """
+        if constraints is not None:
+            pulumi.set(__self__, "constraints", constraints)
+
+    @property
+    @pulumi.getter
+    def constraints(self) -> Optional[Sequence['outputs.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraint']]:
+        """
+        Request constraints
+        """
+        return pulumi.get(self, "constraints")
+
+
+@pulumi.output_type
+class NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraint(dict):
+    def __init__(__self__, *,
+                 constraints: Sequence['outputs.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintConstraint']):
+        """
+        :param Sequence['NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintConstraintArgs'] constraints: The network availability monitor constraint
+        """
+        pulumi.set(__self__, "constraints", constraints)
+
+    @property
+    @pulumi.getter
+    def constraints(self) -> Sequence['outputs.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintConstraint']:
+        """
+        The network availability monitor constraint
+        """
+        return pulumi.get(self, "constraints")
+
+
+@pulumi.output_type
+class NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintConstraint(dict):
+    def __init__(__self__, *,
+                 properties: Mapping[str, str],
+                 type: str):
+        """
+        :param Mapping[str, str] properties: Key/value pairs of constraint properties
+        :param str type: Constraint type
+        """
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Mapping[str, str]:
+        """
+        Key/value pairs of constraint properties
+        """
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Constraint type
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class NetworkMonitorTag(dict):
+    def __init__(__self__, *,
+                 tags: Optional[Sequence['outputs.NetworkMonitorTagTag']] = None):
+        """
+        :param Sequence['NetworkMonitorTagTagArgs'] tags: Tag with source of a Dynatrace entity.
+        """
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[Sequence['outputs.NetworkMonitorTagTag']]:
+        """
+        Tag with source of a Dynatrace entity.
+        """
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class NetworkMonitorTagTag(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 context: Optional[str] = None,
+                 source: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str key: The key of the tag
+        :param str context: The origin of the tag, such as AWS or Cloud Foundry.
+        :param str source: The source of the tag, possible values: `AUTO`, `RULE_BASED` or `USER`
+        :param str value: The value of the tag
+        """
+        pulumi.set(__self__, "key", key)
+        if context is not None:
+            pulumi.set(__self__, "context", context)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the tag
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def context(self) -> Optional[str]:
+        """
+        The origin of the tag, such as AWS or Cloud Foundry.
+        """
+        return pulumi.get(self, "context")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[str]:
+        """
+        The source of the tag, possible values: `AUTO`, `RULE_BASED` or `USER`
+        """
+        return pulumi.get(self, "source")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        The value of the tag
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class NetworkTrafficExcludeIp(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -60361,6 +61515,8 @@ class OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondi
             suggest = "metadata_condition"
         elif key == "metadataKey":
             suggest = "metadata_key"
+        elif key == "keyMustExist":
+            suggest = "key_must_exist"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition. Access the value via the '{suggest}' property getter instead.")
@@ -60375,19 +61531,23 @@ class OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondi
 
     def __init__(__self__, *,
                  metadata_condition: str,
-                 metadata_key: str):
+                 metadata_key: str,
+                 key_must_exist: Optional[bool] = None):
         """
-        :param str metadata_condition: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        :param str metadata_condition: This string has to match a required format.
         :param str metadata_key: Key
+        :param bool key_must_exist: When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
         """
         pulumi.set(__self__, "metadata_condition", metadata_condition)
         pulumi.set(__self__, "metadata_key", metadata_key)
+        if key_must_exist is not None:
+            pulumi.set(__self__, "key_must_exist", key_must_exist)
 
     @property
     @pulumi.getter(name="metadataCondition")
     def metadata_condition(self) -> str:
         """
-        This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        This string has to match a required format.
         """
         return pulumi.get(self, "metadata_condition")
 
@@ -60398,6 +61558,14 @@ class OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondi
         Key
         """
         return pulumi.get(self, "metadata_key")
+
+    @property
+    @pulumi.getter(name="keyMustExist")
+    def key_must_exist(self) -> Optional[bool]:
+        """
+        When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+        """
+        return pulumi.get(self, "key_must_exist")
 
 
 @pulumi.output_type
@@ -60558,6 +61726,8 @@ class OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataC
             suggest = "metadata_condition"
         elif key == "metadataKey":
             suggest = "metadata_key"
+        elif key == "keyMustExist":
+            suggest = "key_must_exist"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition. Access the value via the '{suggest}' property getter instead.")
@@ -60572,19 +61742,23 @@ class OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataC
 
     def __init__(__self__, *,
                  metadata_condition: str,
-                 metadata_key: str):
+                 metadata_key: str,
+                 key_must_exist: Optional[bool] = None):
         """
-        :param str metadata_condition: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        :param str metadata_condition: This string has to match a required format.
         :param str metadata_key: Key
+        :param bool key_must_exist: When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
         """
         pulumi.set(__self__, "metadata_condition", metadata_condition)
         pulumi.set(__self__, "metadata_key", metadata_key)
+        if key_must_exist is not None:
+            pulumi.set(__self__, "key_must_exist", key_must_exist)
 
     @property
     @pulumi.getter(name="metadataCondition")
     def metadata_condition(self) -> str:
         """
-        This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        This string has to match a required format.
         """
         return pulumi.get(self, "metadata_condition")
 
@@ -60595,6 +61769,14 @@ class OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataC
         Key
         """
         return pulumi.get(self, "metadata_key")
+
+    @property
+    @pulumi.getter(name="keyMustExist")
+    def key_must_exist(self) -> Optional[bool]:
+        """
+        When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+        """
+        return pulumi.get(self, "key_must_exist")
 
 
 @pulumi.output_type
@@ -61365,6 +62547,8 @@ class ProcessAvailabilityRulesRuleHostMetadataCondition(dict):
             suggest = "metadata_condition"
         elif key == "metadataKey":
             suggest = "metadata_key"
+        elif key == "keyMustExist":
+            suggest = "key_must_exist"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ProcessAvailabilityRulesRuleHostMetadataCondition. Access the value via the '{suggest}' property getter instead.")
@@ -61379,7 +62563,8 @@ class ProcessAvailabilityRulesRuleHostMetadataCondition(dict):
 
     def __init__(__self__, *,
                  metadata_condition: str,
-                 metadata_key: str):
+                 metadata_key: str,
+                 key_must_exist: Optional[bool] = None):
         """
         :param str metadata_condition: This string has to match a required format.
                
@@ -61395,9 +62580,12 @@ class ProcessAvailabilityRulesRuleHostMetadataCondition(dict):
                
                Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
         :param str metadata_key: Key
+        :param bool key_must_exist: When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
         """
         pulumi.set(__self__, "metadata_condition", metadata_condition)
         pulumi.set(__self__, "metadata_key", metadata_key)
+        if key_must_exist is not None:
+            pulumi.set(__self__, "key_must_exist", key_must_exist)
 
     @property
     @pulumi.getter(name="metadataCondition")
@@ -61426,6 +62614,14 @@ class ProcessAvailabilityRulesRuleHostMetadataCondition(dict):
         Key
         """
         return pulumi.get(self, "metadata_key")
+
+    @property
+    @pulumi.getter(name="keyMustExist")
+    def key_must_exist(self) -> Optional[bool]:
+        """
+        When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+        """
+        return pulumi.get(self, "key_must_exist")
 
 
 @pulumi.output_type
@@ -88650,32 +89846,28 @@ class WebApplicationCustomActionApdexSettings(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 frustrating_fallback_threshold: Optional[int] = None,
-                 frustrating_threshold: Optional[int] = None,
-                 threshold: Optional[int] = None,
-                 tolerated_fallback_threshold: Optional[int] = None,
-                 tolerated_threshold: Optional[int] = None):
+                 frustrating_fallback_threshold: int,
+                 frustrating_threshold: int,
+                 tolerated_fallback_threshold: int,
+                 tolerated_threshold: int,
+                 threshold: Optional[int] = None):
         """
         :param int frustrating_fallback_threshold: Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
         :param int frustrating_threshold: Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-        :param int threshold: no documentation available
         :param int tolerated_fallback_threshold: Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
         :param int tolerated_threshold: Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
+        :param int threshold: no documentation available
         """
-        if frustrating_fallback_threshold is not None:
-            pulumi.set(__self__, "frustrating_fallback_threshold", frustrating_fallback_threshold)
-        if frustrating_threshold is not None:
-            pulumi.set(__self__, "frustrating_threshold", frustrating_threshold)
+        pulumi.set(__self__, "frustrating_fallback_threshold", frustrating_fallback_threshold)
+        pulumi.set(__self__, "frustrating_threshold", frustrating_threshold)
+        pulumi.set(__self__, "tolerated_fallback_threshold", tolerated_fallback_threshold)
+        pulumi.set(__self__, "tolerated_threshold", tolerated_threshold)
         if threshold is not None:
             pulumi.set(__self__, "threshold", threshold)
-        if tolerated_fallback_threshold is not None:
-            pulumi.set(__self__, "tolerated_fallback_threshold", tolerated_fallback_threshold)
-        if tolerated_threshold is not None:
-            pulumi.set(__self__, "tolerated_threshold", tolerated_threshold)
 
     @property
     @pulumi.getter(name="frustratingFallbackThreshold")
-    def frustrating_fallback_threshold(self) -> Optional[int]:
+    def frustrating_fallback_threshold(self) -> int:
         """
         Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
         """
@@ -88683,23 +89875,15 @@ class WebApplicationCustomActionApdexSettings(dict):
 
     @property
     @pulumi.getter(name="frustratingThreshold")
-    def frustrating_threshold(self) -> Optional[int]:
+    def frustrating_threshold(self) -> int:
         """
         Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
         """
         return pulumi.get(self, "frustrating_threshold")
 
     @property
-    @pulumi.getter
-    def threshold(self) -> Optional[int]:
-        """
-        no documentation available
-        """
-        return pulumi.get(self, "threshold")
-
-    @property
     @pulumi.getter(name="toleratedFallbackThreshold")
-    def tolerated_fallback_threshold(self) -> Optional[int]:
+    def tolerated_fallback_threshold(self) -> int:
         """
         Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
         """
@@ -88707,11 +89891,20 @@ class WebApplicationCustomActionApdexSettings(dict):
 
     @property
     @pulumi.getter(name="toleratedThreshold")
-    def tolerated_threshold(self) -> Optional[int]:
+    def tolerated_threshold(self) -> int:
         """
         Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
         """
         return pulumi.get(self, "tolerated_threshold")
+
+    @property
+    @pulumi.getter
+    @_utilities.deprecated("""The attribute `threshold` no longer exists in the API schema, please use `tolerated_threshold`, `frustrating_threshold`, `tolerated_fallback_threshold`, and `frustrating_fallback_threshold` instead""")
+    def threshold(self) -> Optional[int]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "threshold")
 
 
 @pulumi.output_type
@@ -88799,32 +89992,28 @@ class WebApplicationLoadActionApdexSettings(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 frustrating_fallback_threshold: Optional[int] = None,
-                 frustrating_threshold: Optional[int] = None,
-                 threshold: Optional[int] = None,
-                 tolerated_fallback_threshold: Optional[int] = None,
-                 tolerated_threshold: Optional[int] = None):
+                 frustrating_fallback_threshold: int,
+                 frustrating_threshold: int,
+                 tolerated_fallback_threshold: int,
+                 tolerated_threshold: int,
+                 threshold: Optional[int] = None):
         """
         :param int frustrating_fallback_threshold: Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
         :param int frustrating_threshold: Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-        :param int threshold: no documentation available
         :param int tolerated_fallback_threshold: Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
         :param int tolerated_threshold: Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
+        :param int threshold: no documentation available
         """
-        if frustrating_fallback_threshold is not None:
-            pulumi.set(__self__, "frustrating_fallback_threshold", frustrating_fallback_threshold)
-        if frustrating_threshold is not None:
-            pulumi.set(__self__, "frustrating_threshold", frustrating_threshold)
+        pulumi.set(__self__, "frustrating_fallback_threshold", frustrating_fallback_threshold)
+        pulumi.set(__self__, "frustrating_threshold", frustrating_threshold)
+        pulumi.set(__self__, "tolerated_fallback_threshold", tolerated_fallback_threshold)
+        pulumi.set(__self__, "tolerated_threshold", tolerated_threshold)
         if threshold is not None:
             pulumi.set(__self__, "threshold", threshold)
-        if tolerated_fallback_threshold is not None:
-            pulumi.set(__self__, "tolerated_fallback_threshold", tolerated_fallback_threshold)
-        if tolerated_threshold is not None:
-            pulumi.set(__self__, "tolerated_threshold", tolerated_threshold)
 
     @property
     @pulumi.getter(name="frustratingFallbackThreshold")
-    def frustrating_fallback_threshold(self) -> Optional[int]:
+    def frustrating_fallback_threshold(self) -> int:
         """
         Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
         """
@@ -88832,23 +90021,15 @@ class WebApplicationLoadActionApdexSettings(dict):
 
     @property
     @pulumi.getter(name="frustratingThreshold")
-    def frustrating_threshold(self) -> Optional[int]:
+    def frustrating_threshold(self) -> int:
         """
         Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
         """
         return pulumi.get(self, "frustrating_threshold")
 
     @property
-    @pulumi.getter
-    def threshold(self) -> Optional[int]:
-        """
-        no documentation available
-        """
-        return pulumi.get(self, "threshold")
-
-    @property
     @pulumi.getter(name="toleratedFallbackThreshold")
-    def tolerated_fallback_threshold(self) -> Optional[int]:
+    def tolerated_fallback_threshold(self) -> int:
         """
         Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
         """
@@ -88856,11 +90037,20 @@ class WebApplicationLoadActionApdexSettings(dict):
 
     @property
     @pulumi.getter(name="toleratedThreshold")
-    def tolerated_threshold(self) -> Optional[int]:
+    def tolerated_threshold(self) -> int:
         """
         Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
         """
         return pulumi.get(self, "tolerated_threshold")
+
+    @property
+    @pulumi.getter
+    @_utilities.deprecated("""The attribute `threshold` no longer exists in the API schema, please use `tolerated_threshold`, `frustrating_threshold`, `tolerated_fallback_threshold`, and `frustrating_fallback_threshold` instead""")
+    def threshold(self) -> Optional[int]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "threshold")
 
 
 @pulumi.output_type
@@ -88986,14 +90176,14 @@ class WebApplicationMonitoringSettings(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "contentCapture":
+        if key == "advancedJavascriptTagSettings":
+            suggest = "advanced_javascript_tag_settings"
+        elif key == "contentCapture":
             suggest = "content_capture"
         elif key == "injectionMode":
             suggest = "injection_mode"
         elif key == "addCrossOriginAnonymousAttribute":
             suggest = "add_cross_origin_anonymous_attribute"
-        elif key == "advancedJavascriptTagSettings":
-            suggest = "advanced_javascript_tag_settings"
         elif key == "angularPackageName":
             suggest = "angular_package_name"
         elif key == "browserRestrictionSettings":
@@ -89047,10 +90237,10 @@ class WebApplicationMonitoringSettings(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 advanced_javascript_tag_settings: 'outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings',
                  content_capture: 'outputs.WebApplicationMonitoringSettingsContentCapture',
                  injection_mode: str,
                  add_cross_origin_anonymous_attribute: Optional[bool] = None,
-                 advanced_javascript_tag_settings: Optional['outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings'] = None,
                  angular_package_name: Optional[str] = None,
                  browser_restriction_settings: Optional['outputs.WebApplicationMonitoringSettingsBrowserRestrictionSettings'] = None,
                  cache_control_header_optimizations: Optional[bool] = None,
@@ -89072,10 +90262,10 @@ class WebApplicationMonitoringSettings(dict):
                  use_cors: Optional[bool] = None,
                  xml_http_request: Optional[bool] = None):
         """
+        :param 'WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs' advanced_javascript_tag_settings: Advanced JavaScript tag settings
         :param 'WebApplicationMonitoringSettingsContentCaptureArgs' content_capture: Settings for content capture
         :param str injection_mode: Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE` and `JAVASCRIPT_TAG`.
         :param bool add_cross_origin_anonymous_attribute: Add the cross origin = anonymous attribute to capture JavaScript error messages and W3C resource timings
-        :param 'WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs' advanced_javascript_tag_settings: Advanced JavaScript tag settings
         :param str angular_package_name: The name of the angular package
         :param 'WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs' browser_restriction_settings: Settings for restricting certain browser type, version, platform and, comparator. It also restricts the mode
         :param bool cache_control_header_optimizations: Optimize the value of cache control headers for use with Dynatrace real user monitoring enabled/disabled
@@ -89113,12 +90303,11 @@ class WebApplicationMonitoringSettings(dict):
         :param bool use_cors: Send beacon data via CORS.
         :param bool xml_http_request: `XmlHttpRequest` support enabled/disabled
         """
+        pulumi.set(__self__, "advanced_javascript_tag_settings", advanced_javascript_tag_settings)
         pulumi.set(__self__, "content_capture", content_capture)
         pulumi.set(__self__, "injection_mode", injection_mode)
         if add_cross_origin_anonymous_attribute is not None:
             pulumi.set(__self__, "add_cross_origin_anonymous_attribute", add_cross_origin_anonymous_attribute)
-        if advanced_javascript_tag_settings is not None:
-            pulumi.set(__self__, "advanced_javascript_tag_settings", advanced_javascript_tag_settings)
         if angular_package_name is not None:
             pulumi.set(__self__, "angular_package_name", angular_package_name)
         if browser_restriction_settings is not None:
@@ -89161,6 +90350,14 @@ class WebApplicationMonitoringSettings(dict):
             pulumi.set(__self__, "xml_http_request", xml_http_request)
 
     @property
+    @pulumi.getter(name="advancedJavascriptTagSettings")
+    def advanced_javascript_tag_settings(self) -> 'outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings':
+        """
+        Advanced JavaScript tag settings
+        """
+        return pulumi.get(self, "advanced_javascript_tag_settings")
+
+    @property
     @pulumi.getter(name="contentCapture")
     def content_capture(self) -> 'outputs.WebApplicationMonitoringSettingsContentCapture':
         """
@@ -89183,14 +90380,6 @@ class WebApplicationMonitoringSettings(dict):
         Add the cross origin = anonymous attribute to capture JavaScript error messages and W3C resource timings
         """
         return pulumi.get(self, "add_cross_origin_anonymous_attribute")
-
-    @property
-    @pulumi.getter(name="advancedJavascriptTagSettings")
-    def advanced_javascript_tag_settings(self) -> Optional['outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings']:
-        """
-        Advanced JavaScript tag settings
-        """
-        return pulumi.get(self, "advanced_javascript_tag_settings")
 
     @property
     @pulumi.getter(name="angularPackageName")
@@ -89374,12 +90563,12 @@ class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "maxActionNameLength":
+        if key == "additionalEventHandlers":
+            suggest = "additional_event_handlers"
+        elif key == "maxActionNameLength":
             suggest = "max_action_name_length"
         elif key == "maxErrorsToCapture":
             suggest = "max_errors_to_capture"
-        elif key == "additionalEventHandlers":
-            suggest = "additional_event_handlers"
         elif key == "eventWrapperSettings":
             suggest = "event_wrapper_settings"
         elif key == "globalEventCaptureSettings":
@@ -89405,9 +90594,9 @@ class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 additional_event_handlers: 'outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers',
                  max_action_name_length: int,
                  max_errors_to_capture: int,
-                 additional_event_handlers: Optional['outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers'] = None,
                  event_wrapper_settings: Optional['outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings'] = None,
                  global_event_capture_settings: Optional['outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings'] = None,
                  instrument_unsupported_ajax_frameworks: Optional[bool] = None,
@@ -89415,9 +90604,9 @@ class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings(dict):
                  sync_beacon_firefox: Optional[bool] = None,
                  sync_beacon_internet_explorer: Optional[bool] = None):
         """
+        :param 'WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs' additional_event_handlers: Additional event handlers and wrappers
         :param int max_action_name_length: Maximum character length for action names. Valid values range from 5 to 10000.
         :param int max_errors_to_capture: Maximum number of errors to be captured per page. Valid values range from 0 to 50.
-        :param 'WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs' additional_event_handlers: Additional event handlers and wrappers
         :param 'WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs' event_wrapper_settings: In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
         :param 'WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs' global_event_capture_settings: Global event capture settings
         :param bool instrument_unsupported_ajax_frameworks: Instrumentation of unsupported Ajax frameworks enabled/disabled
@@ -89425,10 +90614,9 @@ class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings(dict):
         :param bool sync_beacon_firefox: Send the beacon signal as a synchronous XMLHttpRequest using Firefox enabled/disabled
         :param bool sync_beacon_internet_explorer: Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
         """
+        pulumi.set(__self__, "additional_event_handlers", additional_event_handlers)
         pulumi.set(__self__, "max_action_name_length", max_action_name_length)
         pulumi.set(__self__, "max_errors_to_capture", max_errors_to_capture)
-        if additional_event_handlers is not None:
-            pulumi.set(__self__, "additional_event_handlers", additional_event_handlers)
         if event_wrapper_settings is not None:
             pulumi.set(__self__, "event_wrapper_settings", event_wrapper_settings)
         if global_event_capture_settings is not None:
@@ -89441,6 +90629,14 @@ class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings(dict):
             pulumi.set(__self__, "sync_beacon_firefox", sync_beacon_firefox)
         if sync_beacon_internet_explorer is not None:
             pulumi.set(__self__, "sync_beacon_internet_explorer", sync_beacon_internet_explorer)
+
+    @property
+    @pulumi.getter(name="additionalEventHandlers")
+    def additional_event_handlers(self) -> 'outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers':
+        """
+        Additional event handlers and wrappers
+        """
+        return pulumi.get(self, "additional_event_handlers")
 
     @property
     @pulumi.getter(name="maxActionNameLength")
@@ -89457,14 +90653,6 @@ class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings(dict):
         Maximum number of errors to be captured per page. Valid values range from 0 to 50.
         """
         return pulumi.get(self, "max_errors_to_capture")
-
-    @property
-    @pulumi.getter(name="additionalEventHandlers")
-    def additional_event_handlers(self) -> Optional['outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers']:
-        """
-        Additional event handlers and wrappers
-        """
-        return pulumi.get(self, "additional_event_handlers")
 
     @property
     @pulumi.getter(name="eventWrapperSettings")
@@ -90010,12 +91198,12 @@ class WebApplicationMonitoringSettingsContentCapture(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "javascriptErrors":
-            suggest = "javascript_errors"
-        elif key == "resourceTimingSettings":
+        if key == "resourceTimingSettings":
             suggest = "resource_timing_settings"
         elif key == "timeoutSettings":
             suggest = "timeout_settings"
+        elif key == "javascriptErrors":
+            suggest = "javascript_errors"
         elif key == "visuallyCompleteAndSpeedIndex":
             suggest = "visually_complete_and_speed_index"
         elif key == "visuallyCompleteSettings":
@@ -90033,28 +91221,42 @@ class WebApplicationMonitoringSettingsContentCapture(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 resource_timing_settings: 'outputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings',
+                 timeout_settings: 'outputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings',
                  javascript_errors: Optional[bool] = None,
-                 resource_timing_settings: Optional['outputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings'] = None,
-                 timeout_settings: Optional['outputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings'] = None,
                  visually_complete_and_speed_index: Optional[bool] = None,
                  visually_complete_settings: Optional['outputs.WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings'] = None):
         """
-        :param bool javascript_errors: JavaScript errors monitoring enabled/disabled
         :param 'WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs' resource_timing_settings: Settings for resource timings capture
         :param 'WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs' timeout_settings: Settings for timed action capture
+        :param bool javascript_errors: JavaScript errors monitoring enabled/disabled
         :param bool visually_complete_and_speed_index: Visually complete and Speed index support enabled/disabled
         :param 'WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs' visually_complete_settings: Settings for VisuallyComplete
         """
+        pulumi.set(__self__, "resource_timing_settings", resource_timing_settings)
+        pulumi.set(__self__, "timeout_settings", timeout_settings)
         if javascript_errors is not None:
             pulumi.set(__self__, "javascript_errors", javascript_errors)
-        if resource_timing_settings is not None:
-            pulumi.set(__self__, "resource_timing_settings", resource_timing_settings)
-        if timeout_settings is not None:
-            pulumi.set(__self__, "timeout_settings", timeout_settings)
         if visually_complete_and_speed_index is not None:
             pulumi.set(__self__, "visually_complete_and_speed_index", visually_complete_and_speed_index)
         if visually_complete_settings is not None:
             pulumi.set(__self__, "visually_complete_settings", visually_complete_settings)
+
+    @property
+    @pulumi.getter(name="resourceTimingSettings")
+    def resource_timing_settings(self) -> 'outputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings':
+        """
+        Settings for resource timings capture
+        """
+        return pulumi.get(self, "resource_timing_settings")
+
+    @property
+    @pulumi.getter(name="timeoutSettings")
+    def timeout_settings(self) -> 'outputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings':
+        """
+        Settings for timed action capture
+        """
+        return pulumi.get(self, "timeout_settings")
 
     @property
     @pulumi.getter(name="javascriptErrors")
@@ -90063,22 +91265,6 @@ class WebApplicationMonitoringSettingsContentCapture(dict):
         JavaScript errors monitoring enabled/disabled
         """
         return pulumi.get(self, "javascript_errors")
-
-    @property
-    @pulumi.getter(name="resourceTimingSettings")
-    def resource_timing_settings(self) -> Optional['outputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings']:
-        """
-        Settings for resource timings capture
-        """
-        return pulumi.get(self, "resource_timing_settings")
-
-    @property
-    @pulumi.getter(name="timeoutSettings")
-    def timeout_settings(self) -> Optional['outputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings']:
-        """
-        Settings for timed action capture
-        """
-        return pulumi.get(self, "timeout_settings")
 
     @property
     @pulumi.getter(name="visuallyCompleteAndSpeedIndex")
@@ -92066,32 +93252,28 @@ class WebApplicationXhrActionApdexSettings(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 frustrating_fallback_threshold: Optional[int] = None,
-                 frustrating_threshold: Optional[int] = None,
-                 threshold: Optional[int] = None,
-                 tolerated_fallback_threshold: Optional[int] = None,
-                 tolerated_threshold: Optional[int] = None):
+                 frustrating_fallback_threshold: int,
+                 frustrating_threshold: int,
+                 tolerated_fallback_threshold: int,
+                 tolerated_threshold: int,
+                 threshold: Optional[int] = None):
         """
         :param int frustrating_fallback_threshold: Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
         :param int frustrating_threshold: Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-        :param int threshold: no documentation available
         :param int tolerated_fallback_threshold: Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
         :param int tolerated_threshold: Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
+        :param int threshold: no documentation available
         """
-        if frustrating_fallback_threshold is not None:
-            pulumi.set(__self__, "frustrating_fallback_threshold", frustrating_fallback_threshold)
-        if frustrating_threshold is not None:
-            pulumi.set(__self__, "frustrating_threshold", frustrating_threshold)
+        pulumi.set(__self__, "frustrating_fallback_threshold", frustrating_fallback_threshold)
+        pulumi.set(__self__, "frustrating_threshold", frustrating_threshold)
+        pulumi.set(__self__, "tolerated_fallback_threshold", tolerated_fallback_threshold)
+        pulumi.set(__self__, "tolerated_threshold", tolerated_threshold)
         if threshold is not None:
             pulumi.set(__self__, "threshold", threshold)
-        if tolerated_fallback_threshold is not None:
-            pulumi.set(__self__, "tolerated_fallback_threshold", tolerated_fallback_threshold)
-        if tolerated_threshold is not None:
-            pulumi.set(__self__, "tolerated_threshold", tolerated_threshold)
 
     @property
     @pulumi.getter(name="frustratingFallbackThreshold")
-    def frustrating_fallback_threshold(self) -> Optional[int]:
+    def frustrating_fallback_threshold(self) -> int:
         """
         Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
         """
@@ -92099,23 +93281,15 @@ class WebApplicationXhrActionApdexSettings(dict):
 
     @property
     @pulumi.getter(name="frustratingThreshold")
-    def frustrating_threshold(self) -> Optional[int]:
+    def frustrating_threshold(self) -> int:
         """
         Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
         """
         return pulumi.get(self, "frustrating_threshold")
 
     @property
-    @pulumi.getter
-    def threshold(self) -> Optional[int]:
-        """
-        no documentation available
-        """
-        return pulumi.get(self, "threshold")
-
-    @property
     @pulumi.getter(name="toleratedFallbackThreshold")
-    def tolerated_fallback_threshold(self) -> Optional[int]:
+    def tolerated_fallback_threshold(self) -> int:
         """
         Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
         """
@@ -92123,11 +93297,20 @@ class WebApplicationXhrActionApdexSettings(dict):
 
     @property
     @pulumi.getter(name="toleratedThreshold")
-    def tolerated_threshold(self) -> Optional[int]:
+    def tolerated_threshold(self) -> int:
         """
         Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
         """
         return pulumi.get(self, "tolerated_threshold")
+
+    @property
+    @pulumi.getter
+    @_utilities.deprecated("""The attribute `threshold` no longer exists in the API schema, please use `tolerated_threshold`, `frustrating_threshold`, `tolerated_fallback_threshold`, and `frustrating_fallback_threshold` instead""")
+    def threshold(self) -> Optional[int]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "threshold")
 
 
 @pulumi.output_type

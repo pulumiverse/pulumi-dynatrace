@@ -17,6 +17,7 @@ __all__ = ['CredentialsArgs', 'Credentials']
 class CredentialsArgs:
     def __init__(__self__, *,
                  allow_contextless_requests: Optional[pulumi.Input[bool]] = None,
+                 allowed_entities: Optional[pulumi.Input['CredentialsAllowedEntitiesArgs']] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
                  credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -33,6 +34,7 @@ class CredentialsArgs:
         """
         The set of arguments for constructing a Credentials resource.
         :param pulumi.Input[bool] allow_contextless_requests: Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+        :param pulumi.Input['CredentialsAllowedEntitiesArgs'] allowed_entities: The set of entities allowed to use the credential.
         :param pulumi.Input[str] certificate: The certificate in the string format.
         :param pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]] credential_usage_summaries: The list contains summary data related to the use of credentials
         :param pulumi.Input[str] description: A short description of the credentials set
@@ -41,13 +43,15 @@ class CredentialsArgs:
         :param pulumi.Input[str] name: The name of the credentials set
         :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
         :param pulumi.Input[bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
-        :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
         :param pulumi.Input[str] token: Token in the string format. Specifying a token implies `Token Authentication`.
         :param pulumi.Input[str] username: The username of the credentials set.
         """
         if allow_contextless_requests is not None:
             pulumi.set(__self__, "allow_contextless_requests", allow_contextless_requests)
+        if allowed_entities is not None:
+            pulumi.set(__self__, "allowed_entities", allowed_entities)
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
         if credential_usage_summaries is not None:
@@ -92,6 +96,18 @@ class CredentialsArgs:
     @allow_contextless_requests.setter
     def allow_contextless_requests(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "allow_contextless_requests", value)
+
+    @property
+    @pulumi.getter(name="allowedEntities")
+    def allowed_entities(self) -> Optional[pulumi.Input['CredentialsAllowedEntitiesArgs']]:
+        """
+        The set of entities allowed to use the credential.
+        """
+        return pulumi.get(self, "allowed_entities")
+
+    @allowed_entities.setter
+    def allowed_entities(self, value: Optional[pulumi.Input['CredentialsAllowedEntitiesArgs']]):
+        pulumi.set(self, "allowed_entities", value)
 
     @property
     @pulumi.getter
@@ -204,7 +220,7 @@ class CredentialsArgs:
     @_utilities.deprecated("""Deprecated(v279), please use `scopes` instead.""")
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         """
         return pulumi.get(self, "scope")
 
@@ -216,7 +232,7 @@ class CredentialsArgs:
     @pulumi.getter
     def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
         """
         return pulumi.get(self, "scopes")
 
@@ -253,6 +269,7 @@ class CredentialsArgs:
 class _CredentialsState:
     def __init__(__self__, *,
                  allow_contextless_requests: Optional[pulumi.Input[bool]] = None,
+                 allowed_entities: Optional[pulumi.Input['CredentialsAllowedEntitiesArgs']] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
                  credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -269,6 +286,7 @@ class _CredentialsState:
         """
         Input properties used for looking up and filtering Credentials resources.
         :param pulumi.Input[bool] allow_contextless_requests: Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+        :param pulumi.Input['CredentialsAllowedEntitiesArgs'] allowed_entities: The set of entities allowed to use the credential.
         :param pulumi.Input[str] certificate: The certificate in the string format.
         :param pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]] credential_usage_summaries: The list contains summary data related to the use of credentials
         :param pulumi.Input[str] description: A short description of the credentials set
@@ -277,13 +295,15 @@ class _CredentialsState:
         :param pulumi.Input[str] name: The name of the credentials set
         :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
         :param pulumi.Input[bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
-        :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
         :param pulumi.Input[str] token: Token in the string format. Specifying a token implies `Token Authentication`.
         :param pulumi.Input[str] username: The username of the credentials set.
         """
         if allow_contextless_requests is not None:
             pulumi.set(__self__, "allow_contextless_requests", allow_contextless_requests)
+        if allowed_entities is not None:
+            pulumi.set(__self__, "allowed_entities", allowed_entities)
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
         if credential_usage_summaries is not None:
@@ -328,6 +348,18 @@ class _CredentialsState:
     @allow_contextless_requests.setter
     def allow_contextless_requests(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "allow_contextless_requests", value)
+
+    @property
+    @pulumi.getter(name="allowedEntities")
+    def allowed_entities(self) -> Optional[pulumi.Input['CredentialsAllowedEntitiesArgs']]:
+        """
+        The set of entities allowed to use the credential.
+        """
+        return pulumi.get(self, "allowed_entities")
+
+    @allowed_entities.setter
+    def allowed_entities(self, value: Optional[pulumi.Input['CredentialsAllowedEntitiesArgs']]):
+        pulumi.set(self, "allowed_entities", value)
 
     @property
     @pulumi.getter
@@ -440,7 +472,7 @@ class _CredentialsState:
     @_utilities.deprecated("""Deprecated(v279), please use `scopes` instead.""")
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         """
         return pulumi.get(self, "scope")
 
@@ -452,7 +484,7 @@ class _CredentialsState:
     @pulumi.getter
     def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
         """
         return pulumi.get(self, "scopes")
 
@@ -491,6 +523,7 @@ class Credentials(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  allow_contextless_requests: Optional[pulumi.Input[bool]] = None,
+                 allowed_entities: Optional[pulumi.Input[pulumi.InputType['CredentialsAllowedEntitiesArgs']]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
                  credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -510,6 +543,7 @@ class Credentials(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] allow_contextless_requests: Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+        :param pulumi.Input[pulumi.InputType['CredentialsAllowedEntitiesArgs']] allowed_entities: The set of entities allowed to use the credential.
         :param pulumi.Input[str] certificate: The certificate in the string format.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]] credential_usage_summaries: The list contains summary data related to the use of credentials
         :param pulumi.Input[str] description: A short description of the credentials set
@@ -518,8 +552,8 @@ class Credentials(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the credentials set
         :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
         :param pulumi.Input[bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
-        :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
         :param pulumi.Input[str] token: Token in the string format. Specifying a token implies `Token Authentication`.
         :param pulumi.Input[str] username: The username of the credentials set.
         """
@@ -547,6 +581,7 @@ class Credentials(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  allow_contextless_requests: Optional[pulumi.Input[bool]] = None,
+                 allowed_entities: Optional[pulumi.Input[pulumi.InputType['CredentialsAllowedEntitiesArgs']]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
                  credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -570,6 +605,7 @@ class Credentials(pulumi.CustomResource):
             __props__ = CredentialsArgs.__new__(CredentialsArgs)
 
             __props__.__dict__["allow_contextless_requests"] = allow_contextless_requests
+            __props__.__dict__["allowed_entities"] = allowed_entities
             __props__.__dict__["certificate"] = certificate
             __props__.__dict__["credential_usage_summaries"] = credential_usage_summaries
             __props__.__dict__["description"] = description
@@ -596,6 +632,7 @@ class Credentials(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             allow_contextless_requests: Optional[pulumi.Input[bool]] = None,
+            allowed_entities: Optional[pulumi.Input[pulumi.InputType['CredentialsAllowedEntitiesArgs']]] = None,
             certificate: Optional[pulumi.Input[str]] = None,
             credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -617,6 +654,7 @@ class Credentials(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] allow_contextless_requests: Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+        :param pulumi.Input[pulumi.InputType['CredentialsAllowedEntitiesArgs']] allowed_entities: The set of entities allowed to use the credential.
         :param pulumi.Input[str] certificate: The certificate in the string format.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]] credential_usage_summaries: The list contains summary data related to the use of credentials
         :param pulumi.Input[str] description: A short description of the credentials set
@@ -625,8 +663,8 @@ class Credentials(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the credentials set
         :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
         :param pulumi.Input[bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
-        :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
         :param pulumi.Input[str] token: Token in the string format. Specifying a token implies `Token Authentication`.
         :param pulumi.Input[str] username: The username of the credentials set.
         """
@@ -635,6 +673,7 @@ class Credentials(pulumi.CustomResource):
         __props__ = _CredentialsState.__new__(_CredentialsState)
 
         __props__.__dict__["allow_contextless_requests"] = allow_contextless_requests
+        __props__.__dict__["allowed_entities"] = allowed_entities
         __props__.__dict__["certificate"] = certificate
         __props__.__dict__["credential_usage_summaries"] = credential_usage_summaries
         __props__.__dict__["description"] = description
@@ -657,6 +696,14 @@ class Credentials(pulumi.CustomResource):
         Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
         """
         return pulumi.get(self, "allow_contextless_requests")
+
+    @property
+    @pulumi.getter(name="allowedEntities")
+    def allowed_entities(self) -> pulumi.Output[Optional['outputs.CredentialsAllowedEntities']]:
+        """
+        The set of entities allowed to use the credential.
+        """
+        return pulumi.get(self, "allowed_entities")
 
     @property
     @pulumi.getter
@@ -733,7 +780,7 @@ class Credentials(pulumi.CustomResource):
     @_utilities.deprecated("""Deprecated(v279), please use `scopes` instead.""")
     def scope(self) -> pulumi.Output[Optional[str]]:
         """
-        The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         """
         return pulumi.get(self, "scope")
 
@@ -741,7 +788,7 @@ class Credentials(pulumi.CustomResource):
     @pulumi.getter
     def scopes(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
         """
         return pulumi.get(self, "scopes")
 

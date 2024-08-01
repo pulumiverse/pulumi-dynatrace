@@ -5673,6 +5673,134 @@ export interface BusinessEventsOneagentEventType {
     sourceType: pulumi.Input<string>;
 }
 
+export interface BusinessEventsOneagentOutgoingEvent {
+    /**
+     * Event category
+     */
+    category: pulumi.Input<inputs.BusinessEventsOneagentOutgoingEventCategory>;
+    /**
+     * Additional attributes for the business event.
+     */
+    data?: pulumi.Input<inputs.BusinessEventsOneagentOutgoingEventData>;
+    /**
+     * Event provider
+     */
+    provider: pulumi.Input<inputs.BusinessEventsOneagentOutgoingEventProvider>;
+    /**
+     * Event type
+     */
+    type: pulumi.Input<inputs.BusinessEventsOneagentOutgoingEventType>;
+}
+
+export interface BusinessEventsOneagentOutgoingEventCategory {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
+    path?: pulumi.Input<string>;
+    /**
+     * Fixed value
+     */
+    source?: pulumi.Input<string>;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
+    sourceType: pulumi.Input<string>;
+}
+
+export interface BusinessEventsOneagentOutgoingEventData {
+    eventDataFieldComplexes: pulumi.Input<pulumi.Input<inputs.BusinessEventsOneagentOutgoingEventDataEventDataFieldComplex>[]>;
+}
+
+export interface BusinessEventsOneagentOutgoingEventDataEventDataFieldComplex {
+    /**
+     * Field name to be added to data.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
+    source: pulumi.Input<inputs.BusinessEventsOneagentOutgoingEventDataEventDataFieldComplexSource>;
+}
+
+export interface BusinessEventsOneagentOutgoingEventDataEventDataFieldComplexSource {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
+    path?: pulumi.Input<string>;
+    /**
+     * Fixed value
+     */
+    source?: pulumi.Input<string>;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
+    sourceType: pulumi.Input<string>;
+}
+
+export interface BusinessEventsOneagentOutgoingEventProvider {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
+    path?: pulumi.Input<string>;
+    /**
+     * Fixed value
+     */
+    source?: pulumi.Input<string>;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
+    sourceType: pulumi.Input<string>;
+}
+
+export interface BusinessEventsOneagentOutgoingEventType {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
+    path?: pulumi.Input<string>;
+    /**
+     * Fixed value
+     */
+    source?: pulumi.Input<string>;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
+    sourceType: pulumi.Input<string>;
+}
+
+export interface BusinessEventsOneagentOutgoingTriggers {
+    triggers: pulumi.Input<pulumi.Input<inputs.BusinessEventsOneagentOutgoingTriggersTrigger>[]>;
+}
+
+export interface BusinessEventsOneagentOutgoingTriggersTrigger {
+    /**
+     * Case sensitive
+     */
+    caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
+    source: pulumi.Input<inputs.BusinessEventsOneagentOutgoingTriggersTriggerSource>;
+    /**
+     * Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `N_CONTAINS`, `N_ENDS_WITH`, `N_EQUALS`, `N_EXISTS`, `N_STARTS_WITH`, `STARTS_WITH`
+     */
+    type: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface BusinessEventsOneagentOutgoingTriggersTriggerSource {
+    /**
+     * Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
+    dataSource: pulumi.Input<string>;
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
+    path?: pulumi.Input<string>;
+}
+
 export interface BusinessEventsOneagentTriggers {
     triggers: pulumi.Input<pulumi.Input<inputs.BusinessEventsOneagentTriggersTrigger>[]>;
 }
@@ -6935,6 +7063,24 @@ export interface CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter {
      * Namespace name
      */
     namespace?: pulumi.Input<string>;
+}
+
+export interface CredentialsAllowedEntities {
+    /**
+     * The set of entities allowed to use the credential.
+     */
+    entities: pulumi.Input<pulumi.Input<inputs.CredentialsAllowedEntitiesEntity>[]>;
+}
+
+export interface CredentialsAllowedEntitiesEntity {
+    /**
+     * ID of the entity
+     */
+    id?: pulumi.Input<string>;
+    /**
+     * Type of entity. Possible values: `USER`, `APPLICATION`, `UNKNOWN`
+     */
+    type?: pulumi.Input<string>;
 }
 
 export interface CredentialsCredentialUsageSummary {
@@ -9166,6 +9312,10 @@ export interface DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataCondi
 }
 
 export interface DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMetadataCondition {
+    /**
+     * When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+     */
+    keyMustExist?: pulumi.Input<boolean>;
     /**
      * This string has to match a required format.
      */
@@ -17497,6 +17647,188 @@ export interface MobileApplicationPropertiesRequestAttribute {
     type: pulumi.Input<string>;
 }
 
+export interface NetworkMonitorOutageHandling {
+    /**
+     * Number of consecutive failures for all locations
+     */
+    globalConsecutiveOutageCountThreshold?: pulumi.Input<number>;
+    /**
+     * Generate a problem and send an alert when the monitor is unavailable at all configured locations
+     */
+    globalOutages?: pulumi.Input<boolean>;
+    /**
+     * Number of consecutive failures
+     */
+    localConsecutiveOutageCountThreshold?: pulumi.Input<number>;
+    /**
+     * Number of failing locations
+     */
+    localLocationOutageCountThreshold?: pulumi.Input<number>;
+    /**
+     * Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
+     */
+    localOutages?: pulumi.Input<boolean>;
+}
+
+export interface NetworkMonitorPerformanceThresholds {
+    /**
+     * Performance threshold is enabled (true) or disabled (false)
+     */
+    enabled?: pulumi.Input<boolean>;
+    /**
+     * The list of performance threshold rules
+     */
+    thresholds?: pulumi.Input<inputs.NetworkMonitorPerformanceThresholdsThresholds>;
+}
+
+export interface NetworkMonitorPerformanceThresholdsThresholds {
+    /**
+     * The list of performance threshold rules
+     */
+    thresholds?: pulumi.Input<pulumi.Input<inputs.NetworkMonitorPerformanceThresholdsThresholdsThreshold>[]>;
+}
+
+export interface NetworkMonitorPerformanceThresholdsThresholdsThreshold {
+    /**
+     * Aggregation type, possible values: `AVG`, `MAX`, `MIN`
+     */
+    aggregation?: pulumi.Input<string>;
+    /**
+     * Number of most recent non-violating request executions that closes the problem
+     */
+    dealertingSamples?: pulumi.Input<number>;
+    /**
+     * Number of request executions in analyzed sliding window (sliding window size)
+     */
+    samples?: pulumi.Input<number>;
+    /**
+     * Specify the step's index to which a threshold applies
+     */
+    stepIndex?: pulumi.Input<number>;
+    /**
+     * Notify if monitor request takes longer than X milliseconds to execute
+     */
+    threshold?: pulumi.Input<number>;
+    /**
+     * Number of violating request executions in analyzed sliding window
+     */
+    violatingSamples?: pulumi.Input<number>;
+}
+
+export interface NetworkMonitorStep {
+    /**
+     * The step of a network availability monitor
+     */
+    steps: pulumi.Input<pulumi.Input<inputs.NetworkMonitorStepStep>[]>;
+}
+
+export interface NetworkMonitorStepStep {
+    /**
+     * The list of constraints which apply to all requests in the step
+     */
+    constraints: pulumi.Input<pulumi.Input<inputs.NetworkMonitorStepStepConstraint>[]>;
+    /**
+     * Step name
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Key/value pairs of properties which apply to all requests in the step
+     */
+    properties: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Request configurations
+     */
+    requestConfigurations?: pulumi.Input<pulumi.Input<inputs.NetworkMonitorStepStepRequestConfiguration>[]>;
+    /**
+     * Request type, possible values `ICMP`, `TCP`, `DNS`
+     */
+    requestType: pulumi.Input<string>;
+    /**
+     * Target filter
+     */
+    targetFilter?: pulumi.Input<string>;
+    /**
+     * Target list
+     */
+    targetLists: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface NetworkMonitorStepStepConstraint {
+    /**
+     * The network availability monitor constraint
+     */
+    constraints: pulumi.Input<pulumi.Input<inputs.NetworkMonitorStepStepConstraintConstraint>[]>;
+}
+
+export interface NetworkMonitorStepStepConstraintConstraint {
+    /**
+     * Key/value pairs of constraint properties
+     */
+    properties: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Constraint type
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface NetworkMonitorStepStepRequestConfiguration {
+    /**
+     * The configuration of a network availability monitor request
+     */
+    requestConfigurations: pulumi.Input<pulumi.Input<inputs.NetworkMonitorStepStepRequestConfigurationRequestConfiguration>[]>;
+}
+
+export interface NetworkMonitorStepStepRequestConfigurationRequestConfiguration {
+    /**
+     * Request constraints
+     */
+    constraints?: pulumi.Input<pulumi.Input<inputs.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraint>[]>;
+}
+
+export interface NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraint {
+    /**
+     * The network availability monitor constraint
+     */
+    constraints: pulumi.Input<pulumi.Input<inputs.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintConstraint>[]>;
+}
+
+export interface NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintConstraint {
+    /**
+     * Key/value pairs of constraint properties
+     */
+    properties: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Constraint type
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface NetworkMonitorTag {
+    /**
+     * Tag with source of a Dynatrace entity.
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.NetworkMonitorTagTag>[]>;
+}
+
+export interface NetworkMonitorTagTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry.
+     */
+    context?: pulumi.Input<string>;
+    /**
+     * The key of the tag
+     */
+    key: pulumi.Input<string>;
+    /**
+     * The source of the tag, possible values: `AUTO`, `RULE_BASED` or `USER`
+     */
+    source?: pulumi.Input<string>;
+    /**
+     * The value of the tag
+     */
+    value?: pulumi.Input<string>;
+}
+
 export interface NetworkTrafficExcludeIp {
     ipAddressForms: pulumi.Input<pulumi.Input<inputs.NetworkTrafficExcludeIpIpAddressForm>[]>;
 }
@@ -18072,7 +18404,11 @@ export interface OsServicesDetectionConditionsLinuxLinuxDetectionCondition {
 
 export interface OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition {
     /**
-     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     * When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+     */
+    keyMustExist?: pulumi.Input<boolean>;
+    /**
+     * This string has to match a required format.
      */
     metadataCondition: pulumi.Input<string>;
     /**
@@ -18126,7 +18462,11 @@ export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindow {
 
 export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition {
     /**
-     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     * When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+     */
+    keyMustExist?: pulumi.Input<boolean>;
+    /**
+     * This string has to match a required format.
      */
     metadataCondition: pulumi.Input<string>;
     /**
@@ -18336,6 +18676,10 @@ export interface ProcessAvailabilityRulesRule {
 }
 
 export interface ProcessAvailabilityRulesRuleHostMetadataCondition {
+    /**
+     * When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+     */
+    keyMustExist?: pulumi.Input<boolean>;
     /**
      * This string has to match a required format.
      *
@@ -26672,23 +27016,25 @@ export interface WebApplicationCustomActionApdexSettings {
     /**
      * Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
      */
-    frustratingFallbackThreshold?: pulumi.Input<number>;
+    frustratingFallbackThreshold: pulumi.Input<number>;
     /**
      * Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
      */
-    frustratingThreshold?: pulumi.Input<number>;
+    frustratingThreshold: pulumi.Input<number>;
     /**
      * no documentation available
+     *
+     * @deprecated The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
      */
     threshold?: pulumi.Input<number>;
     /**
      * Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
      */
-    toleratedFallbackThreshold?: pulumi.Input<number>;
+    toleratedFallbackThreshold: pulumi.Input<number>;
     /**
      * Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
      */
-    toleratedThreshold?: pulumi.Input<number>;
+    toleratedThreshold: pulumi.Input<number>;
 }
 
 export interface WebApplicationKeyUserAction {
@@ -26717,23 +27063,25 @@ export interface WebApplicationLoadActionApdexSettings {
     /**
      * Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
      */
-    frustratingFallbackThreshold?: pulumi.Input<number>;
+    frustratingFallbackThreshold: pulumi.Input<number>;
     /**
      * Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
      */
-    frustratingThreshold?: pulumi.Input<number>;
+    frustratingThreshold: pulumi.Input<number>;
     /**
      * no documentation available
+     *
+     * @deprecated The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
      */
     threshold?: pulumi.Input<number>;
     /**
      * Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
      */
-    toleratedFallbackThreshold?: pulumi.Input<number>;
+    toleratedFallbackThreshold: pulumi.Input<number>;
     /**
      * Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
      */
-    toleratedThreshold?: pulumi.Input<number>;
+    toleratedThreshold: pulumi.Input<number>;
 }
 
 export interface WebApplicationMetaDataCaptureSettings {
@@ -26778,7 +27126,7 @@ export interface WebApplicationMonitoringSettings {
     /**
      * Advanced JavaScript tag settings
      */
-    advancedJavascriptTagSettings?: pulumi.Input<inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings>;
+    advancedJavascriptTagSettings: pulumi.Input<inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings>;
     /**
      * The name of the angular package
      */
@@ -26889,7 +27237,7 @@ export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings {
     /**
      * Additional event handlers and wrappers
      */
-    additionalEventHandlers?: pulumi.Input<inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers>;
+    additionalEventHandlers: pulumi.Input<inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers>;
     /**
      * In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
      */
@@ -27074,11 +27422,11 @@ export interface WebApplicationMonitoringSettingsContentCapture {
     /**
      * Settings for resource timings capture
      */
-    resourceTimingSettings?: pulumi.Input<inputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings>;
+    resourceTimingSettings: pulumi.Input<inputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings>;
     /**
      * Settings for timed action capture
      */
-    timeoutSettings?: pulumi.Input<inputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings>;
+    timeoutSettings: pulumi.Input<inputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings>;
     /**
      * Visually complete and Speed index support enabled/disabled
      */
@@ -27656,23 +28004,25 @@ export interface WebApplicationXhrActionApdexSettings {
     /**
      * Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
      */
-    frustratingFallbackThreshold?: pulumi.Input<number>;
+    frustratingFallbackThreshold: pulumi.Input<number>;
     /**
      * Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
      */
-    frustratingThreshold?: pulumi.Input<number>;
+    frustratingThreshold: pulumi.Input<number>;
     /**
      * no documentation available
+     *
+     * @deprecated The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
      */
     threshold?: pulumi.Input<number>;
     /**
      * Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
      */
-    toleratedFallbackThreshold?: pulumi.Input<number>;
+    toleratedFallbackThreshold: pulumi.Input<number>;
     /**
      * Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
      */
-    toleratedThreshold?: pulumi.Input<number>;
+    toleratedThreshold: pulumi.Input<number>;
 }
 
 export interface WebhookNotificationHeaders {

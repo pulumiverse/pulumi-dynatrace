@@ -150,6 +150,11 @@ export type AutomationWorkflowJira = import("./automationWorkflowJira").Automati
 export const AutomationWorkflowJira: typeof import("./automationWorkflowJira").AutomationWorkflowJira = null as any;
 utilities.lazyLoad(exports, ["AutomationWorkflowJira"], () => require("./automationWorkflowJira"));
 
+export { AutomationWorkflowK8sConnectionsArgs, AutomationWorkflowK8sConnectionsState } from "./automationWorkflowK8sConnections";
+export type AutomationWorkflowK8sConnections = import("./automationWorkflowK8sConnections").AutomationWorkflowK8sConnections;
+export const AutomationWorkflowK8sConnections: typeof import("./automationWorkflowK8sConnections").AutomationWorkflowK8sConnections = null as any;
+utilities.lazyLoad(exports, ["AutomationWorkflowK8sConnections"], () => require("./automationWorkflowK8sConnections"));
+
 export { AutomationWorkflowSlackArgs, AutomationWorkflowSlackState } from "./automationWorkflowSlack";
 export type AutomationWorkflowSlack = import("./automationWorkflowSlack").AutomationWorkflowSlack;
 export const AutomationWorkflowSlack: typeof import("./automationWorkflowSlack").AutomationWorkflowSlack = null as any;
@@ -229,6 +234,11 @@ export { BusinessEventsOneagentArgs, BusinessEventsOneagentState } from "./busin
 export type BusinessEventsOneagent = import("./businessEventsOneagent").BusinessEventsOneagent;
 export const BusinessEventsOneagent: typeof import("./businessEventsOneagent").BusinessEventsOneagent = null as any;
 utilities.lazyLoad(exports, ["BusinessEventsOneagent"], () => require("./businessEventsOneagent"));
+
+export { BusinessEventsOneagentOutgoingArgs, BusinessEventsOneagentOutgoingState } from "./businessEventsOneagentOutgoing";
+export type BusinessEventsOneagentOutgoing = import("./businessEventsOneagentOutgoing").BusinessEventsOneagentOutgoing;
+export const BusinessEventsOneagentOutgoing: typeof import("./businessEventsOneagentOutgoing").BusinessEventsOneagentOutgoing = null as any;
+utilities.lazyLoad(exports, ["BusinessEventsOneagentOutgoing"], () => require("./businessEventsOneagentOutgoing"));
 
 export { BusinessEventsProcessingArgs, BusinessEventsProcessingState } from "./businessEventsProcessing";
 export type BusinessEventsProcessing = import("./businessEventsProcessing").BusinessEventsProcessing;
@@ -815,6 +825,11 @@ export type HubExtensionConfig = import("./hubExtensionConfig").HubExtensionConf
 export const HubExtensionConfig: typeof import("./hubExtensionConfig").HubExtensionConfig = null as any;
 utilities.lazyLoad(exports, ["HubExtensionConfig"], () => require("./hubExtensionConfig"));
 
+export { HubPermissionsArgs, HubPermissionsState } from "./hubPermissions";
+export type HubPermissions = import("./hubPermissions").HubPermissions;
+export const HubPermissions: typeof import("./hubPermissions").HubPermissions = null as any;
+utilities.lazyLoad(exports, ["HubPermissions"], () => require("./hubPermissions"));
+
 export { HubSubscriptionsArgs, HubSubscriptionsState } from "./hubSubscriptions";
 export type HubSubscriptions = import("./hubSubscriptions").HubSubscriptions;
 export const HubSubscriptions: typeof import("./hubSubscriptions").HubSubscriptions = null as any;
@@ -1200,6 +1215,16 @@ export type Nettracer = import("./nettracer").Nettracer;
 export const Nettracer: typeof import("./nettracer").Nettracer = null as any;
 utilities.lazyLoad(exports, ["Nettracer"], () => require("./nettracer"));
 
+export { NetworkMonitorArgs, NetworkMonitorState } from "./networkMonitor";
+export type NetworkMonitor = import("./networkMonitor").NetworkMonitor;
+export const NetworkMonitor: typeof import("./networkMonitor").NetworkMonitor = null as any;
+utilities.lazyLoad(exports, ["NetworkMonitor"], () => require("./networkMonitor"));
+
+export { NetworkMonitorOutageArgs, NetworkMonitorOutageState } from "./networkMonitorOutage";
+export type NetworkMonitorOutage = import("./networkMonitorOutage").NetworkMonitorOutage;
+export const NetworkMonitorOutage: typeof import("./networkMonitorOutage").NetworkMonitorOutage = null as any;
+utilities.lazyLoad(exports, ["NetworkMonitorOutage"], () => require("./networkMonitorOutage"));
+
 export { NetworkTrafficArgs, NetworkTrafficState } from "./networkTraffic";
 export type NetworkTraffic = import("./networkTraffic").NetworkTraffic;
 export const NetworkTraffic: typeof import("./networkTraffic").NetworkTraffic = null as any;
@@ -1219,6 +1244,11 @@ export { NotificationArgs, NotificationState } from "./notification";
 export type Notification = import("./notification").Notification;
 export const Notification: typeof import("./notification").Notification = null as any;
 utilities.lazyLoad(exports, ["Notification"], () => require("./notification"));
+
+export { OneagentDefaultModeArgs, OneagentDefaultModeState } from "./oneagentDefaultMode";
+export type OneagentDefaultMode = import("./oneagentDefaultMode").OneagentDefaultMode;
+export const OneagentDefaultMode: typeof import("./oneagentDefaultMode").OneagentDefaultMode = null as any;
+utilities.lazyLoad(exports, ["OneagentDefaultMode"], () => require("./oneagentDefaultMode"));
 
 export { OneagentDefaultVersionArgs, OneagentDefaultVersionState } from "./oneagentDefaultVersion";
 export type OneagentDefaultVersion = import("./oneagentDefaultVersion").OneagentDefaultVersion;
@@ -1807,6 +1837,8 @@ const _module = {
                 return new AutomationWorkflow(name, <any>undefined, { urn })
             case "dynatrace:index/automationWorkflowJira:AutomationWorkflowJira":
                 return new AutomationWorkflowJira(name, <any>undefined, { urn })
+            case "dynatrace:index/automationWorkflowK8sConnections:AutomationWorkflowK8sConnections":
+                return new AutomationWorkflowK8sConnections(name, <any>undefined, { urn })
             case "dynatrace:index/automationWorkflowSlack:AutomationWorkflowSlack":
                 return new AutomationWorkflowSlack(name, <any>undefined, { urn })
             case "dynatrace:index/autotag:Autotag":
@@ -1839,6 +1871,8 @@ const _module = {
                 return new BusinessEventsMetrics(name, <any>undefined, { urn })
             case "dynatrace:index/businessEventsOneagent:BusinessEventsOneagent":
                 return new BusinessEventsOneagent(name, <any>undefined, { urn })
+            case "dynatrace:index/businessEventsOneagentOutgoing:BusinessEventsOneagentOutgoing":
+                return new BusinessEventsOneagentOutgoing(name, <any>undefined, { urn })
             case "dynatrace:index/businessEventsProcessing:BusinessEventsProcessing":
                 return new BusinessEventsProcessing(name, <any>undefined, { urn })
             case "dynatrace:index/businessEventsSecurityContext:BusinessEventsSecurityContext":
@@ -1989,6 +2023,8 @@ const _module = {
                 return new HubExtensionActiveVersion(name, <any>undefined, { urn })
             case "dynatrace:index/hubExtensionConfig:HubExtensionConfig":
                 return new HubExtensionConfig(name, <any>undefined, { urn })
+            case "dynatrace:index/hubPermissions:HubPermissions":
+                return new HubPermissions(name, <any>undefined, { urn })
             case "dynatrace:index/hubSubscriptions:HubSubscriptions":
                 return new HubSubscriptions(name, <any>undefined, { urn })
             case "dynatrace:index/iamGroup:IamGroup":
@@ -2143,6 +2179,10 @@ const _module = {
                 return new MutedRequests(name, <any>undefined, { urn })
             case "dynatrace:index/nettracer:Nettracer":
                 return new Nettracer(name, <any>undefined, { urn })
+            case "dynatrace:index/networkMonitor:NetworkMonitor":
+                return new NetworkMonitor(name, <any>undefined, { urn })
+            case "dynatrace:index/networkMonitorOutage:NetworkMonitorOutage":
+                return new NetworkMonitorOutage(name, <any>undefined, { urn })
             case "dynatrace:index/networkTraffic:NetworkTraffic":
                 return new NetworkTraffic(name, <any>undefined, { urn })
             case "dynatrace:index/networkZone:NetworkZone":
@@ -2151,6 +2191,8 @@ const _module = {
                 return new NetworkZones(name, <any>undefined, { urn })
             case "dynatrace:index/notification:Notification":
                 return new Notification(name, <any>undefined, { urn })
+            case "dynatrace:index/oneagentDefaultMode:OneagentDefaultMode":
+                return new OneagentDefaultMode(name, <any>undefined, { urn })
             case "dynatrace:index/oneagentDefaultVersion:OneagentDefaultVersion":
                 return new OneagentDefaultVersion(name, <any>undefined, { urn })
             case "dynatrace:index/oneagentFeatures:OneagentFeatures":
@@ -2389,6 +2431,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/automationBusinessCale
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationSchedulingRule", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflow", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflowJira", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflowK8sConnections", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflowSlack", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/autotag", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/autotagRules", _module)
@@ -2405,6 +2448,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/builtinProcessMonitori
 pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsBuckets", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsMetrics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsOneagent", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsOneagentOutgoing", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsProcessing", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsSecurityContext", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/calculatedMobileMetric", _module)
@@ -2480,6 +2524,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/httpMonitorPerformance
 pulumi.runtime.registerResourceModule("dynatrace", "index/httpMonitorScript", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hubExtensionActiveVersion", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hubExtensionConfig", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/hubPermissions", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hubSubscriptions", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamGroup", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamPermission", _module)
@@ -2557,10 +2602,13 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesV
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesWsmb", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/mutedRequests", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/nettracer", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/networkMonitor", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/networkMonitorOutage", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/networkTraffic", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/networkZone", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/networkZones", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/notification", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentDefaultMode", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentDefaultVersion", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentFeatures", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentSideMasking", _module)

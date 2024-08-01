@@ -15,6 +15,10 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ProcessAvailabilityRulesRuleHostMetadataCondition
     {
         /// <summary>
+        /// When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+        /// </summary>
+        public readonly bool? KeyMustExist;
+        /// <summary>
         /// This string has to match a required format.
         /// 
         /// - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
@@ -37,10 +41,13 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private ProcessAvailabilityRulesRuleHostMetadataCondition(
+            bool? keyMustExist,
+
             string metadataCondition,
 
             string metadataKey)
         {
+            KeyMustExist = keyMustExist;
             MetadataCondition = metadataCondition;
             MetadataKey = metadataKey;
         }

@@ -65,7 +65,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Owner { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies whether the document is private or readable by everybody
+        /// Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
         /// </summary>
         [Output("private")]
         public Output<bool?> Private { get; private set; } = null!;
@@ -154,7 +154,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Owner { get; set; }
 
         /// <summary>
-        /// Specifies whether the document is private or readable by everybody
+        /// Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
         /// </summary>
         [Input("private")]
         public Input<bool>? Private { get; set; }
@@ -198,7 +198,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Owner { get; set; }
 
         /// <summary>
-        /// Specifies whether the document is private or readable by everybody
+        /// Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
         /// </summary>
         [Input("private")]
         public Input<bool>? Private { get; set; }

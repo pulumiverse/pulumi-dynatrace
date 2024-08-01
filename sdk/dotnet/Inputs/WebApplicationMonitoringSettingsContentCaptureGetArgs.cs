@@ -22,14 +22,14 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Settings for resource timings capture
         /// </summary>
-        [Input("resourceTimingSettings")]
-        public Input<Inputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsGetArgs>? ResourceTimingSettings { get; set; }
+        [Input("resourceTimingSettings", required: true)]
+        public Input<Inputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsGetArgs> ResourceTimingSettings { get; set; } = null!;
 
         /// <summary>
         /// Settings for timed action capture
         /// </summary>
-        [Input("timeoutSettings")]
-        public Input<Inputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsGetArgs>? TimeoutSettings { get; set; }
+        [Input("timeoutSettings", required: true)]
+        public Input<Inputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsGetArgs> TimeoutSettings { get; set; } = null!;
 
         /// <summary>
         /// Visually complete and Speed index support enabled/disabled

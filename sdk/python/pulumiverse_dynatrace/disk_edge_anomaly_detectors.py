@@ -22,6 +22,7 @@ class DiskEdgeAnomalyDetectorsArgs:
                  disk_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  event_properties: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs']] = None,
                  host_metadata_conditions: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scope: Optional[pulumi.Input[str]] = None):
         """
@@ -32,6 +33,7 @@ class DiskEdgeAnomalyDetectorsArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] disk_name_filters: Disk will be included in this policy if **any** of the filters match
         :param pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs'] event_properties: Set of additional key-value properties to be attached to the triggered event.
         :param pulumi.Input['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs'] host_metadata_conditions: The policy will be enabled if **all** conditions are met
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[str]]] operating_systems: Select the operating systems on which policy should be applied
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -45,6 +47,8 @@ class DiskEdgeAnomalyDetectorsArgs:
             pulumi.set(__self__, "event_properties", event_properties)
         if host_metadata_conditions is not None:
             pulumi.set(__self__, "host_metadata_conditions", host_metadata_conditions)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if operating_systems is not None:
             pulumi.set(__self__, "operating_systems", operating_systems)
         if scope is not None:
@@ -123,6 +127,18 @@ class DiskEdgeAnomalyDetectorsArgs:
         pulumi.set(self, "host_metadata_conditions", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter(name="operatingSystems")
     def operating_systems(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -155,6 +171,7 @@ class _DiskEdgeAnomalyDetectorsState:
                  enabled: Optional[pulumi.Input[bool]] = None,
                  event_properties: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs']] = None,
                  host_metadata_conditions: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  policy_name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None):
@@ -165,6 +182,7 @@ class _DiskEdgeAnomalyDetectorsState:
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs'] event_properties: Set of additional key-value properties to be attached to the triggered event.
         :param pulumi.Input['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs'] host_metadata_conditions: The policy will be enabled if **all** conditions are met
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[str]]] operating_systems: Select the operating systems on which policy should be applied
         :param pulumi.Input[str] policy_name: Policy name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -179,6 +197,8 @@ class _DiskEdgeAnomalyDetectorsState:
             pulumi.set(__self__, "event_properties", event_properties)
         if host_metadata_conditions is not None:
             pulumi.set(__self__, "host_metadata_conditions", host_metadata_conditions)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if operating_systems is not None:
             pulumi.set(__self__, "operating_systems", operating_systems)
         if policy_name is not None:
@@ -247,6 +267,18 @@ class _DiskEdgeAnomalyDetectorsState:
         pulumi.set(self, "host_metadata_conditions", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter(name="operatingSystems")
     def operating_systems(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -293,6 +325,7 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
                  enabled: Optional[pulumi.Input[bool]] = None,
                  event_properties: Optional[pulumi.Input[pulumi.InputType['DiskEdgeAnomalyDetectorsEventPropertiesArgs']]] = None,
                  host_metadata_conditions: Optional[pulumi.Input[pulumi.InputType['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  policy_name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -306,6 +339,7 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[pulumi.InputType['DiskEdgeAnomalyDetectorsEventPropertiesArgs']] event_properties: Set of additional key-value properties to be attached to the triggered event.
         :param pulumi.Input[pulumi.InputType['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']] host_metadata_conditions: The policy will be enabled if **all** conditions are met
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[str]]] operating_systems: Select the operating systems on which policy should be applied
         :param pulumi.Input[str] policy_name: Policy name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -338,6 +372,7 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
                  enabled: Optional[pulumi.Input[bool]] = None,
                  event_properties: Optional[pulumi.Input[pulumi.InputType['DiskEdgeAnomalyDetectorsEventPropertiesArgs']]] = None,
                  host_metadata_conditions: Optional[pulumi.Input[pulumi.InputType['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  policy_name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -357,6 +392,7 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
             __props__.__dict__["enabled"] = enabled
             __props__.__dict__["event_properties"] = event_properties
             __props__.__dict__["host_metadata_conditions"] = host_metadata_conditions
+            __props__.__dict__["insert_after"] = insert_after
             __props__.__dict__["operating_systems"] = operating_systems
             if policy_name is None and not opts.urn:
                 raise TypeError("Missing required property 'policy_name'")
@@ -377,6 +413,7 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
             enabled: Optional[pulumi.Input[bool]] = None,
             event_properties: Optional[pulumi.Input[pulumi.InputType['DiskEdgeAnomalyDetectorsEventPropertiesArgs']]] = None,
             host_metadata_conditions: Optional[pulumi.Input[pulumi.InputType['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             policy_name: Optional[pulumi.Input[str]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'DiskEdgeAnomalyDetectors':
@@ -392,6 +429,7 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[pulumi.InputType['DiskEdgeAnomalyDetectorsEventPropertiesArgs']] event_properties: Set of additional key-value properties to be attached to the triggered event.
         :param pulumi.Input[pulumi.InputType['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']] host_metadata_conditions: The policy will be enabled if **all** conditions are met
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[str]]] operating_systems: Select the operating systems on which policy should be applied
         :param pulumi.Input[str] policy_name: Policy name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -405,6 +443,7 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["event_properties"] = event_properties
         __props__.__dict__["host_metadata_conditions"] = host_metadata_conditions
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["operating_systems"] = operating_systems
         __props__.__dict__["policy_name"] = policy_name
         __props__.__dict__["scope"] = scope
@@ -449,6 +488,14 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
         The policy will be enabled if **all** conditions are met
         """
         return pulumi.get(self, "host_metadata_conditions")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter(name="operatingSystems")

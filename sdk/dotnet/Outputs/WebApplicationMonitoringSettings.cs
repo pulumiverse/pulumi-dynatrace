@@ -21,7 +21,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Advanced JavaScript tag settings
         /// </summary>
-        public readonly Outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings? AdvancedJavascriptTagSettings;
+        public readonly Outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings AdvancedJavascriptTagSettings;
         /// <summary>
         /// The name of the angular package
         /// </summary>
@@ -131,7 +131,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         private WebApplicationMonitoringSettings(
             bool? addCrossOriginAnonymousAttribute,
 
-            Outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings? advancedJavascriptTagSettings,
+            Outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings advancedJavascriptTagSettings,
 
             string? angularPackageName,
 

@@ -39,6 +39,10 @@ export class AwsCredentials extends pulumi.CustomResource {
      */
     public readonly authenticationData!: pulumi.Output<outputs.AwsCredentialsAuthenticationData>;
     /**
+     * Enable monitoring of specified AWS credentials
+     */
+    public readonly credentialsEnabled!: pulumi.Output<boolean | undefined>;
+    /**
      * The name of the credentials
      */
     public readonly label!: pulumi.Output<string | undefined>;
@@ -50,6 +54,10 @@ export class AwsCredentials extends pulumi.CustomResource {
      * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
      */
     public readonly removeDefaults!: pulumi.Output<boolean | undefined>;
+    /**
+     * Run credentials on Dynatrace infrastructure
+     */
+    public readonly runningOnDynatraceInfrastructure!: pulumi.Output<boolean | undefined>;
     /**
      * @deprecated Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
      */
@@ -87,9 +95,11 @@ export class AwsCredentials extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as AwsCredentialsState | undefined;
             resourceInputs["authenticationData"] = state ? state.authenticationData : undefined;
+            resourceInputs["credentialsEnabled"] = state ? state.credentialsEnabled : undefined;
             resourceInputs["label"] = state ? state.label : undefined;
             resourceInputs["partitionType"] = state ? state.partitionType : undefined;
             resourceInputs["removeDefaults"] = state ? state.removeDefaults : undefined;
+            resourceInputs["runningOnDynatraceInfrastructure"] = state ? state.runningOnDynatraceInfrastructure : undefined;
             resourceInputs["supportingServicesManagedInDynatrace"] = state ? state.supportingServicesManagedInDynatrace : undefined;
             resourceInputs["supportingServicesToMonitors"] = state ? state.supportingServicesToMonitors : undefined;
             resourceInputs["taggedOnly"] = state ? state.taggedOnly : undefined;
@@ -107,9 +117,11 @@ export class AwsCredentials extends pulumi.CustomResource {
                 throw new Error("Missing required property 'taggedOnly'");
             }
             resourceInputs["authenticationData"] = args ? args.authenticationData : undefined;
+            resourceInputs["credentialsEnabled"] = args ? args.credentialsEnabled : undefined;
             resourceInputs["label"] = args ? args.label : undefined;
             resourceInputs["partitionType"] = args ? args.partitionType : undefined;
             resourceInputs["removeDefaults"] = args ? args.removeDefaults : undefined;
+            resourceInputs["runningOnDynatraceInfrastructure"] = args ? args.runningOnDynatraceInfrastructure : undefined;
             resourceInputs["supportingServicesManagedInDynatrace"] = args ? args.supportingServicesManagedInDynatrace : undefined;
             resourceInputs["supportingServicesToMonitors"] = args ? args.supportingServicesToMonitors : undefined;
             resourceInputs["taggedOnly"] = args ? args.taggedOnly : undefined;
@@ -130,6 +142,10 @@ export interface AwsCredentialsState {
      */
     authenticationData?: pulumi.Input<inputs.AwsCredentialsAuthenticationData>;
     /**
+     * Enable monitoring of specified AWS credentials
+     */
+    credentialsEnabled?: pulumi.Input<boolean>;
+    /**
      * The name of the credentials
      */
     label?: pulumi.Input<string>;
@@ -141,6 +157,10 @@ export interface AwsCredentialsState {
      * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
      */
     removeDefaults?: pulumi.Input<boolean>;
+    /**
+     * Run credentials on Dynatrace infrastructure
+     */
+    runningOnDynatraceInfrastructure?: pulumi.Input<boolean>;
     /**
      * @deprecated Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
      */
@@ -174,6 +194,10 @@ export interface AwsCredentialsArgs {
      */
     authenticationData: pulumi.Input<inputs.AwsCredentialsAuthenticationData>;
     /**
+     * Enable monitoring of specified AWS credentials
+     */
+    credentialsEnabled?: pulumi.Input<boolean>;
+    /**
      * The name of the credentials
      */
     label?: pulumi.Input<string>;
@@ -185,6 +209,10 @@ export interface AwsCredentialsArgs {
      * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
      */
     removeDefaults?: pulumi.Input<boolean>;
+    /**
+     * Run credentials on Dynatrace infrastructure
+     */
+    runningOnDynatraceInfrastructure?: pulumi.Input<boolean>;
     /**
      * @deprecated Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
      */

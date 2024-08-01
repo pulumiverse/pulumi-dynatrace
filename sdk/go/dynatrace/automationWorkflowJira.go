@@ -16,6 +16,8 @@ type AutomationWorkflowJira struct {
 	pulumi.CustomResourceState
 
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// The name of the Jira connection
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -79,6 +81,8 @@ func GetAutomationWorkflowJira(ctx *pulumi.Context,
 // Input properties used for looking up and filtering AutomationWorkflowJira resources.
 type automationWorkflowJiraState struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter *string `pulumi:"insertAfter"`
 	// The name of the Jira connection
 	Name *string `pulumi:"name"`
@@ -96,6 +100,8 @@ type automationWorkflowJiraState struct {
 
 type AutomationWorkflowJiraState struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter pulumi.StringPtrInput
 	// The name of the Jira connection
 	Name pulumi.StringPtrInput
@@ -117,6 +123,8 @@ func (AutomationWorkflowJiraState) ElementType() reflect.Type {
 
 type automationWorkflowJiraArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter *string `pulumi:"insertAfter"`
 	// The name of the Jira connection
 	Name *string `pulumi:"name"`
@@ -135,6 +143,8 @@ type automationWorkflowJiraArgs struct {
 // The set of arguments for constructing a AutomationWorkflowJira resource.
 type AutomationWorkflowJiraArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter pulumi.StringPtrInput
 	// The name of the Jira connection
 	Name pulumi.StringPtrInput
@@ -238,6 +248,8 @@ func (o AutomationWorkflowJiraOutput) ToAutomationWorkflowJiraOutputWithContext(
 }
 
 // Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+//
+// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 func (o AutomationWorkflowJiraOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutomationWorkflowJira) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
