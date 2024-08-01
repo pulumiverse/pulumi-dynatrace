@@ -13,13 +13,13 @@ This package is available in many languages in standard packaging formats.
 To use from JavaScript or TypeScript in Node.js, install using either `npm`:
 
 ```
-$ npm install @pulumiverse/pulumi-dynatrace
+$ npm install @pulumiverse/dynatrace
 ```
 
 or `yarn`:
 
 ```
-$ yarn add @pulumiverse/pulumi-dynatrace
+$ yarn add @pulumiverse/dynatrace
 ```
 
 ### Python
@@ -27,7 +27,7 @@ $ yarn add @pulumiverse/pulumi-dynatrace
 To use from Python, install using `pip`:
 
 ```
-$ pip install pulumiverse-pulumi-dynatrace
+$ pip install pulumiverse-dynatrace
 ```
 
 ### Go
@@ -44,7 +44,7 @@ To use from Dotnet, use `dotnet add package` to install into your project. You m
 
 
 ```
-$ dotnet add package pulumivers.PulumiPackage.Dynatrace
+$ dotnet add package Pulumiverse.Dynatrace
 ```
 
 ## Reference
