@@ -25,6 +25,8 @@ type DiskEdgeAnomalyDetectors struct {
 	EventProperties DiskEdgeAnomalyDetectorsEventPropertiesPtrOutput `pulumi:"eventProperties"`
 	// The policy will be enabled if **all** conditions are met
 	HostMetadataConditions DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrOutput `pulumi:"hostMetadataConditions"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Select the operating systems on which policy should be applied
 	OperatingSystems pulumi.StringArrayOutput `pulumi:"operatingSystems"`
 	// Policy name
@@ -79,6 +81,8 @@ type diskEdgeAnomalyDetectorsState struct {
 	EventProperties *DiskEdgeAnomalyDetectorsEventProperties `pulumi:"eventProperties"`
 	// The policy will be enabled if **all** conditions are met
 	HostMetadataConditions *DiskEdgeAnomalyDetectorsHostMetadataConditions `pulumi:"hostMetadataConditions"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Select the operating systems on which policy should be applied
 	OperatingSystems []string `pulumi:"operatingSystems"`
 	// Policy name
@@ -98,6 +102,8 @@ type DiskEdgeAnomalyDetectorsState struct {
 	EventProperties DiskEdgeAnomalyDetectorsEventPropertiesPtrInput
 	// The policy will be enabled if **all** conditions are met
 	HostMetadataConditions DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Select the operating systems on which policy should be applied
 	OperatingSystems pulumi.StringArrayInput
 	// Policy name
@@ -121,6 +127,8 @@ type diskEdgeAnomalyDetectorsArgs struct {
 	EventProperties *DiskEdgeAnomalyDetectorsEventProperties `pulumi:"eventProperties"`
 	// The policy will be enabled if **all** conditions are met
 	HostMetadataConditions *DiskEdgeAnomalyDetectorsHostMetadataConditions `pulumi:"hostMetadataConditions"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Select the operating systems on which policy should be applied
 	OperatingSystems []string `pulumi:"operatingSystems"`
 	// Policy name
@@ -141,6 +149,8 @@ type DiskEdgeAnomalyDetectorsArgs struct {
 	EventProperties DiskEdgeAnomalyDetectorsEventPropertiesPtrInput
 	// The policy will be enabled if **all** conditions are met
 	HostMetadataConditions DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Select the operating systems on which policy should be applied
 	OperatingSystems pulumi.StringArrayInput
 	// Policy name
@@ -263,6 +273,11 @@ func (o DiskEdgeAnomalyDetectorsOutput) HostMetadataConditions() DiskEdgeAnomaly
 	return o.ApplyT(func(v *DiskEdgeAnomalyDetectors) DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrOutput {
 		return v.HostMetadataConditions
 	}).(DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o DiskEdgeAnomalyDetectorsOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *DiskEdgeAnomalyDetectors) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Select the operating systems on which policy should be applied

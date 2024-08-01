@@ -17,11 +17,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
         /// </summary>
-        public readonly int? FrustratingFallbackThreshold;
+        public readonly int FrustratingFallbackThreshold;
         /// <summary>
         /// Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
         /// </summary>
-        public readonly int? FrustratingThreshold;
+        public readonly int FrustratingThreshold;
         /// <summary>
         /// no documentation available
         /// </summary>
@@ -29,23 +29,23 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
         /// </summary>
-        public readonly int? ToleratedFallbackThreshold;
+        public readonly int ToleratedFallbackThreshold;
         /// <summary>
         /// Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
         /// </summary>
-        public readonly int? ToleratedThreshold;
+        public readonly int ToleratedThreshold;
 
         [OutputConstructor]
         private WebApplicationXhrActionApdexSettings(
-            int? frustratingFallbackThreshold,
+            int frustratingFallbackThreshold,
 
-            int? frustratingThreshold,
+            int frustratingThreshold,
 
             int? threshold,
 
-            int? toleratedFallbackThreshold,
+            int toleratedFallbackThreshold,
 
-            int? toleratedThreshold)
+            int toleratedThreshold)
         {
             FrustratingFallbackThreshold = frustratingFallbackThreshold;
             FrustratingThreshold = frustratingThreshold;

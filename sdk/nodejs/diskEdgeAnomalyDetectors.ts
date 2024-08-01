@@ -55,6 +55,10 @@ export class DiskEdgeAnomalyDetectors extends pulumi.CustomResource {
      */
     public readonly hostMetadataConditions!: pulumi.Output<outputs.DiskEdgeAnomalyDetectorsHostMetadataConditions | undefined>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Select the operating systems on which policy should be applied
      */
     public readonly operatingSystems!: pulumi.Output<string[] | undefined>;
@@ -85,6 +89,7 @@ export class DiskEdgeAnomalyDetectors extends pulumi.CustomResource {
             resourceInputs["enabled"] = state ? state.enabled : undefined;
             resourceInputs["eventProperties"] = state ? state.eventProperties : undefined;
             resourceInputs["hostMetadataConditions"] = state ? state.hostMetadataConditions : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["operatingSystems"] = state ? state.operatingSystems : undefined;
             resourceInputs["policyName"] = state ? state.policyName : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
@@ -101,6 +106,7 @@ export class DiskEdgeAnomalyDetectors extends pulumi.CustomResource {
             resourceInputs["enabled"] = args ? args.enabled : undefined;
             resourceInputs["eventProperties"] = args ? args.eventProperties : undefined;
             resourceInputs["hostMetadataConditions"] = args ? args.hostMetadataConditions : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["operatingSystems"] = args ? args.operatingSystems : undefined;
             resourceInputs["policyName"] = args ? args.policyName : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
@@ -134,6 +140,10 @@ export interface DiskEdgeAnomalyDetectorsState {
      * The policy will be enabled if **all** conditions are met
      */
     hostMetadataConditions?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsHostMetadataConditions>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Select the operating systems on which policy should be applied
      */
@@ -172,6 +182,10 @@ export interface DiskEdgeAnomalyDetectorsArgs {
      * The policy will be enabled if **all** conditions are met
      */
     hostMetadataConditions?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsHostMetadataConditions>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Select the operating systems on which policy should be applied
      */

@@ -14,7 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+        /// </summary>
+        [Input("keyMustExist")]
+        public Input<bool>? KeyMustExist { get; set; }
+
+        /// <summary>
+        /// This string has to match a required format.
         /// </summary>
         [Input("metadataCondition", required: true)]
         public Input<string> MetadataCondition { get; set; } = null!;

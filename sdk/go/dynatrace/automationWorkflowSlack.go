@@ -16,6 +16,8 @@ type AutomationWorkflowSlack struct {
 	pulumi.CustomResourceState
 
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// The name of the Slack connection
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -64,6 +66,8 @@ func GetAutomationWorkflowSlack(ctx *pulumi.Context,
 // Input properties used for looking up and filtering AutomationWorkflowSlack resources.
 type automationWorkflowSlackState struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter *string `pulumi:"insertAfter"`
 	// The name of the Slack connection
 	Name *string `pulumi:"name"`
@@ -73,6 +77,8 @@ type automationWorkflowSlackState struct {
 
 type AutomationWorkflowSlackState struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter pulumi.StringPtrInput
 	// The name of the Slack connection
 	Name pulumi.StringPtrInput
@@ -86,6 +92,8 @@ func (AutomationWorkflowSlackState) ElementType() reflect.Type {
 
 type automationWorkflowSlackArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter *string `pulumi:"insertAfter"`
 	// The name of the Slack connection
 	Name *string `pulumi:"name"`
@@ -96,6 +104,8 @@ type automationWorkflowSlackArgs struct {
 // The set of arguments for constructing a AutomationWorkflowSlack resource.
 type AutomationWorkflowSlackArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter pulumi.StringPtrInput
 	// The name of the Slack connection
 	Name pulumi.StringPtrInput
@@ -191,6 +201,8 @@ func (o AutomationWorkflowSlackOutput) ToAutomationWorkflowSlackOutputWithContex
 }
 
 // Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+//
+// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 func (o AutomationWorkflowSlackOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutomationWorkflowSlack) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }

@@ -17,12 +17,16 @@ type AwsCredentials struct {
 
 	// credentials for the AWS authentication
 	AuthenticationData AwsCredentialsAuthenticationDataOutput `pulumi:"authenticationData"`
+	// Enable monitoring of specified AWS credentials
+	CredentialsEnabled pulumi.BoolPtrOutput `pulumi:"credentialsEnabled"`
 	// The name of the credentials
 	Label pulumi.StringPtrOutput `pulumi:"label"`
 	// The type of the AWS partition
 	PartitionType pulumi.StringOutput `pulumi:"partitionType"`
 	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
 	RemoveDefaults pulumi.BoolPtrOutput `pulumi:"removeDefaults"`
+	// Run credentials on Dynatrace infrastructure
+	RunningOnDynatraceInfrastructure pulumi.BoolPtrOutput `pulumi:"runningOnDynatraceInfrastructure"`
 	// Deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
 	SupportingServicesManagedInDynatrace pulumi.BoolPtrOutput `pulumi:"supportingServicesManagedInDynatrace"`
 	// supporting services to be monitored
@@ -78,12 +82,16 @@ func GetAwsCredentials(ctx *pulumi.Context,
 type awsCredentialsState struct {
 	// credentials for the AWS authentication
 	AuthenticationData *AwsCredentialsAuthenticationData `pulumi:"authenticationData"`
+	// Enable monitoring of specified AWS credentials
+	CredentialsEnabled *bool `pulumi:"credentialsEnabled"`
 	// The name of the credentials
 	Label *string `pulumi:"label"`
 	// The type of the AWS partition
 	PartitionType *string `pulumi:"partitionType"`
 	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
 	RemoveDefaults *bool `pulumi:"removeDefaults"`
+	// Run credentials on Dynatrace infrastructure
+	RunningOnDynatraceInfrastructure *bool `pulumi:"runningOnDynatraceInfrastructure"`
 	// Deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
 	SupportingServicesManagedInDynatrace *bool `pulumi:"supportingServicesManagedInDynatrace"`
 	// supporting services to be monitored
@@ -101,12 +109,16 @@ type awsCredentialsState struct {
 type AwsCredentialsState struct {
 	// credentials for the AWS authentication
 	AuthenticationData AwsCredentialsAuthenticationDataPtrInput
+	// Enable monitoring of specified AWS credentials
+	CredentialsEnabled pulumi.BoolPtrInput
 	// The name of the credentials
 	Label pulumi.StringPtrInput
 	// The type of the AWS partition
 	PartitionType pulumi.StringPtrInput
 	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
 	RemoveDefaults pulumi.BoolPtrInput
+	// Run credentials on Dynatrace infrastructure
+	RunningOnDynatraceInfrastructure pulumi.BoolPtrInput
 	// Deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
 	SupportingServicesManagedInDynatrace pulumi.BoolPtrInput
 	// supporting services to be monitored
@@ -128,12 +140,16 @@ func (AwsCredentialsState) ElementType() reflect.Type {
 type awsCredentialsArgs struct {
 	// credentials for the AWS authentication
 	AuthenticationData AwsCredentialsAuthenticationData `pulumi:"authenticationData"`
+	// Enable monitoring of specified AWS credentials
+	CredentialsEnabled *bool `pulumi:"credentialsEnabled"`
 	// The name of the credentials
 	Label *string `pulumi:"label"`
 	// The type of the AWS partition
 	PartitionType string `pulumi:"partitionType"`
 	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
 	RemoveDefaults *bool `pulumi:"removeDefaults"`
+	// Run credentials on Dynatrace infrastructure
+	RunningOnDynatraceInfrastructure *bool `pulumi:"runningOnDynatraceInfrastructure"`
 	// Deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
 	SupportingServicesManagedInDynatrace *bool `pulumi:"supportingServicesManagedInDynatrace"`
 	// supporting services to be monitored
@@ -152,12 +168,16 @@ type awsCredentialsArgs struct {
 type AwsCredentialsArgs struct {
 	// credentials for the AWS authentication
 	AuthenticationData AwsCredentialsAuthenticationDataInput
+	// Enable monitoring of specified AWS credentials
+	CredentialsEnabled pulumi.BoolPtrInput
 	// The name of the credentials
 	Label pulumi.StringPtrInput
 	// The type of the AWS partition
 	PartitionType pulumi.StringInput
 	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
 	RemoveDefaults pulumi.BoolPtrInput
+	// Run credentials on Dynatrace infrastructure
+	RunningOnDynatraceInfrastructure pulumi.BoolPtrInput
 	// Deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
 	SupportingServicesManagedInDynatrace pulumi.BoolPtrInput
 	// supporting services to be monitored
@@ -264,6 +284,11 @@ func (o AwsCredentialsOutput) AuthenticationData() AwsCredentialsAuthenticationD
 	return o.ApplyT(func(v *AwsCredentials) AwsCredentialsAuthenticationDataOutput { return v.AuthenticationData }).(AwsCredentialsAuthenticationDataOutput)
 }
 
+// Enable monitoring of specified AWS credentials
+func (o AwsCredentialsOutput) CredentialsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AwsCredentials) pulumi.BoolPtrOutput { return v.CredentialsEnabled }).(pulumi.BoolPtrOutput)
+}
+
 // The name of the credentials
 func (o AwsCredentialsOutput) Label() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AwsCredentials) pulumi.StringPtrOutput { return v.Label }).(pulumi.StringPtrOutput)
@@ -277,6 +302,11 @@ func (o AwsCredentialsOutput) PartitionType() pulumi.StringOutput {
 // Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
 func (o AwsCredentialsOutput) RemoveDefaults() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AwsCredentials) pulumi.BoolPtrOutput { return v.RemoveDefaults }).(pulumi.BoolPtrOutput)
+}
+
+// Run credentials on Dynatrace infrastructure
+func (o AwsCredentialsOutput) RunningOnDynatraceInfrastructure() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AwsCredentials) pulumi.BoolPtrOutput { return v.RunningOnDynatraceInfrastructure }).(pulumi.BoolPtrOutput)
 }
 
 // Deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates

@@ -14,6 +14,12 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class ProcessAvailabilityRulesRuleHostMetadataConditionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+        /// </summary>
+        [Input("keyMustExist")]
+        public Input<bool>? KeyMustExist { get; set; }
+
+        /// <summary>
         /// This string has to match a required format.
         /// 
         /// - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.

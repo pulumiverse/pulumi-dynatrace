@@ -39,6 +39,10 @@ export class Credentials extends pulumi.CustomResource {
      */
     public readonly allowContextlessRequests!: pulumi.Output<boolean | undefined>;
     /**
+     * The set of entities allowed to use the credential.
+     */
+    public readonly allowedEntities!: pulumi.Output<outputs.CredentialsAllowedEntities | undefined>;
+    /**
      * The certificate in the string format.
      */
     public readonly certificate!: pulumi.Output<string | undefined>;
@@ -74,13 +78,13 @@ export class Credentials extends pulumi.CustomResource {
      */
     public readonly public!: pulumi.Output<boolean | undefined>;
     /**
-     * The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+     * The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
      *
      * @deprecated Deprecated(v279), please use `scopes` instead.
      */
     public readonly scope!: pulumi.Output<string | undefined>;
     /**
-     * The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+     * The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
      */
     public readonly scopes!: pulumi.Output<string[] | undefined>;
     /**
@@ -106,6 +110,7 @@ export class Credentials extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as CredentialsState | undefined;
             resourceInputs["allowContextlessRequests"] = state ? state.allowContextlessRequests : undefined;
+            resourceInputs["allowedEntities"] = state ? state.allowedEntities : undefined;
             resourceInputs["certificate"] = state ? state.certificate : undefined;
             resourceInputs["credentialUsageSummaries"] = state ? state.credentialUsageSummaries : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
@@ -122,6 +127,7 @@ export class Credentials extends pulumi.CustomResource {
         } else {
             const args = argsOrState as CredentialsArgs | undefined;
             resourceInputs["allowContextlessRequests"] = args ? args.allowContextlessRequests : undefined;
+            resourceInputs["allowedEntities"] = args ? args.allowedEntities : undefined;
             resourceInputs["certificate"] = args ? args.certificate : undefined;
             resourceInputs["credentialUsageSummaries"] = args ? args.credentialUsageSummaries : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -152,6 +158,10 @@ export interface CredentialsState {
      */
     allowContextlessRequests?: pulumi.Input<boolean>;
     /**
+     * The set of entities allowed to use the credential.
+     */
+    allowedEntities?: pulumi.Input<inputs.CredentialsAllowedEntities>;
+    /**
      * The certificate in the string format.
      */
     certificate?: pulumi.Input<string>;
@@ -187,13 +197,13 @@ export interface CredentialsState {
      */
     public?: pulumi.Input<boolean>;
     /**
-     * The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+     * The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
      *
      * @deprecated Deprecated(v279), please use `scopes` instead.
      */
     scope?: pulumi.Input<string>;
     /**
-     * The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+     * The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
      */
     scopes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -215,6 +225,10 @@ export interface CredentialsArgs {
      */
     allowContextlessRequests?: pulumi.Input<boolean>;
     /**
+     * The set of entities allowed to use the credential.
+     */
+    allowedEntities?: pulumi.Input<inputs.CredentialsAllowedEntities>;
+    /**
      * The certificate in the string format.
      */
     certificate?: pulumi.Input<string>;
@@ -250,13 +264,13 @@ export interface CredentialsArgs {
      */
     public?: pulumi.Input<boolean>;
     /**
-     * The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+     * The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
      *
      * @deprecated Deprecated(v279), please use `scopes` instead.
      */
     scope?: pulumi.Input<string>;
     /**
-     * The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+     * The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
      */
     scopes?: pulumi.Input<pulumi.Input<string>[]>;
     /**

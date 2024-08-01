@@ -79,6 +79,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AutomationWorkflow{}
 	case "dynatrace:index/automationWorkflowJira:AutomationWorkflowJira":
 		r = &AutomationWorkflowJira{}
+	case "dynatrace:index/automationWorkflowK8sConnections:AutomationWorkflowK8sConnections":
+		r = &AutomationWorkflowK8sConnections{}
 	case "dynatrace:index/automationWorkflowSlack:AutomationWorkflowSlack":
 		r = &AutomationWorkflowSlack{}
 	case "dynatrace:index/autotag:Autotag":
@@ -111,6 +113,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BusinessEventsMetrics{}
 	case "dynatrace:index/businessEventsOneagent:BusinessEventsOneagent":
 		r = &BusinessEventsOneagent{}
+	case "dynatrace:index/businessEventsOneagentOutgoing:BusinessEventsOneagentOutgoing":
+		r = &BusinessEventsOneagentOutgoing{}
 	case "dynatrace:index/businessEventsProcessing:BusinessEventsProcessing":
 		r = &BusinessEventsProcessing{}
 	case "dynatrace:index/businessEventsSecurityContext:BusinessEventsSecurityContext":
@@ -261,6 +265,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &HubExtensionActiveVersion{}
 	case "dynatrace:index/hubExtensionConfig:HubExtensionConfig":
 		r = &HubExtensionConfig{}
+	case "dynatrace:index/hubPermissions:HubPermissions":
+		r = &HubPermissions{}
 	case "dynatrace:index/hubSubscriptions:HubSubscriptions":
 		r = &HubSubscriptions{}
 	case "dynatrace:index/iamGroup:IamGroup":
@@ -415,6 +421,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MutedRequests{}
 	case "dynatrace:index/nettracer:Nettracer":
 		r = &Nettracer{}
+	case "dynatrace:index/networkMonitor:NetworkMonitor":
+		r = &NetworkMonitor{}
+	case "dynatrace:index/networkMonitorOutage:NetworkMonitorOutage":
+		r = &NetworkMonitorOutage{}
 	case "dynatrace:index/networkTraffic:NetworkTraffic":
 		r = &NetworkTraffic{}
 	case "dynatrace:index/networkZone:NetworkZone":
@@ -423,6 +433,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &NetworkZones{}
 	case "dynatrace:index/notification:Notification":
 		r = &Notification{}
+	case "dynatrace:index/oneagentDefaultMode:OneagentDefaultMode":
+		r = &OneagentDefaultMode{}
 	case "dynatrace:index/oneagentDefaultVersion:OneagentDefaultVersion":
 		r = &OneagentDefaultVersion{}
 	case "dynatrace:index/oneagentFeatures:OneagentFeatures":
@@ -805,6 +817,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/automationWorkflowK8sConnections",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/automationWorkflowSlack",
 		&module{version},
 	)
@@ -881,6 +898,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/businessEventsOneagent",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/businessEventsOneagentOutgoing",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1256,6 +1278,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/hubExtensionConfig",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/hubPermissions",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1645,6 +1672,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/networkMonitor",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/networkMonitorOutage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/networkTraffic",
 		&module{version},
 	)
@@ -1661,6 +1698,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/notification",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/oneagentDefaultMode",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

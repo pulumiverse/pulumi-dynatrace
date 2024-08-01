@@ -22,8 +22,8 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Advanced JavaScript tag settings
         /// </summary>
-        [Input("advancedJavascriptTagSettings")]
-        public Input<Inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGetArgs>? AdvancedJavascriptTagSettings { get; set; }
+        [Input("advancedJavascriptTagSettings", required: true)]
+        public Input<Inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGetArgs> AdvancedJavascriptTagSettings { get; set; } = null!;
 
         /// <summary>
         /// The name of the angular package

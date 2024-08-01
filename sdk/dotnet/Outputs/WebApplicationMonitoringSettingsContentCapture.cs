@@ -21,11 +21,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Settings for resource timings capture
         /// </summary>
-        public readonly Outputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings? ResourceTimingSettings;
+        public readonly Outputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings ResourceTimingSettings;
         /// <summary>
         /// Settings for timed action capture
         /// </summary>
-        public readonly Outputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings? TimeoutSettings;
+        public readonly Outputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings TimeoutSettings;
         /// <summary>
         /// Visually complete and Speed index support enabled/disabled
         /// </summary>
@@ -39,9 +39,9 @@ namespace Pulumiverse.Dynatrace.Outputs
         private WebApplicationMonitoringSettingsContentCapture(
             bool? javascriptErrors,
 
-            Outputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings? resourceTimingSettings,
+            Outputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings resourceTimingSettings,
 
-            Outputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings? timeoutSettings,
+            Outputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings timeoutSettings,
 
             bool? visuallyCompleteAndSpeedIndex,
 

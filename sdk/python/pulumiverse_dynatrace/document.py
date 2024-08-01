@@ -27,7 +27,7 @@ class DocumentArgs:
         :param pulumi.Input[str] actor: The user context the executions of the document will happen with
         :param pulumi.Input[str] name: The name/name of the document
         :param pulumi.Input[str] owner: The ID of the owner of this document
-        :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody
+        :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
         """
         pulumi.set(__self__, "content", content)
         pulumi.set(__self__, "type", type)
@@ -104,7 +104,7 @@ class DocumentArgs:
     @pulumi.getter
     def private(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies whether the document is private or readable by everybody
+        Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
         """
         return pulumi.get(self, "private")
 
@@ -129,7 +129,7 @@ class _DocumentState:
         :param pulumi.Input[str] content: Document content as JSON
         :param pulumi.Input[str] name: The name/name of the document
         :param pulumi.Input[str] owner: The ID of the owner of this document
-        :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody
+        :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
         :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard` and `notebook`
         :param pulumi.Input[int] version: The version of the document
         """
@@ -200,7 +200,7 @@ class _DocumentState:
     @pulumi.getter
     def private(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies whether the document is private or readable by everybody
+        Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
         """
         return pulumi.get(self, "private")
 
@@ -272,7 +272,7 @@ class Document(pulumi.CustomResource):
         :param pulumi.Input[str] content: Document content as JSON
         :param pulumi.Input[str] name: The name/name of the document
         :param pulumi.Input[str] owner: The ID of the owner of this document
-        :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody
+        :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
         :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard` and `notebook`
         """
         ...
@@ -371,7 +371,7 @@ class Document(pulumi.CustomResource):
         :param pulumi.Input[str] content: Document content as JSON
         :param pulumi.Input[str] name: The name/name of the document
         :param pulumi.Input[str] owner: The ID of the owner of this document
-        :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody
+        :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
         :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard` and `notebook`
         :param pulumi.Input[int] version: The version of the document
         """
@@ -424,7 +424,7 @@ class Document(pulumi.CustomResource):
     @pulumi.getter
     def private(self) -> pulumi.Output[Optional[bool]]:
         """
-        Specifies whether the document is private or readable by everybody
+        Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
         """
         return pulumi.get(self, "private")
 

@@ -15,7 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition
     {
         /// <summary>
-        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+        /// </summary>
+        public readonly bool? KeyMustExist;
+        /// <summary>
+        /// This string has to match a required format.
         /// </summary>
         public readonly string MetadataCondition;
         /// <summary>
@@ -25,10 +29,13 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition(
+            bool? keyMustExist,
+
             string metadataCondition,
 
             string metadataKey)
         {
+            KeyMustExist = keyMustExist;
             MetadataCondition = metadataCondition;
             MetadataKey = metadataKey;
         }

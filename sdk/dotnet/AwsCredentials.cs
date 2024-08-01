@@ -20,6 +20,12 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.AwsCredentialsAuthenticationData> AuthenticationData { get; private set; } = null!;
 
         /// <summary>
+        /// Enable monitoring of specified AWS credentials
+        /// </summary>
+        [Output("credentialsEnabled")]
+        public Output<bool?> CredentialsEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// The name of the credentials
         /// </summary>
         [Output("label")]
@@ -36,6 +42,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("removeDefaults")]
         public Output<bool?> RemoveDefaults { get; private set; } = null!;
+
+        /// <summary>
+        /// Run credentials on Dynatrace infrastructure
+        /// </summary>
+        [Output("runningOnDynatraceInfrastructure")]
+        public Output<bool?> RunningOnDynatraceInfrastructure { get; private set; } = null!;
 
         [Output("supportingServicesManagedInDynatrace")]
         public Output<bool?> SupportingServicesManagedInDynatrace { get; private set; } = null!;
@@ -118,6 +130,12 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AwsCredentialsAuthenticationDataArgs> AuthenticationData { get; set; } = null!;
 
         /// <summary>
+        /// Enable monitoring of specified AWS credentials
+        /// </summary>
+        [Input("credentialsEnabled")]
+        public Input<bool>? CredentialsEnabled { get; set; }
+
+        /// <summary>
         /// The name of the credentials
         /// </summary>
         [Input("label")]
@@ -134,6 +152,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("removeDefaults")]
         public Input<bool>? RemoveDefaults { get; set; }
+
+        /// <summary>
+        /// Run credentials on Dynatrace infrastructure
+        /// </summary>
+        [Input("runningOnDynatraceInfrastructure")]
+        public Input<bool>? RunningOnDynatraceInfrastructure { get; set; }
 
         [Input("supportingServicesManagedInDynatrace")]
         public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }
@@ -190,6 +214,12 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AwsCredentialsAuthenticationDataGetArgs>? AuthenticationData { get; set; }
 
         /// <summary>
+        /// Enable monitoring of specified AWS credentials
+        /// </summary>
+        [Input("credentialsEnabled")]
+        public Input<bool>? CredentialsEnabled { get; set; }
+
+        /// <summary>
         /// The name of the credentials
         /// </summary>
         [Input("label")]
@@ -206,6 +236,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("removeDefaults")]
         public Input<bool>? RemoveDefaults { get; set; }
+
+        /// <summary>
+        /// Run credentials on Dynatrace infrastructure
+        /// </summary>
+        [Input("runningOnDynatraceInfrastructure")]
+        public Input<bool>? RunningOnDynatraceInfrastructure { get; set; }
 
         [Input("supportingServicesManagedInDynatrace")]
         public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }

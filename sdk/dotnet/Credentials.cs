@@ -20,6 +20,12 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> AllowContextlessRequests { get; private set; } = null!;
 
         /// <summary>
+        /// The set of entities allowed to use the credential.
+        /// </summary>
+        [Output("allowedEntities")]
+        public Output<Outputs.CredentialsAllowedEntities?> AllowedEntities { get; private set; } = null!;
+
+        /// <summary>
         /// The certificate in the string format.
         /// </summary>
         [Output("certificate")]
@@ -71,13 +77,13 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> Public { get; private set; } = null!;
 
         /// <summary>
-        /// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        /// The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         /// </summary>
         [Output("scope")]
         public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
-        /// The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        /// The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
         /// </summary>
         [Output("scopes")]
         public Output<ImmutableArray<string>> Scopes { get; private set; } = null!;
@@ -154,6 +160,12 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? AllowContextlessRequests { get; set; }
 
         /// <summary>
+        /// The set of entities allowed to use the credential.
+        /// </summary>
+        [Input("allowedEntities")]
+        public Input<Inputs.CredentialsAllowedEntitiesArgs>? AllowedEntities { get; set; }
+
+        /// <summary>
         /// The certificate in the string format.
         /// </summary>
         [Input("certificate")]
@@ -221,7 +233,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Public { get; set; }
 
         /// <summary>
-        /// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        /// The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -230,7 +242,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _scopes;
 
         /// <summary>
-        /// The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        /// The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
         /// </summary>
         public InputList<string> Scopes
         {
@@ -283,6 +295,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("allowContextlessRequests")]
         public Input<bool>? AllowContextlessRequests { get; set; }
+
+        /// <summary>
+        /// The set of entities allowed to use the credential.
+        /// </summary>
+        [Input("allowedEntities")]
+        public Input<Inputs.CredentialsAllowedEntitiesGetArgs>? AllowedEntities { get; set; }
 
         /// <summary>
         /// The certificate in the string format.
@@ -352,7 +370,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Public { get; set; }
 
         /// <summary>
-        /// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        /// The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -361,7 +379,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _scopes;
 
         /// <summary>
-        /// The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        /// The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
         /// </summary>
         public InputList<string> Scopes
         {

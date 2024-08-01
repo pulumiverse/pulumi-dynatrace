@@ -16,14 +16,14 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
         /// </summary>
-        [Input("frustratingFallbackThreshold")]
-        public Input<int>? FrustratingFallbackThreshold { get; set; }
+        [Input("frustratingFallbackThreshold", required: true)]
+        public Input<int> FrustratingFallbackThreshold { get; set; } = null!;
 
         /// <summary>
         /// Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
         /// </summary>
-        [Input("frustratingThreshold")]
-        public Input<int>? FrustratingThreshold { get; set; }
+        [Input("frustratingThreshold", required: true)]
+        public Input<int> FrustratingThreshold { get; set; } = null!;
 
         /// <summary>
         /// no documentation available
@@ -34,14 +34,14 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
         /// </summary>
-        [Input("toleratedFallbackThreshold")]
-        public Input<int>? ToleratedFallbackThreshold { get; set; }
+        [Input("toleratedFallbackThreshold", required: true)]
+        public Input<int> ToleratedFallbackThreshold { get; set; } = null!;
 
         /// <summary>
         /// Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
         /// </summary>
-        [Input("toleratedThreshold")]
-        public Input<int>? ToleratedThreshold { get; set; }
+        [Input("toleratedThreshold", required: true)]
+        public Input<int> ToleratedThreshold { get; set; } = null!;
 
         public WebApplicationCustomActionApdexSettingsGetArgs()
         {

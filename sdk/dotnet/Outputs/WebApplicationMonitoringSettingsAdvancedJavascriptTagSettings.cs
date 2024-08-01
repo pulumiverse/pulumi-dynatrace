@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Additional event handlers and wrappers
         /// </summary>
-        public readonly Outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers? AdditionalEventHandlers;
+        public readonly Outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers AdditionalEventHandlers;
         /// <summary>
         /// In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
         /// </summary>
@@ -53,7 +53,7 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings(
-            Outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers? additionalEventHandlers,
+            Outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers additionalEventHandlers,
 
             Outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings? eventWrapperSettings,
 
