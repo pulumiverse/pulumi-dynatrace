@@ -39,7 +39,7 @@ class WebhookNotificationArgs:
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
         :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
-        :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
+        :param pulumi.Input[bool] notify_closed_problems: Call webhook if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
         :param pulumi.Input['WebhookNotificationOauth2CredentialsArgs'] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
         :param pulumi.Input[str] secret_url: The secret URL of the webhook endpoint.
@@ -161,7 +161,7 @@ class WebhookNotificationArgs:
     @pulumi.getter(name="notifyClosedProblems")
     def notify_closed_problems(self) -> Optional[pulumi.Input[bool]]:
         """
-        Send email if problem is closed
+        Call webhook if problem is closed
         """
         return pulumi.get(self, "notify_closed_problems")
 
@@ -266,7 +266,7 @@ class _WebhookNotificationState:
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
         :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
-        :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
+        :param pulumi.Input[bool] notify_closed_problems: Call webhook if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
         :param pulumi.Input['WebhookNotificationOauth2CredentialsArgs'] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
         :param pulumi.Input[str] payload: The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
@@ -369,7 +369,7 @@ class _WebhookNotificationState:
     @pulumi.getter(name="notifyClosedProblems")
     def notify_closed_problems(self) -> Optional[pulumi.Input[bool]]:
         """
-        Send email if problem is closed
+        Call webhook if problem is closed
         """
         return pulumi.get(self, "notify_closed_problems")
 
@@ -503,7 +503,7 @@ class WebhookNotification(pulumi.CustomResource):
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
         :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
-        :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
+        :param pulumi.Input[bool] notify_closed_problems: Call webhook if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
         :param pulumi.Input[pulumi.InputType['WebhookNotificationOauth2CredentialsArgs']] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
         :param pulumi.Input[str] payload: The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
@@ -617,7 +617,7 @@ class WebhookNotification(pulumi.CustomResource):
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
         :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
-        :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
+        :param pulumi.Input[bool] notify_closed_problems: Call webhook if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
         :param pulumi.Input[pulumi.InputType['WebhookNotificationOauth2CredentialsArgs']] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
         :param pulumi.Input[str] payload: The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
@@ -691,7 +691,7 @@ class WebhookNotification(pulumi.CustomResource):
     @pulumi.getter(name="notifyClosedProblems")
     def notify_closed_problems(self) -> pulumi.Output[Optional[bool]]:
         """
-        Send email if problem is closed
+        Call webhook if problem is closed
         """
         return pulumi.get(self, "notify_closed_problems")
 
