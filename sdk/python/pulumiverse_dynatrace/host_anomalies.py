@@ -258,25 +258,25 @@ class HostAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connections: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesConnectionsArgs']]] = None,
-                 cpu: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesCpuArgs']]] = None,
-                 disks: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesDisksArgs']]] = None,
-                 gc: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesGcArgs']]] = None,
-                 java: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesJavaArgs']]] = None,
-                 memory: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesMemoryArgs']]] = None,
-                 network: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesNetworkArgs']]] = None,
+                 connections: Optional[pulumi.Input[Union['HostAnomaliesConnectionsArgs', 'HostAnomaliesConnectionsArgsDict']]] = None,
+                 cpu: Optional[pulumi.Input[Union['HostAnomaliesCpuArgs', 'HostAnomaliesCpuArgsDict']]] = None,
+                 disks: Optional[pulumi.Input[Union['HostAnomaliesDisksArgs', 'HostAnomaliesDisksArgsDict']]] = None,
+                 gc: Optional[pulumi.Input[Union['HostAnomaliesGcArgs', 'HostAnomaliesGcArgsDict']]] = None,
+                 java: Optional[pulumi.Input[Union['HostAnomaliesJavaArgs', 'HostAnomaliesJavaArgsDict']]] = None,
+                 memory: Optional[pulumi.Input[Union['HostAnomaliesMemoryArgs', 'HostAnomaliesMemoryArgsDict']]] = None,
+                 network: Optional[pulumi.Input[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict']]] = None,
                  __props__=None):
         """
         Create a HostAnomalies resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesConnectionsArgs']] connections: Configuration of lost connection detection
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesCpuArgs']] cpu: Configuration of high CPU saturation detection
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesDisksArgs']] disks: Configuration of disk related anomalies
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesGcArgs']] gc: Configuration of high Garbage Collector activity detection
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesJavaArgs']] java: Configuration of Java related anomalies
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesMemoryArgs']] memory: Configuration of high memory usage detection
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesNetworkArgs']] network: Configuration of network related anomalies
+        :param pulumi.Input[Union['HostAnomaliesConnectionsArgs', 'HostAnomaliesConnectionsArgsDict']] connections: Configuration of lost connection detection
+        :param pulumi.Input[Union['HostAnomaliesCpuArgs', 'HostAnomaliesCpuArgsDict']] cpu: Configuration of high CPU saturation detection
+        :param pulumi.Input[Union['HostAnomaliesDisksArgs', 'HostAnomaliesDisksArgsDict']] disks: Configuration of disk related anomalies
+        :param pulumi.Input[Union['HostAnomaliesGcArgs', 'HostAnomaliesGcArgsDict']] gc: Configuration of high Garbage Collector activity detection
+        :param pulumi.Input[Union['HostAnomaliesJavaArgs', 'HostAnomaliesJavaArgsDict']] java: Configuration of Java related anomalies
+        :param pulumi.Input[Union['HostAnomaliesMemoryArgs', 'HostAnomaliesMemoryArgsDict']] memory: Configuration of high memory usage detection
+        :param pulumi.Input[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict']] network: Configuration of network related anomalies
         """
         ...
     @overload
@@ -301,13 +301,13 @@ class HostAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connections: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesConnectionsArgs']]] = None,
-                 cpu: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesCpuArgs']]] = None,
-                 disks: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesDisksArgs']]] = None,
-                 gc: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesGcArgs']]] = None,
-                 java: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesJavaArgs']]] = None,
-                 memory: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesMemoryArgs']]] = None,
-                 network: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesNetworkArgs']]] = None,
+                 connections: Optional[pulumi.Input[Union['HostAnomaliesConnectionsArgs', 'HostAnomaliesConnectionsArgsDict']]] = None,
+                 cpu: Optional[pulumi.Input[Union['HostAnomaliesCpuArgs', 'HostAnomaliesCpuArgsDict']]] = None,
+                 disks: Optional[pulumi.Input[Union['HostAnomaliesDisksArgs', 'HostAnomaliesDisksArgsDict']]] = None,
+                 gc: Optional[pulumi.Input[Union['HostAnomaliesGcArgs', 'HostAnomaliesGcArgsDict']]] = None,
+                 java: Optional[pulumi.Input[Union['HostAnomaliesJavaArgs', 'HostAnomaliesJavaArgsDict']]] = None,
+                 memory: Optional[pulumi.Input[Union['HostAnomaliesMemoryArgs', 'HostAnomaliesMemoryArgsDict']]] = None,
+                 network: Optional[pulumi.Input[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -334,13 +334,13 @@ class HostAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            connections: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesConnectionsArgs']]] = None,
-            cpu: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesCpuArgs']]] = None,
-            disks: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesDisksArgs']]] = None,
-            gc: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesGcArgs']]] = None,
-            java: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesJavaArgs']]] = None,
-            memory: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesMemoryArgs']]] = None,
-            network: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesNetworkArgs']]] = None) -> 'HostAnomalies':
+            connections: Optional[pulumi.Input[Union['HostAnomaliesConnectionsArgs', 'HostAnomaliesConnectionsArgsDict']]] = None,
+            cpu: Optional[pulumi.Input[Union['HostAnomaliesCpuArgs', 'HostAnomaliesCpuArgsDict']]] = None,
+            disks: Optional[pulumi.Input[Union['HostAnomaliesDisksArgs', 'HostAnomaliesDisksArgsDict']]] = None,
+            gc: Optional[pulumi.Input[Union['HostAnomaliesGcArgs', 'HostAnomaliesGcArgsDict']]] = None,
+            java: Optional[pulumi.Input[Union['HostAnomaliesJavaArgs', 'HostAnomaliesJavaArgsDict']]] = None,
+            memory: Optional[pulumi.Input[Union['HostAnomaliesMemoryArgs', 'HostAnomaliesMemoryArgsDict']]] = None,
+            network: Optional[pulumi.Input[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict']]] = None) -> 'HostAnomalies':
         """
         Get an existing HostAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -348,13 +348,13 @@ class HostAnomalies(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesConnectionsArgs']] connections: Configuration of lost connection detection
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesCpuArgs']] cpu: Configuration of high CPU saturation detection
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesDisksArgs']] disks: Configuration of disk related anomalies
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesGcArgs']] gc: Configuration of high Garbage Collector activity detection
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesJavaArgs']] java: Configuration of Java related anomalies
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesMemoryArgs']] memory: Configuration of high memory usage detection
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesNetworkArgs']] network: Configuration of network related anomalies
+        :param pulumi.Input[Union['HostAnomaliesConnectionsArgs', 'HostAnomaliesConnectionsArgsDict']] connections: Configuration of lost connection detection
+        :param pulumi.Input[Union['HostAnomaliesCpuArgs', 'HostAnomaliesCpuArgsDict']] cpu: Configuration of high CPU saturation detection
+        :param pulumi.Input[Union['HostAnomaliesDisksArgs', 'HostAnomaliesDisksArgsDict']] disks: Configuration of disk related anomalies
+        :param pulumi.Input[Union['HostAnomaliesGcArgs', 'HostAnomaliesGcArgsDict']] gc: Configuration of high Garbage Collector activity detection
+        :param pulumi.Input[Union['HostAnomaliesJavaArgs', 'HostAnomaliesJavaArgsDict']] java: Configuration of Java related anomalies
+        :param pulumi.Input[Union['HostAnomaliesMemoryArgs', 'HostAnomaliesMemoryArgsDict']] memory: Configuration of high memory usage detection
+        :param pulumi.Input[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict']] network: Configuration of network related anomalies
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

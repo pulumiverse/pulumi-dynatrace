@@ -256,10 +256,10 @@ class ServiceFullWebService(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[pulumi.InputType['ServiceFullWebServiceConditionsArgs']]] = None,
+                 conditions: Optional[pulumi.Input[Union['ServiceFullWebServiceConditionsArgs', 'ServiceFullWebServiceConditionsArgsDict']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 id_contributors: Optional[pulumi.Input[pulumi.InputType['ServiceFullWebServiceIdContributorsArgs']]] = None,
+                 id_contributors: Optional[pulumi.Input[Union['ServiceFullWebServiceIdContributorsArgs', 'ServiceFullWebServiceIdContributorsArgsDict']]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -268,10 +268,10 @@ class ServiceFullWebService(pulumi.CustomResource):
         Create a ServiceFullWebService resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ServiceFullWebServiceConditionsArgs']] conditions: A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
+        :param pulumi.Input[Union['ServiceFullWebServiceConditionsArgs', 'ServiceFullWebServiceConditionsArgsDict']] conditions: A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
         :param pulumi.Input[str] description: Description
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['ServiceFullWebServiceIdContributorsArgs']] id_contributors: Contributors to the Service Identifier calculation. All of the Contributors are always applied.
+        :param pulumi.Input[Union['ServiceFullWebServiceIdContributorsArgs', 'ServiceFullWebServiceIdContributorsArgsDict']] id_contributors: Contributors to the Service Identifier calculation. All of the Contributors are always applied.
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[str]]] management_zones: Define a management zone of the process group for which this service detection rule should be created.
         :param pulumi.Input[str] name: Rule name
@@ -299,10 +299,10 @@ class ServiceFullWebService(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[pulumi.InputType['ServiceFullWebServiceConditionsArgs']]] = None,
+                 conditions: Optional[pulumi.Input[Union['ServiceFullWebServiceConditionsArgs', 'ServiceFullWebServiceConditionsArgsDict']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 id_contributors: Optional[pulumi.Input[pulumi.InputType['ServiceFullWebServiceIdContributorsArgs']]] = None,
+                 id_contributors: Optional[pulumi.Input[Union['ServiceFullWebServiceIdContributorsArgs', 'ServiceFullWebServiceIdContributorsArgsDict']]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -336,10 +336,10 @@ class ServiceFullWebService(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            conditions: Optional[pulumi.Input[pulumi.InputType['ServiceFullWebServiceConditionsArgs']]] = None,
+            conditions: Optional[pulumi.Input[Union['ServiceFullWebServiceConditionsArgs', 'ServiceFullWebServiceConditionsArgsDict']]] = None,
             description: Optional[pulumi.Input[str]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
-            id_contributors: Optional[pulumi.Input[pulumi.InputType['ServiceFullWebServiceIdContributorsArgs']]] = None,
+            id_contributors: Optional[pulumi.Input[Union['ServiceFullWebServiceIdContributorsArgs', 'ServiceFullWebServiceIdContributorsArgsDict']]] = None,
             insert_after: Optional[pulumi.Input[str]] = None,
             management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None) -> 'ServiceFullWebService':
@@ -350,10 +350,10 @@ class ServiceFullWebService(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ServiceFullWebServiceConditionsArgs']] conditions: A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
+        :param pulumi.Input[Union['ServiceFullWebServiceConditionsArgs', 'ServiceFullWebServiceConditionsArgsDict']] conditions: A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
         :param pulumi.Input[str] description: Description
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['ServiceFullWebServiceIdContributorsArgs']] id_contributors: Contributors to the Service Identifier calculation. All of the Contributors are always applied.
+        :param pulumi.Input[Union['ServiceFullWebServiceIdContributorsArgs', 'ServiceFullWebServiceIdContributorsArgsDict']] id_contributors: Contributors to the Service Identifier calculation. All of the Contributors are always applied.
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[str]]] management_zones: Define a management zone of the process group for which this service detection rule should be created.
         :param pulumi.Input[str] name: Rule name

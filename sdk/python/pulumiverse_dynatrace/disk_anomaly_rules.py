@@ -318,12 +318,12 @@ class DiskAnomalyRules(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disk_name_filter: Optional[pulumi.Input[pulumi.InputType['DiskAnomalyRulesDiskNameFilterArgs']]] = None,
+                 disk_name_filter: Optional[pulumi.Input[Union['DiskAnomalyRulesDiskNameFilterArgs', 'DiskAnomalyRulesDiskNameFilterArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  host_group_id: Optional[pulumi.Input[str]] = None,
                  metric: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 sample_limit: Optional[pulumi.Input[pulumi.InputType['DiskAnomalyRulesSampleLimitArgs']]] = None,
+                 sample_limit: Optional[pulumi.Input[Union['DiskAnomalyRulesSampleLimitArgs', 'DiskAnomalyRulesSampleLimitArgsDict']]] = None,
                  tag_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  threshold_milliseconds: Optional[pulumi.Input[float]] = None,
                  threshold_percent: Optional[pulumi.Input[float]] = None,
@@ -332,12 +332,12 @@ class DiskAnomalyRules(pulumi.CustomResource):
         Create a DiskAnomalyRules resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DiskAnomalyRulesDiskNameFilterArgs']] disk_name_filter: Only apply to disks whose name matches
+        :param pulumi.Input[Union['DiskAnomalyRulesDiskNameFilterArgs', 'DiskAnomalyRulesDiskNameFilterArgsDict']] disk_name_filter: Only apply to disks whose name matches
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[str] metric: Possible Values: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING`, `WRITE_TIME_EXCEEDING`
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[pulumi.InputType['DiskAnomalyRulesSampleLimitArgs']] sample_limit: Only alert if the threshold was violated in at least *n* of the last *m* samples
+        :param pulumi.Input[Union['DiskAnomalyRulesSampleLimitArgs', 'DiskAnomalyRulesSampleLimitArgsDict']] sample_limit: Only alert if the threshold was violated in at least *n* of the last *m* samples
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tag_filters: Only apply to hosts that have the following tags
         :param pulumi.Input[float] threshold_milliseconds: Alert if higher than
         :param pulumi.Input[float] threshold_percent: Alert if lower than
@@ -365,12 +365,12 @@ class DiskAnomalyRules(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disk_name_filter: Optional[pulumi.Input[pulumi.InputType['DiskAnomalyRulesDiskNameFilterArgs']]] = None,
+                 disk_name_filter: Optional[pulumi.Input[Union['DiskAnomalyRulesDiskNameFilterArgs', 'DiskAnomalyRulesDiskNameFilterArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  host_group_id: Optional[pulumi.Input[str]] = None,
                  metric: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 sample_limit: Optional[pulumi.Input[pulumi.InputType['DiskAnomalyRulesSampleLimitArgs']]] = None,
+                 sample_limit: Optional[pulumi.Input[Union['DiskAnomalyRulesSampleLimitArgs', 'DiskAnomalyRulesSampleLimitArgsDict']]] = None,
                  tag_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  threshold_milliseconds: Optional[pulumi.Input[float]] = None,
                  threshold_percent: Optional[pulumi.Input[float]] = None,
@@ -410,12 +410,12 @@ class DiskAnomalyRules(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            disk_name_filter: Optional[pulumi.Input[pulumi.InputType['DiskAnomalyRulesDiskNameFilterArgs']]] = None,
+            disk_name_filter: Optional[pulumi.Input[Union['DiskAnomalyRulesDiskNameFilterArgs', 'DiskAnomalyRulesDiskNameFilterArgsDict']]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             host_group_id: Optional[pulumi.Input[str]] = None,
             metric: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            sample_limit: Optional[pulumi.Input[pulumi.InputType['DiskAnomalyRulesSampleLimitArgs']]] = None,
+            sample_limit: Optional[pulumi.Input[Union['DiskAnomalyRulesSampleLimitArgs', 'DiskAnomalyRulesSampleLimitArgsDict']]] = None,
             tag_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             threshold_milliseconds: Optional[pulumi.Input[float]] = None,
             threshold_percent: Optional[pulumi.Input[float]] = None) -> 'DiskAnomalyRules':
@@ -426,12 +426,12 @@ class DiskAnomalyRules(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DiskAnomalyRulesDiskNameFilterArgs']] disk_name_filter: Only apply to disks whose name matches
+        :param pulumi.Input[Union['DiskAnomalyRulesDiskNameFilterArgs', 'DiskAnomalyRulesDiskNameFilterArgsDict']] disk_name_filter: Only apply to disks whose name matches
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[str] metric: Possible Values: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING`, `WRITE_TIME_EXCEEDING`
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[pulumi.InputType['DiskAnomalyRulesSampleLimitArgs']] sample_limit: Only alert if the threshold was violated in at least *n* of the last *m* samples
+        :param pulumi.Input[Union['DiskAnomalyRulesSampleLimitArgs', 'DiskAnomalyRulesSampleLimitArgsDict']] sample_limit: Only alert if the threshold was violated in at least *n* of the last *m* samples
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tag_filters: Only apply to hosts that have the following tags
         :param pulumi.Input[float] threshold_milliseconds: Alert if higher than
         :param pulumi.Input[float] threshold_percent: Alert if lower than

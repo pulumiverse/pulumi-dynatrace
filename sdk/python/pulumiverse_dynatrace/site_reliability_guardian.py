@@ -195,9 +195,9 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 objectives: Optional[pulumi.Input[pulumi.InputType['SiteReliabilityGuardianObjectivesArgs']]] = None,
+                 objectives: Optional[pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 variables: Optional[pulumi.Input[pulumi.InputType['SiteReliabilityGuardianVariablesArgs']]] = None,
+                 variables: Optional[pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']]] = None,
                  __props__=None):
         """
         Create a SiteReliabilityGuardian resource with the given unique name, props, and options.
@@ -205,9 +205,9 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: Description
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[pulumi.InputType['SiteReliabilityGuardianObjectivesArgs']] objectives: Objectives
+        :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']] objectives: Objectives
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: Define key/value pairs that further describe this guardian.
-        :param pulumi.Input[pulumi.InputType['SiteReliabilityGuardianVariablesArgs']] variables: Define variables for dynamically defining DQL queries
+        :param pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']] variables: Define variables for dynamically defining DQL queries
         """
         ...
     @overload
@@ -234,9 +234,9 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 objectives: Optional[pulumi.Input[pulumi.InputType['SiteReliabilityGuardianObjectivesArgs']]] = None,
+                 objectives: Optional[pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 variables: Optional[pulumi.Input[pulumi.InputType['SiteReliabilityGuardianVariablesArgs']]] = None,
+                 variables: Optional[pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -265,9 +265,9 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             description: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            objectives: Optional[pulumi.Input[pulumi.InputType['SiteReliabilityGuardianObjectivesArgs']]] = None,
+            objectives: Optional[pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            variables: Optional[pulumi.Input[pulumi.InputType['SiteReliabilityGuardianVariablesArgs']]] = None) -> 'SiteReliabilityGuardian':
+            variables: Optional[pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']]] = None) -> 'SiteReliabilityGuardian':
         """
         Get an existing SiteReliabilityGuardian resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -277,9 +277,9 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: Description
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[pulumi.InputType['SiteReliabilityGuardianObjectivesArgs']] objectives: Objectives
+        :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']] objectives: Objectives
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: Define key/value pairs that further describe this guardian.
-        :param pulumi.Input[pulumi.InputType['SiteReliabilityGuardianVariablesArgs']] variables: Define variables for dynamically defining DQL queries
+        :param pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']] variables: Define variables for dynamically defining DQL queries
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

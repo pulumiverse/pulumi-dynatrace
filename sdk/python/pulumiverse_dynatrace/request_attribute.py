@@ -321,7 +321,7 @@ class RequestAttribute(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  aggregation: Optional[pulumi.Input[str]] = None,
                  confidential: Optional[pulumi.Input[bool]] = None,
-                 data_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RequestAttributeDataSourceArgs']]]]] = None,
+                 data_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]]] = None,
                  data_type: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -335,7 +335,7 @@ class RequestAttribute(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] aggregation: Aggregation type for the request values
         :param pulumi.Input[bool] confidential: Confidential data flag. Set `true` to treat the captured data as confidential
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RequestAttributeDataSourceArgs']]]] data_sources: The list of data sources
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]] data_sources: The list of data sources
         :param pulumi.Input[str] data_type: The data type of the request attribute
         :param pulumi.Input[bool] enabled: The request attribute is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] name: The name of the request attribute
@@ -368,7 +368,7 @@ class RequestAttribute(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  aggregation: Optional[pulumi.Input[str]] = None,
                  confidential: Optional[pulumi.Input[bool]] = None,
-                 data_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RequestAttributeDataSourceArgs']]]]] = None,
+                 data_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]]] = None,
                  data_type: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -411,7 +411,7 @@ class RequestAttribute(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             aggregation: Optional[pulumi.Input[str]] = None,
             confidential: Optional[pulumi.Input[bool]] = None,
-            data_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RequestAttributeDataSourceArgs']]]]] = None,
+            data_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]]] = None,
             data_type: Optional[pulumi.Input[str]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
@@ -427,7 +427,7 @@ class RequestAttribute(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] aggregation: Aggregation type for the request values
         :param pulumi.Input[bool] confidential: Confidential data flag. Set `true` to treat the captured data as confidential
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RequestAttributeDataSourceArgs']]]] data_sources: The list of data sources
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]] data_sources: The list of data sources
         :param pulumi.Input[str] data_type: The data type of the request attribute
         :param pulumi.Input[bool] enabled: The request attribute is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] name: The name of the request attribute

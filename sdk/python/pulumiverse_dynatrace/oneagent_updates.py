@@ -193,7 +193,7 @@ class OneagentUpdates(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 maintenance_windows: Optional[pulumi.Input[pulumi.InputType['OneagentUpdatesMaintenanceWindowsArgs']]] = None,
+                 maintenance_windows: Optional[pulumi.Input[Union['OneagentUpdatesMaintenanceWindowsArgs', 'OneagentUpdatesMaintenanceWindowsArgsDict']]] = None,
                  revision: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  target_version: Optional[pulumi.Input[str]] = None,
@@ -203,7 +203,7 @@ class OneagentUpdates(pulumi.CustomResource):
         Create a OneagentUpdates resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['OneagentUpdatesMaintenanceWindowsArgs']] maintenance_windows: Maintenance windows
+        :param pulumi.Input[Union['OneagentUpdatesMaintenanceWindowsArgs', 'OneagentUpdatesMaintenanceWindowsArgsDict']] maintenance_windows: Maintenance windows
         :param pulumi.Input[str] revision: Revision
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[str] target_version: Target version
@@ -232,7 +232,7 @@ class OneagentUpdates(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 maintenance_windows: Optional[pulumi.Input[pulumi.InputType['OneagentUpdatesMaintenanceWindowsArgs']]] = None,
+                 maintenance_windows: Optional[pulumi.Input[Union['OneagentUpdatesMaintenanceWindowsArgs', 'OneagentUpdatesMaintenanceWindowsArgsDict']]] = None,
                  revision: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  target_version: Optional[pulumi.Input[str]] = None,
@@ -263,7 +263,7 @@ class OneagentUpdates(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            maintenance_windows: Optional[pulumi.Input[pulumi.InputType['OneagentUpdatesMaintenanceWindowsArgs']]] = None,
+            maintenance_windows: Optional[pulumi.Input[Union['OneagentUpdatesMaintenanceWindowsArgs', 'OneagentUpdatesMaintenanceWindowsArgsDict']]] = None,
             revision: Optional[pulumi.Input[str]] = None,
             scope: Optional[pulumi.Input[str]] = None,
             target_version: Optional[pulumi.Input[str]] = None,
@@ -275,7 +275,7 @@ class OneagentUpdates(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['OneagentUpdatesMaintenanceWindowsArgs']] maintenance_windows: Maintenance windows
+        :param pulumi.Input[Union['OneagentUpdatesMaintenanceWindowsArgs', 'OneagentUpdatesMaintenanceWindowsArgsDict']] maintenance_windows: Maintenance windows
         :param pulumi.Input[str] revision: Revision
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[str] target_version: Target version

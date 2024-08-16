@@ -223,22 +223,22 @@ class BusinessEventsOneagent(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 event: Optional[pulumi.Input[pulumi.InputType['BusinessEventsOneagentEventArgs']]] = None,
+                 event: Optional[pulumi.Input[Union['BusinessEventsOneagentEventArgs', 'BusinessEventsOneagentEventArgsDict']]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  rule_name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
-                 triggers: Optional[pulumi.Input[pulumi.InputType['BusinessEventsOneagentTriggersArgs']]] = None,
+                 triggers: Optional[pulumi.Input[Union['BusinessEventsOneagentTriggersArgs', 'BusinessEventsOneagentTriggersArgsDict']]] = None,
                  __props__=None):
         """
         Create a BusinessEventsOneagent resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['BusinessEventsOneagentEventArgs']] event: Event meta data
+        :param pulumi.Input[Union['BusinessEventsOneagentEventArgs', 'BusinessEventsOneagentEventArgsDict']] event: Event meta data
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] rule_name: Rule name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[pulumi.InputType['BusinessEventsOneagentTriggersArgs']] triggers: Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+        :param pulumi.Input[Union['BusinessEventsOneagentTriggersArgs', 'BusinessEventsOneagentTriggersArgsDict']] triggers: Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         ...
     @overload
@@ -264,11 +264,11 @@ class BusinessEventsOneagent(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 event: Optional[pulumi.Input[pulumi.InputType['BusinessEventsOneagentEventArgs']]] = None,
+                 event: Optional[pulumi.Input[Union['BusinessEventsOneagentEventArgs', 'BusinessEventsOneagentEventArgsDict']]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  rule_name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
-                 triggers: Optional[pulumi.Input[pulumi.InputType['BusinessEventsOneagentTriggersArgs']]] = None,
+                 triggers: Optional[pulumi.Input[Union['BusinessEventsOneagentTriggersArgs', 'BusinessEventsOneagentTriggersArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -303,11 +303,11 @@ class BusinessEventsOneagent(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
-            event: Optional[pulumi.Input[pulumi.InputType['BusinessEventsOneagentEventArgs']]] = None,
+            event: Optional[pulumi.Input[Union['BusinessEventsOneagentEventArgs', 'BusinessEventsOneagentEventArgsDict']]] = None,
             insert_after: Optional[pulumi.Input[str]] = None,
             rule_name: Optional[pulumi.Input[str]] = None,
             scope: Optional[pulumi.Input[str]] = None,
-            triggers: Optional[pulumi.Input[pulumi.InputType['BusinessEventsOneagentTriggersArgs']]] = None) -> 'BusinessEventsOneagent':
+            triggers: Optional[pulumi.Input[Union['BusinessEventsOneagentTriggersArgs', 'BusinessEventsOneagentTriggersArgsDict']]] = None) -> 'BusinessEventsOneagent':
         """
         Get an existing BusinessEventsOneagent resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -316,11 +316,11 @@ class BusinessEventsOneagent(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['BusinessEventsOneagentEventArgs']] event: Event meta data
+        :param pulumi.Input[Union['BusinessEventsOneagentEventArgs', 'BusinessEventsOneagentEventArgsDict']] event: Event meta data
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] rule_name: Rule name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[pulumi.InputType['BusinessEventsOneagentTriggersArgs']] triggers: Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+        :param pulumi.Input[Union['BusinessEventsOneagentTriggersArgs', 'BusinessEventsOneagentTriggersArgsDict']] triggers: Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

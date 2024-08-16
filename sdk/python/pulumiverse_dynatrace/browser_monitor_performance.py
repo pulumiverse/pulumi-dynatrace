@@ -130,7 +130,7 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
-                 thresholds: Optional[pulumi.Input[pulumi.InputType['BrowserMonitorPerformanceThresholdsArgs']]] = None,
+                 thresholds: Optional[pulumi.Input[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']]] = None,
                  __props__=None):
         """
         Create a BrowserMonitorPerformance resource with the given unique name, props, and options.
@@ -138,7 +138,7 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] scope: The scope of this setting (SYNTHETIC_TEST)
-        :param pulumi.Input[pulumi.InputType['BrowserMonitorPerformanceThresholdsArgs']] thresholds: Performance thresholds
+        :param pulumi.Input[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']] thresholds: Performance thresholds
         """
         ...
     @overload
@@ -165,7 +165,7 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
-                 thresholds: Optional[pulumi.Input[pulumi.InputType['BrowserMonitorPerformanceThresholdsArgs']]] = None,
+                 thresholds: Optional[pulumi.Input[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -194,7 +194,7 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             scope: Optional[pulumi.Input[str]] = None,
-            thresholds: Optional[pulumi.Input[pulumi.InputType['BrowserMonitorPerformanceThresholdsArgs']]] = None) -> 'BrowserMonitorPerformance':
+            thresholds: Optional[pulumi.Input[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']]] = None) -> 'BrowserMonitorPerformance':
         """
         Get an existing BrowserMonitorPerformance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -204,7 +204,7 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] scope: The scope of this setting (SYNTHETIC_TEST)
-        :param pulumi.Input[pulumi.InputType['BrowserMonitorPerformanceThresholdsArgs']] thresholds: Performance thresholds
+        :param pulumi.Input[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']] thresholds: Performance thresholds
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

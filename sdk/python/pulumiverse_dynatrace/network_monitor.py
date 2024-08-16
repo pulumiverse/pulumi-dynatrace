@@ -356,10 +356,10 @@ class NetworkMonitor(pulumi.CustomResource):
                  frequency_min: Optional[pulumi.Input[int]] = None,
                  locations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 outage_handling: Optional[pulumi.Input[pulumi.InputType['NetworkMonitorOutageHandlingArgs']]] = None,
-                 performance_thresholds: Optional[pulumi.Input[pulumi.InputType['NetworkMonitorPerformanceThresholdsArgs']]] = None,
-                 steps: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkMonitorStepArgs']]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkMonitorTagArgs']]]]] = None,
+                 outage_handling: Optional[pulumi.Input[Union['NetworkMonitorOutageHandlingArgs', 'NetworkMonitorOutageHandlingArgsDict']]] = None,
+                 performance_thresholds: Optional[pulumi.Input[Union['NetworkMonitorPerformanceThresholdsArgs', 'NetworkMonitorPerformanceThresholdsArgsDict']]] = None,
+                 steps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorStepArgs', 'NetworkMonitorStepArgsDict']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorTagArgs', 'NetworkMonitorTagArgsDict']]]]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -371,10 +371,10 @@ class NetworkMonitor(pulumi.CustomResource):
         :param pulumi.Input[int] frequency_min: Frequency of the monitor, in minutes
         :param pulumi.Input[Sequence[pulumi.Input[str]]] locations: The locations to which the monitor is assigned
         :param pulumi.Input[str] name: Name of the monitor
-        :param pulumi.Input[pulumi.InputType['NetworkMonitorOutageHandlingArgs']] outage_handling: Outage handling configuration
-        :param pulumi.Input[pulumi.InputType['NetworkMonitorPerformanceThresholdsArgs']] performance_thresholds: Performance thresholds configuration
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkMonitorStepArgs']]]] steps: The steps of the monitor
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkMonitorTagArgs']]]] tags: A set of tags assigned to the monitor.
+        :param pulumi.Input[Union['NetworkMonitorOutageHandlingArgs', 'NetworkMonitorOutageHandlingArgsDict']] outage_handling: Outage handling configuration
+        :param pulumi.Input[Union['NetworkMonitorPerformanceThresholdsArgs', 'NetworkMonitorPerformanceThresholdsArgsDict']] performance_thresholds: Performance thresholds configuration
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorStepArgs', 'NetworkMonitorStepArgsDict']]]] steps: The steps of the monitor
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorTagArgs', 'NetworkMonitorTagArgsDict']]]] tags: A set of tags assigned to the monitor.
         :param pulumi.Input[str] type: Type of the monitor, possible values: `MULTI_PROTOCOL`
         """
         ...
@@ -405,10 +405,10 @@ class NetworkMonitor(pulumi.CustomResource):
                  frequency_min: Optional[pulumi.Input[int]] = None,
                  locations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 outage_handling: Optional[pulumi.Input[pulumi.InputType['NetworkMonitorOutageHandlingArgs']]] = None,
-                 performance_thresholds: Optional[pulumi.Input[pulumi.InputType['NetworkMonitorPerformanceThresholdsArgs']]] = None,
-                 steps: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkMonitorStepArgs']]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkMonitorTagArgs']]]]] = None,
+                 outage_handling: Optional[pulumi.Input[Union['NetworkMonitorOutageHandlingArgs', 'NetworkMonitorOutageHandlingArgsDict']]] = None,
+                 performance_thresholds: Optional[pulumi.Input[Union['NetworkMonitorPerformanceThresholdsArgs', 'NetworkMonitorPerformanceThresholdsArgsDict']]] = None,
+                 steps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorStepArgs', 'NetworkMonitorStepArgsDict']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorTagArgs', 'NetworkMonitorTagArgsDict']]]]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -450,10 +450,10 @@ class NetworkMonitor(pulumi.CustomResource):
             frequency_min: Optional[pulumi.Input[int]] = None,
             locations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            outage_handling: Optional[pulumi.Input[pulumi.InputType['NetworkMonitorOutageHandlingArgs']]] = None,
-            performance_thresholds: Optional[pulumi.Input[pulumi.InputType['NetworkMonitorPerformanceThresholdsArgs']]] = None,
-            steps: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkMonitorStepArgs']]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkMonitorTagArgs']]]]] = None,
+            outage_handling: Optional[pulumi.Input[Union['NetworkMonitorOutageHandlingArgs', 'NetworkMonitorOutageHandlingArgsDict']]] = None,
+            performance_thresholds: Optional[pulumi.Input[Union['NetworkMonitorPerformanceThresholdsArgs', 'NetworkMonitorPerformanceThresholdsArgsDict']]] = None,
+            steps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorStepArgs', 'NetworkMonitorStepArgsDict']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorTagArgs', 'NetworkMonitorTagArgsDict']]]]] = None,
             type: Optional[pulumi.Input[str]] = None) -> 'NetworkMonitor':
         """
         Get an existing NetworkMonitor resource's state with the given name, id, and optional extra
@@ -467,10 +467,10 @@ class NetworkMonitor(pulumi.CustomResource):
         :param pulumi.Input[int] frequency_min: Frequency of the monitor, in minutes
         :param pulumi.Input[Sequence[pulumi.Input[str]]] locations: The locations to which the monitor is assigned
         :param pulumi.Input[str] name: Name of the monitor
-        :param pulumi.Input[pulumi.InputType['NetworkMonitorOutageHandlingArgs']] outage_handling: Outage handling configuration
-        :param pulumi.Input[pulumi.InputType['NetworkMonitorPerformanceThresholdsArgs']] performance_thresholds: Performance thresholds configuration
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkMonitorStepArgs']]]] steps: The steps of the monitor
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkMonitorTagArgs']]]] tags: A set of tags assigned to the monitor.
+        :param pulumi.Input[Union['NetworkMonitorOutageHandlingArgs', 'NetworkMonitorOutageHandlingArgsDict']] outage_handling: Outage handling configuration
+        :param pulumi.Input[Union['NetworkMonitorPerformanceThresholdsArgs', 'NetworkMonitorPerformanceThresholdsArgsDict']] performance_thresholds: Performance thresholds configuration
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorStepArgs', 'NetworkMonitorStepArgsDict']]]] steps: The steps of the monitor
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorTagArgs', 'NetworkMonitorTagArgsDict']]]] tags: A set of tags assigned to the monitor.
         :param pulumi.Input[str] type: Type of the monitor, possible values: `MULTI_PROTOCOL`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

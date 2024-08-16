@@ -190,20 +190,20 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 failure_rate: Optional[pulumi.Input[pulumi.InputType['ServiceAnomaliesV2FailureRateArgs']]] = None,
-                 load_drops: Optional[pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadDropsArgs']]] = None,
-                 load_spikes: Optional[pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadSpikesArgs']]] = None,
-                 response_time: Optional[pulumi.Input[pulumi.InputType['ServiceAnomaliesV2ResponseTimeArgs']]] = None,
+                 failure_rate: Optional[pulumi.Input[Union['ServiceAnomaliesV2FailureRateArgs', 'ServiceAnomaliesV2FailureRateArgsDict']]] = None,
+                 load_drops: Optional[pulumi.Input[Union['ServiceAnomaliesV2LoadDropsArgs', 'ServiceAnomaliesV2LoadDropsArgsDict']]] = None,
+                 load_spikes: Optional[pulumi.Input[Union['ServiceAnomaliesV2LoadSpikesArgs', 'ServiceAnomaliesV2LoadSpikesArgsDict']]] = None,
+                 response_time: Optional[pulumi.Input[Union['ServiceAnomaliesV2ResponseTimeArgs', 'ServiceAnomaliesV2ResponseTimeArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a ServiceAnomaliesV2 resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2FailureRateArgs']] failure_rate: Failure rate
-        :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadDropsArgs']] load_drops: Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time:
-        :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadSpikesArgs']] load_spikes: Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time:
-        :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2ResponseTimeArgs']] response_time: Response time
+        :param pulumi.Input[Union['ServiceAnomaliesV2FailureRateArgs', 'ServiceAnomaliesV2FailureRateArgsDict']] failure_rate: Failure rate
+        :param pulumi.Input[Union['ServiceAnomaliesV2LoadDropsArgs', 'ServiceAnomaliesV2LoadDropsArgsDict']] load_drops: Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time:
+        :param pulumi.Input[Union['ServiceAnomaliesV2LoadSpikesArgs', 'ServiceAnomaliesV2LoadSpikesArgsDict']] load_spikes: Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time:
+        :param pulumi.Input[Union['ServiceAnomaliesV2ResponseTimeArgs', 'ServiceAnomaliesV2ResponseTimeArgsDict']] response_time: Response time
         :param pulumi.Input[str] scope: The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         ...
@@ -229,10 +229,10 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 failure_rate: Optional[pulumi.Input[pulumi.InputType['ServiceAnomaliesV2FailureRateArgs']]] = None,
-                 load_drops: Optional[pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadDropsArgs']]] = None,
-                 load_spikes: Optional[pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadSpikesArgs']]] = None,
-                 response_time: Optional[pulumi.Input[pulumi.InputType['ServiceAnomaliesV2ResponseTimeArgs']]] = None,
+                 failure_rate: Optional[pulumi.Input[Union['ServiceAnomaliesV2FailureRateArgs', 'ServiceAnomaliesV2FailureRateArgsDict']]] = None,
+                 load_drops: Optional[pulumi.Input[Union['ServiceAnomaliesV2LoadDropsArgs', 'ServiceAnomaliesV2LoadDropsArgsDict']]] = None,
+                 load_spikes: Optional[pulumi.Input[Union['ServiceAnomaliesV2LoadSpikesArgs', 'ServiceAnomaliesV2LoadSpikesArgsDict']]] = None,
+                 response_time: Optional[pulumi.Input[Union['ServiceAnomaliesV2ResponseTimeArgs', 'ServiceAnomaliesV2ResponseTimeArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -266,10 +266,10 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            failure_rate: Optional[pulumi.Input[pulumi.InputType['ServiceAnomaliesV2FailureRateArgs']]] = None,
-            load_drops: Optional[pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadDropsArgs']]] = None,
-            load_spikes: Optional[pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadSpikesArgs']]] = None,
-            response_time: Optional[pulumi.Input[pulumi.InputType['ServiceAnomaliesV2ResponseTimeArgs']]] = None,
+            failure_rate: Optional[pulumi.Input[Union['ServiceAnomaliesV2FailureRateArgs', 'ServiceAnomaliesV2FailureRateArgsDict']]] = None,
+            load_drops: Optional[pulumi.Input[Union['ServiceAnomaliesV2LoadDropsArgs', 'ServiceAnomaliesV2LoadDropsArgsDict']]] = None,
+            load_spikes: Optional[pulumi.Input[Union['ServiceAnomaliesV2LoadSpikesArgs', 'ServiceAnomaliesV2LoadSpikesArgsDict']]] = None,
+            response_time: Optional[pulumi.Input[Union['ServiceAnomaliesV2ResponseTimeArgs', 'ServiceAnomaliesV2ResponseTimeArgsDict']]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'ServiceAnomaliesV2':
         """
         Get an existing ServiceAnomaliesV2 resource's state with the given name, id, and optional extra
@@ -278,10 +278,10 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2FailureRateArgs']] failure_rate: Failure rate
-        :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadDropsArgs']] load_drops: Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time:
-        :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadSpikesArgs']] load_spikes: Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time:
-        :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2ResponseTimeArgs']] response_time: Response time
+        :param pulumi.Input[Union['ServiceAnomaliesV2FailureRateArgs', 'ServiceAnomaliesV2FailureRateArgsDict']] failure_rate: Failure rate
+        :param pulumi.Input[Union['ServiceAnomaliesV2LoadDropsArgs', 'ServiceAnomaliesV2LoadDropsArgsDict']] load_drops: Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time:
+        :param pulumi.Input[Union['ServiceAnomaliesV2LoadSpikesArgs', 'ServiceAnomaliesV2LoadSpikesArgsDict']] load_spikes: Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time:
+        :param pulumi.Input[Union['ServiceAnomaliesV2ResponseTimeArgs', 'ServiceAnomaliesV2ResponseTimeArgsDict']] response_time: Response time
         :param pulumi.Input[str] scope: The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

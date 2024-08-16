@@ -129,7 +129,7 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  frustrating_if_reported_or_web_request_error: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
-                 thresholds: Optional[pulumi.Input[pulumi.InputType['MobileAppKeyPerformanceThresholdsArgs']]] = None,
+                 thresholds: Optional[pulumi.Input[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']]] = None,
                  __props__=None):
         """
         Create a MobileAppKeyPerformance resource with the given unique name, props, and options.
@@ -137,7 +137,7 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] frustrating_if_reported_or_web_request_error: Treat user actions with reported errors or web request errors as erroneous and rate their performance as Frustrating. Turn off this setting if errors should not affect the Apdex rate.
         :param pulumi.Input[str] scope: The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE*APPLICATION, CUSTOM*APPLICATION)
-        :param pulumi.Input[pulumi.InputType['MobileAppKeyPerformanceThresholdsArgs']] thresholds: no documentation available
+        :param pulumi.Input[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']] thresholds: no documentation available
         """
         ...
     @overload
@@ -164,7 +164,7 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  frustrating_if_reported_or_web_request_error: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
-                 thresholds: Optional[pulumi.Input[pulumi.InputType['MobileAppKeyPerformanceThresholdsArgs']]] = None,
+                 thresholds: Optional[pulumi.Input[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -195,7 +195,7 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             frustrating_if_reported_or_web_request_error: Optional[pulumi.Input[bool]] = None,
             scope: Optional[pulumi.Input[str]] = None,
-            thresholds: Optional[pulumi.Input[pulumi.InputType['MobileAppKeyPerformanceThresholdsArgs']]] = None) -> 'MobileAppKeyPerformance':
+            thresholds: Optional[pulumi.Input[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']]] = None) -> 'MobileAppKeyPerformance':
         """
         Get an existing MobileAppKeyPerformance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -205,7 +205,7 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] frustrating_if_reported_or_web_request_error: Treat user actions with reported errors or web request errors as erroneous and rate their performance as Frustrating. Turn off this setting if errors should not affect the Apdex rate.
         :param pulumi.Input[str] scope: The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE*APPLICATION, CUSTOM*APPLICATION)
-        :param pulumi.Input[pulumi.InputType['MobileAppKeyPerformanceThresholdsArgs']] thresholds: no documentation available
+        :param pulumi.Input[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']] thresholds: no documentation available
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

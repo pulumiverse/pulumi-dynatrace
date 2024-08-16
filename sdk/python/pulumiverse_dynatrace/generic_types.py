@@ -227,7 +227,7 @@ class GenericTypes(pulumi.CustomResource):
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[pulumi.InputType['GenericTypesRulesArgs']]] = None,
+                 rules: Optional[pulumi.Input[Union['GenericTypesRulesArgs', 'GenericTypesRulesArgsDict']]] = None,
                  __props__=None):
         """
         Create a GenericTypes resource with the given unique name, props, and options.
@@ -238,7 +238,7 @@ class GenericTypes(pulumi.CustomResource):
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: The entity type name. This type name must be unique and must not be changed after creation.
-        :param pulumi.Input[pulumi.InputType['GenericTypesRulesArgs']] rules: Specify a list of rules which are evaluated in order. When **any** rule matches, the entity defined according to that rule will be extracted. Subsequent rules will not be evaluated.
+        :param pulumi.Input[Union['GenericTypesRulesArgs', 'GenericTypesRulesArgsDict']] rules: Specify a list of rules which are evaluated in order. When **any** rule matches, the entity defined according to that rule will be extracted. Subsequent rules will not be evaluated.
         """
         ...
     @overload
@@ -268,7 +268,7 @@ class GenericTypes(pulumi.CustomResource):
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[pulumi.InputType['GenericTypesRulesArgs']]] = None,
+                 rules: Optional[pulumi.Input[Union['GenericTypesRulesArgs', 'GenericTypesRulesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -307,7 +307,7 @@ class GenericTypes(pulumi.CustomResource):
             enabled: Optional[pulumi.Input[bool]] = None,
             insert_after: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            rules: Optional[pulumi.Input[pulumi.InputType['GenericTypesRulesArgs']]] = None) -> 'GenericTypes':
+            rules: Optional[pulumi.Input[Union['GenericTypesRulesArgs', 'GenericTypesRulesArgsDict']]] = None) -> 'GenericTypes':
         """
         Get an existing GenericTypes resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -320,7 +320,7 @@ class GenericTypes(pulumi.CustomResource):
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: The entity type name. This type name must be unique and must not be changed after creation.
-        :param pulumi.Input[pulumi.InputType['GenericTypesRulesArgs']] rules: Specify a list of rules which are evaluated in order. When **any** rule matches, the entity defined according to that rule will be extracted. Subsequent rules will not be evaluated.
+        :param pulumi.Input[Union['GenericTypesRulesArgs', 'GenericTypesRulesArgsDict']] rules: Specify a list of rules which are evaluated in order. When **any** rule matches, the entity defined according to that rule will be extracted. Subsequent rules will not be evaluated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

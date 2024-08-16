@@ -31,6 +31,9 @@ class AutomationWorkflowK8sConnectionsArgs:
         pulumi.set(__self__, "token", token)
         pulumi.set(__self__, "uid", uid)
         if insert_after is not None:
+            warnings.warn("""This resource is no longer ordered, please remove this attribute from the configuration""", DeprecationWarning)
+            pulumi.log.warn("""insert_after is deprecated: This resource is no longer ordered, please remove this attribute from the configuration""")
+        if insert_after is not None:
             pulumi.set(__self__, "insert_after", insert_after)
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -73,6 +76,7 @@ class AutomationWorkflowK8sConnectionsArgs:
 
     @property
     @pulumi.getter(name="insertAfter")
+    @_utilities.deprecated("""This resource is no longer ordered, please remove this attribute from the configuration""")
     def insert_after(self) -> Optional[pulumi.Input[str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -113,6 +117,9 @@ class _AutomationWorkflowK8sConnectionsState:
         :param pulumi.Input[str] uid: A pseudo-ID for the cluster, set to the UID of the kube-system namespace
         """
         if insert_after is not None:
+            warnings.warn("""This resource is no longer ordered, please remove this attribute from the configuration""", DeprecationWarning)
+            pulumi.log.warn("""insert_after is deprecated: This resource is no longer ordered, please remove this attribute from the configuration""")
+        if insert_after is not None:
             pulumi.set(__self__, "insert_after", insert_after)
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -125,6 +132,7 @@ class _AutomationWorkflowK8sConnectionsState:
 
     @property
     @pulumi.getter(name="insertAfter")
+    @_utilities.deprecated("""This resource is no longer ordered, please remove this attribute from the configuration""")
     def insert_after(self) -> Optional[pulumi.Input[str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -296,6 +304,7 @@ class AutomationWorkflowK8sConnections(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="insertAfter")
+    @_utilities.deprecated("""This resource is no longer ordered, please remove this attribute from the configuration""")
     def insert_after(self) -> pulumi.Output[str]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched

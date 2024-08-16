@@ -222,7 +222,7 @@ class RumProviderBreakdown(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domain_name_pattern_list: Optional[pulumi.Input[pulumi.InputType['RumProviderBreakdownDomainNamePatternListArgs']]] = None,
+                 domain_name_pattern_list: Optional[pulumi.Input[Union['RumProviderBreakdownDomainNamePatternListArgs', 'RumProviderBreakdownDomainNamePatternListArgsDict']]] = None,
                  icon_url: Optional[pulumi.Input[str]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  report_public_improvement: Optional[pulumi.Input[bool]] = None,
@@ -233,7 +233,7 @@ class RumProviderBreakdown(pulumi.CustomResource):
         Create a RumProviderBreakdown resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['RumProviderBreakdownDomainNamePatternListArgs']] domain_name_pattern_list: Domain name pattern
+        :param pulumi.Input[Union['RumProviderBreakdownDomainNamePatternListArgs', 'RumProviderBreakdownDomainNamePatternListArgsDict']] domain_name_pattern_list: Domain name pattern
         :param pulumi.Input[str] icon_url: Specify an URL for the provider's brand icon
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[bool] report_public_improvement: Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
@@ -263,7 +263,7 @@ class RumProviderBreakdown(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domain_name_pattern_list: Optional[pulumi.Input[pulumi.InputType['RumProviderBreakdownDomainNamePatternListArgs']]] = None,
+                 domain_name_pattern_list: Optional[pulumi.Input[Union['RumProviderBreakdownDomainNamePatternListArgs', 'RumProviderBreakdownDomainNamePatternListArgsDict']]] = None,
                  icon_url: Optional[pulumi.Input[str]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  report_public_improvement: Optional[pulumi.Input[bool]] = None,
@@ -302,7 +302,7 @@ class RumProviderBreakdown(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            domain_name_pattern_list: Optional[pulumi.Input[pulumi.InputType['RumProviderBreakdownDomainNamePatternListArgs']]] = None,
+            domain_name_pattern_list: Optional[pulumi.Input[Union['RumProviderBreakdownDomainNamePatternListArgs', 'RumProviderBreakdownDomainNamePatternListArgsDict']]] = None,
             icon_url: Optional[pulumi.Input[str]] = None,
             insert_after: Optional[pulumi.Input[str]] = None,
             report_public_improvement: Optional[pulumi.Input[bool]] = None,
@@ -315,7 +315,7 @@ class RumProviderBreakdown(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['RumProviderBreakdownDomainNamePatternListArgs']] domain_name_pattern_list: Domain name pattern
+        :param pulumi.Input[Union['RumProviderBreakdownDomainNamePatternListArgs', 'RumProviderBreakdownDomainNamePatternListArgsDict']] domain_name_pattern_list: Domain name pattern
         :param pulumi.Input[str] icon_url: Specify an URL for the provider's brand icon
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[bool] report_public_improvement: Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.

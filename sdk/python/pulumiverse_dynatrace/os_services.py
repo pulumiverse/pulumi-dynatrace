@@ -496,11 +496,11 @@ class OsServices(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  alert_activation_duration: Optional[pulumi.Input[int]] = None,
                  alerting: Optional[pulumi.Input[bool]] = None,
-                 detection_conditions_linux: Optional[pulumi.Input[pulumi.InputType['OsServicesDetectionConditionsLinuxArgs']]] = None,
-                 detection_conditions_windows: Optional[pulumi.Input[pulumi.InputType['OsServicesDetectionConditionsWindowsArgs']]] = None,
+                 detection_conditions_linux: Optional[pulumi.Input[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']]] = None,
+                 detection_conditions_windows: Optional[pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['OsServicesMetadataArgs']]] = None,
+                 metadata: Optional[pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']]] = None,
                  monitoring: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  not_installed_alerting: Optional[pulumi.Input[bool]] = None,
@@ -515,11 +515,11 @@ class OsServices(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] alert_activation_duration: The number of **10-second measurement cycles** before alerting is triggered
         :param pulumi.Input[bool] alerting: Toggle the switch in order to enable or disable alerting for this policy
-        :param pulumi.Input[pulumi.InputType['OsServicesDetectionConditionsLinuxArgs']] detection_conditions_linux: Detection rules
-        :param pulumi.Input[pulumi.InputType['OsServicesDetectionConditionsWindowsArgs']] detection_conditions_windows: Detection rules
+        :param pulumi.Input[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']] detection_conditions_linux: Detection rules
+        :param pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']] detection_conditions_windows: Detection rules
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['OsServicesMetadataArgs']] metadata: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event.
         :param pulumi.Input[bool] monitoring: Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
         :param pulumi.Input[str] name: Rule name
         :param pulumi.Input[bool] not_installed_alerting: By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
@@ -557,11 +557,11 @@ class OsServices(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  alert_activation_duration: Optional[pulumi.Input[int]] = None,
                  alerting: Optional[pulumi.Input[bool]] = None,
-                 detection_conditions_linux: Optional[pulumi.Input[pulumi.InputType['OsServicesDetectionConditionsLinuxArgs']]] = None,
-                 detection_conditions_windows: Optional[pulumi.Input[pulumi.InputType['OsServicesDetectionConditionsWindowsArgs']]] = None,
+                 detection_conditions_linux: Optional[pulumi.Input[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']]] = None,
+                 detection_conditions_windows: Optional[pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['OsServicesMetadataArgs']]] = None,
+                 metadata: Optional[pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']]] = None,
                  monitoring: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  not_installed_alerting: Optional[pulumi.Input[bool]] = None,
@@ -612,11 +612,11 @@ class OsServices(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             alert_activation_duration: Optional[pulumi.Input[int]] = None,
             alerting: Optional[pulumi.Input[bool]] = None,
-            detection_conditions_linux: Optional[pulumi.Input[pulumi.InputType['OsServicesDetectionConditionsLinuxArgs']]] = None,
-            detection_conditions_windows: Optional[pulumi.Input[pulumi.InputType['OsServicesDetectionConditionsWindowsArgs']]] = None,
+            detection_conditions_linux: Optional[pulumi.Input[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']]] = None,
+            detection_conditions_windows: Optional[pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             insert_after: Optional[pulumi.Input[str]] = None,
-            metadata: Optional[pulumi.Input[pulumi.InputType['OsServicesMetadataArgs']]] = None,
+            metadata: Optional[pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']]] = None,
             monitoring: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
             not_installed_alerting: Optional[pulumi.Input[bool]] = None,
@@ -633,11 +633,11 @@ class OsServices(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] alert_activation_duration: The number of **10-second measurement cycles** before alerting is triggered
         :param pulumi.Input[bool] alerting: Toggle the switch in order to enable or disable alerting for this policy
-        :param pulumi.Input[pulumi.InputType['OsServicesDetectionConditionsLinuxArgs']] detection_conditions_linux: Detection rules
-        :param pulumi.Input[pulumi.InputType['OsServicesDetectionConditionsWindowsArgs']] detection_conditions_windows: Detection rules
+        :param pulumi.Input[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']] detection_conditions_linux: Detection rules
+        :param pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']] detection_conditions_windows: Detection rules
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['OsServicesMetadataArgs']] metadata: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event.
         :param pulumi.Input[bool] monitoring: Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
         :param pulumi.Input[str] name: Rule name
         :param pulumi.Input[bool] not_installed_alerting: By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature

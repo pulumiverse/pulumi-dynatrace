@@ -265,9 +265,9 @@ class BusinessEventsProcessing(pulumi.CustomResource):
                  insert_after: Optional[pulumi.Input[str]] = None,
                  matcher: Optional[pulumi.Input[str]] = None,
                  rule_name: Optional[pulumi.Input[str]] = None,
-                 rule_testing: Optional[pulumi.Input[pulumi.InputType['BusinessEventsProcessingRuleTestingArgs']]] = None,
+                 rule_testing: Optional[pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']]] = None,
                  script: Optional[pulumi.Input[str]] = None,
-                 transformation_fields: Optional[pulumi.Input[pulumi.InputType['BusinessEventsProcessingTransformationFieldsArgs']]] = None,
+                 transformation_fields: Optional[pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']]] = None,
                  __props__=None):
         """
         Create a BusinessEventsProcessing resource with the given unique name, props, and options.
@@ -279,9 +279,9 @@ class BusinessEventsProcessing(pulumi.CustomResource):
                specified during update the order will remain untouched
         :param pulumi.Input[str] matcher: [See our documentation](https://dt-url.net/bp234rv)
         :param pulumi.Input[str] rule_name: Rule name
-        :param pulumi.Input[pulumi.InputType['BusinessEventsProcessingRuleTestingArgs']] rule_testing: ## Rule testing ### 1. Paste an event sample
+        :param pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing ### 1. Paste an event sample
         :param pulumi.Input[str] script: [See our documentation](https://dt-url.net/pz030w5)
-        :param pulumi.Input[pulumi.InputType['BusinessEventsProcessingTransformationFieldsArgs']] transformation_fields: Transformation fields
+        :param pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']] transformation_fields: Transformation fields
         """
         ...
     @overload
@@ -310,9 +310,9 @@ class BusinessEventsProcessing(pulumi.CustomResource):
                  insert_after: Optional[pulumi.Input[str]] = None,
                  matcher: Optional[pulumi.Input[str]] = None,
                  rule_name: Optional[pulumi.Input[str]] = None,
-                 rule_testing: Optional[pulumi.Input[pulumi.InputType['BusinessEventsProcessingRuleTestingArgs']]] = None,
+                 rule_testing: Optional[pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']]] = None,
                  script: Optional[pulumi.Input[str]] = None,
-                 transformation_fields: Optional[pulumi.Input[pulumi.InputType['BusinessEventsProcessingTransformationFieldsArgs']]] = None,
+                 transformation_fields: Optional[pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -353,9 +353,9 @@ class BusinessEventsProcessing(pulumi.CustomResource):
             insert_after: Optional[pulumi.Input[str]] = None,
             matcher: Optional[pulumi.Input[str]] = None,
             rule_name: Optional[pulumi.Input[str]] = None,
-            rule_testing: Optional[pulumi.Input[pulumi.InputType['BusinessEventsProcessingRuleTestingArgs']]] = None,
+            rule_testing: Optional[pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']]] = None,
             script: Optional[pulumi.Input[str]] = None,
-            transformation_fields: Optional[pulumi.Input[pulumi.InputType['BusinessEventsProcessingTransformationFieldsArgs']]] = None) -> 'BusinessEventsProcessing':
+            transformation_fields: Optional[pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']]] = None) -> 'BusinessEventsProcessing':
         """
         Get an existing BusinessEventsProcessing resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -369,9 +369,9 @@ class BusinessEventsProcessing(pulumi.CustomResource):
                specified during update the order will remain untouched
         :param pulumi.Input[str] matcher: [See our documentation](https://dt-url.net/bp234rv)
         :param pulumi.Input[str] rule_name: Rule name
-        :param pulumi.Input[pulumi.InputType['BusinessEventsProcessingRuleTestingArgs']] rule_testing: ## Rule testing ### 1. Paste an event sample
+        :param pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing ### 1. Paste an event sample
         :param pulumi.Input[str] script: [See our documentation](https://dt-url.net/pz030w5)
-        :param pulumi.Input[pulumi.InputType['BusinessEventsProcessingTransformationFieldsArgs']] transformation_fields: Transformation fields
+        :param pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']] transformation_fields: Transformation fields
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

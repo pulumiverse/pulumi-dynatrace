@@ -34,6 +34,8 @@ export class AutomationWorkflowK8sConnections extends pulumi.CustomResource {
 
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     *
+     * @deprecated This resource is no longer ordered, please remove this attribute from the configuration
      */
     public readonly insertAfter!: pulumi.Output<string>;
     /**
@@ -101,6 +103,8 @@ export class AutomationWorkflowK8sConnections extends pulumi.CustomResource {
 export interface AutomationWorkflowK8sConnectionsState {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     *
+     * @deprecated This resource is no longer ordered, please remove this attribute from the configuration
      */
     insertAfter?: pulumi.Input<string>;
     /**
@@ -127,6 +131,8 @@ export interface AutomationWorkflowK8sConnectionsState {
 export interface AutomationWorkflowK8sConnectionsArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     *
+     * @deprecated This resource is no longer ordered, please remove this attribute from the configuration
      */
     insertAfter?: pulumi.Input<string>;
     /**

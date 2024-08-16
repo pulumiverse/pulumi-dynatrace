@@ -129,16 +129,16 @@ class NetworkTraffic(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 exclude_ip: Optional[pulumi.Input[pulumi.InputType['NetworkTrafficExcludeIpArgs']]] = None,
-                 exclude_nic: Optional[pulumi.Input[pulumi.InputType['NetworkTrafficExcludeNicArgs']]] = None,
+                 exclude_ip: Optional[pulumi.Input[Union['NetworkTrafficExcludeIpArgs', 'NetworkTrafficExcludeIpArgsDict']]] = None,
+                 exclude_nic: Optional[pulumi.Input[Union['NetworkTrafficExcludeNicArgs', 'NetworkTrafficExcludeNicArgsDict']]] = None,
                  host_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a NetworkTraffic resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['NetworkTrafficExcludeIpArgs']] exclude_ip: Providing a host IP address, you will exclude network traffic only in calculating connectivity (other metrics will still be calculated).
-        :param pulumi.Input[pulumi.InputType['NetworkTrafficExcludeNicArgs']] exclude_nic: Selecting a network interface, you will exclude all network traffic on that interface from being monitored. You can select from the list below what to not monitor, or input it manually using the "other one" option.
+        :param pulumi.Input[Union['NetworkTrafficExcludeIpArgs', 'NetworkTrafficExcludeIpArgsDict']] exclude_ip: Providing a host IP address, you will exclude network traffic only in calculating connectivity (other metrics will still be calculated).
+        :param pulumi.Input[Union['NetworkTrafficExcludeNicArgs', 'NetworkTrafficExcludeNicArgsDict']] exclude_nic: Selecting a network interface, you will exclude all network traffic on that interface from being monitored. You can select from the list below what to not monitor, or input it manually using the "other one" option.
         :param pulumi.Input[str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         ...
@@ -164,8 +164,8 @@ class NetworkTraffic(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 exclude_ip: Optional[pulumi.Input[pulumi.InputType['NetworkTrafficExcludeIpArgs']]] = None,
-                 exclude_nic: Optional[pulumi.Input[pulumi.InputType['NetworkTrafficExcludeNicArgs']]] = None,
+                 exclude_ip: Optional[pulumi.Input[Union['NetworkTrafficExcludeIpArgs', 'NetworkTrafficExcludeIpArgsDict']]] = None,
+                 exclude_nic: Optional[pulumi.Input[Union['NetworkTrafficExcludeNicArgs', 'NetworkTrafficExcludeNicArgsDict']]] = None,
                  host_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -191,8 +191,8 @@ class NetworkTraffic(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            exclude_ip: Optional[pulumi.Input[pulumi.InputType['NetworkTrafficExcludeIpArgs']]] = None,
-            exclude_nic: Optional[pulumi.Input[pulumi.InputType['NetworkTrafficExcludeNicArgs']]] = None,
+            exclude_ip: Optional[pulumi.Input[Union['NetworkTrafficExcludeIpArgs', 'NetworkTrafficExcludeIpArgsDict']]] = None,
+            exclude_nic: Optional[pulumi.Input[Union['NetworkTrafficExcludeNicArgs', 'NetworkTrafficExcludeNicArgsDict']]] = None,
             host_id: Optional[pulumi.Input[str]] = None) -> 'NetworkTraffic':
         """
         Get an existing NetworkTraffic resource's state with the given name, id, and optional extra
@@ -201,8 +201,8 @@ class NetworkTraffic(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['NetworkTrafficExcludeIpArgs']] exclude_ip: Providing a host IP address, you will exclude network traffic only in calculating connectivity (other metrics will still be calculated).
-        :param pulumi.Input[pulumi.InputType['NetworkTrafficExcludeNicArgs']] exclude_nic: Selecting a network interface, you will exclude all network traffic on that interface from being monitored. You can select from the list below what to not monitor, or input it manually using the "other one" option.
+        :param pulumi.Input[Union['NetworkTrafficExcludeIpArgs', 'NetworkTrafficExcludeIpArgsDict']] exclude_ip: Providing a host IP address, you will exclude network traffic only in calculating connectivity (other metrics will still be calculated).
+        :param pulumi.Input[Union['NetworkTrafficExcludeNicArgs', 'NetworkTrafficExcludeNicArgsDict']] exclude_nic: Selecting a network interface, you will exclude all network traffic on that interface from being monitored. You can select from the list below what to not monitor, or input it manually using the "other one" option.
         :param pulumi.Input[str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

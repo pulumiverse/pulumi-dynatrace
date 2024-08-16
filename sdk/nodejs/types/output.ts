@@ -956,6 +956,8 @@ export interface AttackRulesCriteria {
     attackType: string;
     /**
      * Process group
+     *
+     * @deprecated This field has been deprecated
      */
     processGroup?: string;
 }
@@ -965,6 +967,25 @@ export interface AttackRulesMetadata {
      * no documentation available
      */
     comment: string;
+}
+
+export interface AttackRulesResourceAttributeConditions {
+    resourceAttributeConditions: outputs.AttackRulesResourceAttributeConditionsResourceAttributeCondition[];
+}
+
+export interface AttackRulesResourceAttributeConditionsResourceAttributeCondition {
+    /**
+     * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+     */
+    matcher: string;
+    /**
+     * Resource attribute key
+     */
+    resourceAttributeKey: string;
+    /**
+     * Resource attribute value
+     */
+    resourceAttributeValue?: string;
 }
 
 export interface AttackSettingsDefaultAttackHandling {
@@ -3494,11 +3515,11 @@ export interface AutotagRulesRulesRule {
      */
     type: string;
     /**
-     * Type '{' for placeholder suggestions
+     * Optional tag value
      */
     valueFormat?: string;
     /**
-     * Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+     * Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
      */
     valueNormalization: string;
 }
@@ -3611,11 +3632,11 @@ export interface AutotagV2RulesRule {
      */
     type: string;
     /**
-     * Type '{' for placeholder suggestions
+     * Optional tag value
      */
     valueFormat?: string;
     /**
-     * Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+     * Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
      */
     valueNormalization: string;
 }
@@ -9076,6 +9097,78 @@ export interface DirectSharesRecipientsRecipient {
     type?: string;
 }
 
+export interface DiscoveryDefaultRulesRule {
+    /**
+     * no documentation available
+     */
+    actions?: outputs.DiscoveryDefaultRulesRuleActions;
+    /**
+     * no documentation available
+     */
+    category: string;
+    /**
+     * no documentation available
+     */
+    description: string;
+    /**
+     * Environment scope
+     */
+    environmentScope: boolean;
+    /**
+     * no documentation available
+     */
+    id: string;
+    /**
+     * no documentation available
+     */
+    priority: string;
+    /**
+     * Rule query
+     */
+    query: string;
+    /**
+     * no documentation available
+     */
+    title: string;
+}
+
+export interface DiscoveryDefaultRulesRuleActions {
+    actions: outputs.DiscoveryDefaultRulesRuleActionsAction[];
+}
+
+export interface DiscoveryDefaultRulesRuleActionsAction {
+    /**
+     * no documentation available
+     */
+    name: string;
+    /**
+     * no documentation available
+     */
+    parameters?: outputs.DiscoveryDefaultRulesRuleActionsActionParameters;
+}
+
+export interface DiscoveryDefaultRulesRuleActionsActionParameters {
+    parameters: outputs.DiscoveryDefaultRulesRuleActionsActionParametersParameter[];
+}
+
+export interface DiscoveryDefaultRulesRuleActionsActionParametersParameter {
+    /**
+     * no documentation available
+     */
+    name: string;
+    /**
+     * no documentation available
+     */
+    value: string;
+}
+
+export interface DiscoveryDefaultRulesSettings {
+    /**
+     * no documentation available
+     */
+    muted: boolean;
+}
+
 export interface DiskAnomaliesDiskName {
     /**
      * Possible values are: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS` and `STARTS_WITH`
@@ -9339,7 +9432,7 @@ export interface DiskOptionsExclusionsExclusion {
      * * btrfs
      * * ext*
      *
-     * ⚠️ File system types are case sensitive! 
+     * ⚠️ Starting from **OneAgent 1.299+** file system types are not case sensitive! 
      *
      * The wildcard in the last example means to exclude matching file systems such as types ext4 and ext3
      */
@@ -9910,6 +10003,53 @@ export interface GetAlertingProfilesValue {
     name: string;
 }
 
+export interface GetApiTokensApiToken {
+    /**
+     * Token creation date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
+     */
+    creationDate: string;
+    /**
+     * The token is enabled (true) or disabled (false), default disabled (false).
+     */
+    enabled?: boolean;
+    /**
+     * The expiration date of the token.
+     */
+    expirationDate?: string;
+    /**
+     * Token last used date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
+     */
+    lastUsedDate: string;
+    /**
+     * Token last used IP address.
+     */
+    lastUsedIpAddress: string;
+    /**
+     * Token last modified date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
+     */
+    modifiedDate: string;
+    /**
+     * The name of the token.
+     */
+    name: string;
+    /**
+     * The owner of the token
+     */
+    owner: string;
+    /**
+     * The token is a personal access token (true) or an API token (false).
+     */
+    personalAccessToken?: boolean;
+    /**
+     * A list of the scopes to be assigned to the token.
+     */
+    scopes: string[];
+    /**
+     * The secret of the token.
+     */
+    token: string;
+}
+
 export interface GetDocumentsValue {
     /**
      * The unique identifier of the document.
@@ -9980,6 +10120,13 @@ export interface GetEntitiesEntityTagTag {
      * The value of the tag. Not applicable to custom tags
      */
     value?: string;
+}
+
+export interface GetGenericSettingsValue {
+    localStorage: string;
+    schema: string;
+    scope: string;
+    value: string;
 }
 
 export interface GetHubItemsItem {
@@ -26723,6 +26870,25 @@ export interface VulnerabilityCodeMetadata {
     comment: string;
 }
 
+export interface VulnerabilityCodeResourceAttributeConditions {
+    resourceAttributeConditions: outputs.VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition[];
+}
+
+export interface VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition {
+    /**
+     * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+     */
+    matcher: string;
+    /**
+     * Resource attribute key
+     */
+    resourceAttributeKey: string;
+    /**
+     * Resource attribute value
+     */
+    resourceAttributeValue?: string;
+}
+
 export interface VulnerabilityCodeVulnerabilityDetectionControl {
     /**
      * Possible Values: `MONITORING_OFF`, `MONITORING_ON`
@@ -28290,6 +28456,10 @@ export interface WebhookNotificationOauth2Credentials {
      * Access token URL
      */
     accessTokenUrl: string;
+    /**
+     * If false, the client credentials are included in the HTTP request body.
+     */
+    authenticateViaRequestHeader?: boolean;
     /**
      * Client ID
      */

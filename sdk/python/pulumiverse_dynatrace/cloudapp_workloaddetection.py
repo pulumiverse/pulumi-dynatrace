@@ -155,20 +155,20 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_foundry: Optional[pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionCloudFoundryArgs']]] = None,
-                 docker: Optional[pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionDockerArgs']]] = None,
-                 kubernetes: Optional[pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionKubernetesArgs']]] = None,
+                 cloud_foundry: Optional[pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']]] = None,
+                 docker: Optional[pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']]] = None,
+                 kubernetes: Optional[pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']]] = None,
                  __props__=None):
         """
         Create a CloudappWorkloaddetection resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionCloudFoundryArgs']] cloud_foundry: Enable this setting to get * Processes of Cloud Foundry application instances merged into process groups by Cloud
+        :param pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']] cloud_foundry: Enable this setting to get * Processes of Cloud Foundry application instances merged into process groups by Cloud
                Foundry application. * Container resource metrics (Container group instance entities) and [related
                screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
-        :param pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionDockerArgs']] docker: Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
+        :param pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']] docker: Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
                entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
-        :param pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionKubernetesArgs']] kubernetes: Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
+        :param pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']] kubernetes: Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
                cloud application and cloud application instance and entities). * Container resource metrics (container group instance
                entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Similar workloads
                merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
@@ -197,9 +197,9 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_foundry: Optional[pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionCloudFoundryArgs']]] = None,
-                 docker: Optional[pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionDockerArgs']]] = None,
-                 kubernetes: Optional[pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionKubernetesArgs']]] = None,
+                 cloud_foundry: Optional[pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']]] = None,
+                 docker: Optional[pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']]] = None,
+                 kubernetes: Optional[pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -228,9 +228,9 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cloud_foundry: Optional[pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionCloudFoundryArgs']]] = None,
-            docker: Optional[pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionDockerArgs']]] = None,
-            kubernetes: Optional[pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionKubernetesArgs']]] = None) -> 'CloudappWorkloaddetection':
+            cloud_foundry: Optional[pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']]] = None,
+            docker: Optional[pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']]] = None,
+            kubernetes: Optional[pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']]] = None) -> 'CloudappWorkloaddetection':
         """
         Get an existing CloudappWorkloaddetection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -238,12 +238,12 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionCloudFoundryArgs']] cloud_foundry: Enable this setting to get * Processes of Cloud Foundry application instances merged into process groups by Cloud
+        :param pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']] cloud_foundry: Enable this setting to get * Processes of Cloud Foundry application instances merged into process groups by Cloud
                Foundry application. * Container resource metrics (Container group instance entities) and [related
                screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
-        :param pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionDockerArgs']] docker: Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
+        :param pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']] docker: Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
                entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
-        :param pulumi.Input[pulumi.InputType['CloudappWorkloaddetectionKubernetesArgs']] kubernetes: Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
+        :param pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']] kubernetes: Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
                cloud application and cloud application instance and entities). * Container resource metrics (container group instance
                entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Similar workloads
                merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes

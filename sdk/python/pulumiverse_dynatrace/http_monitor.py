@@ -325,29 +325,29 @@ class HttpMonitor(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 anomaly_detections: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorAnomalyDetectionArgs']]]]] = None,
+                 anomaly_detections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorAnomalyDetectionArgs', 'HttpMonitorAnomalyDetectionArgsDict']]]]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  frequency: Optional[pulumi.Input[int]] = None,
                  locations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  no_script: Optional[pulumi.Input[bool]] = None,
-                 script: Optional[pulumi.Input[pulumi.InputType['HttpMonitorScriptArgs']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorTagArgs']]]]] = None,
+                 script: Optional[pulumi.Input[Union['HttpMonitorScriptArgs', 'HttpMonitorScriptArgsDict']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorTagArgs', 'HttpMonitorTagArgsDict']]]]] = None,
                  __props__=None):
         """
         Create a HttpMonitor resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorAnomalyDetectionArgs']]]] anomaly_detections: The anomaly detection configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorAnomalyDetectionArgs', 'HttpMonitorAnomalyDetectionArgsDict']]]] anomaly_detections: The anomaly detection configuration.
         :param pulumi.Input[bool] enabled: The monitor is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[int] frequency: The frequency of the monitor, in minutes.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] locations: A list of locations from which the monitor is executed. To specify a location, use its entity ID.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] manually_assigned_apps: A set of manually assigned applications.
         :param pulumi.Input[str] name: The name of the monitor.
         :param pulumi.Input[bool] no_script: No script block - handle requests via `HttpMonitorScript` resource
-        :param pulumi.Input[pulumi.InputType['HttpMonitorScriptArgs']] script: The HTTP Script
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorTagArgs']]]] tags: A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
+        :param pulumi.Input[Union['HttpMonitorScriptArgs', 'HttpMonitorScriptArgsDict']] script: The HTTP Script
+        :param pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorTagArgs', 'HttpMonitorTagArgsDict']]]] tags: A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
                source 'USER' will be added automatically.
         """
         ...
@@ -373,15 +373,15 @@ class HttpMonitor(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 anomaly_detections: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorAnomalyDetectionArgs']]]]] = None,
+                 anomaly_detections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorAnomalyDetectionArgs', 'HttpMonitorAnomalyDetectionArgsDict']]]]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  frequency: Optional[pulumi.Input[int]] = None,
                  locations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  no_script: Optional[pulumi.Input[bool]] = None,
-                 script: Optional[pulumi.Input[pulumi.InputType['HttpMonitorScriptArgs']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorTagArgs']]]]] = None,
+                 script: Optional[pulumi.Input[Union['HttpMonitorScriptArgs', 'HttpMonitorScriptArgsDict']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorTagArgs', 'HttpMonitorTagArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -412,15 +412,15 @@ class HttpMonitor(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            anomaly_detections: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorAnomalyDetectionArgs']]]]] = None,
+            anomaly_detections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorAnomalyDetectionArgs', 'HttpMonitorAnomalyDetectionArgsDict']]]]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             frequency: Optional[pulumi.Input[int]] = None,
             locations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             no_script: Optional[pulumi.Input[bool]] = None,
-            script: Optional[pulumi.Input[pulumi.InputType['HttpMonitorScriptArgs']]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorTagArgs']]]]] = None) -> 'HttpMonitor':
+            script: Optional[pulumi.Input[Union['HttpMonitorScriptArgs', 'HttpMonitorScriptArgsDict']]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorTagArgs', 'HttpMonitorTagArgsDict']]]]] = None) -> 'HttpMonitor':
         """
         Get an existing HttpMonitor resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -428,15 +428,15 @@ class HttpMonitor(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorAnomalyDetectionArgs']]]] anomaly_detections: The anomaly detection configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorAnomalyDetectionArgs', 'HttpMonitorAnomalyDetectionArgsDict']]]] anomaly_detections: The anomaly detection configuration.
         :param pulumi.Input[bool] enabled: The monitor is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[int] frequency: The frequency of the monitor, in minutes.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] locations: A list of locations from which the monitor is executed. To specify a location, use its entity ID.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] manually_assigned_apps: A set of manually assigned applications.
         :param pulumi.Input[str] name: The name of the monitor.
         :param pulumi.Input[bool] no_script: No script block - handle requests via `HttpMonitorScript` resource
-        :param pulumi.Input[pulumi.InputType['HttpMonitorScriptArgs']] script: The HTTP Script
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorTagArgs']]]] tags: A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
+        :param pulumi.Input[Union['HttpMonitorScriptArgs', 'HttpMonitorScriptArgsDict']] script: The HTTP Script
+        :param pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorTagArgs', 'HttpMonitorTagArgsDict']]]] tags: A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
                source 'USER' will be added automatically.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

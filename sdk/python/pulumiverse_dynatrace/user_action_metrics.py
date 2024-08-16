@@ -193,9 +193,9 @@ class UserActionMetrics(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 filters: Optional[pulumi.Input[pulumi.InputType['UserActionMetricsFiltersArgs']]] = None,
+                 filters: Optional[pulumi.Input[Union['UserActionMetricsFiltersArgs', 'UserActionMetricsFiltersArgsDict']]] = None,
                  metric_key: Optional[pulumi.Input[str]] = None,
-                 value: Optional[pulumi.Input[pulumi.InputType['UserActionMetricsValueArgs']]] = None,
+                 value: Optional[pulumi.Input[Union['UserActionMetricsValueArgs', 'UserActionMetricsValueArgsDict']]] = None,
                  __props__=None):
         """
         Create a UserActionMetrics resource with the given unique name, props, and options.
@@ -203,9 +203,9 @@ class UserActionMetrics(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "name". For example, using "type" as a dimension allows you to split chart data based on the user action type.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['UserActionMetricsFiltersArgs']] filters: Defines the filters for the user action. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "type equals Xhr" will give you only data from xhr actions, while forcing the rest of user actions of different types to be ignored.
+        :param pulumi.Input[Union['UserActionMetricsFiltersArgs', 'UserActionMetricsFiltersArgsDict']] filters: Defines the filters for the user action. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "type equals Xhr" will give you only data from xhr actions, while forcing the rest of user actions of different types to be ignored.
         :param pulumi.Input[str] metric_key: Metric key
-        :param pulumi.Input[pulumi.InputType['UserActionMetricsValueArgs']] value: Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
+        :param pulumi.Input[Union['UserActionMetricsValueArgs', 'UserActionMetricsValueArgsDict']] value: Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
         """
         ...
     @overload
@@ -232,9 +232,9 @@ class UserActionMetrics(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 filters: Optional[pulumi.Input[pulumi.InputType['UserActionMetricsFiltersArgs']]] = None,
+                 filters: Optional[pulumi.Input[Union['UserActionMetricsFiltersArgs', 'UserActionMetricsFiltersArgsDict']]] = None,
                  metric_key: Optional[pulumi.Input[str]] = None,
-                 value: Optional[pulumi.Input[pulumi.InputType['UserActionMetricsValueArgs']]] = None,
+                 value: Optional[pulumi.Input[Union['UserActionMetricsValueArgs', 'UserActionMetricsValueArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -267,9 +267,9 @@ class UserActionMetrics(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
-            filters: Optional[pulumi.Input[pulumi.InputType['UserActionMetricsFiltersArgs']]] = None,
+            filters: Optional[pulumi.Input[Union['UserActionMetricsFiltersArgs', 'UserActionMetricsFiltersArgsDict']]] = None,
             metric_key: Optional[pulumi.Input[str]] = None,
-            value: Optional[pulumi.Input[pulumi.InputType['UserActionMetricsValueArgs']]] = None) -> 'UserActionMetrics':
+            value: Optional[pulumi.Input[Union['UserActionMetricsValueArgs', 'UserActionMetricsValueArgsDict']]] = None) -> 'UserActionMetrics':
         """
         Get an existing UserActionMetrics resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -279,9 +279,9 @@ class UserActionMetrics(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "name". For example, using "type" as a dimension allows you to split chart data based on the user action type.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['UserActionMetricsFiltersArgs']] filters: Defines the filters for the user action. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "type equals Xhr" will give you only data from xhr actions, while forcing the rest of user actions of different types to be ignored.
+        :param pulumi.Input[Union['UserActionMetricsFiltersArgs', 'UserActionMetricsFiltersArgsDict']] filters: Defines the filters for the user action. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "type equals Xhr" will give you only data from xhr actions, while forcing the rest of user actions of different types to be ignored.
         :param pulumi.Input[str] metric_key: Metric key
-        :param pulumi.Input[pulumi.InputType['UserActionMetricsValueArgs']] value: Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
+        :param pulumi.Input[Union['UserActionMetricsValueArgs', 'UserActionMetricsValueArgsDict']] value: Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -97,14 +97,14 @@ class DashboardsGeneral(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_dashboard_list: Optional[pulumi.Input[pulumi.InputType['DashboardsGeneralDefaultDashboardListArgs']]] = None,
+                 default_dashboard_list: Optional[pulumi.Input[Union['DashboardsGeneralDefaultDashboardListArgs', 'DashboardsGeneralDefaultDashboardListArgsDict']]] = None,
                  enable_public_sharing: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
         Create a DashboardsGeneral resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DashboardsGeneralDefaultDashboardListArgs']] default_dashboard_list: Configure home dashboard for selected user group. The selected preset dashboard will be loaded as default landing page for this environment.
+        :param pulumi.Input[Union['DashboardsGeneralDefaultDashboardListArgs', 'DashboardsGeneralDefaultDashboardListArgsDict']] default_dashboard_list: Configure home dashboard for selected user group. The selected preset dashboard will be loaded as default landing page for this environment.
         :param pulumi.Input[bool] enable_public_sharing: Allow users to grant anonymous access to dashboards. No sign-in will be required to view those dashboards read-only.
         """
         ...
@@ -130,7 +130,7 @@ class DashboardsGeneral(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_dashboard_list: Optional[pulumi.Input[pulumi.InputType['DashboardsGeneralDefaultDashboardListArgs']]] = None,
+                 default_dashboard_list: Optional[pulumi.Input[Union['DashboardsGeneralDefaultDashboardListArgs', 'DashboardsGeneralDefaultDashboardListArgsDict']]] = None,
                  enable_public_sharing: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -155,7 +155,7 @@ class DashboardsGeneral(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            default_dashboard_list: Optional[pulumi.Input[pulumi.InputType['DashboardsGeneralDefaultDashboardListArgs']]] = None,
+            default_dashboard_list: Optional[pulumi.Input[Union['DashboardsGeneralDefaultDashboardListArgs', 'DashboardsGeneralDefaultDashboardListArgsDict']]] = None,
             enable_public_sharing: Optional[pulumi.Input[bool]] = None) -> 'DashboardsGeneral':
         """
         Get an existing DashboardsGeneral resource's state with the given name, id, and optional extra
@@ -164,7 +164,7 @@ class DashboardsGeneral(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DashboardsGeneralDefaultDashboardListArgs']] default_dashboard_list: Configure home dashboard for selected user group. The selected preset dashboard will be loaded as default landing page for this environment.
+        :param pulumi.Input[Union['DashboardsGeneralDefaultDashboardListArgs', 'DashboardsGeneralDefaultDashboardListArgsDict']] default_dashboard_list: Configure home dashboard for selected user group. The selected preset dashboard will be loaded as default landing page for this environment.
         :param pulumi.Input[bool] enable_public_sharing: Allow users to grant anonymous access to dashboards. No sign-in will be required to view those dashboards read-only.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

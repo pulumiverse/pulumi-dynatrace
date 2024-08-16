@@ -131,7 +131,7 @@ class AutotagRules(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  auto_tag_id: Optional[pulumi.Input[str]] = None,
                  current_state: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[pulumi.InputType['AutotagRulesRulesArgs']]] = None,
+                 rules: Optional[pulumi.Input[Union['AutotagRulesRulesArgs', 'AutotagRulesRulesArgsDict']]] = None,
                  __props__=None):
         """
         > `AutotagV2` is the primary resource to manage auto tags. This particular resource allows you to manage a subset of tags of a given auto tag ID. The benefit of this is that it allows the flexibility of multiple users to manage the same automatically applied tag.
@@ -158,22 +158,22 @@ class AutotagRules(pulumi.CustomResource):
         #`dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
         sample_autotag_rules = dynatrace.AutotagRules("sampleAutotagRules",
             auto_tag_id=sample_autotag_v2.id,
-            rules=dynatrace.AutotagRulesRulesArgs(
-                rules=[dynatrace.AutotagRulesRulesRuleArgs(
-                    type="SELECTOR",
-                    enabled=True,
-                    entity_selector="type(SERVICE),tag(sample)",
-                    value_format="disabled",
-                    value_normalization="Leave text as-is",
-                )],
-            ))
+            rules={
+                "rules": [{
+                    "type": "SELECTOR",
+                    "enabled": True,
+                    "entity_selector": "type(SERVICE),tag(sample)",
+                    "value_format": "disabled",
+                    "value_normalization": "Leave text as-is",
+                }],
+            })
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] auto_tag_id: Automatically applied tag ID
         :param pulumi.Input[str] current_state: For internal use: current state of rules in JSON format
-        :param pulumi.Input[pulumi.InputType['AutotagRulesRulesArgs']] rules: Rules
+        :param pulumi.Input[Union['AutotagRulesRulesArgs', 'AutotagRulesRulesArgsDict']] rules: Rules
         """
         ...
     @overload
@@ -206,15 +206,15 @@ class AutotagRules(pulumi.CustomResource):
         #`dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
         sample_autotag_rules = dynatrace.AutotagRules("sampleAutotagRules",
             auto_tag_id=sample_autotag_v2.id,
-            rules=dynatrace.AutotagRulesRulesArgs(
-                rules=[dynatrace.AutotagRulesRulesRuleArgs(
-                    type="SELECTOR",
-                    enabled=True,
-                    entity_selector="type(SERVICE),tag(sample)",
-                    value_format="disabled",
-                    value_normalization="Leave text as-is",
-                )],
-            ))
+            rules={
+                "rules": [{
+                    "type": "SELECTOR",
+                    "enabled": True,
+                    "entity_selector": "type(SERVICE),tag(sample)",
+                    "value_format": "disabled",
+                    "value_normalization": "Leave text as-is",
+                }],
+            })
         ```
 
         :param str resource_name: The name of the resource.
@@ -234,7 +234,7 @@ class AutotagRules(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  auto_tag_id: Optional[pulumi.Input[str]] = None,
                  current_state: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[pulumi.InputType['AutotagRulesRulesArgs']]] = None,
+                 rules: Optional[pulumi.Input[Union['AutotagRulesRulesArgs', 'AutotagRulesRulesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -261,7 +261,7 @@ class AutotagRules(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             auto_tag_id: Optional[pulumi.Input[str]] = None,
             current_state: Optional[pulumi.Input[str]] = None,
-            rules: Optional[pulumi.Input[pulumi.InputType['AutotagRulesRulesArgs']]] = None) -> 'AutotagRules':
+            rules: Optional[pulumi.Input[Union['AutotagRulesRulesArgs', 'AutotagRulesRulesArgsDict']]] = None) -> 'AutotagRules':
         """
         Get an existing AutotagRules resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -271,7 +271,7 @@ class AutotagRules(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] auto_tag_id: Automatically applied tag ID
         :param pulumi.Input[str] current_state: For internal use: current state of rules in JSON format
-        :param pulumi.Input[pulumi.InputType['AutotagRulesRulesArgs']] rules: Rules
+        :param pulumi.Input[Union['AutotagRulesRulesArgs', 'AutotagRulesRulesArgsDict']] rules: Rules
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

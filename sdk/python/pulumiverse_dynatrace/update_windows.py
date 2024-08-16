@@ -256,25 +256,25 @@ class UpdateWindows(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 daily_recurrence: Optional[pulumi.Input[pulumi.InputType['UpdateWindowsDailyRecurrenceArgs']]] = None,
+                 daily_recurrence: Optional[pulumi.Input[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 monthly_recurrence: Optional[pulumi.Input[pulumi.InputType['UpdateWindowsMonthlyRecurrenceArgs']]] = None,
+                 monthly_recurrence: Optional[pulumi.Input[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 once_recurrence: Optional[pulumi.Input[pulumi.InputType['UpdateWindowsOnceRecurrenceArgs']]] = None,
+                 once_recurrence: Optional[pulumi.Input[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']]] = None,
                  recurrence: Optional[pulumi.Input[str]] = None,
-                 weekly_recurrence: Optional[pulumi.Input[pulumi.InputType['UpdateWindowsWeeklyRecurrenceArgs']]] = None,
+                 weekly_recurrence: Optional[pulumi.Input[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']]] = None,
                  __props__=None):
         """
         Create a UpdateWindows resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['UpdateWindowsDailyRecurrenceArgs']] daily_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']] daily_recurrence: no documentation available
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['UpdateWindowsMonthlyRecurrenceArgs']] monthly_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']] monthly_recurrence: no documentation available
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[pulumi.InputType['UpdateWindowsOnceRecurrenceArgs']] once_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']] once_recurrence: no documentation available
         :param pulumi.Input[str] recurrence: Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
-        :param pulumi.Input[pulumi.InputType['UpdateWindowsWeeklyRecurrenceArgs']] weekly_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']] weekly_recurrence: no documentation available
         """
         ...
     @overload
@@ -299,13 +299,13 @@ class UpdateWindows(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 daily_recurrence: Optional[pulumi.Input[pulumi.InputType['UpdateWindowsDailyRecurrenceArgs']]] = None,
+                 daily_recurrence: Optional[pulumi.Input[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 monthly_recurrence: Optional[pulumi.Input[pulumi.InputType['UpdateWindowsMonthlyRecurrenceArgs']]] = None,
+                 monthly_recurrence: Optional[pulumi.Input[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 once_recurrence: Optional[pulumi.Input[pulumi.InputType['UpdateWindowsOnceRecurrenceArgs']]] = None,
+                 once_recurrence: Optional[pulumi.Input[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']]] = None,
                  recurrence: Optional[pulumi.Input[str]] = None,
-                 weekly_recurrence: Optional[pulumi.Input[pulumi.InputType['UpdateWindowsWeeklyRecurrenceArgs']]] = None,
+                 weekly_recurrence: Optional[pulumi.Input[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -336,13 +336,13 @@ class UpdateWindows(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            daily_recurrence: Optional[pulumi.Input[pulumi.InputType['UpdateWindowsDailyRecurrenceArgs']]] = None,
+            daily_recurrence: Optional[pulumi.Input[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
-            monthly_recurrence: Optional[pulumi.Input[pulumi.InputType['UpdateWindowsMonthlyRecurrenceArgs']]] = None,
+            monthly_recurrence: Optional[pulumi.Input[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            once_recurrence: Optional[pulumi.Input[pulumi.InputType['UpdateWindowsOnceRecurrenceArgs']]] = None,
+            once_recurrence: Optional[pulumi.Input[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']]] = None,
             recurrence: Optional[pulumi.Input[str]] = None,
-            weekly_recurrence: Optional[pulumi.Input[pulumi.InputType['UpdateWindowsWeeklyRecurrenceArgs']]] = None) -> 'UpdateWindows':
+            weekly_recurrence: Optional[pulumi.Input[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']]] = None) -> 'UpdateWindows':
         """
         Get an existing UpdateWindows resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -350,13 +350,13 @@ class UpdateWindows(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['UpdateWindowsDailyRecurrenceArgs']] daily_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']] daily_recurrence: no documentation available
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['UpdateWindowsMonthlyRecurrenceArgs']] monthly_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']] monthly_recurrence: no documentation available
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[pulumi.InputType['UpdateWindowsOnceRecurrenceArgs']] once_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']] once_recurrence: no documentation available
         :param pulumi.Input[str] recurrence: Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
-        :param pulumi.Input[pulumi.InputType['UpdateWindowsWeeklyRecurrenceArgs']] weekly_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']] weekly_recurrence: no documentation available
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -164,7 +164,7 @@ class AutotagV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[pulumi.InputType['AutotagV2RulesArgs']]] = None,
+                 rules: Optional[pulumi.Input[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']]] = None,
                  rules_maintained_externally: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
@@ -173,7 +173,7 @@ class AutotagV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: Description
         :param pulumi.Input[str] name: Tag name
-        :param pulumi.Input[pulumi.InputType['AutotagV2RulesArgs']] rules: Rules
+        :param pulumi.Input[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']] rules: Rules
         :param pulumi.Input[bool] rules_maintained_externally: If `true` this resource will not
         """
         ...
@@ -201,7 +201,7 @@ class AutotagV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[pulumi.InputType['AutotagV2RulesArgs']]] = None,
+                 rules: Optional[pulumi.Input[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']]] = None,
                  rules_maintained_externally: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -228,7 +228,7 @@ class AutotagV2(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             description: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            rules: Optional[pulumi.Input[pulumi.InputType['AutotagV2RulesArgs']]] = None,
+            rules: Optional[pulumi.Input[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']]] = None,
             rules_maintained_externally: Optional[pulumi.Input[bool]] = None) -> 'AutotagV2':
         """
         Get an existing AutotagV2 resource's state with the given name, id, and optional extra
@@ -239,7 +239,7 @@ class AutotagV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: Description
         :param pulumi.Input[str] name: Tag name
-        :param pulumi.Input[pulumi.InputType['AutotagV2RulesArgs']] rules: Rules
+        :param pulumi.Input[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']] rules: Rules
         :param pulumi.Input[bool] rules_maintained_externally: If `true` this resource will not
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

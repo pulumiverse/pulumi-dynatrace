@@ -21,9 +21,11 @@ class PolicyBindingsArgs:
         """
         The set of arguments for constructing a PolicyBindings resource.
         :param pulumi.Input[str] group: The name of the policy
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] policies: A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] policies: A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
+               different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
         :param pulumi.Input[str] cluster: The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
-        :param pulumi.Input[str] environment: The ID of the environment (https://\\n\\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
+        :param pulumi.Input[str] environment: The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
+               policies defined for that environment.
         """
         pulumi.set(__self__, "group", group)
         pulumi.set(__self__, "policies", policies)
@@ -48,7 +50,8 @@ class PolicyBindingsArgs:
     @pulumi.getter
     def policies(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+        A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
+        different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
         """
         return pulumi.get(self, "policies")
 
@@ -72,7 +75,8 @@ class PolicyBindingsArgs:
     @pulumi.getter
     def environment(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the environment (https://\\n\\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
+        The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
+        policies defined for that environment.
         """
         return pulumi.get(self, "environment")
 
@@ -91,9 +95,11 @@ class _PolicyBindingsState:
         """
         Input properties used for looking up and filtering PolicyBindings resources.
         :param pulumi.Input[str] cluster: The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
-        :param pulumi.Input[str] environment: The ID of the environment (https://\\n\\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
+        :param pulumi.Input[str] environment: The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
+               policies defined for that environment.
         :param pulumi.Input[str] group: The name of the policy
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] policies: A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] policies: A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
+               different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
         """
         if cluster is not None:
             pulumi.set(__self__, "cluster", cluster)
@@ -120,7 +126,8 @@ class _PolicyBindingsState:
     @pulumi.getter
     def environment(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the environment (https://\\n\\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
+        The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
+        policies defined for that environment.
         """
         return pulumi.get(self, "environment")
 
@@ -144,7 +151,8 @@ class _PolicyBindingsState:
     @pulumi.getter
     def policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+        A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
+        different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
         """
         return pulumi.get(self, "policies")
 
@@ -168,9 +176,11 @@ class PolicyBindings(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] cluster: The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
-        :param pulumi.Input[str] environment: The ID of the environment (https://\\n\\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
+        :param pulumi.Input[str] environment: The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
+               policies defined for that environment.
         :param pulumi.Input[str] group: The name of the policy
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] policies: A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] policies: A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
+               different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
         """
         ...
     @overload
@@ -238,9 +248,11 @@ class PolicyBindings(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] cluster: The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
-        :param pulumi.Input[str] environment: The ID of the environment (https://\\n\\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
+        :param pulumi.Input[str] environment: The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
+               policies defined for that environment.
         :param pulumi.Input[str] group: The name of the policy
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] policies: A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] policies: A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
+               different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -264,7 +276,8 @@ class PolicyBindings(pulumi.CustomResource):
     @pulumi.getter
     def environment(self) -> pulumi.Output[Optional[str]]:
         """
-        The ID of the environment (https://\\n\\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
+        The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
+        policies defined for that environment.
         """
         return pulumi.get(self, "environment")
 
@@ -280,7 +293,8 @@ class PolicyBindings(pulumi.CustomResource):
     @pulumi.getter
     def policies(self) -> pulumi.Output[Sequence[str]]:
         """
-        A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+        A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
+        different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
         """
         return pulumi.get(self, "policies")
 

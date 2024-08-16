@@ -317,13 +317,13 @@ class DiskAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disk_name: Optional[pulumi.Input[pulumi.InputType['DiskAnomaliesDiskNameArgs']]] = None,
+                 disk_name: Optional[pulumi.Input[Union['DiskAnomaliesDiskNameArgs', 'DiskAnomaliesDiskNameArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  host_group_id: Optional[pulumi.Input[str]] = None,
                  metric: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  samples: Optional[pulumi.Input[int]] = None,
-                 tags: Optional[pulumi.Input[pulumi.InputType['DiskAnomaliesTagsArgs']]] = None,
+                 tags: Optional[pulumi.Input[Union['DiskAnomaliesTagsArgs', 'DiskAnomaliesTagsArgsDict']]] = None,
                  threshold: Optional[pulumi.Input[float]] = None,
                  violating_samples: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -331,13 +331,13 @@ class DiskAnomalies(pulumi.CustomResource):
         Create a DiskAnomalies resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DiskAnomaliesDiskNameArgs']] disk_name: Narrows the rule usage down to disks, matching the specified criteria
+        :param pulumi.Input[Union['DiskAnomaliesDiskNameArgs', 'DiskAnomaliesDiskNameArgsDict']] disk_name: Narrows the rule usage down to disks, matching the specified criteria
         :param pulumi.Input[bool] enabled: Disk event rule enabled/disabled
         :param pulumi.Input[str] host_group_id: Narrows the rule usage down to disks that run on hosts that themselves run on the specified host group
         :param pulumi.Input[str] metric: The metric to monitor. Possible values are: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING` and `WRITE_TIME_EXCEEDING`
         :param pulumi.Input[str] name: The name of the disk event rule
         :param pulumi.Input[int] samples: The number of samples to evaluate
-        :param pulumi.Input[pulumi.InputType['DiskAnomaliesTagsArgs']] tags: Narrows the rule usage down to the hosts matching the specified tags
+        :param pulumi.Input[Union['DiskAnomaliesTagsArgs', 'DiskAnomaliesTagsArgsDict']] tags: Narrows the rule usage down to the hosts matching the specified tags
         :param pulumi.Input[float] threshold: The threshold to trigger disk event.   * A percentage for `LowDiskSpace` or `LowInodes` metrics.   * In milliseconds for `ReadTimeExceeding` or `WriteTimeExceeding` metrics
         :param pulumi.Input[int] violating_samples: The number of samples that must violate the threshold to trigger an event. Must not exceed the number of evaluated samples
         """
@@ -364,13 +364,13 @@ class DiskAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disk_name: Optional[pulumi.Input[pulumi.InputType['DiskAnomaliesDiskNameArgs']]] = None,
+                 disk_name: Optional[pulumi.Input[Union['DiskAnomaliesDiskNameArgs', 'DiskAnomaliesDiskNameArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  host_group_id: Optional[pulumi.Input[str]] = None,
                  metric: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  samples: Optional[pulumi.Input[int]] = None,
-                 tags: Optional[pulumi.Input[pulumi.InputType['DiskAnomaliesTagsArgs']]] = None,
+                 tags: Optional[pulumi.Input[Union['DiskAnomaliesTagsArgs', 'DiskAnomaliesTagsArgsDict']]] = None,
                  threshold: Optional[pulumi.Input[float]] = None,
                  violating_samples: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -411,13 +411,13 @@ class DiskAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            disk_name: Optional[pulumi.Input[pulumi.InputType['DiskAnomaliesDiskNameArgs']]] = None,
+            disk_name: Optional[pulumi.Input[Union['DiskAnomaliesDiskNameArgs', 'DiskAnomaliesDiskNameArgsDict']]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             host_group_id: Optional[pulumi.Input[str]] = None,
             metric: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             samples: Optional[pulumi.Input[int]] = None,
-            tags: Optional[pulumi.Input[pulumi.InputType['DiskAnomaliesTagsArgs']]] = None,
+            tags: Optional[pulumi.Input[Union['DiskAnomaliesTagsArgs', 'DiskAnomaliesTagsArgsDict']]] = None,
             threshold: Optional[pulumi.Input[float]] = None,
             violating_samples: Optional[pulumi.Input[int]] = None) -> 'DiskAnomalies':
         """
@@ -427,13 +427,13 @@ class DiskAnomalies(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DiskAnomaliesDiskNameArgs']] disk_name: Narrows the rule usage down to disks, matching the specified criteria
+        :param pulumi.Input[Union['DiskAnomaliesDiskNameArgs', 'DiskAnomaliesDiskNameArgsDict']] disk_name: Narrows the rule usage down to disks, matching the specified criteria
         :param pulumi.Input[bool] enabled: Disk event rule enabled/disabled
         :param pulumi.Input[str] host_group_id: Narrows the rule usage down to disks that run on hosts that themselves run on the specified host group
         :param pulumi.Input[str] metric: The metric to monitor. Possible values are: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING` and `WRITE_TIME_EXCEEDING`
         :param pulumi.Input[str] name: The name of the disk event rule
         :param pulumi.Input[int] samples: The number of samples to evaluate
-        :param pulumi.Input[pulumi.InputType['DiskAnomaliesTagsArgs']] tags: Narrows the rule usage down to the hosts matching the specified tags
+        :param pulumi.Input[Union['DiskAnomaliesTagsArgs', 'DiskAnomaliesTagsArgsDict']] tags: Narrows the rule usage down to the hosts matching the specified tags
         :param pulumi.Input[float] threshold: The threshold to trigger disk event.   * A percentage for `LowDiskSpace` or `LowInodes` metrics.   * In milliseconds for `ReadTimeExceeding` or `WriteTimeExceeding` metrics
         :param pulumi.Input[int] violating_samples: The number of samples that must violate the threshold to trigger an event. Must not exceed the number of evaluated samples
         """

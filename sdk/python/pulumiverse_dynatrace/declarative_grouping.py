@@ -205,7 +205,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 detection: Optional[pulumi.Input[pulumi.InputType['DeclarativeGroupingDetectionArgs']]] = None,
+                 detection: Optional[pulumi.Input[Union['DeclarativeGroupingDetectionArgs', 'DeclarativeGroupingDetectionArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -215,7 +215,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
         Create a DeclarativeGrouping resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DeclarativeGroupingDetectionArgs']] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
+        :param pulumi.Input[Union['DeclarativeGroupingDetectionArgs', 'DeclarativeGroupingDetectionArgsDict']] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
                group.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
@@ -247,7 +247,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 detection: Optional[pulumi.Input[pulumi.InputType['DeclarativeGroupingDetectionArgs']]] = None,
+                 detection: Optional[pulumi.Input[Union['DeclarativeGroupingDetectionArgs', 'DeclarativeGroupingDetectionArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -278,7 +278,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            detection: Optional[pulumi.Input[pulumi.InputType['DeclarativeGroupingDetectionArgs']]] = None,
+            detection: Optional[pulumi.Input[Union['DeclarativeGroupingDetectionArgs', 'DeclarativeGroupingDetectionArgsDict']]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             insert_after: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
@@ -290,7 +290,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DeclarativeGroupingDetectionArgs']] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
+        :param pulumi.Input[Union['DeclarativeGroupingDetectionArgs', 'DeclarativeGroupingDetectionArgsDict']] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
                group.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this

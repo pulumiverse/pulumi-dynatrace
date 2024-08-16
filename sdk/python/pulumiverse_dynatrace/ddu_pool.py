@@ -194,11 +194,11 @@ class DduPool(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 events: Optional[pulumi.Input[pulumi.InputType['DduPoolEventsArgs']]] = None,
-                 log_monitoring: Optional[pulumi.Input[pulumi.InputType['DduPoolLogMonitoringArgs']]] = None,
-                 metrics: Optional[pulumi.Input[pulumi.InputType['DduPoolMetricsArgs']]] = None,
-                 serverless: Optional[pulumi.Input[pulumi.InputType['DduPoolServerlessArgs']]] = None,
-                 traces: Optional[pulumi.Input[pulumi.InputType['DduPoolTracesArgs']]] = None,
+                 events: Optional[pulumi.Input[Union['DduPoolEventsArgs', 'DduPoolEventsArgsDict']]] = None,
+                 log_monitoring: Optional[pulumi.Input[Union['DduPoolLogMonitoringArgs', 'DduPoolLogMonitoringArgsDict']]] = None,
+                 metrics: Optional[pulumi.Input[Union['DduPoolMetricsArgs', 'DduPoolMetricsArgsDict']]] = None,
+                 serverless: Optional[pulumi.Input[Union['DduPoolServerlessArgs', 'DduPoolServerlessArgsDict']]] = None,
+                 traces: Optional[pulumi.Input[Union['DduPoolTracesArgs', 'DduPoolTracesArgsDict']]] = None,
                  __props__=None):
         """
         !> This resource API endpoint has been deprecated.
@@ -218,40 +218,40 @@ class DduPool(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         _name_ = dynatrace.DduPool("#name#",
-            events=dynatrace.DduPoolEventsArgs(
-                enabled=True,
-                type="MONTHLY",
-                value=125,
-            ),
-            log_monitoring=dynatrace.DduPoolLogMonitoringArgs(
-                enabled=True,
-                type="MONTHLY",
-                value=124,
-            ),
-            metrics=dynatrace.DduPoolMetricsArgs(
-                enabled=True,
-                type="MONTHLY",
-                value=123,
-            ),
-            serverless=dynatrace.DduPoolServerlessArgs(
-                enabled=True,
-                type="MONTHLY",
-                value=126,
-            ),
-            traces=dynatrace.DduPoolTracesArgs(
-                enabled=True,
-                type="MONTHLY",
-                value=127,
-            ))
+            events={
+                "enabled": True,
+                "type": "MONTHLY",
+                "value": 125,
+            },
+            log_monitoring={
+                "enabled": True,
+                "type": "MONTHLY",
+                "value": 124,
+            },
+            metrics={
+                "enabled": True,
+                "type": "MONTHLY",
+                "value": 123,
+            },
+            serverless={
+                "enabled": True,
+                "type": "MONTHLY",
+                "value": 126,
+            },
+            traces={
+                "enabled": True,
+                "type": "MONTHLY",
+                "value": 127,
+            })
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DduPoolEventsArgs']] events: DDU pool settings for Events
-        :param pulumi.Input[pulumi.InputType['DduPoolLogMonitoringArgs']] log_monitoring: DDU pool settings for Log Monitoring
-        :param pulumi.Input[pulumi.InputType['DduPoolMetricsArgs']] metrics: DDU pool settings for Metrics
-        :param pulumi.Input[pulumi.InputType['DduPoolServerlessArgs']] serverless: DDU pool settings for Serverless
-        :param pulumi.Input[pulumi.InputType['DduPoolTracesArgs']] traces: DDU pool settings for Traces
+        :param pulumi.Input[Union['DduPoolEventsArgs', 'DduPoolEventsArgsDict']] events: DDU pool settings for Events
+        :param pulumi.Input[Union['DduPoolLogMonitoringArgs', 'DduPoolLogMonitoringArgsDict']] log_monitoring: DDU pool settings for Log Monitoring
+        :param pulumi.Input[Union['DduPoolMetricsArgs', 'DduPoolMetricsArgsDict']] metrics: DDU pool settings for Metrics
+        :param pulumi.Input[Union['DduPoolServerlessArgs', 'DduPoolServerlessArgsDict']] serverless: DDU pool settings for Serverless
+        :param pulumi.Input[Union['DduPoolTracesArgs', 'DduPoolTracesArgsDict']] traces: DDU pool settings for Traces
         """
         ...
     @overload
@@ -277,31 +277,31 @@ class DduPool(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         _name_ = dynatrace.DduPool("#name#",
-            events=dynatrace.DduPoolEventsArgs(
-                enabled=True,
-                type="MONTHLY",
-                value=125,
-            ),
-            log_monitoring=dynatrace.DduPoolLogMonitoringArgs(
-                enabled=True,
-                type="MONTHLY",
-                value=124,
-            ),
-            metrics=dynatrace.DduPoolMetricsArgs(
-                enabled=True,
-                type="MONTHLY",
-                value=123,
-            ),
-            serverless=dynatrace.DduPoolServerlessArgs(
-                enabled=True,
-                type="MONTHLY",
-                value=126,
-            ),
-            traces=dynatrace.DduPoolTracesArgs(
-                enabled=True,
-                type="MONTHLY",
-                value=127,
-            ))
+            events={
+                "enabled": True,
+                "type": "MONTHLY",
+                "value": 125,
+            },
+            log_monitoring={
+                "enabled": True,
+                "type": "MONTHLY",
+                "value": 124,
+            },
+            metrics={
+                "enabled": True,
+                "type": "MONTHLY",
+                "value": 123,
+            },
+            serverless={
+                "enabled": True,
+                "type": "MONTHLY",
+                "value": 126,
+            },
+            traces={
+                "enabled": True,
+                "type": "MONTHLY",
+                "value": 127,
+            })
         ```
 
         :param str resource_name: The name of the resource.
@@ -319,11 +319,11 @@ class DduPool(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 events: Optional[pulumi.Input[pulumi.InputType['DduPoolEventsArgs']]] = None,
-                 log_monitoring: Optional[pulumi.Input[pulumi.InputType['DduPoolLogMonitoringArgs']]] = None,
-                 metrics: Optional[pulumi.Input[pulumi.InputType['DduPoolMetricsArgs']]] = None,
-                 serverless: Optional[pulumi.Input[pulumi.InputType['DduPoolServerlessArgs']]] = None,
-                 traces: Optional[pulumi.Input[pulumi.InputType['DduPoolTracesArgs']]] = None,
+                 events: Optional[pulumi.Input[Union['DduPoolEventsArgs', 'DduPoolEventsArgsDict']]] = None,
+                 log_monitoring: Optional[pulumi.Input[Union['DduPoolLogMonitoringArgs', 'DduPoolLogMonitoringArgsDict']]] = None,
+                 metrics: Optional[pulumi.Input[Union['DduPoolMetricsArgs', 'DduPoolMetricsArgsDict']]] = None,
+                 serverless: Optional[pulumi.Input[Union['DduPoolServerlessArgs', 'DduPoolServerlessArgsDict']]] = None,
+                 traces: Optional[pulumi.Input[Union['DduPoolTracesArgs', 'DduPoolTracesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -348,11 +348,11 @@ class DduPool(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            events: Optional[pulumi.Input[pulumi.InputType['DduPoolEventsArgs']]] = None,
-            log_monitoring: Optional[pulumi.Input[pulumi.InputType['DduPoolLogMonitoringArgs']]] = None,
-            metrics: Optional[pulumi.Input[pulumi.InputType['DduPoolMetricsArgs']]] = None,
-            serverless: Optional[pulumi.Input[pulumi.InputType['DduPoolServerlessArgs']]] = None,
-            traces: Optional[pulumi.Input[pulumi.InputType['DduPoolTracesArgs']]] = None) -> 'DduPool':
+            events: Optional[pulumi.Input[Union['DduPoolEventsArgs', 'DduPoolEventsArgsDict']]] = None,
+            log_monitoring: Optional[pulumi.Input[Union['DduPoolLogMonitoringArgs', 'DduPoolLogMonitoringArgsDict']]] = None,
+            metrics: Optional[pulumi.Input[Union['DduPoolMetricsArgs', 'DduPoolMetricsArgsDict']]] = None,
+            serverless: Optional[pulumi.Input[Union['DduPoolServerlessArgs', 'DduPoolServerlessArgsDict']]] = None,
+            traces: Optional[pulumi.Input[Union['DduPoolTracesArgs', 'DduPoolTracesArgsDict']]] = None) -> 'DduPool':
         """
         Get an existing DduPool resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -360,11 +360,11 @@ class DduPool(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DduPoolEventsArgs']] events: DDU pool settings for Events
-        :param pulumi.Input[pulumi.InputType['DduPoolLogMonitoringArgs']] log_monitoring: DDU pool settings for Log Monitoring
-        :param pulumi.Input[pulumi.InputType['DduPoolMetricsArgs']] metrics: DDU pool settings for Metrics
-        :param pulumi.Input[pulumi.InputType['DduPoolServerlessArgs']] serverless: DDU pool settings for Serverless
-        :param pulumi.Input[pulumi.InputType['DduPoolTracesArgs']] traces: DDU pool settings for Traces
+        :param pulumi.Input[Union['DduPoolEventsArgs', 'DduPoolEventsArgsDict']] events: DDU pool settings for Events
+        :param pulumi.Input[Union['DduPoolLogMonitoringArgs', 'DduPoolLogMonitoringArgsDict']] log_monitoring: DDU pool settings for Log Monitoring
+        :param pulumi.Input[Union['DduPoolMetricsArgs', 'DduPoolMetricsArgsDict']] metrics: DDU pool settings for Metrics
+        :param pulumi.Input[Union['DduPoolServerlessArgs', 'DduPoolServerlessArgsDict']] serverless: DDU pool settings for Serverless
+        :param pulumi.Input[Union['DduPoolTracesArgs', 'DduPoolTracesArgsDict']] traces: DDU pool settings for Traces
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

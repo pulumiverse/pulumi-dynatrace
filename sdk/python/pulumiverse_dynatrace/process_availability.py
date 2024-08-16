@@ -303,11 +303,11 @@ class ProcessAvailability(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['ProcessAvailabilityMetadataArgs']]] = None,
+                 metadata: Optional[pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']]] = None,
                  minimum_processes: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 rules: Optional[pulumi.Input[pulumi.InputType['ProcessAvailabilityRulesArgs']]] = None,
+                 rules: Optional[pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -318,11 +318,11 @@ class ProcessAvailability(pulumi.CustomResource):
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
                instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
                specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['ProcessAvailabilityMetadataArgs']] metadata: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event.
         :param pulumi.Input[int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
         :param pulumi.Input[str] name: Monitoring rule name
         :param pulumi.Input[Sequence[pulumi.Input[str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
-        :param pulumi.Input[pulumi.InputType['ProcessAvailabilityRulesArgs']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
+        :param pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
                detection rules associated with it.
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -351,11 +351,11 @@ class ProcessAvailability(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['ProcessAvailabilityMetadataArgs']]] = None,
+                 metadata: Optional[pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']]] = None,
                  minimum_processes: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 rules: Optional[pulumi.Input[pulumi.InputType['ProcessAvailabilityRulesArgs']]] = None,
+                 rules: Optional[pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -388,11 +388,11 @@ class ProcessAvailability(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             insert_after: Optional[pulumi.Input[str]] = None,
-            metadata: Optional[pulumi.Input[pulumi.InputType['ProcessAvailabilityMetadataArgs']]] = None,
+            metadata: Optional[pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']]] = None,
             minimum_processes: Optional[pulumi.Input[int]] = None,
             name: Optional[pulumi.Input[str]] = None,
             operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            rules: Optional[pulumi.Input[pulumi.InputType['ProcessAvailabilityRulesArgs']]] = None,
+            rules: Optional[pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'ProcessAvailability':
         """
         Get an existing ProcessAvailability resource's state with the given name, id, and optional extra
@@ -405,11 +405,11 @@ class ProcessAvailability(pulumi.CustomResource):
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
                instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
                specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['ProcessAvailabilityMetadataArgs']] metadata: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event.
         :param pulumi.Input[int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
         :param pulumi.Input[str] name: Monitoring rule name
         :param pulumi.Input[Sequence[pulumi.Input[str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
-        :param pulumi.Input[pulumi.InputType['ProcessAvailabilityRulesArgs']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
+        :param pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
                detection rules associated with it.
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """

@@ -225,9 +225,9 @@ class Environment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 quotas: Optional[pulumi.Input[pulumi.InputType['EnvironmentQuotasArgs']]] = None,
+                 quotas: Optional[pulumi.Input[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 storage: Optional[pulumi.Input[pulumi.InputType['EnvironmentStorageArgs']]] = None,
+                 storage: Optional[pulumi.Input[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  trial: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -243,9 +243,9 @@ class Environment(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] name: The display name of the environment
-        :param pulumi.Input[pulumi.InputType['EnvironmentQuotasArgs']] quotas: Environment level consumption and quotas information
+        :param pulumi.Input[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']] quotas: Environment level consumption and quotas information
         :param pulumi.Input[str] state: Indicates whether the environment is enabled or disabled. Possible values are `ENABLED` and `DISABLED`. The default value is ENABLED
-        :param pulumi.Input[pulumi.InputType['EnvironmentStorageArgs']] storage: Environment level storage usage and limit information
+        :param pulumi.Input[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']] storage: Environment level storage usage and limit information
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags that are assigned to this environment. Every tag can have a maximum length of 100 characters
         :param pulumi.Input[bool] trial: Specifies whether the environment is a trial environment or a non-trial environment. Creating a trial environment is only possible if your license allows that. The default value is false (non-trial)
         """
@@ -280,9 +280,9 @@ class Environment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 quotas: Optional[pulumi.Input[pulumi.InputType['EnvironmentQuotasArgs']]] = None,
+                 quotas: Optional[pulumi.Input[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 storage: Optional[pulumi.Input[pulumi.InputType['EnvironmentStorageArgs']]] = None,
+                 storage: Optional[pulumi.Input[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  trial: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -315,9 +315,9 @@ class Environment(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             name: Optional[pulumi.Input[str]] = None,
-            quotas: Optional[pulumi.Input[pulumi.InputType['EnvironmentQuotasArgs']]] = None,
+            quotas: Optional[pulumi.Input[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            storage: Optional[pulumi.Input[pulumi.InputType['EnvironmentStorageArgs']]] = None,
+            storage: Optional[pulumi.Input[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             trial: Optional[pulumi.Input[bool]] = None) -> 'Environment':
         """
@@ -328,9 +328,9 @@ class Environment(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] name: The display name of the environment
-        :param pulumi.Input[pulumi.InputType['EnvironmentQuotasArgs']] quotas: Environment level consumption and quotas information
+        :param pulumi.Input[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']] quotas: Environment level consumption and quotas information
         :param pulumi.Input[str] state: Indicates whether the environment is enabled or disabled. Possible values are `ENABLED` and `DISABLED`. The default value is ENABLED
-        :param pulumi.Input[pulumi.InputType['EnvironmentStorageArgs']] storage: Environment level storage usage and limit information
+        :param pulumi.Input[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']] storage: Environment level storage usage and limit information
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags that are assigned to this environment. Every tag can have a maximum length of 100 characters
         :param pulumi.Input[bool] trial: Specifies whether the environment is a trial environment or a non-trial environment. Creating a trial environment is only possible if your license allows that. The default value is false (non-trial)
         """

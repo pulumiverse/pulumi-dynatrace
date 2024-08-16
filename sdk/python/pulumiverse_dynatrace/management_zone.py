@@ -227,10 +227,10 @@ class ManagementZone(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneDimensionalRuleArgs']]]]] = None,
-                 entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneEntitySelectorBasedRuleArgs']]]]] = None,
+                 dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict']]]]] = None,
+                 entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneRuleArgs']]]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -238,10 +238,10 @@ class ManagementZone(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: The description of the management zone
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneDimensionalRuleArgs']]]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneEntitySelectorBasedRuleArgs']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict']]]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[str] name: The name of the management zone
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneRuleArgs']]]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         ...
@@ -268,10 +268,10 @@ class ManagementZone(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneDimensionalRuleArgs']]]]] = None,
-                 entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneEntitySelectorBasedRuleArgs']]]]] = None,
+                 dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict']]]]] = None,
+                 entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneRuleArgs']]]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -299,10 +299,10 @@ class ManagementZone(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             description: Optional[pulumi.Input[str]] = None,
-            dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneDimensionalRuleArgs']]]]] = None,
-            entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneEntitySelectorBasedRuleArgs']]]]] = None,
+            dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict']]]]] = None,
+            entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict']]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneRuleArgs']]]]] = None,
+            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]]] = None,
             unknowns: Optional[pulumi.Input[str]] = None) -> 'ManagementZone':
         """
         Get an existing ManagementZone resource's state with the given name, id, and optional extra
@@ -312,10 +312,10 @@ class ManagementZone(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: The description of the management zone
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneDimensionalRuleArgs']]]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneEntitySelectorBasedRuleArgs']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict']]]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[str] name: The name of the management zone
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneRuleArgs']]]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

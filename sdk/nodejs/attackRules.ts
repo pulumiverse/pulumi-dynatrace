@@ -35,11 +35,11 @@ export class AttackRules extends pulumi.CustomResource {
     }
 
     /**
-     * Step 2: Define attack control for chosen criteria
+     * Step 1: Select attack protection behavior
      */
     public readonly attackHandling!: pulumi.Output<outputs.AttackRulesAttackHandling>;
     /**
-     * Step 1: Define criteria
+     * Step 2: Select attack type
      */
     public readonly criteria!: pulumi.Output<outputs.AttackRulesCriteria>;
     /**
@@ -51,9 +51,17 @@ export class AttackRules extends pulumi.CustomResource {
      */
     public readonly insertAfter!: pulumi.Output<string>;
     /**
-     * Step 3: Leave comment
+     * Step 4: Leave comment (optional)
      */
     public readonly metadata!: pulumi.Output<outputs.AttackRulesMetadata>;
+    /**
+     * If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+     */
+    public readonly resourceAttributeConditions!: pulumi.Output<outputs.AttackRulesResourceAttributeConditions | undefined>;
+    /**
+     * Rule name
+     */
+    public readonly ruleName!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AttackRules resource with the given unique name, arguments, and options.
@@ -73,6 +81,8 @@ export class AttackRules extends pulumi.CustomResource {
             resourceInputs["enabled"] = state ? state.enabled : undefined;
             resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["metadata"] = state ? state.metadata : undefined;
+            resourceInputs["resourceAttributeConditions"] = state ? state.resourceAttributeConditions : undefined;
+            resourceInputs["ruleName"] = state ? state.ruleName : undefined;
         } else {
             const args = argsOrState as AttackRulesArgs | undefined;
             if ((!args || args.attackHandling === undefined) && !opts.urn) {
@@ -92,6 +102,8 @@ export class AttackRules extends pulumi.CustomResource {
             resourceInputs["enabled"] = args ? args.enabled : undefined;
             resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["metadata"] = args ? args.metadata : undefined;
+            resourceInputs["resourceAttributeConditions"] = args ? args.resourceAttributeConditions : undefined;
+            resourceInputs["ruleName"] = args ? args.ruleName : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AttackRules.__pulumiType, name, resourceInputs, opts);
@@ -103,11 +115,11 @@ export class AttackRules extends pulumi.CustomResource {
  */
 export interface AttackRulesState {
     /**
-     * Step 2: Define attack control for chosen criteria
+     * Step 1: Select attack protection behavior
      */
     attackHandling?: pulumi.Input<inputs.AttackRulesAttackHandling>;
     /**
-     * Step 1: Define criteria
+     * Step 2: Select attack type
      */
     criteria?: pulumi.Input<inputs.AttackRulesCriteria>;
     /**
@@ -119,9 +131,17 @@ export interface AttackRulesState {
      */
     insertAfter?: pulumi.Input<string>;
     /**
-     * Step 3: Leave comment
+     * Step 4: Leave comment (optional)
      */
     metadata?: pulumi.Input<inputs.AttackRulesMetadata>;
+    /**
+     * If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+     */
+    resourceAttributeConditions?: pulumi.Input<inputs.AttackRulesResourceAttributeConditions>;
+    /**
+     * Rule name
+     */
+    ruleName?: pulumi.Input<string>;
 }
 
 /**
@@ -129,11 +149,11 @@ export interface AttackRulesState {
  */
 export interface AttackRulesArgs {
     /**
-     * Step 2: Define attack control for chosen criteria
+     * Step 1: Select attack protection behavior
      */
     attackHandling: pulumi.Input<inputs.AttackRulesAttackHandling>;
     /**
-     * Step 1: Define criteria
+     * Step 2: Select attack type
      */
     criteria: pulumi.Input<inputs.AttackRulesCriteria>;
     /**
@@ -145,7 +165,15 @@ export interface AttackRulesArgs {
      */
     insertAfter?: pulumi.Input<string>;
     /**
-     * Step 3: Leave comment
+     * Step 4: Leave comment (optional)
      */
     metadata: pulumi.Input<inputs.AttackRulesMetadata>;
+    /**
+     * If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+     */
+    resourceAttributeConditions?: pulumi.Input<inputs.AttackRulesResourceAttributeConditions>;
+    /**
+     * Rule name
+     */
+    ruleName?: pulumi.Input<string>;
 }

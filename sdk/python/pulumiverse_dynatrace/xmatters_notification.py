@@ -287,7 +287,7 @@ class XmattersNotification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: Optional[pulumi.Input[bool]] = None,
-                 headers: Optional[pulumi.Input[pulumi.InputType['XmattersNotificationHeadersArgs']]] = None,
+                 headers: Optional[pulumi.Input[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']]] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -300,7 +300,7 @@ class XmattersNotification(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['XmattersNotificationHeadersArgs']] headers: A list of the additional HTTP headers
+        :param pulumi.Input[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']] headers: A list of the additional HTTP headers
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
         :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
@@ -332,7 +332,7 @@ class XmattersNotification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: Optional[pulumi.Input[bool]] = None,
-                 headers: Optional[pulumi.Input[pulumi.InputType['XmattersNotificationHeadersArgs']]] = None,
+                 headers: Optional[pulumi.Input[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']]] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -375,7 +375,7 @@ class XmattersNotification(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             active: Optional[pulumi.Input[bool]] = None,
-            headers: Optional[pulumi.Input[pulumi.InputType['XmattersNotificationHeadersArgs']]] = None,
+            headers: Optional[pulumi.Input[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']]] = None,
             insecure: Optional[pulumi.Input[bool]] = None,
             legacy_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
@@ -390,7 +390,7 @@ class XmattersNotification(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['XmattersNotificationHeadersArgs']] headers: A list of the additional HTTP headers
+        :param pulumi.Input[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']] headers: A list of the additional HTTP headers
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
         :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration

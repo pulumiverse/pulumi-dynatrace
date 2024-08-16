@@ -293,7 +293,7 @@ class CustomService(pulumi.CustomResource):
                  process_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  queue_entry_point: Optional[pulumi.Input[bool]] = None,
                  queue_entry_point_type: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomServiceRuleArgs']]]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomServiceRuleArgs', 'CustomServiceRuleArgsDict']]]]] = None,
                  technology: Optional[pulumi.Input[str]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -306,7 +306,7 @@ class CustomService(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] process_groups: The list of process groups the custom service should belong to
         :param pulumi.Input[bool] queue_entry_point: The queue entry point flag. Set to `true` for custom messaging services
         :param pulumi.Input[str] queue_entry_point_type: The queue entry point type (IBM*MQ, JMS, KAFKA, MSMQ or RABBIT*MQ)
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomServiceRuleArgs']]]] rules: The list of rules defining the custom service
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CustomServiceRuleArgs', 'CustomServiceRuleArgsDict']]]] rules: The list of rules defining the custom service
         :param pulumi.Input[str] technology: Matcher applying to the file name (ENDS*WITH, EQUALS or STARTS*WITH). Default value is ENDS_WITH (if applicable)
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
@@ -338,7 +338,7 @@ class CustomService(pulumi.CustomResource):
                  process_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  queue_entry_point: Optional[pulumi.Input[bool]] = None,
                  queue_entry_point_type: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomServiceRuleArgs']]]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomServiceRuleArgs', 'CustomServiceRuleArgsDict']]]]] = None,
                  technology: Optional[pulumi.Input[str]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -377,7 +377,7 @@ class CustomService(pulumi.CustomResource):
             process_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             queue_entry_point: Optional[pulumi.Input[bool]] = None,
             queue_entry_point_type: Optional[pulumi.Input[str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomServiceRuleArgs']]]]] = None,
+            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomServiceRuleArgs', 'CustomServiceRuleArgsDict']]]]] = None,
             technology: Optional[pulumi.Input[str]] = None,
             unknowns: Optional[pulumi.Input[str]] = None) -> 'CustomService':
         """
@@ -392,7 +392,7 @@ class CustomService(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] process_groups: The list of process groups the custom service should belong to
         :param pulumi.Input[bool] queue_entry_point: The queue entry point flag. Set to `true` for custom messaging services
         :param pulumi.Input[str] queue_entry_point_type: The queue entry point type (IBM*MQ, JMS, KAFKA, MSMQ or RABBIT*MQ)
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomServiceRuleArgs']]]] rules: The list of rules defining the custom service
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CustomServiceRuleArgs', 'CustomServiceRuleArgsDict']]]] rules: The list of rules defining the custom service
         :param pulumi.Input[str] technology: Matcher applying to the file name (ENDS*WITH, EQUALS or STARTS*WITH). Default value is ENDS_WITH (if applicable)
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """

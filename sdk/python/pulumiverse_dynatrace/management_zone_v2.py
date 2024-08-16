@@ -165,7 +165,7 @@ class ManagementZoneV2(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[pulumi.InputType['ManagementZoneV2RulesArgs']]] = None,
+                 rules: Optional[pulumi.Input[Union['ManagementZoneV2RulesArgs', 'ManagementZoneV2RulesArgsDict']]] = None,
                  __props__=None):
         """
         Create a ManagementZoneV2 resource with the given unique name, props, and options.
@@ -174,7 +174,7 @@ class ManagementZoneV2(pulumi.CustomResource):
         :param pulumi.Input[str] description: Description
         :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[str] name: **Be careful when renaming** - if there are policies that are referencing this Management zone, they will need to be adapted to the new name!
-        :param pulumi.Input[pulumi.InputType['ManagementZoneV2RulesArgs']] rules: Rules
+        :param pulumi.Input[Union['ManagementZoneV2RulesArgs', 'ManagementZoneV2RulesArgsDict']] rules: Rules
         """
         ...
     @overload
@@ -202,7 +202,7 @@ class ManagementZoneV2(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[pulumi.InputType['ManagementZoneV2RulesArgs']]] = None,
+                 rules: Optional[pulumi.Input[Union['ManagementZoneV2RulesArgs', 'ManagementZoneV2RulesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -229,7 +229,7 @@ class ManagementZoneV2(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             legacy_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            rules: Optional[pulumi.Input[pulumi.InputType['ManagementZoneV2RulesArgs']]] = None) -> 'ManagementZoneV2':
+            rules: Optional[pulumi.Input[Union['ManagementZoneV2RulesArgs', 'ManagementZoneV2RulesArgsDict']]] = None) -> 'ManagementZoneV2':
         """
         Get an existing ManagementZoneV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -240,7 +240,7 @@ class ManagementZoneV2(pulumi.CustomResource):
         :param pulumi.Input[str] description: Description
         :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[str] name: **Be careful when renaming** - if there are policies that are referencing this Management zone, they will need to be adapted to the new name!
-        :param pulumi.Input[pulumi.InputType['ManagementZoneV2RulesArgs']] rules: Rules
+        :param pulumi.Input[Union['ManagementZoneV2RulesArgs', 'ManagementZoneV2RulesArgsDict']] rules: Rules
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

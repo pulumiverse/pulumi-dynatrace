@@ -189,6 +189,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DeclarativeGrouping{}
 	case "dynatrace:index/directShares:DirectShares":
 		r = &DirectShares{}
+	case "dynatrace:index/discoveryDefaultRules:DiscoveryDefaultRules":
+		r = &DiscoveryDefaultRules{}
+	case "dynatrace:index/discoveryFeatureFlags:DiscoveryFeatureFlags":
+		r = &DiscoveryFeatureFlags{}
 	case "dynatrace:index/diskAnalytics:DiskAnalytics":
 		r = &DiskAnalytics{}
 	case "dynatrace:index/diskAnomalies:DiskAnomalies":
@@ -613,6 +617,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &WebAppCustomConfigProperties{}
 	case "dynatrace:index/webAppCustomErrors:WebAppCustomErrors":
 		r = &WebAppCustomErrors{}
+	case "dynatrace:index/webAppCustomInjection:WebAppCustomInjection":
+		r = &WebAppCustomInjection{}
 	case "dynatrace:index/webAppEnablement:WebAppEnablement":
 		r = &WebAppEnablement{}
 	case "dynatrace:index/webAppInjectionCookie:WebAppInjectionCookie":
@@ -1088,6 +1094,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/directShares",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/discoveryDefaultRules",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/discoveryFeatureFlags",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2148,6 +2164,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/webAppCustomErrors",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/webAppCustomInjection",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -232,23 +232,23 @@ class RequestNaming(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[pulumi.InputType['RequestNamingConditionsArgs']]] = None,
+                 conditions: Optional[pulumi.Input[Union['RequestNamingConditionsArgs', 'RequestNamingConditionsArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  naming_pattern: Optional[pulumi.Input[str]] = None,
-                 placeholders: Optional[pulumi.Input[pulumi.InputType['RequestNamingPlaceholdersArgs']]] = None,
+                 placeholders: Optional[pulumi.Input[Union['RequestNamingPlaceholdersArgs', 'RequestNamingPlaceholdersArgsDict']]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a RequestNaming resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['RequestNamingConditionsArgs']] conditions: The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
+        :param pulumi.Input[Union['RequestNamingConditionsArgs', 'RequestNamingConditionsArgsDict']] conditions: The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
                **all** the specified conditions for the rule to trigger
         :param pulumi.Input[bool] enabled: The rule is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[Sequence[pulumi.Input[str]]] management_zones: Specifies the management zones for which this rule should be applied
         :param pulumi.Input[str] naming_pattern: The name to be assigned to matching requests
-        :param pulumi.Input[pulumi.InputType['RequestNamingPlaceholdersArgs']] placeholders: The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
+        :param pulumi.Input[Union['RequestNamingPlaceholdersArgs', 'RequestNamingPlaceholdersArgsDict']] placeholders: The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
                other request attribute and use it in the request naming pattern.
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
@@ -275,11 +275,11 @@ class RequestNaming(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[pulumi.InputType['RequestNamingConditionsArgs']]] = None,
+                 conditions: Optional[pulumi.Input[Union['RequestNamingConditionsArgs', 'RequestNamingConditionsArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  naming_pattern: Optional[pulumi.Input[str]] = None,
-                 placeholders: Optional[pulumi.Input[pulumi.InputType['RequestNamingPlaceholdersArgs']]] = None,
+                 placeholders: Optional[pulumi.Input[Union['RequestNamingPlaceholdersArgs', 'RequestNamingPlaceholdersArgsDict']]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -310,11 +310,11 @@ class RequestNaming(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            conditions: Optional[pulumi.Input[pulumi.InputType['RequestNamingConditionsArgs']]] = None,
+            conditions: Optional[pulumi.Input[Union['RequestNamingConditionsArgs', 'RequestNamingConditionsArgsDict']]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             naming_pattern: Optional[pulumi.Input[str]] = None,
-            placeholders: Optional[pulumi.Input[pulumi.InputType['RequestNamingPlaceholdersArgs']]] = None,
+            placeholders: Optional[pulumi.Input[Union['RequestNamingPlaceholdersArgs', 'RequestNamingPlaceholdersArgsDict']]] = None,
             unknowns: Optional[pulumi.Input[str]] = None) -> 'RequestNaming':
         """
         Get an existing RequestNaming resource's state with the given name, id, and optional extra
@@ -323,12 +323,12 @@ class RequestNaming(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['RequestNamingConditionsArgs']] conditions: The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
+        :param pulumi.Input[Union['RequestNamingConditionsArgs', 'RequestNamingConditionsArgsDict']] conditions: The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
                **all** the specified conditions for the rule to trigger
         :param pulumi.Input[bool] enabled: The rule is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[Sequence[pulumi.Input[str]]] management_zones: Specifies the management zones for which this rule should be applied
         :param pulumi.Input[str] naming_pattern: The name to be assigned to matching requests
-        :param pulumi.Input[pulumi.InputType['RequestNamingPlaceholdersArgs']] placeholders: The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
+        :param pulumi.Input[Union['RequestNamingPlaceholdersArgs', 'RequestNamingPlaceholdersArgsDict']] placeholders: The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
                other request attribute and use it in the request naming pattern.
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """

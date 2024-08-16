@@ -174,7 +174,7 @@ class AzureService(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  credentials_id: Optional[pulumi.Input[str]] = None,
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureServiceMetricArgs']]]]] = None,
+                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureServiceMetricArgs', 'AzureServiceMetricArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  use_recommended_metrics: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -210,10 +210,10 @@ class AzureService(pulumi.CustomResource):
             label="TERRAFORM_SAMPLE",
             key="aaaa",
             monitor_only_tagged_entities=True,
-            monitor_only_tag_pairs=[dynatrace.AzureCredentialsMonitorOnlyTagPairArgs(
-                name="string",
-                value="string",
-            )])
+            monitor_only_tag_pairs=[{
+                "name": "string",
+                "value": "string",
+            }])
         supported_services = dynatrace.get_azure_supported_services(excepts=["AZURE_STORAGE_ACCOUNT"])
         t_erraformsample_services = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
@@ -265,10 +265,10 @@ class AzureService(pulumi.CustomResource):
             label="TERRAFORM_SAMPLE",
             key="aaaa",
             monitor_only_tagged_entities=True,
-            monitor_only_tag_pairs=[dynatrace.AzureCredentialsMonitorOnlyTagPairArgs(
-                name="string",
-                value="string",
-            )])
+            monitor_only_tag_pairs=[{
+                "name": "string",
+                "value": "string",
+            }])
         supported_services = dynatrace.get_azure_supported_services(excepts=["AZURE_STORAGE_ACCOUNT"])
         t_erraformsample_services = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
@@ -293,7 +293,7 @@ class AzureService(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  credentials_id: Optional[pulumi.Input[str]] = None,
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureServiceMetricArgs']]]]] = None,
+                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureServiceMetricArgs', 'AzureServiceMetricArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  use_recommended_metrics: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -325,7 +325,7 @@ class AzureService(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             built_in: Optional[pulumi.Input[bool]] = None,
             credentials_id: Optional[pulumi.Input[str]] = None,
-            metrics: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureServiceMetricArgs']]]]] = None,
+            metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureServiceMetricArgs', 'AzureServiceMetricArgsDict']]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             required_metrics: Optional[pulumi.Input[str]] = None,
             use_recommended_metrics: Optional[pulumi.Input[bool]] = None) -> 'AzureService':

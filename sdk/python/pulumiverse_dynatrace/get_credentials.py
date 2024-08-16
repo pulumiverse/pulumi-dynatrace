@@ -99,38 +99,38 @@ def get_credentials(name: Optional[str] = None,
         enabled=True,
         frequency=60,
         locations=["SYNTHETIC_LOCATION-781752216580B1BC"],
-        anomaly_detections=[dynatrace.HttpMonitorAnomalyDetectionArgs(
-            loading_time_thresholds=[dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs(
-                enabled=True,
-            )],
-            outage_handlings=[dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArgs(
-                global_outage=True,
-                local_outage=False,
-                retry_on_error=False,
-            )],
-        )],
-        script=dynatrace.HttpMonitorScriptArgs(
-            requests=[dynatrace.HttpMonitorScriptRequestArgs(
-                description="google.com",
-                method="GET",
-                url="https://www.google.com",
-                authentication=dynatrace.HttpMonitorScriptRequestAuthenticationArgs(
-                    type="BASIC_AUTHENTICATION",
-                    credentials=creds.id,
-                ),
-                configuration=dynatrace.HttpMonitorScriptRequestConfigurationArgs(
-                    accept_any_certificate=True,
-                    follow_redirects=True,
-                ),
-                validation=dynatrace.HttpMonitorScriptRequestValidationArgs(
-                    rules=[dynatrace.HttpMonitorScriptRequestValidationRuleArgs(
-                        type="httpStatusesList",
-                        pass_if_found=False,
-                        value=">=400",
-                    )],
-                ),
-            )],
-        ))
+        anomaly_detections=[{
+            "loading_time_thresholds": [{
+                "enabled": True,
+            }],
+            "outage_handlings": [{
+                "global_outage": True,
+                "local_outage": False,
+                "retry_on_error": False,
+            }],
+        }],
+        script={
+            "requests": [{
+                "description": "google.com",
+                "method": "GET",
+                "url": "https://www.google.com",
+                "authentication": {
+                    "type": "BASIC_AUTHENTICATION",
+                    "credentials": creds.id,
+                },
+                "configuration": {
+                    "accept_any_certificate": True,
+                    "follow_redirects": True,
+                },
+                "validation": {
+                    "rules": [{
+                        "type": "httpStatusesList",
+                        "pass_if_found": False,
+                        "value": ">=400",
+                    }],
+                },
+            }],
+        })
     ```
 
 
@@ -172,38 +172,38 @@ def get_credentials_output(name: Optional[pulumi.Input[Optional[str]]] = None,
         enabled=True,
         frequency=60,
         locations=["SYNTHETIC_LOCATION-781752216580B1BC"],
-        anomaly_detections=[dynatrace.HttpMonitorAnomalyDetectionArgs(
-            loading_time_thresholds=[dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs(
-                enabled=True,
-            )],
-            outage_handlings=[dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArgs(
-                global_outage=True,
-                local_outage=False,
-                retry_on_error=False,
-            )],
-        )],
-        script=dynatrace.HttpMonitorScriptArgs(
-            requests=[dynatrace.HttpMonitorScriptRequestArgs(
-                description="google.com",
-                method="GET",
-                url="https://www.google.com",
-                authentication=dynatrace.HttpMonitorScriptRequestAuthenticationArgs(
-                    type="BASIC_AUTHENTICATION",
-                    credentials=creds.id,
-                ),
-                configuration=dynatrace.HttpMonitorScriptRequestConfigurationArgs(
-                    accept_any_certificate=True,
-                    follow_redirects=True,
-                ),
-                validation=dynatrace.HttpMonitorScriptRequestValidationArgs(
-                    rules=[dynatrace.HttpMonitorScriptRequestValidationRuleArgs(
-                        type="httpStatusesList",
-                        pass_if_found=False,
-                        value=">=400",
-                    )],
-                ),
-            )],
-        ))
+        anomaly_detections=[{
+            "loading_time_thresholds": [{
+                "enabled": True,
+            }],
+            "outage_handlings": [{
+                "global_outage": True,
+                "local_outage": False,
+                "retry_on_error": False,
+            }],
+        }],
+        script={
+            "requests": [{
+                "description": "google.com",
+                "method": "GET",
+                "url": "https://www.google.com",
+                "authentication": {
+                    "type": "BASIC_AUTHENTICATION",
+                    "credentials": creds.id,
+                },
+                "configuration": {
+                    "accept_any_certificate": True,
+                    "follow_redirects": True,
+                },
+                "validation": {
+                    "rules": [{
+                        "type": "httpStatusesList",
+                        "pass_if_found": False,
+                        "value": ">=400",
+                    }],
+                },
+            }],
+        })
     ```
 
 

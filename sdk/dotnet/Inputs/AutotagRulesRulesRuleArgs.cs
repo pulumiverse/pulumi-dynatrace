@@ -38,13 +38,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// Type '{' for placeholder suggestions
+        /// Optional tag value
         /// </summary>
         [Input("valueFormat")]
         public Input<string>? ValueFormat { get; set; }
 
         /// <summary>
-        /// Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        /// Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
         /// </summary>
         [Input("valueNormalization", required: true)]
         public Input<string> ValueNormalization { get; set; } = null!;

@@ -171,7 +171,7 @@ class DiskOptions(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  disable_nfs_disk_monitoring: Optional[pulumi.Input[bool]] = None,
-                 exclusions: Optional[pulumi.Input[pulumi.InputType['DiskOptionsExclusionsArgs']]] = None,
+                 exclusions: Optional[pulumi.Input[Union['DiskOptionsExclusionsArgs', 'DiskOptionsExclusionsArgsDict']]] = None,
                  nfs_show_all: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -180,7 +180,7 @@ class DiskOptions(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] disable_nfs_disk_monitoring: Deactivate NFS monitoring on all supported systems
-        :param pulumi.Input[pulumi.InputType['DiskOptionsExclusionsArgs']] exclusions: OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
+        :param pulumi.Input[Union['DiskOptionsExclusionsArgs', 'DiskOptionsExclusionsArgsDict']] exclusions: OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
                disks from the monitoring list.
         :param pulumi.Input[bool] nfs_show_all: When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
                Requires OneAgent 1.209 or later
@@ -210,7 +210,7 @@ class DiskOptions(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  disable_nfs_disk_monitoring: Optional[pulumi.Input[bool]] = None,
-                 exclusions: Optional[pulumi.Input[pulumi.InputType['DiskOptionsExclusionsArgs']]] = None,
+                 exclusions: Optional[pulumi.Input[Union['DiskOptionsExclusionsArgs', 'DiskOptionsExclusionsArgsDict']]] = None,
                  nfs_show_all: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -237,7 +237,7 @@ class DiskOptions(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             disable_nfs_disk_monitoring: Optional[pulumi.Input[bool]] = None,
-            exclusions: Optional[pulumi.Input[pulumi.InputType['DiskOptionsExclusionsArgs']]] = None,
+            exclusions: Optional[pulumi.Input[Union['DiskOptionsExclusionsArgs', 'DiskOptionsExclusionsArgsDict']]] = None,
             nfs_show_all: Optional[pulumi.Input[bool]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'DiskOptions':
         """
@@ -248,7 +248,7 @@ class DiskOptions(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] disable_nfs_disk_monitoring: Deactivate NFS monitoring on all supported systems
-        :param pulumi.Input[pulumi.InputType['DiskOptionsExclusionsArgs']] exclusions: OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
+        :param pulumi.Input[Union['DiskOptionsExclusionsArgs', 'DiskOptionsExclusionsArgsDict']] exclusions: OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
                disks from the monitoring list.
         :param pulumi.Input[bool] nfs_show_all: When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
                Requires OneAgent 1.209 or later

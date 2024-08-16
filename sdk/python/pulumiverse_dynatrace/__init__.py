@@ -89,6 +89,8 @@ from .db_app_feature_flags import *
 from .ddu_pool import *
 from .declarative_grouping import *
 from .direct_shares import *
+from .discovery_default_rules import *
+from .discovery_feature_flags import *
 from .disk_analytics import *
 from .disk_anomalies import *
 from .disk_anomalies_v2 import *
@@ -112,6 +114,8 @@ from .generic_types import *
 from .geolocation import *
 from .get_alerting_profile import *
 from .get_alerting_profiles import *
+from .get_api_token import *
+from .get_api_tokens import *
 from .get_application import *
 from .get_attack_alerting import *
 from .get_autotag import *
@@ -127,6 +131,8 @@ from .get_documents import *
 from .get_entities import *
 from .get_entity import *
 from .get_failure_detection_parameters import *
+from .get_generic_setting import *
+from .get_generic_settings import *
 from .get_host import *
 from .get_hub_items import *
 from .get_iam_group import *
@@ -344,6 +350,7 @@ from .web_app_beacon_endpoint import *
 from .web_app_beacon_origins import *
 from .web_app_custom_config_properties import *
 from .web_app_custom_errors import *
+from .web_app_custom_injection import *
 from .web_app_enablement import *
 from .web_app_injection_cookie import *
 from .web_app_javascript_updates import *
@@ -1040,6 +1047,22 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/directShares:DirectShares": "DirectShares"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/discoveryDefaultRules",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/discoveryDefaultRules:DiscoveryDefaultRules": "DiscoveryDefaultRules"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/discoveryFeatureFlags",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/discoveryFeatureFlags:DiscoveryFeatureFlags": "DiscoveryFeatureFlags"
   }
  },
  {
@@ -2736,6 +2759,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/webAppCustomErrors:WebAppCustomErrors": "WebAppCustomErrors"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/webAppCustomInjection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/webAppCustomInjection:WebAppCustomInjection": "WebAppCustomInjection"
   }
  },
  {

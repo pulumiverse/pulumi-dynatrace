@@ -191,20 +191,20 @@ class FailureDetectionParameters(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 broken_links: Optional[pulumi.Input[pulumi.InputType['FailureDetectionParametersBrokenLinksArgs']]] = None,
+                 broken_links: Optional[pulumi.Input[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 exception_rules: Optional[pulumi.Input[pulumi.InputType['FailureDetectionParametersExceptionRulesArgs']]] = None,
-                 http_response_codes: Optional[pulumi.Input[pulumi.InputType['FailureDetectionParametersHttpResponseCodesArgs']]] = None,
+                 exception_rules: Optional[pulumi.Input[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']]] = None,
+                 http_response_codes: Optional[pulumi.Input[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a FailureDetectionParameters resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['FailureDetectionParametersBrokenLinksArgs']] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
+        :param pulumi.Input[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
         :param pulumi.Input[str] description: Description
-        :param pulumi.Input[pulumi.InputType['FailureDetectionParametersExceptionRulesArgs']] exception_rules: Customize failure detection for specific exceptions and errors
-        :param pulumi.Input[pulumi.InputType['FailureDetectionParametersHttpResponseCodesArgs']] http_response_codes: HTTP response codes
+        :param pulumi.Input[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']] exception_rules: Customize failure detection for specific exceptions and errors
+        :param pulumi.Input[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']] http_response_codes: HTTP response codes
         :param pulumi.Input[str] name: Name
         """
         ...
@@ -230,10 +230,10 @@ class FailureDetectionParameters(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 broken_links: Optional[pulumi.Input[pulumi.InputType['FailureDetectionParametersBrokenLinksArgs']]] = None,
+                 broken_links: Optional[pulumi.Input[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 exception_rules: Optional[pulumi.Input[pulumi.InputType['FailureDetectionParametersExceptionRulesArgs']]] = None,
-                 http_response_codes: Optional[pulumi.Input[pulumi.InputType['FailureDetectionParametersHttpResponseCodesArgs']]] = None,
+                 exception_rules: Optional[pulumi.Input[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']]] = None,
+                 http_response_codes: Optional[pulumi.Input[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -265,10 +265,10 @@ class FailureDetectionParameters(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            broken_links: Optional[pulumi.Input[pulumi.InputType['FailureDetectionParametersBrokenLinksArgs']]] = None,
+            broken_links: Optional[pulumi.Input[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']]] = None,
             description: Optional[pulumi.Input[str]] = None,
-            exception_rules: Optional[pulumi.Input[pulumi.InputType['FailureDetectionParametersExceptionRulesArgs']]] = None,
-            http_response_codes: Optional[pulumi.Input[pulumi.InputType['FailureDetectionParametersHttpResponseCodesArgs']]] = None,
+            exception_rules: Optional[pulumi.Input[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']]] = None,
+            http_response_codes: Optional[pulumi.Input[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']]] = None,
             name: Optional[pulumi.Input[str]] = None) -> 'FailureDetectionParameters':
         """
         Get an existing FailureDetectionParameters resource's state with the given name, id, and optional extra
@@ -277,10 +277,10 @@ class FailureDetectionParameters(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['FailureDetectionParametersBrokenLinksArgs']] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
+        :param pulumi.Input[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
         :param pulumi.Input[str] description: Description
-        :param pulumi.Input[pulumi.InputType['FailureDetectionParametersExceptionRulesArgs']] exception_rules: Customize failure detection for specific exceptions and errors
-        :param pulumi.Input[pulumi.InputType['FailureDetectionParametersHttpResponseCodesArgs']] http_response_codes: HTTP response codes
+        :param pulumi.Input[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']] exception_rules: Customize failure detection for specific exceptions and errors
+        :param pulumi.Input[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']] http_response_codes: HTTP response codes
         :param pulumi.Input[str] name: Name
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

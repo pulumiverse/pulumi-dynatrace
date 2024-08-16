@@ -65,7 +65,7 @@ class AwaitableGetSyntheticLocationsResult(GetSyntheticLocationsResult):
 
 
 def get_synthetic_locations(id: Optional[str] = None,
-                            locations: Optional[pulumi.InputType['GetSyntheticLocationsLocationsArgs']] = None,
+                            locations: Optional[Union['GetSyntheticLocationsLocationsArgs', 'GetSyntheticLocationsLocationsArgsDict']] = None,
                             name: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSyntheticLocationsResult:
     """
@@ -83,34 +83,34 @@ def get_synthetic_locations(id: Optional[str] = None,
         enabled=True,
         frequency=60,
         locations=[test.locations.entity_id],
-        anomaly_detections=[dynatrace.HttpMonitorAnomalyDetectionArgs(
-            loading_time_thresholds=[dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs(
-                enabled=True,
-            )],
-            outage_handlings=[dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArgs(
-                global_outage=True,
-                local_outage=False,
-                retry_on_error=False,
-            )],
-        )],
-        script=dynatrace.HttpMonitorScriptArgs(
-            requests=[dynatrace.HttpMonitorScriptRequestArgs(
-                description="google.com",
-                method="GET",
-                url="https://www.google.com",
-                configuration=dynatrace.HttpMonitorScriptRequestConfigurationArgs(
-                    accept_any_certificate=True,
-                    follow_redirects=True,
-                ),
-                validation=dynatrace.HttpMonitorScriptRequestValidationArgs(
-                    rules=[dynatrace.HttpMonitorScriptRequestValidationRuleArgs(
-                        type="httpStatusesList",
-                        pass_if_found=False,
-                        value=">=400",
-                    )],
-                ),
-            )],
-        ))
+        anomaly_detections=[{
+            "loading_time_thresholds": [{
+                "enabled": True,
+            }],
+            "outage_handlings": [{
+                "global_outage": True,
+                "local_outage": False,
+                "retry_on_error": False,
+            }],
+        }],
+        script={
+            "requests": [{
+                "description": "google.com",
+                "method": "GET",
+                "url": "https://www.google.com",
+                "configuration": {
+                    "accept_any_certificate": True,
+                    "follow_redirects": True,
+                },
+                "validation": {
+                    "rules": [{
+                        "type": "httpStatusesList",
+                        "pass_if_found": False,
+                        "value": ">=400",
+                    }],
+                },
+            }],
+        })
     ```
 
 
@@ -131,7 +131,7 @@ def get_synthetic_locations(id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_synthetic_locations)
 def get_synthetic_locations_output(id: Optional[pulumi.Input[Optional[str]]] = None,
-                                   locations: Optional[pulumi.Input[Optional[pulumi.InputType['GetSyntheticLocationsLocationsArgs']]]] = None,
+                                   locations: Optional[pulumi.Input[Optional[Union['GetSyntheticLocationsLocationsArgs', 'GetSyntheticLocationsLocationsArgsDict']]]] = None,
                                    name: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSyntheticLocationsResult]:
     """
@@ -149,34 +149,34 @@ def get_synthetic_locations_output(id: Optional[pulumi.Input[Optional[str]]] = N
         enabled=True,
         frequency=60,
         locations=[test.locations.entity_id],
-        anomaly_detections=[dynatrace.HttpMonitorAnomalyDetectionArgs(
-            loading_time_thresholds=[dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs(
-                enabled=True,
-            )],
-            outage_handlings=[dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArgs(
-                global_outage=True,
-                local_outage=False,
-                retry_on_error=False,
-            )],
-        )],
-        script=dynatrace.HttpMonitorScriptArgs(
-            requests=[dynatrace.HttpMonitorScriptRequestArgs(
-                description="google.com",
-                method="GET",
-                url="https://www.google.com",
-                configuration=dynatrace.HttpMonitorScriptRequestConfigurationArgs(
-                    accept_any_certificate=True,
-                    follow_redirects=True,
-                ),
-                validation=dynatrace.HttpMonitorScriptRequestValidationArgs(
-                    rules=[dynatrace.HttpMonitorScriptRequestValidationRuleArgs(
-                        type="httpStatusesList",
-                        pass_if_found=False,
-                        value=">=400",
-                    )],
-                ),
-            )],
-        ))
+        anomaly_detections=[{
+            "loading_time_thresholds": [{
+                "enabled": True,
+            }],
+            "outage_handlings": [{
+                "global_outage": True,
+                "local_outage": False,
+                "retry_on_error": False,
+            }],
+        }],
+        script={
+            "requests": [{
+                "description": "google.com",
+                "method": "GET",
+                "url": "https://www.google.com",
+                "configuration": {
+                    "accept_any_certificate": True,
+                    "follow_redirects": True,
+                },
+                "validation": {
+                    "rules": [{
+                        "type": "httpStatusesList",
+                        "pass_if_found": False,
+                        "value": ">=400",
+                    }],
+                },
+            }],
+        })
     ```
 
 

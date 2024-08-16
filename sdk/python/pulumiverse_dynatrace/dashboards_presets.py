@@ -97,14 +97,14 @@ class DashboardsPresets(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dashboard_presets_list: Optional[pulumi.Input[pulumi.InputType['DashboardsPresetsDashboardPresetsListArgs']]] = None,
+                 dashboard_presets_list: Optional[pulumi.Input[Union['DashboardsPresetsDashboardPresetsListArgs', 'DashboardsPresetsDashboardPresetsListArgsDict']]] = None,
                  enable_dashboard_presets: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
         Create a DashboardsPresets resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DashboardsPresetsDashboardPresetsListArgs']] dashboard_presets_list: Show selected preset to respective user group only.
+        :param pulumi.Input[Union['DashboardsPresetsDashboardPresetsListArgs', 'DashboardsPresetsDashboardPresetsListArgsDict']] dashboard_presets_list: Show selected preset to respective user group only.
         :param pulumi.Input[bool] enable_dashboard_presets: Dashboard presets are visible to all users by default. For a pristine environment you may disable them entirely or opt to manually limit visibility to selected user groups.
         """
         ...
@@ -130,7 +130,7 @@ class DashboardsPresets(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dashboard_presets_list: Optional[pulumi.Input[pulumi.InputType['DashboardsPresetsDashboardPresetsListArgs']]] = None,
+                 dashboard_presets_list: Optional[pulumi.Input[Union['DashboardsPresetsDashboardPresetsListArgs', 'DashboardsPresetsDashboardPresetsListArgsDict']]] = None,
                  enable_dashboard_presets: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -155,7 +155,7 @@ class DashboardsPresets(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dashboard_presets_list: Optional[pulumi.Input[pulumi.InputType['DashboardsPresetsDashboardPresetsListArgs']]] = None,
+            dashboard_presets_list: Optional[pulumi.Input[Union['DashboardsPresetsDashboardPresetsListArgs', 'DashboardsPresetsDashboardPresetsListArgsDict']]] = None,
             enable_dashboard_presets: Optional[pulumi.Input[bool]] = None) -> 'DashboardsPresets':
         """
         Get an existing DashboardsPresets resource's state with the given name, id, and optional extra
@@ -164,7 +164,7 @@ class DashboardsPresets(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DashboardsPresetsDashboardPresetsListArgs']] dashboard_presets_list: Show selected preset to respective user group only.
+        :param pulumi.Input[Union['DashboardsPresetsDashboardPresetsListArgs', 'DashboardsPresetsDashboardPresetsListArgsDict']] dashboard_presets_list: Show selected preset to respective user group only.
         :param pulumi.Input[bool] enable_dashboard_presets: Dashboard presets are visible to all users by default. For a pristine environment you may disable them entirely or opt to manually limit visibility to selected user groups.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

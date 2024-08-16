@@ -462,11 +462,11 @@ class AzureCredentials(pulumi.CustomResource):
                  directory_id: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  label: Optional[pulumi.Input[str]] = None,
-                 monitor_only_excluding_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]]] = None,
-                 monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyTagPairArgs']]]]] = None,
+                 monitor_only_excluding_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyExcludingTagPairArgs', 'AzureCredentialsMonitorOnlyExcludingTagPairArgsDict']]]]] = None,
+                 monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyTagPairArgs', 'AzureCredentialsMonitorOnlyTagPairArgsDict']]]]] = None,
                  monitor_only_tagged_entities: Optional[pulumi.Input[bool]] = None,
                  remove_defaults: Optional[pulumi.Input[bool]] = None,
-                 supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsSupportingServiceArgs']]]]] = None,
+                 supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict']]]]] = None,
                  supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -480,11 +480,11 @@ class AzureCredentials(pulumi.CustomResource):
         :param pulumi.Input[str] directory_id: The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
         :param pulumi.Input[str] key: The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[str] label: The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]] monitor_only_excluding_tag_pairs: A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyTagPairArgs']]]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyExcludingTagPairArgs', 'AzureCredentialsMonitorOnlyExcludingTagPairArgsDict']]]] monitor_only_excluding_tag_pairs: A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyTagPairArgs', 'AzureCredentialsMonitorOnlyTagPairArgsDict']]]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         :param pulumi.Input[bool] monitor_only_tagged_entities: Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
         :param pulumi.Input[bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsSupportingServiceArgs']]]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict']]]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
         """
         ...
@@ -516,11 +516,11 @@ class AzureCredentials(pulumi.CustomResource):
                  directory_id: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  label: Optional[pulumi.Input[str]] = None,
-                 monitor_only_excluding_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]]] = None,
-                 monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyTagPairArgs']]]]] = None,
+                 monitor_only_excluding_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyExcludingTagPairArgs', 'AzureCredentialsMonitorOnlyExcludingTagPairArgsDict']]]]] = None,
+                 monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyTagPairArgs', 'AzureCredentialsMonitorOnlyTagPairArgsDict']]]]] = None,
                  monitor_only_tagged_entities: Optional[pulumi.Input[bool]] = None,
                  remove_defaults: Optional[pulumi.Input[bool]] = None,
-                 supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsSupportingServiceArgs']]]]] = None,
+                 supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict']]]]] = None,
                  supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -567,11 +567,11 @@ class AzureCredentials(pulumi.CustomResource):
             directory_id: Optional[pulumi.Input[str]] = None,
             key: Optional[pulumi.Input[str]] = None,
             label: Optional[pulumi.Input[str]] = None,
-            monitor_only_excluding_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]]] = None,
-            monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyTagPairArgs']]]]] = None,
+            monitor_only_excluding_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyExcludingTagPairArgs', 'AzureCredentialsMonitorOnlyExcludingTagPairArgsDict']]]]] = None,
+            monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyTagPairArgs', 'AzureCredentialsMonitorOnlyTagPairArgsDict']]]]] = None,
             monitor_only_tagged_entities: Optional[pulumi.Input[bool]] = None,
             remove_defaults: Optional[pulumi.Input[bool]] = None,
-            supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsSupportingServiceArgs']]]]] = None,
+            supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict']]]]] = None,
             supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
             unknowns: Optional[pulumi.Input[str]] = None) -> 'AzureCredentials':
         """
@@ -587,11 +587,11 @@ class AzureCredentials(pulumi.CustomResource):
         :param pulumi.Input[str] directory_id: The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
         :param pulumi.Input[str] key: The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[str] label: The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]] monitor_only_excluding_tag_pairs: A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyTagPairArgs']]]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyExcludingTagPairArgs', 'AzureCredentialsMonitorOnlyExcludingTagPairArgsDict']]]] monitor_only_excluding_tag_pairs: A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyTagPairArgs', 'AzureCredentialsMonitorOnlyTagPairArgsDict']]]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         :param pulumi.Input[bool] monitor_only_tagged_entities: Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
         :param pulumi.Input[bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsSupportingServiceArgs']]]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict']]]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

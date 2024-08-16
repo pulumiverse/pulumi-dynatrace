@@ -238,8 +238,8 @@ class ApplicationErrorRules(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 custom_errors: Optional[pulumi.Input[pulumi.InputType['ApplicationErrorRulesCustomErrorsArgs']]] = None,
-                 http_errors: Optional[pulumi.Input[pulumi.InputType['ApplicationErrorRulesHttpErrorsArgs']]] = None,
+                 custom_errors: Optional[pulumi.Input[Union['ApplicationErrorRulesCustomErrorsArgs', 'ApplicationErrorRulesCustomErrorsArgsDict']]] = None,
+                 http_errors: Optional[pulumi.Input[Union['ApplicationErrorRulesHttpErrorsArgs', 'ApplicationErrorRulesHttpErrorsArgsDict']]] = None,
                  ignore_custom_errors_apdex: Optional[pulumi.Input[bool]] = None,
                  ignore_http_errors_apdex: Optional[pulumi.Input[bool]] = None,
                  ignore_js_errors_apdex: Optional[pulumi.Input[bool]] = None,
@@ -249,8 +249,8 @@ class ApplicationErrorRules(pulumi.CustomResource):
         Create a ApplicationErrorRules resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ApplicationErrorRulesCustomErrorsArgs']] custom_errors: (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
-        :param pulumi.Input[pulumi.InputType['ApplicationErrorRulesHttpErrorsArgs']] http_errors: (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors. Rules are evaluated from top to bottom;
+        :param pulumi.Input[Union['ApplicationErrorRulesCustomErrorsArgs', 'ApplicationErrorRulesCustomErrorsArgsDict']] custom_errors: (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
+        :param pulumi.Input[Union['ApplicationErrorRulesHttpErrorsArgs', 'ApplicationErrorRulesHttpErrorsArgsDict']] http_errors: (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors. Rules are evaluated from top to bottom;
                the first matching rule applies
         :param pulumi.Input[bool] ignore_custom_errors_apdex: (Field has overlap with `WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in
                **customErrorRules** in Apdex calculation
@@ -282,8 +282,8 @@ class ApplicationErrorRules(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 custom_errors: Optional[pulumi.Input[pulumi.InputType['ApplicationErrorRulesCustomErrorsArgs']]] = None,
-                 http_errors: Optional[pulumi.Input[pulumi.InputType['ApplicationErrorRulesHttpErrorsArgs']]] = None,
+                 custom_errors: Optional[pulumi.Input[Union['ApplicationErrorRulesCustomErrorsArgs', 'ApplicationErrorRulesCustomErrorsArgsDict']]] = None,
+                 http_errors: Optional[pulumi.Input[Union['ApplicationErrorRulesHttpErrorsArgs', 'ApplicationErrorRulesHttpErrorsArgsDict']]] = None,
                  ignore_custom_errors_apdex: Optional[pulumi.Input[bool]] = None,
                  ignore_http_errors_apdex: Optional[pulumi.Input[bool]] = None,
                  ignore_js_errors_apdex: Optional[pulumi.Input[bool]] = None,
@@ -313,8 +313,8 @@ class ApplicationErrorRules(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            custom_errors: Optional[pulumi.Input[pulumi.InputType['ApplicationErrorRulesCustomErrorsArgs']]] = None,
-            http_errors: Optional[pulumi.Input[pulumi.InputType['ApplicationErrorRulesHttpErrorsArgs']]] = None,
+            custom_errors: Optional[pulumi.Input[Union['ApplicationErrorRulesCustomErrorsArgs', 'ApplicationErrorRulesCustomErrorsArgsDict']]] = None,
+            http_errors: Optional[pulumi.Input[Union['ApplicationErrorRulesHttpErrorsArgs', 'ApplicationErrorRulesHttpErrorsArgsDict']]] = None,
             ignore_custom_errors_apdex: Optional[pulumi.Input[bool]] = None,
             ignore_http_errors_apdex: Optional[pulumi.Input[bool]] = None,
             ignore_js_errors_apdex: Optional[pulumi.Input[bool]] = None,
@@ -326,8 +326,8 @@ class ApplicationErrorRules(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ApplicationErrorRulesCustomErrorsArgs']] custom_errors: (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
-        :param pulumi.Input[pulumi.InputType['ApplicationErrorRulesHttpErrorsArgs']] http_errors: (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors. Rules are evaluated from top to bottom;
+        :param pulumi.Input[Union['ApplicationErrorRulesCustomErrorsArgs', 'ApplicationErrorRulesCustomErrorsArgsDict']] custom_errors: (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
+        :param pulumi.Input[Union['ApplicationErrorRulesHttpErrorsArgs', 'ApplicationErrorRulesHttpErrorsArgsDict']] http_errors: (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors. Rules are evaluated from top to bottom;
                the first matching rule applies
         :param pulumi.Input[bool] ignore_custom_errors_apdex: (Field has overlap with `WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in
                **customErrorRules** in Apdex calculation

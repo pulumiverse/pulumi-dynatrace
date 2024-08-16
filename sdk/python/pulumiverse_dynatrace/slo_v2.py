@@ -412,7 +412,7 @@ class SloV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  custom_description: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 error_budget_burn_rate: Optional[pulumi.Input[pulumi.InputType['SloV2ErrorBudgetBurnRateArgs']]] = None,
+                 error_budget_burn_rate: Optional[pulumi.Input[Union['SloV2ErrorBudgetBurnRateArgs', 'SloV2ErrorBudgetBurnRateArgsDict']]] = None,
                  evaluation_type: Optional[pulumi.Input[str]] = None,
                  evaluation_window: Optional[pulumi.Input[str]] = None,
                  filter: Optional[pulumi.Input[str]] = None,
@@ -429,7 +429,7 @@ class SloV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] custom_description: The description of the SLO
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['SloV2ErrorBudgetBurnRateArgs']] error_budget_burn_rate: ### Error budget burn rate
+        :param pulumi.Input[Union['SloV2ErrorBudgetBurnRateArgs', 'SloV2ErrorBudgetBurnRateArgsDict']] error_budget_burn_rate: ### Error budget burn rate
         :param pulumi.Input[str] evaluation_type: Possible Values: `AGGREGATE`
         :param pulumi.Input[str] evaluation_window: Define the timeframe during which the SLO is to be evaluated. For the timeframe you can enter expressions like -1h (last hour), -1w (last week) or complex expressions like -2d to now (last two days), -1d/d to now/d (beginning of yesterday to beginning of today).
         :param pulumi.Input[str] filter: Set a filter parameter (entitySelector) on any GET call to evaluate this SLO against specific services only (for example, type("SERVICE")).  For details, see the [Entity Selector documentation](https://dt-url.net/entityselector).
@@ -465,7 +465,7 @@ class SloV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  custom_description: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 error_budget_burn_rate: Optional[pulumi.Input[pulumi.InputType['SloV2ErrorBudgetBurnRateArgs']]] = None,
+                 error_budget_burn_rate: Optional[pulumi.Input[Union['SloV2ErrorBudgetBurnRateArgs', 'SloV2ErrorBudgetBurnRateArgsDict']]] = None,
                  evaluation_type: Optional[pulumi.Input[str]] = None,
                  evaluation_window: Optional[pulumi.Input[str]] = None,
                  filter: Optional[pulumi.Input[str]] = None,
@@ -524,7 +524,7 @@ class SloV2(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             custom_description: Optional[pulumi.Input[str]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
-            error_budget_burn_rate: Optional[pulumi.Input[pulumi.InputType['SloV2ErrorBudgetBurnRateArgs']]] = None,
+            error_budget_burn_rate: Optional[pulumi.Input[Union['SloV2ErrorBudgetBurnRateArgs', 'SloV2ErrorBudgetBurnRateArgsDict']]] = None,
             evaluation_type: Optional[pulumi.Input[str]] = None,
             evaluation_window: Optional[pulumi.Input[str]] = None,
             filter: Optional[pulumi.Input[str]] = None,
@@ -543,7 +543,7 @@ class SloV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] custom_description: The description of the SLO
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['SloV2ErrorBudgetBurnRateArgs']] error_budget_burn_rate: ### Error budget burn rate
+        :param pulumi.Input[Union['SloV2ErrorBudgetBurnRateArgs', 'SloV2ErrorBudgetBurnRateArgsDict']] error_budget_burn_rate: ### Error budget burn rate
         :param pulumi.Input[str] evaluation_type: Possible Values: `AGGREGATE`
         :param pulumi.Input[str] evaluation_window: Define the timeframe during which the SLO is to be evaluated. For the timeframe you can enter expressions like -1h (last hour), -1w (last week) or complex expressions like -2d to now (last two days), -1d/d to now/d (beginning of yesterday to beginning of today).
         :param pulumi.Input[str] filter: Set a filter parameter (entitySelector) on any GET call to evaluate this SLO against specific services only (for example, type("SERVICE")).  For details, see the [Entity Selector documentation](https://dt-url.net/entityselector).
