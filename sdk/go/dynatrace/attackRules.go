@@ -15,16 +15,20 @@ import (
 type AttackRules struct {
 	pulumi.CustomResourceState
 
-	// Step 2: Define attack control for chosen criteria
+	// Step 1: Select attack protection behavior
 	AttackHandling AttackRulesAttackHandlingOutput `pulumi:"attackHandling"`
-	// Step 1: Define criteria
+	// Step 2: Select attack type
 	Criteria AttackRulesCriteriaOutput `pulumi:"criteria"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// Step 3: Leave comment
+	// Step 4: Leave comment (optional)
 	Metadata AttackRulesMetadataOutput `pulumi:"metadata"`
+	// If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+	ResourceAttributeConditions AttackRulesResourceAttributeConditionsPtrOutput `pulumi:"resourceAttributeConditions"`
+	// Rule name
+	RuleName pulumi.StringPtrOutput `pulumi:"ruleName"`
 }
 
 // NewAttackRules registers a new resource with the given unique name, arguments, and options.
@@ -69,29 +73,37 @@ func GetAttackRules(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AttackRules resources.
 type attackRulesState struct {
-	// Step 2: Define attack control for chosen criteria
+	// Step 1: Select attack protection behavior
 	AttackHandling *AttackRulesAttackHandling `pulumi:"attackHandling"`
-	// Step 1: Define criteria
+	// Step 2: Select attack type
 	Criteria *AttackRulesCriteria `pulumi:"criteria"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Step 3: Leave comment
+	// Step 4: Leave comment (optional)
 	Metadata *AttackRulesMetadata `pulumi:"metadata"`
+	// If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+	ResourceAttributeConditions *AttackRulesResourceAttributeConditions `pulumi:"resourceAttributeConditions"`
+	// Rule name
+	RuleName *string `pulumi:"ruleName"`
 }
 
 type AttackRulesState struct {
-	// Step 2: Define attack control for chosen criteria
+	// Step 1: Select attack protection behavior
 	AttackHandling AttackRulesAttackHandlingPtrInput
-	// Step 1: Define criteria
+	// Step 2: Select attack type
 	Criteria AttackRulesCriteriaPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Step 3: Leave comment
+	// Step 4: Leave comment (optional)
 	Metadata AttackRulesMetadataPtrInput
+	// If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+	ResourceAttributeConditions AttackRulesResourceAttributeConditionsPtrInput
+	// Rule name
+	RuleName pulumi.StringPtrInput
 }
 
 func (AttackRulesState) ElementType() reflect.Type {
@@ -99,30 +111,38 @@ func (AttackRulesState) ElementType() reflect.Type {
 }
 
 type attackRulesArgs struct {
-	// Step 2: Define attack control for chosen criteria
+	// Step 1: Select attack protection behavior
 	AttackHandling AttackRulesAttackHandling `pulumi:"attackHandling"`
-	// Step 1: Define criteria
+	// Step 2: Select attack type
 	Criteria AttackRulesCriteria `pulumi:"criteria"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Step 3: Leave comment
+	// Step 4: Leave comment (optional)
 	Metadata AttackRulesMetadata `pulumi:"metadata"`
+	// If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+	ResourceAttributeConditions *AttackRulesResourceAttributeConditions `pulumi:"resourceAttributeConditions"`
+	// Rule name
+	RuleName *string `pulumi:"ruleName"`
 }
 
 // The set of arguments for constructing a AttackRules resource.
 type AttackRulesArgs struct {
-	// Step 2: Define attack control for chosen criteria
+	// Step 1: Select attack protection behavior
 	AttackHandling AttackRulesAttackHandlingInput
-	// Step 1: Define criteria
+	// Step 2: Select attack type
 	Criteria AttackRulesCriteriaInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Step 3: Leave comment
+	// Step 4: Leave comment (optional)
 	Metadata AttackRulesMetadataInput
+	// If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+	ResourceAttributeConditions AttackRulesResourceAttributeConditionsPtrInput
+	// Rule name
+	RuleName pulumi.StringPtrInput
 }
 
 func (AttackRulesArgs) ElementType() reflect.Type {
@@ -212,12 +232,12 @@ func (o AttackRulesOutput) ToAttackRulesOutputWithContext(ctx context.Context) A
 	return o
 }
 
-// Step 2: Define attack control for chosen criteria
+// Step 1: Select attack protection behavior
 func (o AttackRulesOutput) AttackHandling() AttackRulesAttackHandlingOutput {
 	return o.ApplyT(func(v *AttackRules) AttackRulesAttackHandlingOutput { return v.AttackHandling }).(AttackRulesAttackHandlingOutput)
 }
 
-// Step 1: Define criteria
+// Step 2: Select attack type
 func (o AttackRulesOutput) Criteria() AttackRulesCriteriaOutput {
 	return o.ApplyT(func(v *AttackRules) AttackRulesCriteriaOutput { return v.Criteria }).(AttackRulesCriteriaOutput)
 }
@@ -232,9 +252,21 @@ func (o AttackRulesOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *AttackRules) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// Step 3: Leave comment
+// Step 4: Leave comment (optional)
 func (o AttackRulesOutput) Metadata() AttackRulesMetadataOutput {
 	return o.ApplyT(func(v *AttackRules) AttackRulesMetadataOutput { return v.Metadata }).(AttackRulesMetadataOutput)
+}
+
+// If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+func (o AttackRulesOutput) ResourceAttributeConditions() AttackRulesResourceAttributeConditionsPtrOutput {
+	return o.ApplyT(func(v *AttackRules) AttackRulesResourceAttributeConditionsPtrOutput {
+		return v.ResourceAttributeConditions
+	}).(AttackRulesResourceAttributeConditionsPtrOutput)
+}
+
+// Rule name
+func (o AttackRulesOutput) RuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AttackRules) pulumi.StringPtrOutput { return v.RuleName }).(pulumi.StringPtrOutput)
 }
 
 type AttackRulesArrayOutput struct{ *pulumi.OutputState }

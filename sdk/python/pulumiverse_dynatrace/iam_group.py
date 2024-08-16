@@ -133,7 +133,7 @@ class IamGroup(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  federated_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 permissions: Optional[pulumi.Input[pulumi.InputType['IamGroupPermissionsArgs']]] = None,
+                 permissions: Optional[pulumi.Input[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict']]] = None,
                  __props__=None):
         """
         > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
@@ -163,13 +163,13 @@ class IamGroup(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        restricted = dynatrace.IamGroup("restricted", permissions=dynatrace.IamGroupPermissionsArgs(
-            permissions=[dynatrace.IamGroupPermissionsPermissionArgs(
-                name="tenant-viewer",
-                scope="<environment-id>:<managementzone-id>",
-                type="management-zone",
-            )],
-        ))
+        restricted = dynatrace.IamGroup("restricted", permissions={
+            "permissions": [{
+                "name": "tenant-viewer",
+                "scope": "<environment-id>:<managementzone-id>",
+                "type": "management-zone",
+            }],
+        })
         ```
 
         :param str resource_name: The name of the resource.
@@ -209,13 +209,13 @@ class IamGroup(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        restricted = dynatrace.IamGroup("restricted", permissions=dynatrace.IamGroupPermissionsArgs(
-            permissions=[dynatrace.IamGroupPermissionsPermissionArgs(
-                name="tenant-viewer",
-                scope="<environment-id>:<managementzone-id>",
-                type="management-zone",
-            )],
-        ))
+        restricted = dynatrace.IamGroup("restricted", permissions={
+            "permissions": [{
+                "name": "tenant-viewer",
+                "scope": "<environment-id>:<managementzone-id>",
+                "type": "management-zone",
+            }],
+        })
         ```
 
         :param str resource_name: The name of the resource.
@@ -236,7 +236,7 @@ class IamGroup(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  federated_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 permissions: Optional[pulumi.Input[pulumi.InputType['IamGroupPermissionsArgs']]] = None,
+                 permissions: Optional[pulumi.Input[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -263,7 +263,7 @@ class IamGroup(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             federated_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            permissions: Optional[pulumi.Input[pulumi.InputType['IamGroupPermissionsArgs']]] = None) -> 'IamGroup':
+            permissions: Optional[pulumi.Input[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict']]] = None) -> 'IamGroup':
         """
         Get an existing IamGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

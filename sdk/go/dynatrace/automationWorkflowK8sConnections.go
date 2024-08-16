@@ -16,6 +16,8 @@ type AutomationWorkflowK8sConnections struct {
 	pulumi.CustomResourceState
 
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// The name of the EdgeConnect deployment
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -74,6 +76,8 @@ func GetAutomationWorkflowK8sConnections(ctx *pulumi.Context,
 // Input properties used for looking up and filtering AutomationWorkflowK8sConnections resources.
 type automationWorkflowK8sConnectionsState struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter *string `pulumi:"insertAfter"`
 	// The name of the EdgeConnect deployment
 	Name *string `pulumi:"name"`
@@ -87,6 +91,8 @@ type automationWorkflowK8sConnectionsState struct {
 
 type AutomationWorkflowK8sConnectionsState struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter pulumi.StringPtrInput
 	// The name of the EdgeConnect deployment
 	Name pulumi.StringPtrInput
@@ -104,6 +110,8 @@ func (AutomationWorkflowK8sConnectionsState) ElementType() reflect.Type {
 
 type automationWorkflowK8sConnectionsArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter *string `pulumi:"insertAfter"`
 	// The name of the EdgeConnect deployment
 	Name *string `pulumi:"name"`
@@ -118,6 +126,8 @@ type automationWorkflowK8sConnectionsArgs struct {
 // The set of arguments for constructing a AutomationWorkflowK8sConnections resource.
 type AutomationWorkflowK8sConnectionsArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	//
+	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 	InsertAfter pulumi.StringPtrInput
 	// The name of the EdgeConnect deployment
 	Name pulumi.StringPtrInput
@@ -217,6 +227,8 @@ func (o AutomationWorkflowK8sConnectionsOutput) ToAutomationWorkflowK8sConnectio
 }
 
 // Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+//
+// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
 func (o AutomationWorkflowK8sConnectionsOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutomationWorkflowK8sConnections) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }

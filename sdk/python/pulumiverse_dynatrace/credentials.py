@@ -523,11 +523,11 @@ class Credentials(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  allow_contextless_requests: Optional[pulumi.Input[bool]] = None,
-                 allowed_entities: Optional[pulumi.Input[pulumi.InputType['CredentialsAllowedEntitiesArgs']]] = None,
+                 allowed_entities: Optional[pulumi.Input[Union['CredentialsAllowedEntitiesArgs', 'CredentialsAllowedEntitiesArgsDict']]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
-                 credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]]] = None,
+                 credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CredentialsCredentialUsageSummaryArgs', 'CredentialsCredentialUsageSummaryArgsDict']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 external: Optional[pulumi.Input[pulumi.InputType['CredentialsExternalArgs']]] = None,
+                 external: Optional[pulumi.Input[Union['CredentialsExternalArgs', 'CredentialsExternalArgsDict']]] = None,
                  format: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  owner_access_only: Optional[pulumi.Input[bool]] = None,
@@ -543,11 +543,11 @@ class Credentials(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] allow_contextless_requests: Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
-        :param pulumi.Input[pulumi.InputType['CredentialsAllowedEntitiesArgs']] allowed_entities: The set of entities allowed to use the credential.
+        :param pulumi.Input[Union['CredentialsAllowedEntitiesArgs', 'CredentialsAllowedEntitiesArgsDict']] allowed_entities: The set of entities allowed to use the credential.
         :param pulumi.Input[str] certificate: The certificate in the string format.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]] credential_usage_summaries: The list contains summary data related to the use of credentials
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CredentialsCredentialUsageSummaryArgs', 'CredentialsCredentialUsageSummaryArgsDict']]]] credential_usage_summaries: The list contains summary data related to the use of credentials
         :param pulumi.Input[str] description: A short description of the credentials set
-        :param pulumi.Input[pulumi.InputType['CredentialsExternalArgs']] external: External Vault Configuration
+        :param pulumi.Input[Union['CredentialsExternalArgs', 'CredentialsExternalArgsDict']] external: External Vault Configuration
         :param pulumi.Input[str] format: The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
         :param pulumi.Input[str] name: The name of the credentials set
         :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
@@ -581,11 +581,11 @@ class Credentials(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  allow_contextless_requests: Optional[pulumi.Input[bool]] = None,
-                 allowed_entities: Optional[pulumi.Input[pulumi.InputType['CredentialsAllowedEntitiesArgs']]] = None,
+                 allowed_entities: Optional[pulumi.Input[Union['CredentialsAllowedEntitiesArgs', 'CredentialsAllowedEntitiesArgsDict']]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
-                 credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]]] = None,
+                 credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CredentialsCredentialUsageSummaryArgs', 'CredentialsCredentialUsageSummaryArgsDict']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 external: Optional[pulumi.Input[pulumi.InputType['CredentialsExternalArgs']]] = None,
+                 external: Optional[pulumi.Input[Union['CredentialsExternalArgs', 'CredentialsExternalArgsDict']]] = None,
                  format: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  owner_access_only: Optional[pulumi.Input[bool]] = None,
@@ -632,11 +632,11 @@ class Credentials(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             allow_contextless_requests: Optional[pulumi.Input[bool]] = None,
-            allowed_entities: Optional[pulumi.Input[pulumi.InputType['CredentialsAllowedEntitiesArgs']]] = None,
+            allowed_entities: Optional[pulumi.Input[Union['CredentialsAllowedEntitiesArgs', 'CredentialsAllowedEntitiesArgsDict']]] = None,
             certificate: Optional[pulumi.Input[str]] = None,
-            credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]]] = None,
+            credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CredentialsCredentialUsageSummaryArgs', 'CredentialsCredentialUsageSummaryArgsDict']]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
-            external: Optional[pulumi.Input[pulumi.InputType['CredentialsExternalArgs']]] = None,
+            external: Optional[pulumi.Input[Union['CredentialsExternalArgs', 'CredentialsExternalArgsDict']]] = None,
             format: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             owner_access_only: Optional[pulumi.Input[bool]] = None,
@@ -654,11 +654,11 @@ class Credentials(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] allow_contextless_requests: Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
-        :param pulumi.Input[pulumi.InputType['CredentialsAllowedEntitiesArgs']] allowed_entities: The set of entities allowed to use the credential.
+        :param pulumi.Input[Union['CredentialsAllowedEntitiesArgs', 'CredentialsAllowedEntitiesArgsDict']] allowed_entities: The set of entities allowed to use the credential.
         :param pulumi.Input[str] certificate: The certificate in the string format.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]] credential_usage_summaries: The list contains summary data related to the use of credentials
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CredentialsCredentialUsageSummaryArgs', 'CredentialsCredentialUsageSummaryArgsDict']]]] credential_usage_summaries: The list contains summary data related to the use of credentials
         :param pulumi.Input[str] description: A short description of the credentials set
-        :param pulumi.Input[pulumi.InputType['CredentialsExternalArgs']] external: External Vault Configuration
+        :param pulumi.Input[Union['CredentialsExternalArgs', 'CredentialsExternalArgsDict']] external: External Vault Configuration
         :param pulumi.Input[str] format: The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
         :param pulumi.Input[str] name: The name of the credentials set
         :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)

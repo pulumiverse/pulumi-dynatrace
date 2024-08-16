@@ -164,7 +164,7 @@ class IamPolicyBindingsV2(pulumi.CustomResource):
                  account: Optional[pulumi.Input[str]] = None,
                  environment: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
-                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IamPolicyBindingsV2PolicyArgs']]]]] = None,
+                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamPolicyBindingsV2PolicyArgs', 'IamPolicyBindingsV2PolicyArgsDict']]]]] = None,
                  __props__=None):
         """
         > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
@@ -193,7 +193,7 @@ class IamPolicyBindingsV2(pulumi.CustomResource):
         :param pulumi.Input[str] account: The UUID of the account (`urn:dtaccount:<account-uuid>`). The attribute `policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
         :param pulumi.Input[str] environment: The ID of the environment (https://\\n\\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
         :param pulumi.Input[str] group: The name of the policy
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IamPolicyBindingsV2PolicyArgs']]]] policies: A list of Policies (ID and parameters/metadata) referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamPolicyBindingsV2PolicyArgs', 'IamPolicyBindingsV2PolicyArgsDict']]]] policies: A list of Policies (ID and parameters/metadata) referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
         """
         ...
     @overload
@@ -241,7 +241,7 @@ class IamPolicyBindingsV2(pulumi.CustomResource):
                  account: Optional[pulumi.Input[str]] = None,
                  environment: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
-                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IamPolicyBindingsV2PolicyArgs']]]]] = None,
+                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamPolicyBindingsV2PolicyArgs', 'IamPolicyBindingsV2PolicyArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -270,7 +270,7 @@ class IamPolicyBindingsV2(pulumi.CustomResource):
             account: Optional[pulumi.Input[str]] = None,
             environment: Optional[pulumi.Input[str]] = None,
             group: Optional[pulumi.Input[str]] = None,
-            policies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IamPolicyBindingsV2PolicyArgs']]]]] = None) -> 'IamPolicyBindingsV2':
+            policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamPolicyBindingsV2PolicyArgs', 'IamPolicyBindingsV2PolicyArgsDict']]]]] = None) -> 'IamPolicyBindingsV2':
         """
         Get an existing IamPolicyBindingsV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -281,7 +281,7 @@ class IamPolicyBindingsV2(pulumi.CustomResource):
         :param pulumi.Input[str] account: The UUID of the account (`urn:dtaccount:<account-uuid>`). The attribute `policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
         :param pulumi.Input[str] environment: The ID of the environment (https://\\n\\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
         :param pulumi.Input[str] group: The name of the policy
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IamPolicyBindingsV2PolicyArgs']]]] policies: A list of Policies (ID and parameters/metadata) referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamPolicyBindingsV2PolicyArgs', 'IamPolicyBindingsV2PolicyArgsDict']]]] policies: A list of Policies (ID and parameters/metadata) referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

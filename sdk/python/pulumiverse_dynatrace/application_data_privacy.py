@@ -194,7 +194,7 @@ class ApplicationDataPrivacy(pulumi.CustomResource):
                  data_capture_opt_in: Optional[pulumi.Input[bool]] = None,
                  do_not_track_behaviour: Optional[pulumi.Input[str]] = None,
                  persistent_cookie_for_user_tracking: Optional[pulumi.Input[bool]] = None,
-                 session_replay_data_privacy: Optional[pulumi.Input[pulumi.InputType['ApplicationDataPrivacySessionReplayDataPrivacyArgs']]] = None,
+                 session_replay_data_privacy: Optional[pulumi.Input[Union['ApplicationDataPrivacySessionReplayDataPrivacyArgs', 'ApplicationDataPrivacySessionReplayDataPrivacyArgsDict']]] = None,
                  web_application_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -204,7 +204,7 @@ class ApplicationDataPrivacy(pulumi.CustomResource):
         :param pulumi.Input[bool] data_capture_opt_in: (Field has overlap with `DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
         :param pulumi.Input[str] do_not_track_behaviour: (Field has overlap with `DataPrivacy`) How to handle the "Do Not Track" header:
         :param pulumi.Input[bool] persistent_cookie_for_user_tracking: (Field has overlap with `DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
-        :param pulumi.Input[pulumi.InputType['ApplicationDataPrivacySessionReplayDataPrivacyArgs']] session_replay_data_privacy: (Field has overlap with `SessionReplayWebPrivacy`) Data privacy settings for Session Replay
+        :param pulumi.Input[Union['ApplicationDataPrivacySessionReplayDataPrivacyArgs', 'ApplicationDataPrivacySessionReplayDataPrivacyArgsDict']] session_replay_data_privacy: (Field has overlap with `SessionReplayWebPrivacy`) Data privacy settings for Session Replay
         :param pulumi.Input[str] web_application_id: Dynatrace entity ID of the web application
         """
         ...
@@ -233,7 +233,7 @@ class ApplicationDataPrivacy(pulumi.CustomResource):
                  data_capture_opt_in: Optional[pulumi.Input[bool]] = None,
                  do_not_track_behaviour: Optional[pulumi.Input[str]] = None,
                  persistent_cookie_for_user_tracking: Optional[pulumi.Input[bool]] = None,
-                 session_replay_data_privacy: Optional[pulumi.Input[pulumi.InputType['ApplicationDataPrivacySessionReplayDataPrivacyArgs']]] = None,
+                 session_replay_data_privacy: Optional[pulumi.Input[Union['ApplicationDataPrivacySessionReplayDataPrivacyArgs', 'ApplicationDataPrivacySessionReplayDataPrivacyArgsDict']]] = None,
                  web_application_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -268,7 +268,7 @@ class ApplicationDataPrivacy(pulumi.CustomResource):
             data_capture_opt_in: Optional[pulumi.Input[bool]] = None,
             do_not_track_behaviour: Optional[pulumi.Input[str]] = None,
             persistent_cookie_for_user_tracking: Optional[pulumi.Input[bool]] = None,
-            session_replay_data_privacy: Optional[pulumi.Input[pulumi.InputType['ApplicationDataPrivacySessionReplayDataPrivacyArgs']]] = None,
+            session_replay_data_privacy: Optional[pulumi.Input[Union['ApplicationDataPrivacySessionReplayDataPrivacyArgs', 'ApplicationDataPrivacySessionReplayDataPrivacyArgsDict']]] = None,
             web_application_id: Optional[pulumi.Input[str]] = None) -> 'ApplicationDataPrivacy':
         """
         Get an existing ApplicationDataPrivacy resource's state with the given name, id, and optional extra
@@ -280,7 +280,7 @@ class ApplicationDataPrivacy(pulumi.CustomResource):
         :param pulumi.Input[bool] data_capture_opt_in: (Field has overlap with `DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
         :param pulumi.Input[str] do_not_track_behaviour: (Field has overlap with `DataPrivacy`) How to handle the "Do Not Track" header:
         :param pulumi.Input[bool] persistent_cookie_for_user_tracking: (Field has overlap with `DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
-        :param pulumi.Input[pulumi.InputType['ApplicationDataPrivacySessionReplayDataPrivacyArgs']] session_replay_data_privacy: (Field has overlap with `SessionReplayWebPrivacy`) Data privacy settings for Session Replay
+        :param pulumi.Input[Union['ApplicationDataPrivacySessionReplayDataPrivacyArgs', 'ApplicationDataPrivacySessionReplayDataPrivacyArgsDict']] session_replay_data_privacy: (Field has overlap with `SessionReplayWebPrivacy`) Data privacy settings for Session Replay
         :param pulumi.Input[str] web_application_id: Dynatrace entity ID of the web application
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

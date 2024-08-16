@@ -211,9 +211,9 @@ class DashboardSharing(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  dashboard_id: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 permissions: Optional[pulumi.Input[pulumi.InputType['DashboardSharingPermissionsArgs']]] = None,
+                 permissions: Optional[pulumi.Input[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']]] = None,
                  preset: Optional[pulumi.Input[bool]] = None,
-                 public: Optional[pulumi.Input[pulumi.InputType['DashboardSharingPublicArgs']]] = None,
+                 public: Optional[pulumi.Input[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']]] = None,
                  __props__=None):
         """
         > This is a child resource of dynatrace_json_dashboard, therefore it is automatically retrieved with the dashboard.
@@ -230,9 +230,9 @@ class DashboardSharing(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] dashboard_id: The Dynatrace entity ID of the dashboard
         :param pulumi.Input[bool] enabled: The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
-        :param pulumi.Input[pulumi.InputType['DashboardSharingPermissionsArgs']] permissions: Access permissions of the dashboard
+        :param pulumi.Input[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']] permissions: Access permissions of the dashboard
         :param pulumi.Input[bool] preset: If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
-        :param pulumi.Input[pulumi.InputType['DashboardSharingPublicArgs']] public: Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
+        :param pulumi.Input[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']] public: Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
         """
         ...
     @overload
@@ -268,9 +268,9 @@ class DashboardSharing(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  dashboard_id: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 permissions: Optional[pulumi.Input[pulumi.InputType['DashboardSharingPermissionsArgs']]] = None,
+                 permissions: Optional[pulumi.Input[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']]] = None,
                  preset: Optional[pulumi.Input[bool]] = None,
-                 public: Optional[pulumi.Input[pulumi.InputType['DashboardSharingPublicArgs']]] = None,
+                 public: Optional[pulumi.Input[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -301,9 +301,9 @@ class DashboardSharing(pulumi.CustomResource):
             dashboard_id: Optional[pulumi.Input[str]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             muted: Optional[pulumi.Input[bool]] = None,
-            permissions: Optional[pulumi.Input[pulumi.InputType['DashboardSharingPermissionsArgs']]] = None,
+            permissions: Optional[pulumi.Input[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']]] = None,
             preset: Optional[pulumi.Input[bool]] = None,
-            public: Optional[pulumi.Input[pulumi.InputType['DashboardSharingPublicArgs']]] = None) -> 'DashboardSharing':
+            public: Optional[pulumi.Input[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']]] = None) -> 'DashboardSharing':
         """
         Get an existing DashboardSharing resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -314,9 +314,9 @@ class DashboardSharing(pulumi.CustomResource):
         :param pulumi.Input[str] dashboard_id: The Dynatrace entity ID of the dashboard
         :param pulumi.Input[bool] enabled: The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         :param pulumi.Input[bool] muted: Reserved for internal use by the provider
-        :param pulumi.Input[pulumi.InputType['DashboardSharingPermissionsArgs']] permissions: Access permissions of the dashboard
+        :param pulumi.Input[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']] permissions: Access permissions of the dashboard
         :param pulumi.Input[bool] preset: If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
-        :param pulumi.Input[pulumi.InputType['DashboardSharingPublicArgs']] public: Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
+        :param pulumi.Input[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']] public: Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

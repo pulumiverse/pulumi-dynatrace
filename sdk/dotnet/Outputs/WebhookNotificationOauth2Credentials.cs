@@ -19,6 +19,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string AccessTokenUrl;
         /// <summary>
+        /// If false, the client credentials are included in the HTTP request body.
+        /// </summary>
+        public readonly bool? AuthenticateViaRequestHeader;
+        /// <summary>
         /// Client ID
         /// </summary>
         public readonly string ClientId;
@@ -35,6 +39,8 @@ namespace Pulumiverse.Dynatrace.Outputs
         private WebhookNotificationOauth2Credentials(
             string accessTokenUrl,
 
+            bool? authenticateViaRequestHeader,
+
             string clientId,
 
             string clientSecret,
@@ -42,6 +48,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             string? scope)
         {
             AccessTokenUrl = accessTokenUrl;
+            AuthenticateViaRequestHeader = authenticateViaRequestHeader;
             ClientId = clientId;
             ClientSecret = clientSecret;
             Scope = scope;

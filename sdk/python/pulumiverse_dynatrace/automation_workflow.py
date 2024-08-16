@@ -260,9 +260,9 @@ class AutomationWorkflow(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  owner: Optional[pulumi.Input[str]] = None,
                  private: Optional[pulumi.Input[bool]] = None,
-                 tasks: Optional[pulumi.Input[pulumi.InputType['AutomationWorkflowTasksArgs']]] = None,
+                 tasks: Optional[pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
                  title: Optional[pulumi.Input[str]] = None,
-                 trigger: Optional[pulumi.Input[pulumi.InputType['AutomationWorkflowTriggerArgs']]] = None,
+                 trigger: Optional[pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
                  __props__=None):
         """
         > This resource is excluded by default in the export utility. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DYNATRACE_AUTOMATION_CLIENT_ID` and `DYNATRACE_AUTOMATION_CLIENT_SECRET` for authentication.
@@ -296,70 +296,70 @@ class AutomationWorkflow(pulumi.CustomResource):
             title="Sample Worklow TF1",
             owner="########-####-####-####-############",
             private=True,
-            tasks=dynatrace.AutomationWorkflowTasksArgs(
-                tasks=[
-                    dynatrace.AutomationWorkflowTasksTaskArgs(
-                        name="http_request_1",
-                        description="Issue an HTTP request to any API",
-                        action="dynatrace.automations:http-function",
-                        active=True,
-                        input=json.dumps({
+            tasks={
+                "tasks": [
+                    {
+                        "name": "http_request_1",
+                        "description": "Issue an HTTP request to any API",
+                        "action": "dynatrace.automations:http-function",
+                        "active": True,
+                        "input": json.dumps({
                             "method": "GET",
                             "url": "https://www.google.at/",
                         }),
-                        position=dynatrace.AutomationWorkflowTasksTaskPositionArgs(
-                            x=0,
-                            y=1,
-                        ),
-                    ),
-                    dynatrace.AutomationWorkflowTasksTaskArgs(
-                        name="http_request_2",
-                        description="Issue an HTTP request to any API",
-                        action="dynatrace.automations:http-function",
-                        active=False,
-                        input=json.dumps({
+                        "position": {
+                            "x": 0,
+                            "y": 1,
+                        },
+                    },
+                    {
+                        "name": "http_request_2",
+                        "description": "Issue an HTTP request to any API",
+                        "action": "dynatrace.automations:http-function",
+                        "active": False,
+                        "input": json.dumps({
                             "method": "GET",
                             "url": "https://www.second-task.com/",
                         }),
-                        conditions=dynatrace.AutomationWorkflowTasksTaskConditionsArgs(
-                            states={
+                        "conditions": {
+                            "states": {
                                 "http_request_1": "SUCCESS",
                                 "run_javascript_1": "OK",
                             },
-                            custom="",
-                        ),
-                        position=dynatrace.AutomationWorkflowTasksTaskPositionArgs(
-                            x=-1,
-                            y=2,
-                        ),
-                        timeout="50000",
-                    ),
-                    dynatrace.AutomationWorkflowTasksTaskArgs(
-                        name="http_request_3",
-                        description="Issue an HTTP request to any API",
-                        action="dynatrace.automations:http-function",
-                        active=False,
-                        input=json.dumps({
+                            "custom": "",
+                        },
+                        "position": {
+                            "x": -1,
+                            "y": 2,
+                        },
+                        "timeout": "50000",
+                    },
+                    {
+                        "name": "http_request_3",
+                        "description": "Issue an HTTP request to any API",
+                        "action": "dynatrace.automations:http-function",
+                        "active": False,
+                        "input": json.dumps({
                             "method": "GET",
                             "url": "https://www.third-task.com",
                         }),
-                        conditions=dynatrace.AutomationWorkflowTasksTaskConditionsArgs(
-                            states={
+                        "conditions": {
+                            "states": {
                                 "http_request_2": "OK",
                             },
-                            custom="{{http_request_1}}",
-                        ),
-                        position=dynatrace.AutomationWorkflowTasksTaskPositionArgs(
-                            x=0,
-                            y=3,
-                        ),
-                    ),
-                    dynatrace.AutomationWorkflowTasksTaskArgs(
-                        name="run_javascript_1",
-                        description="Build a custom task running js Code",
-                        action="dynatrace.automations:run-javascript",
-                        active=False,
-                        input=json.dumps({
+                            "custom": "{{http_request_1}}",
+                        },
+                        "position": {
+                            "x": 0,
+                            "y": 3,
+                        },
+                    },
+                    {
+                        "name": "run_javascript_1",
+                        "description": "Build a custom task running js Code",
+                        "action": "dynatrace.automations:run-javascript",
+                        "active": False,
+                        "input": json.dumps({
                             "script": \"\"\"// optional import of sdk modules
         import { execution } from '@dynatrace-sdk/automation-utils';
 
@@ -372,28 +372,28 @@ class AutomationWorkflow(pulumi.CustomResource):
           return { triggeredBy: ex.trigger };
         }\"\"\",
                         }),
-                        position=dynatrace.AutomationWorkflowTasksTaskPositionArgs(
-                            x=-2,
-                            y=1,
-                        ),
-                    ),
+                        "position": {
+                            "x": -2,
+                            "y": 1,
+                        },
+                    },
                 ],
-            ),
-            trigger=dynatrace.AutomationWorkflowTriggerArgs(
-                event=dynatrace.AutomationWorkflowTriggerEventArgs(
-                    active=False,
-                    config=dynatrace.AutomationWorkflowTriggerEventConfigArgs(
-                        davis_event=dynatrace.AutomationWorkflowTriggerEventConfigDavisEventArgs(
-                            entity_tags_match="all",
-                            entity_tags={
+            },
+            trigger={
+                "event": {
+                    "active": False,
+                    "config": {
+                        "davis_event": {
+                            "entity_tags_match": "all",
+                            "entity_tags": {
                                 "asdf": "",
                             },
-                            on_problem_close=False,
-                            types=["CUSTOM_ANNOTATION"],
-                        ),
-                    ),
-                ),
-            ))
+                            "on_problem_close": False,
+                            "types": ["CUSTOM_ANNOTATION"],
+                        },
+                    },
+                },
+            })
         ```
 
         :param str resource_name: The name of the resource.
@@ -402,9 +402,9 @@ class AutomationWorkflow(pulumi.CustomResource):
         :param pulumi.Input[str] description: An optional description for the workflow
         :param pulumi.Input[str] owner: The ID of the owner of this workflow
         :param pulumi.Input[bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
-        :param pulumi.Input[pulumi.InputType['AutomationWorkflowTasksArgs']] tasks: The tasks to run for every execution of this workflow
+        :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow
         :param pulumi.Input[str] title: The title / name of the workflow
-        :param pulumi.Input[pulumi.InputType['AutomationWorkflowTriggerArgs']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
+        :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         """
         ...
     @overload
@@ -444,70 +444,70 @@ class AutomationWorkflow(pulumi.CustomResource):
             title="Sample Worklow TF1",
             owner="########-####-####-####-############",
             private=True,
-            tasks=dynatrace.AutomationWorkflowTasksArgs(
-                tasks=[
-                    dynatrace.AutomationWorkflowTasksTaskArgs(
-                        name="http_request_1",
-                        description="Issue an HTTP request to any API",
-                        action="dynatrace.automations:http-function",
-                        active=True,
-                        input=json.dumps({
+            tasks={
+                "tasks": [
+                    {
+                        "name": "http_request_1",
+                        "description": "Issue an HTTP request to any API",
+                        "action": "dynatrace.automations:http-function",
+                        "active": True,
+                        "input": json.dumps({
                             "method": "GET",
                             "url": "https://www.google.at/",
                         }),
-                        position=dynatrace.AutomationWorkflowTasksTaskPositionArgs(
-                            x=0,
-                            y=1,
-                        ),
-                    ),
-                    dynatrace.AutomationWorkflowTasksTaskArgs(
-                        name="http_request_2",
-                        description="Issue an HTTP request to any API",
-                        action="dynatrace.automations:http-function",
-                        active=False,
-                        input=json.dumps({
+                        "position": {
+                            "x": 0,
+                            "y": 1,
+                        },
+                    },
+                    {
+                        "name": "http_request_2",
+                        "description": "Issue an HTTP request to any API",
+                        "action": "dynatrace.automations:http-function",
+                        "active": False,
+                        "input": json.dumps({
                             "method": "GET",
                             "url": "https://www.second-task.com/",
                         }),
-                        conditions=dynatrace.AutomationWorkflowTasksTaskConditionsArgs(
-                            states={
+                        "conditions": {
+                            "states": {
                                 "http_request_1": "SUCCESS",
                                 "run_javascript_1": "OK",
                             },
-                            custom="",
-                        ),
-                        position=dynatrace.AutomationWorkflowTasksTaskPositionArgs(
-                            x=-1,
-                            y=2,
-                        ),
-                        timeout="50000",
-                    ),
-                    dynatrace.AutomationWorkflowTasksTaskArgs(
-                        name="http_request_3",
-                        description="Issue an HTTP request to any API",
-                        action="dynatrace.automations:http-function",
-                        active=False,
-                        input=json.dumps({
+                            "custom": "",
+                        },
+                        "position": {
+                            "x": -1,
+                            "y": 2,
+                        },
+                        "timeout": "50000",
+                    },
+                    {
+                        "name": "http_request_3",
+                        "description": "Issue an HTTP request to any API",
+                        "action": "dynatrace.automations:http-function",
+                        "active": False,
+                        "input": json.dumps({
                             "method": "GET",
                             "url": "https://www.third-task.com",
                         }),
-                        conditions=dynatrace.AutomationWorkflowTasksTaskConditionsArgs(
-                            states={
+                        "conditions": {
+                            "states": {
                                 "http_request_2": "OK",
                             },
-                            custom="{{http_request_1}}",
-                        ),
-                        position=dynatrace.AutomationWorkflowTasksTaskPositionArgs(
-                            x=0,
-                            y=3,
-                        ),
-                    ),
-                    dynatrace.AutomationWorkflowTasksTaskArgs(
-                        name="run_javascript_1",
-                        description="Build a custom task running js Code",
-                        action="dynatrace.automations:run-javascript",
-                        active=False,
-                        input=json.dumps({
+                            "custom": "{{http_request_1}}",
+                        },
+                        "position": {
+                            "x": 0,
+                            "y": 3,
+                        },
+                    },
+                    {
+                        "name": "run_javascript_1",
+                        "description": "Build a custom task running js Code",
+                        "action": "dynatrace.automations:run-javascript",
+                        "active": False,
+                        "input": json.dumps({
                             "script": \"\"\"// optional import of sdk modules
         import { execution } from '@dynatrace-sdk/automation-utils';
 
@@ -520,28 +520,28 @@ class AutomationWorkflow(pulumi.CustomResource):
           return { triggeredBy: ex.trigger };
         }\"\"\",
                         }),
-                        position=dynatrace.AutomationWorkflowTasksTaskPositionArgs(
-                            x=-2,
-                            y=1,
-                        ),
-                    ),
+                        "position": {
+                            "x": -2,
+                            "y": 1,
+                        },
+                    },
                 ],
-            ),
-            trigger=dynatrace.AutomationWorkflowTriggerArgs(
-                event=dynatrace.AutomationWorkflowTriggerEventArgs(
-                    active=False,
-                    config=dynatrace.AutomationWorkflowTriggerEventConfigArgs(
-                        davis_event=dynatrace.AutomationWorkflowTriggerEventConfigDavisEventArgs(
-                            entity_tags_match="all",
-                            entity_tags={
+            },
+            trigger={
+                "event": {
+                    "active": False,
+                    "config": {
+                        "davis_event": {
+                            "entity_tags_match": "all",
+                            "entity_tags": {
                                 "asdf": "",
                             },
-                            on_problem_close=False,
-                            types=["CUSTOM_ANNOTATION"],
-                        ),
-                    ),
-                ),
-            ))
+                            "on_problem_close": False,
+                            "types": ["CUSTOM_ANNOTATION"],
+                        },
+                    },
+                },
+            })
         ```
 
         :param str resource_name: The name of the resource.
@@ -563,9 +563,9 @@ class AutomationWorkflow(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  owner: Optional[pulumi.Input[str]] = None,
                  private: Optional[pulumi.Input[bool]] = None,
-                 tasks: Optional[pulumi.Input[pulumi.InputType['AutomationWorkflowTasksArgs']]] = None,
+                 tasks: Optional[pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
                  title: Optional[pulumi.Input[str]] = None,
-                 trigger: Optional[pulumi.Input[pulumi.InputType['AutomationWorkflowTriggerArgs']]] = None,
+                 trigger: Optional[pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -600,9 +600,9 @@ class AutomationWorkflow(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             owner: Optional[pulumi.Input[str]] = None,
             private: Optional[pulumi.Input[bool]] = None,
-            tasks: Optional[pulumi.Input[pulumi.InputType['AutomationWorkflowTasksArgs']]] = None,
+            tasks: Optional[pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
             title: Optional[pulumi.Input[str]] = None,
-            trigger: Optional[pulumi.Input[pulumi.InputType['AutomationWorkflowTriggerArgs']]] = None) -> 'AutomationWorkflow':
+            trigger: Optional[pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None) -> 'AutomationWorkflow':
         """
         Get an existing AutomationWorkflow resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -614,9 +614,9 @@ class AutomationWorkflow(pulumi.CustomResource):
         :param pulumi.Input[str] description: An optional description for the workflow
         :param pulumi.Input[str] owner: The ID of the owner of this workflow
         :param pulumi.Input[bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
-        :param pulumi.Input[pulumi.InputType['AutomationWorkflowTasksArgs']] tasks: The tasks to run for every execution of this workflow
+        :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow
         :param pulumi.Input[str] title: The title / name of the workflow
-        :param pulumi.Input[pulumi.InputType['AutomationWorkflowTriggerArgs']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
+        :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

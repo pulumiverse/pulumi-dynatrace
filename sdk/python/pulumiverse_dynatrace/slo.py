@@ -489,7 +489,7 @@ class Slo(pulumi.CustomResource):
                  denominator: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  disabled: Optional[pulumi.Input[bool]] = None,
-                 error_budget_burn_rate: Optional[pulumi.Input[pulumi.InputType['SloErrorBudgetBurnRateArgs']]] = None,
+                 error_budget_burn_rate: Optional[pulumi.Input[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']]] = None,
                  evaluation: Optional[pulumi.Input[str]] = None,
                  filter: Optional[pulumi.Input[str]] = None,
                  metric_expression: Optional[pulumi.Input[str]] = None,
@@ -508,7 +508,7 @@ class Slo(pulumi.CustomResource):
         :param pulumi.Input[str] denominator: The total count metric (the denominator in rate calculation)
         :param pulumi.Input[str] description: The custom description of the SLO (optional)
         :param pulumi.Input[bool] disabled: The SLO is enabled (`false`) or disabled (`true`)
-        :param pulumi.Input[pulumi.InputType['SloErrorBudgetBurnRateArgs']] error_budget_burn_rate: Error budget burn rate configuration of a service-level objective (SLO).
+        :param pulumi.Input[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']] error_budget_burn_rate: Error budget burn rate configuration of a service-level objective (SLO).
         :param pulumi.Input[str] evaluation: The evaluation type of the SLO. Currently only `AGGREGATE` is supported
         :param pulumi.Input[str] filter: The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
         :param pulumi.Input[str] metric_expression: The percentage-based metric expression for the calculation of the SLO
@@ -546,7 +546,7 @@ class Slo(pulumi.CustomResource):
                  denominator: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  disabled: Optional[pulumi.Input[bool]] = None,
-                 error_budget_burn_rate: Optional[pulumi.Input[pulumi.InputType['SloErrorBudgetBurnRateArgs']]] = None,
+                 error_budget_burn_rate: Optional[pulumi.Input[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']]] = None,
                  evaluation: Optional[pulumi.Input[str]] = None,
                  filter: Optional[pulumi.Input[str]] = None,
                  metric_expression: Optional[pulumi.Input[str]] = None,
@@ -601,7 +601,7 @@ class Slo(pulumi.CustomResource):
             denominator: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
             disabled: Optional[pulumi.Input[bool]] = None,
-            error_budget_burn_rate: Optional[pulumi.Input[pulumi.InputType['SloErrorBudgetBurnRateArgs']]] = None,
+            error_budget_burn_rate: Optional[pulumi.Input[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']]] = None,
             evaluation: Optional[pulumi.Input[str]] = None,
             filter: Optional[pulumi.Input[str]] = None,
             metric_expression: Optional[pulumi.Input[str]] = None,
@@ -622,7 +622,7 @@ class Slo(pulumi.CustomResource):
         :param pulumi.Input[str] denominator: The total count metric (the denominator in rate calculation)
         :param pulumi.Input[str] description: The custom description of the SLO (optional)
         :param pulumi.Input[bool] disabled: The SLO is enabled (`false`) or disabled (`true`)
-        :param pulumi.Input[pulumi.InputType['SloErrorBudgetBurnRateArgs']] error_budget_burn_rate: Error budget burn rate configuration of a service-level objective (SLO).
+        :param pulumi.Input[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']] error_budget_burn_rate: Error budget burn rate configuration of a service-level objective (SLO).
         :param pulumi.Input[str] evaluation: The evaluation type of the SLO. Currently only `AGGREGATE` is supported
         :param pulumi.Input[str] filter: The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
         :param pulumi.Input[str] metric_expression: The percentage-based metric expression for the calculation of the SLO

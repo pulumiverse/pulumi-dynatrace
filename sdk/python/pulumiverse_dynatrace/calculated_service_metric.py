@@ -476,14 +476,14 @@ class CalculatedServiceMetric(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CalculatedServiceMetricConditionArgs']]]]] = None,
+                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculatedServiceMetricConditionArgs', 'CalculatedServiceMetricConditionArgsDict']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 dimension_definition: Optional[pulumi.Input[pulumi.InputType['CalculatedServiceMetricDimensionDefinitionArgs']]] = None,
+                 dimension_definition: Optional[pulumi.Input[Union['CalculatedServiceMetricDimensionDefinitionArgs', 'CalculatedServiceMetricDimensionDefinitionArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  entity_id: Optional[pulumi.Input[str]] = None,
                  ignore_muted_requests: Optional[pulumi.Input[bool]] = None,
                  management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 metric_definition: Optional[pulumi.Input[pulumi.InputType['CalculatedServiceMetricMetricDefinitionArgs']]] = None,
+                 metric_definition: Optional[pulumi.Input[Union['CalculatedServiceMetricMetricDefinitionArgs', 'CalculatedServiceMetricMetricDefinitionArgsDict']]] = None,
                  metric_key: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  unit: Optional[pulumi.Input[str]] = None,
@@ -494,14 +494,14 @@ class CalculatedServiceMetric(pulumi.CustomResource):
         Create a CalculatedServiceMetric resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CalculatedServiceMetricConditionArgs']]]] conditions: The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedServiceMetricConditionArgs', 'CalculatedServiceMetricConditionArgsDict']]]] conditions: The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
         :param pulumi.Input[str] description: The displayed description of the metric
-        :param pulumi.Input[pulumi.InputType['CalculatedServiceMetricDimensionDefinitionArgs']] dimension_definition: Parameters of a definition of a calculated service metric
+        :param pulumi.Input[Union['CalculatedServiceMetricDimensionDefinitionArgs', 'CalculatedServiceMetricDimensionDefinitionArgsDict']] dimension_definition: Parameters of a definition of a calculated service metric
         :param pulumi.Input[bool] enabled: The metric is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] entity_id: Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
         :param pulumi.Input[bool] ignore_muted_requests: Metric should (true) or not (false) ignore muted requests.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] management_zones: Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
-        :param pulumi.Input[pulumi.InputType['CalculatedServiceMetricMetricDefinitionArgs']] metric_definition: The definition of a calculated service metric
+        :param pulumi.Input[Union['CalculatedServiceMetricMetricDefinitionArgs', 'CalculatedServiceMetricMetricDefinitionArgsDict']] metric_definition: The definition of a calculated service metric
         :param pulumi.Input[str] metric_key: The key of the calculated service metric
         :param pulumi.Input[str] name: The displayed name of the metric
         :param pulumi.Input[str] unit: The unit of the metric. Possible values are `BIT`, `BIT_PER_HOUR`, `BIT_PER_MINUTE`, `BIT_PER_SECOND`, `BYTE`,
@@ -538,14 +538,14 @@ class CalculatedServiceMetric(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CalculatedServiceMetricConditionArgs']]]]] = None,
+                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculatedServiceMetricConditionArgs', 'CalculatedServiceMetricConditionArgsDict']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 dimension_definition: Optional[pulumi.Input[pulumi.InputType['CalculatedServiceMetricDimensionDefinitionArgs']]] = None,
+                 dimension_definition: Optional[pulumi.Input[Union['CalculatedServiceMetricDimensionDefinitionArgs', 'CalculatedServiceMetricDimensionDefinitionArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  entity_id: Optional[pulumi.Input[str]] = None,
                  ignore_muted_requests: Optional[pulumi.Input[bool]] = None,
                  management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 metric_definition: Optional[pulumi.Input[pulumi.InputType['CalculatedServiceMetricMetricDefinitionArgs']]] = None,
+                 metric_definition: Optional[pulumi.Input[Union['CalculatedServiceMetricMetricDefinitionArgs', 'CalculatedServiceMetricMetricDefinitionArgsDict']]] = None,
                  metric_key: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  unit: Optional[pulumi.Input[str]] = None,
@@ -587,14 +587,14 @@ class CalculatedServiceMetric(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            conditions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CalculatedServiceMetricConditionArgs']]]]] = None,
+            conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculatedServiceMetricConditionArgs', 'CalculatedServiceMetricConditionArgsDict']]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
-            dimension_definition: Optional[pulumi.Input[pulumi.InputType['CalculatedServiceMetricDimensionDefinitionArgs']]] = None,
+            dimension_definition: Optional[pulumi.Input[Union['CalculatedServiceMetricDimensionDefinitionArgs', 'CalculatedServiceMetricDimensionDefinitionArgsDict']]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             entity_id: Optional[pulumi.Input[str]] = None,
             ignore_muted_requests: Optional[pulumi.Input[bool]] = None,
             management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            metric_definition: Optional[pulumi.Input[pulumi.InputType['CalculatedServiceMetricMetricDefinitionArgs']]] = None,
+            metric_definition: Optional[pulumi.Input[Union['CalculatedServiceMetricMetricDefinitionArgs', 'CalculatedServiceMetricMetricDefinitionArgsDict']]] = None,
             metric_key: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             unit: Optional[pulumi.Input[str]] = None,
@@ -607,14 +607,14 @@ class CalculatedServiceMetric(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CalculatedServiceMetricConditionArgs']]]] conditions: The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedServiceMetricConditionArgs', 'CalculatedServiceMetricConditionArgsDict']]]] conditions: The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
         :param pulumi.Input[str] description: The displayed description of the metric
-        :param pulumi.Input[pulumi.InputType['CalculatedServiceMetricDimensionDefinitionArgs']] dimension_definition: Parameters of a definition of a calculated service metric
+        :param pulumi.Input[Union['CalculatedServiceMetricDimensionDefinitionArgs', 'CalculatedServiceMetricDimensionDefinitionArgsDict']] dimension_definition: Parameters of a definition of a calculated service metric
         :param pulumi.Input[bool] enabled: The metric is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] entity_id: Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
         :param pulumi.Input[bool] ignore_muted_requests: Metric should (true) or not (false) ignore muted requests.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] management_zones: Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
-        :param pulumi.Input[pulumi.InputType['CalculatedServiceMetricMetricDefinitionArgs']] metric_definition: The definition of a calculated service metric
+        :param pulumi.Input[Union['CalculatedServiceMetricMetricDefinitionArgs', 'CalculatedServiceMetricMetricDefinitionArgsDict']] metric_definition: The definition of a calculated service metric
         :param pulumi.Input[str] metric_key: The key of the calculated service metric
         :param pulumi.Input[str] name: The displayed name of the metric
         :param pulumi.Input[str] unit: The unit of the metric. Possible values are `BIT`, `BIT_PER_HOUR`, `BIT_PER_MINUTE`, `BIT_PER_SECOND`, `BYTE`,

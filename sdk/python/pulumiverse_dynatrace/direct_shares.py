@@ -130,7 +130,7 @@ class DirectShares(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access: Optional[pulumi.Input[str]] = None,
                  document_id: Optional[pulumi.Input[str]] = None,
-                 recipients: Optional[pulumi.Input[pulumi.InputType['DirectSharesRecipientsArgs']]] = None,
+                 recipients: Optional[pulumi.Input[Union['DirectSharesRecipientsArgs', 'DirectSharesRecipientsArgsDict']]] = None,
                  __props__=None):
         """
         > This resource is currently not covered by the export utility.
@@ -162,25 +162,25 @@ class DirectShares(pulumi.CustomResource):
         this = dynatrace.DirectShares("this",
             access="read-write",
             document_id="441564f0-23c9-40ef-b344-18c02c23d712",
-            recipients=dynatrace.DirectSharesRecipientsArgs(
-                recipients=[
-                    dynatrace.DirectSharesRecipientsRecipientArgs(
-                        id="441664f0-23c9-40ef-b344-18c02c23d787",
-                        type="user",
-                    ),
-                    dynatrace.DirectSharesRecipientsRecipientArgs(
-                        id="441664f0-23c9-40ef-b344-18c02c23d788",
-                        type="group",
-                    ),
+            recipients={
+                "recipients": [
+                    {
+                        "id": "441664f0-23c9-40ef-b344-18c02c23d787",
+                        "type": "user",
+                    },
+                    {
+                        "id": "441664f0-23c9-40ef-b344-18c02c23d788",
+                        "type": "group",
+                    },
                 ],
-            ))
+            })
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] access: Access grants. Possible values are `read` and `read-write`
         :param pulumi.Input[str] document_id: Document ID
-        :param pulumi.Input[pulumi.InputType['DirectSharesRecipientsArgs']] recipients: Recipients of the direct share
+        :param pulumi.Input[Union['DirectSharesRecipientsArgs', 'DirectSharesRecipientsArgsDict']] recipients: Recipients of the direct share
         """
         ...
     @overload
@@ -218,18 +218,18 @@ class DirectShares(pulumi.CustomResource):
         this = dynatrace.DirectShares("this",
             access="read-write",
             document_id="441564f0-23c9-40ef-b344-18c02c23d712",
-            recipients=dynatrace.DirectSharesRecipientsArgs(
-                recipients=[
-                    dynatrace.DirectSharesRecipientsRecipientArgs(
-                        id="441664f0-23c9-40ef-b344-18c02c23d787",
-                        type="user",
-                    ),
-                    dynatrace.DirectSharesRecipientsRecipientArgs(
-                        id="441664f0-23c9-40ef-b344-18c02c23d788",
-                        type="group",
-                    ),
+            recipients={
+                "recipients": [
+                    {
+                        "id": "441664f0-23c9-40ef-b344-18c02c23d787",
+                        "type": "user",
+                    },
+                    {
+                        "id": "441664f0-23c9-40ef-b344-18c02c23d788",
+                        "type": "group",
+                    },
                 ],
-            ))
+            })
         ```
 
         :param str resource_name: The name of the resource.
@@ -249,7 +249,7 @@ class DirectShares(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access: Optional[pulumi.Input[str]] = None,
                  document_id: Optional[pulumi.Input[str]] = None,
-                 recipients: Optional[pulumi.Input[pulumi.InputType['DirectSharesRecipientsArgs']]] = None,
+                 recipients: Optional[pulumi.Input[Union['DirectSharesRecipientsArgs', 'DirectSharesRecipientsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -278,7 +278,7 @@ class DirectShares(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             access: Optional[pulumi.Input[str]] = None,
             document_id: Optional[pulumi.Input[str]] = None,
-            recipients: Optional[pulumi.Input[pulumi.InputType['DirectSharesRecipientsArgs']]] = None) -> 'DirectShares':
+            recipients: Optional[pulumi.Input[Union['DirectSharesRecipientsArgs', 'DirectSharesRecipientsArgsDict']]] = None) -> 'DirectShares':
         """
         Get an existing DirectShares resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -288,7 +288,7 @@ class DirectShares(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] access: Access grants. Possible values are `read` and `read-write`
         :param pulumi.Input[str] document_id: Document ID
-        :param pulumi.Input[pulumi.InputType['DirectSharesRecipientsArgs']] recipients: Recipients of the direct share
+        :param pulumi.Input[Union['DirectSharesRecipientsArgs', 'DirectSharesRecipientsArgsDict']] recipients: Recipients of the direct share
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

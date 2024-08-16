@@ -96,14 +96,14 @@ class AttackSettings(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_attack_handling: Optional[pulumi.Input[pulumi.InputType['AttackSettingsDefaultAttackHandlingArgs']]] = None,
+                 default_attack_handling: Optional[pulumi.Input[Union['AttackSettingsDefaultAttackHandlingArgs', 'AttackSettingsDefaultAttackHandlingArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
         Create a AttackSettings resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AttackSettingsDefaultAttackHandlingArgs']] default_attack_handling: Define global incoming attack control
+        :param pulumi.Input[Union['AttackSettingsDefaultAttackHandlingArgs', 'AttackSettingsDefaultAttackHandlingArgsDict']] default_attack_handling: Define global incoming attack control
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
         ...
@@ -129,7 +129,7 @@ class AttackSettings(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_attack_handling: Optional[pulumi.Input[pulumi.InputType['AttackSettingsDefaultAttackHandlingArgs']]] = None,
+                 default_attack_handling: Optional[pulumi.Input[Union['AttackSettingsDefaultAttackHandlingArgs', 'AttackSettingsDefaultAttackHandlingArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -156,7 +156,7 @@ class AttackSettings(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            default_attack_handling: Optional[pulumi.Input[pulumi.InputType['AttackSettingsDefaultAttackHandlingArgs']]] = None,
+            default_attack_handling: Optional[pulumi.Input[Union['AttackSettingsDefaultAttackHandlingArgs', 'AttackSettingsDefaultAttackHandlingArgsDict']]] = None,
             enabled: Optional[pulumi.Input[bool]] = None) -> 'AttackSettings':
         """
         Get an existing AttackSettings resource's state with the given name, id, and optional extra
@@ -165,7 +165,7 @@ class AttackSettings(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AttackSettingsDefaultAttackHandlingArgs']] default_attack_handling: Define global incoming attack control
+        :param pulumi.Input[Union['AttackSettingsDefaultAttackHandlingArgs', 'AttackSettingsDefaultAttackHandlingArgsDict']] default_attack_handling: Define global incoming attack control
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

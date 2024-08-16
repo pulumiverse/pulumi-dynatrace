@@ -258,7 +258,7 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 holidays: Optional[pulumi.Input[pulumi.InputType['AutomationBusinessCalendarHolidaysArgs']]] = None,
+                 holidays: Optional[pulumi.Input[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']]] = None,
                  title: Optional[pulumi.Input[str]] = None,
                  valid_from: Optional[pulumi.Input[str]] = None,
                  valid_to: Optional[pulumi.Input[str]] = None,
@@ -292,574 +292,574 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
 
         _name_ = dynatrace.AutomationBusinessCalendar("#name#",
             description="#name#",
-            holidays=dynatrace.AutomationBusinessCalendarHolidaysArgs(
-                holidays=[
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-04-01",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-05-09",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-05-20",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-05-30",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-04-21",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-05-29",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-06-09",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-06-19",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-04-06",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-05-14",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-05-25",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-06-04",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-03-29",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-05-06",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-05-17",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-05-27",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-04-17",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-05-25",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-06-05",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-06-15",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-04-02",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-05-10",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-05-21",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-05-31",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-04-22",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-05-30",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-06-10",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-06-20",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-04-14",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-05-22",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-06-02",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-06-12",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-03-29",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-05-06",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-05-17",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-05-27",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-04-18",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-05-26",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-06-06",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-06-16",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-07-31",
-                        title="Reini Day",
-                    ),
+            holidays={
+                "holidays": [
+                    {
+                        "date": "2023-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2023-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2023-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2023-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2023-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2023-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2024-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2024-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2024-04-01",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2024-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2024-05-09",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2024-05-20",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2024-05-30",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2024-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2024-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2024-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2024-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2024-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2024-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2025-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2025-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2025-04-21",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2025-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2025-05-29",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2025-06-09",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2025-06-19",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2025-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2025-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2025-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2025-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2025-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2025-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2026-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2026-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2026-04-06",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2026-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2026-05-14",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2026-05-25",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2026-06-04",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2026-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2026-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2026-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2026-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2026-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2026-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2027-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2027-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2027-03-29",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2027-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2027-05-06",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2027-05-17",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2027-05-27",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2027-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2027-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2027-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2027-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2027-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2027-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2028-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2028-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2028-04-17",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2028-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2028-05-25",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2028-06-05",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2028-06-15",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2028-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2028-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2028-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2028-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2028-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2028-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2029-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2029-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2029-04-02",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2029-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2029-05-10",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2029-05-21",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2029-05-31",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2029-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2029-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2029-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2029-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2029-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2029-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2030-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2030-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2030-04-22",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2030-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2030-05-30",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2030-06-10",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2030-06-20",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2030-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2030-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2030-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2030-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2030-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2030-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2031-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2031-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2031-04-14",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2031-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2031-05-22",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2031-06-02",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2031-06-12",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2031-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2031-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2031-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2031-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2031-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2031-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2032-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2032-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2032-03-29",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2032-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2032-05-06",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2032-05-17",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2032-05-27",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2032-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2032-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2032-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2032-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2032-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2032-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2033-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2033-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2033-04-18",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2033-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2033-05-26",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2033-06-06",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2033-06-16",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2023-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2024-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2025-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2026-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2027-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2028-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2029-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2030-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2031-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2032-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2033-07-31",
+                        "title": "Reini Day",
+                    },
                 ],
-            ),
+            },
             title="#name#",
             valid_from="2023-07-31",
             valid_to="2033-07-31",
@@ -876,7 +876,7 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: An optional description for the Business Calendar
-        :param pulumi.Input[pulumi.InputType['AutomationBusinessCalendarHolidaysArgs']] holidays: A list of holidays valid in this calendar
+        :param pulumi.Input[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']] holidays: A list of holidays valid in this calendar
         :param pulumi.Input[str] title: The title / name of the Business Calendar
         :param pulumi.Input[str] valid_from: The date from when on this calendar is valid from. Example: `2023-07-04` for July 4th 2023
         :param pulumi.Input[str] valid_to: The date until when on this calendar is valid to. Example: `2023-07-04` for July 4th 2023
@@ -916,574 +916,574 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
 
         _name_ = dynatrace.AutomationBusinessCalendar("#name#",
             description="#name#",
-            holidays=dynatrace.AutomationBusinessCalendarHolidaysArgs(
-                holidays=[
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-04-01",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-05-09",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-05-20",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-05-30",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-04-21",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-05-29",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-06-09",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-06-19",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-04-06",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-05-14",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-05-25",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-06-04",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-03-29",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-05-06",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-05-17",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-05-27",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-04-17",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-05-25",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-06-05",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-06-15",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-04-02",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-05-10",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-05-21",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-05-31",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-04-22",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-05-30",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-06-10",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-06-20",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-04-14",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-05-22",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-06-02",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-06-12",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-03-29",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-05-06",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-05-17",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-05-27",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-08-15",
-                        title="Mariä Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-10-26",
-                        title="Nationalfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-11-01",
-                        title="Allerheiligen",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-12-08",
-                        title="Mariä Empfängnis",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-12-25",
-                        title="Christtag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-12-26",
-                        title="Stefanitag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-01-01",
-                        title="Neujahr",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-01-06",
-                        title="Heilige Drei Könige",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-04-18",
-                        title="Ostermontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-05-01",
-                        title="Staatsfeiertag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-05-26",
-                        title="Christi Himmelfahrt",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-06-06",
-                        title="Pfingstmontag",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-06-16",
-                        title="Fronleichnam",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2023-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2024-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2025-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2026-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2027-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2028-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2029-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2030-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2031-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2032-07-31",
-                        title="Reini Day",
-                    ),
-                    dynatrace.AutomationBusinessCalendarHolidaysHolidayArgs(
-                        date="2033-07-31",
-                        title="Reini Day",
-                    ),
+            holidays={
+                "holidays": [
+                    {
+                        "date": "2023-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2023-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2023-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2023-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2023-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2023-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2024-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2024-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2024-04-01",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2024-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2024-05-09",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2024-05-20",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2024-05-30",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2024-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2024-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2024-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2024-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2024-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2024-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2025-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2025-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2025-04-21",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2025-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2025-05-29",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2025-06-09",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2025-06-19",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2025-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2025-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2025-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2025-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2025-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2025-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2026-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2026-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2026-04-06",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2026-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2026-05-14",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2026-05-25",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2026-06-04",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2026-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2026-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2026-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2026-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2026-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2026-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2027-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2027-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2027-03-29",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2027-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2027-05-06",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2027-05-17",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2027-05-27",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2027-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2027-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2027-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2027-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2027-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2027-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2028-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2028-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2028-04-17",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2028-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2028-05-25",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2028-06-05",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2028-06-15",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2028-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2028-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2028-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2028-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2028-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2028-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2029-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2029-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2029-04-02",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2029-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2029-05-10",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2029-05-21",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2029-05-31",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2029-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2029-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2029-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2029-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2029-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2029-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2030-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2030-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2030-04-22",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2030-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2030-05-30",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2030-06-10",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2030-06-20",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2030-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2030-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2030-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2030-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2030-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2030-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2031-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2031-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2031-04-14",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2031-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2031-05-22",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2031-06-02",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2031-06-12",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2031-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2031-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2031-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2031-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2031-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2031-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2032-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2032-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2032-03-29",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2032-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2032-05-06",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2032-05-17",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2032-05-27",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2032-08-15",
+                        "title": "Mariä Himmelfahrt",
+                    },
+                    {
+                        "date": "2032-10-26",
+                        "title": "Nationalfeiertag",
+                    },
+                    {
+                        "date": "2032-11-01",
+                        "title": "Allerheiligen",
+                    },
+                    {
+                        "date": "2032-12-08",
+                        "title": "Mariä Empfängnis",
+                    },
+                    {
+                        "date": "2032-12-25",
+                        "title": "Christtag",
+                    },
+                    {
+                        "date": "2032-12-26",
+                        "title": "Stefanitag",
+                    },
+                    {
+                        "date": "2033-01-01",
+                        "title": "Neujahr",
+                    },
+                    {
+                        "date": "2033-01-06",
+                        "title": "Heilige Drei Könige",
+                    },
+                    {
+                        "date": "2033-04-18",
+                        "title": "Ostermontag",
+                    },
+                    {
+                        "date": "2033-05-01",
+                        "title": "Staatsfeiertag",
+                    },
+                    {
+                        "date": "2033-05-26",
+                        "title": "Christi Himmelfahrt",
+                    },
+                    {
+                        "date": "2033-06-06",
+                        "title": "Pfingstmontag",
+                    },
+                    {
+                        "date": "2033-06-16",
+                        "title": "Fronleichnam",
+                    },
+                    {
+                        "date": "2023-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2024-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2025-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2026-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2027-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2028-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2029-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2030-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2031-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2032-07-31",
+                        "title": "Reini Day",
+                    },
+                    {
+                        "date": "2033-07-31",
+                        "title": "Reini Day",
+                    },
                 ],
-            ),
+            },
             title="#name#",
             valid_from="2023-07-31",
             valid_to="2033-07-31",
@@ -1513,7 +1513,7 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 holidays: Optional[pulumi.Input[pulumi.InputType['AutomationBusinessCalendarHolidaysArgs']]] = None,
+                 holidays: Optional[pulumi.Input[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']]] = None,
                  title: Optional[pulumi.Input[str]] = None,
                  valid_from: Optional[pulumi.Input[str]] = None,
                  valid_to: Optional[pulumi.Input[str]] = None,
@@ -1548,7 +1548,7 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             description: Optional[pulumi.Input[str]] = None,
-            holidays: Optional[pulumi.Input[pulumi.InputType['AutomationBusinessCalendarHolidaysArgs']]] = None,
+            holidays: Optional[pulumi.Input[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']]] = None,
             title: Optional[pulumi.Input[str]] = None,
             valid_from: Optional[pulumi.Input[str]] = None,
             valid_to: Optional[pulumi.Input[str]] = None,
@@ -1562,7 +1562,7 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: An optional description for the Business Calendar
-        :param pulumi.Input[pulumi.InputType['AutomationBusinessCalendarHolidaysArgs']] holidays: A list of holidays valid in this calendar
+        :param pulumi.Input[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']] holidays: A list of holidays valid in this calendar
         :param pulumi.Input[str] title: The title / name of the Business Calendar
         :param pulumi.Input[str] valid_from: The date from when on this calendar is valid from. Example: `2023-07-04` for July 4th 2023
         :param pulumi.Input[str] valid_to: The date until when on this calendar is valid to. Example: `2023-07-04` for July 4th 2023

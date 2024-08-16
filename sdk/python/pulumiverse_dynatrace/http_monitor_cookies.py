@@ -128,7 +128,7 @@ class HttpMonitorCookies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cookies: Optional[pulumi.Input[pulumi.InputType['HttpMonitorCookiesCookiesArgs']]] = None,
+                 cookies: Optional[pulumi.Input[Union['HttpMonitorCookiesCookiesArgs', 'HttpMonitorCookiesCookiesArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -136,7 +136,7 @@ class HttpMonitorCookies(pulumi.CustomResource):
         Create a HttpMonitorCookies resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['HttpMonitorCookiesCookiesArgs']] cookies: no documentation available
+        :param pulumi.Input[Union['HttpMonitorCookiesCookiesArgs', 'HttpMonitorCookiesCookiesArgsDict']] cookies: no documentation available
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] scope: The scope of this setting (HTTP_CHECK)
         """
@@ -163,7 +163,7 @@ class HttpMonitorCookies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cookies: Optional[pulumi.Input[pulumi.InputType['HttpMonitorCookiesCookiesArgs']]] = None,
+                 cookies: Optional[pulumi.Input[Union['HttpMonitorCookiesCookiesArgs', 'HttpMonitorCookiesCookiesArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -192,7 +192,7 @@ class HttpMonitorCookies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cookies: Optional[pulumi.Input[pulumi.InputType['HttpMonitorCookiesCookiesArgs']]] = None,
+            cookies: Optional[pulumi.Input[Union['HttpMonitorCookiesCookiesArgs', 'HttpMonitorCookiesCookiesArgsDict']]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'HttpMonitorCookies':
         """
@@ -202,7 +202,7 @@ class HttpMonitorCookies(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['HttpMonitorCookiesCookiesArgs']] cookies: no documentation available
+        :param pulumi.Input[Union['HttpMonitorCookiesCookiesArgs', 'HttpMonitorCookiesCookiesArgsDict']] cookies: no documentation available
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] scope: The scope of this setting (HTTP_CHECK)
         """

@@ -162,7 +162,7 @@ class SpanContextPropagation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[str]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 matches: Optional[pulumi.Input[pulumi.InputType['SpanContextPropagationMatchesArgs']]] = None,
+                 matches: Optional[pulumi.Input[Union['SpanContextPropagationMatchesArgs', 'SpanContextPropagationMatchesArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -171,7 +171,7 @@ class SpanContextPropagation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] action: Whether to create an entry point or not
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['SpanContextPropagationMatchesArgs']] matches: Matching strategies for the Span
+        :param pulumi.Input[Union['SpanContextPropagationMatchesArgs', 'SpanContextPropagationMatchesArgsDict']] matches: Matching strategies for the Span
         :param pulumi.Input[str] name: The name of the rule
         """
         ...
@@ -199,7 +199,7 @@ class SpanContextPropagation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[str]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 matches: Optional[pulumi.Input[pulumi.InputType['SpanContextPropagationMatchesArgs']]] = None,
+                 matches: Optional[pulumi.Input[Union['SpanContextPropagationMatchesArgs', 'SpanContextPropagationMatchesArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -230,7 +230,7 @@ class SpanContextPropagation(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             action: Optional[pulumi.Input[str]] = None,
             insert_after: Optional[pulumi.Input[str]] = None,
-            matches: Optional[pulumi.Input[pulumi.InputType['SpanContextPropagationMatchesArgs']]] = None,
+            matches: Optional[pulumi.Input[Union['SpanContextPropagationMatchesArgs', 'SpanContextPropagationMatchesArgsDict']]] = None,
             name: Optional[pulumi.Input[str]] = None) -> 'SpanContextPropagation':
         """
         Get an existing SpanContextPropagation resource's state with the given name, id, and optional extra
@@ -241,7 +241,7 @@ class SpanContextPropagation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] action: Whether to create an entry point or not
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['SpanContextPropagationMatchesArgs']] matches: Matching strategies for the Span
+        :param pulumi.Input[Union['SpanContextPropagationMatchesArgs', 'SpanContextPropagationMatchesArgsDict']] matches: Matching strategies for the Span
         :param pulumi.Input[str] name: The name of the rule
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

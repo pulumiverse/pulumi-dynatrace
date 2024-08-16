@@ -497,16 +497,16 @@ class CustomAnomalies(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  aggregation_type: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomAnomaliesDimensionArgs']]]]] = None,
+                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesDimensionArgs', 'CustomAnomaliesDimensionArgsDict']]]]] = None,
                  disabled_reason: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  metric_id: Optional[pulumi.Input[str]] = None,
                  metric_selector: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  primary_dimension_key: Optional[pulumi.Input[str]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomAnomaliesScopeArgs']]]]] = None,
+                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesScopeArgs', 'CustomAnomaliesScopeArgsDict']]]]] = None,
                  severity: Optional[pulumi.Input[str]] = None,
-                 strategy: Optional[pulumi.Input[pulumi.InputType['CustomAnomaliesStrategyArgs']]] = None,
+                 strategy: Optional[pulumi.Input[Union['CustomAnomaliesStrategyArgs', 'CustomAnomaliesStrategyArgsDict']]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  warning_reason: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -516,16 +516,16 @@ class CustomAnomalies(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] aggregation_type: How the metric data points are aggregated for the evaluation. The timeseries must support this aggregation
         :param pulumi.Input[str] description: The description of the metric event
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomAnomaliesDimensionArgs']]]] dimensions: Defines the dimensions of the metric to alert on. The filters are combined by conjunction
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesDimensionArgs', 'CustomAnomaliesDimensionArgsDict']]]] dimensions: Defines the dimensions of the metric to alert on. The filters are combined by conjunction
         :param pulumi.Input[str] disabled_reason: The reason of automatic disabling.  The `NONE` means config was not disabled automatically. Possible values are `METRIC_DEFINITION_INCONSISTENCY`, `NONE`, `TOO_MANY_DIMS` and `TOPX_FORCIBLY_DEACTIVATED`
         :param pulumi.Input[bool] enabled: The metric event is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] metric_id: The ID of the metric evaluated by the metric event
         :param pulumi.Input[str] metric_selector: The metric selector that should be executed
         :param pulumi.Input[str] name: The name of the metric event displayed in the UI
         :param pulumi.Input[str] primary_dimension_key: Defines which dimension key should be used for the **alertingScope**
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomAnomaliesScopeArgs']]]] scopes: Defines the scope of the metric event. Only one filter is allowed per filter type, except for tags, where up to 3 are allowed. The filters are combined by conjunction
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesScopeArgs', 'CustomAnomaliesScopeArgsDict']]]] scopes: Defines the scope of the metric event. Only one filter is allowed per filter type, except for tags, where up to 3 are allowed. The filters are combined by conjunction
         :param pulumi.Input[str] severity: The type of the event to trigger on the threshold violation.  The `CUSTOM_ALERT` type is not correlated with other alerts. The `INFO` type does not open a problem
-        :param pulumi.Input[pulumi.InputType['CustomAnomaliesStrategyArgs']] strategy: A monitoring strategy for a metric event config. This is the base version of the monitoring strategy, depending on the type,  the actual JSON may contain additional fields
+        :param pulumi.Input[Union['CustomAnomaliesStrategyArgs', 'CustomAnomaliesStrategyArgsDict']] strategy: A monitoring strategy for a metric event config. This is the base version of the monitoring strategy, depending on the type,  the actual JSON may contain additional fields
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         :param pulumi.Input[str] warning_reason: The reason of a warning set on the config. The `NONE` means config has no warnings. The other supported value is `TOO_MANY_DIMS`
         """
@@ -554,16 +554,16 @@ class CustomAnomalies(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  aggregation_type: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomAnomaliesDimensionArgs']]]]] = None,
+                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesDimensionArgs', 'CustomAnomaliesDimensionArgsDict']]]]] = None,
                  disabled_reason: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  metric_id: Optional[pulumi.Input[str]] = None,
                  metric_selector: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  primary_dimension_key: Optional[pulumi.Input[str]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomAnomaliesScopeArgs']]]]] = None,
+                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesScopeArgs', 'CustomAnomaliesScopeArgsDict']]]]] = None,
                  severity: Optional[pulumi.Input[str]] = None,
-                 strategy: Optional[pulumi.Input[pulumi.InputType['CustomAnomaliesStrategyArgs']]] = None,
+                 strategy: Optional[pulumi.Input[Union['CustomAnomaliesStrategyArgs', 'CustomAnomaliesStrategyArgsDict']]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  warning_reason: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -607,16 +607,16 @@ class CustomAnomalies(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             aggregation_type: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
-            dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomAnomaliesDimensionArgs']]]]] = None,
+            dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesDimensionArgs', 'CustomAnomaliesDimensionArgsDict']]]]] = None,
             disabled_reason: Optional[pulumi.Input[str]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             metric_id: Optional[pulumi.Input[str]] = None,
             metric_selector: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             primary_dimension_key: Optional[pulumi.Input[str]] = None,
-            scopes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomAnomaliesScopeArgs']]]]] = None,
+            scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesScopeArgs', 'CustomAnomaliesScopeArgsDict']]]]] = None,
             severity: Optional[pulumi.Input[str]] = None,
-            strategy: Optional[pulumi.Input[pulumi.InputType['CustomAnomaliesStrategyArgs']]] = None,
+            strategy: Optional[pulumi.Input[Union['CustomAnomaliesStrategyArgs', 'CustomAnomaliesStrategyArgsDict']]] = None,
             unknowns: Optional[pulumi.Input[str]] = None,
             warning_reason: Optional[pulumi.Input[str]] = None) -> 'CustomAnomalies':
         """
@@ -628,16 +628,16 @@ class CustomAnomalies(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] aggregation_type: How the metric data points are aggregated for the evaluation. The timeseries must support this aggregation
         :param pulumi.Input[str] description: The description of the metric event
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomAnomaliesDimensionArgs']]]] dimensions: Defines the dimensions of the metric to alert on. The filters are combined by conjunction
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesDimensionArgs', 'CustomAnomaliesDimensionArgsDict']]]] dimensions: Defines the dimensions of the metric to alert on. The filters are combined by conjunction
         :param pulumi.Input[str] disabled_reason: The reason of automatic disabling.  The `NONE` means config was not disabled automatically. Possible values are `METRIC_DEFINITION_INCONSISTENCY`, `NONE`, `TOO_MANY_DIMS` and `TOPX_FORCIBLY_DEACTIVATED`
         :param pulumi.Input[bool] enabled: The metric event is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] metric_id: The ID of the metric evaluated by the metric event
         :param pulumi.Input[str] metric_selector: The metric selector that should be executed
         :param pulumi.Input[str] name: The name of the metric event displayed in the UI
         :param pulumi.Input[str] primary_dimension_key: Defines which dimension key should be used for the **alertingScope**
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CustomAnomaliesScopeArgs']]]] scopes: Defines the scope of the metric event. Only one filter is allowed per filter type, except for tags, where up to 3 are allowed. The filters are combined by conjunction
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesScopeArgs', 'CustomAnomaliesScopeArgsDict']]]] scopes: Defines the scope of the metric event. Only one filter is allowed per filter type, except for tags, where up to 3 are allowed. The filters are combined by conjunction
         :param pulumi.Input[str] severity: The type of the event to trigger on the threshold violation.  The `CUSTOM_ALERT` type is not correlated with other alerts. The `INFO` type does not open a problem
-        :param pulumi.Input[pulumi.InputType['CustomAnomaliesStrategyArgs']] strategy: A monitoring strategy for a metric event config. This is the base version of the monitoring strategy, depending on the type,  the actual JSON may contain additional fields
+        :param pulumi.Input[Union['CustomAnomaliesStrategyArgs', 'CustomAnomaliesStrategyArgsDict']] strategy: A monitoring strategy for a metric event config. This is the base version of the monitoring strategy, depending on the type,  the actual JSON may contain additional fields
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         :param pulumi.Input[str] warning_reason: The reason of a warning set on the config. The `NONE` means config has no warnings. The other supported value is `TOO_MANY_DIMS`
         """

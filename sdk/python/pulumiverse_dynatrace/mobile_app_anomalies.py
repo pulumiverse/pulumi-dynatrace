@@ -190,21 +190,21 @@ class MobileAppAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 error_rate_increase: Optional[pulumi.Input[pulumi.InputType['MobileAppAnomaliesErrorRateIncreaseArgs']]] = None,
+                 error_rate_increase: Optional[pulumi.Input[Union['MobileAppAnomaliesErrorRateIncreaseArgs', 'MobileAppAnomaliesErrorRateIncreaseArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
-                 slow_user_actions: Optional[pulumi.Input[pulumi.InputType['MobileAppAnomaliesSlowUserActionsArgs']]] = None,
-                 unexpected_high_load: Optional[pulumi.Input[pulumi.InputType['MobileAppAnomaliesUnexpectedHighLoadArgs']]] = None,
-                 unexpected_low_load: Optional[pulumi.Input[pulumi.InputType['MobileAppAnomaliesUnexpectedLowLoadArgs']]] = None,
+                 slow_user_actions: Optional[pulumi.Input[Union['MobileAppAnomaliesSlowUserActionsArgs', 'MobileAppAnomaliesSlowUserActionsArgsDict']]] = None,
+                 unexpected_high_load: Optional[pulumi.Input[Union['MobileAppAnomaliesUnexpectedHighLoadArgs', 'MobileAppAnomaliesUnexpectedHighLoadArgsDict']]] = None,
+                 unexpected_low_load: Optional[pulumi.Input[Union['MobileAppAnomaliesUnexpectedLowLoadArgs', 'MobileAppAnomaliesUnexpectedLowLoadArgsDict']]] = None,
                  __props__=None):
         """
         Create a MobileAppAnomalies resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['MobileAppAnomaliesErrorRateIncreaseArgs']] error_rate_increase: Error rate increase
+        :param pulumi.Input[Union['MobileAppAnomaliesErrorRateIncreaseArgs', 'MobileAppAnomaliesErrorRateIncreaseArgsDict']] error_rate_increase: Error rate increase
         :param pulumi.Input[str] scope: The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE_APPLICATION). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[pulumi.InputType['MobileAppAnomaliesSlowUserActionsArgs']] slow_user_actions: Slow user actions
-        :param pulumi.Input[pulumi.InputType['MobileAppAnomaliesUnexpectedHighLoadArgs']] unexpected_high_load: Unexpected high load
-        :param pulumi.Input[pulumi.InputType['MobileAppAnomaliesUnexpectedLowLoadArgs']] unexpected_low_load: Unexpected low load
+        :param pulumi.Input[Union['MobileAppAnomaliesSlowUserActionsArgs', 'MobileAppAnomaliesSlowUserActionsArgsDict']] slow_user_actions: Slow user actions
+        :param pulumi.Input[Union['MobileAppAnomaliesUnexpectedHighLoadArgs', 'MobileAppAnomaliesUnexpectedHighLoadArgsDict']] unexpected_high_load: Unexpected high load
+        :param pulumi.Input[Union['MobileAppAnomaliesUnexpectedLowLoadArgs', 'MobileAppAnomaliesUnexpectedLowLoadArgsDict']] unexpected_low_load: Unexpected low load
         """
         ...
     @overload
@@ -229,11 +229,11 @@ class MobileAppAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 error_rate_increase: Optional[pulumi.Input[pulumi.InputType['MobileAppAnomaliesErrorRateIncreaseArgs']]] = None,
+                 error_rate_increase: Optional[pulumi.Input[Union['MobileAppAnomaliesErrorRateIncreaseArgs', 'MobileAppAnomaliesErrorRateIncreaseArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
-                 slow_user_actions: Optional[pulumi.Input[pulumi.InputType['MobileAppAnomaliesSlowUserActionsArgs']]] = None,
-                 unexpected_high_load: Optional[pulumi.Input[pulumi.InputType['MobileAppAnomaliesUnexpectedHighLoadArgs']]] = None,
-                 unexpected_low_load: Optional[pulumi.Input[pulumi.InputType['MobileAppAnomaliesUnexpectedLowLoadArgs']]] = None,
+                 slow_user_actions: Optional[pulumi.Input[Union['MobileAppAnomaliesSlowUserActionsArgs', 'MobileAppAnomaliesSlowUserActionsArgsDict']]] = None,
+                 unexpected_high_load: Optional[pulumi.Input[Union['MobileAppAnomaliesUnexpectedHighLoadArgs', 'MobileAppAnomaliesUnexpectedHighLoadArgsDict']]] = None,
+                 unexpected_low_load: Optional[pulumi.Input[Union['MobileAppAnomaliesUnexpectedLowLoadArgs', 'MobileAppAnomaliesUnexpectedLowLoadArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -266,11 +266,11 @@ class MobileAppAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            error_rate_increase: Optional[pulumi.Input[pulumi.InputType['MobileAppAnomaliesErrorRateIncreaseArgs']]] = None,
+            error_rate_increase: Optional[pulumi.Input[Union['MobileAppAnomaliesErrorRateIncreaseArgs', 'MobileAppAnomaliesErrorRateIncreaseArgsDict']]] = None,
             scope: Optional[pulumi.Input[str]] = None,
-            slow_user_actions: Optional[pulumi.Input[pulumi.InputType['MobileAppAnomaliesSlowUserActionsArgs']]] = None,
-            unexpected_high_load: Optional[pulumi.Input[pulumi.InputType['MobileAppAnomaliesUnexpectedHighLoadArgs']]] = None,
-            unexpected_low_load: Optional[pulumi.Input[pulumi.InputType['MobileAppAnomaliesUnexpectedLowLoadArgs']]] = None) -> 'MobileAppAnomalies':
+            slow_user_actions: Optional[pulumi.Input[Union['MobileAppAnomaliesSlowUserActionsArgs', 'MobileAppAnomaliesSlowUserActionsArgsDict']]] = None,
+            unexpected_high_load: Optional[pulumi.Input[Union['MobileAppAnomaliesUnexpectedHighLoadArgs', 'MobileAppAnomaliesUnexpectedHighLoadArgsDict']]] = None,
+            unexpected_low_load: Optional[pulumi.Input[Union['MobileAppAnomaliesUnexpectedLowLoadArgs', 'MobileAppAnomaliesUnexpectedLowLoadArgsDict']]] = None) -> 'MobileAppAnomalies':
         """
         Get an existing MobileAppAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -278,11 +278,11 @@ class MobileAppAnomalies(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['MobileAppAnomaliesErrorRateIncreaseArgs']] error_rate_increase: Error rate increase
+        :param pulumi.Input[Union['MobileAppAnomaliesErrorRateIncreaseArgs', 'MobileAppAnomaliesErrorRateIncreaseArgsDict']] error_rate_increase: Error rate increase
         :param pulumi.Input[str] scope: The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE_APPLICATION). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[pulumi.InputType['MobileAppAnomaliesSlowUserActionsArgs']] slow_user_actions: Slow user actions
-        :param pulumi.Input[pulumi.InputType['MobileAppAnomaliesUnexpectedHighLoadArgs']] unexpected_high_load: Unexpected high load
-        :param pulumi.Input[pulumi.InputType['MobileAppAnomaliesUnexpectedLowLoadArgs']] unexpected_low_load: Unexpected low load
+        :param pulumi.Input[Union['MobileAppAnomaliesSlowUserActionsArgs', 'MobileAppAnomaliesSlowUserActionsArgsDict']] slow_user_actions: Slow user actions
+        :param pulumi.Input[Union['MobileAppAnomaliesUnexpectedHighLoadArgs', 'MobileAppAnomaliesUnexpectedHighLoadArgsDict']] unexpected_high_load: Unexpected high load
+        :param pulumi.Input[Union['MobileAppAnomaliesUnexpectedLowLoadArgs', 'MobileAppAnomaliesUnexpectedLowLoadArgsDict']] unexpected_low_load: Unexpected low load
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

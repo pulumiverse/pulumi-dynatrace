@@ -159,7 +159,7 @@ class LogEvents(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 event_template: Optional[pulumi.Input[pulumi.InputType['LogEventsEventTemplateArgs']]] = None,
+                 event_template: Optional[pulumi.Input[Union['LogEventsEventTemplateArgs', 'LogEventsEventTemplateArgsDict']]] = None,
                  query: Optional[pulumi.Input[str]] = None,
                  summary: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -168,7 +168,7 @@ class LogEvents(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['LogEventsEventTemplateArgs']] event_template: Event template
+        :param pulumi.Input[Union['LogEventsEventTemplateArgs', 'LogEventsEventTemplateArgsDict']] event_template: Event template
         :param pulumi.Input[str] query: Log query
         :param pulumi.Input[str] summary: The textual summary of the log event entry
         """
@@ -196,7 +196,7 @@ class LogEvents(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 event_template: Optional[pulumi.Input[pulumi.InputType['LogEventsEventTemplateArgs']]] = None,
+                 event_template: Optional[pulumi.Input[Union['LogEventsEventTemplateArgs', 'LogEventsEventTemplateArgsDict']]] = None,
                  query: Optional[pulumi.Input[str]] = None,
                  summary: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -231,7 +231,7 @@ class LogEvents(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
-            event_template: Optional[pulumi.Input[pulumi.InputType['LogEventsEventTemplateArgs']]] = None,
+            event_template: Optional[pulumi.Input[Union['LogEventsEventTemplateArgs', 'LogEventsEventTemplateArgsDict']]] = None,
             query: Optional[pulumi.Input[str]] = None,
             summary: Optional[pulumi.Input[str]] = None) -> 'LogEvents':
         """
@@ -242,7 +242,7 @@ class LogEvents(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['LogEventsEventTemplateArgs']] event_template: Event template
+        :param pulumi.Input[Union['LogEventsEventTemplateArgs', 'LogEventsEventTemplateArgsDict']] event_template: Event template
         :param pulumi.Input[str] query: Log query
         :param pulumi.Input[str] summary: The textual summary of the log event entry
         """

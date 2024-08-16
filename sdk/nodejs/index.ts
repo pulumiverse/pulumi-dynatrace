@@ -425,6 +425,16 @@ export type DirectShares = import("./directShares").DirectShares;
 export const DirectShares: typeof import("./directShares").DirectShares = null as any;
 utilities.lazyLoad(exports, ["DirectShares"], () => require("./directShares"));
 
+export { DiscoveryDefaultRulesArgs, DiscoveryDefaultRulesState } from "./discoveryDefaultRules";
+export type DiscoveryDefaultRules = import("./discoveryDefaultRules").DiscoveryDefaultRules;
+export const DiscoveryDefaultRules: typeof import("./discoveryDefaultRules").DiscoveryDefaultRules = null as any;
+utilities.lazyLoad(exports, ["DiscoveryDefaultRules"], () => require("./discoveryDefaultRules"));
+
+export { DiscoveryFeatureFlagsArgs, DiscoveryFeatureFlagsState } from "./discoveryFeatureFlags";
+export type DiscoveryFeatureFlags = import("./discoveryFeatureFlags").DiscoveryFeatureFlags;
+export const DiscoveryFeatureFlags: typeof import("./discoveryFeatureFlags").DiscoveryFeatureFlags = null as any;
+utilities.lazyLoad(exports, ["DiscoveryFeatureFlags"], () => require("./discoveryFeatureFlags"));
+
 export { DiskAnalyticsArgs, DiskAnalyticsState } from "./diskAnalytics";
 export type DiskAnalytics = import("./diskAnalytics").DiskAnalytics;
 export const DiskAnalytics: typeof import("./diskAnalytics").DiskAnalytics = null as any;
@@ -540,6 +550,16 @@ export const getAlertingProfiles: typeof import("./getAlertingProfiles").getAler
 export const getAlertingProfilesOutput: typeof import("./getAlertingProfiles").getAlertingProfilesOutput = null as any;
 utilities.lazyLoad(exports, ["getAlertingProfiles","getAlertingProfilesOutput"], () => require("./getAlertingProfiles"));
 
+export { GetApiTokenArgs, GetApiTokenResult, GetApiTokenOutputArgs } from "./getApiToken";
+export const getApiToken: typeof import("./getApiToken").getApiToken = null as any;
+export const getApiTokenOutput: typeof import("./getApiToken").getApiTokenOutput = null as any;
+utilities.lazyLoad(exports, ["getApiToken","getApiTokenOutput"], () => require("./getApiToken"));
+
+export { GetApiTokensResult } from "./getApiTokens";
+export const getApiTokens: typeof import("./getApiTokens").getApiTokens = null as any;
+export const getApiTokensOutput: typeof import("./getApiTokens").getApiTokensOutput = null as any;
+utilities.lazyLoad(exports, ["getApiTokens","getApiTokensOutput"], () => require("./getApiTokens"));
+
 export { GetApplicationArgs, GetApplicationResult, GetApplicationOutputArgs } from "./getApplication";
 export const getApplication: typeof import("./getApplication").getApplication = null as any;
 export const getApplicationOutput: typeof import("./getApplication").getApplicationOutput = null as any;
@@ -614,6 +634,16 @@ export { GetFailureDetectionParametersArgs, GetFailureDetectionParametersResult,
 export const getFailureDetectionParameters: typeof import("./getFailureDetectionParameters").getFailureDetectionParameters = null as any;
 export const getFailureDetectionParametersOutput: typeof import("./getFailureDetectionParameters").getFailureDetectionParametersOutput = null as any;
 utilities.lazyLoad(exports, ["getFailureDetectionParameters","getFailureDetectionParametersOutput"], () => require("./getFailureDetectionParameters"));
+
+export { GetGenericSettingArgs, GetGenericSettingResult, GetGenericSettingOutputArgs } from "./getGenericSetting";
+export const getGenericSetting: typeof import("./getGenericSetting").getGenericSetting = null as any;
+export const getGenericSettingOutput: typeof import("./getGenericSetting").getGenericSettingOutput = null as any;
+utilities.lazyLoad(exports, ["getGenericSetting","getGenericSettingOutput"], () => require("./getGenericSetting"));
+
+export { GetGenericSettingsArgs, GetGenericSettingsResult, GetGenericSettingsOutputArgs } from "./getGenericSettings";
+export const getGenericSettings: typeof import("./getGenericSettings").getGenericSettings = null as any;
+export const getGenericSettingsOutput: typeof import("./getGenericSettings").getGenericSettingsOutput = null as any;
+utilities.lazyLoad(exports, ["getGenericSettings","getGenericSettingsOutput"], () => require("./getGenericSettings"));
 
 export { GetHostArgs, GetHostResult, GetHostOutputArgs } from "./getHost";
 export const getHost: typeof import("./getHost").getHost = null as any;
@@ -1700,6 +1730,11 @@ export type WebAppCustomErrors = import("./webAppCustomErrors").WebAppCustomErro
 export const WebAppCustomErrors: typeof import("./webAppCustomErrors").WebAppCustomErrors = null as any;
 utilities.lazyLoad(exports, ["WebAppCustomErrors"], () => require("./webAppCustomErrors"));
 
+export { WebAppCustomInjectionArgs, WebAppCustomInjectionState } from "./webAppCustomInjection";
+export type WebAppCustomInjection = import("./webAppCustomInjection").WebAppCustomInjection;
+export const WebAppCustomInjection: typeof import("./webAppCustomInjection").WebAppCustomInjection = null as any;
+utilities.lazyLoad(exports, ["WebAppCustomInjection"], () => require("./webAppCustomInjection"));
+
 export { WebAppEnablementArgs, WebAppEnablementState } from "./webAppEnablement";
 export type WebAppEnablement = import("./webAppEnablement").WebAppEnablement;
 export const WebAppEnablement: typeof import("./webAppEnablement").WebAppEnablement = null as any;
@@ -1947,6 +1982,10 @@ const _module = {
                 return new DeclarativeGrouping(name, <any>undefined, { urn })
             case "dynatrace:index/directShares:DirectShares":
                 return new DirectShares(name, <any>undefined, { urn })
+            case "dynatrace:index/discoveryDefaultRules:DiscoveryDefaultRules":
+                return new DiscoveryDefaultRules(name, <any>undefined, { urn })
+            case "dynatrace:index/discoveryFeatureFlags:DiscoveryFeatureFlags":
+                return new DiscoveryFeatureFlags(name, <any>undefined, { urn })
             case "dynatrace:index/diskAnalytics:DiskAnalytics":
                 return new DiskAnalytics(name, <any>undefined, { urn })
             case "dynatrace:index/diskAnomalies:DiskAnomalies":
@@ -2371,6 +2410,8 @@ const _module = {
                 return new WebAppCustomConfigProperties(name, <any>undefined, { urn })
             case "dynatrace:index/webAppCustomErrors:WebAppCustomErrors":
                 return new WebAppCustomErrors(name, <any>undefined, { urn })
+            case "dynatrace:index/webAppCustomInjection:WebAppCustomInjection":
+                return new WebAppCustomInjection(name, <any>undefined, { urn })
             case "dynatrace:index/webAppEnablement:WebAppEnablement":
                 return new WebAppEnablement(name, <any>undefined, { urn })
             case "dynatrace:index/webAppInjectionCookie:WebAppInjectionCookie":
@@ -2486,6 +2527,8 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/dbAppFeatureFlags", _m
 pulumi.runtime.registerResourceModule("dynatrace", "index/dduPool", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/declarativeGrouping", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/directShares", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/discoveryDefaultRules", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/discoveryFeatureFlags", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskAnalytics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskAnomaliesV2", _module)
@@ -2698,6 +2741,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/webAppBeaconEndpoint",
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppBeaconOrigins", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppCustomConfigProperties", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppCustomErrors", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/webAppCustomInjection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppEnablement", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppInjectionCookie", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppJavascriptUpdates", _module)

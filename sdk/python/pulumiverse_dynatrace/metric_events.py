@@ -255,10 +255,10 @@ class MetricEvents(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  event_entity_dimension_key: Optional[pulumi.Input[str]] = None,
-                 event_template: Optional[pulumi.Input[pulumi.InputType['MetricEventsEventTemplateArgs']]] = None,
+                 event_template: Optional[pulumi.Input[Union['MetricEventsEventTemplateArgs', 'MetricEventsEventTemplateArgsDict']]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
-                 model_properties: Optional[pulumi.Input[pulumi.InputType['MetricEventsModelPropertiesArgs']]] = None,
-                 query_definition: Optional[pulumi.Input[pulumi.InputType['MetricEventsQueryDefinitionArgs']]] = None,
+                 model_properties: Optional[pulumi.Input[Union['MetricEventsModelPropertiesArgs', 'MetricEventsModelPropertiesArgsDict']]] = None,
+                 query_definition: Optional[pulumi.Input[Union['MetricEventsQueryDefinitionArgs', 'MetricEventsQueryDefinitionArgsDict']]] = None,
                  summary: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -267,10 +267,10 @@ class MetricEvents(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] event_entity_dimension_key: Controls the preferred entity type used for triggered events.
-        :param pulumi.Input[pulumi.InputType['MetricEventsEventTemplateArgs']] event_template: Event template
+        :param pulumi.Input[Union['MetricEventsEventTemplateArgs', 'MetricEventsEventTemplateArgsDict']] event_template: Event template
         :param pulumi.Input[str] legacy_id: Config id
-        :param pulumi.Input[pulumi.InputType['MetricEventsModelPropertiesArgs']] model_properties: Monitoring strategy
-        :param pulumi.Input[pulumi.InputType['MetricEventsQueryDefinitionArgs']] query_definition: Query definition
+        :param pulumi.Input[Union['MetricEventsModelPropertiesArgs', 'MetricEventsModelPropertiesArgsDict']] model_properties: Monitoring strategy
+        :param pulumi.Input[Union['MetricEventsQueryDefinitionArgs', 'MetricEventsQueryDefinitionArgsDict']] query_definition: Query definition
         :param pulumi.Input[str] summary: The textual summary of the metric event entry
         """
         ...
@@ -298,10 +298,10 @@ class MetricEvents(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  event_entity_dimension_key: Optional[pulumi.Input[str]] = None,
-                 event_template: Optional[pulumi.Input[pulumi.InputType['MetricEventsEventTemplateArgs']]] = None,
+                 event_template: Optional[pulumi.Input[Union['MetricEventsEventTemplateArgs', 'MetricEventsEventTemplateArgsDict']]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
-                 model_properties: Optional[pulumi.Input[pulumi.InputType['MetricEventsModelPropertiesArgs']]] = None,
-                 query_definition: Optional[pulumi.Input[pulumi.InputType['MetricEventsQueryDefinitionArgs']]] = None,
+                 model_properties: Optional[pulumi.Input[Union['MetricEventsModelPropertiesArgs', 'MetricEventsModelPropertiesArgsDict']]] = None,
+                 query_definition: Optional[pulumi.Input[Union['MetricEventsQueryDefinitionArgs', 'MetricEventsQueryDefinitionArgsDict']]] = None,
                  summary: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -341,10 +341,10 @@ class MetricEvents(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             event_entity_dimension_key: Optional[pulumi.Input[str]] = None,
-            event_template: Optional[pulumi.Input[pulumi.InputType['MetricEventsEventTemplateArgs']]] = None,
+            event_template: Optional[pulumi.Input[Union['MetricEventsEventTemplateArgs', 'MetricEventsEventTemplateArgsDict']]] = None,
             legacy_id: Optional[pulumi.Input[str]] = None,
-            model_properties: Optional[pulumi.Input[pulumi.InputType['MetricEventsModelPropertiesArgs']]] = None,
-            query_definition: Optional[pulumi.Input[pulumi.InputType['MetricEventsQueryDefinitionArgs']]] = None,
+            model_properties: Optional[pulumi.Input[Union['MetricEventsModelPropertiesArgs', 'MetricEventsModelPropertiesArgsDict']]] = None,
+            query_definition: Optional[pulumi.Input[Union['MetricEventsQueryDefinitionArgs', 'MetricEventsQueryDefinitionArgsDict']]] = None,
             summary: Optional[pulumi.Input[str]] = None) -> 'MetricEvents':
         """
         Get an existing MetricEvents resource's state with the given name, id, and optional extra
@@ -355,10 +355,10 @@ class MetricEvents(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] event_entity_dimension_key: Controls the preferred entity type used for triggered events.
-        :param pulumi.Input[pulumi.InputType['MetricEventsEventTemplateArgs']] event_template: Event template
+        :param pulumi.Input[Union['MetricEventsEventTemplateArgs', 'MetricEventsEventTemplateArgsDict']] event_template: Event template
         :param pulumi.Input[str] legacy_id: Config id
-        :param pulumi.Input[pulumi.InputType['MetricEventsModelPropertiesArgs']] model_properties: Monitoring strategy
-        :param pulumi.Input[pulumi.InputType['MetricEventsQueryDefinitionArgs']] query_definition: Query definition
+        :param pulumi.Input[Union['MetricEventsModelPropertiesArgs', 'MetricEventsModelPropertiesArgsDict']] model_properties: Monitoring strategy
+        :param pulumi.Input[Union['MetricEventsQueryDefinitionArgs', 'MetricEventsQueryDefinitionArgsDict']] query_definition: Query definition
         :param pulumi.Input[str] summary: The textual summary of the metric event entry
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

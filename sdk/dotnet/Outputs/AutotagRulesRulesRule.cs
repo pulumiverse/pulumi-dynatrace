@@ -31,11 +31,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Type '{' for placeholder suggestions
+        /// Optional tag value
         /// </summary>
         public readonly string? ValueFormat;
         /// <summary>
-        /// Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        /// Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
         /// </summary>
         public readonly string ValueNormalization;
 

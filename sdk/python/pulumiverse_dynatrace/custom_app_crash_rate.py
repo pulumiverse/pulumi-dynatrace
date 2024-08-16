@@ -97,14 +97,14 @@ class CustomAppCrashRate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 crash_rate_increase: Optional[pulumi.Input[pulumi.InputType['CustomAppCrashRateCrashRateIncreaseArgs']]] = None,
+                 crash_rate_increase: Optional[pulumi.Input[Union['CustomAppCrashRateCrashRateIncreaseArgs', 'CustomAppCrashRateCrashRateIncreaseArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a CustomAppCrashRate resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['CustomAppCrashRateCrashRateIncreaseArgs']] crash_rate_increase: Crash rate increase
+        :param pulumi.Input[Union['CustomAppCrashRateCrashRateIncreaseArgs', 'CustomAppCrashRateCrashRateIncreaseArgsDict']] crash_rate_increase: Crash rate increase
         :param pulumi.Input[str] scope: The scope of this setting (CUSTOM_APPLICATION environment)
         """
         ...
@@ -130,7 +130,7 @@ class CustomAppCrashRate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 crash_rate_increase: Optional[pulumi.Input[pulumi.InputType['CustomAppCrashRateCrashRateIncreaseArgs']]] = None,
+                 crash_rate_increase: Optional[pulumi.Input[Union['CustomAppCrashRateCrashRateIncreaseArgs', 'CustomAppCrashRateCrashRateIncreaseArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -155,7 +155,7 @@ class CustomAppCrashRate(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crash_rate_increase: Optional[pulumi.Input[pulumi.InputType['CustomAppCrashRateCrashRateIncreaseArgs']]] = None,
+            crash_rate_increase: Optional[pulumi.Input[Union['CustomAppCrashRateCrashRateIncreaseArgs', 'CustomAppCrashRateCrashRateIncreaseArgsDict']]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'CustomAppCrashRate':
         """
         Get an existing CustomAppCrashRate resource's state with the given name, id, and optional extra
@@ -164,7 +164,7 @@ class CustomAppCrashRate(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['CustomAppCrashRateCrashRateIncreaseArgs']] crash_rate_increase: Crash rate increase
+        :param pulumi.Input[Union['CustomAppCrashRateCrashRateIncreaseArgs', 'CustomAppCrashRateCrashRateIncreaseArgsDict']] crash_rate_increase: Crash rate increase
         :param pulumi.Input[str] scope: The scope of this setting (CUSTOM_APPLICATION environment)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

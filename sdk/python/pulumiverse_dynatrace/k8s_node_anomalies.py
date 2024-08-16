@@ -221,22 +221,22 @@ class K8sNodeAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cpu_requests_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesCpuRequestsSaturationArgs']]] = None,
-                 memory_requests_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesMemoryRequestsSaturationArgs']]] = None,
-                 node_problematic_condition: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesNodeProblematicConditionArgs']]] = None,
-                 pods_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesPodsSaturationArgs']]] = None,
-                 readiness_issues: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesReadinessIssuesArgs']]] = None,
+                 cpu_requests_saturation: Optional[pulumi.Input[Union['K8sNodeAnomaliesCpuRequestsSaturationArgs', 'K8sNodeAnomaliesCpuRequestsSaturationArgsDict']]] = None,
+                 memory_requests_saturation: Optional[pulumi.Input[Union['K8sNodeAnomaliesMemoryRequestsSaturationArgs', 'K8sNodeAnomaliesMemoryRequestsSaturationArgsDict']]] = None,
+                 node_problematic_condition: Optional[pulumi.Input[Union['K8sNodeAnomaliesNodeProblematicConditionArgs', 'K8sNodeAnomaliesNodeProblematicConditionArgsDict']]] = None,
+                 pods_saturation: Optional[pulumi.Input[Union['K8sNodeAnomaliesPodsSaturationArgs', 'K8sNodeAnomaliesPodsSaturationArgsDict']]] = None,
+                 readiness_issues: Optional[pulumi.Input[Union['K8sNodeAnomaliesReadinessIssuesArgs', 'K8sNodeAnomaliesReadinessIssuesArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a K8sNodeAnomalies resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['K8sNodeAnomaliesCpuRequestsSaturationArgs']] cpu_requests_saturation: no documentation available
-        :param pulumi.Input[pulumi.InputType['K8sNodeAnomaliesMemoryRequestsSaturationArgs']] memory_requests_saturation: no documentation available
-        :param pulumi.Input[pulumi.InputType['K8sNodeAnomaliesNodeProblematicConditionArgs']] node_problematic_condition: no documentation available
-        :param pulumi.Input[pulumi.InputType['K8sNodeAnomaliesPodsSaturationArgs']] pods_saturation: no documentation available
-        :param pulumi.Input[pulumi.InputType['K8sNodeAnomaliesReadinessIssuesArgs']] readiness_issues: Alerts if node has not been available for a given amount of time
+        :param pulumi.Input[Union['K8sNodeAnomaliesCpuRequestsSaturationArgs', 'K8sNodeAnomaliesCpuRequestsSaturationArgsDict']] cpu_requests_saturation: no documentation available
+        :param pulumi.Input[Union['K8sNodeAnomaliesMemoryRequestsSaturationArgs', 'K8sNodeAnomaliesMemoryRequestsSaturationArgsDict']] memory_requests_saturation: no documentation available
+        :param pulumi.Input[Union['K8sNodeAnomaliesNodeProblematicConditionArgs', 'K8sNodeAnomaliesNodeProblematicConditionArgsDict']] node_problematic_condition: no documentation available
+        :param pulumi.Input[Union['K8sNodeAnomaliesPodsSaturationArgs', 'K8sNodeAnomaliesPodsSaturationArgsDict']] pods_saturation: no documentation available
+        :param pulumi.Input[Union['K8sNodeAnomaliesReadinessIssuesArgs', 'K8sNodeAnomaliesReadinessIssuesArgsDict']] readiness_issues: Alerts if node has not been available for a given amount of time
         :param pulumi.Input[str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         ...
@@ -262,11 +262,11 @@ class K8sNodeAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cpu_requests_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesCpuRequestsSaturationArgs']]] = None,
-                 memory_requests_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesMemoryRequestsSaturationArgs']]] = None,
-                 node_problematic_condition: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesNodeProblematicConditionArgs']]] = None,
-                 pods_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesPodsSaturationArgs']]] = None,
-                 readiness_issues: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesReadinessIssuesArgs']]] = None,
+                 cpu_requests_saturation: Optional[pulumi.Input[Union['K8sNodeAnomaliesCpuRequestsSaturationArgs', 'K8sNodeAnomaliesCpuRequestsSaturationArgsDict']]] = None,
+                 memory_requests_saturation: Optional[pulumi.Input[Union['K8sNodeAnomaliesMemoryRequestsSaturationArgs', 'K8sNodeAnomaliesMemoryRequestsSaturationArgsDict']]] = None,
+                 node_problematic_condition: Optional[pulumi.Input[Union['K8sNodeAnomaliesNodeProblematicConditionArgs', 'K8sNodeAnomaliesNodeProblematicConditionArgsDict']]] = None,
+                 pods_saturation: Optional[pulumi.Input[Union['K8sNodeAnomaliesPodsSaturationArgs', 'K8sNodeAnomaliesPodsSaturationArgsDict']]] = None,
+                 readiness_issues: Optional[pulumi.Input[Union['K8sNodeAnomaliesReadinessIssuesArgs', 'K8sNodeAnomaliesReadinessIssuesArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -303,11 +303,11 @@ class K8sNodeAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cpu_requests_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesCpuRequestsSaturationArgs']]] = None,
-            memory_requests_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesMemoryRequestsSaturationArgs']]] = None,
-            node_problematic_condition: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesNodeProblematicConditionArgs']]] = None,
-            pods_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesPodsSaturationArgs']]] = None,
-            readiness_issues: Optional[pulumi.Input[pulumi.InputType['K8sNodeAnomaliesReadinessIssuesArgs']]] = None,
+            cpu_requests_saturation: Optional[pulumi.Input[Union['K8sNodeAnomaliesCpuRequestsSaturationArgs', 'K8sNodeAnomaliesCpuRequestsSaturationArgsDict']]] = None,
+            memory_requests_saturation: Optional[pulumi.Input[Union['K8sNodeAnomaliesMemoryRequestsSaturationArgs', 'K8sNodeAnomaliesMemoryRequestsSaturationArgsDict']]] = None,
+            node_problematic_condition: Optional[pulumi.Input[Union['K8sNodeAnomaliesNodeProblematicConditionArgs', 'K8sNodeAnomaliesNodeProblematicConditionArgsDict']]] = None,
+            pods_saturation: Optional[pulumi.Input[Union['K8sNodeAnomaliesPodsSaturationArgs', 'K8sNodeAnomaliesPodsSaturationArgsDict']]] = None,
+            readiness_issues: Optional[pulumi.Input[Union['K8sNodeAnomaliesReadinessIssuesArgs', 'K8sNodeAnomaliesReadinessIssuesArgsDict']]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'K8sNodeAnomalies':
         """
         Get an existing K8sNodeAnomalies resource's state with the given name, id, and optional extra
@@ -316,11 +316,11 @@ class K8sNodeAnomalies(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['K8sNodeAnomaliesCpuRequestsSaturationArgs']] cpu_requests_saturation: no documentation available
-        :param pulumi.Input[pulumi.InputType['K8sNodeAnomaliesMemoryRequestsSaturationArgs']] memory_requests_saturation: no documentation available
-        :param pulumi.Input[pulumi.InputType['K8sNodeAnomaliesNodeProblematicConditionArgs']] node_problematic_condition: no documentation available
-        :param pulumi.Input[pulumi.InputType['K8sNodeAnomaliesPodsSaturationArgs']] pods_saturation: no documentation available
-        :param pulumi.Input[pulumi.InputType['K8sNodeAnomaliesReadinessIssuesArgs']] readiness_issues: Alerts if node has not been available for a given amount of time
+        :param pulumi.Input[Union['K8sNodeAnomaliesCpuRequestsSaturationArgs', 'K8sNodeAnomaliesCpuRequestsSaturationArgsDict']] cpu_requests_saturation: no documentation available
+        :param pulumi.Input[Union['K8sNodeAnomaliesMemoryRequestsSaturationArgs', 'K8sNodeAnomaliesMemoryRequestsSaturationArgsDict']] memory_requests_saturation: no documentation available
+        :param pulumi.Input[Union['K8sNodeAnomaliesNodeProblematicConditionArgs', 'K8sNodeAnomaliesNodeProblematicConditionArgsDict']] node_problematic_condition: no documentation available
+        :param pulumi.Input[Union['K8sNodeAnomaliesPodsSaturationArgs', 'K8sNodeAnomaliesPodsSaturationArgsDict']] pods_saturation: no documentation available
+        :param pulumi.Input[Union['K8sNodeAnomaliesReadinessIssuesArgs', 'K8sNodeAnomaliesReadinessIssuesArgsDict']] readiness_issues: Alerts if node has not been available for a given amount of time
         :param pulumi.Input[str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

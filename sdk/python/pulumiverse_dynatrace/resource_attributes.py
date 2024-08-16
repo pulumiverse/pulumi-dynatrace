@@ -66,13 +66,13 @@ class ResourceAttributes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 keys: Optional[pulumi.Input[pulumi.InputType['ResourceAttributesKeysArgs']]] = None,
+                 keys: Optional[pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None,
                  __props__=None):
         """
         Create a ResourceAttributes resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ResourceAttributesKeysArgs']] keys: Attribute key allow-list
+        :param pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']] keys: Attribute key allow-list
         """
         ...
     @overload
@@ -97,7 +97,7 @@ class ResourceAttributes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 keys: Optional[pulumi.Input[pulumi.InputType['ResourceAttributesKeysArgs']]] = None,
+                 keys: Optional[pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -118,7 +118,7 @@ class ResourceAttributes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            keys: Optional[pulumi.Input[pulumi.InputType['ResourceAttributesKeysArgs']]] = None) -> 'ResourceAttributes':
+            keys: Optional[pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None) -> 'ResourceAttributes':
         """
         Get an existing ResourceAttributes resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -126,7 +126,7 @@ class ResourceAttributes(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ResourceAttributesKeysArgs']] keys: Attribute key allow-list
+        :param pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']] keys: Attribute key allow-list
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

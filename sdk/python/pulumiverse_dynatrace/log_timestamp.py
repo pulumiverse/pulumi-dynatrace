@@ -291,7 +291,7 @@ class LogTimestamp(pulumi.CustomResource):
                  date_time_pattern: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 matchers: Optional[pulumi.Input[pulumi.InputType['LogTimestampMatchersArgs']]] = None,
+                 matchers: Optional[pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  timezone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -304,7 +304,7 @@ class LogTimestamp(pulumi.CustomResource):
         :param pulumi.Input[str] date_time_pattern: Date-time pattern
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['LogTimestampMatchersArgs']] matchers: no documentation available
+        :param pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']] matchers: no documentation available
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[str] timezone: Timezone
         """
@@ -336,7 +336,7 @@ class LogTimestamp(pulumi.CustomResource):
                  date_time_pattern: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 matchers: Optional[pulumi.Input[pulumi.InputType['LogTimestampMatchersArgs']]] = None,
+                 matchers: Optional[pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  timezone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -379,7 +379,7 @@ class LogTimestamp(pulumi.CustomResource):
             date_time_pattern: Optional[pulumi.Input[str]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             insert_after: Optional[pulumi.Input[str]] = None,
-            matchers: Optional[pulumi.Input[pulumi.InputType['LogTimestampMatchersArgs']]] = None,
+            matchers: Optional[pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']]] = None,
             scope: Optional[pulumi.Input[str]] = None,
             timezone: Optional[pulumi.Input[str]] = None) -> 'LogTimestamp':
         """
@@ -394,7 +394,7 @@ class LogTimestamp(pulumi.CustomResource):
         :param pulumi.Input[str] date_time_pattern: Date-time pattern
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['LogTimestampMatchersArgs']] matchers: no documentation available
+        :param pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']] matchers: no documentation available
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[str] timezone: Timezone
         """

@@ -326,7 +326,7 @@ class K8sMonitoring(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cloud_application_pipeline_enabled: Optional[pulumi.Input[bool]] = None,
-                 event_patterns: Optional[pulumi.Input[pulumi.InputType['K8sMonitoringEventPatternsArgs']]] = None,
+                 event_patterns: Optional[pulumi.Input[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']]] = None,
                  event_processing_active: Optional[pulumi.Input[bool]] = None,
                  filter_events: Optional[pulumi.Input[bool]] = None,
                  include_all_fdi_events: Optional[pulumi.Input[bool]] = None,
@@ -340,7 +340,7 @@ class K8sMonitoring(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
-        :param pulumi.Input[pulumi.InputType['K8sMonitoringEventPatternsArgs']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the
+        :param pulumi.Input[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the
                [documentation](https://dt-url.net/2201p0u).
         :param pulumi.Input[bool] event_processing_active: All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
         :param pulumi.Input[bool] filter_events: Include only events specified by Events Field Selectors
@@ -375,7 +375,7 @@ class K8sMonitoring(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cloud_application_pipeline_enabled: Optional[pulumi.Input[bool]] = None,
-                 event_patterns: Optional[pulumi.Input[pulumi.InputType['K8sMonitoringEventPatternsArgs']]] = None,
+                 event_patterns: Optional[pulumi.Input[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']]] = None,
                  event_processing_active: Optional[pulumi.Input[bool]] = None,
                  filter_events: Optional[pulumi.Input[bool]] = None,
                  include_all_fdi_events: Optional[pulumi.Input[bool]] = None,
@@ -422,7 +422,7 @@ class K8sMonitoring(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             cloud_application_pipeline_enabled: Optional[pulumi.Input[bool]] = None,
-            event_patterns: Optional[pulumi.Input[pulumi.InputType['K8sMonitoringEventPatternsArgs']]] = None,
+            event_patterns: Optional[pulumi.Input[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']]] = None,
             event_processing_active: Optional[pulumi.Input[bool]] = None,
             filter_events: Optional[pulumi.Input[bool]] = None,
             include_all_fdi_events: Optional[pulumi.Input[bool]] = None,
@@ -438,7 +438,7 @@ class K8sMonitoring(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
-        :param pulumi.Input[pulumi.InputType['K8sMonitoringEventPatternsArgs']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the
+        :param pulumi.Input[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the
                [documentation](https://dt-url.net/2201p0u).
         :param pulumi.Input[bool] event_processing_active: All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
         :param pulumi.Input[bool] filter_events: Include only events specified by Events Field Selectors

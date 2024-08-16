@@ -480,13 +480,13 @@ class WebhookNotification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: Optional[pulumi.Input[bool]] = None,
-                 headers: Optional[pulumi.Input[pulumi.InputType['WebhookNotificationHeadersArgs']]] = None,
+                 headers: Optional[pulumi.Input[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']]] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None,
                  notify_event_merges: Optional[pulumi.Input[bool]] = None,
-                 oauth2_credentials: Optional[pulumi.Input[pulumi.InputType['WebhookNotificationOauth2CredentialsArgs']]] = None,
+                 oauth2_credentials: Optional[pulumi.Input[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']]] = None,
                  payload: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
                  secret_url: Optional[pulumi.Input[str]] = None,
@@ -499,13 +499,13 @@ class WebhookNotification(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['WebhookNotificationHeadersArgs']] headers: A list of the additional HTTP headers
+        :param pulumi.Input[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']] headers: A list of the additional HTTP headers
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
         :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
-        :param pulumi.Input[pulumi.InputType['WebhookNotificationOauth2CredentialsArgs']] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        :param pulumi.Input[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
         :param pulumi.Input[str] payload: The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
         :param pulumi.Input[str] secret_url: The secret URL of the webhook endpoint.
@@ -537,13 +537,13 @@ class WebhookNotification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: Optional[pulumi.Input[bool]] = None,
-                 headers: Optional[pulumi.Input[pulumi.InputType['WebhookNotificationHeadersArgs']]] = None,
+                 headers: Optional[pulumi.Input[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']]] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None,
                  notify_event_merges: Optional[pulumi.Input[bool]] = None,
-                 oauth2_credentials: Optional[pulumi.Input[pulumi.InputType['WebhookNotificationOauth2CredentialsArgs']]] = None,
+                 oauth2_credentials: Optional[pulumi.Input[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']]] = None,
                  payload: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
                  secret_url: Optional[pulumi.Input[str]] = None,
@@ -592,13 +592,13 @@ class WebhookNotification(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             active: Optional[pulumi.Input[bool]] = None,
-            headers: Optional[pulumi.Input[pulumi.InputType['WebhookNotificationHeadersArgs']]] = None,
+            headers: Optional[pulumi.Input[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']]] = None,
             insecure: Optional[pulumi.Input[bool]] = None,
             legacy_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             notify_closed_problems: Optional[pulumi.Input[bool]] = None,
             notify_event_merges: Optional[pulumi.Input[bool]] = None,
-            oauth2_credentials: Optional[pulumi.Input[pulumi.InputType['WebhookNotificationOauth2CredentialsArgs']]] = None,
+            oauth2_credentials: Optional[pulumi.Input[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']]] = None,
             payload: Optional[pulumi.Input[str]] = None,
             profile: Optional[pulumi.Input[str]] = None,
             secret_url: Optional[pulumi.Input[str]] = None,
@@ -613,13 +613,13 @@ class WebhookNotification(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['WebhookNotificationHeadersArgs']] headers: A list of the additional HTTP headers
+        :param pulumi.Input[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']] headers: A list of the additional HTTP headers
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
         :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
-        :param pulumi.Input[pulumi.InputType['WebhookNotificationOauth2CredentialsArgs']] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        :param pulumi.Input[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
         :param pulumi.Input[str] payload: The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
         :param pulumi.Input[str] secret_url: The secret URL of the webhook endpoint.

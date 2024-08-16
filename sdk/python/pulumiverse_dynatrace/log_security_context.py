@@ -98,14 +98,14 @@ class LogSecurityContext(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 security_context_rule: Optional[pulumi.Input[pulumi.InputType['LogSecurityContextSecurityContextRuleArgs']]] = None,
+                 security_context_rule: Optional[pulumi.Input[Union['LogSecurityContextSecurityContextRuleArgs', 'LogSecurityContextSecurityContextRuleArgsDict']]] = None,
                  __props__=None):
         """
         Create a LogSecurityContext resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['LogSecurityContextSecurityContextRuleArgs']] security_context_rule: no documentation available
+        :param pulumi.Input[Union['LogSecurityContextSecurityContextRuleArgs', 'LogSecurityContextSecurityContextRuleArgsDict']] security_context_rule: no documentation available
         """
         ...
     @overload
@@ -131,7 +131,7 @@ class LogSecurityContext(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 security_context_rule: Optional[pulumi.Input[pulumi.InputType['LogSecurityContextSecurityContextRuleArgs']]] = None,
+                 security_context_rule: Optional[pulumi.Input[Union['LogSecurityContextSecurityContextRuleArgs', 'LogSecurityContextSecurityContextRuleArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -156,7 +156,7 @@ class LogSecurityContext(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             insert_after: Optional[pulumi.Input[str]] = None,
-            security_context_rule: Optional[pulumi.Input[pulumi.InputType['LogSecurityContextSecurityContextRuleArgs']]] = None) -> 'LogSecurityContext':
+            security_context_rule: Optional[pulumi.Input[Union['LogSecurityContextSecurityContextRuleArgs', 'LogSecurityContextSecurityContextRuleArgsDict']]] = None) -> 'LogSecurityContext':
         """
         Get an existing LogSecurityContext resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -165,7 +165,7 @@ class LogSecurityContext(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['LogSecurityContextSecurityContextRuleArgs']] security_context_rule: no documentation available
+        :param pulumi.Input[Union['LogSecurityContextSecurityContextRuleArgs', 'LogSecurityContextSecurityContextRuleArgsDict']] security_context_rule: no documentation available
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

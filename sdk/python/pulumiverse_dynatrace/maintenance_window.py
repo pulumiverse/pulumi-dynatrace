@@ -323,8 +323,8 @@ class MaintenanceWindow(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 schedule: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowScheduleArgs']]] = None,
-                 scope: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowScopeArgs']]] = None,
+                 schedule: Optional[pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
+                 scope: Optional[pulumi.Input[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']]] = None,
                  suppress_synth_mon_exec: Optional[pulumi.Input[bool]] = None,
                  suppression: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -348,27 +348,27 @@ class MaintenanceWindow(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         _name_ = dynatrace.MaintenanceWindow("#name#",
-            schedule=dynatrace.MaintenanceWindowScheduleArgs(
-                end="2021-05-11 14:41",
-                recurrence_type="ONCE",
-                start="2021-05-11 13:41",
-                zone_id="Europe/Vienna",
-            ),
-            scope=dynatrace.MaintenanceWindowScopeArgs(
-                matches=[dynatrace.MaintenanceWindowScopeMatchArgs(
-                    tag_combination="AND",
-                    tags=[
-                        dynatrace.MaintenanceWindowScopeMatchTagArgs(
-                            context="CONTEXTLESS",
-                            key="bggtedgxen",
-                        ),
-                        dynatrace.MaintenanceWindowScopeMatchTagArgs(
-                            context="CONTEXTLESS",
-                            key="deldel1",
-                        ),
+            schedule={
+                "end": "2021-05-11 14:41",
+                "recurrence_type": "ONCE",
+                "start": "2021-05-11 13:41",
+                "zone_id": "Europe/Vienna",
+            },
+            scope={
+                "matches": [{
+                    "tag_combination": "AND",
+                    "tags": [
+                        {
+                            "context": "CONTEXTLESS",
+                            "key": "bggtedgxen",
+                        },
+                        {
+                            "context": "CONTEXTLESS",
+                            "key": "deldel1",
+                        },
                     ],
-                )],
-            ),
+                }],
+            },
             suppress_synth_mon_exec=True,
             suppression="DONT_DETECT_PROBLEMS",
             type="PLANNED")
@@ -379,8 +379,8 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param pulumi.Input[str] description: A short description of the maintenance purpose
         :param pulumi.Input[bool] enabled: The Maintenance Window is enabled or disabled
         :param pulumi.Input[str] name: The name of the maintenance window, displayed in the UI
-        :param pulumi.Input[pulumi.InputType['MaintenanceWindowScheduleArgs']] schedule: The schedule of the maintenance window
-        :param pulumi.Input[pulumi.InputType['MaintenanceWindowScopeArgs']] scope: the tiles this Dashboard consist of
+        :param pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']] schedule: The schedule of the maintenance window
+        :param pulumi.Input[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']] scope: the tiles this Dashboard consist of
         :param pulumi.Input[bool] suppress_synth_mon_exec: Suppress execution of synthetic monitors during the maintenance
         :param pulumi.Input[str] suppression: The type of suppression of alerting and problem detection during the maintenance
         :param pulumi.Input[str] type: The type of the maintenance: planned or unplanned
@@ -410,27 +410,27 @@ class MaintenanceWindow(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         _name_ = dynatrace.MaintenanceWindow("#name#",
-            schedule=dynatrace.MaintenanceWindowScheduleArgs(
-                end="2021-05-11 14:41",
-                recurrence_type="ONCE",
-                start="2021-05-11 13:41",
-                zone_id="Europe/Vienna",
-            ),
-            scope=dynatrace.MaintenanceWindowScopeArgs(
-                matches=[dynatrace.MaintenanceWindowScopeMatchArgs(
-                    tag_combination="AND",
-                    tags=[
-                        dynatrace.MaintenanceWindowScopeMatchTagArgs(
-                            context="CONTEXTLESS",
-                            key="bggtedgxen",
-                        ),
-                        dynatrace.MaintenanceWindowScopeMatchTagArgs(
-                            context="CONTEXTLESS",
-                            key="deldel1",
-                        ),
+            schedule={
+                "end": "2021-05-11 14:41",
+                "recurrence_type": "ONCE",
+                "start": "2021-05-11 13:41",
+                "zone_id": "Europe/Vienna",
+            },
+            scope={
+                "matches": [{
+                    "tag_combination": "AND",
+                    "tags": [
+                        {
+                            "context": "CONTEXTLESS",
+                            "key": "bggtedgxen",
+                        },
+                        {
+                            "context": "CONTEXTLESS",
+                            "key": "deldel1",
+                        },
                     ],
-                )],
-            ),
+                }],
+            },
             suppress_synth_mon_exec=True,
             suppression="DONT_DETECT_PROBLEMS",
             type="PLANNED")
@@ -454,8 +454,8 @@ class MaintenanceWindow(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 schedule: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowScheduleArgs']]] = None,
-                 scope: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowScopeArgs']]] = None,
+                 schedule: Optional[pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
+                 scope: Optional[pulumi.Input[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']]] = None,
                  suppress_synth_mon_exec: Optional[pulumi.Input[bool]] = None,
                  suppression: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -495,8 +495,8 @@ class MaintenanceWindow(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            schedule: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowScheduleArgs']]] = None,
-            scope: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowScopeArgs']]] = None,
+            schedule: Optional[pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
+            scope: Optional[pulumi.Input[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']]] = None,
             suppress_synth_mon_exec: Optional[pulumi.Input[bool]] = None,
             suppression: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None,
@@ -511,8 +511,8 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param pulumi.Input[str] description: A short description of the maintenance purpose
         :param pulumi.Input[bool] enabled: The Maintenance Window is enabled or disabled
         :param pulumi.Input[str] name: The name of the maintenance window, displayed in the UI
-        :param pulumi.Input[pulumi.InputType['MaintenanceWindowScheduleArgs']] schedule: The schedule of the maintenance window
-        :param pulumi.Input[pulumi.InputType['MaintenanceWindowScopeArgs']] scope: the tiles this Dashboard consist of
+        :param pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']] schedule: The schedule of the maintenance window
+        :param pulumi.Input[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']] scope: the tiles this Dashboard consist of
         :param pulumi.Input[bool] suppress_synth_mon_exec: Suppress execution of synthetic monitors during the maintenance
         :param pulumi.Input[str] suppression: The type of suppression of alerting and problem detection during the maintenance
         :param pulumi.Input[str] type: The type of the maintenance: planned or unplanned

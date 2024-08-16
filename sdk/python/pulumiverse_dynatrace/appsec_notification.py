@@ -527,20 +527,20 @@ class AppsecNotification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  attack_candidate_based_alerting_profile: Optional[pulumi.Input[str]] = None,
-                 attack_candidate_based_email_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedEmailPayloadArgs']]] = None,
-                 attack_candidate_based_jira_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedJiraPayloadArgs']]] = None,
-                 attack_candidate_based_webhook_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs']]] = None,
+                 attack_candidate_based_email_payload: Optional[pulumi.Input[Union['AppsecNotificationAttackCandidateBasedEmailPayloadArgs', 'AppsecNotificationAttackCandidateBasedEmailPayloadArgsDict']]] = None,
+                 attack_candidate_based_jira_payload: Optional[pulumi.Input[Union['AppsecNotificationAttackCandidateBasedJiraPayloadArgs', 'AppsecNotificationAttackCandidateBasedJiraPayloadArgsDict']]] = None,
+                 attack_candidate_based_webhook_payload: Optional[pulumi.Input[Union['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs', 'AppsecNotificationAttackCandidateBasedWebhookPayloadArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 email_configuration: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationEmailConfigurationArgs']]] = None,
+                 email_configuration: Optional[pulumi.Input[Union['AppsecNotificationEmailConfigurationArgs', 'AppsecNotificationEmailConfigurationArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 jira_configuration: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationJiraConfigurationArgs']]] = None,
+                 jira_configuration: Optional[pulumi.Input[Union['AppsecNotificationJiraConfigurationArgs', 'AppsecNotificationJiraConfigurationArgsDict']]] = None,
                  security_problem_based_alerting_profile: Optional[pulumi.Input[str]] = None,
-                 security_problem_based_email_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedEmailPayloadArgs']]] = None,
-                 security_problem_based_jira_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedJiraPayloadArgs']]] = None,
-                 security_problem_based_webhook_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs']]] = None,
+                 security_problem_based_email_payload: Optional[pulumi.Input[Union['AppsecNotificationSecurityProblemBasedEmailPayloadArgs', 'AppsecNotificationSecurityProblemBasedEmailPayloadArgsDict']]] = None,
+                 security_problem_based_jira_payload: Optional[pulumi.Input[Union['AppsecNotificationSecurityProblemBasedJiraPayloadArgs', 'AppsecNotificationSecurityProblemBasedJiraPayloadArgsDict']]] = None,
+                 security_problem_based_webhook_payload: Optional[pulumi.Input[Union['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs', 'AppsecNotificationSecurityProblemBasedWebhookPayloadArgsDict']]] = None,
                  trigger: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
-                 webhook_configuration: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationWebhookConfigurationArgs']]] = None,
+                 webhook_configuration: Optional[pulumi.Input[Union['AppsecNotificationWebhookConfigurationArgs', 'AppsecNotificationWebhookConfigurationArgsDict']]] = None,
                  __props__=None):
         """
         Create a AppsecNotification resource with the given unique name, props, and options.
@@ -549,22 +549,22 @@ class AppsecNotification(pulumi.CustomResource):
         :param pulumi.Input[str] attack_candidate_based_alerting_profile: For attack candidate alerts, select an [alerting
                profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
                delivery of security notifications related to this integration.
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedEmailPayloadArgs']] attack_candidate_based_email_payload: Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedJiraPayloadArgs']] attack_candidate_based_jira_payload: Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs']] attack_candidate_based_webhook_payload: Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
+        :param pulumi.Input[Union['AppsecNotificationAttackCandidateBasedEmailPayloadArgs', 'AppsecNotificationAttackCandidateBasedEmailPayloadArgsDict']] attack_candidate_based_email_payload: Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
+        :param pulumi.Input[Union['AppsecNotificationAttackCandidateBasedJiraPayloadArgs', 'AppsecNotificationAttackCandidateBasedJiraPayloadArgsDict']] attack_candidate_based_jira_payload: Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
+        :param pulumi.Input[Union['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs', 'AppsecNotificationAttackCandidateBasedWebhookPayloadArgsDict']] attack_candidate_based_webhook_payload: Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
         :param pulumi.Input[str] display_name: Display name of the security notification
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationEmailConfigurationArgs']] email_configuration: Email configuration, required when `type` equals `EMAIL`
+        :param pulumi.Input[Union['AppsecNotificationEmailConfigurationArgs', 'AppsecNotificationEmailConfigurationArgsDict']] email_configuration: Email configuration, required when `type` equals `EMAIL`
         :param pulumi.Input[bool] enabled: Enable/Disable the security notification, enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationJiraConfigurationArgs']] jira_configuration: Jira configuration, required when `type` equals `JIRA`
+        :param pulumi.Input[Union['AppsecNotificationJiraConfigurationArgs', 'AppsecNotificationJiraConfigurationArgsDict']] jira_configuration: Jira configuration, required when `type` equals `JIRA`
         :param pulumi.Input[str] security_problem_based_alerting_profile: For security problem alerts, select an [alerting
                profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
                security notifications related to this integration.
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedEmailPayloadArgs']] security_problem_based_email_payload: Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedJiraPayloadArgs']] security_problem_based_jira_payload: Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs']] security_problem_based_webhook_payload: Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
+        :param pulumi.Input[Union['AppsecNotificationSecurityProblemBasedEmailPayloadArgs', 'AppsecNotificationSecurityProblemBasedEmailPayloadArgsDict']] security_problem_based_email_payload: Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
+        :param pulumi.Input[Union['AppsecNotificationSecurityProblemBasedJiraPayloadArgs', 'AppsecNotificationSecurityProblemBasedJiraPayloadArgsDict']] security_problem_based_jira_payload: Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
+        :param pulumi.Input[Union['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs', 'AppsecNotificationSecurityProblemBasedWebhookPayloadArgsDict']] security_problem_based_webhook_payload: Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
         :param pulumi.Input[str] trigger: Security alert type, possible Values: `ATTACK_CANDIDATE`, `SECURITY_PROBLEM`
         :param pulumi.Input[str] type: Notification type, possible Values: `EMAIL`, `JIRA`, `WEBHOOK`
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationWebhookConfigurationArgs']] webhook_configuration: Webhook configuration, required when `type` equals `WEBHOOK`
+        :param pulumi.Input[Union['AppsecNotificationWebhookConfigurationArgs', 'AppsecNotificationWebhookConfigurationArgsDict']] webhook_configuration: Webhook configuration, required when `type` equals `WEBHOOK`
         """
         ...
     @overload
@@ -590,20 +590,20 @@ class AppsecNotification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  attack_candidate_based_alerting_profile: Optional[pulumi.Input[str]] = None,
-                 attack_candidate_based_email_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedEmailPayloadArgs']]] = None,
-                 attack_candidate_based_jira_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedJiraPayloadArgs']]] = None,
-                 attack_candidate_based_webhook_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs']]] = None,
+                 attack_candidate_based_email_payload: Optional[pulumi.Input[Union['AppsecNotificationAttackCandidateBasedEmailPayloadArgs', 'AppsecNotificationAttackCandidateBasedEmailPayloadArgsDict']]] = None,
+                 attack_candidate_based_jira_payload: Optional[pulumi.Input[Union['AppsecNotificationAttackCandidateBasedJiraPayloadArgs', 'AppsecNotificationAttackCandidateBasedJiraPayloadArgsDict']]] = None,
+                 attack_candidate_based_webhook_payload: Optional[pulumi.Input[Union['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs', 'AppsecNotificationAttackCandidateBasedWebhookPayloadArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 email_configuration: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationEmailConfigurationArgs']]] = None,
+                 email_configuration: Optional[pulumi.Input[Union['AppsecNotificationEmailConfigurationArgs', 'AppsecNotificationEmailConfigurationArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 jira_configuration: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationJiraConfigurationArgs']]] = None,
+                 jira_configuration: Optional[pulumi.Input[Union['AppsecNotificationJiraConfigurationArgs', 'AppsecNotificationJiraConfigurationArgsDict']]] = None,
                  security_problem_based_alerting_profile: Optional[pulumi.Input[str]] = None,
-                 security_problem_based_email_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedEmailPayloadArgs']]] = None,
-                 security_problem_based_jira_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedJiraPayloadArgs']]] = None,
-                 security_problem_based_webhook_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs']]] = None,
+                 security_problem_based_email_payload: Optional[pulumi.Input[Union['AppsecNotificationSecurityProblemBasedEmailPayloadArgs', 'AppsecNotificationSecurityProblemBasedEmailPayloadArgsDict']]] = None,
+                 security_problem_based_jira_payload: Optional[pulumi.Input[Union['AppsecNotificationSecurityProblemBasedJiraPayloadArgs', 'AppsecNotificationSecurityProblemBasedJiraPayloadArgsDict']]] = None,
+                 security_problem_based_webhook_payload: Optional[pulumi.Input[Union['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs', 'AppsecNotificationSecurityProblemBasedWebhookPayloadArgsDict']]] = None,
                  trigger: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
-                 webhook_configuration: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationWebhookConfigurationArgs']]] = None,
+                 webhook_configuration: Optional[pulumi.Input[Union['AppsecNotificationWebhookConfigurationArgs', 'AppsecNotificationWebhookConfigurationArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -647,20 +647,20 @@ class AppsecNotification(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             attack_candidate_based_alerting_profile: Optional[pulumi.Input[str]] = None,
-            attack_candidate_based_email_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedEmailPayloadArgs']]] = None,
-            attack_candidate_based_jira_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedJiraPayloadArgs']]] = None,
-            attack_candidate_based_webhook_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs']]] = None,
+            attack_candidate_based_email_payload: Optional[pulumi.Input[Union['AppsecNotificationAttackCandidateBasedEmailPayloadArgs', 'AppsecNotificationAttackCandidateBasedEmailPayloadArgsDict']]] = None,
+            attack_candidate_based_jira_payload: Optional[pulumi.Input[Union['AppsecNotificationAttackCandidateBasedJiraPayloadArgs', 'AppsecNotificationAttackCandidateBasedJiraPayloadArgsDict']]] = None,
+            attack_candidate_based_webhook_payload: Optional[pulumi.Input[Union['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs', 'AppsecNotificationAttackCandidateBasedWebhookPayloadArgsDict']]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            email_configuration: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationEmailConfigurationArgs']]] = None,
+            email_configuration: Optional[pulumi.Input[Union['AppsecNotificationEmailConfigurationArgs', 'AppsecNotificationEmailConfigurationArgsDict']]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
-            jira_configuration: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationJiraConfigurationArgs']]] = None,
+            jira_configuration: Optional[pulumi.Input[Union['AppsecNotificationJiraConfigurationArgs', 'AppsecNotificationJiraConfigurationArgsDict']]] = None,
             security_problem_based_alerting_profile: Optional[pulumi.Input[str]] = None,
-            security_problem_based_email_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedEmailPayloadArgs']]] = None,
-            security_problem_based_jira_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedJiraPayloadArgs']]] = None,
-            security_problem_based_webhook_payload: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs']]] = None,
+            security_problem_based_email_payload: Optional[pulumi.Input[Union['AppsecNotificationSecurityProblemBasedEmailPayloadArgs', 'AppsecNotificationSecurityProblemBasedEmailPayloadArgsDict']]] = None,
+            security_problem_based_jira_payload: Optional[pulumi.Input[Union['AppsecNotificationSecurityProblemBasedJiraPayloadArgs', 'AppsecNotificationSecurityProblemBasedJiraPayloadArgsDict']]] = None,
+            security_problem_based_webhook_payload: Optional[pulumi.Input[Union['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs', 'AppsecNotificationSecurityProblemBasedWebhookPayloadArgsDict']]] = None,
             trigger: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None,
-            webhook_configuration: Optional[pulumi.Input[pulumi.InputType['AppsecNotificationWebhookConfigurationArgs']]] = None) -> 'AppsecNotification':
+            webhook_configuration: Optional[pulumi.Input[Union['AppsecNotificationWebhookConfigurationArgs', 'AppsecNotificationWebhookConfigurationArgsDict']]] = None) -> 'AppsecNotification':
         """
         Get an existing AppsecNotification resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -671,22 +671,22 @@ class AppsecNotification(pulumi.CustomResource):
         :param pulumi.Input[str] attack_candidate_based_alerting_profile: For attack candidate alerts, select an [alerting
                profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
                delivery of security notifications related to this integration.
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedEmailPayloadArgs']] attack_candidate_based_email_payload: Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedJiraPayloadArgs']] attack_candidate_based_jira_payload: Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs']] attack_candidate_based_webhook_payload: Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
+        :param pulumi.Input[Union['AppsecNotificationAttackCandidateBasedEmailPayloadArgs', 'AppsecNotificationAttackCandidateBasedEmailPayloadArgsDict']] attack_candidate_based_email_payload: Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
+        :param pulumi.Input[Union['AppsecNotificationAttackCandidateBasedJiraPayloadArgs', 'AppsecNotificationAttackCandidateBasedJiraPayloadArgsDict']] attack_candidate_based_jira_payload: Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
+        :param pulumi.Input[Union['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs', 'AppsecNotificationAttackCandidateBasedWebhookPayloadArgsDict']] attack_candidate_based_webhook_payload: Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
         :param pulumi.Input[str] display_name: Display name of the security notification
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationEmailConfigurationArgs']] email_configuration: Email configuration, required when `type` equals `EMAIL`
+        :param pulumi.Input[Union['AppsecNotificationEmailConfigurationArgs', 'AppsecNotificationEmailConfigurationArgsDict']] email_configuration: Email configuration, required when `type` equals `EMAIL`
         :param pulumi.Input[bool] enabled: Enable/Disable the security notification, enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationJiraConfigurationArgs']] jira_configuration: Jira configuration, required when `type` equals `JIRA`
+        :param pulumi.Input[Union['AppsecNotificationJiraConfigurationArgs', 'AppsecNotificationJiraConfigurationArgsDict']] jira_configuration: Jira configuration, required when `type` equals `JIRA`
         :param pulumi.Input[str] security_problem_based_alerting_profile: For security problem alerts, select an [alerting
                profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
                security notifications related to this integration.
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedEmailPayloadArgs']] security_problem_based_email_payload: Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedJiraPayloadArgs']] security_problem_based_jira_payload: Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs']] security_problem_based_webhook_payload: Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
+        :param pulumi.Input[Union['AppsecNotificationSecurityProblemBasedEmailPayloadArgs', 'AppsecNotificationSecurityProblemBasedEmailPayloadArgsDict']] security_problem_based_email_payload: Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
+        :param pulumi.Input[Union['AppsecNotificationSecurityProblemBasedJiraPayloadArgs', 'AppsecNotificationSecurityProblemBasedJiraPayloadArgsDict']] security_problem_based_jira_payload: Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
+        :param pulumi.Input[Union['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs', 'AppsecNotificationSecurityProblemBasedWebhookPayloadArgsDict']] security_problem_based_webhook_payload: Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
         :param pulumi.Input[str] trigger: Security alert type, possible Values: `ATTACK_CANDIDATE`, `SECURITY_PROBLEM`
         :param pulumi.Input[str] type: Notification type, possible Values: `EMAIL`, `JIRA`, `WEBHOOK`
-        :param pulumi.Input[pulumi.InputType['AppsecNotificationWebhookConfigurationArgs']] webhook_configuration: Webhook configuration, required when `type` equals `WEBHOOK`
+        :param pulumi.Input[Union['AppsecNotificationWebhookConfigurationArgs', 'AppsecNotificationWebhookConfigurationArgsDict']] webhook_configuration: Webhook configuration, required when `type` equals `WEBHOOK`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

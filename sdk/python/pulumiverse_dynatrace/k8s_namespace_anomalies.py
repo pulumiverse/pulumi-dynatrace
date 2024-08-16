@@ -221,22 +221,22 @@ class K8sNamespaceAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cpu_limits_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs']]] = None,
-                 cpu_requests_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs']]] = None,
-                 memory_limits_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs']]] = None,
-                 memory_requests_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgs']]] = None,
-                 pods_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesPodsQuotaSaturationArgs']]] = None,
+                 cpu_limits_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs', 'K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgsDict']]] = None,
+                 cpu_requests_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs', 'K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgsDict']]] = None,
+                 memory_limits_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs', 'K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgsDict']]] = None,
+                 memory_requests_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgs', 'K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgsDict']]] = None,
+                 pods_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesPodsQuotaSaturationArgs', 'K8sNamespaceAnomaliesPodsQuotaSaturationArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a K8sNamespaceAnomalies resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs']] cpu_limits_quota_saturation: Alerts if almost no CPU-limit quota left in namespace
-        :param pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs']] cpu_requests_quota_saturation: Alerts if almost no CPU-request quota left in namespace
-        :param pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs']] memory_limits_quota_saturation: Alerts if almost no memory-limit quota left in namespace
-        :param pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgs']] memory_requests_quota_saturation: Alerts if almost no memory-request quota left in namespace
-        :param pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesPodsQuotaSaturationArgs']] pods_quota_saturation: Alerts if almost no pod quota left in namespace
+        :param pulumi.Input[Union['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs', 'K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgsDict']] cpu_limits_quota_saturation: Alerts if almost no CPU-limit quota left in namespace
+        :param pulumi.Input[Union['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs', 'K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgsDict']] cpu_requests_quota_saturation: Alerts if almost no CPU-request quota left in namespace
+        :param pulumi.Input[Union['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs', 'K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgsDict']] memory_limits_quota_saturation: Alerts if almost no memory-limit quota left in namespace
+        :param pulumi.Input[Union['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgs', 'K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgsDict']] memory_requests_quota_saturation: Alerts if almost no memory-request quota left in namespace
+        :param pulumi.Input[Union['K8sNamespaceAnomaliesPodsQuotaSaturationArgs', 'K8sNamespaceAnomaliesPodsQuotaSaturationArgsDict']] pods_quota_saturation: Alerts if almost no pod quota left in namespace
         :param pulumi.Input[str] scope: The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         ...
@@ -262,11 +262,11 @@ class K8sNamespaceAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cpu_limits_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs']]] = None,
-                 cpu_requests_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs']]] = None,
-                 memory_limits_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs']]] = None,
-                 memory_requests_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgs']]] = None,
-                 pods_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesPodsQuotaSaturationArgs']]] = None,
+                 cpu_limits_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs', 'K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgsDict']]] = None,
+                 cpu_requests_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs', 'K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgsDict']]] = None,
+                 memory_limits_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs', 'K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgsDict']]] = None,
+                 memory_requests_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgs', 'K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgsDict']]] = None,
+                 pods_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesPodsQuotaSaturationArgs', 'K8sNamespaceAnomaliesPodsQuotaSaturationArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -303,11 +303,11 @@ class K8sNamespaceAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cpu_limits_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs']]] = None,
-            cpu_requests_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs']]] = None,
-            memory_limits_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs']]] = None,
-            memory_requests_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgs']]] = None,
-            pods_quota_saturation: Optional[pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesPodsQuotaSaturationArgs']]] = None,
+            cpu_limits_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs', 'K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgsDict']]] = None,
+            cpu_requests_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs', 'K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgsDict']]] = None,
+            memory_limits_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs', 'K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgsDict']]] = None,
+            memory_requests_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgs', 'K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgsDict']]] = None,
+            pods_quota_saturation: Optional[pulumi.Input[Union['K8sNamespaceAnomaliesPodsQuotaSaturationArgs', 'K8sNamespaceAnomaliesPodsQuotaSaturationArgsDict']]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'K8sNamespaceAnomalies':
         """
         Get an existing K8sNamespaceAnomalies resource's state with the given name, id, and optional extra
@@ -316,11 +316,11 @@ class K8sNamespaceAnomalies(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs']] cpu_limits_quota_saturation: Alerts if almost no CPU-limit quota left in namespace
-        :param pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs']] cpu_requests_quota_saturation: Alerts if almost no CPU-request quota left in namespace
-        :param pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs']] memory_limits_quota_saturation: Alerts if almost no memory-limit quota left in namespace
-        :param pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgs']] memory_requests_quota_saturation: Alerts if almost no memory-request quota left in namespace
-        :param pulumi.Input[pulumi.InputType['K8sNamespaceAnomaliesPodsQuotaSaturationArgs']] pods_quota_saturation: Alerts if almost no pod quota left in namespace
+        :param pulumi.Input[Union['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs', 'K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgsDict']] cpu_limits_quota_saturation: Alerts if almost no CPU-limit quota left in namespace
+        :param pulumi.Input[Union['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs', 'K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgsDict']] cpu_requests_quota_saturation: Alerts if almost no CPU-request quota left in namespace
+        :param pulumi.Input[Union['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs', 'K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgsDict']] memory_limits_quota_saturation: Alerts if almost no memory-limit quota left in namespace
+        :param pulumi.Input[Union['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgs', 'K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgsDict']] memory_requests_quota_saturation: Alerts if almost no memory-request quota left in namespace
+        :param pulumi.Input[Union['K8sNamespaceAnomaliesPodsQuotaSaturationArgs', 'K8sNamespaceAnomaliesPodsQuotaSaturationArgsDict']] pods_quota_saturation: Alerts if almost no pod quota left in namespace
         :param pulumi.Input[str] scope: The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

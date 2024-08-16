@@ -129,16 +129,16 @@ class MobileAppEnablement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: Optional[pulumi.Input[str]] = None,
-                 rum: Optional[pulumi.Input[pulumi.InputType['MobileAppEnablementRumArgs']]] = None,
-                 session_replay: Optional[pulumi.Input[pulumi.InputType['MobileAppEnablementSessionReplayArgs']]] = None,
+                 rum: Optional[pulumi.Input[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']]] = None,
+                 session_replay: Optional[pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']]] = None,
                  __props__=None):
         """
         Create a MobileAppEnablement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[pulumi.InputType['MobileAppEnablementRumArgs']] rum: (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
-        :param pulumi.Input[pulumi.InputType['MobileAppEnablementSessionReplayArgs']] session_replay: (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        :param pulumi.Input[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']] rum: (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
+        :param pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']] session_replay: (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
         ...
     @overload
@@ -164,8 +164,8 @@ class MobileAppEnablement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: Optional[pulumi.Input[str]] = None,
-                 rum: Optional[pulumi.Input[pulumi.InputType['MobileAppEnablementRumArgs']]] = None,
-                 session_replay: Optional[pulumi.Input[pulumi.InputType['MobileAppEnablementSessionReplayArgs']]] = None,
+                 rum: Optional[pulumi.Input[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']]] = None,
+                 session_replay: Optional[pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -193,8 +193,8 @@ class MobileAppEnablement(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             application_id: Optional[pulumi.Input[str]] = None,
-            rum: Optional[pulumi.Input[pulumi.InputType['MobileAppEnablementRumArgs']]] = None,
-            session_replay: Optional[pulumi.Input[pulumi.InputType['MobileAppEnablementSessionReplayArgs']]] = None) -> 'MobileAppEnablement':
+            rum: Optional[pulumi.Input[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']]] = None,
+            session_replay: Optional[pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']]] = None) -> 'MobileAppEnablement':
         """
         Get an existing MobileAppEnablement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -203,8 +203,8 @@ class MobileAppEnablement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[pulumi.InputType['MobileAppEnablementRumArgs']] rum: (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
-        :param pulumi.Input[pulumi.InputType['MobileAppEnablementSessionReplayArgs']] session_replay: (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        :param pulumi.Input[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']] rum: (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
+        :param pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']] session_replay: (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

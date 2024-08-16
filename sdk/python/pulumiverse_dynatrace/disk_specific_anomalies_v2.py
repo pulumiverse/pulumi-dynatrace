@@ -255,9 +255,9 @@ class DiskSpecificAnomaliesV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  disk_id: Optional[pulumi.Input[str]] = None,
-                 disk_low_inodes_detection: Optional[pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']]] = None,
-                 disk_low_space_detection: Optional[pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']]] = None,
-                 disk_slow_writes_and_reads_detection: Optional[pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']]] = None,
+                 disk_low_inodes_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowInodesDetectionArgsDict']]] = None,
+                 disk_low_space_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgsDict']]] = None,
+                 disk_slow_writes_and_reads_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs', 'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgsDict']]] = None,
                  override_disk_low_space_detection: Optional[pulumi.Input[bool]] = None,
                  override_low_inodes_detection: Optional[pulumi.Input[bool]] = None,
                  override_slow_writes_and_reads_detection: Optional[pulumi.Input[bool]] = None,
@@ -267,9 +267,9 @@ class DiskSpecificAnomaliesV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] disk_id: The id for the disk anomaly detection
-        :param pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']] disk_low_inodes_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']] disk_low_space_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']] disk_slow_writes_and_reads_detection: no documentation available
+        :param pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowInodesDetectionArgsDict']] disk_low_inodes_detection: no documentation available
+        :param pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgsDict']] disk_low_space_detection: no documentation available
+        :param pulumi.Input[Union['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs', 'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgsDict']] disk_slow_writes_and_reads_detection: no documentation available
         :param pulumi.Input[bool] override_disk_low_space_detection: Override low disk space detection settings
         :param pulumi.Input[bool] override_low_inodes_detection: Override low inodes detection settings
         :param pulumi.Input[bool] override_slow_writes_and_reads_detection: Override slow writes and reads detection settings
@@ -298,9 +298,9 @@ class DiskSpecificAnomaliesV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  disk_id: Optional[pulumi.Input[str]] = None,
-                 disk_low_inodes_detection: Optional[pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']]] = None,
-                 disk_low_space_detection: Optional[pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']]] = None,
-                 disk_slow_writes_and_reads_detection: Optional[pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']]] = None,
+                 disk_low_inodes_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowInodesDetectionArgsDict']]] = None,
+                 disk_low_space_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgsDict']]] = None,
+                 disk_slow_writes_and_reads_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs', 'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgsDict']]] = None,
                  override_disk_low_space_detection: Optional[pulumi.Input[bool]] = None,
                  override_low_inodes_detection: Optional[pulumi.Input[bool]] = None,
                  override_slow_writes_and_reads_detection: Optional[pulumi.Input[bool]] = None,
@@ -339,9 +339,9 @@ class DiskSpecificAnomaliesV2(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             disk_id: Optional[pulumi.Input[str]] = None,
-            disk_low_inodes_detection: Optional[pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']]] = None,
-            disk_low_space_detection: Optional[pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']]] = None,
-            disk_slow_writes_and_reads_detection: Optional[pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']]] = None,
+            disk_low_inodes_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowInodesDetectionArgsDict']]] = None,
+            disk_low_space_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgsDict']]] = None,
+            disk_slow_writes_and_reads_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs', 'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgsDict']]] = None,
             override_disk_low_space_detection: Optional[pulumi.Input[bool]] = None,
             override_low_inodes_detection: Optional[pulumi.Input[bool]] = None,
             override_slow_writes_and_reads_detection: Optional[pulumi.Input[bool]] = None) -> 'DiskSpecificAnomaliesV2':
@@ -353,9 +353,9 @@ class DiskSpecificAnomaliesV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] disk_id: The id for the disk anomaly detection
-        :param pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']] disk_low_inodes_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']] disk_low_space_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']] disk_slow_writes_and_reads_detection: no documentation available
+        :param pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowInodesDetectionArgsDict']] disk_low_inodes_detection: no documentation available
+        :param pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgsDict']] disk_low_space_detection: no documentation available
+        :param pulumi.Input[Union['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs', 'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgsDict']] disk_slow_writes_and_reads_detection: no documentation available
         :param pulumi.Input[bool] override_disk_low_space_detection: Override low disk space detection settings
         :param pulumi.Input[bool] override_low_inodes_detection: Override low inodes detection settings
         :param pulumi.Input[bool] override_slow_writes_and_reads_detection: Override slow writes and reads detection settings

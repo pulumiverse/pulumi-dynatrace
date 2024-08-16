@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace
     public partial class AttackRules : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Step 2: Define attack control for chosen criteria
+        /// Step 1: Select attack protection behavior
         /// </summary>
         [Output("attackHandling")]
         public Output<Outputs.AttackRulesAttackHandling> AttackHandling { get; private set; } = null!;
 
         /// <summary>
-        /// Step 1: Define criteria
+        /// Step 2: Select attack type
         /// </summary>
         [Output("criteria")]
         public Output<Outputs.AttackRulesCriteria> Criteria { get; private set; } = null!;
@@ -38,10 +38,22 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// Step 3: Leave comment
+        /// Step 4: Leave comment (optional)
         /// </summary>
         [Output("metadata")]
         public Output<Outputs.AttackRulesMetadata> Metadata { get; private set; } = null!;
+
+        /// <summary>
+        /// If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+        /// </summary>
+        [Output("resourceAttributeConditions")]
+        public Output<Outputs.AttackRulesResourceAttributeConditions?> ResourceAttributeConditions { get; private set; } = null!;
+
+        /// <summary>
+        /// Rule name
+        /// </summary>
+        [Output("ruleName")]
+        public Output<string?> RuleName { get; private set; } = null!;
 
 
         /// <summary>
@@ -91,13 +103,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class AttackRulesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Step 2: Define attack control for chosen criteria
+        /// Step 1: Select attack protection behavior
         /// </summary>
         [Input("attackHandling", required: true)]
         public Input<Inputs.AttackRulesAttackHandlingArgs> AttackHandling { get; set; } = null!;
 
         /// <summary>
-        /// Step 1: Define criteria
+        /// Step 2: Select attack type
         /// </summary>
         [Input("criteria", required: true)]
         public Input<Inputs.AttackRulesCriteriaArgs> Criteria { get; set; } = null!;
@@ -115,10 +127,22 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Step 3: Leave comment
+        /// Step 4: Leave comment (optional)
         /// </summary>
         [Input("metadata", required: true)]
         public Input<Inputs.AttackRulesMetadataArgs> Metadata { get; set; } = null!;
+
+        /// <summary>
+        /// If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+        /// </summary>
+        [Input("resourceAttributeConditions")]
+        public Input<Inputs.AttackRulesResourceAttributeConditionsArgs>? ResourceAttributeConditions { get; set; }
+
+        /// <summary>
+        /// Rule name
+        /// </summary>
+        [Input("ruleName")]
+        public Input<string>? RuleName { get; set; }
 
         public AttackRulesArgs()
         {
@@ -129,13 +153,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class AttackRulesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Step 2: Define attack control for chosen criteria
+        /// Step 1: Select attack protection behavior
         /// </summary>
         [Input("attackHandling")]
         public Input<Inputs.AttackRulesAttackHandlingGetArgs>? AttackHandling { get; set; }
 
         /// <summary>
-        /// Step 1: Define criteria
+        /// Step 2: Select attack type
         /// </summary>
         [Input("criteria")]
         public Input<Inputs.AttackRulesCriteriaGetArgs>? Criteria { get; set; }
@@ -153,10 +177,22 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Step 3: Leave comment
+        /// Step 4: Leave comment (optional)
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.AttackRulesMetadataGetArgs>? Metadata { get; set; }
+
+        /// <summary>
+        /// If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+        /// </summary>
+        [Input("resourceAttributeConditions")]
+        public Input<Inputs.AttackRulesResourceAttributeConditionsGetArgs>? ResourceAttributeConditions { get; set; }
+
+        /// <summary>
+        /// Rule name
+        /// </summary>
+        [Input("ruleName")]
+        public Input<string>? RuleName { get; set; }
 
         public AttackRulesState()
         {

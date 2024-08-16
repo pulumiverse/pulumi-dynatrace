@@ -127,16 +127,16 @@ class HostAnomaliesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 host: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesV2HostArgs']]] = None,
-                 network: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesV2NetworkArgs']]] = None,
+                 host: Optional[pulumi.Input[Union['HostAnomaliesV2HostArgs', 'HostAnomaliesV2HostArgsDict']]] = None,
+                 network: Optional[pulumi.Input[Union['HostAnomaliesV2NetworkArgs', 'HostAnomaliesV2NetworkArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a HostAnomaliesV2 resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesV2HostArgs']] host: Hosts
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesV2NetworkArgs']] network: Network
+        :param pulumi.Input[Union['HostAnomaliesV2HostArgs', 'HostAnomaliesV2HostArgsDict']] host: Hosts
+        :param pulumi.Input[Union['HostAnomaliesV2NetworkArgs', 'HostAnomaliesV2NetworkArgsDict']] network: Network
         :param pulumi.Input[str] scope: The scope of this setting (HOST HOST_GROUP environment)
         """
         ...
@@ -162,8 +162,8 @@ class HostAnomaliesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 host: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesV2HostArgs']]] = None,
-                 network: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesV2NetworkArgs']]] = None,
+                 host: Optional[pulumi.Input[Union['HostAnomaliesV2HostArgs', 'HostAnomaliesV2HostArgsDict']]] = None,
+                 network: Optional[pulumi.Input[Union['HostAnomaliesV2NetworkArgs', 'HostAnomaliesV2NetworkArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -193,8 +193,8 @@ class HostAnomaliesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            host: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesV2HostArgs']]] = None,
-            network: Optional[pulumi.Input[pulumi.InputType['HostAnomaliesV2NetworkArgs']]] = None,
+            host: Optional[pulumi.Input[Union['HostAnomaliesV2HostArgs', 'HostAnomaliesV2HostArgsDict']]] = None,
+            network: Optional[pulumi.Input[Union['HostAnomaliesV2NetworkArgs', 'HostAnomaliesV2NetworkArgsDict']]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'HostAnomaliesV2':
         """
         Get an existing HostAnomaliesV2 resource's state with the given name, id, and optional extra
@@ -203,8 +203,8 @@ class HostAnomaliesV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesV2HostArgs']] host: Hosts
-        :param pulumi.Input[pulumi.InputType['HostAnomaliesV2NetworkArgs']] network: Network
+        :param pulumi.Input[Union['HostAnomaliesV2HostArgs', 'HostAnomaliesV2HostArgsDict']] host: Hosts
+        :param pulumi.Input[Union['HostAnomaliesV2NetworkArgs', 'HostAnomaliesV2NetworkArgsDict']] network: Network
         :param pulumi.Input[str] scope: The scope of this setting (HOST HOST_GROUP environment)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

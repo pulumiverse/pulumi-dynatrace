@@ -235,10 +235,10 @@ class LogProcessing(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 processor_definition: Optional[pulumi.Input[pulumi.InputType['LogProcessingProcessorDefinitionArgs']]] = None,
+                 processor_definition: Optional[pulumi.Input[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']]] = None,
                  query: Optional[pulumi.Input[str]] = None,
                  rule_name: Optional[pulumi.Input[str]] = None,
-                 rule_testing: Optional[pulumi.Input[pulumi.InputType['LogProcessingRuleTestingArgs']]] = None,
+                 rule_testing: Optional[pulumi.Input[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']]] = None,
                  __props__=None):
         """
         Create a LogProcessing resource with the given unique name, props, and options.
@@ -248,11 +248,11 @@ class LogProcessing(pulumi.CustomResource):
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
                instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
                specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['LogProcessingProcessorDefinitionArgs']] processor_definition: ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
+        :param pulumi.Input[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']] processor_definition: ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
                will find instructions and application [examples](https://dt-url.net/m24305t).
         :param pulumi.Input[str] query: Matcher
         :param pulumi.Input[str] rule_name: Rule name
-        :param pulumi.Input[pulumi.InputType['LogProcessingRuleTestingArgs']] rule_testing: ## Rule testing ### 1. Paste a log / JSON sample
+        :param pulumi.Input[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing ### 1. Paste a log / JSON sample
         """
         ...
     @overload
@@ -279,10 +279,10 @@ class LogProcessing(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 processor_definition: Optional[pulumi.Input[pulumi.InputType['LogProcessingProcessorDefinitionArgs']]] = None,
+                 processor_definition: Optional[pulumi.Input[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']]] = None,
                  query: Optional[pulumi.Input[str]] = None,
                  rule_name: Optional[pulumi.Input[str]] = None,
-                 rule_testing: Optional[pulumi.Input[pulumi.InputType['LogProcessingRuleTestingArgs']]] = None,
+                 rule_testing: Optional[pulumi.Input[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -320,10 +320,10 @@ class LogProcessing(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             insert_after: Optional[pulumi.Input[str]] = None,
-            processor_definition: Optional[pulumi.Input[pulumi.InputType['LogProcessingProcessorDefinitionArgs']]] = None,
+            processor_definition: Optional[pulumi.Input[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']]] = None,
             query: Optional[pulumi.Input[str]] = None,
             rule_name: Optional[pulumi.Input[str]] = None,
-            rule_testing: Optional[pulumi.Input[pulumi.InputType['LogProcessingRuleTestingArgs']]] = None) -> 'LogProcessing':
+            rule_testing: Optional[pulumi.Input[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']]] = None) -> 'LogProcessing':
         """
         Get an existing LogProcessing resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -335,11 +335,11 @@ class LogProcessing(pulumi.CustomResource):
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
                instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
                specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['LogProcessingProcessorDefinitionArgs']] processor_definition: ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
+        :param pulumi.Input[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']] processor_definition: ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
                will find instructions and application [examples](https://dt-url.net/m24305t).
         :param pulumi.Input[str] query: Matcher
         :param pulumi.Input[str] rule_name: Rule name
-        :param pulumi.Input[pulumi.InputType['LogProcessingRuleTestingArgs']] rule_testing: ## Rule testing ### 1. Paste a log / JSON sample
+        :param pulumi.Input[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing ### 1. Paste a log / JSON sample
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

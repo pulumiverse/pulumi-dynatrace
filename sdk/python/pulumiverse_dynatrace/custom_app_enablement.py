@@ -97,14 +97,14 @@ class CustomAppEnablement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 rum: Optional[pulumi.Input[pulumi.InputType['CustomAppEnablementRumArgs']]] = None,
+                 rum: Optional[pulumi.Input[Union['CustomAppEnablementRumArgs', 'CustomAppEnablementRumArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a CustomAppEnablement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['CustomAppEnablementRumArgs']] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
+        :param pulumi.Input[Union['CustomAppEnablementRumArgs', 'CustomAppEnablementRumArgsDict']] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         :param pulumi.Input[str] scope: The scope of this setting (CUSTOM_APPLICATION). Omit this property if you want to cover the whole environment.
         """
         ...
@@ -130,7 +130,7 @@ class CustomAppEnablement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 rum: Optional[pulumi.Input[pulumi.InputType['CustomAppEnablementRumArgs']]] = None,
+                 rum: Optional[pulumi.Input[Union['CustomAppEnablementRumArgs', 'CustomAppEnablementRumArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -155,7 +155,7 @@ class CustomAppEnablement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            rum: Optional[pulumi.Input[pulumi.InputType['CustomAppEnablementRumArgs']]] = None,
+            rum: Optional[pulumi.Input[Union['CustomAppEnablementRumArgs', 'CustomAppEnablementRumArgsDict']]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'CustomAppEnablement':
         """
         Get an existing CustomAppEnablement resource's state with the given name, id, and optional extra
@@ -164,7 +164,7 @@ class CustomAppEnablement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['CustomAppEnablementRumArgs']] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
+        :param pulumi.Input[Union['CustomAppEnablementRumArgs', 'CustomAppEnablementRumArgsDict']] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         :param pulumi.Input[str] scope: The scope of this setting (CUSTOM_APPLICATION). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

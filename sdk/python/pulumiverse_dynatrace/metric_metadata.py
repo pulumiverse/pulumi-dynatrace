@@ -321,10 +321,10 @@ class MetricMetadata(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 dimensions: Optional[pulumi.Input[pulumi.InputType['MetricMetadataDimensionsArgs']]] = None,
+                 dimensions: Optional[pulumi.Input[Union['MetricMetadataDimensionsArgs', 'MetricMetadataDimensionsArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  metric_id: Optional[pulumi.Input[str]] = None,
-                 metric_properties: Optional[pulumi.Input[pulumi.InputType['MetricMetadataMetricPropertiesArgs']]] = None,
+                 metric_properties: Optional[pulumi.Input[Union['MetricMetadataMetricPropertiesArgs', 'MetricMetadataMetricPropertiesArgsDict']]] = None,
                  source_entity_type: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  unit: Optional[pulumi.Input[str]] = None,
@@ -335,10 +335,10 @@ class MetricMetadata(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: Description
-        :param pulumi.Input[pulumi.InputType['MetricMetadataDimensionsArgs']] dimensions: Define metadata per metric dimension.
+        :param pulumi.Input[Union['MetricMetadataDimensionsArgs', 'MetricMetadataDimensionsArgsDict']] dimensions: Define metadata per metric dimension.
         :param pulumi.Input[str] display_name: Display name
         :param pulumi.Input[str] metric_id: The scope of this setting (metric)
-        :param pulumi.Input[pulumi.InputType['MetricMetadataMetricPropertiesArgs']] metric_properties: Metric properties
+        :param pulumi.Input[Union['MetricMetadataMetricPropertiesArgs', 'MetricMetadataMetricPropertiesArgsDict']] metric_properties: Metric properties
         :param pulumi.Input[str] source_entity_type: Specifies which entity dimension should be used as the primary dimension. The property can only be configured for metrics ingested with the Metrics API.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: Tags
         :param pulumi.Input[str] unit: Unit
@@ -368,10 +368,10 @@ class MetricMetadata(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 dimensions: Optional[pulumi.Input[pulumi.InputType['MetricMetadataDimensionsArgs']]] = None,
+                 dimensions: Optional[pulumi.Input[Union['MetricMetadataDimensionsArgs', 'MetricMetadataDimensionsArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  metric_id: Optional[pulumi.Input[str]] = None,
-                 metric_properties: Optional[pulumi.Input[pulumi.InputType['MetricMetadataMetricPropertiesArgs']]] = None,
+                 metric_properties: Optional[pulumi.Input[Union['MetricMetadataMetricPropertiesArgs', 'MetricMetadataMetricPropertiesArgsDict']]] = None,
                  source_entity_type: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  unit: Optional[pulumi.Input[str]] = None,
@@ -409,10 +409,10 @@ class MetricMetadata(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             description: Optional[pulumi.Input[str]] = None,
-            dimensions: Optional[pulumi.Input[pulumi.InputType['MetricMetadataDimensionsArgs']]] = None,
+            dimensions: Optional[pulumi.Input[Union['MetricMetadataDimensionsArgs', 'MetricMetadataDimensionsArgsDict']]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             metric_id: Optional[pulumi.Input[str]] = None,
-            metric_properties: Optional[pulumi.Input[pulumi.InputType['MetricMetadataMetricPropertiesArgs']]] = None,
+            metric_properties: Optional[pulumi.Input[Union['MetricMetadataMetricPropertiesArgs', 'MetricMetadataMetricPropertiesArgsDict']]] = None,
             source_entity_type: Optional[pulumi.Input[str]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             unit: Optional[pulumi.Input[str]] = None,
@@ -425,10 +425,10 @@ class MetricMetadata(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: Description
-        :param pulumi.Input[pulumi.InputType['MetricMetadataDimensionsArgs']] dimensions: Define metadata per metric dimension.
+        :param pulumi.Input[Union['MetricMetadataDimensionsArgs', 'MetricMetadataDimensionsArgsDict']] dimensions: Define metadata per metric dimension.
         :param pulumi.Input[str] display_name: Display name
         :param pulumi.Input[str] metric_id: The scope of this setting (metric)
-        :param pulumi.Input[pulumi.InputType['MetricMetadataMetricPropertiesArgs']] metric_properties: Metric properties
+        :param pulumi.Input[Union['MetricMetadataMetricPropertiesArgs', 'MetricMetadataMetricPropertiesArgsDict']] metric_properties: Metric properties
         :param pulumi.Input[str] source_entity_type: Specifies which entity dimension should be used as the primary dimension. The property can only be configured for metrics ingested with the Metrics API.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: Tags
         :param pulumi.Input[str] unit: Unit

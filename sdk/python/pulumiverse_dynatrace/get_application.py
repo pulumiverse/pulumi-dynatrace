@@ -70,11 +70,11 @@ def get_application(name: Optional[str] = None,
     test = dynatrace.get_application(name="Example")
     _name_ = dynatrace.ApplicationDetectionRule("#name#",
         application_identifier=test.id,
-        filter_config=dynatrace.ApplicationDetectionRuleFilterConfigArgs(
-            application_match_target="DOMAIN",
-            application_match_type="MATCHES",
-            pattern="www.google.com",
-        ))
+        filter_config={
+            "application_match_target": "DOMAIN",
+            "application_match_type": "MATCHES",
+            "pattern": "www.google.com",
+        })
     ```
     """
     __args__ = dict()
@@ -105,11 +105,11 @@ def get_application_output(name: Optional[pulumi.Input[str]] = None,
     test = dynatrace.get_application(name="Example")
     _name_ = dynatrace.ApplicationDetectionRule("#name#",
         application_identifier=test.id,
-        filter_config=dynatrace.ApplicationDetectionRuleFilterConfigArgs(
-            application_match_target="DOMAIN",
-            application_match_type="MATCHES",
-            pattern="www.google.com",
-        ))
+        filter_config={
+            "application_match_target": "DOMAIN",
+            "application_match_type": "MATCHES",
+            "pattern": "www.google.com",
+        })
     ```
     """
     ...

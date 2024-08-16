@@ -190,21 +190,21 @@ class WebAppAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 error_rate: Optional[pulumi.Input[pulumi.InputType['WebAppAnomaliesErrorRateArgs']]] = None,
-                 response_time: Optional[pulumi.Input[pulumi.InputType['WebAppAnomaliesResponseTimeArgs']]] = None,
+                 error_rate: Optional[pulumi.Input[Union['WebAppAnomaliesErrorRateArgs', 'WebAppAnomaliesErrorRateArgsDict']]] = None,
+                 response_time: Optional[pulumi.Input[Union['WebAppAnomaliesResponseTimeArgs', 'WebAppAnomaliesResponseTimeArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
-                 traffic_drops: Optional[pulumi.Input[pulumi.InputType['WebAppAnomaliesTrafficDropsArgs']]] = None,
-                 traffic_spikes: Optional[pulumi.Input[pulumi.InputType['WebAppAnomaliesTrafficSpikesArgs']]] = None,
+                 traffic_drops: Optional[pulumi.Input[Union['WebAppAnomaliesTrafficDropsArgs', 'WebAppAnomaliesTrafficDropsArgsDict']]] = None,
+                 traffic_spikes: Optional[pulumi.Input[Union['WebAppAnomaliesTrafficSpikesArgs', 'WebAppAnomaliesTrafficSpikesArgsDict']]] = None,
                  __props__=None):
         """
         Create a WebAppAnomalies resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['WebAppAnomaliesErrorRateArgs']] error_rate: Error rate
-        :param pulumi.Input[pulumi.InputType['WebAppAnomaliesResponseTimeArgs']] response_time: Response time
+        :param pulumi.Input[Union['WebAppAnomaliesErrorRateArgs', 'WebAppAnomaliesErrorRateArgsDict']] error_rate: Error rate
+        :param pulumi.Input[Union['WebAppAnomaliesResponseTimeArgs', 'WebAppAnomaliesResponseTimeArgsDict']] response_time: Response time
         :param pulumi.Input[str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[pulumi.InputType['WebAppAnomaliesTrafficDropsArgs']] traffic_drops: Detect traffic drops
-        :param pulumi.Input[pulumi.InputType['WebAppAnomaliesTrafficSpikesArgs']] traffic_spikes: Detect traffic spikes
+        :param pulumi.Input[Union['WebAppAnomaliesTrafficDropsArgs', 'WebAppAnomaliesTrafficDropsArgsDict']] traffic_drops: Detect traffic drops
+        :param pulumi.Input[Union['WebAppAnomaliesTrafficSpikesArgs', 'WebAppAnomaliesTrafficSpikesArgsDict']] traffic_spikes: Detect traffic spikes
         """
         ...
     @overload
@@ -229,11 +229,11 @@ class WebAppAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 error_rate: Optional[pulumi.Input[pulumi.InputType['WebAppAnomaliesErrorRateArgs']]] = None,
-                 response_time: Optional[pulumi.Input[pulumi.InputType['WebAppAnomaliesResponseTimeArgs']]] = None,
+                 error_rate: Optional[pulumi.Input[Union['WebAppAnomaliesErrorRateArgs', 'WebAppAnomaliesErrorRateArgsDict']]] = None,
+                 response_time: Optional[pulumi.Input[Union['WebAppAnomaliesResponseTimeArgs', 'WebAppAnomaliesResponseTimeArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
-                 traffic_drops: Optional[pulumi.Input[pulumi.InputType['WebAppAnomaliesTrafficDropsArgs']]] = None,
-                 traffic_spikes: Optional[pulumi.Input[pulumi.InputType['WebAppAnomaliesTrafficSpikesArgs']]] = None,
+                 traffic_drops: Optional[pulumi.Input[Union['WebAppAnomaliesTrafficDropsArgs', 'WebAppAnomaliesTrafficDropsArgsDict']]] = None,
+                 traffic_spikes: Optional[pulumi.Input[Union['WebAppAnomaliesTrafficSpikesArgs', 'WebAppAnomaliesTrafficSpikesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -266,11 +266,11 @@ class WebAppAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            error_rate: Optional[pulumi.Input[pulumi.InputType['WebAppAnomaliesErrorRateArgs']]] = None,
-            response_time: Optional[pulumi.Input[pulumi.InputType['WebAppAnomaliesResponseTimeArgs']]] = None,
+            error_rate: Optional[pulumi.Input[Union['WebAppAnomaliesErrorRateArgs', 'WebAppAnomaliesErrorRateArgsDict']]] = None,
+            response_time: Optional[pulumi.Input[Union['WebAppAnomaliesResponseTimeArgs', 'WebAppAnomaliesResponseTimeArgsDict']]] = None,
             scope: Optional[pulumi.Input[str]] = None,
-            traffic_drops: Optional[pulumi.Input[pulumi.InputType['WebAppAnomaliesTrafficDropsArgs']]] = None,
-            traffic_spikes: Optional[pulumi.Input[pulumi.InputType['WebAppAnomaliesTrafficSpikesArgs']]] = None) -> 'WebAppAnomalies':
+            traffic_drops: Optional[pulumi.Input[Union['WebAppAnomaliesTrafficDropsArgs', 'WebAppAnomaliesTrafficDropsArgsDict']]] = None,
+            traffic_spikes: Optional[pulumi.Input[Union['WebAppAnomaliesTrafficSpikesArgs', 'WebAppAnomaliesTrafficSpikesArgsDict']]] = None) -> 'WebAppAnomalies':
         """
         Get an existing WebAppAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -278,11 +278,11 @@ class WebAppAnomalies(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['WebAppAnomaliesErrorRateArgs']] error_rate: Error rate
-        :param pulumi.Input[pulumi.InputType['WebAppAnomaliesResponseTimeArgs']] response_time: Response time
+        :param pulumi.Input[Union['WebAppAnomaliesErrorRateArgs', 'WebAppAnomaliesErrorRateArgsDict']] error_rate: Error rate
+        :param pulumi.Input[Union['WebAppAnomaliesResponseTimeArgs', 'WebAppAnomaliesResponseTimeArgsDict']] response_time: Response time
         :param pulumi.Input[str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[pulumi.InputType['WebAppAnomaliesTrafficDropsArgs']] traffic_drops: Detect traffic drops
-        :param pulumi.Input[pulumi.InputType['WebAppAnomaliesTrafficSpikesArgs']] traffic_spikes: Detect traffic spikes
+        :param pulumi.Input[Union['WebAppAnomaliesTrafficDropsArgs', 'WebAppAnomaliesTrafficDropsArgsDict']] traffic_drops: Detect traffic drops
+        :param pulumi.Input[Union['WebAppAnomaliesTrafficSpikesArgs', 'WebAppAnomaliesTrafficSpikesArgsDict']] traffic_spikes: Detect traffic spikes
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

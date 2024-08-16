@@ -89,27 +89,27 @@ def get_management_zone_v2(name: Optional[str] = None,
 
     test = dynatrace.get_management_zone_v2(name="Example")
     _name_ = dynatrace.CalculatedServiceMetric("#name#",
-        conditions=[dynatrace.CalculatedServiceMetricConditionArgs(
-            conditions=[dynatrace.CalculatedServiceMetricConditionConditionArgs(
-                attribute="HTTP_REQUEST_METHOD",
-                comparison=dynatrace.CalculatedServiceMetricConditionConditionComparisonArgs(
-                    http_method=dynatrace.CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs(
-                        operator="EQUALS_ANY_OF",
-                        values=[
+        conditions=[{
+            "conditions": [{
+                "attribute": "HTTP_REQUEST_METHOD",
+                "comparison": {
+                    "http_method": {
+                        "operator": "EQUALS_ANY_OF",
+                        "values": [
                             "POST",
                             "GET",
                         ],
-                    ),
-                    negate=False,
-                ),
-            )],
-        )],
+                    },
+                    "negate": False,
+                },
+            }],
+        }],
         enabled=True,
         management_zones=[test.legacy_id],
-        metric_definition=dynatrace.CalculatedServiceMetricMetricDefinitionArgs(
-            metric="REQUEST_ATTRIBUTE",
-            request_attribute="foo",
-        ),
+        metric_definition={
+            "metric": "REQUEST_ATTRIBUTE",
+            "request_attribute": "foo",
+        },
         metric_key="calc:service.#name#",
         unit="MILLI_SECOND_PER_MINUTE")
     ```
@@ -145,27 +145,27 @@ def get_management_zone_v2_output(name: Optional[pulumi.Input[str]] = None,
 
     test = dynatrace.get_management_zone_v2(name="Example")
     _name_ = dynatrace.CalculatedServiceMetric("#name#",
-        conditions=[dynatrace.CalculatedServiceMetricConditionArgs(
-            conditions=[dynatrace.CalculatedServiceMetricConditionConditionArgs(
-                attribute="HTTP_REQUEST_METHOD",
-                comparison=dynatrace.CalculatedServiceMetricConditionConditionComparisonArgs(
-                    http_method=dynatrace.CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs(
-                        operator="EQUALS_ANY_OF",
-                        values=[
+        conditions=[{
+            "conditions": [{
+                "attribute": "HTTP_REQUEST_METHOD",
+                "comparison": {
+                    "http_method": {
+                        "operator": "EQUALS_ANY_OF",
+                        "values": [
                             "POST",
                             "GET",
                         ],
-                    ),
-                    negate=False,
-                ),
-            )],
-        )],
+                    },
+                    "negate": False,
+                },
+            }],
+        }],
         enabled=True,
         management_zones=[test.legacy_id],
-        metric_definition=dynatrace.CalculatedServiceMetricMetricDefinitionArgs(
-            metric="REQUEST_ATTRIBUTE",
-            request_attribute="foo",
-        ),
+        metric_definition={
+            "metric": "REQUEST_ATTRIBUTE",
+            "request_attribute": "foo",
+        },
         metric_key="calc:service.#name#",
         unit="MILLI_SECOND_PER_MINUTE")
     ```

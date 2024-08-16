@@ -20,6 +20,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> AccessTokenUrl { get; set; } = null!;
 
         /// <summary>
+        /// If false, the client credentials are included in the HTTP request body.
+        /// </summary>
+        [Input("authenticateViaRequestHeader")]
+        public Input<bool>? AuthenticateViaRequestHeader { get; set; }
+
+        /// <summary>
         /// Client ID
         /// </summary>
         [Input("clientId", required: true)]

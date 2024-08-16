@@ -190,21 +190,21 @@ class AttackAllowlist(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_handling: Optional[pulumi.Input[pulumi.InputType['AttackAllowlistAttackHandlingArgs']]] = None,
-                 criteria: Optional[pulumi.Input[pulumi.InputType['AttackAllowlistCriteriaArgs']]] = None,
+                 attack_handling: Optional[pulumi.Input[Union['AttackAllowlistAttackHandlingArgs', 'AttackAllowlistAttackHandlingArgsDict']]] = None,
+                 criteria: Optional[pulumi.Input[Union['AttackAllowlistCriteriaArgs', 'AttackAllowlistCriteriaArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['AttackAllowlistMetadataArgs']]] = None,
+                 metadata: Optional[pulumi.Input[Union['AttackAllowlistMetadataArgs', 'AttackAllowlistMetadataArgsDict']]] = None,
                  __props__=None):
         """
         Create a AttackAllowlist resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AttackAllowlistAttackHandlingArgs']] attack_handling: Step 2: Define attack control for chosen criteria
-        :param pulumi.Input[pulumi.InputType['AttackAllowlistCriteriaArgs']] criteria: Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
+        :param pulumi.Input[Union['AttackAllowlistAttackHandlingArgs', 'AttackAllowlistAttackHandlingArgsDict']] attack_handling: Step 2: Define attack control for chosen criteria
+        :param pulumi.Input[Union['AttackAllowlistCriteriaArgs', 'AttackAllowlistCriteriaArgsDict']] criteria: Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['AttackAllowlistMetadataArgs']] metadata: Step 3: Leave comment
+        :param pulumi.Input[Union['AttackAllowlistMetadataArgs', 'AttackAllowlistMetadataArgsDict']] metadata: Step 3: Leave comment
         """
         ...
     @overload
@@ -229,11 +229,11 @@ class AttackAllowlist(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_handling: Optional[pulumi.Input[pulumi.InputType['AttackAllowlistAttackHandlingArgs']]] = None,
-                 criteria: Optional[pulumi.Input[pulumi.InputType['AttackAllowlistCriteriaArgs']]] = None,
+                 attack_handling: Optional[pulumi.Input[Union['AttackAllowlistAttackHandlingArgs', 'AttackAllowlistAttackHandlingArgsDict']]] = None,
+                 criteria: Optional[pulumi.Input[Union['AttackAllowlistCriteriaArgs', 'AttackAllowlistCriteriaArgsDict']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['AttackAllowlistMetadataArgs']]] = None,
+                 metadata: Optional[pulumi.Input[Union['AttackAllowlistMetadataArgs', 'AttackAllowlistMetadataArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -266,11 +266,11 @@ class AttackAllowlist(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attack_handling: Optional[pulumi.Input[pulumi.InputType['AttackAllowlistAttackHandlingArgs']]] = None,
-            criteria: Optional[pulumi.Input[pulumi.InputType['AttackAllowlistCriteriaArgs']]] = None,
+            attack_handling: Optional[pulumi.Input[Union['AttackAllowlistAttackHandlingArgs', 'AttackAllowlistAttackHandlingArgsDict']]] = None,
+            criteria: Optional[pulumi.Input[Union['AttackAllowlistCriteriaArgs', 'AttackAllowlistCriteriaArgsDict']]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             insert_after: Optional[pulumi.Input[str]] = None,
-            metadata: Optional[pulumi.Input[pulumi.InputType['AttackAllowlistMetadataArgs']]] = None) -> 'AttackAllowlist':
+            metadata: Optional[pulumi.Input[Union['AttackAllowlistMetadataArgs', 'AttackAllowlistMetadataArgsDict']]] = None) -> 'AttackAllowlist':
         """
         Get an existing AttackAllowlist resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -278,11 +278,11 @@ class AttackAllowlist(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AttackAllowlistAttackHandlingArgs']] attack_handling: Step 2: Define attack control for chosen criteria
-        :param pulumi.Input[pulumi.InputType['AttackAllowlistCriteriaArgs']] criteria: Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
+        :param pulumi.Input[Union['AttackAllowlistAttackHandlingArgs', 'AttackAllowlistAttackHandlingArgsDict']] attack_handling: Step 2: Define attack control for chosen criteria
+        :param pulumi.Input[Union['AttackAllowlistCriteriaArgs', 'AttackAllowlistCriteriaArgsDict']] criteria: Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[pulumi.InputType['AttackAllowlistMetadataArgs']] metadata: Step 3: Leave comment
+        :param pulumi.Input[Union['AttackAllowlistMetadataArgs', 'AttackAllowlistMetadataArgsDict']] metadata: Step 3: Leave comment
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

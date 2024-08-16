@@ -50,7 +50,7 @@ import (
 //				EntitySelectorBasedRules: dynatrace.ManagementZoneEntitySelectorBasedRuleArray{
 //					&dynatrace.ManagementZoneEntitySelectorBasedRuleArgs{
 //						Enabled:  pulumi.Bool(true),
-//						Selector: pulumi.String(fmt.Sprintf("type(\"process_group\"),entityId(\"%v\")", test.Id)),
+//						Selector: pulumi.Sprintf("type(\"process_group\"),entityId(\"%v\")", test.Id),
 //					},
 //				},
 //			})

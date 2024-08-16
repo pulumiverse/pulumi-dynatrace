@@ -956,6 +956,8 @@ export interface AttackRulesCriteria {
     attackType: pulumi.Input<string>;
     /**
      * Process group
+     *
+     * @deprecated This field has been deprecated
      */
     processGroup?: pulumi.Input<string>;
 }
@@ -965,6 +967,25 @@ export interface AttackRulesMetadata {
      * no documentation available
      */
     comment: pulumi.Input<string>;
+}
+
+export interface AttackRulesResourceAttributeConditions {
+    resourceAttributeConditions: pulumi.Input<pulumi.Input<inputs.AttackRulesResourceAttributeConditionsResourceAttributeCondition>[]>;
+}
+
+export interface AttackRulesResourceAttributeConditionsResourceAttributeCondition {
+    /**
+     * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Resource attribute key
+     */
+    resourceAttributeKey: pulumi.Input<string>;
+    /**
+     * Resource attribute value
+     */
+    resourceAttributeValue?: pulumi.Input<string>;
 }
 
 export interface AttackSettingsDefaultAttackHandling {
@@ -3494,11 +3515,11 @@ export interface AutotagRulesRulesRule {
      */
     type: pulumi.Input<string>;
     /**
-     * Type '{' for placeholder suggestions
+     * Optional tag value
      */
     valueFormat?: pulumi.Input<string>;
     /**
-     * Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+     * Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
      */
     valueNormalization: pulumi.Input<string>;
 }
@@ -3611,11 +3632,11 @@ export interface AutotagV2RulesRule {
      */
     type: pulumi.Input<string>;
     /**
-     * Type '{' for placeholder suggestions
+     * Optional tag value
      */
     valueFormat?: pulumi.Input<string>;
     /**
-     * Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+     * Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
      */
     valueNormalization: pulumi.Input<string>;
 }
@@ -9076,6 +9097,78 @@ export interface DirectSharesRecipientsRecipient {
     type?: pulumi.Input<string>;
 }
 
+export interface DiscoveryDefaultRulesRule {
+    /**
+     * no documentation available
+     */
+    actions?: pulumi.Input<inputs.DiscoveryDefaultRulesRuleActions>;
+    /**
+     * no documentation available
+     */
+    category: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Environment scope
+     */
+    environmentScope: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
+    id: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
+    priority: pulumi.Input<string>;
+    /**
+     * Rule query
+     */
+    query: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
+    title: pulumi.Input<string>;
+}
+
+export interface DiscoveryDefaultRulesRuleActions {
+    actions: pulumi.Input<pulumi.Input<inputs.DiscoveryDefaultRulesRuleActionsAction>[]>;
+}
+
+export interface DiscoveryDefaultRulesRuleActionsAction {
+    /**
+     * no documentation available
+     */
+    name: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
+    parameters?: pulumi.Input<inputs.DiscoveryDefaultRulesRuleActionsActionParameters>;
+}
+
+export interface DiscoveryDefaultRulesRuleActionsActionParameters {
+    parameters: pulumi.Input<pulumi.Input<inputs.DiscoveryDefaultRulesRuleActionsActionParametersParameter>[]>;
+}
+
+export interface DiscoveryDefaultRulesRuleActionsActionParametersParameter {
+    /**
+     * no documentation available
+     */
+    name: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface DiscoveryDefaultRulesSettings {
+    /**
+     * no documentation available
+     */
+    muted: pulumi.Input<boolean>;
+}
+
 export interface DiskAnomaliesDiskName {
     /**
      * Possible values are: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS` and `STARTS_WITH`
@@ -9339,7 +9432,7 @@ export interface DiskOptionsExclusionsExclusion {
      * * btrfs
      * * ext*
      *
-     * ⚠️ File system types are case sensitive! 
+     * ⚠️ Starting from **OneAgent 1.299+** file system types are not case sensitive! 
      *
      * The wildcard in the last example means to exclude matching file systems such as types ext4 and ext3
      */
@@ -26485,6 +26578,25 @@ export interface VulnerabilityCodeMetadata {
     comment: pulumi.Input<string>;
 }
 
+export interface VulnerabilityCodeResourceAttributeConditions {
+    resourceAttributeConditions: pulumi.Input<pulumi.Input<inputs.VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition>[]>;
+}
+
+export interface VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition {
+    /**
+     * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Resource attribute key
+     */
+    resourceAttributeKey: pulumi.Input<string>;
+    /**
+     * Resource attribute value
+     */
+    resourceAttributeValue?: pulumi.Input<string>;
+}
+
 export interface VulnerabilityCodeVulnerabilityDetectionControl {
     /**
      * Possible Values: `MONITORING_OFF`, `MONITORING_ON`
@@ -28052,6 +28164,10 @@ export interface WebhookNotificationOauth2Credentials {
      * Access token URL
      */
     accessTokenUrl: pulumi.Input<string>;
+    /**
+     * If false, the client credentials are included in the HTTP request body.
+     */
+    authenticateViaRequestHeader?: pulumi.Input<boolean>;
     /**
      * Client ID
      */

@@ -391,31 +391,31 @@ class AwsCredentials(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authentication_data: Optional[pulumi.Input[pulumi.InputType['AwsCredentialsAuthenticationDataArgs']]] = None,
+                 authentication_data: Optional[pulumi.Input[Union['AwsCredentialsAuthenticationDataArgs', 'AwsCredentialsAuthenticationDataArgsDict']]] = None,
                  credentials_enabled: Optional[pulumi.Input[bool]] = None,
                  label: Optional[pulumi.Input[str]] = None,
                  partition_type: Optional[pulumi.Input[str]] = None,
                  remove_defaults: Optional[pulumi.Input[bool]] = None,
                  running_on_dynatrace_infrastructure: Optional[pulumi.Input[bool]] = None,
                  supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
-                 supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsSupportingServicesToMonitorArgs']]]]] = None,
+                 supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]]] = None,
                  tagged_only: Optional[pulumi.Input[bool]] = None,
-                 tags_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsTagsToMonitorArgs']]]]] = None,
+                 tags_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict']]]]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a AwsCredentials resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AwsCredentialsAuthenticationDataArgs']] authentication_data: credentials for the AWS authentication
+        :param pulumi.Input[Union['AwsCredentialsAuthenticationDataArgs', 'AwsCredentialsAuthenticationDataArgsDict']] authentication_data: credentials for the AWS authentication
         :param pulumi.Input[bool] credentials_enabled: Enable monitoring of specified AWS credentials
         :param pulumi.Input[str] label: The name of the credentials
         :param pulumi.Input[str] partition_type: The type of the AWS partition
         :param pulumi.Input[bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
         :param pulumi.Input[bool] running_on_dynatrace_infrastructure: Run credentials on Dynatrace infrastructure
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsSupportingServicesToMonitorArgs']]]] supporting_services_to_monitors: supporting services to be monitored
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsTagsToMonitorArgs']]]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict']]]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
         """
         ...
@@ -441,16 +441,16 @@ class AwsCredentials(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authentication_data: Optional[pulumi.Input[pulumi.InputType['AwsCredentialsAuthenticationDataArgs']]] = None,
+                 authentication_data: Optional[pulumi.Input[Union['AwsCredentialsAuthenticationDataArgs', 'AwsCredentialsAuthenticationDataArgsDict']]] = None,
                  credentials_enabled: Optional[pulumi.Input[bool]] = None,
                  label: Optional[pulumi.Input[str]] = None,
                  partition_type: Optional[pulumi.Input[str]] = None,
                  remove_defaults: Optional[pulumi.Input[bool]] = None,
                  running_on_dynatrace_infrastructure: Optional[pulumi.Input[bool]] = None,
                  supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
-                 supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsSupportingServicesToMonitorArgs']]]]] = None,
+                 supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]]] = None,
                  tagged_only: Optional[pulumi.Input[bool]] = None,
-                 tags_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsTagsToMonitorArgs']]]]] = None,
+                 tags_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict']]]]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -488,16 +488,16 @@ class AwsCredentials(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            authentication_data: Optional[pulumi.Input[pulumi.InputType['AwsCredentialsAuthenticationDataArgs']]] = None,
+            authentication_data: Optional[pulumi.Input[Union['AwsCredentialsAuthenticationDataArgs', 'AwsCredentialsAuthenticationDataArgsDict']]] = None,
             credentials_enabled: Optional[pulumi.Input[bool]] = None,
             label: Optional[pulumi.Input[str]] = None,
             partition_type: Optional[pulumi.Input[str]] = None,
             remove_defaults: Optional[pulumi.Input[bool]] = None,
             running_on_dynatrace_infrastructure: Optional[pulumi.Input[bool]] = None,
             supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
-            supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsSupportingServicesToMonitorArgs']]]]] = None,
+            supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]]] = None,
             tagged_only: Optional[pulumi.Input[bool]] = None,
-            tags_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsTagsToMonitorArgs']]]]] = None,
+            tags_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict']]]]] = None,
             unknowns: Optional[pulumi.Input[str]] = None) -> 'AwsCredentials':
         """
         Get an existing AwsCredentials resource's state with the given name, id, and optional extra
@@ -506,15 +506,15 @@ class AwsCredentials(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AwsCredentialsAuthenticationDataArgs']] authentication_data: credentials for the AWS authentication
+        :param pulumi.Input[Union['AwsCredentialsAuthenticationDataArgs', 'AwsCredentialsAuthenticationDataArgsDict']] authentication_data: credentials for the AWS authentication
         :param pulumi.Input[bool] credentials_enabled: Enable monitoring of specified AWS credentials
         :param pulumi.Input[str] label: The name of the credentials
         :param pulumi.Input[str] partition_type: The type of the AWS partition
         :param pulumi.Input[bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
         :param pulumi.Input[bool] running_on_dynatrace_infrastructure: Run credentials on Dynatrace infrastructure
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsSupportingServicesToMonitorArgs']]]] supporting_services_to_monitors: supporting services to be monitored
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsTagsToMonitorArgs']]]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict']]]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

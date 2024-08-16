@@ -282,27 +282,27 @@ class VmwareAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dropped_packets_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesDroppedPacketsDetectionArgs']]] = None,
-                 esxi_high_cpu_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesEsxiHighCpuDetectionArgs']]] = None,
-                 esxi_high_memory_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesEsxiHighMemoryDetectionArgs']]] = None,
-                 guest_cpu_limit_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesGuestCpuLimitDetectionArgs']]] = None,
-                 low_datastore_space_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesLowDatastoreSpaceDetectionArgs']]] = None,
-                 overloaded_storage_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesOverloadedStorageDetectionArgs']]] = None,
-                 slow_physical_storage_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesSlowPhysicalStorageDetectionArgs']]] = None,
-                 undersized_storage_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesUndersizedStorageDetectionArgs']]] = None,
+                 dropped_packets_detection: Optional[pulumi.Input[Union['VmwareAnomaliesDroppedPacketsDetectionArgs', 'VmwareAnomaliesDroppedPacketsDetectionArgsDict']]] = None,
+                 esxi_high_cpu_detection: Optional[pulumi.Input[Union['VmwareAnomaliesEsxiHighCpuDetectionArgs', 'VmwareAnomaliesEsxiHighCpuDetectionArgsDict']]] = None,
+                 esxi_high_memory_detection: Optional[pulumi.Input[Union['VmwareAnomaliesEsxiHighMemoryDetectionArgs', 'VmwareAnomaliesEsxiHighMemoryDetectionArgsDict']]] = None,
+                 guest_cpu_limit_detection: Optional[pulumi.Input[Union['VmwareAnomaliesGuestCpuLimitDetectionArgs', 'VmwareAnomaliesGuestCpuLimitDetectionArgsDict']]] = None,
+                 low_datastore_space_detection: Optional[pulumi.Input[Union['VmwareAnomaliesLowDatastoreSpaceDetectionArgs', 'VmwareAnomaliesLowDatastoreSpaceDetectionArgsDict']]] = None,
+                 overloaded_storage_detection: Optional[pulumi.Input[Union['VmwareAnomaliesOverloadedStorageDetectionArgs', 'VmwareAnomaliesOverloadedStorageDetectionArgsDict']]] = None,
+                 slow_physical_storage_detection: Optional[pulumi.Input[Union['VmwareAnomaliesSlowPhysicalStorageDetectionArgs', 'VmwareAnomaliesSlowPhysicalStorageDetectionArgsDict']]] = None,
+                 undersized_storage_detection: Optional[pulumi.Input[Union['VmwareAnomaliesUndersizedStorageDetectionArgs', 'VmwareAnomaliesUndersizedStorageDetectionArgsDict']]] = None,
                  __props__=None):
         """
         Create a VmwareAnomalies resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesDroppedPacketsDetectionArgs']] dropped_packets_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesEsxiHighCpuDetectionArgs']] esxi_high_cpu_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesEsxiHighMemoryDetectionArgs']] esxi_high_memory_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesGuestCpuLimitDetectionArgs']] guest_cpu_limit_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesLowDatastoreSpaceDetectionArgs']] low_datastore_space_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesOverloadedStorageDetectionArgs']] overloaded_storage_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesSlowPhysicalStorageDetectionArgs']] slow_physical_storage_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesUndersizedStorageDetectionArgs']] undersized_storage_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesDroppedPacketsDetectionArgs', 'VmwareAnomaliesDroppedPacketsDetectionArgsDict']] dropped_packets_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesEsxiHighCpuDetectionArgs', 'VmwareAnomaliesEsxiHighCpuDetectionArgsDict']] esxi_high_cpu_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesEsxiHighMemoryDetectionArgs', 'VmwareAnomaliesEsxiHighMemoryDetectionArgsDict']] esxi_high_memory_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesGuestCpuLimitDetectionArgs', 'VmwareAnomaliesGuestCpuLimitDetectionArgsDict']] guest_cpu_limit_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesLowDatastoreSpaceDetectionArgs', 'VmwareAnomaliesLowDatastoreSpaceDetectionArgsDict']] low_datastore_space_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesOverloadedStorageDetectionArgs', 'VmwareAnomaliesOverloadedStorageDetectionArgsDict']] overloaded_storage_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesSlowPhysicalStorageDetectionArgs', 'VmwareAnomaliesSlowPhysicalStorageDetectionArgsDict']] slow_physical_storage_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesUndersizedStorageDetectionArgs', 'VmwareAnomaliesUndersizedStorageDetectionArgsDict']] undersized_storage_detection: no documentation available
         """
         ...
     @overload
@@ -327,14 +327,14 @@ class VmwareAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dropped_packets_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesDroppedPacketsDetectionArgs']]] = None,
-                 esxi_high_cpu_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesEsxiHighCpuDetectionArgs']]] = None,
-                 esxi_high_memory_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesEsxiHighMemoryDetectionArgs']]] = None,
-                 guest_cpu_limit_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesGuestCpuLimitDetectionArgs']]] = None,
-                 low_datastore_space_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesLowDatastoreSpaceDetectionArgs']]] = None,
-                 overloaded_storage_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesOverloadedStorageDetectionArgs']]] = None,
-                 slow_physical_storage_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesSlowPhysicalStorageDetectionArgs']]] = None,
-                 undersized_storage_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesUndersizedStorageDetectionArgs']]] = None,
+                 dropped_packets_detection: Optional[pulumi.Input[Union['VmwareAnomaliesDroppedPacketsDetectionArgs', 'VmwareAnomaliesDroppedPacketsDetectionArgsDict']]] = None,
+                 esxi_high_cpu_detection: Optional[pulumi.Input[Union['VmwareAnomaliesEsxiHighCpuDetectionArgs', 'VmwareAnomaliesEsxiHighCpuDetectionArgsDict']]] = None,
+                 esxi_high_memory_detection: Optional[pulumi.Input[Union['VmwareAnomaliesEsxiHighMemoryDetectionArgs', 'VmwareAnomaliesEsxiHighMemoryDetectionArgsDict']]] = None,
+                 guest_cpu_limit_detection: Optional[pulumi.Input[Union['VmwareAnomaliesGuestCpuLimitDetectionArgs', 'VmwareAnomaliesGuestCpuLimitDetectionArgsDict']]] = None,
+                 low_datastore_space_detection: Optional[pulumi.Input[Union['VmwareAnomaliesLowDatastoreSpaceDetectionArgs', 'VmwareAnomaliesLowDatastoreSpaceDetectionArgsDict']]] = None,
+                 overloaded_storage_detection: Optional[pulumi.Input[Union['VmwareAnomaliesOverloadedStorageDetectionArgs', 'VmwareAnomaliesOverloadedStorageDetectionArgsDict']]] = None,
+                 slow_physical_storage_detection: Optional[pulumi.Input[Union['VmwareAnomaliesSlowPhysicalStorageDetectionArgs', 'VmwareAnomaliesSlowPhysicalStorageDetectionArgsDict']]] = None,
+                 undersized_storage_detection: Optional[pulumi.Input[Union['VmwareAnomaliesUndersizedStorageDetectionArgs', 'VmwareAnomaliesUndersizedStorageDetectionArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -378,14 +378,14 @@ class VmwareAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dropped_packets_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesDroppedPacketsDetectionArgs']]] = None,
-            esxi_high_cpu_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesEsxiHighCpuDetectionArgs']]] = None,
-            esxi_high_memory_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesEsxiHighMemoryDetectionArgs']]] = None,
-            guest_cpu_limit_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesGuestCpuLimitDetectionArgs']]] = None,
-            low_datastore_space_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesLowDatastoreSpaceDetectionArgs']]] = None,
-            overloaded_storage_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesOverloadedStorageDetectionArgs']]] = None,
-            slow_physical_storage_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesSlowPhysicalStorageDetectionArgs']]] = None,
-            undersized_storage_detection: Optional[pulumi.Input[pulumi.InputType['VmwareAnomaliesUndersizedStorageDetectionArgs']]] = None) -> 'VmwareAnomalies':
+            dropped_packets_detection: Optional[pulumi.Input[Union['VmwareAnomaliesDroppedPacketsDetectionArgs', 'VmwareAnomaliesDroppedPacketsDetectionArgsDict']]] = None,
+            esxi_high_cpu_detection: Optional[pulumi.Input[Union['VmwareAnomaliesEsxiHighCpuDetectionArgs', 'VmwareAnomaliesEsxiHighCpuDetectionArgsDict']]] = None,
+            esxi_high_memory_detection: Optional[pulumi.Input[Union['VmwareAnomaliesEsxiHighMemoryDetectionArgs', 'VmwareAnomaliesEsxiHighMemoryDetectionArgsDict']]] = None,
+            guest_cpu_limit_detection: Optional[pulumi.Input[Union['VmwareAnomaliesGuestCpuLimitDetectionArgs', 'VmwareAnomaliesGuestCpuLimitDetectionArgsDict']]] = None,
+            low_datastore_space_detection: Optional[pulumi.Input[Union['VmwareAnomaliesLowDatastoreSpaceDetectionArgs', 'VmwareAnomaliesLowDatastoreSpaceDetectionArgsDict']]] = None,
+            overloaded_storage_detection: Optional[pulumi.Input[Union['VmwareAnomaliesOverloadedStorageDetectionArgs', 'VmwareAnomaliesOverloadedStorageDetectionArgsDict']]] = None,
+            slow_physical_storage_detection: Optional[pulumi.Input[Union['VmwareAnomaliesSlowPhysicalStorageDetectionArgs', 'VmwareAnomaliesSlowPhysicalStorageDetectionArgsDict']]] = None,
+            undersized_storage_detection: Optional[pulumi.Input[Union['VmwareAnomaliesUndersizedStorageDetectionArgs', 'VmwareAnomaliesUndersizedStorageDetectionArgsDict']]] = None) -> 'VmwareAnomalies':
         """
         Get an existing VmwareAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -393,14 +393,14 @@ class VmwareAnomalies(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesDroppedPacketsDetectionArgs']] dropped_packets_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesEsxiHighCpuDetectionArgs']] esxi_high_cpu_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesEsxiHighMemoryDetectionArgs']] esxi_high_memory_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesGuestCpuLimitDetectionArgs']] guest_cpu_limit_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesLowDatastoreSpaceDetectionArgs']] low_datastore_space_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesOverloadedStorageDetectionArgs']] overloaded_storage_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesSlowPhysicalStorageDetectionArgs']] slow_physical_storage_detection: no documentation available
-        :param pulumi.Input[pulumi.InputType['VmwareAnomaliesUndersizedStorageDetectionArgs']] undersized_storage_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesDroppedPacketsDetectionArgs', 'VmwareAnomaliesDroppedPacketsDetectionArgsDict']] dropped_packets_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesEsxiHighCpuDetectionArgs', 'VmwareAnomaliesEsxiHighCpuDetectionArgsDict']] esxi_high_cpu_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesEsxiHighMemoryDetectionArgs', 'VmwareAnomaliesEsxiHighMemoryDetectionArgsDict']] esxi_high_memory_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesGuestCpuLimitDetectionArgs', 'VmwareAnomaliesGuestCpuLimitDetectionArgsDict']] guest_cpu_limit_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesLowDatastoreSpaceDetectionArgs', 'VmwareAnomaliesLowDatastoreSpaceDetectionArgsDict']] low_datastore_space_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesOverloadedStorageDetectionArgs', 'VmwareAnomaliesOverloadedStorageDetectionArgsDict']] overloaded_storage_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesSlowPhysicalStorageDetectionArgs', 'VmwareAnomaliesSlowPhysicalStorageDetectionArgsDict']] slow_physical_storage_detection: no documentation available
+        :param pulumi.Input[Union['VmwareAnomaliesUndersizedStorageDetectionArgs', 'VmwareAnomaliesUndersizedStorageDetectionArgsDict']] undersized_storage_detection: no documentation available
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

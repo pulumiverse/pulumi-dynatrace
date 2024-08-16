@@ -683,7 +683,7 @@ class Kubernetes(pulumi.CustomResource):
                  cluster_id_enabled: Optional[pulumi.Input[bool]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  endpoint_url: Optional[pulumi.Input[str]] = None,
-                 event_patterns: Optional[pulumi.Input[pulumi.InputType['KubernetesEventPatternsArgs']]] = None,
+                 event_patterns: Optional[pulumi.Input[Union['KubernetesEventPatternsArgs', 'KubernetesEventPatternsArgsDict']]] = None,
                  event_processing_active: Optional[pulumi.Input[bool]] = None,
                  filter_events: Optional[pulumi.Input[bool]] = None,
                  hostname_verification_enabled: Optional[pulumi.Input[bool]] = None,
@@ -706,7 +706,7 @@ class Kubernetes(pulumi.CustomResource):
         :param pulumi.Input[bool] cluster_id_enabled: For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] endpoint_url: Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
-        :param pulumi.Input[pulumi.InputType['KubernetesEventPatternsArgs']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
+        :param pulumi.Input[Union['KubernetesEventPatternsArgs', 'KubernetesEventPatternsArgsDict']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         :param pulumi.Input[bool] event_processing_active: All events are monitored by default unless event filters are specified.
         :param pulumi.Input[bool] filter_events: Include only events specified by Events Field Selectors
         :param pulumi.Input[bool] hostname_verification_enabled: Verify hostname in certificate against Kubernetes API URL
@@ -749,7 +749,7 @@ class Kubernetes(pulumi.CustomResource):
                  cluster_id_enabled: Optional[pulumi.Input[bool]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  endpoint_url: Optional[pulumi.Input[str]] = None,
-                 event_patterns: Optional[pulumi.Input[pulumi.InputType['KubernetesEventPatternsArgs']]] = None,
+                 event_patterns: Optional[pulumi.Input[Union['KubernetesEventPatternsArgs', 'KubernetesEventPatternsArgsDict']]] = None,
                  event_processing_active: Optional[pulumi.Input[bool]] = None,
                  filter_events: Optional[pulumi.Input[bool]] = None,
                  hostname_verification_enabled: Optional[pulumi.Input[bool]] = None,
@@ -812,7 +812,7 @@ class Kubernetes(pulumi.CustomResource):
             cluster_id_enabled: Optional[pulumi.Input[bool]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             endpoint_url: Optional[pulumi.Input[str]] = None,
-            event_patterns: Optional[pulumi.Input[pulumi.InputType['KubernetesEventPatternsArgs']]] = None,
+            event_patterns: Optional[pulumi.Input[Union['KubernetesEventPatternsArgs', 'KubernetesEventPatternsArgsDict']]] = None,
             event_processing_active: Optional[pulumi.Input[bool]] = None,
             filter_events: Optional[pulumi.Input[bool]] = None,
             hostname_verification_enabled: Optional[pulumi.Input[bool]] = None,
@@ -837,7 +837,7 @@ class Kubernetes(pulumi.CustomResource):
         :param pulumi.Input[bool] cluster_id_enabled: For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] endpoint_url: Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
-        :param pulumi.Input[pulumi.InputType['KubernetesEventPatternsArgs']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
+        :param pulumi.Input[Union['KubernetesEventPatternsArgs', 'KubernetesEventPatternsArgsDict']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         :param pulumi.Input[bool] event_processing_active: All events are monitored by default unless event filters are specified.
         :param pulumi.Input[bool] filter_events: Include only events specified by Events Field Selectors
         :param pulumi.Input[bool] hostname_verification_enabled: Verify hostname in certificate against Kubernetes API URL

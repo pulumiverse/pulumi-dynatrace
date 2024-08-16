@@ -66,13 +66,13 @@ class DashboardsAllowlist(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowlist: Optional[pulumi.Input[pulumi.InputType['DashboardsAllowlistAllowlistArgs']]] = None,
+                 allowlist: Optional[pulumi.Input[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict']]] = None,
                  __props__=None):
         """
         Create a DashboardsAllowlist resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DashboardsAllowlistAllowlistArgs']] allowlist: List of URL pattern matchers
+        :param pulumi.Input[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict']] allowlist: List of URL pattern matchers
         """
         ...
     @overload
@@ -97,7 +97,7 @@ class DashboardsAllowlist(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowlist: Optional[pulumi.Input[pulumi.InputType['DashboardsAllowlistAllowlistArgs']]] = None,
+                 allowlist: Optional[pulumi.Input[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -118,7 +118,7 @@ class DashboardsAllowlist(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allowlist: Optional[pulumi.Input[pulumi.InputType['DashboardsAllowlistAllowlistArgs']]] = None) -> 'DashboardsAllowlist':
+            allowlist: Optional[pulumi.Input[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict']]] = None) -> 'DashboardsAllowlist':
         """
         Get an existing DashboardsAllowlist resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -126,7 +126,7 @@ class DashboardsAllowlist(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DashboardsAllowlistAllowlistArgs']] allowlist: List of URL pattern matchers
+        :param pulumi.Input[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict']] allowlist: List of URL pattern matchers
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

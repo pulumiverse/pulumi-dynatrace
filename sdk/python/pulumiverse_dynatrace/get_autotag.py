@@ -72,46 +72,46 @@ def get_autotag(name: Optional[str] = None,
     example_autotag = dynatrace.get_autotag(name="Terraform Example")
     example_autotag_rules = dynatrace.AutotagRules("exampleAutotagRules",
         auto_tag_id=example_autotag.id,
-        rules=dynatrace.AutotagRulesRulesArgs(
-            rules=[
-                dynatrace.AutotagRulesRulesRuleArgs(
-                    type="ME",
-                    enabled=True,
-                    value_format="Java",
-                    value_normalization="Leave text as-is",
-                    attribute_rule=dynatrace.AutotagRulesRulesRuleAttributeRuleArgs(
-                        entity_type="PROCESS_GROUP",
-                        pg_to_host_propagation=True,
-                        pg_to_service_propagation=False,
-                        conditions=dynatrace.AutotagRulesRulesRuleAttributeRuleConditionsArgs(
-                            conditions=[dynatrace.AutotagRulesRulesRuleAttributeRuleConditionsConditionArgs(
-                                enum_value="JAVA",
-                                key="PROCESS_GROUP_TECHNOLOGY",
-                                operator="EQUALS",
-                            )],
-                        ),
-                    ),
-                ),
-                dynatrace.AutotagRulesRulesRuleArgs(
-                    type="ME",
-                    enabled=True,
-                    value_format=".NET",
-                    value_normalization="Leave text as-is",
-                    attribute_rule=dynatrace.AutotagRulesRulesRuleAttributeRuleArgs(
-                        entity_type="PROCESS_GROUP",
-                        pg_to_host_propagation=True,
-                        pg_to_service_propagation=False,
-                        conditions=dynatrace.AutotagRulesRulesRuleAttributeRuleConditionsArgs(
-                            conditions=[dynatrace.AutotagRulesRulesRuleAttributeRuleConditionsConditionArgs(
-                                enum_value="DOTNET",
-                                key="PROCESS_GROUP_TECHNOLOGY",
-                                operator="EQUALS",
-                            )],
-                        ),
-                    ),
-                ),
+        rules={
+            "rules": [
+                {
+                    "type": "ME",
+                    "enabled": True,
+                    "value_format": "Java",
+                    "value_normalization": "Leave text as-is",
+                    "attribute_rule": {
+                        "entity_type": "PROCESS_GROUP",
+                        "pg_to_host_propagation": True,
+                        "pg_to_service_propagation": False,
+                        "conditions": {
+                            "conditions": [{
+                                "enum_value": "JAVA",
+                                "key": "PROCESS_GROUP_TECHNOLOGY",
+                                "operator": "EQUALS",
+                            }],
+                        },
+                    },
+                },
+                {
+                    "type": "ME",
+                    "enabled": True,
+                    "value_format": ".NET",
+                    "value_normalization": "Leave text as-is",
+                    "attribute_rule": {
+                        "entity_type": "PROCESS_GROUP",
+                        "pg_to_host_propagation": True,
+                        "pg_to_service_propagation": False,
+                        "conditions": {
+                            "conditions": [{
+                                "enum_value": "DOTNET",
+                                "key": "PROCESS_GROUP_TECHNOLOGY",
+                                "operator": "EQUALS",
+                            }],
+                        },
+                    },
+                },
             ],
-        ))
+        })
     ```
     """
     __args__ = dict()
@@ -144,46 +144,46 @@ def get_autotag_output(name: Optional[pulumi.Input[str]] = None,
     example_autotag = dynatrace.get_autotag(name="Terraform Example")
     example_autotag_rules = dynatrace.AutotagRules("exampleAutotagRules",
         auto_tag_id=example_autotag.id,
-        rules=dynatrace.AutotagRulesRulesArgs(
-            rules=[
-                dynatrace.AutotagRulesRulesRuleArgs(
-                    type="ME",
-                    enabled=True,
-                    value_format="Java",
-                    value_normalization="Leave text as-is",
-                    attribute_rule=dynatrace.AutotagRulesRulesRuleAttributeRuleArgs(
-                        entity_type="PROCESS_GROUP",
-                        pg_to_host_propagation=True,
-                        pg_to_service_propagation=False,
-                        conditions=dynatrace.AutotagRulesRulesRuleAttributeRuleConditionsArgs(
-                            conditions=[dynatrace.AutotagRulesRulesRuleAttributeRuleConditionsConditionArgs(
-                                enum_value="JAVA",
-                                key="PROCESS_GROUP_TECHNOLOGY",
-                                operator="EQUALS",
-                            )],
-                        ),
-                    ),
-                ),
-                dynatrace.AutotagRulesRulesRuleArgs(
-                    type="ME",
-                    enabled=True,
-                    value_format=".NET",
-                    value_normalization="Leave text as-is",
-                    attribute_rule=dynatrace.AutotagRulesRulesRuleAttributeRuleArgs(
-                        entity_type="PROCESS_GROUP",
-                        pg_to_host_propagation=True,
-                        pg_to_service_propagation=False,
-                        conditions=dynatrace.AutotagRulesRulesRuleAttributeRuleConditionsArgs(
-                            conditions=[dynatrace.AutotagRulesRulesRuleAttributeRuleConditionsConditionArgs(
-                                enum_value="DOTNET",
-                                key="PROCESS_GROUP_TECHNOLOGY",
-                                operator="EQUALS",
-                            )],
-                        ),
-                    ),
-                ),
+        rules={
+            "rules": [
+                {
+                    "type": "ME",
+                    "enabled": True,
+                    "value_format": "Java",
+                    "value_normalization": "Leave text as-is",
+                    "attribute_rule": {
+                        "entity_type": "PROCESS_GROUP",
+                        "pg_to_host_propagation": True,
+                        "pg_to_service_propagation": False,
+                        "conditions": {
+                            "conditions": [{
+                                "enum_value": "JAVA",
+                                "key": "PROCESS_GROUP_TECHNOLOGY",
+                                "operator": "EQUALS",
+                            }],
+                        },
+                    },
+                },
+                {
+                    "type": "ME",
+                    "enabled": True,
+                    "value_format": ".NET",
+                    "value_normalization": "Leave text as-is",
+                    "attribute_rule": {
+                        "entity_type": "PROCESS_GROUP",
+                        "pg_to_host_propagation": True,
+                        "pg_to_service_propagation": False,
+                        "conditions": {
+                            "conditions": [{
+                                "enum_value": "DOTNET",
+                                "key": "PROCESS_GROUP_TECHNOLOGY",
+                                "operator": "EQUALS",
+                            }],
+                        },
+                    },
+                },
             ],
-        ))
+        })
     ```
     """
     ...

@@ -98,14 +98,14 @@ class MobileAppCrashRate(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: Optional[pulumi.Input[str]] = None,
-                 crash_rate_increase: Optional[pulumi.Input[pulumi.InputType['MobileAppCrashRateCrashRateIncreaseArgs']]] = None,
+                 crash_rate_increase: Optional[pulumi.Input[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']]] = None,
                  __props__=None):
         """
         Create a MobileAppCrashRate resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[pulumi.InputType['MobileAppCrashRateCrashRateIncreaseArgs']] crash_rate_increase: Crash rate increase
+        :param pulumi.Input[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']] crash_rate_increase: Crash rate increase
         """
         ...
     @overload
@@ -131,7 +131,7 @@ class MobileAppCrashRate(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: Optional[pulumi.Input[str]] = None,
-                 crash_rate_increase: Optional[pulumi.Input[pulumi.InputType['MobileAppCrashRateCrashRateIncreaseArgs']]] = None,
+                 crash_rate_increase: Optional[pulumi.Input[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -156,7 +156,7 @@ class MobileAppCrashRate(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             application_id: Optional[pulumi.Input[str]] = None,
-            crash_rate_increase: Optional[pulumi.Input[pulumi.InputType['MobileAppCrashRateCrashRateIncreaseArgs']]] = None) -> 'MobileAppCrashRate':
+            crash_rate_increase: Optional[pulumi.Input[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']]] = None) -> 'MobileAppCrashRate':
         """
         Get an existing MobileAppCrashRate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -165,7 +165,7 @@ class MobileAppCrashRate(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[pulumi.InputType['MobileAppCrashRateCrashRateIncreaseArgs']] crash_rate_increase: Crash rate increase
+        :param pulumi.Input[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']] crash_rate_increase: Crash rate increase
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -488,7 +488,7 @@ class K8sCredentials(pulumi.CustomResource):
                  davis_events_integration_enabled: Optional[pulumi.Input[bool]] = None,
                  endpoint_url: Optional[pulumi.Input[str]] = None,
                  event_analysis_and_alerting_enabled: Optional[pulumi.Input[bool]] = None,
-                 events_field_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['K8sCredentialsEventsFieldSelectorArgs']]]]] = None,
+                 events_field_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['K8sCredentialsEventsFieldSelectorArgs', 'K8sCredentialsEventsFieldSelectorArgsDict']]]]] = None,
                  events_integration_enabled: Optional[pulumi.Input[bool]] = None,
                  hostname_verification: Optional[pulumi.Input[bool]] = None,
                  label: Optional[pulumi.Input[str]] = None,
@@ -507,7 +507,7 @@ class K8sCredentials(pulumi.CustomResource):
         :param pulumi.Input[bool] davis_events_integration_enabled: Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
         :param pulumi.Input[str] endpoint_url: The URL of the Kubernetes API server.  It must be unique within a Dynatrace environment.  The URL must valid according to RFC 2396. Leading or trailing whitespaces are not allowed.
         :param pulumi.Input[bool] event_analysis_and_alerting_enabled: Event analysis and alerting is (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['K8sCredentialsEventsFieldSelectorArgs']]]] events_field_selectors: Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['K8sCredentialsEventsFieldSelectorArgs', 'K8sCredentialsEventsFieldSelectorArgsDict']]]] events_field_selectors: Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
         :param pulumi.Input[bool] events_integration_enabled: Monitoring of events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `false` value is used.  If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[bool] hostname_verification: Verify hostname in certificate against Kubernetes API URL
         :param pulumi.Input[str] label: The name of the Kubernetes credentials configuration.  Allowed characters are letters, numbers, whitespaces, and the following characters: `.+-_`. Leading or trailing whitespace is not allowed.
@@ -545,7 +545,7 @@ class K8sCredentials(pulumi.CustomResource):
                  davis_events_integration_enabled: Optional[pulumi.Input[bool]] = None,
                  endpoint_url: Optional[pulumi.Input[str]] = None,
                  event_analysis_and_alerting_enabled: Optional[pulumi.Input[bool]] = None,
-                 events_field_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['K8sCredentialsEventsFieldSelectorArgs']]]]] = None,
+                 events_field_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['K8sCredentialsEventsFieldSelectorArgs', 'K8sCredentialsEventsFieldSelectorArgsDict']]]]] = None,
                  events_integration_enabled: Optional[pulumi.Input[bool]] = None,
                  hostname_verification: Optional[pulumi.Input[bool]] = None,
                  label: Optional[pulumi.Input[str]] = None,
@@ -596,7 +596,7 @@ class K8sCredentials(pulumi.CustomResource):
             davis_events_integration_enabled: Optional[pulumi.Input[bool]] = None,
             endpoint_url: Optional[pulumi.Input[str]] = None,
             event_analysis_and_alerting_enabled: Optional[pulumi.Input[bool]] = None,
-            events_field_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['K8sCredentialsEventsFieldSelectorArgs']]]]] = None,
+            events_field_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['K8sCredentialsEventsFieldSelectorArgs', 'K8sCredentialsEventsFieldSelectorArgsDict']]]]] = None,
             events_integration_enabled: Optional[pulumi.Input[bool]] = None,
             hostname_verification: Optional[pulumi.Input[bool]] = None,
             label: Optional[pulumi.Input[str]] = None,
@@ -617,7 +617,7 @@ class K8sCredentials(pulumi.CustomResource):
         :param pulumi.Input[bool] davis_events_integration_enabled: Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
         :param pulumi.Input[str] endpoint_url: The URL of the Kubernetes API server.  It must be unique within a Dynatrace environment.  The URL must valid according to RFC 2396. Leading or trailing whitespaces are not allowed.
         :param pulumi.Input[bool] event_analysis_and_alerting_enabled: Event analysis and alerting is (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['K8sCredentialsEventsFieldSelectorArgs']]]] events_field_selectors: Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['K8sCredentialsEventsFieldSelectorArgs', 'K8sCredentialsEventsFieldSelectorArgsDict']]]] events_field_selectors: Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
         :param pulumi.Input[bool] events_integration_enabled: Monitoring of events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `false` value is used.  If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[bool] hostname_verification: Verify hostname in certificate against Kubernetes API URL
         :param pulumi.Input[str] label: The name of the Kubernetes credentials configuration.  Allowed characters are letters, numbers, whitespaces, and the following characters: `.+-_`. Leading or trailing whitespace is not allowed.

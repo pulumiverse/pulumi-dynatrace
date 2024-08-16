@@ -90,10 +90,10 @@ def get_host(name: Optional[str] = None,
             "TerraformKeyTest",
             "TerraformKeyValueTest=TestValue",
         ])
-    _name_ = dynatrace.ManagementZone("#name#", entity_selector_based_rules=[dynatrace.ManagementZoneEntitySelectorBasedRuleArgs(
-        enabled=True,
-        selector=f"type(\\"host\\"),entityId(\\"{test.id}\\")",
-    )])
+    _name_ = dynatrace.ManagementZone("#name#", entity_selector_based_rules=[{
+        "enabled": True,
+        "selector": f"type(\\"host\\"),entityId(\\"{test.id}\\")",
+    }])
     ```
 
 
@@ -137,10 +137,10 @@ def get_host_output(name: Optional[pulumi.Input[str]] = None,
             "TerraformKeyTest",
             "TerraformKeyValueTest=TestValue",
         ])
-    _name_ = dynatrace.ManagementZone("#name#", entity_selector_based_rules=[dynatrace.ManagementZoneEntitySelectorBasedRuleArgs(
-        enabled=True,
-        selector=f"type(\\"host\\"),entityId(\\"{test.id}\\")",
-    )])
+    _name_ = dynatrace.ManagementZone("#name#", entity_selector_based_rules=[{
+        "enabled": True,
+        "selector": f"type(\\"host\\"),entityId(\\"{test.id}\\")",
+    }])
     ```
 
 

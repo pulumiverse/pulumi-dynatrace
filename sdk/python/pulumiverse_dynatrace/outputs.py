@@ -72,6 +72,8 @@ __all__ = [
     'AttackRulesAttackHandling',
     'AttackRulesCriteria',
     'AttackRulesMetadata',
+    'AttackRulesResourceAttributeConditions',
+    'AttackRulesResourceAttributeConditionsResourceAttributeCondition',
     'AttackSettingsDefaultAttackHandling',
     'AutomationBusinessCalendarHolidays',
     'AutomationBusinessCalendarHolidaysHoliday',
@@ -535,6 +537,12 @@ __all__ = [
     'DeclarativeGroupingDetectionProcessDefinitionRulesRule',
     'DirectSharesRecipients',
     'DirectSharesRecipientsRecipient',
+    'DiscoveryDefaultRulesRule',
+    'DiscoveryDefaultRulesRuleActions',
+    'DiscoveryDefaultRulesRuleActionsAction',
+    'DiscoveryDefaultRulesRuleActionsActionParameters',
+    'DiscoveryDefaultRulesRuleActionsActionParametersParameter',
+    'DiscoveryDefaultRulesSettings',
     'DiskAnomaliesDiskName',
     'DiskAnomaliesTags',
     'DiskAnomaliesTagsFilter',
@@ -1465,6 +1473,8 @@ __all__ = [
     'VmwareAnomaliesUndersizedStorageDetectionCustomThresholds',
     'VulnerabilityCodeCriteria',
     'VulnerabilityCodeMetadata',
+    'VulnerabilityCodeResourceAttributeConditions',
+    'VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition',
     'VulnerabilityCodeVulnerabilityDetectionControl',
     'VulnerabilitySettingsTechnologies',
     'WebAppAnomaliesErrorRate',
@@ -1558,10 +1568,12 @@ __all__ = [
     'XmattersNotificationHeaders',
     'XmattersNotificationHeadersHeader',
     'GetAlertingProfilesValueResult',
+    'GetApiTokensApiTokenResult',
     'GetDocumentsValueResult',
     'GetEntitiesEntityResult',
     'GetEntitiesEntityTagResult',
     'GetEntitiesEntityTagTagResult',
+    'GetGenericSettingsValueResult',
     'GetHubItemsItemResult',
     'GetIamPoliciesPolicyResult',
     'GetManagementZonesValueResult',
@@ -4621,6 +4633,7 @@ class AttackRulesCriteria(dict):
 
     @property
     @pulumi.getter(name="processGroup")
+    @_utilities.deprecated("""This field has been deprecated""")
     def process_group(self) -> Optional[str]:
         """
         Process group
@@ -4644,6 +4657,95 @@ class AttackRulesMetadata(dict):
         no documentation available
         """
         return pulumi.get(self, "comment")
+
+
+@pulumi.output_type
+class AttackRulesResourceAttributeConditions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "resourceAttributeConditions":
+            suggest = "resource_attribute_conditions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AttackRulesResourceAttributeConditions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AttackRulesResourceAttributeConditions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AttackRulesResourceAttributeConditions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 resource_attribute_conditions: Sequence['outputs.AttackRulesResourceAttributeConditionsResourceAttributeCondition']):
+        pulumi.set(__self__, "resource_attribute_conditions", resource_attribute_conditions)
+
+    @property
+    @pulumi.getter(name="resourceAttributeConditions")
+    def resource_attribute_conditions(self) -> Sequence['outputs.AttackRulesResourceAttributeConditionsResourceAttributeCondition']:
+        return pulumi.get(self, "resource_attribute_conditions")
+
+
+@pulumi.output_type
+class AttackRulesResourceAttributeConditionsResourceAttributeCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "resourceAttributeKey":
+            suggest = "resource_attribute_key"
+        elif key == "resourceAttributeValue":
+            suggest = "resource_attribute_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AttackRulesResourceAttributeConditionsResourceAttributeCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AttackRulesResourceAttributeConditionsResourceAttributeCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AttackRulesResourceAttributeConditionsResourceAttributeCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 matcher: str,
+                 resource_attribute_key: str,
+                 resource_attribute_value: Optional[str] = None):
+        """
+        :param str matcher: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+        :param str resource_attribute_key: Resource attribute key
+        :param str resource_attribute_value: Resource attribute value
+        """
+        pulumi.set(__self__, "matcher", matcher)
+        pulumi.set(__self__, "resource_attribute_key", resource_attribute_key)
+        if resource_attribute_value is not None:
+            pulumi.set(__self__, "resource_attribute_value", resource_attribute_value)
+
+    @property
+    @pulumi.getter
+    def matcher(self) -> str:
+        """
+        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+        """
+        return pulumi.get(self, "matcher")
+
+    @property
+    @pulumi.getter(name="resourceAttributeKey")
+    def resource_attribute_key(self) -> str:
+        """
+        Resource attribute key
+        """
+        return pulumi.get(self, "resource_attribute_key")
+
+    @property
+    @pulumi.getter(name="resourceAttributeValue")
+    def resource_attribute_value(self) -> Optional[str]:
+        """
+        Resource attribute value
+        """
+        return pulumi.get(self, "resource_attribute_value")
 
 
 @pulumi.output_type
@@ -12149,10 +12251,10 @@ class AutotagRulesRulesRule(dict):
         """
         :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
         :param str type: Possible Values: `ME`, `SELECTOR`
-        :param str value_normalization: Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        :param str value_normalization: Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
         :param 'AutotagRulesRulesRuleAttributeRuleArgs' attribute_rule: no documentation available
         :param str entity_selector: The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
-        :param str value_format: Type '{' for placeholder suggestions
+        :param str value_format: Optional tag value
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "type", type)
@@ -12184,7 +12286,7 @@ class AutotagRulesRulesRule(dict):
     @pulumi.getter(name="valueNormalization")
     def value_normalization(self) -> str:
         """
-        Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
         """
         return pulumi.get(self, "value_normalization")
 
@@ -12208,7 +12310,7 @@ class AutotagRulesRulesRule(dict):
     @pulumi.getter(name="valueFormat")
     def value_format(self) -> Optional[str]:
         """
-        Type '{' for placeholder suggestions
+        Optional tag value
         """
         return pulumi.get(self, "value_format")
 
@@ -12570,10 +12672,10 @@ class AutotagV2RulesRule(dict):
         """
         :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
         :param str type: Possible Values: `ME`, `SELECTOR`
-        :param str value_normalization: Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        :param str value_normalization: Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
         :param 'AutotagV2RulesRuleAttributeRuleArgs' attribute_rule: no documentation available
         :param str entity_selector: The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
-        :param str value_format: Type '{' for placeholder suggestions
+        :param str value_format: Optional tag value
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "type", type)
@@ -12605,7 +12707,7 @@ class AutotagV2RulesRule(dict):
     @pulumi.getter(name="valueNormalization")
     def value_normalization(self) -> str:
         """
-        Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
         """
         return pulumi.get(self, "value_normalization")
 
@@ -12629,7 +12731,7 @@ class AutotagV2RulesRule(dict):
     @pulumi.getter(name="valueFormat")
     def value_format(self) -> Optional[str]:
         """
-        Type '{' for placeholder suggestions
+        Optional tag value
         """
         return pulumi.get(self, "value_format")
 
@@ -31121,6 +31223,220 @@ class DirectSharesRecipientsRecipient(dict):
 
 
 @pulumi.output_type
+class DiscoveryDefaultRulesRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "environmentScope":
+            suggest = "environment_scope"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiscoveryDefaultRulesRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiscoveryDefaultRulesRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiscoveryDefaultRulesRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 category: str,
+                 description: str,
+                 environment_scope: bool,
+                 id: str,
+                 priority: str,
+                 query: str,
+                 title: str,
+                 actions: Optional['outputs.DiscoveryDefaultRulesRuleActions'] = None):
+        """
+        :param str category: no documentation available
+        :param str description: no documentation available
+        :param bool environment_scope: Environment scope
+        :param str id: no documentation available
+        :param str priority: no documentation available
+        :param str query: Rule query
+        :param str title: no documentation available
+        :param 'DiscoveryDefaultRulesRuleActionsArgs' actions: no documentation available
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "environment_scope", environment_scope)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "priority", priority)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "title", title)
+        if actions is not None:
+            pulumi.set(__self__, "actions", actions)
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="environmentScope")
+    def environment_scope(self) -> bool:
+        """
+        Environment scope
+        """
+        return pulumi.get(self, "environment_scope")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def priority(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "priority")
+
+    @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        Rule query
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter
+    def title(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "title")
+
+    @property
+    @pulumi.getter
+    def actions(self) -> Optional['outputs.DiscoveryDefaultRulesRuleActions']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "actions")
+
+
+@pulumi.output_type
+class DiscoveryDefaultRulesRuleActions(dict):
+    def __init__(__self__, *,
+                 actions: Sequence['outputs.DiscoveryDefaultRulesRuleActionsAction']):
+        pulumi.set(__self__, "actions", actions)
+
+    @property
+    @pulumi.getter
+    def actions(self) -> Sequence['outputs.DiscoveryDefaultRulesRuleActionsAction']:
+        return pulumi.get(self, "actions")
+
+
+@pulumi.output_type
+class DiscoveryDefaultRulesRuleActionsAction(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 parameters: Optional['outputs.DiscoveryDefaultRulesRuleActionsActionParameters'] = None):
+        """
+        :param str name: no documentation available
+        :param 'DiscoveryDefaultRulesRuleActionsActionParametersArgs' parameters: no documentation available
+        """
+        pulumi.set(__self__, "name", name)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Optional['outputs.DiscoveryDefaultRulesRuleActionsActionParameters']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "parameters")
+
+
+@pulumi.output_type
+class DiscoveryDefaultRulesRuleActionsActionParameters(dict):
+    def __init__(__self__, *,
+                 parameters: Sequence['outputs.DiscoveryDefaultRulesRuleActionsActionParametersParameter']):
+        pulumi.set(__self__, "parameters", parameters)
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Sequence['outputs.DiscoveryDefaultRulesRuleActionsActionParametersParameter']:
+        return pulumi.get(self, "parameters")
+
+
+@pulumi.output_type
+class DiscoveryDefaultRulesRuleActionsActionParametersParameter(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: no documentation available
+        :param str value: no documentation available
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DiscoveryDefaultRulesSettings(dict):
+    def __init__(__self__, *,
+                 muted: bool):
+        """
+        :param bool muted: no documentation available
+        """
+        pulumi.set(__self__, "muted", muted)
+
+    @property
+    @pulumi.getter
+    def muted(self) -> bool:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "muted")
+
+
+@pulumi.output_type
 class DiskAnomaliesDiskName(dict):
     def __init__(__self__, *,
                  operator: str,
@@ -32141,7 +32457,7 @@ class DiskOptionsExclusionsExclusion(dict):
                * btrfs
                * ext*
                
-               ⚠️ File system types are case sensitive! 
+               ⚠️ Starting from **OneAgent 1.299+** file system types are not case sensitive! 
                
                The wildcard in the last example means to exclude matching file systems such as types ext4 and ext3
         :param str mountpoint: **Disk or mount point path field:** the path to where the disk to be excluded from monitoring is mounted. Examples:
@@ -32183,7 +32499,7 @@ class DiskOptionsExclusionsExclusion(dict):
         * btrfs
         * ext*
 
-        ⚠️ File system types are case sensitive! 
+        ⚠️ Starting from **OneAgent 1.299+** file system types are not case sensitive! 
 
         The wildcard in the last example means to exclude matching file systems such as types ext4 and ext3
         """
@@ -87670,6 +87986,95 @@ class VulnerabilityCodeMetadata(dict):
 
 
 @pulumi.output_type
+class VulnerabilityCodeResourceAttributeConditions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "resourceAttributeConditions":
+            suggest = "resource_attribute_conditions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VulnerabilityCodeResourceAttributeConditions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VulnerabilityCodeResourceAttributeConditions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VulnerabilityCodeResourceAttributeConditions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 resource_attribute_conditions: Sequence['outputs.VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition']):
+        pulumi.set(__self__, "resource_attribute_conditions", resource_attribute_conditions)
+
+    @property
+    @pulumi.getter(name="resourceAttributeConditions")
+    def resource_attribute_conditions(self) -> Sequence['outputs.VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition']:
+        return pulumi.get(self, "resource_attribute_conditions")
+
+
+@pulumi.output_type
+class VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "resourceAttributeKey":
+            suggest = "resource_attribute_key"
+        elif key == "resourceAttributeValue":
+            suggest = "resource_attribute_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 matcher: str,
+                 resource_attribute_key: str,
+                 resource_attribute_value: Optional[str] = None):
+        """
+        :param str matcher: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+        :param str resource_attribute_key: Resource attribute key
+        :param str resource_attribute_value: Resource attribute value
+        """
+        pulumi.set(__self__, "matcher", matcher)
+        pulumi.set(__self__, "resource_attribute_key", resource_attribute_key)
+        if resource_attribute_value is not None:
+            pulumi.set(__self__, "resource_attribute_value", resource_attribute_value)
+
+    @property
+    @pulumi.getter
+    def matcher(self) -> str:
+        """
+        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+        """
+        return pulumi.get(self, "matcher")
+
+    @property
+    @pulumi.getter(name="resourceAttributeKey")
+    def resource_attribute_key(self) -> str:
+        """
+        Resource attribute key
+        """
+        return pulumi.get(self, "resource_attribute_key")
+
+    @property
+    @pulumi.getter(name="resourceAttributeValue")
+    def resource_attribute_value(self) -> Optional[str]:
+        """
+        Resource attribute value
+        """
+        return pulumi.get(self, "resource_attribute_value")
+
+
+@pulumi.output_type
 class VulnerabilityCodeVulnerabilityDetectionControl(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -93401,6 +93806,8 @@ class WebhookNotificationOauth2Credentials(dict):
             suggest = "client_id"
         elif key == "clientSecret":
             suggest = "client_secret"
+        elif key == "authenticateViaRequestHeader":
+            suggest = "authenticate_via_request_header"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in WebhookNotificationOauth2Credentials. Access the value via the '{suggest}' property getter instead.")
@@ -93417,16 +93824,20 @@ class WebhookNotificationOauth2Credentials(dict):
                  access_token_url: str,
                  client_id: str,
                  client_secret: str,
+                 authenticate_via_request_header: Optional[bool] = None,
                  scope: Optional[str] = None):
         """
         :param str access_token_url: Access token URL
         :param str client_id: Client ID
         :param str client_secret: Client secret
+        :param bool authenticate_via_request_header: If false, the client credentials are included in the HTTP request body.
         :param str scope: The scope of access you are requesting
         """
         pulumi.set(__self__, "access_token_url", access_token_url)
         pulumi.set(__self__, "client_id", client_id)
         pulumi.set(__self__, "client_secret", client_secret)
+        if authenticate_via_request_header is not None:
+            pulumi.set(__self__, "authenticate_via_request_header", authenticate_via_request_header)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
 
@@ -93453,6 +93864,14 @@ class WebhookNotificationOauth2Credentials(dict):
         Client secret
         """
         return pulumi.get(self, "client_secret")
+
+    @property
+    @pulumi.getter(name="authenticateViaRequestHeader")
+    def authenticate_via_request_header(self) -> Optional[bool]:
+        """
+        If false, the client credentials are included in the HTTP request body.
+        """
+        return pulumi.get(self, "authenticate_via_request_header")
 
     @property
     @pulumi.getter
@@ -93600,6 +94019,137 @@ class GetAlertingProfilesValueResult(dict):
         The name of the Alerting Profile
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetApiTokensApiTokenResult(dict):
+    def __init__(__self__, *,
+                 creation_date: str,
+                 last_used_date: str,
+                 last_used_ip_address: str,
+                 modified_date: str,
+                 name: str,
+                 owner: str,
+                 scopes: Sequence[str],
+                 token: str,
+                 enabled: Optional[bool] = None,
+                 expiration_date: Optional[str] = None,
+                 personal_access_token: Optional[bool] = None):
+        """
+        :param str creation_date: Token creation date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
+        :param str last_used_date: Token last used date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
+        :param str last_used_ip_address: Token last used IP address.
+        :param str modified_date: Token last modified date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
+        :param str name: The name of the token.
+        :param str owner: The owner of the token
+        :param Sequence[str] scopes: A list of the scopes to be assigned to the token.
+        :param str token: The secret of the token.
+        :param bool enabled: The token is enabled (true) or disabled (false), default disabled (false).
+        :param str expiration_date: The expiration date of the token.
+        :param bool personal_access_token: The token is a personal access token (true) or an API token (false).
+        """
+        pulumi.set(__self__, "creation_date", creation_date)
+        pulumi.set(__self__, "last_used_date", last_used_date)
+        pulumi.set(__self__, "last_used_ip_address", last_used_ip_address)
+        pulumi.set(__self__, "modified_date", modified_date)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "scopes", scopes)
+        pulumi.set(__self__, "token", token)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if expiration_date is not None:
+            pulumi.set(__self__, "expiration_date", expiration_date)
+        if personal_access_token is not None:
+            pulumi.set(__self__, "personal_access_token", personal_access_token)
+
+    @property
+    @pulumi.getter(name="creationDate")
+    def creation_date(self) -> str:
+        """
+        Token creation date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
+        """
+        return pulumi.get(self, "creation_date")
+
+    @property
+    @pulumi.getter(name="lastUsedDate")
+    def last_used_date(self) -> str:
+        """
+        Token last used date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
+        """
+        return pulumi.get(self, "last_used_date")
+
+    @property
+    @pulumi.getter(name="lastUsedIpAddress")
+    def last_used_ip_address(self) -> str:
+        """
+        Token last used IP address.
+        """
+        return pulumi.get(self, "last_used_ip_address")
+
+    @property
+    @pulumi.getter(name="modifiedDate")
+    def modified_date(self) -> str:
+        """
+        Token last modified date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
+        """
+        return pulumi.get(self, "modified_date")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the token.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def owner(self) -> str:
+        """
+        The owner of the token
+        """
+        return pulumi.get(self, "owner")
+
+    @property
+    @pulumi.getter
+    def scopes(self) -> Sequence[str]:
+        """
+        A list of the scopes to be assigned to the token.
+        """
+        return pulumi.get(self, "scopes")
+
+    @property
+    @pulumi.getter
+    def token(self) -> str:
+        """
+        The secret of the token.
+        """
+        return pulumi.get(self, "token")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        The token is enabled (true) or disabled (false), default disabled (false).
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="expirationDate")
+    def expiration_date(self) -> Optional[str]:
+        """
+        The expiration date of the token.
+        """
+        return pulumi.get(self, "expiration_date")
+
+    @property
+    @pulumi.getter(name="personalAccessToken")
+    def personal_access_token(self) -> Optional[bool]:
+        """
+        The token is a personal access token (true) or an API token (false).
+        """
+        return pulumi.get(self, "personal_access_token")
 
 
 @pulumi.output_type
@@ -93800,6 +94350,39 @@ class GetEntitiesEntityTagTagResult(dict):
         """
         The value of the tag. Not applicable to custom tags
         """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetGenericSettingsValueResult(dict):
+    def __init__(__self__, *,
+                 local_storage: str,
+                 schema: str,
+                 scope: str,
+                 value: str):
+        pulumi.set(__self__, "local_storage", local_storage)
+        pulumi.set(__self__, "schema", schema)
+        pulumi.set(__self__, "scope", scope)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="localStorage")
+    def local_storage(self) -> str:
+        return pulumi.get(self, "local_storage")
+
+    @property
+    @pulumi.getter
+    def schema(self) -> str:
+        return pulumi.get(self, "schema")
+
+    @property
+    @pulumi.getter
+    def scope(self) -> str:
+        return pulumi.get(self, "scope")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
         return pulumi.get(self, "value")
 
 

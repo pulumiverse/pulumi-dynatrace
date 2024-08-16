@@ -448,7 +448,7 @@ class ServiceNaming(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ServiceNamingConditionArgs']]]]] = None,
+                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceNamingConditionArgs', 'ServiceNamingConditionArgsDict']]]]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  format: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -458,7 +458,7 @@ class ServiceNaming(pulumi.CustomResource):
         Create a ServiceNaming resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ServiceNamingConditionArgs']]]] conditions: A list of matching conditions of the rule. The rule applies only if **all** conditions are fulfilled
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceNamingConditionArgs', 'ServiceNamingConditionArgsDict']]]] conditions: A list of matching conditions of the rule. The rule applies only if **all** conditions are fulfilled
         :param pulumi.Input[bool] enabled: The rule is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] format: The name to be assigned to matching entities. You can use the following placeholders here: *
                `{AwsAutoScalingGroup:Name}` * `{AwsAvailabilityZone:Name}` * `{AwsElasticLoadBalancer:Name}` *
@@ -551,7 +551,7 @@ class ServiceNaming(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ServiceNamingConditionArgs']]]]] = None,
+                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceNamingConditionArgs', 'ServiceNamingConditionArgsDict']]]]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  format: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -584,7 +584,7 @@ class ServiceNaming(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            conditions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ServiceNamingConditionArgs']]]]] = None,
+            conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceNamingConditionArgs', 'ServiceNamingConditionArgsDict']]]]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             format: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
@@ -596,7 +596,7 @@ class ServiceNaming(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ServiceNamingConditionArgs']]]] conditions: A list of matching conditions of the rule. The rule applies only if **all** conditions are fulfilled
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceNamingConditionArgs', 'ServiceNamingConditionArgsDict']]]] conditions: A list of matching conditions of the rule. The rule applies only if **all** conditions are fulfilled
         :param pulumi.Input[bool] enabled: The rule is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] format: The name to be assigned to matching entities. You can use the following placeholders here: *
                `{AwsAutoScalingGroup:Name}` * `{AwsAvailabilityZone:Name}` * `{AwsElasticLoadBalancer:Name}` *
