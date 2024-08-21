@@ -1,6 +1,8 @@
 version: 2
 updates:
   - package-ecosystem: "gomod"
+    assignees:
+      - "pierskarsenbarg"
     schedule:
       interval: "weekly"
       time: "08:00"
@@ -18,6 +20,8 @@ updates:
     ignore:
       - dependency-name: "github.com/pulumi/pulumi/sdk/*"
   - package-ecosystem: "gomod"
+    assignees:
+      - "pierskarsenbarg"
     directory: "/sdk"
     schedule:
       interval: "weekly"
@@ -33,6 +37,8 @@ updates:
           - minor
           - patch
   - package-ecosystem: "github-actions"
+    assignees:
+      - "pierskarsenbarg"
     directory: "/"
     schedule:
       interval: "weekly"
