@@ -128,9 +128,9 @@ import (
 //							Active:      pulumi.Bool(false),
 //							Input:       pulumi.String(json1),
 //							Conditions: &dynatrace.AutomationWorkflowTasksTaskConditionsArgs{
-//								States: pulumi.Map{
-//									"http_request_1":   pulumi.Any("SUCCESS"),
-//									"run_javascript_1": pulumi.Any("OK"),
+//								States: pulumi.StringMap{
+//									"http_request_1":   pulumi.String("SUCCESS"),
+//									"run_javascript_1": pulumi.String("OK"),
 //								},
 //								Custom: pulumi.String(""),
 //							},
@@ -147,8 +147,8 @@ import (
 //							Active:      pulumi.Bool(false),
 //							Input:       pulumi.String(json2),
 //							Conditions: &dynatrace.AutomationWorkflowTasksTaskConditionsArgs{
-//								States: pulumi.Map{
-//									"http_request_2": pulumi.Any("OK"),
+//								States: pulumi.StringMap{
+//									"http_request_2": pulumi.String("OK"),
 //								},
 //								Custom: pulumi.String("{{http_request_1}}"),
 //							},

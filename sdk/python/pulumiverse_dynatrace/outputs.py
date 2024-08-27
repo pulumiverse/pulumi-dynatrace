@@ -402,6 +402,7 @@ __all__ = [
     'CloudappWorkloaddetectionKubernetesFiltersFilter',
     'CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles',
     'CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter',
+    'CloudappWorkloaddetectionServerless',
     'CredentialsAllowedEntities',
     'CredentialsAllowedEntitiesEntity',
     'CredentialsCredentialUsageSummary',
@@ -874,6 +875,7 @@ __all__ = [
     'LogSensitiveDataMaskingMatchersMatcher',
     'LogStorageMatchers',
     'LogStorageMatchersMatcher',
+    'LogTimestampEntryBoundary',
     'LogTimestampMatchers',
     'LogTimestampMatchersMatcher',
     'MaintenanceFilters',
@@ -5296,11 +5298,11 @@ class AutomationWorkflowTasksTaskConditions(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 states: Mapping[str, Any],
+                 states: Mapping[str, str],
                  custom: Optional[str] = None,
                  else_: Optional[str] = None):
         """
-        :param Mapping[str, Any] states: key/value pairs where the `key` is the name of another task and the value the status it needs to be for the current task to get executed. Possible values are `SUCCESS`, `ERROR`, `ANY`, `OK` (Success or Skipped) and `NOK` (Error or Cancelled)
+        :param Mapping[str, str] states: key/value pairs where the `key` is the name of another task and the value the status it needs to be for the current task to get executed. Possible values are `SUCCESS`, `ERROR`, `ANY`, `OK` (Success or Skipped) and `NOK` (Error or Cancelled)
         :param str custom: A custom condition that needs to be met for the current task to get executed
         :param str else_: Possible values are `SKIP` and `STOP`
         """
@@ -5312,7 +5314,7 @@ class AutomationWorkflowTasksTaskConditions(dict):
 
     @property
     @pulumi.getter
-    def states(self) -> Mapping[str, Any]:
+    def states(self) -> Mapping[str, str]:
         """
         key/value pairs where the `key` is the name of another task and the value the status it needs to be for the current task to get executed. Possible values are `SUCCESS`, `ERROR`, `ANY`, `OK` (Success or Skipped) and `NOK` (Error or Cancelled)
         """
@@ -24245,6 +24247,24 @@ class CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter(dict):
         Namespace name
         """
         return pulumi.get(self, "namespace")
+
+
+@pulumi.output_type
+class CloudappWorkloaddetectionServerless(dict):
+    def __init__(__self__, *,
+                 enabled: bool):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
 
 
 @pulumi.output_type
@@ -49065,6 +49085,25 @@ class LogStorageMatchersMatcher(dict):
         no documentation available
         """
         return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class LogTimestampEntryBoundary(dict):
+    def __init__(__self__, *,
+                 pattern: Optional[str] = None):
+        """
+        :param str pattern: no documentation available
+        """
+        if pattern is not None:
+            pulumi.set(__self__, "pattern", pattern)
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> Optional[str]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "pattern")
 
 
 @pulumi.output_type

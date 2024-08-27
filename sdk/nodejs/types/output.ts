@@ -1158,7 +1158,7 @@ export interface AutomationWorkflowTasksTaskConditions {
     /**
      * key/value pairs where the `key` is the name of another task and the value the status it needs to be for the current task to get executed. Possible values are `SUCCESS`, `ERROR`, `ANY`, `OK` (Success or Skipped) and `NOK` (Error or Cancelled)
      */
-    states: {[key: string]: any};
+    states: {[key: string]: string};
 }
 
 export interface AutomationWorkflowTasksTaskPosition {
@@ -7084,6 +7084,13 @@ export interface CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter {
      * Namespace name
      */
     namespace?: string;
+}
+
+export interface CloudappWorkloaddetectionServerless {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
 }
 
 export interface CredentialsAllowedEntities {
@@ -14826,6 +14833,13 @@ export interface LogStorageMatchersMatcher {
      * no documentation available
      */
     values: string[];
+}
+
+export interface LogTimestampEntryBoundary {
+    /**
+     * no documentation available
+     */
+    pattern?: string;
 }
 
 export interface LogTimestampMatchers {

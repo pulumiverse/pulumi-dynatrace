@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace
     public partial class HubPermissions : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Description
+        /// Name
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Email
+        /// Contact Email
         /// </summary>
         [Output("email")]
         public Output<string> Email { get; private set; } = null!;
@@ -73,13 +73,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class HubPermissionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Description
+        /// Name
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
-        /// Email
+        /// Contact Email
         /// </summary>
         [Input("email", required: true)]
         public Input<string> Email { get; set; } = null!;
@@ -93,13 +93,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class HubPermissionsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Description
+        /// Name
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Email
+        /// Contact Email
         /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }

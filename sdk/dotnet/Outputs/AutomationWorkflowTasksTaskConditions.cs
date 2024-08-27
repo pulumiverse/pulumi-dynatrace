@@ -25,7 +25,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// key/value pairs where the `key` is the name of another task and the value the status it needs to be for the current task to get executed. Possible values are `SUCCESS`, `ERROR`, `ANY`, `OK` (Success or Skipped) and `NOK` (Error or Cancelled)
         /// </summary>
-        public readonly ImmutableDictionary<string, object> States;
+        public readonly ImmutableDictionary<string, string> States;
 
         [OutputConstructor]
         private AutomationWorkflowTasksTaskConditions(
@@ -33,7 +33,7 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? @else,
 
-            ImmutableDictionary<string, object> states)
+            ImmutableDictionary<string, string> states)
         {
             Custom = custom;
             Else = @else;

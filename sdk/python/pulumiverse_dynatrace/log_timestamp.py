@@ -21,6 +21,7 @@ class LogTimestampArgs:
                  enabled: pulumi.Input[bool],
                  timezone: pulumi.Input[str],
                  date_search_limit: Optional[pulumi.Input[int]] = None,
+                 entry_boundary: Optional[pulumi.Input['LogTimestampEntryBoundaryArgs']] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  matchers: Optional[pulumi.Input['LogTimestampMatchersArgs']] = None,
                  scope: Optional[pulumi.Input[str]] = None):
@@ -30,7 +31,8 @@ class LogTimestampArgs:
         :param pulumi.Input[str] date_time_pattern: Date-time pattern
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] timezone: Timezone
-        :param pulumi.Input[int] date_search_limit: (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        :param pulumi.Input[int] date_search_limit: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        :param pulumi.Input['LogTimestampEntryBoundaryArgs'] entry_boundary: Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogTimestampMatchersArgs'] matchers: no documentation available
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -41,6 +43,8 @@ class LogTimestampArgs:
         pulumi.set(__self__, "timezone", timezone)
         if date_search_limit is not None:
             pulumi.set(__self__, "date_search_limit", date_search_limit)
+        if entry_boundary is not None:
+            pulumi.set(__self__, "entry_boundary", entry_boundary)
         if insert_after is not None:
             pulumi.set(__self__, "insert_after", insert_after)
         if matchers is not None:
@@ -100,13 +104,25 @@ class LogTimestampArgs:
     @pulumi.getter(name="dateSearchLimit")
     def date_search_limit(self) -> Optional[pulumi.Input[int]]:
         """
-        (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         """
         return pulumi.get(self, "date_search_limit")
 
     @date_search_limit.setter
     def date_search_limit(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "date_search_limit", value)
+
+    @property
+    @pulumi.getter(name="entryBoundary")
+    def entry_boundary(self) -> Optional[pulumi.Input['LogTimestampEntryBoundaryArgs']]:
+        """
+        Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+        """
+        return pulumi.get(self, "entry_boundary")
+
+    @entry_boundary.setter
+    def entry_boundary(self, value: Optional[pulumi.Input['LogTimestampEntryBoundaryArgs']]):
+        pulumi.set(self, "entry_boundary", value)
 
     @property
     @pulumi.getter(name="insertAfter")
@@ -152,6 +168,7 @@ class _LogTimestampState:
                  date_search_limit: Optional[pulumi.Input[int]] = None,
                  date_time_pattern: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 entry_boundary: Optional[pulumi.Input['LogTimestampEntryBoundaryArgs']] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  matchers: Optional[pulumi.Input['LogTimestampMatchersArgs']] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -159,9 +176,10 @@ class _LogTimestampState:
         """
         Input properties used for looking up and filtering LogTimestamp resources.
         :param pulumi.Input[str] config_item_title: Name
-        :param pulumi.Input[int] date_search_limit: (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        :param pulumi.Input[int] date_search_limit: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[str] date_time_pattern: Date-time pattern
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['LogTimestampEntryBoundaryArgs'] entry_boundary: Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogTimestampMatchersArgs'] matchers: no documentation available
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -175,6 +193,8 @@ class _LogTimestampState:
             pulumi.set(__self__, "date_time_pattern", date_time_pattern)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if entry_boundary is not None:
+            pulumi.set(__self__, "entry_boundary", entry_boundary)
         if insert_after is not None:
             pulumi.set(__self__, "insert_after", insert_after)
         if matchers is not None:
@@ -200,7 +220,7 @@ class _LogTimestampState:
     @pulumi.getter(name="dateSearchLimit")
     def date_search_limit(self) -> Optional[pulumi.Input[int]]:
         """
-        (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         """
         return pulumi.get(self, "date_search_limit")
 
@@ -231,6 +251,18 @@ class _LogTimestampState:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="entryBoundary")
+    def entry_boundary(self) -> Optional[pulumi.Input['LogTimestampEntryBoundaryArgs']]:
+        """
+        Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+        """
+        return pulumi.get(self, "entry_boundary")
+
+    @entry_boundary.setter
+    def entry_boundary(self, value: Optional[pulumi.Input['LogTimestampEntryBoundaryArgs']]):
+        pulumi.set(self, "entry_boundary", value)
 
     @property
     @pulumi.getter(name="insertAfter")
@@ -290,6 +322,7 @@ class LogTimestamp(pulumi.CustomResource):
                  date_search_limit: Optional[pulumi.Input[int]] = None,
                  date_time_pattern: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 entry_boundary: Optional[pulumi.Input[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict']]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  matchers: Optional[pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -300,9 +333,10 @@ class LogTimestamp(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] config_item_title: Name
-        :param pulumi.Input[int] date_search_limit: (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        :param pulumi.Input[int] date_search_limit: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[str] date_time_pattern: Date-time pattern
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict']] entry_boundary: Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']] matchers: no documentation available
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -335,6 +369,7 @@ class LogTimestamp(pulumi.CustomResource):
                  date_search_limit: Optional[pulumi.Input[int]] = None,
                  date_time_pattern: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 entry_boundary: Optional[pulumi.Input[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict']]] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  matchers: Optional[pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -358,6 +393,7 @@ class LogTimestamp(pulumi.CustomResource):
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
+            __props__.__dict__["entry_boundary"] = entry_boundary
             __props__.__dict__["insert_after"] = insert_after
             __props__.__dict__["matchers"] = matchers
             __props__.__dict__["scope"] = scope
@@ -378,6 +414,7 @@ class LogTimestamp(pulumi.CustomResource):
             date_search_limit: Optional[pulumi.Input[int]] = None,
             date_time_pattern: Optional[pulumi.Input[str]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
+            entry_boundary: Optional[pulumi.Input[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict']]] = None,
             insert_after: Optional[pulumi.Input[str]] = None,
             matchers: Optional[pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']]] = None,
             scope: Optional[pulumi.Input[str]] = None,
@@ -390,9 +427,10 @@ class LogTimestamp(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] config_item_title: Name
-        :param pulumi.Input[int] date_search_limit: (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        :param pulumi.Input[int] date_search_limit: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[str] date_time_pattern: Date-time pattern
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict']] entry_boundary: Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']] matchers: no documentation available
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -406,6 +444,7 @@ class LogTimestamp(pulumi.CustomResource):
         __props__.__dict__["date_search_limit"] = date_search_limit
         __props__.__dict__["date_time_pattern"] = date_time_pattern
         __props__.__dict__["enabled"] = enabled
+        __props__.__dict__["entry_boundary"] = entry_boundary
         __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["matchers"] = matchers
         __props__.__dict__["scope"] = scope
@@ -424,7 +463,7 @@ class LogTimestamp(pulumi.CustomResource):
     @pulumi.getter(name="dateSearchLimit")
     def date_search_limit(self) -> pulumi.Output[Optional[int]]:
         """
-        (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         """
         return pulumi.get(self, "date_search_limit")
 
@@ -443,6 +482,14 @@ class LogTimestamp(pulumi.CustomResource):
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="entryBoundary")
+    def entry_boundary(self) -> pulumi.Output[Optional['outputs.LogTimestampEntryBoundary']]:
+        """
+        Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+        """
+        return pulumi.get(self, "entry_boundary")
 
     @property
     @pulumi.getter(name="insertAfter")

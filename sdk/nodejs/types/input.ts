@@ -1158,7 +1158,7 @@ export interface AutomationWorkflowTasksTaskConditions {
     /**
      * key/value pairs where the `key` is the name of another task and the value the status it needs to be for the current task to get executed. Possible values are `SUCCESS`, `ERROR`, `ANY`, `OK` (Success or Skipped) and `NOK` (Error or Cancelled)
      */
-    states: pulumi.Input<{[key: string]: any}>;
+    states: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
 
 export interface AutomationWorkflowTasksTaskPosition {
@@ -7084,6 +7084,13 @@ export interface CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter {
      * Namespace name
      */
     namespace?: pulumi.Input<string>;
+}
+
+export interface CloudappWorkloaddetectionServerless {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
 }
 
 export interface CredentialsAllowedEntities {
@@ -14534,6 +14541,13 @@ export interface LogStorageMatchersMatcher {
      * no documentation available
      */
     values: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface LogTimestampEntryBoundary {
+    /**
+     * no documentation available
+     */
+    pattern?: pulumi.Input<string>;
 }
 
 export interface LogTimestampMatchers {
