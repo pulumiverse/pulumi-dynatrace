@@ -19,8 +19,9 @@ type CloudappWorkloaddetection struct {
 	// Foundry application. * Container resource metrics (Container group instance entities) and [related
 	// screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
 	CloudFoundry CloudappWorkloaddetectionCloudFoundryOutput `pulumi:"cloudFoundry"`
-	// Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-	// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+	// Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+	// instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+	// support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
 	Docker CloudappWorkloaddetectionDockerOutput `pulumi:"docker"`
 	// Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
 	// cloud application and cloud application instance and entities). * Container resource metrics (container group instance
@@ -28,6 +29,10 @@ type CloudappWorkloaddetection struct {
 	// merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
 	// workloads.
 	Kubernetes CloudappWorkloaddetectionKubernetesOutput `pulumi:"kubernetes"`
+	// Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+	// Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+	// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+	Serverless CloudappWorkloaddetectionServerlessPtrOutput `pulumi:"serverless"`
 }
 
 // NewCloudappWorkloaddetection registers a new resource with the given unique name, arguments, and options.
@@ -73,8 +78,9 @@ type cloudappWorkloaddetectionState struct {
 	// Foundry application. * Container resource metrics (Container group instance entities) and [related
 	// screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
 	CloudFoundry *CloudappWorkloaddetectionCloudFoundry `pulumi:"cloudFoundry"`
-	// Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-	// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+	// Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+	// instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+	// support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
 	Docker *CloudappWorkloaddetectionDocker `pulumi:"docker"`
 	// Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
 	// cloud application and cloud application instance and entities). * Container resource metrics (container group instance
@@ -82,6 +88,10 @@ type cloudappWorkloaddetectionState struct {
 	// merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
 	// workloads.
 	Kubernetes *CloudappWorkloaddetectionKubernetes `pulumi:"kubernetes"`
+	// Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+	// Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+	// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+	Serverless *CloudappWorkloaddetectionServerless `pulumi:"serverless"`
 }
 
 type CloudappWorkloaddetectionState struct {
@@ -89,8 +99,9 @@ type CloudappWorkloaddetectionState struct {
 	// Foundry application. * Container resource metrics (Container group instance entities) and [related
 	// screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
 	CloudFoundry CloudappWorkloaddetectionCloudFoundryPtrInput
-	// Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-	// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+	// Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+	// instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+	// support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
 	Docker CloudappWorkloaddetectionDockerPtrInput
 	// Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
 	// cloud application and cloud application instance and entities). * Container resource metrics (container group instance
@@ -98,6 +109,10 @@ type CloudappWorkloaddetectionState struct {
 	// merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
 	// workloads.
 	Kubernetes CloudappWorkloaddetectionKubernetesPtrInput
+	// Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+	// Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+	// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+	Serverless CloudappWorkloaddetectionServerlessPtrInput
 }
 
 func (CloudappWorkloaddetectionState) ElementType() reflect.Type {
@@ -109,8 +124,9 @@ type cloudappWorkloaddetectionArgs struct {
 	// Foundry application. * Container resource metrics (Container group instance entities) and [related
 	// screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
 	CloudFoundry CloudappWorkloaddetectionCloudFoundry `pulumi:"cloudFoundry"`
-	// Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-	// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+	// Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+	// instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+	// support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
 	Docker CloudappWorkloaddetectionDocker `pulumi:"docker"`
 	// Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
 	// cloud application and cloud application instance and entities). * Container resource metrics (container group instance
@@ -118,6 +134,10 @@ type cloudappWorkloaddetectionArgs struct {
 	// merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
 	// workloads.
 	Kubernetes CloudappWorkloaddetectionKubernetes `pulumi:"kubernetes"`
+	// Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+	// Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+	// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+	Serverless *CloudappWorkloaddetectionServerless `pulumi:"serverless"`
 }
 
 // The set of arguments for constructing a CloudappWorkloaddetection resource.
@@ -126,8 +146,9 @@ type CloudappWorkloaddetectionArgs struct {
 	// Foundry application. * Container resource metrics (Container group instance entities) and [related
 	// screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
 	CloudFoundry CloudappWorkloaddetectionCloudFoundryInput
-	// Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-	// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+	// Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+	// instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+	// support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
 	Docker CloudappWorkloaddetectionDockerInput
 	// Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
 	// cloud application and cloud application instance and entities). * Container resource metrics (container group instance
@@ -135,6 +156,10 @@ type CloudappWorkloaddetectionArgs struct {
 	// merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
 	// workloads.
 	Kubernetes CloudappWorkloaddetectionKubernetesInput
+	// Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+	// Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+	// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+	Serverless CloudappWorkloaddetectionServerlessPtrInput
 }
 
 func (CloudappWorkloaddetectionArgs) ElementType() reflect.Type {
@@ -231,8 +256,9 @@ func (o CloudappWorkloaddetectionOutput) CloudFoundry() CloudappWorkloaddetectio
 	return o.ApplyT(func(v *CloudappWorkloaddetection) CloudappWorkloaddetectionCloudFoundryOutput { return v.CloudFoundry }).(CloudappWorkloaddetectionCloudFoundryOutput)
 }
 
-// Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+// Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+// instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+// support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
 func (o CloudappWorkloaddetectionOutput) Docker() CloudappWorkloaddetectionDockerOutput {
 	return o.ApplyT(func(v *CloudappWorkloaddetection) CloudappWorkloaddetectionDockerOutput { return v.Docker }).(CloudappWorkloaddetectionDockerOutput)
 }
@@ -244,6 +270,13 @@ func (o CloudappWorkloaddetectionOutput) Docker() CloudappWorkloaddetectionDocke
 // workloads.
 func (o CloudappWorkloaddetectionOutput) Kubernetes() CloudappWorkloaddetectionKubernetesOutput {
 	return o.ApplyT(func(v *CloudappWorkloaddetection) CloudappWorkloaddetectionKubernetesOutput { return v.Kubernetes }).(CloudappWorkloaddetectionKubernetesOutput)
+}
+
+// Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+// Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+func (o CloudappWorkloaddetectionOutput) Serverless() CloudappWorkloaddetectionServerlessPtrOutput {
+	return o.ApplyT(func(v *CloudappWorkloaddetection) CloudappWorkloaddetectionServerlessPtrOutput { return v.Serverless }).(CloudappWorkloaddetectionServerlessPtrOutput)
 }
 
 type CloudappWorkloaddetectionArrayOutput struct{ *pulumi.OutputState }

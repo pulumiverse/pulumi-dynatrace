@@ -39,7 +39,7 @@ export class LogTimestamp extends pulumi.CustomResource {
      */
     public readonly configItemTitle!: pulumi.Output<string>;
     /**
-     * (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+     * Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
      */
     public readonly dateSearchLimit!: pulumi.Output<number | undefined>;
     /**
@@ -50,6 +50,10 @@ export class LogTimestamp extends pulumi.CustomResource {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     public readonly enabled!: pulumi.Output<boolean>;
+    /**
+     * Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+     */
+    public readonly entryBoundary!: pulumi.Output<outputs.LogTimestampEntryBoundary | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
@@ -84,6 +88,7 @@ export class LogTimestamp extends pulumi.CustomResource {
             resourceInputs["dateSearchLimit"] = state ? state.dateSearchLimit : undefined;
             resourceInputs["dateTimePattern"] = state ? state.dateTimePattern : undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
+            resourceInputs["entryBoundary"] = state ? state.entryBoundary : undefined;
             resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["matchers"] = state ? state.matchers : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
@@ -106,6 +111,7 @@ export class LogTimestamp extends pulumi.CustomResource {
             resourceInputs["dateSearchLimit"] = args ? args.dateSearchLimit : undefined;
             resourceInputs["dateTimePattern"] = args ? args.dateTimePattern : undefined;
             resourceInputs["enabled"] = args ? args.enabled : undefined;
+            resourceInputs["entryBoundary"] = args ? args.entryBoundary : undefined;
             resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["matchers"] = args ? args.matchers : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
@@ -125,7 +131,7 @@ export interface LogTimestampState {
      */
     configItemTitle?: pulumi.Input<string>;
     /**
-     * (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+     * Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
      */
     dateSearchLimit?: pulumi.Input<number>;
     /**
@@ -136,6 +142,10 @@ export interface LogTimestampState {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+     */
+    entryBoundary?: pulumi.Input<inputs.LogTimestampEntryBoundary>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
@@ -163,7 +173,7 @@ export interface LogTimestampArgs {
      */
     configItemTitle: pulumi.Input<string>;
     /**
-     * (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+     * Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
      */
     dateSearchLimit?: pulumi.Input<number>;
     /**
@@ -174,6 +184,10 @@ export interface LogTimestampArgs {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+     */
+    entryBoundary?: pulumi.Input<inputs.LogTimestampEntryBoundary>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */

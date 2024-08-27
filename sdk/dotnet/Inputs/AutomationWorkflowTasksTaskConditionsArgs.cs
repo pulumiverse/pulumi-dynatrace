@@ -26,14 +26,14 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Else { get; set; }
 
         [Input("states", required: true)]
-        private InputMap<object>? _states;
+        private InputMap<string>? _states;
 
         /// <summary>
         /// key/value pairs where the `key` is the name of another task and the value the status it needs to be for the current task to get executed. Possible values are `SUCCESS`, `ERROR`, `ANY`, `OK` (Success or Skipped) and `NOK` (Error or Cancelled)
         /// </summary>
-        public InputMap<object> States
+        public InputMap<string> States
         {
-            get => _states ?? (_states = new InputMap<object>());
+            get => _states ?? (_states = new InputMap<string>());
             set => _states = value;
         }
 

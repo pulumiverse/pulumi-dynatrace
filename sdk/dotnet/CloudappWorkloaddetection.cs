@@ -22,8 +22,9 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.CloudappWorkloaddetectionCloudFoundry> CloudFoundry { get; private set; } = null!;
 
         /// <summary>
-        /// Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-        /// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        /// Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+        /// instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+        /// support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
         /// </summary>
         [Output("docker")]
         public Output<Outputs.CloudappWorkloaddetectionDocker> Docker { get; private set; } = null!;
@@ -37,6 +38,14 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("kubernetes")]
         public Output<Outputs.CloudappWorkloaddetectionKubernetes> Kubernetes { get; private set; } = null!;
+
+        /// <summary>
+        /// Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+        /// Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+        /// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        /// </summary>
+        [Output("serverless")]
+        public Output<Outputs.CloudappWorkloaddetectionServerless?> Serverless { get; private set; } = null!;
 
 
         /// <summary>
@@ -94,8 +103,9 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.CloudappWorkloaddetectionCloudFoundryArgs> CloudFoundry { get; set; } = null!;
 
         /// <summary>
-        /// Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-        /// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        /// Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+        /// instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+        /// support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
         /// </summary>
         [Input("docker", required: true)]
         public Input<Inputs.CloudappWorkloaddetectionDockerArgs> Docker { get; set; } = null!;
@@ -109,6 +119,14 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("kubernetes", required: true)]
         public Input<Inputs.CloudappWorkloaddetectionKubernetesArgs> Kubernetes { get; set; } = null!;
+
+        /// <summary>
+        /// Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+        /// Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+        /// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        /// </summary>
+        [Input("serverless")]
+        public Input<Inputs.CloudappWorkloaddetectionServerlessArgs>? Serverless { get; set; }
 
         public CloudappWorkloaddetectionArgs()
         {
@@ -127,8 +145,9 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.CloudappWorkloaddetectionCloudFoundryGetArgs>? CloudFoundry { get; set; }
 
         /// <summary>
-        /// Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-        /// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        /// Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+        /// instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+        /// support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
         /// </summary>
         [Input("docker")]
         public Input<Inputs.CloudappWorkloaddetectionDockerGetArgs>? Docker { get; set; }
@@ -142,6 +161,14 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("kubernetes")]
         public Input<Inputs.CloudappWorkloaddetectionKubernetesGetArgs>? Kubernetes { get; set; }
+
+        /// <summary>
+        /// Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+        /// Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+        /// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        /// </summary>
+        [Input("serverless")]
+        public Input<Inputs.CloudappWorkloaddetectionServerlessGetArgs>? Serverless { get; set; }
 
         public CloudappWorkloaddetectionState()
         {

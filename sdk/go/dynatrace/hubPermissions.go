@@ -15,9 +15,9 @@ import (
 type HubPermissions struct {
 	pulumi.CustomResourceState
 
-	// Description
+	// Name
 	Description pulumi.StringOutput `pulumi:"description"`
-	// Email
+	// Contact Email
 	Email pulumi.StringOutput `pulumi:"email"`
 }
 
@@ -57,16 +57,16 @@ func GetHubPermissions(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering HubPermissions resources.
 type hubPermissionsState struct {
-	// Description
+	// Name
 	Description *string `pulumi:"description"`
-	// Email
+	// Contact Email
 	Email *string `pulumi:"email"`
 }
 
 type HubPermissionsState struct {
-	// Description
+	// Name
 	Description pulumi.StringPtrInput
-	// Email
+	// Contact Email
 	Email pulumi.StringPtrInput
 }
 
@@ -75,17 +75,17 @@ func (HubPermissionsState) ElementType() reflect.Type {
 }
 
 type hubPermissionsArgs struct {
-	// Description
+	// Name
 	Description string `pulumi:"description"`
-	// Email
+	// Contact Email
 	Email string `pulumi:"email"`
 }
 
 // The set of arguments for constructing a HubPermissions resource.
 type HubPermissionsArgs struct {
-	// Description
+	// Name
 	Description pulumi.StringInput
-	// Email
+	// Contact Email
 	Email pulumi.StringInput
 }
 
@@ -176,12 +176,12 @@ func (o HubPermissionsOutput) ToHubPermissionsOutputWithContext(ctx context.Cont
 	return o
 }
 
-// Description
+// Name
 func (o HubPermissionsOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *HubPermissions) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// Email
+// Contact Email
 func (o HubPermissionsOutput) Email() pulumi.StringOutput {
 	return o.ApplyT(func(v *HubPermissions) pulumi.StringOutput { return v.Email }).(pulumi.StringOutput)
 }

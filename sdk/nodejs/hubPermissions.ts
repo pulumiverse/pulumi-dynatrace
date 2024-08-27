@@ -33,11 +33,11 @@ export class HubPermissions extends pulumi.CustomResource {
     }
 
     /**
-     * Description
+     * Name
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * Email
+     * Contact Email
      */
     public readonly email!: pulumi.Output<string>;
 
@@ -77,11 +77,11 @@ export class HubPermissions extends pulumi.CustomResource {
  */
 export interface HubPermissionsState {
     /**
-     * Description
+     * Name
      */
     description?: pulumi.Input<string>;
     /**
-     * Email
+     * Contact Email
      */
     email?: pulumi.Input<string>;
 }
@@ -91,11 +91,11 @@ export interface HubPermissionsState {
  */
 export interface HubPermissionsArgs {
     /**
-     * Description
+     * Name
      */
     description: pulumi.Input<string>;
     /**
-     * Email
+     * Contact Email
      */
     email: pulumi.Input<string>;
 }

@@ -18,23 +18,30 @@ class CloudappWorkloaddetectionArgs:
     def __init__(__self__, *,
                  cloud_foundry: pulumi.Input['CloudappWorkloaddetectionCloudFoundryArgs'],
                  docker: pulumi.Input['CloudappWorkloaddetectionDockerArgs'],
-                 kubernetes: pulumi.Input['CloudappWorkloaddetectionKubernetesArgs']):
+                 kubernetes: pulumi.Input['CloudappWorkloaddetectionKubernetesArgs'],
+                 serverless: Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']] = None):
         """
         The set of arguments for constructing a CloudappWorkloaddetection resource.
         :param pulumi.Input['CloudappWorkloaddetectionCloudFoundryArgs'] cloud_foundry: Enable this setting to get * Processes of Cloud Foundry application instances merged into process groups by Cloud
                Foundry application. * Container resource metrics (Container group instance entities) and [related
                screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
-        :param pulumi.Input['CloudappWorkloaddetectionDockerArgs'] docker: Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-               entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        :param pulumi.Input['CloudappWorkloaddetectionDockerArgs'] docker: Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+               instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+               support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
         :param pulumi.Input['CloudappWorkloaddetectionKubernetesArgs'] kubernetes: Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
                cloud application and cloud application instance and entities). * Container resource metrics (container group instance
                entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Similar workloads
                merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
                workloads.
+        :param pulumi.Input['CloudappWorkloaddetectionServerlessArgs'] serverless: Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+               Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+               entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
         """
         pulumi.set(__self__, "cloud_foundry", cloud_foundry)
         pulumi.set(__self__, "docker", docker)
         pulumi.set(__self__, "kubernetes", kubernetes)
+        if serverless is not None:
+            pulumi.set(__self__, "serverless", serverless)
 
     @property
     @pulumi.getter(name="cloudFoundry")
@@ -54,8 +61,9 @@ class CloudappWorkloaddetectionArgs:
     @pulumi.getter
     def docker(self) -> pulumi.Input['CloudappWorkloaddetectionDockerArgs']:
         """
-        Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-        entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+        instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+        support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
         """
         return pulumi.get(self, "docker")
 
@@ -79,25 +87,44 @@ class CloudappWorkloaddetectionArgs:
     def kubernetes(self, value: pulumi.Input['CloudappWorkloaddetectionKubernetesArgs']):
         pulumi.set(self, "kubernetes", value)
 
+    @property
+    @pulumi.getter
+    def serverless(self) -> Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']]:
+        """
+        Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+        Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+        entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        """
+        return pulumi.get(self, "serverless")
+
+    @serverless.setter
+    def serverless(self, value: Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']]):
+        pulumi.set(self, "serverless", value)
+
 
 @pulumi.input_type
 class _CloudappWorkloaddetectionState:
     def __init__(__self__, *,
                  cloud_foundry: Optional[pulumi.Input['CloudappWorkloaddetectionCloudFoundryArgs']] = None,
                  docker: Optional[pulumi.Input['CloudappWorkloaddetectionDockerArgs']] = None,
-                 kubernetes: Optional[pulumi.Input['CloudappWorkloaddetectionKubernetesArgs']] = None):
+                 kubernetes: Optional[pulumi.Input['CloudappWorkloaddetectionKubernetesArgs']] = None,
+                 serverless: Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']] = None):
         """
         Input properties used for looking up and filtering CloudappWorkloaddetection resources.
         :param pulumi.Input['CloudappWorkloaddetectionCloudFoundryArgs'] cloud_foundry: Enable this setting to get * Processes of Cloud Foundry application instances merged into process groups by Cloud
                Foundry application. * Container resource metrics (Container group instance entities) and [related
                screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
-        :param pulumi.Input['CloudappWorkloaddetectionDockerArgs'] docker: Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-               entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        :param pulumi.Input['CloudappWorkloaddetectionDockerArgs'] docker: Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+               instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+               support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
         :param pulumi.Input['CloudappWorkloaddetectionKubernetesArgs'] kubernetes: Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
                cloud application and cloud application instance and entities). * Container resource metrics (container group instance
                entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Similar workloads
                merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
                workloads.
+        :param pulumi.Input['CloudappWorkloaddetectionServerlessArgs'] serverless: Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+               Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+               entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
         """
         if cloud_foundry is not None:
             pulumi.set(__self__, "cloud_foundry", cloud_foundry)
@@ -105,6 +132,8 @@ class _CloudappWorkloaddetectionState:
             pulumi.set(__self__, "docker", docker)
         if kubernetes is not None:
             pulumi.set(__self__, "kubernetes", kubernetes)
+        if serverless is not None:
+            pulumi.set(__self__, "serverless", serverless)
 
     @property
     @pulumi.getter(name="cloudFoundry")
@@ -124,8 +153,9 @@ class _CloudappWorkloaddetectionState:
     @pulumi.getter
     def docker(self) -> Optional[pulumi.Input['CloudappWorkloaddetectionDockerArgs']]:
         """
-        Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-        entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+        instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+        support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
         """
         return pulumi.get(self, "docker")
 
@@ -149,6 +179,20 @@ class _CloudappWorkloaddetectionState:
     def kubernetes(self, value: Optional[pulumi.Input['CloudappWorkloaddetectionKubernetesArgs']]):
         pulumi.set(self, "kubernetes", value)
 
+    @property
+    @pulumi.getter
+    def serverless(self) -> Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']]:
+        """
+        Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+        Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+        entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        """
+        return pulumi.get(self, "serverless")
+
+    @serverless.setter
+    def serverless(self, value: Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']]):
+        pulumi.set(self, "serverless", value)
+
 
 class CloudappWorkloaddetection(pulumi.CustomResource):
     @overload
@@ -158,6 +202,7 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
                  cloud_foundry: Optional[pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']]] = None,
                  docker: Optional[pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']]] = None,
                  kubernetes: Optional[pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']]] = None,
+                 serverless: Optional[pulumi.Input[Union['CloudappWorkloaddetectionServerlessArgs', 'CloudappWorkloaddetectionServerlessArgsDict']]] = None,
                  __props__=None):
         """
         Create a CloudappWorkloaddetection resource with the given unique name, props, and options.
@@ -166,13 +211,17 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
         :param pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']] cloud_foundry: Enable this setting to get * Processes of Cloud Foundry application instances merged into process groups by Cloud
                Foundry application. * Container resource metrics (Container group instance entities) and [related
                screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
-        :param pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']] docker: Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-               entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        :param pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']] docker: Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+               instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+               support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
         :param pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']] kubernetes: Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
                cloud application and cloud application instance and entities). * Container resource metrics (container group instance
                entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Similar workloads
                merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
                workloads.
+        :param pulumi.Input[Union['CloudappWorkloaddetectionServerlessArgs', 'CloudappWorkloaddetectionServerlessArgsDict']] serverless: Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+               Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+               entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
         """
         ...
     @overload
@@ -200,6 +249,7 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
                  cloud_foundry: Optional[pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']]] = None,
                  docker: Optional[pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']]] = None,
                  kubernetes: Optional[pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']]] = None,
+                 serverless: Optional[pulumi.Input[Union['CloudappWorkloaddetectionServerlessArgs', 'CloudappWorkloaddetectionServerlessArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -218,6 +268,7 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
             if kubernetes is None and not opts.urn:
                 raise TypeError("Missing required property 'kubernetes'")
             __props__.__dict__["kubernetes"] = kubernetes
+            __props__.__dict__["serverless"] = serverless
         super(CloudappWorkloaddetection, __self__).__init__(
             'dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection',
             resource_name,
@@ -230,7 +281,8 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             cloud_foundry: Optional[pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']]] = None,
             docker: Optional[pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']]] = None,
-            kubernetes: Optional[pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']]] = None) -> 'CloudappWorkloaddetection':
+            kubernetes: Optional[pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']]] = None,
+            serverless: Optional[pulumi.Input[Union['CloudappWorkloaddetectionServerlessArgs', 'CloudappWorkloaddetectionServerlessArgsDict']]] = None) -> 'CloudappWorkloaddetection':
         """
         Get an existing CloudappWorkloaddetection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -241,13 +293,17 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
         :param pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']] cloud_foundry: Enable this setting to get * Processes of Cloud Foundry application instances merged into process groups by Cloud
                Foundry application. * Container resource metrics (Container group instance entities) and [related
                screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
-        :param pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']] docker: Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-               entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        :param pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']] docker: Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+               instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+               support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
         :param pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']] kubernetes: Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
                cloud application and cloud application instance and entities). * Container resource metrics (container group instance
                entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Similar workloads
                merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
                workloads.
+        :param pulumi.Input[Union['CloudappWorkloaddetectionServerlessArgs', 'CloudappWorkloaddetectionServerlessArgsDict']] serverless: Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+               Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+               entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -256,6 +312,7 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
         __props__.__dict__["cloud_foundry"] = cloud_foundry
         __props__.__dict__["docker"] = docker
         __props__.__dict__["kubernetes"] = kubernetes
+        __props__.__dict__["serverless"] = serverless
         return CloudappWorkloaddetection(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -272,8 +329,9 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
     @pulumi.getter
     def docker(self) -> pulumi.Output['outputs.CloudappWorkloaddetectionDocker']:
         """
-        Enable this setting for plain Docker environments to get * Container resource metrics (Container group instance
-        entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
+        instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
+        support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
         """
         return pulumi.get(self, "docker")
 
@@ -288,4 +346,14 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
         workloads.
         """
         return pulumi.get(self, "kubernetes")
+
+    @property
+    @pulumi.getter
+    def serverless(self) -> pulumi.Output[Optional['outputs.CloudappWorkloaddetectionServerless']]:
+        """
+        Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
+        Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
+        entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        """
+        return pulumi.get(self, "serverless")
 

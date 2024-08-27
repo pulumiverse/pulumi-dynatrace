@@ -17,12 +17,14 @@ type LogTimestamp struct {
 
 	// Name
 	ConfigItemTitle pulumi.StringOutput `pulumi:"configItemTitle"`
-	// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+	// Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
 	DateSearchLimit pulumi.IntPtrOutput `pulumi:"dateSearchLimit"`
 	// Date-time pattern
 	DateTimePattern pulumi.StringOutput `pulumi:"dateTimePattern"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+	EntryBoundary LogTimestampEntryBoundaryPtrOutput `pulumi:"entryBoundary"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// no documentation available
@@ -77,12 +79,14 @@ func GetLogTimestamp(ctx *pulumi.Context,
 type logTimestampState struct {
 	// Name
 	ConfigItemTitle *string `pulumi:"configItemTitle"`
-	// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+	// Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
 	DateSearchLimit *int `pulumi:"dateSearchLimit"`
 	// Date-time pattern
 	DateTimePattern *string `pulumi:"dateTimePattern"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+	EntryBoundary *LogTimestampEntryBoundary `pulumi:"entryBoundary"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
 	// no documentation available
@@ -96,12 +100,14 @@ type logTimestampState struct {
 type LogTimestampState struct {
 	// Name
 	ConfigItemTitle pulumi.StringPtrInput
-	// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+	// Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
 	DateSearchLimit pulumi.IntPtrInput
 	// Date-time pattern
 	DateTimePattern pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+	EntryBoundary LogTimestampEntryBoundaryPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
 	// no documentation available
@@ -119,12 +125,14 @@ func (LogTimestampState) ElementType() reflect.Type {
 type logTimestampArgs struct {
 	// Name
 	ConfigItemTitle string `pulumi:"configItemTitle"`
-	// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+	// Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
 	DateSearchLimit *int `pulumi:"dateSearchLimit"`
 	// Date-time pattern
 	DateTimePattern string `pulumi:"dateTimePattern"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+	EntryBoundary *LogTimestampEntryBoundary `pulumi:"entryBoundary"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
 	// no documentation available
@@ -139,12 +147,14 @@ type logTimestampArgs struct {
 type LogTimestampArgs struct {
 	// Name
 	ConfigItemTitle pulumi.StringInput
-	// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+	// Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
 	DateSearchLimit pulumi.IntPtrInput
 	// Date-time pattern
 	DateTimePattern pulumi.StringInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+	EntryBoundary LogTimestampEntryBoundaryPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
 	// no documentation available
@@ -247,7 +257,7 @@ func (o LogTimestampOutput) ConfigItemTitle() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogTimestamp) pulumi.StringOutput { return v.ConfigItemTitle }).(pulumi.StringOutput)
 }
 
-// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+// Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
 func (o LogTimestampOutput) DateSearchLimit() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *LogTimestamp) pulumi.IntPtrOutput { return v.DateSearchLimit }).(pulumi.IntPtrOutput)
 }
@@ -260,6 +270,11 @@ func (o LogTimestampOutput) DateTimePattern() pulumi.StringOutput {
 // This setting is enabled (`true`) or disabled (`false`)
 func (o LogTimestampOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogTimestamp) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+func (o LogTimestampOutput) EntryBoundary() LogTimestampEntryBoundaryPtrOutput {
+	return o.ApplyT(func(v *LogTimestamp) LogTimestampEntryBoundaryPtrOutput { return v.EntryBoundary }).(LogTimestampEntryBoundaryPtrOutput)
 }
 
 // Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched

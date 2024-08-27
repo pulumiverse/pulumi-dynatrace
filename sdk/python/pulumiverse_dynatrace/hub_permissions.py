@@ -18,8 +18,8 @@ class HubPermissionsArgs:
                  email: pulumi.Input[str]):
         """
         The set of arguments for constructing a HubPermissions resource.
-        :param pulumi.Input[str] description: Description
-        :param pulumi.Input[str] email: Email
+        :param pulumi.Input[str] description: Name
+        :param pulumi.Input[str] email: Contact Email
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "email", email)
@@ -28,7 +28,7 @@ class HubPermissionsArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
         """
-        Description
+        Name
         """
         return pulumi.get(self, "description")
 
@@ -40,7 +40,7 @@ class HubPermissionsArgs:
     @pulumi.getter
     def email(self) -> pulumi.Input[str]:
         """
-        Email
+        Contact Email
         """
         return pulumi.get(self, "email")
 
@@ -56,8 +56,8 @@ class _HubPermissionsState:
                  email: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering HubPermissions resources.
-        :param pulumi.Input[str] description: Description
-        :param pulumi.Input[str] email: Email
+        :param pulumi.Input[str] description: Name
+        :param pulumi.Input[str] email: Contact Email
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -68,7 +68,7 @@ class _HubPermissionsState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        Description
+        Name
         """
         return pulumi.get(self, "description")
 
@@ -80,7 +80,7 @@ class _HubPermissionsState:
     @pulumi.getter
     def email(self) -> Optional[pulumi.Input[str]]:
         """
-        Email
+        Contact Email
         """
         return pulumi.get(self, "email")
 
@@ -101,8 +101,8 @@ class HubPermissions(pulumi.CustomResource):
         Create a HubPermissions resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: Description
-        :param pulumi.Input[str] email: Email
+        :param pulumi.Input[str] description: Name
+        :param pulumi.Input[str] email: Contact Email
         """
         ...
     @overload
@@ -163,8 +163,8 @@ class HubPermissions(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: Description
-        :param pulumi.Input[str] email: Email
+        :param pulumi.Input[str] description: Name
+        :param pulumi.Input[str] email: Contact Email
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -178,7 +178,7 @@ class HubPermissions(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        Description
+        Name
         """
         return pulumi.get(self, "description")
 
@@ -186,7 +186,7 @@ class HubPermissions(pulumi.CustomResource):
     @pulumi.getter
     def email(self) -> pulumi.Output[str]:
         """
-        Email
+        Contact Email
         """
         return pulumi.get(self, "email")
 
