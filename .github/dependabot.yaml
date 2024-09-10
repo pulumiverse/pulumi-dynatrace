@@ -10,7 +10,7 @@ updates:
     commit-message:
       prefix: "provider"
       include: "scope"
-    directory: "/"
+    directory: "/provider"
     groups:
       modules:
         applies-to: version-updates
