@@ -13,6 +13,204 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type WebAppRequestErrorsErrorRulesErrorRuleFilterSettings struct {
+	// Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+	Filter *string `pulumi:"filter"`
+	// no documentation available
+	Url *string `pulumi:"url"`
+}
+
+// WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsInput is an input type that accepts WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs and WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput values.
+// You can construct a concrete instance of `WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsInput` via:
+//
+//	WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs{...}
+type WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsInput interface {
+	pulumi.Input
+
+	ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput() WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput
+	ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutputWithContext(context.Context) WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput
+}
+
+type WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs struct {
+	// Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+	Filter pulumi.StringPtrInput `pulumi:"filter"`
+	// no documentation available
+	Url pulumi.StringPtrInput `pulumi:"url"`
+}
+
+func (WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleFilterSettings)(nil)).Elem()
+}
+
+func (i WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs) ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput() WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput {
+	return i.ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutputWithContext(context.Background())
+}
+
+func (i WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs) ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput)
+}
+
+type WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleFilterSettings)(nil)).Elem()
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput) ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput() WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput) ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput {
+	return o
+}
+
+// Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+func (o WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput) Filter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRuleFilterSettings) *string { return v.Filter }).(pulumi.StringPtrOutput)
+}
+
+// no documentation available
+func (o WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRuleFilterSettings) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+type WebApplicationConversionGoals struct {
+	// A conversion goal of the application
+	Goals []WebApplicationConversionGoalsGoal `pulumi:"goals"`
+}
+
+// WebApplicationConversionGoalsInput is an input type that accepts WebApplicationConversionGoalsArgs and WebApplicationConversionGoalsOutput values.
+// You can construct a concrete instance of `WebApplicationConversionGoalsInput` via:
+//
+//	WebApplicationConversionGoalsArgs{...}
+type WebApplicationConversionGoalsInput interface {
+	pulumi.Input
+
+	ToWebApplicationConversionGoalsOutput() WebApplicationConversionGoalsOutput
+	ToWebApplicationConversionGoalsOutputWithContext(context.Context) WebApplicationConversionGoalsOutput
+}
+
+type WebApplicationConversionGoalsArgs struct {
+	// A conversion goal of the application
+	Goals WebApplicationConversionGoalsGoalArrayInput `pulumi:"goals"`
+}
+
+func (WebApplicationConversionGoalsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationConversionGoals)(nil)).Elem()
+}
+
+func (i WebApplicationConversionGoalsArgs) ToWebApplicationConversionGoalsOutput() WebApplicationConversionGoalsOutput {
+	return i.ToWebApplicationConversionGoalsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationConversionGoalsArgs) ToWebApplicationConversionGoalsOutputWithContext(ctx context.Context) WebApplicationConversionGoalsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsOutput)
+}
+
+func (i WebApplicationConversionGoalsArgs) ToWebApplicationConversionGoalsPtrOutput() WebApplicationConversionGoalsPtrOutput {
+	return i.ToWebApplicationConversionGoalsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationConversionGoalsArgs) ToWebApplicationConversionGoalsPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsOutput).ToWebApplicationConversionGoalsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationConversionGoalsPtrInput is an input type that accepts WebApplicationConversionGoalsArgs, WebApplicationConversionGoalsPtr and WebApplicationConversionGoalsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationConversionGoalsPtrInput` via:
+//
+//	        WebApplicationConversionGoalsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationConversionGoalsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationConversionGoalsPtrOutput() WebApplicationConversionGoalsPtrOutput
+	ToWebApplicationConversionGoalsPtrOutputWithContext(context.Context) WebApplicationConversionGoalsPtrOutput
+}
+
+type webApplicationConversionGoalsPtrType WebApplicationConversionGoalsArgs
+
+func WebApplicationConversionGoalsPtr(v *WebApplicationConversionGoalsArgs) WebApplicationConversionGoalsPtrInput {
+	return (*webApplicationConversionGoalsPtrType)(v)
+}
+
+func (*webApplicationConversionGoalsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationConversionGoals)(nil)).Elem()
+}
+
+func (i *webApplicationConversionGoalsPtrType) ToWebApplicationConversionGoalsPtrOutput() WebApplicationConversionGoalsPtrOutput {
+	return i.ToWebApplicationConversionGoalsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationConversionGoalsPtrType) ToWebApplicationConversionGoalsPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsPtrOutput)
+}
+
+type WebApplicationConversionGoalsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationConversionGoalsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationConversionGoals)(nil)).Elem()
+}
+
+func (o WebApplicationConversionGoalsOutput) ToWebApplicationConversionGoalsOutput() WebApplicationConversionGoalsOutput {
+	return o
+}
+
+func (o WebApplicationConversionGoalsOutput) ToWebApplicationConversionGoalsOutputWithContext(ctx context.Context) WebApplicationConversionGoalsOutput {
+	return o
+}
+
+func (o WebApplicationConversionGoalsOutput) ToWebApplicationConversionGoalsPtrOutput() WebApplicationConversionGoalsPtrOutput {
+	return o.ToWebApplicationConversionGoalsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationConversionGoalsOutput) ToWebApplicationConversionGoalsPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationConversionGoals) *WebApplicationConversionGoals {
+		return &v
+	}).(WebApplicationConversionGoalsPtrOutput)
+}
+
+// A conversion goal of the application
+func (o WebApplicationConversionGoalsOutput) Goals() WebApplicationConversionGoalsGoalArrayOutput {
+	return o.ApplyT(func(v WebApplicationConversionGoals) []WebApplicationConversionGoalsGoal { return v.Goals }).(WebApplicationConversionGoalsGoalArrayOutput)
+}
+
+type WebApplicationConversionGoalsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationConversionGoalsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationConversionGoals)(nil)).Elem()
+}
+
+func (o WebApplicationConversionGoalsPtrOutput) ToWebApplicationConversionGoalsPtrOutput() WebApplicationConversionGoalsPtrOutput {
+	return o
+}
+
+func (o WebApplicationConversionGoalsPtrOutput) ToWebApplicationConversionGoalsPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsPtrOutput {
+	return o
+}
+
+func (o WebApplicationConversionGoalsPtrOutput) Elem() WebApplicationConversionGoalsOutput {
+	return o.ApplyT(func(v *WebApplicationConversionGoals) WebApplicationConversionGoals {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationConversionGoals
+		return ret
+	}).(WebApplicationConversionGoalsOutput)
+}
+
+// A conversion goal of the application
+func (o WebApplicationConversionGoalsPtrOutput) Goals() WebApplicationConversionGoalsGoalArrayOutput {
+	return o.ApplyT(func(v *WebApplicationConversionGoals) []WebApplicationConversionGoalsGoal {
+		if v == nil {
+			return nil
+		}
+		return v.Goals
+	}).(WebApplicationConversionGoalsGoalArrayOutput)
+}
+
 type WebApplicationConversionGoalsGoal struct {
 	// Configuration of a destination-based conversion goal
 	Destination *WebApplicationConversionGoalsGoalDestination `pulumi:"destination"`
@@ -12316,6 +12514,9 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsInput)(nil)).Elem(), WebApplicationConversionGoalsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsPtrInput)(nil)).Elem(), WebApplicationConversionGoalsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsGoalInput)(nil)).Elem(), WebApplicationConversionGoalsGoalArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsGoalArrayInput)(nil)).Elem(), WebApplicationConversionGoalsGoalArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsGoalDestinationInput)(nil)).Elem(), WebApplicationConversionGoalsGoalDestinationArgs{})
@@ -12458,6 +12659,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput{})
+	pulumi.RegisterOutputType(WebApplicationConversionGoalsOutput{})
+	pulumi.RegisterOutputType(WebApplicationConversionGoalsPtrOutput{})
 	pulumi.RegisterOutputType(WebApplicationConversionGoalsGoalOutput{})
 	pulumi.RegisterOutputType(WebApplicationConversionGoalsGoalArrayOutput{})
 	pulumi.RegisterOutputType(WebApplicationConversionGoalsGoalDestinationOutput{})

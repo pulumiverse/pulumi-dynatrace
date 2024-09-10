@@ -14609,6 +14609,29 @@ export interface KubernetesAppKubernetesAppOptions {
     enableKubernetesApp: boolean;
 }
 
+export interface KubernetesEnrichmentRules {
+    rules: outputs.KubernetesEnrichmentRulesRule[];
+}
+
+export interface KubernetesEnrichmentRulesRule {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * The source must follow the syntax of Kubernetes annotation/label keys as defined in the [Kubernetes documentation](https://dt-url.net/2c02sbn).
+     */
+    source: string;
+    /**
+     * Possible Values: `Dt_cost_costcenter`, `Dt_cost_product`, `Dt_security_context`
+     */
+    target: string;
+    /**
+     * Possible Values: `ANNOTATION`, `LABEL`
+     */
+    type: string;
+}
+
 export interface KubernetesEventPatterns {
     eventPatterns: outputs.KubernetesEventPatternsEventPattern[];
 }

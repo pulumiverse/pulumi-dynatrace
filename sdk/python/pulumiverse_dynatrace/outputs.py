@@ -854,6 +854,8 @@ __all__ = [
     'K8sWorkloadAnomaliesWorkloadWithoutReadyPods',
     'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration',
     'KubernetesAppKubernetesAppOptions',
+    'KubernetesEnrichmentRules',
+    'KubernetesEnrichmentRulesRule',
     'KubernetesEventPatterns',
     'KubernetesEventPatternsEventPattern',
     'LimitOutboundConnectionsAllowedOutboundConnections',
@@ -48316,6 +48318,69 @@ class KubernetesAppKubernetesAppOptions(dict):
         New Kubernetes experience
         """
         return pulumi.get(self, "enable_kubernetes_app")
+
+
+@pulumi.output_type
+class KubernetesEnrichmentRules(dict):
+    def __init__(__self__, *,
+                 rules: Sequence['outputs.KubernetesEnrichmentRulesRule']):
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.KubernetesEnrichmentRulesRule']:
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class KubernetesEnrichmentRulesRule(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 source: str,
+                 target: str,
+                 type: str):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param str source: The source must follow the syntax of Kubernetes annotation/label keys as defined in the [Kubernetes documentation](https://dt-url.net/2c02sbn).
+        :param str target: Possible Values: `Dt_cost_costcenter`, `Dt_cost_product`, `Dt_security_context`
+        :param str type: Possible Values: `ANNOTATION`, `LABEL`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "target", target)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def source(self) -> str:
+        """
+        The source must follow the syntax of Kubernetes annotation/label keys as defined in the [Kubernetes documentation](https://dt-url.net/2c02sbn).
+        """
+        return pulumi.get(self, "source")
+
+    @property
+    @pulumi.getter
+    def target(self) -> str:
+        """
+        Possible Values: `Dt_cost_costcenter`, `Dt_cost_product`, `Dt_security_context`
+        """
+        return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Possible Values: `ANNOTATION`, `LABEL`
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

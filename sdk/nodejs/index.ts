@@ -770,6 +770,11 @@ export const getVulnerabilityAlerting: typeof import("./getVulnerabilityAlerting
 export const getVulnerabilityAlertingOutput: typeof import("./getVulnerabilityAlerting").getVulnerabilityAlertingOutput = null as any;
 utilities.lazyLoad(exports, ["getVulnerabilityAlerting","getVulnerabilityAlertingOutput"], () => require("./getVulnerabilityAlerting"));
 
+export { GoldenStateArgs, GoldenStateState } from "./goldenState";
+export type GoldenState = import("./goldenState").GoldenState;
+export const GoldenState: typeof import("./goldenState").GoldenState = null as any;
+utilities.lazyLoad(exports, ["GoldenState"], () => require("./goldenState"));
+
 export { GrailMetricsAllowallArgs, GrailMetricsAllowallState } from "./grailMetricsAllowall";
 export type GrailMetricsAllowall = import("./grailMetricsAllowall").GrailMetricsAllowall;
 export const GrailMetricsAllowall: typeof import("./grailMetricsAllowall").GrailMetricsAllowall = null as any;
@@ -784,6 +789,11 @@ export { GrailSecurityContextArgs, GrailSecurityContextState } from "./grailSecu
 export type GrailSecurityContext = import("./grailSecurityContext").GrailSecurityContext;
 export const GrailSecurityContext: typeof import("./grailSecurityContext").GrailSecurityContext = null as any;
 utilities.lazyLoad(exports, ["GrailSecurityContext"], () => require("./grailSecurityContext"));
+
+export { HistogramMetricsArgs, HistogramMetricsState } from "./histogramMetrics";
+export type HistogramMetrics = import("./histogramMetrics").HistogramMetrics;
+export const HistogramMetrics: typeof import("./histogramMetrics").HistogramMetrics = null as any;
+utilities.lazyLoad(exports, ["HistogramMetrics"], () => require("./histogramMetrics"));
 
 export { HostAnomaliesArgs, HostAnomaliesState } from "./hostAnomalies";
 export type HostAnomalies = import("./hostAnomalies").HostAnomalies;
@@ -994,6 +1004,11 @@ export { KubernetesAppArgs, KubernetesAppState } from "./kubernetesApp";
 export type KubernetesApp = import("./kubernetesApp").KubernetesApp;
 export const KubernetesApp: typeof import("./kubernetesApp").KubernetesApp = null as any;
 utilities.lazyLoad(exports, ["KubernetesApp"], () => require("./kubernetesApp"));
+
+export { KubernetesEnrichmentArgs, KubernetesEnrichmentState } from "./kubernetesEnrichment";
+export type KubernetesEnrichment = import("./kubernetesEnrichment").KubernetesEnrichment;
+export const KubernetesEnrichment: typeof import("./kubernetesEnrichment").KubernetesEnrichment = null as any;
+utilities.lazyLoad(exports, ["KubernetesEnrichment"], () => require("./kubernetesEnrichment"));
 
 export { LimitOutboundConnectionsArgs, LimitOutboundConnectionsState } from "./limitOutboundConnections";
 export type LimitOutboundConnections = import("./limitOutboundConnections").LimitOutboundConnections;
@@ -2028,12 +2043,16 @@ const _module = {
                 return new GenericTypes(name, <any>undefined, { urn })
             case "dynatrace:index/geolocation:Geolocation":
                 return new Geolocation(name, <any>undefined, { urn })
+            case "dynatrace:index/goldenState:GoldenState":
+                return new GoldenState(name, <any>undefined, { urn })
             case "dynatrace:index/grailMetricsAllowall:GrailMetricsAllowall":
                 return new GrailMetricsAllowall(name, <any>undefined, { urn })
             case "dynatrace:index/grailMetricsAllowlist:GrailMetricsAllowlist":
                 return new GrailMetricsAllowlist(name, <any>undefined, { urn })
             case "dynatrace:index/grailSecurityContext:GrailSecurityContext":
                 return new GrailSecurityContext(name, <any>undefined, { urn })
+            case "dynatrace:index/histogramMetrics:HistogramMetrics":
+                return new HistogramMetrics(name, <any>undefined, { urn })
             case "dynatrace:index/hostAnomalies:HostAnomalies":
                 return new HostAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/hostAnomaliesV2:HostAnomaliesV2":
@@ -2118,6 +2137,8 @@ const _module = {
                 return new Kubernetes(name, <any>undefined, { urn })
             case "dynatrace:index/kubernetesApp:KubernetesApp":
                 return new KubernetesApp(name, <any>undefined, { urn })
+            case "dynatrace:index/kubernetesEnrichment:KubernetesEnrichment":
+                return new KubernetesEnrichment(name, <any>undefined, { urn })
             case "dynatrace:index/limitOutboundConnections:LimitOutboundConnections":
                 return new LimitOutboundConnections(name, <any>undefined, { urn })
             case "dynatrace:index/logBuckets:LogBuckets":
@@ -2550,9 +2571,11 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/genericRelationships",
 pulumi.runtime.registerResourceModule("dynatrace", "index/genericSetting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/genericTypes", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/geolocation", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/goldenState", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/grailMetricsAllowall", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/grailMetricsAllowlist", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/grailSecurityContext", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/histogramMetrics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostAnomaliesV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostMonitoring", _module)
@@ -2595,6 +2618,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/keyRequests", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/keyUserAction", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/kubernetes", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/kubernetesApp", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/kubernetesEnrichment", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/limitOutboundConnections", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logBuckets", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logCustomAttribute", _module)
