@@ -14317,6 +14317,29 @@ export interface KubernetesAppKubernetesAppOptions {
     enableKubernetesApp: pulumi.Input<boolean>;
 }
 
+export interface KubernetesEnrichmentRules {
+    rules: pulumi.Input<pulumi.Input<inputs.KubernetesEnrichmentRulesRule>[]>;
+}
+
+export interface KubernetesEnrichmentRulesRule {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The source must follow the syntax of Kubernetes annotation/label keys as defined in the [Kubernetes documentation](https://dt-url.net/2c02sbn).
+     */
+    source: pulumi.Input<string>;
+    /**
+     * Possible Values: `Dt_cost_costcenter`, `Dt_cost_product`, `Dt_security_context`
+     */
+    target: pulumi.Input<string>;
+    /**
+     * Possible Values: `ANNOTATION`, `LABEL`
+     */
+    type: pulumi.Input<string>;
+}
+
 export interface KubernetesEventPatterns {
     eventPatterns: pulumi.Input<pulumi.Input<inputs.KubernetesEventPatternsEventPattern>[]>;
 }

@@ -235,12 +235,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &GenericTypes{}
 	case "dynatrace:index/geolocation:Geolocation":
 		r = &Geolocation{}
+	case "dynatrace:index/goldenState:GoldenState":
+		r = &GoldenState{}
 	case "dynatrace:index/grailMetricsAllowall:GrailMetricsAllowall":
 		r = &GrailMetricsAllowall{}
 	case "dynatrace:index/grailMetricsAllowlist:GrailMetricsAllowlist":
 		r = &GrailMetricsAllowlist{}
 	case "dynatrace:index/grailSecurityContext:GrailSecurityContext":
 		r = &GrailSecurityContext{}
+	case "dynatrace:index/histogramMetrics:HistogramMetrics":
+		r = &HistogramMetrics{}
 	case "dynatrace:index/hostAnomalies:HostAnomalies":
 		r = &HostAnomalies{}
 	case "dynatrace:index/hostAnomaliesV2:HostAnomaliesV2":
@@ -325,6 +329,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Kubernetes{}
 	case "dynatrace:index/kubernetesApp:KubernetesApp":
 		r = &KubernetesApp{}
+	case "dynatrace:index/kubernetesEnrichment:KubernetesEnrichment":
+		r = &KubernetesEnrichment{}
 	case "dynatrace:index/limitOutboundConnections:LimitOutboundConnections":
 		r = &LimitOutboundConnections{}
 	case "dynatrace:index/logBuckets:LogBuckets":
@@ -1213,6 +1219,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/goldenState",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/grailMetricsAllowall",
 		&module{version},
 	)
@@ -1224,6 +1235,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/grailSecurityContext",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/histogramMetrics",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1434,6 +1450,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/kubernetesApp",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/kubernetesEnrichment",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -158,9 +158,11 @@ from .get_synthetic_nodes import *
 from .get_tenant import *
 from .get_update_windows import *
 from .get_vulnerability_alerting import *
+from .golden_state import *
 from .grail_metrics_allowall import *
 from .grail_metrics_allowlist import *
 from .grail_security_context import *
+from .histogram_metrics import *
 from .host_anomalies import *
 from .host_anomalies_v2 import *
 from .host_monitoring import *
@@ -203,6 +205,7 @@ from .key_requests import *
 from .key_user_action import *
 from .kubernetes import *
 from .kubernetes_app import *
+from .kubernetes_enrichment import *
 from .limit_outbound_connections import *
 from .log_buckets import *
 from .log_custom_attribute import *
@@ -1235,6 +1238,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/goldenState",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/goldenState:GoldenState": "GoldenState"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/grailMetricsAllowall",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -1255,6 +1266,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/grailSecurityContext:GrailSecurityContext": "GrailSecurityContext"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/histogramMetrics",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/histogramMetrics:HistogramMetrics": "HistogramMetrics"
   }
  },
  {
@@ -1591,6 +1610,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/kubernetesApp:KubernetesApp": "KubernetesApp"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/kubernetesEnrichment",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/kubernetesEnrichment:KubernetesEnrichment": "KubernetesEnrichment"
   }
  },
  {

@@ -55,7 +55,7 @@ type Document struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The ID of the owner of this document
 	Owner pulumi.StringOutput `pulumi:"owner"`
-	// Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
+	// Specifies whether the document is private or readable by everybody
 	Private pulumi.BoolPtrOutput `pulumi:"private"`
 	// Type of the document. Possible Values are `dashboard` and `notebook`
 	Type pulumi.StringOutput `pulumi:"type"`
@@ -107,7 +107,7 @@ type documentState struct {
 	Name *string `pulumi:"name"`
 	// The ID of the owner of this document
 	Owner *string `pulumi:"owner"`
-	// Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
+	// Specifies whether the document is private or readable by everybody
 	Private *bool `pulumi:"private"`
 	// Type of the document. Possible Values are `dashboard` and `notebook`
 	Type *string `pulumi:"type"`
@@ -124,7 +124,7 @@ type DocumentState struct {
 	Name pulumi.StringPtrInput
 	// The ID of the owner of this document
 	Owner pulumi.StringPtrInput
-	// Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
+	// Specifies whether the document is private or readable by everybody
 	Private pulumi.BoolPtrInput
 	// Type of the document. Possible Values are `dashboard` and `notebook`
 	Type pulumi.StringPtrInput
@@ -145,7 +145,7 @@ type documentArgs struct {
 	Name *string `pulumi:"name"`
 	// The ID of the owner of this document
 	Owner *string `pulumi:"owner"`
-	// Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
+	// Specifies whether the document is private or readable by everybody
 	Private *bool `pulumi:"private"`
 	// Type of the document. Possible Values are `dashboard` and `notebook`
 	Type string `pulumi:"type"`
@@ -161,7 +161,7 @@ type DocumentArgs struct {
 	Name pulumi.StringPtrInput
 	// The ID of the owner of this document
 	Owner pulumi.StringPtrInput
-	// Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
+	// Specifies whether the document is private or readable by everybody
 	Private pulumi.BoolPtrInput
 	// Type of the document. Possible Values are `dashboard` and `notebook`
 	Type pulumi.StringInput
@@ -274,7 +274,7 @@ func (o DocumentOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v *Document) pulumi.StringOutput { return v.Owner }).(pulumi.StringOutput)
 }
 
-// Specifies whether the document is private or readable by everybody. This attribute is currently getting ignored until all Dynatrace Environments are guaranteed to support for it
+// Specifies whether the document is private or readable by everybody
 func (o DocumentOutput) Private() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Document) pulumi.BoolPtrOutput { return v.Private }).(pulumi.BoolPtrOutput)
 }
