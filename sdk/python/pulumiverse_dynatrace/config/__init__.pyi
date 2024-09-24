@@ -47,3 +47,7 @@ iamClientId: Optional[str]
 
 iamClientSecret: Optional[str]
 
+iamEndpointUrl: Optional[str]
+
+iamTokenUrl: Optional[str]
+

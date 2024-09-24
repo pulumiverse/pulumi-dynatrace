@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class AppMonitoring extends pulumi.CustomResource {
@@ -33,6 +35,10 @@ export class AppMonitoring extends pulumi.CustomResource {
     }
 
     /**
+     * You can override the default monitoring setting for each app separately
+     */
+    public readonly appMonitoring!: pulumi.Output<outputs.AppMonitoringAppMonitoring | undefined>;
+    /**
      * Possible Values: `All`, `Off`
      */
     public readonly defaultLogLevel!: pulumi.Output<string>;
@@ -50,12 +56,14 @@ export class AppMonitoring extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppMonitoringState | undefined;
+            resourceInputs["appMonitoring"] = state ? state.appMonitoring : undefined;
             resourceInputs["defaultLogLevel"] = state ? state.defaultLogLevel : undefined;
         } else {
             const args = argsOrState as AppMonitoringArgs | undefined;
             if ((!args || args.defaultLogLevel === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'defaultLogLevel'");
             }
+            resourceInputs["appMonitoring"] = args ? args.appMonitoring : undefined;
             resourceInputs["defaultLogLevel"] = args ? args.defaultLogLevel : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -68,6 +76,10 @@ export class AppMonitoring extends pulumi.CustomResource {
  */
 export interface AppMonitoringState {
     /**
+     * You can override the default monitoring setting for each app separately
+     */
+    appMonitoring?: pulumi.Input<inputs.AppMonitoringAppMonitoring>;
+    /**
      * Possible Values: `All`, `Off`
      */
     defaultLogLevel?: pulumi.Input<string>;
@@ -77,6 +89,10 @@ export interface AppMonitoringState {
  * The set of arguments for constructing a AppMonitoring resource.
  */
 export interface AppMonitoringArgs {
+    /**
+     * You can override the default monitoring setting for each app separately
+     */
+    appMonitoring?: pulumi.Input<inputs.AppMonitoringAppMonitoring>;
     /**
      * Possible Values: `All`, `Off`
      */

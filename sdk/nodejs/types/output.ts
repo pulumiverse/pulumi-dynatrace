@@ -329,6 +329,21 @@ export interface ApiDetectionConditionsCondition {
     pattern: string;
 }
 
+export interface AppMonitoringAppMonitoring {
+    appMonitorings: outputs.AppMonitoringAppMonitoringAppMonitoring[];
+}
+
+export interface AppMonitoringAppMonitoringAppMonitoring {
+    /**
+     * App ID
+     */
+    appId: string;
+    /**
+     * Possible Values: `Debug`, `Error`, `Info`, `Off`, `UseDefault`, `Warn`
+     */
+    customLogLevel: string;
+}
+
 export interface ApplicationAnomaliesFailureRate {
     /**
      * Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%

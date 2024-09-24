@@ -8,18 +8,24 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['AppMonitoringArgs', 'AppMonitoring']
 
 @pulumi.input_type
 class AppMonitoringArgs:
     def __init__(__self__, *,
-                 default_log_level: pulumi.Input[str]):
+                 default_log_level: pulumi.Input[str],
+                 app_monitoring: Optional[pulumi.Input['AppMonitoringAppMonitoringArgs']] = None):
         """
         The set of arguments for constructing a AppMonitoring resource.
         :param pulumi.Input[str] default_log_level: Possible Values: `All`, `Off`
+        :param pulumi.Input['AppMonitoringAppMonitoringArgs'] app_monitoring: You can override the default monitoring setting for each app separately
         """
         pulumi.set(__self__, "default_log_level", default_log_level)
+        if app_monitoring is not None:
+            pulumi.set(__self__, "app_monitoring", app_monitoring)
 
     @property
     @pulumi.getter(name="defaultLogLevel")
@@ -33,17 +39,45 @@ class AppMonitoringArgs:
     def default_log_level(self, value: pulumi.Input[str]):
         pulumi.set(self, "default_log_level", value)
 
+    @property
+    @pulumi.getter(name="appMonitoring")
+    def app_monitoring(self) -> Optional[pulumi.Input['AppMonitoringAppMonitoringArgs']]:
+        """
+        You can override the default monitoring setting for each app separately
+        """
+        return pulumi.get(self, "app_monitoring")
+
+    @app_monitoring.setter
+    def app_monitoring(self, value: Optional[pulumi.Input['AppMonitoringAppMonitoringArgs']]):
+        pulumi.set(self, "app_monitoring", value)
+
 
 @pulumi.input_type
 class _AppMonitoringState:
     def __init__(__self__, *,
+                 app_monitoring: Optional[pulumi.Input['AppMonitoringAppMonitoringArgs']] = None,
                  default_log_level: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppMonitoring resources.
+        :param pulumi.Input['AppMonitoringAppMonitoringArgs'] app_monitoring: You can override the default monitoring setting for each app separately
         :param pulumi.Input[str] default_log_level: Possible Values: `All`, `Off`
         """
+        if app_monitoring is not None:
+            pulumi.set(__self__, "app_monitoring", app_monitoring)
         if default_log_level is not None:
             pulumi.set(__self__, "default_log_level", default_log_level)
+
+    @property
+    @pulumi.getter(name="appMonitoring")
+    def app_monitoring(self) -> Optional[pulumi.Input['AppMonitoringAppMonitoringArgs']]:
+        """
+        You can override the default monitoring setting for each app separately
+        """
+        return pulumi.get(self, "app_monitoring")
+
+    @app_monitoring.setter
+    def app_monitoring(self, value: Optional[pulumi.Input['AppMonitoringAppMonitoringArgs']]):
+        pulumi.set(self, "app_monitoring", value)
 
     @property
     @pulumi.getter(name="defaultLogLevel")
@@ -63,12 +97,14 @@ class AppMonitoring(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 app_monitoring: Optional[pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']]] = None,
                  default_log_level: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a AppMonitoring resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']] app_monitoring: You can override the default monitoring setting for each app separately
         :param pulumi.Input[str] default_log_level: Possible Values: `All`, `Off`
         """
         ...
@@ -94,6 +130,7 @@ class AppMonitoring(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 app_monitoring: Optional[pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']]] = None,
                  default_log_level: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -104,6 +141,7 @@ class AppMonitoring(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AppMonitoringArgs.__new__(AppMonitoringArgs)
 
+            __props__.__dict__["app_monitoring"] = app_monitoring
             if default_log_level is None and not opts.urn:
                 raise TypeError("Missing required property 'default_log_level'")
             __props__.__dict__["default_log_level"] = default_log_level
@@ -117,6 +155,7 @@ class AppMonitoring(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            app_monitoring: Optional[pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']]] = None,
             default_log_level: Optional[pulumi.Input[str]] = None) -> 'AppMonitoring':
         """
         Get an existing AppMonitoring resource's state with the given name, id, and optional extra
@@ -125,14 +164,24 @@ class AppMonitoring(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']] app_monitoring: You can override the default monitoring setting for each app separately
         :param pulumi.Input[str] default_log_level: Possible Values: `All`, `Off`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _AppMonitoringState.__new__(_AppMonitoringState)
 
+        __props__.__dict__["app_monitoring"] = app_monitoring
         __props__.__dict__["default_log_level"] = default_log_level
         return AppMonitoring(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="appMonitoring")
+    def app_monitoring(self) -> pulumi.Output[Optional['outputs.AppMonitoringAppMonitoring']]:
+        """
+        You can override the default monitoring setting for each app separately
+        """
+        return pulumi.get(self, "app_monitoring")
 
     @property
     @pulumi.getter(name="defaultLogLevel")

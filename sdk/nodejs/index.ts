@@ -420,6 +420,11 @@ export type DeclarativeGrouping = import("./declarativeGrouping").DeclarativeGro
 export const DeclarativeGrouping: typeof import("./declarativeGrouping").DeclarativeGrouping = null as any;
 utilities.lazyLoad(exports, ["DeclarativeGrouping"], () => require("./declarativeGrouping"));
 
+export { DevobsGitOnpremArgs, DevobsGitOnpremState } from "./devobsGitOnprem";
+export type DevobsGitOnprem = import("./devobsGitOnprem").DevobsGitOnprem;
+export const DevobsGitOnprem: typeof import("./devobsGitOnprem").DevobsGitOnprem = null as any;
+utilities.lazyLoad(exports, ["DevobsGitOnprem"], () => require("./devobsGitOnprem"));
+
 export { DirectSharesArgs, DirectSharesState } from "./directShares";
 export type DirectShares = import("./directShares").DirectShares;
 export const DirectShares: typeof import("./directShares").DirectShares = null as any;
@@ -1995,6 +2000,8 @@ const _module = {
                 return new DduPool(name, <any>undefined, { urn })
             case "dynatrace:index/declarativeGrouping:DeclarativeGrouping":
                 return new DeclarativeGrouping(name, <any>undefined, { urn })
+            case "dynatrace:index/devobsGitOnprem:DevobsGitOnprem":
+                return new DevobsGitOnprem(name, <any>undefined, { urn })
             case "dynatrace:index/directShares:DirectShares":
                 return new DirectShares(name, <any>undefined, { urn })
             case "dynatrace:index/discoveryDefaultRules:DiscoveryDefaultRules":
@@ -2547,6 +2554,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/davisAnomalyDetectors"
 pulumi.runtime.registerResourceModule("dynatrace", "index/dbAppFeatureFlags", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/dduPool", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/declarativeGrouping", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/devobsGitOnprem", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/directShares", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/discoveryDefaultRules", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/discoveryFeatureFlags", _module)

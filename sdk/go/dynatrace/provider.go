@@ -38,6 +38,8 @@ type Provider struct {
 	IamAccountId       pulumi.StringPtrOutput `pulumi:"iamAccountId"`
 	IamClientId        pulumi.StringPtrOutput `pulumi:"iamClientId"`
 	IamClientSecret    pulumi.StringPtrOutput `pulumi:"iamClientSecret"`
+	IamEndpointUrl     pulumi.StringPtrOutput `pulumi:"iamEndpointUrl"`
+	IamTokenUrl        pulumi.StringPtrOutput `pulumi:"iamTokenUrl"`
 }
 
 // NewProvider registers a new resource with the given unique name, arguments, and options.
@@ -100,6 +102,12 @@ func NewProvider(ctx *pulumi.Context,
 	if args.IamClientSecret != nil {
 		args.IamClientSecret = pulumi.ToSecret(args.IamClientSecret).(pulumi.StringPtrInput)
 	}
+	if args.IamEndpointUrl != nil {
+		args.IamEndpointUrl = pulumi.ToSecret(args.IamEndpointUrl).(pulumi.StringPtrInput)
+	}
+	if args.IamTokenUrl != nil {
+		args.IamTokenUrl = pulumi.ToSecret(args.IamTokenUrl).(pulumi.StringPtrInput)
+	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"accountId",
 		"automationClientId",
@@ -112,6 +120,8 @@ func NewProvider(ctx *pulumi.Context,
 		"iamAccountId",
 		"iamClientId",
 		"iamClientSecret",
+		"iamEndpointUrl",
+		"iamTokenUrl",
 	})
 	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
@@ -144,6 +154,8 @@ type providerArgs struct {
 	IamAccountId       *string `pulumi:"iamAccountId"`
 	IamClientId        *string `pulumi:"iamClientId"`
 	IamClientSecret    *string `pulumi:"iamClientSecret"`
+	IamEndpointUrl     *string `pulumi:"iamEndpointUrl"`
+	IamTokenUrl        *string `pulumi:"iamTokenUrl"`
 }
 
 // The set of arguments for constructing a Provider resource.
@@ -168,6 +180,8 @@ type ProviderArgs struct {
 	IamAccountId       pulumi.StringPtrInput
 	IamClientId        pulumi.StringPtrInput
 	IamClientSecret    pulumi.StringPtrInput
+	IamEndpointUrl     pulumi.StringPtrInput
+	IamTokenUrl        pulumi.StringPtrInput
 }
 
 func (ProviderArgs) ElementType() reflect.Type {
@@ -267,6 +281,14 @@ func (o ProviderOutput) IamClientId() pulumi.StringPtrOutput {
 
 func (o ProviderOutput) IamClientSecret() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.IamClientSecret }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) IamEndpointUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.IamEndpointUrl }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) IamTokenUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.IamTokenUrl }).(pulumi.StringPtrOutput)
 }
 
 func init() {

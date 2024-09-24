@@ -98,6 +98,7 @@
         "dbAppFeatureFlags.ts",
         "dduPool.ts",
         "declarativeGrouping.ts",
+        "devobsGitOnprem.ts",
         "directShares.ts",
         "discoveryDefaultRules.ts",
         "discoveryFeatureFlags.ts",

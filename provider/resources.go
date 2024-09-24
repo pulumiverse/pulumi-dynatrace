@@ -129,11 +129,19 @@ func Provider() tfbridge.ProviderInfo {
 		},
 		PreConfigureCallback: preConfigureCallback,
 		Resources: map[string]*tfbridge.ResourceInfo{
-			"dynatrace_alerting":                      {Tok: dynatraceResource(mainMod, "Alerting")},
-			"dynatrace_activegate_token":              {Tok: dynatraceResource(mainMod, "ActivegateToken")},
-			"dynatrace_activegate_updates":            {Tok: dynatraceResource(mainMod, "ActivegateUpdates")},
-			"dynatrace_alerting_profile":              {Tok: dynatraceResource(mainMod, "AlertingProfile")},
-			"dynatrace_aix_extension":                 {Tok: dynatraceResource(mainMod, "AixExtension")},
+			"dynatrace_alerting":           {Tok: dynatraceResource(mainMod, "Alerting")},
+			"dynatrace_activegate_token":   {Tok: dynatraceResource(mainMod, "ActivegateToken")},
+			"dynatrace_activegate_updates": {Tok: dynatraceResource(mainMod, "ActivegateUpdates")},
+			"dynatrace_alerting_profile":   {Tok: dynatraceResource(mainMod, "AlertingProfile")},
+			"dynatrace_aix_extension":      {Tok: dynatraceResource(mainMod, "AixExtension")},
+			"dynatrace_app_monitoring": {
+				Tok: dynatraceResource(mainMod, "AppMonitoring"),
+				Fields: map[string]*tfbridge.SchemaInfo{
+					"app_monitoring": {
+						CSharpName: "AppMonitoringOverrides",
+					},
+				},
+			},
 			"dynatrace_application_anomalies":         {Tok: dynatraceResource(mainMod, "ApplicationAnomalies")},
 			"dynatrace_application_data_privacy":      {Tok: dynatraceResource(mainMod, "ApplicationDataPrivacy")},
 			"dynatrace_application_detection_rule":    {Tok: dynatraceResource(mainMod, "ApplicationDetectionRule")},
@@ -163,7 +171,7 @@ func Provider() tfbridge.ProviderInfo {
 				Tok:    dynatraceResource(mainMod, "ConnectivityAlerts"),
 				Fields: map[string]*tfbridge.SchemaInfo{"connectivity_alerts": {CSharpName: "EnableConnectivityAlerts"}},
 			},
-			"dynatrace_container_builtin_rule":         {Tok: dynatraceResource(mainMod, "ContainerBuiltinRule")},
+			"dynatrace_container_builtin_rule": {Tok: dynatraceResource(mainMod, "ContainerBuiltinRule")},
 			"dynatrace_container_registry": {
 				Tok: tfbridge.MakeResource(mainPkg, mainMod, "ContainerRegistry"),
 				Fields: map[string]*tfbridge.SchemaInfo{

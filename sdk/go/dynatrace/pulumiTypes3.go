@@ -13,6 +13,213 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type WebAppRequestErrorsErrorRulesErrorRule struct {
+	// Capture settings
+	CaptureSettings WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings `pulumi:"captureSettings"`
+	// Match by errors that have CSP violations
+	ConsiderCspViolations bool `pulumi:"considerCspViolations"`
+	// Match by errors that have failed image requests
+	ConsiderFailedImages bool `pulumi:"considerFailedImages"`
+	// Match by error code
+	ErrorCodes *string `pulumi:"errorCodes"`
+	// Filter settings
+	FilterSettings WebAppRequestErrorsErrorRulesErrorRuleFilterSettings `pulumi:"filterSettings"`
+}
+
+// WebAppRequestErrorsErrorRulesErrorRuleInput is an input type that accepts WebAppRequestErrorsErrorRulesErrorRuleArgs and WebAppRequestErrorsErrorRulesErrorRuleOutput values.
+// You can construct a concrete instance of `WebAppRequestErrorsErrorRulesErrorRuleInput` via:
+//
+//	WebAppRequestErrorsErrorRulesErrorRuleArgs{...}
+type WebAppRequestErrorsErrorRulesErrorRuleInput interface {
+	pulumi.Input
+
+	ToWebAppRequestErrorsErrorRulesErrorRuleOutput() WebAppRequestErrorsErrorRulesErrorRuleOutput
+	ToWebAppRequestErrorsErrorRulesErrorRuleOutputWithContext(context.Context) WebAppRequestErrorsErrorRulesErrorRuleOutput
+}
+
+type WebAppRequestErrorsErrorRulesErrorRuleArgs struct {
+	// Capture settings
+	CaptureSettings WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsInput `pulumi:"captureSettings"`
+	// Match by errors that have CSP violations
+	ConsiderCspViolations pulumi.BoolInput `pulumi:"considerCspViolations"`
+	// Match by errors that have failed image requests
+	ConsiderFailedImages pulumi.BoolInput `pulumi:"considerFailedImages"`
+	// Match by error code
+	ErrorCodes pulumi.StringPtrInput `pulumi:"errorCodes"`
+	// Filter settings
+	FilterSettings WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsInput `pulumi:"filterSettings"`
+}
+
+func (WebAppRequestErrorsErrorRulesErrorRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRule)(nil)).Elem()
+}
+
+func (i WebAppRequestErrorsErrorRulesErrorRuleArgs) ToWebAppRequestErrorsErrorRulesErrorRuleOutput() WebAppRequestErrorsErrorRulesErrorRuleOutput {
+	return i.ToWebAppRequestErrorsErrorRulesErrorRuleOutputWithContext(context.Background())
+}
+
+func (i WebAppRequestErrorsErrorRulesErrorRuleArgs) ToWebAppRequestErrorsErrorRulesErrorRuleOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppRequestErrorsErrorRulesErrorRuleOutput)
+}
+
+// WebAppRequestErrorsErrorRulesErrorRuleArrayInput is an input type that accepts WebAppRequestErrorsErrorRulesErrorRuleArray and WebAppRequestErrorsErrorRulesErrorRuleArrayOutput values.
+// You can construct a concrete instance of `WebAppRequestErrorsErrorRulesErrorRuleArrayInput` via:
+//
+//	WebAppRequestErrorsErrorRulesErrorRuleArray{ WebAppRequestErrorsErrorRulesErrorRuleArgs{...} }
+type WebAppRequestErrorsErrorRulesErrorRuleArrayInput interface {
+	pulumi.Input
+
+	ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutput() WebAppRequestErrorsErrorRulesErrorRuleArrayOutput
+	ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutputWithContext(context.Context) WebAppRequestErrorsErrorRulesErrorRuleArrayOutput
+}
+
+type WebAppRequestErrorsErrorRulesErrorRuleArray []WebAppRequestErrorsErrorRulesErrorRuleInput
+
+func (WebAppRequestErrorsErrorRulesErrorRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppRequestErrorsErrorRulesErrorRule)(nil)).Elem()
+}
+
+func (i WebAppRequestErrorsErrorRulesErrorRuleArray) ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutput() WebAppRequestErrorsErrorRulesErrorRuleArrayOutput {
+	return i.ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutputWithContext(context.Background())
+}
+
+func (i WebAppRequestErrorsErrorRulesErrorRuleArray) ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppRequestErrorsErrorRulesErrorRuleArrayOutput)
+}
+
+type WebAppRequestErrorsErrorRulesErrorRuleOutput struct{ *pulumi.OutputState }
+
+func (WebAppRequestErrorsErrorRulesErrorRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRule)(nil)).Elem()
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) ToWebAppRequestErrorsErrorRulesErrorRuleOutput() WebAppRequestErrorsErrorRulesErrorRuleOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) ToWebAppRequestErrorsErrorRulesErrorRuleOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleOutput {
+	return o
+}
+
+// Capture settings
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) CaptureSettings() WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRule) WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings {
+		return v.CaptureSettings
+	}).(WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput)
+}
+
+// Match by errors that have CSP violations
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) ConsiderCspViolations() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRule) bool { return v.ConsiderCspViolations }).(pulumi.BoolOutput)
+}
+
+// Match by errors that have failed image requests
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) ConsiderFailedImages() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRule) bool { return v.ConsiderFailedImages }).(pulumi.BoolOutput)
+}
+
+// Match by error code
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) ErrorCodes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRule) *string { return v.ErrorCodes }).(pulumi.StringPtrOutput)
+}
+
+// Filter settings
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) FilterSettings() WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRule) WebAppRequestErrorsErrorRulesErrorRuleFilterSettings {
+		return v.FilterSettings
+	}).(WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput)
+}
+
+type WebAppRequestErrorsErrorRulesErrorRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (WebAppRequestErrorsErrorRulesErrorRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppRequestErrorsErrorRulesErrorRule)(nil)).Elem()
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleArrayOutput) ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutput() WebAppRequestErrorsErrorRulesErrorRuleArrayOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleArrayOutput) ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleArrayOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleArrayOutput) Index(i pulumi.IntInput) WebAppRequestErrorsErrorRulesErrorRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebAppRequestErrorsErrorRulesErrorRule {
+		return vs[0].([]WebAppRequestErrorsErrorRulesErrorRule)[vs[1].(int)]
+	}).(WebAppRequestErrorsErrorRulesErrorRuleOutput)
+}
+
+type WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings struct {
+	// Capture this error
+	Capture bool `pulumi:"capture"`
+	// [View more details](https://dt-url.net/hd580p2k)
+	ConsiderForAi *bool `pulumi:"considerForAi"`
+	// Include error in Apdex calculations
+	ImpactApdex *bool `pulumi:"impactApdex"`
+}
+
+// WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsInput is an input type that accepts WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs and WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput values.
+// You can construct a concrete instance of `WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsInput` via:
+//
+//	WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs{...}
+type WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsInput interface {
+	pulumi.Input
+
+	ToWebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput() WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput
+	ToWebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutputWithContext(context.Context) WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput
+}
+
+type WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs struct {
+	// Capture this error
+	Capture pulumi.BoolInput `pulumi:"capture"`
+	// [View more details](https://dt-url.net/hd580p2k)
+	ConsiderForAi pulumi.BoolPtrInput `pulumi:"considerForAi"`
+	// Include error in Apdex calculations
+	ImpactApdex pulumi.BoolPtrInput `pulumi:"impactApdex"`
+}
+
+func (WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings)(nil)).Elem()
+}
+
+func (i WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs) ToWebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput() WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput {
+	return i.ToWebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutputWithContext(context.Background())
+}
+
+func (i WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs) ToWebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput)
+}
+
+type WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings)(nil)).Elem()
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput) ToWebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput() WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput) ToWebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput {
+	return o
+}
+
+// Capture this error
+func (o WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput) Capture() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings) bool { return v.Capture }).(pulumi.BoolOutput)
+}
+
+// [View more details](https://dt-url.net/hd580p2k)
+func (o WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput) ConsiderForAi() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings) *bool { return v.ConsiderForAi }).(pulumi.BoolPtrOutput)
+}
+
+// Include error in Apdex calculations
+func (o WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput) ImpactApdex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings) *bool { return v.ImpactApdex }).(pulumi.BoolPtrOutput)
+}
+
 type WebAppRequestErrorsErrorRulesErrorRuleFilterSettings struct {
 	// Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
 	Filter *string `pulumi:"filter"`
@@ -12514,6 +12721,9 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleArrayInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsInput)(nil)).Elem(), WebApplicationConversionGoalsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsPtrInput)(nil)).Elem(), WebApplicationConversionGoalsArgs{})
@@ -12659,6 +12869,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleOutput{})
+	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleArrayOutput{})
+	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput{})
 	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput{})
 	pulumi.RegisterOutputType(WebApplicationConversionGoalsOutput{})
 	pulumi.RegisterOutputType(WebApplicationConversionGoalsPtrOutput{})

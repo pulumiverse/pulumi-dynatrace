@@ -81,3 +81,11 @@ class _ExportableConfig(types.ModuleType):
     def iam_client_secret(self) -> Optional[str]:
         return __config__.get('iamClientSecret')
 
+    @property
+    def iam_endpoint_url(self) -> Optional[str]:
+        return __config__.get('iamEndpointUrl')
+
+    @property
+    def iam_token_url(self) -> Optional[str]:
+        return __config__.get('iamTokenUrl')
+

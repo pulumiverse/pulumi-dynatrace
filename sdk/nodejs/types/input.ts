@@ -329,6 +329,21 @@ export interface ApiDetectionConditionsCondition {
     pattern: pulumi.Input<string>;
 }
 
+export interface AppMonitoringAppMonitoring {
+    appMonitorings: pulumi.Input<pulumi.Input<inputs.AppMonitoringAppMonitoringAppMonitoring>[]>;
+}
+
+export interface AppMonitoringAppMonitoringAppMonitoring {
+    /**
+     * App ID
+     */
+    appId: pulumi.Input<string>;
+    /**
+     * Possible Values: `Debug`, `Error`, `Info`, `Off`, `UseDefault`, `Warn`
+     */
+    customLogLevel: pulumi.Input<string>;
+}
+
 export interface ApplicationAnomaliesFailureRate {
     /**
      * Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%

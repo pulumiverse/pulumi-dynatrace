@@ -140,5 +140,19 @@ namespace Pulumiverse.Dynatrace
             set => _iamClientSecret.Set(value);
         }
 
+        private static readonly __Value<string?> _iamEndpointUrl = new __Value<string?>(() => __config.Get("iamEndpointUrl"));
+        public static string? IamEndpointUrl
+        {
+            get => _iamEndpointUrl.Get();
+            set => _iamEndpointUrl.Set(value);
+        }
+
+        private static readonly __Value<string?> _iamTokenUrl = new __Value<string?>(() => __config.Get("iamTokenUrl"));
+        public static string? IamTokenUrl
+        {
+            get => _iamTokenUrl.Get();
+            set => _iamTokenUrl.Set(value);
+        }
+
     }
 }

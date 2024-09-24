@@ -14,6 +14,12 @@ namespace Pulumiverse.Dynatrace
     public partial class AppMonitoring : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// You can override the default monitoring setting for each app separately
+        /// </summary>
+        [Output("appMonitoring")]
+        public Output<Outputs.AppMonitoringAppMonitoring?> AppMonitoringOverrides { get; private set; } = null!;
+
+        /// <summary>
         /// Possible Values: `All`, `Off`
         /// </summary>
         [Output("defaultLogLevel")]
@@ -67,6 +73,12 @@ namespace Pulumiverse.Dynatrace
     public sealed class AppMonitoringArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// You can override the default monitoring setting for each app separately
+        /// </summary>
+        [Input("appMonitoring")]
+        public Input<Inputs.AppMonitoringAppMonitoringArgs>? AppMonitoringOverrides { get; set; }
+
+        /// <summary>
         /// Possible Values: `All`, `Off`
         /// </summary>
         [Input("defaultLogLevel", required: true)]
@@ -80,6 +92,12 @@ namespace Pulumiverse.Dynatrace
 
     public sealed class AppMonitoringState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// You can override the default monitoring setting for each app separately
+        /// </summary>
+        [Input("appMonitoring")]
+        public Input<Inputs.AppMonitoringAppMonitoringGetArgs>? AppMonitoringOverrides { get; set; }
+
         /// <summary>
         /// Possible Values: `All`, `Off`
         /// </summary>
