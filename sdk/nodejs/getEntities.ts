@@ -25,7 +25,6 @@ import * as utilities from "./utilities";
  */
 export function getEntities(args?: GetEntitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetEntitiesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getEntities:getEntities", {
         "entitySelector": args.entitySelector,
@@ -77,7 +76,14 @@ export interface GetEntitiesResult {
  * ```
  */
 export function getEntitiesOutput(args?: GetEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEntitiesResult> {
-    return pulumi.output(args).apply((a: any) => getEntities(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getEntities:getEntities", {
+        "entitySelector": args.entitySelector,
+        "from": args.from,
+        "to": args.to,
+        "type": args.type,
+    }, opts);
 }
 
 /**

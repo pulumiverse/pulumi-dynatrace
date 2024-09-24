@@ -13,7 +13,6 @@ import * as utilities from "./utilities";
  */
 export function getAzureSupportedServices(args?: GetAzureSupportedServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetAzureSupportedServicesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getAzureSupportedServices:getAzureSupportedServices", {
         "excepts": args.excepts,
@@ -55,7 +54,11 @@ export interface GetAzureSupportedServicesResult {
  * For an example of this data source, please refer to the Resource Example Usage of the dynatrace.AzureService resource.
  */
 export function getAzureSupportedServicesOutput(args?: GetAzureSupportedServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAzureSupportedServicesResult> {
-    return pulumi.output(args).apply((a: any) => getAzureSupportedServices(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getAzureSupportedServices:getAzureSupportedServices", {
+        "excepts": args.excepts,
+    }, opts);
 }
 
 /**

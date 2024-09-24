@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getAttackAlerting(args: GetAttackAlertingArgs, opts?: pulumi.InvokeOptions): Promise<GetAttackAlertingResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getAttackAlerting:getAttackAlerting", {
         "name": args.name,
@@ -68,7 +67,10 @@ export interface GetAttackAlertingResult {
  * ```
  */
 export function getAttackAlertingOutput(args: GetAttackAlertingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAttackAlertingResult> {
-    return pulumi.output(args).apply((a: any) => getAttackAlerting(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getAttackAlerting:getAttackAlerting", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

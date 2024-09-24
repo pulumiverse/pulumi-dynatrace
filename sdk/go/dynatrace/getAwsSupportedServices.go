@@ -44,14 +44,20 @@ type GetAwsSupportedServicesResult struct {
 
 func GetAwsSupportedServicesOutput(ctx *pulumi.Context, args GetAwsSupportedServicesOutputArgs, opts ...pulumi.InvokeOption) GetAwsSupportedServicesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAwsSupportedServicesResult, error) {
+		ApplyT(func(v interface{}) (GetAwsSupportedServicesResultOutput, error) {
 			args := v.(GetAwsSupportedServicesArgs)
-			r, err := GetAwsSupportedServices(ctx, &args, opts...)
-			var s GetAwsSupportedServicesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAwsSupportedServicesResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getAwsSupportedServices:getAwsSupportedServices", args, &rv, "", opts...)
+			if err != nil {
+				return GetAwsSupportedServicesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAwsSupportedServicesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAwsSupportedServicesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAwsSupportedServicesResultOutput)
 }
 

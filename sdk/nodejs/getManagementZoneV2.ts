@@ -49,7 +49,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getManagementZoneV2(args: GetManagementZoneV2Args, opts?: pulumi.InvokeOptions): Promise<GetManagementZoneV2Result> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getManagementZoneV2:getManagementZoneV2", {
         "name": args.name,
@@ -120,7 +119,10 @@ export interface GetManagementZoneV2Result {
  * ```
  */
 export function getManagementZoneV2Output(args: GetManagementZoneV2OutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementZoneV2Result> {
-    return pulumi.output(args).apply((a: any) => getManagementZoneV2(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getManagementZoneV2:getManagementZoneV2", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

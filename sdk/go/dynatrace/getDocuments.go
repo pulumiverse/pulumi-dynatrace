@@ -100,14 +100,20 @@ type GetDocumentsResult struct {
 
 func GetDocumentsOutput(ctx *pulumi.Context, args GetDocumentsOutputArgs, opts ...pulumi.InvokeOption) GetDocumentsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDocumentsResult, error) {
+		ApplyT(func(v interface{}) (GetDocumentsResultOutput, error) {
 			args := v.(GetDocumentsArgs)
-			r, err := GetDocuments(ctx, &args, opts...)
-			var s GetDocumentsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDocumentsResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getDocuments:getDocuments", args, &rv, "", opts...)
+			if err != nil {
+				return GetDocumentsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDocumentsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDocumentsResultOutput), nil
+			}
+			return output, nil
 		}).(GetDocumentsResultOutput)
 }
 

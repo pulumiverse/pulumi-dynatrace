@@ -30,13 +30,19 @@ type GetSyntheticNodesResult struct {
 }
 
 func GetSyntheticNodesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetSyntheticNodesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetSyntheticNodesResult, error) {
-		r, err := GetSyntheticNodes(ctx, opts...)
-		var s GetSyntheticNodesResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetSyntheticNodesResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetSyntheticNodesResult
+		secret, err := ctx.InvokePackageRaw("dynatrace:index/getSyntheticNodes:getSyntheticNodes", nil, &rv, "", opts...)
+		if err != nil {
+			return GetSyntheticNodesResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetSyntheticNodesResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetSyntheticNodesResultOutput), nil
+		}
+		return output, nil
 	}).(GetSyntheticNodesResultOutput)
 }
 

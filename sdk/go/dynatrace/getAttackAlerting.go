@@ -67,14 +67,20 @@ type LookupAttackAlertingResult struct {
 
 func LookupAttackAlertingOutput(ctx *pulumi.Context, args LookupAttackAlertingOutputArgs, opts ...pulumi.InvokeOption) LookupAttackAlertingResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAttackAlertingResult, error) {
+		ApplyT(func(v interface{}) (LookupAttackAlertingResultOutput, error) {
 			args := v.(LookupAttackAlertingArgs)
-			r, err := LookupAttackAlerting(ctx, &args, opts...)
-			var s LookupAttackAlertingResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAttackAlertingResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getAttackAlerting:getAttackAlerting", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAttackAlertingResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAttackAlertingResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAttackAlertingResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAttackAlertingResultOutput)
 }
 

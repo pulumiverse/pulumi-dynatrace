@@ -9,7 +9,6 @@ import * as utilities from "./utilities";
  */
 export function getSyntheticLocation(args?: GetSyntheticLocationArgs, opts?: pulumi.InvokeOptions): Promise<GetSyntheticLocationResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getSyntheticLocation:getSyntheticLocation", {
         "cloudPlatform": args.cloudPlatform,
@@ -61,7 +60,17 @@ export interface GetSyntheticLocationResult {
  * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
  */
 export function getSyntheticLocationOutput(args?: GetSyntheticLocationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSyntheticLocationResult> {
-    return pulumi.output(args).apply((a: any) => getSyntheticLocation(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getSyntheticLocation:getSyntheticLocation", {
+        "cloudPlatform": args.cloudPlatform,
+        "entityId": args.entityId,
+        "ips": args.ips,
+        "name": args.name,
+        "stage": args.stage,
+        "status": args.status,
+        "type": args.type,
+    }, opts);
 }
 
 /**

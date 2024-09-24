@@ -31,13 +31,19 @@ type GetTenantResult struct {
 }
 
 func GetTenantOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetTenantResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetTenantResult, error) {
-		r, err := GetTenant(ctx, opts...)
-		var s GetTenantResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetTenantResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetTenantResult
+		secret, err := ctx.InvokePackageRaw("dynatrace:index/getTenant:getTenant", nil, &rv, "", opts...)
+		if err != nil {
+			return GetTenantResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetTenantResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetTenantResultOutput), nil
+		}
+		return output, nil
 	}).(GetTenantResultOutput)
 }
 

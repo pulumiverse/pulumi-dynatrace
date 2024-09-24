@@ -22,7 +22,6 @@ import * as utilities from "./utilities";
  * ## Example Output
  */
 export function getIamPolicy(args: GetIamPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetIamPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getIamPolicy:getIamPolicy", {
         "account": args.account,
@@ -97,7 +96,13 @@ export interface GetIamPolicyResult {
  * ## Example Output
  */
 export function getIamPolicyOutput(args: GetIamPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getIamPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getIamPolicy:getIamPolicy", {
+        "account": args.account,
+        "environment": args.environment,
+        "name": args.name,
+        "uuid": args.uuid,
+    }, opts);
 }
 
 /**

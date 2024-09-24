@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getIamUser(args: GetIamUserArgs, opts?: pulumi.InvokeOptions): Promise<GetIamUserResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getIamUser:getIamUser", {
         "email": args.email,
@@ -62,7 +61,10 @@ export interface GetIamUserResult {
  * ```
  */
 export function getIamUserOutput(args: GetIamUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamUserResult> {
-    return pulumi.output(args).apply((a: any) => getIamUser(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getIamUser:getIamUser", {
+        "email": args.email,
+    }, opts);
 }
 
 /**

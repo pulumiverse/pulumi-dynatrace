@@ -35,7 +35,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getProcessGroup(args: GetProcessGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetProcessGroupResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getProcessGroup:getProcessGroup", {
         "name": args.name,
@@ -99,7 +98,11 @@ export interface GetProcessGroupResult {
  * ```
  */
 export function getProcessGroupOutput(args: GetProcessGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProcessGroupResult> {
-    return pulumi.output(args).apply((a: any) => getProcessGroup(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getProcessGroup:getProcessGroup", {
+        "name": args.name,
+        "tags": args.tags,
+    }, opts);
 }
 
 /**

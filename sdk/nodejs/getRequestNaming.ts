@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getRequestNaming(args: GetRequestNamingArgs, opts?: pulumi.InvokeOptions): Promise<GetRequestNamingResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getRequestNaming:getRequestNaming", {
         "name": args.name,
@@ -68,7 +67,10 @@ export interface GetRequestNamingResult {
  * ```
  */
 export function getRequestNamingOutput(args: GetRequestNamingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRequestNamingResult> {
-    return pulumi.output(args).apply((a: any) => getRequestNaming(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getRequestNaming:getRequestNaming", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

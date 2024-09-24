@@ -55,13 +55,19 @@ type GetIamGroupsResult struct {
 }
 
 func GetIamGroupsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamGroupsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamGroupsResult, error) {
-		r, err := GetIamGroups(ctx, opts...)
-		var s GetIamGroupsResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamGroupsResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetIamGroupsResult
+		secret, err := ctx.InvokePackageRaw("dynatrace:index/getIamGroups:getIamGroups", nil, &rv, "", opts...)
+		if err != nil {
+			return GetIamGroupsResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetIamGroupsResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetIamGroupsResultOutput), nil
+		}
+		return output, nil
 	}).(GetIamGroupsResultOutput)
 }
 

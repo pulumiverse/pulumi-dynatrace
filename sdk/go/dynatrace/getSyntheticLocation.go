@@ -50,14 +50,20 @@ type LookupSyntheticLocationResult struct {
 
 func LookupSyntheticLocationOutput(ctx *pulumi.Context, args LookupSyntheticLocationOutputArgs, opts ...pulumi.InvokeOption) LookupSyntheticLocationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupSyntheticLocationResult, error) {
+		ApplyT(func(v interface{}) (LookupSyntheticLocationResultOutput, error) {
 			args := v.(LookupSyntheticLocationArgs)
-			r, err := LookupSyntheticLocation(ctx, &args, opts...)
-			var s LookupSyntheticLocationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupSyntheticLocationResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getSyntheticLocation:getSyntheticLocation", args, &rv, "", opts...)
+			if err != nil {
+				return LookupSyntheticLocationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupSyntheticLocationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupSyntheticLocationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupSyntheticLocationResultOutput)
 }
 

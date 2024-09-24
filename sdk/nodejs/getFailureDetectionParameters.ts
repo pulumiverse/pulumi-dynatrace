@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getFailureDetectionParameters(args: GetFailureDetectionParametersArgs, opts?: pulumi.InvokeOptions): Promise<GetFailureDetectionParametersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getFailureDetectionParameters:getFailureDetectionParameters", {
         "name": args.name,
@@ -68,7 +67,10 @@ export interface GetFailureDetectionParametersResult {
  * ```
  */
 export function getFailureDetectionParametersOutput(args: GetFailureDetectionParametersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFailureDetectionParametersResult> {
-    return pulumi.output(args).apply((a: any) => getFailureDetectionParameters(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getFailureDetectionParameters:getFailureDetectionParameters", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

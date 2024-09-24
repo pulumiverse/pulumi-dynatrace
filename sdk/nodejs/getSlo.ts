@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getSlo(args: GetSloArgs, opts?: pulumi.InvokeOptions): Promise<GetSloResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getSlo:getSlo", {
         "name": args.name,
@@ -116,7 +115,10 @@ export interface GetSloResult {
  * ```
  */
 export function getSloOutput(args: GetSloOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSloResult> {
-    return pulumi.output(args).apply((a: any) => getSlo(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getSlo:getSlo", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

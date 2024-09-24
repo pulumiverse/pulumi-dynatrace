@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getRemoteEnvironments(opts?: pulumi.InvokeOptions): Promise<GetRemoteEnvironmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getRemoteEnvironments:getRemoteEnvironments", {
     }, opts);
@@ -50,5 +49,7 @@ export interface GetRemoteEnvironmentsResult {
  * ```
  */
 export function getRemoteEnvironmentsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetRemoteEnvironmentsResult> {
-    return pulumi.output(getRemoteEnvironments(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getRemoteEnvironments:getRemoteEnvironments", {
+    }, opts);
 }

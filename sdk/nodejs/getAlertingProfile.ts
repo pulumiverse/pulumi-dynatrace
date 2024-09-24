@@ -30,7 +30,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getAlertingProfile(args: GetAlertingProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertingProfileResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getAlertingProfile:getAlertingProfile", {
         "name": args.name,
@@ -81,7 +80,10 @@ export interface GetAlertingProfileResult {
  * ```
  */
 export function getAlertingProfileOutput(args: GetAlertingProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertingProfileResult> {
-    return pulumi.output(args).apply((a: any) => getAlertingProfile(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getAlertingProfile:getAlertingProfile", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

@@ -9,7 +9,6 @@ import * as utilities from "./utilities";
  * Main purpose is for migrating settings from one environment to another, but it can be used to in general to avoid hard coding the environment ID like in the example below.
  */
 export function getTenant(opts?: pulumi.InvokeOptions): Promise<GetTenantResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getTenant:getTenant", {
     }, opts);
@@ -30,5 +29,7 @@ export interface GetTenantResult {
  * Main purpose is for migrating settings from one environment to another, but it can be used to in general to avoid hard coding the environment ID like in the example below.
  */
 export function getTenantOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetTenantResult> {
-    return pulumi.output(getTenant(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getTenant:getTenant", {
+    }, opts);
 }

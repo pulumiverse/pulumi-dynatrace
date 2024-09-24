@@ -29,13 +29,19 @@ type GetAwsIamExternalResult struct {
 }
 
 func GetAwsIamExternalOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetAwsIamExternalResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetAwsIamExternalResult, error) {
-		r, err := GetAwsIamExternal(ctx, opts...)
-		var s GetAwsIamExternalResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetAwsIamExternalResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetAwsIamExternalResult
+		secret, err := ctx.InvokePackageRaw("dynatrace:index/getAwsIamExternal:getAwsIamExternal", nil, &rv, "", opts...)
+		if err != nil {
+			return GetAwsIamExternalResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetAwsIamExternalResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetAwsIamExternalResultOutput), nil
+		}
+		return output, nil
 	}).(GetAwsIamExternalResultOutput)
 }
 

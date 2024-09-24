@@ -65,14 +65,20 @@ type LookupRequestAttributeResult struct {
 
 func LookupRequestAttributeOutput(ctx *pulumi.Context, args LookupRequestAttributeOutputArgs, opts ...pulumi.InvokeOption) LookupRequestAttributeResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupRequestAttributeResult, error) {
+		ApplyT(func(v interface{}) (LookupRequestAttributeResultOutput, error) {
 			args := v.(LookupRequestAttributeArgs)
-			r, err := LookupRequestAttribute(ctx, &args, opts...)
-			var s LookupRequestAttributeResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupRequestAttributeResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getRequestAttribute:getRequestAttribute", args, &rv, "", opts...)
+			if err != nil {
+				return LookupRequestAttributeResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupRequestAttributeResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupRequestAttributeResultOutput), nil
+			}
+			return output, nil
 		}).(LookupRequestAttributeResultOutput)
 }
 

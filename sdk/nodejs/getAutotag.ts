@@ -67,7 +67,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getAutotag(args: GetAutotagArgs, opts?: pulumi.InvokeOptions): Promise<GetAutotagResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getAutotag:getAutotag", {
         "name": args.name,
@@ -154,7 +153,10 @@ export interface GetAutotagResult {
  * ```
  */
 export function getAutotagOutput(args: GetAutotagOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutotagResult> {
-    return pulumi.output(args).apply((a: any) => getAutotag(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getAutotag:getAutotag", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

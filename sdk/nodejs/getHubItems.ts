@@ -30,7 +30,6 @@ import * as utilities from "./utilities";
  */
 export function getHubItems(args?: GetHubItemsArgs, opts?: pulumi.InvokeOptions): Promise<GetHubItemsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getHubItems:getHubItems", {
         "type": args.type,
@@ -91,7 +90,11 @@ export interface GetHubItemsResult {
  * ```
  */
 export function getHubItemsOutput(args?: GetHubItemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHubItemsResult> {
-    return pulumi.output(args).apply((a: any) => getHubItems(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getHubItems:getHubItems", {
+        "type": args.type,
+    }, opts);
 }
 
 /**

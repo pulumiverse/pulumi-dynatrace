@@ -22,7 +22,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getMobileApplication(args: GetMobileApplicationArgs, opts?: pulumi.InvokeOptions): Promise<GetMobileApplicationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getMobileApplication:getMobileApplication", {
         "name": args.name,
@@ -64,7 +63,10 @@ export interface GetMobileApplicationResult {
  * ```
  */
 export function getMobileApplicationOutput(args: GetMobileApplicationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMobileApplicationResult> {
-    return pulumi.output(args).apply((a: any) => getMobileApplication(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getMobileApplication:getMobileApplication", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

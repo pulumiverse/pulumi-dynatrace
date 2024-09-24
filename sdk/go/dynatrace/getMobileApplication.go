@@ -65,14 +65,20 @@ type LookupMobileApplicationResult struct {
 
 func LookupMobileApplicationOutput(ctx *pulumi.Context, args LookupMobileApplicationOutputArgs, opts ...pulumi.InvokeOption) LookupMobileApplicationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupMobileApplicationResult, error) {
+		ApplyT(func(v interface{}) (LookupMobileApplicationResultOutput, error) {
 			args := v.(LookupMobileApplicationArgs)
-			r, err := LookupMobileApplication(ctx, &args, opts...)
-			var s LookupMobileApplicationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupMobileApplicationResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getMobileApplication:getMobileApplication", args, &rv, "", opts...)
+			if err != nil {
+				return LookupMobileApplicationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupMobileApplicationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupMobileApplicationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupMobileApplicationResultOutput)
 }
 

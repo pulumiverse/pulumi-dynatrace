@@ -10,7 +10,6 @@ import * as utilities from "./utilities";
  * The synthetic locations data source queries for all available Synthetic Nodes. The data source doesn't need to get configured. It always provides the full list of synthetic nodes.
  */
 export function getSyntheticNodes(opts?: pulumi.InvokeOptions): Promise<GetSyntheticNodesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getSyntheticNodes:getSyntheticNodes", {
     }, opts);
@@ -30,5 +29,7 @@ export interface GetSyntheticNodesResult {
  * The synthetic locations data source queries for all available Synthetic Nodes. The data source doesn't need to get configured. It always provides the full list of synthetic nodes.
  */
 export function getSyntheticNodesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetSyntheticNodesResult> {
-    return pulumi.output(getSyntheticNodes(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getSyntheticNodes:getSyntheticNodes", {
+    }, opts);
 }

@@ -13,7 +13,6 @@ import * as utilities from "./utilities";
  */
 export function getAwsSupportedServices(args?: GetAwsSupportedServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetAwsSupportedServicesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getAwsSupportedServices:getAwsSupportedServices", {
         "excepts": args.excepts,
@@ -55,7 +54,11 @@ export interface GetAwsSupportedServicesResult {
  * For an example of this data source, please refer to the Resource Example Usage of the dynatrace.AwsService resource.
  */
 export function getAwsSupportedServicesOutput(args?: GetAwsSupportedServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAwsSupportedServicesResult> {
-    return pulumi.output(args).apply((a: any) => getAwsSupportedServices(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getAwsSupportedServices:getAwsSupportedServices", {
+        "excepts": args.excepts,
+    }, opts);
 }
 
 /**

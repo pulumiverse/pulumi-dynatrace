@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
  * The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
  */
 export function getAwsIamExternal(opts?: pulumi.InvokeOptions): Promise<GetAwsIamExternalResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getAwsIamExternal:getAwsIamExternal", {
     }, opts);
@@ -27,5 +26,7 @@ export interface GetAwsIamExternalResult {
  * The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
  */
 export function getAwsIamExternalOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetAwsIamExternalResult> {
-    return pulumi.output(getAwsIamExternal(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getAwsIamExternal:getAwsIamExternal", {
+    }, opts);
 }

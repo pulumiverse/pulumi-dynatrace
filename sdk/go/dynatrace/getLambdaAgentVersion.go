@@ -87,14 +87,20 @@ type GetLambdaAgentVersionResult struct {
 
 func GetLambdaAgentVersionOutput(ctx *pulumi.Context, args GetLambdaAgentVersionOutputArgs, opts ...pulumi.InvokeOption) GetLambdaAgentVersionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetLambdaAgentVersionResult, error) {
+		ApplyT(func(v interface{}) (GetLambdaAgentVersionResultOutput, error) {
 			args := v.(GetLambdaAgentVersionArgs)
-			r, err := GetLambdaAgentVersion(ctx, &args, opts...)
-			var s GetLambdaAgentVersionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetLambdaAgentVersionResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getLambdaAgentVersion:getLambdaAgentVersion", args, &rv, "", opts...)
+			if err != nil {
+				return GetLambdaAgentVersionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetLambdaAgentVersionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetLambdaAgentVersionResultOutput), nil
+			}
+			return output, nil
 		}).(GetLambdaAgentVersionResultOutput)
 }
 
