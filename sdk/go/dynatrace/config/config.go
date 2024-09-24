@@ -93,3 +93,9 @@ func GetIamClientId(ctx *pulumi.Context) string {
 func GetIamClientSecret(ctx *pulumi.Context) string {
 	return config.Get(ctx, "dynatrace:iamClientSecret")
 }
+func GetIamEndpointUrl(ctx *pulumi.Context) string {
+	return config.Get(ctx, "dynatrace:iamEndpointUrl")
+}
+func GetIamTokenUrl(ctx *pulumi.Context) string {
+	return config.Get(ctx, "dynatrace:iamTokenUrl")
+}

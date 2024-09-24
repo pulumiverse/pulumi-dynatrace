@@ -71,6 +71,12 @@ namespace Pulumiverse.Dynatrace
         [Output("iamClientSecret")]
         public Output<string?> IamClientSecret { get; private set; } = null!;
 
+        [Output("iamEndpointUrl")]
+        public Output<string?> IamEndpointUrl { get; private set; } = null!;
+
+        [Output("iamTokenUrl")]
+        public Output<string?> IamTokenUrl { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a Provider resource with the given unique name, arguments, and options.
@@ -103,6 +109,8 @@ namespace Pulumiverse.Dynatrace
                     "iamAccountId",
                     "iamClientId",
                     "iamClientSecret",
+                    "iamEndpointUrl",
+                    "iamTokenUrl",
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -262,6 +270,30 @@ namespace Pulumiverse.Dynatrace
             {
                 var emptySecret = Output.CreateSecret(0);
                 _iamClientSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("iamEndpointUrl")]
+        private Input<string>? _iamEndpointUrl;
+        public Input<string>? IamEndpointUrl
+        {
+            get => _iamEndpointUrl;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _iamEndpointUrl = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("iamTokenUrl")]
+        private Input<string>? _iamTokenUrl;
+        public Input<string>? IamTokenUrl
+        {
+            get => _iamTokenUrl;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _iamTokenUrl = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
             }
         }
 

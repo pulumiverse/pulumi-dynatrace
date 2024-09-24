@@ -187,6 +187,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DduPool{}
 	case "dynatrace:index/declarativeGrouping:DeclarativeGrouping":
 		r = &DeclarativeGrouping{}
+	case "dynatrace:index/devobsGitOnprem:DevobsGitOnprem":
+		r = &DevobsGitOnprem{}
 	case "dynatrace:index/directShares:DirectShares":
 		r = &DirectShares{}
 	case "dynatrace:index/discoveryDefaultRules:DiscoveryDefaultRules":
@@ -1095,6 +1097,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/declarativeGrouping",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/devobsGitOnprem",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

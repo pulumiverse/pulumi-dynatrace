@@ -33,6 +33,8 @@ __all__ = [
     'AlertingRulesRule',
     'ApiDetectionConditions',
     'ApiDetectionConditionsCondition',
+    'AppMonitoringAppMonitoring',
+    'AppMonitoringAppMonitoringAppMonitoring',
     'ApplicationAnomaliesFailureRate',
     'ApplicationAnomaliesFailureRateAuto',
     'ApplicationAnomaliesFailureRateThresholds',
@@ -2696,6 +2698,83 @@ class ApiDetectionConditionsCondition(dict):
         no documentation available
         """
         return pulumi.get(self, "pattern")
+
+
+@pulumi.output_type
+class AppMonitoringAppMonitoring(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "appMonitorings":
+            suggest = "app_monitorings"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AppMonitoringAppMonitoring. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AppMonitoringAppMonitoring.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AppMonitoringAppMonitoring.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 app_monitorings: Sequence['outputs.AppMonitoringAppMonitoringAppMonitoring']):
+        pulumi.set(__self__, "app_monitorings", app_monitorings)
+
+    @property
+    @pulumi.getter(name="appMonitorings")
+    def app_monitorings(self) -> Sequence['outputs.AppMonitoringAppMonitoringAppMonitoring']:
+        return pulumi.get(self, "app_monitorings")
+
+
+@pulumi.output_type
+class AppMonitoringAppMonitoringAppMonitoring(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "appId":
+            suggest = "app_id"
+        elif key == "customLogLevel":
+            suggest = "custom_log_level"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AppMonitoringAppMonitoringAppMonitoring. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AppMonitoringAppMonitoringAppMonitoring.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AppMonitoringAppMonitoringAppMonitoring.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 app_id: str,
+                 custom_log_level: str):
+        """
+        :param str app_id: App ID
+        :param str custom_log_level: Possible Values: `Debug`, `Error`, `Info`, `Off`, `UseDefault`, `Warn`
+        """
+        pulumi.set(__self__, "app_id", app_id)
+        pulumi.set(__self__, "custom_log_level", custom_log_level)
+
+    @property
+    @pulumi.getter(name="appId")
+    def app_id(self) -> str:
+        """
+        App ID
+        """
+        return pulumi.get(self, "app_id")
+
+    @property
+    @pulumi.getter(name="customLogLevel")
+    def custom_log_level(self) -> str:
+        """
+        Possible Values: `Debug`, `Error`, `Info`, `Off`, `UseDefault`, `Warn`
+        """
+        return pulumi.get(self, "custom_log_level")
 
 
 @pulumi.output_type

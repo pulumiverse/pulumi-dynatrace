@@ -49,6 +49,8 @@ export class Provider extends pulumi.ProviderResource {
     public readonly iamAccountId!: pulumi.Output<string | undefined>;
     public readonly iamClientId!: pulumi.Output<string | undefined>;
     public readonly iamClientSecret!: pulumi.Output<string | undefined>;
+    public readonly iamEndpointUrl!: pulumi.Output<string | undefined>;
+    public readonly iamTokenUrl!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -75,9 +77,11 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["iamAccountId"] = args?.iamAccountId ? pulumi.secret(args.iamAccountId) : undefined;
             resourceInputs["iamClientId"] = args?.iamClientId ? pulumi.secret(args.iamClientId) : undefined;
             resourceInputs["iamClientSecret"] = args?.iamClientSecret ? pulumi.secret(args.iamClientSecret) : undefined;
+            resourceInputs["iamEndpointUrl"] = args?.iamEndpointUrl ? pulumi.secret(args.iamEndpointUrl) : undefined;
+            resourceInputs["iamTokenUrl"] = args?.iamTokenUrl ? pulumi.secret(args.iamTokenUrl) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["accountId", "automationClientId", "automationClientSecret", "clientId", "clientSecret", "dtApiToken", "dtClusterApiToken", "dtClusterUrl", "iamAccountId", "iamClientId", "iamClientSecret"] };
+        const secretOpts = { additionalSecretOutputs: ["accountId", "automationClientId", "automationClientSecret", "clientId", "clientSecret", "dtApiToken", "dtClusterApiToken", "dtClusterUrl", "iamAccountId", "iamClientId", "iamClientSecret", "iamEndpointUrl", "iamTokenUrl"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }
@@ -111,4 +115,6 @@ export interface ProviderArgs {
     iamAccountId?: pulumi.Input<string>;
     iamClientId?: pulumi.Input<string>;
     iamClientSecret?: pulumi.Input<string>;
+    iamEndpointUrl?: pulumi.Input<string>;
+    iamTokenUrl?: pulumi.Input<string>;
 }

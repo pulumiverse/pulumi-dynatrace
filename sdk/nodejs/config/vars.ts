@@ -129,3 +129,19 @@ Object.defineProperty(exports, "iamClientSecret", {
     enumerable: true,
 });
 
+export declare const iamEndpointUrl: string | undefined;
+Object.defineProperty(exports, "iamEndpointUrl", {
+    get() {
+        return __config.get("iamEndpointUrl");
+    },
+    enumerable: true,
+});
+
+export declare const iamTokenUrl: string | undefined;
+Object.defineProperty(exports, "iamTokenUrl", {
+    get() {
+        return __config.get("iamTokenUrl");
+    },
+    enumerable: true,
+});
+

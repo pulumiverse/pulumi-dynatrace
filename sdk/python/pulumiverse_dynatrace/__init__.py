@@ -88,6 +88,7 @@ from .davis_anomaly_detectors import *
 from .db_app_feature_flags import *
 from .ddu_pool import *
 from .declarative_grouping import *
+from .devobs_git_onprem import *
 from .direct_shares import *
 from .discovery_default_rules import *
 from .discovery_feature_flags import *
@@ -1042,6 +1043,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/declarativeGrouping:DeclarativeGrouping": "DeclarativeGrouping"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/devobsGitOnprem",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/devobsGitOnprem:DevobsGitOnprem": "DevobsGitOnprem"
   }
  },
  {

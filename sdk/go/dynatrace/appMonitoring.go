@@ -15,6 +15,8 @@ import (
 type AppMonitoring struct {
 	pulumi.CustomResourceState
 
+	// You can override the default monitoring setting for each app separately
+	AppMonitoring AppMonitoringAppMonitoringPtrOutput `pulumi:"appMonitoring"`
 	// Possible Values: `All`, `Off`
 	DefaultLogLevel pulumi.StringOutput `pulumi:"defaultLogLevel"`
 }
@@ -52,11 +54,15 @@ func GetAppMonitoring(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppMonitoring resources.
 type appMonitoringState struct {
+	// You can override the default monitoring setting for each app separately
+	AppMonitoring *AppMonitoringAppMonitoring `pulumi:"appMonitoring"`
 	// Possible Values: `All`, `Off`
 	DefaultLogLevel *string `pulumi:"defaultLogLevel"`
 }
 
 type AppMonitoringState struct {
+	// You can override the default monitoring setting for each app separately
+	AppMonitoring AppMonitoringAppMonitoringPtrInput
 	// Possible Values: `All`, `Off`
 	DefaultLogLevel pulumi.StringPtrInput
 }
@@ -66,12 +72,16 @@ func (AppMonitoringState) ElementType() reflect.Type {
 }
 
 type appMonitoringArgs struct {
+	// You can override the default monitoring setting for each app separately
+	AppMonitoring *AppMonitoringAppMonitoring `pulumi:"appMonitoring"`
 	// Possible Values: `All`, `Off`
 	DefaultLogLevel string `pulumi:"defaultLogLevel"`
 }
 
 // The set of arguments for constructing a AppMonitoring resource.
 type AppMonitoringArgs struct {
+	// You can override the default monitoring setting for each app separately
+	AppMonitoring AppMonitoringAppMonitoringPtrInput
 	// Possible Values: `All`, `Off`
 	DefaultLogLevel pulumi.StringInput
 }
@@ -161,6 +171,11 @@ func (o AppMonitoringOutput) ToAppMonitoringOutput() AppMonitoringOutput {
 
 func (o AppMonitoringOutput) ToAppMonitoringOutputWithContext(ctx context.Context) AppMonitoringOutput {
 	return o
+}
+
+// You can override the default monitoring setting for each app separately
+func (o AppMonitoringOutput) AppMonitoring() AppMonitoringAppMonitoringPtrOutput {
+	return o.ApplyT(func(v *AppMonitoring) AppMonitoringAppMonitoringPtrOutput { return v.AppMonitoring }).(AppMonitoringAppMonitoringPtrOutput)
 }
 
 // Possible Values: `All`, `Off`
