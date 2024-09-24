@@ -45,7 +45,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getManagementZones(opts?: pulumi.InvokeOptions): Promise<GetManagementZonesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getManagementZones:getManagementZones", {
     }, opts);
@@ -100,5 +99,7 @@ export interface GetManagementZonesResult {
  * ```
  */
 export function getManagementZonesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementZonesResult> {
-    return pulumi.output(getManagementZones(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getManagementZones:getManagementZones", {
+    }, opts);
 }

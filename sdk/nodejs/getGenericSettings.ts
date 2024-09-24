@@ -23,7 +23,6 @@ import * as utilities from "./utilities";
  */
 export function getGenericSettings(args?: GetGenericSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetGenericSettingsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getGenericSettings:getGenericSettings", {
         "filter": args.filter,
@@ -88,7 +87,13 @@ export interface GetGenericSettingsResult {
  * ```
  */
 export function getGenericSettingsOutput(args?: GetGenericSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGenericSettingsResult> {
-    return pulumi.output(args).apply((a: any) => getGenericSettings(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getGenericSettings:getGenericSettings", {
+        "filter": args.filter,
+        "schema": args.schema,
+        "scope": args.scope,
+    }, opts);
 }
 
 /**

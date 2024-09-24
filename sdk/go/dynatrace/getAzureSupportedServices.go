@@ -44,14 +44,20 @@ type GetAzureSupportedServicesResult struct {
 
 func GetAzureSupportedServicesOutput(ctx *pulumi.Context, args GetAzureSupportedServicesOutputArgs, opts ...pulumi.InvokeOption) GetAzureSupportedServicesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAzureSupportedServicesResult, error) {
+		ApplyT(func(v interface{}) (GetAzureSupportedServicesResultOutput, error) {
 			args := v.(GetAzureSupportedServicesArgs)
-			r, err := GetAzureSupportedServices(ctx, &args, opts...)
-			var s GetAzureSupportedServicesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAzureSupportedServicesResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getAzureSupportedServices:getAzureSupportedServices", args, &rv, "", opts...)
+			if err != nil {
+				return GetAzureSupportedServicesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAzureSupportedServicesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAzureSupportedServicesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAzureSupportedServicesResultOutput)
 }
 

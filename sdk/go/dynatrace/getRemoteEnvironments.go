@@ -55,13 +55,19 @@ type LookupRemoteEnvironmentsResult struct {
 }
 
 func LookupRemoteEnvironmentsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) LookupRemoteEnvironmentsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (LookupRemoteEnvironmentsResult, error) {
-		r, err := LookupRemoteEnvironments(ctx, opts...)
-		var s LookupRemoteEnvironmentsResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (LookupRemoteEnvironmentsResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv LookupRemoteEnvironmentsResult
+		secret, err := ctx.InvokePackageRaw("dynatrace:index/getRemoteEnvironments:getRemoteEnvironments", nil, &rv, "", opts...)
+		if err != nil {
+			return LookupRemoteEnvironmentsResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(LookupRemoteEnvironmentsResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(LookupRemoteEnvironmentsResultOutput), nil
+		}
+		return output, nil
 	}).(LookupRemoteEnvironmentsResultOutput)
 }
 

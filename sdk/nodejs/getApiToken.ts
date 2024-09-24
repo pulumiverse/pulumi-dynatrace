@@ -22,7 +22,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getApiToken(args: GetApiTokenArgs, opts?: pulumi.InvokeOptions): Promise<GetApiTokenResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getApiToken:getApiToken", {
         "name": args.name,
@@ -88,7 +87,10 @@ export interface GetApiTokenResult {
  * ```
  */
 export function getApiTokenOutput(args: GetApiTokenOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiTokenResult> {
-    return pulumi.output(args).apply((a: any) => getApiToken(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getApiToken:getApiToken", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

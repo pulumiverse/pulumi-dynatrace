@@ -56,7 +56,6 @@ import * as utilities from "./utilities";
  */
 export function getSyntheticLocations(args?: GetSyntheticLocationsArgs, opts?: pulumi.InvokeOptions): Promise<GetSyntheticLocationsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getSyntheticLocations:getSyntheticLocations", {
         "id": args.id,
@@ -137,7 +136,13 @@ export interface GetSyntheticLocationsResult {
  * ```
  */
 export function getSyntheticLocationsOutput(args?: GetSyntheticLocationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSyntheticLocationsResult> {
-    return pulumi.output(args).apply((a: any) => getSyntheticLocations(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getSyntheticLocations:getSyntheticLocations", {
+        "id": args.id,
+        "locations": args.locations,
+        "name": args.name,
+    }, opts);
 }
 
 /**

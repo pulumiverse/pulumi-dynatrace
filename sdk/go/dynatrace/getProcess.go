@@ -90,14 +90,20 @@ type GetProcessResult struct {
 
 func GetProcessOutput(ctx *pulumi.Context, args GetProcessOutputArgs, opts ...pulumi.InvokeOption) GetProcessResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetProcessResult, error) {
+		ApplyT(func(v interface{}) (GetProcessResultOutput, error) {
 			args := v.(GetProcessArgs)
-			r, err := GetProcess(ctx, &args, opts...)
-			var s GetProcessResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetProcessResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getProcess:getProcess", args, &rv, "", opts...)
+			if err != nil {
+				return GetProcessResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetProcessResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetProcessResultOutput), nil
+			}
+			return output, nil
 		}).(GetProcessResultOutput)
 }
 

@@ -79,14 +79,20 @@ type LookupIamPolicyResult struct {
 
 func LookupIamPolicyOutput(ctx *pulumi.Context, args LookupIamPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupIamPolicyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupIamPolicyResult, error) {
+		ApplyT(func(v interface{}) (LookupIamPolicyResultOutput, error) {
 			args := v.(LookupIamPolicyArgs)
-			r, err := LookupIamPolicy(ctx, &args, opts...)
-			var s LookupIamPolicyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupIamPolicyResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getIamPolicy:getIamPolicy", args, &rv, "", opts...)
+			if err != nil {
+				return LookupIamPolicyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupIamPolicyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupIamPolicyResultOutput), nil
+			}
+			return output, nil
 		}).(LookupIamPolicyResultOutput)
 }
 

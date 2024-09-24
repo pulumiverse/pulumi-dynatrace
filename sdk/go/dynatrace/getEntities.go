@@ -72,14 +72,20 @@ type GetEntitiesResult struct {
 
 func GetEntitiesOutput(ctx *pulumi.Context, args GetEntitiesOutputArgs, opts ...pulumi.InvokeOption) GetEntitiesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetEntitiesResult, error) {
+		ApplyT(func(v interface{}) (GetEntitiesResultOutput, error) {
 			args := v.(GetEntitiesArgs)
-			r, err := GetEntities(ctx, &args, opts...)
-			var s GetEntitiesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetEntitiesResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getEntities:getEntities", args, &rv, "", opts...)
+			if err != nil {
+				return GetEntitiesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetEntitiesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetEntitiesResultOutput), nil
+			}
+			return output, nil
 		}).(GetEntitiesResultOutput)
 }
 

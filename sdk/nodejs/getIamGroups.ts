@@ -18,7 +18,6 @@ import * as utilities from "./utilities";
  * ### Example output
  */
 export function getIamGroups(opts?: pulumi.InvokeOptions): Promise<GetIamGroupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getIamGroups:getIamGroups", {
     }, opts);
@@ -48,5 +47,7 @@ export interface GetIamGroupsResult {
  * ### Example output
  */
 export function getIamGroupsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamGroupsResult> {
-    return pulumi.output(getIamGroups(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getIamGroups:getIamGroups", {
+    }, opts);
 }

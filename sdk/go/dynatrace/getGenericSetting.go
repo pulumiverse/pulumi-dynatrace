@@ -77,14 +77,20 @@ type LookupGenericSettingResult struct {
 
 func LookupGenericSettingOutput(ctx *pulumi.Context, args LookupGenericSettingOutputArgs, opts ...pulumi.InvokeOption) LookupGenericSettingResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupGenericSettingResult, error) {
+		ApplyT(func(v interface{}) (LookupGenericSettingResultOutput, error) {
 			args := v.(LookupGenericSettingArgs)
-			r, err := LookupGenericSetting(ctx, &args, opts...)
-			var s LookupGenericSettingResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupGenericSettingResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getGenericSetting:getGenericSetting", args, &rv, "", opts...)
+			if err != nil {
+				return LookupGenericSettingResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupGenericSettingResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupGenericSettingResultOutput), nil
+			}
+			return output, nil
 		}).(LookupGenericSettingResultOutput)
 }
 

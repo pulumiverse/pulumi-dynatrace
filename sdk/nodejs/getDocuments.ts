@@ -38,7 +38,6 @@ import * as utilities from "./utilities";
  */
 export function getDocuments(args?: GetDocumentsArgs, opts?: pulumi.InvokeOptions): Promise<GetDocumentsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getDocuments:getDocuments", {
         "type": args.type,
@@ -100,7 +99,11 @@ export interface GetDocumentsResult {
  * ```
  */
 export function getDocumentsOutput(args?: GetDocumentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDocumentsResult> {
-    return pulumi.output(args).apply((a: any) => getDocuments(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getDocuments:getDocuments", {
+        "type": args.type,
+    }, opts);
 }
 
 /**

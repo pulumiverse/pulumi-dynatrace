@@ -10,7 +10,6 @@ import * as utilities from "./utilities";
  * - `label` (String) - The label/name of the Azure credential
  */
 export function getAzureCredentials(args: GetAzureCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetAzureCredentialsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getAzureCredentials:getAzureCredentials", {
         "label": args.label,
@@ -40,7 +39,10 @@ export interface GetAzureCredentialsResult {
  * - `label` (String) - The label/name of the Azure credential
  */
 export function getAzureCredentialsOutput(args: GetAzureCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAzureCredentialsResult> {
-    return pulumi.output(args).apply((a: any) => getAzureCredentials(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getAzureCredentials:getAzureCredentials", {
+        "label": args.label,
+    }, opts);
 }
 
 /**

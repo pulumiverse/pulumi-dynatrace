@@ -11,7 +11,6 @@ import * as utilities from "./utilities";
  */
 export function getAlertingProfiles(args?: GetAlertingProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertingProfilesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getAlertingProfiles:getAlertingProfiles", {
         "profiles": args.profiles,
@@ -40,7 +39,11 @@ export interface GetAlertingProfilesResult {
  * The alerting profiles data source allows retrieval of all alerting profiles.
  */
 export function getAlertingProfilesOutput(args?: GetAlertingProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertingProfilesResult> {
-    return pulumi.output(args).apply((a: any) => getAlertingProfiles(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getAlertingProfiles:getAlertingProfiles", {
+        "profiles": args.profiles,
+    }, opts);
 }
 
 /**

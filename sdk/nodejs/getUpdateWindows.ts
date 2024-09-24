@@ -22,7 +22,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getUpdateWindows(args: GetUpdateWindowsArgs, opts?: pulumi.InvokeOptions): Promise<GetUpdateWindowsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getUpdateWindows:getUpdateWindows", {
         "name": args.name,
@@ -64,7 +63,10 @@ export interface GetUpdateWindowsResult {
  * ```
  */
 export function getUpdateWindowsOutput(args: GetUpdateWindowsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUpdateWindowsResult> {
-    return pulumi.output(args).apply((a: any) => getUpdateWindows(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getUpdateWindows:getUpdateWindows", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

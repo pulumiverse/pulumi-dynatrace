@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  */
 export function getGenericSetting(args?: GetGenericSettingArgs, opts?: pulumi.InvokeOptions): Promise<GetGenericSettingResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getGenericSetting:getGenericSetting", {
         "filter": args.filter,
@@ -92,7 +91,13 @@ export interface GetGenericSettingResult {
  * ```
  */
 export function getGenericSettingOutput(args?: GetGenericSettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGenericSettingResult> {
-    return pulumi.output(args).apply((a: any) => getGenericSetting(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getGenericSetting:getGenericSetting", {
+        "filter": args.filter,
+        "schema": args.schema,
+        "scope": args.scope,
+    }, opts);
 }
 
 /**

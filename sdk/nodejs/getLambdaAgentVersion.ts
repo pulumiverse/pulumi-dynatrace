@@ -19,7 +19,6 @@ import * as utilities from "./utilities";
  */
 export function getLambdaAgentVersion(args?: GetLambdaAgentVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetLambdaAgentVersionResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getLambdaAgentVersion:getLambdaAgentVersion", {
         "collector": args.collector,
@@ -117,7 +116,17 @@ export interface GetLambdaAgentVersionResult {
  * ```
  */
 export function getLambdaAgentVersionOutput(args?: GetLambdaAgentVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLambdaAgentVersionResult> {
-    return pulumi.output(args).apply((a: any) => getLambdaAgentVersion(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getLambdaAgentVersion:getLambdaAgentVersion", {
+        "collector": args.collector,
+        "java": args.java,
+        "javaWithCollector": args.javaWithCollector,
+        "nodejs": args.nodejs,
+        "nodejsWithCollector": args.nodejsWithCollector,
+        "python": args.python,
+        "pythonWithCollector": args.pythonWithCollector,
+    }, opts);
 }
 
 /**

@@ -58,7 +58,6 @@ import * as utilities from "./utilities";
  */
 export function getCredentials(args?: GetCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetCredentialsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getCredentials:getCredentials", {
         "name": args.name,
@@ -159,7 +158,13 @@ export interface GetCredentialsResult {
  * ```
  */
 export function getCredentialsOutput(args?: GetCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCredentialsResult> {
-    return pulumi.output(args).apply((a: any) => getCredentials(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getCredentials:getCredentials", {
+        "name": args.name,
+        "scope": args.scope,
+        "type": args.type,
+    }, opts);
 }
 
 /**

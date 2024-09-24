@@ -22,7 +22,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getCalculatedServiceMetric(args: GetCalculatedServiceMetricArgs, opts?: pulumi.InvokeOptions): Promise<GetCalculatedServiceMetricResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getCalculatedServiceMetric:getCalculatedServiceMetric", {
         "name": args.name,
@@ -64,7 +63,10 @@ export interface GetCalculatedServiceMetricResult {
  * ```
  */
 export function getCalculatedServiceMetricOutput(args: GetCalculatedServiceMetricOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCalculatedServiceMetricResult> {
-    return pulumi.output(args).apply((a: any) => getCalculatedServiceMetric(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getCalculatedServiceMetric:getCalculatedServiceMetric", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

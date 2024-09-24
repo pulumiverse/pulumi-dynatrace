@@ -22,7 +22,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getRequestAttribute(args: GetRequestAttributeArgs, opts?: pulumi.InvokeOptions): Promise<GetRequestAttributeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getRequestAttribute:getRequestAttribute", {
         "name": args.name,
@@ -64,7 +63,10 @@ export interface GetRequestAttributeResult {
  * ```
  */
 export function getRequestAttributeOutput(args: GetRequestAttributeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRequestAttributeResult> {
-    return pulumi.output(args).apply((a: any) => getRequestAttribute(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getRequestAttribute:getRequestAttribute", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

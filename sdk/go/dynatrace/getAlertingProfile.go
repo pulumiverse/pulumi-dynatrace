@@ -76,14 +76,20 @@ type LookupAlertingProfileResult struct {
 
 func LookupAlertingProfileOutput(ctx *pulumi.Context, args LookupAlertingProfileOutputArgs, opts ...pulumi.InvokeOption) LookupAlertingProfileResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAlertingProfileResult, error) {
+		ApplyT(func(v interface{}) (LookupAlertingProfileResultOutput, error) {
 			args := v.(LookupAlertingProfileArgs)
-			r, err := LookupAlertingProfile(ctx, &args, opts...)
-			var s LookupAlertingProfileResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAlertingProfileResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getAlertingProfile:getAlertingProfile", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAlertingProfileResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAlertingProfileResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAlertingProfileResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAlertingProfileResultOutput)
 }
 

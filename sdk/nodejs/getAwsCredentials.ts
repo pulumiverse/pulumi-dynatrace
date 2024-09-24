@@ -10,7 +10,6 @@ import * as utilities from "./utilities";
  * - `label` (String) - The label/name of the AWS credential
  */
 export function getAwsCredentials(args: GetAwsCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetAwsCredentialsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getAwsCredentials:getAwsCredentials", {
         "label": args.label,
@@ -40,7 +39,10 @@ export interface GetAwsCredentialsResult {
  * - `label` (String) - The label/name of the AWS credential
  */
 export function getAwsCredentialsOutput(args: GetAwsCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAwsCredentialsResult> {
-    return pulumi.output(args).apply((a: any) => getAwsCredentials(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("dynatrace:index/getAwsCredentials:getAwsCredentials", {
+        "label": args.label,
+    }, opts);
 }
 
 /**

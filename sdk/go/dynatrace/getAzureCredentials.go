@@ -38,14 +38,20 @@ type LookupAzureCredentialsResult struct {
 
 func LookupAzureCredentialsOutput(ctx *pulumi.Context, args LookupAzureCredentialsOutputArgs, opts ...pulumi.InvokeOption) LookupAzureCredentialsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAzureCredentialsResult, error) {
+		ApplyT(func(v interface{}) (LookupAzureCredentialsResultOutput, error) {
 			args := v.(LookupAzureCredentialsArgs)
-			r, err := LookupAzureCredentials(ctx, &args, opts...)
-			var s LookupAzureCredentialsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAzureCredentialsResult
+			secret, err := ctx.InvokePackageRaw("dynatrace:index/getAzureCredentials:getAzureCredentials", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAzureCredentialsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAzureCredentialsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAzureCredentialsResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAzureCredentialsResultOutput)
 }
 
