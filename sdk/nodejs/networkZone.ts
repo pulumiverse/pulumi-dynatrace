@@ -41,6 +41,10 @@ export class NetworkZone extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string | undefined>;
     /**
+     * The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+     */
+    public readonly fallbackMode!: pulumi.Output<string | undefined>;
+    /**
      * Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
      */
     public readonly name!: pulumi.Output<string>;
@@ -76,6 +80,7 @@ export class NetworkZone extends pulumi.CustomResource {
             const state = argsOrState as NetworkZoneState | undefined;
             resourceInputs["alternativeZones"] = state ? state.alternativeZones : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["fallbackMode"] = state ? state.fallbackMode : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["numOfConfiguredActivegates"] = state ? state.numOfConfiguredActivegates : undefined;
             resourceInputs["numOfConfiguredOneagents"] = state ? state.numOfConfiguredOneagents : undefined;
@@ -85,6 +90,7 @@ export class NetworkZone extends pulumi.CustomResource {
             const args = argsOrState as NetworkZoneArgs | undefined;
             resourceInputs["alternativeZones"] = args ? args.alternativeZones : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["fallbackMode"] = args ? args.fallbackMode : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["numOfConfiguredActivegates"] = args ? args.numOfConfiguredActivegates : undefined;
             resourceInputs["numOfConfiguredOneagents"] = args ? args.numOfConfiguredOneagents : undefined;
@@ -108,6 +114,10 @@ export interface NetworkZoneState {
      * A short description of the network zone
      */
     description?: pulumi.Input<string>;
+    /**
+     * The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+     */
+    fallbackMode?: pulumi.Input<string>;
     /**
      * Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
      */
@@ -142,6 +152,10 @@ export interface NetworkZoneArgs {
      * A short description of the network zone
      */
     description?: pulumi.Input<string>;
+    /**
+     * The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+     */
+    fallbackMode?: pulumi.Input<string>;
     /**
      * Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
      */

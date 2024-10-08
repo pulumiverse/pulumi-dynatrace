@@ -35,6 +35,7 @@ class AwsCredentialsArgs:
         :param pulumi.Input[bool] credentials_enabled: Enable monitoring of specified AWS credentials
         :param pulumi.Input[str] label: The name of the credentials
         :param pulumi.Input[bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+               Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         :param pulumi.Input[bool] running_on_dynatrace_infrastructure: Run credentials on Dynatrace infrastructure
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
@@ -131,6 +132,7 @@ class AwsCredentialsArgs:
     def remove_defaults(self) -> Optional[pulumi.Input[bool]]:
         """
         Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+        Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         """
         return pulumi.get(self, "remove_defaults")
 
@@ -219,6 +221,7 @@ class _AwsCredentialsState:
         :param pulumi.Input[str] label: The name of the credentials
         :param pulumi.Input[str] partition_type: The type of the AWS partition
         :param pulumi.Input[bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+               Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         :param pulumi.Input[bool] running_on_dynatrace_infrastructure: Run credentials on Dynatrace infrastructure
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
@@ -307,6 +310,7 @@ class _AwsCredentialsState:
     def remove_defaults(self) -> Optional[pulumi.Input[bool]]:
         """
         Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+        Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         """
         return pulumi.get(self, "remove_defaults")
 
@@ -412,6 +416,7 @@ class AwsCredentials(pulumi.CustomResource):
         :param pulumi.Input[str] label: The name of the credentials
         :param pulumi.Input[str] partition_type: The type of the AWS partition
         :param pulumi.Input[bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+               Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         :param pulumi.Input[bool] running_on_dynatrace_infrastructure: Run credentials on Dynatrace infrastructure
         :param pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
@@ -511,6 +516,7 @@ class AwsCredentials(pulumi.CustomResource):
         :param pulumi.Input[str] label: The name of the credentials
         :param pulumi.Input[str] partition_type: The type of the AWS partition
         :param pulumi.Input[bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+               Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         :param pulumi.Input[bool] running_on_dynatrace_infrastructure: Run credentials on Dynatrace infrastructure
         :param pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
@@ -571,6 +577,7 @@ class AwsCredentials(pulumi.CustomResource):
     def remove_defaults(self) -> pulumi.Output[Optional[bool]]:
         """
         Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+        Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         """
         return pulumi.get(self, "remove_defaults")
 

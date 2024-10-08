@@ -13,6 +13,10 @@ namespace Pulumiverse.Dynatrace
     public static class GetIamPolicies
     {
         /// <summary>
+        /// &gt; **Dynatrace SaaS only**
+        /// 
+        /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`).
+        /// 
         /// You can use the attributes `environments`, `accounts` and `globals` to refine which policies you want to query for.
         /// * The attribute `global` indicates whether the results should also contain global (Dynatrace defined) policies
         /// * The attribute `environment` is an array of environment IDs.
@@ -134,6 +138,10 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamPoliciesResult>("dynatrace:index/getIamPolicies:getIamPolicies", args ?? new GetIamPoliciesArgs(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; **Dynatrace SaaS only**
+        /// 
+        /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`).
+        /// 
         /// You can use the attributes `environments`, `accounts` and `globals` to refine which policies you want to query for.
         /// * The attribute `global` indicates whether the results should also contain global (Dynatrace defined) policies
         /// * The attribute `environment` is an array of environment IDs.

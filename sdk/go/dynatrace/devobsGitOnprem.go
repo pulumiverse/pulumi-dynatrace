@@ -17,8 +17,7 @@ type DevobsGitOnprem struct {
 
 	// Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
 	GitProvider pulumi.StringOutput `pulumi:"gitProvider"`
-	// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-	// set to `omit`.
+	// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
 	IncludeCredentials pulumi.BoolPtrOutput `pulumi:"includeCredentials"`
 	// An HTTP/HTTPS URL of your server
 	Url pulumi.StringOutput `pulumi:"url"`
@@ -62,8 +61,7 @@ func GetDevobsGitOnprem(ctx *pulumi.Context,
 type devobsGitOnpremState struct {
 	// Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
 	GitProvider *string `pulumi:"gitProvider"`
-	// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-	// set to `omit`.
+	// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
 	IncludeCredentials *bool `pulumi:"includeCredentials"`
 	// An HTTP/HTTPS URL of your server
 	Url *string `pulumi:"url"`
@@ -72,8 +70,7 @@ type devobsGitOnpremState struct {
 type DevobsGitOnpremState struct {
 	// Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
 	GitProvider pulumi.StringPtrInput
-	// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-	// set to `omit`.
+	// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
 	IncludeCredentials pulumi.BoolPtrInput
 	// An HTTP/HTTPS URL of your server
 	Url pulumi.StringPtrInput
@@ -86,8 +83,7 @@ func (DevobsGitOnpremState) ElementType() reflect.Type {
 type devobsGitOnpremArgs struct {
 	// Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
 	GitProvider string `pulumi:"gitProvider"`
-	// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-	// set to `omit`.
+	// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
 	IncludeCredentials *bool `pulumi:"includeCredentials"`
 	// An HTTP/HTTPS URL of your server
 	Url string `pulumi:"url"`
@@ -97,8 +93,7 @@ type devobsGitOnpremArgs struct {
 type DevobsGitOnpremArgs struct {
 	// Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
 	GitProvider pulumi.StringInput
-	// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-	// set to `omit`.
+	// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
 	IncludeCredentials pulumi.BoolPtrInput
 	// An HTTP/HTTPS URL of your server
 	Url pulumi.StringInput
@@ -196,8 +191,7 @@ func (o DevobsGitOnpremOutput) GitProvider() pulumi.StringOutput {
 	return o.ApplyT(func(v *DevobsGitOnprem) pulumi.StringOutput { return v.GitProvider }).(pulumi.StringOutput)
 }
 
-// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-// set to `omit`.
+// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
 func (o DevobsGitOnpremOutput) IncludeCredentials() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DevobsGitOnprem) pulumi.BoolPtrOutput { return v.IncludeCredentials }).(pulumi.BoolPtrOutput)
 }

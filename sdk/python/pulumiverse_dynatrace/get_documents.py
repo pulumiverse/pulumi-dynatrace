@@ -69,19 +69,11 @@ class AwaitableGetDocumentsResult(GetDocumentsResult):
 def get_documents(type: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDocumentsResult:
     """
+    > **Dynatrace SaaS only**
+
+    > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **View documents** (`document:documents:read`).
+
     - `type` (String) The type of documents to query for. Leave empty if you want to query for all kinds of documents.
-
-    ## Prerequisites
-
-    Using this resource requires an OAuth client to be configured within your account settings.
-    The scopes of the OAuth Client need to contain the permission to read documents (`document:documents:read`).
-
-    Finally the provider configuration requires the credentials for that OAuth Client.
-    The configuration section of your provider needs to look like this.
-    ```python
-    import pulumi
-    ```
-    > In order to handle credentials in a secure manner we recommend to use the environment variables `DYNATRACE_AUTOMATION_CLIENT_ID` and `DYNATRACE_AUTOMATION_CLIENT_SECRET` as an alternative.
 
     ## Example Usage
 
@@ -112,19 +104,11 @@ def get_documents(type: Optional[str] = None,
 def get_documents_output(type: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDocumentsResult]:
     """
+    > **Dynatrace SaaS only**
+
+    > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **View documents** (`document:documents:read`).
+
     - `type` (String) The type of documents to query for. Leave empty if you want to query for all kinds of documents.
-
-    ## Prerequisites
-
-    Using this resource requires an OAuth client to be configured within your account settings.
-    The scopes of the OAuth Client need to contain the permission to read documents (`document:documents:read`).
-
-    Finally the provider configuration requires the credentials for that OAuth Client.
-    The configuration section of your provider needs to look like this.
-    ```python
-    import pulumi
-    ```
-    > In order to handle credentials in a secure manner we recommend to use the environment variables `DYNATRACE_AUTOMATION_CLIENT_ID` and `DYNATRACE_AUTOMATION_CLIENT_SECRET` as an alternative.
 
     ## Example Usage
 

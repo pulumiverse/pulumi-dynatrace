@@ -145,6 +145,11 @@ export type AutomationWorkflow = import("./automationWorkflow").AutomationWorkfl
 export const AutomationWorkflow: typeof import("./automationWorkflow").AutomationWorkflow = null as any;
 utilities.lazyLoad(exports, ["AutomationWorkflow"], () => require("./automationWorkflow"));
 
+export { AutomationWorkflowAwsConnectionsArgs, AutomationWorkflowAwsConnectionsState } from "./automationWorkflowAwsConnections";
+export type AutomationWorkflowAwsConnections = import("./automationWorkflowAwsConnections").AutomationWorkflowAwsConnections;
+export const AutomationWorkflowAwsConnections: typeof import("./automationWorkflowAwsConnections").AutomationWorkflowAwsConnections = null as any;
+utilities.lazyLoad(exports, ["AutomationWorkflowAwsConnections"], () => require("./automationWorkflowAwsConnections"));
+
 export { AutomationWorkflowJiraArgs, AutomationWorkflowJiraState } from "./automationWorkflowJira";
 export type AutomationWorkflowJira = import("./automationWorkflowJira").AutomationWorkflowJira;
 export const AutomationWorkflowJira: typeof import("./automationWorkflowJira").AutomationWorkflowJira = null as any;
@@ -405,6 +410,11 @@ export type DavisAnomalyDetectors = import("./davisAnomalyDetectors").DavisAnoma
 export const DavisAnomalyDetectors: typeof import("./davisAnomalyDetectors").DavisAnomalyDetectors = null as any;
 utilities.lazyLoad(exports, ["DavisAnomalyDetectors"], () => require("./davisAnomalyDetectors"));
 
+export { DavisCopilotArgs, DavisCopilotState } from "./davisCopilot";
+export type DavisCopilot = import("./davisCopilot").DavisCopilot;
+export const DavisCopilot: typeof import("./davisCopilot").DavisCopilot = null as any;
+utilities.lazyLoad(exports, ["DavisCopilot"], () => require("./davisCopilot"));
+
 export { DbAppFeatureFlagsArgs, DbAppFeatureFlagsState } from "./dbAppFeatureFlags";
 export type DbAppFeatureFlags = import("./dbAppFeatureFlags").DbAppFeatureFlags;
 export const DbAppFeatureFlags: typeof import("./dbAppFeatureFlags").DbAppFeatureFlags = null as any;
@@ -419,6 +429,16 @@ export { DeclarativeGroupingArgs, DeclarativeGroupingState } from "./declarative
 export type DeclarativeGrouping = import("./declarativeGrouping").DeclarativeGrouping;
 export const DeclarativeGrouping: typeof import("./declarativeGrouping").DeclarativeGrouping = null as any;
 utilities.lazyLoad(exports, ["DeclarativeGrouping"], () => require("./declarativeGrouping"));
+
+export { DevobsAgentOptinArgs, DevobsAgentOptinState } from "./devobsAgentOptin";
+export type DevobsAgentOptin = import("./devobsAgentOptin").DevobsAgentOptin;
+export const DevobsAgentOptin: typeof import("./devobsAgentOptin").DevobsAgentOptin = null as any;
+utilities.lazyLoad(exports, ["DevobsAgentOptin"], () => require("./devobsAgentOptin"));
+
+export { DevobsDataMaskingArgs, DevobsDataMaskingState } from "./devobsDataMasking";
+export type DevobsDataMasking = import("./devobsDataMasking").DevobsDataMasking;
+export const DevobsDataMasking: typeof import("./devobsDataMasking").DevobsDataMasking = null as any;
+utilities.lazyLoad(exports, ["DevobsDataMasking"], () => require("./devobsDataMasking"));
 
 export { DevobsGitOnpremArgs, DevobsGitOnpremState } from "./devobsGitOnprem";
 export type DevobsGitOnprem = import("./devobsGitOnprem").DevobsGitOnprem;
@@ -1890,6 +1910,8 @@ const _module = {
                 return new AutomationSchedulingRule(name, <any>undefined, { urn })
             case "dynatrace:index/automationWorkflow:AutomationWorkflow":
                 return new AutomationWorkflow(name, <any>undefined, { urn })
+            case "dynatrace:index/automationWorkflowAwsConnections:AutomationWorkflowAwsConnections":
+                return new AutomationWorkflowAwsConnections(name, <any>undefined, { urn })
             case "dynatrace:index/automationWorkflowJira:AutomationWorkflowJira":
                 return new AutomationWorkflowJira(name, <any>undefined, { urn })
             case "dynatrace:index/automationWorkflowK8sConnections:AutomationWorkflowK8sConnections":
@@ -1994,12 +2016,18 @@ const _module = {
                 return new DatabaseAnomaliesV2(name, <any>undefined, { urn })
             case "dynatrace:index/davisAnomalyDetectors:DavisAnomalyDetectors":
                 return new DavisAnomalyDetectors(name, <any>undefined, { urn })
+            case "dynatrace:index/davisCopilot:DavisCopilot":
+                return new DavisCopilot(name, <any>undefined, { urn })
             case "dynatrace:index/dbAppFeatureFlags:DbAppFeatureFlags":
                 return new DbAppFeatureFlags(name, <any>undefined, { urn })
             case "dynatrace:index/dduPool:DduPool":
                 return new DduPool(name, <any>undefined, { urn })
             case "dynatrace:index/declarativeGrouping:DeclarativeGrouping":
                 return new DeclarativeGrouping(name, <any>undefined, { urn })
+            case "dynatrace:index/devobsAgentOptin:DevobsAgentOptin":
+                return new DevobsAgentOptin(name, <any>undefined, { urn })
+            case "dynatrace:index/devobsDataMasking:DevobsDataMasking":
+                return new DevobsDataMasking(name, <any>undefined, { urn })
             case "dynatrace:index/devobsGitOnprem:DevobsGitOnprem":
                 return new DevobsGitOnprem(name, <any>undefined, { urn })
             case "dynatrace:index/directShares:DirectShares":
@@ -2499,6 +2527,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/auditLog", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationBusinessCalendar", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationSchedulingRule", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflow", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflowAwsConnections", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflowJira", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflowK8sConnections", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflowSlack", _module)
@@ -2551,9 +2580,12 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/dataPrivacy", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/databaseAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/databaseAnomaliesV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/davisAnomalyDetectors", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/davisCopilot", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/dbAppFeatureFlags", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/dduPool", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/declarativeGrouping", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/devobsAgentOptin", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/devobsDataMasking", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/devobsGitOnprem", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/directShares", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/discoveryDefaultRules", _module)

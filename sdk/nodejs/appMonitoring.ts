@@ -39,7 +39,7 @@ export class AppMonitoring extends pulumi.CustomResource {
      */
     public readonly appMonitoring!: pulumi.Output<outputs.AppMonitoringAppMonitoring | undefined>;
     /**
-     * Possible Values: `All`, `Off`
+     * Possible Values: `Debug`, `Error`, `Info`, `Off`, `Warn`
      */
     public readonly defaultLogLevel!: pulumi.Output<string>;
 
@@ -80,7 +80,7 @@ export interface AppMonitoringState {
      */
     appMonitoring?: pulumi.Input<inputs.AppMonitoringAppMonitoring>;
     /**
-     * Possible Values: `All`, `Off`
+     * Possible Values: `Debug`, `Error`, `Info`, `Off`, `Warn`
      */
     defaultLogLevel?: pulumi.Input<string>;
 }
@@ -94,7 +94,7 @@ export interface AppMonitoringArgs {
      */
     appMonitoring?: pulumi.Input<inputs.AppMonitoringAppMonitoring>;
     /**
-     * Possible Values: `All`, `Off`
+     * Possible Values: `Debug`, `Error`, `Info`, `Off`, `Warn`
      */
     defaultLogLevel: pulumi.Input<string>;
 }

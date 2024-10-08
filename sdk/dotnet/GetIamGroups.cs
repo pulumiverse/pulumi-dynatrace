@@ -13,6 +13,10 @@ namespace Pulumiverse.Dynatrace
     public static class GetIamGroups
     {
         /// <summary>
+        /// &gt; **Dynatrace SaaS only**
+        /// 
+        /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **Allow read access for identity resources (users and groups)** (`account-idm-read`).
+        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,6 +53,10 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamGroupsResult>("dynatrace:index/getIamGroups:getIamGroups", InvokeArgs.Empty, options.WithDefaults());
 
         /// <summary>
+        /// &gt; **Dynatrace SaaS only**
+        /// 
+        /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **Allow read access for identity resources (users and groups)** (`account-idm-read`).
+        /// 
         /// ## Example Usage
         /// 
         /// ```csharp

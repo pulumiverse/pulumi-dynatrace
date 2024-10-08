@@ -23,7 +23,8 @@ class MgmzPermissionArgs:
         :param pulumi.Input[str] environment: The UUID of the environment
         :param pulumi.Input[str] group: The ID of the group the permissions are valid for. You may refer to the id of a resource `UserGroup` here
         :param pulumi.Input[str] management_zone: The ID of the management zone the permissions are valid for. When referring to resource `ManagementZoneV2` or data source `ManagementZone` you need to refer to the attribute `legacy_id`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+               Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
         """
         pulumi.set(__self__, "environment", environment)
         pulumi.set(__self__, "group", group)
@@ -70,7 +71,8 @@ class MgmzPermissionArgs:
     @pulumi.getter
     def permissions(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+        The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+        Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
         """
         return pulumi.get(self, "permissions")
 
@@ -91,7 +93,8 @@ class _MgmzPermissionState:
         :param pulumi.Input[str] environment: The UUID of the environment
         :param pulumi.Input[str] group: The ID of the group the permissions are valid for. You may refer to the id of a resource `UserGroup` here
         :param pulumi.Input[str] management_zone: The ID of the management zone the permissions are valid for. When referring to resource `ManagementZoneV2` or data source `ManagementZone` you need to refer to the attribute `legacy_id`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+               Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
         """
         if environment is not None:
             pulumi.set(__self__, "environment", environment)
@@ -142,7 +145,8 @@ class _MgmzPermissionState:
     @pulumi.getter
     def permissions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+        The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+        Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
         """
         return pulumi.get(self, "permissions")
 
@@ -168,7 +172,8 @@ class MgmzPermission(pulumi.CustomResource):
         :param pulumi.Input[str] environment: The UUID of the environment
         :param pulumi.Input[str] group: The ID of the group the permissions are valid for. You may refer to the id of a resource `UserGroup` here
         :param pulumi.Input[str] management_zone: The ID of the management zone the permissions are valid for. When referring to resource `ManagementZoneV2` or data source `ManagementZone` you need to refer to the attribute `legacy_id`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+               Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
         """
         ...
     @overload
@@ -242,7 +247,8 @@ class MgmzPermission(pulumi.CustomResource):
         :param pulumi.Input[str] environment: The UUID of the environment
         :param pulumi.Input[str] group: The ID of the group the permissions are valid for. You may refer to the id of a resource `UserGroup` here
         :param pulumi.Input[str] management_zone: The ID of the management zone the permissions are valid for. When referring to resource `ManagementZoneV2` or data source `ManagementZone` you need to refer to the attribute `legacy_id`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+               Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -282,7 +288,8 @@ class MgmzPermission(pulumi.CustomResource):
     @pulumi.getter
     def permissions(self) -> pulumi.Output[Sequence[str]]:
         """
-        The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+        The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+        Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
         """
         return pulumi.get(self, "permissions")
 

@@ -37,8 +37,7 @@ export class DevobsGitOnprem extends pulumi.CustomResource {
      */
     public readonly gitProvider!: pulumi.Output<string>;
     /**
-     * If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-     * set to `omit`.
+     * If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
      */
     public readonly includeCredentials!: pulumi.Output<boolean | undefined>;
     /**
@@ -88,8 +87,7 @@ export interface DevobsGitOnpremState {
      */
     gitProvider?: pulumi.Input<string>;
     /**
-     * If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-     * set to `omit`.
+     * If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
      */
     includeCredentials?: pulumi.Input<boolean>;
     /**
@@ -107,8 +105,7 @@ export interface DevobsGitOnpremArgs {
      */
     gitProvider: pulumi.Input<string>;
     /**
-     * If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-     * set to `omit`.
+     * If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
      */
     includeCredentials?: pulumi.Input<boolean>;
     /**

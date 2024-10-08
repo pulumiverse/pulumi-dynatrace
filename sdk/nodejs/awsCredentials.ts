@@ -52,6 +52,7 @@ export class AwsCredentials extends pulumi.CustomResource {
     public readonly partitionType!: pulumi.Output<string>;
     /**
      * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
+     * Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
      */
     public readonly removeDefaults!: pulumi.Output<boolean | undefined>;
     /**
@@ -155,6 +156,7 @@ export interface AwsCredentialsState {
     partitionType?: pulumi.Input<string>;
     /**
      * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
+     * Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
      */
     removeDefaults?: pulumi.Input<boolean>;
     /**
@@ -207,6 +209,7 @@ export interface AwsCredentialsArgs {
     partitionType: pulumi.Input<string>;
     /**
      * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
+     * Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
      */
     removeDefaults?: pulumi.Input<boolean>;
     /**

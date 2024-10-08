@@ -1107,6 +1107,17 @@ export interface AutomationSchedulingRuleRelativeOffset {
     targetRule: string;
 }
 
+export interface AutomationWorkflowAwsConnectionsWebIdentity {
+    /**
+     * An optional list of policies that can be used to restrict the AWS role
+     */
+    policyArns?: string[];
+    /**
+     * The ARN of the AWS role that should be assumed
+     */
+    roleArn: string;
+}
+
 export interface AutomationWorkflowTasks {
     /**
      * TODO: No documentation available
@@ -8979,6 +8990,21 @@ export interface DavisAnomalyDetectorsExecutionSettings {
      * Minute offset of sliding evaluation window for metrics with latency
      */
     queryOffset?: number;
+}
+
+export interface DavisCopilotBlocklistEntries {
+    blocklistEntries: outputs.DavisCopilotBlocklistEntriesBlocklistEntry[];
+}
+
+export interface DavisCopilotBlocklistEntriesBlocklistEntry {
+    /**
+     * no documentation available
+     */
+    name: string;
+    /**
+     * Possible Values: `BUCKET`, `TABLE`
+     */
+    type: string;
 }
 
 export interface DduPoolEvents {

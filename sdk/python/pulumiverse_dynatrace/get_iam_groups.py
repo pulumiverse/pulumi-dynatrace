@@ -55,6 +55,10 @@ class AwaitableGetIamGroupsResult(GetIamGroupsResult):
 
 def get_iam_groups(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamGroupsResult:
     """
+    > **Dynatrace SaaS only**
+
+    > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **Allow read access for identity resources (users and groups)** (`account-idm-read`).
+
     ## Example Usage
 
     ```python
@@ -79,6 +83,10 @@ def get_iam_groups(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetI
 @_utilities.lift_output_func(get_iam_groups)
 def get_iam_groups_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamGroupsResult]:
     """
+    > **Dynatrace SaaS only**
+
+    > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **Allow read access for identity resources (users and groups)** (`account-idm-read`).
+
     ## Example Usage
 
     ```python

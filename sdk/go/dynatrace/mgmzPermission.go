@@ -21,7 +21,8 @@ type MgmzPermission struct {
 	Group pulumi.StringOutput `pulumi:"group"`
 	// The ID of the management zone the permissions are valid for. When referring to resource `ManagementZoneV2` or data source `ManagementZone` you need to refer to the attribute `legacyId`.
 	ManagementZone pulumi.StringOutput `pulumi:"managementZone"`
-	// The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+	// The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+	// Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
 	Permissions pulumi.StringArrayOutput `pulumi:"permissions"`
 }
 
@@ -73,7 +74,8 @@ type mgmzPermissionState struct {
 	Group *string `pulumi:"group"`
 	// The ID of the management zone the permissions are valid for. When referring to resource `ManagementZoneV2` or data source `ManagementZone` you need to refer to the attribute `legacyId`.
 	ManagementZone *string `pulumi:"managementZone"`
-	// The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+	// The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+	// Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
 	Permissions []string `pulumi:"permissions"`
 }
 
@@ -84,7 +86,8 @@ type MgmzPermissionState struct {
 	Group pulumi.StringPtrInput
 	// The ID of the management zone the permissions are valid for. When referring to resource `ManagementZoneV2` or data source `ManagementZone` you need to refer to the attribute `legacyId`.
 	ManagementZone pulumi.StringPtrInput
-	// The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+	// The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+	// Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
 	Permissions pulumi.StringArrayInput
 }
 
@@ -99,7 +102,8 @@ type mgmzPermissionArgs struct {
 	Group string `pulumi:"group"`
 	// The ID of the management zone the permissions are valid for. When referring to resource `ManagementZoneV2` or data source `ManagementZone` you need to refer to the attribute `legacyId`.
 	ManagementZone string `pulumi:"managementZone"`
-	// The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+	// The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+	// Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
 	Permissions []string `pulumi:"permissions"`
 }
 
@@ -111,7 +115,8 @@ type MgmzPermissionArgs struct {
 	Group pulumi.StringInput
 	// The ID of the management zone the permissions are valid for. When referring to resource `ManagementZoneV2` or data source `ManagementZone` you need to refer to the attribute `legacyId`.
 	ManagementZone pulumi.StringInput
-	// The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+	// The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+	// Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
 	Permissions pulumi.StringArrayInput
 }
 
@@ -217,7 +222,8 @@ func (o MgmzPermissionOutput) ManagementZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *MgmzPermission) pulumi.StringOutput { return v.ManagementZone }).(pulumi.StringOutput)
 }
 
-// The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+// The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+// Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
 func (o MgmzPermissionOutput) Permissions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *MgmzPermission) pulumi.StringArrayOutput { return v.Permissions }).(pulumi.StringArrayOutput)
 }
