@@ -133,25 +133,15 @@ class DirectShares(pulumi.CustomResource):
                  recipients: Optional[pulumi.Input[Union['DirectSharesRecipientsArgs', 'DirectSharesRecipientsArgsDict']]] = None,
                  __props__=None):
         """
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Read direct-shares** (`document:direct-shares:read`), **Write direct-shares** (`document:direct-shares:write`), and **Delete direct-shares** (`document:direct-shares:delete`).
+
         > This resource is currently not covered by the export utility.
 
         ## Dynatrace Documentation
 
         - Dynatrace Documents - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Document%20Service
-
-        ## Prerequisites
-
-        Using this resource requires an OAuth client to be configured within your account settings.
-        The scopes of the OAuth Client need to include `Read direct-shares (document:direct-shares:read)`, `Write direct-shares (document:direct-shares:write)`, `Delete direct-shares (document:direct-shares:delete)`.
-
-        Finally the provider configuration requires the credentials for that OAuth Client.
-        The configuration section of your provider needs to look like this.
-
-        ```python
-        import pulumi
-        ```
-
-        > In order to handle credentials in a secure manner we recommend to use the environment variables `DYNATRACE_AUTOMATION_CLIENT_ID` and `DYNATRACE_AUTOMATION_CLIENT_SECRET` as an alternative.
 
         ## Resource Example Usage
 
@@ -189,25 +179,15 @@ class DirectShares(pulumi.CustomResource):
                  args: DirectSharesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Read direct-shares** (`document:direct-shares:read`), **Write direct-shares** (`document:direct-shares:write`), and **Delete direct-shares** (`document:direct-shares:delete`).
+
         > This resource is currently not covered by the export utility.
 
         ## Dynatrace Documentation
 
         - Dynatrace Documents - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Document%20Service
-
-        ## Prerequisites
-
-        Using this resource requires an OAuth client to be configured within your account settings.
-        The scopes of the OAuth Client need to include `Read direct-shares (document:direct-shares:read)`, `Write direct-shares (document:direct-shares:write)`, `Delete direct-shares (document:direct-shares:delete)`.
-
-        Finally the provider configuration requires the credentials for that OAuth Client.
-        The configuration section of your provider needs to look like this.
-
-        ```python
-        import pulumi
-        ```
-
-        > In order to handle credentials in a secure manner we recommend to use the environment variables `DYNATRACE_AUTOMATION_CLIENT_ID` and `DYNATRACE_AUTOMATION_CLIENT_SECRET` as an alternative.
 
         ## Resource Example Usage
 

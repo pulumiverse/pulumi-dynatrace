@@ -33,6 +33,7 @@ from .audit_log import *
 from .automation_business_calendar import *
 from .automation_scheduling_rule import *
 from .automation_workflow import *
+from .automation_workflow_aws_connections import *
 from .automation_workflow_jira import *
 from .automation_workflow_k8s_connections import *
 from .automation_workflow_slack import *
@@ -85,9 +86,12 @@ from .data_privacy import *
 from .database_anomalies import *
 from .database_anomalies_v2 import *
 from .davis_anomaly_detectors import *
+from .davis_copilot import *
 from .db_app_feature_flags import *
 from .ddu_pool import *
 from .declarative_grouping import *
+from .devobs_agent_optin import *
+from .devobs_data_masking import *
 from .devobs_git_onprem import *
 from .direct_shares import *
 from .discovery_default_rules import *
@@ -607,6 +611,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/automationWorkflowAwsConnections",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/automationWorkflowAwsConnections:AutomationWorkflowAwsConnections": "AutomationWorkflowAwsConnections"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/automationWorkflowJira",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -1023,6 +1035,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/davisCopilot",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/davisCopilot:DavisCopilot": "DavisCopilot"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/dbAppFeatureFlags",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -1043,6 +1063,22 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/declarativeGrouping:DeclarativeGrouping": "DeclarativeGrouping"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/devobsAgentOptin",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/devobsAgentOptin:DevobsAgentOptin": "DevobsAgentOptin"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/devobsDataMasking",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/devobsDataMasking:DevobsDataMasking": "DevobsDataMasking"
   }
  },
  {

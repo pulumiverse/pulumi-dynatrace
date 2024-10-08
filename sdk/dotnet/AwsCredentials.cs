@@ -39,6 +39,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
+        /// Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         /// </summary>
         [Output("removeDefaults")]
         public Output<bool?> RemoveDefaults { get; private set; } = null!;
@@ -149,6 +150,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
+        /// Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         /// </summary>
         [Input("removeDefaults")]
         public Input<bool>? RemoveDefaults { get; set; }
@@ -233,6 +235,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
+        /// Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         /// </summary>
         [Input("removeDefaults")]
         public Input<bool>? RemoveDefaults { get; set; }

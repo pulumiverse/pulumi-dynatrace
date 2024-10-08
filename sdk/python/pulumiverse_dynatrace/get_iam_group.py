@@ -56,6 +56,10 @@ class AwaitableGetIamGroupResult(GetIamGroupResult):
 def get_iam_group(name: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamGroupResult:
     """
+    > **Dynatrace SaaS only**
+
+    > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **Allow read access for identity resources (users and groups)** (`account-idm-read`).
+
     The IAM group data source allows the group ID to be retrieved by its name.
 
     - `name` (String) - The name of the IAM group
@@ -84,6 +88,10 @@ def get_iam_group(name: Optional[str] = None,
 def get_iam_group_output(name: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamGroupResult]:
     """
+    > **Dynatrace SaaS only**
+
+    > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **Allow read access for identity resources (users and groups)** (`account-idm-read`).
+
     The IAM group data source allows the group ID to be retrieved by its name.
 
     - `name` (String) - The name of the IAM group

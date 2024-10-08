@@ -5,25 +5,15 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * > This resource is excluded by default in the export utility. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DYNATRACE_AUTOMATION_CLIENT_ID` and `DYNATRACE_AUTOMATION_CLIENT_SECRET` for authentication.
+ * > **Dynatrace SaaS only**
+ *
+ * > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Create and edit documents** (`document:documents:write`), **View documents** (`document:documents:read`) and **Delete documents** (`document:documents:delete`).
+ *
+ * > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
  *
  * ## Dynatrace Documentation
  *
  * - Dynatrace Documents - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Document%20Service
- *
- * ## Prerequisites
- *
- * Using this resource requires an OAuth client to be configured within your account settings.
- * The scopes of the OAuth Client need to include `Create and edit documents (document:documents:write)`, `View documents (document:documents:read)`, `Delete documents (document:documents:delete)`.
- *
- * Finally the provider configuration requires the credentials for that OAuth Client.
- * The configuration section of your provider needs to look like this.
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * ```
- *
- * > In order to handle credentials in a secure manner we recommend to use the environment variables `DYNATRACE_AUTOMATION_CLIENT_ID` and `DYNATRACE_AUTOMATION_CLIENT_SECRET` as an alternative.
  */
 export class Document extends pulumi.CustomResource {
     /**

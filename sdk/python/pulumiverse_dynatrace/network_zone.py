@@ -16,6 +16,7 @@ class NetworkZoneArgs:
     def __init__(__self__, *,
                  alternative_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 fallback_mode: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  num_of_configured_activegates: Optional[pulumi.Input[int]] = None,
                  num_of_configured_oneagents: Optional[pulumi.Input[int]] = None,
@@ -25,6 +26,7 @@ class NetworkZoneArgs:
         The set of arguments for constructing a NetworkZone resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] alternative_zones: A list of alternative network zones.
         :param pulumi.Input[str] description: A short description of the network zone
+        :param pulumi.Input[str] fallback_mode: The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
         :param pulumi.Input[str] name: Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         :param pulumi.Input[int] num_of_configured_activegates: The number of ActiveGates in the network zone.
         :param pulumi.Input[int] num_of_configured_oneagents: The number of OneAgents that are configured to use the network zone as primary.
@@ -35,6 +37,8 @@ class NetworkZoneArgs:
             pulumi.set(__self__, "alternative_zones", alternative_zones)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if fallback_mode is not None:
+            pulumi.set(__self__, "fallback_mode", fallback_mode)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if num_of_configured_activegates is not None:
@@ -69,6 +73,18 @@ class NetworkZoneArgs:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="fallbackMode")
+    def fallback_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+        """
+        return pulumi.get(self, "fallback_mode")
+
+    @fallback_mode.setter
+    def fallback_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "fallback_mode", value)
 
     @property
     @pulumi.getter
@@ -136,6 +152,7 @@ class _NetworkZoneState:
     def __init__(__self__, *,
                  alternative_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 fallback_mode: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  num_of_configured_activegates: Optional[pulumi.Input[int]] = None,
                  num_of_configured_oneagents: Optional[pulumi.Input[int]] = None,
@@ -145,6 +162,7 @@ class _NetworkZoneState:
         Input properties used for looking up and filtering NetworkZone resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] alternative_zones: A list of alternative network zones.
         :param pulumi.Input[str] description: A short description of the network zone
+        :param pulumi.Input[str] fallback_mode: The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
         :param pulumi.Input[str] name: Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         :param pulumi.Input[int] num_of_configured_activegates: The number of ActiveGates in the network zone.
         :param pulumi.Input[int] num_of_configured_oneagents: The number of OneAgents that are configured to use the network zone as primary.
@@ -155,6 +173,8 @@ class _NetworkZoneState:
             pulumi.set(__self__, "alternative_zones", alternative_zones)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if fallback_mode is not None:
+            pulumi.set(__self__, "fallback_mode", fallback_mode)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if num_of_configured_activegates is not None:
@@ -189,6 +209,18 @@ class _NetworkZoneState:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="fallbackMode")
+    def fallback_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+        """
+        return pulumi.get(self, "fallback_mode")
+
+    @fallback_mode.setter
+    def fallback_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "fallback_mode", value)
 
     @property
     @pulumi.getter
@@ -258,6 +290,7 @@ class NetworkZone(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  alternative_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 fallback_mode: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  num_of_configured_activegates: Optional[pulumi.Input[int]] = None,
                  num_of_configured_oneagents: Optional[pulumi.Input[int]] = None,
@@ -270,6 +303,7 @@ class NetworkZone(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] alternative_zones: A list of alternative network zones.
         :param pulumi.Input[str] description: A short description of the network zone
+        :param pulumi.Input[str] fallback_mode: The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
         :param pulumi.Input[str] name: Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         :param pulumi.Input[int] num_of_configured_activegates: The number of ActiveGates in the network zone.
         :param pulumi.Input[int] num_of_configured_oneagents: The number of OneAgents that are configured to use the network zone as primary.
@@ -301,6 +335,7 @@ class NetworkZone(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  alternative_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 fallback_mode: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  num_of_configured_activegates: Optional[pulumi.Input[int]] = None,
                  num_of_configured_oneagents: Optional[pulumi.Input[int]] = None,
@@ -317,6 +352,7 @@ class NetworkZone(pulumi.CustomResource):
 
             __props__.__dict__["alternative_zones"] = alternative_zones
             __props__.__dict__["description"] = description
+            __props__.__dict__["fallback_mode"] = fallback_mode
             __props__.__dict__["name"] = name
             __props__.__dict__["num_of_configured_activegates"] = num_of_configured_activegates
             __props__.__dict__["num_of_configured_oneagents"] = num_of_configured_oneagents
@@ -334,6 +370,7 @@ class NetworkZone(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             alternative_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
+            fallback_mode: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             num_of_configured_activegates: Optional[pulumi.Input[int]] = None,
             num_of_configured_oneagents: Optional[pulumi.Input[int]] = None,
@@ -348,6 +385,7 @@ class NetworkZone(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] alternative_zones: A list of alternative network zones.
         :param pulumi.Input[str] description: A short description of the network zone
+        :param pulumi.Input[str] fallback_mode: The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
         :param pulumi.Input[str] name: Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         :param pulumi.Input[int] num_of_configured_activegates: The number of ActiveGates in the network zone.
         :param pulumi.Input[int] num_of_configured_oneagents: The number of OneAgents that are configured to use the network zone as primary.
@@ -360,6 +398,7 @@ class NetworkZone(pulumi.CustomResource):
 
         __props__.__dict__["alternative_zones"] = alternative_zones
         __props__.__dict__["description"] = description
+        __props__.__dict__["fallback_mode"] = fallback_mode
         __props__.__dict__["name"] = name
         __props__.__dict__["num_of_configured_activegates"] = num_of_configured_activegates
         __props__.__dict__["num_of_configured_oneagents"] = num_of_configured_oneagents
@@ -382,6 +421,14 @@ class NetworkZone(pulumi.CustomResource):
         A short description of the network zone
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="fallbackMode")
+    def fallback_mode(self) -> pulumi.Output[Optional[str]]:
+        """
+        The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+        """
+        return pulumi.get(self, "fallback_mode")
 
     @property
     @pulumi.getter

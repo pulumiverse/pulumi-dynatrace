@@ -13,6 +13,453 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type WebAppKeyPerformanceXhrFallbackThresholds struct {
+	// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingFallbackThresholdSeconds float64 `pulumi:"frustratingFallbackThresholdSeconds"`
+	// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedFallbackThresholdSeconds float64 `pulumi:"toleratedFallbackThresholdSeconds"`
+}
+
+// WebAppKeyPerformanceXhrFallbackThresholdsInput is an input type that accepts WebAppKeyPerformanceXhrFallbackThresholdsArgs and WebAppKeyPerformanceXhrFallbackThresholdsOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceXhrFallbackThresholdsInput` via:
+//
+//	WebAppKeyPerformanceXhrFallbackThresholdsArgs{...}
+type WebAppKeyPerformanceXhrFallbackThresholdsInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceXhrFallbackThresholdsOutput() WebAppKeyPerformanceXhrFallbackThresholdsOutput
+	ToWebAppKeyPerformanceXhrFallbackThresholdsOutputWithContext(context.Context) WebAppKeyPerformanceXhrFallbackThresholdsOutput
+}
+
+type WebAppKeyPerformanceXhrFallbackThresholdsArgs struct {
+	// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingFallbackThresholdSeconds pulumi.Float64Input `pulumi:"frustratingFallbackThresholdSeconds"`
+	// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedFallbackThresholdSeconds pulumi.Float64Input `pulumi:"toleratedFallbackThresholdSeconds"`
+}
+
+func (WebAppKeyPerformanceXhrFallbackThresholdsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceXhrFallbackThresholds)(nil)).Elem()
+}
+
+func (i WebAppKeyPerformanceXhrFallbackThresholdsArgs) ToWebAppKeyPerformanceXhrFallbackThresholdsOutput() WebAppKeyPerformanceXhrFallbackThresholdsOutput {
+	return i.ToWebAppKeyPerformanceXhrFallbackThresholdsOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceXhrFallbackThresholdsArgs) ToWebAppKeyPerformanceXhrFallbackThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrFallbackThresholdsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceXhrFallbackThresholdsOutput)
+}
+
+func (i WebAppKeyPerformanceXhrFallbackThresholdsArgs) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutput() WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceXhrFallbackThresholdsArgs) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceXhrFallbackThresholdsOutput).ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(ctx)
+}
+
+// WebAppKeyPerformanceXhrFallbackThresholdsPtrInput is an input type that accepts WebAppKeyPerformanceXhrFallbackThresholdsArgs, WebAppKeyPerformanceXhrFallbackThresholdsPtr and WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceXhrFallbackThresholdsPtrInput` via:
+//
+//	        WebAppKeyPerformanceXhrFallbackThresholdsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppKeyPerformanceXhrFallbackThresholdsPtrInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutput() WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput
+	ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(context.Context) WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput
+}
+
+type webAppKeyPerformanceXhrFallbackThresholdsPtrType WebAppKeyPerformanceXhrFallbackThresholdsArgs
+
+func WebAppKeyPerformanceXhrFallbackThresholdsPtr(v *WebAppKeyPerformanceXhrFallbackThresholdsArgs) WebAppKeyPerformanceXhrFallbackThresholdsPtrInput {
+	return (*webAppKeyPerformanceXhrFallbackThresholdsPtrType)(v)
+}
+
+func (*webAppKeyPerformanceXhrFallbackThresholdsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceXhrFallbackThresholds)(nil)).Elem()
+}
+
+func (i *webAppKeyPerformanceXhrFallbackThresholdsPtrType) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutput() WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppKeyPerformanceXhrFallbackThresholdsPtrType) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput)
+}
+
+type WebAppKeyPerformanceXhrFallbackThresholdsOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceXhrFallbackThresholdsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceXhrFallbackThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsOutput) ToWebAppKeyPerformanceXhrFallbackThresholdsOutput() WebAppKeyPerformanceXhrFallbackThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsOutput) ToWebAppKeyPerformanceXhrFallbackThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrFallbackThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsOutput) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutput() WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return o.ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsOutput) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppKeyPerformanceXhrFallbackThresholds) *WebAppKeyPerformanceXhrFallbackThresholds {
+		return &v
+	}).(WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput)
+}
+
+// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceXhrFallbackThresholdsOutput) FrustratingFallbackThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceXhrFallbackThresholds) float64 {
+		return v.FrustratingFallbackThresholdSeconds
+	}).(pulumi.Float64Output)
+}
+
+// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceXhrFallbackThresholdsOutput) ToleratedFallbackThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceXhrFallbackThresholds) float64 { return v.ToleratedFallbackThresholdSeconds }).(pulumi.Float64Output)
+}
+
+type WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceXhrFallbackThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutput() WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput) Elem() WebAppKeyPerformanceXhrFallbackThresholdsOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceXhrFallbackThresholds) WebAppKeyPerformanceXhrFallbackThresholds {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppKeyPerformanceXhrFallbackThresholds
+		return ret
+	}).(WebAppKeyPerformanceXhrFallbackThresholdsOutput)
+}
+
+// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput) FrustratingFallbackThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceXhrFallbackThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.FrustratingFallbackThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput) ToleratedFallbackThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceXhrFallbackThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.ToleratedFallbackThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppKeyPerformanceXhrThresholds struct {
+	// If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingThresholdSeconds float64 `pulumi:"frustratingThresholdSeconds"`
+	// If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedThresholdSeconds float64 `pulumi:"toleratedThresholdSeconds"`
+}
+
+// WebAppKeyPerformanceXhrThresholdsInput is an input type that accepts WebAppKeyPerformanceXhrThresholdsArgs and WebAppKeyPerformanceXhrThresholdsOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceXhrThresholdsInput` via:
+//
+//	WebAppKeyPerformanceXhrThresholdsArgs{...}
+type WebAppKeyPerformanceXhrThresholdsInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceXhrThresholdsOutput() WebAppKeyPerformanceXhrThresholdsOutput
+	ToWebAppKeyPerformanceXhrThresholdsOutputWithContext(context.Context) WebAppKeyPerformanceXhrThresholdsOutput
+}
+
+type WebAppKeyPerformanceXhrThresholdsArgs struct {
+	// If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingThresholdSeconds pulumi.Float64Input `pulumi:"frustratingThresholdSeconds"`
+	// If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedThresholdSeconds pulumi.Float64Input `pulumi:"toleratedThresholdSeconds"`
+}
+
+func (WebAppKeyPerformanceXhrThresholdsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceXhrThresholds)(nil)).Elem()
+}
+
+func (i WebAppKeyPerformanceXhrThresholdsArgs) ToWebAppKeyPerformanceXhrThresholdsOutput() WebAppKeyPerformanceXhrThresholdsOutput {
+	return i.ToWebAppKeyPerformanceXhrThresholdsOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceXhrThresholdsArgs) ToWebAppKeyPerformanceXhrThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrThresholdsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceXhrThresholdsOutput)
+}
+
+func (i WebAppKeyPerformanceXhrThresholdsArgs) ToWebAppKeyPerformanceXhrThresholdsPtrOutput() WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceXhrThresholdsArgs) ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceXhrThresholdsOutput).ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(ctx)
+}
+
+// WebAppKeyPerformanceXhrThresholdsPtrInput is an input type that accepts WebAppKeyPerformanceXhrThresholdsArgs, WebAppKeyPerformanceXhrThresholdsPtr and WebAppKeyPerformanceXhrThresholdsPtrOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceXhrThresholdsPtrInput` via:
+//
+//	        WebAppKeyPerformanceXhrThresholdsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppKeyPerformanceXhrThresholdsPtrInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceXhrThresholdsPtrOutput() WebAppKeyPerformanceXhrThresholdsPtrOutput
+	ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(context.Context) WebAppKeyPerformanceXhrThresholdsPtrOutput
+}
+
+type webAppKeyPerformanceXhrThresholdsPtrType WebAppKeyPerformanceXhrThresholdsArgs
+
+func WebAppKeyPerformanceXhrThresholdsPtr(v *WebAppKeyPerformanceXhrThresholdsArgs) WebAppKeyPerformanceXhrThresholdsPtrInput {
+	return (*webAppKeyPerformanceXhrThresholdsPtrType)(v)
+}
+
+func (*webAppKeyPerformanceXhrThresholdsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceXhrThresholds)(nil)).Elem()
+}
+
+func (i *webAppKeyPerformanceXhrThresholdsPtrType) ToWebAppKeyPerformanceXhrThresholdsPtrOutput() WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppKeyPerformanceXhrThresholdsPtrType) ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceXhrThresholdsPtrOutput)
+}
+
+type WebAppKeyPerformanceXhrThresholdsOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceXhrThresholdsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceXhrThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsOutput) ToWebAppKeyPerformanceXhrThresholdsOutput() WebAppKeyPerformanceXhrThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsOutput) ToWebAppKeyPerformanceXhrThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsOutput) ToWebAppKeyPerformanceXhrThresholdsPtrOutput() WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return o.ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsOutput) ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppKeyPerformanceXhrThresholds) *WebAppKeyPerformanceXhrThresholds {
+		return &v
+	}).(WebAppKeyPerformanceXhrThresholdsPtrOutput)
+}
+
+// If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceXhrThresholdsOutput) FrustratingThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceXhrThresholds) float64 { return v.FrustratingThresholdSeconds }).(pulumi.Float64Output)
+}
+
+// If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceXhrThresholdsOutput) ToleratedThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceXhrThresholds) float64 { return v.ToleratedThresholdSeconds }).(pulumi.Float64Output)
+}
+
+type WebAppKeyPerformanceXhrThresholdsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceXhrThresholdsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceXhrThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsPtrOutput) ToWebAppKeyPerformanceXhrThresholdsPtrOutput() WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsPtrOutput) ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsPtrOutput) Elem() WebAppKeyPerformanceXhrThresholdsOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceXhrThresholds) WebAppKeyPerformanceXhrThresholds {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppKeyPerformanceXhrThresholds
+		return ret
+	}).(WebAppKeyPerformanceXhrThresholdsOutput)
+}
+
+// If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceXhrThresholdsPtrOutput) FrustratingThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceXhrThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.FrustratingThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+// If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceXhrThresholdsPtrOutput) ToleratedThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceXhrThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.ToleratedThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppRequestErrorsErrorRules struct {
+	ErrorRules []WebAppRequestErrorsErrorRulesErrorRule `pulumi:"errorRules"`
+}
+
+// WebAppRequestErrorsErrorRulesInput is an input type that accepts WebAppRequestErrorsErrorRulesArgs and WebAppRequestErrorsErrorRulesOutput values.
+// You can construct a concrete instance of `WebAppRequestErrorsErrorRulesInput` via:
+//
+//	WebAppRequestErrorsErrorRulesArgs{...}
+type WebAppRequestErrorsErrorRulesInput interface {
+	pulumi.Input
+
+	ToWebAppRequestErrorsErrorRulesOutput() WebAppRequestErrorsErrorRulesOutput
+	ToWebAppRequestErrorsErrorRulesOutputWithContext(context.Context) WebAppRequestErrorsErrorRulesOutput
+}
+
+type WebAppRequestErrorsErrorRulesArgs struct {
+	ErrorRules WebAppRequestErrorsErrorRulesErrorRuleArrayInput `pulumi:"errorRules"`
+}
+
+func (WebAppRequestErrorsErrorRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppRequestErrorsErrorRules)(nil)).Elem()
+}
+
+func (i WebAppRequestErrorsErrorRulesArgs) ToWebAppRequestErrorsErrorRulesOutput() WebAppRequestErrorsErrorRulesOutput {
+	return i.ToWebAppRequestErrorsErrorRulesOutputWithContext(context.Background())
+}
+
+func (i WebAppRequestErrorsErrorRulesArgs) ToWebAppRequestErrorsErrorRulesOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppRequestErrorsErrorRulesOutput)
+}
+
+func (i WebAppRequestErrorsErrorRulesArgs) ToWebAppRequestErrorsErrorRulesPtrOutput() WebAppRequestErrorsErrorRulesPtrOutput {
+	return i.ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppRequestErrorsErrorRulesArgs) ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppRequestErrorsErrorRulesOutput).ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(ctx)
+}
+
+// WebAppRequestErrorsErrorRulesPtrInput is an input type that accepts WebAppRequestErrorsErrorRulesArgs, WebAppRequestErrorsErrorRulesPtr and WebAppRequestErrorsErrorRulesPtrOutput values.
+// You can construct a concrete instance of `WebAppRequestErrorsErrorRulesPtrInput` via:
+//
+//	        WebAppRequestErrorsErrorRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppRequestErrorsErrorRulesPtrInput interface {
+	pulumi.Input
+
+	ToWebAppRequestErrorsErrorRulesPtrOutput() WebAppRequestErrorsErrorRulesPtrOutput
+	ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(context.Context) WebAppRequestErrorsErrorRulesPtrOutput
+}
+
+type webAppRequestErrorsErrorRulesPtrType WebAppRequestErrorsErrorRulesArgs
+
+func WebAppRequestErrorsErrorRulesPtr(v *WebAppRequestErrorsErrorRulesArgs) WebAppRequestErrorsErrorRulesPtrInput {
+	return (*webAppRequestErrorsErrorRulesPtrType)(v)
+}
+
+func (*webAppRequestErrorsErrorRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppRequestErrorsErrorRules)(nil)).Elem()
+}
+
+func (i *webAppRequestErrorsErrorRulesPtrType) ToWebAppRequestErrorsErrorRulesPtrOutput() WebAppRequestErrorsErrorRulesPtrOutput {
+	return i.ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppRequestErrorsErrorRulesPtrType) ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppRequestErrorsErrorRulesPtrOutput)
+}
+
+type WebAppRequestErrorsErrorRulesOutput struct{ *pulumi.OutputState }
+
+func (WebAppRequestErrorsErrorRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppRequestErrorsErrorRules)(nil)).Elem()
+}
+
+func (o WebAppRequestErrorsErrorRulesOutput) ToWebAppRequestErrorsErrorRulesOutput() WebAppRequestErrorsErrorRulesOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesOutput) ToWebAppRequestErrorsErrorRulesOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesOutput) ToWebAppRequestErrorsErrorRulesPtrOutput() WebAppRequestErrorsErrorRulesPtrOutput {
+	return o.ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppRequestErrorsErrorRulesOutput) ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppRequestErrorsErrorRules) *WebAppRequestErrorsErrorRules {
+		return &v
+	}).(WebAppRequestErrorsErrorRulesPtrOutput)
+}
+
+func (o WebAppRequestErrorsErrorRulesOutput) ErrorRules() WebAppRequestErrorsErrorRulesErrorRuleArrayOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRules) []WebAppRequestErrorsErrorRulesErrorRule { return v.ErrorRules }).(WebAppRequestErrorsErrorRulesErrorRuleArrayOutput)
+}
+
+type WebAppRequestErrorsErrorRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppRequestErrorsErrorRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppRequestErrorsErrorRules)(nil)).Elem()
+}
+
+func (o WebAppRequestErrorsErrorRulesPtrOutput) ToWebAppRequestErrorsErrorRulesPtrOutput() WebAppRequestErrorsErrorRulesPtrOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesPtrOutput) ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesPtrOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesPtrOutput) Elem() WebAppRequestErrorsErrorRulesOutput {
+	return o.ApplyT(func(v *WebAppRequestErrorsErrorRules) WebAppRequestErrorsErrorRules {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppRequestErrorsErrorRules
+		return ret
+	}).(WebAppRequestErrorsErrorRulesOutput)
+}
+
+func (o WebAppRequestErrorsErrorRulesPtrOutput) ErrorRules() WebAppRequestErrorsErrorRulesErrorRuleArrayOutput {
+	return o.ApplyT(func(v *WebAppRequestErrorsErrorRules) []WebAppRequestErrorsErrorRulesErrorRule {
+		if v == nil {
+			return nil
+		}
+		return v.ErrorRules
+	}).(WebAppRequestErrorsErrorRulesErrorRuleArrayOutput)
+}
+
 type WebAppRequestErrorsErrorRulesErrorRule struct {
 	// Capture settings
 	CaptureSettings WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings `pulumi:"captureSettings"`
@@ -12721,6 +13168,12 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceXhrFallbackThresholdsInput)(nil)).Elem(), WebAppKeyPerformanceXhrFallbackThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceXhrFallbackThresholdsPtrInput)(nil)).Elem(), WebAppKeyPerformanceXhrFallbackThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceXhrThresholdsInput)(nil)).Elem(), WebAppKeyPerformanceXhrThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceXhrThresholdsPtrInput)(nil)).Elem(), WebAppKeyPerformanceXhrThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesPtrInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleArrayInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs{})
@@ -12869,6 +13322,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceXhrFallbackThresholdsOutput{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceXhrThresholdsOutput{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceXhrThresholdsPtrOutput{})
+	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesOutput{})
+	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesPtrOutput{})
 	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleOutput{})
 	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleArrayOutput{})
 	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput{})

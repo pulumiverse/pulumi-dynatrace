@@ -45,7 +45,8 @@ export class MgmzPermission extends pulumi.CustomResource {
      */
     public readonly managementZone!: pulumi.Output<string>;
     /**
-     * The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+     * The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+     * Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
      */
     public readonly permissions!: pulumi.Output<string[]>;
 
@@ -107,7 +108,8 @@ export interface MgmzPermissionState {
      */
     managementZone?: pulumi.Input<string>;
     /**
-     * The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+     * The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+     * Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
      */
     permissions?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -129,7 +131,8 @@ export interface MgmzPermissionArgs {
      */
     managementZone: pulumi.Input<string>;
     /**
-     * The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`
+     * The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
+     * Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
      */
     permissions: pulumi.Input<pulumi.Input<string>[]>;
 }

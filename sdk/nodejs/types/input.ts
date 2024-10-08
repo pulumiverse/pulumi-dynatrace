@@ -1107,6 +1107,17 @@ export interface AutomationSchedulingRuleRelativeOffset {
     targetRule: pulumi.Input<string>;
 }
 
+export interface AutomationWorkflowAwsConnectionsWebIdentity {
+    /**
+     * An optional list of policies that can be used to restrict the AWS role
+     */
+    policyArns?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The ARN of the AWS role that should be assumed
+     */
+    roleArn: pulumi.Input<string>;
+}
+
 export interface AutomationWorkflowTasks {
     /**
      * TODO: No documentation available
@@ -8979,6 +8990,21 @@ export interface DavisAnomalyDetectorsExecutionSettings {
      * Minute offset of sliding evaluation window for metrics with latency
      */
     queryOffset?: pulumi.Input<number>;
+}
+
+export interface DavisCopilotBlocklistEntries {
+    blocklistEntries: pulumi.Input<pulumi.Input<inputs.DavisCopilotBlocklistEntriesBlocklistEntry>[]>;
+}
+
+export interface DavisCopilotBlocklistEntriesBlocklistEntry {
+    /**
+     * no documentation available
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Possible Values: `BUCKET`, `TABLE`
+     */
+    type: pulumi.Input<string>;
 }
 
 export interface DduPoolEvents {

@@ -26,6 +26,12 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
+        /// The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+        /// </summary>
+        [Output("fallbackMode")]
+        public Output<string?> FallbackMode { get; private set; } = null!;
+
+        /// <summary>
         /// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         /// </summary>
         [Output("name")]
@@ -121,6 +127,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+        /// </summary>
+        [Input("fallbackMode")]
+        public Input<string>? FallbackMode { get; set; }
+
+        /// <summary>
         /// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         /// </summary>
         [Input("name")]
@@ -175,6 +187,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+        /// </summary>
+        [Input("fallbackMode")]
+        public Input<string>? FallbackMode { get; set; }
 
         /// <summary>
         /// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot

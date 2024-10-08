@@ -83,6 +83,7 @@ __all__ = [
     'AutomationSchedulingRuleGrouping',
     'AutomationSchedulingRuleRecurrence',
     'AutomationSchedulingRuleRelativeOffset',
+    'AutomationWorkflowAwsConnectionsWebIdentity',
     'AutomationWorkflowTasks',
     'AutomationWorkflowTasksTask',
     'AutomationWorkflowTasksTaskConditions',
@@ -529,6 +530,8 @@ __all__ = [
     'DavisAnomalyDetectorsEventTemplateProperties',
     'DavisAnomalyDetectorsEventTemplatePropertiesProperty',
     'DavisAnomalyDetectorsExecutionSettings',
+    'DavisCopilotBlocklistEntries',
+    'DavisCopilotBlocklistEntriesBlocklistEntry',
     'DduPoolEvents',
     'DduPoolLogMonitoring',
     'DduPoolMetrics',
@@ -5184,6 +5187,55 @@ class AutomationSchedulingRuleRelativeOffset(dict):
     @pulumi.getter(name="targetRule")
     def target_rule(self) -> str:
         return pulumi.get(self, "target_rule")
+
+
+@pulumi.output_type
+class AutomationWorkflowAwsConnectionsWebIdentity(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "roleArn":
+            suggest = "role_arn"
+        elif key == "policyArns":
+            suggest = "policy_arns"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationWorkflowAwsConnectionsWebIdentity. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationWorkflowAwsConnectionsWebIdentity.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationWorkflowAwsConnectionsWebIdentity.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 role_arn: str,
+                 policy_arns: Optional[Sequence[str]] = None):
+        """
+        :param str role_arn: The ARN of the AWS role that should be assumed
+        :param Sequence[str] policy_arns: An optional list of policies that can be used to restrict the AWS role
+        """
+        pulumi.set(__self__, "role_arn", role_arn)
+        if policy_arns is not None:
+            pulumi.set(__self__, "policy_arns", policy_arns)
+
+    @property
+    @pulumi.getter(name="roleArn")
+    def role_arn(self) -> str:
+        """
+        The ARN of the AWS role that should be assumed
+        """
+        return pulumi.get(self, "role_arn")
+
+    @property
+    @pulumi.getter(name="policyArns")
+    def policy_arns(self) -> Optional[Sequence[str]]:
+        """
+        An optional list of policies that can be used to restrict the AWS role
+        """
+        return pulumi.get(self, "policy_arns")
 
 
 @pulumi.output_type
@@ -30909,6 +30961,64 @@ class DavisAnomalyDetectorsExecutionSettings(dict):
         Minute offset of sliding evaluation window for metrics with latency
         """
         return pulumi.get(self, "query_offset")
+
+
+@pulumi.output_type
+class DavisCopilotBlocklistEntries(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blocklistEntries":
+            suggest = "blocklist_entries"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DavisCopilotBlocklistEntries. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DavisCopilotBlocklistEntries.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DavisCopilotBlocklistEntries.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 blocklist_entries: Sequence['outputs.DavisCopilotBlocklistEntriesBlocklistEntry']):
+        pulumi.set(__self__, "blocklist_entries", blocklist_entries)
+
+    @property
+    @pulumi.getter(name="blocklistEntries")
+    def blocklist_entries(self) -> Sequence['outputs.DavisCopilotBlocklistEntriesBlocklistEntry']:
+        return pulumi.get(self, "blocklist_entries")
+
+
+@pulumi.output_type
+class DavisCopilotBlocklistEntriesBlocklistEntry(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 type: str):
+        """
+        :param str name: no documentation available
+        :param str type: Possible Values: `BUCKET`, `TABLE`
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Possible Values: `BUCKET`, `TABLE`
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

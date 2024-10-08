@@ -98,6 +98,10 @@ def get_iam_policy(account: Optional[str] = None,
                    uuid: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamPolicyResult:
     """
+    > **Dynatrace SaaS only**
+
+    > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`).
+
     The IAM policy data source allows the policy UUID to be retrieved by its name and account/environment (exclude for global).
 
     ## Example Usage
@@ -141,6 +145,10 @@ def get_iam_policy_output(account: Optional[pulumi.Input[Optional[str]]] = None,
                           uuid: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamPolicyResult]:
     """
+    > **Dynatrace SaaS only**
+
+    > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`).
+
     The IAM policy data source allows the policy UUID to be retrieved by its name and account/environment (exclude for global).
 
     ## Example Usage

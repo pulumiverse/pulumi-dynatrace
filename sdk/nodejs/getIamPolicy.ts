@@ -5,6 +5,10 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
+ * > **Dynatrace SaaS only**
+ *
+ * > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`).
+ *
  * The IAM policy data source allows the policy UUID to be retrieved by its name and account/environment (exclude for global).
  *
  * ## Example Usage
@@ -79,6 +83,10 @@ export interface GetIamPolicyResult {
     readonly uuid: string;
 }
 /**
+ * > **Dynatrace SaaS only**
+ *
+ * > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`).
+ *
  * The IAM policy data source allows the policy UUID to be retrieved by its name and account/environment (exclude for global).
  *
  * ## Example Usage

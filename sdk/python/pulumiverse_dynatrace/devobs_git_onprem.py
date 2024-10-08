@@ -21,8 +21,7 @@ class DevobsGitOnpremArgs:
         The set of arguments for constructing a DevobsGitOnprem resource.
         :param pulumi.Input[str] git_provider: Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
         :param pulumi.Input[str] url: An HTTP/HTTPS URL of your server
-        :param pulumi.Input[bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-               set to `omit`.
+        :param pulumi.Input[bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
         """
         pulumi.set(__self__, "git_provider", git_provider)
         pulumi.set(__self__, "url", url)
@@ -57,8 +56,7 @@ class DevobsGitOnpremArgs:
     @pulumi.getter(name="includeCredentials")
     def include_credentials(self) -> Optional[pulumi.Input[bool]]:
         """
-        If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-        set to `omit`.
+        If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
         """
         return pulumi.get(self, "include_credentials")
 
@@ -76,8 +74,7 @@ class _DevobsGitOnpremState:
         """
         Input properties used for looking up and filtering DevobsGitOnprem resources.
         :param pulumi.Input[str] git_provider: Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
-        :param pulumi.Input[bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-               set to `omit`.
+        :param pulumi.Input[bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
         :param pulumi.Input[str] url: An HTTP/HTTPS URL of your server
         """
         if git_provider is not None:
@@ -103,8 +100,7 @@ class _DevobsGitOnpremState:
     @pulumi.getter(name="includeCredentials")
     def include_credentials(self) -> Optional[pulumi.Input[bool]]:
         """
-        If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-        set to `omit`.
+        If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
         """
         return pulumi.get(self, "include_credentials")
 
@@ -139,8 +135,7 @@ class DevobsGitOnprem(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] git_provider: Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
-        :param pulumi.Input[bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-               set to `omit`.
+        :param pulumi.Input[bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
         :param pulumi.Input[str] url: An HTTP/HTTPS URL of your server
         """
         ...
@@ -206,8 +201,7 @@ class DevobsGitOnprem(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] git_provider: Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
-        :param pulumi.Input[bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-               set to `omit`.
+        :param pulumi.Input[bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
         :param pulumi.Input[str] url: An HTTP/HTTPS URL of your server
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -231,8 +225,7 @@ class DevobsGitOnprem(pulumi.CustomResource):
     @pulumi.getter(name="includeCredentials")
     def include_credentials(self) -> pulumi.Output[Optional[bool]]:
         """
-        If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be
-        set to `omit`.
+        If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
         """
         return pulumi.get(self, "include_credentials")
 

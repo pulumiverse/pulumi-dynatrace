@@ -24,6 +24,7 @@ type AwsCredentials struct {
 	// The type of the AWS partition
 	PartitionType pulumi.StringOutput `pulumi:"partitionType"`
 	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+	// Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
 	RemoveDefaults pulumi.BoolPtrOutput `pulumi:"removeDefaults"`
 	// Run credentials on Dynatrace infrastructure
 	RunningOnDynatraceInfrastructure pulumi.BoolPtrOutput `pulumi:"runningOnDynatraceInfrastructure"`
@@ -89,6 +90,7 @@ type awsCredentialsState struct {
 	// The type of the AWS partition
 	PartitionType *string `pulumi:"partitionType"`
 	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+	// Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
 	RemoveDefaults *bool `pulumi:"removeDefaults"`
 	// Run credentials on Dynatrace infrastructure
 	RunningOnDynatraceInfrastructure *bool `pulumi:"runningOnDynatraceInfrastructure"`
@@ -116,6 +118,7 @@ type AwsCredentialsState struct {
 	// The type of the AWS partition
 	PartitionType pulumi.StringPtrInput
 	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+	// Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
 	RemoveDefaults pulumi.BoolPtrInput
 	// Run credentials on Dynatrace infrastructure
 	RunningOnDynatraceInfrastructure pulumi.BoolPtrInput
@@ -147,6 +150,7 @@ type awsCredentialsArgs struct {
 	// The type of the AWS partition
 	PartitionType string `pulumi:"partitionType"`
 	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+	// Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
 	RemoveDefaults *bool `pulumi:"removeDefaults"`
 	// Run credentials on Dynatrace infrastructure
 	RunningOnDynatraceInfrastructure *bool `pulumi:"runningOnDynatraceInfrastructure"`
@@ -175,6 +179,7 @@ type AwsCredentialsArgs struct {
 	// The type of the AWS partition
 	PartitionType pulumi.StringInput
 	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+	// Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
 	RemoveDefaults pulumi.BoolPtrInput
 	// Run credentials on Dynatrace infrastructure
 	RunningOnDynatraceInfrastructure pulumi.BoolPtrInput
@@ -300,6 +305,7 @@ func (o AwsCredentialsOutput) PartitionType() pulumi.StringOutput {
 }
 
 // Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+// Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
 func (o AwsCredentialsOutput) RemoveDefaults() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AwsCredentials) pulumi.BoolPtrOutput { return v.RemoveDefaults }).(pulumi.BoolPtrOutput)
 }

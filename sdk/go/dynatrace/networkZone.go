@@ -18,6 +18,8 @@ type NetworkZone struct {
 	AlternativeZones pulumi.StringArrayOutput `pulumi:"alternativeZones"`
 	// A short description of the network zone
 	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+	FallbackMode pulumi.StringPtrOutput `pulumi:"fallbackMode"`
 	// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The number of ActiveGates in the network zone.
@@ -64,6 +66,8 @@ type networkZoneState struct {
 	AlternativeZones []string `pulumi:"alternativeZones"`
 	// A short description of the network zone
 	Description *string `pulumi:"description"`
+	// The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+	FallbackMode *string `pulumi:"fallbackMode"`
 	// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
 	Name *string `pulumi:"name"`
 	// The number of ActiveGates in the network zone.
@@ -81,6 +85,8 @@ type NetworkZoneState struct {
 	AlternativeZones pulumi.StringArrayInput
 	// A short description of the network zone
 	Description pulumi.StringPtrInput
+	// The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+	FallbackMode pulumi.StringPtrInput
 	// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
 	Name pulumi.StringPtrInput
 	// The number of ActiveGates in the network zone.
@@ -102,6 +108,8 @@ type networkZoneArgs struct {
 	AlternativeZones []string `pulumi:"alternativeZones"`
 	// A short description of the network zone
 	Description *string `pulumi:"description"`
+	// The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+	FallbackMode *string `pulumi:"fallbackMode"`
 	// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
 	Name *string `pulumi:"name"`
 	// The number of ActiveGates in the network zone.
@@ -120,6 +128,8 @@ type NetworkZoneArgs struct {
 	AlternativeZones pulumi.StringArrayInput
 	// A short description of the network zone
 	Description pulumi.StringPtrInput
+	// The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+	FallbackMode pulumi.StringPtrInput
 	// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
 	Name pulumi.StringPtrInput
 	// The number of ActiveGates in the network zone.
@@ -227,6 +237,11 @@ func (o NetworkZoneOutput) AlternativeZones() pulumi.StringArrayOutput {
 // A short description of the network zone
 func (o NetworkZoneOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NetworkZone) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
+func (o NetworkZoneOutput) FallbackMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkZone) pulumi.StringPtrOutput { return v.FallbackMode }).(pulumi.StringPtrOutput)
 }
 
 // Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot

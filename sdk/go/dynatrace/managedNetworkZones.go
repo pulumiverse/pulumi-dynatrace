@@ -15,7 +15,7 @@ import (
 //
 // ## Dynatrace Documentation
 //
-// - Network zones - https://docs.dynatrace.com/docs/manage/network-zones
+// - Network zones - https://docs.dynatrace.com/managed/manage/network-zones
 //
 // - Cluster API v2 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v2
 //

@@ -77,6 +77,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AutomationSchedulingRule{}
 	case "dynatrace:index/automationWorkflow:AutomationWorkflow":
 		r = &AutomationWorkflow{}
+	case "dynatrace:index/automationWorkflowAwsConnections:AutomationWorkflowAwsConnections":
+		r = &AutomationWorkflowAwsConnections{}
 	case "dynatrace:index/automationWorkflowJira:AutomationWorkflowJira":
 		r = &AutomationWorkflowJira{}
 	case "dynatrace:index/automationWorkflowK8sConnections:AutomationWorkflowK8sConnections":
@@ -181,12 +183,18 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DatabaseAnomaliesV2{}
 	case "dynatrace:index/davisAnomalyDetectors:DavisAnomalyDetectors":
 		r = &DavisAnomalyDetectors{}
+	case "dynatrace:index/davisCopilot:DavisCopilot":
+		r = &DavisCopilot{}
 	case "dynatrace:index/dbAppFeatureFlags:DbAppFeatureFlags":
 		r = &DbAppFeatureFlags{}
 	case "dynatrace:index/dduPool:DduPool":
 		r = &DduPool{}
 	case "dynatrace:index/declarativeGrouping:DeclarativeGrouping":
 		r = &DeclarativeGrouping{}
+	case "dynatrace:index/devobsAgentOptin:DevobsAgentOptin":
+		r = &DevobsAgentOptin{}
+	case "dynatrace:index/devobsDataMasking:DevobsDataMasking":
+		r = &DevobsDataMasking{}
 	case "dynatrace:index/devobsGitOnprem:DevobsGitOnprem":
 		r = &DevobsGitOnprem{}
 	case "dynatrace:index/directShares:DirectShares":
@@ -826,6 +834,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/automationWorkflowAwsConnections",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/automationWorkflowJira",
 		&module{version},
 	)
@@ -1086,6 +1099,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/davisCopilot",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/dbAppFeatureFlags",
 		&module{version},
 	)
@@ -1097,6 +1115,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/declarativeGrouping",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/devobsAgentOptin",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/devobsDataMasking",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
