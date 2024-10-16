@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -144,9 +149,6 @@ def get_synthetic_location(cloud_platform: Optional[str] = None,
         stage=pulumi.get(__ret__, 'stage'),
         status=pulumi.get(__ret__, 'status'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_synthetic_location)
 def get_synthetic_location_output(cloud_platform: Optional[pulumi.Input[Optional[str]]] = None,
                                   entity_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   ips: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -161,4 +163,22 @@ def get_synthetic_location_output(cloud_platform: Optional[pulumi.Input[Optional
 
     :param str cloud_platform: The cloud provider where the location is hosted.
     """
-    ...
+    __args__ = dict()
+    __args__['cloudPlatform'] = cloud_platform
+    __args__['entityId'] = entity_id
+    __args__['ips'] = ips
+    __args__['name'] = name
+    __args__['stage'] = stage
+    __args__['status'] = status
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getSyntheticLocation:getSyntheticLocation', __args__, opts=opts, typ=GetSyntheticLocationResult)
+    return __ret__.apply(lambda __response__: GetSyntheticLocationResult(
+        cloud_platform=pulumi.get(__response__, 'cloud_platform'),
+        entity_id=pulumi.get(__response__, 'entity_id'),
+        id=pulumi.get(__response__, 'id'),
+        ips=pulumi.get(__response__, 'ips'),
+        name=pulumi.get(__response__, 'name'),
+        stage=pulumi.get(__response__, 'stage'),
+        status=pulumi.get(__response__, 'status'),
+        type=pulumi.get(__response__, 'type')))

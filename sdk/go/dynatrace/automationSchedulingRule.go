@@ -629,11 +629,11 @@ import (
 //				Recurrence: &dynatrace.AutomationSchedulingRuleRecurrenceArgs{
 //					Datestart: pulumi.String("2023-07-31"),
 //					DaysInMonths: pulumi.IntArray{
-//						int(-1),
+//						pulumi.Int(-1),
 //					},
 //					DaysInYears: pulumi.IntArray{
-//						int(-2),
-//						int(-1),
+//						pulumi.Int(-2),
+//						pulumi.Int(-1),
 //						pulumi.Int(1),
 //						pulumi.Int(2),
 //						pulumi.Int(3),
@@ -660,8 +660,8 @@ import (
 //						pulumi.String("WE"),
 //					},
 //					Weeks: pulumi.IntArray{
-//						int(-2),
-//						int(-1),
+//						pulumi.Int(-2),
+//						pulumi.Int(-1),
 //						pulumi.Int(1),
 //						pulumi.Int(2),
 //						pulumi.Int(3),
@@ -1283,11 +1283,11 @@ import (
 //				Recurrence: &dynatrace.AutomationSchedulingRuleRecurrenceArgs{
 //					Datestart: pulumi.String("2023-07-31"),
 //					DaysInMonths: pulumi.IntArray{
-//						int(-1),
+//						pulumi.Int(-1),
 //					},
 //					DaysInYears: pulumi.IntArray{
-//						int(-2),
-//						int(-1),
+//						pulumi.Int(-2),
+//						pulumi.Int(-1),
 //						pulumi.Int(1),
 //						pulumi.Int(2),
 //						pulumi.Int(3),
@@ -1314,8 +1314,8 @@ import (
 //						pulumi.String("WE"),
 //					},
 //					Weeks: pulumi.IntArray{
-//						int(-2),
-//						int(-1),
+//						pulumi.Int(-2),
+//						pulumi.Int(-1),
 //						pulumi.Int(1),
 //						pulumi.Int(2),
 //						pulumi.Int(3),
@@ -1947,11 +1947,11 @@ import (
 //				Recurrence: &dynatrace.AutomationSchedulingRuleRecurrenceArgs{
 //					Datestart: pulumi.String("2023-07-31"),
 //					DaysInMonths: pulumi.IntArray{
-//						int(-1),
+//						pulumi.Int(-1),
 //					},
 //					DaysInYears: pulumi.IntArray{
-//						int(-2),
-//						int(-1),
+//						pulumi.Int(-2),
+//						pulumi.Int(-1),
 //						pulumi.Int(1),
 //						pulumi.Int(2),
 //						pulumi.Int(3),
@@ -1978,8 +1978,8 @@ import (
 //						pulumi.String("WE"),
 //					},
 //					Weeks: pulumi.IntArray{
-//						int(-2),
-//						int(-1),
+//						pulumi.Int(-2),
+//						pulumi.Int(-1),
 //						pulumi.Int(1),
 //						pulumi.Int(2),
 //						pulumi.Int(3),
@@ -1996,11 +1996,11 @@ import (
 //				Recurrence: &dynatrace.AutomationSchedulingRuleRecurrenceArgs{
 //					Datestart: pulumi.String("2023-07-31"),
 //					DaysInMonths: pulumi.IntArray{
-//						int(-1),
+//						pulumi.Int(-1),
 //					},
 //					DaysInYears: pulumi.IntArray{
-//						int(-2),
-//						int(-1),
+//						pulumi.Int(-2),
+//						pulumi.Int(-1),
 //						pulumi.Int(1),
 //						pulumi.Int(2),
 //						pulumi.Int(3),
@@ -2027,8 +2027,8 @@ import (
 //						pulumi.String("WE"),
 //					},
 //					Weeks: pulumi.IntArray{
-//						int(-2),
-//						int(-1),
+//						pulumi.Int(-2),
+//						pulumi.Int(-1),
 //						pulumi.Int(1),
 //						pulumi.Int(2),
 //						pulumi.Int(3),

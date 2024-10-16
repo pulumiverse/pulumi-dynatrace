@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -118,9 +123,6 @@ def get_service(name: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         operator=pulumi.get(__ret__, 'operator'),
         tags=pulumi.get(__ret__, 'tags'))
-
-
-@_utilities.lift_output_func(get_service)
 def get_service_output(name: Optional[pulumi.Input[str]] = None,
                        operator: Optional[pulumi.Input[Optional[str]]] = None,
                        tags: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -153,4 +155,14 @@ def get_service_output(name: Optional[pulumi.Input[str]] = None,
 
     :param Sequence[str] tags: Required tags of the service to find
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    __args__['operator'] = operator
+    __args__['tags'] = tags
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getService:getService', __args__, opts=opts, typ=GetServiceResult)
+    return __ret__.apply(lambda __response__: GetServiceResult(
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        operator=pulumi.get(__response__, 'operator'),
+        tags=pulumi.get(__response__, 'tags')))

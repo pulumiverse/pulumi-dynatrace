@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -127,9 +132,6 @@ def get_synthetic_locations(id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         locations=pulumi.get(__ret__, 'locations'),
         name=pulumi.get(__ret__, 'name'))
-
-
-@_utilities.lift_output_func(get_synthetic_locations)
 def get_synthetic_locations_output(id: Optional[pulumi.Input[Optional[str]]] = None,
                                    locations: Optional[pulumi.Input[Optional[Union['GetSyntheticLocationsLocationsArgs', 'GetSyntheticLocationsLocationsArgsDict']]]] = None,
                                    name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -182,4 +184,13 @@ def get_synthetic_locations_output(id: Optional[pulumi.Input[Optional[str]]] = N
 
     :param str id: The ID of this resource.
     """
-    ...
+    __args__ = dict()
+    __args__['id'] = id
+    __args__['locations'] = locations
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getSyntheticLocations:getSyntheticLocations', __args__, opts=opts, typ=GetSyntheticLocationsResult)
+    return __ret__.apply(lambda __response__: GetSyntheticLocationsResult(
+        id=pulumi.get(__response__, 'id'),
+        locations=pulumi.get(__response__, 'locations'),
+        name=pulumi.get(__response__, 'name')))

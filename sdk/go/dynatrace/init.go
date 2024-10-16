@@ -463,6 +463,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OneagentSideMasking{}
 	case "dynatrace:index/oneagentUpdates:OneagentUpdates":
 		r = &OneagentUpdates{}
+	case "dynatrace:index/openpipelineBusinessEvents:OpenpipelineBusinessEvents":
+		r = &OpenpipelineBusinessEvents{}
+	case "dynatrace:index/openpipelineEvents:OpenpipelineEvents":
+		r = &OpenpipelineEvents{}
+	case "dynatrace:index/openpipelineLogs:OpenpipelineLogs":
+		r = &OpenpipelineLogs{}
+	case "dynatrace:index/openpipelineSdlcEvents:OpenpipelineSdlcEvents":
+		r = &OpenpipelineSdlcEvents{}
+	case "dynatrace:index/openpipelineSecurityEvents:OpenpipelineSecurityEvents":
+		r = &OpenpipelineSecurityEvents{}
 	case "dynatrace:index/opentelemetryMetrics:OpentelemetryMetrics":
 		r = &OpentelemetryMetrics{}
 	case "dynatrace:index/opsGenieNotification:OpsGenieNotification":
@@ -1795,6 +1805,31 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/oneagentUpdates",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineBusinessEvents",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineEvents",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineLogs",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineSdlcEvents",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineSecurityEvents",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

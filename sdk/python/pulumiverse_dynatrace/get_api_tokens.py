@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -75,9 +80,6 @@ def get_api_tokens(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetA
     return AwaitableGetApiTokensResult(
         api_tokens=pulumi.get(__ret__, 'api_tokens'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_api_tokens)
 def get_api_tokens_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiTokensResult]:
     """
     The API tokens data source allows all access tokens to be retrieved, note the token value is not included in the response.
@@ -92,4 +94,9 @@ def get_api_tokens_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi
     pulumi.export("example", example_api_tokens)
     ```
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getApiTokens:getApiTokens', __args__, opts=opts, typ=GetApiTokensResult)
+    return __ret__.apply(lambda __response__: GetApiTokensResult(
+        api_tokens=pulumi.get(__response__, 'api_tokens'),
+        id=pulumi.get(__response__, 'id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -78,9 +83,6 @@ def get_iam_groups(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetI
     return AwaitableGetIamGroupsResult(
         groups=pulumi.get(__ret__, 'groups'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_iam_groups)
 def get_iam_groups_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamGroupsResult]:
     """
     > **Dynatrace SaaS only**
@@ -99,4 +101,9 @@ def get_iam_groups_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi
 
     ### Example output
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getIamGroups:getIamGroups', __args__, opts=opts, typ=GetIamGroupsResult)
+    return __ret__.apply(lambda __response__: GetIamGroupsResult(
+        groups=pulumi.get(__response__, 'groups'),
+        id=pulumi.get(__response__, 'id')))

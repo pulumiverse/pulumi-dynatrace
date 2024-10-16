@@ -272,6 +272,11 @@ from .oneagent_default_version import *
 from .oneagent_features import *
 from .oneagent_side_masking import *
 from .oneagent_updates import *
+from .openpipeline_business_events import *
+from .openpipeline_events import *
+from .openpipeline_logs import *
+from .openpipeline_sdlc_events import *
+from .openpipeline_security_events import *
 from .opentelemetry_metrics import *
 from .ops_genie_notification import *
 from .os_services import *
@@ -2151,6 +2156,46 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/oneagentUpdates:OneagentUpdates": "OneagentUpdates"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineBusinessEvents",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineBusinessEvents:OpenpipelineBusinessEvents": "OpenpipelineBusinessEvents"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineEvents",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineEvents:OpenpipelineEvents": "OpenpipelineEvents"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineLogs",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineLogs:OpenpipelineLogs": "OpenpipelineLogs"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineSdlcEvents",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineSdlcEvents:OpenpipelineSdlcEvents": "OpenpipelineSdlcEvents"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineSecurityEvents",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineSecurityEvents:OpenpipelineSecurityEvents": "OpenpipelineSecurityEvents"
   }
  },
  {

@@ -31,7 +31,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.GetDocuments(ctx, nil, nil)
+//			_, err := dynatrace.GetDocuments(ctx, &dynatrace.GetDocumentsArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

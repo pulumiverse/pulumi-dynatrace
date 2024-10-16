@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			exampleApiTokens, err := dynatrace.GetApiTokens(ctx, nil, nil)
+//			exampleApiTokens, err := dynatrace.GetApiTokens(ctx, map[string]interface{}{}, nil)
 //			if err != nil {
 //				return err
 //			}

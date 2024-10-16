@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -236,9 +241,6 @@ def get_slo(name: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         target_success=pulumi.get(__ret__, 'target_success'),
         target_warning=pulumi.get(__ret__, 'target_warning'))
-
-
-@_utilities.lift_output_func(get_slo)
 def get_slo_output(name: Optional[pulumi.Input[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSloResult]:
     """
@@ -258,4 +260,22 @@ def get_slo_output(name: Optional[pulumi.Input[str]] = None,
     pulumi.export("id", example.id)
     ```
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getSlo:getSlo', __args__, opts=opts, typ=GetSloResult)
+    return __ret__.apply(lambda __response__: GetSloResult(
+        burn_rate_visualization_enabled=pulumi.get(__response__, 'burn_rate_visualization_enabled'),
+        description=pulumi.get(__response__, 'description'),
+        enabled=pulumi.get(__response__, 'enabled'),
+        evaluation_type=pulumi.get(__response__, 'evaluation_type'),
+        evaluation_window=pulumi.get(__response__, 'evaluation_window'),
+        fast_burn_threshold=pulumi.get(__response__, 'fast_burn_threshold'),
+        filter=pulumi.get(__response__, 'filter'),
+        id=pulumi.get(__response__, 'id'),
+        legacy_id=pulumi.get(__response__, 'legacy_id'),
+        metric_expression=pulumi.get(__response__, 'metric_expression'),
+        metric_name=pulumi.get(__response__, 'metric_name'),
+        name=pulumi.get(__response__, 'name'),
+        target_success=pulumi.get(__response__, 'target_success'),
+        target_warning=pulumi.get(__response__, 'target_warning')))

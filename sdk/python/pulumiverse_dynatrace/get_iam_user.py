@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -100,9 +105,6 @@ def get_iam_user(email: Optional[str] = None,
         groups=pulumi.get(__ret__, 'groups'),
         id=pulumi.get(__ret__, 'id'),
         uid=pulumi.get(__ret__, 'uid'))
-
-
-@_utilities.lift_output_func(get_iam_user)
 def get_iam_user_output(email: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamUserResult]:
     """
@@ -122,4 +124,12 @@ def get_iam_user_output(email: Optional[pulumi.Input[str]] = None,
     pulumi.export("groups", user_a.groups)
     ```
     """
-    ...
+    __args__ = dict()
+    __args__['email'] = email
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getIamUser:getIamUser', __args__, opts=opts, typ=GetIamUserResult)
+    return __ret__.apply(lambda __response__: GetIamUserResult(
+        email=pulumi.get(__response__, 'email'),
+        groups=pulumi.get(__response__, 'groups'),
+        id=pulumi.get(__response__, 'id'),
+        uid=pulumi.get(__response__, 'uid')))

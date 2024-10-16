@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -65,11 +70,13 @@ def get_synthetic_nodes(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitabl
     return AwaitableGetSyntheticNodesResult(
         id=pulumi.get(__ret__, 'id'),
         nodes=pulumi.get(__ret__, 'nodes'))
-
-
-@_utilities.lift_output_func(get_synthetic_nodes)
 def get_synthetic_nodes_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSyntheticNodesResult]:
     """
     The synthetic locations data source queries for all available Synthetic Nodes. The data source doesn't need to get configured. It always provides the full list of synthetic nodes.
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getSyntheticNodes:getSyntheticNodes', __args__, opts=opts, typ=GetSyntheticNodesResult)
+    return __ret__.apply(lambda __response__: GetSyntheticNodesResult(
+        id=pulumi.get(__response__, 'id'),
+        nodes=pulumi.get(__response__, 'nodes')))

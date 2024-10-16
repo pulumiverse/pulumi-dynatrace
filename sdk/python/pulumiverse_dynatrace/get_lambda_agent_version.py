@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -178,9 +183,6 @@ def get_lambda_agent_version(collector: Optional[str] = None,
         nodejs_with_collector=pulumi.get(__ret__, 'nodejs_with_collector'),
         python=pulumi.get(__ret__, 'python'),
         python_with_collector=pulumi.get(__ret__, 'python_with_collector'))
-
-
-@_utilities.lift_output_func(get_lambda_agent_version)
 def get_lambda_agent_version_output(collector: Optional[pulumi.Input[Optional[str]]] = None,
                                     java: Optional[pulumi.Input[Optional[str]]] = None,
                                     java_with_collector: Optional[pulumi.Input[Optional[str]]] = None,
@@ -211,4 +213,22 @@ def get_lambda_agent_version_output(collector: Optional[pulumi.Input[Optional[st
     :param str python: Latest version name of Python code module
     :param str python_with_collector: Latest version name of Python code module with log collector
     """
-    ...
+    __args__ = dict()
+    __args__['collector'] = collector
+    __args__['java'] = java
+    __args__['javaWithCollector'] = java_with_collector
+    __args__['nodejs'] = nodejs
+    __args__['nodejsWithCollector'] = nodejs_with_collector
+    __args__['python'] = python
+    __args__['pythonWithCollector'] = python_with_collector
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getLambdaAgentVersion:getLambdaAgentVersion', __args__, opts=opts, typ=GetLambdaAgentVersionResult)
+    return __ret__.apply(lambda __response__: GetLambdaAgentVersionResult(
+        collector=pulumi.get(__response__, 'collector'),
+        id=pulumi.get(__response__, 'id'),
+        java=pulumi.get(__response__, 'java'),
+        java_with_collector=pulumi.get(__response__, 'java_with_collector'),
+        nodejs=pulumi.get(__response__, 'nodejs'),
+        nodejs_with_collector=pulumi.get(__response__, 'nodejs_with_collector'),
+        python=pulumi.get(__response__, 'python'),
+        python_with_collector=pulumi.get(__response__, 'python_with_collector')))

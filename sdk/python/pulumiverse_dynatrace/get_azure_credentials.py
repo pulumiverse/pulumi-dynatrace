@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -68,9 +73,6 @@ def get_azure_credentials(label: Optional[str] = None,
     return AwaitableGetAzureCredentialsResult(
         id=pulumi.get(__ret__, 'id'),
         label=pulumi.get(__ret__, 'label'))
-
-
-@_utilities.lift_output_func(get_azure_credentials)
 def get_azure_credentials_output(label: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAzureCredentialsResult]:
     """
@@ -78,4 +80,10 @@ def get_azure_credentials_output(label: Optional[pulumi.Input[str]] = None,
 
     - `label` (String) - The label/name of the Azure credential
     """
-    ...
+    __args__ = dict()
+    __args__['label'] = label
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getAzureCredentials:getAzureCredentials', __args__, opts=opts, typ=GetAzureCredentialsResult)
+    return __ret__.apply(lambda __response__: GetAzureCredentialsResult(
+        id=pulumi.get(__response__, 'id'),
+        label=pulumi.get(__response__, 'label')))
