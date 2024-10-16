@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -89,9 +94,6 @@ def get_azure_supported_services(excepts: Optional[Sequence[str]] = None,
         excepts=pulumi.get(__ret__, 'excepts'),
         id=pulumi.get(__ret__, 'id'),
         services=pulumi.get(__ret__, 'services'))
-
-
-@_utilities.lift_output_func(get_azure_supported_services)
 def get_azure_supported_services_output(excepts: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAzureSupportedServicesResult]:
     """
@@ -104,4 +106,11 @@ def get_azure_supported_services_output(excepts: Optional[pulumi.Input[Optional[
 
     :param Sequence[str] excepts: Services with the given names won't be included in the results
     """
-    ...
+    __args__ = dict()
+    __args__['excepts'] = excepts
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getAzureSupportedServices:getAzureSupportedServices', __args__, opts=opts, typ=GetAzureSupportedServicesResult)
+    return __ret__.apply(lambda __response__: GetAzureSupportedServicesResult(
+        excepts=pulumi.get(__response__, 'excepts'),
+        id=pulumi.get(__response__, 'id'),
+        services=pulumi.get(__response__, 'services')))

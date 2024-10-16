@@ -18795,6 +18795,3971 @@ export interface OneagentUpdatesMaintenanceWindowsMaintenanceWindow {
     maintenanceWindow: string;
 }
 
+export interface OpenpipelineBusinessEventsEndpoints {
+    /**
+     * Definition of a single ingest source
+     */
+    endpoints?: outputs.OpenpipelineBusinessEventsEndpointsEndpoint[];
+}
+
+export interface OpenpipelineBusinessEventsEndpointsEndpoint {
+    /**
+     * The default bucket assigned to records for the ingest source
+     */
+    defaultBucket?: string;
+    /**
+     * Display name of the ingest source
+     */
+    displayName: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * The pre-processing done in the ingest source
+     */
+    processors?: outputs.OpenpipelineBusinessEventsEndpointsEndpointProcessors;
+    /**
+     * Routing strategy, either dynamic or static
+     */
+    routing: outputs.OpenpipelineBusinessEventsEndpointsEndpointRouting;
+    /**
+     * The segment of the ingest source, which is applied to the base path. Must be unique within a configuration."
+     */
+    segment: string;
+}
+
+export interface OpenpipelineBusinessEventsEndpointsEndpointProcessors {
+    /**
+     * Groups all processors applicable for processing in the EndpointDefinition.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor and DropProcessor.
+     */
+    processors?: outputs.OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessor[];
+}
+
+export interface OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: outputs.OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorDqlProcessor;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: outputs.OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: outputs.OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: outputs.OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor;
+}
+
+export interface OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: outputs.OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: string;
+    /**
+     * Value to assign to the field
+     */
+    value: string;
+}
+
+export interface OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: string[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to rename on the record
+     */
+    fields: outputs.OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: string;
+    /**
+     * The new field name
+     */
+    toName: string;
+}
+
+export interface OpenpipelineBusinessEventsEndpointsEndpointRouting {
+    /**
+     * Pipeline ID of the static routing
+     */
+    pipelineId?: string;
+    /**
+     * Type of routing, static or dynamic
+     */
+    type: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelines {
+    /**
+     * Definition of a single pipeline
+     */
+    pipelines?: outputs.OpenpipelineBusinessEventsPipelinesPipeline[];
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipeline {
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    dataExtraction?: outputs.OpenpipelineBusinessEventsPipelinesPipelineDataExtraction;
+    /**
+     * Display name of the pipeline
+     */
+    displayName: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the pipeline
+     */
+    id: string;
+    /**
+     * Metric extraction stage configuration of the pipeline
+     */
+    metricExtraction?: outputs.OpenpipelineBusinessEventsPipelinesPipelineMetricExtraction;
+    /**
+     * Processing stage configuration of the pipeline
+     */
+    processing?: outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessing;
+    /**
+     * Security context stage configuration of the pipeline
+     */
+    securityContext?: outputs.OpenpipelineBusinessEventsPipelinesPipelineSecurityContext;
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    storage?: outputs.OpenpipelineBusinessEventsPipelinesPipelineStorage;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineDataExtraction {
+    /**
+     * Groups all processors applicable for the DataExtractionStage.
+     * Applicable processors are DavisEventExtractionProcessor and BizeventExtractionProcessor.
+     */
+    processors?: outputs.OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessor[];
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessor {
+    bizeventExtractionProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor;
+    /**
+     * Processor to apply a DQL script
+     */
+    davisEventExtractionProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Strategy to assign a value
+     */
+    eventProvider: outputs.OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider;
+    /**
+     * Strategy to assign a value
+     */
+    eventType: outputs.OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType;
+    fieldExtraction?: outputs.OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
+    fields: string[];
+    semantic: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * List of properties for the extracted davis event
+     */
+    properties: outputs.OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty[];
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty {
+    /**
+     * The key to set on the davis event
+     */
+    key: string;
+    /**
+     * The value assigned to the key
+     */
+    value: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineMetricExtraction {
+    /**
+     * Data extraction processor to use
+     */
+    processors?: outputs.OpenpipelineBusinessEventsPipelinesPipelineMetricExtractionProcessor[];
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineMetricExtractionProcessor {
+    /**
+     * Processor to write the occurrences as a metric
+     */
+    counterMetricExtractionProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor;
+    /**
+     * Processor to extract a value from a field as a metric
+     */
+    valueMetricExtractionProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: string[];
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: string[];
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * The field to extract the value for the metric
+     */
+    field: string;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineProcessing {
+    /**
+     * Groups all processors applicable for the ProcessingStage.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor, TechnologyProcessor and DropProcessor.
+     */
+    processors?: outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessor[];
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorDqlProcessor;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor;
+    /**
+     * Processor to apply a technology processors
+     */
+    technologyProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorTechnologyProcessor;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: string;
+    /**
+     * Value to assign to the field
+     */
+    value: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: string[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to rename on the record
+     */
+    fields: outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: string;
+    /**
+     * The new field name
+     */
+    toName: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorTechnologyProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    technologyId: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineSecurityContext {
+    /**
+     * Groups all processors applicable for the SecurityContextStage.
+     * Applicable processor is SecurityContextProcessor.
+     */
+    processors?: outputs.OpenpipelineBusinessEventsPipelinesPipelineSecurityContextProcessor[];
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineSecurityContextProcessor {
+    /**
+     * Processor to set the security context field
+     */
+    securityContextProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+    /**
+     * Strategy to assign a value
+     */
+    value: outputs.OpenpipelineBusinessEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineStorage {
+    /**
+     * Default bucket assigned to records which do not match any other storage processor
+     */
+    catchAllBucketName?: string;
+    /**
+     * Groups all processors applicable for the StorageStage.
+     * Applicable processors are BucketAssignmentProcessor and NoStorageProcessor.
+     */
+    processors?: outputs.OpenpipelineBusinessEventsPipelinesPipelineStorageProcessor[];
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineStorageProcessor {
+    /**
+     * Processor to assign a bucket
+     */
+    bucketAssignmentProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor;
+    /**
+     * Processor to skip storage assignment
+     */
+    noStorageProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineStorageProcessorNoStorageProcessor;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor {
+    /**
+     * Bucket that is assigned when the record is matched
+     */
+    bucketName: string;
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineStorageProcessorNoStorageProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsRouting {
+    /**
+     * Dynamic routing entry
+     */
+    entries?: outputs.OpenpipelineBusinessEventsRoutingEntry[];
+}
+
+export interface OpenpipelineBusinessEventsRoutingEntry {
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Unique note describing the dynamic route
+     */
+    note: string;
+    /**
+     * Identifier of the pipeline the record is routed into
+     */
+    pipelineId: string;
+}
+
+export interface OpenpipelineEventsEndpoints {
+    /**
+     * Definition of a single ingest source
+     */
+    endpoints?: outputs.OpenpipelineEventsEndpointsEndpoint[];
+}
+
+export interface OpenpipelineEventsEndpointsEndpoint {
+    /**
+     * The default bucket assigned to records for the ingest source
+     */
+    defaultBucket?: string;
+    /**
+     * Display name of the ingest source
+     */
+    displayName: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * The pre-processing done in the ingest source
+     */
+    processors?: outputs.OpenpipelineEventsEndpointsEndpointProcessors;
+    /**
+     * Routing strategy, either dynamic or static
+     */
+    routing: outputs.OpenpipelineEventsEndpointsEndpointRouting;
+    /**
+     * The segment of the ingest source, which is applied to the base path. Must be unique within a configuration."
+     */
+    segment: string;
+}
+
+export interface OpenpipelineEventsEndpointsEndpointProcessors {
+    /**
+     * Groups all processors applicable for processing in the EndpointDefinition.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor and DropProcessor.
+     */
+    processors?: outputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessor[];
+}
+
+export interface OpenpipelineEventsEndpointsEndpointProcessorsProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: outputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorDqlProcessor;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: outputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: outputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: outputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor;
+}
+
+export interface OpenpipelineEventsEndpointsEndpointProcessorsProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: outputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: string;
+    /**
+     * Value to assign to the field
+     */
+    value: string;
+}
+
+export interface OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: string[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to rename on the record
+     */
+    fields: outputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: string;
+    /**
+     * The new field name
+     */
+    toName: string;
+}
+
+export interface OpenpipelineEventsEndpointsEndpointRouting {
+    /**
+     * Pipeline ID of the static routing
+     */
+    pipelineId?: string;
+    /**
+     * Type of routing, static or dynamic
+     */
+    type: string;
+}
+
+export interface OpenpipelineEventsPipelines {
+    /**
+     * Definition of a single pipeline
+     */
+    pipelines?: outputs.OpenpipelineEventsPipelinesPipeline[];
+}
+
+export interface OpenpipelineEventsPipelinesPipeline {
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    dataExtraction?: outputs.OpenpipelineEventsPipelinesPipelineDataExtraction;
+    /**
+     * Display name of the pipeline
+     */
+    displayName: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the pipeline
+     */
+    id: string;
+    /**
+     * Metric extraction stage configuration of the pipeline
+     */
+    metricExtraction?: outputs.OpenpipelineEventsPipelinesPipelineMetricExtraction;
+    /**
+     * Processing stage configuration of the pipeline
+     */
+    processing?: outputs.OpenpipelineEventsPipelinesPipelineProcessing;
+    /**
+     * Security context stage configuration of the pipeline
+     */
+    securityContext?: outputs.OpenpipelineEventsPipelinesPipelineSecurityContext;
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    storage?: outputs.OpenpipelineEventsPipelinesPipelineStorage;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineDataExtraction {
+    /**
+     * Groups all processors applicable for the DataExtractionStage.
+     * Applicable processors are DavisEventExtractionProcessor and BizeventExtractionProcessor.
+     */
+    processors?: outputs.OpenpipelineEventsPipelinesPipelineDataExtractionProcessor[];
+}
+
+export interface OpenpipelineEventsPipelinesPipelineDataExtractionProcessor {
+    bizeventExtractionProcessor?: outputs.OpenpipelineEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor;
+    /**
+     * Processor to apply a DQL script
+     */
+    davisEventExtractionProcessor?: outputs.OpenpipelineEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Strategy to assign a value
+     */
+    eventProvider: outputs.OpenpipelineEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider;
+    /**
+     * Strategy to assign a value
+     */
+    eventType: outputs.OpenpipelineEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType;
+    fieldExtraction?: outputs.OpenpipelineEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
+    fields: string[];
+    semantic: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * List of properties for the extracted davis event
+     */
+    properties: outputs.OpenpipelineEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty[];
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty {
+    /**
+     * The key to set on the davis event
+     */
+    key: string;
+    /**
+     * The value assigned to the key
+     */
+    value: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineMetricExtraction {
+    /**
+     * Data extraction processor to use
+     */
+    processors?: outputs.OpenpipelineEventsPipelinesPipelineMetricExtractionProcessor[];
+}
+
+export interface OpenpipelineEventsPipelinesPipelineMetricExtractionProcessor {
+    /**
+     * Processor to write the occurrences as a metric
+     */
+    counterMetricExtractionProcessor?: outputs.OpenpipelineEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor;
+    /**
+     * Processor to extract a value from a field as a metric
+     */
+    valueMetricExtractionProcessor?: outputs.OpenpipelineEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: string[];
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: string[];
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * The field to extract the value for the metric
+     */
+    field: string;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineProcessing {
+    /**
+     * Groups all processors applicable for the ProcessingStage.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor, TechnologyProcessor and DropProcessor.
+     */
+    processors?: outputs.OpenpipelineEventsPipelinesPipelineProcessingProcessor[];
+}
+
+export interface OpenpipelineEventsPipelinesPipelineProcessingProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: outputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorDqlProcessor;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: outputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: outputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: outputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor;
+    /**
+     * Processor to apply a technology processors
+     */
+    technologyProcessor?: outputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorTechnologyProcessor;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineProcessingProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: outputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: string;
+    /**
+     * Value to assign to the field
+     */
+    value: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: string[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to rename on the record
+     */
+    fields: outputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: string;
+    /**
+     * The new field name
+     */
+    toName: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineProcessingProcessorTechnologyProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    technologyId: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineSecurityContext {
+    /**
+     * Groups all processors applicable for the SecurityContextStage.
+     * Applicable processor is SecurityContextProcessor.
+     */
+    processors?: outputs.OpenpipelineEventsPipelinesPipelineSecurityContextProcessor[];
+}
+
+export interface OpenpipelineEventsPipelinesPipelineSecurityContextProcessor {
+    /**
+     * Processor to set the security context field
+     */
+    securityContextProcessor?: outputs.OpenpipelineEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+    /**
+     * Strategy to assign a value
+     */
+    value: outputs.OpenpipelineEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineStorage {
+    /**
+     * Default bucket assigned to records which do not match any other storage processor
+     */
+    catchAllBucketName?: string;
+    /**
+     * Groups all processors applicable for the StorageStage.
+     * Applicable processors are BucketAssignmentProcessor and NoStorageProcessor.
+     */
+    processors?: outputs.OpenpipelineEventsPipelinesPipelineStorageProcessor[];
+}
+
+export interface OpenpipelineEventsPipelinesPipelineStorageProcessor {
+    /**
+     * Processor to assign a bucket
+     */
+    bucketAssignmentProcessor?: outputs.OpenpipelineEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor;
+    /**
+     * Processor to skip storage assignment
+     */
+    noStorageProcessor?: outputs.OpenpipelineEventsPipelinesPipelineStorageProcessorNoStorageProcessor;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor {
+    /**
+     * Bucket that is assigned when the record is matched
+     */
+    bucketName: string;
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineStorageProcessorNoStorageProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsRouting {
+    /**
+     * Dynamic routing entry
+     */
+    entries?: outputs.OpenpipelineEventsRoutingEntry[];
+}
+
+export interface OpenpipelineEventsRoutingEntry {
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Unique note describing the dynamic route
+     */
+    note: string;
+    /**
+     * Identifier of the pipeline the record is routed into
+     */
+    pipelineId: string;
+}
+
+export interface OpenpipelineLogsEndpoints {
+    /**
+     * Definition of a single ingest source
+     */
+    endpoints?: outputs.OpenpipelineLogsEndpointsEndpoint[];
+}
+
+export interface OpenpipelineLogsEndpointsEndpoint {
+    /**
+     * The default bucket assigned to records for the ingest source
+     */
+    defaultBucket?: string;
+    /**
+     * Display name of the ingest source
+     */
+    displayName: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * The pre-processing done in the ingest source
+     */
+    processors?: outputs.OpenpipelineLogsEndpointsEndpointProcessors;
+    /**
+     * Routing strategy, either dynamic or static
+     */
+    routing: outputs.OpenpipelineLogsEndpointsEndpointRouting;
+    /**
+     * The segment of the ingest source, which is applied to the base path. Must be unique within a configuration."
+     */
+    segment: string;
+}
+
+export interface OpenpipelineLogsEndpointsEndpointProcessors {
+    /**
+     * Groups all processors applicable for processing in the EndpointDefinition.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor and DropProcessor.
+     */
+    processors?: outputs.OpenpipelineLogsEndpointsEndpointProcessorsProcessor[];
+}
+
+export interface OpenpipelineLogsEndpointsEndpointProcessorsProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: outputs.OpenpipelineLogsEndpointsEndpointProcessorsProcessorDqlProcessor;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: outputs.OpenpipelineLogsEndpointsEndpointProcessorsProcessorFieldsAddProcessor;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: outputs.OpenpipelineLogsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: outputs.OpenpipelineLogsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor;
+}
+
+export interface OpenpipelineLogsEndpointsEndpointProcessorsProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsEndpointsEndpointProcessorsProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: outputs.OpenpipelineLogsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: string;
+    /**
+     * Value to assign to the field
+     */
+    value: string;
+}
+
+export interface OpenpipelineLogsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: string[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to rename on the record
+     */
+    fields: outputs.OpenpipelineLogsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: string;
+    /**
+     * The new field name
+     */
+    toName: string;
+}
+
+export interface OpenpipelineLogsEndpointsEndpointRouting {
+    /**
+     * Pipeline ID of the static routing
+     */
+    pipelineId?: string;
+    /**
+     * Type of routing, static or dynamic
+     */
+    type: string;
+}
+
+export interface OpenpipelineLogsPipelines {
+    /**
+     * Definition of a single pipeline
+     */
+    pipelines?: outputs.OpenpipelineLogsPipelinesPipeline[];
+}
+
+export interface OpenpipelineLogsPipelinesPipeline {
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    dataExtraction?: outputs.OpenpipelineLogsPipelinesPipelineDataExtraction;
+    /**
+     * Display name of the pipeline
+     */
+    displayName: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the pipeline
+     */
+    id: string;
+    /**
+     * Metric extraction stage configuration of the pipeline
+     */
+    metricExtraction?: outputs.OpenpipelineLogsPipelinesPipelineMetricExtraction;
+    /**
+     * Processing stage configuration of the pipeline
+     */
+    processing?: outputs.OpenpipelineLogsPipelinesPipelineProcessing;
+    /**
+     * Security context stage configuration of the pipeline
+     */
+    securityContext?: outputs.OpenpipelineLogsPipelinesPipelineSecurityContext;
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    storage?: outputs.OpenpipelineLogsPipelinesPipelineStorage;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineDataExtraction {
+    /**
+     * Groups all processors applicable for the DataExtractionStage.
+     * Applicable processors are DavisEventExtractionProcessor and BizeventExtractionProcessor.
+     */
+    processors?: outputs.OpenpipelineLogsPipelinesPipelineDataExtractionProcessor[];
+}
+
+export interface OpenpipelineLogsPipelinesPipelineDataExtractionProcessor {
+    bizeventExtractionProcessor?: outputs.OpenpipelineLogsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor;
+    /**
+     * Processor to apply a DQL script
+     */
+    davisEventExtractionProcessor?: outputs.OpenpipelineLogsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Strategy to assign a value
+     */
+    eventProvider: outputs.OpenpipelineLogsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider;
+    /**
+     * Strategy to assign a value
+     */
+    eventType: outputs.OpenpipelineLogsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType;
+    fieldExtraction?: outputs.OpenpipelineLogsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
+    fields: string[];
+    semantic: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * List of properties for the extracted davis event
+     */
+    properties: outputs.OpenpipelineLogsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty[];
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty {
+    /**
+     * The key to set on the davis event
+     */
+    key: string;
+    /**
+     * The value assigned to the key
+     */
+    value: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineMetricExtraction {
+    /**
+     * Data extraction processor to use
+     */
+    processors?: outputs.OpenpipelineLogsPipelinesPipelineMetricExtractionProcessor[];
+}
+
+export interface OpenpipelineLogsPipelinesPipelineMetricExtractionProcessor {
+    /**
+     * Processor to write the occurrences as a metric
+     */
+    counterMetricExtractionProcessor?: outputs.OpenpipelineLogsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor;
+    /**
+     * Processor to extract a value from a field as a metric
+     */
+    valueMetricExtractionProcessor?: outputs.OpenpipelineLogsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: string[];
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: string[];
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * The field to extract the value for the metric
+     */
+    field: string;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineProcessing {
+    /**
+     * Groups all processors applicable for the ProcessingStage.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor, TechnologyProcessor and DropProcessor.
+     */
+    processors?: outputs.OpenpipelineLogsPipelinesPipelineProcessingProcessor[];
+}
+
+export interface OpenpipelineLogsPipelinesPipelineProcessingProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: outputs.OpenpipelineLogsPipelinesPipelineProcessingProcessorDqlProcessor;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: outputs.OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsAddProcessor;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: outputs.OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: outputs.OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsRenameProcessor;
+    /**
+     * Processor to apply a technology processors
+     */
+    technologyProcessor?: outputs.OpenpipelineLogsPipelinesPipelineProcessingProcessorTechnologyProcessor;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineProcessingProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: outputs.OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsAddProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: string;
+    /**
+     * Value to assign to the field
+     */
+    value: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: string[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to rename on the record
+     */
+    fields: outputs.OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: string;
+    /**
+     * The new field name
+     */
+    toName: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineProcessingProcessorTechnologyProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    technologyId: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineSecurityContext {
+    /**
+     * Groups all processors applicable for the SecurityContextStage.
+     * Applicable processor is SecurityContextProcessor.
+     */
+    processors?: outputs.OpenpipelineLogsPipelinesPipelineSecurityContextProcessor[];
+}
+
+export interface OpenpipelineLogsPipelinesPipelineSecurityContextProcessor {
+    /**
+     * Processor to set the security context field
+     */
+    securityContextProcessor?: outputs.OpenpipelineLogsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+    /**
+     * Strategy to assign a value
+     */
+    value: outputs.OpenpipelineLogsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineStorage {
+    /**
+     * Default bucket assigned to records which do not match any other storage processor
+     */
+    catchAllBucketName?: string;
+    /**
+     * Groups all processors applicable for the StorageStage.
+     * Applicable processors are BucketAssignmentProcessor and NoStorageProcessor.
+     */
+    processors?: outputs.OpenpipelineLogsPipelinesPipelineStorageProcessor[];
+}
+
+export interface OpenpipelineLogsPipelinesPipelineStorageProcessor {
+    /**
+     * Processor to assign a bucket
+     */
+    bucketAssignmentProcessor?: outputs.OpenpipelineLogsPipelinesPipelineStorageProcessorBucketAssignmentProcessor;
+    /**
+     * Processor to skip storage assignment
+     */
+    noStorageProcessor?: outputs.OpenpipelineLogsPipelinesPipelineStorageProcessorNoStorageProcessor;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineStorageProcessorBucketAssignmentProcessor {
+    /**
+     * Bucket that is assigned when the record is matched
+     */
+    bucketName: string;
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineStorageProcessorNoStorageProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsRouting {
+    /**
+     * Dynamic routing entry
+     */
+    entries?: outputs.OpenpipelineLogsRoutingEntry[];
+}
+
+export interface OpenpipelineLogsRoutingEntry {
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Unique note describing the dynamic route
+     */
+    note: string;
+    /**
+     * Identifier of the pipeline the record is routed into
+     */
+    pipelineId: string;
+}
+
+export interface OpenpipelineSdlcEventsEndpoints {
+    /**
+     * Definition of a single ingest source
+     */
+    endpoints?: outputs.OpenpipelineSdlcEventsEndpointsEndpoint[];
+}
+
+export interface OpenpipelineSdlcEventsEndpointsEndpoint {
+    /**
+     * The default bucket assigned to records for the ingest source
+     */
+    defaultBucket?: string;
+    /**
+     * Display name of the ingest source
+     */
+    displayName: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * The pre-processing done in the ingest source
+     */
+    processors?: outputs.OpenpipelineSdlcEventsEndpointsEndpointProcessors;
+    /**
+     * Routing strategy, either dynamic or static
+     */
+    routing: outputs.OpenpipelineSdlcEventsEndpointsEndpointRouting;
+    /**
+     * The segment of the ingest source, which is applied to the base path. Must be unique within a configuration."
+     */
+    segment: string;
+}
+
+export interface OpenpipelineSdlcEventsEndpointsEndpointProcessors {
+    /**
+     * Groups all processors applicable for processing in the EndpointDefinition.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor and DropProcessor.
+     */
+    processors?: outputs.OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessor[];
+}
+
+export interface OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: outputs.OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorDqlProcessor;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: outputs.OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: outputs.OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: outputs.OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor;
+}
+
+export interface OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: outputs.OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: string;
+    /**
+     * Value to assign to the field
+     */
+    value: string;
+}
+
+export interface OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: string[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to rename on the record
+     */
+    fields: outputs.OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: string;
+    /**
+     * The new field name
+     */
+    toName: string;
+}
+
+export interface OpenpipelineSdlcEventsEndpointsEndpointRouting {
+    /**
+     * Pipeline ID of the static routing
+     */
+    pipelineId?: string;
+    /**
+     * Type of routing, static or dynamic
+     */
+    type: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelines {
+    /**
+     * Definition of a single pipeline
+     */
+    pipelines?: outputs.OpenpipelineSdlcEventsPipelinesPipeline[];
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipeline {
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    dataExtraction?: outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtraction;
+    /**
+     * Display name of the pipeline
+     */
+    displayName: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the pipeline
+     */
+    id: string;
+    /**
+     * Metric extraction stage configuration of the pipeline
+     */
+    metricExtraction?: outputs.OpenpipelineSdlcEventsPipelinesPipelineMetricExtraction;
+    /**
+     * Processing stage configuration of the pipeline
+     */
+    processing?: outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessing;
+    /**
+     * Security context stage configuration of the pipeline
+     */
+    securityContext?: outputs.OpenpipelineSdlcEventsPipelinesPipelineSecurityContext;
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    storage?: outputs.OpenpipelineSdlcEventsPipelinesPipelineStorage;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineDataExtraction {
+    /**
+     * Groups all processors applicable for the DataExtractionStage.
+     * Applicable processors are DavisEventExtractionProcessor and BizeventExtractionProcessor.
+     */
+    processors?: outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessor[];
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessor {
+    bizeventExtractionProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor;
+    /**
+     * Processor to apply a DQL script
+     */
+    davisEventExtractionProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Strategy to assign a value
+     */
+    eventProvider: outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider;
+    /**
+     * Strategy to assign a value
+     */
+    eventType: outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType;
+    fieldExtraction?: outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
+    fields: string[];
+    semantic: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * List of properties for the extracted davis event
+     */
+    properties: outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty[];
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty {
+    /**
+     * The key to set on the davis event
+     */
+    key: string;
+    /**
+     * The value assigned to the key
+     */
+    value: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineMetricExtraction {
+    /**
+     * Data extraction processor to use
+     */
+    processors?: outputs.OpenpipelineSdlcEventsPipelinesPipelineMetricExtractionProcessor[];
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineMetricExtractionProcessor {
+    /**
+     * Processor to write the occurrences as a metric
+     */
+    counterMetricExtractionProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor;
+    /**
+     * Processor to extract a value from a field as a metric
+     */
+    valueMetricExtractionProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: string[];
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: string[];
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * The field to extract the value for the metric
+     */
+    field: string;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineProcessing {
+    /**
+     * Groups all processors applicable for the ProcessingStage.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor, TechnologyProcessor and DropProcessor.
+     */
+    processors?: outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessor[];
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorDqlProcessor;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor;
+    /**
+     * Processor to apply a technology processors
+     */
+    technologyProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorTechnologyProcessor;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: string;
+    /**
+     * Value to assign to the field
+     */
+    value: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: string[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to rename on the record
+     */
+    fields: outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: string;
+    /**
+     * The new field name
+     */
+    toName: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorTechnologyProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    technologyId: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineSecurityContext {
+    /**
+     * Groups all processors applicable for the SecurityContextStage.
+     * Applicable processor is SecurityContextProcessor.
+     */
+    processors?: outputs.OpenpipelineSdlcEventsPipelinesPipelineSecurityContextProcessor[];
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineSecurityContextProcessor {
+    /**
+     * Processor to set the security context field
+     */
+    securityContextProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+    /**
+     * Strategy to assign a value
+     */
+    value: outputs.OpenpipelineSdlcEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineStorage {
+    /**
+     * Default bucket assigned to records which do not match any other storage processor
+     */
+    catchAllBucketName?: string;
+    /**
+     * Groups all processors applicable for the StorageStage.
+     * Applicable processors are BucketAssignmentProcessor and NoStorageProcessor.
+     */
+    processors?: outputs.OpenpipelineSdlcEventsPipelinesPipelineStorageProcessor[];
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineStorageProcessor {
+    /**
+     * Processor to assign a bucket
+     */
+    bucketAssignmentProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor;
+    /**
+     * Processor to skip storage assignment
+     */
+    noStorageProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineStorageProcessorNoStorageProcessor;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor {
+    /**
+     * Bucket that is assigned when the record is matched
+     */
+    bucketName: string;
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineStorageProcessorNoStorageProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsRouting {
+    /**
+     * Dynamic routing entry
+     */
+    entries?: outputs.OpenpipelineSdlcEventsRoutingEntry[];
+}
+
+export interface OpenpipelineSdlcEventsRoutingEntry {
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Unique note describing the dynamic route
+     */
+    note: string;
+    /**
+     * Identifier of the pipeline the record is routed into
+     */
+    pipelineId: string;
+}
+
+export interface OpenpipelineSecurityEventsEndpoints {
+    /**
+     * Definition of a single ingest source
+     */
+    endpoints?: outputs.OpenpipelineSecurityEventsEndpointsEndpoint[];
+}
+
+export interface OpenpipelineSecurityEventsEndpointsEndpoint {
+    /**
+     * The default bucket assigned to records for the ingest source
+     */
+    defaultBucket?: string;
+    /**
+     * Display name of the ingest source
+     */
+    displayName: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * The pre-processing done in the ingest source
+     */
+    processors?: outputs.OpenpipelineSecurityEventsEndpointsEndpointProcessors;
+    /**
+     * Routing strategy, either dynamic or static
+     */
+    routing: outputs.OpenpipelineSecurityEventsEndpointsEndpointRouting;
+    /**
+     * The segment of the ingest source, which is applied to the base path. Must be unique within a configuration."
+     */
+    segment: string;
+}
+
+export interface OpenpipelineSecurityEventsEndpointsEndpointProcessors {
+    /**
+     * Groups all processors applicable for processing in the EndpointDefinition.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor and DropProcessor.
+     */
+    processors?: outputs.OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessor[];
+}
+
+export interface OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: outputs.OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorDqlProcessor;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: outputs.OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: outputs.OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: outputs.OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor;
+}
+
+export interface OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: outputs.OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: string;
+    /**
+     * Value to assign to the field
+     */
+    value: string;
+}
+
+export interface OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: string[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to rename on the record
+     */
+    fields: outputs.OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: string;
+    /**
+     * The new field name
+     */
+    toName: string;
+}
+
+export interface OpenpipelineSecurityEventsEndpointsEndpointRouting {
+    /**
+     * Pipeline ID of the static routing
+     */
+    pipelineId?: string;
+    /**
+     * Type of routing, static or dynamic
+     */
+    type: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelines {
+    /**
+     * Definition of a single pipeline
+     */
+    pipelines?: outputs.OpenpipelineSecurityEventsPipelinesPipeline[];
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipeline {
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    dataExtraction?: outputs.OpenpipelineSecurityEventsPipelinesPipelineDataExtraction;
+    /**
+     * Display name of the pipeline
+     */
+    displayName: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the pipeline
+     */
+    id: string;
+    /**
+     * Metric extraction stage configuration of the pipeline
+     */
+    metricExtraction?: outputs.OpenpipelineSecurityEventsPipelinesPipelineMetricExtraction;
+    /**
+     * Processing stage configuration of the pipeline
+     */
+    processing?: outputs.OpenpipelineSecurityEventsPipelinesPipelineProcessing;
+    /**
+     * Security context stage configuration of the pipeline
+     */
+    securityContext?: outputs.OpenpipelineSecurityEventsPipelinesPipelineSecurityContext;
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    storage?: outputs.OpenpipelineSecurityEventsPipelinesPipelineStorage;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineDataExtraction {
+    /**
+     * Groups all processors applicable for the DataExtractionStage.
+     * Applicable processors are DavisEventExtractionProcessor and BizeventExtractionProcessor.
+     */
+    processors?: outputs.OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessor[];
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessor {
+    bizeventExtractionProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor;
+    /**
+     * Processor to apply a DQL script
+     */
+    davisEventExtractionProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Strategy to assign a value
+     */
+    eventProvider: outputs.OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider;
+    /**
+     * Strategy to assign a value
+     */
+    eventType: outputs.OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType;
+    fieldExtraction?: outputs.OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
+    fields: string[];
+    semantic: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * List of properties for the extracted davis event
+     */
+    properties: outputs.OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty[];
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty {
+    /**
+     * The key to set on the davis event
+     */
+    key: string;
+    /**
+     * The value assigned to the key
+     */
+    value: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineMetricExtraction {
+    /**
+     * Data extraction processor to use
+     */
+    processors?: outputs.OpenpipelineSecurityEventsPipelinesPipelineMetricExtractionProcessor[];
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineMetricExtractionProcessor {
+    /**
+     * Processor to write the occurrences as a metric
+     */
+    counterMetricExtractionProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor;
+    /**
+     * Processor to extract a value from a field as a metric
+     */
+    valueMetricExtractionProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: string[];
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: string[];
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * The field to extract the value for the metric
+     */
+    field: string;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineProcessing {
+    /**
+     * Groups all processors applicable for the ProcessingStage.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor, TechnologyProcessor and DropProcessor.
+     */
+    processors?: outputs.OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessor[];
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorDqlProcessor;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor;
+    /**
+     * Processor to apply a technology processors
+     */
+    technologyProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorTechnologyProcessor;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: outputs.OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: string;
+    /**
+     * Value to assign to the field
+     */
+    value: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to add to the record
+     */
+    fields: string[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Field to rename on the record
+     */
+    fields: outputs.OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField[];
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: string;
+    /**
+     * The new field name
+     */
+    toName: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorTechnologyProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    technologyId: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineSecurityContext {
+    /**
+     * Groups all processors applicable for the SecurityContextStage.
+     * Applicable processor is SecurityContextProcessor.
+     */
+    processors?: outputs.OpenpipelineSecurityEventsPipelinesPipelineSecurityContextProcessor[];
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineSecurityContextProcessor {
+    /**
+     * Processor to set the security context field
+     */
+    securityContextProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+    /**
+     * Strategy to assign a value
+     */
+    value: outputs.OpenpipelineSecurityEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: string;
+    /**
+     * Strategy to assign a value
+     */
+    field?: string;
+    /**
+     * Strategy to assign a value
+     */
+    type: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineStorage {
+    /**
+     * Default bucket assigned to records which do not match any other storage processor
+     */
+    catchAllBucketName?: string;
+    /**
+     * Groups all processors applicable for the StorageStage.
+     * Applicable processors are BucketAssignmentProcessor and NoStorageProcessor.
+     */
+    processors?: outputs.OpenpipelineSecurityEventsPipelinesPipelineStorageProcessor[];
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineStorageProcessor {
+    /**
+     * Processor to assign a bucket
+     */
+    bucketAssignmentProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor;
+    /**
+     * Processor to skip storage assignment
+     */
+    noStorageProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineStorageProcessorNoStorageProcessor;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor {
+    /**
+     * Bucket that is assigned when the record is matched
+     */
+    bucketName: string;
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineStorageProcessorNoStorageProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsRouting {
+    /**
+     * Dynamic routing entry
+     */
+    entries?: outputs.OpenpipelineSecurityEventsRoutingEntry[];
+}
+
+export interface OpenpipelineSecurityEventsRoutingEntry {
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Unique note describing the dynamic route
+     */
+    note: string;
+    /**
+     * Identifier of the pipeline the record is routed into
+     */
+    pipelineId: string;
+}
+
 export interface OpentelemetryMetricsAdditionalAttributes {
     additionalAttributes: outputs.OpentelemetryMetricsAdditionalAttributesAdditionalAttribute[];
 }

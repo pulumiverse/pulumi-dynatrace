@@ -55,7 +55,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			supportedServices, err := dynatrace.GetAwsSupportedServices(ctx, nil, nil)
+//			supportedServices, err := dynatrace.GetAwsSupportedServices(ctx, &dynatrace.GetAwsSupportedServicesArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

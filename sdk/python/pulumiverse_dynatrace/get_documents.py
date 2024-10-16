@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -98,9 +103,6 @@ def get_documents(type: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         type=pulumi.get(__ret__, 'type'),
         values=pulumi.get(__ret__, 'values'))
-
-
-@_utilities.lift_output_func(get_documents)
 def get_documents_output(type: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDocumentsResult]:
     """
@@ -124,4 +126,11 @@ def get_documents_output(type: Optional[pulumi.Input[Optional[str]]] = None,
 
     :param str type: The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
     """
-    ...
+    __args__ = dict()
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getDocuments:getDocuments', __args__, opts=opts, typ=GetDocumentsResult)
+    return __ret__.apply(lambda __response__: GetDocumentsResult(
+        id=pulumi.get(__response__, 'id'),
+        type=pulumi.get(__response__, 'type'),
+        values=pulumi.get(__response__, 'values')))

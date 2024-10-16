@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -80,9 +85,6 @@ def get_failure_detection_parameters(name: Optional[str] = None,
     return AwaitableGetFailureDetectionParametersResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-
-
-@_utilities.lift_output_func(get_failure_detection_parameters)
 def get_failure_detection_parameters_output(name: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFailureDetectionParametersResult]:
     """
@@ -102,4 +104,10 @@ def get_failure_detection_parameters_output(name: Optional[pulumi.Input[str]] = 
     pulumi.export("id", example.id)
     ```
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getFailureDetectionParameters:getFailureDetectionParameters', __args__, opts=opts, typ=GetFailureDetectionParametersResult)
+    return __ret__.apply(lambda __response__: GetFailureDetectionParametersResult(
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name')))

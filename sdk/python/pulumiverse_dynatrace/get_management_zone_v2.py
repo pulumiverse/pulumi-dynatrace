@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -124,9 +129,6 @@ def get_management_zone_v2(name: Optional[str] = None,
         legacy_id=pulumi.get(__ret__, 'legacy_id'),
         name=pulumi.get(__ret__, 'name'),
         settings20_id=pulumi.get(__ret__, 'settings20_id'))
-
-
-@_utilities.lift_output_func(get_management_zone_v2)
 def get_management_zone_v2_output(name: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementZoneV2Result]:
     """
@@ -170,4 +172,12 @@ def get_management_zone_v2_output(name: Optional[pulumi.Input[str]] = None,
         unit="MILLI_SECOND_PER_MINUTE")
     ```
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getManagementZoneV2:getManagementZoneV2', __args__, opts=opts, typ=GetManagementZoneV2Result)
+    return __ret__.apply(lambda __response__: GetManagementZoneV2Result(
+        id=pulumi.get(__response__, 'id'),
+        legacy_id=pulumi.get(__response__, 'legacy_id'),
+        name=pulumi.get(__response__, 'name'),
+        settings20_id=pulumi.get(__response__, 'settings20_id')))

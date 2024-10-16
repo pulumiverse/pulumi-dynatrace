@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -140,9 +145,6 @@ def get_entity(entity_selector: Optional[str] = None,
         properties=pulumi.get(__ret__, 'properties'),
         to=pulumi.get(__ret__, 'to'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_entity)
 def get_entity_output(entity_selector: Optional[pulumi.Input[Optional[str]]] = None,
                       from_: Optional[pulumi.Input[Optional[str]]] = None,
                       name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -168,4 +170,19 @@ def get_entity_output(entity_selector: Optional[pulumi.Input[Optional[str]]] = N
     pulumi.export("id", test.id)
     ```
     """
-    ...
+    __args__ = dict()
+    __args__['entitySelector'] = entity_selector
+    __args__['from'] = from_
+    __args__['name'] = name
+    __args__['to'] = to
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getEntity:getEntity', __args__, opts=opts, typ=GetEntityResult)
+    return __ret__.apply(lambda __response__: GetEntityResult(
+        entity_selector=pulumi.get(__response__, 'entity_selector'),
+        from_=pulumi.get(__response__, 'from_'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        properties=pulumi.get(__response__, 'properties'),
+        to=pulumi.get(__response__, 'to'),
+        type=pulumi.get(__response__, 'type')))

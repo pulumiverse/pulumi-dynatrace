@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -150,9 +155,6 @@ def get_credentials(name: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         scope=pulumi.get(__ret__, 'scope'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_credentials)
 def get_credentials_output(name: Optional[pulumi.Input[Optional[str]]] = None,
                            scope: Optional[pulumi.Input[Optional[str]]] = None,
                            type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -211,4 +213,14 @@ def get_credentials_output(name: Optional[pulumi.Input[Optional[str]]] = None,
     :param str scope: The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.
     :param str type: The type of the credential. Possible values are `CERTIFICATE`, `PUBLIC_CERTIFICATE`, `TOKEN`, `USERNAME_PASSWORD` and `UNKNOWN`. If not specified all credential types will match
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    __args__['scope'] = scope
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getCredentials:getCredentials', __args__, opts=opts, typ=GetCredentialsResult)
+    return __ret__.apply(lambda __response__: GetCredentialsResult(
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        scope=pulumi.get(__response__, 'scope'),
+        type=pulumi.get(__response__, 'type')))

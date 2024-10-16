@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			all_groups, err := dynatrace.GetIamGroups(ctx, nil, nil)
+//			all_groups, err := dynatrace.GetIamGroups(ctx, map[string]interface{}{}, nil)
 //			if err != nil {
 //				return err
 //			}

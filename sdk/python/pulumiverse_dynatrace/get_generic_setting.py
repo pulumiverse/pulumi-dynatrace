@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -127,9 +132,6 @@ def get_generic_setting(filter: Optional[str] = None,
         schema=pulumi.get(__ret__, 'schema'),
         scope=pulumi.get(__ret__, 'scope'),
         value=pulumi.get(__ret__, 'value'))
-
-
-@_utilities.lift_output_func(get_generic_setting)
 def get_generic_setting_output(filter: Optional[pulumi.Input[Optional[str]]] = None,
                                schema: Optional[pulumi.Input[Optional[str]]] = None,
                                scope: Optional[pulumi.Input[Optional[str]]] = None,
@@ -155,4 +157,15 @@ def get_generic_setting_output(filter: Optional[pulumi.Input[Optional[str]]] = N
     :param str schema: Schema IDs to which the requested objects belong
     :param str scope: Scope that the requested objects target
     """
-    ...
+    __args__ = dict()
+    __args__['filter'] = filter
+    __args__['schema'] = schema
+    __args__['scope'] = scope
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getGenericSetting:getGenericSetting', __args__, opts=opts, typ=GetGenericSettingResult)
+    return __ret__.apply(lambda __response__: GetGenericSettingResult(
+        filter=pulumi.get(__response__, 'filter'),
+        id=pulumi.get(__response__, 'id'),
+        schema=pulumi.get(__response__, 'schema'),
+        scope=pulumi.get(__response__, 'scope'),
+        value=pulumi.get(__response__, 'value')))

@@ -1340,6 +1340,31 @@ export type OneagentUpdates = import("./oneagentUpdates").OneagentUpdates;
 export const OneagentUpdates: typeof import("./oneagentUpdates").OneagentUpdates = null as any;
 utilities.lazyLoad(exports, ["OneagentUpdates"], () => require("./oneagentUpdates"));
 
+export { OpenpipelineBusinessEventsArgs, OpenpipelineBusinessEventsState } from "./openpipelineBusinessEvents";
+export type OpenpipelineBusinessEvents = import("./openpipelineBusinessEvents").OpenpipelineBusinessEvents;
+export const OpenpipelineBusinessEvents: typeof import("./openpipelineBusinessEvents").OpenpipelineBusinessEvents = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineBusinessEvents"], () => require("./openpipelineBusinessEvents"));
+
+export { OpenpipelineEventsArgs, OpenpipelineEventsState } from "./openpipelineEvents";
+export type OpenpipelineEvents = import("./openpipelineEvents").OpenpipelineEvents;
+export const OpenpipelineEvents: typeof import("./openpipelineEvents").OpenpipelineEvents = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineEvents"], () => require("./openpipelineEvents"));
+
+export { OpenpipelineLogsArgs, OpenpipelineLogsState } from "./openpipelineLogs";
+export type OpenpipelineLogs = import("./openpipelineLogs").OpenpipelineLogs;
+export const OpenpipelineLogs: typeof import("./openpipelineLogs").OpenpipelineLogs = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineLogs"], () => require("./openpipelineLogs"));
+
+export { OpenpipelineSdlcEventsArgs, OpenpipelineSdlcEventsState } from "./openpipelineSdlcEvents";
+export type OpenpipelineSdlcEvents = import("./openpipelineSdlcEvents").OpenpipelineSdlcEvents;
+export const OpenpipelineSdlcEvents: typeof import("./openpipelineSdlcEvents").OpenpipelineSdlcEvents = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineSdlcEvents"], () => require("./openpipelineSdlcEvents"));
+
+export { OpenpipelineSecurityEventsArgs, OpenpipelineSecurityEventsState } from "./openpipelineSecurityEvents";
+export type OpenpipelineSecurityEvents = import("./openpipelineSecurityEvents").OpenpipelineSecurityEvents;
+export const OpenpipelineSecurityEvents: typeof import("./openpipelineSecurityEvents").OpenpipelineSecurityEvents = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineSecurityEvents"], () => require("./openpipelineSecurityEvents"));
+
 export { OpentelemetryMetricsArgs, OpentelemetryMetricsState } from "./opentelemetryMetrics";
 export type OpentelemetryMetrics = import("./opentelemetryMetrics").OpentelemetryMetrics;
 export const OpentelemetryMetrics: typeof import("./opentelemetryMetrics").OpentelemetryMetrics = null as any;
@@ -2296,6 +2321,16 @@ const _module = {
                 return new OneagentSideMasking(name, <any>undefined, { urn })
             case "dynatrace:index/oneagentUpdates:OneagentUpdates":
                 return new OneagentUpdates(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineBusinessEvents:OpenpipelineBusinessEvents":
+                return new OpenpipelineBusinessEvents(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineEvents:OpenpipelineEvents":
+                return new OpenpipelineEvents(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineLogs:OpenpipelineLogs":
+                return new OpenpipelineLogs(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineSdlcEvents:OpenpipelineSdlcEvents":
+                return new OpenpipelineSdlcEvents(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineSecurityEvents:OpenpipelineSecurityEvents":
+                return new OpenpipelineSecurityEvents(name, <any>undefined, { urn })
             case "dynatrace:index/opentelemetryMetrics:OpentelemetryMetrics":
                 return new OpentelemetryMetrics(name, <any>undefined, { urn })
             case "dynatrace:index/opsGenieNotification:OpsGenieNotification":
@@ -2720,6 +2755,11 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentDefaultVersion
 pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentFeatures", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentSideMasking", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentUpdates", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineBusinessEvents", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineEvents", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineLogs", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineSdlcEvents", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineSecurityEvents", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/opentelemetryMetrics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/opsGenieNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/osServices", _module)

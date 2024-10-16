@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			test, err := dynatrace.GetManagementZones(ctx, nil, nil)
+//			test, err := dynatrace.GetManagementZones(ctx, map[string]interface{}{}, nil)
 //			if err != nil {
 //				return err
 //			}

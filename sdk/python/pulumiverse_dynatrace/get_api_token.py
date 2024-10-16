@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -156,9 +161,6 @@ def get_api_token(name: Optional[str] = None,
         owner=pulumi.get(__ret__, 'owner'),
         personal_access_token=pulumi.get(__ret__, 'personal_access_token'),
         scopes=pulumi.get(__ret__, 'scopes'))
-
-
-@_utilities.lift_output_func(get_api_token)
 def get_api_token_output(name: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiTokenResult]:
     """
@@ -176,4 +178,16 @@ def get_api_token_output(name: Optional[pulumi.Input[str]] = None,
     pulumi.export("example", example_api_token)
     ```
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getApiToken:getApiToken', __args__, opts=opts, typ=GetApiTokenResult)
+    return __ret__.apply(lambda __response__: GetApiTokenResult(
+        creation_date=pulumi.get(__response__, 'creation_date'),
+        enabled=pulumi.get(__response__, 'enabled'),
+        expiration_date=pulumi.get(__response__, 'expiration_date'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        owner=pulumi.get(__response__, 'owner'),
+        personal_access_token=pulumi.get(__response__, 'personal_access_token'),
+        scopes=pulumi.get(__response__, 'scopes')))

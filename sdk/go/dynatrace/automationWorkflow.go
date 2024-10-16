@@ -114,7 +114,7 @@ import (
 //								Custom: pulumi.String(""),
 //							},
 //							Position: &dynatrace.AutomationWorkflowTasksTaskPositionArgs{
-//								X: int(-1),
+//								X: pulumi.Int(-1),
 //								Y: pulumi.Int(2),
 //							},
 //							Timeout: pulumi.String("50000"),
@@ -143,7 +143,7 @@ import (
 //							Active:      pulumi.Bool(false),
 //							Input:       pulumi.String(json3),
 //							Position: &dynatrace.AutomationWorkflowTasksTaskPositionArgs{
-//								X: int(-2),
+//								X: pulumi.Int(-2),
 //								Y: pulumi.Int(1),
 //							},
 //						},

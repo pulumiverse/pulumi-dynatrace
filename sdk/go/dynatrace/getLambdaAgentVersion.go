@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := dynatrace.GetLambdaAgentVersion(ctx, nil, nil)
+//			example, err := dynatrace.GetLambdaAgentVersion(ctx, &dynatrace.GetLambdaAgentVersionArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

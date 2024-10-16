@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := dynatrace.LookupRemoteEnvironments(ctx, nil, nil)
+//			example, err := dynatrace.LookupRemoteEnvironments(ctx, map[string]interface{}{}, nil)
 //			if err != nil {
 //				return err
 //			}

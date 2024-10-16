@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -156,9 +161,6 @@ def get_iam_policies(accounts: Optional[Sequence[str]] = None,
         global_=pulumi.get(__ret__, 'global_'),
         id=pulumi.get(__ret__, 'id'),
         policies=pulumi.get(__ret__, 'policies'))
-
-
-@_utilities.lift_output_func(get_iam_policies)
 def get_iam_policies_output(accounts: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                             environments: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                             global_: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -212,4 +214,15 @@ def get_iam_policies_output(accounts: Optional[pulumi.Input[Optional[Sequence[st
     :param Sequence[str] environments: The results will contain policies defined for the given environments. If one of the entries contains `*` the results will contain policies for all environments
     :param bool global_: If `true` the results will contain global policies
     """
-    ...
+    __args__ = dict()
+    __args__['accounts'] = accounts
+    __args__['environments'] = environments
+    __args__['global'] = global_
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getIamPolicies:getIamPolicies', __args__, opts=opts, typ=GetIamPoliciesResult)
+    return __ret__.apply(lambda __response__: GetIamPoliciesResult(
+        accounts=pulumi.get(__response__, 'accounts'),
+        environments=pulumi.get(__response__, 'environments'),
+        global_=pulumi.get(__response__, 'global_'),
+        id=pulumi.get(__response__, 'id'),
+        policies=pulumi.get(__response__, 'policies')))
