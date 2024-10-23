@@ -21,31 +21,43 @@ __all__ = ['DeclarativeGroupingArgs', 'DeclarativeGrouping']
 @pulumi.input_type
 class DeclarativeGroupingArgs:
     def __init__(__self__, *,
+                 detection: pulumi.Input['DeclarativeGroupingDetectionArgs'],
                  enabled: pulumi.Input[bool],
-                 detection: Optional[pulumi.Input['DeclarativeGroupingDetectionArgs']] = None,
                  insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DeclarativeGrouping resource.
-        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['DeclarativeGroupingDetectionArgs'] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
                group.
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
                instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
                specified during update the order will remain untouched
         :param pulumi.Input[str] name: Monitored technology name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
+        pulumi.set(__self__, "detection", detection)
         pulumi.set(__self__, "enabled", enabled)
-        if detection is not None:
-            pulumi.set(__self__, "detection", detection)
         if insert_after is not None:
             pulumi.set(__self__, "insert_after", insert_after)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
+
+    @property
+    @pulumi.getter
+    def detection(self) -> pulumi.Input['DeclarativeGroupingDetectionArgs']:
+        """
+        Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
+        group.
+        """
+        return pulumi.get(self, "detection")
+
+    @detection.setter
+    def detection(self, value: pulumi.Input['DeclarativeGroupingDetectionArgs']):
+        pulumi.set(self, "detection", value)
 
     @property
     @pulumi.getter
@@ -58,19 +70,6 @@ class DeclarativeGroupingArgs:
     @enabled.setter
     def enabled(self, value: pulumi.Input[bool]):
         pulumi.set(self, "enabled", value)
-
-    @property
-    @pulumi.getter
-    def detection(self) -> Optional[pulumi.Input['DeclarativeGroupingDetectionArgs']]:
-        """
-        Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-        group.
-        """
-        return pulumi.get(self, "detection")
-
-    @detection.setter
-    def detection(self, value: Optional[pulumi.Input['DeclarativeGroupingDetectionArgs']]):
-        pulumi.set(self, "detection", value)
 
     @property
     @pulumi.getter(name="insertAfter")
@@ -266,6 +265,8 @@ class DeclarativeGrouping(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DeclarativeGroupingArgs.__new__(DeclarativeGroupingArgs)
 
+            if detection is None and not opts.urn:
+                raise TypeError("Missing required property 'detection'")
             __props__.__dict__["detection"] = detection
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
@@ -317,7 +318,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def detection(self) -> pulumi.Output[Optional['outputs.DeclarativeGroupingDetection']]:
+    def detection(self) -> pulumi.Output['outputs.DeclarativeGroupingDetection']:
         """
         Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
         group.

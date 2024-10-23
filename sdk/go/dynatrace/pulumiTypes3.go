@@ -33256,6 +33256,8 @@ type WebAppEnablementRum struct {
 	CostAndTrafficControl int `pulumi:"costAndTrafficControl"`
 	// (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Enable Real User Monitoring powered by Grail
+	EnabledOnGrail *bool `pulumi:"enabledOnGrail"`
 }
 
 // WebAppEnablementRumInput is an input type that accepts WebAppEnablementRumArgs and WebAppEnablementRumOutput values.
@@ -33274,6 +33276,8 @@ type WebAppEnablementRumArgs struct {
 	CostAndTrafficControl pulumi.IntInput `pulumi:"costAndTrafficControl"`
 	// (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// Enable Real User Monitoring powered by Grail
+	EnabledOnGrail pulumi.BoolPtrInput `pulumi:"enabledOnGrail"`
 }
 
 func (WebAppEnablementRumArgs) ElementType() reflect.Type {
@@ -33363,6 +33367,11 @@ func (o WebAppEnablementRumOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v WebAppEnablementRum) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
+// Enable Real User Monitoring powered by Grail
+func (o WebAppEnablementRumOutput) EnabledOnGrail() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebAppEnablementRum) *bool { return v.EnabledOnGrail }).(pulumi.BoolPtrOutput)
+}
+
 type WebAppEnablementRumPtrOutput struct{ *pulumi.OutputState }
 
 func (WebAppEnablementRumPtrOutput) ElementType() reflect.Type {
@@ -33404,6 +33413,16 @@ func (o WebAppEnablementRumPtrOutput) Enabled() pulumi.BoolPtrOutput {
 			return nil
 		}
 		return &v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Enable Real User Monitoring powered by Grail
+func (o WebAppEnablementRumPtrOutput) EnabledOnGrail() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppEnablementRum) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnabledOnGrail
 	}).(pulumi.BoolPtrOutput)
 }
 

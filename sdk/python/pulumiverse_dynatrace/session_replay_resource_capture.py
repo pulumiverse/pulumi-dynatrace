@@ -24,7 +24,7 @@ class SessionReplayResourceCaptureArgs:
                  resource_capture_url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a SessionReplayResourceCapture resource.
-        :param pulumi.Input[bool] enable_resource_capturing: (Field has overlap with `WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+        :param pulumi.Input[bool] enable_resource_capturing: (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
         :param pulumi.Input[str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] resource_capture_url_exclusion_pattern_lists: (Field has overlap with `WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
         """
@@ -38,7 +38,7 @@ class SessionReplayResourceCaptureArgs:
     @pulumi.getter(name="enableResourceCapturing")
     def enable_resource_capturing(self) -> pulumi.Input[bool]:
         """
-        (Field has overlap with `WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+        (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
         """
         return pulumi.get(self, "enable_resource_capturing")
 
@@ -80,7 +80,7 @@ class _SessionReplayResourceCaptureState:
         """
         Input properties used for looking up and filtering SessionReplayResourceCapture resources.
         :param pulumi.Input[str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[bool] enable_resource_capturing: (Field has overlap with `WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+        :param pulumi.Input[bool] enable_resource_capturing: (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] resource_capture_url_exclusion_pattern_lists: (Field has overlap with `WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
         """
         if application_id is not None:
@@ -106,7 +106,7 @@ class _SessionReplayResourceCaptureState:
     @pulumi.getter(name="enableResourceCapturing")
     def enable_resource_capturing(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Field has overlap with `WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+        (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
         """
         return pulumi.get(self, "enable_resource_capturing")
 
@@ -141,7 +141,7 @@ class SessionReplayResourceCapture(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[bool] enable_resource_capturing: (Field has overlap with `WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+        :param pulumi.Input[bool] enable_resource_capturing: (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] resource_capture_url_exclusion_pattern_lists: (Field has overlap with `WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
         """
         ...
@@ -205,7 +205,7 @@ class SessionReplayResourceCapture(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[bool] enable_resource_capturing: (Field has overlap with `WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+        :param pulumi.Input[bool] enable_resource_capturing: (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] resource_capture_url_exclusion_pattern_lists: (Field has overlap with `WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -229,7 +229,7 @@ class SessionReplayResourceCapture(pulumi.CustomResource):
     @pulumi.getter(name="enableResourceCapturing")
     def enable_resource_capturing(self) -> pulumi.Output[bool]:
         """
-        (Field has overlap with `WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+        (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
         """
         return pulumi.get(self, "enable_resource_capturing")
 

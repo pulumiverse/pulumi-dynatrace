@@ -38,7 +38,7 @@ export class DeclarativeGrouping extends pulumi.CustomResource {
      * Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
      * group.
      */
-    public readonly detection!: pulumi.Output<outputs.DeclarativeGroupingDetection | undefined>;
+    public readonly detection!: pulumi.Output<outputs.DeclarativeGroupingDetection>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -78,6 +78,9 @@ export class DeclarativeGrouping extends pulumi.CustomResource {
             resourceInputs["scope"] = state ? state.scope : undefined;
         } else {
             const args = argsOrState as DeclarativeGroupingArgs | undefined;
+            if ((!args || args.detection === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'detection'");
+            }
             if ((!args || args.enabled === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
@@ -129,7 +132,7 @@ export interface DeclarativeGroupingArgs {
      * Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
      * group.
      */
-    detection?: pulumi.Input<inputs.DeclarativeGroupingDetection>;
+    detection: pulumi.Input<inputs.DeclarativeGroupingDetection>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */

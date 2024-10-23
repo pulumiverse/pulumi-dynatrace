@@ -37,7 +37,7 @@ export class SessionReplayResourceCapture extends pulumi.CustomResource {
      */
     public readonly applicationId!: pulumi.Output<string | undefined>;
     /**
-     * (Field has overlap with `dynatrace.WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+     * (Field has overlap with `dynatrace.WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
      */
     public readonly enableResourceCapturing!: pulumi.Output<boolean>;
     /**
@@ -84,7 +84,7 @@ export interface SessionReplayResourceCaptureState {
      */
     applicationId?: pulumi.Input<string>;
     /**
-     * (Field has overlap with `dynatrace.WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+     * (Field has overlap with `dynatrace.WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
      */
     enableResourceCapturing?: pulumi.Input<boolean>;
     /**
@@ -102,7 +102,7 @@ export interface SessionReplayResourceCaptureArgs {
      */
     applicationId?: pulumi.Input<string>;
     /**
-     * (Field has overlap with `dynatrace.WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+     * (Field has overlap with `dynatrace.WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
      */
     enableResourceCapturing: pulumi.Input<boolean>;
     /**

@@ -35,7 +35,7 @@ export class UserActionMetrics extends pulumi.CustomResource {
     }
 
     /**
-     * Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "name". For example, using "type" as a dimension allows you to split chart data based on the user action type.
+     * Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "apdexCategory". For example, using "type" as a dimension allows you to split chart data based on the user action type.
      */
     public readonly dimensions!: pulumi.Output<string[] | undefined>;
     /**
@@ -100,7 +100,7 @@ export class UserActionMetrics extends pulumi.CustomResource {
  */
 export interface UserActionMetricsState {
     /**
-     * Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "name". For example, using "type" as a dimension allows you to split chart data based on the user action type.
+     * Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "apdexCategory". For example, using "type" as a dimension allows you to split chart data based on the user action type.
      */
     dimensions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -126,7 +126,7 @@ export interface UserActionMetricsState {
  */
 export interface UserActionMetricsArgs {
     /**
-     * Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "name". For example, using "type" as a dimension allows you to split chart data based on the user action type.
+     * Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "apdexCategory". For example, using "type" as a dimension allows you to split chart data based on the user action type.
      */
     dimensions?: pulumi.Input<pulumi.Input<string>[]>;
     /**

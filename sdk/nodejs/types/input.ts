@@ -9102,7 +9102,7 @@ export interface DeclarativeGroupingDetectionProcessDefinition {
     /**
      * Define process detection rules by selecting a process property and a condition. Each process group can have multiple detection rules associated with it.
      */
-    rules?: pulumi.Input<inputs.DeclarativeGroupingDetectionProcessDefinitionRules>;
+    rules: pulumi.Input<inputs.DeclarativeGroupingDetectionProcessDefinitionRules>;
 }
 
 export interface DeclarativeGroupingDetectionProcessDefinitionRules {
@@ -9178,6 +9178,10 @@ export interface DiscoveryDefaultRulesRule {
      * no documentation available
      */
     title: pulumi.Input<string>;
+    /**
+     * Zero rated
+     */
+    zeroRated?: pulumi.Input<boolean>;
 }
 
 export interface DiscoveryDefaultRulesRuleActions {
@@ -17691,6 +17695,10 @@ export interface MobileAppEnablementRum {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Please be aware that only mobile agents with version **8.303 or higher** can ingest Grail events
+     */
+    enabledOnGrail?: pulumi.Input<boolean>;
 }
 
 export interface MobileAppEnablementSessionReplay {
@@ -30956,6 +30964,10 @@ export interface WebAppEnablementRum {
      * (Field has overlap with `dynatrace.WebApplication`) This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Enable Real User Monitoring powered by Grail
+     */
+    enabledOnGrail?: pulumi.Input<boolean>;
 }
 
 export interface WebAppEnablementSessionReplay {

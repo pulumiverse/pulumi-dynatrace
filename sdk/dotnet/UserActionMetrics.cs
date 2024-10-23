@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class UserActionMetrics : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "name". For example, using "type" as a dimension allows you to split chart data based on the user action type.
+        /// Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "apdexCategory". For example, using "type" as a dimension allows you to split chart data based on the user action type.
         /// </summary>
         [Output("dimensions")]
         public Output<ImmutableArray<string>> Dimensions { get; private set; } = null!;
@@ -94,7 +94,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _dimensions;
 
         /// <summary>
-        /// Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "name". For example, using "type" as a dimension allows you to split chart data based on the user action type.
+        /// Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "apdexCategory". For example, using "type" as a dimension allows you to split chart data based on the user action type.
         /// </summary>
         public InputList<string> Dimensions
         {
@@ -138,7 +138,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _dimensions;
 
         /// <summary>
-        /// Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "name". For example, using "type" as a dimension allows you to split chart data based on the user action type.
+        /// Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "apdexCategory". For example, using "type" as a dimension allows you to split chart data based on the user action type.
         /// </summary>
         public InputList<string> Dimensions
         {

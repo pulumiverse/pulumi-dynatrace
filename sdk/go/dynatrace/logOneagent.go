@@ -27,7 +27,7 @@ type LogOneagent struct {
 	EventLogQueryTimeoutSec pulumi.IntOutput `pulumi:"eventLogQueryTimeoutSec"`
 	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled pulumi.BoolOutput `pulumi:"iisdetectionEnabled"`
-	// Allows detection of logs written to mounted network storage drives.
+	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
 	LogScannerLinuxNfsEnabled pulumi.BoolOutput `pulumi:"logScannerLinuxNfsEnabled"`
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount pulumi.IntOutput `pulumi:"maxLgisPerEntityCount"`
@@ -37,7 +37,7 @@ type LogOneagent struct {
 	MonitorOwnLogsEnabled pulumi.BoolOutput `pulumi:"monitorOwnLogsEnabled"`
 	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled pulumi.BoolOutput `pulumi:"openLogFilesDetectionEnabled"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
 	SeverityDetectionLimitBytes pulumi.IntOutput `pulumi:"severityDetectionLimitBytes"`
@@ -131,7 +131,7 @@ type logOneagentState struct {
 	EventLogQueryTimeoutSec *int `pulumi:"eventLogQueryTimeoutSec"`
 	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled *bool `pulumi:"iisdetectionEnabled"`
-	// Allows detection of logs written to mounted network storage drives.
+	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
 	LogScannerLinuxNfsEnabled *bool `pulumi:"logScannerLinuxNfsEnabled"`
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount *int `pulumi:"maxLgisPerEntityCount"`
@@ -141,7 +141,7 @@ type logOneagentState struct {
 	MonitorOwnLogsEnabled *bool `pulumi:"monitorOwnLogsEnabled"`
 	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled *bool `pulumi:"openLogFilesDetectionEnabled"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 	// Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
 	SeverityDetectionLimitBytes *int `pulumi:"severityDetectionLimitBytes"`
@@ -164,7 +164,7 @@ type LogOneagentState struct {
 	EventLogQueryTimeoutSec pulumi.IntPtrInput
 	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled pulumi.BoolPtrInput
-	// Allows detection of logs written to mounted network storage drives.
+	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
 	LogScannerLinuxNfsEnabled pulumi.BoolPtrInput
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount pulumi.IntPtrInput
@@ -174,7 +174,7 @@ type LogOneagentState struct {
 	MonitorOwnLogsEnabled pulumi.BoolPtrInput
 	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled pulumi.BoolPtrInput
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 	// Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
 	SeverityDetectionLimitBytes pulumi.IntPtrInput
@@ -201,7 +201,7 @@ type logOneagentArgs struct {
 	EventLogQueryTimeoutSec int `pulumi:"eventLogQueryTimeoutSec"`
 	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled bool `pulumi:"iisdetectionEnabled"`
-	// Allows detection of logs written to mounted network storage drives.
+	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
 	LogScannerLinuxNfsEnabled bool `pulumi:"logScannerLinuxNfsEnabled"`
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount int `pulumi:"maxLgisPerEntityCount"`
@@ -211,7 +211,7 @@ type logOneagentArgs struct {
 	MonitorOwnLogsEnabled bool `pulumi:"monitorOwnLogsEnabled"`
 	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled bool `pulumi:"openLogFilesDetectionEnabled"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 	// Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
 	SeverityDetectionLimitBytes int `pulumi:"severityDetectionLimitBytes"`
@@ -235,7 +235,7 @@ type LogOneagentArgs struct {
 	EventLogQueryTimeoutSec pulumi.IntInput
 	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled pulumi.BoolInput
-	// Allows detection of logs written to mounted network storage drives.
+	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
 	LogScannerLinuxNfsEnabled pulumi.BoolInput
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount pulumi.IntInput
@@ -245,7 +245,7 @@ type LogOneagentArgs struct {
 	MonitorOwnLogsEnabled pulumi.BoolInput
 	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled pulumi.BoolInput
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 	// Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
 	SeverityDetectionLimitBytes pulumi.IntInput
@@ -372,7 +372,7 @@ func (o LogOneagentOutput) IisdetectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.IisdetectionEnabled }).(pulumi.BoolOutput)
 }
 
-// Allows detection of logs written to mounted network storage drives.
+// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
 func (o LogOneagentOutput) LogScannerLinuxNfsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.LogScannerLinuxNfsEnabled }).(pulumi.BoolOutput)
 }
@@ -397,7 +397,7 @@ func (o LogOneagentOutput) OpenLogFilesDetectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.OpenLogFilesDetectionEnabled }).(pulumi.BoolOutput)
 }
 
-// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 func (o LogOneagentOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }

@@ -42,7 +42,7 @@ class LogOneagentArgs:
         :param pulumi.Input[str] default_timezone: Default timezone for agent if more specific configurations is not defined.
         :param pulumi.Input[int] event_log_query_timeout_sec: Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
         :param pulumi.Input[bool] iisdetection_enabled: Allows detection of logs and event logs written by IIS server.
-        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives.
+        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
         :param pulumi.Input[int] max_lgis_per_entity_count: Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
         :param pulumi.Input[int] min_binary_detection_limit_bytes: Defines the minimum number of bytes in log file required for binary detection.
         :param pulumi.Input[bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
@@ -50,7 +50,7 @@ class LogOneagentArgs:
         :param pulumi.Input[int] severity_detection_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
         :param pulumi.Input[int] severity_detection_lines_limit: Defines the number of the first lines of every log entry where severity is searched.
         :param pulumi.Input[bool] system_logs_detection_enabled: Linux: syslog, message log Windows: system, application, security event logs
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "container_timezone_heuristic_enabled", container_timezone_heuristic_enabled)
         pulumi.set(__self__, "containers_logs_detection_enabled", containers_logs_detection_enabled)
@@ -145,7 +145,7 @@ class LogOneagentArgs:
     @pulumi.getter(name="logScannerLinuxNfsEnabled")
     def log_scanner_linux_nfs_enabled(self) -> pulumi.Input[bool]:
         """
-        Allows detection of logs written to mounted network storage drives.
+        Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
         """
         return pulumi.get(self, "log_scanner_linux_nfs_enabled")
 
@@ -241,7 +241,7 @@ class LogOneagentArgs:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -276,12 +276,12 @@ class _LogOneagentState:
         :param pulumi.Input[str] default_timezone: Default timezone for agent if more specific configurations is not defined.
         :param pulumi.Input[int] event_log_query_timeout_sec: Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
         :param pulumi.Input[bool] iisdetection_enabled: Allows detection of logs and event logs written by IIS server.
-        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives.
+        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
         :param pulumi.Input[int] max_lgis_per_entity_count: Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
         :param pulumi.Input[int] min_binary_detection_limit_bytes: Defines the minimum number of bytes in log file required for binary detection.
         :param pulumi.Input[bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
         :param pulumi.Input[bool] open_log_files_detection_enabled: Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[int] severity_detection_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
         :param pulumi.Input[int] severity_detection_lines_limit: Defines the number of the first lines of every log entry where severity is searched.
         :param pulumi.Input[bool] system_logs_detection_enabled: Linux: syslog, message log Windows: system, application, security event logs
@@ -393,7 +393,7 @@ class _LogOneagentState:
     @pulumi.getter(name="logScannerLinuxNfsEnabled")
     def log_scanner_linux_nfs_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Allows detection of logs written to mounted network storage drives.
+        Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
         """
         return pulumi.get(self, "log_scanner_linux_nfs_enabled")
 
@@ -453,7 +453,7 @@ class _LogOneagentState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -529,12 +529,12 @@ class LogOneagent(pulumi.CustomResource):
         :param pulumi.Input[str] default_timezone: Default timezone for agent if more specific configurations is not defined.
         :param pulumi.Input[int] event_log_query_timeout_sec: Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
         :param pulumi.Input[bool] iisdetection_enabled: Allows detection of logs and event logs written by IIS server.
-        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives.
+        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
         :param pulumi.Input[int] max_lgis_per_entity_count: Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
         :param pulumi.Input[int] min_binary_detection_limit_bytes: Defines the minimum number of bytes in log file required for binary detection.
         :param pulumi.Input[bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
         :param pulumi.Input[bool] open_log_files_detection_enabled: Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[int] severity_detection_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
         :param pulumi.Input[int] severity_detection_lines_limit: Defines the number of the first lines of every log entry where severity is searched.
         :param pulumi.Input[bool] system_logs_detection_enabled: Linux: syslog, message log Windows: system, application, security event logs
@@ -667,12 +667,12 @@ class LogOneagent(pulumi.CustomResource):
         :param pulumi.Input[str] default_timezone: Default timezone for agent if more specific configurations is not defined.
         :param pulumi.Input[int] event_log_query_timeout_sec: Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
         :param pulumi.Input[bool] iisdetection_enabled: Allows detection of logs and event logs written by IIS server.
-        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives.
+        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
         :param pulumi.Input[int] max_lgis_per_entity_count: Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
         :param pulumi.Input[int] min_binary_detection_limit_bytes: Defines the minimum number of bytes in log file required for binary detection.
         :param pulumi.Input[bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
         :param pulumi.Input[bool] open_log_files_detection_enabled: Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[int] severity_detection_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
         :param pulumi.Input[int] severity_detection_lines_limit: Defines the number of the first lines of every log entry where severity is searched.
         :param pulumi.Input[bool] system_logs_detection_enabled: Linux: syslog, message log Windows: system, application, security event logs
@@ -750,7 +750,7 @@ class LogOneagent(pulumi.CustomResource):
     @pulumi.getter(name="logScannerLinuxNfsEnabled")
     def log_scanner_linux_nfs_enabled(self) -> pulumi.Output[bool]:
         """
-        Allows detection of logs written to mounted network storage drives.
+        Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
         """
         return pulumi.get(self, "log_scanner_linux_nfs_enabled")
 
@@ -790,7 +790,7 @@ class LogOneagent(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 

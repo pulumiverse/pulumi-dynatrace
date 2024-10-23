@@ -34,8 +34,8 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Define process detection rules by selecting a process property and a condition. Each process group can have multiple detection rules associated with it.
         /// </summary>
-        [Input("rules")]
-        public Input<Inputs.DeclarativeGroupingDetectionProcessDefinitionRulesArgs>? Rules { get; set; }
+        [Input("rules", required: true)]
+        public Input<Inputs.DeclarativeGroupingDetectionProcessDefinitionRulesArgs> Rules { get; set; } = null!;
 
         public DeclarativeGroupingDetectionProcessDefinitionArgs()
         {

@@ -25,7 +25,7 @@ type LogSensitiveDataMasking struct {
 	Matchers LogSensitiveDataMaskingMatchersPtrOutput `pulumi:"matchers"`
 	// Name
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 }
 
@@ -75,7 +75,7 @@ type logSensitiveDataMaskingState struct {
 	Matchers *LogSensitiveDataMaskingMatchers `pulumi:"matchers"`
 	// Name
 	Name *string `pulumi:"name"`
-	// The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 }
 
@@ -90,7 +90,7 @@ type LogSensitiveDataMaskingState struct {
 	Matchers LogSensitiveDataMaskingMatchersPtrInput
 	// Name
 	Name pulumi.StringPtrInput
-	// The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 }
 
@@ -109,7 +109,7 @@ type logSensitiveDataMaskingArgs struct {
 	Matchers *LogSensitiveDataMaskingMatchers `pulumi:"matchers"`
 	// Name
 	Name *string `pulumi:"name"`
-	// The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 }
 
@@ -125,7 +125,7 @@ type LogSensitiveDataMaskingArgs struct {
 	Matchers LogSensitiveDataMaskingMatchersPtrInput
 	// Name
 	Name pulumi.StringPtrInput
-	// The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 }
 
@@ -241,7 +241,7 @@ func (o LogSensitiveDataMaskingOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogSensitiveDataMasking) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 func (o LogSensitiveDataMaskingOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LogSensitiveDataMasking) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }

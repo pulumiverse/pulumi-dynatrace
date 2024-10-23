@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        /// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Output("scope")]
         public Output<string?> Scope { get; private set; } = null!;
@@ -121,7 +121,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        /// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -165,7 +165,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        /// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }

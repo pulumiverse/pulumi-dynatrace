@@ -40,7 +40,7 @@ class LogTimestampArgs:
         :param pulumi.Input['LogTimestampEntryBoundaryArgs'] entry_boundary: Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogTimestampMatchersArgs'] matchers: no documentation available
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "config_item_title", config_item_title)
         pulumi.set(__self__, "date_time_pattern", date_time_pattern)
@@ -157,7 +157,7 @@ class LogTimestampArgs:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -187,7 +187,7 @@ class _LogTimestampState:
         :param pulumi.Input['LogTimestampEntryBoundaryArgs'] entry_boundary: Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogTimestampMatchersArgs'] matchers: no documentation available
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[str] timezone: Timezone
         """
         if config_item_title is not None:
@@ -297,7 +297,7 @@ class _LogTimestampState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -344,7 +344,7 @@ class LogTimestamp(pulumi.CustomResource):
         :param pulumi.Input[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict']] entry_boundary: Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']] matchers: no documentation available
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[str] timezone: Timezone
         """
         ...
@@ -438,7 +438,7 @@ class LogTimestamp(pulumi.CustomResource):
         :param pulumi.Input[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict']] entry_boundary: Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']] matchers: no documentation available
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[str] timezone: Timezone
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -516,7 +516,7 @@ class LogTimestamp(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 

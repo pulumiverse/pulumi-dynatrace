@@ -46,6 +46,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// no documentation available
         /// </summary>
         public readonly string Title;
+        /// <summary>
+        /// Zero rated
+        /// </summary>
+        public readonly bool? ZeroRated;
 
         [OutputConstructor]
         private DiscoveryDefaultRulesRule(
@@ -63,7 +67,9 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string query,
 
-            string title)
+            string title,
+
+            bool? zeroRated)
         {
             Actions = actions;
             Category = category;
@@ -73,6 +79,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             Priority = priority;
             Query = query;
             Title = title;
+            ZeroRated = zeroRated;
         }
     }
 }

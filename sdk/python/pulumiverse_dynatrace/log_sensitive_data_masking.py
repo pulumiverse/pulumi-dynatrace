@@ -34,7 +34,7 @@ class LogSensitiveDataMaskingArgs:
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogSensitiveDataMaskingMatchersArgs'] matchers: no documentation available
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[str] scope: The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "masking", masking)
@@ -111,7 +111,7 @@ class LogSensitiveDataMaskingArgs:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -136,7 +136,7 @@ class _LogSensitiveDataMaskingState:
         :param pulumi.Input['LogSensitiveDataMaskingMaskingArgs'] masking: no documentation available
         :param pulumi.Input['LogSensitiveDataMaskingMatchersArgs'] matchers: no documentation available
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[str] scope: The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -215,7 +215,7 @@ class _LogSensitiveDataMaskingState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -245,7 +245,7 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
         :param pulumi.Input[Union['LogSensitiveDataMaskingMaskingArgs', 'LogSensitiveDataMaskingMaskingArgsDict']] masking: no documentation available
         :param pulumi.Input[Union['LogSensitiveDataMaskingMatchersArgs', 'LogSensitiveDataMaskingMatchersArgsDict']] matchers: no documentation available
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[str] scope: The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         ...
     @overload
@@ -323,7 +323,7 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
         :param pulumi.Input[Union['LogSensitiveDataMaskingMaskingArgs', 'LogSensitiveDataMaskingMaskingArgsDict']] masking: no documentation available
         :param pulumi.Input[Union['LogSensitiveDataMaskingMatchersArgs', 'LogSensitiveDataMaskingMatchersArgsDict']] matchers: no documentation available
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[str] scope: The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -381,7 +381,7 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[str]]:
         """
-        The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 

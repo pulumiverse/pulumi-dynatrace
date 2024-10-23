@@ -32,7 +32,7 @@ class LogCustomSourceArgs:
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['LogCustomSourceContextArgs'] context: Define Custom Log Source only within context if provided
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "custom_log_source", custom_log_source)
         pulumi.set(__self__, "enabled", enabled)
@@ -95,7 +95,7 @@ class LogCustomSourceArgs:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -118,7 +118,7 @@ class _LogCustomSourceState:
         :param pulumi.Input['LogCustomSourceCustomLogSourceArgs'] custom_log_source: no documentation available
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         if context is not None:
             pulumi.set(__self__, "context", context)
@@ -183,7 +183,7 @@ class _LogCustomSourceState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -211,7 +211,7 @@ class LogCustomSource(pulumi.CustomResource):
         :param pulumi.Input[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict']] custom_log_source: no documentation available
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         ...
     @overload
@@ -285,7 +285,7 @@ class LogCustomSource(pulumi.CustomResource):
         :param pulumi.Input[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict']] custom_log_source: no documentation available
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -334,7 +334,7 @@ class LogCustomSource(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
