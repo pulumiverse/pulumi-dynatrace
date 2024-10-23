@@ -18,7 +18,7 @@ namespace Pulumiverse.Dynatrace
         /// group.
         /// </summary>
         [Output("detection")]
-        public Output<Outputs.DeclarativeGroupingDetection?> Detection { get; private set; } = null!;
+        public Output<Outputs.DeclarativeGroupingDetection> Detection { get; private set; } = null!;
 
         /// <summary>
         /// This setting is enabled (`true`) or disabled (`false`)
@@ -97,8 +97,8 @@ namespace Pulumiverse.Dynatrace
         /// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
         /// group.
         /// </summary>
-        [Input("detection")]
-        public Input<Inputs.DeclarativeGroupingDetectionArgs>? Detection { get; set; }
+        [Input("detection", required: true)]
+        public Input<Inputs.DeclarativeGroupingDetectionArgs> Detection { get; set; } = null!;
 
         /// <summary>
         /// This setting is enabled (`true`) or disabled (`false`)

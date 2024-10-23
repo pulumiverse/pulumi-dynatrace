@@ -34,7 +34,7 @@ class LogStorageArgs:
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogStorageMatchersArgs'] matchers: no documentation available
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "send_to_storage", send_to_storage)
@@ -111,7 +111,7 @@ class LogStorageArgs:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -135,7 +135,7 @@ class _LogStorageState:
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogStorageMatchersArgs'] matchers: no documentation available
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[bool] send_to_storage: If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
         """
         if enabled is not None:
@@ -203,7 +203,7 @@ class _LogStorageState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -244,7 +244,7 @@ class LogStorage(pulumi.CustomResource):
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Union['LogStorageMatchersArgs', 'LogStorageMatchersArgsDict']] matchers: no documentation available
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[bool] send_to_storage: If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
         """
         ...
@@ -322,7 +322,7 @@ class LogStorage(pulumi.CustomResource):
         :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Union['LogStorageMatchersArgs', 'LogStorageMatchersArgsDict']] matchers: no documentation available
         :param pulumi.Input[str] name: Name
-        :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[bool] send_to_storage: If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -373,7 +373,7 @@ class LogStorage(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 

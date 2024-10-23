@@ -61,6 +61,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("title", required: true)]
         public Input<string> Title { get; set; } = null!;
 
+        /// <summary>
+        /// Zero rated
+        /// </summary>
+        [Input("zeroRated")]
+        public Input<bool>? ZeroRated { get; set; }
+
         public DiscoveryDefaultRulesRuleGetArgs()
         {
         }

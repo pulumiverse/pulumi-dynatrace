@@ -63,7 +63,7 @@ export class LogTimestamp extends pulumi.CustomResource {
      */
     public readonly matchers!: pulumi.Output<outputs.LogTimestampMatchers | undefined>;
     /**
-     * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     public readonly scope!: pulumi.Output<string | undefined>;
     /**
@@ -155,7 +155,7 @@ export interface LogTimestampState {
      */
     matchers?: pulumi.Input<inputs.LogTimestampMatchers>;
     /**
-     * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string>;
     /**
@@ -197,7 +197,7 @@ export interface LogTimestampArgs {
      */
     matchers?: pulumi.Input<inputs.LogTimestampMatchers>;
     /**
-     * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string>;
     /**

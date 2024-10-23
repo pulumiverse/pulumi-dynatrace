@@ -25,6 +25,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
+        /// <summary>
+        /// Please be aware that only mobile agents with version **8.303 or higher** can ingest Grail events
+        /// </summary>
+        [Input("enabledOnGrail")]
+        public Input<bool>? EnabledOnGrail { get; set; }
+
         public MobileAppEnablementRumArgs()
         {
         }

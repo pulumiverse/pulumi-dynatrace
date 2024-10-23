@@ -17,7 +17,7 @@ type SessionReplayResourceCapture struct {
 
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrOutput `pulumi:"applicationId"`
-	// (Field has overlap with `WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+	// (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
 	EnableResourceCapturing pulumi.BoolOutput `pulumi:"enableResourceCapturing"`
 	// (Field has overlap with `WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
 	ResourceCaptureUrlExclusionPatternLists pulumi.StringArrayOutput `pulumi:"resourceCaptureUrlExclusionPatternLists"`
@@ -58,7 +58,7 @@ func GetSessionReplayResourceCapture(ctx *pulumi.Context,
 type sessionReplayResourceCaptureState struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
-	// (Field has overlap with `WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+	// (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
 	EnableResourceCapturing *bool `pulumi:"enableResourceCapturing"`
 	// (Field has overlap with `WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
 	ResourceCaptureUrlExclusionPatternLists []string `pulumi:"resourceCaptureUrlExclusionPatternLists"`
@@ -67,7 +67,7 @@ type sessionReplayResourceCaptureState struct {
 type SessionReplayResourceCaptureState struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
-	// (Field has overlap with `WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+	// (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
 	EnableResourceCapturing pulumi.BoolPtrInput
 	// (Field has overlap with `WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
 	ResourceCaptureUrlExclusionPatternLists pulumi.StringArrayInput
@@ -80,7 +80,7 @@ func (SessionReplayResourceCaptureState) ElementType() reflect.Type {
 type sessionReplayResourceCaptureArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
-	// (Field has overlap with `WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+	// (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
 	EnableResourceCapturing bool `pulumi:"enableResourceCapturing"`
 	// (Field has overlap with `WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
 	ResourceCaptureUrlExclusionPatternLists []string `pulumi:"resourceCaptureUrlExclusionPatternLists"`
@@ -90,7 +90,7 @@ type sessionReplayResourceCaptureArgs struct {
 type SessionReplayResourceCaptureArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
-	// (Field has overlap with `WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+	// (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
 	EnableResourceCapturing pulumi.BoolInput
 	// (Field has overlap with `WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
 	ResourceCaptureUrlExclusionPatternLists pulumi.StringArrayInput
@@ -188,7 +188,7 @@ func (o SessionReplayResourceCaptureOutput) ApplicationId() pulumi.StringPtrOutp
 	return o.ApplyT(func(v *SessionReplayResourceCapture) pulumi.StringPtrOutput { return v.ApplicationId }).(pulumi.StringPtrOutput)
 }
 
-// (Field has overlap with `WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+// (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
 func (o SessionReplayResourceCaptureOutput) EnableResourceCapturing() pulumi.BoolOutput {
 	return o.ApplyT(func(v *SessionReplayResourceCapture) pulumi.BoolOutput { return v.EnableResourceCapturing }).(pulumi.BoolOutput)
 }

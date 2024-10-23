@@ -17,7 +17,7 @@ type DeclarativeGrouping struct {
 
 	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
 	// group.
-	Detection DeclarativeGroupingDetectionPtrOutput `pulumi:"detection"`
+	Detection DeclarativeGroupingDetectionOutput `pulumi:"detection"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
@@ -37,6 +37,9 @@ func NewDeclarativeGrouping(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
+	if args.Detection == nil {
+		return nil, errors.New("invalid value for required argument 'Detection'")
+	}
 	if args.Enabled == nil {
 		return nil, errors.New("invalid value for required argument 'Enabled'")
 	}
@@ -101,7 +104,7 @@ func (DeclarativeGroupingState) ElementType() reflect.Type {
 type declarativeGroupingArgs struct {
 	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
 	// group.
-	Detection *DeclarativeGroupingDetection `pulumi:"detection"`
+	Detection DeclarativeGroupingDetection `pulumi:"detection"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
@@ -118,7 +121,7 @@ type declarativeGroupingArgs struct {
 type DeclarativeGroupingArgs struct {
 	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
 	// group.
-	Detection DeclarativeGroupingDetectionPtrInput
+	Detection DeclarativeGroupingDetectionInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
@@ -220,8 +223,8 @@ func (o DeclarativeGroupingOutput) ToDeclarativeGroupingOutputWithContext(ctx co
 
 // Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
 // group.
-func (o DeclarativeGroupingOutput) Detection() DeclarativeGroupingDetectionPtrOutput {
-	return o.ApplyT(func(v *DeclarativeGrouping) DeclarativeGroupingDetectionPtrOutput { return v.Detection }).(DeclarativeGroupingDetectionPtrOutput)
+func (o DeclarativeGroupingOutput) Detection() DeclarativeGroupingDetectionOutput {
+	return o.ApplyT(func(v *DeclarativeGrouping) DeclarativeGroupingDetectionOutput { return v.Detection }).(DeclarativeGroupingDetectionOutput)
 }
 
 // This setting is enabled (`true`) or disabled (`false`)

@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Define process detection rules by selecting a process property and a condition. Each process group can have multiple detection rules associated with it.
         /// </summary>
-        public readonly Outputs.DeclarativeGroupingDetectionProcessDefinitionRules? Rules;
+        public readonly Outputs.DeclarativeGroupingDetectionProcessDefinitionRules Rules;
 
         [OutputConstructor]
         private DeclarativeGroupingDetectionProcessDefinition(
@@ -39,7 +39,7 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string report,
 
-            Outputs.DeclarativeGroupingDetectionProcessDefinitionRules? rules)
+            Outputs.DeclarativeGroupingDetectionProcessDefinitionRules rules)
         {
             Id = id;
             ProcessGroupName = processGroupName;

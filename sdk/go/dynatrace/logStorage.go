@@ -23,7 +23,7 @@ type LogStorage struct {
 	Matchers LogStorageMatchersPtrOutput `pulumi:"matchers"`
 	// Name
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
 	SendToStorage pulumi.BoolOutput `pulumi:"sendToStorage"`
@@ -73,7 +73,7 @@ type logStorageState struct {
 	Matchers *LogStorageMatchers `pulumi:"matchers"`
 	// Name
 	Name *string `pulumi:"name"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 	// If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
 	SendToStorage *bool `pulumi:"sendToStorage"`
@@ -88,7 +88,7 @@ type LogStorageState struct {
 	Matchers LogStorageMatchersPtrInput
 	// Name
 	Name pulumi.StringPtrInput
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 	// If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
 	SendToStorage pulumi.BoolPtrInput
@@ -107,7 +107,7 @@ type logStorageArgs struct {
 	Matchers *LogStorageMatchers `pulumi:"matchers"`
 	// Name
 	Name *string `pulumi:"name"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 	// If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
 	SendToStorage bool `pulumi:"sendToStorage"`
@@ -123,7 +123,7 @@ type LogStorageArgs struct {
 	Matchers LogStorageMatchersPtrInput
 	// Name
 	Name pulumi.StringPtrInput
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 	// If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
 	SendToStorage pulumi.BoolInput
@@ -236,7 +236,7 @@ func (o LogStorageOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogStorage) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 func (o LogStorageOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LogStorage) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }

@@ -22,15 +22,22 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// (Field has overlap with `dynatrace.WebApplication`) This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// Enable Real User Monitoring powered by Grail
+        /// </summary>
+        public readonly bool? EnabledOnGrail;
 
         [OutputConstructor]
         private WebAppEnablementRum(
             int costAndTrafficControl,
 
-            bool enabled)
+            bool enabled,
+
+            bool? enabledOnGrail)
         {
             CostAndTrafficControl = costAndTrafficControl;
             Enabled = enabled;
+            EnabledOnGrail = enabledOnGrail;
         }
     }
 }

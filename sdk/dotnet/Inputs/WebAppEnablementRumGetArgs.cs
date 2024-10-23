@@ -25,6 +25,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
+        /// <summary>
+        /// Enable Real User Monitoring powered by Grail
+        /// </summary>
+        [Input("enabledOnGrail")]
+        public Input<bool>? EnabledOnGrail { get; set; }
+
         public WebAppEnablementRumGetArgs()
         {
         }

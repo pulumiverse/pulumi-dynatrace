@@ -55,7 +55,7 @@ export class LogSensitiveDataMasking extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     public readonly scope!: pulumi.Output<string | undefined>;
 
@@ -123,7 +123,7 @@ export interface LogSensitiveDataMaskingState {
      */
     name?: pulumi.Input<string>;
     /**
-     * The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string>;
 }
@@ -153,7 +153,7 @@ export interface LogSensitiveDataMaskingArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string>;
 }

@@ -22,15 +22,22 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// Please be aware that only mobile agents with version **8.303 or higher** can ingest Grail events
+        /// </summary>
+        public readonly bool? EnabledOnGrail;
 
         [OutputConstructor]
         private MobileAppEnablementRum(
             int costAndTrafficControl,
 
-            bool enabled)
+            bool enabled,
+
+            bool? enabledOnGrail)
         {
             CostAndTrafficControl = costAndTrafficControl;
             Enabled = enabled;
+            EnabledOnGrail = enabledOnGrail;
         }
     }
 }

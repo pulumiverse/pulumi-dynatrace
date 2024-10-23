@@ -57,7 +57,7 @@ export class LogOneagent extends pulumi.CustomResource {
      */
     public readonly iisdetectionEnabled!: pulumi.Output<boolean>;
     /**
-     * Allows detection of logs written to mounted network storage drives.
+     * Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
      */
     public readonly logScannerLinuxNfsEnabled!: pulumi.Output<boolean>;
     /**
@@ -77,7 +77,7 @@ export class LogOneagent extends pulumi.CustomResource {
      */
     public readonly openLogFilesDetectionEnabled!: pulumi.Output<boolean>;
     /**
-     * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     public readonly scope!: pulumi.Output<string | undefined>;
     /**
@@ -215,7 +215,7 @@ export interface LogOneagentState {
      */
     iisdetectionEnabled?: pulumi.Input<boolean>;
     /**
-     * Allows detection of logs written to mounted network storage drives.
+     * Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
      */
     logScannerLinuxNfsEnabled?: pulumi.Input<boolean>;
     /**
@@ -235,7 +235,7 @@ export interface LogOneagentState {
      */
     openLogFilesDetectionEnabled?: pulumi.Input<boolean>;
     /**
-     * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string>;
     /**
@@ -281,7 +281,7 @@ export interface LogOneagentArgs {
      */
     iisdetectionEnabled: pulumi.Input<boolean>;
     /**
-     * Allows detection of logs written to mounted network storage drives.
+     * Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
      */
     logScannerLinuxNfsEnabled: pulumi.Input<boolean>;
     /**
@@ -301,7 +301,7 @@ export interface LogOneagentArgs {
      */
     openLogFilesDetectionEnabled: pulumi.Input<boolean>;
     /**
-     * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string>;
     /**

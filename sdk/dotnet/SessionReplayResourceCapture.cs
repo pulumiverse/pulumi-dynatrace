@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> ApplicationId { get; private set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+        /// (Field has overlap with `dynatrace.WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
         /// </summary>
         [Output("enableResourceCapturing")]
         public Output<bool> EnableResourceCapturing { get; private set; } = null!;
@@ -85,7 +85,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+        /// (Field has overlap with `dynatrace.WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
         /// </summary>
         [Input("enableResourceCapturing", required: true)]
         public Input<bool> EnableResourceCapturing { get; set; } = null!;
@@ -117,7 +117,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.WebApplication`) When turned on, all CSS resources from all sessions are captured. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
+        /// (Field has overlap with `dynatrace.WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
         /// </summary>
         [Input("enableResourceCapturing")]
         public Input<bool>? EnableResourceCapturing { get; set; }

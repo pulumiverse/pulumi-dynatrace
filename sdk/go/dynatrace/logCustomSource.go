@@ -23,7 +23,7 @@ type LogCustomSource struct {
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Name
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 }
 
@@ -71,7 +71,7 @@ type logCustomSourceState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// Name
 	Name *string `pulumi:"name"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 }
 
@@ -84,7 +84,7 @@ type LogCustomSourceState struct {
 	Enabled pulumi.BoolPtrInput
 	// Name
 	Name pulumi.StringPtrInput
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 }
 
@@ -101,7 +101,7 @@ type logCustomSourceArgs struct {
 	Enabled bool `pulumi:"enabled"`
 	// Name
 	Name *string `pulumi:"name"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 }
 
@@ -115,7 +115,7 @@ type LogCustomSourceArgs struct {
 	Enabled pulumi.BoolInput
 	// Name
 	Name pulumi.StringPtrInput
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 }
 
@@ -226,7 +226,7 @@ func (o LogCustomSourceOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogCustomSource) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 func (o LogCustomSourceOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LogCustomSource) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }

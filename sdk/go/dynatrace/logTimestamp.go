@@ -29,7 +29,7 @@ type LogTimestamp struct {
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// no documentation available
 	Matchers LogTimestampMatchersPtrOutput `pulumi:"matchers"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// Timezone
 	Timezone pulumi.StringOutput `pulumi:"timezone"`
@@ -91,7 +91,7 @@ type logTimestampState struct {
 	InsertAfter *string `pulumi:"insertAfter"`
 	// no documentation available
 	Matchers *LogTimestampMatchers `pulumi:"matchers"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 	// Timezone
 	Timezone *string `pulumi:"timezone"`
@@ -112,7 +112,7 @@ type LogTimestampState struct {
 	InsertAfter pulumi.StringPtrInput
 	// no documentation available
 	Matchers LogTimestampMatchersPtrInput
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 	// Timezone
 	Timezone pulumi.StringPtrInput
@@ -137,7 +137,7 @@ type logTimestampArgs struct {
 	InsertAfter *string `pulumi:"insertAfter"`
 	// no documentation available
 	Matchers *LogTimestampMatchers `pulumi:"matchers"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 	// Timezone
 	Timezone string `pulumi:"timezone"`
@@ -159,7 +159,7 @@ type LogTimestampArgs struct {
 	InsertAfter pulumi.StringPtrInput
 	// no documentation available
 	Matchers LogTimestampMatchersPtrInput
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 	// Timezone
 	Timezone pulumi.StringInput
@@ -287,7 +287,7 @@ func (o LogTimestampOutput) Matchers() LogTimestampMatchersPtrOutput {
 	return o.ApplyT(func(v *LogTimestamp) LogTimestampMatchersPtrOutput { return v.Matchers }).(LogTimestampMatchersPtrOutput)
 }
 
-// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 func (o LogTimestampOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LogTimestamp) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
