@@ -40,7 +40,7 @@ jobs:
       with:
         go-version: ${{matrix.goversion}}
     - name: Install pulumictl
-      uses: jaxxstorm/action-install-gh-release@v1.12.0
+      uses: jaxxstorm/action-install-gh-release@v1.13.0
       with:
         repo: pulumi/pulumictl
     - name: Install Pulumi CLI
@@ -118,14 +118,14 @@ jobs:
       with:
         go-version: ${{matrix.goversion}}
     - name: Install pulumictl
-      uses: jaxxstorm/action-install-gh-release@v1.12.0
+      uses: jaxxstorm/action-install-gh-release@v1.13.0
       with:
         repo: pulumi/pulumictl
     - name: Install Pulumi CLI
       uses: pulumi/actions@v6
     - if: github.event_name == 'pull_request'
       name: Install Schema Tools
-      uses: jaxxstorm/action-install-gh-release@v1.12.0
+      uses: jaxxstorm/action-install-gh-release@v1.13.0
       with:
         repo: mikhailshilkov/schema-tools
     - name: Build tfgen & provider binaries
@@ -179,7 +179,7 @@ jobs:
       with:
         go-version: 1.22.x
     - name: Install pulumictl
-      uses: jaxxstorm/action-install-gh-release@v1.12.0
+      uses: jaxxstorm/action-install-gh-release@v1.13.0
       with:
         repo: pulumi/pulumictl
     - name: Install Pulumi CLI
@@ -211,7 +211,7 @@ jobs:
       with:
         go-version: ${{matrix.goversion}}
     - name: Install pulumictl
-      uses: jaxxstorm/action-install-gh-release@v1.12.0
+      uses: jaxxstorm/action-install-gh-release@v1.13.0
       with:
         repo: pulumi/pulumictl
     - name: Install Pulumi CLI
@@ -257,7 +257,7 @@ jobs:
     #   run: ./ci-scripts/ci/publish-tfgen-package ${{ github.workspace }}
     - if: ${{ matrix.language == 'python' && env.PUBLISH_PYPI == 'true' }}
       name: Publish package to PyPI
-      uses: pypa/gh-action-pypi-publish@v1.12.0
+      uses: pypa/gh-action-pypi-publish@v1.12.2
       with:
         user: ${{ env.PYPI_USERNAME }}
         password: ${{ env.PYPI_PASSWORD }}
@@ -310,7 +310,7 @@ jobs:
       with:
         go-version: ${{matrix.goversion}}
     - name: Install pulumictl
-      uses: jaxxstorm/action-install-gh-release@v1.12.0
+      uses: jaxxstorm/action-install-gh-release@v1.13.0
       with:
         repo: pulumi/pulumictl
     - name: Install Pulumi CLI
