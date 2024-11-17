@@ -296,6 +296,18 @@ namespace Pulumiverse.Dynatrace
         [Input("global")]
         public bool? Global { get; set; }
 
+        [Input("groups")]
+        private List<string>? _groups;
+
+        /// <summary>
+        /// The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
+        /// </summary>
+        public List<string> Groups
+        {
+            get => _groups ?? (_groups = new List<string>());
+            set => _groups = value;
+        }
+
         public GetIamPoliciesArgs()
         {
         }
@@ -334,6 +346,18 @@ namespace Pulumiverse.Dynatrace
         [Input("global")]
         public Input<bool>? Global { get; set; }
 
+        [Input("groups")]
+        private InputList<string>? _groups;
+
+        /// <summary>
+        /// The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
+        /// </summary>
+        public InputList<string> Groups
+        {
+            get => _groups ?? (_groups = new InputList<string>());
+            set => _groups = value;
+        }
+
         public GetIamPoliciesInvokeArgs()
         {
         }
@@ -357,6 +381,10 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public readonly bool? Global;
         /// <summary>
+        /// The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
+        /// </summary>
+        public readonly ImmutableArray<string> Groups;
+        /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
@@ -370,6 +398,8 @@ namespace Pulumiverse.Dynatrace
 
             bool? global,
 
+            ImmutableArray<string> groups,
+
             string id,
 
             ImmutableArray<Outputs.GetIamPoliciesPolicyResult> policies)
@@ -377,6 +407,7 @@ namespace Pulumiverse.Dynatrace
             Accounts = accounts;
             Environments = environments;
             Global = global;
+            Groups = groups;
             Id = id;
             Policies = policies;
         }

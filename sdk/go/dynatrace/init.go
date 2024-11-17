@@ -129,6 +129,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CalculatedSyntheticMetric{}
 	case "dynatrace:index/calculatedWebMetric:CalculatedWebMetric":
 		r = &CalculatedWebMetric{}
+	case "dynatrace:index/cloudDevelopmentEnvironments:CloudDevelopmentEnvironments":
+		r = &CloudDevelopmentEnvironments{}
 	case "dynatrace:index/cloudFoundry:CloudFoundry":
 		r = &CloudFoundry{}
 	case "dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection":
@@ -341,8 +343,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &KubernetesApp{}
 	case "dynatrace:index/kubernetesEnrichment:KubernetesEnrichment":
 		r = &KubernetesEnrichment{}
+	case "dynatrace:index/kubernetesSpm:KubernetesSpm":
+		r = &KubernetesSpm{}
 	case "dynatrace:index/limitOutboundConnections:LimitOutboundConnections":
 		r = &LimitOutboundConnections{}
+	case "dynatrace:index/logAgentFeatureFlags:LogAgentFeatureFlags":
+		r = &LogAgentFeatureFlags{}
 	case "dynatrace:index/logBuckets:LogBuckets":
 		r = &LogBuckets{}
 	case "dynatrace:index/logCustomAttribute:LogCustomAttribute":
@@ -495,6 +501,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Policy{}
 	case "dynatrace:index/policyBindings:PolicyBindings":
 		r = &PolicyBindings{}
+	case "dynatrace:index/problemRecordPropagationRules:ProblemRecordPropagationRules":
+		r = &ProblemRecordPropagationRules{}
 	case "dynatrace:index/processAvailability:ProcessAvailability":
 		r = &ProcessAvailability{}
 	case "dynatrace:index/processGroupDetection:ProcessGroupDetection":
@@ -970,6 +978,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/calculatedWebMetric",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/cloudDevelopmentEnvironments",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1504,7 +1517,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/kubernetesSpm",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/limitOutboundConnections",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/logAgentFeatureFlags",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1885,6 +1908,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/policyBindings",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/problemRecordPropagationRules",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

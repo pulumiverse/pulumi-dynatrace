@@ -28,7 +28,7 @@ class DocumentArgs:
         """
         The set of arguments for constructing a Document resource.
         :param pulumi.Input[str] content: Document content as JSON
-        :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard` and `notebook`
+        :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
         :param pulumi.Input[str] actor: The user context the executions of the document will happen with
         :param pulumi.Input[str] name: The name/name of the document
         :param pulumi.Input[str] owner: The ID of the owner of this document
@@ -61,7 +61,7 @@ class DocumentArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        Type of the document. Possible Values are `dashboard` and `notebook`
+        Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
         """
         return pulumi.get(self, "type")
 
@@ -135,7 +135,7 @@ class _DocumentState:
         :param pulumi.Input[str] name: The name/name of the document
         :param pulumi.Input[str] owner: The ID of the owner of this document
         :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody
-        :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard` and `notebook`
+        :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
         :param pulumi.Input[int] version: The version of the document
         """
         if actor is not None:
@@ -217,7 +217,7 @@ class _DocumentState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        Type of the document. Possible Values are `dashboard` and `notebook`
+        Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
         """
         return pulumi.get(self, "type")
 
@@ -261,6 +261,147 @@ class Document(pulumi.CustomResource):
 
         - Dynatrace Documents - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Document%20Service
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import json
+        import pulumiverse_dynatrace as dynatrace
+
+        this = dynatrace.Document("this",
+            type="dashboard",
+            content=json.dumps({
+                "version": 13,
+                "variables": [],
+                "tiles": {
+                    "0": {
+                        "type": "markdown",
+                        "title": "",
+                        "content": "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
+                    },
+                    "1": {
+                        "type": "data",
+                        "title": "",
+                        "query": "timeseries avg(dt.host.cpu.user)",
+                        "queryConfig": {
+                            "additionalFilters": {},
+                            "version": "4.3.1",
+                            "datatype": "metrics",
+                            "metricKey": "dt.host.cpu.user",
+                            "aggregation": "avg",
+                            "by": [],
+                        },
+                        "subType": "dql-builder-metrics",
+                        "visualization": "lineChart",
+                        "visualizationSettings": {
+                            "thresholds": [],
+                            "chartSettings": {
+                                "gapPolicy": "connect",
+                                "circleChartSettings": {
+                                    "groupingThresholdType": "relative",
+                                    "groupingThresholdValue": 0,
+                                    "valueType": "relative",
+                                },
+                                "categoryOverrides": {},
+                                "fieldMapping": {
+                                    "timestamp": "timeframe",
+                                    "leftAxisValues": ["avg(dt.host.cpu.user)"],
+                                    "leftAxisDimensions": [],
+                                    "fields": [],
+                                    "values": [],
+                                },
+                            },
+                            "singleValue": {
+                                "showLabel": True,
+                                "label": "",
+                                "prefixIcon": "",
+                                "autoscale": True,
+                                "alignment": "center",
+                                "colorThresholdTarget": "value",
+                            },
+                            "table": {
+                                "rowDensity": "condensed",
+                                "enableSparklines": False,
+                                "hiddenColumns": [],
+                                "lineWrapIds": [],
+                                "columnWidths": {},
+                            },
+                        },
+                    },
+                    "2": {
+                        "type": "data",
+                        "title": "",
+                        "query": "timeseries avg(dt.host.memory.used)",
+                        "queryConfig": {
+                            "additionalFilters": {},
+                            "version": "4.3.1",
+                            "datatype": "metrics",
+                            "metricKey": "dt.host.memory.used",
+                            "aggregation": "avg",
+                            "by": [],
+                        },
+                        "subType": "dql-builder-metrics",
+                        "visualization": "lineChart",
+                        "visualizationSettings": {
+                            "thresholds": [],
+                            "chartSettings": {
+                                "gapPolicy": "connect",
+                                "circleChartSettings": {
+                                    "groupingThresholdType": "relative",
+                                    "groupingThresholdValue": 0,
+                                    "valueType": "relative",
+                                },
+                                "categoryOverrides": {},
+                                "fieldMapping": {
+                                    "timestamp": "timeframe",
+                                    "leftAxisValues": ["avg(dt.host.memory.used)"],
+                                    "leftAxisDimensions": [],
+                                    "fields": [],
+                                    "values": [],
+                                },
+                                "categoricalBarChartSettings": {},
+                            },
+                            "singleValue": {
+                                "showLabel": True,
+                                "label": "",
+                                "prefixIcon": "",
+                                "autoscale": True,
+                                "alignment": "center",
+                                "colorThresholdTarget": "value",
+                            },
+                            "table": {
+                                "rowDensity": "condensed",
+                                "enableSparklines": False,
+                                "hiddenColumns": [],
+                                "lineWrapIds": [],
+                                "columnWidths": {},
+                            },
+                        },
+                    },
+                },
+                "layouts": {
+                    "0": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 24,
+                        "h": 14,
+                    },
+                    "1": {
+                        "x": 0,
+                        "y": 14,
+                        "w": 9,
+                        "h": 6,
+                    },
+                    "2": {
+                        "x": 15,
+                        "y": 14,
+                        "w": 9,
+                        "h": 6,
+                    },
+                },
+            }))
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] actor: The user context the executions of the document will happen with
@@ -268,7 +409,7 @@ class Document(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name/name of the document
         :param pulumi.Input[str] owner: The ID of the owner of this document
         :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody
-        :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard` and `notebook`
+        :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
         """
         ...
     @overload
@@ -286,6 +427,147 @@ class Document(pulumi.CustomResource):
         ## Dynatrace Documentation
 
         - Dynatrace Documents - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Document%20Service
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import json
+        import pulumiverse_dynatrace as dynatrace
+
+        this = dynatrace.Document("this",
+            type="dashboard",
+            content=json.dumps({
+                "version": 13,
+                "variables": [],
+                "tiles": {
+                    "0": {
+                        "type": "markdown",
+                        "title": "",
+                        "content": "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
+                    },
+                    "1": {
+                        "type": "data",
+                        "title": "",
+                        "query": "timeseries avg(dt.host.cpu.user)",
+                        "queryConfig": {
+                            "additionalFilters": {},
+                            "version": "4.3.1",
+                            "datatype": "metrics",
+                            "metricKey": "dt.host.cpu.user",
+                            "aggregation": "avg",
+                            "by": [],
+                        },
+                        "subType": "dql-builder-metrics",
+                        "visualization": "lineChart",
+                        "visualizationSettings": {
+                            "thresholds": [],
+                            "chartSettings": {
+                                "gapPolicy": "connect",
+                                "circleChartSettings": {
+                                    "groupingThresholdType": "relative",
+                                    "groupingThresholdValue": 0,
+                                    "valueType": "relative",
+                                },
+                                "categoryOverrides": {},
+                                "fieldMapping": {
+                                    "timestamp": "timeframe",
+                                    "leftAxisValues": ["avg(dt.host.cpu.user)"],
+                                    "leftAxisDimensions": [],
+                                    "fields": [],
+                                    "values": [],
+                                },
+                            },
+                            "singleValue": {
+                                "showLabel": True,
+                                "label": "",
+                                "prefixIcon": "",
+                                "autoscale": True,
+                                "alignment": "center",
+                                "colorThresholdTarget": "value",
+                            },
+                            "table": {
+                                "rowDensity": "condensed",
+                                "enableSparklines": False,
+                                "hiddenColumns": [],
+                                "lineWrapIds": [],
+                                "columnWidths": {},
+                            },
+                        },
+                    },
+                    "2": {
+                        "type": "data",
+                        "title": "",
+                        "query": "timeseries avg(dt.host.memory.used)",
+                        "queryConfig": {
+                            "additionalFilters": {},
+                            "version": "4.3.1",
+                            "datatype": "metrics",
+                            "metricKey": "dt.host.memory.used",
+                            "aggregation": "avg",
+                            "by": [],
+                        },
+                        "subType": "dql-builder-metrics",
+                        "visualization": "lineChart",
+                        "visualizationSettings": {
+                            "thresholds": [],
+                            "chartSettings": {
+                                "gapPolicy": "connect",
+                                "circleChartSettings": {
+                                    "groupingThresholdType": "relative",
+                                    "groupingThresholdValue": 0,
+                                    "valueType": "relative",
+                                },
+                                "categoryOverrides": {},
+                                "fieldMapping": {
+                                    "timestamp": "timeframe",
+                                    "leftAxisValues": ["avg(dt.host.memory.used)"],
+                                    "leftAxisDimensions": [],
+                                    "fields": [],
+                                    "values": [],
+                                },
+                                "categoricalBarChartSettings": {},
+                            },
+                            "singleValue": {
+                                "showLabel": True,
+                                "label": "",
+                                "prefixIcon": "",
+                                "autoscale": True,
+                                "alignment": "center",
+                                "colorThresholdTarget": "value",
+                            },
+                            "table": {
+                                "rowDensity": "condensed",
+                                "enableSparklines": False,
+                                "hiddenColumns": [],
+                                "lineWrapIds": [],
+                                "columnWidths": {},
+                            },
+                        },
+                    },
+                },
+                "layouts": {
+                    "0": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 24,
+                        "h": 14,
+                    },
+                    "1": {
+                        "x": 0,
+                        "y": 14,
+                        "w": 9,
+                        "h": 6,
+                    },
+                    "2": {
+                        "x": 15,
+                        "y": 14,
+                        "w": 9,
+                        "h": 6,
+                    },
+                },
+            }))
+        ```
 
         :param str resource_name: The name of the resource.
         :param DocumentArgs args: The arguments to use to populate this resource's properties.
@@ -357,7 +639,7 @@ class Document(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name/name of the document
         :param pulumi.Input[str] owner: The ID of the owner of this document
         :param pulumi.Input[bool] private: Specifies whether the document is private or readable by everybody
-        :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard` and `notebook`
+        :param pulumi.Input[str] type: Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
         :param pulumi.Input[int] version: The version of the document
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -417,7 +699,7 @@ class Document(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
         """
-        Type of the document. Possible Values are `dashboard` and `notebook`
+        Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
         """
         return pulumi.get(self, "type")
 

@@ -275,6 +275,11 @@ export type CalculatedWebMetric = import("./calculatedWebMetric").CalculatedWebM
 export const CalculatedWebMetric: typeof import("./calculatedWebMetric").CalculatedWebMetric = null as any;
 utilities.lazyLoad(exports, ["CalculatedWebMetric"], () => require("./calculatedWebMetric"));
 
+export { CloudDevelopmentEnvironmentsArgs, CloudDevelopmentEnvironmentsState } from "./cloudDevelopmentEnvironments";
+export type CloudDevelopmentEnvironments = import("./cloudDevelopmentEnvironments").CloudDevelopmentEnvironments;
+export const CloudDevelopmentEnvironments: typeof import("./cloudDevelopmentEnvironments").CloudDevelopmentEnvironments = null as any;
+utilities.lazyLoad(exports, ["CloudDevelopmentEnvironments"], () => require("./cloudDevelopmentEnvironments"));
+
 export { CloudFoundryArgs, CloudFoundryState } from "./cloudFoundry";
 export type CloudFoundry = import("./cloudFoundry").CloudFoundry;
 export const CloudFoundry: typeof import("./cloudFoundry").CloudFoundry = null as any;
@@ -1035,10 +1040,20 @@ export type KubernetesEnrichment = import("./kubernetesEnrichment").KubernetesEn
 export const KubernetesEnrichment: typeof import("./kubernetesEnrichment").KubernetesEnrichment = null as any;
 utilities.lazyLoad(exports, ["KubernetesEnrichment"], () => require("./kubernetesEnrichment"));
 
+export { KubernetesSpmArgs, KubernetesSpmState } from "./kubernetesSpm";
+export type KubernetesSpm = import("./kubernetesSpm").KubernetesSpm;
+export const KubernetesSpm: typeof import("./kubernetesSpm").KubernetesSpm = null as any;
+utilities.lazyLoad(exports, ["KubernetesSpm"], () => require("./kubernetesSpm"));
+
 export { LimitOutboundConnectionsArgs, LimitOutboundConnectionsState } from "./limitOutboundConnections";
 export type LimitOutboundConnections = import("./limitOutboundConnections").LimitOutboundConnections;
 export const LimitOutboundConnections: typeof import("./limitOutboundConnections").LimitOutboundConnections = null as any;
 utilities.lazyLoad(exports, ["LimitOutboundConnections"], () => require("./limitOutboundConnections"));
+
+export { LogAgentFeatureFlagsArgs, LogAgentFeatureFlagsState } from "./logAgentFeatureFlags";
+export type LogAgentFeatureFlags = import("./logAgentFeatureFlags").LogAgentFeatureFlags;
+export const LogAgentFeatureFlags: typeof import("./logAgentFeatureFlags").LogAgentFeatureFlags = null as any;
+utilities.lazyLoad(exports, ["LogAgentFeatureFlags"], () => require("./logAgentFeatureFlags"));
 
 export { LogBucketsArgs, LogBucketsState } from "./logBuckets";
 export type LogBuckets = import("./logBuckets").LogBuckets;
@@ -1419,6 +1434,11 @@ export { PolicyBindingsArgs, PolicyBindingsState } from "./policyBindings";
 export type PolicyBindings = import("./policyBindings").PolicyBindings;
 export const PolicyBindings: typeof import("./policyBindings").PolicyBindings = null as any;
 utilities.lazyLoad(exports, ["PolicyBindings"], () => require("./policyBindings"));
+
+export { ProblemRecordPropagationRulesArgs, ProblemRecordPropagationRulesState } from "./problemRecordPropagationRules";
+export type ProblemRecordPropagationRules = import("./problemRecordPropagationRules").ProblemRecordPropagationRules;
+export const ProblemRecordPropagationRules: typeof import("./problemRecordPropagationRules").ProblemRecordPropagationRules = null as any;
+utilities.lazyLoad(exports, ["ProblemRecordPropagationRules"], () => require("./problemRecordPropagationRules"));
 
 export { ProcessAvailabilityArgs, ProcessAvailabilityState } from "./processAvailability";
 export type ProcessAvailability = import("./processAvailability").ProcessAvailability;
@@ -1987,6 +2007,8 @@ const _module = {
                 return new CalculatedSyntheticMetric(name, <any>undefined, { urn })
             case "dynatrace:index/calculatedWebMetric:CalculatedWebMetric":
                 return new CalculatedWebMetric(name, <any>undefined, { urn })
+            case "dynatrace:index/cloudDevelopmentEnvironments:CloudDevelopmentEnvironments":
+                return new CloudDevelopmentEnvironments(name, <any>undefined, { urn })
             case "dynatrace:index/cloudFoundry:CloudFoundry":
                 return new CloudFoundry(name, <any>undefined, { urn })
             case "dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection":
@@ -2199,8 +2221,12 @@ const _module = {
                 return new KubernetesApp(name, <any>undefined, { urn })
             case "dynatrace:index/kubernetesEnrichment:KubernetesEnrichment":
                 return new KubernetesEnrichment(name, <any>undefined, { urn })
+            case "dynatrace:index/kubernetesSpm:KubernetesSpm":
+                return new KubernetesSpm(name, <any>undefined, { urn })
             case "dynatrace:index/limitOutboundConnections:LimitOutboundConnections":
                 return new LimitOutboundConnections(name, <any>undefined, { urn })
+            case "dynatrace:index/logAgentFeatureFlags:LogAgentFeatureFlags":
+                return new LogAgentFeatureFlags(name, <any>undefined, { urn })
             case "dynatrace:index/logBuckets:LogBuckets":
                 return new LogBuckets(name, <any>undefined, { urn })
             case "dynatrace:index/logCustomAttribute:LogCustomAttribute":
@@ -2353,6 +2379,8 @@ const _module = {
                 return new Policy(name, <any>undefined, { urn })
             case "dynatrace:index/policyBindings:PolicyBindings":
                 return new PolicyBindings(name, <any>undefined, { urn })
+            case "dynatrace:index/problemRecordPropagationRules:ProblemRecordPropagationRules":
+                return new ProblemRecordPropagationRules(name, <any>undefined, { urn })
             case "dynatrace:index/processAvailability:ProcessAvailability":
                 return new ProcessAvailability(name, <any>undefined, { urn })
             case "dynatrace:index/processGroupDetection:ProcessGroupDetection":
@@ -2588,6 +2616,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/calculatedMobileMetric
 pulumi.runtime.registerResourceModule("dynatrace", "index/calculatedServiceMetric", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/calculatedSyntheticMetric", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/calculatedWebMetric", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/cloudDevelopmentEnvironments", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/cloudFoundry", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/cloudappWorkloaddetection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/cloudfoundryCredentials", _module)
@@ -2694,7 +2723,9 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/keyUserAction", _modul
 pulumi.runtime.registerResourceModule("dynatrace", "index/kubernetes", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/kubernetesApp", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/kubernetesEnrichment", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/kubernetesSpm", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/limitOutboundConnections", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/logAgentFeatureFlags", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logBuckets", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logCustomAttribute", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logCustomSource", _module)
@@ -2771,6 +2802,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/pgAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/platformBucket", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/policy", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/policyBindings", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/problemRecordPropagationRules", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processAvailability", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processGroupDetection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processGroupDetectionFlags", _module)

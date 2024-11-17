@@ -23,9 +23,142 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const _this = new dynatrace.DirectShares("this", {
+ * const thisDocument = new dynatrace.Document("thisDocument", {
+ *     type: "dashboard",
+ *     content: JSON.stringify({
+ *         version: 13,
+ *         variables: [],
+ *         tiles: {
+ *             "0": {
+ *                 type: "markdown",
+ *                 title: "",
+ *                 content: "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
+ *             },
+ *             "1": {
+ *                 type: "data",
+ *                 title: "",
+ *                 query: "timeseries avg(dt.host.cpu.user)",
+ *                 queryConfig: {
+ *                     additionalFilters: {},
+ *                     version: "4.3.1",
+ *                     datatype: "metrics",
+ *                     metricKey: "dt.host.cpu.user",
+ *                     aggregation: "avg",
+ *                     by: [],
+ *                 },
+ *                 subType: "dql-builder-metrics",
+ *                 visualization: "lineChart",
+ *                 visualizationSettings: {
+ *                     thresholds: [],
+ *                     chartSettings: {
+ *                         gapPolicy: "connect",
+ *                         circleChartSettings: {
+ *                             groupingThresholdType: "relative",
+ *                             groupingThresholdValue: 0,
+ *                             valueType: "relative",
+ *                         },
+ *                         categoryOverrides: {},
+ *                         fieldMapping: {
+ *                             timestamp: "timeframe",
+ *                             leftAxisValues: ["avg(dt.host.cpu.user)"],
+ *                             leftAxisDimensions: [],
+ *                             fields: [],
+ *                             values: [],
+ *                         },
+ *                     },
+ *                     singleValue: {
+ *                         showLabel: true,
+ *                         label: "",
+ *                         prefixIcon: "",
+ *                         autoscale: true,
+ *                         alignment: "center",
+ *                         colorThresholdTarget: "value",
+ *                     },
+ *                     table: {
+ *                         rowDensity: "condensed",
+ *                         enableSparklines: false,
+ *                         hiddenColumns: [],
+ *                         lineWrapIds: [],
+ *                         columnWidths: {},
+ *                     },
+ *                 },
+ *             },
+ *             "2": {
+ *                 type: "data",
+ *                 title: "",
+ *                 query: "timeseries avg(dt.host.memory.used)",
+ *                 queryConfig: {
+ *                     additionalFilters: {},
+ *                     version: "4.3.1",
+ *                     datatype: "metrics",
+ *                     metricKey: "dt.host.memory.used",
+ *                     aggregation: "avg",
+ *                     by: [],
+ *                 },
+ *                 subType: "dql-builder-metrics",
+ *                 visualization: "lineChart",
+ *                 visualizationSettings: {
+ *                     thresholds: [],
+ *                     chartSettings: {
+ *                         gapPolicy: "connect",
+ *                         circleChartSettings: {
+ *                             groupingThresholdType: "relative",
+ *                             groupingThresholdValue: 0,
+ *                             valueType: "relative",
+ *                         },
+ *                         categoryOverrides: {},
+ *                         fieldMapping: {
+ *                             timestamp: "timeframe",
+ *                             leftAxisValues: ["avg(dt.host.memory.used)"],
+ *                             leftAxisDimensions: [],
+ *                             fields: [],
+ *                             values: [],
+ *                         },
+ *                         categoricalBarChartSettings: {},
+ *                     },
+ *                     singleValue: {
+ *                         showLabel: true,
+ *                         label: "",
+ *                         prefixIcon: "",
+ *                         autoscale: true,
+ *                         alignment: "center",
+ *                         colorThresholdTarget: "value",
+ *                     },
+ *                     table: {
+ *                         rowDensity: "condensed",
+ *                         enableSparklines: false,
+ *                         hiddenColumns: [],
+ *                         lineWrapIds: [],
+ *                         columnWidths: {},
+ *                     },
+ *                 },
+ *             },
+ *         },
+ *         layouts: {
+ *             "0": {
+ *                 x: 0,
+ *                 y: 0,
+ *                 w: 24,
+ *                 h: 14,
+ *             },
+ *             "1": {
+ *                 x: 0,
+ *                 y: 14,
+ *                 w: 9,
+ *                 h: 6,
+ *             },
+ *             "2": {
+ *                 x: 15,
+ *                 y: 14,
+ *                 w: 9,
+ *                 h: 6,
+ *             },
+ *         },
+ *     }),
+ * });
+ * const thisDirectShares = new dynatrace.DirectShares("thisDirectShares", {
+ *     documentId: thisDocument.id,
  *     access: "read-write",
- *     documentId: "441564f0-23c9-40ef-b344-18c02c23d712",
  *     recipients: {
  *         recipients: [
  *             {

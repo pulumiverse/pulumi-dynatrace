@@ -32,7 +32,9 @@ type K8sMonitoring struct {
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled pulumi.BoolOutput `pulumi:"openMetricsPipelineEnabled"`
 	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
-	PvcMonitoringEnabled pulumi.BoolOutput `pulumi:"pvcMonitoringEnabled"`
+	//
+	// Deprecated: This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.
+	PvcMonitoringEnabled pulumi.BoolPtrOutput `pulumi:"pvcMonitoringEnabled"`
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 }
@@ -55,9 +57,6 @@ func NewK8sMonitoring(ctx *pulumi.Context,
 	}
 	if args.OpenMetricsPipelineEnabled == nil {
 		return nil, errors.New("invalid value for required argument 'OpenMetricsPipelineEnabled'")
-	}
-	if args.PvcMonitoringEnabled == nil {
-		return nil, errors.New("invalid value for required argument 'PvcMonitoringEnabled'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource K8sMonitoring
@@ -99,6 +98,8 @@ type k8sMonitoringState struct {
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled *bool `pulumi:"openMetricsPipelineEnabled"`
 	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
+	//
+	// Deprecated: This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.
 	PvcMonitoringEnabled *bool `pulumi:"pvcMonitoringEnabled"`
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
@@ -122,6 +123,8 @@ type K8sMonitoringState struct {
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled pulumi.BoolPtrInput
 	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
+	//
+	// Deprecated: This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.
 	PvcMonitoringEnabled pulumi.BoolPtrInput
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
@@ -149,7 +152,9 @@ type k8sMonitoringArgs struct {
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled bool `pulumi:"openMetricsPipelineEnabled"`
 	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
-	PvcMonitoringEnabled bool `pulumi:"pvcMonitoringEnabled"`
+	//
+	// Deprecated: This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.
+	PvcMonitoringEnabled *bool `pulumi:"pvcMonitoringEnabled"`
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 }
@@ -173,7 +178,9 @@ type K8sMonitoringArgs struct {
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled pulumi.BoolInput
 	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
-	PvcMonitoringEnabled pulumi.BoolInput
+	//
+	// Deprecated: This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.
+	PvcMonitoringEnabled pulumi.BoolPtrInput
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 }
@@ -303,8 +310,10 @@ func (o K8sMonitoringOutput) OpenMetricsPipelineEnabled() pulumi.BoolOutput {
 }
 
 // To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
-func (o K8sMonitoringOutput) PvcMonitoringEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *K8sMonitoring) pulumi.BoolOutput { return v.PvcMonitoringEnabled }).(pulumi.BoolOutput)
+//
+// Deprecated: This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.
+func (o K8sMonitoringOutput) PvcMonitoringEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *K8sMonitoring) pulumi.BoolPtrOutput { return v.PvcMonitoringEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.

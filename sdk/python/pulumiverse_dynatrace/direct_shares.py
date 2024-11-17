@@ -152,11 +152,144 @@ class DirectShares(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import json
         import pulumiverse_dynatrace as dynatrace
 
-        this = dynatrace.DirectShares("this",
+        this_document = dynatrace.Document("thisDocument",
+            type="dashboard",
+            content=json.dumps({
+                "version": 13,
+                "variables": [],
+                "tiles": {
+                    "0": {
+                        "type": "markdown",
+                        "title": "",
+                        "content": "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
+                    },
+                    "1": {
+                        "type": "data",
+                        "title": "",
+                        "query": "timeseries avg(dt.host.cpu.user)",
+                        "queryConfig": {
+                            "additionalFilters": {},
+                            "version": "4.3.1",
+                            "datatype": "metrics",
+                            "metricKey": "dt.host.cpu.user",
+                            "aggregation": "avg",
+                            "by": [],
+                        },
+                        "subType": "dql-builder-metrics",
+                        "visualization": "lineChart",
+                        "visualizationSettings": {
+                            "thresholds": [],
+                            "chartSettings": {
+                                "gapPolicy": "connect",
+                                "circleChartSettings": {
+                                    "groupingThresholdType": "relative",
+                                    "groupingThresholdValue": 0,
+                                    "valueType": "relative",
+                                },
+                                "categoryOverrides": {},
+                                "fieldMapping": {
+                                    "timestamp": "timeframe",
+                                    "leftAxisValues": ["avg(dt.host.cpu.user)"],
+                                    "leftAxisDimensions": [],
+                                    "fields": [],
+                                    "values": [],
+                                },
+                            },
+                            "singleValue": {
+                                "showLabel": True,
+                                "label": "",
+                                "prefixIcon": "",
+                                "autoscale": True,
+                                "alignment": "center",
+                                "colorThresholdTarget": "value",
+                            },
+                            "table": {
+                                "rowDensity": "condensed",
+                                "enableSparklines": False,
+                                "hiddenColumns": [],
+                                "lineWrapIds": [],
+                                "columnWidths": {},
+                            },
+                        },
+                    },
+                    "2": {
+                        "type": "data",
+                        "title": "",
+                        "query": "timeseries avg(dt.host.memory.used)",
+                        "queryConfig": {
+                            "additionalFilters": {},
+                            "version": "4.3.1",
+                            "datatype": "metrics",
+                            "metricKey": "dt.host.memory.used",
+                            "aggregation": "avg",
+                            "by": [],
+                        },
+                        "subType": "dql-builder-metrics",
+                        "visualization": "lineChart",
+                        "visualizationSettings": {
+                            "thresholds": [],
+                            "chartSettings": {
+                                "gapPolicy": "connect",
+                                "circleChartSettings": {
+                                    "groupingThresholdType": "relative",
+                                    "groupingThresholdValue": 0,
+                                    "valueType": "relative",
+                                },
+                                "categoryOverrides": {},
+                                "fieldMapping": {
+                                    "timestamp": "timeframe",
+                                    "leftAxisValues": ["avg(dt.host.memory.used)"],
+                                    "leftAxisDimensions": [],
+                                    "fields": [],
+                                    "values": [],
+                                },
+                                "categoricalBarChartSettings": {},
+                            },
+                            "singleValue": {
+                                "showLabel": True,
+                                "label": "",
+                                "prefixIcon": "",
+                                "autoscale": True,
+                                "alignment": "center",
+                                "colorThresholdTarget": "value",
+                            },
+                            "table": {
+                                "rowDensity": "condensed",
+                                "enableSparklines": False,
+                                "hiddenColumns": [],
+                                "lineWrapIds": [],
+                                "columnWidths": {},
+                            },
+                        },
+                    },
+                },
+                "layouts": {
+                    "0": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 24,
+                        "h": 14,
+                    },
+                    "1": {
+                        "x": 0,
+                        "y": 14,
+                        "w": 9,
+                        "h": 6,
+                    },
+                    "2": {
+                        "x": 15,
+                        "y": 14,
+                        "w": 9,
+                        "h": 6,
+                    },
+                },
+            }))
+        this_direct_shares = dynatrace.DirectShares("thisDirectShares",
+            document_id=this_document.id,
             access="read-write",
-            document_id="441564f0-23c9-40ef-b344-18c02c23d712",
             recipients={
                 "recipients": [
                     {
@@ -198,11 +331,144 @@ class DirectShares(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import json
         import pulumiverse_dynatrace as dynatrace
 
-        this = dynatrace.DirectShares("this",
+        this_document = dynatrace.Document("thisDocument",
+            type="dashboard",
+            content=json.dumps({
+                "version": 13,
+                "variables": [],
+                "tiles": {
+                    "0": {
+                        "type": "markdown",
+                        "title": "",
+                        "content": "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
+                    },
+                    "1": {
+                        "type": "data",
+                        "title": "",
+                        "query": "timeseries avg(dt.host.cpu.user)",
+                        "queryConfig": {
+                            "additionalFilters": {},
+                            "version": "4.3.1",
+                            "datatype": "metrics",
+                            "metricKey": "dt.host.cpu.user",
+                            "aggregation": "avg",
+                            "by": [],
+                        },
+                        "subType": "dql-builder-metrics",
+                        "visualization": "lineChart",
+                        "visualizationSettings": {
+                            "thresholds": [],
+                            "chartSettings": {
+                                "gapPolicy": "connect",
+                                "circleChartSettings": {
+                                    "groupingThresholdType": "relative",
+                                    "groupingThresholdValue": 0,
+                                    "valueType": "relative",
+                                },
+                                "categoryOverrides": {},
+                                "fieldMapping": {
+                                    "timestamp": "timeframe",
+                                    "leftAxisValues": ["avg(dt.host.cpu.user)"],
+                                    "leftAxisDimensions": [],
+                                    "fields": [],
+                                    "values": [],
+                                },
+                            },
+                            "singleValue": {
+                                "showLabel": True,
+                                "label": "",
+                                "prefixIcon": "",
+                                "autoscale": True,
+                                "alignment": "center",
+                                "colorThresholdTarget": "value",
+                            },
+                            "table": {
+                                "rowDensity": "condensed",
+                                "enableSparklines": False,
+                                "hiddenColumns": [],
+                                "lineWrapIds": [],
+                                "columnWidths": {},
+                            },
+                        },
+                    },
+                    "2": {
+                        "type": "data",
+                        "title": "",
+                        "query": "timeseries avg(dt.host.memory.used)",
+                        "queryConfig": {
+                            "additionalFilters": {},
+                            "version": "4.3.1",
+                            "datatype": "metrics",
+                            "metricKey": "dt.host.memory.used",
+                            "aggregation": "avg",
+                            "by": [],
+                        },
+                        "subType": "dql-builder-metrics",
+                        "visualization": "lineChart",
+                        "visualizationSettings": {
+                            "thresholds": [],
+                            "chartSettings": {
+                                "gapPolicy": "connect",
+                                "circleChartSettings": {
+                                    "groupingThresholdType": "relative",
+                                    "groupingThresholdValue": 0,
+                                    "valueType": "relative",
+                                },
+                                "categoryOverrides": {},
+                                "fieldMapping": {
+                                    "timestamp": "timeframe",
+                                    "leftAxisValues": ["avg(dt.host.memory.used)"],
+                                    "leftAxisDimensions": [],
+                                    "fields": [],
+                                    "values": [],
+                                },
+                                "categoricalBarChartSettings": {},
+                            },
+                            "singleValue": {
+                                "showLabel": True,
+                                "label": "",
+                                "prefixIcon": "",
+                                "autoscale": True,
+                                "alignment": "center",
+                                "colorThresholdTarget": "value",
+                            },
+                            "table": {
+                                "rowDensity": "condensed",
+                                "enableSparklines": False,
+                                "hiddenColumns": [],
+                                "lineWrapIds": [],
+                                "columnWidths": {},
+                            },
+                        },
+                    },
+                },
+                "layouts": {
+                    "0": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 24,
+                        "h": 14,
+                    },
+                    "1": {
+                        "x": 0,
+                        "y": 14,
+                        "w": 9,
+                        "h": 6,
+                    },
+                    "2": {
+                        "x": 15,
+                        "y": 14,
+                        "w": 9,
+                        "h": 6,
+                    },
+                },
+            }))
+        this_direct_shares = dynatrace.DirectShares("thisDirectShares",
+            document_id=this_document.id,
             access="read-write",
-            document_id="441564f0-23c9-40ef-b344-18c02c23d712",
             recipients={
                 "recipients": [
                     {

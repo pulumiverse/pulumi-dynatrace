@@ -74,6 +74,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Timeout { get; set; }
 
         /// <summary>
+        /// Specifies a default task wait before in seconds. 0 is used when not set
+        /// </summary>
+        [Input("waitBefore")]
+        public Input<string>? WaitBefore { get; set; }
+
+        /// <summary>
         /// Iterates over items in a list, allowing actions to be executed repeatedly. Example: Specifying `item in [1, 2, 3]` here will execute the task three times for the numbers 1, 2 and 3 - with the current number available for scripting using the expression `{{ _.item }}`
         /// </summary>
         [Input("withItems")]

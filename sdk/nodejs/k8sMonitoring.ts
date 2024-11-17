@@ -66,8 +66,10 @@ export class K8sMonitoring extends pulumi.CustomResource {
     public readonly openMetricsPipelineEnabled!: pulumi.Output<boolean>;
     /**
      * To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
+     *
+     * @deprecated This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.
      */
-    public readonly pvcMonitoringEnabled!: pulumi.Output<boolean>;
+    public readonly pvcMonitoringEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
@@ -108,9 +110,6 @@ export class K8sMonitoring extends pulumi.CustomResource {
             }
             if ((!args || args.openMetricsPipelineEnabled === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'openMetricsPipelineEnabled'");
-            }
-            if ((!args || args.pvcMonitoringEnabled === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'pvcMonitoringEnabled'");
             }
             resourceInputs["cloudApplicationPipelineEnabled"] = args ? args.cloudApplicationPipelineEnabled : undefined;
             resourceInputs["eventPatterns"] = args ? args.eventPatterns : undefined;
@@ -163,6 +162,8 @@ export interface K8sMonitoringState {
     openMetricsPipelineEnabled?: pulumi.Input<boolean>;
     /**
      * To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
+     *
+     * @deprecated This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.
      */
     pvcMonitoringEnabled?: pulumi.Input<boolean>;
     /**
@@ -207,8 +208,10 @@ export interface K8sMonitoringArgs {
     openMetricsPipelineEnabled: pulumi.Input<boolean>;
     /**
      * To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
+     *
+     * @deprecated This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.
      */
-    pvcMonitoringEnabled: pulumi.Input<boolean>;
+    pvcMonitoringEnabled?: pulumi.Input<boolean>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */

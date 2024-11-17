@@ -63,6 +63,7 @@ export function getIamPolicies(args?: GetIamPoliciesArgs, opts?: pulumi.InvokeOp
         "accounts": args.accounts,
         "environments": args.environments,
         "global": args.global,
+        "groups": args.groups,
     }, opts);
 }
 
@@ -82,6 +83,10 @@ export interface GetIamPoliciesArgs {
      * If `true` the results will contain global policies
      */
     global?: boolean;
+    /**
+     * The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
+     */
+    groups?: string[];
 }
 
 /**
@@ -100,6 +105,10 @@ export interface GetIamPoliciesResult {
      * If `true` the results will contain global policies
      */
     readonly global?: boolean;
+    /**
+     * The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
+     */
+    readonly groups?: string[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
@@ -163,6 +172,7 @@ export function getIamPoliciesOutput(args?: GetIamPoliciesOutputArgs, opts?: pul
         "accounts": args.accounts,
         "environments": args.environments,
         "global": args.global,
+        "groups": args.groups,
     }, opts);
 }
 
@@ -182,4 +192,8 @@ export interface GetIamPoliciesOutputArgs {
      * If `true` the results will contain global policies
      */
     global?: pulumi.Input<boolean>;
+    /**
+     * The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
+     */
+    groups?: pulumi.Input<pulumi.Input<string>[]>;
 }
