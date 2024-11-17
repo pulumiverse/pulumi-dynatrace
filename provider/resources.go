@@ -167,6 +167,14 @@ func Provider() tfbridge.ProviderInfo {
 			"dynatrace_cloudfoundry_credentials":      {Tok: dynatraceResource(mainMod, "CloudfoundryCredentials")},
 			"dynatrace_cloud_foundry":                 {Tok: dynatraceResource(mainMod, "CloudFoundry")},
 			"dynatrace_cloudapp_workloaddetection":    {Tok: dynatraceResource(mainMod, "CloudappWorkloaddetection")},
+			"dynatrace_cloud_development_environments": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "CloudDevelopmentEnvironments"),
+				Fields: map[string]*tfbridge.SchemaInfo{
+					"cloud_development_environments": {
+						CSharpName: "Environments",
+					},
+				},
+			},
 			"dynatrace_connectivity_alerts": {
 				Tok:    dynatraceResource(mainMod, "ConnectivityAlerts"),
 				Fields: map[string]*tfbridge.SchemaInfo{"connectivity_alerts": {CSharpName: "EnableConnectivityAlerts"}},

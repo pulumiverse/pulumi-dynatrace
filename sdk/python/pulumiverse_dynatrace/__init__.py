@@ -59,6 +59,7 @@ from .calculated_mobile_metric import *
 from .calculated_service_metric import *
 from .calculated_synthetic_metric import *
 from .calculated_web_metric import *
+from .cloud_development_environments import *
 from .cloud_foundry import *
 from .cloudapp_workloaddetection import *
 from .cloudfoundry_credentials import *
@@ -211,7 +212,9 @@ from .key_user_action import *
 from .kubernetes import *
 from .kubernetes_app import *
 from .kubernetes_enrichment import *
+from .kubernetes_spm import *
 from .limit_outbound_connections import *
+from .log_agent_feature_flags import *
 from .log_buckets import *
 from .log_custom_attribute import *
 from .log_custom_source import *
@@ -288,6 +291,7 @@ from .pg_anomalies import *
 from .platform_bucket import *
 from .policy import *
 from .policy_bindings import *
+from .problem_record_propagation_rules import *
 from .process_availability import *
 from .process_group_detection import *
 from .process_group_detection_flags import *
@@ -820,6 +824,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/calculatedWebMetric:CalculatedWebMetric": "CalculatedWebMetric"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/cloudDevelopmentEnvironments",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/cloudDevelopmentEnvironments:CloudDevelopmentEnvironments": "CloudDevelopmentEnvironments"
   }
  },
  {
@@ -1672,10 +1684,26 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/kubernetesSpm",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/kubernetesSpm:KubernetesSpm": "KubernetesSpm"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/limitOutboundConnections",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/limitOutboundConnections:LimitOutboundConnections": "LimitOutboundConnections"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/logAgentFeatureFlags",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/logAgentFeatureFlags:LogAgentFeatureFlags": "LogAgentFeatureFlags"
   }
  },
  {
@@ -2284,6 +2312,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/policyBindings:PolicyBindings": "PolicyBindings"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/problemRecordPropagationRules",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/problemRecordPropagationRules:ProblemRecordPropagationRules": "ProblemRecordPropagationRules"
   }
  },
  {

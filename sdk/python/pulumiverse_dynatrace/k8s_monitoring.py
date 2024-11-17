@@ -25,10 +25,10 @@ class K8sMonitoringArgs:
                  event_processing_active: pulumi.Input[bool],
                  open_metrics_builtin_enabled: pulumi.Input[bool],
                  open_metrics_pipeline_enabled: pulumi.Input[bool],
-                 pvc_monitoring_enabled: pulumi.Input[bool],
                  event_patterns: Optional[pulumi.Input['K8sMonitoringEventPatternsArgs']] = None,
                  filter_events: Optional[pulumi.Input[bool]] = None,
                  include_all_fdi_events: Optional[pulumi.Input[bool]] = None,
+                 pvc_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a K8sMonitoring resource.
@@ -37,24 +37,28 @@ class K8sMonitoringArgs:
         :param pulumi.Input[bool] open_metrics_builtin_enabled: Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
                this may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
-        :param pulumi.Input[bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input['K8sMonitoringEventPatternsArgs'] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the
                [documentation](https://dt-url.net/2201p0u).
         :param pulumi.Input[bool] filter_events: Include only events specified by Events Field Selectors
         :param pulumi.Input[bool] include_all_fdi_events: For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
+        :param pulumi.Input[bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input[str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "cloud_application_pipeline_enabled", cloud_application_pipeline_enabled)
         pulumi.set(__self__, "event_processing_active", event_processing_active)
         pulumi.set(__self__, "open_metrics_builtin_enabled", open_metrics_builtin_enabled)
         pulumi.set(__self__, "open_metrics_pipeline_enabled", open_metrics_pipeline_enabled)
-        pulumi.set(__self__, "pvc_monitoring_enabled", pvc_monitoring_enabled)
         if event_patterns is not None:
             pulumi.set(__self__, "event_patterns", event_patterns)
         if filter_events is not None:
             pulumi.set(__self__, "filter_events", filter_events)
         if include_all_fdi_events is not None:
             pulumi.set(__self__, "include_all_fdi_events", include_all_fdi_events)
+        if pvc_monitoring_enabled is not None:
+            warnings.warn("""This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.""", DeprecationWarning)
+            pulumi.log.warn("""pvc_monitoring_enabled is deprecated: This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.""")
+        if pvc_monitoring_enabled is not None:
+            pulumi.set(__self__, "pvc_monitoring_enabled", pvc_monitoring_enabled)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
 
@@ -108,18 +112,6 @@ class K8sMonitoringArgs:
         pulumi.set(self, "open_metrics_pipeline_enabled", value)
 
     @property
-    @pulumi.getter(name="pvcMonitoringEnabled")
-    def pvc_monitoring_enabled(self) -> pulumi.Input[bool]:
-        """
-        To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
-        """
-        return pulumi.get(self, "pvc_monitoring_enabled")
-
-    @pvc_monitoring_enabled.setter
-    def pvc_monitoring_enabled(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "pvc_monitoring_enabled", value)
-
-    @property
     @pulumi.getter(name="eventPatterns")
     def event_patterns(self) -> Optional[pulumi.Input['K8sMonitoringEventPatternsArgs']]:
         """
@@ -155,6 +147,19 @@ class K8sMonitoringArgs:
     @include_all_fdi_events.setter
     def include_all_fdi_events(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "include_all_fdi_events", value)
+
+    @property
+    @pulumi.getter(name="pvcMonitoringEnabled")
+    @_utilities.deprecated("""This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.""")
+    def pvc_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
+        """
+        return pulumi.get(self, "pvc_monitoring_enabled")
+
+    @pvc_monitoring_enabled.setter
+    def pvc_monitoring_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "pvc_monitoring_enabled", value)
 
     @property
     @pulumi.getter
@@ -209,6 +214,9 @@ class _K8sMonitoringState:
             pulumi.set(__self__, "open_metrics_builtin_enabled", open_metrics_builtin_enabled)
         if open_metrics_pipeline_enabled is not None:
             pulumi.set(__self__, "open_metrics_pipeline_enabled", open_metrics_pipeline_enabled)
+        if pvc_monitoring_enabled is not None:
+            warnings.warn("""This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.""", DeprecationWarning)
+            pulumi.log.warn("""pvc_monitoring_enabled is deprecated: This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.""")
         if pvc_monitoring_enabled is not None:
             pulumi.set(__self__, "pvc_monitoring_enabled", pvc_monitoring_enabled)
         if scope is not None:
@@ -302,6 +310,7 @@ class _K8sMonitoringState:
 
     @property
     @pulumi.getter(name="pvcMonitoringEnabled")
+    @_utilities.deprecated("""This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.""")
     def pvc_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
@@ -412,8 +421,6 @@ class K8sMonitoring(pulumi.CustomResource):
             if open_metrics_pipeline_enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'open_metrics_pipeline_enabled'")
             __props__.__dict__["open_metrics_pipeline_enabled"] = open_metrics_pipeline_enabled
-            if pvc_monitoring_enabled is None and not opts.urn:
-                raise TypeError("Missing required property 'pvc_monitoring_enabled'")
             __props__.__dict__["pvc_monitoring_enabled"] = pvc_monitoring_enabled
             __props__.__dict__["scope"] = scope
         super(K8sMonitoring, __self__).__init__(
@@ -529,7 +536,8 @@ class K8sMonitoring(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="pvcMonitoringEnabled")
-    def pvc_monitoring_enabled(self) -> pulumi.Output[bool]:
+    @_utilities.deprecated("""This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.""")
+    def pvc_monitoring_enabled(self) -> pulumi.Output[Optional[bool]]:
         """
         To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         """

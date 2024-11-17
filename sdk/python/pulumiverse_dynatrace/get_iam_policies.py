@@ -27,7 +27,7 @@ class GetIamPoliciesResult:
     """
     A collection of values returned by getIamPolicies.
     """
-    def __init__(__self__, accounts=None, environments=None, global_=None, id=None, policies=None):
+    def __init__(__self__, accounts=None, environments=None, global_=None, groups=None, id=None, policies=None):
         if accounts and not isinstance(accounts, list):
             raise TypeError("Expected argument 'accounts' to be a list")
         pulumi.set(__self__, "accounts", accounts)
@@ -37,6 +37,9 @@ class GetIamPoliciesResult:
         if global_ and not isinstance(global_, bool):
             raise TypeError("Expected argument 'global_' to be a bool")
         pulumi.set(__self__, "global_", global_)
+        if groups and not isinstance(groups, list):
+            raise TypeError("Expected argument 'groups' to be a list")
+        pulumi.set(__self__, "groups", groups)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -70,6 +73,14 @@ class GetIamPoliciesResult:
 
     @property
     @pulumi.getter
+    def groups(self) -> Optional[Sequence[str]]:
+        """
+        The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
+        """
+        return pulumi.get(self, "groups")
+
+    @property
+    @pulumi.getter
     def id(self) -> str:
         """
         The provider-assigned unique ID for this managed resource.
@@ -91,6 +102,7 @@ class AwaitableGetIamPoliciesResult(GetIamPoliciesResult):
             accounts=self.accounts,
             environments=self.environments,
             global_=self.global_,
+            groups=self.groups,
             id=self.id,
             policies=self.policies)
 
@@ -98,6 +110,7 @@ class AwaitableGetIamPoliciesResult(GetIamPoliciesResult):
 def get_iam_policies(accounts: Optional[Sequence[str]] = None,
                      environments: Optional[Sequence[str]] = None,
                      global_: Optional[bool] = None,
+                     groups: Optional[Sequence[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamPoliciesResult:
     """
     > **Dynatrace SaaS only**
@@ -147,11 +160,13 @@ def get_iam_policies(accounts: Optional[Sequence[str]] = None,
     :param Sequence[str] accounts: The results will contain policies defined for the given accountID. If one of the entries contains `*` the results will contain policies for all accounts
     :param Sequence[str] environments: The results will contain policies defined for the given environments. If one of the entries contains `*` the results will contain policies for all environments
     :param bool global_: If `true` the results will contain global policies
+    :param Sequence[str] groups: The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
     """
     __args__ = dict()
     __args__['accounts'] = accounts
     __args__['environments'] = environments
     __args__['global'] = global_
+    __args__['groups'] = groups
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getIamPolicies:getIamPolicies', __args__, opts=opts, typ=GetIamPoliciesResult).value
 
@@ -159,11 +174,13 @@ def get_iam_policies(accounts: Optional[Sequence[str]] = None,
         accounts=pulumi.get(__ret__, 'accounts'),
         environments=pulumi.get(__ret__, 'environments'),
         global_=pulumi.get(__ret__, 'global_'),
+        groups=pulumi.get(__ret__, 'groups'),
         id=pulumi.get(__ret__, 'id'),
         policies=pulumi.get(__ret__, 'policies'))
 def get_iam_policies_output(accounts: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                             environments: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                             global_: Optional[pulumi.Input[Optional[bool]]] = None,
+                            groups: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamPoliciesResult]:
     """
     > **Dynatrace SaaS only**
@@ -213,16 +230,19 @@ def get_iam_policies_output(accounts: Optional[pulumi.Input[Optional[Sequence[st
     :param Sequence[str] accounts: The results will contain policies defined for the given accountID. If one of the entries contains `*` the results will contain policies for all accounts
     :param Sequence[str] environments: The results will contain policies defined for the given environments. If one of the entries contains `*` the results will contain policies for all environments
     :param bool global_: If `true` the results will contain global policies
+    :param Sequence[str] groups: The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
     """
     __args__ = dict()
     __args__['accounts'] = accounts
     __args__['environments'] = environments
     __args__['global'] = global_
+    __args__['groups'] = groups
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getIamPolicies:getIamPolicies', __args__, opts=opts, typ=GetIamPoliciesResult)
     return __ret__.apply(lambda __response__: GetIamPoliciesResult(
         accounts=pulumi.get(__response__, 'accounts'),
         environments=pulumi.get(__response__, 'environments'),
         global_=pulumi.get(__response__, 'global_'),
+        groups=pulumi.get(__response__, 'groups'),
         id=pulumi.get(__response__, 'id'),
         policies=pulumi.get(__response__, 'policies')))

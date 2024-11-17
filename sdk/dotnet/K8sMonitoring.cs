@@ -61,7 +61,7 @@ namespace Pulumiverse.Dynatrace
         /// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         /// </summary>
         [Output("pvcMonitoringEnabled")]
-        public Output<bool> PvcMonitoringEnabled { get; private set; } = null!;
+        public Output<bool?> PvcMonitoringEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
@@ -163,8 +163,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         /// </summary>
-        [Input("pvcMonitoringEnabled", required: true)]
-        public Input<bool> PvcMonitoringEnabled { get; set; } = null!;
+        [Input("pvcMonitoringEnabled")]
+        public Input<bool>? PvcMonitoringEnabled { get; set; }
 
         /// <summary>
         /// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.

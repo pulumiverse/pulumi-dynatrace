@@ -21,6 +21,173 @@ import (
 // ## Dynatrace Documentation
 //
 // - Dynatrace Documents - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Document%20Service
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"encoding/json"
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			tmpJSON0, err := json.Marshal(map[string]interface{}{
+//				"version":   13,
+//				"variables": []interface{}{},
+//				"tiles": map[string]interface{}{
+//					"0": map[string]interface{}{
+//						"type":    "markdown",
+//						"title":   "",
+//						"content": "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
+//					},
+//					"1": map[string]interface{}{
+//						"type":  "data",
+//						"title": "",
+//						"query": "timeseries avg(dt.host.cpu.user)",
+//						"queryConfig": map[string]interface{}{
+//							"additionalFilters": map[string]interface{}{},
+//							"version":           "4.3.1",
+//							"datatype":          "metrics",
+//							"metricKey":         "dt.host.cpu.user",
+//							"aggregation":       "avg",
+//							"by":                []interface{}{},
+//						},
+//						"subType":       "dql-builder-metrics",
+//						"visualization": "lineChart",
+//						"visualizationSettings": map[string]interface{}{
+//							"thresholds": []interface{}{},
+//							"chartSettings": map[string]interface{}{
+//								"gapPolicy": "connect",
+//								"circleChartSettings": map[string]interface{}{
+//									"groupingThresholdType":  "relative",
+//									"groupingThresholdValue": 0,
+//									"valueType":              "relative",
+//								},
+//								"categoryOverrides": map[string]interface{}{},
+//								"fieldMapping": map[string]interface{}{
+//									"timestamp": "timeframe",
+//									"leftAxisValues": []string{
+//										"avg(dt.host.cpu.user)",
+//									},
+//									"leftAxisDimensions": []interface{}{},
+//									"fields":             []interface{}{},
+//									"values":             []interface{}{},
+//								},
+//							},
+//							"singleValue": map[string]interface{}{
+//								"showLabel":            true,
+//								"label":                "",
+//								"prefixIcon":           "",
+//								"autoscale":            true,
+//								"alignment":            "center",
+//								"colorThresholdTarget": "value",
+//							},
+//							"table": map[string]interface{}{
+//								"rowDensity":       "condensed",
+//								"enableSparklines": false,
+//								"hiddenColumns":    []interface{}{},
+//								"lineWrapIds":      []interface{}{},
+//								"columnWidths":     map[string]interface{}{},
+//							},
+//						},
+//					},
+//					"2": map[string]interface{}{
+//						"type":  "data",
+//						"title": "",
+//						"query": "timeseries avg(dt.host.memory.used)",
+//						"queryConfig": map[string]interface{}{
+//							"additionalFilters": map[string]interface{}{},
+//							"version":           "4.3.1",
+//							"datatype":          "metrics",
+//							"metricKey":         "dt.host.memory.used",
+//							"aggregation":       "avg",
+//							"by":                []interface{}{},
+//						},
+//						"subType":       "dql-builder-metrics",
+//						"visualization": "lineChart",
+//						"visualizationSettings": map[string]interface{}{
+//							"thresholds": []interface{}{},
+//							"chartSettings": map[string]interface{}{
+//								"gapPolicy": "connect",
+//								"circleChartSettings": map[string]interface{}{
+//									"groupingThresholdType":  "relative",
+//									"groupingThresholdValue": 0,
+//									"valueType":              "relative",
+//								},
+//								"categoryOverrides": map[string]interface{}{},
+//								"fieldMapping": map[string]interface{}{
+//									"timestamp": "timeframe",
+//									"leftAxisValues": []string{
+//										"avg(dt.host.memory.used)",
+//									},
+//									"leftAxisDimensions": []interface{}{},
+//									"fields":             []interface{}{},
+//									"values":             []interface{}{},
+//								},
+//								"categoricalBarChartSettings": map[string]interface{}{},
+//							},
+//							"singleValue": map[string]interface{}{
+//								"showLabel":            true,
+//								"label":                "",
+//								"prefixIcon":           "",
+//								"autoscale":            true,
+//								"alignment":            "center",
+//								"colorThresholdTarget": "value",
+//							},
+//							"table": map[string]interface{}{
+//								"rowDensity":       "condensed",
+//								"enableSparklines": false,
+//								"hiddenColumns":    []interface{}{},
+//								"lineWrapIds":      []interface{}{},
+//								"columnWidths":     map[string]interface{}{},
+//							},
+//						},
+//					},
+//				},
+//				"layouts": map[string]interface{}{
+//					"0": map[string]interface{}{
+//						"x": 0,
+//						"y": 0,
+//						"w": 24,
+//						"h": 14,
+//					},
+//					"1": map[string]interface{}{
+//						"x": 0,
+//						"y": 14,
+//						"w": 9,
+//						"h": 6,
+//					},
+//					"2": map[string]interface{}{
+//						"x": 15,
+//						"y": 14,
+//						"w": 9,
+//						"h": 6,
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			json0 := string(tmpJSON0)
+//			_, err = dynatrace.NewDocument(ctx, "this", &dynatrace.DocumentArgs{
+//				Type:    pulumi.String("dashboard"),
+//				Content: pulumi.String(json0),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type Document struct {
 	pulumi.CustomResourceState
 
@@ -34,7 +201,7 @@ type Document struct {
 	Owner pulumi.StringOutput `pulumi:"owner"`
 	// Specifies whether the document is private or readable by everybody
 	Private pulumi.BoolPtrOutput `pulumi:"private"`
-	// Type of the document. Possible Values are `dashboard` and `notebook`
+	// Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
 	Type pulumi.StringOutput `pulumi:"type"`
 	// The version of the document
 	Version pulumi.IntOutput `pulumi:"version"`
@@ -86,7 +253,7 @@ type documentState struct {
 	Owner *string `pulumi:"owner"`
 	// Specifies whether the document is private or readable by everybody
 	Private *bool `pulumi:"private"`
-	// Type of the document. Possible Values are `dashboard` and `notebook`
+	// Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
 	Type *string `pulumi:"type"`
 	// The version of the document
 	Version *int `pulumi:"version"`
@@ -103,7 +270,7 @@ type DocumentState struct {
 	Owner pulumi.StringPtrInput
 	// Specifies whether the document is private or readable by everybody
 	Private pulumi.BoolPtrInput
-	// Type of the document. Possible Values are `dashboard` and `notebook`
+	// Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
 	Type pulumi.StringPtrInput
 	// The version of the document
 	Version pulumi.IntPtrInput
@@ -124,7 +291,7 @@ type documentArgs struct {
 	Owner *string `pulumi:"owner"`
 	// Specifies whether the document is private or readable by everybody
 	Private *bool `pulumi:"private"`
-	// Type of the document. Possible Values are `dashboard` and `notebook`
+	// Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
 	Type string `pulumi:"type"`
 }
 
@@ -140,7 +307,7 @@ type DocumentArgs struct {
 	Owner pulumi.StringPtrInput
 	// Specifies whether the document is private or readable by everybody
 	Private pulumi.BoolPtrInput
-	// Type of the document. Possible Values are `dashboard` and `notebook`
+	// Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
 	Type pulumi.StringInput
 }
 
@@ -256,7 +423,7 @@ func (o DocumentOutput) Private() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Document) pulumi.BoolPtrOutput { return v.Private }).(pulumi.BoolPtrOutput)
 }
 
-// Type of the document. Possible Values are `dashboard` and `notebook`
+// Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
 func (o DocumentOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *Document) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

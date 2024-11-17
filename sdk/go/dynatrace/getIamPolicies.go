@@ -132,6 +132,8 @@ type GetIamPoliciesArgs struct {
 	Environments []string `pulumi:"environments"`
 	// If `true` the results will contain global policies
 	Global *bool `pulumi:"global"`
+	// The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
+	Groups []string `pulumi:"groups"`
 }
 
 // A collection of values returned by getIamPolicies.
@@ -142,6 +144,8 @@ type GetIamPoliciesResult struct {
 	Environments []string `pulumi:"environments"`
 	// If `true` the results will contain global policies
 	Global *bool `pulumi:"global"`
+	// The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
+	Groups []string `pulumi:"groups"`
 	// The provider-assigned unique ID for this managed resource.
 	Id       string                 `pulumi:"id"`
 	Policies []GetIamPoliciesPolicy `pulumi:"policies"`
@@ -174,6 +178,8 @@ type GetIamPoliciesOutputArgs struct {
 	Environments pulumi.StringArrayInput `pulumi:"environments"`
 	// If `true` the results will contain global policies
 	Global pulumi.BoolPtrInput `pulumi:"global"`
+	// The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
+	Groups pulumi.StringArrayInput `pulumi:"groups"`
 }
 
 func (GetIamPoliciesOutputArgs) ElementType() reflect.Type {
@@ -208,6 +214,11 @@ func (o GetIamPoliciesResultOutput) Environments() pulumi.StringArrayOutput {
 // If `true` the results will contain global policies
 func (o GetIamPoliciesResultOutput) Global() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetIamPoliciesResult) *bool { return v.Global }).(pulumi.BoolPtrOutput)
+}
+
+// The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
+func (o GetIamPoliciesResultOutput) Groups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIamPoliciesResult) []string { return v.Groups }).(pulumi.StringArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

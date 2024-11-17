@@ -26,15 +26,224 @@ namespace Pulumiverse.Dynatrace
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
+    /// using System.Text.Json;
     /// using Pulumi;
     /// using Dynatrace = Pulumiverse.Dynatrace;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var @this = new Dynatrace.DirectShares("this", new()
+    ///     var thisDocument = new Dynatrace.Document("thisDocument", new()
     ///     {
+    ///         Type = "dashboard",
+    ///         Content = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
+    ///         {
+    ///             ["version"] = 13,
+    ///             ["variables"] = new[]
+    ///             {
+    ///             },
+    ///             ["tiles"] = new Dictionary&lt;string, object?&gt;
+    ///             {
+    ///                 ["0"] = new Dictionary&lt;string, object?&gt;
+    ///                 {
+    ///                     ["type"] = "markdown",
+    ///                     ["title"] = "",
+    ///                     ["content"] = "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
+    ///                 },
+    ///                 ["1"] = new Dictionary&lt;string, object?&gt;
+    ///                 {
+    ///                     ["type"] = "data",
+    ///                     ["title"] = "",
+    ///                     ["query"] = "timeseries avg(dt.host.cpu.user)",
+    ///                     ["queryConfig"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["additionalFilters"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                         },
+    ///                         ["version"] = "4.3.1",
+    ///                         ["datatype"] = "metrics",
+    ///                         ["metricKey"] = "dt.host.cpu.user",
+    ///                         ["aggregation"] = "avg",
+    ///                         ["by"] = new[]
+    ///                         {
+    ///                         },
+    ///                     },
+    ///                     ["subType"] = "dql-builder-metrics",
+    ///                     ["visualization"] = "lineChart",
+    ///                     ["visualizationSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["thresholds"] = new[]
+    ///                         {
+    ///                         },
+    ///                         ["chartSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["gapPolicy"] = "connect",
+    ///                             ["circleChartSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["groupingThresholdType"] = "relative",
+    ///                                 ["groupingThresholdValue"] = 0,
+    ///                                 ["valueType"] = "relative",
+    ///                             },
+    ///                             ["categoryOverrides"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                             },
+    ///                             ["fieldMapping"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["timestamp"] = "timeframe",
+    ///                                 ["leftAxisValues"] = new[]
+    ///                                 {
+    ///                                     "avg(dt.host.cpu.user)",
+    ///                                 },
+    ///                                 ["leftAxisDimensions"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                                 ["fields"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                                 ["values"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         ["singleValue"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["showLabel"] = true,
+    ///                             ["label"] = "",
+    ///                             ["prefixIcon"] = "",
+    ///                             ["autoscale"] = true,
+    ///                             ["alignment"] = "center",
+    ///                             ["colorThresholdTarget"] = "value",
+    ///                         },
+    ///                         ["table"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["rowDensity"] = "condensed",
+    ///                             ["enableSparklines"] = false,
+    ///                             ["hiddenColumns"] = new[]
+    ///                             {
+    ///                             },
+    ///                             ["lineWrapIds"] = new[]
+    ///                             {
+    ///                             },
+    ///                             ["columnWidths"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 ["2"] = new Dictionary&lt;string, object?&gt;
+    ///                 {
+    ///                     ["type"] = "data",
+    ///                     ["title"] = "",
+    ///                     ["query"] = "timeseries avg(dt.host.memory.used)",
+    ///                     ["queryConfig"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["additionalFilters"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                         },
+    ///                         ["version"] = "4.3.1",
+    ///                         ["datatype"] = "metrics",
+    ///                         ["metricKey"] = "dt.host.memory.used",
+    ///                         ["aggregation"] = "avg",
+    ///                         ["by"] = new[]
+    ///                         {
+    ///                         },
+    ///                     },
+    ///                     ["subType"] = "dql-builder-metrics",
+    ///                     ["visualization"] = "lineChart",
+    ///                     ["visualizationSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["thresholds"] = new[]
+    ///                         {
+    ///                         },
+    ///                         ["chartSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["gapPolicy"] = "connect",
+    ///                             ["circleChartSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["groupingThresholdType"] = "relative",
+    ///                                 ["groupingThresholdValue"] = 0,
+    ///                                 ["valueType"] = "relative",
+    ///                             },
+    ///                             ["categoryOverrides"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                             },
+    ///                             ["fieldMapping"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["timestamp"] = "timeframe",
+    ///                                 ["leftAxisValues"] = new[]
+    ///                                 {
+    ///                                     "avg(dt.host.memory.used)",
+    ///                                 },
+    ///                                 ["leftAxisDimensions"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                                 ["fields"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                                 ["values"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                             ["categoricalBarChartSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                             },
+    ///                         },
+    ///                         ["singleValue"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["showLabel"] = true,
+    ///                             ["label"] = "",
+    ///                             ["prefixIcon"] = "",
+    ///                             ["autoscale"] = true,
+    ///                             ["alignment"] = "center",
+    ///                             ["colorThresholdTarget"] = "value",
+    ///                         },
+    ///                         ["table"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["rowDensity"] = "condensed",
+    ///                             ["enableSparklines"] = false,
+    ///                             ["hiddenColumns"] = new[]
+    ///                             {
+    ///                             },
+    ///                             ["lineWrapIds"] = new[]
+    ///                             {
+    ///                             },
+    ///                             ["columnWidths"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///             ["layouts"] = new Dictionary&lt;string, object?&gt;
+    ///             {
+    ///                 ["0"] = new Dictionary&lt;string, object?&gt;
+    ///                 {
+    ///                     ["x"] = 0,
+    ///                     ["y"] = 0,
+    ///                     ["w"] = 24,
+    ///                     ["h"] = 14,
+    ///                 },
+    ///                 ["1"] = new Dictionary&lt;string, object?&gt;
+    ///                 {
+    ///                     ["x"] = 0,
+    ///                     ["y"] = 14,
+    ///                     ["w"] = 9,
+    ///                     ["h"] = 6,
+    ///                 },
+    ///                 ["2"] = new Dictionary&lt;string, object?&gt;
+    ///                 {
+    ///                     ["x"] = 15,
+    ///                     ["y"] = 14,
+    ///                     ["w"] = 9,
+    ///                     ["h"] = 6,
+    ///                 },
+    ///             },
+    ///         }),
+    ///     });
+    /// 
+    ///     var thisDirectShares = new Dynatrace.DirectShares("thisDirectShares", new()
+    ///     {
+    ///         DocumentId = thisDocument.Id,
     ///         Access = "read-write",
-    ///         DocumentId = "441564f0-23c9-40ef-b344-18c02c23d712",
     ///         Recipients = new Dynatrace.Inputs.DirectSharesRecipientsArgs
     ///         {
     ///             Recipients = new[]

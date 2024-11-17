@@ -29,6 +29,8 @@ import (
 //
 // import (
 //
+//	"encoding/json"
+//
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
 //
@@ -36,9 +38,154 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewDirectShares(ctx, "this", &dynatrace.DirectSharesArgs{
+//			tmpJSON0, err := json.Marshal(map[string]interface{}{
+//				"version":   13,
+//				"variables": []interface{}{},
+//				"tiles": map[string]interface{}{
+//					"0": map[string]interface{}{
+//						"type":    "markdown",
+//						"title":   "",
+//						"content": "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
+//					},
+//					"1": map[string]interface{}{
+//						"type":  "data",
+//						"title": "",
+//						"query": "timeseries avg(dt.host.cpu.user)",
+//						"queryConfig": map[string]interface{}{
+//							"additionalFilters": map[string]interface{}{},
+//							"version":           "4.3.1",
+//							"datatype":          "metrics",
+//							"metricKey":         "dt.host.cpu.user",
+//							"aggregation":       "avg",
+//							"by":                []interface{}{},
+//						},
+//						"subType":       "dql-builder-metrics",
+//						"visualization": "lineChart",
+//						"visualizationSettings": map[string]interface{}{
+//							"thresholds": []interface{}{},
+//							"chartSettings": map[string]interface{}{
+//								"gapPolicy": "connect",
+//								"circleChartSettings": map[string]interface{}{
+//									"groupingThresholdType":  "relative",
+//									"groupingThresholdValue": 0,
+//									"valueType":              "relative",
+//								},
+//								"categoryOverrides": map[string]interface{}{},
+//								"fieldMapping": map[string]interface{}{
+//									"timestamp": "timeframe",
+//									"leftAxisValues": []string{
+//										"avg(dt.host.cpu.user)",
+//									},
+//									"leftAxisDimensions": []interface{}{},
+//									"fields":             []interface{}{},
+//									"values":             []interface{}{},
+//								},
+//							},
+//							"singleValue": map[string]interface{}{
+//								"showLabel":            true,
+//								"label":                "",
+//								"prefixIcon":           "",
+//								"autoscale":            true,
+//								"alignment":            "center",
+//								"colorThresholdTarget": "value",
+//							},
+//							"table": map[string]interface{}{
+//								"rowDensity":       "condensed",
+//								"enableSparklines": false,
+//								"hiddenColumns":    []interface{}{},
+//								"lineWrapIds":      []interface{}{},
+//								"columnWidths":     map[string]interface{}{},
+//							},
+//						},
+//					},
+//					"2": map[string]interface{}{
+//						"type":  "data",
+//						"title": "",
+//						"query": "timeseries avg(dt.host.memory.used)",
+//						"queryConfig": map[string]interface{}{
+//							"additionalFilters": map[string]interface{}{},
+//							"version":           "4.3.1",
+//							"datatype":          "metrics",
+//							"metricKey":         "dt.host.memory.used",
+//							"aggregation":       "avg",
+//							"by":                []interface{}{},
+//						},
+//						"subType":       "dql-builder-metrics",
+//						"visualization": "lineChart",
+//						"visualizationSettings": map[string]interface{}{
+//							"thresholds": []interface{}{},
+//							"chartSettings": map[string]interface{}{
+//								"gapPolicy": "connect",
+//								"circleChartSettings": map[string]interface{}{
+//									"groupingThresholdType":  "relative",
+//									"groupingThresholdValue": 0,
+//									"valueType":              "relative",
+//								},
+//								"categoryOverrides": map[string]interface{}{},
+//								"fieldMapping": map[string]interface{}{
+//									"timestamp": "timeframe",
+//									"leftAxisValues": []string{
+//										"avg(dt.host.memory.used)",
+//									},
+//									"leftAxisDimensions": []interface{}{},
+//									"fields":             []interface{}{},
+//									"values":             []interface{}{},
+//								},
+//								"categoricalBarChartSettings": map[string]interface{}{},
+//							},
+//							"singleValue": map[string]interface{}{
+//								"showLabel":            true,
+//								"label":                "",
+//								"prefixIcon":           "",
+//								"autoscale":            true,
+//								"alignment":            "center",
+//								"colorThresholdTarget": "value",
+//							},
+//							"table": map[string]interface{}{
+//								"rowDensity":       "condensed",
+//								"enableSparklines": false,
+//								"hiddenColumns":    []interface{}{},
+//								"lineWrapIds":      []interface{}{},
+//								"columnWidths":     map[string]interface{}{},
+//							},
+//						},
+//					},
+//				},
+//				"layouts": map[string]interface{}{
+//					"0": map[string]interface{}{
+//						"x": 0,
+//						"y": 0,
+//						"w": 24,
+//						"h": 14,
+//					},
+//					"1": map[string]interface{}{
+//						"x": 0,
+//						"y": 14,
+//						"w": 9,
+//						"h": 6,
+//					},
+//					"2": map[string]interface{}{
+//						"x": 15,
+//						"y": 14,
+//						"w": 9,
+//						"h": 6,
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			json0 := string(tmpJSON0)
+//			thisDocument, err := dynatrace.NewDocument(ctx, "thisDocument", &dynatrace.DocumentArgs{
+//				Type:    pulumi.String("dashboard"),
+//				Content: pulumi.String(json0),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewDirectShares(ctx, "thisDirectShares", &dynatrace.DirectSharesArgs{
+//				DocumentId: thisDocument.ID(),
 //				Access:     pulumi.String("read-write"),
-//				DocumentId: pulumi.String("441564f0-23c9-40ef-b344-18c02c23d712"),
 //				Recipients: &dynatrace.DirectSharesRecipientsArgs{
 //					Recipients: dynatrace.DirectSharesRecipientsRecipientArray{
 //						&dynatrace.DirectSharesRecipientsRecipientArgs{

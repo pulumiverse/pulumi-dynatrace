@@ -55,6 +55,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Timeout;
         /// <summary>
+        /// Specifies a default task wait before in seconds. 0 is used when not set
+        /// </summary>
+        public readonly string? WaitBefore;
+        /// <summary>
         /// Iterates over items in a list, allowing actions to be executed repeatedly. Example: Specifying `item in [1, 2, 3]` here will execute the task three times for the numbers 1, 2 and 3 - with the current number available for scripting using the expression `{{ _.item }}`
         /// </summary>
         public readonly string? WithItems;
@@ -81,6 +85,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? timeout,
 
+            string? waitBefore,
+
             string? withItems)
         {
             Action = action;
@@ -93,6 +99,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             Position = position;
             Retry = retry;
             Timeout = timeout;
+            WaitBefore = waitBefore;
             WithItems = withItems;
         }
     }

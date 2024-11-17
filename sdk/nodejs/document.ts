@@ -14,6 +14,147 @@ import * as utilities from "./utilities";
  * ## Dynatrace Documentation
  *
  * - Dynatrace Documents - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Document%20Service
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const _this = new dynatrace.Document("this", {
+ *     type: "dashboard",
+ *     content: JSON.stringify({
+ *         version: 13,
+ *         variables: [],
+ *         tiles: {
+ *             "0": {
+ *                 type: "markdown",
+ *                 title: "",
+ *                 content: "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
+ *             },
+ *             "1": {
+ *                 type: "data",
+ *                 title: "",
+ *                 query: "timeseries avg(dt.host.cpu.user)",
+ *                 queryConfig: {
+ *                     additionalFilters: {},
+ *                     version: "4.3.1",
+ *                     datatype: "metrics",
+ *                     metricKey: "dt.host.cpu.user",
+ *                     aggregation: "avg",
+ *                     by: [],
+ *                 },
+ *                 subType: "dql-builder-metrics",
+ *                 visualization: "lineChart",
+ *                 visualizationSettings: {
+ *                     thresholds: [],
+ *                     chartSettings: {
+ *                         gapPolicy: "connect",
+ *                         circleChartSettings: {
+ *                             groupingThresholdType: "relative",
+ *                             groupingThresholdValue: 0,
+ *                             valueType: "relative",
+ *                         },
+ *                         categoryOverrides: {},
+ *                         fieldMapping: {
+ *                             timestamp: "timeframe",
+ *                             leftAxisValues: ["avg(dt.host.cpu.user)"],
+ *                             leftAxisDimensions: [],
+ *                             fields: [],
+ *                             values: [],
+ *                         },
+ *                     },
+ *                     singleValue: {
+ *                         showLabel: true,
+ *                         label: "",
+ *                         prefixIcon: "",
+ *                         autoscale: true,
+ *                         alignment: "center",
+ *                         colorThresholdTarget: "value",
+ *                     },
+ *                     table: {
+ *                         rowDensity: "condensed",
+ *                         enableSparklines: false,
+ *                         hiddenColumns: [],
+ *                         lineWrapIds: [],
+ *                         columnWidths: {},
+ *                     },
+ *                 },
+ *             },
+ *             "2": {
+ *                 type: "data",
+ *                 title: "",
+ *                 query: "timeseries avg(dt.host.memory.used)",
+ *                 queryConfig: {
+ *                     additionalFilters: {},
+ *                     version: "4.3.1",
+ *                     datatype: "metrics",
+ *                     metricKey: "dt.host.memory.used",
+ *                     aggregation: "avg",
+ *                     by: [],
+ *                 },
+ *                 subType: "dql-builder-metrics",
+ *                 visualization: "lineChart",
+ *                 visualizationSettings: {
+ *                     thresholds: [],
+ *                     chartSettings: {
+ *                         gapPolicy: "connect",
+ *                         circleChartSettings: {
+ *                             groupingThresholdType: "relative",
+ *                             groupingThresholdValue: 0,
+ *                             valueType: "relative",
+ *                         },
+ *                         categoryOverrides: {},
+ *                         fieldMapping: {
+ *                             timestamp: "timeframe",
+ *                             leftAxisValues: ["avg(dt.host.memory.used)"],
+ *                             leftAxisDimensions: [],
+ *                             fields: [],
+ *                             values: [],
+ *                         },
+ *                         categoricalBarChartSettings: {},
+ *                     },
+ *                     singleValue: {
+ *                         showLabel: true,
+ *                         label: "",
+ *                         prefixIcon: "",
+ *                         autoscale: true,
+ *                         alignment: "center",
+ *                         colorThresholdTarget: "value",
+ *                     },
+ *                     table: {
+ *                         rowDensity: "condensed",
+ *                         enableSparklines: false,
+ *                         hiddenColumns: [],
+ *                         lineWrapIds: [],
+ *                         columnWidths: {},
+ *                     },
+ *                 },
+ *             },
+ *         },
+ *         layouts: {
+ *             "0": {
+ *                 x: 0,
+ *                 y: 0,
+ *                 w: 24,
+ *                 h: 14,
+ *             },
+ *             "1": {
+ *                 x: 0,
+ *                 y: 14,
+ *                 w: 9,
+ *                 h: 6,
+ *             },
+ *             "2": {
+ *                 x: 15,
+ *                 y: 14,
+ *                 w: 9,
+ *                 h: 6,
+ *             },
+ *         },
+ *     }),
+ * });
+ * ```
  */
 export class Document extends pulumi.CustomResource {
     /**
@@ -64,7 +205,7 @@ export class Document extends pulumi.CustomResource {
      */
     public readonly private!: pulumi.Output<boolean | undefined>;
     /**
-     * Type of the document. Possible Values are `dashboard` and `notebook`
+     * Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
      */
     public readonly type!: pulumi.Output<string>;
     /**
@@ -138,7 +279,7 @@ export interface DocumentState {
      */
     private?: pulumi.Input<boolean>;
     /**
-     * Type of the document. Possible Values are `dashboard` and `notebook`
+     * Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
      */
     type?: pulumi.Input<string>;
     /**
@@ -172,7 +313,7 @@ export interface DocumentArgs {
      */
     private?: pulumi.Input<boolean>;
     /**
-     * Type of the document. Possible Values are `dashboard` and `notebook`
+     * Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
      */
     type: pulumi.Input<string>;
 }
