@@ -257,7 +257,7 @@ jobs:
     #   run: ./ci-scripts/ci/publish-tfgen-package ${{ github.workspace }}
     - if: ${{ matrix.language == 'python' && env.PUBLISH_PYPI == 'true' }}
       name: Publish package to PyPI
-      uses: pypa/gh-action-pypi-publish@v1.12.2
+      uses: pypa/gh-action-pypi-publish@v1.12.3
       with:
         user: ${{ env.PYPI_USERNAME }}
         password: ${{ env.PYPI_PASSWORD }}
