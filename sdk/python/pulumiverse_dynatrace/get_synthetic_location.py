@@ -156,7 +156,7 @@ def get_synthetic_location_output(cloud_platform: Optional[pulumi.Input[Optional
                                   stage: Optional[pulumi.Input[Optional[str]]] = None,
                                   status: Optional[pulumi.Input[Optional[str]]] = None,
                                   type: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSyntheticLocationResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSyntheticLocationResult]:
     """
     The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
 
@@ -171,7 +171,7 @@ def get_synthetic_location_output(cloud_platform: Optional[pulumi.Input[Optional
     __args__['stage'] = stage
     __args__['status'] = status
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getSyntheticLocation:getSyntheticLocation', __args__, opts=opts, typ=GetSyntheticLocationResult)
     return __ret__.apply(lambda __response__: GetSyntheticLocationResult(
         cloud_platform=pulumi.get(__response__, 'cloud_platform'),

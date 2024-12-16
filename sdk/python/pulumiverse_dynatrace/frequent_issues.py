@@ -21,16 +21,20 @@ class FrequentIssuesArgs:
     def __init__(__self__, *,
                  detect_apps: pulumi.Input[bool],
                  detect_infra: pulumi.Input[bool],
-                 detect_txn: pulumi.Input[bool]):
+                 detect_txn: pulumi.Input[bool],
+                 detect_env: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a FrequentIssues resource.
         :param pulumi.Input[bool] detect_apps: Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
         :param pulumi.Input[bool] detect_infra: Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
         :param pulumi.Input[bool] detect_txn: Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[bool] detect_env: Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
         """
         pulumi.set(__self__, "detect_apps", detect_apps)
         pulumi.set(__self__, "detect_infra", detect_infra)
         pulumi.set(__self__, "detect_txn", detect_txn)
+        if detect_env is not None:
+            pulumi.set(__self__, "detect_env", detect_env)
 
     @property
     @pulumi.getter(name="detectApps")
@@ -68,21 +72,37 @@ class FrequentIssuesArgs:
     def detect_txn(self, value: pulumi.Input[bool]):
         pulumi.set(self, "detect_txn", value)
 
+    @property
+    @pulumi.getter(name="detectEnv")
+    def detect_env(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+        """
+        return pulumi.get(self, "detect_env")
+
+    @detect_env.setter
+    def detect_env(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "detect_env", value)
+
 
 @pulumi.input_type
 class _FrequentIssuesState:
     def __init__(__self__, *,
                  detect_apps: Optional[pulumi.Input[bool]] = None,
+                 detect_env: Optional[pulumi.Input[bool]] = None,
                  detect_infra: Optional[pulumi.Input[bool]] = None,
                  detect_txn: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering FrequentIssues resources.
         :param pulumi.Input[bool] detect_apps: Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[bool] detect_env: Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
         :param pulumi.Input[bool] detect_infra: Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
         :param pulumi.Input[bool] detect_txn: Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
         """
         if detect_apps is not None:
             pulumi.set(__self__, "detect_apps", detect_apps)
+        if detect_env is not None:
+            pulumi.set(__self__, "detect_env", detect_env)
         if detect_infra is not None:
             pulumi.set(__self__, "detect_infra", detect_infra)
         if detect_txn is not None:
@@ -99,6 +119,18 @@ class _FrequentIssuesState:
     @detect_apps.setter
     def detect_apps(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "detect_apps", value)
+
+    @property
+    @pulumi.getter(name="detectEnv")
+    def detect_env(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+        """
+        return pulumi.get(self, "detect_env")
+
+    @detect_env.setter
+    def detect_env(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "detect_env", value)
 
     @property
     @pulumi.getter(name="detectInfra")
@@ -131,6 +163,7 @@ class FrequentIssues(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  detect_apps: Optional[pulumi.Input[bool]] = None,
+                 detect_env: Optional[pulumi.Input[bool]] = None,
                  detect_infra: Optional[pulumi.Input[bool]] = None,
                  detect_txn: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -139,6 +172,7 @@ class FrequentIssues(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] detect_apps: Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[bool] detect_env: Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
         :param pulumi.Input[bool] detect_infra: Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
         :param pulumi.Input[bool] detect_txn: Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
         """
@@ -166,6 +200,7 @@ class FrequentIssues(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  detect_apps: Optional[pulumi.Input[bool]] = None,
+                 detect_env: Optional[pulumi.Input[bool]] = None,
                  detect_infra: Optional[pulumi.Input[bool]] = None,
                  detect_txn: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -180,6 +215,7 @@ class FrequentIssues(pulumi.CustomResource):
             if detect_apps is None and not opts.urn:
                 raise TypeError("Missing required property 'detect_apps'")
             __props__.__dict__["detect_apps"] = detect_apps
+            __props__.__dict__["detect_env"] = detect_env
             if detect_infra is None and not opts.urn:
                 raise TypeError("Missing required property 'detect_infra'")
             __props__.__dict__["detect_infra"] = detect_infra
@@ -197,6 +233,7 @@ class FrequentIssues(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             detect_apps: Optional[pulumi.Input[bool]] = None,
+            detect_env: Optional[pulumi.Input[bool]] = None,
             detect_infra: Optional[pulumi.Input[bool]] = None,
             detect_txn: Optional[pulumi.Input[bool]] = None) -> 'FrequentIssues':
         """
@@ -207,6 +244,7 @@ class FrequentIssues(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] detect_apps: Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[bool] detect_env: Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
         :param pulumi.Input[bool] detect_infra: Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
         :param pulumi.Input[bool] detect_txn: Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
         """
@@ -215,6 +253,7 @@ class FrequentIssues(pulumi.CustomResource):
         __props__ = _FrequentIssuesState.__new__(_FrequentIssuesState)
 
         __props__.__dict__["detect_apps"] = detect_apps
+        __props__.__dict__["detect_env"] = detect_env
         __props__.__dict__["detect_infra"] = detect_infra
         __props__.__dict__["detect_txn"] = detect_txn
         return FrequentIssues(resource_name, opts=opts, __props__=__props__)
@@ -226,6 +265,14 @@ class FrequentIssues(pulumi.CustomResource):
         Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "detect_apps")
+
+    @property
+    @pulumi.getter(name="detectEnv")
+    def detect_env(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+        """
+        return pulumi.get(self, "detect_env")
 
     @property
     @pulumi.getter(name="detectInfra")

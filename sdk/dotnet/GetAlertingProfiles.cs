@@ -23,6 +23,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetAlertingProfilesResult> Invoke(GetAlertingProfilesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlertingProfilesResult>("dynatrace:index/getAlertingProfiles:getAlertingProfiles", args ?? new GetAlertingProfilesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The alerting profiles data source allows retrieval of all alerting profiles.
+        /// </summary>
+        public static Output<GetAlertingProfilesResult> Invoke(GetAlertingProfilesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlertingProfilesResult>("dynatrace:index/getAlertingProfiles:getAlertingProfiles", args ?? new GetAlertingProfilesInvokeArgs(), options.WithDefaults());
     }
 
 

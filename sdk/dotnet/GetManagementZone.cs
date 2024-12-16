@@ -157,6 +157,79 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetManagementZoneResult> Invoke(GetManagementZoneInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementZoneResult>("dynatrace:index/getManagementZone:getManagementZone", args ?? new GetManagementZoneInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The management zone data source allows the management zone ID to be retrieved by its name.
+        /// 
+        /// &gt; This data source requires the API token scope **Read configuration** (`ReadConfig`)
+        /// 
+        /// !&gt; This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
+        /// 
+        /// - `name` queries for all management zones with the specified name
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Dynatrace.GetManagementZone.Invoke(new()
+        ///     {
+        ///         Name = "Example",
+        ///     });
+        /// 
+        ///     var _name_ = new Dynatrace.CalculatedServiceMetric("#name#", new()
+        ///     {
+        ///         Conditions = new[]
+        ///         {
+        ///             new Dynatrace.Inputs.CalculatedServiceMetricConditionArgs
+        ///             {
+        ///                 Conditions = new[]
+        ///                 {
+        ///                     new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionArgs
+        ///                     {
+        ///                         Attribute = "HTTP_REQUEST_METHOD",
+        ///                         Comparison = new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionComparisonArgs
+        ///                         {
+        ///                             HttpMethod = new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs
+        ///                             {
+        ///                                 Operator = "EQUALS_ANY_OF",
+        ///                                 Values = new[]
+        ///                                 {
+        ///                                     "POST",
+        ///                                     "GET",
+        ///                                 },
+        ///                             },
+        ///                             Negate = false,
+        ///                         },
+        ///                     },
+        ///                 },
+        ///             },
+        ///         },
+        ///         Enabled = true,
+        ///         ManagementZones = new[]
+        ///         {
+        ///             test.Apply(getManagementZoneResult =&gt; getManagementZoneResult.Id),
+        ///         },
+        ///         MetricDefinition = new Dynatrace.Inputs.CalculatedServiceMetricMetricDefinitionArgs
+        ///         {
+        ///             Metric = "REQUEST_ATTRIBUTE",
+        ///             RequestAttribute = "foo",
+        ///         },
+        ///         MetricKey = "calc:service.#name#",
+        ///         Unit = "MILLI_SECOND_PER_MINUTE",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagementZoneResult> Invoke(GetManagementZoneInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementZoneResult>("dynatrace:index/getManagementZone:getManagementZone", args ?? new GetManagementZoneInvokeArgs(), options.WithDefaults());
     }
 
 

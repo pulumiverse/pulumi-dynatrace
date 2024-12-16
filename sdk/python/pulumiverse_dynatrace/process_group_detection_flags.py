@@ -34,7 +34,8 @@ class ProcessGroupDetectionFlagsArgs:
                  split_oracle_listener_pg: pulumi.Input[bool],
                  use_catalina_base: pulumi.Input[bool],
                  use_docker_container_name: pulumi.Input[bool],
-                 scope: Optional[pulumi.Input[str]] = None):
+                 scope: Optional[pulumi.Input[str]] = None,
+                 security_software_detection_enabled: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a ProcessGroupDetectionFlags resource.
         :param pulumi.Input[bool] add_node_js_script_name: In older versions, Node.js applications were distinguished based on their directory name, omitting the script name. Changing this setting may change the general handling of Node.js process groups. Leave unchanged if in doubt.
@@ -53,6 +54,7 @@ class ProcessGroupDetectionFlagsArgs:
         :param pulumi.Input[bool] use_catalina_base: By default, Tomcat clusters are identified and named based on the CATALINA*HOME directory name. This setting results in the use of the CATALINA*BASE directory name to identify multiple Tomcat nodes within each Tomcat cluster. If this setting is not enabled, each CATALINA*HOME+CATALINA*BASE combination will be considered a separate Tomcat cluster. In other words, Tomcat clusters can't have multiple nodes on a single host.
         :param pulumi.Input[bool] use_docker_container_name: By default, Dynatrace uses image names as identifiers for individual process groups, with one process-group instance per host. Normally Docker container names can't serve as stable identifiers of process group instances because they are variable and auto-generated. You can however manually assign proper container names to their Docker instances. Such manually-assigned container names can serve as reliable process-group instance identifiers. This flag instructs Dynatrace to use Docker-provided names to distinguish between multiple instances of the same image. If this flag is not applied and you run multiple containers of the same image on the same host, the resulting processes will be consolidated into a single process view. Use this flag with caution!
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[bool] security_software_detection_enabled: This flag enables the detection of security software such as anti-malware protection.
         """
         pulumi.set(__self__, "add_node_js_script_name", add_node_js_script_name)
         pulumi.set(__self__, "auto_detect_cassandra_clusters", auto_detect_cassandra_clusters)
@@ -71,6 +73,8 @@ class ProcessGroupDetectionFlagsArgs:
         pulumi.set(__self__, "use_docker_container_name", use_docker_container_name)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
+        if security_software_detection_enabled is not None:
+            pulumi.set(__self__, "security_software_detection_enabled", security_software_detection_enabled)
 
     @property
     @pulumi.getter(name="addNodeJsScriptName")
@@ -264,6 +268,18 @@ class ProcessGroupDetectionFlagsArgs:
     def scope(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "scope", value)
 
+    @property
+    @pulumi.getter(name="securitySoftwareDetectionEnabled")
+    def security_software_detection_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        This flag enables the detection of security software such as anti-malware protection.
+        """
+        return pulumi.get(self, "security_software_detection_enabled")
+
+    @security_software_detection_enabled.setter
+    def security_software_detection_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "security_software_detection_enabled", value)
+
 
 @pulumi.input_type
 class _ProcessGroupDetectionFlagsState:
@@ -279,6 +295,7 @@ class _ProcessGroupDetectionFlagsState:
                  identify_jboss_server_by_system_property: Optional[pulumi.Input[bool]] = None,
                  ignore_unique_identifiers: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
+                 security_software_detection_enabled: Optional[pulumi.Input[bool]] = None,
                  short_lived_processes_monitoring: Optional[pulumi.Input[bool]] = None,
                  split_oracle_database_pg: Optional[pulumi.Input[bool]] = None,
                  split_oracle_listener_pg: Optional[pulumi.Input[bool]] = None,
@@ -297,6 +314,7 @@ class _ProcessGroupDetectionFlagsState:
         :param pulumi.Input[bool] identify_jboss_server_by_system_property: Enabling this flag will detect the JBoss server name from the system property jboss.server.name=\\n\\n, only if -D[Server:\\n\\n] is not set.
         :param pulumi.Input[bool] ignore_unique_identifiers: To determine the unique identity of each detected process, and to generate a unique name for each detected process, Dynatrace evaluates the name of the directory that each process binary is contained within. For application containers like Tomcat and JBoss, Dynatrace evaluates important directories like CATALINA*HOME and JBOSS*HOME for this information. In some automated deployment scenarios such directory names are updated automatically with new version numbers, build numbers, dates, or GUIDs. Enable this setting to ensure that automated directory name changes don't result in Dynatrace registering pre-existing processes as new processes.
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[bool] security_software_detection_enabled: This flag enables the detection of security software such as anti-malware protection.
         :param pulumi.Input[bool] short_lived_processes_monitoring: Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
         :param pulumi.Input[bool] split_oracle_database_pg: Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
         :param pulumi.Input[bool] split_oracle_listener_pg: Enable to group and separately analyze the processes of each Oracle Listener. Each process group receives a unique name based on the Oracle Listener name.
@@ -325,6 +343,8 @@ class _ProcessGroupDetectionFlagsState:
             pulumi.set(__self__, "ignore_unique_identifiers", ignore_unique_identifiers)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
+        if security_software_detection_enabled is not None:
+            pulumi.set(__self__, "security_software_detection_enabled", security_software_detection_enabled)
         if short_lived_processes_monitoring is not None:
             pulumi.set(__self__, "short_lived_processes_monitoring", short_lived_processes_monitoring)
         if split_oracle_database_pg is not None:
@@ -469,6 +489,18 @@ class _ProcessGroupDetectionFlagsState:
         pulumi.set(self, "scope", value)
 
     @property
+    @pulumi.getter(name="securitySoftwareDetectionEnabled")
+    def security_software_detection_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        This flag enables the detection of security software such as anti-malware protection.
+        """
+        return pulumi.get(self, "security_software_detection_enabled")
+
+    @security_software_detection_enabled.setter
+    def security_software_detection_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "security_software_detection_enabled", value)
+
+    @property
     @pulumi.getter(name="shortLivedProcessesMonitoring")
     def short_lived_processes_monitoring(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -545,6 +577,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
                  identify_jboss_server_by_system_property: Optional[pulumi.Input[bool]] = None,
                  ignore_unique_identifiers: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
+                 security_software_detection_enabled: Optional[pulumi.Input[bool]] = None,
                  short_lived_processes_monitoring: Optional[pulumi.Input[bool]] = None,
                  split_oracle_database_pg: Optional[pulumi.Input[bool]] = None,
                  split_oracle_listener_pg: Optional[pulumi.Input[bool]] = None,
@@ -566,6 +599,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
         :param pulumi.Input[bool] identify_jboss_server_by_system_property: Enabling this flag will detect the JBoss server name from the system property jboss.server.name=\\n\\n, only if -D[Server:\\n\\n] is not set.
         :param pulumi.Input[bool] ignore_unique_identifiers: To determine the unique identity of each detected process, and to generate a unique name for each detected process, Dynatrace evaluates the name of the directory that each process binary is contained within. For application containers like Tomcat and JBoss, Dynatrace evaluates important directories like CATALINA*HOME and JBOSS*HOME for this information. In some automated deployment scenarios such directory names are updated automatically with new version numbers, build numbers, dates, or GUIDs. Enable this setting to ensure that automated directory name changes don't result in Dynatrace registering pre-existing processes as new processes.
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[bool] security_software_detection_enabled: This flag enables the detection of security software such as anti-malware protection.
         :param pulumi.Input[bool] short_lived_processes_monitoring: Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
         :param pulumi.Input[bool] split_oracle_database_pg: Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
         :param pulumi.Input[bool] split_oracle_listener_pg: Enable to group and separately analyze the processes of each Oracle Listener. Each process group receives a unique name based on the Oracle Listener name.
@@ -606,6 +640,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
                  identify_jboss_server_by_system_property: Optional[pulumi.Input[bool]] = None,
                  ignore_unique_identifiers: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
+                 security_software_detection_enabled: Optional[pulumi.Input[bool]] = None,
                  short_lived_processes_monitoring: Optional[pulumi.Input[bool]] = None,
                  split_oracle_database_pg: Optional[pulumi.Input[bool]] = None,
                  split_oracle_listener_pg: Optional[pulumi.Input[bool]] = None,
@@ -651,6 +686,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
                 raise TypeError("Missing required property 'ignore_unique_identifiers'")
             __props__.__dict__["ignore_unique_identifiers"] = ignore_unique_identifiers
             __props__.__dict__["scope"] = scope
+            __props__.__dict__["security_software_detection_enabled"] = security_software_detection_enabled
             if short_lived_processes_monitoring is None and not opts.urn:
                 raise TypeError("Missing required property 'short_lived_processes_monitoring'")
             __props__.__dict__["short_lived_processes_monitoring"] = short_lived_processes_monitoring
@@ -687,6 +723,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
             identify_jboss_server_by_system_property: Optional[pulumi.Input[bool]] = None,
             ignore_unique_identifiers: Optional[pulumi.Input[bool]] = None,
             scope: Optional[pulumi.Input[str]] = None,
+            security_software_detection_enabled: Optional[pulumi.Input[bool]] = None,
             short_lived_processes_monitoring: Optional[pulumi.Input[bool]] = None,
             split_oracle_database_pg: Optional[pulumi.Input[bool]] = None,
             split_oracle_listener_pg: Optional[pulumi.Input[bool]] = None,
@@ -710,6 +747,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
         :param pulumi.Input[bool] identify_jboss_server_by_system_property: Enabling this flag will detect the JBoss server name from the system property jboss.server.name=\\n\\n, only if -D[Server:\\n\\n] is not set.
         :param pulumi.Input[bool] ignore_unique_identifiers: To determine the unique identity of each detected process, and to generate a unique name for each detected process, Dynatrace evaluates the name of the directory that each process binary is contained within. For application containers like Tomcat and JBoss, Dynatrace evaluates important directories like CATALINA*HOME and JBOSS*HOME for this information. In some automated deployment scenarios such directory names are updated automatically with new version numbers, build numbers, dates, or GUIDs. Enable this setting to ensure that automated directory name changes don't result in Dynatrace registering pre-existing processes as new processes.
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[bool] security_software_detection_enabled: This flag enables the detection of security software such as anti-malware protection.
         :param pulumi.Input[bool] short_lived_processes_monitoring: Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
         :param pulumi.Input[bool] split_oracle_database_pg: Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
         :param pulumi.Input[bool] split_oracle_listener_pg: Enable to group and separately analyze the processes of each Oracle Listener. Each process group receives a unique name based on the Oracle Listener name.
@@ -731,6 +769,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
         __props__.__dict__["identify_jboss_server_by_system_property"] = identify_jboss_server_by_system_property
         __props__.__dict__["ignore_unique_identifiers"] = ignore_unique_identifiers
         __props__.__dict__["scope"] = scope
+        __props__.__dict__["security_software_detection_enabled"] = security_software_detection_enabled
         __props__.__dict__["short_lived_processes_monitoring"] = short_lived_processes_monitoring
         __props__.__dict__["split_oracle_database_pg"] = split_oracle_database_pg
         __props__.__dict__["split_oracle_listener_pg"] = split_oracle_listener_pg
@@ -825,6 +864,14 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
+
+    @property
+    @pulumi.getter(name="securitySoftwareDetectionEnabled")
+    def security_software_detection_enabled(self) -> pulumi.Output[Optional[bool]]:
+        """
+        This flag enables the detection of security software such as anti-malware protection.
+        """
+        return pulumi.get(self, "security_software_detection_enabled")
 
     @property
     @pulumi.getter(name="shortLivedProcessesMonitoring")

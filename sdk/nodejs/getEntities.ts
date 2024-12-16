@@ -75,7 +75,7 @@ export interface GetEntitiesResult {
  * export const serviceList = test.then(test => test.entities);
  * ```
  */
-export function getEntitiesOutput(args?: GetEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEntitiesResult> {
+export function getEntitiesOutput(args?: GetEntitiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEntitiesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getEntities:getEntities", {

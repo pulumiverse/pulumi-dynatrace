@@ -84,7 +84,7 @@ def get_calculated_service_metric(name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
 def get_calculated_service_metric_output(name: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCalculatedServiceMetricResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCalculatedServiceMetricResult]:
     """
     The calculated service metric data source allows the metric ID to be retrieved by its name.
 
@@ -102,7 +102,7 @@ def get_calculated_service_metric_output(name: Optional[pulumi.Input[str]] = Non
     """
     __args__ = dict()
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getCalculatedServiceMetric:getCalculatedServiceMetric', __args__, opts=opts, typ=GetCalculatedServiceMetricResult)
     return __ret__.apply(lambda __response__: GetCalculatedServiceMetricResult(
         id=pulumi.get(__response__, 'id'),

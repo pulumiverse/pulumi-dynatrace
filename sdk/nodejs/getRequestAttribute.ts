@@ -62,7 +62,7 @@ export interface GetRequestAttributeResult {
  * export const id = example.then(example => example.id);
  * ```
  */
-export function getRequestAttributeOutput(args: GetRequestAttributeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRequestAttributeResult> {
+export function getRequestAttributeOutput(args: GetRequestAttributeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRequestAttributeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getRequestAttribute:getRequestAttribute", {
         "name": args.name,

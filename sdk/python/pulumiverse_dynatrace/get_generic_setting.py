@@ -135,7 +135,7 @@ def get_generic_setting(filter: Optional[str] = None,
 def get_generic_setting_output(filter: Optional[pulumi.Input[Optional[str]]] = None,
                                schema: Optional[pulumi.Input[Optional[str]]] = None,
                                scope: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGenericSettingResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGenericSettingResult]:
     """
     The generic setting data source allows a single Settings 2.0 object to be retrieved by its schema ID, scope, and/or filter.
 
@@ -161,7 +161,7 @@ def get_generic_setting_output(filter: Optional[pulumi.Input[Optional[str]]] = N
     __args__['filter'] = filter
     __args__['schema'] = schema
     __args__['scope'] = scope
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getGenericSetting:getGenericSetting', __args__, opts=opts, typ=GetGenericSettingResult)
     return __ret__.apply(lambda __response__: GetGenericSettingResult(
         filter=pulumi.get(__response__, 'filter'),

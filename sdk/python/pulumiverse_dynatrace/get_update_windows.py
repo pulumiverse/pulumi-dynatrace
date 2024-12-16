@@ -84,7 +84,7 @@ def get_update_windows(name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
 def get_update_windows_output(name: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUpdateWindowsResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUpdateWindowsResult]:
     """
     The `UpdateWindows` data source allows the OneAgent update maintenance window ID to be retrieved by its name.
 
@@ -102,7 +102,7 @@ def get_update_windows_output(name: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getUpdateWindows:getUpdateWindows', __args__, opts=opts, typ=GetUpdateWindowsResult)
     return __ret__.apply(lambda __response__: GetUpdateWindowsResult(
         id=pulumi.get(__response__, 'id'),

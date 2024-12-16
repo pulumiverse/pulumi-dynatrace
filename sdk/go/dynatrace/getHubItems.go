@@ -71,21 +71,11 @@ type GetHubItemsResult struct {
 }
 
 func GetHubItemsOutput(ctx *pulumi.Context, args GetHubItemsOutputArgs, opts ...pulumi.InvokeOption) GetHubItemsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetHubItemsResultOutput, error) {
 			args := v.(GetHubItemsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetHubItemsResult
-			secret, err := ctx.InvokePackageRaw("dynatrace:index/getHubItems:getHubItems", args, &rv, "", opts...)
-			if err != nil {
-				return GetHubItemsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetHubItemsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetHubItemsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("dynatrace:index/getHubItems:getHubItems", args, GetHubItemsResultOutput{}, options).(GetHubItemsResultOutput), nil
 		}).(GetHubItemsResultOutput)
 }
 

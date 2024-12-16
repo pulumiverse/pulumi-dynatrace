@@ -82,7 +82,7 @@ export interface GetDocumentsResult {
  * });
  * ```
  */
-export function getDocumentsOutput(args?: GetDocumentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDocumentsResult> {
+export function getDocumentsOutput(args?: GetDocumentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDocumentsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getDocuments:getDocuments", {

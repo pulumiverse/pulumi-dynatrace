@@ -152,7 +152,7 @@ export interface GetAutotagResult {
  * });
  * ```
  */
-export function getAutotagOutput(args: GetAutotagOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutotagResult> {
+export function getAutotagOutput(args: GetAutotagOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutotagResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getAutotag:getAutotag", {
         "name": args.name,

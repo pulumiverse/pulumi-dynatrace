@@ -28,7 +28,7 @@ export interface GetSyntheticNodesResult {
 /**
  * The synthetic locations data source queries for all available Synthetic Nodes. The data source doesn't need to get configured. It always provides the full list of synthetic nodes.
  */
-export function getSyntheticNodesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetSyntheticNodesResult> {
+export function getSyntheticNodesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSyntheticNodesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getSyntheticNodes:getSyntheticNodes", {
     }, opts);

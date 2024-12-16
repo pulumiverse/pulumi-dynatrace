@@ -71,6 +71,36 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetRequestAttributeResult> Invoke(GetRequestAttributeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRequestAttributeResult>("dynatrace:index/getRequestAttribute:getRequestAttribute", args ?? new GetRequestAttributeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The `dynatrace.RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
+        /// 
+        /// - `name` (String) - The name of the request attribute
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetRequestAttribute.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = example.Apply(getRequestAttributeResult =&gt; getRequestAttributeResult.Id),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRequestAttributeResult> Invoke(GetRequestAttributeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRequestAttributeResult>("dynatrace:index/getRequestAttribute:getRequestAttribute", args ?? new GetRequestAttributeInvokeArgs(), options.WithDefaults());
     }
 
 

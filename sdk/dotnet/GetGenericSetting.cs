@@ -73,6 +73,37 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetGenericSettingResult> Invoke(GetGenericSettingInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGenericSettingResult>("dynatrace:index/getGenericSetting:getGenericSetting", args ?? new GetGenericSettingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The generic setting data source allows a single Settings 2.0 object to be retrieved by its schema ID, scope, and/or filter.
+        /// 
+        /// If multiple objects match the given criteria, the first result will be retrieved.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetGenericSetting.Invoke(new()
+        ///     {
+        ///         Schema = "builtin:alerting.maintenance-window",
+        ///         Filter = "value.generalProperties.name = 'Terraform Example'",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["genericSetting"] = example,
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetGenericSettingResult> Invoke(GetGenericSettingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGenericSettingResult>("dynatrace:index/getGenericSetting:getGenericSetting", args ?? new GetGenericSettingInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -20,14 +20,18 @@ __all__ = ['InfraopsAppSettingsArgs', 'InfraopsAppSettings']
 class InfraopsAppSettingsArgs:
     def __init__(__self__, *,
                  show_monitoring_candidates: pulumi.Input[bool],
-                 show_standalone_hosts: pulumi.Input[bool]):
+                 show_standalone_hosts: pulumi.Input[bool],
+                 interface_saturation_threshold: Optional[pulumi.Input[float]] = None):
         """
         The set of arguments for constructing a InfraopsAppSettings resource.
         :param pulumi.Input[bool] show_monitoring_candidates: When set to true, the app will display monitoring candidates in the Hosts table
         :param pulumi.Input[bool] show_standalone_hosts: When set to true, the app will display app only hosts in the Hosts table
+        :param pulumi.Input[float] interface_saturation_threshold: (Required v305+) The threshold at which a network device interface is deemed to be saturated.
         """
         pulumi.set(__self__, "show_monitoring_candidates", show_monitoring_candidates)
         pulumi.set(__self__, "show_standalone_hosts", show_standalone_hosts)
+        if interface_saturation_threshold is not None:
+            pulumi.set(__self__, "interface_saturation_threshold", interface_saturation_threshold)
 
     @property
     @pulumi.getter(name="showMonitoringCandidates")
@@ -53,21 +57,49 @@ class InfraopsAppSettingsArgs:
     def show_standalone_hosts(self, value: pulumi.Input[bool]):
         pulumi.set(self, "show_standalone_hosts", value)
 
+    @property
+    @pulumi.getter(name="interfaceSaturationThreshold")
+    def interface_saturation_threshold(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+        """
+        return pulumi.get(self, "interface_saturation_threshold")
+
+    @interface_saturation_threshold.setter
+    def interface_saturation_threshold(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "interface_saturation_threshold", value)
+
 
 @pulumi.input_type
 class _InfraopsAppSettingsState:
     def __init__(__self__, *,
+                 interface_saturation_threshold: Optional[pulumi.Input[float]] = None,
                  show_monitoring_candidates: Optional[pulumi.Input[bool]] = None,
                  show_standalone_hosts: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering InfraopsAppSettings resources.
+        :param pulumi.Input[float] interface_saturation_threshold: (Required v305+) The threshold at which a network device interface is deemed to be saturated.
         :param pulumi.Input[bool] show_monitoring_candidates: When set to true, the app will display monitoring candidates in the Hosts table
         :param pulumi.Input[bool] show_standalone_hosts: When set to true, the app will display app only hosts in the Hosts table
         """
+        if interface_saturation_threshold is not None:
+            pulumi.set(__self__, "interface_saturation_threshold", interface_saturation_threshold)
         if show_monitoring_candidates is not None:
             pulumi.set(__self__, "show_monitoring_candidates", show_monitoring_candidates)
         if show_standalone_hosts is not None:
             pulumi.set(__self__, "show_standalone_hosts", show_standalone_hosts)
+
+    @property
+    @pulumi.getter(name="interfaceSaturationThreshold")
+    def interface_saturation_threshold(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+        """
+        return pulumi.get(self, "interface_saturation_threshold")
+
+    @interface_saturation_threshold.setter
+    def interface_saturation_threshold(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "interface_saturation_threshold", value)
 
     @property
     @pulumi.getter(name="showMonitoringCandidates")
@@ -99,6 +131,7 @@ class InfraopsAppSettings(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 interface_saturation_threshold: Optional[pulumi.Input[float]] = None,
                  show_monitoring_candidates: Optional[pulumi.Input[bool]] = None,
                  show_standalone_hosts: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -106,6 +139,7 @@ class InfraopsAppSettings(pulumi.CustomResource):
         Create a InfraopsAppSettings resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[float] interface_saturation_threshold: (Required v305+) The threshold at which a network device interface is deemed to be saturated.
         :param pulumi.Input[bool] show_monitoring_candidates: When set to true, the app will display monitoring candidates in the Hosts table
         :param pulumi.Input[bool] show_standalone_hosts: When set to true, the app will display app only hosts in the Hosts table
         """
@@ -132,6 +166,7 @@ class InfraopsAppSettings(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 interface_saturation_threshold: Optional[pulumi.Input[float]] = None,
                  show_monitoring_candidates: Optional[pulumi.Input[bool]] = None,
                  show_standalone_hosts: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -143,6 +178,7 @@ class InfraopsAppSettings(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InfraopsAppSettingsArgs.__new__(InfraopsAppSettingsArgs)
 
+            __props__.__dict__["interface_saturation_threshold"] = interface_saturation_threshold
             if show_monitoring_candidates is None and not opts.urn:
                 raise TypeError("Missing required property 'show_monitoring_candidates'")
             __props__.__dict__["show_monitoring_candidates"] = show_monitoring_candidates
@@ -159,6 +195,7 @@ class InfraopsAppSettings(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            interface_saturation_threshold: Optional[pulumi.Input[float]] = None,
             show_monitoring_candidates: Optional[pulumi.Input[bool]] = None,
             show_standalone_hosts: Optional[pulumi.Input[bool]] = None) -> 'InfraopsAppSettings':
         """
@@ -168,6 +205,7 @@ class InfraopsAppSettings(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[float] interface_saturation_threshold: (Required v305+) The threshold at which a network device interface is deemed to be saturated.
         :param pulumi.Input[bool] show_monitoring_candidates: When set to true, the app will display monitoring candidates in the Hosts table
         :param pulumi.Input[bool] show_standalone_hosts: When set to true, the app will display app only hosts in the Hosts table
         """
@@ -175,9 +213,18 @@ class InfraopsAppSettings(pulumi.CustomResource):
 
         __props__ = _InfraopsAppSettingsState.__new__(_InfraopsAppSettingsState)
 
+        __props__.__dict__["interface_saturation_threshold"] = interface_saturation_threshold
         __props__.__dict__["show_monitoring_candidates"] = show_monitoring_candidates
         __props__.__dict__["show_standalone_hosts"] = show_standalone_hosts
         return InfraopsAppSettings(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="interfaceSaturationThreshold")
+    def interface_saturation_threshold(self) -> pulumi.Output[Optional[float]]:
+        """
+        (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+        """
+        return pulumi.get(self, "interface_saturation_threshold")
 
     @property
     @pulumi.getter(name="showMonitoringCandidates")

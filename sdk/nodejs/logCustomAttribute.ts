@@ -33,7 +33,7 @@ export class LogCustomAttribute extends pulumi.CustomResource {
     }
 
     /**
-     * The attribute key is case insensitive in log data ingestion.
+     * The attribute key is case sensitive in log data ingestion.
      */
     public readonly key!: pulumi.Output<string>;
     /**
@@ -77,7 +77,7 @@ export class LogCustomAttribute extends pulumi.CustomResource {
  */
 export interface LogCustomAttributeState {
     /**
-     * The attribute key is case insensitive in log data ingestion.
+     * The attribute key is case sensitive in log data ingestion.
      */
     key?: pulumi.Input<string>;
     /**
@@ -91,7 +91,7 @@ export interface LogCustomAttributeState {
  */
 export interface LogCustomAttributeArgs {
     /**
-     * The attribute key is case insensitive in log data ingestion.
+     * The attribute key is case sensitive in log data ingestion.
      */
     key: pulumi.Input<string>;
     /**

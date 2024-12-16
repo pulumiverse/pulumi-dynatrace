@@ -104,7 +104,7 @@ def get_management_zones(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitab
     return AwaitableGetManagementZonesResult(
         id=pulumi.get(__ret__, 'id'),
         values=pulumi.get(__ret__, 'values'))
-def get_management_zones_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementZonesResult]:
+def get_management_zones_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementZonesResult]:
     """
     The management zones data source allows retrieval of all management zones.
 
@@ -143,7 +143,7 @@ def get_management_zones_output(opts: Optional[pulumi.InvokeOptions] = None) -> 
     ```
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getManagementZones:getManagementZones', __args__, opts=opts, typ=GetManagementZonesResult)
     return __ret__.apply(lambda __response__: GetManagementZonesResult(
         id=pulumi.get(__response__, 'id'),

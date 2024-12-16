@@ -101,7 +101,7 @@ def get_alerting_profile(name: Optional[str] = None,
         legacy_id=pulumi.get(__ret__, 'legacy_id'),
         name=pulumi.get(__ret__, 'name'))
 def get_alerting_profile_output(name: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertingProfileResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertingProfileResult]:
     """
     The Alerting Profile queries for an Alerting Profile that has a specified name. In case multiple Alerting Profiles share the same name the first one found will be used.
     The ID of this Data Resource aligns with the IDs used by the Dynatrace Settings 2.0 API.
@@ -126,7 +126,7 @@ def get_alerting_profile_output(name: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getAlertingProfile:getAlertingProfile', __args__, opts=opts, typ=GetAlertingProfileResult)
     return __ret__.apply(lambda __response__: GetAlertingProfileResult(
         id=pulumi.get(__response__, 'id'),

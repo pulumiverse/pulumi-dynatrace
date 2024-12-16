@@ -84,7 +84,7 @@ def get_mobile_application(name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
 def get_mobile_application_output(name: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMobileApplicationResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMobileApplicationResult]:
     """
     The `MobileApplication` data source allows the mobile application ID to be retrieved by its name.
 
@@ -102,7 +102,7 @@ def get_mobile_application_output(name: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getMobileApplication:getMobileApplication', __args__, opts=opts, typ=GetMobileApplicationResult)
     return __ret__.apply(lambda __response__: GetMobileApplicationResult(
         id=pulumi.get(__response__, 'id'),

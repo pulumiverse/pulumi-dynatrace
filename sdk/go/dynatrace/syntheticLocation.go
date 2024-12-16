@@ -25,8 +25,8 @@ type SyntheticLocation struct {
 	AvailabilityNotificationsEnabled pulumi.BoolPtrOutput `pulumi:"availabilityNotificationsEnabled"`
 	// The city of the location
 	City pulumi.StringPtrOutput `pulumi:"city"`
-	// The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-	// example, `AT` for Austria or `PL` for Poland)
+	// The country code of the location. To fetch the list of available country codes, use the [GET all
+	// countries](https://dt-url.net/37030go) request
 	CountryCode pulumi.StringPtrOutput `pulumi:"countryCode"`
 	// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
 	// location is deployed on Kubernetes
@@ -49,9 +49,8 @@ type SyntheticLocation struct {
 	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
 	// nodes](https://dt-url.net/miy3rpl) call
 	Nodes pulumi.StringArrayOutput `pulumi:"nodes"`
-	// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-	// use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-	// rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+	// country](https://dt-url.net/az230x0) request
 	RegionCode pulumi.StringPtrOutput `pulumi:"regionCode"`
 }
 
@@ -101,8 +100,8 @@ type syntheticLocationState struct {
 	AvailabilityNotificationsEnabled *bool `pulumi:"availabilityNotificationsEnabled"`
 	// The city of the location
 	City *string `pulumi:"city"`
-	// The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-	// example, `AT` for Austria or `PL` for Poland)
+	// The country code of the location. To fetch the list of available country codes, use the [GET all
+	// countries](https://dt-url.net/37030go) request
 	CountryCode *string `pulumi:"countryCode"`
 	// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
 	// location is deployed on Kubernetes
@@ -125,9 +124,8 @@ type syntheticLocationState struct {
 	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
 	// nodes](https://dt-url.net/miy3rpl) call
 	Nodes []string `pulumi:"nodes"`
-	// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-	// use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-	// rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+	// country](https://dt-url.net/az230x0) request
 	RegionCode *string `pulumi:"regionCode"`
 }
 
@@ -142,8 +140,8 @@ type SyntheticLocationState struct {
 	AvailabilityNotificationsEnabled pulumi.BoolPtrInput
 	// The city of the location
 	City pulumi.StringPtrInput
-	// The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-	// example, `AT` for Austria or `PL` for Poland)
+	// The country code of the location. To fetch the list of available country codes, use the [GET all
+	// countries](https://dt-url.net/37030go) request
 	CountryCode pulumi.StringPtrInput
 	// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
 	// location is deployed on Kubernetes
@@ -166,9 +164,8 @@ type SyntheticLocationState struct {
 	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
 	// nodes](https://dt-url.net/miy3rpl) call
 	Nodes pulumi.StringArrayInput
-	// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-	// use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-	// rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+	// country](https://dt-url.net/az230x0) request
 	RegionCode pulumi.StringPtrInput
 }
 
@@ -187,8 +184,8 @@ type syntheticLocationArgs struct {
 	AvailabilityNotificationsEnabled *bool `pulumi:"availabilityNotificationsEnabled"`
 	// The city of the location
 	City *string `pulumi:"city"`
-	// The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-	// example, `AT` for Austria or `PL` for Poland)
+	// The country code of the location. To fetch the list of available country codes, use the [GET all
+	// countries](https://dt-url.net/37030go) request
 	CountryCode *string `pulumi:"countryCode"`
 	// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
 	// location is deployed on Kubernetes
@@ -211,9 +208,8 @@ type syntheticLocationArgs struct {
 	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
 	// nodes](https://dt-url.net/miy3rpl) call
 	Nodes []string `pulumi:"nodes"`
-	// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-	// use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-	// rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+	// country](https://dt-url.net/az230x0) request
 	RegionCode *string `pulumi:"regionCode"`
 }
 
@@ -229,8 +225,8 @@ type SyntheticLocationArgs struct {
 	AvailabilityNotificationsEnabled pulumi.BoolPtrInput
 	// The city of the location
 	City pulumi.StringPtrInput
-	// The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-	// example, `AT` for Austria or `PL` for Poland)
+	// The country code of the location. To fetch the list of available country codes, use the [GET all
+	// countries](https://dt-url.net/37030go) request
 	CountryCode pulumi.StringPtrInput
 	// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
 	// location is deployed on Kubernetes
@@ -253,9 +249,8 @@ type SyntheticLocationArgs struct {
 	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
 	// nodes](https://dt-url.net/miy3rpl) call
 	Nodes pulumi.StringArrayInput
-	// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-	// use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-	// rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+	// country](https://dt-url.net/az230x0) request
 	RegionCode pulumi.StringPtrInput
 }
 
@@ -371,8 +366,8 @@ func (o SyntheticLocationOutput) City() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringPtrOutput { return v.City }).(pulumi.StringPtrOutput)
 }
 
-// The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-// example, `AT` for Austria or `PL` for Poland)
+// The country code of the location. To fetch the list of available country codes, use the [GET all
+// countries](https://dt-url.net/37030go) request
 func (o SyntheticLocationOutput) CountryCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringPtrOutput { return v.CountryCode }).(pulumi.StringPtrOutput)
 }
@@ -425,9 +420,8 @@ func (o SyntheticLocationOutput) Nodes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringArrayOutput { return v.Nodes }).(pulumi.StringArrayOutput)
 }
 
-// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-// use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-// rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+// country](https://dt-url.net/az230x0) request
 func (o SyntheticLocationOutput) RegionCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringPtrOutput { return v.RegionCode }).(pulumi.StringPtrOutput)
 }

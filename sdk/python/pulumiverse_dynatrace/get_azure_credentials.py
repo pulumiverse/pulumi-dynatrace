@@ -74,7 +74,7 @@ def get_azure_credentials(label: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         label=pulumi.get(__ret__, 'label'))
 def get_azure_credentials_output(label: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAzureCredentialsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAzureCredentialsResult]:
     """
     The `AzureCredentials` data source allows the Azure credential ID to be retrieved by its label.
 
@@ -82,7 +82,7 @@ def get_azure_credentials_output(label: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['label'] = label
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getAzureCredentials:getAzureCredentials', __args__, opts=opts, typ=GetAzureCredentialsResult)
     return __ret__.apply(lambda __response__: GetAzureCredentialsResult(
         id=pulumi.get(__response__, 'id'),

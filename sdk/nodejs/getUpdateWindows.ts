@@ -62,7 +62,7 @@ export interface GetUpdateWindowsResult {
  * export const id = example.then(example => example.id);
  * ```
  */
-export function getUpdateWindowsOutput(args: GetUpdateWindowsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUpdateWindowsResult> {
+export function getUpdateWindowsOutput(args: GetUpdateWindowsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUpdateWindowsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getUpdateWindows:getUpdateWindows", {
         "name": args.name,

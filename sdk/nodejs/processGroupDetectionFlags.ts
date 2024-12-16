@@ -77,6 +77,10 @@ export class ProcessGroupDetectionFlags extends pulumi.CustomResource {
      */
     public readonly scope!: pulumi.Output<string | undefined>;
     /**
+     * This flag enables the detection of security software such as anti-malware protection.
+     */
+    public readonly securitySoftwareDetectionEnabled!: pulumi.Output<boolean | undefined>;
+    /**
      * Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
      */
     public readonly shortLivedProcessesMonitoring!: pulumi.Output<boolean>;
@@ -121,6 +125,7 @@ export class ProcessGroupDetectionFlags extends pulumi.CustomResource {
             resourceInputs["identifyJbossServerBySystemProperty"] = state ? state.identifyJbossServerBySystemProperty : undefined;
             resourceInputs["ignoreUniqueIdentifiers"] = state ? state.ignoreUniqueIdentifiers : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["securitySoftwareDetectionEnabled"] = state ? state.securitySoftwareDetectionEnabled : undefined;
             resourceInputs["shortLivedProcessesMonitoring"] = state ? state.shortLivedProcessesMonitoring : undefined;
             resourceInputs["splitOracleDatabasePg"] = state ? state.splitOracleDatabasePg : undefined;
             resourceInputs["splitOracleListenerPg"] = state ? state.splitOracleListenerPg : undefined;
@@ -184,6 +189,7 @@ export class ProcessGroupDetectionFlags extends pulumi.CustomResource {
             resourceInputs["identifyJbossServerBySystemProperty"] = args ? args.identifyJbossServerBySystemProperty : undefined;
             resourceInputs["ignoreUniqueIdentifiers"] = args ? args.ignoreUniqueIdentifiers : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["securitySoftwareDetectionEnabled"] = args ? args.securitySoftwareDetectionEnabled : undefined;
             resourceInputs["shortLivedProcessesMonitoring"] = args ? args.shortLivedProcessesMonitoring : undefined;
             resourceInputs["splitOracleDatabasePg"] = args ? args.splitOracleDatabasePg : undefined;
             resourceInputs["splitOracleListenerPg"] = args ? args.splitOracleListenerPg : undefined;
@@ -243,6 +249,10 @@ export interface ProcessGroupDetectionFlagsState {
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string>;
+    /**
+     * This flag enables the detection of security software such as anti-malware protection.
+     */
+    securitySoftwareDetectionEnabled?: pulumi.Input<boolean>;
     /**
      * Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
      */
@@ -313,6 +323,10 @@ export interface ProcessGroupDetectionFlagsArgs {
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string>;
+    /**
+     * This flag enables the detection of security software such as anti-malware protection.
+     */
+    securitySoftwareDetectionEnabled?: pulumi.Input<boolean>;
     /**
      * Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
      */

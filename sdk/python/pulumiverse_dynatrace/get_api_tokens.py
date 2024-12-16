@@ -80,7 +80,7 @@ def get_api_tokens(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetA
     return AwaitableGetApiTokensResult(
         api_tokens=pulumi.get(__ret__, 'api_tokens'),
         id=pulumi.get(__ret__, 'id'))
-def get_api_tokens_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiTokensResult]:
+def get_api_tokens_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiTokensResult]:
     """
     The API tokens data source allows all access tokens to be retrieved, note the token value is not included in the response.
 
@@ -95,7 +95,7 @@ def get_api_tokens_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi
     ```
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getApiTokens:getApiTokens', __args__, opts=opts, typ=GetApiTokensResult)
     return __ret__.apply(lambda __response__: GetApiTokensResult(
         api_tokens=pulumi.get(__response__, 'api_tokens'),

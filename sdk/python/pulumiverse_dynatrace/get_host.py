@@ -116,7 +116,7 @@ def get_host(name: Optional[str] = None,
         tags=pulumi.get(__ret__, 'tags'))
 def get_host_output(name: Optional[pulumi.Input[str]] = None,
                     tags: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHostResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostResult]:
     """
     !> The data source API endpoint has been deprecated, please use get_entity with entity type `HOST` instead.
 
@@ -151,7 +151,7 @@ def get_host_output(name: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['name'] = name
     __args__['tags'] = tags
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getHost:getHost', __args__, opts=opts, typ=GetHostResult)
     return __ret__.apply(lambda __response__: GetHostResult(
         id=pulumi.get(__response__, 'id'),

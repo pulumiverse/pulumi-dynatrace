@@ -52,6 +52,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Normalization;
         /// <summary>
+        /// The One Agent attribute to extract from. Required if the kind value is `ONE_AGENT_ATTRIBUTE`. Not applicable otherwise.
+        /// </summary>
+        public readonly string? OneagentAttributeKey;
+        /// <summary>
         /// The request attribute to extract from. Required if the `kind` value is `SERVICE_REQUEST_ATTRIBUTE`. Not applicable otherwise
         /// </summary>
         public readonly string? RequestAttribute;
@@ -84,6 +88,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? normalization,
 
+            string? oneagentAttributeKey,
+
             string? requestAttribute,
 
             Outputs.CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSource? source,
@@ -99,6 +105,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             Kind = kind;
             Name = name;
             Normalization = normalization;
+            OneagentAttributeKey = oneagentAttributeKey;
             RequestAttribute = requestAttribute;
             Source = source;
             Unknowns = unknowns;

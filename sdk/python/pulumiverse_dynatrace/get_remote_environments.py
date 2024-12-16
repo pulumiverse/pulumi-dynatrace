@@ -80,7 +80,7 @@ def get_remote_environments(opts: Optional[pulumi.InvokeOptions] = None) -> Awai
     return AwaitableGetRemoteEnvironmentsResult(
         id=pulumi.get(__ret__, 'id'),
         remote_environments=pulumi.get(__ret__, 'remote_environments'))
-def get_remote_environments_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemoteEnvironmentsResult]:
+def get_remote_environments_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRemoteEnvironmentsResult]:
     """
     The remote environments data source allows retrieval of all remote environments.
 
@@ -95,7 +95,7 @@ def get_remote_environments_output(opts: Optional[pulumi.InvokeOptions] = None) 
     ```
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getRemoteEnvironments:getRemoteEnvironments', __args__, opts=opts, typ=GetRemoteEnvironmentsResult)
     return __ret__.apply(lambda __response__: GetRemoteEnvironmentsResult(
         id=pulumi.get(__response__, 'id'),

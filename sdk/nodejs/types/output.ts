@@ -6708,6 +6708,10 @@ export interface CalculatedServiceMetricDimensionDefinitionPlaceholdersPlacehold
      */
     normalization?: string;
     /**
+     * The One Agent attribute to extract from. Required if the kind value is `ONE_AGENT_ATTRIBUTE`. Not applicable otherwise.
+     */
+    oneagentAttributeKey?: string;
+    /**
      * The request attribute to extract from. Required if the `kind` value is `SERVICE_REQUEST_ATTRIBUTE`. Not applicable otherwise
      */
     requestAttribute?: string;
@@ -9131,6 +9135,25 @@ export interface DeclarativeGroupingDetectionProcessDefinitionRulesRule {
     property: string;
 }
 
+export interface DefaultLaunchpadGroupLaunchpads {
+    groupLaunchpads: outputs.DefaultLaunchpadGroupLaunchpadsGroupLaunchpad[];
+}
+
+export interface DefaultLaunchpadGroupLaunchpadsGroupLaunchpad {
+    /**
+     * State
+     */
+    isEnabled: boolean;
+    /**
+     * Launchpad
+     */
+    launchpadId: string;
+    /**
+     * User Group
+     */
+    userGroupId: string;
+}
+
 export interface DirectSharesRecipients {
     /**
      * Recipient of the direct share
@@ -10183,6 +10206,22 @@ export interface GetGenericSettingsValue {
     schema: string;
     scope: string;
     value: string;
+}
+
+export interface GetGeoCitiesCity {
+    latitude: number;
+    longitude: number;
+    name: string;
+}
+
+export interface GetGeoCountriesCountry {
+    code: string;
+    name: string;
+}
+
+export interface GetGeoRegionsRegion {
+    code: string;
+    name: string;
 }
 
 export interface GetHubItemsItem {
@@ -14665,8 +14704,10 @@ export interface KubernetesEnrichmentRules {
 export interface KubernetesEnrichmentRulesRule {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
+     *
+     * @deprecated Attribute no longer exists in the schema.
      */
-    enabled: boolean;
+    enabled?: boolean;
     /**
      * The source must follow the syntax of Kubernetes annotation/label keys as defined in the [Kubernetes documentation](https://dt-url.net/2c02sbn).
      */
@@ -26283,6 +26324,10 @@ export interface RequestNamingPlaceholdersPlaceholder {
      * The format of the extracted string. Possible values are `ORIGINAL`, `TO_LOWER_CASE` and `TO_UPPER_CASE`
      */
     normalization?: string;
+    /**
+     * The One Agent attribute to extract from. Required if the kind value is `ONE_AGENT_ATTRIBUTE`. Not applicable otherwise.
+     */
+    oneagentAttributeKey?: string;
     /**
      * The request attribute to extract from. Required if the `kind` value is `SERVICE_REQUEST_ATTRIBUTE`. Not applicable otherwise
      */

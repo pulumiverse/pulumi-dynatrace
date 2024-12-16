@@ -191,6 +191,96 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetAutotagResult> Invoke(GetAutotagInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutotagResult>("dynatrace:index/getAutotag:getAutotag", args ?? new GetAutotagInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The automatically applied tag data source allows the tag ID to be retrieved by its name.
+        /// 
+        /// &gt; This data source requires the API token scopes **Read settings** (`settings.read`)
+        /// 
+        /// - `name` queries the automatically applied tag with the specified name
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var exampleAutotag = Dynatrace.GetAutotag.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     var exampleAutotagRules = new Dynatrace.AutotagRules("exampleAutotagRules", new()
+        ///     {
+        ///         AutoTagId = exampleAutotag.Apply(getAutotagResult =&gt; getAutotagResult.Id),
+        ///         Rules = new Dynatrace.Inputs.AutotagRulesRulesArgs
+        ///         {
+        ///             Rules = new[]
+        ///             {
+        ///                 new Dynatrace.Inputs.AutotagRulesRulesRuleArgs
+        ///                 {
+        ///                     Type = "ME",
+        ///                     Enabled = true,
+        ///                     ValueFormat = "Java",
+        ///                     ValueNormalization = "Leave text as-is",
+        ///                     AttributeRule = new Dynatrace.Inputs.AutotagRulesRulesRuleAttributeRuleArgs
+        ///                     {
+        ///                         EntityType = "PROCESS_GROUP",
+        ///                         PgToHostPropagation = true,
+        ///                         PgToServicePropagation = false,
+        ///                         Conditions = new Dynatrace.Inputs.AutotagRulesRulesRuleAttributeRuleConditionsArgs
+        ///                         {
+        ///                             Conditions = new[]
+        ///                             {
+        ///                                 new Dynatrace.Inputs.AutotagRulesRulesRuleAttributeRuleConditionsConditionArgs
+        ///                                 {
+        ///                                     EnumValue = "JAVA",
+        ///                                     Key = "PROCESS_GROUP_TECHNOLOGY",
+        ///                                     Operator = "EQUALS",
+        ///                                 },
+        ///                             },
+        ///                         },
+        ///                     },
+        ///                 },
+        ///                 new Dynatrace.Inputs.AutotagRulesRulesRuleArgs
+        ///                 {
+        ///                     Type = "ME",
+        ///                     Enabled = true,
+        ///                     ValueFormat = ".NET",
+        ///                     ValueNormalization = "Leave text as-is",
+        ///                     AttributeRule = new Dynatrace.Inputs.AutotagRulesRulesRuleAttributeRuleArgs
+        ///                     {
+        ///                         EntityType = "PROCESS_GROUP",
+        ///                         PgToHostPropagation = true,
+        ///                         PgToServicePropagation = false,
+        ///                         Conditions = new Dynatrace.Inputs.AutotagRulesRulesRuleAttributeRuleConditionsArgs
+        ///                         {
+        ///                             Conditions = new[]
+        ///                             {
+        ///                                 new Dynatrace.Inputs.AutotagRulesRulesRuleAttributeRuleConditionsConditionArgs
+        ///                                 {
+        ///                                     EnumValue = "DOTNET",
+        ///                                     Key = "PROCESS_GROUP_TECHNOLOGY",
+        ///                                     Operator = "EQUALS",
+        ///                                 },
+        ///                             },
+        ///                         },
+        ///                     },
+        ///                 },
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutotagResult> Invoke(GetAutotagInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutotagResult>("dynatrace:index/getAutotag:getAutotag", args ?? new GetAutotagInvokeArgs(), options.WithDefaults());
     }
 
 

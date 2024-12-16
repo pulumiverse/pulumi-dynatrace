@@ -48,7 +48,7 @@ export interface GetRemoteEnvironmentsResult {
  * export const remoteEnvironments = example;
  * ```
  */
-export function getRemoteEnvironmentsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetRemoteEnvironmentsResult> {
+export function getRemoteEnvironmentsOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRemoteEnvironmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getRemoteEnvironments:getRemoteEnvironments", {
     }, opts);

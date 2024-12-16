@@ -85,6 +85,43 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetAlertingProfileResult> Invoke(GetAlertingProfileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlertingProfileResult>("dynatrace:index/getAlertingProfile:getAlertingProfile", args ?? new GetAlertingProfileInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The Alerting Profile queries for an Alerting Profile that has a specified name. In case multiple Alerting Profiles share the same name the first one found will be used.
+        /// The ID of this Data Resource aligns with the IDs used by the Dynatrace Settings 2.0 API.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var @default = Dynatrace.GetAlertingProfile.Invoke(new()
+        ///     {
+        ///         Name = "Default",
+        ///     });
+        /// 
+        ///     var myWebhookNotification = new Dynatrace.WebhookNotification("myWebhookNotification", new()
+        ///     {
+        ///         Active = false,
+        ///         Profile = @default.Apply(@default =&gt; @default.Apply(getAlertingProfileResult =&gt; getAlertingProfileResult.Id)),
+        ///         Url = "https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e",
+        ///         Insecure = true,
+        ///         NotifyEventMerges = true,
+        ///         NotifyClosedProblems = true,
+        ///         Payload = "web-hook-payload",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAlertingProfileResult> Invoke(GetAlertingProfileInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlertingProfileResult>("dynatrace:index/getAlertingProfile:getAlertingProfile", args ?? new GetAlertingProfileInvokeArgs(), options.WithDefaults());
     }
 
 

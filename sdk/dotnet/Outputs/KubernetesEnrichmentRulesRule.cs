@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
-        public readonly bool Enabled;
+        public readonly bool? Enabled;
         /// <summary>
         /// The source must follow the syntax of Kubernetes annotation/label keys as defined in the [Kubernetes documentation](https://dt-url.net/2c02sbn).
         /// </summary>
@@ -33,7 +33,7 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private KubernetesEnrichmentRulesRule(
-            bool enabled,
+            bool? enabled,
 
             string source,
 

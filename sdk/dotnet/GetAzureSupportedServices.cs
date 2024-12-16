@@ -31,6 +31,16 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetAzureSupportedServicesResult> Invoke(GetAzureSupportedServicesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAzureSupportedServicesResult>("dynatrace:index/getAzureSupportedServices:getAzureSupportedServices", args ?? new GetAzureSupportedServicesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The Azure supported service data source queries for a full list of all supported services.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// For an example of this data source, please refer to the Resource Example Usage of the dynatrace.AzureService resource.
+        /// </summary>
+        public static Output<GetAzureSupportedServicesResult> Invoke(GetAzureSupportedServicesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAzureSupportedServicesResult>("dynatrace:index/getAzureSupportedServices:getAzureSupportedServices", args ?? new GetAzureSupportedServicesInvokeArgs(), options.WithDefaults());
     }
 
 

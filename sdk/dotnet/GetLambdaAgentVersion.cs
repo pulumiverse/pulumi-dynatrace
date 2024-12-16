@@ -61,6 +61,31 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetLambdaAgentVersionResult> Invoke(GetLambdaAgentVersionInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLambdaAgentVersionResult>("dynatrace:index/getLambdaAgentVersion:getLambdaAgentVersion", args ?? new GetLambdaAgentVersionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The AWS Lambda agent version data source retrieves the latest version names of OneAgent code modules for the Java, Node.js, and Python runtimes, also including names for layers that are combined with the log collector, as well as for the standalone log collector layer.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetLambdaAgentVersion.Invoke();
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["latest"] = example,
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLambdaAgentVersionResult> Invoke(GetLambdaAgentVersionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLambdaAgentVersionResult>("dynatrace:index/getLambdaAgentVersion:getLambdaAgentVersion", args ?? new GetLambdaAgentVersionInvokeArgs(), options.WithDefaults());
     }
 
 

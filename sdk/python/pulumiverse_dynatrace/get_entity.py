@@ -150,7 +150,7 @@ def get_entity_output(entity_selector: Optional[pulumi.Input[Optional[str]]] = N
                       name: Optional[pulumi.Input[Optional[str]]] = None,
                       to: Optional[pulumi.Input[Optional[str]]] = None,
                       type: Optional[pulumi.Input[Optional[str]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEntityResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEntityResult]:
     """
     The entity data source allows the entity ID to be retrieved by its name and type.
 
@@ -176,7 +176,7 @@ def get_entity_output(entity_selector: Optional[pulumi.Input[Optional[str]]] = N
     __args__['name'] = name
     __args__['to'] = to
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getEntity:getEntity', __args__, opts=opts, typ=GetEntityResult)
     return __ret__.apply(lambda __response__: GetEntityResult(
         entity_selector=pulumi.get(__response__, 'entity_selector'),

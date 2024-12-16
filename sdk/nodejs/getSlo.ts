@@ -114,7 +114,7 @@ export interface GetSloResult {
  * export const id = example.then(example => example.id);
  * ```
  */
-export function getSloOutput(args: GetSloOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSloResult> {
+export function getSloOutput(args: GetSloOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSloResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getSlo:getSlo", {
         "name": args.name,

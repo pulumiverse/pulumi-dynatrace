@@ -15,6 +15,8 @@ import (
 type InfraopsAppSettings struct {
 	pulumi.CustomResourceState
 
+	// (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+	InterfaceSaturationThreshold pulumi.Float64PtrOutput `pulumi:"interfaceSaturationThreshold"`
 	// When set to true, the app will display monitoring candidates in the Hosts table
 	ShowMonitoringCandidates pulumi.BoolOutput `pulumi:"showMonitoringCandidates"`
 	// When set to true, the app will display app only hosts in the Hosts table
@@ -57,6 +59,8 @@ func GetInfraopsAppSettings(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering InfraopsAppSettings resources.
 type infraopsAppSettingsState struct {
+	// (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+	InterfaceSaturationThreshold *float64 `pulumi:"interfaceSaturationThreshold"`
 	// When set to true, the app will display monitoring candidates in the Hosts table
 	ShowMonitoringCandidates *bool `pulumi:"showMonitoringCandidates"`
 	// When set to true, the app will display app only hosts in the Hosts table
@@ -64,6 +68,8 @@ type infraopsAppSettingsState struct {
 }
 
 type InfraopsAppSettingsState struct {
+	// (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+	InterfaceSaturationThreshold pulumi.Float64PtrInput
 	// When set to true, the app will display monitoring candidates in the Hosts table
 	ShowMonitoringCandidates pulumi.BoolPtrInput
 	// When set to true, the app will display app only hosts in the Hosts table
@@ -75,6 +81,8 @@ func (InfraopsAppSettingsState) ElementType() reflect.Type {
 }
 
 type infraopsAppSettingsArgs struct {
+	// (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+	InterfaceSaturationThreshold *float64 `pulumi:"interfaceSaturationThreshold"`
 	// When set to true, the app will display monitoring candidates in the Hosts table
 	ShowMonitoringCandidates bool `pulumi:"showMonitoringCandidates"`
 	// When set to true, the app will display app only hosts in the Hosts table
@@ -83,6 +91,8 @@ type infraopsAppSettingsArgs struct {
 
 // The set of arguments for constructing a InfraopsAppSettings resource.
 type InfraopsAppSettingsArgs struct {
+	// (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+	InterfaceSaturationThreshold pulumi.Float64PtrInput
 	// When set to true, the app will display monitoring candidates in the Hosts table
 	ShowMonitoringCandidates pulumi.BoolInput
 	// When set to true, the app will display app only hosts in the Hosts table
@@ -174,6 +184,11 @@ func (o InfraopsAppSettingsOutput) ToInfraopsAppSettingsOutput() InfraopsAppSett
 
 func (o InfraopsAppSettingsOutput) ToInfraopsAppSettingsOutputWithContext(ctx context.Context) InfraopsAppSettingsOutput {
 	return o
+}
+
+// (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+func (o InfraopsAppSettingsOutput) InterfaceSaturationThreshold() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *InfraopsAppSettings) pulumi.Float64PtrOutput { return v.InterfaceSaturationThreshold }).(pulumi.Float64PtrOutput)
 }
 
 // When set to true, the app will display monitoring candidates in the Hosts table

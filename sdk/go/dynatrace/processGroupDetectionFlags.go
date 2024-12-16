@@ -37,6 +37,8 @@ type ProcessGroupDetectionFlags struct {
 	IgnoreUniqueIdentifiers pulumi.BoolOutput `pulumi:"ignoreUniqueIdentifiers"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
+	// This flag enables the detection of security software such as anti-malware protection.
+	SecuritySoftwareDetectionEnabled pulumi.BoolPtrOutput `pulumi:"securitySoftwareDetectionEnabled"`
 	// Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
 	ShortLivedProcessesMonitoring pulumi.BoolOutput `pulumi:"shortLivedProcessesMonitoring"`
 	// Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
@@ -146,6 +148,8 @@ type processGroupDetectionFlagsState struct {
 	IgnoreUniqueIdentifiers *bool `pulumi:"ignoreUniqueIdentifiers"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
+	// This flag enables the detection of security software such as anti-malware protection.
+	SecuritySoftwareDetectionEnabled *bool `pulumi:"securitySoftwareDetectionEnabled"`
 	// Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
 	ShortLivedProcessesMonitoring *bool `pulumi:"shortLivedProcessesMonitoring"`
 	// Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
@@ -181,6 +185,8 @@ type ProcessGroupDetectionFlagsState struct {
 	IgnoreUniqueIdentifiers pulumi.BoolPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
+	// This flag enables the detection of security software such as anti-malware protection.
+	SecuritySoftwareDetectionEnabled pulumi.BoolPtrInput
 	// Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
 	ShortLivedProcessesMonitoring pulumi.BoolPtrInput
 	// Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
@@ -220,6 +226,8 @@ type processGroupDetectionFlagsArgs struct {
 	IgnoreUniqueIdentifiers bool `pulumi:"ignoreUniqueIdentifiers"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
+	// This flag enables the detection of security software such as anti-malware protection.
+	SecuritySoftwareDetectionEnabled *bool `pulumi:"securitySoftwareDetectionEnabled"`
 	// Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
 	ShortLivedProcessesMonitoring bool `pulumi:"shortLivedProcessesMonitoring"`
 	// Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
@@ -256,6 +264,8 @@ type ProcessGroupDetectionFlagsArgs struct {
 	IgnoreUniqueIdentifiers pulumi.BoolInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
+	// This flag enables the detection of security software such as anti-malware protection.
+	SecuritySoftwareDetectionEnabled pulumi.BoolPtrInput
 	// Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
 	ShortLivedProcessesMonitoring pulumi.BoolInput
 	// Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
@@ -408,6 +418,11 @@ func (o ProcessGroupDetectionFlagsOutput) IgnoreUniqueIdentifiers() pulumi.BoolO
 // The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 func (o ProcessGroupDetectionFlagsOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProcessGroupDetectionFlags) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
+}
+
+// This flag enables the detection of security software such as anti-malware protection.
+func (o ProcessGroupDetectionFlagsOutput) SecuritySoftwareDetectionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ProcessGroupDetectionFlags) pulumi.BoolPtrOutput { return v.SecuritySoftwareDetectionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.

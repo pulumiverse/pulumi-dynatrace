@@ -26,7 +26,7 @@ type AzureCredentials struct {
 	// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
 	Key pulumi.StringPtrOutput `pulumi:"key"`
 	// The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
-	Label pulumi.StringPtrOutput `pulumi:"label"`
+	Label pulumi.StringOutput `pulumi:"label"`
 	// A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
 	MonitorOnlyExcludingTagPairs AzureCredentialsMonitorOnlyExcludingTagPairArrayOutput `pulumi:"monitorOnlyExcludingTagPairs"`
 	// A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
@@ -54,6 +54,9 @@ func NewAzureCredentials(ctx *pulumi.Context,
 
 	if args.Active == nil {
 		return nil, errors.New("invalid value for required argument 'Active'")
+	}
+	if args.Label == nil {
+		return nil, errors.New("invalid value for required argument 'Label'")
 	}
 	if args.MonitorOnlyTaggedEntities == nil {
 		return nil, errors.New("invalid value for required argument 'MonitorOnlyTaggedEntities'")
@@ -165,7 +168,7 @@ type azureCredentialsArgs struct {
 	// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
 	Key *string `pulumi:"key"`
 	// The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
-	Label *string `pulumi:"label"`
+	Label string `pulumi:"label"`
 	// A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
 	MonitorOnlyExcludingTagPairs []AzureCredentialsMonitorOnlyExcludingTagPair `pulumi:"monitorOnlyExcludingTagPairs"`
 	// A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
@@ -197,7 +200,7 @@ type AzureCredentialsArgs struct {
 	// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
 	Key pulumi.StringPtrInput
 	// The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
-	Label pulumi.StringPtrInput
+	Label pulumi.StringInput
 	// A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
 	MonitorOnlyExcludingTagPairs AzureCredentialsMonitorOnlyExcludingTagPairArrayInput
 	// A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
@@ -329,8 +332,8 @@ func (o AzureCredentialsOutput) Key() pulumi.StringPtrOutput {
 }
 
 // The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
-func (o AzureCredentialsOutput) Label() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *AzureCredentials) pulumi.StringPtrOutput { return v.Label }).(pulumi.StringPtrOutput)
+func (o AzureCredentialsOutput) Label() pulumi.StringOutput {
+	return o.ApplyT(func(v *AzureCredentials) pulumi.StringOutput { return v.Label }).(pulumi.StringOutput)
 }
 
 // A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.

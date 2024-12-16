@@ -66,7 +66,7 @@ export interface GetAttackAlertingResult {
  * export const id = example.then(example => example.id);
  * ```
  */
-export function getAttackAlertingOutput(args: GetAttackAlertingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAttackAlertingResult> {
+export function getAttackAlertingOutput(args: GetAttackAlertingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAttackAlertingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getAttackAlerting:getAttackAlerting", {
         "name": args.name,

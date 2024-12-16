@@ -70,12 +70,12 @@ def get_synthetic_nodes(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitabl
     return AwaitableGetSyntheticNodesResult(
         id=pulumi.get(__ret__, 'id'),
         nodes=pulumi.get(__ret__, 'nodes'))
-def get_synthetic_nodes_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSyntheticNodesResult]:
+def get_synthetic_nodes_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSyntheticNodesResult]:
     """
     The synthetic locations data source queries for all available Synthetic Nodes. The data source doesn't need to get configured. It always provides the full list of synthetic nodes.
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getSyntheticNodes:getSyntheticNodes', __args__, opts=opts, typ=GetSyntheticNodesResult)
     return __ret__.apply(lambda __response__: GetSyntheticNodesResult(
         id=pulumi.get(__response__, 'id'),

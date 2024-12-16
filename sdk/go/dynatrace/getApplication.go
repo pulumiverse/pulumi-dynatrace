@@ -74,21 +74,11 @@ type GetApplicationResult struct {
 }
 
 func GetApplicationOutput(ctx *pulumi.Context, args GetApplicationOutputArgs, opts ...pulumi.InvokeOption) GetApplicationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetApplicationResultOutput, error) {
 			args := v.(GetApplicationArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetApplicationResult
-			secret, err := ctx.InvokePackageRaw("dynatrace:index/getApplication:getApplication", args, &rv, "", opts...)
-			if err != nil {
-				return GetApplicationResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetApplicationResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetApplicationResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("dynatrace:index/getApplication:getApplication", args, GetApplicationResultOutput{}, options).(GetApplicationResultOutput), nil
 		}).(GetApplicationResultOutput)
 }
 

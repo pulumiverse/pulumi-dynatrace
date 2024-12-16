@@ -79,6 +79,40 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetIamGroupResult> Invoke(GetIamGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamGroupResult>("dynatrace:index/getIamGroup:getIamGroup", args ?? new GetIamGroupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// &gt; **Dynatrace SaaS only**
+        /// 
+        /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **Allow read access for identity resources (users and groups)** (`account-idm-read`).
+        /// 
+        /// The IAM group data source allows the group ID to be retrieved by its name.
+        /// 
+        /// - `name` (String) - The name of the IAM group
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetIamGroup.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["groups"] = example.Apply(getIamGroupResult =&gt; getIamGroupResult.Id),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIamGroupResult> Invoke(GetIamGroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamGroupResult>("dynatrace:index/getIamGroup:getIamGroup", args ?? new GetIamGroupInvokeArgs(), options.WithDefaults());
     }
 
 

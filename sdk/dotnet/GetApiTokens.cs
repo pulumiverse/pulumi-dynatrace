@@ -61,6 +61,31 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetApiTokensResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApiTokensResult>("dynatrace:index/getApiTokens:getApiTokens", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// The API tokens data source allows all access tokens to be retrieved, note the token value is not included in the response.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var exampleApiTokens = Dynatrace.GetApiTokens.Invoke();
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["example"] = exampleApiTokens,
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetApiTokensResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetApiTokensResult>("dynatrace:index/getApiTokens:getApiTokens", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

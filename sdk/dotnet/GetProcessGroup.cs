@@ -109,6 +109,55 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetProcessGroupResult> Invoke(GetProcessGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProcessGroupResult>("dynatrace:index/getProcessGroup:getProcessGroup", args ?? new GetProcessGroupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// !&gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `PROCESS_GROUP` instead.
+        /// 
+        /// The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
+        /// 
+        /// - `name` queries for all process groups with the specified name
+        /// - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
+        /// 
+        /// If multiple process groups match the given criteria, the first result will be retrieved.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Dynatrace.GetProcessGroup.Invoke(new()
+        ///     {
+        ///         Name = "Example",
+        ///         Tags = new[]
+        ///         {
+        ///             "TerraformKeyTest",
+        ///             "TerraformKeyValueTest=TestValue",
+        ///         },
+        ///     });
+        /// 
+        ///     var _name_ = new Dynatrace.ManagementZone("#name#", new()
+        ///     {
+        ///         EntitySelectorBasedRules = new[]
+        ///         {
+        ///             new Dynatrace.Inputs.ManagementZoneEntitySelectorBasedRuleArgs
+        ///             {
+        ///                 Enabled = true,
+        ///                 Selector = $"type(\"process_group\"),entityId(\"{test.Apply(getProcessGroupResult =&gt; getProcessGroupResult.Id)}\")",
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProcessGroupResult> Invoke(GetProcessGroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProcessGroupResult>("dynatrace:index/getProcessGroup:getProcessGroup", args ?? new GetProcessGroupInvokeArgs(), options.WithDefaults());
     }
 
 

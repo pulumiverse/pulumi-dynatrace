@@ -71,6 +71,36 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetMobileApplicationResult> Invoke(GetMobileApplicationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMobileApplicationResult>("dynatrace:index/getMobileApplication:getMobileApplication", args ?? new GetMobileApplicationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The `dynatrace.MobileApplication` data source allows the mobile application ID to be retrieved by its name.
+        /// 
+        /// - `name` (String) - The name of the mobile application
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetMobileApplication.Invoke(new()
+        ///     {
+        ///         Name = "Terraform",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = example.Apply(getMobileApplicationResult =&gt; getMobileApplicationResult.Id),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMobileApplicationResult> Invoke(GetMobileApplicationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMobileApplicationResult>("dynatrace:index/getMobileApplication:getMobileApplication", args ?? new GetMobileApplicationInvokeArgs(), options.WithDefaults());
     }
 
 

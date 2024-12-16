@@ -23,6 +23,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetSyntheticNodesResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSyntheticNodesResult>("dynatrace:index/getSyntheticNodes:getSyntheticNodes", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// The synthetic locations data source queries for all available Synthetic Nodes. The data source doesn't need to get configured. It always provides the full list of synthetic nodes.
+        /// </summary>
+        public static Output<GetSyntheticNodesResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSyntheticNodesResult>("dynatrace:index/getSyntheticNodes:getSyntheticNodes", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

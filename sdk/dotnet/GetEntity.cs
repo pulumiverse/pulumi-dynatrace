@@ -79,6 +79,40 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetEntityResult> Invoke(GetEntityInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEntityResult>("dynatrace:index/getEntity:getEntity", args ?? new GetEntityInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The entity data source allows the entity ID to be retrieved by its name and type.
+        /// 
+        /// - `name` (String) Display name of the entity
+        /// - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+        /// 
+        /// If multiple services match the given criteria, the first result will be retrieved.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Dynatrace.GetEntity.Invoke(new()
+        ///     {
+        ///         Type = "SERVICE",
+        ///         Name = "BookingService",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = test.Apply(getEntityResult =&gt; getEntityResult.Id),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEntityResult> Invoke(GetEntityInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEntityResult>("dynatrace:index/getEntity:getEntity", args ?? new GetEntityInvokeArgs(), options.WithDefaults());
     }
 
 

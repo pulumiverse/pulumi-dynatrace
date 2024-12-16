@@ -158,7 +158,7 @@ def get_credentials(name: Optional[str] = None,
 def get_credentials_output(name: Optional[pulumi.Input[Optional[str]]] = None,
                            scope: Optional[pulumi.Input[Optional[str]]] = None,
                            type: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCredentialsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCredentialsResult]:
     """
     The `Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
 
@@ -217,7 +217,7 @@ def get_credentials_output(name: Optional[pulumi.Input[Optional[str]]] = None,
     __args__['name'] = name
     __args__['scope'] = scope
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getCredentials:getCredentials', __args__, opts=opts, typ=GetCredentialsResult)
     return __ret__.apply(lambda __response__: GetCredentialsResult(
         id=pulumi.get(__response__, 'id'),

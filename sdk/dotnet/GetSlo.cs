@@ -75,6 +75,38 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetSloResult> Invoke(GetSloInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSloResult>("dynatrace:index/getSlo:getSlo", args ?? new GetSloInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The `dynatrace.Slo` data source allows the SLO ID to be retrieved by its name.
+        /// 
+        /// - `name` (String) - The name of the SLO
+        /// 
+        /// If multiple services match the given criteria, the first result will be retrieved.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetSlo.Invoke(new()
+        ///     {
+        ///         Name = "Terraform",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = example.Apply(getSloResult =&gt; getSloResult.Id),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSloResult> Invoke(GetSloInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSloResult>("dynatrace:index/getSlo:getSlo", args ?? new GetSloInvokeArgs(), options.WithDefaults());
     }
 
 

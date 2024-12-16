@@ -59,7 +59,7 @@ export interface GetSyntheticLocationResult {
 /**
  * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
  */
-export function getSyntheticLocationOutput(args?: GetSyntheticLocationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSyntheticLocationResult> {
+export function getSyntheticLocationOutput(args?: GetSyntheticLocationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSyntheticLocationResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getSyntheticLocation:getSyntheticLocation", {

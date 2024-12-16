@@ -86,7 +86,7 @@ def get_attack_alerting(name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
 def get_attack_alerting_output(name: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAttackAlertingResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAttackAlertingResult]:
     """
     The `AttackAlerting` data source allows the attack alerting profile ID to be retrieved by its name.
 
@@ -106,7 +106,7 @@ def get_attack_alerting_output(name: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getAttackAlerting:getAttackAlerting', __args__, opts=opts, typ=GetAttackAlertingResult)
     return __ret__.apply(lambda __response__: GetAttackAlertingResult(
         id=pulumi.get(__response__, 'id'),

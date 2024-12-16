@@ -95,7 +95,7 @@ def get_aws_supported_services(excepts: Optional[Sequence[str]] = None,
         id=pulumi.get(__ret__, 'id'),
         services=pulumi.get(__ret__, 'services'))
 def get_aws_supported_services_output(excepts: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAwsSupportedServicesResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAwsSupportedServicesResult]:
     """
     The AWS supported service data source queries for a full list of all supported services.
 
@@ -108,7 +108,7 @@ def get_aws_supported_services_output(excepts: Optional[pulumi.Input[Optional[Se
     """
     __args__ = dict()
     __args__['excepts'] = excepts
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getAwsSupportedServices:getAwsSupportedServices', __args__, opts=opts, typ=GetAwsSupportedServicesResult)
     return __ret__.apply(lambda __response__: GetAwsSupportedServicesResult(
         excepts=pulumi.get(__response__, 'excepts'),

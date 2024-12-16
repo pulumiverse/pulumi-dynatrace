@@ -73,6 +73,37 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetHubItemsResult> Invoke(GetHubItemsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHubItemsResult>("dynatrace:index/getHubItems:getHubItems", args ?? new GetHubItemsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// &gt; This data source requires the API token scope `hub.read`)
+        /// 
+        /// - `type` (String) The type of hub item you are interested in. Possible values are `TECHNOLOGY`, `EXTENSION1` or `EXTENSION2`. If not specified, no restriction regarding type happens
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var extension_20_items = Dynatrace.GetHubItems.Invoke(new()
+        ///     {
+        ///         Type = "EXTENSION2",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["artifact-ids"] = extension_20_items.Apply(extension_20_items =&gt; extension_20_items.Apply(getHubItemsResult =&gt; getHubItemsResult.Artifacts)),
+        ///         ["hub-items"] = extension_20_items.Apply(extension_20_items =&gt; extension_20_items.Apply(getHubItemsResult =&gt; getHubItemsResult.Items)),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetHubItemsResult> Invoke(GetHubItemsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetHubItemsResult>("dynatrace:index/getHubItems:getHubItems", args ?? new GetHubItemsInvokeArgs(), options.WithDefaults());
     }
 
 

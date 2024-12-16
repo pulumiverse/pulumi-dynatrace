@@ -66,7 +66,7 @@ export interface GetFailureDetectionParametersResult {
  * export const id = example.then(example => example.id);
  * ```
  */
-export function getFailureDetectionParametersOutput(args: GetFailureDetectionParametersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFailureDetectionParametersResult> {
+export function getFailureDetectionParametersOutput(args: GetFailureDetectionParametersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFailureDetectionParametersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getFailureDetectionParameters:getFailureDetectionParameters", {
         "name": args.name,

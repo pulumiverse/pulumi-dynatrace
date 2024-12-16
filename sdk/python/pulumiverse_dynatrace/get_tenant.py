@@ -70,13 +70,13 @@ def get_tenant(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTenan
     return AwaitableGetTenantResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_tenant_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTenantResult]:
+def get_tenant_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTenantResult]:
     """
     The data source `get_tenant` evalutes the configured Environment URL (either the environment variable `DYNATRACE_ENV_URL` or the configuration attribute `dt_env_url`) and extracts out the name/id of the environment this provider addresses.
     Main purpose is for migrating settings from one environment to another, but it can be used to in general to avoid hard coding the environment ID like in the example below.
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getTenant:getTenant', __args__, opts=opts, typ=GetTenantResult)
     return __ret__.apply(lambda __response__: GetTenantResult(
         id=pulumi.get(__response__, 'id'),

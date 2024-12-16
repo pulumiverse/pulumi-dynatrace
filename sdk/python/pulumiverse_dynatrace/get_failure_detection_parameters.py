@@ -86,7 +86,7 @@ def get_failure_detection_parameters(name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
 def get_failure_detection_parameters_output(name: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFailureDetectionParametersResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFailureDetectionParametersResult]:
     """
     The `FailureDetectionParameters` data source allows the failure detection parameter ID to be retrieved by its name.
 
@@ -106,7 +106,7 @@ def get_failure_detection_parameters_output(name: Optional[pulumi.Input[str]] = 
     """
     __args__ = dict()
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getFailureDetectionParameters:getFailureDetectionParameters', __args__, opts=opts, typ=GetFailureDetectionParametersResult)
     return __ret__.apply(lambda __response__: GetFailureDetectionParametersResult(
         id=pulumi.get(__response__, 'id'),

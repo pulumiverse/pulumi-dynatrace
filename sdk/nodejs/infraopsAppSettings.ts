@@ -33,6 +33,10 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
     }
 
     /**
+     * (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+     */
+    public readonly interfaceSaturationThreshold!: pulumi.Output<number | undefined>;
+    /**
      * When set to true, the app will display monitoring candidates in the Hosts table
      */
     public readonly showMonitoringCandidates!: pulumi.Output<boolean>;
@@ -54,6 +58,7 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InfraopsAppSettingsState | undefined;
+            resourceInputs["interfaceSaturationThreshold"] = state ? state.interfaceSaturationThreshold : undefined;
             resourceInputs["showMonitoringCandidates"] = state ? state.showMonitoringCandidates : undefined;
             resourceInputs["showStandaloneHosts"] = state ? state.showStandaloneHosts : undefined;
         } else {
@@ -64,6 +69,7 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
             if ((!args || args.showStandaloneHosts === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'showStandaloneHosts'");
             }
+            resourceInputs["interfaceSaturationThreshold"] = args ? args.interfaceSaturationThreshold : undefined;
             resourceInputs["showMonitoringCandidates"] = args ? args.showMonitoringCandidates : undefined;
             resourceInputs["showStandaloneHosts"] = args ? args.showStandaloneHosts : undefined;
         }
@@ -76,6 +82,10 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
  * Input properties used for looking up and filtering InfraopsAppSettings resources.
  */
 export interface InfraopsAppSettingsState {
+    /**
+     * (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+     */
+    interfaceSaturationThreshold?: pulumi.Input<number>;
     /**
      * When set to true, the app will display monitoring candidates in the Hosts table
      */
@@ -90,6 +100,10 @@ export interface InfraopsAppSettingsState {
  * The set of arguments for constructing a InfraopsAppSettings resource.
  */
 export interface InfraopsAppSettingsArgs {
+    /**
+     * (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+     */
+    interfaceSaturationThreshold?: pulumi.Input<number>;
     /**
      * When set to true, the app will display monitoring candidates in the Hosts table
      */

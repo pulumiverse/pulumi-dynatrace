@@ -73,21 +73,11 @@ type GetGenericSettingsResult struct {
 }
 
 func GetGenericSettingsOutput(ctx *pulumi.Context, args GetGenericSettingsOutputArgs, opts ...pulumi.InvokeOption) GetGenericSettingsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetGenericSettingsResultOutput, error) {
 			args := v.(GetGenericSettingsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetGenericSettingsResult
-			secret, err := ctx.InvokePackageRaw("dynatrace:index/getGenericSettings:getGenericSettings", args, &rv, "", opts...)
-			if err != nil {
-				return GetGenericSettingsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetGenericSettingsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetGenericSettingsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("dynatrace:index/getGenericSettings:getGenericSettings", args, GetGenericSettingsResultOutput{}, options).(GetGenericSettingsResultOutput), nil
 		}).(GetGenericSettingsResultOutput)
 }
 

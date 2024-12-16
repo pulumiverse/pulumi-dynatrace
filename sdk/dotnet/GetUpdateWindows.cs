@@ -71,6 +71,36 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetUpdateWindowsResult> Invoke(GetUpdateWindowsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUpdateWindowsResult>("dynatrace:index/getUpdateWindows:getUpdateWindows", args ?? new GetUpdateWindowsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The `dynatrace.UpdateWindows` data source allows the OneAgent update maintenance window ID to be retrieved by its name.
+        /// 
+        /// - `name` (String) - The name of the OneAgent update maintenance window
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetUpdateWindows.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = example.Apply(getUpdateWindowsResult =&gt; getUpdateWindowsResult.Id),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUpdateWindowsResult> Invoke(GetUpdateWindowsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUpdateWindowsResult>("dynatrace:index/getUpdateWindows:getUpdateWindows", args ?? new GetUpdateWindowsInvokeArgs(), options.WithDefaults());
     }
 
 

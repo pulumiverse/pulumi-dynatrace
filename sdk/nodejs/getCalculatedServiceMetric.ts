@@ -62,7 +62,7 @@ export interface GetCalculatedServiceMetricResult {
  * export const groups = example.then(example => example.id);
  * ```
  */
-export function getCalculatedServiceMetricOutput(args: GetCalculatedServiceMetricOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCalculatedServiceMetricResult> {
+export function getCalculatedServiceMetricOutput(args: GetCalculatedServiceMetricOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCalculatedServiceMetricResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getCalculatedServiceMetric:getCalculatedServiceMetric", {
         "name": args.name,

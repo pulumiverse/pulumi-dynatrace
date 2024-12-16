@@ -80,6 +80,12 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
+        /// This flag enables the detection of security software such as anti-malware protection.
+        /// </summary>
+        [Output("securitySoftwareDetectionEnabled")]
+        public Output<bool?> SecuritySoftwareDetectionEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
         /// </summary>
         [Output("shortLivedProcessesMonitoring")]
@@ -223,6 +229,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
+        /// This flag enables the detection of security software such as anti-malware protection.
+        /// </summary>
+        [Input("securitySoftwareDetectionEnabled")]
+        public Input<bool>? SecuritySoftwareDetectionEnabled { get; set; }
+
+        /// <summary>
         /// Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
         /// </summary>
         [Input("shortLivedProcessesMonitoring", required: true)]
@@ -325,6 +337,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
+
+        /// <summary>
+        /// This flag enables the detection of security software such as anti-malware protection.
+        /// </summary>
+        [Input("securitySoftwareDetectionEnabled")]
+        public Input<bool>? SecuritySoftwareDetectionEnabled { get; set; }
 
         /// <summary>
         /// Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.

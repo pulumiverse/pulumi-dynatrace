@@ -157,7 +157,7 @@ export interface GetCredentialsResult {
  * });
  * ```
  */
-export function getCredentialsOutput(args?: GetCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCredentialsResult> {
+export function getCredentialsOutput(args?: GetCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCredentialsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getCredentials:getCredentials", {

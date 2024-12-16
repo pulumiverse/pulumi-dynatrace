@@ -74,7 +74,7 @@ def get_aws_credentials(label: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         label=pulumi.get(__ret__, 'label'))
 def get_aws_credentials_output(label: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAwsCredentialsResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAwsCredentialsResult]:
     """
     The `AwsCredentials` data source allows the AWS credential ID to be retrieved by its label.
 
@@ -82,7 +82,7 @@ def get_aws_credentials_output(label: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['label'] = label
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getAwsCredentials:getAwsCredentials', __args__, opts=opts, typ=GetAwsCredentialsResult)
     return __ret__.apply(lambda __response__: GetAwsCredentialsResult(
         id=pulumi.get(__response__, 'id'),

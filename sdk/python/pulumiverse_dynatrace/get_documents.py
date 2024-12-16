@@ -104,7 +104,7 @@ def get_documents(type: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         values=pulumi.get(__ret__, 'values'))
 def get_documents_output(type: Optional[pulumi.Input[Optional[str]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDocumentsResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDocumentsResult]:
     """
     > **Dynatrace SaaS only**
 
@@ -128,7 +128,7 @@ def get_documents_output(type: Optional[pulumi.Input[Optional[str]]] = None,
     """
     __args__ = dict()
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getDocuments:getDocuments', __args__, opts=opts, typ=GetDocumentsResult)
     return __ret__.apply(lambda __response__: GetDocumentsResult(
         id=pulumi.get(__response__, 'id'),

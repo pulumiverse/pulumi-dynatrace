@@ -38,7 +38,7 @@ export interface GetAzureCredentialsResult {
  *
  * - `label` (String) - The label/name of the Azure credential
  */
-export function getAzureCredentialsOutput(args: GetAzureCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAzureCredentialsResult> {
+export function getAzureCredentialsOutput(args: GetAzureCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAzureCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getAzureCredentials:getAzureCredentials", {
         "label": args.label,

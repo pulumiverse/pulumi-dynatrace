@@ -37,6 +37,10 @@ export class FrequentIssues extends pulumi.CustomResource {
      */
     public readonly detectApps!: pulumi.Output<boolean>;
     /**
+     * Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+     */
+    public readonly detectEnv!: pulumi.Output<boolean | undefined>;
+    /**
      * Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
      */
     public readonly detectInfra!: pulumi.Output<boolean>;
@@ -59,6 +63,7 @@ export class FrequentIssues extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as FrequentIssuesState | undefined;
             resourceInputs["detectApps"] = state ? state.detectApps : undefined;
+            resourceInputs["detectEnv"] = state ? state.detectEnv : undefined;
             resourceInputs["detectInfra"] = state ? state.detectInfra : undefined;
             resourceInputs["detectTxn"] = state ? state.detectTxn : undefined;
         } else {
@@ -73,6 +78,7 @@ export class FrequentIssues extends pulumi.CustomResource {
                 throw new Error("Missing required property 'detectTxn'");
             }
             resourceInputs["detectApps"] = args ? args.detectApps : undefined;
+            resourceInputs["detectEnv"] = args ? args.detectEnv : undefined;
             resourceInputs["detectInfra"] = args ? args.detectInfra : undefined;
             resourceInputs["detectTxn"] = args ? args.detectTxn : undefined;
         }
@@ -89,6 +95,10 @@ export interface FrequentIssuesState {
      * Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
      */
     detectApps?: pulumi.Input<boolean>;
+    /**
+     * Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+     */
+    detectEnv?: pulumi.Input<boolean>;
     /**
      * Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
      */
@@ -107,6 +117,10 @@ export interface FrequentIssuesArgs {
      * Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
      */
     detectApps: pulumi.Input<boolean>;
+    /**
+     * Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+     */
+    detectEnv?: pulumi.Input<boolean>;
     /**
      * Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
      */

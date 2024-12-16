@@ -16,8 +16,8 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
-        [Input("enabled", required: true)]
-        public Input<bool> Enabled { get; set; } = null!;
+        [Input("enabled")]
+        public Input<bool>? Enabled { get; set; }
 
         /// <summary>
         /// The source must follow the syntax of Kubernetes annotation/label keys as defined in the [Kubernetes documentation](https://dt-url.net/2c02sbn).

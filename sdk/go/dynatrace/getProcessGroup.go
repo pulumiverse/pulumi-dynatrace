@@ -89,21 +89,11 @@ type GetProcessGroupResult struct {
 }
 
 func GetProcessGroupOutput(ctx *pulumi.Context, args GetProcessGroupOutputArgs, opts ...pulumi.InvokeOption) GetProcessGroupResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetProcessGroupResultOutput, error) {
 			args := v.(GetProcessGroupArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetProcessGroupResult
-			secret, err := ctx.InvokePackageRaw("dynatrace:index/getProcessGroup:getProcessGroup", args, &rv, "", opts...)
-			if err != nil {
-				return GetProcessGroupResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetProcessGroupResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetProcessGroupResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("dynatrace:index/getProcessGroup:getProcessGroup", args, GetProcessGroupResultOutput{}, options).(GetProcessGroupResultOutput), nil
 		}).(GetProcessGroupResultOutput)
 }
 

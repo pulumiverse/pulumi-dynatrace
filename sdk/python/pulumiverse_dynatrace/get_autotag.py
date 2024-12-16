@@ -128,7 +128,7 @@ def get_autotag(name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
 def get_autotag_output(name: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutotagResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutotagResult]:
     """
     The automatically applied tag data source allows the tag ID to be retrieved by its name.
 
@@ -190,7 +190,7 @@ def get_autotag_output(name: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getAutotag:getAutotag', __args__, opts=opts, typ=GetAutotagResult)
     return __ret__.apply(lambda __response__: GetAutotagResult(
         id=pulumi.get(__response__, 'id'),

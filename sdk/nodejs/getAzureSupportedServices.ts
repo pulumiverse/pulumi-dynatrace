@@ -53,7 +53,7 @@ export interface GetAzureSupportedServicesResult {
  *
  * For an example of this data source, please refer to the Resource Example Usage of the dynatrace.AzureService resource.
  */
-export function getAzureSupportedServicesOutput(args?: GetAzureSupportedServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAzureSupportedServicesResult> {
+export function getAzureSupportedServicesOutput(args?: GetAzureSupportedServicesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAzureSupportedServicesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getAzureSupportedServices:getAzureSupportedServices", {

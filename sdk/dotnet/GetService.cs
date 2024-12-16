@@ -95,6 +95,48 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetServiceResult> Invoke(GetServiceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceResult>("dynatrace:index/getService:getService", args ?? new GetServiceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// !&gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `SERVICE` instead.
+        /// 
+        /// The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
+        /// 
+        /// - `name` queries for all services with the specified name
+        /// - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+        /// 
+        /// If multiple services match the given criteria, the first result will be retrieved.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Dynatrace.GetService.Invoke(new()
+        ///     {
+        ///         Name = "Example",
+        ///         Tags = new[]
+        ///         {
+        ///             "TerraformKeyTest",
+        ///             "TerraformKeyValueTest=TestValue",
+        ///         },
+        ///     });
+        /// 
+        ///     var _name_ = new Dynatrace.KeyRequests("#name#", new()
+        ///     {
+        ///         Service = test.Apply(getServiceResult =&gt; getServiceResult.Id),
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetServiceResult> Invoke(GetServiceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceResult>("dynatrace:index/getService:getService", args ?? new GetServiceInvokeArgs(), options.WithDefaults());
     }
 
 

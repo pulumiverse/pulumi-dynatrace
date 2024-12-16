@@ -13,6 +13,251 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ServiceFailureExceptionRulesCustomHandledExceptions struct {
+	CustomHandledExceptions []ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException `pulumi:"customHandledExceptions"`
+}
+
+// ServiceFailureExceptionRulesCustomHandledExceptionsInput is an input type that accepts ServiceFailureExceptionRulesCustomHandledExceptionsArgs and ServiceFailureExceptionRulesCustomHandledExceptionsOutput values.
+// You can construct a concrete instance of `ServiceFailureExceptionRulesCustomHandledExceptionsInput` via:
+//
+//	ServiceFailureExceptionRulesCustomHandledExceptionsArgs{...}
+type ServiceFailureExceptionRulesCustomHandledExceptionsInput interface {
+	pulumi.Input
+
+	ToServiceFailureExceptionRulesCustomHandledExceptionsOutput() ServiceFailureExceptionRulesCustomHandledExceptionsOutput
+	ToServiceFailureExceptionRulesCustomHandledExceptionsOutputWithContext(context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsOutput
+}
+
+type ServiceFailureExceptionRulesCustomHandledExceptionsArgs struct {
+	CustomHandledExceptions ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayInput `pulumi:"customHandledExceptions"`
+}
+
+func (ServiceFailureExceptionRulesCustomHandledExceptionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFailureExceptionRulesCustomHandledExceptions)(nil)).Elem()
+}
+
+func (i ServiceFailureExceptionRulesCustomHandledExceptionsArgs) ToServiceFailureExceptionRulesCustomHandledExceptionsOutput() ServiceFailureExceptionRulesCustomHandledExceptionsOutput {
+	return i.ToServiceFailureExceptionRulesCustomHandledExceptionsOutputWithContext(context.Background())
+}
+
+func (i ServiceFailureExceptionRulesCustomHandledExceptionsArgs) ToServiceFailureExceptionRulesCustomHandledExceptionsOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesCustomHandledExceptionsOutput)
+}
+
+func (i ServiceFailureExceptionRulesCustomHandledExceptionsArgs) ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput() ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput {
+	return i.ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceFailureExceptionRulesCustomHandledExceptionsArgs) ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesCustomHandledExceptionsOutput).ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutputWithContext(ctx)
+}
+
+// ServiceFailureExceptionRulesCustomHandledExceptionsPtrInput is an input type that accepts ServiceFailureExceptionRulesCustomHandledExceptionsArgs, ServiceFailureExceptionRulesCustomHandledExceptionsPtr and ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput values.
+// You can construct a concrete instance of `ServiceFailureExceptionRulesCustomHandledExceptionsPtrInput` via:
+//
+//	        ServiceFailureExceptionRulesCustomHandledExceptionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceFailureExceptionRulesCustomHandledExceptionsPtrInput interface {
+	pulumi.Input
+
+	ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput() ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput
+	ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutputWithContext(context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput
+}
+
+type serviceFailureExceptionRulesCustomHandledExceptionsPtrType ServiceFailureExceptionRulesCustomHandledExceptionsArgs
+
+func ServiceFailureExceptionRulesCustomHandledExceptionsPtr(v *ServiceFailureExceptionRulesCustomHandledExceptionsArgs) ServiceFailureExceptionRulesCustomHandledExceptionsPtrInput {
+	return (*serviceFailureExceptionRulesCustomHandledExceptionsPtrType)(v)
+}
+
+func (*serviceFailureExceptionRulesCustomHandledExceptionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFailureExceptionRulesCustomHandledExceptions)(nil)).Elem()
+}
+
+func (i *serviceFailureExceptionRulesCustomHandledExceptionsPtrType) ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput() ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput {
+	return i.ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceFailureExceptionRulesCustomHandledExceptionsPtrType) ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput)
+}
+
+type ServiceFailureExceptionRulesCustomHandledExceptionsOutput struct{ *pulumi.OutputState }
+
+func (ServiceFailureExceptionRulesCustomHandledExceptionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFailureExceptionRulesCustomHandledExceptions)(nil)).Elem()
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsOutput) ToServiceFailureExceptionRulesCustomHandledExceptionsOutput() ServiceFailureExceptionRulesCustomHandledExceptionsOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsOutput) ToServiceFailureExceptionRulesCustomHandledExceptionsOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsOutput) ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput() ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput {
+	return o.ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsOutput) ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceFailureExceptionRulesCustomHandledExceptions) *ServiceFailureExceptionRulesCustomHandledExceptions {
+		return &v
+	}).(ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput)
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsOutput) CustomHandledExceptions() ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRulesCustomHandledExceptions) []ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException {
+		return v.CustomHandledExceptions
+	}).(ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput)
+}
+
+type ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFailureExceptionRulesCustomHandledExceptions)(nil)).Elem()
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput) ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput() ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput) ToServiceFailureExceptionRulesCustomHandledExceptionsPtrOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput) Elem() ServiceFailureExceptionRulesCustomHandledExceptionsOutput {
+	return o.ApplyT(func(v *ServiceFailureExceptionRulesCustomHandledExceptions) ServiceFailureExceptionRulesCustomHandledExceptions {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceFailureExceptionRulesCustomHandledExceptions
+		return ret
+	}).(ServiceFailureExceptionRulesCustomHandledExceptionsOutput)
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput) CustomHandledExceptions() ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput {
+	return o.ApplyT(func(v *ServiceFailureExceptionRulesCustomHandledExceptions) []ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHandledExceptions
+	}).(ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput)
+}
+
+type ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException struct {
+	// The pattern will match if it is contained within the actual class name.
+	ClassPattern *string `pulumi:"classPattern"`
+	// Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+	MessagePattern *string `pulumi:"messagePattern"`
+}
+
+// ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionInput is an input type that accepts ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs and ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput values.
+// You can construct a concrete instance of `ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionInput` via:
+//
+//	ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs{...}
+type ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionInput interface {
+	pulumi.Input
+
+	ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput() ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput
+	ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutputWithContext(context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput
+}
+
+type ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs struct {
+	// The pattern will match if it is contained within the actual class name.
+	ClassPattern pulumi.StringPtrInput `pulumi:"classPattern"`
+	// Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+	MessagePattern pulumi.StringPtrInput `pulumi:"messagePattern"`
+}
+
+func (ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException)(nil)).Elem()
+}
+
+func (i ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs) ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput() ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput {
+	return i.ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutputWithContext(context.Background())
+}
+
+func (i ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs) ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput)
+}
+
+// ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayInput is an input type that accepts ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArray and ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput values.
+// You can construct a concrete instance of `ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayInput` via:
+//
+//	ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArray{ ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs{...} }
+type ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayInput interface {
+	pulumi.Input
+
+	ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput() ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput
+	ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutputWithContext(context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput
+}
+
+type ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArray []ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionInput
+
+func (ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException)(nil)).Elem()
+}
+
+func (i ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArray) ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput() ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput {
+	return i.ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArray) ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput)
+}
+
+type ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput struct{ *pulumi.OutputState }
+
+func (ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException)(nil)).Elem()
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput) ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput() ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput) ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput {
+	return o
+}
+
+// The pattern will match if it is contained within the actual class name.
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput) ClassPattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException) *string {
+		return v.ClassPattern
+	}).(pulumi.StringPtrOutput)
+}
+
+// Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput) MessagePattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException) *string {
+		return v.MessagePattern
+	}).(pulumi.StringPtrOutput)
+}
+
+type ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException)(nil)).Elem()
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput) ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput() ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput) ToServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput) Index(i pulumi.IntInput) ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException {
+		return vs[0].([]ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException)[vs[1].(int)]
+	}).(ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput)
+}
+
 type ServiceFailureExceptionRulesIgnoredExceptions struct {
 	CustomHandledExceptions []ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException `pulumi:"customHandledExceptions"`
 }
@@ -46116,6 +46361,312 @@ func (o GetGenericSettingsValueArrayOutput) Index(i pulumi.IntInput) GetGenericS
 	}).(GetGenericSettingsValueOutput)
 }
 
+type GetGeoCitiesCity struct {
+	Latitude  float64 `pulumi:"latitude"`
+	Longitude float64 `pulumi:"longitude"`
+	Name      string  `pulumi:"name"`
+}
+
+// GetGeoCitiesCityInput is an input type that accepts GetGeoCitiesCityArgs and GetGeoCitiesCityOutput values.
+// You can construct a concrete instance of `GetGeoCitiesCityInput` via:
+//
+//	GetGeoCitiesCityArgs{...}
+type GetGeoCitiesCityInput interface {
+	pulumi.Input
+
+	ToGetGeoCitiesCityOutput() GetGeoCitiesCityOutput
+	ToGetGeoCitiesCityOutputWithContext(context.Context) GetGeoCitiesCityOutput
+}
+
+type GetGeoCitiesCityArgs struct {
+	Latitude  pulumi.Float64Input `pulumi:"latitude"`
+	Longitude pulumi.Float64Input `pulumi:"longitude"`
+	Name      pulumi.StringInput  `pulumi:"name"`
+}
+
+func (GetGeoCitiesCityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGeoCitiesCity)(nil)).Elem()
+}
+
+func (i GetGeoCitiesCityArgs) ToGetGeoCitiesCityOutput() GetGeoCitiesCityOutput {
+	return i.ToGetGeoCitiesCityOutputWithContext(context.Background())
+}
+
+func (i GetGeoCitiesCityArgs) ToGetGeoCitiesCityOutputWithContext(ctx context.Context) GetGeoCitiesCityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGeoCitiesCityOutput)
+}
+
+// GetGeoCitiesCityArrayInput is an input type that accepts GetGeoCitiesCityArray and GetGeoCitiesCityArrayOutput values.
+// You can construct a concrete instance of `GetGeoCitiesCityArrayInput` via:
+//
+//	GetGeoCitiesCityArray{ GetGeoCitiesCityArgs{...} }
+type GetGeoCitiesCityArrayInput interface {
+	pulumi.Input
+
+	ToGetGeoCitiesCityArrayOutput() GetGeoCitiesCityArrayOutput
+	ToGetGeoCitiesCityArrayOutputWithContext(context.Context) GetGeoCitiesCityArrayOutput
+}
+
+type GetGeoCitiesCityArray []GetGeoCitiesCityInput
+
+func (GetGeoCitiesCityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGeoCitiesCity)(nil)).Elem()
+}
+
+func (i GetGeoCitiesCityArray) ToGetGeoCitiesCityArrayOutput() GetGeoCitiesCityArrayOutput {
+	return i.ToGetGeoCitiesCityArrayOutputWithContext(context.Background())
+}
+
+func (i GetGeoCitiesCityArray) ToGetGeoCitiesCityArrayOutputWithContext(ctx context.Context) GetGeoCitiesCityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGeoCitiesCityArrayOutput)
+}
+
+type GetGeoCitiesCityOutput struct{ *pulumi.OutputState }
+
+func (GetGeoCitiesCityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGeoCitiesCity)(nil)).Elem()
+}
+
+func (o GetGeoCitiesCityOutput) ToGetGeoCitiesCityOutput() GetGeoCitiesCityOutput {
+	return o
+}
+
+func (o GetGeoCitiesCityOutput) ToGetGeoCitiesCityOutputWithContext(ctx context.Context) GetGeoCitiesCityOutput {
+	return o
+}
+
+func (o GetGeoCitiesCityOutput) Latitude() pulumi.Float64Output {
+	return o.ApplyT(func(v GetGeoCitiesCity) float64 { return v.Latitude }).(pulumi.Float64Output)
+}
+
+func (o GetGeoCitiesCityOutput) Longitude() pulumi.Float64Output {
+	return o.ApplyT(func(v GetGeoCitiesCity) float64 { return v.Longitude }).(pulumi.Float64Output)
+}
+
+func (o GetGeoCitiesCityOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGeoCitiesCity) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetGeoCitiesCityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGeoCitiesCityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGeoCitiesCity)(nil)).Elem()
+}
+
+func (o GetGeoCitiesCityArrayOutput) ToGetGeoCitiesCityArrayOutput() GetGeoCitiesCityArrayOutput {
+	return o
+}
+
+func (o GetGeoCitiesCityArrayOutput) ToGetGeoCitiesCityArrayOutputWithContext(ctx context.Context) GetGeoCitiesCityArrayOutput {
+	return o
+}
+
+func (o GetGeoCitiesCityArrayOutput) Index(i pulumi.IntInput) GetGeoCitiesCityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGeoCitiesCity {
+		return vs[0].([]GetGeoCitiesCity)[vs[1].(int)]
+	}).(GetGeoCitiesCityOutput)
+}
+
+type GetGeoCountriesCountry struct {
+	Code string `pulumi:"code"`
+	Name string `pulumi:"name"`
+}
+
+// GetGeoCountriesCountryInput is an input type that accepts GetGeoCountriesCountryArgs and GetGeoCountriesCountryOutput values.
+// You can construct a concrete instance of `GetGeoCountriesCountryInput` via:
+//
+//	GetGeoCountriesCountryArgs{...}
+type GetGeoCountriesCountryInput interface {
+	pulumi.Input
+
+	ToGetGeoCountriesCountryOutput() GetGeoCountriesCountryOutput
+	ToGetGeoCountriesCountryOutputWithContext(context.Context) GetGeoCountriesCountryOutput
+}
+
+type GetGeoCountriesCountryArgs struct {
+	Code pulumi.StringInput `pulumi:"code"`
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetGeoCountriesCountryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGeoCountriesCountry)(nil)).Elem()
+}
+
+func (i GetGeoCountriesCountryArgs) ToGetGeoCountriesCountryOutput() GetGeoCountriesCountryOutput {
+	return i.ToGetGeoCountriesCountryOutputWithContext(context.Background())
+}
+
+func (i GetGeoCountriesCountryArgs) ToGetGeoCountriesCountryOutputWithContext(ctx context.Context) GetGeoCountriesCountryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGeoCountriesCountryOutput)
+}
+
+// GetGeoCountriesCountryArrayInput is an input type that accepts GetGeoCountriesCountryArray and GetGeoCountriesCountryArrayOutput values.
+// You can construct a concrete instance of `GetGeoCountriesCountryArrayInput` via:
+//
+//	GetGeoCountriesCountryArray{ GetGeoCountriesCountryArgs{...} }
+type GetGeoCountriesCountryArrayInput interface {
+	pulumi.Input
+
+	ToGetGeoCountriesCountryArrayOutput() GetGeoCountriesCountryArrayOutput
+	ToGetGeoCountriesCountryArrayOutputWithContext(context.Context) GetGeoCountriesCountryArrayOutput
+}
+
+type GetGeoCountriesCountryArray []GetGeoCountriesCountryInput
+
+func (GetGeoCountriesCountryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGeoCountriesCountry)(nil)).Elem()
+}
+
+func (i GetGeoCountriesCountryArray) ToGetGeoCountriesCountryArrayOutput() GetGeoCountriesCountryArrayOutput {
+	return i.ToGetGeoCountriesCountryArrayOutputWithContext(context.Background())
+}
+
+func (i GetGeoCountriesCountryArray) ToGetGeoCountriesCountryArrayOutputWithContext(ctx context.Context) GetGeoCountriesCountryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGeoCountriesCountryArrayOutput)
+}
+
+type GetGeoCountriesCountryOutput struct{ *pulumi.OutputState }
+
+func (GetGeoCountriesCountryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGeoCountriesCountry)(nil)).Elem()
+}
+
+func (o GetGeoCountriesCountryOutput) ToGetGeoCountriesCountryOutput() GetGeoCountriesCountryOutput {
+	return o
+}
+
+func (o GetGeoCountriesCountryOutput) ToGetGeoCountriesCountryOutputWithContext(ctx context.Context) GetGeoCountriesCountryOutput {
+	return o
+}
+
+func (o GetGeoCountriesCountryOutput) Code() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGeoCountriesCountry) string { return v.Code }).(pulumi.StringOutput)
+}
+
+func (o GetGeoCountriesCountryOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGeoCountriesCountry) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetGeoCountriesCountryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGeoCountriesCountryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGeoCountriesCountry)(nil)).Elem()
+}
+
+func (o GetGeoCountriesCountryArrayOutput) ToGetGeoCountriesCountryArrayOutput() GetGeoCountriesCountryArrayOutput {
+	return o
+}
+
+func (o GetGeoCountriesCountryArrayOutput) ToGetGeoCountriesCountryArrayOutputWithContext(ctx context.Context) GetGeoCountriesCountryArrayOutput {
+	return o
+}
+
+func (o GetGeoCountriesCountryArrayOutput) Index(i pulumi.IntInput) GetGeoCountriesCountryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGeoCountriesCountry {
+		return vs[0].([]GetGeoCountriesCountry)[vs[1].(int)]
+	}).(GetGeoCountriesCountryOutput)
+}
+
+type GetGeoRegionsRegion struct {
+	Code string `pulumi:"code"`
+	Name string `pulumi:"name"`
+}
+
+// GetGeoRegionsRegionInput is an input type that accepts GetGeoRegionsRegionArgs and GetGeoRegionsRegionOutput values.
+// You can construct a concrete instance of `GetGeoRegionsRegionInput` via:
+//
+//	GetGeoRegionsRegionArgs{...}
+type GetGeoRegionsRegionInput interface {
+	pulumi.Input
+
+	ToGetGeoRegionsRegionOutput() GetGeoRegionsRegionOutput
+	ToGetGeoRegionsRegionOutputWithContext(context.Context) GetGeoRegionsRegionOutput
+}
+
+type GetGeoRegionsRegionArgs struct {
+	Code pulumi.StringInput `pulumi:"code"`
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetGeoRegionsRegionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGeoRegionsRegion)(nil)).Elem()
+}
+
+func (i GetGeoRegionsRegionArgs) ToGetGeoRegionsRegionOutput() GetGeoRegionsRegionOutput {
+	return i.ToGetGeoRegionsRegionOutputWithContext(context.Background())
+}
+
+func (i GetGeoRegionsRegionArgs) ToGetGeoRegionsRegionOutputWithContext(ctx context.Context) GetGeoRegionsRegionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGeoRegionsRegionOutput)
+}
+
+// GetGeoRegionsRegionArrayInput is an input type that accepts GetGeoRegionsRegionArray and GetGeoRegionsRegionArrayOutput values.
+// You can construct a concrete instance of `GetGeoRegionsRegionArrayInput` via:
+//
+//	GetGeoRegionsRegionArray{ GetGeoRegionsRegionArgs{...} }
+type GetGeoRegionsRegionArrayInput interface {
+	pulumi.Input
+
+	ToGetGeoRegionsRegionArrayOutput() GetGeoRegionsRegionArrayOutput
+	ToGetGeoRegionsRegionArrayOutputWithContext(context.Context) GetGeoRegionsRegionArrayOutput
+}
+
+type GetGeoRegionsRegionArray []GetGeoRegionsRegionInput
+
+func (GetGeoRegionsRegionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGeoRegionsRegion)(nil)).Elem()
+}
+
+func (i GetGeoRegionsRegionArray) ToGetGeoRegionsRegionArrayOutput() GetGeoRegionsRegionArrayOutput {
+	return i.ToGetGeoRegionsRegionArrayOutputWithContext(context.Background())
+}
+
+func (i GetGeoRegionsRegionArray) ToGetGeoRegionsRegionArrayOutputWithContext(ctx context.Context) GetGeoRegionsRegionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGeoRegionsRegionArrayOutput)
+}
+
+type GetGeoRegionsRegionOutput struct{ *pulumi.OutputState }
+
+func (GetGeoRegionsRegionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGeoRegionsRegion)(nil)).Elem()
+}
+
+func (o GetGeoRegionsRegionOutput) ToGetGeoRegionsRegionOutput() GetGeoRegionsRegionOutput {
+	return o
+}
+
+func (o GetGeoRegionsRegionOutput) ToGetGeoRegionsRegionOutputWithContext(ctx context.Context) GetGeoRegionsRegionOutput {
+	return o
+}
+
+func (o GetGeoRegionsRegionOutput) Code() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGeoRegionsRegion) string { return v.Code }).(pulumi.StringOutput)
+}
+
+func (o GetGeoRegionsRegionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGeoRegionsRegion) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetGeoRegionsRegionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGeoRegionsRegionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGeoRegionsRegion)(nil)).Elem()
+}
+
+func (o GetGeoRegionsRegionArrayOutput) ToGetGeoRegionsRegionArrayOutput() GetGeoRegionsRegionArrayOutput {
+	return o
+}
+
+func (o GetGeoRegionsRegionArrayOutput) ToGetGeoRegionsRegionArrayOutputWithContext(ctx context.Context) GetGeoRegionsRegionArrayOutput {
+	return o
+}
+
+func (o GetGeoRegionsRegionArrayOutput) Index(i pulumi.IntInput) GetGeoRegionsRegionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGeoRegionsRegion {
+		return vs[0].([]GetGeoRegionsRegion)[vs[1].(int)]
+	}).(GetGeoRegionsRegionOutput)
+}
+
 type GetHubItemsItem struct {
 	// The activation link for a technology
 	ActivationLink string `pulumi:"activationLink"`
@@ -47207,6 +47758,10 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesCustomHandledExceptionsInput)(nil)).Elem(), ServiceFailureExceptionRulesCustomHandledExceptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesCustomHandledExceptionsPtrInput)(nil)).Elem(), ServiceFailureExceptionRulesCustomHandledExceptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionInput)(nil)).Elem(), ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayInput)(nil)).Elem(), ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesIgnoredExceptionsInput)(nil)).Elem(), ServiceFailureExceptionRulesIgnoredExceptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesIgnoredExceptionsPtrInput)(nil)).Elem(), ServiceFailureExceptionRulesIgnoredExceptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledExceptionInput)(nil)).Elem(), ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledExceptionArgs{})
@@ -47784,6 +48339,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEntitiesEntityTagTagArrayInput)(nil)).Elem(), GetEntitiesEntityTagTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGenericSettingsValueInput)(nil)).Elem(), GetGenericSettingsValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGenericSettingsValueArrayInput)(nil)).Elem(), GetGenericSettingsValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGeoCitiesCityInput)(nil)).Elem(), GetGeoCitiesCityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGeoCitiesCityArrayInput)(nil)).Elem(), GetGeoCitiesCityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGeoCountriesCountryInput)(nil)).Elem(), GetGeoCountriesCountryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGeoCountriesCountryArrayInput)(nil)).Elem(), GetGeoCountriesCountryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGeoRegionsRegionInput)(nil)).Elem(), GetGeoRegionsRegionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGeoRegionsRegionArrayInput)(nil)).Elem(), GetGeoRegionsRegionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHubItemsItemInput)(nil)).Elem(), GetHubItemsItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHubItemsItemArrayInput)(nil)).Elem(), GetHubItemsItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIamPoliciesPolicyInput)(nil)).Elem(), GetIamPoliciesPolicyArgs{})
@@ -47796,6 +48357,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(ServiceFailureExceptionRulesCustomHandledExceptionsOutput{})
+	pulumi.RegisterOutputType(ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput{})
+	pulumi.RegisterOutputType(ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput{})
+	pulumi.RegisterOutputType(ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArrayOutput{})
 	pulumi.RegisterOutputType(ServiceFailureExceptionRulesIgnoredExceptionsOutput{})
 	pulumi.RegisterOutputType(ServiceFailureExceptionRulesIgnoredExceptionsPtrOutput{})
 	pulumi.RegisterOutputType(ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledExceptionOutput{})
@@ -48373,6 +48938,12 @@ func init() {
 	pulumi.RegisterOutputType(GetEntitiesEntityTagTagArrayOutput{})
 	pulumi.RegisterOutputType(GetGenericSettingsValueOutput{})
 	pulumi.RegisterOutputType(GetGenericSettingsValueArrayOutput{})
+	pulumi.RegisterOutputType(GetGeoCitiesCityOutput{})
+	pulumi.RegisterOutputType(GetGeoCitiesCityArrayOutput{})
+	pulumi.RegisterOutputType(GetGeoCountriesCountryOutput{})
+	pulumi.RegisterOutputType(GetGeoCountriesCountryArrayOutput{})
+	pulumi.RegisterOutputType(GetGeoRegionsRegionOutput{})
+	pulumi.RegisterOutputType(GetGeoRegionsRegionArrayOutput{})
 	pulumi.RegisterOutputType(GetHubItemsItemOutput{})
 	pulumi.RegisterOutputType(GetHubItemsItemArrayOutput{})
 	pulumi.RegisterOutputType(GetIamPoliciesPolicyOutput{})

@@ -75,6 +75,38 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetIamUserResult> Invoke(GetIamUserInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamUserResult>("dynatrace:index/getIamUser:getIamUser", args ?? new GetIamUserInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// &gt; **Dynatrace SaaS only**
+        /// 
+        /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **Allow read access for identity resources (users and groups)** (`account-idm-read`).
+        /// 
+        /// This data source allows you to specify the email address of the user and produces an ordered list of group IDs this user is a member of
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var userA = Dynatrace.GetIamUser.Invoke(new()
+        ///     {
+        ///         Email = "me@home.com",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["groups"] = userA.Apply(getIamUserResult =&gt; getIamUserResult.Groups),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIamUserResult> Invoke(GetIamUserInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamUserResult>("dynatrace:index/getIamUser:getIamUser", args ?? new GetIamUserInvokeArgs(), options.WithDefaults());
     }
 
 

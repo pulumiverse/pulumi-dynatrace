@@ -62,7 +62,7 @@ export interface GetMobileApplicationResult {
  * export const id = example.then(example => example.id);
  * ```
  */
-export function getMobileApplicationOutput(args: GetMobileApplicationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMobileApplicationResult> {
+export function getMobileApplicationOutput(args: GetMobileApplicationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMobileApplicationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getMobileApplication:getMobileApplication", {
         "name": args.name,

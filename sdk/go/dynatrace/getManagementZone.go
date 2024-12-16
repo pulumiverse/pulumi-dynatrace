@@ -103,21 +103,11 @@ type LookupManagementZoneResult struct {
 }
 
 func LookupManagementZoneOutput(ctx *pulumi.Context, args LookupManagementZoneOutputArgs, opts ...pulumi.InvokeOption) LookupManagementZoneResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupManagementZoneResultOutput, error) {
 			args := v.(LookupManagementZoneArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupManagementZoneResult
-			secret, err := ctx.InvokePackageRaw("dynatrace:index/getManagementZone:getManagementZone", args, &rv, "", opts...)
-			if err != nil {
-				return LookupManagementZoneResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupManagementZoneResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupManagementZoneResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("dynatrace:index/getManagementZone:getManagementZone", args, LookupManagementZoneResultOutput{}, options).(LookupManagementZoneResultOutput), nil
 		}).(LookupManagementZoneResultOutput)
 }
 

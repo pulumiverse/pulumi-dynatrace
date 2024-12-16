@@ -84,7 +84,7 @@ def get_request_attribute(name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
 def get_request_attribute_output(name: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRequestAttributeResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRequestAttributeResult]:
     """
     The `RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
 
@@ -102,7 +102,7 @@ def get_request_attribute_output(name: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getRequestAttribute:getRequestAttribute', __args__, opts=opts, typ=GetRequestAttributeResult)
     return __ret__.apply(lambda __response__: GetRequestAttributeResult(
         id=pulumi.get(__response__, 'id'),

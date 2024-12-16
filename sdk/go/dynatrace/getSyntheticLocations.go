@@ -113,21 +113,11 @@ type GetSyntheticLocationsResult struct {
 }
 
 func GetSyntheticLocationsOutput(ctx *pulumi.Context, args GetSyntheticLocationsOutputArgs, opts ...pulumi.InvokeOption) GetSyntheticLocationsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSyntheticLocationsResultOutput, error) {
 			args := v.(GetSyntheticLocationsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSyntheticLocationsResult
-			secret, err := ctx.InvokePackageRaw("dynatrace:index/getSyntheticLocations:getSyntheticLocations", args, &rv, "", opts...)
-			if err != nil {
-				return GetSyntheticLocationsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSyntheticLocationsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSyntheticLocationsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("dynatrace:index/getSyntheticLocations:getSyntheticLocations", args, GetSyntheticLocationsResultOutput{}, options).(GetSyntheticLocationsResultOutput), nil
 		}).(GetSyntheticLocationsResultOutput)
 }
 

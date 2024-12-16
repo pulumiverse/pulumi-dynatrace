@@ -181,7 +181,7 @@ def get_iam_policies_output(accounts: Optional[pulumi.Input[Optional[Sequence[st
                             environments: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                             global_: Optional[pulumi.Input[Optional[bool]]] = None,
                             groups: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamPoliciesResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamPoliciesResult]:
     """
     > **Dynatrace SaaS only**
 
@@ -237,7 +237,7 @@ def get_iam_policies_output(accounts: Optional[pulumi.Input[Optional[Sequence[st
     __args__['environments'] = environments
     __args__['global'] = global_
     __args__['groups'] = groups
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getIamPolicies:getIamPolicies', __args__, opts=opts, typ=GetIamPoliciesResult)
     return __ret__.apply(lambda __response__: GetIamPoliciesResult(
         accounts=pulumi.get(__response__, 'accounts'),

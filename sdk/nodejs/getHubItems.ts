@@ -89,7 +89,7 @@ export interface GetHubItemsResult {
  * }
  * ```
  */
-export function getHubItemsOutput(args?: GetHubItemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHubItemsResult> {
+export function getHubItemsOutput(args?: GetHubItemsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHubItemsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getHubItems:getHubItems", {
