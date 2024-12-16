@@ -89,18 +89,8 @@ type GetManagementZonesResult struct {
 
 func GetManagementZonesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetManagementZonesResultOutput {
 	return pulumi.ToOutput(0).ApplyT(func(int) (GetManagementZonesResultOutput, error) {
-		opts = internal.PkgInvokeDefaultOpts(opts)
-		var rv GetManagementZonesResult
-		secret, err := ctx.InvokePackageRaw("dynatrace:index/getManagementZones:getManagementZones", nil, &rv, "", opts...)
-		if err != nil {
-			return GetManagementZonesResultOutput{}, err
-		}
-
-		output := pulumi.ToOutput(rv).(GetManagementZonesResultOutput)
-		if secret {
-			return pulumi.ToSecret(output).(GetManagementZonesResultOutput), nil
-		}
-		return output, nil
+		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+		return ctx.InvokeOutput("dynatrace:index/getManagementZones:getManagementZones", nil, GetManagementZonesResultOutput{}, options).(GetManagementZonesResultOutput), nil
 	}).(GetManagementZonesResultOutput)
 }
 

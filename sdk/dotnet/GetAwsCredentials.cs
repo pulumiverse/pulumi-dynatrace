@@ -27,6 +27,14 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetAwsCredentialsResult> Invoke(GetAwsCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAwsCredentialsResult>("dynatrace:index/getAwsCredentials:getAwsCredentials", args ?? new GetAwsCredentialsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The `dynatrace.AwsCredentials` data source allows the AWS credential ID to be retrieved by its label.
+        /// 
+        /// - `label` (String) - The label/name of the AWS credential
+        /// </summary>
+        public static Output<GetAwsCredentialsResult> Invoke(GetAwsCredentialsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAwsCredentialsResult>("dynatrace:index/getAwsCredentials:getAwsCredentials", args ?? new GetAwsCredentialsInvokeArgs(), options.WithDefaults());
     }
 
 

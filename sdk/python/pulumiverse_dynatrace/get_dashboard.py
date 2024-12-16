@@ -101,7 +101,7 @@ def get_dashboard(name: Optional[str] = None,
         owner=pulumi.get(__ret__, 'owner'))
 def get_dashboard_output(name: Optional[pulumi.Input[str]] = None,
                          owner: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDashboardResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDashboardResult]:
     """
     The `Dashboard` data source allows the dashboard ID to be retrieved by its name and owner.
 
@@ -124,7 +124,7 @@ def get_dashboard_output(name: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['name'] = name
     __args__['owner'] = owner
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getDashboard:getDashboard', __args__, opts=opts, typ=GetDashboardResult)
     return __ret__.apply(lambda __response__: GetDashboardResult(
         id=pulumi.get(__response__, 'id'),

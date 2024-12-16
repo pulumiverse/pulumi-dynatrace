@@ -47,7 +47,7 @@ namespace Pulumiverse.Dynatrace
         /// The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
         /// </summary>
         [Output("label")]
-        public Output<string?> Label { get; private set; } = null!;
+        public Output<string> Label { get; private set; } = null!;
 
         /// <summary>
         /// A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
@@ -182,8 +182,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
         /// </summary>
-        [Input("label")]
-        public Input<string>? Label { get; set; }
+        [Input("label", required: true)]
+        public Input<string> Label { get; set; } = null!;
 
         [Input("monitorOnlyExcludingTagPairs")]
         private InputList<Inputs.AzureCredentialsMonitorOnlyExcludingTagPairArgs>? _monitorOnlyExcludingTagPairs;

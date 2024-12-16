@@ -162,7 +162,7 @@ def get_api_token(name: Optional[str] = None,
         personal_access_token=pulumi.get(__ret__, 'personal_access_token'),
         scopes=pulumi.get(__ret__, 'scopes'))
 def get_api_token_output(name: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiTokenResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiTokenResult]:
     """
     The API token data source allows a single access token to be retrieved by its name, note the token value is not included in the response.
 
@@ -180,7 +180,7 @@ def get_api_token_output(name: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getApiToken:getApiToken', __args__, opts=opts, typ=GetApiTokenResult)
     return __ret__.apply(lambda __response__: GetApiTokenResult(
         creation_date=pulumi.get(__response__, 'creation_date'),

@@ -88,7 +88,7 @@ def get_iam_group(name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
 def get_iam_group_output(name: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamGroupResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamGroupResult]:
     """
     > **Dynatrace SaaS only**
 
@@ -110,7 +110,7 @@ def get_iam_group_output(name: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getIamGroup:getIamGroup', __args__, opts=opts, typ=GetIamGroupResult)
     return __ret__.apply(lambda __response__: GetIamGroupResult(
         id=pulumi.get(__response__, 'id'),

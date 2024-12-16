@@ -81,6 +81,41 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetDocumentsResult> Invoke(GetDocumentsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDocumentsResult>("dynatrace:index/getDocuments:getDocuments", args ?? new GetDocumentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// &gt; **Dynatrace SaaS only**
+        /// 
+        /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **View documents** (`document:documents:read`).
+        /// 
+        /// - `type` (String) The type of documents to query for. Leave empty if you want to query for all kinds of documents.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var all_dashboard_and_notebooks = Dynatrace.GetDocuments.Invoke();
+        /// 
+        ///     var all_dashboards = Dynatrace.GetDocuments.Invoke(new()
+        ///     {
+        ///         Type = "dashboard",
+        ///     });
+        /// 
+        ///     var all_notebooks = Dynatrace.GetDocuments.Invoke(new()
+        ///     {
+        ///         Type = "notebook",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDocumentsResult> Invoke(GetDocumentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDocumentsResult>("dynatrace:index/getDocuments:getDocuments", args ?? new GetDocumentsInvokeArgs(), options.WithDefaults());
     }
 
 

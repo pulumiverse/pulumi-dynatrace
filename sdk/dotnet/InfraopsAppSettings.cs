@@ -14,6 +14,12 @@ namespace Pulumiverse.Dynatrace
     public partial class InfraopsAppSettings : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+        /// </summary>
+        [Output("interfaceSaturationThreshold")]
+        public Output<double?> InterfaceSaturationThreshold { get; private set; } = null!;
+
+        /// <summary>
         /// When set to true, the app will display monitoring candidates in the Hosts table
         /// </summary>
         [Output("showMonitoringCandidates")]
@@ -73,6 +79,12 @@ namespace Pulumiverse.Dynatrace
     public sealed class InfraopsAppSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+        /// </summary>
+        [Input("interfaceSaturationThreshold")]
+        public Input<double>? InterfaceSaturationThreshold { get; set; }
+
+        /// <summary>
         /// When set to true, the app will display monitoring candidates in the Hosts table
         /// </summary>
         [Input("showMonitoringCandidates", required: true)]
@@ -92,6 +104,12 @@ namespace Pulumiverse.Dynatrace
 
     public sealed class InfraopsAppSettingsState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+        /// </summary>
+        [Input("interfaceSaturationThreshold")]
+        public Input<double>? InterfaceSaturationThreshold { get; set; }
+
         /// <summary>
         /// When set to true, the app will display monitoring candidates in the Hosts table
         /// </summary>

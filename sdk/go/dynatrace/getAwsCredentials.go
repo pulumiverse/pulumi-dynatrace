@@ -37,21 +37,11 @@ type LookupAwsCredentialsResult struct {
 }
 
 func LookupAwsCredentialsOutput(ctx *pulumi.Context, args LookupAwsCredentialsOutputArgs, opts ...pulumi.InvokeOption) LookupAwsCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAwsCredentialsResultOutput, error) {
 			args := v.(LookupAwsCredentialsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAwsCredentialsResult
-			secret, err := ctx.InvokePackageRaw("dynatrace:index/getAwsCredentials:getAwsCredentials", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAwsCredentialsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAwsCredentialsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAwsCredentialsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("dynatrace:index/getAwsCredentials:getAwsCredentials", args, LookupAwsCredentialsResultOutput{}, options).(LookupAwsCredentialsResultOutput), nil
 		}).(LookupAwsCredentialsResultOutput)
 }
 

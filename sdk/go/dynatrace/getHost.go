@@ -89,21 +89,11 @@ type GetHostResult struct {
 }
 
 func GetHostOutput(ctx *pulumi.Context, args GetHostOutputArgs, opts ...pulumi.InvokeOption) GetHostResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetHostResultOutput, error) {
 			args := v.(GetHostArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetHostResult
-			secret, err := ctx.InvokePackageRaw("dynatrace:index/getHost:getHost", args, &rv, "", opts...)
-			if err != nil {
-				return GetHostResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetHostResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetHostResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("dynatrace:index/getHost:getHost", args, GetHostResultOutput{}, options).(GetHostResultOutput), nil
 		}).(GetHostResultOutput)
 }
 

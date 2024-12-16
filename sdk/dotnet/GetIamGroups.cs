@@ -91,6 +91,46 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetIamGroupsResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamGroupsResult>("dynatrace:index/getIamGroups:getIamGroups", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// &gt; **Dynatrace SaaS only**
+        /// 
+        /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **Allow read access for identity resources (users and groups)** (`account-idm-read`).
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var all_groups = Dynatrace.GetIamGroups.Invoke();
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["groups"] = all_groups,
+        ///     };
+        /// });
+        /// ```
+        /// 
+        /// ### Example output
+        /// ```
+        /// Changes to Outputs:
+        ///   + groups = {
+        ///       + groups = {
+        ///           + "########-3036-3ac2-5fa4-############" = "Group A"
+        ///           + "########-4049-4241-ac2b-############" = "Group B"
+        ///           + "########-5365-4450-89ab-############" = "Group C"
+        ///         }
+        ///       + id     = "iam-groups"
+        ///     }
+        /// ```
+        /// </summary>
+        public static Output<GetIamGroupsResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamGroupsResult>("dynatrace:index/getIamGroups:getIamGroups", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

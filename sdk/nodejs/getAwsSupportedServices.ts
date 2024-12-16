@@ -53,7 +53,7 @@ export interface GetAwsSupportedServicesResult {
  *
  * For an example of this data source, please refer to the Resource Example Usage of the dynatrace.AwsService resource.
  */
-export function getAwsSupportedServicesOutput(args?: GetAwsSupportedServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAwsSupportedServicesResult> {
+export function getAwsSupportedServicesOutput(args?: GetAwsSupportedServicesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAwsSupportedServicesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getAwsSupportedServices:getAwsSupportedServices", {

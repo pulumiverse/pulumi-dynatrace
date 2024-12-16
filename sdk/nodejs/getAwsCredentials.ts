@@ -38,7 +38,7 @@ export interface GetAwsCredentialsResult {
  *
  * - `label` (String) - The label/name of the AWS credential
  */
-export function getAwsCredentialsOutput(args: GetAwsCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAwsCredentialsResult> {
+export function getAwsCredentialsOutput(args: GetAwsCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAwsCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getAwsCredentials:getAwsCredentials", {
         "label": args.label,

@@ -22,12 +22,12 @@ __all__ = ['AzureCredentialsArgs', 'AzureCredentials']
 class AzureCredentialsArgs:
     def __init__(__self__, *,
                  active: pulumi.Input[bool],
+                 label: pulumi.Input[str],
                  monitor_only_tagged_entities: pulumi.Input[bool],
                  app_id: Optional[pulumi.Input[str]] = None,
                  auto_tagging: Optional[pulumi.Input[bool]] = None,
                  directory_id: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
-                 label: Optional[pulumi.Input[str]] = None,
                  monitor_only_excluding_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]] = None,
                  monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]] = None,
                  remove_defaults: Optional[pulumi.Input[bool]] = None,
@@ -37,12 +37,12 @@ class AzureCredentialsArgs:
         """
         The set of arguments for constructing a AzureCredentials resource.
         :param pulumi.Input[bool] active: The monitoring is enabled (`true`) or disabled (`false`).  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected
+        :param pulumi.Input[str] label: The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
         :param pulumi.Input[bool] monitor_only_tagged_entities: Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
         :param pulumi.Input[str] app_id: The Application ID (also referred to as Client ID)  The combination of Application ID and Directory ID must be unique
         :param pulumi.Input[bool] auto_tagging: The automatic capture of Azure tags is on (`true`) or off (`false`)
         :param pulumi.Input[str] directory_id: The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
         :param pulumi.Input[str] key: The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
-        :param pulumi.Input[str] label: The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]] monitor_only_excluding_tag_pairs: A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         :param pulumi.Input[bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
@@ -50,6 +50,7 @@ class AzureCredentialsArgs:
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
         """
         pulumi.set(__self__, "active", active)
+        pulumi.set(__self__, "label", label)
         pulumi.set(__self__, "monitor_only_tagged_entities", monitor_only_tagged_entities)
         if app_id is not None:
             pulumi.set(__self__, "app_id", app_id)
@@ -59,8 +60,6 @@ class AzureCredentialsArgs:
             pulumi.set(__self__, "directory_id", directory_id)
         if key is not None:
             pulumi.set(__self__, "key", key)
-        if label is not None:
-            pulumi.set(__self__, "label", label)
         if monitor_only_excluding_tag_pairs is not None:
             pulumi.set(__self__, "monitor_only_excluding_tag_pairs", monitor_only_excluding_tag_pairs)
         if monitor_only_tag_pairs is not None:
@@ -91,6 +90,18 @@ class AzureCredentialsArgs:
     @active.setter
     def active(self, value: pulumi.Input[bool]):
         pulumi.set(self, "active", value)
+
+    @property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[str]:
+        """
+        The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
+        """
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[str]):
+        pulumi.set(self, "label", value)
 
     @property
     @pulumi.getter(name="monitorOnlyTaggedEntities")
@@ -151,18 +162,6 @@ class AzureCredentialsArgs:
     @key.setter
     def key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "key", value)
-
-    @property
-    @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
-        """
-        return pulumi.get(self, "label")
-
-    @label.setter
-    def label(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "label", value)
 
     @property
     @pulumi.getter(name="monitorOnlyExcludingTagPairs")
@@ -544,6 +543,8 @@ class AzureCredentials(pulumi.CustomResource):
             __props__.__dict__["auto_tagging"] = auto_tagging
             __props__.__dict__["directory_id"] = directory_id
             __props__.__dict__["key"] = None if key is None else pulumi.Output.secret(key)
+            if label is None and not opts.urn:
+                raise TypeError("Missing required property 'label'")
             __props__.__dict__["label"] = label
             __props__.__dict__["monitor_only_excluding_tag_pairs"] = monitor_only_excluding_tag_pairs
             __props__.__dict__["monitor_only_tag_pairs"] = monitor_only_tag_pairs
@@ -660,7 +661,7 @@ class AzureCredentials(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def label(self) -> pulumi.Output[Optional[str]]:
+    def label(self) -> pulumi.Output[str]:
         """
         The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
         """

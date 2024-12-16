@@ -75,6 +75,38 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetFailureDetectionParametersResult> Invoke(GetFailureDetectionParametersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFailureDetectionParametersResult>("dynatrace:index/getFailureDetectionParameters:getFailureDetectionParameters", args ?? new GetFailureDetectionParametersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The `dynatrace.FailureDetectionParameters` data source allows the failure detection parameter ID to be retrieved by its name.
+        /// 
+        /// - `name` (String) - The name of the failure detection parameter
+        /// 
+        /// If multiple services match the given criteria, the first result will be retrieved.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetFailureDetectionParameters.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = example.Apply(getFailureDetectionParametersResult =&gt; getFailureDetectionParametersResult.Id),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFailureDetectionParametersResult> Invoke(GetFailureDetectionParametersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFailureDetectionParametersResult>("dynatrace:index/getFailureDetectionParameters:getFailureDetectionParameters", args ?? new GetFailureDetectionParametersInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -83,13 +83,13 @@ def get_alerting_profiles(profiles: Optional[Mapping[str, str]] = None,
         profiles=pulumi.get(__ret__, 'profiles'),
         values=pulumi.get(__ret__, 'values'))
 def get_alerting_profiles_output(profiles: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertingProfilesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertingProfilesResult]:
     """
     The alerting profiles data source allows retrieval of all alerting profiles.
     """
     __args__ = dict()
     __args__['profiles'] = profiles
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getAlertingProfiles:getAlertingProfiles', __args__, opts=opts, typ=GetAlertingProfilesResult)
     return __ret__.apply(lambda __response__: GetAlertingProfilesResult(
         id=pulumi.get(__response__, 'id'),

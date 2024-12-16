@@ -54,7 +54,7 @@ export interface GetIamGroupsResult {
  *
  * ### Example output
  */
-export function getIamGroupsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamGroupsResult> {
+export function getIamGroupsOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getIamGroups:getIamGroups", {
     }, opts);

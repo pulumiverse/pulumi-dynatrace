@@ -103,7 +103,7 @@ export interface GetIamPolicyResult {
  *
  * ## Example Output
  */
-export function getIamPolicyOutput(args: GetIamPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamPolicyResult> {
+export function getIamPolicyOutput(args: GetIamPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamPolicyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getIamPolicy:getIamPolicy", {
         "account": args.account,

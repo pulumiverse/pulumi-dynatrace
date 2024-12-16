@@ -130,7 +130,7 @@ def get_management_zone_v2(name: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         settings20_id=pulumi.get(__ret__, 'settings20_id'))
 def get_management_zone_v2_output(name: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementZoneV2Result]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementZoneV2Result]:
     """
     The management zone data source allows the management zone ID to be retrieved by its name.
 
@@ -174,7 +174,7 @@ def get_management_zone_v2_output(name: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getManagementZoneV2:getManagementZoneV2', __args__, opts=opts, typ=GetManagementZoneV2Result)
     return __ret__.apply(lambda __response__: GetManagementZoneV2Result(
         id=pulumi.get(__response__, 'id'),

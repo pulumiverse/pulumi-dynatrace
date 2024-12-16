@@ -68,7 +68,7 @@ export interface GetIamUserResult {
  * export const groups = userA.then(userA => userA.groups);
  * ```
  */
-export function getIamUserOutput(args: GetIamUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamUserResult> {
+export function getIamUserOutput(args: GetIamUserOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamUserResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getIamUser:getIamUser", {
         "email": args.email,

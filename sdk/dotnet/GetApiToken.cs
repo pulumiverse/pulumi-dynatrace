@@ -71,6 +71,36 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetApiTokenResult> Invoke(GetApiTokenInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApiTokenResult>("dynatrace:index/getApiToken:getApiToken", args ?? new GetApiTokenInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The API token data source allows a single access token to be retrieved by its name, note the token value is not included in the response.
+        /// 
+        /// If multiple tokens match the given name, the first result will be retrieved. To retrieve multiple tokens of the same name, please utilize the `dynatrace.getApiTokens` data source.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var exampleApiToken = Dynatrace.GetApiToken.Invoke(new()
+        ///     {
+        ///         Name = "Terraform",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["example"] = exampleApiToken,
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetApiTokenResult> Invoke(GetApiTokenInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetApiTokenResult>("dynatrace:index/getApiToken:getApiToken", args ?? new GetApiTokenInvokeArgs(), options.WithDefaults());
     }
 
 

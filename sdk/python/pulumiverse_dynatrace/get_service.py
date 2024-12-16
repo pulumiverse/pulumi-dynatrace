@@ -126,7 +126,7 @@ def get_service(name: Optional[str] = None,
 def get_service_output(name: Optional[pulumi.Input[str]] = None,
                        operator: Optional[pulumi.Input[Optional[str]]] = None,
                        tags: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceResult]:
     """
     !> The data source API endpoint has been deprecated, please use get_entity with entity type `SERVICE` instead.
 
@@ -159,7 +159,7 @@ def get_service_output(name: Optional[pulumi.Input[str]] = None,
     __args__['name'] = name
     __args__['operator'] = operator
     __args__['tags'] = tags
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getService:getService', __args__, opts=opts, typ=GetServiceResult)
     return __ret__.apply(lambda __response__: GetServiceResult(
         id=pulumi.get(__response__, 'id'),

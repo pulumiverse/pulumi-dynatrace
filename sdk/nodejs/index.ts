@@ -135,6 +135,11 @@ export type AutomationBusinessCalendar = import("./automationBusinessCalendar").
 export const AutomationBusinessCalendar: typeof import("./automationBusinessCalendar").AutomationBusinessCalendar = null as any;
 utilities.lazyLoad(exports, ["AutomationBusinessCalendar"], () => require("./automationBusinessCalendar"));
 
+export { AutomationControllerConnectionsArgs, AutomationControllerConnectionsState } from "./automationControllerConnections";
+export type AutomationControllerConnections = import("./automationControllerConnections").AutomationControllerConnections;
+export const AutomationControllerConnections: typeof import("./automationControllerConnections").AutomationControllerConnections = null as any;
+utilities.lazyLoad(exports, ["AutomationControllerConnections"], () => require("./automationControllerConnections"));
+
 export { AutomationSchedulingRuleArgs, AutomationSchedulingRuleState } from "./automationSchedulingRule";
 export type AutomationSchedulingRule = import("./automationSchedulingRule").AutomationSchedulingRule;
 export const AutomationSchedulingRule: typeof import("./automationSchedulingRule").AutomationSchedulingRule = null as any;
@@ -435,6 +440,11 @@ export type DeclarativeGrouping = import("./declarativeGrouping").DeclarativeGro
 export const DeclarativeGrouping: typeof import("./declarativeGrouping").DeclarativeGrouping = null as any;
 utilities.lazyLoad(exports, ["DeclarativeGrouping"], () => require("./declarativeGrouping"));
 
+export { DefaultLaunchpadArgs, DefaultLaunchpadState } from "./defaultLaunchpad";
+export type DefaultLaunchpad = import("./defaultLaunchpad").DefaultLaunchpad;
+export const DefaultLaunchpad: typeof import("./defaultLaunchpad").DefaultLaunchpad = null as any;
+utilities.lazyLoad(exports, ["DefaultLaunchpad"], () => require("./defaultLaunchpad"));
+
 export { DevobsAgentOptinArgs, DevobsAgentOptinState } from "./devobsAgentOptin";
 export type DevobsAgentOptin = import("./devobsAgentOptin").DevobsAgentOptin;
 export const DevobsAgentOptin: typeof import("./devobsAgentOptin").DevobsAgentOptin = null as any;
@@ -524,6 +534,11 @@ export { EulaSettingsArgs, EulaSettingsState } from "./eulaSettings";
 export type EulaSettings = import("./eulaSettings").EulaSettings;
 export const EulaSettings: typeof import("./eulaSettings").EulaSettings = null as any;
 utilities.lazyLoad(exports, ["EulaSettings"], () => require("./eulaSettings"));
+
+export { EventDrivenAnsibleConnectionsArgs, EventDrivenAnsibleConnectionsState } from "./eventDrivenAnsibleConnections";
+export type EventDrivenAnsibleConnections = import("./eventDrivenAnsibleConnections").EventDrivenAnsibleConnections;
+export const EventDrivenAnsibleConnections: typeof import("./eventDrivenAnsibleConnections").EventDrivenAnsibleConnections = null as any;
+utilities.lazyLoad(exports, ["EventDrivenAnsibleConnections"], () => require("./eventDrivenAnsibleConnections"));
 
 export { ExtensionExecutionControllerArgs, ExtensionExecutionControllerState } from "./extensionExecutionController";
 export type ExtensionExecutionController = import("./extensionExecutionController").ExtensionExecutionController;
@@ -675,6 +690,21 @@ export const getGenericSettings: typeof import("./getGenericSettings").getGeneri
 export const getGenericSettingsOutput: typeof import("./getGenericSettings").getGenericSettingsOutput = null as any;
 utilities.lazyLoad(exports, ["getGenericSettings","getGenericSettingsOutput"], () => require("./getGenericSettings"));
 
+export { GetGeoCitiesArgs, GetGeoCitiesResult, GetGeoCitiesOutputArgs } from "./getGeoCities";
+export const getGeoCities: typeof import("./getGeoCities").getGeoCities = null as any;
+export const getGeoCitiesOutput: typeof import("./getGeoCities").getGeoCitiesOutput = null as any;
+utilities.lazyLoad(exports, ["getGeoCities","getGeoCitiesOutput"], () => require("./getGeoCities"));
+
+export { GetGeoCountriesResult } from "./getGeoCountries";
+export const getGeoCountries: typeof import("./getGeoCountries").getGeoCountries = null as any;
+export const getGeoCountriesOutput: typeof import("./getGeoCountries").getGeoCountriesOutput = null as any;
+utilities.lazyLoad(exports, ["getGeoCountries","getGeoCountriesOutput"], () => require("./getGeoCountries"));
+
+export { GetGeoRegionsArgs, GetGeoRegionsResult, GetGeoRegionsOutputArgs } from "./getGeoRegions";
+export const getGeoRegions: typeof import("./getGeoRegions").getGeoRegions = null as any;
+export const getGeoRegionsOutput: typeof import("./getGeoRegions").getGeoRegionsOutput = null as any;
+utilities.lazyLoad(exports, ["getGeoRegions","getGeoRegionsOutput"], () => require("./getGeoRegions"));
+
 export { GetHostArgs, GetHostResult, GetHostOutputArgs } from "./getHost";
 export const getHost: typeof import("./getHost").getHost = null as any;
 export const getHostOutput: typeof import("./getHost").getHostOutput = null as any;
@@ -799,6 +829,11 @@ export { GetVulnerabilityAlertingArgs, GetVulnerabilityAlertingResult, GetVulner
 export const getVulnerabilityAlerting: typeof import("./getVulnerabilityAlerting").getVulnerabilityAlerting = null as any;
 export const getVulnerabilityAlertingOutput: typeof import("./getVulnerabilityAlerting").getVulnerabilityAlertingOutput = null as any;
 utilities.lazyLoad(exports, ["getVulnerabilityAlerting","getVulnerabilityAlertingOutput"], () => require("./getVulnerabilityAlerting"));
+
+export { GitlabConnectionArgs, GitlabConnectionState } from "./gitlabConnection";
+export type GitlabConnection = import("./gitlabConnection").GitlabConnection;
+export const GitlabConnection: typeof import("./gitlabConnection").GitlabConnection = null as any;
+utilities.lazyLoad(exports, ["GitlabConnection"], () => require("./gitlabConnection"));
 
 export { GoldenStateArgs, GoldenStateState } from "./goldenState";
 export type GoldenState = import("./goldenState").GoldenState;
@@ -964,6 +999,11 @@ export { IssueTrackingArgs, IssueTrackingState } from "./issueTracking";
 export type IssueTracking = import("./issueTracking").IssueTracking;
 export const IssueTracking: typeof import("./issueTracking").IssueTracking = null as any;
 utilities.lazyLoad(exports, ["IssueTracking"], () => require("./issueTracking"));
+
+export { JenkinsConnectionArgs, JenkinsConnectionState } from "./jenkinsConnection";
+export type JenkinsConnection = import("./jenkinsConnection").JenkinsConnection;
+export const JenkinsConnection: typeof import("./jenkinsConnection").JenkinsConnection = null as any;
+utilities.lazyLoad(exports, ["JenkinsConnection"], () => require("./jenkinsConnection"));
 
 export { JiraNotificationArgs, JiraNotificationState } from "./jiraNotification";
 export type JiraNotification = import("./jiraNotification").JiraNotification;
@@ -1290,6 +1330,16 @@ export type MonitoredTechnologiesWsmb = import("./monitoredTechnologiesWsmb").Mo
 export const MonitoredTechnologiesWsmb: typeof import("./monitoredTechnologiesWsmb").MonitoredTechnologiesWsmb = null as any;
 utilities.lazyLoad(exports, ["MonitoredTechnologiesWsmb"], () => require("./monitoredTechnologiesWsmb"));
 
+export { MsentraidConnectionArgs, MsentraidConnectionState } from "./msentraidConnection";
+export type MsentraidConnection = import("./msentraidConnection").MsentraidConnection;
+export const MsentraidConnection: typeof import("./msentraidConnection").MsentraidConnection = null as any;
+utilities.lazyLoad(exports, ["MsentraidConnection"], () => require("./msentraidConnection"));
+
+export { MsteamsConnectionArgs, MsteamsConnectionState } from "./msteamsConnection";
+export type MsteamsConnection = import("./msteamsConnection").MsteamsConnection;
+export const MsteamsConnection: typeof import("./msteamsConnection").MsteamsConnection = null as any;
+utilities.lazyLoad(exports, ["MsteamsConnection"], () => require("./msteamsConnection"));
+
 export { MutedRequestsArgs, MutedRequestsState } from "./mutedRequests";
 export type MutedRequests = import("./mutedRequests").MutedRequests;
 export const MutedRequests: typeof import("./mutedRequests").MutedRequests = null as any;
@@ -1410,6 +1460,11 @@ export type PagerDutyNotification = import("./pagerDutyNotification").PagerDutyN
 export const PagerDutyNotification: typeof import("./pagerDutyNotification").PagerDutyNotification = null as any;
 utilities.lazyLoad(exports, ["PagerDutyNotification"], () => require("./pagerDutyNotification"));
 
+export { PagerdutyConnectionArgs, PagerdutyConnectionState } from "./pagerdutyConnection";
+export type PagerdutyConnection = import("./pagerdutyConnection").PagerdutyConnection;
+export const PagerdutyConnection: typeof import("./pagerdutyConnection").PagerdutyConnection = null as any;
+utilities.lazyLoad(exports, ["PagerdutyConnection"], () => require("./pagerdutyConnection"));
+
 export { PgAlertingArgs, PgAlertingState } from "./pgAlerting";
 export type PgAlerting = import("./pgAlerting").PgAlerting;
 export const PgAlerting: typeof import("./pgAlerting").PgAlerting = null as any;
@@ -1434,6 +1489,11 @@ export { PolicyBindingsArgs, PolicyBindingsState } from "./policyBindings";
 export type PolicyBindings = import("./policyBindings").PolicyBindings;
 export const PolicyBindings: typeof import("./policyBindings").PolicyBindings = null as any;
 utilities.lazyLoad(exports, ["PolicyBindings"], () => require("./policyBindings"));
+
+export { ProblemFieldsArgs, ProblemFieldsState } from "./problemFields";
+export type ProblemFields = import("./problemFields").ProblemFields;
+export const ProblemFields: typeof import("./problemFields").ProblemFields = null as any;
+utilities.lazyLoad(exports, ["ProblemFields"], () => require("./problemFields"));
 
 export { ProblemRecordPropagationRulesArgs, ProblemRecordPropagationRulesState } from "./problemRecordPropagationRules";
 export type ProblemRecordPropagationRules = import("./problemRecordPropagationRules").ProblemRecordPropagationRules;
@@ -1614,6 +1674,11 @@ export { ServiceNowNotificationArgs, ServiceNowNotificationState } from "./servi
 export type ServiceNowNotification = import("./serviceNowNotification").ServiceNowNotification;
 export const ServiceNowNotification: typeof import("./serviceNowNotification").ServiceNowNotification = null as any;
 utilities.lazyLoad(exports, ["ServiceNowNotification"], () => require("./serviceNowNotification"));
+
+export { ServicenowConnectionArgs, ServicenowConnectionState } from "./servicenowConnection";
+export type ServicenowConnection = import("./servicenowConnection").ServicenowConnection;
+export const ServicenowConnection: typeof import("./servicenowConnection").ServicenowConnection = null as any;
+utilities.lazyLoad(exports, ["ServicenowConnection"], () => require("./servicenowConnection"));
 
 export { SessionReplayResourceCaptureArgs, SessionReplayResourceCaptureState } from "./sessionReplayResourceCapture";
 export type SessionReplayResourceCapture = import("./sessionReplayResourceCapture").SessionReplayResourceCapture;
@@ -1951,6 +2016,8 @@ const _module = {
                 return new AuditLog(name, <any>undefined, { urn })
             case "dynatrace:index/automationBusinessCalendar:AutomationBusinessCalendar":
                 return new AutomationBusinessCalendar(name, <any>undefined, { urn })
+            case "dynatrace:index/automationControllerConnections:AutomationControllerConnections":
+                return new AutomationControllerConnections(name, <any>undefined, { urn })
             case "dynatrace:index/automationSchedulingRule:AutomationSchedulingRule":
                 return new AutomationSchedulingRule(name, <any>undefined, { urn })
             case "dynatrace:index/automationWorkflow:AutomationWorkflow":
@@ -2071,6 +2138,8 @@ const _module = {
                 return new DduPool(name, <any>undefined, { urn })
             case "dynatrace:index/declarativeGrouping:DeclarativeGrouping":
                 return new DeclarativeGrouping(name, <any>undefined, { urn })
+            case "dynatrace:index/defaultLaunchpad:DefaultLaunchpad":
+                return new DefaultLaunchpad(name, <any>undefined, { urn })
             case "dynatrace:index/devobsAgentOptin:DevobsAgentOptin":
                 return new DevobsAgentOptin(name, <any>undefined, { urn })
             case "dynatrace:index/devobsDataMasking:DevobsDataMasking":
@@ -2107,6 +2176,8 @@ const _module = {
                 return new Environment(name, <any>undefined, { urn })
             case "dynatrace:index/eulaSettings:EulaSettings":
                 return new EulaSettings(name, <any>undefined, { urn })
+            case "dynatrace:index/eventDrivenAnsibleConnections:EventDrivenAnsibleConnections":
+                return new EventDrivenAnsibleConnections(name, <any>undefined, { urn })
             case "dynatrace:index/extensionExecutionController:ExtensionExecutionController":
                 return new ExtensionExecutionController(name, <any>undefined, { urn })
             case "dynatrace:index/extensionExecutionRemote:ExtensionExecutionRemote":
@@ -2125,6 +2196,8 @@ const _module = {
                 return new GenericTypes(name, <any>undefined, { urn })
             case "dynatrace:index/geolocation:Geolocation":
                 return new Geolocation(name, <any>undefined, { urn })
+            case "dynatrace:index/gitlabConnection:GitlabConnection":
+                return new GitlabConnection(name, <any>undefined, { urn })
             case "dynatrace:index/goldenState:GoldenState":
                 return new GoldenState(name, <any>undefined, { urn })
             case "dynatrace:index/grailMetricsAllowall:GrailMetricsAllowall":
@@ -2191,6 +2264,8 @@ const _module = {
                 return new IpAddressMasking(name, <any>undefined, { urn })
             case "dynatrace:index/issueTracking:IssueTracking":
                 return new IssueTracking(name, <any>undefined, { urn })
+            case "dynatrace:index/jenkinsConnection:JenkinsConnection":
+                return new JenkinsConnection(name, <any>undefined, { urn })
             case "dynatrace:index/jiraNotification:JiraNotification":
                 return new JiraNotification(name, <any>undefined, { urn })
             case "dynatrace:index/jsonDashboard:JsonDashboard":
@@ -2321,6 +2396,10 @@ const _module = {
                 return new MonitoredTechnologiesVarnish(name, <any>undefined, { urn })
             case "dynatrace:index/monitoredTechnologiesWsmb:MonitoredTechnologiesWsmb":
                 return new MonitoredTechnologiesWsmb(name, <any>undefined, { urn })
+            case "dynatrace:index/msentraidConnection:MsentraidConnection":
+                return new MsentraidConnection(name, <any>undefined, { urn })
+            case "dynatrace:index/msteamsConnection:MsteamsConnection":
+                return new MsteamsConnection(name, <any>undefined, { urn })
             case "dynatrace:index/mutedRequests:MutedRequests":
                 return new MutedRequests(name, <any>undefined, { urn })
             case "dynatrace:index/nettracer:Nettracer":
@@ -2369,6 +2448,8 @@ const _module = {
                 return new OwnershipTeams(name, <any>undefined, { urn })
             case "dynatrace:index/pagerDutyNotification:PagerDutyNotification":
                 return new PagerDutyNotification(name, <any>undefined, { urn })
+            case "dynatrace:index/pagerdutyConnection:PagerdutyConnection":
+                return new PagerdutyConnection(name, <any>undefined, { urn })
             case "dynatrace:index/pgAlerting:PgAlerting":
                 return new PgAlerting(name, <any>undefined, { urn })
             case "dynatrace:index/pgAnomalies:PgAnomalies":
@@ -2379,6 +2460,8 @@ const _module = {
                 return new Policy(name, <any>undefined, { urn })
             case "dynatrace:index/policyBindings:PolicyBindings":
                 return new PolicyBindings(name, <any>undefined, { urn })
+            case "dynatrace:index/problemFields:ProblemFields":
+                return new ProblemFields(name, <any>undefined, { urn })
             case "dynatrace:index/problemRecordPropagationRules:ProblemRecordPropagationRules":
                 return new ProblemRecordPropagationRules(name, <any>undefined, { urn })
             case "dynatrace:index/processAvailability:ProcessAvailability":
@@ -2449,6 +2532,8 @@ const _module = {
                 return new ServiceNaming(name, <any>undefined, { urn })
             case "dynatrace:index/serviceNowNotification:ServiceNowNotification":
                 return new ServiceNowNotification(name, <any>undefined, { urn })
+            case "dynatrace:index/servicenowConnection:ServicenowConnection":
+                return new ServicenowConnection(name, <any>undefined, { urn })
             case "dynatrace:index/sessionReplayResourceCapture:SessionReplayResourceCapture":
                 return new SessionReplayResourceCapture(name, <any>undefined, { urn })
             case "dynatrace:index/sessionReplayWebPrivacy:SessionReplayWebPrivacy":
@@ -2588,6 +2673,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/attributeMasking", _mo
 pulumi.runtime.registerResourceModule("dynatrace", "index/attributesPreferences", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/auditLog", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationBusinessCalendar", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/automationControllerConnections", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationSchedulingRule", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflow", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflowAwsConnections", _module)
@@ -2648,6 +2734,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/davisCopilot", _module
 pulumi.runtime.registerResourceModule("dynatrace", "index/dbAppFeatureFlags", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/dduPool", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/declarativeGrouping", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/defaultLaunchpad", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/devobsAgentOptin", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/devobsDataMasking", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/devobsGitOnprem", _module)
@@ -2666,6 +2753,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/ebpfServiceDiscovery",
 pulumi.runtime.registerResourceModule("dynatrace", "index/emailNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/environment", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/eulaSettings", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/eventDrivenAnsibleConnections", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/extensionExecutionController", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/extensionExecutionRemote", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/failureDetectionParameters", _module)
@@ -2675,6 +2763,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/genericRelationships",
 pulumi.runtime.registerResourceModule("dynatrace", "index/genericSetting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/genericTypes", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/geolocation", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/gitlabConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/goldenState", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/grailMetricsAllowall", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/grailMetricsAllowlist", _module)
@@ -2708,6 +2797,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/infraopsAppFeatureFlag
 pulumi.runtime.registerResourceModule("dynatrace", "index/infraopsAppSettings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/ipAddressMasking", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/issueTracking", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/jenkinsConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/jiraNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/jsonDashboard", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/jsonDashboardBase", _module)
@@ -2773,6 +2863,8 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesO
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesPhp", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesVarnish", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesWsmb", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/msentraidConnection", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/msteamsConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/mutedRequests", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/nettracer", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/networkMonitor", _module)
@@ -2797,11 +2889,13 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/osServices", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/ownershipConfig", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/ownershipTeams", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/pagerDutyNotification", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/pagerdutyConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/pgAlerting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/pgAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/platformBucket", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/policy", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/policyBindings", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/problemFields", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/problemRecordPropagationRules", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processAvailability", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processGroupDetection", _module)
@@ -2837,6 +2931,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/serviceFullWebService"
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceHttpFailure", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceNaming", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceNowNotification", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/servicenowConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/sessionReplayResourceCapture", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/sessionReplayWebPrivacy", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/siteReliabilityGuardian", _module)

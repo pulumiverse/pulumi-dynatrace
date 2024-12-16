@@ -76,21 +76,11 @@ type LookupApiTokenResult struct {
 }
 
 func LookupApiTokenOutput(ctx *pulumi.Context, args LookupApiTokenOutputArgs, opts ...pulumi.InvokeOption) LookupApiTokenResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupApiTokenResultOutput, error) {
 			args := v.(LookupApiTokenArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupApiTokenResult
-			secret, err := ctx.InvokePackageRaw("dynatrace:index/getApiToken:getApiToken", args, &rv, "", opts...)
-			if err != nil {
-				return LookupApiTokenResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupApiTokenResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupApiTokenResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("dynatrace:index/getApiToken:getApiToken", args, LookupApiTokenResultOutput{}, options).(LookupApiTokenResultOutput), nil
 		}).(LookupApiTokenResultOutput)
 }
 

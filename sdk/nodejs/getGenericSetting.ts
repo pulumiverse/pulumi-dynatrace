@@ -90,7 +90,7 @@ export interface GetGenericSettingResult {
  * export const genericSetting = example;
  * ```
  */
-export function getGenericSettingOutput(args?: GetGenericSettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGenericSettingResult> {
+export function getGenericSettingOutput(args?: GetGenericSettingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGenericSettingResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getGenericSetting:getGenericSetting", {

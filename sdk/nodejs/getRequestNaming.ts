@@ -66,7 +66,7 @@ export interface GetRequestNamingResult {
  * export const id = example.then(example => example.id);
  * ```
  */
-export function getRequestNamingOutput(args: GetRequestNamingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRequestNamingResult> {
+export function getRequestNamingOutput(args: GetRequestNamingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRequestNamingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getRequestNaming:getRequestNaming", {
         "name": args.name,

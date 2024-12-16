@@ -15,7 +15,7 @@ import (
 type LogCustomAttribute struct {
 	pulumi.CustomResourceState
 
-	// The attribute key is case insensitive in log data ingestion.
+	// The attribute key is case sensitive in log data ingestion.
 	Key pulumi.StringOutput `pulumi:"key"`
 	// Show attribute values in side bar
 	Sidebar pulumi.BoolOutput `pulumi:"sidebar"`
@@ -57,14 +57,14 @@ func GetLogCustomAttribute(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering LogCustomAttribute resources.
 type logCustomAttributeState struct {
-	// The attribute key is case insensitive in log data ingestion.
+	// The attribute key is case sensitive in log data ingestion.
 	Key *string `pulumi:"key"`
 	// Show attribute values in side bar
 	Sidebar *bool `pulumi:"sidebar"`
 }
 
 type LogCustomAttributeState struct {
-	// The attribute key is case insensitive in log data ingestion.
+	// The attribute key is case sensitive in log data ingestion.
 	Key pulumi.StringPtrInput
 	// Show attribute values in side bar
 	Sidebar pulumi.BoolPtrInput
@@ -75,7 +75,7 @@ func (LogCustomAttributeState) ElementType() reflect.Type {
 }
 
 type logCustomAttributeArgs struct {
-	// The attribute key is case insensitive in log data ingestion.
+	// The attribute key is case sensitive in log data ingestion.
 	Key string `pulumi:"key"`
 	// Show attribute values in side bar
 	Sidebar bool `pulumi:"sidebar"`
@@ -83,7 +83,7 @@ type logCustomAttributeArgs struct {
 
 // The set of arguments for constructing a LogCustomAttribute resource.
 type LogCustomAttributeArgs struct {
-	// The attribute key is case insensitive in log data ingestion.
+	// The attribute key is case sensitive in log data ingestion.
 	Key pulumi.StringInput
 	// Show attribute values in side bar
 	Sidebar pulumi.BoolInput
@@ -176,7 +176,7 @@ func (o LogCustomAttributeOutput) ToLogCustomAttributeOutputWithContext(ctx cont
 	return o
 }
 
-// The attribute key is case insensitive in log data ingestion.
+// The attribute key is case sensitive in log data ingestion.
 func (o LogCustomAttributeOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogCustomAttribute) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }

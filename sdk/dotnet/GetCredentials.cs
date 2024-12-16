@@ -193,6 +193,97 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetCredentialsResult> Invoke(GetCredentialsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCredentialsResult>("dynatrace:index/getCredentials:getCredentials", args ?? new GetCredentialsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var creds = Dynatrace.GetCredentials.Invoke(new()
+        ///     {
+        ///         Name = "Office365 Access Token",
+        ///     });
+        /// 
+        ///     var _name_ = new Dynatrace.HttpMonitor("#name#", new()
+        ///     {
+        ///         Enabled = true,
+        ///         Frequency = 60,
+        ///         Locations = new[]
+        ///         {
+        ///             "SYNTHETIC_LOCATION-781752216580B1BC",
+        ///         },
+        ///         AnomalyDetections = new[]
+        ///         {
+        ///             new Dynatrace.Inputs.HttpMonitorAnomalyDetectionArgs
+        ///             {
+        ///                 LoadingTimeThresholds = new[]
+        ///                 {
+        ///                     new Dynatrace.Inputs.HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs
+        ///                     {
+        ///                         Enabled = true,
+        ///                     },
+        ///                 },
+        ///                 OutageHandlings = new[]
+        ///                 {
+        ///                     new Dynatrace.Inputs.HttpMonitorAnomalyDetectionOutageHandlingArgs
+        ///                     {
+        ///                         GlobalOutage = true,
+        ///                         LocalOutage = false,
+        ///                         RetryOnError = false,
+        ///                     },
+        ///                 },
+        ///             },
+        ///         },
+        ///         Script = new Dynatrace.Inputs.HttpMonitorScriptArgs
+        ///         {
+        ///             Requests = new[]
+        ///             {
+        ///                 new Dynatrace.Inputs.HttpMonitorScriptRequestArgs
+        ///                 {
+        ///                     Description = "google.com",
+        ///                     Method = "GET",
+        ///                     Url = "https://www.google.com",
+        ///                     Authentication = new Dynatrace.Inputs.HttpMonitorScriptRequestAuthenticationArgs
+        ///                     {
+        ///                         Type = "BASIC_AUTHENTICATION",
+        ///                         Credentials = creds.Apply(getCredentialsResult =&gt; getCredentialsResult.Id),
+        ///                     },
+        ///                     Configuration = new Dynatrace.Inputs.HttpMonitorScriptRequestConfigurationArgs
+        ///                     {
+        ///                         AcceptAnyCertificate = true,
+        ///                         FollowRedirects = true,
+        ///                     },
+        ///                     Validation = new Dynatrace.Inputs.HttpMonitorScriptRequestValidationArgs
+        ///                     {
+        ///                         Rules = new[]
+        ///                         {
+        ///                             new Dynatrace.Inputs.HttpMonitorScriptRequestValidationRuleArgs
+        ///                             {
+        ///                                 Type = "httpStatusesList",
+        ///                                 PassIfFound = false,
+        ///                                 Value = "&gt;=400",
+        ///                             },
+        ///                         },
+        ///                     },
+        ///                 },
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCredentialsResult> Invoke(GetCredentialsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCredentialsResult>("dynatrace:index/getCredentials:getCredentials", args ?? new GetCredentialsInvokeArgs(), options.WithDefaults());
     }
 
 

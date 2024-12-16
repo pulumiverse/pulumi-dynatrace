@@ -261,6 +261,131 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetIamPoliciesResult> Invoke(GetIamPoliciesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamPoliciesResult>("dynatrace:index/getIamPolicies:getIamPolicies", args ?? new GetIamPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// &gt; **Dynatrace SaaS only**
+        /// 
+        /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`).
+        /// 
+        /// You can use the attributes `environments`, `accounts` and `globals` to refine which policies you want to query for.
+        /// * The attribute `global` indicates whether the results should also contain global (Dynatrace defined) policies
+        /// * The attribute `environment` is an array of environment IDs.
+        /// * The results won't contain any environment specific policies if the attribute `environments` has been omitted
+        /// * The results will contain policies for all environments reachable via the given credentials if `environments` is set to `["*"]`
+        /// * The attribute `accounts` is an array of accounts UUIDs. Set this to `["*"]` if you want to receive account specific policies.
+        /// * The results won't contain any account specific policies if the attribute `accounts` has been omitted
+        /// ## Example Usage
+        /// 
+        /// The following example queries for polices of all environments reachable via the given credentials, all accounts and all global policies.
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var all = Dynatrace.GetIamPolicies.Invoke(new()
+        ///     {
+        ///         Accounts = new[]
+        ///         {
+        ///             "*",
+        ///         },
+        ///         Environments = new[]
+        ///         {
+        ///             "*",
+        ///         },
+        ///         Global = true,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// The following example queries for policies that are defined for the environment with the id `abce234`. No account specific or global policies will be included.
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var all = Dynatrace.GetIamPolicies.Invoke(new()
+        ///     {
+        ///         Environments = new[]
+        ///         {
+        ///             "abce234",
+        ///         },
+        ///         Global = false,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// 
+        /// ## Example Output
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var all = Dynatrace.GetIamPolicies.Invoke(new()
+        ///     {
+        ///         Environments = new[]
+        ///         {
+        ///             "*",
+        ///         },
+        ///         Accounts = new[]
+        ///         {
+        ///             "*",
+        ///         },
+        ///         Global = true,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["policies"] = all.Apply(getIamPoliciesResult =&gt; getIamPoliciesResult.Policies),
+        ///     };
+        /// });
+        /// ```
+        /// 
+        /// ```
+        /// Changes to Outputs:
+        ///   + policies = [
+        ///       + {
+        ///           + account     = "########-86d8-####-88bd-############"
+        ///           + environment = ""
+        ///           + global      = false
+        ///           + id          = "########-7a6a-####-a43e-#############-#account#-#########-86d8-####-88bd-############"      
+        ///           + name        = "storage:bucket-definitions:delete"
+        ///           + uuid        = "########-7a6a-####-a43e-############"
+        ///         },
+        ///         ...
+        ///       + {
+        ///           + account     = ""
+        ///           + environment = "#######"
+        ///           + global      = false
+        ///           + id          = "########-c7d6-####-878c-#############-#environment#-########"
+        ///           + name        = "some-policy"
+        ///           + uuid        = "########-c7d6-####-878c-############"
+        ///         }, 
+        ///         ...
+        ///       + {
+        ///           + account     = ""
+        ///           + environment = ""
+        ///           + global      = true
+        ///           + id          = "########-6852-####-9d1b-#############-#global#-#global"
+        ///           + name        = "Storage Events Read"
+        ///           + uuid        = "########-6852-####-9d1b-############"
+        ///         },               
+        ///     ]
+        /// 
+        /// ```
+        /// </summary>
+        public static Output<GetIamPoliciesResult> Invoke(GetIamPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamPoliciesResult>("dynatrace:index/getIamPolicies:getIamPolicies", args ?? new GetIamPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

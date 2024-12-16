@@ -165,7 +165,7 @@ export interface GetIamPoliciesResult {
  * export const policies = all.then(all => all.policies);
  * ```
  */
-export function getIamPoliciesOutput(args?: GetIamPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamPoliciesResult> {
+export function getIamPoliciesOutput(args?: GetIamPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamPoliciesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getIamPolicies:getIamPolicies", {

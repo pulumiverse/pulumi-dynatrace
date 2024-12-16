@@ -75,6 +75,38 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetRequestNamingResult> Invoke(GetRequestNamingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRequestNamingResult>("dynatrace:index/getRequestNaming:getRequestNaming", args ?? new GetRequestNamingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The `dynatrace.RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
+        /// 
+        /// - `name` (String) - The name to be assigned to matching requests.
+        /// 
+        /// If multiple services match the given criteria, the first result will be retrieved.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetRequestNaming.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = example.Apply(getRequestNamingResult =&gt; getRequestNamingResult.Id),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRequestNamingResult> Invoke(GetRequestNamingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRequestNamingResult>("dynatrace:index/getRequestNaming:getRequestNaming", args ?? new GetRequestNamingInvokeArgs(), options.WithDefaults());
     }
 
 

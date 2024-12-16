@@ -31,6 +31,16 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetAwsSupportedServicesResult> Invoke(GetAwsSupportedServicesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAwsSupportedServicesResult>("dynatrace:index/getAwsSupportedServices:getAwsSupportedServices", args ?? new GetAwsSupportedServicesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The AWS supported service data source queries for a full list of all supported services.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// For an example of this data source, please refer to the Resource Example Usage of the dynatrace.AwsService resource.
+        /// </summary>
+        public static Output<GetAwsSupportedServicesResult> Invoke(GetAwsSupportedServicesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAwsSupportedServicesResult>("dynatrace:index/getAwsSupportedServices:getAwsSupportedServices", args ?? new GetAwsSupportedServicesInvokeArgs(), options.WithDefaults());
     }
 
 

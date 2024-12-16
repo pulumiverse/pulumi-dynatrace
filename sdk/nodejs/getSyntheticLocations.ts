@@ -135,7 +135,7 @@ export interface GetSyntheticLocationsResult {
  * });
  * ```
  */
-export function getSyntheticLocationsOutput(args?: GetSyntheticLocationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSyntheticLocationsResult> {
+export function getSyntheticLocationsOutput(args?: GetSyntheticLocationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSyntheticLocationsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getSyntheticLocations:getSyntheticLocations", {

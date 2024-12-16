@@ -61,6 +61,31 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetRemoteEnvironmentsResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRemoteEnvironmentsResult>("dynatrace:index/getRemoteEnvironments:getRemoteEnvironments", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// The remote environments data source allows retrieval of all remote environments.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetRemoteEnvironments.Invoke();
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["remoteEnvironments"] = example,
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRemoteEnvironmentsResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRemoteEnvironmentsResult>("dynatrace:index/getRemoteEnvironments:getRemoteEnvironments", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

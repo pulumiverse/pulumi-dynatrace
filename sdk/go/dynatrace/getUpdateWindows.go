@@ -64,21 +64,11 @@ type LookupUpdateWindowsResult struct {
 }
 
 func LookupUpdateWindowsOutput(ctx *pulumi.Context, args LookupUpdateWindowsOutputArgs, opts ...pulumi.InvokeOption) LookupUpdateWindowsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupUpdateWindowsResultOutput, error) {
 			args := v.(LookupUpdateWindowsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupUpdateWindowsResult
-			secret, err := ctx.InvokePackageRaw("dynatrace:index/getUpdateWindows:getUpdateWindows", args, &rv, "", opts...)
-			if err != nil {
-				return LookupUpdateWindowsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupUpdateWindowsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupUpdateWindowsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("dynatrace:index/getUpdateWindows:getUpdateWindows", args, LookupUpdateWindowsResultOutput{}, options).(LookupUpdateWindowsResultOutput), nil
 		}).(LookupUpdateWindowsResultOutput)
 }
 

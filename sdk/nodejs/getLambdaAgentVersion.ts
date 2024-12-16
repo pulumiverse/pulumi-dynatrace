@@ -115,7 +115,7 @@ export interface GetLambdaAgentVersionResult {
  * export const latest = example;
  * ```
  */
-export function getLambdaAgentVersionOutput(args?: GetLambdaAgentVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLambdaAgentVersionResult> {
+export function getLambdaAgentVersionOutput(args?: GetLambdaAgentVersionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLambdaAgentVersionResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getLambdaAgentVersion:getLambdaAgentVersion", {

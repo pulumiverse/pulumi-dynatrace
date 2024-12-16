@@ -23,7 +23,7 @@ class LogCustomAttributeArgs:
                  sidebar: pulumi.Input[bool]):
         """
         The set of arguments for constructing a LogCustomAttribute resource.
-        :param pulumi.Input[str] key: The attribute key is case insensitive in log data ingestion.
+        :param pulumi.Input[str] key: The attribute key is case sensitive in log data ingestion.
         :param pulumi.Input[bool] sidebar: Show attribute values in side bar
         """
         pulumi.set(__self__, "key", key)
@@ -33,7 +33,7 @@ class LogCustomAttributeArgs:
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
         """
-        The attribute key is case insensitive in log data ingestion.
+        The attribute key is case sensitive in log data ingestion.
         """
         return pulumi.get(self, "key")
 
@@ -61,7 +61,7 @@ class _LogCustomAttributeState:
                  sidebar: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering LogCustomAttribute resources.
-        :param pulumi.Input[str] key: The attribute key is case insensitive in log data ingestion.
+        :param pulumi.Input[str] key: The attribute key is case sensitive in log data ingestion.
         :param pulumi.Input[bool] sidebar: Show attribute values in side bar
         """
         if key is not None:
@@ -73,7 +73,7 @@ class _LogCustomAttributeState:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        The attribute key is case insensitive in log data ingestion.
+        The attribute key is case sensitive in log data ingestion.
         """
         return pulumi.get(self, "key")
 
@@ -106,7 +106,7 @@ class LogCustomAttribute(pulumi.CustomResource):
         Create a LogCustomAttribute resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] key: The attribute key is case insensitive in log data ingestion.
+        :param pulumi.Input[str] key: The attribute key is case sensitive in log data ingestion.
         :param pulumi.Input[bool] sidebar: Show attribute values in side bar
         """
         ...
@@ -168,7 +168,7 @@ class LogCustomAttribute(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] key: The attribute key is case insensitive in log data ingestion.
+        :param pulumi.Input[str] key: The attribute key is case sensitive in log data ingestion.
         :param pulumi.Input[bool] sidebar: Show attribute values in side bar
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -183,7 +183,7 @@ class LogCustomAttribute(pulumi.CustomResource):
     @pulumi.getter
     def key(self) -> pulumi.Output[str]:
         """
-        The attribute key is case insensitive in log data ingestion.
+        The attribute key is case sensitive in log data ingestion.
         """
         return pulumi.get(self, "key")
 

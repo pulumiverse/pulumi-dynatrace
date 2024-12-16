@@ -20,6 +20,12 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> DetectApps { get; private set; } = null!;
 
         /// <summary>
+        /// Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+        /// </summary>
+        [Output("detectEnv")]
+        public Output<bool?> DetectEnv { get; private set; } = null!;
+
+        /// <summary>
         /// Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
         /// </summary>
         [Output("detectInfra")]
@@ -85,6 +91,12 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> DetectApps { get; set; } = null!;
 
         /// <summary>
+        /// Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+        /// </summary>
+        [Input("detectEnv")]
+        public Input<bool>? DetectEnv { get; set; }
+
+        /// <summary>
         /// Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
         /// </summary>
         [Input("detectInfra", required: true)]
@@ -109,6 +121,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("detectApps")]
         public Input<bool>? DetectApps { get; set; }
+
+        /// <summary>
+        /// Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+        /// </summary>
+        [Input("detectEnv")]
+        public Input<bool>? DetectEnv { get; set; }
 
         /// <summary>
         /// Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)

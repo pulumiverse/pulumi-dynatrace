@@ -97,7 +97,7 @@ export interface GetProcessGroupResult {
  * }]});
  * ```
  */
-export function getProcessGroupOutput(args: GetProcessGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProcessGroupResult> {
+export function getProcessGroupOutput(args: GetProcessGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProcessGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getProcessGroup:getProcessGroup", {
         "name": args.name,

@@ -38,7 +38,7 @@ export interface GetAlertingProfilesResult {
 /**
  * The alerting profiles data source allows retrieval of all alerting profiles.
  */
-export function getAlertingProfilesOutput(args?: GetAlertingProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertingProfilesResult> {
+export function getAlertingProfilesOutput(args?: GetAlertingProfilesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAlertingProfilesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getAlertingProfiles:getAlertingProfiles", {

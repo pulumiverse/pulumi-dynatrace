@@ -134,7 +134,7 @@ def get_entities_output(entity_selector: Optional[pulumi.Input[Optional[str]]] =
                         from_: Optional[pulumi.Input[Optional[str]]] = None,
                         to: Optional[pulumi.Input[Optional[str]]] = None,
                         type: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEntitiesResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEntitiesResult]:
     """
     The entities data source allows all entities to be retrieved by its type.
 
@@ -155,7 +155,7 @@ def get_entities_output(entity_selector: Optional[pulumi.Input[Optional[str]]] =
     __args__['from'] = from_
     __args__['to'] = to
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getEntities:getEntities', __args__, opts=opts, typ=GetEntitiesResult)
     return __ret__.apply(lambda __response__: GetEntitiesResult(
         entities=pulumi.get(__response__, 'entities'),

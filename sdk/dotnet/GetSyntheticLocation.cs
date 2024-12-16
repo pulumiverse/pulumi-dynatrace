@@ -23,6 +23,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetSyntheticLocationResult> Invoke(GetSyntheticLocationInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSyntheticLocationResult>("dynatrace:index/getSyntheticLocation:getSyntheticLocation", args ?? new GetSyntheticLocationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
+        /// </summary>
+        public static Output<GetSyntheticLocationResult> Invoke(GetSyntheticLocationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSyntheticLocationResult>("dynatrace:index/getSyntheticLocation:getSyntheticLocation", args ?? new GetSyntheticLocationInvokeArgs(), options.WithDefaults());
     }
 
 

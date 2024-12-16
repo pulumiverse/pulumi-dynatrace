@@ -44,8 +44,8 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> City { get; private set; } = null!;
 
         /// <summary>
-        /// The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-        /// example, `AT` for Austria or `PL` for Poland)
+        /// The country code of the location. To fetch the list of available country codes, use the [GET all
+        /// countries](https://dt-url.net/37030go) request
         /// </summary>
         [Output("countryCode")]
         public Output<string?> CountryCode { get; private set; } = null!;
@@ -108,9 +108,8 @@ namespace Pulumiverse.Dynatrace
         public Output<ImmutableArray<string>> Nodes { get; private set; } = null!;
 
         /// <summary>
-        /// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-        /// use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-        /// rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+        /// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+        /// country](https://dt-url.net/az230x0) request
         /// </summary>
         [Output("regionCode")]
         public Output<string?> RegionCode { get; private set; } = null!;
@@ -193,8 +192,8 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? City { get; set; }
 
         /// <summary>
-        /// The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-        /// example, `AT` for Austria or `PL` for Poland)
+        /// The country code of the location. To fetch the list of available country codes, use the [GET all
+        /// countries](https://dt-url.net/37030go) request
         /// </summary>
         [Input("countryCode")]
         public Input<string>? CountryCode { get; set; }
@@ -263,9 +262,8 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-        /// use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-        /// rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+        /// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+        /// country](https://dt-url.net/az230x0) request
         /// </summary>
         [Input("regionCode")]
         public Input<string>? RegionCode { get; set; }
@@ -309,8 +307,8 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? City { get; set; }
 
         /// <summary>
-        /// The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-        /// example, `AT` for Austria or `PL` for Poland)
+        /// The country code of the location. To fetch the list of available country codes, use the [GET all
+        /// countries](https://dt-url.net/37030go) request
         /// </summary>
         [Input("countryCode")]
         public Input<string>? CountryCode { get; set; }
@@ -379,9 +377,8 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-        /// use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-        /// rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+        /// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+        /// country](https://dt-url.net/az230x0) request
         /// </summary>
         [Input("regionCode")]
         public Input<string>? RegionCode { get; set; }

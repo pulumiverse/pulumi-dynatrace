@@ -17,6 +17,8 @@ type FrequentIssues struct {
 
 	// Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
 	DetectApps pulumi.BoolOutput `pulumi:"detectApps"`
+	// Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+	DetectEnv pulumi.BoolPtrOutput `pulumi:"detectEnv"`
 	// Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
 	DetectInfra pulumi.BoolOutput `pulumi:"detectInfra"`
 	// Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
@@ -64,6 +66,8 @@ func GetFrequentIssues(ctx *pulumi.Context,
 type frequentIssuesState struct {
 	// Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
 	DetectApps *bool `pulumi:"detectApps"`
+	// Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+	DetectEnv *bool `pulumi:"detectEnv"`
 	// Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
 	DetectInfra *bool `pulumi:"detectInfra"`
 	// Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
@@ -73,6 +77,8 @@ type frequentIssuesState struct {
 type FrequentIssuesState struct {
 	// Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
 	DetectApps pulumi.BoolPtrInput
+	// Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+	DetectEnv pulumi.BoolPtrInput
 	// Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
 	DetectInfra pulumi.BoolPtrInput
 	// Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
@@ -86,6 +92,8 @@ func (FrequentIssuesState) ElementType() reflect.Type {
 type frequentIssuesArgs struct {
 	// Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
 	DetectApps bool `pulumi:"detectApps"`
+	// Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+	DetectEnv *bool `pulumi:"detectEnv"`
 	// Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
 	DetectInfra bool `pulumi:"detectInfra"`
 	// Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
@@ -96,6 +104,8 @@ type frequentIssuesArgs struct {
 type FrequentIssuesArgs struct {
 	// Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
 	DetectApps pulumi.BoolInput
+	// Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+	DetectEnv pulumi.BoolPtrInput
 	// Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
 	DetectInfra pulumi.BoolInput
 	// Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
@@ -192,6 +202,11 @@ func (o FrequentIssuesOutput) ToFrequentIssuesOutputWithContext(ctx context.Cont
 // Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
 func (o FrequentIssuesOutput) DetectApps() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FrequentIssues) pulumi.BoolOutput { return v.DetectApps }).(pulumi.BoolOutput)
+}
+
+// Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
+func (o FrequentIssuesOutput) DetectEnv() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FrequentIssues) pulumi.BoolPtrOutput { return v.DetectEnv }).(pulumi.BoolPtrOutput)
 }
 
 // Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)

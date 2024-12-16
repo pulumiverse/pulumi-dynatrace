@@ -27,6 +27,14 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetAzureCredentialsResult> Invoke(GetAzureCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAzureCredentialsResult>("dynatrace:index/getAzureCredentials:getAzureCredentials", args ?? new GetAzureCredentialsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The `dynatrace.AzureCredentials` data source allows the Azure credential ID to be retrieved by its label.
+        /// 
+        /// - `label` (String) - The label/name of the Azure credential
+        /// </summary>
+        public static Output<GetAzureCredentialsResult> Invoke(GetAzureCredentialsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAzureCredentialsResult>("dynatrace:index/getAzureCredentials:getAzureCredentials", args ?? new GetAzureCredentialsInvokeArgs(), options.WithDefaults());
     }
 
 

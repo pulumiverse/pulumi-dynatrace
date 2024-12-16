@@ -57,7 +57,7 @@ export class AzureCredentials extends pulumi.CustomResource {
     /**
      * The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
      */
-    public readonly label!: pulumi.Output<string | undefined>;
+    public readonly label!: pulumi.Output<string>;
     /**
      * A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
      */
@@ -119,6 +119,9 @@ export class AzureCredentials extends pulumi.CustomResource {
             const args = argsOrState as AzureCredentialsArgs | undefined;
             if ((!args || args.active === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'active'");
+            }
+            if ((!args || args.label === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'label'");
             }
             if ((!args || args.monitorOnlyTaggedEntities === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'monitorOnlyTaggedEntities'");
@@ -231,7 +234,7 @@ export interface AzureCredentialsArgs {
     /**
      * The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
      */
-    label?: pulumi.Input<string>;
+    label: pulumi.Input<string>;
     /**
      * A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
      */

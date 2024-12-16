@@ -95,7 +95,7 @@ def get_azure_supported_services(excepts: Optional[Sequence[str]] = None,
         id=pulumi.get(__ret__, 'id'),
         services=pulumi.get(__ret__, 'services'))
 def get_azure_supported_services_output(excepts: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAzureSupportedServicesResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAzureSupportedServicesResult]:
     """
     The Azure supported service data source queries for a full list of all supported services.
 
@@ -108,7 +108,7 @@ def get_azure_supported_services_output(excepts: Optional[pulumi.Input[Optional[
     """
     __args__ = dict()
     __args__['excepts'] = excepts
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getAzureSupportedServices:getAzureSupportedServices', __args__, opts=opts, typ=GetAzureSupportedServicesResult)
     return __ret__.apply(lambda __response__: GetAzureSupportedServicesResult(
         excepts=pulumi.get(__response__, 'excepts'),

@@ -65,6 +65,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Normalization { get; set; }
 
         /// <summary>
+        /// The One Agent attribute to extract from. Required if the kind value is `ONE_AGENT_ATTRIBUTE`. Not applicable otherwise.
+        /// </summary>
+        [Input("oneagentAttributeKey")]
+        public Input<string>? OneagentAttributeKey { get; set; }
+
+        /// <summary>
         /// The request attribute to extract from. Required if the `kind` value is `SERVICE_REQUEST_ATTRIBUTE`. Not applicable otherwise
         /// </summary>
         [Input("requestAttribute")]

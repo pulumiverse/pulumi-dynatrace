@@ -86,7 +86,7 @@ export interface GetApiTokenResult {
  * export const example = exampleApiToken;
  * ```
  */
-export function getApiTokenOutput(args: GetApiTokenOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiTokenResult> {
+export function getApiTokenOutput(args: GetApiTokenOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApiTokenResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getApiToken:getApiToken", {
         "name": args.name,

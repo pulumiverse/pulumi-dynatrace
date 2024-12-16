@@ -18,7 +18,7 @@ def readme():
 
 
 setup(name='pulumiverse_dynatrace',
-      python_requires='>=3.8',
+      python_requires='>=3.9',
       version=VERSION,
       description="A Pulumi package for creating and managing Dynatrace cloud resources.",
       long_description=readme(),

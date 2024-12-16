@@ -75,6 +75,38 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetAttackAlertingResult> Invoke(GetAttackAlertingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAttackAlertingResult>("dynatrace:index/getAttackAlerting:getAttackAlerting", args ?? new GetAttackAlertingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The `dynatrace.AttackAlerting` data source allows the attack alerting profile ID to be retrieved by its name.
+        /// 
+        /// - `name` (String) - The name of the attack alerting profile
+        /// 
+        /// If multiple services match the given criteria, the first result will be retrieved.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetAttackAlerting.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = example.Apply(getAttackAlertingResult =&gt; getAttackAlertingResult.Id),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAttackAlertingResult> Invoke(GetAttackAlertingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAttackAlertingResult>("dynatrace:index/getAttackAlerting:getAttackAlerting", args ?? new GetAttackAlertingInvokeArgs(), options.WithDefaults());
     }
 
 

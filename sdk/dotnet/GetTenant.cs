@@ -25,6 +25,13 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetTenantResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTenantResult>("dynatrace:index/getTenant:getTenant", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// The data source `dynatrace.getTenant` evalutes the configured Environment URL (either the environment variable `DYNATRACE_ENV_URL` or the configuration attribute `dt_env_url`) and extracts out the name/id of the environment this provider addresses.
+        /// Main purpose is for migrating settings from one environment to another, but it can be used to in general to avoid hard coding the environment ID like in the example below.
+        /// </summary>
+        public static Output<GetTenantResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTenantResult>("dynatrace:index/getTenant:getTenant", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

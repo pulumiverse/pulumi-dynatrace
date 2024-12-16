@@ -123,21 +123,11 @@ type LookupCredentialsResult struct {
 }
 
 func LookupCredentialsOutput(ctx *pulumi.Context, args LookupCredentialsOutputArgs, opts ...pulumi.InvokeOption) LookupCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupCredentialsResultOutput, error) {
 			args := v.(LookupCredentialsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupCredentialsResult
-			secret, err := ctx.InvokePackageRaw("dynatrace:index/getCredentials:getCredentials", args, &rv, "", opts...)
-			if err != nil {
-				return LookupCredentialsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupCredentialsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupCredentialsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("dynatrace:index/getCredentials:getCredentials", args, LookupCredentialsResultOutput{}, options).(LookupCredentialsResultOutput), nil
 		}).(LookupCredentialsResultOutput)
 }
 

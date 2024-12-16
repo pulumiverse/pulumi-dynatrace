@@ -118,7 +118,7 @@ export interface GetManagementZoneV2Result {
  * });
  * ```
  */
-export function getManagementZoneV2Output(args: GetManagementZoneV2OutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementZoneV2Result> {
+export function getManagementZoneV2Output(args: GetManagementZoneV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementZoneV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getManagementZoneV2:getManagementZoneV2", {
         "name": args.name,

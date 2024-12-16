@@ -25,7 +25,7 @@ export interface GetAwsIamExternalResult {
 /**
  * The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
  */
-export function getAwsIamExternalOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetAwsIamExternalResult> {
+export function getAwsIamExternalOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAwsIamExternalResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getAwsIamExternal:getAwsIamExternal", {
     }, opts);

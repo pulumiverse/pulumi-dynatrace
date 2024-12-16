@@ -116,7 +116,7 @@ def get_process(name: Optional[str] = None,
         tags=pulumi.get(__ret__, 'tags'))
 def get_process_output(name: Optional[pulumi.Input[str]] = None,
                        tags: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProcessResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProcessResult]:
     """
     !> The data source API endpoint has been deprecated, please use get_entity with entity type `PROCESS_GROUP_INSTANCE` instead.
 
@@ -151,7 +151,7 @@ def get_process_output(name: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['name'] = name
     __args__['tags'] = tags
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getProcess:getProcess', __args__, opts=opts, typ=GetProcessResult)
     return __ret__.apply(lambda __response__: GetProcessResult(
         id=pulumi.get(__response__, 'id'),

@@ -135,7 +135,7 @@ def get_synthetic_locations(id: Optional[str] = None,
 def get_synthetic_locations_output(id: Optional[pulumi.Input[Optional[str]]] = None,
                                    locations: Optional[pulumi.Input[Optional[Union['GetSyntheticLocationsLocationsArgs', 'GetSyntheticLocationsLocationsArgsDict']]]] = None,
                                    name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSyntheticLocationsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSyntheticLocationsResult]:
     """
     The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
 
@@ -188,7 +188,7 @@ def get_synthetic_locations_output(id: Optional[pulumi.Input[Optional[str]]] = N
     __args__['id'] = id
     __args__['locations'] = locations
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getSyntheticLocations:getSyntheticLocations', __args__, opts=opts, typ=GetSyntheticLocationsResult)
     return __ret__.apply(lambda __response__: GetSyntheticLocationsResult(
         id=pulumi.get(__response__, 'id'),

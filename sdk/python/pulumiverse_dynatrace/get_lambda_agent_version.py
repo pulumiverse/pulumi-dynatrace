@@ -190,7 +190,7 @@ def get_lambda_agent_version_output(collector: Optional[pulumi.Input[Optional[st
                                     nodejs_with_collector: Optional[pulumi.Input[Optional[str]]] = None,
                                     python: Optional[pulumi.Input[Optional[str]]] = None,
                                     python_with_collector: Optional[pulumi.Input[Optional[str]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLambdaAgentVersionResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLambdaAgentVersionResult]:
     """
     The AWS Lambda agent version data source retrieves the latest version names of OneAgent code modules for the Java, Node.js, and Python runtimes, also including names for layers that are combined with the log collector, as well as for the standalone log collector layer.
 
@@ -221,7 +221,7 @@ def get_lambda_agent_version_output(collector: Optional[pulumi.Input[Optional[st
     __args__['nodejsWithCollector'] = nodejs_with_collector
     __args__['python'] = python
     __args__['pythonWithCollector'] = python_with_collector
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getLambdaAgentVersion:getLambdaAgentVersion', __args__, opts=opts, typ=GetLambdaAgentVersionResult)
     return __ret__.apply(lambda __response__: GetLambdaAgentVersionResult(
         collector=pulumi.get(__response__, 'collector'),

@@ -101,6 +101,51 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public static Output<GetIamPolicyResult> Invoke(GetIamPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamPolicyResult>("dynatrace:index/getIamPolicy:getIamPolicy", args ?? new GetIamPolicyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// &gt; **Dynatrace SaaS only**
+        /// 
+        /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`).
+        /// 
+        /// The IAM policy data source allows the policy UUID to be retrieved by its name and account/environment (exclude for global).
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var appengineadmin = Dynatrace.GetIamPolicy.Invoke(new()
+        ///     {
+        ///         Name = "AppEngine - Admin",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["policies"] = appengineadmin,
+        ///     };
+        /// });
+        /// ```
+        /// 
+        /// ## Example Output
+        /// 
+        /// ```
+        /// Changes to Outputs:
+        ///   + policies = {
+        ///       + account     = null
+        ///       + environment = null
+        ///       + id          = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX#-#global#-#global"
+        ///       + name        = "AppEngine - Admin"
+        ///       + uuid        = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+        ///     }
+        /// ```
+        /// </summary>
+        public static Output<GetIamPolicyResult> Invoke(GetIamPolicyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamPolicyResult>("dynatrace:index/getIamPolicy:getIamPolicy", args ?? new GetIamPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

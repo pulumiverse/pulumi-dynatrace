@@ -66,21 +66,11 @@ type LookupRequestNamingResult struct {
 }
 
 func LookupRequestNamingOutput(ctx *pulumi.Context, args LookupRequestNamingOutputArgs, opts ...pulumi.InvokeOption) LookupRequestNamingResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupRequestNamingResultOutput, error) {
 			args := v.(LookupRequestNamingArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupRequestNamingResult
-			secret, err := ctx.InvokePackageRaw("dynatrace:index/getRequestNaming:getRequestNaming", args, &rv, "", opts...)
-			if err != nil {
-				return LookupRequestNamingResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupRequestNamingResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupRequestNamingResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("dynatrace:index/getRequestNaming:getRequestNaming", args, LookupRequestNamingResultOutput{}, options).(LookupRequestNamingResultOutput), nil
 		}).(LookupRequestNamingResultOutput)
 }
 

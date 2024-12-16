@@ -44,8 +44,8 @@ class SyntheticLocationArgs:
         :param pulumi.Input[bool] availability_node_outage: The alerting of node outage is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[bool] availability_notifications_enabled: The notifications of location and node outage is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] city: The city of the location
-        :param pulumi.Input[str] country_code: The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-               example, `AT` for Austria or `PL` for Poland)
+        :param pulumi.Input[str] country_code: The country code of the location. To fetch the list of available country codes, use the [GET all
+               countries](https://dt-url.net/37030go) request
         :param pulumi.Input[str] deployment_type: The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
                location is deployed on Kubernetes
         :param pulumi.Input[int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
@@ -56,9 +56,8 @@ class SyntheticLocationArgs:
         :param pulumi.Input[str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nodes: A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
                nodes](https://dt-url.net/miy3rpl) call
-        :param pulumi.Input[str] region_code: The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-               use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-               rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+        :param pulumi.Input[str] region_code: The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+               country](https://dt-url.net/az230x0) request
         """
         pulumi.set(__self__, "latitude", latitude)
         pulumi.set(__self__, "longitude", longitude)
@@ -179,8 +178,8 @@ class SyntheticLocationArgs:
     @pulumi.getter(name="countryCode")
     def country_code(self) -> Optional[pulumi.Input[str]]:
         """
-        The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-        example, `AT` for Austria or `PL` for Poland)
+        The country code of the location. To fetch the list of available country codes, use the [GET all
+        countries](https://dt-url.net/37030go) request
         """
         return pulumi.get(self, "country_code")
 
@@ -279,9 +278,8 @@ class SyntheticLocationArgs:
     @pulumi.getter(name="regionCode")
     def region_code(self) -> Optional[pulumi.Input[str]]:
         """
-        The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-        use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-        rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+        The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+        country](https://dt-url.net/az230x0) request
         """
         return pulumi.get(self, "region_code")
 
@@ -316,8 +314,8 @@ class _SyntheticLocationState:
         :param pulumi.Input[bool] availability_node_outage: The alerting of node outage is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[bool] availability_notifications_enabled: The notifications of location and node outage is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] city: The city of the location
-        :param pulumi.Input[str] country_code: The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-               example, `AT` for Austria or `PL` for Poland)
+        :param pulumi.Input[str] country_code: The country code of the location. To fetch the list of available country codes, use the [GET all
+               countries](https://dt-url.net/37030go) request
         :param pulumi.Input[str] deployment_type: The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
                location is deployed on Kubernetes
         :param pulumi.Input[float] latitude: The latitude of the location in `DDD.dddd` format
@@ -330,9 +328,8 @@ class _SyntheticLocationState:
         :param pulumi.Input[str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nodes: A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
                nodes](https://dt-url.net/miy3rpl) call
-        :param pulumi.Input[str] region_code: The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-               use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-               rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+        :param pulumi.Input[str] region_code: The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+               country](https://dt-url.net/az230x0) request
         """
         if auto_update_chromium is not None:
             pulumi.set(__self__, "auto_update_chromium", auto_update_chromium)
@@ -431,8 +428,8 @@ class _SyntheticLocationState:
     @pulumi.getter(name="countryCode")
     def country_code(self) -> Optional[pulumi.Input[str]]:
         """
-        The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-        example, `AT` for Austria or `PL` for Poland)
+        The country code of the location. To fetch the list of available country codes, use the [GET all
+        countries](https://dt-url.net/37030go) request
         """
         return pulumi.get(self, "country_code")
 
@@ -555,9 +552,8 @@ class _SyntheticLocationState:
     @pulumi.getter(name="regionCode")
     def region_code(self) -> Optional[pulumi.Input[str]]:
         """
-        The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-        use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-        rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+        The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+        country](https://dt-url.net/az230x0) request
         """
         return pulumi.get(self, "region_code")
 
@@ -597,8 +593,8 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[bool] availability_node_outage: The alerting of node outage is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[bool] availability_notifications_enabled: The notifications of location and node outage is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] city: The city of the location
-        :param pulumi.Input[str] country_code: The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-               example, `AT` for Austria or `PL` for Poland)
+        :param pulumi.Input[str] country_code: The country code of the location. To fetch the list of available country codes, use the [GET all
+               countries](https://dt-url.net/37030go) request
         :param pulumi.Input[str] deployment_type: The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
                location is deployed on Kubernetes
         :param pulumi.Input[float] latitude: The latitude of the location in `DDD.dddd` format
@@ -611,9 +607,8 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nodes: A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
                nodes](https://dt-url.net/miy3rpl) call
-        :param pulumi.Input[str] region_code: The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-               use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-               rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+        :param pulumi.Input[str] region_code: The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+               country](https://dt-url.net/az230x0) request
         """
         ...
     @overload
@@ -721,8 +716,8 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[bool] availability_node_outage: The alerting of node outage is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[bool] availability_notifications_enabled: The notifications of location and node outage is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] city: The city of the location
-        :param pulumi.Input[str] country_code: The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-               example, `AT` for Austria or `PL` for Poland)
+        :param pulumi.Input[str] country_code: The country code of the location. To fetch the list of available country codes, use the [GET all
+               countries](https://dt-url.net/37030go) request
         :param pulumi.Input[str] deployment_type: The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
                location is deployed on Kubernetes
         :param pulumi.Input[float] latitude: The latitude of the location in `DDD.dddd` format
@@ -735,9 +730,8 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nodes: A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
                nodes](https://dt-url.net/miy3rpl) call
-        :param pulumi.Input[str] region_code: The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-               use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-               rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+        :param pulumi.Input[str] region_code: The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+               country](https://dt-url.net/az230x0) request
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -805,8 +799,8 @@ class SyntheticLocation(pulumi.CustomResource):
     @pulumi.getter(name="countryCode")
     def country_code(self) -> pulumi.Output[Optional[str]]:
         """
-        The country code of the location. Use the alpha-2 code of the [ISO 3166-2 standard](https://dt-url.net/iso3166-2), (for
-        example, `AT` for Austria or `PL` for Poland)
+        The country code of the location. To fetch the list of available country codes, use the [GET all
+        countries](https://dt-url.net/37030go) request
         """
         return pulumi.get(self, "country_code")
 
@@ -889,9 +883,8 @@ class SyntheticLocation(pulumi.CustomResource):
     @pulumi.getter(name="regionCode")
     def region_code(self) -> pulumi.Output[Optional[str]]:
         """
-        The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-        use ISO 3166-2 state codes (without `US-` or `CA-` prefix), for example, `VA` for Virginia or `OR` for Oregon. For the
-        rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes)
+        The region code of the location. To fetch the list of available region codes, use the [GET regions of the
+        country](https://dt-url.net/az230x0) request
         """
         return pulumi.get(self, "region_code")
 

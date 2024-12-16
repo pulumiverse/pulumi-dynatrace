@@ -106,7 +106,7 @@ def get_iam_user(email: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         uid=pulumi.get(__ret__, 'uid'))
 def get_iam_user_output(email: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamUserResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamUserResult]:
     """
     > **Dynatrace SaaS only**
 
@@ -126,7 +126,7 @@ def get_iam_user_output(email: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['email'] = email
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getIamUser:getIamUser', __args__, opts=opts, typ=GetIamUserResult)
     return __ret__.apply(lambda __response__: GetIamUserResult(
         email=pulumi.get(__response__, 'email'),

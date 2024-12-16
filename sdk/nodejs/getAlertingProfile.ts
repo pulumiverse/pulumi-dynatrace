@@ -79,7 +79,7 @@ export interface GetAlertingProfileResult {
  * });
  * ```
  */
-export function getAlertingProfileOutput(args: GetAlertingProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertingProfileResult> {
+export function getAlertingProfileOutput(args: GetAlertingProfileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAlertingProfileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getAlertingProfile:getAlertingProfile", {
         "name": args.name,

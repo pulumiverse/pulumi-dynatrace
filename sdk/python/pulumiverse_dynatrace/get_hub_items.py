@@ -118,7 +118,7 @@ def get_hub_items(type: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'),
         type=pulumi.get(__ret__, 'type'))
 def get_hub_items_output(type: Optional[pulumi.Input[Optional[str]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHubItemsResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHubItemsResult]:
     """
     > This data source requires the API token scope `hub.read`)
 
@@ -140,7 +140,7 @@ def get_hub_items_output(type: Optional[pulumi.Input[Optional[str]]] = None,
     """
     __args__ = dict()
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getHubItems:getHubItems', __args__, opts=opts, typ=GetHubItemsResult)
     return __ret__.apply(lambda __response__: GetHubItemsResult(
         artifacts=pulumi.get(__response__, 'artifacts'),

@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class LogCustomAttribute : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The attribute key is case insensitive in log data ingestion.
+        /// The attribute key is case sensitive in log data ingestion.
         /// </summary>
         [Output("key")]
         public Output<string> Key { get; private set; } = null!;
@@ -73,7 +73,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class LogCustomAttributeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The attribute key is case insensitive in log data ingestion.
+        /// The attribute key is case sensitive in log data ingestion.
         /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
@@ -93,7 +93,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class LogCustomAttributeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The attribute key is case insensitive in log data ingestion.
+        /// The attribute key is case sensitive in log data ingestion.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }

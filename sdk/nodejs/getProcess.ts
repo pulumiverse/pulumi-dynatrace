@@ -97,7 +97,7 @@ export interface GetProcessResult {
  * }]});
  * ```
  */
-export function getProcessOutput(args: GetProcessOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProcessResult> {
+export function getProcessOutput(args: GetProcessOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProcessResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("dynatrace:index/getProcess:getProcess", {
         "name": args.name,

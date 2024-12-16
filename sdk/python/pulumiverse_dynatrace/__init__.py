@@ -31,6 +31,7 @@ from .attribute_masking import *
 from .attributes_preferences import *
 from .audit_log import *
 from .automation_business_calendar import *
+from .automation_controller_connections import *
 from .automation_scheduling_rule import *
 from .automation_workflow import *
 from .automation_workflow_aws_connections import *
@@ -91,6 +92,7 @@ from .davis_copilot import *
 from .db_app_feature_flags import *
 from .ddu_pool import *
 from .declarative_grouping import *
+from .default_launchpad import *
 from .devobs_agent_optin import *
 from .devobs_data_masking import *
 from .devobs_git_onprem import *
@@ -109,6 +111,7 @@ from .ebpf_service_discovery import *
 from .email_notification import *
 from .environment import *
 from .eula_settings import *
+from .event_driven_ansible_connections import *
 from .extension_execution_controller import *
 from .extension_execution_remote import *
 from .failure_detection_parameters import *
@@ -139,6 +142,9 @@ from .get_entity import *
 from .get_failure_detection_parameters import *
 from .get_generic_setting import *
 from .get_generic_settings import *
+from .get_geo_cities import *
+from .get_geo_countries import *
+from .get_geo_regions import *
 from .get_host import *
 from .get_hub_items import *
 from .get_iam_group import *
@@ -164,6 +170,7 @@ from .get_synthetic_nodes import *
 from .get_tenant import *
 from .get_update_windows import *
 from .get_vulnerability_alerting import *
+from .gitlab_connection import *
 from .golden_state import *
 from .grail_metrics_allowall import *
 from .grail_metrics_allowlist import *
@@ -197,6 +204,7 @@ from .infraops_app_feature_flags import *
 from .infraops_app_settings import *
 from .ip_address_masking import *
 from .issue_tracking import *
+from .jenkins_connection import *
 from .jira_notification import *
 from .json_dashboard import *
 from .json_dashboard_base import *
@@ -262,6 +270,8 @@ from .monitored_technologies_opentracing import *
 from .monitored_technologies_php import *
 from .monitored_technologies_varnish import *
 from .monitored_technologies_wsmb import *
+from .msentraid_connection import *
+from .msteams_connection import *
 from .muted_requests import *
 from .nettracer import *
 from .network_monitor import *
@@ -286,11 +296,13 @@ from .os_services import *
 from .ownership_config import *
 from .ownership_teams import *
 from .pager_duty_notification import *
+from .pagerduty_connection import *
 from .pg_alerting import *
 from .pg_anomalies import *
 from .platform_bucket import *
 from .policy import *
 from .policy_bindings import *
+from .problem_fields import *
 from .problem_record_propagation_rules import *
 from .process_availability import *
 from .process_group_detection import *
@@ -327,6 +339,7 @@ from .service_full_web_service import *
 from .service_http_failure import *
 from .service_naming import *
 from .service_now_notification import *
+from .servicenow_connection import *
 from .session_replay_resource_capture import *
 from .session_replay_web_privacy import *
 from .site_reliability_guardian import *
@@ -600,6 +613,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/automationBusinessCalendar:AutomationBusinessCalendar": "AutomationBusinessCalendar"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/automationControllerConnections",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/automationControllerConnections:AutomationControllerConnections": "AutomationControllerConnections"
   }
  },
  {
@@ -1084,6 +1105,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/defaultLaunchpad",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/defaultLaunchpad:DefaultLaunchpad": "DefaultLaunchpad"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/devobsAgentOptin",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -1228,6 +1257,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/eventDrivenAnsibleConnections",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/eventDrivenAnsibleConnections:EventDrivenAnsibleConnections": "EventDrivenAnsibleConnections"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/extensionExecutionController",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -1296,6 +1333,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/geolocation:Geolocation": "Geolocation"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/gitlabConnection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/gitlabConnection:GitlabConnection": "GitlabConnection"
   }
  },
  {
@@ -1560,6 +1605,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/issueTracking:IssueTracking": "IssueTracking"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/jenkinsConnection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/jenkinsConnection:JenkinsConnection": "JenkinsConnection"
   }
  },
  {
@@ -2084,6 +2137,22 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/msentraidConnection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/msentraidConnection:MsentraidConnection": "MsentraidConnection"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/msteamsConnection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/msteamsConnection:MsteamsConnection": "MsteamsConnection"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/mutedRequests",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2276,6 +2345,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/pagerdutyConnection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/pagerdutyConnection:PagerdutyConnection": "PagerdutyConnection"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/pgAlerting",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2312,6 +2389,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/policyBindings:PolicyBindings": "PolicyBindings"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/problemFields",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/problemFields:ProblemFields": "ProblemFields"
   }
  },
  {
@@ -2592,6 +2677,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/serviceNowNotification:ServiceNowNotification": "ServiceNowNotification"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/servicenowConnection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/servicenowConnection:ServicenowConnection": "ServicenowConnection"
   }
  },
  {
