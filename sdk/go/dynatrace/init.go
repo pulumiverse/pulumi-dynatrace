@@ -253,6 +253,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &GenericTypes{}
 	case "dynatrace:index/geolocation:Geolocation":
 		r = &Geolocation{}
+	case "dynatrace:index/githubConnection:GithubConnection":
+		r = &GithubConnection{}
 	case "dynatrace:index/gitlabConnection:GitlabConnection":
 		r = &GitlabConnection{}
 	case "dynatrace:index/goldenState:GoldenState":
@@ -453,6 +455,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MonitoredTechnologiesVarnish{}
 	case "dynatrace:index/monitoredTechnologiesWsmb:MonitoredTechnologiesWsmb":
 		r = &MonitoredTechnologiesWsmb{}
+	case "dynatrace:index/ms365EmailConnection:Ms365EmailConnection":
+		r = &Ms365EmailConnection{}
 	case "dynatrace:index/msentraidConnection:MsentraidConnection":
 		r = &MsentraidConnection{}
 	case "dynatrace:index/msteamsConnection:MsteamsConnection":
@@ -1312,6 +1316,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/githubConnection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/gitlabConnection",
 		&module{version},
 	)
@@ -1808,6 +1817,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/monitoredTechnologiesWsmb",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/ms365EmailConnection",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
