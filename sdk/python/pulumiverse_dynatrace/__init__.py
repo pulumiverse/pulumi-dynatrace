@@ -170,6 +170,7 @@ from .get_synthetic_nodes import *
 from .get_tenant import *
 from .get_update_windows import *
 from .get_vulnerability_alerting import *
+from .github_connection import *
 from .gitlab_connection import *
 from .golden_state import *
 from .grail_metrics_allowall import *
@@ -270,6 +271,7 @@ from .monitored_technologies_opentracing import *
 from .monitored_technologies_php import *
 from .monitored_technologies_varnish import *
 from .monitored_technologies_wsmb import *
+from .ms365_email_connection import *
 from .msentraid_connection import *
 from .msteams_connection import *
 from .muted_requests import *
@@ -1337,6 +1339,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/githubConnection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/githubConnection:GithubConnection": "GithubConnection"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/gitlabConnection",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2133,6 +2143,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/monitoredTechnologiesWsmb:MonitoredTechnologiesWsmb": "MonitoredTechnologiesWsmb"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/ms365EmailConnection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/ms365EmailConnection:Ms365EmailConnection": "Ms365EmailConnection"
   }
  },
  {

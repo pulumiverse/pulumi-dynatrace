@@ -830,6 +830,11 @@ export const getVulnerabilityAlerting: typeof import("./getVulnerabilityAlerting
 export const getVulnerabilityAlertingOutput: typeof import("./getVulnerabilityAlerting").getVulnerabilityAlertingOutput = null as any;
 utilities.lazyLoad(exports, ["getVulnerabilityAlerting","getVulnerabilityAlertingOutput"], () => require("./getVulnerabilityAlerting"));
 
+export { GithubConnectionArgs, GithubConnectionState } from "./githubConnection";
+export type GithubConnection = import("./githubConnection").GithubConnection;
+export const GithubConnection: typeof import("./githubConnection").GithubConnection = null as any;
+utilities.lazyLoad(exports, ["GithubConnection"], () => require("./githubConnection"));
+
 export { GitlabConnectionArgs, GitlabConnectionState } from "./gitlabConnection";
 export type GitlabConnection = import("./gitlabConnection").GitlabConnection;
 export const GitlabConnection: typeof import("./gitlabConnection").GitlabConnection = null as any;
@@ -1329,6 +1334,11 @@ export { MonitoredTechnologiesWsmbArgs, MonitoredTechnologiesWsmbState } from ".
 export type MonitoredTechnologiesWsmb = import("./monitoredTechnologiesWsmb").MonitoredTechnologiesWsmb;
 export const MonitoredTechnologiesWsmb: typeof import("./monitoredTechnologiesWsmb").MonitoredTechnologiesWsmb = null as any;
 utilities.lazyLoad(exports, ["MonitoredTechnologiesWsmb"], () => require("./monitoredTechnologiesWsmb"));
+
+export { Ms365EmailConnectionArgs, Ms365EmailConnectionState } from "./ms365EmailConnection";
+export type Ms365EmailConnection = import("./ms365EmailConnection").Ms365EmailConnection;
+export const Ms365EmailConnection: typeof import("./ms365EmailConnection").Ms365EmailConnection = null as any;
+utilities.lazyLoad(exports, ["Ms365EmailConnection"], () => require("./ms365EmailConnection"));
 
 export { MsentraidConnectionArgs, MsentraidConnectionState } from "./msentraidConnection";
 export type MsentraidConnection = import("./msentraidConnection").MsentraidConnection;
@@ -2196,6 +2206,8 @@ const _module = {
                 return new GenericTypes(name, <any>undefined, { urn })
             case "dynatrace:index/geolocation:Geolocation":
                 return new Geolocation(name, <any>undefined, { urn })
+            case "dynatrace:index/githubConnection:GithubConnection":
+                return new GithubConnection(name, <any>undefined, { urn })
             case "dynatrace:index/gitlabConnection:GitlabConnection":
                 return new GitlabConnection(name, <any>undefined, { urn })
             case "dynatrace:index/goldenState:GoldenState":
@@ -2396,6 +2408,8 @@ const _module = {
                 return new MonitoredTechnologiesVarnish(name, <any>undefined, { urn })
             case "dynatrace:index/monitoredTechnologiesWsmb:MonitoredTechnologiesWsmb":
                 return new MonitoredTechnologiesWsmb(name, <any>undefined, { urn })
+            case "dynatrace:index/ms365EmailConnection:Ms365EmailConnection":
+                return new Ms365EmailConnection(name, <any>undefined, { urn })
             case "dynatrace:index/msentraidConnection:MsentraidConnection":
                 return new MsentraidConnection(name, <any>undefined, { urn })
             case "dynatrace:index/msteamsConnection:MsteamsConnection":
@@ -2763,6 +2777,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/genericRelationships",
 pulumi.runtime.registerResourceModule("dynatrace", "index/genericSetting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/genericTypes", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/geolocation", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/githubConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/gitlabConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/goldenState", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/grailMetricsAllowall", _module)
@@ -2863,6 +2878,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesO
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesPhp", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesVarnish", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesWsmb", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/ms365EmailConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/msentraidConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/msteamsConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/mutedRequests", _module)
