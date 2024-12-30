@@ -1336,8 +1336,8 @@ github.com/dlclark/regexp2 v1.11.4/go.mod h1:DHkYz0B9wPfa6wondMfaivmHpzrQ3v9q8cn
 github.com/docopt/docopt-go v0.0.0-20180111231733-ee0de3bc6815/go.mod h1:WwZ+bS3ebgob9U8Nd0kOddGdZWjyMGR8Wziv+TBNwSE=
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 github.com/dustin/go-humanize v1.0.1/go.mod h1:Mu1zIs6XwVuF/gI1OepvI0qD18qycQx+mFykh5fBlto=
-github.com/dynatrace-oss/terraform-provider-dynatrace v1.72.0 h1:xlc6THJGl0Fz7cNWv/ujq1ok9rkM9YHcKiqjAkVVTRE=
-github.com/dynatrace-oss/terraform-provider-dynatrace v1.72.0/go.mod h1:QCafDZ6KR6X6fS2bjPX3vK43M7SU/WLy5RD0Z7nHbmk=
+github.com/dynatrace-oss/terraform-provider-dynatrace v1.72.1 h1:eEL/v+sv5OVdkeufutf9IcKkI5rNZ0p4HV6InqaW6Og=
+github.com/dynatrace-oss/terraform-provider-dynatrace v1.72.1/go.mod h1:QCafDZ6KR6X6fS2bjPX3vK43M7SU/WLy5RD0Z7nHbmk=
 github.com/dynatrace/dynatrace-configuration-as-code-core v0.7.1-0.20241203095532-6211d1be0eb7 h1:OYTSC/vJETxZHWZEaZsmxH26xIThpDQ9es8rHA6cI9o=
 github.com/dynatrace/dynatrace-configuration-as-code-core v0.7.1-0.20241203095532-6211d1be0eb7/go.mod h1:uexblPw82NA/x+hnBOMhHdc3xlM9tuUPW4+sVcd80Ow=
 github.com/edsrzf/mmap-go v1.1.0 h1:6EUwBLQ/Mcr1EYLE4Tn1VdW1A4ckqCQWZBw8Hr0kjpQ=
