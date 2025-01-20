@@ -610,6 +610,11 @@ export const getApplication: typeof import("./getApplication").getApplication = 
 export const getApplicationOutput: typeof import("./getApplication").getApplicationOutput = null as any;
 utilities.lazyLoad(exports, ["getApplication","getApplicationOutput"], () => require("./getApplication"));
 
+export { GetApplicationDetectionRulesResult } from "./getApplicationDetectionRules";
+export const getApplicationDetectionRules: typeof import("./getApplicationDetectionRules").getApplicationDetectionRules = null as any;
+export const getApplicationDetectionRulesOutput: typeof import("./getApplicationDetectionRules").getApplicationDetectionRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getApplicationDetectionRules","getApplicationDetectionRulesOutput"], () => require("./getApplicationDetectionRules"));
+
 export { GetAttackAlertingArgs, GetAttackAlertingResult, GetAttackAlertingOutputArgs } from "./getAttackAlerting";
 export const getAttackAlerting: typeof import("./getAttackAlerting").getAttackAlerting = null as any;
 export const getAttackAlertingOutput: typeof import("./getAttackAlerting").getAttackAlertingOutput = null as any;

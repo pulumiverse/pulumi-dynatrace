@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
@@ -14,7 +15,7 @@ import (
 type JsonDashboardBase struct {
 	pulumi.CustomResourceState
 
-	// This attribute exists for backwards compatibility. You do not have to define it.
+	// Contains the JSON Code of the Dashboard
 	Contents pulumi.StringOutput `pulumi:"contents"`
 }
 
@@ -22,9 +23,12 @@ type JsonDashboardBase struct {
 func NewJsonDashboardBase(ctx *pulumi.Context,
 	name string, args *JsonDashboardBaseArgs, opts ...pulumi.ResourceOption) (*JsonDashboardBase, error) {
 	if args == nil {
-		args = &JsonDashboardBaseArgs{}
+		return nil, errors.New("missing one or more required arguments")
 	}
 
+	if args.Contents == nil {
+		return nil, errors.New("invalid value for required argument 'Contents'")
+	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource JsonDashboardBase
 	err := ctx.RegisterResource("dynatrace:index/jsonDashboardBase:JsonDashboardBase", name, args, &resource, opts...)
@@ -48,12 +52,12 @@ func GetJsonDashboardBase(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering JsonDashboardBase resources.
 type jsonDashboardBaseState struct {
-	// This attribute exists for backwards compatibility. You do not have to define it.
+	// Contains the JSON Code of the Dashboard
 	Contents *string `pulumi:"contents"`
 }
 
 type JsonDashboardBaseState struct {
-	// This attribute exists for backwards compatibility. You do not have to define it.
+	// Contains the JSON Code of the Dashboard
 	Contents pulumi.StringPtrInput
 }
 
@@ -62,14 +66,14 @@ func (JsonDashboardBaseState) ElementType() reflect.Type {
 }
 
 type jsonDashboardBaseArgs struct {
-	// This attribute exists for backwards compatibility. You do not have to define it.
-	Contents *string `pulumi:"contents"`
+	// Contains the JSON Code of the Dashboard
+	Contents string `pulumi:"contents"`
 }
 
 // The set of arguments for constructing a JsonDashboardBase resource.
 type JsonDashboardBaseArgs struct {
-	// This attribute exists for backwards compatibility. You do not have to define it.
-	Contents pulumi.StringPtrInput
+	// Contains the JSON Code of the Dashboard
+	Contents pulumi.StringInput
 }
 
 func (JsonDashboardBaseArgs) ElementType() reflect.Type {
@@ -159,7 +163,7 @@ func (o JsonDashboardBaseOutput) ToJsonDashboardBaseOutputWithContext(ctx contex
 	return o
 }
 
-// This attribute exists for backwards compatibility. You do not have to define it.
+// Contains the JSON Code of the Dashboard
 func (o JsonDashboardBaseOutput) Contents() pulumi.StringOutput {
 	return o.ApplyT(func(v *JsonDashboardBase) pulumi.StringOutput { return v.Contents }).(pulumi.StringOutput)
 }
