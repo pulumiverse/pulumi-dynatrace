@@ -33,7 +33,7 @@ export class JsonDashboardBase extends pulumi.CustomResource {
     }
 
     /**
-     * This attribute exists for backwards compatibility. You do not have to define it.
+     * Contains the JSON Code of the Dashboard
      */
     public readonly contents!: pulumi.Output<string>;
 
@@ -44,7 +44,7 @@ export class JsonDashboardBase extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args?: JsonDashboardBaseArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args: JsonDashboardBaseArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: JsonDashboardBaseArgs | JsonDashboardBaseState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
@@ -53,6 +53,9 @@ export class JsonDashboardBase extends pulumi.CustomResource {
             resourceInputs["contents"] = state ? state.contents : undefined;
         } else {
             const args = argsOrState as JsonDashboardBaseArgs | undefined;
+            if ((!args || args.contents === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'contents'");
+            }
             resourceInputs["contents"] = args ? args.contents : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -65,7 +68,7 @@ export class JsonDashboardBase extends pulumi.CustomResource {
  */
 export interface JsonDashboardBaseState {
     /**
-     * This attribute exists for backwards compatibility. You do not have to define it.
+     * Contains the JSON Code of the Dashboard
      */
     contents?: pulumi.Input<string>;
 }
@@ -75,7 +78,7 @@ export interface JsonDashboardBaseState {
  */
 export interface JsonDashboardBaseArgs {
     /**
-     * This attribute exists for backwards compatibility. You do not have to define it.
+     * Contains the JSON Code of the Dashboard
      */
-    contents?: pulumi.Input<string>;
+    contents: pulumi.Input<string>;
 }

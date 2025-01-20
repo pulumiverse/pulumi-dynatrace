@@ -136,6 +136,7 @@
         "getApiToken.ts",
         "getApiTokens.ts",
         "getApplication.ts",
+        "getApplicationDetectionRules.ts",
         "getAttackAlerting.ts",
         "getAutotag.ts",
         "getAwsCredentials.ts",

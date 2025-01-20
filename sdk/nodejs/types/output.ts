@@ -10129,6 +10129,25 @@ export interface GetApiTokensApiToken {
     token: string;
 }
 
+export interface GetApplicationDetectionRulesValue {
+    /**
+     * Application ID
+     */
+    applicationId: string;
+    /**
+     * Application Detection Rule ID
+     */
+    id: string;
+    /**
+     * Matcher
+     */
+    matcher: string;
+    /**
+     * Pattern
+     */
+    pattern: string;
+}
+
 export interface GetDocumentsValue {
     /**
      * The unique identifier of the document.

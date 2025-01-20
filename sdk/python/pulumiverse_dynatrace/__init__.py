@@ -126,6 +126,7 @@ from .get_alerting_profiles import *
 from .get_api_token import *
 from .get_api_tokens import *
 from .get_application import *
+from .get_application_detection_rules import *
 from .get_attack_alerting import *
 from .get_autotag import *
 from .get_aws_credentials import *

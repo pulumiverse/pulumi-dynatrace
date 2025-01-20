@@ -45762,6 +45762,130 @@ func (o GetApiTokensApiTokenArrayOutput) Index(i pulumi.IntInput) GetApiTokensAp
 	}).(GetApiTokensApiTokenOutput)
 }
 
+type GetApplicationDetectionRulesValue struct {
+	// Application ID
+	ApplicationId string `pulumi:"applicationId"`
+	// Application Detection Rule ID
+	Id string `pulumi:"id"`
+	// Matcher
+	Matcher string `pulumi:"matcher"`
+	// Pattern
+	Pattern string `pulumi:"pattern"`
+}
+
+// GetApplicationDetectionRulesValueInput is an input type that accepts GetApplicationDetectionRulesValueArgs and GetApplicationDetectionRulesValueOutput values.
+// You can construct a concrete instance of `GetApplicationDetectionRulesValueInput` via:
+//
+//	GetApplicationDetectionRulesValueArgs{...}
+type GetApplicationDetectionRulesValueInput interface {
+	pulumi.Input
+
+	ToGetApplicationDetectionRulesValueOutput() GetApplicationDetectionRulesValueOutput
+	ToGetApplicationDetectionRulesValueOutputWithContext(context.Context) GetApplicationDetectionRulesValueOutput
+}
+
+type GetApplicationDetectionRulesValueArgs struct {
+	// Application ID
+	ApplicationId pulumi.StringInput `pulumi:"applicationId"`
+	// Application Detection Rule ID
+	Id pulumi.StringInput `pulumi:"id"`
+	// Matcher
+	Matcher pulumi.StringInput `pulumi:"matcher"`
+	// Pattern
+	Pattern pulumi.StringInput `pulumi:"pattern"`
+}
+
+func (GetApplicationDetectionRulesValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationDetectionRulesValue)(nil)).Elem()
+}
+
+func (i GetApplicationDetectionRulesValueArgs) ToGetApplicationDetectionRulesValueOutput() GetApplicationDetectionRulesValueOutput {
+	return i.ToGetApplicationDetectionRulesValueOutputWithContext(context.Background())
+}
+
+func (i GetApplicationDetectionRulesValueArgs) ToGetApplicationDetectionRulesValueOutputWithContext(ctx context.Context) GetApplicationDetectionRulesValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationDetectionRulesValueOutput)
+}
+
+// GetApplicationDetectionRulesValueArrayInput is an input type that accepts GetApplicationDetectionRulesValueArray and GetApplicationDetectionRulesValueArrayOutput values.
+// You can construct a concrete instance of `GetApplicationDetectionRulesValueArrayInput` via:
+//
+//	GetApplicationDetectionRulesValueArray{ GetApplicationDetectionRulesValueArgs{...} }
+type GetApplicationDetectionRulesValueArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationDetectionRulesValueArrayOutput() GetApplicationDetectionRulesValueArrayOutput
+	ToGetApplicationDetectionRulesValueArrayOutputWithContext(context.Context) GetApplicationDetectionRulesValueArrayOutput
+}
+
+type GetApplicationDetectionRulesValueArray []GetApplicationDetectionRulesValueInput
+
+func (GetApplicationDetectionRulesValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationDetectionRulesValue)(nil)).Elem()
+}
+
+func (i GetApplicationDetectionRulesValueArray) ToGetApplicationDetectionRulesValueArrayOutput() GetApplicationDetectionRulesValueArrayOutput {
+	return i.ToGetApplicationDetectionRulesValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationDetectionRulesValueArray) ToGetApplicationDetectionRulesValueArrayOutputWithContext(ctx context.Context) GetApplicationDetectionRulesValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationDetectionRulesValueArrayOutput)
+}
+
+type GetApplicationDetectionRulesValueOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationDetectionRulesValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationDetectionRulesValue)(nil)).Elem()
+}
+
+func (o GetApplicationDetectionRulesValueOutput) ToGetApplicationDetectionRulesValueOutput() GetApplicationDetectionRulesValueOutput {
+	return o
+}
+
+func (o GetApplicationDetectionRulesValueOutput) ToGetApplicationDetectionRulesValueOutputWithContext(ctx context.Context) GetApplicationDetectionRulesValueOutput {
+	return o
+}
+
+// Application ID
+func (o GetApplicationDetectionRulesValueOutput) ApplicationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationDetectionRulesValue) string { return v.ApplicationId }).(pulumi.StringOutput)
+}
+
+// Application Detection Rule ID
+func (o GetApplicationDetectionRulesValueOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationDetectionRulesValue) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Matcher
+func (o GetApplicationDetectionRulesValueOutput) Matcher() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationDetectionRulesValue) string { return v.Matcher }).(pulumi.StringOutput)
+}
+
+// Pattern
+func (o GetApplicationDetectionRulesValueOutput) Pattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationDetectionRulesValue) string { return v.Pattern }).(pulumi.StringOutput)
+}
+
+type GetApplicationDetectionRulesValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationDetectionRulesValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationDetectionRulesValue)(nil)).Elem()
+}
+
+func (o GetApplicationDetectionRulesValueArrayOutput) ToGetApplicationDetectionRulesValueArrayOutput() GetApplicationDetectionRulesValueArrayOutput {
+	return o
+}
+
+func (o GetApplicationDetectionRulesValueArrayOutput) ToGetApplicationDetectionRulesValueArrayOutputWithContext(ctx context.Context) GetApplicationDetectionRulesValueArrayOutput {
+	return o
+}
+
+func (o GetApplicationDetectionRulesValueArrayOutput) Index(i pulumi.IntInput) GetApplicationDetectionRulesValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationDetectionRulesValue {
+		return vs[0].([]GetApplicationDetectionRulesValue)[vs[1].(int)]
+	}).(GetApplicationDetectionRulesValueOutput)
+}
+
 type GetDocumentsValue struct {
 	// The unique identifier of the document.
 	Id string `pulumi:"id"`
@@ -48329,6 +48453,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertingProfilesValueArrayInput)(nil)).Elem(), GetAlertingProfilesValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiTokensApiTokenInput)(nil)).Elem(), GetApiTokensApiTokenArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiTokensApiTokenArrayInput)(nil)).Elem(), GetApiTokensApiTokenArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationDetectionRulesValueInput)(nil)).Elem(), GetApplicationDetectionRulesValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationDetectionRulesValueArrayInput)(nil)).Elem(), GetApplicationDetectionRulesValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDocumentsValueInput)(nil)).Elem(), GetDocumentsValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDocumentsValueArrayInput)(nil)).Elem(), GetDocumentsValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEntitiesEntityInput)(nil)).Elem(), GetEntitiesEntityArgs{})
@@ -48928,6 +49054,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAlertingProfilesValueArrayOutput{})
 	pulumi.RegisterOutputType(GetApiTokensApiTokenOutput{})
 	pulumi.RegisterOutputType(GetApiTokensApiTokenArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationDetectionRulesValueOutput{})
+	pulumi.RegisterOutputType(GetApplicationDetectionRulesValueArrayOutput{})
 	pulumi.RegisterOutputType(GetDocumentsValueOutput{})
 	pulumi.RegisterOutputType(GetDocumentsValueArrayOutput{})
 	pulumi.RegisterOutputType(GetEntitiesEntityOutput{})
