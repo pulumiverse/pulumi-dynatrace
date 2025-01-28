@@ -19,23 +19,24 @@ __all__ = ['JsonDashboardBaseArgs', 'JsonDashboardBase']
 @pulumi.input_type
 class JsonDashboardBaseArgs:
     def __init__(__self__, *,
-                 contents: pulumi.Input[str]):
+                 contents: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a JsonDashboardBase resource.
         :param pulumi.Input[str] contents: Contains the JSON Code of the Dashboard
         """
-        pulumi.set(__self__, "contents", contents)
+        if contents is not None:
+            pulumi.set(__self__, "contents", contents)
 
     @property
     @pulumi.getter
-    def contents(self) -> pulumi.Input[str]:
+    def contents(self) -> Optional[pulumi.Input[str]]:
         """
         Contains the JSON Code of the Dashboard
         """
         return pulumi.get(self, "contents")
 
     @contents.setter
-    def contents(self, value: pulumi.Input[str]):
+    def contents(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "contents", value)
 
 
@@ -80,7 +81,7 @@ class JsonDashboardBase(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: JsonDashboardBaseArgs,
+                 args: Optional[JsonDashboardBaseArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a JsonDashboardBase resource with the given unique name, props, and options.
@@ -109,8 +110,6 @@ class JsonDashboardBase(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = JsonDashboardBaseArgs.__new__(JsonDashboardBaseArgs)
 
-            if contents is None and not opts.urn:
-                raise TypeError("Missing required property 'contents'")
             __props__.__dict__["contents"] = contents
         super(JsonDashboardBase, __self__).__init__(
             'dynatrace:index/jsonDashboardBase:JsonDashboardBase',
@@ -141,7 +140,7 @@ class JsonDashboardBase(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def contents(self) -> pulumi.Output[str]:
+    def contents(self) -> pulumi.Output[Optional[str]]:
         """
         Contains the JSON Code of the Dashboard
         """
