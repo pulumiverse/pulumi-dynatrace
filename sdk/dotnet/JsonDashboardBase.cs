@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace
         /// Contains the JSON Code of the Dashboard
         /// </summary>
         [Output("contents")]
-        public Output<string> Contents { get; private set; } = null!;
+        public Output<string?> Contents { get; private set; } = null!;
 
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace Pulumiverse.Dynatrace
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public JsonDashboardBase(string name, JsonDashboardBaseArgs args, CustomResourceOptions? options = null)
+        public JsonDashboardBase(string name, JsonDashboardBaseArgs? args = null, CustomResourceOptions? options = null)
             : base("dynatrace:index/jsonDashboardBase:JsonDashboardBase", name, args ?? new JsonDashboardBaseArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -69,8 +69,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// Contains the JSON Code of the Dashboard
         /// </summary>
-        [Input("contents", required: true)]
-        public Input<string> Contents { get; set; } = null!;
+        [Input("contents")]
+        public Input<string>? Contents { get; set; }
 
         public JsonDashboardBaseArgs()
         {

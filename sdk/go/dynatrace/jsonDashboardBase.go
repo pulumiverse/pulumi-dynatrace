@@ -7,7 +7,6 @@ import (
 	"context"
 	"reflect"
 
-	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
@@ -16,19 +15,16 @@ type JsonDashboardBase struct {
 	pulumi.CustomResourceState
 
 	// Contains the JSON Code of the Dashboard
-	Contents pulumi.StringOutput `pulumi:"contents"`
+	Contents pulumi.StringPtrOutput `pulumi:"contents"`
 }
 
 // NewJsonDashboardBase registers a new resource with the given unique name, arguments, and options.
 func NewJsonDashboardBase(ctx *pulumi.Context,
 	name string, args *JsonDashboardBaseArgs, opts ...pulumi.ResourceOption) (*JsonDashboardBase, error) {
 	if args == nil {
-		return nil, errors.New("missing one or more required arguments")
+		args = &JsonDashboardBaseArgs{}
 	}
 
-	if args.Contents == nil {
-		return nil, errors.New("invalid value for required argument 'Contents'")
-	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource JsonDashboardBase
 	err := ctx.RegisterResource("dynatrace:index/jsonDashboardBase:JsonDashboardBase", name, args, &resource, opts...)
@@ -67,13 +63,13 @@ func (JsonDashboardBaseState) ElementType() reflect.Type {
 
 type jsonDashboardBaseArgs struct {
 	// Contains the JSON Code of the Dashboard
-	Contents string `pulumi:"contents"`
+	Contents *string `pulumi:"contents"`
 }
 
 // The set of arguments for constructing a JsonDashboardBase resource.
 type JsonDashboardBaseArgs struct {
 	// Contains the JSON Code of the Dashboard
-	Contents pulumi.StringInput
+	Contents pulumi.StringPtrInput
 }
 
 func (JsonDashboardBaseArgs) ElementType() reflect.Type {
@@ -164,8 +160,8 @@ func (o JsonDashboardBaseOutput) ToJsonDashboardBaseOutputWithContext(ctx contex
 }
 
 // Contains the JSON Code of the Dashboard
-func (o JsonDashboardBaseOutput) Contents() pulumi.StringOutput {
-	return o.ApplyT(func(v *JsonDashboardBase) pulumi.StringOutput { return v.Contents }).(pulumi.StringOutput)
+func (o JsonDashboardBaseOutput) Contents() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JsonDashboardBase) pulumi.StringPtrOutput { return v.Contents }).(pulumi.StringPtrOutput)
 }
 
 type JsonDashboardBaseArrayOutput struct{ *pulumi.OutputState }
