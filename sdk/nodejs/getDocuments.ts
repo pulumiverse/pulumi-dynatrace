@@ -19,11 +19,11 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumi/dynatrace";
  *
- * const all-dashboard-and-notebooks = dynatrace.getDocuments({});
- * const all-dashboards = dynatrace.getDocuments({
+ * const all_dashboard_and_notebooks = dynatrace.getDocuments({});
+ * const all_dashboards = dynatrace.getDocuments({
  *     type: "dashboard",
  * });
- * const all-notebooks = dynatrace.getDocuments({
+ * const all_notebooks = dynatrace.getDocuments({
  *     type: "notebook",
  * });
  * ```
@@ -73,11 +73,11 @@ export interface GetDocumentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumi/dynatrace";
  *
- * const all-dashboard-and-notebooks = dynatrace.getDocuments({});
- * const all-dashboards = dynatrace.getDocuments({
+ * const all_dashboard_and_notebooks = dynatrace.getDocuments({});
+ * const all_dashboards = dynatrace.getDocuments({
  *     type: "dashboard",
  * });
- * const all-notebooks = dynatrace.getDocuments({
+ * const all_notebooks = dynatrace.getDocuments({
  *     type: "notebook",
  * });
  * ```

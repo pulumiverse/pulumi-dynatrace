@@ -51,6 +51,7 @@ from .browser_monitor_outage import *
 from .browser_monitor_performance import *
 from .builtin_process_monitoring import *
 from .business_events_buckets import *
+from .business_events_capturing_variants import *
 from .business_events_metrics import *
 from .business_events_oneagent import *
 from .business_events_oneagent_outgoing import *
@@ -379,6 +380,7 @@ from .vulnerability_code import *
 from .vulnerability_settings import *
 from .vulnerability_third_party import *
 from .web_app_anomalies import *
+from .web_app_auto_injection import *
 from .web_app_beacon_endpoint import *
 from .web_app_beacon_origins import *
 from .web_app_custom_config_properties import *
@@ -776,6 +778,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/businessEventsBuckets:BusinessEventsBuckets": "BusinessEventsBuckets"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/businessEventsCapturingVariants",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/businessEventsCapturingVariants:BusinessEventsCapturingVariants": "BusinessEventsCapturingVariants"
   }
  },
  {
@@ -2992,6 +3002,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/webAppAnomalies:WebAppAnomalies": "WebAppAnomalies"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/webAppAutoInjection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/webAppAutoInjection:WebAppAutoInjection": "WebAppAutoInjection"
   }
  },
  {

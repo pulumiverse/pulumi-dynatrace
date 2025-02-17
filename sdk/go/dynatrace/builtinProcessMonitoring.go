@@ -114,6 +114,8 @@ type BuiltinProcessMonitoring struct {
 	ExeUserbinpiper pulumi.BoolPtrOutput `pulumi:"exeUserbinpiper"`
 	// Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
 	ExeW3wp pulumi.BoolPtrOutput `pulumi:"exeW3wp"`
+	// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+	ExeYq pulumi.BoolPtrOutput `pulumi:"exeYq"`
 	// Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
 	GoStatic pulumi.BoolPtrOutput `pulumi:"goStatic"`
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -282,6 +284,8 @@ type builtinProcessMonitoringState struct {
 	ExeUserbinpiper *bool `pulumi:"exeUserbinpiper"`
 	// Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
 	ExeW3wp *bool `pulumi:"exeW3wp"`
+	// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+	ExeYq *bool `pulumi:"exeYq"`
 	// Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
 	GoStatic *bool `pulumi:"goStatic"`
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -421,6 +425,8 @@ type BuiltinProcessMonitoringState struct {
 	ExeUserbinpiper pulumi.BoolPtrInput
 	// Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
 	ExeW3wp pulumi.BoolPtrInput
+	// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+	ExeYq pulumi.BoolPtrInput
 	// Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
 	GoStatic pulumi.BoolPtrInput
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -564,6 +570,8 @@ type builtinProcessMonitoringArgs struct {
 	ExeUserbinpiper *bool `pulumi:"exeUserbinpiper"`
 	// Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
 	ExeW3wp *bool `pulumi:"exeW3wp"`
+	// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+	ExeYq *bool `pulumi:"exeYq"`
 	// Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
 	GoStatic *bool `pulumi:"goStatic"`
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -704,6 +712,8 @@ type BuiltinProcessMonitoringArgs struct {
 	ExeUserbinpiper pulumi.BoolPtrInput
 	// Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
 	ExeW3wp pulumi.BoolPtrInput
+	// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+	ExeYq pulumi.BoolPtrInput
 	// Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
 	GoStatic pulumi.BoolPtrInput
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -1077,6 +1087,11 @@ func (o BuiltinProcessMonitoringOutput) ExeUserbinpiper() pulumi.BoolPtrOutput {
 // Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
 func (o BuiltinProcessMonitoringOutput) ExeW3wp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeW3wp }).(pulumi.BoolPtrOutput)
+}
+
+// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+func (o BuiltinProcessMonitoringOutput) ExeYq() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeYq }).(pulumi.BoolPtrOutput)
 }
 
 // Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'

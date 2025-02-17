@@ -15,6 +15,8 @@ import (
 type KeyRequests struct {
 	pulumi.CustomResourceState
 
+	// The ids of the key requests
+	KeyRequestIds pulumi.StringMapOutput `pulumi:"keyRequestIds"`
 	// The names of the key requests
 	Names pulumi.StringArrayOutput `pulumi:"names"`
 	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
@@ -54,6 +56,8 @@ func GetKeyRequests(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering KeyRequests resources.
 type keyRequestsState struct {
+	// The ids of the key requests
+	KeyRequestIds map[string]string `pulumi:"keyRequestIds"`
 	// The names of the key requests
 	Names []string `pulumi:"names"`
 	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
@@ -61,6 +65,8 @@ type keyRequestsState struct {
 }
 
 type KeyRequestsState struct {
+	// The ids of the key requests
+	KeyRequestIds pulumi.StringMapInput
 	// The names of the key requests
 	Names pulumi.StringArrayInput
 	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
@@ -72,6 +78,8 @@ func (KeyRequestsState) ElementType() reflect.Type {
 }
 
 type keyRequestsArgs struct {
+	// The ids of the key requests
+	KeyRequestIds map[string]string `pulumi:"keyRequestIds"`
 	// The names of the key requests
 	Names []string `pulumi:"names"`
 	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
@@ -80,6 +88,8 @@ type keyRequestsArgs struct {
 
 // The set of arguments for constructing a KeyRequests resource.
 type KeyRequestsArgs struct {
+	// The ids of the key requests
+	KeyRequestIds pulumi.StringMapInput
 	// The names of the key requests
 	Names pulumi.StringArrayInput
 	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
@@ -171,6 +181,11 @@ func (o KeyRequestsOutput) ToKeyRequestsOutput() KeyRequestsOutput {
 
 func (o KeyRequestsOutput) ToKeyRequestsOutputWithContext(ctx context.Context) KeyRequestsOutput {
 	return o
+}
+
+// The ids of the key requests
+func (o KeyRequestsOutput) KeyRequestIds() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *KeyRequests) pulumi.StringMapOutput { return v.KeyRequestIds }).(pulumi.StringMapOutput)
 }
 
 // The names of the key requests

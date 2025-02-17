@@ -233,6 +233,10 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     public readonly exeW3wp!: pulumi.Output<boolean | undefined>;
     /**
+     * Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+     */
+    public readonly exeYq!: pulumi.Output<boolean | undefined>;
+    /**
      * Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
      */
     public readonly goStatic!: pulumi.Output<boolean | undefined>;
@@ -368,6 +372,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
             resourceInputs["exeUipath"] = state ? state.exeUipath : undefined;
             resourceInputs["exeUserbinpiper"] = state ? state.exeUserbinpiper : undefined;
             resourceInputs["exeW3wp"] = state ? state.exeW3wp : undefined;
+            resourceInputs["exeYq"] = state ? state.exeYq : undefined;
             resourceInputs["goStatic"] = state ? state.goStatic : undefined;
             resourceInputs["hostGroupId"] = state ? state.hostGroupId : undefined;
             resourceInputs["jarDtibmmqconnector"] = state ? state.jarDtibmmqconnector : undefined;
@@ -438,6 +443,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
             resourceInputs["exeUipath"] = args ? args.exeUipath : undefined;
             resourceInputs["exeUserbinpiper"] = args ? args.exeUserbinpiper : undefined;
             resourceInputs["exeW3wp"] = args ? args.exeW3wp : undefined;
+            resourceInputs["exeYq"] = args ? args.exeYq : undefined;
             resourceInputs["goStatic"] = args ? args.goStatic : undefined;
             resourceInputs["hostGroupId"] = args ? args.hostGroupId : undefined;
             resourceInputs["jarDtibmmqconnector"] = args ? args.jarDtibmmqconnector : undefined;
@@ -666,6 +672,10 @@ export interface BuiltinProcessMonitoringState {
      * Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
      */
     exeW3wp?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+     */
+    exeYq?: pulumi.Input<boolean>;
     /**
      * Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
      */
@@ -944,6 +954,10 @@ export interface BuiltinProcessMonitoringArgs {
      * Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
      */
     exeW3wp?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+     */
+    exeYq?: pulumi.Input<boolean>;
     /**
      * Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
      */

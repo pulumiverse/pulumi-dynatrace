@@ -20,6 +20,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? AcceptBinary { get; set; }
 
         /// <summary>
+        /// no documentation available
+        /// </summary>
+        [Input("encoding")]
+        public Input<string>? Encoding { get; set; }
+
+        /// <summary>
         /// Possible Values: `LOG_PATH_PATTERN`, `WINDOWS_EVENT_LOG`
         /// </summary>
         [Input("type", required: true)]

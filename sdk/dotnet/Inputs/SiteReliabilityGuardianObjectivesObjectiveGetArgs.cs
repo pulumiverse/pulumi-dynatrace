@@ -32,6 +32,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// Display Unit
+        /// </summary>
+        [Input("displayUnit")]
+        public Input<Inputs.SiteReliabilityGuardianObjectivesObjectiveDisplayUnitGetArgs>? DisplayUnit { get; set; }
+
+        /// <summary>
         /// DQL query
         /// </summary>
         [Input("dqlQuery")]

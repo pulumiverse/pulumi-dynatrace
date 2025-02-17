@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  * import * as dynatrace from "@pulumi/dynatrace";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const default = dynatrace.getAlertingProfile({
+ * const _default = dynatrace.getAlertingProfile({
  *     name: "Default",
  * });
  * const myWebhookNotification = new dynatrace.WebhookNotification("myWebhookNotification", {
@@ -65,7 +65,7 @@ export interface GetAlertingProfileResult {
  * import * as dynatrace from "@pulumi/dynatrace";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const default = dynatrace.getAlertingProfile({
+ * const _default = dynatrace.getAlertingProfile({
  *     name: "Default",
  * });
  * const myWebhookNotification = new dynatrace.WebhookNotification("myWebhookNotification", {

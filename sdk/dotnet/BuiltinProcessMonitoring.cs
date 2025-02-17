@@ -314,6 +314,12 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> ExeW3wp { get; private set; } = null!;
 
         /// <summary>
+        /// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+        /// </summary>
+        [Output("exeYq")]
+        public Output<bool?> ExeYq { get; private set; } = null!;
+
+        /// <summary>
         /// Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
         /// </summary>
         [Output("goStatic")]
@@ -769,6 +775,12 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeW3wp { get; set; }
 
         /// <summary>
+        /// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+        /// </summary>
+        [Input("exeYq")]
+        public Input<bool>? ExeYq { get; set; }
+
+        /// <summary>
         /// Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
         /// </summary>
         [Input("goStatic")]
@@ -1183,6 +1195,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("exeW3wp")]
         public Input<bool>? ExeW3wp { get; set; }
+
+        /// <summary>
+        /// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+        /// </summary>
+        [Input("exeYq")]
+        public Input<bool>? ExeYq { get; set; }
 
         /// <summary>
         /// Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'

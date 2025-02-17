@@ -39,9 +39,13 @@ export class AppMonitoring extends pulumi.CustomResource {
      */
     public readonly appMonitoring!: pulumi.Output<outputs.AppMonitoringAppMonitoring | undefined>;
     /**
-     * Possible Values: `Debug`, `Error`, `Info`, `Off`, `Warn`
+     * Possible Values: `debug`, `error`, `info`, `off`, `warn`
      */
     public readonly defaultLogLevel!: pulumi.Output<string>;
+    /**
+     * Possible Values: `off`, `on`
+     */
+    public readonly defaultTraceLevel!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppMonitoring resource with the given unique name, arguments, and options.
@@ -58,6 +62,7 @@ export class AppMonitoring extends pulumi.CustomResource {
             const state = argsOrState as AppMonitoringState | undefined;
             resourceInputs["appMonitoring"] = state ? state.appMonitoring : undefined;
             resourceInputs["defaultLogLevel"] = state ? state.defaultLogLevel : undefined;
+            resourceInputs["defaultTraceLevel"] = state ? state.defaultTraceLevel : undefined;
         } else {
             const args = argsOrState as AppMonitoringArgs | undefined;
             if ((!args || args.defaultLogLevel === undefined) && !opts.urn) {
@@ -65,6 +70,7 @@ export class AppMonitoring extends pulumi.CustomResource {
             }
             resourceInputs["appMonitoring"] = args ? args.appMonitoring : undefined;
             resourceInputs["defaultLogLevel"] = args ? args.defaultLogLevel : undefined;
+            resourceInputs["defaultTraceLevel"] = args ? args.defaultTraceLevel : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppMonitoring.__pulumiType, name, resourceInputs, opts);
@@ -80,9 +86,13 @@ export interface AppMonitoringState {
      */
     appMonitoring?: pulumi.Input<inputs.AppMonitoringAppMonitoring>;
     /**
-     * Possible Values: `Debug`, `Error`, `Info`, `Off`, `Warn`
+     * Possible Values: `debug`, `error`, `info`, `off`, `warn`
      */
     defaultLogLevel?: pulumi.Input<string>;
+    /**
+     * Possible Values: `off`, `on`
+     */
+    defaultTraceLevel?: pulumi.Input<string>;
 }
 
 /**
@@ -94,7 +104,11 @@ export interface AppMonitoringArgs {
      */
     appMonitoring?: pulumi.Input<inputs.AppMonitoringAppMonitoring>;
     /**
-     * Possible Values: `Debug`, `Error`, `Info`, `Off`, `Warn`
+     * Possible Values: `debug`, `error`, `info`, `off`, `warn`
      */
     defaultLogLevel: pulumi.Input<string>;
+    /**
+     * Possible Values: `off`, `on`
+     */
+    defaultTraceLevel?: pulumi.Input<string>;
 }

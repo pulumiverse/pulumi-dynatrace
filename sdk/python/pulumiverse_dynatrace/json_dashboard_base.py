@@ -22,7 +22,7 @@ class JsonDashboardBaseArgs:
                  contents: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a JsonDashboardBase resource.
-        :param pulumi.Input[str] contents: Contains the JSON Code of the Dashboard
+        :param pulumi.Input[str] contents: This attribute exists for backwards compatibility. You do not have to define it.
         """
         if contents is not None:
             pulumi.set(__self__, "contents", contents)
@@ -31,7 +31,7 @@ class JsonDashboardBaseArgs:
     @pulumi.getter
     def contents(self) -> Optional[pulumi.Input[str]]:
         """
-        Contains the JSON Code of the Dashboard
+        This attribute exists for backwards compatibility. You do not have to define it.
         """
         return pulumi.get(self, "contents")
 
@@ -46,7 +46,7 @@ class _JsonDashboardBaseState:
                  contents: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering JsonDashboardBase resources.
-        :param pulumi.Input[str] contents: Contains the JSON Code of the Dashboard
+        :param pulumi.Input[str] contents: This attribute exists for backwards compatibility. You do not have to define it.
         """
         if contents is not None:
             pulumi.set(__self__, "contents", contents)
@@ -55,7 +55,7 @@ class _JsonDashboardBaseState:
     @pulumi.getter
     def contents(self) -> Optional[pulumi.Input[str]]:
         """
-        Contains the JSON Code of the Dashboard
+        This attribute exists for backwards compatibility. You do not have to define it.
         """
         return pulumi.get(self, "contents")
 
@@ -75,7 +75,7 @@ class JsonDashboardBase(pulumi.CustomResource):
         Create a JsonDashboardBase resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] contents: Contains the JSON Code of the Dashboard
+        :param pulumi.Input[str] contents: This attribute exists for backwards compatibility. You do not have to define it.
         """
         ...
     @overload
@@ -129,7 +129,7 @@ class JsonDashboardBase(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] contents: Contains the JSON Code of the Dashboard
+        :param pulumi.Input[str] contents: This attribute exists for backwards compatibility. You do not have to define it.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -142,7 +142,7 @@ class JsonDashboardBase(pulumi.CustomResource):
     @pulumi.getter
     def contents(self) -> pulumi.Output[Optional[str]]:
         """
-        Contains the JSON Code of the Dashboard
+        This attribute exists for backwards compatibility. You do not have to define it.
         """
         return pulumi.get(self, "contents")
 

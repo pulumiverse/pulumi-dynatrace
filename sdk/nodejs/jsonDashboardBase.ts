@@ -33,7 +33,7 @@ export class JsonDashboardBase extends pulumi.CustomResource {
     }
 
     /**
-     * Contains the JSON Code of the Dashboard
+     * This attribute exists for backwards compatibility. You do not have to define it.
      */
     public readonly contents!: pulumi.Output<string | undefined>;
 
@@ -65,7 +65,7 @@ export class JsonDashboardBase extends pulumi.CustomResource {
  */
 export interface JsonDashboardBaseState {
     /**
-     * Contains the JSON Code of the Dashboard
+     * This attribute exists for backwards compatibility. You do not have to define it.
      */
     contents?: pulumi.Input<string>;
 }
@@ -75,7 +75,7 @@ export interface JsonDashboardBaseState {
  */
 export interface JsonDashboardBaseArgs {
     /**
-     * Contains the JSON Code of the Dashboard
+     * This attribute exists for backwards compatibility. You do not have to define it.
      */
     contents?: pulumi.Input<string>;
 }

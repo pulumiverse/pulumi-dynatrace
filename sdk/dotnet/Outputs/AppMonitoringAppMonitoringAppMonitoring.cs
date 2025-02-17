@@ -19,18 +19,25 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string AppId;
         /// <summary>
-        /// Possible Values: `Debug`, `Error`, `Info`, `Off`, `UseDefault`, `Warn`
+        /// Possible Values: `debug`, `error`, `info`, `off`, `useDefault`, `warn`
         /// </summary>
         public readonly string CustomLogLevel;
+        /// <summary>
+        /// Possible Values: `off`, `on`, `useDefault`
+        /// </summary>
+        public readonly string? CustomTraceLevel;
 
         [OutputConstructor]
         private AppMonitoringAppMonitoringAppMonitoring(
             string appId,
 
-            string customLogLevel)
+            string customLogLevel,
+
+            string? customTraceLevel)
         {
             AppId = appId;
             CustomLogLevel = customLogLevel;
+            CustomTraceLevel = customTraceLevel;
         }
     }
 }

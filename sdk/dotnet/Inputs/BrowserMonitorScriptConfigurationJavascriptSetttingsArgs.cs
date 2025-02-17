@@ -20,6 +20,24 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? CustomProperties { get; set; }
 
         /// <summary>
+        /// Capture fetch() requests
+        /// </summary>
+        [Input("fetchRequests")]
+        public Input<bool>? FetchRequests { get; set; }
+
+        /// <summary>
+        /// JavaScript error report
+        /// </summary>
+        [Input("javascriptErrors")]
+        public Input<bool>? JavascriptErrors { get; set; }
+
+        /// <summary>
+        /// Timed action support
+        /// </summary>
+        [Input("timedActions")]
+        public Input<bool>? TimedActions { get; set; }
+
+        /// <summary>
         /// Custom JavaScript Agent settings
         /// </summary>
         [Input("timeoutSettings")]
@@ -30,6 +48,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// </summary>
         [Input("visuallyCompleteOptions")]
         public Input<Inputs.BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptionsArgs>? VisuallyCompleteOptions { get; set; }
+
+        /// <summary>
+        /// Capture XMLHttpRequests (XHR)
+        /// </summary>
+        [Input("xmlHttpRequests")]
+        public Input<bool>? XmlHttpRequests { get; set; }
 
         public BrowserMonitorScriptConfigurationJavascriptSetttingsArgs()
         {

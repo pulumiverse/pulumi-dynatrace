@@ -21722,6 +21722,8 @@ type SiteReliabilityGuardianObjectivesObjective struct {
 	ComparisonOperator string `pulumi:"comparisonOperator"`
 	// no documentation available
 	Description *string `pulumi:"description"`
+	// Display Unit
+	DisplayUnit *SiteReliabilityGuardianObjectivesObjectiveDisplayUnit `pulumi:"displayUnit"`
 	// DQL query
 	DqlQuery *string `pulumi:"dqlQuery"`
 	// Objective name
@@ -21754,6 +21756,8 @@ type SiteReliabilityGuardianObjectivesObjectiveArgs struct {
 	ComparisonOperator pulumi.StringInput `pulumi:"comparisonOperator"`
 	// no documentation available
 	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Display Unit
+	DisplayUnit SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrInput `pulumi:"displayUnit"`
 	// DQL query
 	DqlQuery pulumi.StringPtrInput `pulumi:"dqlQuery"`
 	// Objective name
@@ -21834,6 +21838,13 @@ func (o SiteReliabilityGuardianObjectivesObjectiveOutput) Description() pulumi.S
 	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// Display Unit
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) DisplayUnit() SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) *SiteReliabilityGuardianObjectivesObjectiveDisplayUnit {
+		return v.DisplayUnit
+	}).(SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput)
+}
+
 // DQL query
 func (o SiteReliabilityGuardianObjectivesObjectiveOutput) DqlQuery() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) *string { return v.DqlQuery }).(pulumi.StringPtrOutput)
@@ -21882,6 +21893,181 @@ func (o SiteReliabilityGuardianObjectivesObjectiveArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SiteReliabilityGuardianObjectivesObjective {
 		return vs[0].([]SiteReliabilityGuardianObjectivesObjective)[vs[1].(int)]
 	}).(SiteReliabilityGuardianObjectivesObjectiveOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveDisplayUnit struct {
+	// Base Unit
+	Base string `pulumi:"base"`
+	// Decimals
+	Decimals int `pulumi:"decimals"`
+	// display as unit
+	Display string `pulumi:"display"`
+}
+
+// SiteReliabilityGuardianObjectivesObjectiveDisplayUnitInput is an input type that accepts SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs and SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesObjectiveDisplayUnitInput` via:
+//
+//	SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs{...}
+type SiteReliabilityGuardianObjectivesObjectiveDisplayUnitInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput() SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput
+	ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs struct {
+	// Base Unit
+	Base pulumi.StringInput `pulumi:"base"`
+	// Decimals
+	Decimals pulumi.IntInput `pulumi:"decimals"`
+	// display as unit
+	Display pulumi.StringInput `pulumi:"display"`
+}
+
+func (SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveDisplayUnit)(nil)).Elem()
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs) ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput() SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs) ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput)
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs) ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput() SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs) ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput).ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutputWithContext(ctx)
+}
+
+// SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrInput is an input type that accepts SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs, SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtr and SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrInput` via:
+//
+//	        SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs{...}
+//
+//	or:
+//
+//	        nil
+type SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput() SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput
+	ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput
+}
+
+type siteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrType SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs
+
+func SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtr(v *SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs) SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrInput {
+	return (*siteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrType)(v)
+}
+
+func (*siteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SiteReliabilityGuardianObjectivesObjectiveDisplayUnit)(nil)).Elem()
+}
+
+func (i *siteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrType) ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput() SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutputWithContext(context.Background())
+}
+
+func (i *siteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrType) ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveDisplayUnit)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput) ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput() SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput) ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput) ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput() SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput {
+	return o.ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutputWithContext(context.Background())
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput) ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SiteReliabilityGuardianObjectivesObjectiveDisplayUnit) *SiteReliabilityGuardianObjectivesObjectiveDisplayUnit {
+		return &v
+	}).(SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput)
+}
+
+// Base Unit
+func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput) Base() pulumi.StringOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjectiveDisplayUnit) string { return v.Base }).(pulumi.StringOutput)
+}
+
+// Decimals
+func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput) Decimals() pulumi.IntOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjectiveDisplayUnit) int { return v.Decimals }).(pulumi.IntOutput)
+}
+
+// display as unit
+func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjectiveDisplayUnit) string { return v.Display }).(pulumi.StringOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SiteReliabilityGuardianObjectivesObjectiveDisplayUnit)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput) ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput() SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput) ToSiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput) Elem() SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput {
+	return o.ApplyT(func(v *SiteReliabilityGuardianObjectivesObjectiveDisplayUnit) SiteReliabilityGuardianObjectivesObjectiveDisplayUnit {
+		if v != nil {
+			return *v
+		}
+		var ret SiteReliabilityGuardianObjectivesObjectiveDisplayUnit
+		return ret
+	}).(SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput)
+}
+
+// Base Unit
+func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput) Base() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SiteReliabilityGuardianObjectivesObjectiveDisplayUnit) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Base
+	}).(pulumi.StringPtrOutput)
+}
+
+// Decimals
+func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput) Decimals() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SiteReliabilityGuardianObjectivesObjectiveDisplayUnit) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.Decimals
+	}).(pulumi.IntPtrOutput)
+}
+
+// display as unit
+func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput) Display() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SiteReliabilityGuardianObjectivesObjectiveDisplayUnit) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Display
+	}).(pulumi.StringPtrOutput)
 }
 
 type SiteReliabilityGuardianVariables struct {
@@ -33156,6 +33342,455 @@ func (o WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput) TrafficSpikePercenta
 		}
 		return &v.TrafficSpikePercentage
 	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppAutoInjectionCacheControlHeaders struct {
+	// [How to ensure timely configuration updates for automatic injection?](https://dt-url.net/m9039ea)
+	CacheControlHeaders bool `pulumi:"cacheControlHeaders"`
+}
+
+// WebAppAutoInjectionCacheControlHeadersInput is an input type that accepts WebAppAutoInjectionCacheControlHeadersArgs and WebAppAutoInjectionCacheControlHeadersOutput values.
+// You can construct a concrete instance of `WebAppAutoInjectionCacheControlHeadersInput` via:
+//
+//	WebAppAutoInjectionCacheControlHeadersArgs{...}
+type WebAppAutoInjectionCacheControlHeadersInput interface {
+	pulumi.Input
+
+	ToWebAppAutoInjectionCacheControlHeadersOutput() WebAppAutoInjectionCacheControlHeadersOutput
+	ToWebAppAutoInjectionCacheControlHeadersOutputWithContext(context.Context) WebAppAutoInjectionCacheControlHeadersOutput
+}
+
+type WebAppAutoInjectionCacheControlHeadersArgs struct {
+	// [How to ensure timely configuration updates for automatic injection?](https://dt-url.net/m9039ea)
+	CacheControlHeaders pulumi.BoolInput `pulumi:"cacheControlHeaders"`
+}
+
+func (WebAppAutoInjectionCacheControlHeadersArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAutoInjectionCacheControlHeaders)(nil)).Elem()
+}
+
+func (i WebAppAutoInjectionCacheControlHeadersArgs) ToWebAppAutoInjectionCacheControlHeadersOutput() WebAppAutoInjectionCacheControlHeadersOutput {
+	return i.ToWebAppAutoInjectionCacheControlHeadersOutputWithContext(context.Background())
+}
+
+func (i WebAppAutoInjectionCacheControlHeadersArgs) ToWebAppAutoInjectionCacheControlHeadersOutputWithContext(ctx context.Context) WebAppAutoInjectionCacheControlHeadersOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionCacheControlHeadersOutput)
+}
+
+func (i WebAppAutoInjectionCacheControlHeadersArgs) ToWebAppAutoInjectionCacheControlHeadersPtrOutput() WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return i.ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAutoInjectionCacheControlHeadersArgs) ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionCacheControlHeadersOutput).ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(ctx)
+}
+
+// WebAppAutoInjectionCacheControlHeadersPtrInput is an input type that accepts WebAppAutoInjectionCacheControlHeadersArgs, WebAppAutoInjectionCacheControlHeadersPtr and WebAppAutoInjectionCacheControlHeadersPtrOutput values.
+// You can construct a concrete instance of `WebAppAutoInjectionCacheControlHeadersPtrInput` via:
+//
+//	        WebAppAutoInjectionCacheControlHeadersArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAutoInjectionCacheControlHeadersPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAutoInjectionCacheControlHeadersPtrOutput() WebAppAutoInjectionCacheControlHeadersPtrOutput
+	ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(context.Context) WebAppAutoInjectionCacheControlHeadersPtrOutput
+}
+
+type webAppAutoInjectionCacheControlHeadersPtrType WebAppAutoInjectionCacheControlHeadersArgs
+
+func WebAppAutoInjectionCacheControlHeadersPtr(v *WebAppAutoInjectionCacheControlHeadersArgs) WebAppAutoInjectionCacheControlHeadersPtrInput {
+	return (*webAppAutoInjectionCacheControlHeadersPtrType)(v)
+}
+
+func (*webAppAutoInjectionCacheControlHeadersPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAutoInjectionCacheControlHeaders)(nil)).Elem()
+}
+
+func (i *webAppAutoInjectionCacheControlHeadersPtrType) ToWebAppAutoInjectionCacheControlHeadersPtrOutput() WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return i.ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAutoInjectionCacheControlHeadersPtrType) ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionCacheControlHeadersPtrOutput)
+}
+
+type WebAppAutoInjectionCacheControlHeadersOutput struct{ *pulumi.OutputState }
+
+func (WebAppAutoInjectionCacheControlHeadersOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAutoInjectionCacheControlHeaders)(nil)).Elem()
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersOutput) ToWebAppAutoInjectionCacheControlHeadersOutput() WebAppAutoInjectionCacheControlHeadersOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersOutput) ToWebAppAutoInjectionCacheControlHeadersOutputWithContext(ctx context.Context) WebAppAutoInjectionCacheControlHeadersOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersOutput) ToWebAppAutoInjectionCacheControlHeadersPtrOutput() WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return o.ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersOutput) ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAutoInjectionCacheControlHeaders) *WebAppAutoInjectionCacheControlHeaders {
+		return &v
+	}).(WebAppAutoInjectionCacheControlHeadersPtrOutput)
+}
+
+// [How to ensure timely configuration updates for automatic injection?](https://dt-url.net/m9039ea)
+func (o WebAppAutoInjectionCacheControlHeadersOutput) CacheControlHeaders() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppAutoInjectionCacheControlHeaders) bool { return v.CacheControlHeaders }).(pulumi.BoolOutput)
+}
+
+type WebAppAutoInjectionCacheControlHeadersPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAutoInjectionCacheControlHeadersPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAutoInjectionCacheControlHeaders)(nil)).Elem()
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersPtrOutput) ToWebAppAutoInjectionCacheControlHeadersPtrOutput() WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersPtrOutput) ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersPtrOutput) Elem() WebAppAutoInjectionCacheControlHeadersOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionCacheControlHeaders) WebAppAutoInjectionCacheControlHeaders {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAutoInjectionCacheControlHeaders
+		return ret
+	}).(WebAppAutoInjectionCacheControlHeadersOutput)
+}
+
+// [How to ensure timely configuration updates for automatic injection?](https://dt-url.net/m9039ea)
+func (o WebAppAutoInjectionCacheControlHeadersPtrOutput) CacheControlHeaders() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionCacheControlHeaders) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.CacheControlHeaders
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebAppAutoInjectionMonitoringCodeSourceSection struct {
+	// Real User Monitoring code source
+	CodeSource string `pulumi:"codeSource"`
+	// Specify the source path for placement of your application's custom JavaScript library file. By default, this path is set to the root directory of your web server. A custom source path may be necessary if your server operates behind a firewall.
+	MonitoringCodePath *string `pulumi:"monitoringCodePath"`
+}
+
+// WebAppAutoInjectionMonitoringCodeSourceSectionInput is an input type that accepts WebAppAutoInjectionMonitoringCodeSourceSectionArgs and WebAppAutoInjectionMonitoringCodeSourceSectionOutput values.
+// You can construct a concrete instance of `WebAppAutoInjectionMonitoringCodeSourceSectionInput` via:
+//
+//	WebAppAutoInjectionMonitoringCodeSourceSectionArgs{...}
+type WebAppAutoInjectionMonitoringCodeSourceSectionInput interface {
+	pulumi.Input
+
+	ToWebAppAutoInjectionMonitoringCodeSourceSectionOutput() WebAppAutoInjectionMonitoringCodeSourceSectionOutput
+	ToWebAppAutoInjectionMonitoringCodeSourceSectionOutputWithContext(context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionOutput
+}
+
+type WebAppAutoInjectionMonitoringCodeSourceSectionArgs struct {
+	// Real User Monitoring code source
+	CodeSource pulumi.StringInput `pulumi:"codeSource"`
+	// Specify the source path for placement of your application's custom JavaScript library file. By default, this path is set to the root directory of your web server. A custom source path may be necessary if your server operates behind a firewall.
+	MonitoringCodePath pulumi.StringPtrInput `pulumi:"monitoringCodePath"`
+}
+
+func (WebAppAutoInjectionMonitoringCodeSourceSectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAutoInjectionMonitoringCodeSourceSection)(nil)).Elem()
+}
+
+func (i WebAppAutoInjectionMonitoringCodeSourceSectionArgs) ToWebAppAutoInjectionMonitoringCodeSourceSectionOutput() WebAppAutoInjectionMonitoringCodeSourceSectionOutput {
+	return i.ToWebAppAutoInjectionMonitoringCodeSourceSectionOutputWithContext(context.Background())
+}
+
+func (i WebAppAutoInjectionMonitoringCodeSourceSectionArgs) ToWebAppAutoInjectionMonitoringCodeSourceSectionOutputWithContext(ctx context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionMonitoringCodeSourceSectionOutput)
+}
+
+func (i WebAppAutoInjectionMonitoringCodeSourceSectionArgs) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput() WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return i.ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAutoInjectionMonitoringCodeSourceSectionArgs) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionMonitoringCodeSourceSectionOutput).ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(ctx)
+}
+
+// WebAppAutoInjectionMonitoringCodeSourceSectionPtrInput is an input type that accepts WebAppAutoInjectionMonitoringCodeSourceSectionArgs, WebAppAutoInjectionMonitoringCodeSourceSectionPtr and WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput values.
+// You can construct a concrete instance of `WebAppAutoInjectionMonitoringCodeSourceSectionPtrInput` via:
+//
+//	        WebAppAutoInjectionMonitoringCodeSourceSectionArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAutoInjectionMonitoringCodeSourceSectionPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput() WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput
+	ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput
+}
+
+type webAppAutoInjectionMonitoringCodeSourceSectionPtrType WebAppAutoInjectionMonitoringCodeSourceSectionArgs
+
+func WebAppAutoInjectionMonitoringCodeSourceSectionPtr(v *WebAppAutoInjectionMonitoringCodeSourceSectionArgs) WebAppAutoInjectionMonitoringCodeSourceSectionPtrInput {
+	return (*webAppAutoInjectionMonitoringCodeSourceSectionPtrType)(v)
+}
+
+func (*webAppAutoInjectionMonitoringCodeSourceSectionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAutoInjectionMonitoringCodeSourceSection)(nil)).Elem()
+}
+
+func (i *webAppAutoInjectionMonitoringCodeSourceSectionPtrType) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput() WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return i.ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAutoInjectionMonitoringCodeSourceSectionPtrType) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput)
+}
+
+type WebAppAutoInjectionMonitoringCodeSourceSectionOutput struct{ *pulumi.OutputState }
+
+func (WebAppAutoInjectionMonitoringCodeSourceSectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAutoInjectionMonitoringCodeSourceSection)(nil)).Elem()
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionOutput) ToWebAppAutoInjectionMonitoringCodeSourceSectionOutput() WebAppAutoInjectionMonitoringCodeSourceSectionOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionOutput) ToWebAppAutoInjectionMonitoringCodeSourceSectionOutputWithContext(ctx context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionOutput) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput() WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return o.ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionOutput) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAutoInjectionMonitoringCodeSourceSection) *WebAppAutoInjectionMonitoringCodeSourceSection {
+		return &v
+	}).(WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput)
+}
+
+// Real User Monitoring code source
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionOutput) CodeSource() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppAutoInjectionMonitoringCodeSourceSection) string { return v.CodeSource }).(pulumi.StringOutput)
+}
+
+// Specify the source path for placement of your application's custom JavaScript library file. By default, this path is set to the root directory of your web server. A custom source path may be necessary if your server operates behind a firewall.
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionOutput) MonitoringCodePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppAutoInjectionMonitoringCodeSourceSection) *string { return v.MonitoringCodePath }).(pulumi.StringPtrOutput)
+}
+
+type WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAutoInjectionMonitoringCodeSourceSection)(nil)).Elem()
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput() WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput) Elem() WebAppAutoInjectionMonitoringCodeSourceSectionOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionMonitoringCodeSourceSection) WebAppAutoInjectionMonitoringCodeSourceSection {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAutoInjectionMonitoringCodeSourceSection
+		return ret
+	}).(WebAppAutoInjectionMonitoringCodeSourceSectionOutput)
+}
+
+// Real User Monitoring code source
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput) CodeSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionMonitoringCodeSourceSection) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CodeSource
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specify the source path for placement of your application's custom JavaScript library file. By default, this path is set to the root directory of your web server. A custom source path may be necessary if your server operates behind a firewall.
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput) MonitoringCodePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionMonitoringCodeSourceSection) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MonitoringCodePath
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebAppAutoInjectionSnippetFormat struct {
+	// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+	CodeSnippetType *string `pulumi:"codeSnippetType"`
+	// Snippet format
+	SnippetFormat string `pulumi:"snippetFormat"`
+}
+
+// WebAppAutoInjectionSnippetFormatInput is an input type that accepts WebAppAutoInjectionSnippetFormatArgs and WebAppAutoInjectionSnippetFormatOutput values.
+// You can construct a concrete instance of `WebAppAutoInjectionSnippetFormatInput` via:
+//
+//	WebAppAutoInjectionSnippetFormatArgs{...}
+type WebAppAutoInjectionSnippetFormatInput interface {
+	pulumi.Input
+
+	ToWebAppAutoInjectionSnippetFormatOutput() WebAppAutoInjectionSnippetFormatOutput
+	ToWebAppAutoInjectionSnippetFormatOutputWithContext(context.Context) WebAppAutoInjectionSnippetFormatOutput
+}
+
+type WebAppAutoInjectionSnippetFormatArgs struct {
+	// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+	CodeSnippetType pulumi.StringPtrInput `pulumi:"codeSnippetType"`
+	// Snippet format
+	SnippetFormat pulumi.StringInput `pulumi:"snippetFormat"`
+}
+
+func (WebAppAutoInjectionSnippetFormatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAutoInjectionSnippetFormat)(nil)).Elem()
+}
+
+func (i WebAppAutoInjectionSnippetFormatArgs) ToWebAppAutoInjectionSnippetFormatOutput() WebAppAutoInjectionSnippetFormatOutput {
+	return i.ToWebAppAutoInjectionSnippetFormatOutputWithContext(context.Background())
+}
+
+func (i WebAppAutoInjectionSnippetFormatArgs) ToWebAppAutoInjectionSnippetFormatOutputWithContext(ctx context.Context) WebAppAutoInjectionSnippetFormatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionSnippetFormatOutput)
+}
+
+func (i WebAppAutoInjectionSnippetFormatArgs) ToWebAppAutoInjectionSnippetFormatPtrOutput() WebAppAutoInjectionSnippetFormatPtrOutput {
+	return i.ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAutoInjectionSnippetFormatArgs) ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionSnippetFormatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionSnippetFormatOutput).ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(ctx)
+}
+
+// WebAppAutoInjectionSnippetFormatPtrInput is an input type that accepts WebAppAutoInjectionSnippetFormatArgs, WebAppAutoInjectionSnippetFormatPtr and WebAppAutoInjectionSnippetFormatPtrOutput values.
+// You can construct a concrete instance of `WebAppAutoInjectionSnippetFormatPtrInput` via:
+//
+//	        WebAppAutoInjectionSnippetFormatArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAutoInjectionSnippetFormatPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAutoInjectionSnippetFormatPtrOutput() WebAppAutoInjectionSnippetFormatPtrOutput
+	ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(context.Context) WebAppAutoInjectionSnippetFormatPtrOutput
+}
+
+type webAppAutoInjectionSnippetFormatPtrType WebAppAutoInjectionSnippetFormatArgs
+
+func WebAppAutoInjectionSnippetFormatPtr(v *WebAppAutoInjectionSnippetFormatArgs) WebAppAutoInjectionSnippetFormatPtrInput {
+	return (*webAppAutoInjectionSnippetFormatPtrType)(v)
+}
+
+func (*webAppAutoInjectionSnippetFormatPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAutoInjectionSnippetFormat)(nil)).Elem()
+}
+
+func (i *webAppAutoInjectionSnippetFormatPtrType) ToWebAppAutoInjectionSnippetFormatPtrOutput() WebAppAutoInjectionSnippetFormatPtrOutput {
+	return i.ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAutoInjectionSnippetFormatPtrType) ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionSnippetFormatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionSnippetFormatPtrOutput)
+}
+
+type WebAppAutoInjectionSnippetFormatOutput struct{ *pulumi.OutputState }
+
+func (WebAppAutoInjectionSnippetFormatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAutoInjectionSnippetFormat)(nil)).Elem()
+}
+
+func (o WebAppAutoInjectionSnippetFormatOutput) ToWebAppAutoInjectionSnippetFormatOutput() WebAppAutoInjectionSnippetFormatOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionSnippetFormatOutput) ToWebAppAutoInjectionSnippetFormatOutputWithContext(ctx context.Context) WebAppAutoInjectionSnippetFormatOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionSnippetFormatOutput) ToWebAppAutoInjectionSnippetFormatPtrOutput() WebAppAutoInjectionSnippetFormatPtrOutput {
+	return o.ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAutoInjectionSnippetFormatOutput) ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionSnippetFormatPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAutoInjectionSnippetFormat) *WebAppAutoInjectionSnippetFormat {
+		return &v
+	}).(WebAppAutoInjectionSnippetFormatPtrOutput)
+}
+
+// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+func (o WebAppAutoInjectionSnippetFormatOutput) CodeSnippetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppAutoInjectionSnippetFormat) *string { return v.CodeSnippetType }).(pulumi.StringPtrOutput)
+}
+
+// Snippet format
+func (o WebAppAutoInjectionSnippetFormatOutput) SnippetFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppAutoInjectionSnippetFormat) string { return v.SnippetFormat }).(pulumi.StringOutput)
+}
+
+type WebAppAutoInjectionSnippetFormatPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAutoInjectionSnippetFormatPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAutoInjectionSnippetFormat)(nil)).Elem()
+}
+
+func (o WebAppAutoInjectionSnippetFormatPtrOutput) ToWebAppAutoInjectionSnippetFormatPtrOutput() WebAppAutoInjectionSnippetFormatPtrOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionSnippetFormatPtrOutput) ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionSnippetFormatPtrOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionSnippetFormatPtrOutput) Elem() WebAppAutoInjectionSnippetFormatOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionSnippetFormat) WebAppAutoInjectionSnippetFormat {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAutoInjectionSnippetFormat
+		return ret
+	}).(WebAppAutoInjectionSnippetFormatOutput)
+}
+
+// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+func (o WebAppAutoInjectionSnippetFormatPtrOutput) CodeSnippetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionSnippetFormat) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CodeSnippetType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Snippet format
+func (o WebAppAutoInjectionSnippetFormatPtrOutput) SnippetFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionSnippetFormat) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SnippetFormat
+	}).(pulumi.StringPtrOutput)
 }
 
 type WebAppCustomErrorsErrorRules struct {
@@ -48164,6 +48799,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesPtrInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveArrayInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveDisplayUnitInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianVariablesInput)(nil)).Elem(), SiteReliabilityGuardianVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianVariablesPtrInput)(nil)).Elem(), SiteReliabilityGuardianVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianVariablesVariableInput)(nil)).Elem(), SiteReliabilityGuardianVariablesVariableArgs{})
@@ -48306,6 +48943,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesTrafficSpikesPtrInput)(nil)).Elem(), WebAppAnomaliesTrafficSpikesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesTrafficSpikesTrafficSpikesInput)(nil)).Elem(), WebAppAnomaliesTrafficSpikesTrafficSpikesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesTrafficSpikesTrafficSpikesPtrInput)(nil)).Elem(), WebAppAnomaliesTrafficSpikesTrafficSpikesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAutoInjectionCacheControlHeadersInput)(nil)).Elem(), WebAppAutoInjectionCacheControlHeadersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAutoInjectionCacheControlHeadersPtrInput)(nil)).Elem(), WebAppAutoInjectionCacheControlHeadersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAutoInjectionMonitoringCodeSourceSectionInput)(nil)).Elem(), WebAppAutoInjectionMonitoringCodeSourceSectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAutoInjectionMonitoringCodeSourceSectionPtrInput)(nil)).Elem(), WebAppAutoInjectionMonitoringCodeSourceSectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAutoInjectionSnippetFormatInput)(nil)).Elem(), WebAppAutoInjectionSnippetFormatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAutoInjectionSnippetFormatPtrInput)(nil)).Elem(), WebAppAutoInjectionSnippetFormatArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomErrorsErrorRulesInput)(nil)).Elem(), WebAppCustomErrorsErrorRulesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomErrorsErrorRulesPtrInput)(nil)).Elem(), WebAppCustomErrorsErrorRulesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomErrorsErrorRulesErrorRuleInput)(nil)).Elem(), WebAppCustomErrorsErrorRulesErrorRuleArgs{})
@@ -48765,6 +49408,8 @@ func init() {
 	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesPtrOutput{})
 	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveOutput{})
 	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveArrayOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput{})
 	pulumi.RegisterOutputType(SiteReliabilityGuardianVariablesOutput{})
 	pulumi.RegisterOutputType(SiteReliabilityGuardianVariablesPtrOutput{})
 	pulumi.RegisterOutputType(SiteReliabilityGuardianVariablesVariableOutput{})
@@ -48907,6 +49552,12 @@ func init() {
 	pulumi.RegisterOutputType(WebAppAnomaliesTrafficSpikesPtrOutput{})
 	pulumi.RegisterOutputType(WebAppAnomaliesTrafficSpikesTrafficSpikesOutput{})
 	pulumi.RegisterOutputType(WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAutoInjectionCacheControlHeadersOutput{})
+	pulumi.RegisterOutputType(WebAppAutoInjectionCacheControlHeadersPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAutoInjectionMonitoringCodeSourceSectionOutput{})
+	pulumi.RegisterOutputType(WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAutoInjectionSnippetFormatOutput{})
+	pulumi.RegisterOutputType(WebAppAutoInjectionSnippetFormatPtrOutput{})
 	pulumi.RegisterOutputType(WebAppCustomErrorsErrorRulesOutput{})
 	pulumi.RegisterOutputType(WebAppCustomErrorsErrorRulesPtrOutput{})
 	pulumi.RegisterOutputType(WebAppCustomErrorsErrorRulesErrorRuleOutput{})

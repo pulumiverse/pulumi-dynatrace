@@ -20,10 +20,16 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.AppMonitoringAppMonitoring?> AppMonitoringOverrides { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Debug`, `Error`, `Info`, `Off`, `Warn`
+        /// Possible Values: `debug`, `error`, `info`, `off`, `warn`
         /// </summary>
         [Output("defaultLogLevel")]
         public Output<string> DefaultLogLevel { get; private set; } = null!;
+
+        /// <summary>
+        /// Possible Values: `off`, `on`
+        /// </summary>
+        [Output("defaultTraceLevel")]
+        public Output<string?> DefaultTraceLevel { get; private set; } = null!;
 
 
         /// <summary>
@@ -79,10 +85,16 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AppMonitoringAppMonitoringArgs>? AppMonitoringOverrides { get; set; }
 
         /// <summary>
-        /// Possible Values: `Debug`, `Error`, `Info`, `Off`, `Warn`
+        /// Possible Values: `debug`, `error`, `info`, `off`, `warn`
         /// </summary>
         [Input("defaultLogLevel", required: true)]
         public Input<string> DefaultLogLevel { get; set; } = null!;
+
+        /// <summary>
+        /// Possible Values: `off`, `on`
+        /// </summary>
+        [Input("defaultTraceLevel")]
+        public Input<string>? DefaultTraceLevel { get; set; }
 
         public AppMonitoringArgs()
         {
@@ -99,10 +111,16 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AppMonitoringAppMonitoringGetArgs>? AppMonitoringOverrides { get; set; }
 
         /// <summary>
-        /// Possible Values: `Debug`, `Error`, `Info`, `Off`, `Warn`
+        /// Possible Values: `debug`, `error`, `info`, `off`, `warn`
         /// </summary>
         [Input("defaultLogLevel")]
         public Input<string>? DefaultLogLevel { get; set; }
+
+        /// <summary>
+        /// Possible Values: `off`, `on`
+        /// </summary>
+        [Input("defaultTraceLevel")]
+        public Input<string>? DefaultTraceLevel { get; set; }
 
         public AppMonitoringState()
         {

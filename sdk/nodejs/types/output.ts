@@ -339,9 +339,13 @@ export interface AppMonitoringAppMonitoringAppMonitoring {
      */
     appId: string;
     /**
-     * Possible Values: `Debug`, `Error`, `Info`, `Off`, `UseDefault`, `Warn`
+     * Possible Values: `debug`, `error`, `info`, `off`, `useDefault`, `warn`
      */
     customLogLevel: string;
+    /**
+     * Possible Values: `off`, `on`, `useDefault`
+     */
+    customTraceLevel?: string;
 }
 
 export interface ApplicationAnomaliesFailureRate {
@@ -1188,7 +1192,7 @@ export interface AutomationWorkflowTasksTaskConditions {
     /**
      * key/value pairs where the `key` is the name of another task and the value the status it needs to be for the current task to get executed. Possible values are `SUCCESS`, `ERROR`, `ANY`, `OK` (Success or Skipped) and `NOK` (Error or Cancelled)
      */
-    states: {[key: string]: string};
+    states?: {[key: string]: string};
 }
 
 export interface AutomationWorkflowTasksTaskPosition {
@@ -4399,6 +4403,18 @@ export interface BrowserMonitorScriptConfigurationJavascriptSetttings {
      */
     customProperties?: string;
     /**
+     * Capture fetch() requests
+     */
+    fetchRequests?: boolean;
+    /**
+     * JavaScript error report
+     */
+    javascriptErrors?: boolean;
+    /**
+     * Timed action support
+     */
+    timedActions?: boolean;
+    /**
      * Custom JavaScript Agent settings
      */
     timeoutSettings?: outputs.BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettings;
@@ -4406,6 +4422,10 @@ export interface BrowserMonitorScriptConfigurationJavascriptSetttings {
      * Parameters for Visually complete and Speed index calculation
      */
     visuallyCompleteOptions?: outputs.BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptions;
+    /**
+     * Capture XMLHttpRequests (XHR)
+     */
+    xmlHttpRequests?: boolean;
 }
 
 export interface BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettings {
@@ -8995,6 +9015,10 @@ export interface DavisAnomalyDetectorsEventTemplatePropertiesProperty {
 
 export interface DavisAnomalyDetectorsExecutionSettings {
     /**
+     * UUID of a service user. Queries will be executed on behalf of the service user.
+     */
+    actor?: string;
+    /**
      * Minute offset of sliding evaluation window for metrics with latency
      */
     queryOffset?: number;
@@ -9216,6 +9240,10 @@ export interface DiscoveryDefaultRulesRuleActions {
 }
 
 export interface DiscoveryDefaultRulesRuleActionsAction {
+    /**
+     * Instant action
+     */
+    instantAction?: boolean;
     /**
      * no documentation available
      */
@@ -14792,6 +14820,10 @@ export interface LogCustomSourceCustomLogSource {
      */
     acceptBinary?: boolean;
     /**
+     * no documentation available
+     */
+    encoding?: string;
+    /**
      * Possible Values: `LOG_PATH_PATTERN`, `WINDOWS_EVENT_LOG`
      */
     type: string;
@@ -14935,7 +14967,7 @@ export interface LogSensitiveDataMaskingMatchers {
 
 export interface LogSensitiveDataMaskingMatchersMatcher {
     /**
-     * Possible Values: `container.name`, `dt.entity.container_group`, `dt.entity.process_group`, `k8s.container.name`, `k8s.deployment.name`, `k8s.namespace.name`, `log.source`, `process.technology` and `host.tag`
+     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `Host_tag`, `Journald_unit`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `K8s_pod_annotation`, `K8s_pod_label`, `K8s_workload_kind`, `K8s_workload_name`, `Log_source`, `Log_source_origin`, `Process_technology`
      */
     attribute: string;
     /**
@@ -14954,7 +14986,7 @@ export interface LogStorageMatchers {
 
 export interface LogStorageMatchersMatcher {
     /**
-     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `Host_tag`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_content`, `Log_source`, `Loglevel`, `Process_technology`, `Winlog_eventid`, `Winlog_opcode`, `Winlog_provider`, `Winlog_task`
+     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `Host_tag`, `Journald_unit`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `K8s_pod_annotation`, `K8s_pod_label`, `K8s_workload_kind`, `K8s_workload_name`, `Log_content`, `Log_source`, `Log_source_origin`, `Loglevel`, `Process_technology`, `Winlog_eventid`, `Winlog_keywords`, `Winlog_opcode`, `Winlog_provider`, `Winlog_task`, `Winlog_username`
      */
     attribute: string;
     /**
@@ -14980,7 +15012,7 @@ export interface LogTimestampMatchers {
 
 export interface LogTimestampMatchersMatcher {
     /**
-     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_source`, `Process_technology`
+     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `Host_tag`, `Journald_unit`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `K8s_pod_annotation`, `K8s_pod_label`, `K8s_workload_kind`, `K8s_workload_name`, `Log_source`, `Log_source_origin`, `Process_technology`
      */
     attribute: string;
     /**
@@ -30326,6 +30358,10 @@ export interface SiteReliabilityGuardianObjectivesObjective {
      */
     description?: string;
     /**
+     * Display Unit
+     */
+    displayUnit?: outputs.SiteReliabilityGuardianObjectivesObjectiveDisplayUnit;
+    /**
      * DQL query
      */
     dqlQuery?: string;
@@ -30349,6 +30385,21 @@ export interface SiteReliabilityGuardianObjectivesObjective {
      * no documentation available
      */
     warning?: number;
+}
+
+export interface SiteReliabilityGuardianObjectivesObjectiveDisplayUnit {
+    /**
+     * Base Unit
+     */
+    base: string;
+    /**
+     * Decimals
+     */
+    decimals: number;
+    /**
+     * display as unit
+     */
+    display: string;
 }
 
 export interface SiteReliabilityGuardianVariables {
@@ -31271,6 +31322,35 @@ export interface WebAppAnomaliesTrafficSpikesTrafficSpikes {
      * Alert if the observed traffic is more than this percentage of the expected value
      */
     trafficSpikePercentage: number;
+}
+
+export interface WebAppAutoInjectionCacheControlHeaders {
+    /**
+     * [How to ensure timely configuration updates for automatic injection?](https://dt-url.net/m9039ea)
+     */
+    cacheControlHeaders: boolean;
+}
+
+export interface WebAppAutoInjectionMonitoringCodeSourceSection {
+    /**
+     * Real User Monitoring code source
+     */
+    codeSource: string;
+    /**
+     * Specify the source path for placement of your application's custom JavaScript library file. By default, this path is set to the root directory of your web server. A custom source path may be necessary if your server operates behind a firewall.
+     */
+    monitoringCodePath?: string;
+}
+
+export interface WebAppAutoInjectionSnippetFormat {
+    /**
+     * Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+     */
+    codeSnippetType?: string;
+    /**
+     * Snippet format
+     */
+    snippetFormat: string;
 }
 
 export interface WebAppCustomErrorsErrorRules {

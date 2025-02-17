@@ -14,6 +14,12 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class DiscoveryDefaultRulesRuleActionsActionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Instant action
+        /// </summary>
+        [Input("instantAction")]
+        public Input<bool>? InstantAction { get; set; }
+
+        /// <summary>
         /// no documentation available
         /// </summary>
         [Input("name", required: true)]
