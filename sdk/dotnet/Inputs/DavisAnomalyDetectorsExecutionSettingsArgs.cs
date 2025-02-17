@@ -14,6 +14,12 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class DavisAnomalyDetectorsExecutionSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// UUID of a service user. Queries will be executed on behalf of the service user.
+        /// </summary>
+        [Input("actor")]
+        public Input<string>? Actor { get; set; }
+
+        /// <summary>
         /// Minute offset of sliding evaluation window for metrics with latency
         /// </summary>
         [Input("queryOffset")]

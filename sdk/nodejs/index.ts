@@ -235,6 +235,11 @@ export type BusinessEventsBuckets = import("./businessEventsBuckets").BusinessEv
 export const BusinessEventsBuckets: typeof import("./businessEventsBuckets").BusinessEventsBuckets = null as any;
 utilities.lazyLoad(exports, ["BusinessEventsBuckets"], () => require("./businessEventsBuckets"));
 
+export { BusinessEventsCapturingVariantsArgs, BusinessEventsCapturingVariantsState } from "./businessEventsCapturingVariants";
+export type BusinessEventsCapturingVariants = import("./businessEventsCapturingVariants").BusinessEventsCapturingVariants;
+export const BusinessEventsCapturingVariants: typeof import("./businessEventsCapturingVariants").BusinessEventsCapturingVariants = null as any;
+utilities.lazyLoad(exports, ["BusinessEventsCapturingVariants"], () => require("./businessEventsCapturingVariants"));
+
 export { BusinessEventsMetricsArgs, BusinessEventsMetricsState } from "./businessEventsMetrics";
 export type BusinessEventsMetrics = import("./businessEventsMetrics").BusinessEventsMetrics;
 export const BusinessEventsMetrics: typeof import("./businessEventsMetrics").BusinessEventsMetrics = null as any;
@@ -1875,6 +1880,11 @@ export type WebAppAnomalies = import("./webAppAnomalies").WebAppAnomalies;
 export const WebAppAnomalies: typeof import("./webAppAnomalies").WebAppAnomalies = null as any;
 utilities.lazyLoad(exports, ["WebAppAnomalies"], () => require("./webAppAnomalies"));
 
+export { WebAppAutoInjectionArgs, WebAppAutoInjectionState } from "./webAppAutoInjection";
+export type WebAppAutoInjection = import("./webAppAutoInjection").WebAppAutoInjection;
+export const WebAppAutoInjection: typeof import("./webAppAutoInjection").WebAppAutoInjection = null as any;
+utilities.lazyLoad(exports, ["WebAppAutoInjection"], () => require("./webAppAutoInjection"));
+
 export { WebAppBeaconEndpointArgs, WebAppBeaconEndpointState } from "./webAppBeaconEndpoint";
 export type WebAppBeaconEndpoint = import("./webAppBeaconEndpoint").WebAppBeaconEndpoint;
 export const WebAppBeaconEndpoint: typeof import("./webAppBeaconEndpoint").WebAppBeaconEndpoint = null as any;
@@ -2071,6 +2081,8 @@ const _module = {
                 return new BuiltinProcessMonitoring(name, <any>undefined, { urn })
             case "dynatrace:index/businessEventsBuckets:BusinessEventsBuckets":
                 return new BusinessEventsBuckets(name, <any>undefined, { urn })
+            case "dynatrace:index/businessEventsCapturingVariants:BusinessEventsCapturingVariants":
+                return new BusinessEventsCapturingVariants(name, <any>undefined, { urn })
             case "dynatrace:index/businessEventsMetrics:BusinessEventsMetrics":
                 return new BusinessEventsMetrics(name, <any>undefined, { urn })
             case "dynatrace:index/businessEventsOneagent:BusinessEventsOneagent":
@@ -2625,6 +2637,8 @@ const _module = {
                 return new VulnerabilityThirdParty(name, <any>undefined, { urn })
             case "dynatrace:index/webAppAnomalies:WebAppAnomalies":
                 return new WebAppAnomalies(name, <any>undefined, { urn })
+            case "dynatrace:index/webAppAutoInjection:WebAppAutoInjection":
+                return new WebAppAutoInjection(name, <any>undefined, { urn })
             case "dynatrace:index/webAppBeaconEndpoint:WebAppBeaconEndpoint":
                 return new WebAppBeaconEndpoint(name, <any>undefined, { urn })
             case "dynatrace:index/webAppBeaconOrigins:WebAppBeaconOrigins":
@@ -2712,6 +2726,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/browserMonitorOutage",
 pulumi.runtime.registerResourceModule("dynatrace", "index/browserMonitorPerformance", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/builtinProcessMonitoring", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsBuckets", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsCapturingVariants", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsMetrics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsOneagent", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsOneagentOutgoing", _module)
@@ -2989,6 +3004,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/vulnerabilityCode", _m
 pulumi.runtime.registerResourceModule("dynatrace", "index/vulnerabilitySettings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/vulnerabilityThirdParty", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppAnomalies", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/webAppAutoInjection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppBeaconEndpoint", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppBeaconOrigins", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppCustomConfigProperties", _module)

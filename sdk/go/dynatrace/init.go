@@ -113,6 +113,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BuiltinProcessMonitoring{}
 	case "dynatrace:index/businessEventsBuckets:BusinessEventsBuckets":
 		r = &BusinessEventsBuckets{}
+	case "dynatrace:index/businessEventsCapturingVariants:BusinessEventsCapturingVariants":
+		r = &BusinessEventsCapturingVariants{}
 	case "dynatrace:index/businessEventsMetrics:BusinessEventsMetrics":
 		r = &BusinessEventsMetrics{}
 	case "dynatrace:index/businessEventsOneagent:BusinessEventsOneagent":
@@ -667,6 +669,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &VulnerabilityThirdParty{}
 	case "dynatrace:index/webAppAnomalies:WebAppAnomalies":
 		r = &WebAppAnomalies{}
+	case "dynatrace:index/webAppAutoInjection:WebAppAutoInjection":
+		r = &WebAppAutoInjection{}
 	case "dynatrace:index/webAppBeaconEndpoint:WebAppBeaconEndpoint":
 		r = &WebAppBeaconEndpoint{}
 	case "dynatrace:index/webAppBeaconOrigins:WebAppBeaconOrigins":
@@ -962,6 +966,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/businessEventsBuckets",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/businessEventsCapturingVariants",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2347,6 +2356,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/webAppAnomalies",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/webAppAutoInjection",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

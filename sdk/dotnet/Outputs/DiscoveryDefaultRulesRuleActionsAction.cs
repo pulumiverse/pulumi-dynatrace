@@ -15,6 +15,10 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class DiscoveryDefaultRulesRuleActionsAction
     {
         /// <summary>
+        /// Instant action
+        /// </summary>
+        public readonly bool? InstantAction;
+        /// <summary>
         /// no documentation available
         /// </summary>
         public readonly string Name;
@@ -25,10 +29,13 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private DiscoveryDefaultRulesRuleActionsAction(
+            bool? instantAction,
+
             string name,
 
             Outputs.DiscoveryDefaultRulesRuleActionsActionParameters? parameters)
         {
+            InstantAction = instantAction;
             Name = name;
             Parameters = parameters;
         }

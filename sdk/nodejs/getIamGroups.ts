@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumi/dynatrace";
  *
- * const all-groups = dynatrace.getIamGroups({});
+ * const all_groups = dynatrace.getIamGroups({});
  * export const groups = all_groups;
  * ```
  *
@@ -48,7 +48,7 @@ export interface GetIamGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumi/dynatrace";
  *
- * const all-groups = dynatrace.getIamGroups({});
+ * const all_groups = dynatrace.getIamGroups({});
  * export const groups = all_groups;
  * ```
  *

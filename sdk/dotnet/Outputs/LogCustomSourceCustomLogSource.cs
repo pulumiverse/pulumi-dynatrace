@@ -19,6 +19,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? AcceptBinary;
         /// <summary>
+        /// no documentation available
+        /// </summary>
+        public readonly string? Encoding;
+        /// <summary>
         /// Possible Values: `LOG_PATH_PATTERN`, `WINDOWS_EVENT_LOG`
         /// </summary>
         public readonly string Type;
@@ -35,6 +39,8 @@ namespace Pulumiverse.Dynatrace.Outputs
         private LogCustomSourceCustomLogSource(
             bool? acceptBinary,
 
+            string? encoding,
+
             string type,
 
             ImmutableArray<string> values,
@@ -42,6 +48,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             Outputs.LogCustomSourceCustomLogSourceValuesAndEnrichment? valuesAndEnrichment)
         {
             AcceptBinary = acceptBinary;
+            Encoding = encoding;
             Type = type;
             Values = values;
             ValuesAndEnrichment = valuesAndEnrichment;

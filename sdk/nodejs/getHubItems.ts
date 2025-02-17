@@ -18,7 +18,7 @@ import * as utilities from "./utilities";
  * import * as dynatrace from "@pulumi/dynatrace";
  *
  * export = async () => {
- *     const extension-20-items = await dynatrace.getHubItems({
+ *     const extension_20_items = await dynatrace.getHubItems({
  *         type: "EXTENSION2",
  *     });
  *     return {
@@ -79,7 +79,7 @@ export interface GetHubItemsResult {
  * import * as dynatrace from "@pulumi/dynatrace";
  *
  * export = async () => {
- *     const extension-20-items = await dynatrace.getHubItems({
+ *     const extension_20_items = await dynatrace.getHubItems({
  *         type: "EXTENSION2",
  *     });
  *     return {

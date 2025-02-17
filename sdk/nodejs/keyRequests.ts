@@ -33,6 +33,10 @@ export class KeyRequests extends pulumi.CustomResource {
     }
 
     /**
+     * The ids of the key requests
+     */
+    public readonly keyRequestIds!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The names of the key requests
      */
     public readonly names!: pulumi.Output<string[] | undefined>;
@@ -54,6 +58,7 @@ export class KeyRequests extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KeyRequestsState | undefined;
+            resourceInputs["keyRequestIds"] = state ? state.keyRequestIds : undefined;
             resourceInputs["names"] = state ? state.names : undefined;
             resourceInputs["service"] = state ? state.service : undefined;
         } else {
@@ -61,6 +66,7 @@ export class KeyRequests extends pulumi.CustomResource {
             if ((!args || args.service === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'service'");
             }
+            resourceInputs["keyRequestIds"] = args ? args.keyRequestIds : undefined;
             resourceInputs["names"] = args ? args.names : undefined;
             resourceInputs["service"] = args ? args.service : undefined;
         }
@@ -73,6 +79,10 @@ export class KeyRequests extends pulumi.CustomResource {
  * Input properties used for looking up and filtering KeyRequests resources.
  */
 export interface KeyRequestsState {
+    /**
+     * The ids of the key requests
+     */
+    keyRequestIds?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The names of the key requests
      */
@@ -87,6 +97,10 @@ export interface KeyRequestsState {
  * The set of arguments for constructing a KeyRequests resource.
  */
 export interface KeyRequestsArgs {
+    /**
+     * The ids of the key requests
+     */
+    keyRequestIds?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The names of the key requests
      */

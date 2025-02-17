@@ -19,6 +19,18 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? CustomProperties;
         /// <summary>
+        /// Capture fetch() requests
+        /// </summary>
+        public readonly bool? FetchRequests;
+        /// <summary>
+        /// JavaScript error report
+        /// </summary>
+        public readonly bool? JavascriptErrors;
+        /// <summary>
+        /// Timed action support
+        /// </summary>
+        public readonly bool? TimedActions;
+        /// <summary>
         /// Custom JavaScript Agent settings
         /// </summary>
         public readonly Outputs.BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettings? TimeoutSettings;
@@ -26,18 +38,34 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// Parameters for Visually complete and Speed index calculation
         /// </summary>
         public readonly Outputs.BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptions? VisuallyCompleteOptions;
+        /// <summary>
+        /// Capture XMLHttpRequests (XHR)
+        /// </summary>
+        public readonly bool? XmlHttpRequests;
 
         [OutputConstructor]
         private BrowserMonitorScriptConfigurationJavascriptSetttings(
             string? customProperties,
 
+            bool? fetchRequests,
+
+            bool? javascriptErrors,
+
+            bool? timedActions,
+
             Outputs.BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettings? timeoutSettings,
 
-            Outputs.BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptions? visuallyCompleteOptions)
+            Outputs.BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptions? visuallyCompleteOptions,
+
+            bool? xmlHttpRequests)
         {
             CustomProperties = customProperties;
+            FetchRequests = fetchRequests;
+            JavascriptErrors = javascriptErrors;
+            TimedActions = timedActions;
             TimeoutSettings = timeoutSettings;
             VisuallyCompleteOptions = visuallyCompleteOptions;
+            XmlHttpRequests = xmlHttpRequests;
         }
     }
 }

@@ -15,13 +15,21 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class DavisAnomalyDetectorsExecutionSettings
     {
         /// <summary>
+        /// UUID of a service user. Queries will be executed on behalf of the service user.
+        /// </summary>
+        public readonly string? Actor;
+        /// <summary>
         /// Minute offset of sliding evaluation window for metrics with latency
         /// </summary>
         public readonly int? QueryOffset;
 
         [OutputConstructor]
-        private DavisAnomalyDetectorsExecutionSettings(int? queryOffset)
+        private DavisAnomalyDetectorsExecutionSettings(
+            string? actor,
+
+            int? queryOffset)
         {
+            Actor = actor;
             QueryOffset = queryOffset;
         }
     }

@@ -27,6 +27,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
+        /// Display Unit
+        /// </summary>
+        public readonly Outputs.SiteReliabilityGuardianObjectivesObjectiveDisplayUnit? DisplayUnit;
+        /// <summary>
         /// DQL query
         /// </summary>
         public readonly string? DqlQuery;
@@ -59,6 +63,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? description,
 
+            Outputs.SiteReliabilityGuardianObjectivesObjectiveDisplayUnit? displayUnit,
+
             string? dqlQuery,
 
             string name,
@@ -74,6 +80,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             AutoAdaptiveThresholdEnabled = autoAdaptiveThresholdEnabled;
             ComparisonOperator = comparisonOperator;
             Description = description;
+            DisplayUnit = displayUnit;
             DqlQuery = dqlQuery;
             Name = name;
             ObjectiveType = objectiveType;

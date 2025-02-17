@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class JsonDashboardBase : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Contains the JSON Code of the Dashboard
+        /// This attribute exists for backwards compatibility. You do not have to define it.
         /// </summary>
         [Output("contents")]
         public Output<string?> Contents { get; private set; } = null!;
@@ -67,7 +67,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class JsonDashboardBaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Contains the JSON Code of the Dashboard
+        /// This attribute exists for backwards compatibility. You do not have to define it.
         /// </summary>
         [Input("contents")]
         public Input<string>? Contents { get; set; }
@@ -81,7 +81,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class JsonDashboardBaseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Contains the JSON Code of the Dashboard
+        /// This attribute exists for backwards compatibility. You do not have to define it.
         /// </summary>
         [Input("contents")]
         public Input<string>? Contents { get; set; }

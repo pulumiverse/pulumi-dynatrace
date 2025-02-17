@@ -25,7 +25,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("else")]
         public Input<string>? Else { get; set; }
 
-        [Input("states", required: true)]
+        [Input("states")]
         private InputMap<string>? _states;
 
         /// <summary>

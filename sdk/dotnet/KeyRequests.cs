@@ -14,6 +14,12 @@ namespace Pulumiverse.Dynatrace
     public partial class KeyRequests : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// The ids of the key requests
+        /// </summary>
+        [Output("keyRequestIds")]
+        public Output<ImmutableDictionary<string, string>> KeyRequestIds { get; private set; } = null!;
+
+        /// <summary>
         /// The names of the key requests
         /// </summary>
         [Output("names")]
@@ -72,6 +78,18 @@ namespace Pulumiverse.Dynatrace
 
     public sealed class KeyRequestsArgs : global::Pulumi.ResourceArgs
     {
+        [Input("keyRequestIds")]
+        private InputMap<string>? _keyRequestIds;
+
+        /// <summary>
+        /// The ids of the key requests
+        /// </summary>
+        public InputMap<string> KeyRequestIds
+        {
+            get => _keyRequestIds ?? (_keyRequestIds = new InputMap<string>());
+            set => _keyRequestIds = value;
+        }
+
         [Input("names")]
         private InputList<string>? _names;
 
@@ -98,6 +116,18 @@ namespace Pulumiverse.Dynatrace
 
     public sealed class KeyRequestsState : global::Pulumi.ResourceArgs
     {
+        [Input("keyRequestIds")]
+        private InputMap<string>? _keyRequestIds;
+
+        /// <summary>
+        /// The ids of the key requests
+        /// </summary>
+        public InputMap<string> KeyRequestIds
+        {
+            get => _keyRequestIds ?? (_keyRequestIds = new InputMap<string>());
+            set => _keyRequestIds = value;
+        }
+
         [Input("names")]
         private InputList<string>? _names;
 

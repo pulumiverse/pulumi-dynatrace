@@ -69,6 +69,7 @@ class BuiltinProcessMonitoringArgs:
                  exe_uipath: Optional[pulumi.Input[bool]] = None,
                  exe_userbinpiper: Optional[pulumi.Input[bool]] = None,
                  exe_w3wp: Optional[pulumi.Input[bool]] = None,
+                 exe_yq: Optional[pulumi.Input[bool]] = None,
                  go_static: Optional[pulumi.Input[bool]] = None,
                  host_group_id: Optional[pulumi.Input[str]] = None,
                  jar_dtibmmqconnector: Optional[pulumi.Input[bool]] = None,
@@ -139,6 +140,7 @@ class BuiltinProcessMonitoringArgs:
         :param pulumi.Input[bool] exe_uipath: Rule id: 70 - Do not monitor processes if EXE name contains 'UiPath'
         :param pulumi.Input[bool] exe_userbinpiper: Rule id: 67 - Do not monitor processes if EXE path equals '/usr/bin/piper'
         :param pulumi.Input[bool] exe_w3wp: Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
+        :param pulumi.Input[bool] exe_yq: Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
         :param pulumi.Input[bool] go_static: Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
         :param pulumi.Input[str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[bool] jar_dtibmmqconnector: Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
@@ -258,6 +260,8 @@ class BuiltinProcessMonitoringArgs:
             pulumi.set(__self__, "exe_userbinpiper", exe_userbinpiper)
         if exe_w3wp is not None:
             pulumi.set(__self__, "exe_w3wp", exe_w3wp)
+        if exe_yq is not None:
+            pulumi.set(__self__, "exe_yq", exe_yq)
         if go_static is not None:
             pulumi.set(__self__, "go_static", go_static)
         if host_group_id is not None:
@@ -894,6 +898,18 @@ class BuiltinProcessMonitoringArgs:
     @exe_w3wp.setter
     def exe_w3wp(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "exe_w3wp", value)
+
+    @property
+    @pulumi.getter(name="exeYq")
+    def exe_yq(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+        """
+        return pulumi.get(self, "exe_yq")
+
+    @exe_yq.setter
+    def exe_yq(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "exe_yq", value)
 
     @property
     @pulumi.getter(name="goStatic")
@@ -1165,6 +1181,7 @@ class _BuiltinProcessMonitoringState:
                  exe_uipath: Optional[pulumi.Input[bool]] = None,
                  exe_userbinpiper: Optional[pulumi.Input[bool]] = None,
                  exe_w3wp: Optional[pulumi.Input[bool]] = None,
+                 exe_yq: Optional[pulumi.Input[bool]] = None,
                  go_static: Optional[pulumi.Input[bool]] = None,
                  host_group_id: Optional[pulumi.Input[str]] = None,
                  jar_dtibmmqconnector: Optional[pulumi.Input[bool]] = None,
@@ -1235,6 +1252,7 @@ class _BuiltinProcessMonitoringState:
         :param pulumi.Input[bool] exe_uipath: Rule id: 70 - Do not monitor processes if EXE name contains 'UiPath'
         :param pulumi.Input[bool] exe_userbinpiper: Rule id: 67 - Do not monitor processes if EXE path equals '/usr/bin/piper'
         :param pulumi.Input[bool] exe_w3wp: Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
+        :param pulumi.Input[bool] exe_yq: Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
         :param pulumi.Input[bool] go_static: Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
         :param pulumi.Input[str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[bool] jar_dtibmmqconnector: Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
@@ -1354,6 +1372,8 @@ class _BuiltinProcessMonitoringState:
             pulumi.set(__self__, "exe_userbinpiper", exe_userbinpiper)
         if exe_w3wp is not None:
             pulumi.set(__self__, "exe_w3wp", exe_w3wp)
+        if exe_yq is not None:
+            pulumi.set(__self__, "exe_yq", exe_yq)
         if go_static is not None:
             pulumi.set(__self__, "go_static", go_static)
         if host_group_id is not None:
@@ -1990,6 +2010,18 @@ class _BuiltinProcessMonitoringState:
     @exe_w3wp.setter
     def exe_w3wp(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "exe_w3wp", value)
+
+    @property
+    @pulumi.getter(name="exeYq")
+    def exe_yq(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+        """
+        return pulumi.get(self, "exe_yq")
+
+    @exe_yq.setter
+    def exe_yq(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "exe_yq", value)
 
     @property
     @pulumi.getter(name="goStatic")
@@ -2263,6 +2295,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
                  exe_uipath: Optional[pulumi.Input[bool]] = None,
                  exe_userbinpiper: Optional[pulumi.Input[bool]] = None,
                  exe_w3wp: Optional[pulumi.Input[bool]] = None,
+                 exe_yq: Optional[pulumi.Input[bool]] = None,
                  go_static: Optional[pulumi.Input[bool]] = None,
                  host_group_id: Optional[pulumi.Input[str]] = None,
                  jar_dtibmmqconnector: Optional[pulumi.Input[bool]] = None,
@@ -2336,6 +2369,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         :param pulumi.Input[bool] exe_uipath: Rule id: 70 - Do not monitor processes if EXE name contains 'UiPath'
         :param pulumi.Input[bool] exe_userbinpiper: Rule id: 67 - Do not monitor processes if EXE path equals '/usr/bin/piper'
         :param pulumi.Input[bool] exe_w3wp: Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
+        :param pulumi.Input[bool] exe_yq: Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
         :param pulumi.Input[bool] go_static: Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
         :param pulumi.Input[str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[bool] jar_dtibmmqconnector: Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
@@ -2428,6 +2462,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
                  exe_uipath: Optional[pulumi.Input[bool]] = None,
                  exe_userbinpiper: Optional[pulumi.Input[bool]] = None,
                  exe_w3wp: Optional[pulumi.Input[bool]] = None,
+                 exe_yq: Optional[pulumi.Input[bool]] = None,
                  go_static: Optional[pulumi.Input[bool]] = None,
                  host_group_id: Optional[pulumi.Input[str]] = None,
                  jar_dtibmmqconnector: Optional[pulumi.Input[bool]] = None,
@@ -2505,6 +2540,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
             __props__.__dict__["exe_uipath"] = exe_uipath
             __props__.__dict__["exe_userbinpiper"] = exe_userbinpiper
             __props__.__dict__["exe_w3wp"] = exe_w3wp
+            __props__.__dict__["exe_yq"] = exe_yq
             __props__.__dict__["go_static"] = go_static
             __props__.__dict__["host_group_id"] = host_group_id
             __props__.__dict__["jar_dtibmmqconnector"] = jar_dtibmmqconnector
@@ -2583,6 +2619,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
             exe_uipath: Optional[pulumi.Input[bool]] = None,
             exe_userbinpiper: Optional[pulumi.Input[bool]] = None,
             exe_w3wp: Optional[pulumi.Input[bool]] = None,
+            exe_yq: Optional[pulumi.Input[bool]] = None,
             go_static: Optional[pulumi.Input[bool]] = None,
             host_group_id: Optional[pulumi.Input[str]] = None,
             jar_dtibmmqconnector: Optional[pulumi.Input[bool]] = None,
@@ -2658,6 +2695,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         :param pulumi.Input[bool] exe_uipath: Rule id: 70 - Do not monitor processes if EXE name contains 'UiPath'
         :param pulumi.Input[bool] exe_userbinpiper: Rule id: 67 - Do not monitor processes if EXE path equals '/usr/bin/piper'
         :param pulumi.Input[bool] exe_w3wp: Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
+        :param pulumi.Input[bool] exe_yq: Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
         :param pulumi.Input[bool] go_static: Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
         :param pulumi.Input[str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[bool] jar_dtibmmqconnector: Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
@@ -2731,6 +2769,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         __props__.__dict__["exe_uipath"] = exe_uipath
         __props__.__dict__["exe_userbinpiper"] = exe_userbinpiper
         __props__.__dict__["exe_w3wp"] = exe_w3wp
+        __props__.__dict__["exe_yq"] = exe_yq
         __props__.__dict__["go_static"] = go_static
         __props__.__dict__["host_group_id"] = host_group_id
         __props__.__dict__["jar_dtibmmqconnector"] = jar_dtibmmqconnector
@@ -3150,6 +3189,14 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
         """
         return pulumi.get(self, "exe_w3wp")
+
+    @property
+    @pulumi.getter(name="exeYq")
+    def exe_yq(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+        """
+        return pulumi.get(self, "exe_yq")
 
     @property
     @pulumi.getter(name="goStatic")
