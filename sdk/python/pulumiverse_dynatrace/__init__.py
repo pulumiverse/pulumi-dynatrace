@@ -333,6 +333,7 @@ from .rum_ip_determination import *
 from .rum_ip_locations import *
 from .rum_overload_prevention import *
 from .rum_provider_breakdown import *
+from .security_context import *
 from .service_anomalies import *
 from .service_anomalies_v2 import *
 from .service_external_web_request import *
@@ -2626,6 +2627,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/rumProviderBreakdown:RumProviderBreakdown": "RumProviderBreakdown"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/securityContext",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/securityContext:SecurityContext": "SecurityContext"
   }
  },
  {
