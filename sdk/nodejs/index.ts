@@ -1645,6 +1645,11 @@ export type RumProviderBreakdown = import("./rumProviderBreakdown").RumProviderB
 export const RumProviderBreakdown: typeof import("./rumProviderBreakdown").RumProviderBreakdown = null as any;
 utilities.lazyLoad(exports, ["RumProviderBreakdown"], () => require("./rumProviderBreakdown"));
 
+export { SecurityContextArgs, SecurityContextState } from "./securityContext";
+export type SecurityContext = import("./securityContext").SecurityContext;
+export const SecurityContext: typeof import("./securityContext").SecurityContext = null as any;
+utilities.lazyLoad(exports, ["SecurityContext"], () => require("./securityContext"));
+
 export { ServiceAnomaliesArgs, ServiceAnomaliesState } from "./serviceAnomalies";
 export type ServiceAnomalies = import("./serviceAnomalies").ServiceAnomalies;
 export const ServiceAnomalies: typeof import("./serviceAnomalies").ServiceAnomalies = null as any;
@@ -2543,6 +2548,8 @@ const _module = {
                 return new RumOverloadPrevention(name, <any>undefined, { urn })
             case "dynatrace:index/rumProviderBreakdown:RumProviderBreakdown":
                 return new RumProviderBreakdown(name, <any>undefined, { urn })
+            case "dynatrace:index/securityContext:SecurityContext":
+                return new SecurityContext(name, <any>undefined, { urn })
             case "dynatrace:index/serviceAnomalies:ServiceAnomalies":
                 return new ServiceAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/serviceAnomaliesV2:ServiceAnomaliesV2":
@@ -2957,6 +2964,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/rumIpDetermination", _
 pulumi.runtime.registerResourceModule("dynatrace", "index/rumIpLocations", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/rumOverloadPrevention", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/rumProviderBreakdown", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/securityContext", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceAnomaliesV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceExternalWebRequest", _module)

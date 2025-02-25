@@ -344,6 +344,7 @@
         "rumIpLocations.ts",
         "rumOverloadPrevention.ts",
         "rumProviderBreakdown.ts",
+        "securityContext.ts",
         "serviceAnomalies.ts",
         "serviceAnomaliesV2.ts",
         "serviceExternalWebRequest.ts",

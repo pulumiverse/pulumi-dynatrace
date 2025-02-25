@@ -575,6 +575,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &RumOverloadPrevention{}
 	case "dynatrace:index/rumProviderBreakdown:RumProviderBreakdown":
 		r = &RumProviderBreakdown{}
+	case "dynatrace:index/securityContext:SecurityContext":
+		r = &SecurityContext{}
 	case "dynatrace:index/serviceAnomalies:ServiceAnomalies":
 		r = &ServiceAnomalies{}
 	case "dynatrace:index/serviceAnomaliesV2:ServiceAnomaliesV2":
@@ -2121,6 +2123,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/rumProviderBreakdown",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/securityContext",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
