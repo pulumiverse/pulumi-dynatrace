@@ -14,6 +14,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     [OutputType]
     public sealed class IamPolicyBindingsV2Policy
     {
+        public readonly ImmutableArray<string> Boundaries;
         /// <summary>
         /// Either the attribute `id` or the attribute `uuid` of a `dynatrace.IamPolicy`. Initially just the `id` attribute was supported (which is a concatenation of several configuration settings) - and is still supported for backwards compatibility
         /// </summary>
@@ -23,12 +24,15 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private IamPolicyBindingsV2Policy(
+            ImmutableArray<string> boundaries,
+
             string id,
 
             ImmutableDictionary<string, string>? metadata,
 
             ImmutableDictionary<string, string>? parameters)
         {
+            Boundaries = boundaries;
             Id = id;
             Metadata = metadata;
             Parameters = parameters;

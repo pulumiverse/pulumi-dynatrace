@@ -13,6 +13,585 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ServiceFailureExceptionRules struct {
+	// Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+	CustomErrorRules *ServiceFailureExceptionRulesCustomErrorRules `pulumi:"customErrorRules"`
+	// There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+	CustomHandledExceptions *ServiceFailureExceptionRulesCustomHandledExceptions `pulumi:"customHandledExceptions"`
+	// Ignore all exceptions
+	IgnoreAllExceptions bool `pulumi:"ignoreAllExceptions"`
+	// Ignore span failure detection
+	IgnoreSpanFailureDetection bool `pulumi:"ignoreSpanFailureDetection"`
+	// Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+	IgnoredExceptions *ServiceFailureExceptionRulesIgnoredExceptions `pulumi:"ignoredExceptions"`
+	// Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+	SuccessForcingExceptions *ServiceFailureExceptionRulesSuccessForcingExceptions `pulumi:"successForcingExceptions"`
+}
+
+// ServiceFailureExceptionRulesInput is an input type that accepts ServiceFailureExceptionRulesArgs and ServiceFailureExceptionRulesOutput values.
+// You can construct a concrete instance of `ServiceFailureExceptionRulesInput` via:
+//
+//	ServiceFailureExceptionRulesArgs{...}
+type ServiceFailureExceptionRulesInput interface {
+	pulumi.Input
+
+	ToServiceFailureExceptionRulesOutput() ServiceFailureExceptionRulesOutput
+	ToServiceFailureExceptionRulesOutputWithContext(context.Context) ServiceFailureExceptionRulesOutput
+}
+
+type ServiceFailureExceptionRulesArgs struct {
+	// Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+	CustomErrorRules ServiceFailureExceptionRulesCustomErrorRulesPtrInput `pulumi:"customErrorRules"`
+	// There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+	CustomHandledExceptions ServiceFailureExceptionRulesCustomHandledExceptionsPtrInput `pulumi:"customHandledExceptions"`
+	// Ignore all exceptions
+	IgnoreAllExceptions pulumi.BoolInput `pulumi:"ignoreAllExceptions"`
+	// Ignore span failure detection
+	IgnoreSpanFailureDetection pulumi.BoolInput `pulumi:"ignoreSpanFailureDetection"`
+	// Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+	IgnoredExceptions ServiceFailureExceptionRulesIgnoredExceptionsPtrInput `pulumi:"ignoredExceptions"`
+	// Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+	SuccessForcingExceptions ServiceFailureExceptionRulesSuccessForcingExceptionsPtrInput `pulumi:"successForcingExceptions"`
+}
+
+func (ServiceFailureExceptionRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFailureExceptionRules)(nil)).Elem()
+}
+
+func (i ServiceFailureExceptionRulesArgs) ToServiceFailureExceptionRulesOutput() ServiceFailureExceptionRulesOutput {
+	return i.ToServiceFailureExceptionRulesOutputWithContext(context.Background())
+}
+
+func (i ServiceFailureExceptionRulesArgs) ToServiceFailureExceptionRulesOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesOutput)
+}
+
+func (i ServiceFailureExceptionRulesArgs) ToServiceFailureExceptionRulesPtrOutput() ServiceFailureExceptionRulesPtrOutput {
+	return i.ToServiceFailureExceptionRulesPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceFailureExceptionRulesArgs) ToServiceFailureExceptionRulesPtrOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesOutput).ToServiceFailureExceptionRulesPtrOutputWithContext(ctx)
+}
+
+// ServiceFailureExceptionRulesPtrInput is an input type that accepts ServiceFailureExceptionRulesArgs, ServiceFailureExceptionRulesPtr and ServiceFailureExceptionRulesPtrOutput values.
+// You can construct a concrete instance of `ServiceFailureExceptionRulesPtrInput` via:
+//
+//	        ServiceFailureExceptionRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceFailureExceptionRulesPtrInput interface {
+	pulumi.Input
+
+	ToServiceFailureExceptionRulesPtrOutput() ServiceFailureExceptionRulesPtrOutput
+	ToServiceFailureExceptionRulesPtrOutputWithContext(context.Context) ServiceFailureExceptionRulesPtrOutput
+}
+
+type serviceFailureExceptionRulesPtrType ServiceFailureExceptionRulesArgs
+
+func ServiceFailureExceptionRulesPtr(v *ServiceFailureExceptionRulesArgs) ServiceFailureExceptionRulesPtrInput {
+	return (*serviceFailureExceptionRulesPtrType)(v)
+}
+
+func (*serviceFailureExceptionRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFailureExceptionRules)(nil)).Elem()
+}
+
+func (i *serviceFailureExceptionRulesPtrType) ToServiceFailureExceptionRulesPtrOutput() ServiceFailureExceptionRulesPtrOutput {
+	return i.ToServiceFailureExceptionRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceFailureExceptionRulesPtrType) ToServiceFailureExceptionRulesPtrOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesPtrOutput)
+}
+
+type ServiceFailureExceptionRulesOutput struct{ *pulumi.OutputState }
+
+func (ServiceFailureExceptionRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFailureExceptionRules)(nil)).Elem()
+}
+
+func (o ServiceFailureExceptionRulesOutput) ToServiceFailureExceptionRulesOutput() ServiceFailureExceptionRulesOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesOutput) ToServiceFailureExceptionRulesOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesOutput) ToServiceFailureExceptionRulesPtrOutput() ServiceFailureExceptionRulesPtrOutput {
+	return o.ToServiceFailureExceptionRulesPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceFailureExceptionRulesOutput) ToServiceFailureExceptionRulesPtrOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceFailureExceptionRules) *ServiceFailureExceptionRules {
+		return &v
+	}).(ServiceFailureExceptionRulesPtrOutput)
+}
+
+// Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+func (o ServiceFailureExceptionRulesOutput) CustomErrorRules() ServiceFailureExceptionRulesCustomErrorRulesPtrOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRules) *ServiceFailureExceptionRulesCustomErrorRules {
+		return v.CustomErrorRules
+	}).(ServiceFailureExceptionRulesCustomErrorRulesPtrOutput)
+}
+
+// There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+func (o ServiceFailureExceptionRulesOutput) CustomHandledExceptions() ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRules) *ServiceFailureExceptionRulesCustomHandledExceptions {
+		return v.CustomHandledExceptions
+	}).(ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput)
+}
+
+// Ignore all exceptions
+func (o ServiceFailureExceptionRulesOutput) IgnoreAllExceptions() pulumi.BoolOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRules) bool { return v.IgnoreAllExceptions }).(pulumi.BoolOutput)
+}
+
+// Ignore span failure detection
+func (o ServiceFailureExceptionRulesOutput) IgnoreSpanFailureDetection() pulumi.BoolOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRules) bool { return v.IgnoreSpanFailureDetection }).(pulumi.BoolOutput)
+}
+
+// Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+func (o ServiceFailureExceptionRulesOutput) IgnoredExceptions() ServiceFailureExceptionRulesIgnoredExceptionsPtrOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRules) *ServiceFailureExceptionRulesIgnoredExceptions {
+		return v.IgnoredExceptions
+	}).(ServiceFailureExceptionRulesIgnoredExceptionsPtrOutput)
+}
+
+// Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+func (o ServiceFailureExceptionRulesOutput) SuccessForcingExceptions() ServiceFailureExceptionRulesSuccessForcingExceptionsPtrOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRules) *ServiceFailureExceptionRulesSuccessForcingExceptions {
+		return v.SuccessForcingExceptions
+	}).(ServiceFailureExceptionRulesSuccessForcingExceptionsPtrOutput)
+}
+
+type ServiceFailureExceptionRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceFailureExceptionRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFailureExceptionRules)(nil)).Elem()
+}
+
+func (o ServiceFailureExceptionRulesPtrOutput) ToServiceFailureExceptionRulesPtrOutput() ServiceFailureExceptionRulesPtrOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesPtrOutput) ToServiceFailureExceptionRulesPtrOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesPtrOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesPtrOutput) Elem() ServiceFailureExceptionRulesOutput {
+	return o.ApplyT(func(v *ServiceFailureExceptionRules) ServiceFailureExceptionRules {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceFailureExceptionRules
+		return ret
+	}).(ServiceFailureExceptionRulesOutput)
+}
+
+// Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+func (o ServiceFailureExceptionRulesPtrOutput) CustomErrorRules() ServiceFailureExceptionRulesCustomErrorRulesPtrOutput {
+	return o.ApplyT(func(v *ServiceFailureExceptionRules) *ServiceFailureExceptionRulesCustomErrorRules {
+		if v == nil {
+			return nil
+		}
+		return v.CustomErrorRules
+	}).(ServiceFailureExceptionRulesCustomErrorRulesPtrOutput)
+}
+
+// There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+func (o ServiceFailureExceptionRulesPtrOutput) CustomHandledExceptions() ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput {
+	return o.ApplyT(func(v *ServiceFailureExceptionRules) *ServiceFailureExceptionRulesCustomHandledExceptions {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHandledExceptions
+	}).(ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput)
+}
+
+// Ignore all exceptions
+func (o ServiceFailureExceptionRulesPtrOutput) IgnoreAllExceptions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ServiceFailureExceptionRules) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IgnoreAllExceptions
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Ignore span failure detection
+func (o ServiceFailureExceptionRulesPtrOutput) IgnoreSpanFailureDetection() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ServiceFailureExceptionRules) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IgnoreSpanFailureDetection
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+func (o ServiceFailureExceptionRulesPtrOutput) IgnoredExceptions() ServiceFailureExceptionRulesIgnoredExceptionsPtrOutput {
+	return o.ApplyT(func(v *ServiceFailureExceptionRules) *ServiceFailureExceptionRulesIgnoredExceptions {
+		if v == nil {
+			return nil
+		}
+		return v.IgnoredExceptions
+	}).(ServiceFailureExceptionRulesIgnoredExceptionsPtrOutput)
+}
+
+// Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+func (o ServiceFailureExceptionRulesPtrOutput) SuccessForcingExceptions() ServiceFailureExceptionRulesSuccessForcingExceptionsPtrOutput {
+	return o.ApplyT(func(v *ServiceFailureExceptionRules) *ServiceFailureExceptionRulesSuccessForcingExceptions {
+		if v == nil {
+			return nil
+		}
+		return v.SuccessForcingExceptions
+	}).(ServiceFailureExceptionRulesSuccessForcingExceptionsPtrOutput)
+}
+
+type ServiceFailureExceptionRulesCustomErrorRules struct {
+	CustomErrorRules []ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule `pulumi:"customErrorRules"`
+}
+
+// ServiceFailureExceptionRulesCustomErrorRulesInput is an input type that accepts ServiceFailureExceptionRulesCustomErrorRulesArgs and ServiceFailureExceptionRulesCustomErrorRulesOutput values.
+// You can construct a concrete instance of `ServiceFailureExceptionRulesCustomErrorRulesInput` via:
+//
+//	ServiceFailureExceptionRulesCustomErrorRulesArgs{...}
+type ServiceFailureExceptionRulesCustomErrorRulesInput interface {
+	pulumi.Input
+
+	ToServiceFailureExceptionRulesCustomErrorRulesOutput() ServiceFailureExceptionRulesCustomErrorRulesOutput
+	ToServiceFailureExceptionRulesCustomErrorRulesOutputWithContext(context.Context) ServiceFailureExceptionRulesCustomErrorRulesOutput
+}
+
+type ServiceFailureExceptionRulesCustomErrorRulesArgs struct {
+	CustomErrorRules ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayInput `pulumi:"customErrorRules"`
+}
+
+func (ServiceFailureExceptionRulesCustomErrorRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFailureExceptionRulesCustomErrorRules)(nil)).Elem()
+}
+
+func (i ServiceFailureExceptionRulesCustomErrorRulesArgs) ToServiceFailureExceptionRulesCustomErrorRulesOutput() ServiceFailureExceptionRulesCustomErrorRulesOutput {
+	return i.ToServiceFailureExceptionRulesCustomErrorRulesOutputWithContext(context.Background())
+}
+
+func (i ServiceFailureExceptionRulesCustomErrorRulesArgs) ToServiceFailureExceptionRulesCustomErrorRulesOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomErrorRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesCustomErrorRulesOutput)
+}
+
+func (i ServiceFailureExceptionRulesCustomErrorRulesArgs) ToServiceFailureExceptionRulesCustomErrorRulesPtrOutput() ServiceFailureExceptionRulesCustomErrorRulesPtrOutput {
+	return i.ToServiceFailureExceptionRulesCustomErrorRulesPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceFailureExceptionRulesCustomErrorRulesArgs) ToServiceFailureExceptionRulesCustomErrorRulesPtrOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomErrorRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesCustomErrorRulesOutput).ToServiceFailureExceptionRulesCustomErrorRulesPtrOutputWithContext(ctx)
+}
+
+// ServiceFailureExceptionRulesCustomErrorRulesPtrInput is an input type that accepts ServiceFailureExceptionRulesCustomErrorRulesArgs, ServiceFailureExceptionRulesCustomErrorRulesPtr and ServiceFailureExceptionRulesCustomErrorRulesPtrOutput values.
+// You can construct a concrete instance of `ServiceFailureExceptionRulesCustomErrorRulesPtrInput` via:
+//
+//	        ServiceFailureExceptionRulesCustomErrorRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceFailureExceptionRulesCustomErrorRulesPtrInput interface {
+	pulumi.Input
+
+	ToServiceFailureExceptionRulesCustomErrorRulesPtrOutput() ServiceFailureExceptionRulesCustomErrorRulesPtrOutput
+	ToServiceFailureExceptionRulesCustomErrorRulesPtrOutputWithContext(context.Context) ServiceFailureExceptionRulesCustomErrorRulesPtrOutput
+}
+
+type serviceFailureExceptionRulesCustomErrorRulesPtrType ServiceFailureExceptionRulesCustomErrorRulesArgs
+
+func ServiceFailureExceptionRulesCustomErrorRulesPtr(v *ServiceFailureExceptionRulesCustomErrorRulesArgs) ServiceFailureExceptionRulesCustomErrorRulesPtrInput {
+	return (*serviceFailureExceptionRulesCustomErrorRulesPtrType)(v)
+}
+
+func (*serviceFailureExceptionRulesCustomErrorRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFailureExceptionRulesCustomErrorRules)(nil)).Elem()
+}
+
+func (i *serviceFailureExceptionRulesCustomErrorRulesPtrType) ToServiceFailureExceptionRulesCustomErrorRulesPtrOutput() ServiceFailureExceptionRulesCustomErrorRulesPtrOutput {
+	return i.ToServiceFailureExceptionRulesCustomErrorRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceFailureExceptionRulesCustomErrorRulesPtrType) ToServiceFailureExceptionRulesCustomErrorRulesPtrOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomErrorRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesCustomErrorRulesPtrOutput)
+}
+
+type ServiceFailureExceptionRulesCustomErrorRulesOutput struct{ *pulumi.OutputState }
+
+func (ServiceFailureExceptionRulesCustomErrorRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFailureExceptionRulesCustomErrorRules)(nil)).Elem()
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesOutput) ToServiceFailureExceptionRulesCustomErrorRulesOutput() ServiceFailureExceptionRulesCustomErrorRulesOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesOutput) ToServiceFailureExceptionRulesCustomErrorRulesOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomErrorRulesOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesOutput) ToServiceFailureExceptionRulesCustomErrorRulesPtrOutput() ServiceFailureExceptionRulesCustomErrorRulesPtrOutput {
+	return o.ToServiceFailureExceptionRulesCustomErrorRulesPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesOutput) ToServiceFailureExceptionRulesCustomErrorRulesPtrOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomErrorRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceFailureExceptionRulesCustomErrorRules) *ServiceFailureExceptionRulesCustomErrorRules {
+		return &v
+	}).(ServiceFailureExceptionRulesCustomErrorRulesPtrOutput)
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesOutput) CustomErrorRules() ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRulesCustomErrorRules) []ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule {
+		return v.CustomErrorRules
+	}).(ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput)
+}
+
+type ServiceFailureExceptionRulesCustomErrorRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceFailureExceptionRulesCustomErrorRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFailureExceptionRulesCustomErrorRules)(nil)).Elem()
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesPtrOutput) ToServiceFailureExceptionRulesCustomErrorRulesPtrOutput() ServiceFailureExceptionRulesCustomErrorRulesPtrOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesPtrOutput) ToServiceFailureExceptionRulesCustomErrorRulesPtrOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomErrorRulesPtrOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesPtrOutput) Elem() ServiceFailureExceptionRulesCustomErrorRulesOutput {
+	return o.ApplyT(func(v *ServiceFailureExceptionRulesCustomErrorRules) ServiceFailureExceptionRulesCustomErrorRules {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceFailureExceptionRulesCustomErrorRules
+		return ret
+	}).(ServiceFailureExceptionRulesCustomErrorRulesOutput)
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesPtrOutput) CustomErrorRules() ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput {
+	return o.ApplyT(func(v *ServiceFailureExceptionRulesCustomErrorRules) []ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule {
+		if v == nil {
+			return nil
+		}
+		return v.CustomErrorRules
+	}).(ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput)
+}
+
+type ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule struct {
+	// Request attribute condition
+	Condition ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition `pulumi:"condition"`
+	// Request attribute
+	RequestAttribute string `pulumi:"requestAttribute"`
+}
+
+// ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleInput is an input type that accepts ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArgs and ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput values.
+// You can construct a concrete instance of `ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleInput` via:
+//
+//	ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArgs{...}
+type ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleInput interface {
+	pulumi.Input
+
+	ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput() ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput
+	ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutputWithContext(context.Context) ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput
+}
+
+type ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArgs struct {
+	// Request attribute condition
+	Condition ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionInput `pulumi:"condition"`
+	// Request attribute
+	RequestAttribute pulumi.StringInput `pulumi:"requestAttribute"`
+}
+
+func (ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule)(nil)).Elem()
+}
+
+func (i ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArgs) ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput() ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput {
+	return i.ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutputWithContext(context.Background())
+}
+
+func (i ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArgs) ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput)
+}
+
+// ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayInput is an input type that accepts ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArray and ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput values.
+// You can construct a concrete instance of `ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayInput` via:
+//
+//	ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArray{ ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArgs{...} }
+type ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayInput interface {
+	pulumi.Input
+
+	ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput() ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput
+	ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutputWithContext(context.Context) ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput
+}
+
+type ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArray []ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleInput
+
+func (ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule)(nil)).Elem()
+}
+
+func (i ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArray) ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput() ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput {
+	return i.ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArray) ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput)
+}
+
+type ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput struct{ *pulumi.OutputState }
+
+func (ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule)(nil)).Elem()
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput) ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput() ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput) ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput {
+	return o
+}
+
+// Request attribute condition
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput) Condition() ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule) ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition {
+		return v.Condition
+	}).(ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput)
+}
+
+// Request attribute
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput) RequestAttribute() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule) string { return v.RequestAttribute }).(pulumi.StringOutput)
+}
+
+type ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule)(nil)).Elem()
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput) ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput() ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput) ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput) Index(i pulumi.IntInput) ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule {
+		return vs[0].([]ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule)[vs[1].(int)]
+	}).(ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput)
+}
+
+type ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition struct {
+	// Case sensitive
+	CaseSensitive *bool `pulumi:"caseSensitive"`
+	// Apply this comparison
+	CompareOperationType string `pulumi:"compareOperationType"`
+	// Value
+	DoubleValue *float64 `pulumi:"doubleValue"`
+	// Value
+	IntValue *int `pulumi:"intValue"`
+	// Value
+	TextValue *string `pulumi:"textValue"`
+}
+
+// ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionInput is an input type that accepts ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs and ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput values.
+// You can construct a concrete instance of `ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionInput` via:
+//
+//	ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs{...}
+type ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionInput interface {
+	pulumi.Input
+
+	ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput() ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput
+	ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutputWithContext(context.Context) ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput
+}
+
+type ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs struct {
+	// Case sensitive
+	CaseSensitive pulumi.BoolPtrInput `pulumi:"caseSensitive"`
+	// Apply this comparison
+	CompareOperationType pulumi.StringInput `pulumi:"compareOperationType"`
+	// Value
+	DoubleValue pulumi.Float64PtrInput `pulumi:"doubleValue"`
+	// Value
+	IntValue pulumi.IntPtrInput `pulumi:"intValue"`
+	// Value
+	TextValue pulumi.StringPtrInput `pulumi:"textValue"`
+}
+
+func (ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition)(nil)).Elem()
+}
+
+func (i ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs) ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput() ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput {
+	return i.ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutputWithContext(context.Background())
+}
+
+func (i ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs) ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput)
+}
+
+type ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput struct{ *pulumi.OutputState }
+
+func (ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition)(nil)).Elem()
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput) ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput() ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput {
+	return o
+}
+
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput) ToServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutputWithContext(ctx context.Context) ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput {
+	return o
+}
+
+// Case sensitive
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput) CaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition) *bool {
+		return v.CaseSensitive
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Apply this comparison
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput) CompareOperationType() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition) string {
+		return v.CompareOperationType
+	}).(pulumi.StringOutput)
+}
+
+// Value
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput) DoubleValue() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition) *float64 {
+		return v.DoubleValue
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Value
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput) IntValue() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition) *int { return v.IntValue }).(pulumi.IntPtrOutput)
+}
+
+// Value
+func (o ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput) TextValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition) *string {
+		return v.TextValue
+	}).(pulumi.StringPtrOutput)
+}
+
 type ServiceFailureExceptionRulesCustomHandledExceptions struct {
 	CustomHandledExceptions []ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException `pulumi:"customHandledExceptions"`
 }
@@ -30228,6 +30807,10 @@ type VulnerabilitySettingsTechnologies struct {
 	EnableNodeJsRuntime *bool `pulumi:"enableNodeJsRuntime"`
 	// PHP
 	EnablePhp bool `pulumi:"enablePhp"`
+	// Python
+	EnablePython *bool `pulumi:"enablePython"`
+	// Python runtimes
+	EnablePythonRuntime *bool `pulumi:"enablePythonRuntime"`
 }
 
 // VulnerabilitySettingsTechnologiesInput is an input type that accepts VulnerabilitySettingsTechnologiesArgs and VulnerabilitySettingsTechnologiesOutput values.
@@ -30260,6 +30843,10 @@ type VulnerabilitySettingsTechnologiesArgs struct {
 	EnableNodeJsRuntime pulumi.BoolPtrInput `pulumi:"enableNodeJsRuntime"`
 	// PHP
 	EnablePhp pulumi.BoolInput `pulumi:"enablePhp"`
+	// Python
+	EnablePython pulumi.BoolPtrInput `pulumi:"enablePython"`
+	// Python runtimes
+	EnablePythonRuntime pulumi.BoolPtrInput `pulumi:"enablePythonRuntime"`
 }
 
 func (VulnerabilitySettingsTechnologiesArgs) ElementType() reflect.Type {
@@ -30384,6 +30971,16 @@ func (o VulnerabilitySettingsTechnologiesOutput) EnablePhp() pulumi.BoolOutput {
 	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) bool { return v.EnablePhp }).(pulumi.BoolOutput)
 }
 
+// Python
+func (o VulnerabilitySettingsTechnologiesOutput) EnablePython() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) *bool { return v.EnablePython }).(pulumi.BoolPtrOutput)
+}
+
+// Python runtimes
+func (o VulnerabilitySettingsTechnologiesOutput) EnablePythonRuntime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) *bool { return v.EnablePythonRuntime }).(pulumi.BoolPtrOutput)
+}
+
 type VulnerabilitySettingsTechnologiesPtrOutput struct{ *pulumi.OutputState }
 
 func (VulnerabilitySettingsTechnologiesPtrOutput) ElementType() reflect.Type {
@@ -30495,6 +31092,26 @@ func (o VulnerabilitySettingsTechnologiesPtrOutput) EnablePhp() pulumi.BoolPtrOu
 			return nil
 		}
 		return &v.EnablePhp
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Python
+func (o VulnerabilitySettingsTechnologiesPtrOutput) EnablePython() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnablePython
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Python runtimes
+func (o VulnerabilitySettingsTechnologiesPtrOutput) EnablePythonRuntime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnablePythonRuntime
 	}).(pulumi.BoolPtrOutput)
 }
 
@@ -48517,6 +49134,13 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesInput)(nil)).Elem(), ServiceFailureExceptionRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesPtrInput)(nil)).Elem(), ServiceFailureExceptionRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesCustomErrorRulesInput)(nil)).Elem(), ServiceFailureExceptionRulesCustomErrorRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesCustomErrorRulesPtrInput)(nil)).Elem(), ServiceFailureExceptionRulesCustomErrorRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleInput)(nil)).Elem(), ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayInput)(nil)).Elem(), ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionInput)(nil)).Elem(), ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesCustomHandledExceptionsInput)(nil)).Elem(), ServiceFailureExceptionRulesCustomHandledExceptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesCustomHandledExceptionsPtrInput)(nil)).Elem(), ServiceFailureExceptionRulesCustomHandledExceptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionInput)(nil)).Elem(), ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs{})
@@ -49126,6 +49750,13 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(ServiceFailureExceptionRulesOutput{})
+	pulumi.RegisterOutputType(ServiceFailureExceptionRulesPtrOutput{})
+	pulumi.RegisterOutputType(ServiceFailureExceptionRulesCustomErrorRulesOutput{})
+	pulumi.RegisterOutputType(ServiceFailureExceptionRulesCustomErrorRulesPtrOutput{})
+	pulumi.RegisterOutputType(ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleOutput{})
+	pulumi.RegisterOutputType(ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArrayOutput{})
+	pulumi.RegisterOutputType(ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionOutput{})
 	pulumi.RegisterOutputType(ServiceFailureExceptionRulesCustomHandledExceptionsOutput{})
 	pulumi.RegisterOutputType(ServiceFailureExceptionRulesCustomHandledExceptionsPtrOutput{})
 	pulumi.RegisterOutputType(ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionOutput{})

@@ -213,6 +213,12 @@ namespace Pulumiverse.Dynatrace
         [Output("trigger")]
         public Output<Outputs.AutomationWorkflowTrigger?> Trigger { get; private set; } = null!;
 
+        /// <summary>
+        /// The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+        /// </summary>
+        [Output("type")]
+        public Output<string?> Type { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a AutomationWorkflow resource with the given unique name, arguments, and options.
@@ -302,6 +308,12 @@ namespace Pulumiverse.Dynatrace
         [Input("trigger")]
         public Input<Inputs.AutomationWorkflowTriggerArgs>? Trigger { get; set; }
 
+        /// <summary>
+        /// The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
+
         public AutomationWorkflowArgs()
         {
         }
@@ -351,6 +363,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("trigger")]
         public Input<Inputs.AutomationWorkflowTriggerGetArgs>? Trigger { get; set; }
+
+        /// <summary>
+        /// The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
 
         public AutomationWorkflowState()
         {

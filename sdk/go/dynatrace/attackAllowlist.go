@@ -15,16 +15,24 @@ import (
 type AttackAllowlist struct {
 	pulumi.CustomResourceState
 
-	// Step 2: Define attack control for chosen criteria
+	// Step 1: Define attack control for chosen criteria
 	AttackHandling AttackAllowlistAttackHandlingOutput `pulumi:"attackHandling"`
 	// Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
-	Criteria AttackAllowlistCriteriaOutput `pulumi:"criteria"`
+	//
+	// Deprecated: The `criteria` attribute has been deprecated, please use the `rules` and `resourceAttributeConditions` attributes instead.
+	Criteria AttackAllowlistCriteriaPtrOutput `pulumi:"criteria"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// Step 3: Leave comment
+	// Step 4: Leave comment (optional)
 	Metadata AttackAllowlistMetadataOutput `pulumi:"metadata"`
+	// When you add multiple conditions, the rule applies if all conditions apply.
+	ResourceAttributeConditions AttackAllowlistResourceAttributeConditionsPtrOutput `pulumi:"resourceAttributeConditions"`
+	// Rule name
+	RuleName pulumi.StringPtrOutput `pulumi:"ruleName"`
+	// Provide conditions that must be met by the detection finding you want to allowlist.
+	Rules AttackAllowlistRulesOutput `pulumi:"rules"`
 }
 
 // NewAttackAllowlist registers a new resource with the given unique name, arguments, and options.
@@ -37,14 +45,14 @@ func NewAttackAllowlist(ctx *pulumi.Context,
 	if args.AttackHandling == nil {
 		return nil, errors.New("invalid value for required argument 'AttackHandling'")
 	}
-	if args.Criteria == nil {
-		return nil, errors.New("invalid value for required argument 'Criteria'")
-	}
 	if args.Enabled == nil {
 		return nil, errors.New("invalid value for required argument 'Enabled'")
 	}
 	if args.Metadata == nil {
 		return nil, errors.New("invalid value for required argument 'Metadata'")
+	}
+	if args.Rules == nil {
+		return nil, errors.New("invalid value for required argument 'Rules'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AttackAllowlist
@@ -69,29 +77,45 @@ func GetAttackAllowlist(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AttackAllowlist resources.
 type attackAllowlistState struct {
-	// Step 2: Define attack control for chosen criteria
+	// Step 1: Define attack control for chosen criteria
 	AttackHandling *AttackAllowlistAttackHandling `pulumi:"attackHandling"`
 	// Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
+	//
+	// Deprecated: The `criteria` attribute has been deprecated, please use the `rules` and `resourceAttributeConditions` attributes instead.
 	Criteria *AttackAllowlistCriteria `pulumi:"criteria"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Step 3: Leave comment
+	// Step 4: Leave comment (optional)
 	Metadata *AttackAllowlistMetadata `pulumi:"metadata"`
+	// When you add multiple conditions, the rule applies if all conditions apply.
+	ResourceAttributeConditions *AttackAllowlistResourceAttributeConditions `pulumi:"resourceAttributeConditions"`
+	// Rule name
+	RuleName *string `pulumi:"ruleName"`
+	// Provide conditions that must be met by the detection finding you want to allowlist.
+	Rules *AttackAllowlistRules `pulumi:"rules"`
 }
 
 type AttackAllowlistState struct {
-	// Step 2: Define attack control for chosen criteria
+	// Step 1: Define attack control for chosen criteria
 	AttackHandling AttackAllowlistAttackHandlingPtrInput
 	// Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
+	//
+	// Deprecated: The `criteria` attribute has been deprecated, please use the `rules` and `resourceAttributeConditions` attributes instead.
 	Criteria AttackAllowlistCriteriaPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Step 3: Leave comment
+	// Step 4: Leave comment (optional)
 	Metadata AttackAllowlistMetadataPtrInput
+	// When you add multiple conditions, the rule applies if all conditions apply.
+	ResourceAttributeConditions AttackAllowlistResourceAttributeConditionsPtrInput
+	// Rule name
+	RuleName pulumi.StringPtrInput
+	// Provide conditions that must be met by the detection finding you want to allowlist.
+	Rules AttackAllowlistRulesPtrInput
 }
 
 func (AttackAllowlistState) ElementType() reflect.Type {
@@ -99,30 +123,46 @@ func (AttackAllowlistState) ElementType() reflect.Type {
 }
 
 type attackAllowlistArgs struct {
-	// Step 2: Define attack control for chosen criteria
+	// Step 1: Define attack control for chosen criteria
 	AttackHandling AttackAllowlistAttackHandling `pulumi:"attackHandling"`
 	// Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
-	Criteria AttackAllowlistCriteria `pulumi:"criteria"`
+	//
+	// Deprecated: The `criteria` attribute has been deprecated, please use the `rules` and `resourceAttributeConditions` attributes instead.
+	Criteria *AttackAllowlistCriteria `pulumi:"criteria"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Step 3: Leave comment
+	// Step 4: Leave comment (optional)
 	Metadata AttackAllowlistMetadata `pulumi:"metadata"`
+	// When you add multiple conditions, the rule applies if all conditions apply.
+	ResourceAttributeConditions *AttackAllowlistResourceAttributeConditions `pulumi:"resourceAttributeConditions"`
+	// Rule name
+	RuleName *string `pulumi:"ruleName"`
+	// Provide conditions that must be met by the detection finding you want to allowlist.
+	Rules AttackAllowlistRules `pulumi:"rules"`
 }
 
 // The set of arguments for constructing a AttackAllowlist resource.
 type AttackAllowlistArgs struct {
-	// Step 2: Define attack control for chosen criteria
+	// Step 1: Define attack control for chosen criteria
 	AttackHandling AttackAllowlistAttackHandlingInput
 	// Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
-	Criteria AttackAllowlistCriteriaInput
+	//
+	// Deprecated: The `criteria` attribute has been deprecated, please use the `rules` and `resourceAttributeConditions` attributes instead.
+	Criteria AttackAllowlistCriteriaPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Step 3: Leave comment
+	// Step 4: Leave comment (optional)
 	Metadata AttackAllowlistMetadataInput
+	// When you add multiple conditions, the rule applies if all conditions apply.
+	ResourceAttributeConditions AttackAllowlistResourceAttributeConditionsPtrInput
+	// Rule name
+	RuleName pulumi.StringPtrInput
+	// Provide conditions that must be met by the detection finding you want to allowlist.
+	Rules AttackAllowlistRulesInput
 }
 
 func (AttackAllowlistArgs) ElementType() reflect.Type {
@@ -212,14 +252,16 @@ func (o AttackAllowlistOutput) ToAttackAllowlistOutputWithContext(ctx context.Co
 	return o
 }
 
-// Step 2: Define attack control for chosen criteria
+// Step 1: Define attack control for chosen criteria
 func (o AttackAllowlistOutput) AttackHandling() AttackAllowlistAttackHandlingOutput {
 	return o.ApplyT(func(v *AttackAllowlist) AttackAllowlistAttackHandlingOutput { return v.AttackHandling }).(AttackAllowlistAttackHandlingOutput)
 }
 
 // Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
-func (o AttackAllowlistOutput) Criteria() AttackAllowlistCriteriaOutput {
-	return o.ApplyT(func(v *AttackAllowlist) AttackAllowlistCriteriaOutput { return v.Criteria }).(AttackAllowlistCriteriaOutput)
+//
+// Deprecated: The `criteria` attribute has been deprecated, please use the `rules` and `resourceAttributeConditions` attributes instead.
+func (o AttackAllowlistOutput) Criteria() AttackAllowlistCriteriaPtrOutput {
+	return o.ApplyT(func(v *AttackAllowlist) AttackAllowlistCriteriaPtrOutput { return v.Criteria }).(AttackAllowlistCriteriaPtrOutput)
 }
 
 // This setting is enabled (`true`) or disabled (`false`)
@@ -232,9 +274,26 @@ func (o AttackAllowlistOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *AttackAllowlist) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// Step 3: Leave comment
+// Step 4: Leave comment (optional)
 func (o AttackAllowlistOutput) Metadata() AttackAllowlistMetadataOutput {
 	return o.ApplyT(func(v *AttackAllowlist) AttackAllowlistMetadataOutput { return v.Metadata }).(AttackAllowlistMetadataOutput)
+}
+
+// When you add multiple conditions, the rule applies if all conditions apply.
+func (o AttackAllowlistOutput) ResourceAttributeConditions() AttackAllowlistResourceAttributeConditionsPtrOutput {
+	return o.ApplyT(func(v *AttackAllowlist) AttackAllowlistResourceAttributeConditionsPtrOutput {
+		return v.ResourceAttributeConditions
+	}).(AttackAllowlistResourceAttributeConditionsPtrOutput)
+}
+
+// Rule name
+func (o AttackAllowlistOutput) RuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AttackAllowlist) pulumi.StringPtrOutput { return v.RuleName }).(pulumi.StringPtrOutput)
+}
+
+// Provide conditions that must be met by the detection finding you want to allowlist.
+func (o AttackAllowlistOutput) Rules() AttackAllowlistRulesOutput {
+	return o.ApplyT(func(v *AttackAllowlist) AttackAllowlistRulesOutput { return v.Rules }).(AttackAllowlistRulesOutput)
 }
 
 type AttackAllowlistArrayOutput struct{ *pulumi.OutputState }

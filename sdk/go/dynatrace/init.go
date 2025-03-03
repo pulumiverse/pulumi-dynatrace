@@ -311,6 +311,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &IamPolicyBindings{}
 	case "dynatrace:index/iamPolicyBindingsV2:IamPolicyBindingsV2":
 		r = &IamPolicyBindingsV2{}
+	case "dynatrace:index/iamPolicyBoundary:IamPolicyBoundary":
+		r = &IamPolicyBoundary{}
 	case "dynatrace:index/iamUser:IamUser":
 		r = &IamUser{}
 	case "dynatrace:index/ibmMqFilters:IbmMqFilters":
@@ -453,6 +455,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MonitoredTechnologiesOpentracing{}
 	case "dynatrace:index/monitoredTechnologiesPhp:MonitoredTechnologiesPhp":
 		r = &MonitoredTechnologiesPhp{}
+	case "dynatrace:index/monitoredTechnologiesPython:MonitoredTechnologiesPython":
+		r = &MonitoredTechnologiesPython{}
 	case "dynatrace:index/monitoredTechnologiesVarnish:MonitoredTechnologiesVarnish":
 		r = &MonitoredTechnologiesVarnish{}
 	case "dynatrace:index/monitoredTechnologiesWsmb:MonitoredTechnologiesWsmb":
@@ -1467,6 +1471,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/iamPolicyBoundary",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/iamUser",
 		&module{version},
 	)
@@ -1818,6 +1827,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/monitoredTechnologiesPhp",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/monitoredTechnologiesPython",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

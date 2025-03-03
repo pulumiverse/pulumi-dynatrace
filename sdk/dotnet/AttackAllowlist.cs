@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class AttackAllowlist : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Step 2: Define attack control for chosen criteria
+        /// Step 1: Define attack control for chosen criteria
         /// </summary>
         [Output("attackHandling")]
         public Output<Outputs.AttackAllowlistAttackHandling> AttackHandling { get; private set; } = null!;
@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace
         /// Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
         /// </summary>
         [Output("criteria")]
-        public Output<Outputs.AttackAllowlistCriteria> Criteria { get; private set; } = null!;
+        public Output<Outputs.AttackAllowlistCriteria?> Criteria { get; private set; } = null!;
 
         /// <summary>
         /// This setting is enabled (`true`) or disabled (`false`)
@@ -38,10 +38,28 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// Step 3: Leave comment
+        /// Step 4: Leave comment (optional)
         /// </summary>
         [Output("metadata")]
         public Output<Outputs.AttackAllowlistMetadata> Metadata { get; private set; } = null!;
+
+        /// <summary>
+        /// When you add multiple conditions, the rule applies if all conditions apply.
+        /// </summary>
+        [Output("resourceAttributeConditions")]
+        public Output<Outputs.AttackAllowlistResourceAttributeConditions?> ResourceAttributeConditions { get; private set; } = null!;
+
+        /// <summary>
+        /// Rule name
+        /// </summary>
+        [Output("ruleName")]
+        public Output<string?> RuleName { get; private set; } = null!;
+
+        /// <summary>
+        /// Provide conditions that must be met by the detection finding you want to allowlist.
+        /// </summary>
+        [Output("rules")]
+        public Output<Outputs.AttackAllowlistRules> Rules { get; private set; } = null!;
 
 
         /// <summary>
@@ -91,7 +109,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class AttackAllowlistArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Step 2: Define attack control for chosen criteria
+        /// Step 1: Define attack control for chosen criteria
         /// </summary>
         [Input("attackHandling", required: true)]
         public Input<Inputs.AttackAllowlistAttackHandlingArgs> AttackHandling { get; set; } = null!;
@@ -99,8 +117,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
         /// </summary>
-        [Input("criteria", required: true)]
-        public Input<Inputs.AttackAllowlistCriteriaArgs> Criteria { get; set; } = null!;
+        [Input("criteria")]
+        public Input<Inputs.AttackAllowlistCriteriaArgs>? Criteria { get; set; }
 
         /// <summary>
         /// This setting is enabled (`true`) or disabled (`false`)
@@ -115,10 +133,28 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Step 3: Leave comment
+        /// Step 4: Leave comment (optional)
         /// </summary>
         [Input("metadata", required: true)]
         public Input<Inputs.AttackAllowlistMetadataArgs> Metadata { get; set; } = null!;
+
+        /// <summary>
+        /// When you add multiple conditions, the rule applies if all conditions apply.
+        /// </summary>
+        [Input("resourceAttributeConditions")]
+        public Input<Inputs.AttackAllowlistResourceAttributeConditionsArgs>? ResourceAttributeConditions { get; set; }
+
+        /// <summary>
+        /// Rule name
+        /// </summary>
+        [Input("ruleName")]
+        public Input<string>? RuleName { get; set; }
+
+        /// <summary>
+        /// Provide conditions that must be met by the detection finding you want to allowlist.
+        /// </summary>
+        [Input("rules", required: true)]
+        public Input<Inputs.AttackAllowlistRulesArgs> Rules { get; set; } = null!;
 
         public AttackAllowlistArgs()
         {
@@ -129,7 +165,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class AttackAllowlistState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Step 2: Define attack control for chosen criteria
+        /// Step 1: Define attack control for chosen criteria
         /// </summary>
         [Input("attackHandling")]
         public Input<Inputs.AttackAllowlistAttackHandlingGetArgs>? AttackHandling { get; set; }
@@ -153,10 +189,28 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Step 3: Leave comment
+        /// Step 4: Leave comment (optional)
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.AttackAllowlistMetadataGetArgs>? Metadata { get; set; }
+
+        /// <summary>
+        /// When you add multiple conditions, the rule applies if all conditions apply.
+        /// </summary>
+        [Input("resourceAttributeConditions")]
+        public Input<Inputs.AttackAllowlistResourceAttributeConditionsGetArgs>? ResourceAttributeConditions { get; set; }
+
+        /// <summary>
+        /// Rule name
+        /// </summary>
+        [Input("ruleName")]
+        public Input<string>? RuleName { get; set; }
+
+        /// <summary>
+        /// Provide conditions that must be met by the detection finding you want to allowlist.
+        /// </summary>
+        [Input("rules")]
+        public Input<Inputs.AttackAllowlistRulesGetArgs>? Rules { get; set; }
 
         public AttackAllowlistState()
         {

@@ -13,6 +13,14 @@ namespace Pulumiverse.Dynatrace.Inputs
 
     public sealed class IamPolicyBindingsV2PolicyGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("boundaries")]
+        private InputList<string>? _boundaries;
+        public InputList<string> Boundaries
+        {
+            get => _boundaries ?? (_boundaries = new InputList<string>());
+            set => _boundaries = value;
+        }
+
         /// <summary>
         /// Either the attribute `id` or the attribute `uuid` of a `dynatrace.IamPolicy`. Initially just the `id` attribute was supported (which is a concatenation of several configuration settings) - and is still supported for backwards compatibility
         /// </summary>
