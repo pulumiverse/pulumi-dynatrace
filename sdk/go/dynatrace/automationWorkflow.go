@@ -192,6 +192,8 @@ type AutomationWorkflow struct {
 	Title pulumi.StringOutput `pulumi:"title"`
 	// Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
 	Trigger AutomationWorkflowTriggerPtrOutput `pulumi:"trigger"`
+	// The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+	Type pulumi.StringPtrOutput `pulumi:"type"`
 }
 
 // NewAutomationWorkflow registers a new resource with the given unique name, arguments, and options.
@@ -244,6 +246,8 @@ type automationWorkflowState struct {
 	Title *string `pulumi:"title"`
 	// Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
 	Trigger *AutomationWorkflowTrigger `pulumi:"trigger"`
+	// The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+	Type *string `pulumi:"type"`
 }
 
 type AutomationWorkflowState struct {
@@ -261,6 +265,8 @@ type AutomationWorkflowState struct {
 	Title pulumi.StringPtrInput
 	// Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
 	Trigger AutomationWorkflowTriggerPtrInput
+	// The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+	Type pulumi.StringPtrInput
 }
 
 func (AutomationWorkflowState) ElementType() reflect.Type {
@@ -282,6 +288,8 @@ type automationWorkflowArgs struct {
 	Title string `pulumi:"title"`
 	// Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
 	Trigger *AutomationWorkflowTrigger `pulumi:"trigger"`
+	// The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+	Type *string `pulumi:"type"`
 }
 
 // The set of arguments for constructing a AutomationWorkflow resource.
@@ -300,6 +308,8 @@ type AutomationWorkflowArgs struct {
 	Title pulumi.StringInput
 	// Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
 	Trigger AutomationWorkflowTriggerPtrInput
+	// The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+	Type pulumi.StringPtrInput
 }
 
 func (AutomationWorkflowArgs) ElementType() reflect.Type {
@@ -422,6 +432,11 @@ func (o AutomationWorkflowOutput) Title() pulumi.StringOutput {
 // Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
 func (o AutomationWorkflowOutput) Trigger() AutomationWorkflowTriggerPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflow) AutomationWorkflowTriggerPtrOutput { return v.Trigger }).(AutomationWorkflowTriggerPtrOutput)
+}
+
+// The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+func (o AutomationWorkflowOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflow) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type AutomationWorkflowArrayOutput struct{ *pulumi.OutputState }

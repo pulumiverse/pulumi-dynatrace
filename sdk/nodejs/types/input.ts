@@ -961,6 +961,48 @@ export interface AttackAllowlistMetadata {
     comment: pulumi.Input<string>;
 }
 
+export interface AttackAllowlistResourceAttributeConditions {
+    resourceAttributeConditions: pulumi.Input<pulumi.Input<inputs.AttackAllowlistResourceAttributeConditionsResourceAttributeCondition>[]>;
+}
+
+export interface AttackAllowlistResourceAttributeConditionsResourceAttributeCondition {
+    /**
+     * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Resource attribute key
+     */
+    resourceAttributeKey: pulumi.Input<string>;
+    /**
+     * Resource attribute value
+     */
+    resourceAttributeValue?: pulumi.Input<string>;
+}
+
+export interface AttackAllowlistRules {
+    rules: pulumi.Input<pulumi.Input<inputs.AttackAllowlistRulesRule>[]>;
+}
+
+export interface AttackAllowlistRulesRule {
+    /**
+     * Possible Values: `ACTOR_IP`, `DETECTION_TYPE`, `ENTRY_POINT_PAYLOAD`, `ENTRY_POINT_PAYLOAD_DOMAIN`, `ENTRY_POINT_PAYLOAD_PORT`, `ENTRY_POINT_URL_PATH`
+     */
+    criteriaKey: pulumi.Input<string>;
+    /**
+     * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_STARTS_WITH`, `ENDS_WITH`, `EQUALS`, `IP_CIDR`, `NOT_EQUALS`, `NOT_IN_IP_CIDR`, `STARTS_WITH`
+     */
+    criteriaMatcher: pulumi.Input<string>;
+    /**
+     * Possible Values: `CMD_INJECTION`, `JNDI_INJECTION`, `SQL_INJECTION`, `SSRF`
+     */
+    criteriaValueDetectionType?: pulumi.Input<string>;
+    /**
+     * Value
+     */
+    criteriaValueFreeText?: pulumi.Input<string>;
+}
+
 export interface AttackRulesAttackHandling {
     /**
      * Possible Values: `BLOCK`, `MONITOR`, `OFF`
@@ -13667,6 +13709,7 @@ export interface IamGroupPermissionsPermission {
 }
 
 export interface IamPolicyBindingsV2Policy {
+    boundaries?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Either the attribute `id` or the attribute `uuid` of a `dynatrace.IamPolicy`. Initially just the `id` attribute was supported (which is a concatenation of several configuration settings) - and is still supported for backwards compatibility
      */
@@ -14640,7 +14683,7 @@ export interface LogSensitiveDataMaskingMatchers {
 
 export interface LogSensitiveDataMaskingMatchersMatcher {
     /**
-     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `Host_tag`, `Journald_unit`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `K8s_pod_annotation`, `K8s_pod_label`, `K8s_workload_kind`, `K8s_workload_name`, `Log_source`, `Log_source_origin`, `Process_technology`
+     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `Host_tag`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `K8s_pod_annotation`, `K8s_pod_label`, `K8s_workload_kind`, `K8s_workload_name`, `Log_source`, `Log_source_origin`, `Process_technology`
      */
     attribute: pulumi.Input<string>;
     /**
@@ -14685,7 +14728,7 @@ export interface LogTimestampMatchers {
 
 export interface LogTimestampMatchersMatcher {
     /**
-     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `Host_tag`, `Journald_unit`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `K8s_pod_annotation`, `K8s_pod_label`, `K8s_workload_kind`, `K8s_workload_name`, `Log_source`, `Log_source_origin`, `Process_technology`
+     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `Host_tag`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `K8s_pod_annotation`, `K8s_pod_label`, `K8s_workload_kind`, `K8s_workload_name`, `Log_source`, `Log_source_origin`, `Process_technology`
      */
     attribute: pulumi.Input<string>;
     /**
@@ -30776,6 +30819,14 @@ export interface VulnerabilitySettingsTechnologies {
      * PHP
      */
     enablePhp: pulumi.Input<boolean>;
+    /**
+     * Python
+     */
+    enablePython?: pulumi.Input<boolean>;
+    /**
+     * Python runtimes
+     */
+    enablePythonRuntime?: pulumi.Input<boolean>;
 }
 
 export interface WebAppAnomaliesErrorRate {

@@ -675,6 +675,11 @@ export const getDocuments: typeof import("./getDocuments").getDocuments = null a
 export const getDocumentsOutput: typeof import("./getDocuments").getDocumentsOutput = null as any;
 utilities.lazyLoad(exports, ["getDocuments","getDocumentsOutput"], () => require("./getDocuments"));
 
+export { GetDqlArgs, GetDqlResult, GetDqlOutputArgs } from "./getDql";
+export const getDql: typeof import("./getDql").getDql = null as any;
+export const getDqlOutput: typeof import("./getDql").getDqlOutput = null as any;
+utilities.lazyLoad(exports, ["getDql","getDqlOutput"], () => require("./getDql"));
+
 export { GetEntitiesArgs, GetEntitiesResult, GetEntitiesOutputArgs } from "./getEntities";
 export const getEntities: typeof import("./getEntities").getEntities = null as any;
 export const getEntitiesOutput: typeof import("./getEntities").getEntitiesOutput = null as any;
@@ -979,6 +984,11 @@ export { IamPolicyBindingsV2Args, IamPolicyBindingsV2State } from "./iamPolicyBi
 export type IamPolicyBindingsV2 = import("./iamPolicyBindingsV2").IamPolicyBindingsV2;
 export const IamPolicyBindingsV2: typeof import("./iamPolicyBindingsV2").IamPolicyBindingsV2 = null as any;
 utilities.lazyLoad(exports, ["IamPolicyBindingsV2"], () => require("./iamPolicyBindingsV2"));
+
+export { IamPolicyBoundaryArgs, IamPolicyBoundaryState } from "./iamPolicyBoundary";
+export type IamPolicyBoundary = import("./iamPolicyBoundary").IamPolicyBoundary;
+export const IamPolicyBoundary: typeof import("./iamPolicyBoundary").IamPolicyBoundary = null as any;
+utilities.lazyLoad(exports, ["IamPolicyBoundary"], () => require("./iamPolicyBoundary"));
 
 export { IamUserArgs, IamUserState } from "./iamUser";
 export type IamUser = import("./iamUser").IamUser;
@@ -1334,6 +1344,11 @@ export { MonitoredTechnologiesPhpArgs, MonitoredTechnologiesPhpState } from "./m
 export type MonitoredTechnologiesPhp = import("./monitoredTechnologiesPhp").MonitoredTechnologiesPhp;
 export const MonitoredTechnologiesPhp: typeof import("./monitoredTechnologiesPhp").MonitoredTechnologiesPhp = null as any;
 utilities.lazyLoad(exports, ["MonitoredTechnologiesPhp"], () => require("./monitoredTechnologiesPhp"));
+
+export { MonitoredTechnologiesPythonArgs, MonitoredTechnologiesPythonState } from "./monitoredTechnologiesPython";
+export type MonitoredTechnologiesPython = import("./monitoredTechnologiesPython").MonitoredTechnologiesPython;
+export const MonitoredTechnologiesPython: typeof import("./monitoredTechnologiesPython").MonitoredTechnologiesPython = null as any;
+utilities.lazyLoad(exports, ["MonitoredTechnologiesPython"], () => require("./monitoredTechnologiesPython"));
 
 export { MonitoredTechnologiesVarnishArgs, MonitoredTechnologiesVarnishState } from "./monitoredTechnologiesVarnish";
 export type MonitoredTechnologiesVarnish = import("./monitoredTechnologiesVarnish").MonitoredTechnologiesVarnish;
@@ -2284,6 +2299,8 @@ const _module = {
                 return new IamPolicyBindings(name, <any>undefined, { urn })
             case "dynatrace:index/iamPolicyBindingsV2:IamPolicyBindingsV2":
                 return new IamPolicyBindingsV2(name, <any>undefined, { urn })
+            case "dynatrace:index/iamPolicyBoundary:IamPolicyBoundary":
+                return new IamPolicyBoundary(name, <any>undefined, { urn })
             case "dynatrace:index/iamUser:IamUser":
                 return new IamUser(name, <any>undefined, { urn })
             case "dynatrace:index/ibmMqFilters:IbmMqFilters":
@@ -2426,6 +2443,8 @@ const _module = {
                 return new MonitoredTechnologiesOpentracing(name, <any>undefined, { urn })
             case "dynatrace:index/monitoredTechnologiesPhp:MonitoredTechnologiesPhp":
                 return new MonitoredTechnologiesPhp(name, <any>undefined, { urn })
+            case "dynatrace:index/monitoredTechnologiesPython:MonitoredTechnologiesPython":
+                return new MonitoredTechnologiesPython(name, <any>undefined, { urn })
             case "dynatrace:index/monitoredTechnologiesVarnish:MonitoredTechnologiesVarnish":
                 return new MonitoredTechnologiesVarnish(name, <any>undefined, { urn })
             case "dynatrace:index/monitoredTechnologiesWsmb:MonitoredTechnologiesWsmb":
@@ -2832,6 +2851,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/iamPermission", _modul
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamPolicy", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamPolicyBindings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamPolicyBindingsV2", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/iamPolicyBoundary", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamUser", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/ibmMqFilters", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/imsBridges", _module)
@@ -2903,6 +2923,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesN
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesNodejs", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesOpentracing", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesPhp", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesPython", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesVarnish", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesWsmb", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/ms365EmailConnection", _module)

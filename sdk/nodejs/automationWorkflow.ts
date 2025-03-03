@@ -186,6 +186,10 @@ export class AutomationWorkflow extends pulumi.CustomResource {
      * Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
      */
     public readonly trigger!: pulumi.Output<outputs.AutomationWorkflowTrigger | undefined>;
+    /**
+     * The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+     */
+    public readonly type!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AutomationWorkflow resource with the given unique name, arguments, and options.
@@ -207,6 +211,7 @@ export class AutomationWorkflow extends pulumi.CustomResource {
             resourceInputs["tasks"] = state ? state.tasks : undefined;
             resourceInputs["title"] = state ? state.title : undefined;
             resourceInputs["trigger"] = state ? state.trigger : undefined;
+            resourceInputs["type"] = state ? state.type : undefined;
         } else {
             const args = argsOrState as AutomationWorkflowArgs | undefined;
             if ((!args || args.tasks === undefined) && !opts.urn) {
@@ -222,6 +227,7 @@ export class AutomationWorkflow extends pulumi.CustomResource {
             resourceInputs["tasks"] = args ? args.tasks : undefined;
             resourceInputs["title"] = args ? args.title : undefined;
             resourceInputs["trigger"] = args ? args.trigger : undefined;
+            resourceInputs["type"] = args ? args.type : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutomationWorkflow.__pulumiType, name, resourceInputs, opts);
@@ -260,6 +266,10 @@ export interface AutomationWorkflowState {
      * Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
      */
     trigger?: pulumi.Input<inputs.AutomationWorkflowTrigger>;
+    /**
+     * The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+     */
+    type?: pulumi.Input<string>;
 }
 
 /**
@@ -294,4 +304,8 @@ export interface AutomationWorkflowArgs {
      * Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
      */
     trigger?: pulumi.Input<inputs.AutomationWorkflowTrigger>;
+    /**
+     * The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+     */
+    type?: pulumi.Input<string>;
 }

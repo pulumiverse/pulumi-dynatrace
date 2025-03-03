@@ -27,7 +27,8 @@ class AutomationWorkflowArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  owner: Optional[pulumi.Input[str]] = None,
                  private: Optional[pulumi.Input[bool]] = None,
-                 trigger: Optional[pulumi.Input['AutomationWorkflowTriggerArgs']] = None):
+                 trigger: Optional[pulumi.Input['AutomationWorkflowTriggerArgs']] = None,
+                 type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AutomationWorkflow resource.
         :param pulumi.Input['AutomationWorkflowTasksArgs'] tasks: The tasks to run for every execution of this workflow
@@ -37,6 +38,7 @@ class AutomationWorkflowArgs:
         :param pulumi.Input[str] owner: The ID of the owner of this workflow
         :param pulumi.Input[bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
         :param pulumi.Input['AutomationWorkflowTriggerArgs'] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
+        :param pulumi.Input[str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
         """
         pulumi.set(__self__, "tasks", tasks)
         pulumi.set(__self__, "title", title)
@@ -50,6 +52,8 @@ class AutomationWorkflowArgs:
             pulumi.set(__self__, "private", private)
         if trigger is not None:
             pulumi.set(__self__, "trigger", trigger)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -135,6 +139,18 @@ class AutomationWorkflowArgs:
     def trigger(self, value: Optional[pulumi.Input['AutomationWorkflowTriggerArgs']]):
         pulumi.set(self, "trigger", value)
 
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
 
 @pulumi.input_type
 class _AutomationWorkflowState:
@@ -145,7 +161,8 @@ class _AutomationWorkflowState:
                  private: Optional[pulumi.Input[bool]] = None,
                  tasks: Optional[pulumi.Input['AutomationWorkflowTasksArgs']] = None,
                  title: Optional[pulumi.Input[str]] = None,
-                 trigger: Optional[pulumi.Input['AutomationWorkflowTriggerArgs']] = None):
+                 trigger: Optional[pulumi.Input['AutomationWorkflowTriggerArgs']] = None,
+                 type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AutomationWorkflow resources.
         :param pulumi.Input[str] actor: The user context the executions of the workflow will happen with
@@ -155,6 +172,7 @@ class _AutomationWorkflowState:
         :param pulumi.Input['AutomationWorkflowTasksArgs'] tasks: The tasks to run for every execution of this workflow
         :param pulumi.Input[str] title: The title / name of the workflow
         :param pulumi.Input['AutomationWorkflowTriggerArgs'] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
+        :param pulumi.Input[str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
         """
         if actor is not None:
             pulumi.set(__self__, "actor", actor)
@@ -170,6 +188,8 @@ class _AutomationWorkflowState:
             pulumi.set(__self__, "title", title)
         if trigger is not None:
             pulumi.set(__self__, "trigger", trigger)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -255,6 +275,18 @@ class _AutomationWorkflowState:
     def trigger(self, value: Optional[pulumi.Input['AutomationWorkflowTriggerArgs']]):
         pulumi.set(self, "trigger", value)
 
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
 
 class AutomationWorkflow(pulumi.CustomResource):
     @overload
@@ -268,6 +300,7 @@ class AutomationWorkflow(pulumi.CustomResource):
                  tasks: Optional[pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
                  title: Optional[pulumi.Input[str]] = None,
                  trigger: Optional[pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         > **Dynatrace SaaS only**
@@ -402,6 +435,7 @@ class AutomationWorkflow(pulumi.CustomResource):
         :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow
         :param pulumi.Input[str] title: The title / name of the workflow
         :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
+        :param pulumi.Input[str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
         """
         ...
     @overload
@@ -555,6 +589,7 @@ class AutomationWorkflow(pulumi.CustomResource):
                  tasks: Optional[pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
                  title: Optional[pulumi.Input[str]] = None,
                  trigger: Optional[pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -575,6 +610,7 @@ class AutomationWorkflow(pulumi.CustomResource):
                 raise TypeError("Missing required property 'title'")
             __props__.__dict__["title"] = title
             __props__.__dict__["trigger"] = trigger
+            __props__.__dict__["type"] = type
         super(AutomationWorkflow, __self__).__init__(
             'dynatrace:index/automationWorkflow:AutomationWorkflow',
             resource_name,
@@ -591,7 +627,8 @@ class AutomationWorkflow(pulumi.CustomResource):
             private: Optional[pulumi.Input[bool]] = None,
             tasks: Optional[pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
             title: Optional[pulumi.Input[str]] = None,
-            trigger: Optional[pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None) -> 'AutomationWorkflow':
+            trigger: Optional[pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
+            type: Optional[pulumi.Input[str]] = None) -> 'AutomationWorkflow':
         """
         Get an existing AutomationWorkflow resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -606,6 +643,7 @@ class AutomationWorkflow(pulumi.CustomResource):
         :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow
         :param pulumi.Input[str] title: The title / name of the workflow
         :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
+        :param pulumi.Input[str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -618,6 +656,7 @@ class AutomationWorkflow(pulumi.CustomResource):
         __props__.__dict__["tasks"] = tasks
         __props__.__dict__["title"] = title
         __props__.__dict__["trigger"] = trigger
+        __props__.__dict__["type"] = type
         return AutomationWorkflow(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -675,4 +714,12 @@ class AutomationWorkflow(pulumi.CustomResource):
         Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         """
         return pulumi.get(self, "trigger")
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Output[Optional[str]]:
+        """
+        The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+        """
+        return pulumi.get(self, "type")
 

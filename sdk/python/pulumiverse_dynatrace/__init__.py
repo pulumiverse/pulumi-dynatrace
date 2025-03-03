@@ -139,6 +139,7 @@ from .get_calculated_service_metric import *
 from .get_credentials import *
 from .get_dashboard import *
 from .get_documents import *
+from .get_dql import *
 from .get_entities import *
 from .get_entity import *
 from .get_failure_detection_parameters import *
@@ -200,6 +201,7 @@ from .iam_permission import *
 from .iam_policy import *
 from .iam_policy_bindings import *
 from .iam_policy_bindings_v2 import *
+from .iam_policy_boundary import *
 from .iam_user import *
 from .ibm_mq_filters import *
 from .ims_bridges import *
@@ -271,6 +273,7 @@ from .monitored_technologies_nginx import *
 from .monitored_technologies_nodejs import *
 from .monitored_technologies_opentracing import *
 from .monitored_technologies_php import *
+from .monitored_technologies_python import *
 from .monitored_technologies_varnish import *
 from .monitored_technologies_wsmb import *
 from .ms365_email_connection import *
@@ -1575,6 +1578,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/iamPolicyBoundary",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/iamPolicyBoundary:IamPolicyBoundary": "IamPolicyBoundary"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/iamUser",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2139,6 +2150,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/monitoredTechnologiesPhp:MonitoredTechnologiesPhp": "MonitoredTechnologiesPhp"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/monitoredTechnologiesPython",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/monitoredTechnologiesPython:MonitoredTechnologiesPython": "MonitoredTechnologiesPython"
   }
  },
  {

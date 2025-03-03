@@ -35,13 +35,15 @@ export class AttackAllowlist extends pulumi.CustomResource {
     }
 
     /**
-     * Step 2: Define attack control for chosen criteria
+     * Step 1: Define attack control for chosen criteria
      */
     public readonly attackHandling!: pulumi.Output<outputs.AttackAllowlistAttackHandling>;
     /**
      * Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
+     *
+     * @deprecated The `criteria` attribute has been deprecated, please use the `rules` and `resourceAttributeConditions` attributes instead.
      */
-    public readonly criteria!: pulumi.Output<outputs.AttackAllowlistCriteria>;
+    public readonly criteria!: pulumi.Output<outputs.AttackAllowlistCriteria | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -51,9 +53,21 @@ export class AttackAllowlist extends pulumi.CustomResource {
      */
     public readonly insertAfter!: pulumi.Output<string>;
     /**
-     * Step 3: Leave comment
+     * Step 4: Leave comment (optional)
      */
     public readonly metadata!: pulumi.Output<outputs.AttackAllowlistMetadata>;
+    /**
+     * When you add multiple conditions, the rule applies if all conditions apply.
+     */
+    public readonly resourceAttributeConditions!: pulumi.Output<outputs.AttackAllowlistResourceAttributeConditions | undefined>;
+    /**
+     * Rule name
+     */
+    public readonly ruleName!: pulumi.Output<string | undefined>;
+    /**
+     * Provide conditions that must be met by the detection finding you want to allowlist.
+     */
+    public readonly rules!: pulumi.Output<outputs.AttackAllowlistRules>;
 
     /**
      * Create a AttackAllowlist resource with the given unique name, arguments, and options.
@@ -73,13 +87,13 @@ export class AttackAllowlist extends pulumi.CustomResource {
             resourceInputs["enabled"] = state ? state.enabled : undefined;
             resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["metadata"] = state ? state.metadata : undefined;
+            resourceInputs["resourceAttributeConditions"] = state ? state.resourceAttributeConditions : undefined;
+            resourceInputs["ruleName"] = state ? state.ruleName : undefined;
+            resourceInputs["rules"] = state ? state.rules : undefined;
         } else {
             const args = argsOrState as AttackAllowlistArgs | undefined;
             if ((!args || args.attackHandling === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'attackHandling'");
-            }
-            if ((!args || args.criteria === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'criteria'");
             }
             if ((!args || args.enabled === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
@@ -87,11 +101,17 @@ export class AttackAllowlist extends pulumi.CustomResource {
             if ((!args || args.metadata === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'metadata'");
             }
+            if ((!args || args.rules === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'rules'");
+            }
             resourceInputs["attackHandling"] = args ? args.attackHandling : undefined;
             resourceInputs["criteria"] = args ? args.criteria : undefined;
             resourceInputs["enabled"] = args ? args.enabled : undefined;
             resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["metadata"] = args ? args.metadata : undefined;
+            resourceInputs["resourceAttributeConditions"] = args ? args.resourceAttributeConditions : undefined;
+            resourceInputs["ruleName"] = args ? args.ruleName : undefined;
+            resourceInputs["rules"] = args ? args.rules : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AttackAllowlist.__pulumiType, name, resourceInputs, opts);
@@ -103,11 +123,13 @@ export class AttackAllowlist extends pulumi.CustomResource {
  */
 export interface AttackAllowlistState {
     /**
-     * Step 2: Define attack control for chosen criteria
+     * Step 1: Define attack control for chosen criteria
      */
     attackHandling?: pulumi.Input<inputs.AttackAllowlistAttackHandling>;
     /**
      * Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
+     *
+     * @deprecated The `criteria` attribute has been deprecated, please use the `rules` and `resourceAttributeConditions` attributes instead.
      */
     criteria?: pulumi.Input<inputs.AttackAllowlistCriteria>;
     /**
@@ -119,9 +141,21 @@ export interface AttackAllowlistState {
      */
     insertAfter?: pulumi.Input<string>;
     /**
-     * Step 3: Leave comment
+     * Step 4: Leave comment (optional)
      */
     metadata?: pulumi.Input<inputs.AttackAllowlistMetadata>;
+    /**
+     * When you add multiple conditions, the rule applies if all conditions apply.
+     */
+    resourceAttributeConditions?: pulumi.Input<inputs.AttackAllowlistResourceAttributeConditions>;
+    /**
+     * Rule name
+     */
+    ruleName?: pulumi.Input<string>;
+    /**
+     * Provide conditions that must be met by the detection finding you want to allowlist.
+     */
+    rules?: pulumi.Input<inputs.AttackAllowlistRules>;
 }
 
 /**
@@ -129,13 +163,15 @@ export interface AttackAllowlistState {
  */
 export interface AttackAllowlistArgs {
     /**
-     * Step 2: Define attack control for chosen criteria
+     * Step 1: Define attack control for chosen criteria
      */
     attackHandling: pulumi.Input<inputs.AttackAllowlistAttackHandling>;
     /**
      * Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
+     *
+     * @deprecated The `criteria` attribute has been deprecated, please use the `rules` and `resourceAttributeConditions` attributes instead.
      */
-    criteria: pulumi.Input<inputs.AttackAllowlistCriteria>;
+    criteria?: pulumi.Input<inputs.AttackAllowlistCriteria>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -145,7 +181,19 @@ export interface AttackAllowlistArgs {
      */
     insertAfter?: pulumi.Input<string>;
     /**
-     * Step 3: Leave comment
+     * Step 4: Leave comment (optional)
      */
     metadata: pulumi.Input<inputs.AttackAllowlistMetadata>;
+    /**
+     * When you add multiple conditions, the rule applies if all conditions apply.
+     */
+    resourceAttributeConditions?: pulumi.Input<inputs.AttackAllowlistResourceAttributeConditions>;
+    /**
+     * Rule name
+     */
+    ruleName?: pulumi.Input<string>;
+    /**
+     * Provide conditions that must be met by the detection finding you want to allowlist.
+     */
+    rules: pulumi.Input<inputs.AttackAllowlistRules>;
 }
