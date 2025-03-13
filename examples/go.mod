@@ -1,6 +1,7 @@
 module github.com/pulumiverse/pulumi-dynatace/examples
 
-go 1.22
+go 1.23.0
+
 toolchain go1.23.7
 
 require github.com/pulumi/pulumi/pkg/v3 v3.130.0
