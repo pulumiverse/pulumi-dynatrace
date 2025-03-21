@@ -13,6 +13,659 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor struct {
+	// Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+	ContributionType string `pulumi:"contributionType"`
+	// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+	Transformations *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations `pulumi:"transformations"`
+	// The value to be used instead of the detected value.
+	ValueOverride *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride `pulumi:"valueOverride"`
+}
+
+// ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorInput is an input type that accepts ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs and ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput values.
+// You can construct a concrete instance of `ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorInput` via:
+//
+//	ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs{...}
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutputWithContext(context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs struct {
+	// Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+	ContributionType pulumi.StringInput `pulumi:"contributionType"`
+	// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+	Transformations ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrInput `pulumi:"transformations"`
+	// The value to be used instead of the detected value.
+	ValueOverride ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrInput `pulumi:"valueOverride"`
+}
+
+func (ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor)(nil)).Elem()
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput {
+	return i.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput)
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput {
+	return i.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput).ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutputWithContext(ctx)
+}
+
+// ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrInput is an input type that accepts ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs, ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtr and ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput values.
+// You can construct a concrete instance of `ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrInput` via:
+//
+//	        ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutputWithContext(context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput
+}
+
+type serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrType ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs
+
+func ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtr(v *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrInput {
+	return (*serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrType)(v)
+}
+
+func (*serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor)(nil)).Elem()
+}
+
+func (i *serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrType) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput {
+	return i.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrType) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput)
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor)(nil)).Elem()
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput {
+	return o.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor) *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor {
+		return &v
+	}).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput)
+}
+
+// Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput) ContributionType() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor) string {
+		return v.ContributionType
+	}).(pulumi.StringOutput)
+}
+
+// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput) Transformations() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor) *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations {
+		return v.Transformations
+	}).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput)
+}
+
+// The value to be used instead of the detected value.
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput) ValueOverride() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor) *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride {
+		return v.ValueOverride
+	}).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput)
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor)(nil)).Elem()
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput) Elem() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput {
+	return o.ApplyT(func(v *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor
+		return ret
+	}).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput)
+}
+
+// Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput) ContributionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ContributionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput) Transformations() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor) *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations {
+		if v == nil {
+			return nil
+		}
+		return v.Transformations
+	}).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput)
+}
+
+// The value to be used instead of the detected value.
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput) ValueOverride() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor) *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride {
+		if v == nil {
+			return nil
+		}
+		return v.ValueOverride
+	}).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput)
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations struct {
+	Transformations []ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation `pulumi:"transformations"`
+}
+
+// ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsInput is an input type that accepts ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs and ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput values.
+// You can construct a concrete instance of `ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsInput` via:
+//
+//	ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs{...}
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutputWithContext(context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs struct {
+	Transformations ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayInput `pulumi:"transformations"`
+}
+
+func (ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput {
+	return i.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput)
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput {
+	return i.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput).ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutputWithContext(ctx)
+}
+
+// ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrInput is an input type that accepts ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs, ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtr and ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput values.
+// You can construct a concrete instance of `ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrInput` via:
+//
+//	        ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutputWithContext(context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput
+}
+
+type serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrType ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs
+
+func ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtr(v *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrInput {
+	return (*serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrType)(v)
+}
+
+func (*serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (i *serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrType) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput {
+	return i.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrType) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput)
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput {
+	return o.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations) *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations {
+		return &v
+	}).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput)
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput) Transformations() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations) []ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation {
+		return v.Transformations
+	}).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput)
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput) Elem() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput {
+	return o.ApplyT(func(v *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations
+		return ret
+	}).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput)
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput) Transformations() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput {
+	return o.ApplyT(func(v *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations) []ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation {
+		if v == nil {
+			return nil
+		}
+		return v.Transformations
+	}).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput)
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation struct {
+	// include hexadecimal numbers
+	IncludeHexNumbers *bool `pulumi:"includeHexNumbers"`
+	// min digit count
+	MinDigitCount *int `pulumi:"minDigitCount"`
+	// no documentation available
+	Prefix *string `pulumi:"prefix"`
+	// replacement
+	ReplacementValue *string `pulumi:"replacementValue"`
+	// How many segments should be taken.
+	SegmentCount *int `pulumi:"segmentCount"`
+	// select index
+	SelectIndex *int `pulumi:"selectIndex"`
+	// split by
+	SplitDelimiter *string `pulumi:"splitDelimiter"`
+	// no documentation available
+	Suffix *string `pulumi:"suffix"`
+	// take from end
+	TakeFromEnd *bool `pulumi:"takeFromEnd"`
+	// Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+	TransformationType string `pulumi:"transformationType"`
+}
+
+// ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationInput is an input type that accepts ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArgs and ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput values.
+// You can construct a concrete instance of `ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationInput` via:
+//
+//	ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArgs{...}
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutputWithContext(context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArgs struct {
+	// include hexadecimal numbers
+	IncludeHexNumbers pulumi.BoolPtrInput `pulumi:"includeHexNumbers"`
+	// min digit count
+	MinDigitCount pulumi.IntPtrInput `pulumi:"minDigitCount"`
+	// no documentation available
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+	// replacement
+	ReplacementValue pulumi.StringPtrInput `pulumi:"replacementValue"`
+	// How many segments should be taken.
+	SegmentCount pulumi.IntPtrInput `pulumi:"segmentCount"`
+	// select index
+	SelectIndex pulumi.IntPtrInput `pulumi:"selectIndex"`
+	// split by
+	SplitDelimiter pulumi.StringPtrInput `pulumi:"splitDelimiter"`
+	// no documentation available
+	Suffix pulumi.StringPtrInput `pulumi:"suffix"`
+	// take from end
+	TakeFromEnd pulumi.BoolPtrInput `pulumi:"takeFromEnd"`
+	// Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+	TransformationType pulumi.StringInput `pulumi:"transformationType"`
+}
+
+func (ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation)(nil)).Elem()
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput {
+	return i.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput)
+}
+
+// ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayInput is an input type that accepts ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArray and ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput values.
+// You can construct a concrete instance of `ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayInput` via:
+//
+//	ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArray{ ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArgs{...} }
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutputWithContext(context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArray []ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationInput
+
+func (ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation)(nil)).Elem()
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArray) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput {
+	return i.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArray) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput)
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation)(nil)).Elem()
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput {
+	return o
+}
+
+// include hexadecimal numbers
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput) IncludeHexNumbers() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation) *bool {
+		return v.IncludeHexNumbers
+	}).(pulumi.BoolPtrOutput)
+}
+
+// min digit count
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput) MinDigitCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation) *int {
+		return v.MinDigitCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// no documentation available
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation) *string {
+		return v.Prefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// replacement
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput) ReplacementValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation) *string {
+		return v.ReplacementValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// How many segments should be taken.
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput) SegmentCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation) *int {
+		return v.SegmentCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// select index
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput) SelectIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation) *int {
+		return v.SelectIndex
+	}).(pulumi.IntPtrOutput)
+}
+
+// split by
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput) SplitDelimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation) *string {
+		return v.SplitDelimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// no documentation available
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput) Suffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation) *string {
+		return v.Suffix
+	}).(pulumi.StringPtrOutput)
+}
+
+// take from end
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput) TakeFromEnd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation) *bool {
+		return v.TakeFromEnd
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput) TransformationType() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation) string {
+		return v.TransformationType
+	}).(pulumi.StringOutput)
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation)(nil)).Elem()
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput) Index(i pulumi.IntInput) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation {
+		return vs[0].([]ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation)[vs[1].(int)]
+	}).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput)
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride struct {
+	// no documentation available
+	Value string `pulumi:"value"`
+}
+
+// ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideInput is an input type that accepts ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs and ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput values.
+// You can construct a concrete instance of `ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideInput` via:
+//
+//	ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs{...}
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutputWithContext(context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs struct {
+	// no documentation available
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride)(nil)).Elem()
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput {
+	return i.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput)
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput {
+	return i.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput).ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutputWithContext(ctx)
+}
+
+// ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrInput is an input type that accepts ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs, ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtr and ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput values.
+// You can construct a concrete instance of `ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrInput` via:
+//
+//	        ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput
+	ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutputWithContext(context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput
+}
+
+type serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrType ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs
+
+func ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtr(v *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrInput {
+	return (*serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrType)(v)
+}
+
+func (*serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride)(nil)).Elem()
+}
+
+func (i *serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrType) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput {
+	return i.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutputWithContext(context.Background())
+}
+
+func (i *serviceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrType) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput)
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride)(nil)).Elem()
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput {
+	return o.ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutputWithContext(context.Background())
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride) *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride {
+		return &v
+	}).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput)
+}
+
+// no documentation available
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride)(nil)).Elem()
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput) ToServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutputWithContext(ctx context.Context) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput) Elem() ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput {
+	return o.ApplyT(func(v *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride) ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride
+		return ret
+	}).(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput)
+}
+
+// no documentation available
+func (o ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
 type ServiceFailureExceptionRules struct {
 	// Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
 	CustomErrorRules *ServiceFailureExceptionRulesCustomErrorRules `pulumi:"customErrorRules"`
@@ -49134,6 +49787,14 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorInput)(nil)).Elem(), ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrInput)(nil)).Elem(), ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsInput)(nil)).Elem(), ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrInput)(nil)).Elem(), ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationInput)(nil)).Elem(), ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayInput)(nil)).Elem(), ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideInput)(nil)).Elem(), ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrInput)(nil)).Elem(), ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesInput)(nil)).Elem(), ServiceFailureExceptionRulesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesPtrInput)(nil)).Elem(), ServiceFailureExceptionRulesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFailureExceptionRulesCustomErrorRulesInput)(nil)).Elem(), ServiceFailureExceptionRulesCustomErrorRulesArgs{})
@@ -49750,6 +50411,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorPtrOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsPtrOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArrayOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverridePtrOutput{})
 	pulumi.RegisterOutputType(ServiceFailureExceptionRulesOutput{})
 	pulumi.RegisterOutputType(ServiceFailureExceptionRulesPtrOutput{})
 	pulumi.RegisterOutputType(ServiceFailureExceptionRulesCustomErrorRulesOutput{})
