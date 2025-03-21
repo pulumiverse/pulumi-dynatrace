@@ -1,11 +1,11 @@
 module github.com/pulumiverse/pulumi-dynatrace/sdk
 
 go 1.22
-toolchain go1.23.7
+toolchain go1.24.1
 
 require (
 	github.com/blang/semver v3.5.1+incompatible
-	github.com/pulumi/pulumi/sdk/v3 v3.153.1
+	github.com/pulumi/pulumi/sdk/v3 v3.157.0
 )
 
 require (
