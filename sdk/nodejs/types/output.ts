@@ -26515,6 +26515,54 @@ export interface RumProviderBreakdownDomainNamePatternListDomainNamePattern {
     pattern: string;
 }
 
+export interface SegmentIncludes {
+    /**
+     * TODO: No documentation available
+     */
+    items?: outputs.SegmentIncludesItem[];
+}
+
+export interface SegmentIncludesItem {
+    /**
+     * [Experimental] The tables that the entity-filter will be applied to`
+     */
+    applyTos?: string[];
+    /**
+     * The data object that the filter will be applied to. Use '*all*data_object' to apply it to all dataObjects
+     */
+    dataObject: string;
+    /**
+     * Data will be filtered by this value
+     */
+    filter: string;
+    /**
+     * [Experimental] The relationship of an include which has to be be specified when the data object is an entity view
+     */
+    relationship?: outputs.SegmentIncludesItemRelationship;
+}
+
+export interface SegmentIncludesItemRelationship {
+    /**
+     * Name of the relationship
+     */
+    name: string;
+    /**
+     * Target of the relationship
+     */
+    target: string;
+}
+
+export interface SegmentVariables {
+    /**
+     * Type of the variable
+     */
+    type: string;
+    /**
+     * Value of the variable
+     */
+    value: string;
+}
+
 export interface ServiceAnomaliesFailureRates {
     /**
      * Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%

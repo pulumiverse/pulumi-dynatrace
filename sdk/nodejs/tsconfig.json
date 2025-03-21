@@ -348,6 +348,7 @@
         "rumOverloadPrevention.ts",
         "rumProviderBreakdown.ts",
         "securityContext.ts",
+        "segment.ts",
         "serviceAnomalies.ts",
         "serviceAnomaliesV2.ts",
         "serviceExternalWebRequest.ts",

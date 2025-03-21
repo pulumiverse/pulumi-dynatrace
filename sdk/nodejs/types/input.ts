@@ -26188,6 +26188,54 @@ export interface RumProviderBreakdownDomainNamePatternListDomainNamePattern {
     pattern: pulumi.Input<string>;
 }
 
+export interface SegmentIncludes {
+    /**
+     * TODO: No documentation available
+     */
+    items?: pulumi.Input<pulumi.Input<inputs.SegmentIncludesItem>[]>;
+}
+
+export interface SegmentIncludesItem {
+    /**
+     * [Experimental] The tables that the entity-filter will be applied to`
+     */
+    applyTos?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The data object that the filter will be applied to. Use '*all*data_object' to apply it to all dataObjects
+     */
+    dataObject: pulumi.Input<string>;
+    /**
+     * Data will be filtered by this value
+     */
+    filter: pulumi.Input<string>;
+    /**
+     * [Experimental] The relationship of an include which has to be be specified when the data object is an entity view
+     */
+    relationship?: pulumi.Input<inputs.SegmentIncludesItemRelationship>;
+}
+
+export interface SegmentIncludesItemRelationship {
+    /**
+     * Name of the relationship
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Target of the relationship
+     */
+    target: pulumi.Input<string>;
+}
+
+export interface SegmentVariables {
+    /**
+     * Type of the variable
+     */
+    type: pulumi.Input<string>;
+    /**
+     * Value of the variable
+     */
+    value: pulumi.Input<string>;
+}
+
 export interface ServiceAnomaliesFailureRates {
     /**
      * Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%

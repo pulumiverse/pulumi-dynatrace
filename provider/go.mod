@@ -1,15 +1,15 @@
 module github.com/pulumiverse/pulumi-dynatrace/provider
 
-go 1.23.0
+go 1.24.0
 
-toolchain go1.23.6
+toolchain go1.24.1
 
 replace github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20250221232320-8d4cfd37a3cd
 
 require (
-	github.com/dynatrace-oss/terraform-provider-dynatrace v1.75.1
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.104.0
-	github.com/pulumi/pulumi/sdk/v3 v3.153.1
+	github.com/dynatrace-oss/terraform-provider-dynatrace v1.76.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.105.0
+	github.com/pulumi/pulumi/sdk/v3 v3.156.0
 )
 
 require (
@@ -46,7 +46,7 @@ require (
 	github.com/deckarep/golang-set/v2 v2.5.0 // indirect
 	github.com/djherbis/times v1.5.0 // indirect
 	github.com/dlclark/regexp2 v1.11.4 // indirect
-	github.com/dynatrace/dynatrace-configuration-as-code-core v0.7.1-0.20241203095532-6211d1be0eb7 // indirect
+	github.com/dynatrace/dynatrace-configuration-as-code-core v0.7.1-0.20250306093342-97cc482e553f // indirect
 	github.com/edsrzf/mmap-go v1.1.0 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
 	github.com/ettle/strcase v0.1.1 // indirect
@@ -61,7 +61,7 @@ require (
 	github.com/golang/glog v1.2.4 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
-	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/s2a-go v0.1.7 // indirect
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510 // indirect
 	github.com/google/uuid v1.6.0 // indirect
@@ -130,7 +130,7 @@ require (
 	github.com/pulumi/inflector v0.1.1 // indirect
 	github.com/pulumi/pulumi-java/pkg v0.19.0 // indirect
 	github.com/pulumi/pulumi-yaml v1.12.0 // indirect
-	github.com/pulumi/pulumi/pkg/v3 v3.153.1 // indirect
+	github.com/pulumi/pulumi/pkg/v3 v3.156.0 // indirect
 	github.com/pulumi/schema-tools v0.1.2 // indirect
 	github.com/pulumi/terraform-diff-reader v0.0.2 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
@@ -169,12 +169,12 @@ require (
 	golang.org/x/exp v0.0.0-20241217172543-b2144cdd0a67 // indirect
 	golang.org/x/mod v0.22.0 // indirect
 	golang.org/x/net v0.36.0 // indirect
-	golang.org/x/oauth2 v0.24.0 // indirect
+	golang.org/x/oauth2 v0.28.0 // indirect
 	golang.org/x/sync v0.11.0 // indirect
 	golang.org/x/sys v0.30.0 // indirect
 	golang.org/x/term v0.29.0 // indirect
 	golang.org/x/text v0.22.0 // indirect
-	golang.org/x/time v0.8.0 // indirect
+	golang.org/x/time v0.11.0 // indirect
 	golang.org/x/tools v0.28.0 // indirect
 	google.golang.org/api v0.169.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
