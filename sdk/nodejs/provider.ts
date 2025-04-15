@@ -51,6 +51,11 @@ export class Provider extends pulumi.ProviderResource {
     public readonly iamClientSecret!: pulumi.Output<string | undefined>;
     public readonly iamEndpointUrl!: pulumi.Output<string | undefined>;
     public readonly iamTokenUrl!: pulumi.Output<string | undefined>;
+    /**
+     * A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
+     * case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+     */
+    public readonly platformToken!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -79,6 +84,7 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["iamClientSecret"] = args?.iamClientSecret ? pulumi.secret(args.iamClientSecret) : undefined;
             resourceInputs["iamEndpointUrl"] = args?.iamEndpointUrl ? pulumi.secret(args.iamEndpointUrl) : undefined;
             resourceInputs["iamTokenUrl"] = args?.iamTokenUrl ? pulumi.secret(args.iamTokenUrl) : undefined;
+            resourceInputs["platformToken"] = args ? args.platformToken : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["accountId", "automationClientId", "automationClientSecret", "clientId", "clientSecret", "dtApiToken", "dtClusterApiToken", "dtClusterUrl", "iamAccountId", "iamClientId", "iamClientSecret", "iamEndpointUrl", "iamTokenUrl"] };
@@ -117,4 +123,9 @@ export interface ProviderArgs {
     iamClientSecret?: pulumi.Input<string>;
     iamEndpointUrl?: pulumi.Input<string>;
     iamTokenUrl?: pulumi.Input<string>;
+    /**
+     * A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
+     * case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+     */
+    platformToken?: pulumi.Input<string>;
 }

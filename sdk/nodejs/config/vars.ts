@@ -145,3 +145,15 @@ Object.defineProperty(exports, "iamTokenUrl", {
     enumerable: true,
 });
 
+/**
+ * A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
+ * case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+ */
+export declare const platformToken: string | undefined;
+Object.defineProperty(exports, "platformToken", {
+    get() {
+        return __config.get("platformToken");
+    },
+    enumerable: true,
+});
+
