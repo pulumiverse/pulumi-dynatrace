@@ -77,6 +77,13 @@ namespace Pulumiverse.Dynatrace
         [Output("iamTokenUrl")]
         public Output<string?> IamTokenUrl { get; private set; } = null!;
 
+        /// <summary>
+        /// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
+        /// case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
+        /// </summary>
+        [Output("platformToken")]
+        public Output<string?> PlatformToken { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a Provider resource with the given unique name, arguments, and options.
@@ -296,6 +303,13 @@ namespace Pulumiverse.Dynatrace
                 _iamTokenUrl = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
             }
         }
+
+        /// <summary>
+        /// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
+        /// case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
+        /// </summary>
+        [Input("platformToken")]
+        public Input<string>? PlatformToken { get; set; }
 
         public ProviderArgs()
         {

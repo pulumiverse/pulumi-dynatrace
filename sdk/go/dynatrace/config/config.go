@@ -99,3 +99,9 @@ func GetIamEndpointUrl(ctx *pulumi.Context) string {
 func GetIamTokenUrl(ctx *pulumi.Context) string {
 	return config.Get(ctx, "dynatrace:iamTokenUrl")
 }
+
+// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
+// case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+func GetPlatformToken(ctx *pulumi.Context) string {
+	return config.Get(ctx, "dynatrace:platformToken")
+}

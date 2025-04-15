@@ -167,6 +167,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CustomDevice{}
 	case "dynatrace:index/customService:CustomService":
 		r = &CustomService{}
+	case "dynatrace:index/customServiceOrder:CustomServiceOrder":
+		r = &CustomServiceOrder{}
 	case "dynatrace:index/customTags:CustomTags":
 		r = &CustomTags{}
 	case "dynatrace:index/customUnits:CustomUnits":
@@ -281,6 +283,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &HostMonitoringMode{}
 	case "dynatrace:index/hostNaming:HostNaming":
 		r = &HostNaming{}
+	case "dynatrace:index/hostNamingOrder:HostNamingOrder":
+		r = &HostNamingOrder{}
 	case "dynatrace:index/hostProcessGroupMonitoring:HostProcessGroupMonitoring":
 		r = &HostProcessGroupMonitoring{}
 	case "dynatrace:index/httpMonitor:HttpMonitor":
@@ -551,6 +555,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ProcessVisibility{}
 	case "dynatrace:index/processgroupNaming:ProcessgroupNaming":
 		r = &ProcessgroupNaming{}
+	case "dynatrace:index/processgroupNamingOrder:ProcessgroupNamingOrder":
+		r = &ProcessgroupNamingOrder{}
 	case "dynatrace:index/queueManager:QueueManager":
 		r = &QueueManager{}
 	case "dynatrace:index/queueSharingGroups:QueueSharingGroups":
@@ -601,6 +607,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ServiceHttpFailure{}
 	case "dynatrace:index/serviceNaming:ServiceNaming":
 		r = &ServiceNaming{}
+	case "dynatrace:index/serviceNamingOrder:ServiceNamingOrder":
+		r = &ServiceNamingOrder{}
 	case "dynatrace:index/serviceNowNotification:ServiceNowNotification":
 		r = &ServiceNowNotification{}
 	case "dynatrace:index/servicenowConnection:ServicenowConnection":
@@ -1113,6 +1121,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/customServiceOrder",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/customTags",
 		&module{version},
 	)
@@ -1394,6 +1407,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/hostNaming",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/hostNamingOrder",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2073,6 +2091,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/processgroupNamingOrder",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/queueManager",
 		&module{version},
 	)
@@ -2194,6 +2217,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/serviceNaming",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/serviceNamingOrder",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

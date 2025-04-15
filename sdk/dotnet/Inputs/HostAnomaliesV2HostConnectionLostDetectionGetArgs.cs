@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Graceful host shutdowns
+        /// Graceful host shutdowns. Possible values: `DONT_ALERT_ON_GRACEFUL_SHUTDOWN`, `ALERT_ON_GRACEFUL_SHUTDOWN`
         /// </summary>
         [Input("onGracefulShutdowns")]
         public Input<string>? OnGracefulShutdowns { get; set; }

@@ -40,6 +40,9 @@ type Provider struct {
 	IamClientSecret    pulumi.StringPtrOutput `pulumi:"iamClientSecret"`
 	IamEndpointUrl     pulumi.StringPtrOutput `pulumi:"iamEndpointUrl"`
 	IamTokenUrl        pulumi.StringPtrOutput `pulumi:"iamTokenUrl"`
+	// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
+	// case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+	PlatformToken pulumi.StringPtrOutput `pulumi:"platformToken"`
 }
 
 // NewProvider registers a new resource with the given unique name, arguments, and options.
@@ -156,6 +159,9 @@ type providerArgs struct {
 	IamClientSecret    *string `pulumi:"iamClientSecret"`
 	IamEndpointUrl     *string `pulumi:"iamEndpointUrl"`
 	IamTokenUrl        *string `pulumi:"iamTokenUrl"`
+	// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
+	// case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+	PlatformToken *string `pulumi:"platformToken"`
 }
 
 // The set of arguments for constructing a Provider resource.
@@ -182,6 +188,9 @@ type ProviderArgs struct {
 	IamClientSecret    pulumi.StringPtrInput
 	IamEndpointUrl     pulumi.StringPtrInput
 	IamTokenUrl        pulumi.StringPtrInput
+	// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
+	// case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+	PlatformToken pulumi.StringPtrInput
 }
 
 func (ProviderArgs) ElementType() reflect.Type {
@@ -289,6 +298,12 @@ func (o ProviderOutput) IamEndpointUrl() pulumi.StringPtrOutput {
 
 func (o ProviderOutput) IamTokenUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.IamTokenUrl }).(pulumi.StringPtrOutput)
+}
+
+// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
+// case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+func (o ProviderOutput) PlatformToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.PlatformToken }).(pulumi.StringPtrOutput)
 }
 
 func init() {

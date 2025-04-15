@@ -10599,7 +10599,7 @@ export interface HostAnomaliesV2HostConnectionLostDetection {
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * Graceful host shutdowns
+     * Graceful host shutdowns. Possible values: `DONT_ALERT_ON_GRACEFUL_SHUTDOWN`, `ALERT_ON_GRACEFUL_SHUTDOWN`
      */
     onGracefulShutdowns?: pulumi.Input<string>;
 }

@@ -370,6 +370,11 @@ export type CustomService = import("./customService").CustomService;
 export const CustomService: typeof import("./customService").CustomService = null as any;
 utilities.lazyLoad(exports, ["CustomService"], () => require("./customService"));
 
+export { CustomServiceOrderArgs, CustomServiceOrderState } from "./customServiceOrder";
+export type CustomServiceOrder = import("./customServiceOrder").CustomServiceOrder;
+export const CustomServiceOrder: typeof import("./customServiceOrder").CustomServiceOrder = null as any;
+utilities.lazyLoad(exports, ["CustomServiceOrder"], () => require("./customServiceOrder"));
+
 export { CustomTagsArgs, CustomTagsState } from "./customTags";
 export type CustomTags = import("./customTags").CustomTags;
 export const CustomTags: typeof import("./customTags").CustomTags = null as any;
@@ -909,6 +914,11 @@ export { HostNamingArgs, HostNamingState } from "./hostNaming";
 export type HostNaming = import("./hostNaming").HostNaming;
 export const HostNaming: typeof import("./hostNaming").HostNaming = null as any;
 utilities.lazyLoad(exports, ["HostNaming"], () => require("./hostNaming"));
+
+export { HostNamingOrderArgs, HostNamingOrderState } from "./hostNamingOrder";
+export type HostNamingOrder = import("./hostNamingOrder").HostNamingOrder;
+export const HostNamingOrder: typeof import("./hostNamingOrder").HostNamingOrder = null as any;
+utilities.lazyLoad(exports, ["HostNamingOrder"], () => require("./hostNamingOrder"));
 
 export { HostProcessGroupMonitoringArgs, HostProcessGroupMonitoringState } from "./hostProcessGroupMonitoring";
 export type HostProcessGroupMonitoring = import("./hostProcessGroupMonitoring").HostProcessGroupMonitoring;
@@ -1585,6 +1595,11 @@ export type ProcessgroupNaming = import("./processgroupNaming").ProcessgroupNami
 export const ProcessgroupNaming: typeof import("./processgroupNaming").ProcessgroupNaming = null as any;
 utilities.lazyLoad(exports, ["ProcessgroupNaming"], () => require("./processgroupNaming"));
 
+export { ProcessgroupNamingOrderArgs, ProcessgroupNamingOrderState } from "./processgroupNamingOrder";
+export type ProcessgroupNamingOrder = import("./processgroupNamingOrder").ProcessgroupNamingOrder;
+export const ProcessgroupNamingOrder: typeof import("./processgroupNamingOrder").ProcessgroupNamingOrder = null as any;
+utilities.lazyLoad(exports, ["ProcessgroupNamingOrder"], () => require("./processgroupNamingOrder"));
+
 export { ProviderArgs } from "./provider";
 export type Provider = import("./provider").Provider;
 export const Provider: typeof import("./provider").Provider = null as any;
@@ -1714,6 +1729,11 @@ export { ServiceNamingArgs, ServiceNamingState } from "./serviceNaming";
 export type ServiceNaming = import("./serviceNaming").ServiceNaming;
 export const ServiceNaming: typeof import("./serviceNaming").ServiceNaming = null as any;
 utilities.lazyLoad(exports, ["ServiceNaming"], () => require("./serviceNaming"));
+
+export { ServiceNamingOrderArgs, ServiceNamingOrderState } from "./serviceNamingOrder";
+export type ServiceNamingOrder = import("./serviceNamingOrder").ServiceNamingOrder;
+export const ServiceNamingOrder: typeof import("./serviceNamingOrder").ServiceNamingOrder = null as any;
+utilities.lazyLoad(exports, ["ServiceNamingOrder"], () => require("./serviceNamingOrder"));
 
 export { ServiceNowNotificationArgs, ServiceNowNotificationState } from "./serviceNowNotification";
 export type ServiceNowNotification = import("./serviceNowNotification").ServiceNowNotification;
@@ -2160,6 +2180,8 @@ const _module = {
                 return new CustomDevice(name, <any>undefined, { urn })
             case "dynatrace:index/customService:CustomService":
                 return new CustomService(name, <any>undefined, { urn })
+            case "dynatrace:index/customServiceOrder:CustomServiceOrder":
+                return new CustomServiceOrder(name, <any>undefined, { urn })
             case "dynatrace:index/customTags:CustomTags":
                 return new CustomTags(name, <any>undefined, { urn })
             case "dynatrace:index/customUnits:CustomUnits":
@@ -2274,6 +2296,8 @@ const _module = {
                 return new HostMonitoringMode(name, <any>undefined, { urn })
             case "dynatrace:index/hostNaming:HostNaming":
                 return new HostNaming(name, <any>undefined, { urn })
+            case "dynatrace:index/hostNamingOrder:HostNamingOrder":
+                return new HostNamingOrder(name, <any>undefined, { urn })
             case "dynatrace:index/hostProcessGroupMonitoring:HostProcessGroupMonitoring":
                 return new HostProcessGroupMonitoring(name, <any>undefined, { urn })
             case "dynatrace:index/httpMonitor:HttpMonitor":
@@ -2544,6 +2568,8 @@ const _module = {
                 return new ProcessVisibility(name, <any>undefined, { urn })
             case "dynatrace:index/processgroupNaming:ProcessgroupNaming":
                 return new ProcessgroupNaming(name, <any>undefined, { urn })
+            case "dynatrace:index/processgroupNamingOrder:ProcessgroupNamingOrder":
+                return new ProcessgroupNamingOrder(name, <any>undefined, { urn })
             case "dynatrace:index/queueManager:QueueManager":
                 return new QueueManager(name, <any>undefined, { urn })
             case "dynatrace:index/queueSharingGroups:QueueSharingGroups":
@@ -2594,6 +2620,8 @@ const _module = {
                 return new ServiceHttpFailure(name, <any>undefined, { urn })
             case "dynatrace:index/serviceNaming:ServiceNaming":
                 return new ServiceNaming(name, <any>undefined, { urn })
+            case "dynatrace:index/serviceNamingOrder:ServiceNamingOrder":
+                return new ServiceNamingOrder(name, <any>undefined, { urn })
             case "dynatrace:index/serviceNowNotification:ServiceNowNotification":
                 return new ServiceNowNotification(name, <any>undefined, { urn })
             case "dynatrace:index/servicenowConnection:ServicenowConnection":
@@ -2786,6 +2814,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/customAppCrashRate", _
 pulumi.runtime.registerResourceModule("dynatrace", "index/customAppEnablement", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/customDevice", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/customService", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/customServiceOrder", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/customTags", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/customUnits", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/dashboard", _module)
@@ -2843,6 +2872,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/hostMonitoring", _modu
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostMonitoringAdvanced", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostMonitoringMode", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostNaming", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/hostNamingOrder", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostProcessGroupMonitoring", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/httpMonitor", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/httpMonitorCookies", _module)
@@ -2978,6 +3008,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/processMonitoring", _m
 pulumi.runtime.registerResourceModule("dynatrace", "index/processMonitoringRule", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processVisibility", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processgroupNaming", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/processgroupNamingOrder", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/queueManager", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/queueSharingGroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/remoteEnvironments", _module)
@@ -3003,6 +3034,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/serviceFullWebRequest"
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceFullWebService", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceHttpFailure", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceNaming", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/serviceNamingOrder", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceNowNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/servicenowConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/sessionReplayResourceCapture", _module)

@@ -154,5 +154,16 @@ namespace Pulumiverse.Dynatrace
             set => _iamTokenUrl.Set(value);
         }
 
+        private static readonly __Value<string?> _platformToken = new __Value<string?>(() => __config.Get("platformToken"));
+        /// <summary>
+        /// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
+        /// case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
+        /// </summary>
+        public static string? PlatformToken
+        {
+            get => _platformToken.Get();
+            set => _platformToken.Set(value);
+        }
+
     }
 }

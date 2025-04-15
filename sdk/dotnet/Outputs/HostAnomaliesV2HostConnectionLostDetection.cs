@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// Graceful host shutdowns
+        /// Graceful host shutdowns. Possible values: `DONT_ALERT_ON_GRACEFUL_SHUTDOWN`, `ALERT_ON_GRACEFUL_SHUTDOWN`
         /// </summary>
         public readonly string? OnGracefulShutdowns;
 
