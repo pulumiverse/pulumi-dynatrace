@@ -314,6 +314,9 @@ class _ContainerTechnologyState:
 
 
 class ContainerTechnology(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/containerTechnology:ContainerTechnology"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

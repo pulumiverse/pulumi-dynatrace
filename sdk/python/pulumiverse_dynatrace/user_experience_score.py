@@ -158,6 +158,9 @@ class _UserExperienceScoreState:
 
 
 class UserExperienceScore(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/userExperienceScore:UserExperienceScore"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

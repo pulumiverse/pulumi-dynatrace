@@ -162,6 +162,9 @@ class _ServiceHttpFailureState:
 
 
 class ServiceHttpFailure(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/serviceHttpFailure:ServiceHttpFailure"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

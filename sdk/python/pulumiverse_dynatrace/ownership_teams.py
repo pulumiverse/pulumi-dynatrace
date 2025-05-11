@@ -322,6 +322,9 @@ class _OwnershipTeamsState:
 
 
 class OwnershipTeams(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/ownershipTeams:OwnershipTeams"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

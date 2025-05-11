@@ -159,6 +159,9 @@ class _RemoteEnvironmentsState:
 
 
 class RemoteEnvironments(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/remoteEnvironments:RemoteEnvironments"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

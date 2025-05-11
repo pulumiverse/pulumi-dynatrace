@@ -4022,6 +4022,9 @@ class _GoldenStateState:
 
 
 class GoldenState(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/goldenState:GoldenState"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

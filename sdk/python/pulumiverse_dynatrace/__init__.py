@@ -162,6 +162,8 @@ from .get_management_zone import *
 from .get_management_zone_v2 import *
 from .get_management_zones import *
 from .get_mobile_application import *
+from .get_platform_slo_template import *
+from .get_platform_slo_templates import *
 from .get_process import *
 from .get_process_group import *
 from .get_remote_environments import *
@@ -310,6 +312,7 @@ from .pagerduty_connection import *
 from .pg_alerting import *
 from .pg_anomalies import *
 from .platform_bucket import *
+from .platform_slo import *
 from .policy import *
 from .policy_bindings import *
 from .problem_fields import *
@@ -2444,6 +2447,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/platformBucket:PlatformBucket": "PlatformBucket"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/platformSlo",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/platformSlo:PlatformSlo": "PlatformSlo"
   }
  },
  {

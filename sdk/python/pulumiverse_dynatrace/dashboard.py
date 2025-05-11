@@ -172,6 +172,9 @@ class _DashboardState:
 
 
 class Dashboard(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/dashboard:Dashboard"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

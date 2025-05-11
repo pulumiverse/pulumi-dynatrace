@@ -563,6 +563,9 @@ class _ProcessGroupDetectionFlagsState:
 
 
 class ProcessGroupDetectionFlags(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/processGroupDetectionFlags:ProcessGroupDetectionFlags"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

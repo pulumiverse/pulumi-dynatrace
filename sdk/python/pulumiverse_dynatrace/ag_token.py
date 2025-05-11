@@ -219,6 +219,9 @@ class _AgTokenState:
 
 
 class AgToken(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/agToken:AgToken"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

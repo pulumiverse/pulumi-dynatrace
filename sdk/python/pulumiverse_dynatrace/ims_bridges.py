@@ -100,6 +100,9 @@ class _ImsBridgesState:
 
 
 class ImsBridges(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/imsBridges:ImsBridges"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

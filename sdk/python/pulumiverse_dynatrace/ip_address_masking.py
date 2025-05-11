@@ -129,6 +129,9 @@ class _IpAddressMaskingState:
 
 
 class IpAddressMasking(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/ipAddressMasking:IpAddressMasking"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -288,6 +288,9 @@ class _CalculatedSyntheticMetricState:
 
 
 class CalculatedSyntheticMetric(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/calculatedSyntheticMetric:CalculatedSyntheticMetric"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

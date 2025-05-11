@@ -175,6 +175,9 @@ class _AwsServiceState:
 
 
 class AwsService(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/awsService:AwsService"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

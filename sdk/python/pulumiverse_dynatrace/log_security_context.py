@@ -99,6 +99,9 @@ class _LogSecurityContextState:
 
 
 class LogSecurityContext(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/logSecurityContext:LogSecurityContext"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

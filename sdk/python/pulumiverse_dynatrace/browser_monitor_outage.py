@@ -259,6 +259,9 @@ class _BrowserMonitorOutageState:
 
 
 class BrowserMonitorOutage(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/browserMonitorOutage:BrowserMonitorOutage"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

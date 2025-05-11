@@ -288,6 +288,9 @@ class _CalculatedMobileMetricState:
 
 
 class CalculatedMobileMetric(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/calculatedMobileMetric:CalculatedMobileMetric"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

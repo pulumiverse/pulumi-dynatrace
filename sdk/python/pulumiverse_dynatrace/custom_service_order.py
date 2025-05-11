@@ -194,6 +194,9 @@ class _CustomServiceOrderState:
 
 
 class CustomServiceOrder(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/customServiceOrder:CustomServiceOrder"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

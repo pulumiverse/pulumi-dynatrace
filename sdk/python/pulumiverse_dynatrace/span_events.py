@@ -96,6 +96,9 @@ class _SpanEventsState:
 
 
 class SpanEvents(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/spanEvents:SpanEvents"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -66,6 +66,9 @@ class _ProcessgroupNamingOrderState:
 
 
 class ProcessgroupNamingOrder(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/processgroupNamingOrder:ProcessgroupNamingOrder"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

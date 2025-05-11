@@ -319,6 +319,9 @@ class _DiskAnomaliesState:
 
 
 class DiskAnomalies(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/diskAnomalies:DiskAnomalies"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

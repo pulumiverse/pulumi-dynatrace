@@ -96,6 +96,9 @@ class _WebAppCustomConfigPropertiesState:
 
 
 class WebAppCustomConfigProperties(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/webAppCustomConfigProperties:WebAppCustomConfigProperties"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

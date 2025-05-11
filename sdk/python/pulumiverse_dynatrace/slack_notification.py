@@ -253,6 +253,9 @@ class _SlackNotificationState:
 
 
 class SlackNotification(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/slackNotification:SlackNotification"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

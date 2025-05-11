@@ -42,6 +42,8 @@ type SyntheticLocation struct {
 	MaxActiveGateCount pulumi.IntPtrOutput `pulumi:"maxActiveGateCount"`
 	// The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
 	MinActiveGateCount pulumi.IntPtrOutput `pulumi:"minActiveGateCount"`
+	// Boolean value describes if icmp monitors will be executed on this location
+	NamExecutionSupported pulumi.BoolPtrOutput `pulumi:"namExecutionSupported"`
 	// The name of the location
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
@@ -52,6 +54,8 @@ type SyntheticLocation struct {
 	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
 	// country](https://dt-url.net/az230x0) request
 	RegionCode pulumi.StringPtrOutput `pulumi:"regionCode"`
+	// Boolean value describes which kubernetes version will be used
+	UseNewKubernetesVersion pulumi.BoolPtrOutput `pulumi:"useNewKubernetesVersion"`
 }
 
 // NewSyntheticLocation registers a new resource with the given unique name, arguments, and options.
@@ -117,6 +121,8 @@ type syntheticLocationState struct {
 	MaxActiveGateCount *int `pulumi:"maxActiveGateCount"`
 	// The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
 	MinActiveGateCount *int `pulumi:"minActiveGateCount"`
+	// Boolean value describes if icmp monitors will be executed on this location
+	NamExecutionSupported *bool `pulumi:"namExecutionSupported"`
 	// The name of the location
 	Name *string `pulumi:"name"`
 	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
@@ -127,6 +133,8 @@ type syntheticLocationState struct {
 	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
 	// country](https://dt-url.net/az230x0) request
 	RegionCode *string `pulumi:"regionCode"`
+	// Boolean value describes which kubernetes version will be used
+	UseNewKubernetesVersion *bool `pulumi:"useNewKubernetesVersion"`
 }
 
 type SyntheticLocationState struct {
@@ -157,6 +165,8 @@ type SyntheticLocationState struct {
 	MaxActiveGateCount pulumi.IntPtrInput
 	// The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
 	MinActiveGateCount pulumi.IntPtrInput
+	// Boolean value describes if icmp monitors will be executed on this location
+	NamExecutionSupported pulumi.BoolPtrInput
 	// The name of the location
 	Name pulumi.StringPtrInput
 	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
@@ -167,6 +177,8 @@ type SyntheticLocationState struct {
 	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
 	// country](https://dt-url.net/az230x0) request
 	RegionCode pulumi.StringPtrInput
+	// Boolean value describes which kubernetes version will be used
+	UseNewKubernetesVersion pulumi.BoolPtrInput
 }
 
 func (SyntheticLocationState) ElementType() reflect.Type {
@@ -201,6 +213,8 @@ type syntheticLocationArgs struct {
 	MaxActiveGateCount *int `pulumi:"maxActiveGateCount"`
 	// The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
 	MinActiveGateCount *int `pulumi:"minActiveGateCount"`
+	// Boolean value describes if icmp monitors will be executed on this location
+	NamExecutionSupported *bool `pulumi:"namExecutionSupported"`
 	// The name of the location
 	Name *string `pulumi:"name"`
 	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
@@ -211,6 +225,8 @@ type syntheticLocationArgs struct {
 	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
 	// country](https://dt-url.net/az230x0) request
 	RegionCode *string `pulumi:"regionCode"`
+	// Boolean value describes which kubernetes version will be used
+	UseNewKubernetesVersion *bool `pulumi:"useNewKubernetesVersion"`
 }
 
 // The set of arguments for constructing a SyntheticLocation resource.
@@ -242,6 +258,8 @@ type SyntheticLocationArgs struct {
 	MaxActiveGateCount pulumi.IntPtrInput
 	// The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
 	MinActiveGateCount pulumi.IntPtrInput
+	// Boolean value describes if icmp monitors will be executed on this location
+	NamExecutionSupported pulumi.BoolPtrInput
 	// The name of the location
 	Name pulumi.StringPtrInput
 	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
@@ -252,6 +270,8 @@ type SyntheticLocationArgs struct {
 	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
 	// country](https://dt-url.net/az230x0) request
 	RegionCode pulumi.StringPtrInput
+	// Boolean value describes which kubernetes version will be used
+	UseNewKubernetesVersion pulumi.BoolPtrInput
 }
 
 func (SyntheticLocationArgs) ElementType() reflect.Type {
@@ -404,6 +424,11 @@ func (o SyntheticLocationOutput) MinActiveGateCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.IntPtrOutput { return v.MinActiveGateCount }).(pulumi.IntPtrOutput)
 }
 
+// Boolean value describes if icmp monitors will be executed on this location
+func (o SyntheticLocationOutput) NamExecutionSupported() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SyntheticLocation) pulumi.BoolPtrOutput { return v.NamExecutionSupported }).(pulumi.BoolPtrOutput)
+}
+
 // The name of the location
 func (o SyntheticLocationOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
@@ -424,6 +449,11 @@ func (o SyntheticLocationOutput) Nodes() pulumi.StringArrayOutput {
 // country](https://dt-url.net/az230x0) request
 func (o SyntheticLocationOutput) RegionCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringPtrOutput { return v.RegionCode }).(pulumi.StringPtrOutput)
+}
+
+// Boolean value describes which kubernetes version will be used
+func (o SyntheticLocationOutput) UseNewKubernetesVersion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SyntheticLocation) pulumi.BoolPtrOutput { return v.UseNewKubernetesVersion }).(pulumi.BoolPtrOutput)
 }
 
 type SyntheticLocationArrayOutput struct{ *pulumi.OutputState }

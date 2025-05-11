@@ -65,6 +65,9 @@ class _AttributesPreferencesState:
 
 
 class AttributesPreferences(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/attributesPreferences:AttributesPreferences"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

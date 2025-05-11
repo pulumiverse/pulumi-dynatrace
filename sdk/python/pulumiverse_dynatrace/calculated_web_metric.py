@@ -288,6 +288,9 @@ class _CalculatedWebMetricState:
 
 
 class CalculatedWebMetric(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/calculatedWebMetric:CalculatedWebMetric"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

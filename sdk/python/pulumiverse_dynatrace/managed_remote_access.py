@@ -190,6 +190,9 @@ class _ManagedRemoteAccessState:
 
 
 class ManagedRemoteAccess(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/managedRemoteAccess:ManagedRemoteAccess"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

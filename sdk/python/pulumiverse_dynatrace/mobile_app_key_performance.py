@@ -129,6 +129,9 @@ class _MobileAppKeyPerformanceState:
 
 
 class MobileAppKeyPerformance(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/mobileAppKeyPerformance:MobileAppKeyPerformance"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

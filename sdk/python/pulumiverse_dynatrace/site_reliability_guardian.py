@@ -195,6 +195,9 @@ class _SiteReliabilityGuardianState:
 
 
 class SiteReliabilityGuardian(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/siteReliabilityGuardian:SiteReliabilityGuardian"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

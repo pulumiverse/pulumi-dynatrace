@@ -412,6 +412,9 @@ class _SloV2State:
 
 
 class SloV2(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/sloV2:SloV2"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

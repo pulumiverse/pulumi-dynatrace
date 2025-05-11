@@ -128,6 +128,9 @@ class _DevobsGitOnpremState:
 
 
 class DevobsGitOnprem(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/devobsGitOnprem:DevobsGitOnprem"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

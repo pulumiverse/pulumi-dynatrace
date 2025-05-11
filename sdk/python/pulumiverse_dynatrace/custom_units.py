@@ -159,6 +159,9 @@ class _CustomUnitsState:
 
 
 class CustomUnits(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/customUnits:CustomUnits"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -162,6 +162,9 @@ class _CustomTagsState:
 
 
 class CustomTags(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/customTags:CustomTags"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -97,6 +97,9 @@ class _MonitoredTechnologiesOpentracingState:
 
 
 class MonitoredTechnologiesOpentracing(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/monitoredTechnologiesOpentracing:MonitoredTechnologiesOpentracing"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

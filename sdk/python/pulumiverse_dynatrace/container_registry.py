@@ -66,6 +66,9 @@ class _ContainerRegistryState:
 
 
 class ContainerRegistry(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/containerRegistry:ContainerRegistry"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

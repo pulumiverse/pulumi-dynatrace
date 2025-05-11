@@ -193,6 +193,9 @@ class _IamPermissionState:
 
 
 class IamPermission(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/iamPermission:IamPermission"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

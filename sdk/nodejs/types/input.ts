@@ -1057,6 +1057,10 @@ export interface AttackSettingsDefaultAttackHandling {
     /**
      * Possible Values: `BLOCK`, `MONITOR`, `OFF`
      */
+    blockingStrategyGo?: pulumi.Input<string>;
+    /**
+     * Possible Values: `BLOCK`, `MONITOR`, `OFF`
+     */
     blockingStrategyJava: pulumi.Input<string>;
 }
 
@@ -1324,7 +1328,7 @@ export interface AutomationWorkflowTriggerEventConfigDavisEvent {
     /**
      * The types of davis events to trigger an execution. Possible values are `CUSTOM_ANNOTATION`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `APPLICATION_OVERLOAD_PREVENTION`, `APPLICATION_SLOWDOWN`, `AVAILABILITY_EVENT`, `LOG_AVAILABILITY`, `EC2_HIGH_CPU`, `RDS_BACKUP_COMPLETED`, `RDS_BACKUP_STARTED`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_TEST_LOCATION_SLOWDOWN`, `CUSTOM_CONFIGURATION`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `OSI_HIGH_CPU`, `CUSTOM_ALERT`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APPLICATION_OVERLOAD_PREVENTION`, `CUSTOM_APPLICATION_SLOWDOWN`, `PGI_CUSTOM_AVAILABILITY`, `PGI_CUSTOM_ERROR`, `CUSTOM_INFO`, `PGI_CUSTOM_PERFORMANCE`, `CUSTOM_DEPLOYMENT`, `DEPLOYMENT_CHANGED_CHANGE`, `DEPLOYMENT_CHANGED_NEW`, `DEPLOYMENT_CHANGED_REMOVED`, `EBS_VOLUME_HIGH_LATENCY`, `ERROR_EVENT`, `LOG_ERROR`, `ESXI_HOST_CONNECTION_FAILED`, `ESXI_HOST_CONNECTION_LOST`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_MAINTENANCE`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_NO_CONNECTION`, `ESXI_HOST_SHUTDOWN`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_UP`, `ESXI_HOST_TIMEOUT`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `DATABASE_CONNECTION_FAILURE`, `RDS_AZ_FAILOVER_COMPLETED`, `RDS_AZ_FAILOVER_STARTED`, `SERVICE_ERROR_RATE_INCREASED`, `RDS_HIGH_LATENCY`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_NIC_ERRORS_HIGH`, `PGI_HAPROXY_QUEUED_REQUESTS_HIGH`, `PGI_RMQ_HIGH_FILE_DESC_USAGE`, `PGI_RMQ_HIGH_MEM_USAGE`, `PGI_RMQ_HIGH_PROCESS_USAGE`, `PGI_RMQ_HIGH_SOCKETS_USAGE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `PGI_MYSQL_SLOW_QUERIES_RATE_HIGH`, `PGI_KEYSTONE_SLOW`, `PGI_HAPROXY_SESSION_USAGE_HIGH`, `HOST_LOG_AVAILABILITY`, `HOST_LOG_ERROR`, `OSI_GRACEFULLY_SHUTDOWN`, `HOST_LOG_MATCHED`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `HOST_LOG_PERFORMANCE`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `ESXI_HOST_DISK_QUEUE_SLOW`, `LOG_MATCHED`, `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_JS_FRAMEWORK_DETECTED`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ELB_HIGH_FRONTEND_ERROR_RATE`, `ELB_HIGH_UNHEALTHY_HOST_RATE`, `PROCESS_HIGH_GC_ACTIVITY`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_DATA_SPACE`, `OSI_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_METADATA_SPACE`, `OSI_DISK_LOW_INODES`, `PGI_RMQ_LOW_DISK_SPACE`, `RDS_LOW_STORAGE_SPACE`, `MARKED_FOR_TERMINATION`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `OSI_HIGH_MEMORY`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_OVERLOAD_PREVENTION`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MONITORING_UNAVAILABLE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PGI_KEYSTONE_UNHEALTHY`, `ESXI_HOST_OVERLOADED_STORAGE`, `PERFORMANCE_EVENT`, `LOG_PERFORMANCE`, `PGI_LOG_AVAILABILITY`, `PGI_CRASHED_INFO`, `PROCESS_CRASHED`, `PGI_LOG_ERROR`, `PG_LOW_INSTANCE_COUNT`, `PGI_LOG_MATCHED`, `PGI_MEMDUMP`, `PGI_LOG_PERFORMANCE`, `PROCESS_RESTART`, `PGI_UNAVAILABLE`, `RDS_HIGH_CPU`, `RDS_LOW_MEMORY`, `RDS_OF_SERVICE_UNAVAILABLE`, `RESOURCE_CONTENTION_EVENT`, `SERVICE_SLOWDOWN`, `RDS_RESTART`, `RDS_RESTART_SEQUENCE`, `PGI_OF_SERVICE_UNAVAILABLE`, `OSI_SLOW_DISK`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `ESXI_VM_DISCONNECTED`, `OPENSTACK_VM_LAUNCH_FAILED`, `ESXI_HOST_VM_MOTION_LEFT`, `ESXI_HOST_VM_MOTION_ARRIVED`, `ESXI_VM_MOTION`, `OPENSTACK_VM_MOTION`, `ESXI_VM_POWER_OFF`, `ESXI_VM_SHUTDOWN`, `OPENSTACK_HOST_VM_SHUTDOWN`, `ESXI_VM_START`, `ESXI_HOST_VM_STARTED`, `OPENSTACK_HOST_VM_STARTED`
      */
-    types: pulumi.Input<pulumi.Input<string>[]>;
+    types?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface AutomationWorkflowTriggerEventConfigDavisProblem {
@@ -22874,6 +22878,96 @@ export interface PgAnomaliesAvailability {
     minimumThreshold?: pulumi.Input<number>;
 }
 
+export interface PlatformSloCriteria {
+    criteriaDetails: pulumi.Input<pulumi.Input<inputs.PlatformSloCriteriaCriteriaDetail>[]>;
+}
+
+export interface PlatformSloCriteriaCriteriaDetail {
+    /**
+     * Criteria target, example: `99.8`
+     */
+    target: pulumi.Input<number>;
+    /**
+     * Timeframe from, example: `now-7d`
+     */
+    timeframeFrom: pulumi.Input<string>;
+    /**
+     * Timeframe to, example: `now`
+     */
+    timeframeTo?: pulumi.Input<string>;
+    /**
+     * Criteria warning, example: `99.9`
+     */
+    warning?: pulumi.Input<number>;
+}
+
+export interface PlatformSloCustomSli {
+    /**
+     * A filter segment is identified by an ID. Each segment includes a list of variable definitions.
+     */
+    filterSegments?: pulumi.Input<inputs.PlatformSloCustomSliFilterSegments>;
+    /**
+     * Indicator of the custom SLI. Example: `timeseries sli=avg(dt.host.cpu.idle)`
+     */
+    indicator: pulumi.Input<string>;
+}
+
+export interface PlatformSloCustomSliFilterSegments {
+    filterSegments: pulumi.Input<pulumi.Input<inputs.PlatformSloCustomSliFilterSegmentsFilterSegment>[]>;
+}
+
+export interface PlatformSloCustomSliFilterSegmentsFilterSegment {
+    /**
+     * The ID of the filter segment
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Defines a variable with a name and a list of values
+     */
+    variables?: pulumi.Input<inputs.PlatformSloCustomSliFilterSegmentsFilterSegmentVariables>;
+}
+
+export interface PlatformSloCustomSliFilterSegmentsFilterSegmentVariables {
+    filterSegmentVariables: pulumi.Input<pulumi.Input<inputs.PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable>[]>;
+}
+
+export interface PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable {
+    /**
+     * Name of the filter segment variable
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Values of the filter segment variable
+     */
+    values: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface PlatformSloSliReference {
+    /**
+     * Template ID of the SLI reference
+     */
+    templateId: pulumi.Input<string>;
+    /**
+     * Variables of the SLI reference
+     */
+    variables: pulumi.Input<inputs.PlatformSloSliReferenceVariables>;
+}
+
+export interface PlatformSloSliReferenceVariables {
+    sliReferenceVariables: pulumi.Input<pulumi.Input<inputs.PlatformSloSliReferenceVariablesSliReferenceVariable>[]>;
+}
+
+export interface PlatformSloSliReferenceVariablesSliReferenceVariable {
+    /**
+     * Name of the SLI reference variable. Example: `hostIds`
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value of the SLI reference variable. Example: `HOST-123456789ABCDEFG`
+     */
+    value: pulumi.Input<string>;
+}
+
 export interface ProcessAvailabilityMetadata {
     items: pulumi.Input<pulumi.Input<inputs.ProcessAvailabilityMetadataItem>[]>;
 }
@@ -25205,6 +25299,10 @@ export interface RequestAttributeDataSource {
      */
     cicsSdkMethodNodeCondition?: pulumi.Input<inputs.RequestAttributeDataSourceCicsSdkMethodNodeCondition>;
     /**
+     * CICS transaction call type condition for which the value is captured. Required if the source is: `CICS_TRANSACTION_CALL_TYPE`. Not applicable in other cases.
+     */
+    cicsTransactionCallType?: pulumi.Input<string>;
+    /**
      * The data source is enabled (`true`) or disabled (`false`)
      */
     enabled: pulumi.Input<boolean>;
@@ -25221,6 +25319,14 @@ export interface RequestAttributeDataSource {
      */
     iibNodeType?: pulumi.Input<string>;
     /**
+     * IBM integration bus label node name condition for which the value is captured
+     */
+    iibNodeTypeCondition?: pulumi.Input<inputs.RequestAttributeDataSourceIibNodeTypeCondition>;
+    /**
+     * IMS transaction call type condition for which the value is captured. Required if the source is: `IMS_TRANSACTION_CALL_TYPE`. Not applicable in other cases.
+     */
+    imsTransactionCallType?: pulumi.Input<string>;
+    /**
      * The method specification if the **source** value is `METHOD_PARAM`.   Not applicable in other cases
      */
     methods?: pulumi.Input<pulumi.Input<inputs.RequestAttributeDataSourceMethod>[]>;
@@ -25233,13 +25339,23 @@ export interface RequestAttributeDataSource {
      */
     scope?: pulumi.Input<inputs.RequestAttributeDataSourceScope>;
     /**
-     * The technology of the session attribute to capture if the **source** value is `SESSION_ATTRIBUTE`.
+     * The technology of the server variable to capture if the source value is SERVER_VARIABLE.
+     */
+    serverVariableTechnology?: pulumi.Input<string>;
+    /**
+     * The technology of the session attribute to capture if the **source** value is `SESSION_ATTRIBUTE`. 
+     *
+     *  Not applicable in other cases
      */
     sessionAttributeTechnology?: pulumi.Input<string>;
     /**
      * The source of the attribute to capture. Works in conjunction with **parameterName** or **methods** and **technology**
      */
     source: pulumi.Input<string>;
+    /**
+     * The key of the span attribute to capture. Required if the source is: `SPAN_ATTRIBUTE`. Not applicable in other cases.
+     */
+    spanAttributeKey?: pulumi.Input<string>;
     /**
      * The technology of the method to capture if the **source** value is `METHOD_PARAM`. 
      *
@@ -25295,6 +25411,25 @@ export interface RequestAttributeDataSourceIibLabelMethodNodeCondition {
 }
 
 export interface RequestAttributeDataSourceIibMethodNodeCondition {
+    /**
+     * Negate the comparison
+     */
+    negate?: pulumi.Input<boolean>;
+    /**
+     * Operator comparing the extracted value to the comparison value
+     */
+    operator: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
+    unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface RequestAttributeDataSourceIibNodeTypeCondition {
     /**
      * Negate the comparison
      */
@@ -31551,7 +31686,7 @@ export interface WebApplicationMonitoringSettings {
      */
     fetchRequests?: pulumi.Input<boolean>;
     /**
-     * Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE` and `JAVASCRIPT_TAG`.
+     * Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE`, `JAVASCRIPT_TAG`, `JAVASCRIPT_TAG_COMPLETE`, `JAVASCRIPT_TAG_SRI`
      */
     injectionMode: pulumi.Input<string>;
     /**
@@ -31570,6 +31705,10 @@ export interface WebApplicationMonitoringSettings {
      * Java script injection rules
      */
     javascriptInjectionRules?: pulumi.Input<inputs.WebApplicationMonitoringSettingsJavascriptInjectionRules>;
+    /**
+     * Get the JavaScript library file from the CDN. Not supported by agentless applications and assumed to be false for auto-injected applications if omitted.
+     */
+    libraryFileFromCdn?: pulumi.Input<boolean>;
     /**
      * The location of your application’s custom JavaScript library file. 
      *
@@ -31638,6 +31777,10 @@ export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings {
      */
     maxErrorsToCapture: pulumi.Input<number>;
     /**
+     * Proxy wrapper enabled/disabled
+     */
+    proxyWrapperEnabled?: pulumi.Input<boolean>;
+    /**
      * Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `<` and `>`.
      */
     specialCharactersToEscape?: pulumi.Input<string>;
@@ -31649,6 +31792,10 @@ export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings {
      * Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
      */
     syncBeaconInternetExplorer?: pulumi.Input<boolean>;
+    /**
+     * User action name attribute
+     */
+    userActionNameAttribute?: pulumi.Input<string>;
 }
 
 export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers {

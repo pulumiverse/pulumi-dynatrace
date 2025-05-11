@@ -22,6 +22,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Possible Values: `BLOCK`, `MONITOR`, `OFF`
         /// </summary>
+        [Input("blockingStrategyGo")]
+        public Input<string>? BlockingStrategyGo { get; set; }
+
+        /// <summary>
+        /// Possible Values: `BLOCK`, `MONITOR`, `OFF`
+        /// </summary>
         [Input("blockingStrategyJava", required: true)]
         public Input<string> BlockingStrategyJava { get; set; } = null!;
 

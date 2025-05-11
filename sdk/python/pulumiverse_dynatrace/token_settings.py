@@ -100,6 +100,9 @@ class _TokenSettingsState:
 
 
 class TokenSettings(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/tokenSettings:TokenSettings"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

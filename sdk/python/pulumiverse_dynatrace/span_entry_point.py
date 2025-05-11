@@ -162,6 +162,9 @@ class _SpanEntryPointState:
 
 
 class SpanEntryPoint(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/spanEntryPoint:SpanEntryPoint"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

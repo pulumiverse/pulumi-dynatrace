@@ -240,6 +240,9 @@ class _DocumentState:
 
 
 class Document(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/document:Document"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

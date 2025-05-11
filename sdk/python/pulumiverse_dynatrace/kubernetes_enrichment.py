@@ -100,6 +100,9 @@ class _KubernetesEnrichmentState:
 
 
 class KubernetesEnrichment(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/kubernetesEnrichment:KubernetesEnrichment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

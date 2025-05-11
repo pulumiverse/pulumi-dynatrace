@@ -192,6 +192,9 @@ class _MobileAppAnomaliesState:
 
 
 class MobileAppAnomalies(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/mobileAppAnomalies:MobileAppAnomalies"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

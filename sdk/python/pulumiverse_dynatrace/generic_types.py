@@ -224,6 +224,9 @@ class _GenericTypesState:
 
 
 class GenericTypes(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/genericTypes:GenericTypes"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

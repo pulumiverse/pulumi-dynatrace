@@ -350,6 +350,9 @@ class _EmailNotificationState:
 
 
 class EmailNotification(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/emailNotification:EmailNotification"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

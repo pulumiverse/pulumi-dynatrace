@@ -160,6 +160,9 @@ class _WebAppBeaconEndpointState:
 
 
 class WebAppBeaconEndpoint(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/webAppBeaconEndpoint:WebAppBeaconEndpoint"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

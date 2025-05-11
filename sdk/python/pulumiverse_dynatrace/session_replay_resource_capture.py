@@ -129,6 +129,9 @@ class _SessionReplayResourceCaptureState:
 
 
 class SessionReplayResourceCapture(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/sessionReplayResourceCapture:SessionReplayResourceCapture"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

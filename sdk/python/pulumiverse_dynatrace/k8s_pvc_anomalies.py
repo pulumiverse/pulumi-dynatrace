@@ -130,6 +130,9 @@ class _K8sPvcAnomaliesState:
 
 
 class K8sPvcAnomalies(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/k8sPvcAnomalies:K8sPvcAnomalies"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

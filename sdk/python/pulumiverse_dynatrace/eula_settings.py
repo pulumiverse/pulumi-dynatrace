@@ -97,6 +97,9 @@ class _EulaSettingsState:
 
 
 class EulaSettings(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/eulaSettings:EulaSettings"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

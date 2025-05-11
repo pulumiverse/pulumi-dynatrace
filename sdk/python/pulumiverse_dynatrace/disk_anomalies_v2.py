@@ -98,6 +98,9 @@ class _DiskAnomaliesV2State:
 
 
 class DiskAnomaliesV2(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/diskAnomaliesV2:DiskAnomaliesV2"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

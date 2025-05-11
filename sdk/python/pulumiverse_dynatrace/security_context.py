@@ -65,6 +65,9 @@ class _SecurityContextState:
 
 
 class SecurityContext(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/securityContext:SecurityContext"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

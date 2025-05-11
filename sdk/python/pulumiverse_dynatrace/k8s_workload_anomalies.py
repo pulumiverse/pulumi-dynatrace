@@ -502,6 +502,9 @@ class _K8sWorkloadAnomaliesState:
 
 
 class K8sWorkloadAnomalies(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/k8sWorkloadAnomalies:K8sWorkloadAnomalies"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

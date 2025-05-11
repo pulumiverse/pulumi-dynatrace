@@ -199,6 +199,9 @@ class _AutomationWorkflowK8sConnectionsState:
 
 
 class AutomationWorkflowK8sConnections(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/automationWorkflowK8sConnections:AutomationWorkflowK8sConnections"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

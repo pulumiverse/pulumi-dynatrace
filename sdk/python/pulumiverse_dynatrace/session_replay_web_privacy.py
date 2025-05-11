@@ -162,6 +162,9 @@ class _SessionReplayWebPrivacyState:
 
 
 class SessionReplayWebPrivacy(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/sessionReplayWebPrivacy:SessionReplayWebPrivacy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

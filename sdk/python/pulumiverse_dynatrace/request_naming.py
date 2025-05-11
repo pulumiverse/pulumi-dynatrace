@@ -234,6 +234,9 @@ class _RequestNamingState:
 
 
 class RequestNaming(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/requestNaming:RequestNaming"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -303,6 +303,9 @@ class _ProcessAvailabilityState:
 
 
 class ProcessAvailability(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/processAvailability:ProcessAvailability"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

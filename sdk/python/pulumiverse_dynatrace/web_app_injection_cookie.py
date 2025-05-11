@@ -159,6 +159,9 @@ class _WebAppInjectionCookieState:
 
 
 class WebAppInjectionCookie(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/webAppInjectionCookie:WebAppInjectionCookie"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

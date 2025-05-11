@@ -99,6 +99,9 @@ class _MobileAppRequestErrorsState:
 
 
 class MobileAppRequestErrors(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/mobileAppRequestErrors:MobileAppRequestErrors"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

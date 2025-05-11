@@ -96,6 +96,9 @@ class _HubPermissionsState:
 
 
 class HubPermissions(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/hubPermissions:HubPermissions"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -226,6 +226,9 @@ class _IbmMqFiltersState:
 
 
 class IbmMqFilters(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/ibmMqFilters:IbmMqFilters"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -160,6 +160,9 @@ class _PgAlertingState:
 
 
 class PgAlerting(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/pgAlerting:PgAlerting"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

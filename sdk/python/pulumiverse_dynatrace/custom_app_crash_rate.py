@@ -99,6 +99,9 @@ class _CustomAppCrashRateState:
 
 
 class CustomAppCrashRate(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/customAppCrashRate:CustomAppCrashRate"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

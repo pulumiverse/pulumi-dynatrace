@@ -224,6 +224,9 @@ class _HttpMonitorOutageState:
 
 
 class HttpMonitorOutage(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/httpMonitorOutage:HttpMonitorOutage"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

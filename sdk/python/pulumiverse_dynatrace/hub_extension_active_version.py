@@ -97,6 +97,9 @@ class _HubExtensionActiveVersionState:
 
 
 class HubExtensionActiveVersion(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/hubExtensionActiveVersion:HubExtensionActiveVersion"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

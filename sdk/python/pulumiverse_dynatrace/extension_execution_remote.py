@@ -96,6 +96,9 @@ class _ExtensionExecutionRemoteState:
 
 
 class ExtensionExecutionRemote(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/extensionExecutionRemote:ExtensionExecutionRemote"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -131,6 +131,9 @@ class _DavisCopilotState:
 
 
 class DavisCopilot(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/davisCopilot:DavisCopilot"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

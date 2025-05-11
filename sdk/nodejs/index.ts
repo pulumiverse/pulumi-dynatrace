@@ -785,6 +785,16 @@ export const getMobileApplication: typeof import("./getMobileApplication").getMo
 export const getMobileApplicationOutput: typeof import("./getMobileApplication").getMobileApplicationOutput = null as any;
 utilities.lazyLoad(exports, ["getMobileApplication","getMobileApplicationOutput"], () => require("./getMobileApplication"));
 
+export { GetPlatformSloTemplateArgs, GetPlatformSloTemplateResult, GetPlatformSloTemplateOutputArgs } from "./getPlatformSloTemplate";
+export const getPlatformSloTemplate: typeof import("./getPlatformSloTemplate").getPlatformSloTemplate = null as any;
+export const getPlatformSloTemplateOutput: typeof import("./getPlatformSloTemplate").getPlatformSloTemplateOutput = null as any;
+utilities.lazyLoad(exports, ["getPlatformSloTemplate","getPlatformSloTemplateOutput"], () => require("./getPlatformSloTemplate"));
+
+export { GetPlatformSloTemplatesResult } from "./getPlatformSloTemplates";
+export const getPlatformSloTemplates: typeof import("./getPlatformSloTemplates").getPlatformSloTemplates = null as any;
+export const getPlatformSloTemplatesOutput: typeof import("./getPlatformSloTemplates").getPlatformSloTemplatesOutput = null as any;
+utilities.lazyLoad(exports, ["getPlatformSloTemplates","getPlatformSloTemplatesOutput"], () => require("./getPlatformSloTemplates"));
+
 export { GetProcessArgs, GetProcessResult, GetProcessOutputArgs } from "./getProcess";
 export const getProcess: typeof import("./getProcess").getProcess = null as any;
 export const getProcessOutput: typeof import("./getProcess").getProcessOutput = null as any;
@@ -1524,6 +1534,11 @@ export { PlatformBucketArgs, PlatformBucketState } from "./platformBucket";
 export type PlatformBucket = import("./platformBucket").PlatformBucket;
 export const PlatformBucket: typeof import("./platformBucket").PlatformBucket = null as any;
 utilities.lazyLoad(exports, ["PlatformBucket"], () => require("./platformBucket"));
+
+export { PlatformSloArgs, PlatformSloState } from "./platformSlo";
+export type PlatformSlo = import("./platformSlo").PlatformSlo;
+export const PlatformSlo: typeof import("./platformSlo").PlatformSlo = null as any;
+utilities.lazyLoad(exports, ["PlatformSlo"], () => require("./platformSlo"));
 
 export { PolicyArgs, PolicyState } from "./policy";
 export type Policy = import("./policy").Policy;
@@ -2540,6 +2555,8 @@ const _module = {
                 return new PgAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/platformBucket:PlatformBucket":
                 return new PlatformBucket(name, <any>undefined, { urn })
+            case "dynatrace:index/platformSlo:PlatformSlo":
+                return new PlatformSlo(name, <any>undefined, { urn })
             case "dynatrace:index/policy:Policy":
                 return new Policy(name, <any>undefined, { urn })
             case "dynatrace:index/policyBindings:PolicyBindings":
@@ -2994,6 +3011,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/pagerdutyConnection", 
 pulumi.runtime.registerResourceModule("dynatrace", "index/pgAlerting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/pgAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/platformBucket", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/platformSlo", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/policy", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/policyBindings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/problemFields", _module)

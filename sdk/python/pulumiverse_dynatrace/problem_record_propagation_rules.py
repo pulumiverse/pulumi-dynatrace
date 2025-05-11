@@ -127,6 +127,9 @@ class _ProblemRecordPropagationRulesState:
 
 
 class ProblemRecordPropagationRules(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/problemRecordPropagationRules:ProblemRecordPropagationRules"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -164,6 +164,9 @@ class _ManagementZoneV2State:
 
 
 class ManagementZoneV2(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/managementZoneV2:ManagementZoneV2"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

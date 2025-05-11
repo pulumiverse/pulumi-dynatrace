@@ -68,6 +68,9 @@ class _HubSubscriptionsState:
 
 
 class HubSubscriptions(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/hubSubscriptions:HubSubscriptions"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

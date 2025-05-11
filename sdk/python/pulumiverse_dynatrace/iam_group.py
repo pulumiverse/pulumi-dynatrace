@@ -132,6 +132,9 @@ class _IamGroupState:
 
 
 class IamGroup(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/iamGroup:IamGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -23,6 +23,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.RequestAttributeDataSourceCicsSdkMethodNodeCondition? CicsSdkMethodNodeCondition;
         /// <summary>
+        /// CICS transaction call type condition for which the value is captured. Required if the source is: `CICS_TRANSACTION_CALL_TYPE`. Not applicable in other cases.
+        /// </summary>
+        public readonly string? CicsTransactionCallType;
+        /// <summary>
         /// The data source is enabled (`true`) or disabled (`false`)
         /// </summary>
         public readonly bool Enabled;
@@ -39,6 +43,14 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? IibNodeType;
         /// <summary>
+        /// IBM integration bus label node name condition for which the value is captured
+        /// </summary>
+        public readonly Outputs.RequestAttributeDataSourceIibNodeTypeCondition? IibNodeTypeCondition;
+        /// <summary>
+        /// IMS transaction call type condition for which the value is captured. Required if the source is: `IMS_TRANSACTION_CALL_TYPE`. Not applicable in other cases.
+        /// </summary>
+        public readonly string? ImsTransactionCallType;
+        /// <summary>
         /// The method specification if the **source** value is `METHOD_PARAM`.   Not applicable in other cases
         /// </summary>
         public readonly ImmutableArray<Outputs.RequestAttributeDataSourceMethod> Methods;
@@ -51,13 +63,23 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.RequestAttributeDataSourceScope? Scope;
         /// <summary>
-        /// The technology of the session attribute to capture if the **source** value is `SESSION_ATTRIBUTE`.
+        /// The technology of the server variable to capture if the source value is SERVER_VARIABLE.
+        /// </summary>
+        public readonly string? ServerVariableTechnology;
+        /// <summary>
+        /// The technology of the session attribute to capture if the **source** value is `SESSION_ATTRIBUTE`. 
+        /// 
+        ///  Not applicable in other cases
         /// </summary>
         public readonly string? SessionAttributeTechnology;
         /// <summary>
         /// The source of the attribute to capture. Works in conjunction with **parameterName** or **methods** and **technology**
         /// </summary>
         public readonly string Source;
+        /// <summary>
+        /// The key of the span attribute to capture. Required if the source is: `SPAN_ATTRIBUTE`. Not applicable in other cases.
+        /// </summary>
+        public readonly string? SpanAttributeKey;
         /// <summary>
         /// The technology of the method to capture if the **source** value is `METHOD_PARAM`. 
         /// 
@@ -79,6 +101,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             Outputs.RequestAttributeDataSourceCicsSdkMethodNodeCondition? cicsSdkMethodNodeCondition,
 
+            string? cicsTransactionCallType,
+
             bool enabled,
 
             Outputs.RequestAttributeDataSourceIibLabelMethodNodeCondition? iibLabelMethodNodeCondition,
@@ -87,15 +111,23 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? iibNodeType,
 
+            Outputs.RequestAttributeDataSourceIibNodeTypeCondition? iibNodeTypeCondition,
+
+            string? imsTransactionCallType,
+
             ImmutableArray<Outputs.RequestAttributeDataSourceMethod> methods,
 
             string? parameterName,
 
             Outputs.RequestAttributeDataSourceScope? scope,
 
+            string? serverVariableTechnology,
+
             string? sessionAttributeTechnology,
 
             string source,
+
+            string? spanAttributeKey,
 
             string? technology,
 
@@ -105,15 +137,20 @@ namespace Pulumiverse.Dynatrace.Outputs
         {
             CapturingAndStorageLocation = capturingAndStorageLocation;
             CicsSdkMethodNodeCondition = cicsSdkMethodNodeCondition;
+            CicsTransactionCallType = cicsTransactionCallType;
             Enabled = enabled;
             IibLabelMethodNodeCondition = iibLabelMethodNodeCondition;
             IibMethodNodeCondition = iibMethodNodeCondition;
             IibNodeType = iibNodeType;
+            IibNodeTypeCondition = iibNodeTypeCondition;
+            ImsTransactionCallType = imsTransactionCallType;
             Methods = methods;
             ParameterName = parameterName;
             Scope = scope;
+            ServerVariableTechnology = serverVariableTechnology;
             SessionAttributeTechnology = sessionAttributeTechnology;
             Source = source;
+            SpanAttributeKey = spanAttributeKey;
             Technology = technology;
             Unknowns = unknowns;
             ValueProcessing = valueProcessing;

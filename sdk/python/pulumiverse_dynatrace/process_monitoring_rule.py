@@ -193,6 +193,9 @@ class _ProcessMonitoringRuleState:
 
 
 class ProcessMonitoringRule(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/processMonitoringRule:ProcessMonitoringRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

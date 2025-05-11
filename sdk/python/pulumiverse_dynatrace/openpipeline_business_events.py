@@ -132,6 +132,9 @@ class _OpenpipelineBusinessEventsState:
 
 
 class OpenpipelineBusinessEvents(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/openpipelineBusinessEvents:OpenpipelineBusinessEvents"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

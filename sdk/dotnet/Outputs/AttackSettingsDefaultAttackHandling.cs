@@ -21,15 +21,22 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Possible Values: `BLOCK`, `MONITOR`, `OFF`
         /// </summary>
+        public readonly string? BlockingStrategyGo;
+        /// <summary>
+        /// Possible Values: `BLOCK`, `MONITOR`, `OFF`
+        /// </summary>
         public readonly string BlockingStrategyJava;
 
         [OutputConstructor]
         private AttackSettingsDefaultAttackHandling(
             string? blockingStrategyDotNet,
 
+            string? blockingStrategyGo,
+
             string blockingStrategyJava)
         {
             BlockingStrategyDotNet = blockingStrategyDotNet;
+            BlockingStrategyGo = blockingStrategyGo;
             BlockingStrategyJava = blockingStrategyJava;
         }
     }

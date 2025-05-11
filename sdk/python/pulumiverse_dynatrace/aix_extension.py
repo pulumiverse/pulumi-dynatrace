@@ -128,6 +128,9 @@ class _AixExtensionState:
 
 
 class AixExtension(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/aixExtension:AixExtension"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

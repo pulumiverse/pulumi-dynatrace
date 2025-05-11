@@ -65,6 +65,9 @@ class _NetworkZonesState:
 
 
 class NetworkZones(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/networkZones:NetworkZones"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

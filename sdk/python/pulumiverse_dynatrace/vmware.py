@@ -229,6 +229,9 @@ class _VmwareState:
 
 
 class Vmware(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/vmware:Vmware"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

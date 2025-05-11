@@ -397,6 +397,9 @@ class _AwsCredentialsState:
 
 
 class AwsCredentials(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/awsCredentials:AwsCredentials"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -161,6 +161,9 @@ class _MsteamsConnectionState:
 
 
 class MsteamsConnection(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/msteamsConnection:MsteamsConnection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

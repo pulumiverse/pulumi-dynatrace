@@ -191,6 +191,9 @@ class _BusinessEventsCapturingVariantsState:
 
 
 class BusinessEventsCapturingVariants(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/businessEventsCapturingVariants:BusinessEventsCapturingVariants"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -26,6 +26,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.RequestAttributeDataSourceCicsSdkMethodNodeConditionArgs>? CicsSdkMethodNodeCondition { get; set; }
 
         /// <summary>
+        /// CICS transaction call type condition for which the value is captured. Required if the source is: `CICS_TRANSACTION_CALL_TYPE`. Not applicable in other cases.
+        /// </summary>
+        [Input("cicsTransactionCallType")]
+        public Input<string>? CicsTransactionCallType { get; set; }
+
+        /// <summary>
         /// The data source is enabled (`true`) or disabled (`false`)
         /// </summary>
         [Input("enabled", required: true)]
@@ -48,6 +54,18 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// </summary>
         [Input("iibNodeType")]
         public Input<string>? IibNodeType { get; set; }
+
+        /// <summary>
+        /// IBM integration bus label node name condition for which the value is captured
+        /// </summary>
+        [Input("iibNodeTypeCondition")]
+        public Input<Inputs.RequestAttributeDataSourceIibNodeTypeConditionArgs>? IibNodeTypeCondition { get; set; }
+
+        /// <summary>
+        /// IMS transaction call type condition for which the value is captured. Required if the source is: `IMS_TRANSACTION_CALL_TYPE`. Not applicable in other cases.
+        /// </summary>
+        [Input("imsTransactionCallType")]
+        public Input<string>? ImsTransactionCallType { get; set; }
 
         [Input("methods")]
         private InputList<Inputs.RequestAttributeDataSourceMethodArgs>? _methods;
@@ -74,7 +92,15 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.RequestAttributeDataSourceScopeArgs>? Scope { get; set; }
 
         /// <summary>
-        /// The technology of the session attribute to capture if the **source** value is `SESSION_ATTRIBUTE`.
+        /// The technology of the server variable to capture if the source value is SERVER_VARIABLE.
+        /// </summary>
+        [Input("serverVariableTechnology")]
+        public Input<string>? ServerVariableTechnology { get; set; }
+
+        /// <summary>
+        /// The technology of the session attribute to capture if the **source** value is `SESSION_ATTRIBUTE`. 
+        /// 
+        ///  Not applicable in other cases
         /// </summary>
         [Input("sessionAttributeTechnology")]
         public Input<string>? SessionAttributeTechnology { get; set; }
@@ -84,6 +110,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// </summary>
         [Input("source", required: true)]
         public Input<string> Source { get; set; } = null!;
+
+        /// <summary>
+        /// The key of the span attribute to capture. Required if the source is: `SPAN_ATTRIBUTE`. Not applicable in other cases.
+        /// </summary>
+        [Input("spanAttributeKey")]
+        public Input<string>? SpanAttributeKey { get; set; }
 
         /// <summary>
         /// The technology of the method to capture if the **source** value is `METHOD_PARAM`. 

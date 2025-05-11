@@ -161,6 +161,9 @@ class _WebAppKeyPerformanceXhrState:
 
 
 class WebAppKeyPerformanceXhr(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/webAppKeyPerformanceXhr:WebAppKeyPerformanceXhr"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

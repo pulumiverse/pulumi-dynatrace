@@ -197,6 +197,9 @@ class _MaintenanceState:
 
 
 class Maintenance(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/maintenance:Maintenance"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

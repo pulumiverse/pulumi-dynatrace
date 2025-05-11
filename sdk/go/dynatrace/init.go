@@ -527,6 +527,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &PgAnomalies{}
 	case "dynatrace:index/platformBucket:PlatformBucket":
 		r = &PlatformBucket{}
+	case "dynatrace:index/platformSlo:PlatformSlo":
+		r = &PlatformSlo{}
 	case "dynatrace:index/policy:Policy":
 		r = &Policy{}
 	case "dynatrace:index/policyBindings:PolicyBindings":
@@ -2017,6 +2019,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/platformBucket",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/platformSlo",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

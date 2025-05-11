@@ -162,6 +162,9 @@ class _SpanCaptureRuleState:
 
 
 class SpanCaptureRule(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/spanCaptureRule:SpanCaptureRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -127,6 +127,9 @@ class _HostProcessGroupMonitoringState:
 
 
 class HostProcessGroupMonitoring(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/hostProcessGroupMonitoring:HostProcessGroupMonitoring"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

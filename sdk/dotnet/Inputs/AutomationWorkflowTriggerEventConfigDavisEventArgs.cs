@@ -37,7 +37,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("onProblemClose")]
         public Input<bool>? OnProblemClose { get; set; }
 
-        [Input("types", required: true)]
+        [Input("types")]
         private InputList<string>? _types;
 
         /// <summary>

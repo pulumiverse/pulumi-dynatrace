@@ -32,10 +32,12 @@ class SyntheticLocationArgs:
                  location_node_outage_delay_in_minutes: Optional[pulumi.Input[builtins.int]] = None,
                  max_active_gate_count: Optional[pulumi.Input[builtins.int]] = None,
                  min_active_gate_count: Optional[pulumi.Input[builtins.int]] = None,
+                 nam_execution_supported: Optional[pulumi.Input[builtins.bool]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  node_size: Optional[pulumi.Input[builtins.str]] = None,
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
-                 region_code: Optional[pulumi.Input[builtins.str]] = None):
+                 region_code: Optional[pulumi.Input[builtins.str]] = None,
+                 use_new_kubernetes_version: Optional[pulumi.Input[builtins.bool]] = None):
         """
         The set of arguments for constructing a SyntheticLocation resource.
         :param pulumi.Input[builtins.float] latitude: The latitude of the location in `DDD.dddd` format
@@ -53,12 +55,14 @@ class SyntheticLocationArgs:
                **availability_location_outage** or **availability_node_outage** is set to `true`
         :param pulumi.Input[builtins.int] max_active_gate_count: The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
         :param pulumi.Input[builtins.int] min_active_gate_count: The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        :param pulumi.Input[builtins.bool] nam_execution_supported: Boolean value describes if icmp monitors will be executed on this location
         :param pulumi.Input[builtins.str] name: The name of the location
         :param pulumi.Input[builtins.str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nodes: A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
                nodes](https://dt-url.net/miy3rpl) call
         :param pulumi.Input[builtins.str] region_code: The region code of the location. To fetch the list of available region codes, use the [GET regions of the
                country](https://dt-url.net/az230x0) request
+        :param pulumi.Input[builtins.bool] use_new_kubernetes_version: Boolean value describes which kubernetes version will be used
         """
         pulumi.set(__self__, "latitude", latitude)
         pulumi.set(__self__, "longitude", longitude)
@@ -82,6 +86,8 @@ class SyntheticLocationArgs:
             pulumi.set(__self__, "max_active_gate_count", max_active_gate_count)
         if min_active_gate_count is not None:
             pulumi.set(__self__, "min_active_gate_count", min_active_gate_count)
+        if nam_execution_supported is not None:
+            pulumi.set(__self__, "nam_execution_supported", nam_execution_supported)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if node_size is not None:
@@ -90,6 +96,8 @@ class SyntheticLocationArgs:
             pulumi.set(__self__, "nodes", nodes)
         if region_code is not None:
             pulumi.set(__self__, "region_code", region_code)
+        if use_new_kubernetes_version is not None:
+            pulumi.set(__self__, "use_new_kubernetes_version", use_new_kubernetes_version)
 
     @property
     @pulumi.getter
@@ -239,6 +247,18 @@ class SyntheticLocationArgs:
         pulumi.set(self, "min_active_gate_count", value)
 
     @property
+    @pulumi.getter(name="namExecutionSupported")
+    def nam_execution_supported(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Boolean value describes if icmp monitors will be executed on this location
+        """
+        return pulumi.get(self, "nam_execution_supported")
+
+    @nam_execution_supported.setter
+    def nam_execution_supported(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "nam_execution_supported", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -288,6 +308,18 @@ class SyntheticLocationArgs:
     def region_code(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "region_code", value)
 
+    @property
+    @pulumi.getter(name="useNewKubernetesVersion")
+    def use_new_kubernetes_version(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Boolean value describes which kubernetes version will be used
+        """
+        return pulumi.get(self, "use_new_kubernetes_version")
+
+    @use_new_kubernetes_version.setter
+    def use_new_kubernetes_version(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "use_new_kubernetes_version", value)
+
 
 @pulumi.input_type
 class _SyntheticLocationState:
@@ -304,10 +336,12 @@ class _SyntheticLocationState:
                  longitude: Optional[pulumi.Input[builtins.float]] = None,
                  max_active_gate_count: Optional[pulumi.Input[builtins.int]] = None,
                  min_active_gate_count: Optional[pulumi.Input[builtins.int]] = None,
+                 nam_execution_supported: Optional[pulumi.Input[builtins.bool]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  node_size: Optional[pulumi.Input[builtins.str]] = None,
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
-                 region_code: Optional[pulumi.Input[builtins.str]] = None):
+                 region_code: Optional[pulumi.Input[builtins.str]] = None,
+                 use_new_kubernetes_version: Optional[pulumi.Input[builtins.bool]] = None):
         """
         Input properties used for looking up and filtering SyntheticLocation resources.
         :param pulumi.Input[builtins.bool] auto_update_chromium: Auto upgrade of Chromium is enabled (`true`) or disabled (`false`)
@@ -325,12 +359,14 @@ class _SyntheticLocationState:
         :param pulumi.Input[builtins.float] longitude: The longitude of the location in `DDD.dddd` format
         :param pulumi.Input[builtins.int] max_active_gate_count: The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
         :param pulumi.Input[builtins.int] min_active_gate_count: The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        :param pulumi.Input[builtins.bool] nam_execution_supported: Boolean value describes if icmp monitors will be executed on this location
         :param pulumi.Input[builtins.str] name: The name of the location
         :param pulumi.Input[builtins.str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nodes: A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
                nodes](https://dt-url.net/miy3rpl) call
         :param pulumi.Input[builtins.str] region_code: The region code of the location. To fetch the list of available region codes, use the [GET regions of the
                country](https://dt-url.net/az230x0) request
+        :param pulumi.Input[builtins.bool] use_new_kubernetes_version: Boolean value describes which kubernetes version will be used
         """
         if auto_update_chromium is not None:
             pulumi.set(__self__, "auto_update_chromium", auto_update_chromium)
@@ -356,6 +392,8 @@ class _SyntheticLocationState:
             pulumi.set(__self__, "max_active_gate_count", max_active_gate_count)
         if min_active_gate_count is not None:
             pulumi.set(__self__, "min_active_gate_count", min_active_gate_count)
+        if nam_execution_supported is not None:
+            pulumi.set(__self__, "nam_execution_supported", nam_execution_supported)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if node_size is not None:
@@ -364,6 +402,8 @@ class _SyntheticLocationState:
             pulumi.set(__self__, "nodes", nodes)
         if region_code is not None:
             pulumi.set(__self__, "region_code", region_code)
+        if use_new_kubernetes_version is not None:
+            pulumi.set(__self__, "use_new_kubernetes_version", use_new_kubernetes_version)
 
     @property
     @pulumi.getter(name="autoUpdateChromium")
@@ -513,6 +553,18 @@ class _SyntheticLocationState:
         pulumi.set(self, "min_active_gate_count", value)
 
     @property
+    @pulumi.getter(name="namExecutionSupported")
+    def nam_execution_supported(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Boolean value describes if icmp monitors will be executed on this location
+        """
+        return pulumi.get(self, "nam_execution_supported")
+
+    @nam_execution_supported.setter
+    def nam_execution_supported(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "nam_execution_supported", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -562,8 +614,23 @@ class _SyntheticLocationState:
     def region_code(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "region_code", value)
 
+    @property
+    @pulumi.getter(name="useNewKubernetesVersion")
+    def use_new_kubernetes_version(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Boolean value describes which kubernetes version will be used
+        """
+        return pulumi.get(self, "use_new_kubernetes_version")
+
+    @use_new_kubernetes_version.setter
+    def use_new_kubernetes_version(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "use_new_kubernetes_version", value)
+
 
 class SyntheticLocation(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/syntheticLocation:SyntheticLocation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
@@ -580,10 +647,12 @@ class SyntheticLocation(pulumi.CustomResource):
                  longitude: Optional[pulumi.Input[builtins.float]] = None,
                  max_active_gate_count: Optional[pulumi.Input[builtins.int]] = None,
                  min_active_gate_count: Optional[pulumi.Input[builtins.int]] = None,
+                 nam_execution_supported: Optional[pulumi.Input[builtins.bool]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  node_size: Optional[pulumi.Input[builtins.str]] = None,
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  region_code: Optional[pulumi.Input[builtins.str]] = None,
+                 use_new_kubernetes_version: Optional[pulumi.Input[builtins.bool]] = None,
                  __props__=None):
         """
         Create a SyntheticLocation resource with the given unique name, props, and options.
@@ -604,12 +673,14 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[builtins.float] longitude: The longitude of the location in `DDD.dddd` format
         :param pulumi.Input[builtins.int] max_active_gate_count: The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
         :param pulumi.Input[builtins.int] min_active_gate_count: The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        :param pulumi.Input[builtins.bool] nam_execution_supported: Boolean value describes if icmp monitors will be executed on this location
         :param pulumi.Input[builtins.str] name: The name of the location
         :param pulumi.Input[builtins.str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nodes: A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
                nodes](https://dt-url.net/miy3rpl) call
         :param pulumi.Input[builtins.str] region_code: The region code of the location. To fetch the list of available region codes, use the [GET regions of the
                country](https://dt-url.net/az230x0) request
+        :param pulumi.Input[builtins.bool] use_new_kubernetes_version: Boolean value describes which kubernetes version will be used
         """
         ...
     @overload
@@ -646,10 +717,12 @@ class SyntheticLocation(pulumi.CustomResource):
                  longitude: Optional[pulumi.Input[builtins.float]] = None,
                  max_active_gate_count: Optional[pulumi.Input[builtins.int]] = None,
                  min_active_gate_count: Optional[pulumi.Input[builtins.int]] = None,
+                 nam_execution_supported: Optional[pulumi.Input[builtins.bool]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  node_size: Optional[pulumi.Input[builtins.str]] = None,
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  region_code: Optional[pulumi.Input[builtins.str]] = None,
+                 use_new_kubernetes_version: Optional[pulumi.Input[builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -675,10 +748,12 @@ class SyntheticLocation(pulumi.CustomResource):
             __props__.__dict__["longitude"] = longitude
             __props__.__dict__["max_active_gate_count"] = max_active_gate_count
             __props__.__dict__["min_active_gate_count"] = min_active_gate_count
+            __props__.__dict__["nam_execution_supported"] = nam_execution_supported
             __props__.__dict__["name"] = name
             __props__.__dict__["node_size"] = node_size
             __props__.__dict__["nodes"] = nodes
             __props__.__dict__["region_code"] = region_code
+            __props__.__dict__["use_new_kubernetes_version"] = use_new_kubernetes_version
         super(SyntheticLocation, __self__).__init__(
             'dynatrace:index/syntheticLocation:SyntheticLocation',
             resource_name,
@@ -701,10 +776,12 @@ class SyntheticLocation(pulumi.CustomResource):
             longitude: Optional[pulumi.Input[builtins.float]] = None,
             max_active_gate_count: Optional[pulumi.Input[builtins.int]] = None,
             min_active_gate_count: Optional[pulumi.Input[builtins.int]] = None,
+            nam_execution_supported: Optional[pulumi.Input[builtins.bool]] = None,
             name: Optional[pulumi.Input[builtins.str]] = None,
             node_size: Optional[pulumi.Input[builtins.str]] = None,
             nodes: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
-            region_code: Optional[pulumi.Input[builtins.str]] = None) -> 'SyntheticLocation':
+            region_code: Optional[pulumi.Input[builtins.str]] = None,
+            use_new_kubernetes_version: Optional[pulumi.Input[builtins.bool]] = None) -> 'SyntheticLocation':
         """
         Get an existing SyntheticLocation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -727,12 +804,14 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[builtins.float] longitude: The longitude of the location in `DDD.dddd` format
         :param pulumi.Input[builtins.int] max_active_gate_count: The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
         :param pulumi.Input[builtins.int] min_active_gate_count: The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        :param pulumi.Input[builtins.bool] nam_execution_supported: Boolean value describes if icmp monitors will be executed on this location
         :param pulumi.Input[builtins.str] name: The name of the location
         :param pulumi.Input[builtins.str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nodes: A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
                nodes](https://dt-url.net/miy3rpl) call
         :param pulumi.Input[builtins.str] region_code: The region code of the location. To fetch the list of available region codes, use the [GET regions of the
                country](https://dt-url.net/az230x0) request
+        :param pulumi.Input[builtins.bool] use_new_kubernetes_version: Boolean value describes which kubernetes version will be used
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -750,10 +829,12 @@ class SyntheticLocation(pulumi.CustomResource):
         __props__.__dict__["longitude"] = longitude
         __props__.__dict__["max_active_gate_count"] = max_active_gate_count
         __props__.__dict__["min_active_gate_count"] = min_active_gate_count
+        __props__.__dict__["nam_execution_supported"] = nam_execution_supported
         __props__.__dict__["name"] = name
         __props__.__dict__["node_size"] = node_size
         __props__.__dict__["nodes"] = nodes
         __props__.__dict__["region_code"] = region_code
+        __props__.__dict__["use_new_kubernetes_version"] = use_new_kubernetes_version
         return SyntheticLocation(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -856,6 +937,14 @@ class SyntheticLocation(pulumi.CustomResource):
         return pulumi.get(self, "min_active_gate_count")
 
     @property
+    @pulumi.getter(name="namExecutionSupported")
+    def nam_execution_supported(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Boolean value describes if icmp monitors will be executed on this location
+        """
+        return pulumi.get(self, "nam_execution_supported")
+
+    @property
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
@@ -888,4 +977,12 @@ class SyntheticLocation(pulumi.CustomResource):
         country](https://dt-url.net/az230x0) request
         """
         return pulumi.get(self, "region_code")
+
+    @property
+    @pulumi.getter(name="useNewKubernetesVersion")
+    def use_new_kubernetes_version(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Boolean value describes which kubernetes version will be used
+        """
+        return pulumi.get(self, "use_new_kubernetes_version")
 

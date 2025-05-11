@@ -369,6 +369,9 @@ class _ApiTokenState:
 
 
 class ApiToken(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/apiToken:ApiToken"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

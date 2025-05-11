@@ -190,6 +190,9 @@ class _BusinessEventsBucketsState:
 
 
 class BusinessEventsBuckets(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/businessEventsBuckets:BusinessEventsBuckets"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

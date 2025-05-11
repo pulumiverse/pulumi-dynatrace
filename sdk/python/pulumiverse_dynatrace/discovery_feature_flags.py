@@ -193,6 +193,9 @@ class _DiscoveryFeatureFlagsState:
 
 
 class DiscoveryFeatureFlags(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/discoveryFeatureFlags:DiscoveryFeatureFlags"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

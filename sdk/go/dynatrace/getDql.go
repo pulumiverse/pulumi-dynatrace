@@ -11,6 +11,67 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.GetDql(ctx, &dynatrace.GetDqlArgs{
+//				Query: "fetch events",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// will produce content for the `results` attribute like this:
+//
+// You can also use Heredoc syntax for better readability of complex DQL queries.
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.GetDql(ctx, &dynatrace.GetDqlArgs{
+//				Query: `    fetch events |
+//	    filter event.type == "davis" AND davis.status != "CLOSED" |
+//	    fields timestamp, davis.title, davis.underMaintenance, davis.status |
+//	    sort timestamp |
+//	    limit 10
+//
+// `,
+//
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// {{ .SchemaMarkdown | trimspace }}
 func GetDql(ctx *pulumi.Context, args *GetDqlArgs, opts ...pulumi.InvokeOption) (*GetDqlResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDqlResult
@@ -23,57 +84,33 @@ func GetDql(ctx *pulumi.Context, args *GetDqlArgs, opts ...pulumi.InvokeOption) 
 
 // A collection of arguments for invoking getDql.
 type GetDqlArgs struct {
-	// In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
-	DefaultSamplingRatio *float64 `pulumi:"defaultSamplingRatio"`
-	// Limit in gigabytes for the amount data that will be scanned during read
-	DefaultScanLimitGbytes *int `pulumi:"defaultScanLimitGbytes"`
-	// The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
-	DefaultTimeframeEnd *string `pulumi:"defaultTimeframeEnd"`
-	// The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
-	DefaultTimeframeStart *string `pulumi:"defaultTimeframeStart"`
-	// The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
-	FetchTimeoutSeconds *int `pulumi:"fetchTimeoutSeconds"`
-	// The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
-	Locale *string `pulumi:"locale"`
-	// The maximum number of result bytes that this query will return
-	MaxResultBytes *int `pulumi:"maxResultBytes"`
-	// The maximum number of result records that this query will return
-	MaxResultRecords *int `pulumi:"maxResultRecords"`
-	// example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
-	Query string `pulumi:"query"`
-	// The time a client is willing to wait for the query result. In case the query finishes within the specified timeout, the query result is returned. Otherwise, the requestToken is returned, allowing polling for the result
-	RequestTimeoutMilliseconds *int `pulumi:"requestTimeoutMilliseconds"`
-	// The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
-	Timezone *string `pulumi:"timezone"`
+	DefaultSamplingRatio   *float64 `pulumi:"defaultSamplingRatio"`
+	DefaultScanLimitGbytes *int     `pulumi:"defaultScanLimitGbytes"`
+	DefaultTimeframeEnd    *string  `pulumi:"defaultTimeframeEnd"`
+	DefaultTimeframeStart  *string  `pulumi:"defaultTimeframeStart"`
+	FetchTimeoutSeconds    *int     `pulumi:"fetchTimeoutSeconds"`
+	Locale                 *string  `pulumi:"locale"`
+	MaxResultBytes         *int     `pulumi:"maxResultBytes"`
+	MaxResultRecords       *int     `pulumi:"maxResultRecords"`
+	Query                  string   `pulumi:"query"`
+	Timezone               *string  `pulumi:"timezone"`
 }
 
 // A collection of values returned by getDql.
 type GetDqlResult struct {
-	// In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
-	DefaultSamplingRatio *float64 `pulumi:"defaultSamplingRatio"`
-	// Limit in gigabytes for the amount data that will be scanned during read
-	DefaultScanLimitGbytes *int `pulumi:"defaultScanLimitGbytes"`
-	// The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
-	DefaultTimeframeEnd *string `pulumi:"defaultTimeframeEnd"`
-	// The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
-	DefaultTimeframeStart *string `pulumi:"defaultTimeframeStart"`
-	// The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
-	FetchTimeoutSeconds *int `pulumi:"fetchTimeoutSeconds"`
+	DefaultSamplingRatio   *float64 `pulumi:"defaultSamplingRatio"`
+	DefaultScanLimitGbytes *int     `pulumi:"defaultScanLimitGbytes"`
+	DefaultTimeframeEnd    *string  `pulumi:"defaultTimeframeEnd"`
+	DefaultTimeframeStart  *string  `pulumi:"defaultTimeframeStart"`
+	FetchTimeoutSeconds    *int     `pulumi:"fetchTimeoutSeconds"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
-	Locale *string `pulumi:"locale"`
-	// The maximum number of result bytes that this query will return
-	MaxResultBytes *int `pulumi:"maxResultBytes"`
-	// The maximum number of result records that this query will return
-	MaxResultRecords *int `pulumi:"maxResultRecords"`
-	// example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
-	Query   string `pulumi:"query"`
-	Records string `pulumi:"records"`
-	// The time a client is willing to wait for the query result. In case the query finishes within the specified timeout, the query result is returned. Otherwise, the requestToken is returned, allowing polling for the result
-	RequestTimeoutMilliseconds *int `pulumi:"requestTimeoutMilliseconds"`
-	// The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
-	Timezone *string `pulumi:"timezone"`
+	Id               string  `pulumi:"id"`
+	Locale           *string `pulumi:"locale"`
+	MaxResultBytes   *int    `pulumi:"maxResultBytes"`
+	MaxResultRecords *int    `pulumi:"maxResultRecords"`
+	Query            string  `pulumi:"query"`
+	Records          string  `pulumi:"records"`
+	Timezone         *string `pulumi:"timezone"`
 }
 
 func GetDqlOutput(ctx *pulumi.Context, args GetDqlOutputArgs, opts ...pulumi.InvokeOption) GetDqlResultOutput {
@@ -87,28 +124,16 @@ func GetDqlOutput(ctx *pulumi.Context, args GetDqlOutputArgs, opts ...pulumi.Inv
 
 // A collection of arguments for invoking getDql.
 type GetDqlOutputArgs struct {
-	// In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
-	DefaultSamplingRatio pulumi.Float64PtrInput `pulumi:"defaultSamplingRatio"`
-	// Limit in gigabytes for the amount data that will be scanned during read
-	DefaultScanLimitGbytes pulumi.IntPtrInput `pulumi:"defaultScanLimitGbytes"`
-	// The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
-	DefaultTimeframeEnd pulumi.StringPtrInput `pulumi:"defaultTimeframeEnd"`
-	// The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
-	DefaultTimeframeStart pulumi.StringPtrInput `pulumi:"defaultTimeframeStart"`
-	// The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
-	FetchTimeoutSeconds pulumi.IntPtrInput `pulumi:"fetchTimeoutSeconds"`
-	// The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
-	Locale pulumi.StringPtrInput `pulumi:"locale"`
-	// The maximum number of result bytes that this query will return
-	MaxResultBytes pulumi.IntPtrInput `pulumi:"maxResultBytes"`
-	// The maximum number of result records that this query will return
-	MaxResultRecords pulumi.IntPtrInput `pulumi:"maxResultRecords"`
-	// example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
-	Query pulumi.StringInput `pulumi:"query"`
-	// The time a client is willing to wait for the query result. In case the query finishes within the specified timeout, the query result is returned. Otherwise, the requestToken is returned, allowing polling for the result
-	RequestTimeoutMilliseconds pulumi.IntPtrInput `pulumi:"requestTimeoutMilliseconds"`
-	// The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
-	Timezone pulumi.StringPtrInput `pulumi:"timezone"`
+	DefaultSamplingRatio   pulumi.Float64PtrInput `pulumi:"defaultSamplingRatio"`
+	DefaultScanLimitGbytes pulumi.IntPtrInput     `pulumi:"defaultScanLimitGbytes"`
+	DefaultTimeframeEnd    pulumi.StringPtrInput  `pulumi:"defaultTimeframeEnd"`
+	DefaultTimeframeStart  pulumi.StringPtrInput  `pulumi:"defaultTimeframeStart"`
+	FetchTimeoutSeconds    pulumi.IntPtrInput     `pulumi:"fetchTimeoutSeconds"`
+	Locale                 pulumi.StringPtrInput  `pulumi:"locale"`
+	MaxResultBytes         pulumi.IntPtrInput     `pulumi:"maxResultBytes"`
+	MaxResultRecords       pulumi.IntPtrInput     `pulumi:"maxResultRecords"`
+	Query                  pulumi.StringInput     `pulumi:"query"`
+	Timezone               pulumi.StringPtrInput  `pulumi:"timezone"`
 }
 
 func (GetDqlOutputArgs) ElementType() reflect.Type {
@@ -130,27 +155,22 @@ func (o GetDqlResultOutput) ToGetDqlResultOutputWithContext(ctx context.Context)
 	return o
 }
 
-// In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
 func (o GetDqlResultOutput) DefaultSamplingRatio() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v GetDqlResult) *float64 { return v.DefaultSamplingRatio }).(pulumi.Float64PtrOutput)
 }
 
-// Limit in gigabytes for the amount data that will be scanned during read
 func (o GetDqlResultOutput) DefaultScanLimitGbytes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetDqlResult) *int { return v.DefaultScanLimitGbytes }).(pulumi.IntPtrOutput)
 }
 
-// The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
 func (o GetDqlResultOutput) DefaultTimeframeEnd() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDqlResult) *string { return v.DefaultTimeframeEnd }).(pulumi.StringPtrOutput)
 }
 
-// The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
 func (o GetDqlResultOutput) DefaultTimeframeStart() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDqlResult) *string { return v.DefaultTimeframeStart }).(pulumi.StringPtrOutput)
 }
 
-// The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
 func (o GetDqlResultOutput) FetchTimeoutSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetDqlResult) *int { return v.FetchTimeoutSeconds }).(pulumi.IntPtrOutput)
 }
@@ -160,22 +180,18 @@ func (o GetDqlResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDqlResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
 func (o GetDqlResultOutput) Locale() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDqlResult) *string { return v.Locale }).(pulumi.StringPtrOutput)
 }
 
-// The maximum number of result bytes that this query will return
 func (o GetDqlResultOutput) MaxResultBytes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetDqlResult) *int { return v.MaxResultBytes }).(pulumi.IntPtrOutput)
 }
 
-// The maximum number of result records that this query will return
 func (o GetDqlResultOutput) MaxResultRecords() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetDqlResult) *int { return v.MaxResultRecords }).(pulumi.IntPtrOutput)
 }
 
-// example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
 func (o GetDqlResultOutput) Query() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDqlResult) string { return v.Query }).(pulumi.StringOutput)
 }
@@ -184,12 +200,6 @@ func (o GetDqlResultOutput) Records() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDqlResult) string { return v.Records }).(pulumi.StringOutput)
 }
 
-// The time a client is willing to wait for the query result. In case the query finishes within the specified timeout, the query result is returned. Otherwise, the requestToken is returned, allowing polling for the result
-func (o GetDqlResultOutput) RequestTimeoutMilliseconds() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetDqlResult) *int { return v.RequestTimeoutMilliseconds }).(pulumi.IntPtrOutput)
-}
-
-// The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
 func (o GetDqlResultOutput) Timezone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDqlResult) *string { return v.Timezone }).(pulumi.StringPtrOutput)
 }

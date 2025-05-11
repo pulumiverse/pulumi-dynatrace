@@ -193,6 +193,9 @@ class _FailureDetectionParametersState:
 
 
 class FailureDetectionParameters(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/failureDetectionParameters:FailureDetectionParameters"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

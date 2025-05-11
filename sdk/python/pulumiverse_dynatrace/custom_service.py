@@ -290,6 +290,9 @@ class _CustomServiceState:
 
 
 class CustomService(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/customService:CustomService"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

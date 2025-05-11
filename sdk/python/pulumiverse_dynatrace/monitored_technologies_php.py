@@ -161,6 +161,9 @@ class _MonitoredTechnologiesPhpState:
 
 
 class MonitoredTechnologiesPhp(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/monitoredTechnologiesPhp:MonitoredTechnologiesPhp"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

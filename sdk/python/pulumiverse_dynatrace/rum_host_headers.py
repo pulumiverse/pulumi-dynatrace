@@ -97,6 +97,9 @@ class _RumHostHeadersState:
 
 
 class RumHostHeaders(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/rumHostHeaders:RumHostHeaders"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -223,6 +223,9 @@ class _ManagedInternetProxyState:
 
 
 class ManagedInternetProxy(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/managedInternetProxy:ManagedInternetProxy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

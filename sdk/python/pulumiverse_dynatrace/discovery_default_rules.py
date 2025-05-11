@@ -98,6 +98,9 @@ class _DiscoveryDefaultRulesState:
 
 
 class DiscoveryDefaultRules(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/discoveryDefaultRules:DiscoveryDefaultRules"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

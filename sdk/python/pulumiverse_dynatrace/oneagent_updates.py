@@ -195,6 +195,9 @@ class _OneagentUpdatesState:
 
 
 class OneagentUpdates(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/oneagentUpdates:OneagentUpdates"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

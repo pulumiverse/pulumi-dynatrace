@@ -65,6 +65,9 @@ class _SyntheticAvailabilityState:
 
 
 class SyntheticAvailability(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/syntheticAvailability:SyntheticAvailability"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

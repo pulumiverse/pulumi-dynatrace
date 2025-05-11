@@ -260,6 +260,9 @@ class _OpentelemetryMetricsState:
 
 
 class OpentelemetryMetrics(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/opentelemetryMetrics:OpentelemetryMetrics"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

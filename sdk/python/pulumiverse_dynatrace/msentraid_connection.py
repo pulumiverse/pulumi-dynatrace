@@ -191,6 +191,9 @@ class _MsentraidConnectionState:
 
 
 class MsentraidConnection(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/msentraidConnection:MsentraidConnection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

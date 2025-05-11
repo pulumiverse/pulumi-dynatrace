@@ -176,6 +176,9 @@ class _PlatformBucketState:
 
 
 class PlatformBucket(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/platformBucket:PlatformBucket"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

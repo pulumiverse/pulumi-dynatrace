@@ -385,6 +385,9 @@ class _ManagedBackupState:
 
 
 class ManagedBackup(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/managedBackup:ManagedBackup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

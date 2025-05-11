@@ -66,6 +66,9 @@ class _JsonDashboardBaseState:
 
 
 class JsonDashboardBase(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/jsonDashboardBase:JsonDashboardBase"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
