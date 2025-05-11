@@ -97,6 +97,9 @@ class _WebAppJavascriptUpdatesState:
 
 
 class WebAppJavascriptUpdates(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/webAppJavascriptUpdates:WebAppJavascriptUpdates"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

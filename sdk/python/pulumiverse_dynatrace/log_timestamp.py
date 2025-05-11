@@ -320,6 +320,9 @@ class _LogTimestampState:
 
 
 class LogTimestamp(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/logTimestamp:LogTimestamp"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

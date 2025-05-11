@@ -196,6 +196,9 @@ class _QueueManagerState:
 
 
 class QueueManager(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/queueManager:QueueManager"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

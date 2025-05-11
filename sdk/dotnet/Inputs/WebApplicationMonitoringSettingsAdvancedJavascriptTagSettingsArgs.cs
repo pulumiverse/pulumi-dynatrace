@@ -50,6 +50,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<int> MaxErrorsToCapture { get; set; } = null!;
 
         /// <summary>
+        /// Proxy wrapper enabled/disabled
+        /// </summary>
+        [Input("proxyWrapperEnabled")]
+        public Input<bool>? ProxyWrapperEnabled { get; set; }
+
+        /// <summary>
         /// Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `&lt;` and `&gt;`.
         /// </summary>
         [Input("specialCharactersToEscape")]
@@ -66,6 +72,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// </summary>
         [Input("syncBeaconInternetExplorer")]
         public Input<bool>? SyncBeaconInternetExplorer { get; set; }
+
+        /// <summary>
+        /// User action name attribute
+        /// </summary>
+        [Input("userActionNameAttribute")]
+        public Input<string>? UserActionNameAttribute { get; set; }
 
         public WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs()
         {

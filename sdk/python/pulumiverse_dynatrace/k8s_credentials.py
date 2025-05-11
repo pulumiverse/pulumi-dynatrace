@@ -483,6 +483,9 @@ class _K8sCredentialsState:
 
 
 class K8sCredentials(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/k8sCredentials:K8sCredentials"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

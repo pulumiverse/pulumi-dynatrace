@@ -222,6 +222,9 @@ class _Ms365EmailConnectionState:
 
 
 class Ms365EmailConnection(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/ms365EmailConnection:Ms365EmailConnection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

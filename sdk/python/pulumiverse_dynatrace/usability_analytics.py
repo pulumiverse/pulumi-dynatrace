@@ -101,6 +101,9 @@ class _UsabilityAnalyticsState:
 
 
 class UsabilityAnalytics(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/usabilityAnalytics:UsabilityAnalytics"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

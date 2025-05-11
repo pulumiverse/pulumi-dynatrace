@@ -97,6 +97,9 @@ class _MonitoredTechnologiesIisState:
 
 
 class MonitoredTechnologiesIis(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/monitoredTechnologiesIis:MonitoredTechnologiesIis"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

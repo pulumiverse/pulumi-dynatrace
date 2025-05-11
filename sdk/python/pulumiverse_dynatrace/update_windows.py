@@ -258,6 +258,9 @@ class _UpdateWindowsState:
 
 
 class UpdateWindows(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/updateWindows:UpdateWindows"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

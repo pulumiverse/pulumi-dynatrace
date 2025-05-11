@@ -206,6 +206,9 @@ class _DeclarativeGroupingState:
 
 
 class DeclarativeGrouping(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/declarativeGrouping:DeclarativeGrouping"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -130,6 +130,9 @@ class _HttpMonitorCookiesState:
 
 
 class HttpMonitorCookies(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/httpMonitorCookies:HttpMonitorCookies"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

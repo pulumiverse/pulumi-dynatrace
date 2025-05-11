@@ -129,6 +129,9 @@ class _AttackAlertingState:
 
 
 class AttackAlerting(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/attackAlerting:AttackAlerting"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

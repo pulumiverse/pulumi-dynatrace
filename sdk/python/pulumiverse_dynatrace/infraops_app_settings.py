@@ -128,6 +128,9 @@ class _InfraopsAppSettingsState:
 
 
 class InfraopsAppSettings(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/infraopsAppSettings:InfraopsAppSettings"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

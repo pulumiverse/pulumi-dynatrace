@@ -224,6 +224,9 @@ class _BusinessEventsOneagentState:
 
 
 class BusinessEventsOneagent(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/businessEventsOneagent:BusinessEventsOneagent"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

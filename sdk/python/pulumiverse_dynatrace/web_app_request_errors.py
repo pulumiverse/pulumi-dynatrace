@@ -130,6 +130,9 @@ class _WebAppRequestErrorsState:
 
 
 class WebAppRequestErrors(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/webAppRequestErrors:WebAppRequestErrors"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -172,6 +172,9 @@ class _DiskOptionsState:
 
 
 class DiskOptions(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/diskOptions:DiskOptions"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -97,6 +97,9 @@ class _OneagentDefaultVersionState:
 
 
 class OneagentDefaultVersion(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/oneagentDefaultVersion:OneagentDefaultVersion"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -256,6 +256,9 @@ class _AttackRulesState:
 
 
 class AttackRules(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/attackRules:AttackRules"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

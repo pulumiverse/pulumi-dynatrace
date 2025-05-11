@@ -65,6 +65,9 @@ class _GrailMetricsAllowallState:
 
 
 class GrailMetricsAllowall(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/grailMetricsAllowall:GrailMetricsAllowall"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

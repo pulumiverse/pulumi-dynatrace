@@ -66,6 +66,9 @@ class _HostNamingOrderState:
 
 
 class HostNamingOrder(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/hostNamingOrder:HostNamingOrder"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

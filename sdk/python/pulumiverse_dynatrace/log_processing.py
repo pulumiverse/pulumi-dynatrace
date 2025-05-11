@@ -235,6 +235,9 @@ class _LogProcessingState:
 
 
 class LogProcessing(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/logProcessing:LogProcessing"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

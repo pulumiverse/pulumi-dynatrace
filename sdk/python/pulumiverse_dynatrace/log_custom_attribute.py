@@ -96,6 +96,9 @@ class _LogCustomAttributeState:
 
 
 class LogCustomAttribute(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/logCustomAttribute:LogCustomAttribute"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

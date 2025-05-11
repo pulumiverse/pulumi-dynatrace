@@ -96,6 +96,9 @@ class _MetricQueryState:
 
 
 class MetricQuery(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/metricQuery:MetricQuery"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

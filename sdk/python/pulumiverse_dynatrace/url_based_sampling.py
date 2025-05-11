@@ -353,6 +353,9 @@ class _UrlBasedSamplingState:
 
 
 class UrlBasedSampling(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/urlBasedSampling:UrlBasedSampling"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

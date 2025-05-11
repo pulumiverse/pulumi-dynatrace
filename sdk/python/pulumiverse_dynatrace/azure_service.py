@@ -175,6 +175,9 @@ class _AzureServiceState:
 
 
 class AzureService(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/azureService:AzureService"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

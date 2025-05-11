@@ -225,6 +225,9 @@ class _ApiDetectionState:
 
 
 class ApiDetection(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/apiDetection:ApiDetection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -129,6 +129,9 @@ class _MonitoredTechnologiesDotnetState:
 
 
 class MonitoredTechnologiesDotnet(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/monitoredTechnologiesDotnet:MonitoredTechnologiesDotnet"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

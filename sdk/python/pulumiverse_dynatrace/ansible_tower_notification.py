@@ -318,6 +318,9 @@ class _AnsibleTowerNotificationState:
 
 
 class AnsibleTowerNotification(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/ansibleTowerNotification:AnsibleTowerNotification"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -129,6 +129,9 @@ class _KeyRequestsState:
 
 
 class KeyRequests(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/keyRequests:KeyRequests"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

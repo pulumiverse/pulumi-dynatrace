@@ -130,6 +130,9 @@ class _QueueSharingGroupsState:
 
 
 class QueueSharingGroups(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/queueSharingGroups:QueueSharingGroups"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

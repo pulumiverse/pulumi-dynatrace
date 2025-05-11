@@ -67,7 +67,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? FetchRequests;
         /// <summary>
-        /// Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE` and `JAVASCRIPT_TAG`.
+        /// Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE`, `JAVASCRIPT_TAG`, `JAVASCRIPT_TAG_COMPLETE`, `JAVASCRIPT_TAG_SRI`
         /// </summary>
         public readonly string InjectionMode;
         /// <summary>
@@ -86,6 +86,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// Java script injection rules
         /// </summary>
         public readonly Outputs.WebApplicationMonitoringSettingsJavascriptInjectionRules? JavascriptInjectionRules;
+        /// <summary>
+        /// Get the JavaScript library file from the CDN. Not supported by agentless applications and assumed to be false for auto-injected applications if omitted.
+        /// </summary>
+        public readonly bool? LibraryFileFromCdn;
         /// <summary>
         /// The location of your application’s custom JavaScript library file. 
         /// 
@@ -161,6 +165,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             Outputs.WebApplicationMonitoringSettingsJavascriptInjectionRules? javascriptInjectionRules,
 
+            bool? libraryFileFromCdn,
+
             string? libraryFileLocation,
 
             string? monitoringDataPath,
@@ -193,6 +199,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             IpAddressRestrictionSettings = ipAddressRestrictionSettings;
             JavascriptFrameworkSupport = javascriptFrameworkSupport;
             JavascriptInjectionRules = javascriptInjectionRules;
+            LibraryFileFromCdn = libraryFileFromCdn;
             LibraryFileLocation = libraryFileLocation;
             MonitoringDataPath = monitoringDataPath;
             SameSiteCookieAttribute = sameSiteCookieAttribute;

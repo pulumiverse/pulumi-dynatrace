@@ -97,6 +97,9 @@ class _MonitoredTechnologiesJavaState:
 
 
 class MonitoredTechnologiesJava(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/monitoredTechnologiesJava:MonitoredTechnologiesJava"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -162,6 +162,9 @@ class _SpanContextPropagationState:
 
 
 class SpanContextPropagation(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/spanContextPropagation:SpanContextPropagation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

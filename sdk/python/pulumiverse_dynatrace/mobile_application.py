@@ -462,6 +462,9 @@ class _MobileApplicationState:
 
 
 class MobileApplication(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/mobileApplication:MobileApplication"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

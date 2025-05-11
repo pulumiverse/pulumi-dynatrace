@@ -240,6 +240,9 @@ class _ApplicationErrorRulesState:
 
 
 class ApplicationErrorRules(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/applicationErrorRules:ApplicationErrorRules"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

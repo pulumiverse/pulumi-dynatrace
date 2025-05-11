@@ -224,6 +224,9 @@ class _RumProviderBreakdownState:
 
 
 class RumProviderBreakdown(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/rumProviderBreakdown:RumProviderBreakdown"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

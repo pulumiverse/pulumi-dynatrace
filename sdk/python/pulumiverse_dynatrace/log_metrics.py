@@ -222,6 +222,9 @@ class _LogMetricsState:
 
 
 class LogMetrics(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/logMetrics:LogMetrics"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

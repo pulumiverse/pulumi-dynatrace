@@ -260,6 +260,9 @@ class _UserGroupState:
 
 
 class UserGroup(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/userGroup:UserGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

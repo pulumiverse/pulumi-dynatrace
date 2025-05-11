@@ -131,6 +131,9 @@ class _AppMonitoringState:
 
 
 class AppMonitoring(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/appMonitoring:AppMonitoring"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

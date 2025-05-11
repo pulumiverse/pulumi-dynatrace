@@ -222,6 +222,9 @@ class _DatabaseAnomaliesV2State:
 
 
 class DatabaseAnomaliesV2(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/databaseAnomaliesV2:DatabaseAnomaliesV2"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

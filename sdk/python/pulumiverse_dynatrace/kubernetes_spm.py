@@ -97,6 +97,9 @@ class _KubernetesSpmState:
 
 
 class KubernetesSpm(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/kubernetesSpm:KubernetesSpm"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

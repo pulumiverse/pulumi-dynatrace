@@ -99,6 +99,9 @@ class _CustomAppEnablementState:
 
 
 class CustomAppEnablement(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/customAppEnablement:CustomAppEnablement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

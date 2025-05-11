@@ -130,6 +130,9 @@ class _DirectSharesState:
 
 
 class DirectShares(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/directShares:DirectShares"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

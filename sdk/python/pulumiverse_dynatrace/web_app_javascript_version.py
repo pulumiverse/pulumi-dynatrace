@@ -66,6 +66,9 @@ class _WebAppJavascriptVersionState:
 
 
 class WebAppJavascriptVersion(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/webAppJavascriptVersion:WebAppJavascriptVersion"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

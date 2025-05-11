@@ -158,6 +158,9 @@ class _ContainerBuiltinRuleState:
 
 
 class ContainerBuiltinRule(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/containerBuiltinRule:ContainerBuiltinRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

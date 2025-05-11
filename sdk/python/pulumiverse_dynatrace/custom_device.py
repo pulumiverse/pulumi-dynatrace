@@ -433,6 +433,9 @@ class _CustomDeviceState:
 
 
 class CustomDevice(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/customDevice:CustomDevice"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

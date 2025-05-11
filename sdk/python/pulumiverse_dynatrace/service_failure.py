@@ -130,6 +130,9 @@ class _ServiceFailureState:
 
 
 class ServiceFailure(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/serviceFailure:ServiceFailure"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

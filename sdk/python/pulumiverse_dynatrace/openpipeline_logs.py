@@ -132,6 +132,9 @@ class _OpenpipelineLogsState:
 
 
 class OpenpipelineLogs(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/openpipelineLogs:OpenpipelineLogs"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

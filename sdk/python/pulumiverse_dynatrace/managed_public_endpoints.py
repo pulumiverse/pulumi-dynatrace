@@ -162,6 +162,9 @@ class _ManagedPublicEndpointsState:
 
 
 class ManagedPublicEndpoints(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/managedPublicEndpoints:ManagedPublicEndpoints"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -192,6 +192,9 @@ class _ServiceAnomaliesV2State:
 
 
 class ServiceAnomaliesV2(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/serviceAnomaliesV2:ServiceAnomaliesV2"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

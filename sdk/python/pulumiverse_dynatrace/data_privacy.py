@@ -200,6 +200,9 @@ class _DataPrivacyState:
 
 
 class DataPrivacy(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/dataPrivacy:DataPrivacy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -222,6 +222,9 @@ class _BusinessEventsMetricsState:
 
 
 class BusinessEventsMetrics(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/businessEventsMetrics:BusinessEventsMetrics"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

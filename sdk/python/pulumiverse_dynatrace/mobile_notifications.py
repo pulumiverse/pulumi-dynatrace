@@ -65,6 +65,9 @@ class _MobileNotificationsState:
 
 
 class MobileNotifications(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/mobileNotifications:MobileNotifications"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

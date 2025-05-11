@@ -260,6 +260,9 @@ class _HostAnomaliesState:
 
 
 class HostAnomalies(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/hostAnomalies:HostAnomalies"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

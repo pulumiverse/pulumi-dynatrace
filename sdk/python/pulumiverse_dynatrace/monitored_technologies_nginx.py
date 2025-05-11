@@ -97,6 +97,9 @@ class _MonitoredTechnologiesNginxState:
 
 
 class MonitoredTechnologiesNginx(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/monitoredTechnologiesNginx:MonitoredTechnologiesNginx"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -84,6 +84,10 @@ export class SyntheticLocation extends pulumi.CustomResource {
      */
     public readonly minActiveGateCount!: pulumi.Output<number | undefined>;
     /**
+     * Boolean value describes if icmp monitors will be executed on this location
+     */
+    public readonly namExecutionSupported!: pulumi.Output<boolean | undefined>;
+    /**
      * The name of the location
      */
     public readonly name!: pulumi.Output<string>;
@@ -101,6 +105,10 @@ export class SyntheticLocation extends pulumi.CustomResource {
      * country](https://dt-url.net/az230x0) request
      */
     public readonly regionCode!: pulumi.Output<string | undefined>;
+    /**
+     * Boolean value describes which kubernetes version will be used
+     */
+    public readonly useNewKubernetesVersion!: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a SyntheticLocation resource with the given unique name, arguments, and options.
@@ -127,10 +135,12 @@ export class SyntheticLocation extends pulumi.CustomResource {
             resourceInputs["longitude"] = state ? state.longitude : undefined;
             resourceInputs["maxActiveGateCount"] = state ? state.maxActiveGateCount : undefined;
             resourceInputs["minActiveGateCount"] = state ? state.minActiveGateCount : undefined;
+            resourceInputs["namExecutionSupported"] = state ? state.namExecutionSupported : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["nodeSize"] = state ? state.nodeSize : undefined;
             resourceInputs["nodes"] = state ? state.nodes : undefined;
             resourceInputs["regionCode"] = state ? state.regionCode : undefined;
+            resourceInputs["useNewKubernetesVersion"] = state ? state.useNewKubernetesVersion : undefined;
         } else {
             const args = argsOrState as SyntheticLocationArgs | undefined;
             if ((!args || args.latitude === undefined) && !opts.urn) {
@@ -151,10 +161,12 @@ export class SyntheticLocation extends pulumi.CustomResource {
             resourceInputs["longitude"] = args ? args.longitude : undefined;
             resourceInputs["maxActiveGateCount"] = args ? args.maxActiveGateCount : undefined;
             resourceInputs["minActiveGateCount"] = args ? args.minActiveGateCount : undefined;
+            resourceInputs["namExecutionSupported"] = args ? args.namExecutionSupported : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["nodeSize"] = args ? args.nodeSize : undefined;
             resourceInputs["nodes"] = args ? args.nodes : undefined;
             resourceInputs["regionCode"] = args ? args.regionCode : undefined;
+            resourceInputs["useNewKubernetesVersion"] = args ? args.useNewKubernetesVersion : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SyntheticLocation.__pulumiType, name, resourceInputs, opts);
@@ -217,6 +229,10 @@ export interface SyntheticLocationState {
      */
     minActiveGateCount?: pulumi.Input<number>;
     /**
+     * Boolean value describes if icmp monitors will be executed on this location
+     */
+    namExecutionSupported?: pulumi.Input<boolean>;
+    /**
      * The name of the location
      */
     name?: pulumi.Input<string>;
@@ -234,6 +250,10 @@ export interface SyntheticLocationState {
      * country](https://dt-url.net/az230x0) request
      */
     regionCode?: pulumi.Input<string>;
+    /**
+     * Boolean value describes which kubernetes version will be used
+     */
+    useNewKubernetesVersion?: pulumi.Input<boolean>;
 }
 
 /**
@@ -292,6 +312,10 @@ export interface SyntheticLocationArgs {
      */
     minActiveGateCount?: pulumi.Input<number>;
     /**
+     * Boolean value describes if icmp monitors will be executed on this location
+     */
+    namExecutionSupported?: pulumi.Input<boolean>;
+    /**
      * The name of the location
      */
     name?: pulumi.Input<string>;
@@ -309,4 +333,8 @@ export interface SyntheticLocationArgs {
      * country](https://dt-url.net/az230x0) request
      */
     regionCode?: pulumi.Input<string>;
+    /**
+     * Boolean value describes which kubernetes version will be used
+     */
+    useNewKubernetesVersion?: pulumi.Input<boolean>;
 }

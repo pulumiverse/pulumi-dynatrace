@@ -89,6 +89,12 @@ namespace Pulumiverse.Dynatrace
         public Output<int?> MinActiveGateCount { get; private set; } = null!;
 
         /// <summary>
+        /// Boolean value describes if icmp monitors will be executed on this location
+        /// </summary>
+        [Output("namExecutionSupported")]
+        public Output<bool?> NamExecutionSupported { get; private set; } = null!;
+
+        /// <summary>
         /// The name of the location
         /// </summary>
         [Output("name")]
@@ -113,6 +119,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("regionCode")]
         public Output<string?> RegionCode { get; private set; } = null!;
+
+        /// <summary>
+        /// Boolean value describes which kubernetes version will be used
+        /// </summary>
+        [Output("useNewKubernetesVersion")]
+        public Output<bool?> UseNewKubernetesVersion { get; private set; } = null!;
 
 
         /// <summary>
@@ -237,6 +249,12 @@ namespace Pulumiverse.Dynatrace
         public Input<int>? MinActiveGateCount { get; set; }
 
         /// <summary>
+        /// Boolean value describes if icmp monitors will be executed on this location
+        /// </summary>
+        [Input("namExecutionSupported")]
+        public Input<bool>? NamExecutionSupported { get; set; }
+
+        /// <summary>
         /// The name of the location
         /// </summary>
         [Input("name")]
@@ -267,6 +285,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("regionCode")]
         public Input<string>? RegionCode { get; set; }
+
+        /// <summary>
+        /// Boolean value describes which kubernetes version will be used
+        /// </summary>
+        [Input("useNewKubernetesVersion")]
+        public Input<bool>? UseNewKubernetesVersion { get; set; }
 
         public SyntheticLocationArgs()
         {
@@ -352,6 +376,12 @@ namespace Pulumiverse.Dynatrace
         public Input<int>? MinActiveGateCount { get; set; }
 
         /// <summary>
+        /// Boolean value describes if icmp monitors will be executed on this location
+        /// </summary>
+        [Input("namExecutionSupported")]
+        public Input<bool>? NamExecutionSupported { get; set; }
+
+        /// <summary>
         /// The name of the location
         /// </summary>
         [Input("name")]
@@ -382,6 +412,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("regionCode")]
         public Input<string>? RegionCode { get; set; }
+
+        /// <summary>
+        /// Boolean value describes which kubernetes version will be used
+        /// </summary>
+        [Input("useNewKubernetesVersion")]
+        public Input<bool>? UseNewKubernetesVersion { get; set; }
 
         public SyntheticLocationState()
         {

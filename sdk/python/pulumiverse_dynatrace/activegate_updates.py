@@ -97,6 +97,9 @@ class _ActivegateUpdatesState:
 
 
 class ActivegateUpdates(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/activegateUpdates:ActivegateUpdates"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

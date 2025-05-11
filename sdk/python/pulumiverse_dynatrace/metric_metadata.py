@@ -322,6 +322,9 @@ class _MetricMetadataState:
 
 
 class MetricMetadata(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/metricMetadata:MetricMetadata"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

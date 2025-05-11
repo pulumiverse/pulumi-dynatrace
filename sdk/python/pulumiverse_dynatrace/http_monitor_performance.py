@@ -130,6 +130,9 @@ class _HttpMonitorPerformanceState:
 
 
 class HttpMonitorPerformance(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/httpMonitorPerformance:HttpMonitorPerformance"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

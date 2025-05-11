@@ -88,7 +88,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? FetchRequests { get; set; }
 
         /// <summary>
-        /// Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE` and `JAVASCRIPT_TAG`.
+        /// Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE`, `JAVASCRIPT_TAG`, `JAVASCRIPT_TAG_COMPLETE`, `JAVASCRIPT_TAG_SRI`
         /// </summary>
         [Input("injectionMode", required: true)]
         public Input<string> InjectionMode { get; set; } = null!;
@@ -116,6 +116,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// </summary>
         [Input("javascriptInjectionRules")]
         public Input<Inputs.WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs>? JavascriptInjectionRules { get; set; }
+
+        /// <summary>
+        /// Get the JavaScript library file from the CDN. Not supported by agentless applications and assumed to be false for auto-injected applications if omitted.
+        /// </summary>
+        [Input("libraryFileFromCdn")]
+        public Input<bool>? LibraryFileFromCdn { get; set; }
 
         /// <summary>
         /// The location of your application’s custom JavaScript library file. 

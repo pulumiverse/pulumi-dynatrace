@@ -264,6 +264,9 @@ class _AutomationWorkflowJiraState:
 
 
 class AutomationWorkflowJira(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/automationWorkflowJira:AutomationWorkflowJira"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

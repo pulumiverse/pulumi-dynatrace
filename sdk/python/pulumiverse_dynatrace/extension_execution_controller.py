@@ -193,6 +193,9 @@ class _ExtensionExecutionControllerState:
 
 
 class ExtensionExecutionController(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/extensionExecutionController:ExtensionExecutionController"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

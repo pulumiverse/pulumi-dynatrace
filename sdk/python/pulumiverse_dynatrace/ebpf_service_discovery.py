@@ -97,6 +97,9 @@ class _EbpfServiceDiscoveryState:
 
 
 class EbpfServiceDiscovery(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/ebpfServiceDiscovery:EbpfServiceDiscovery"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

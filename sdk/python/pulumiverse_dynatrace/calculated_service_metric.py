@@ -478,6 +478,9 @@ class _CalculatedServiceMetricState:
 
 
 class CalculatedServiceMetric(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/calculatedServiceMetric:CalculatedServiceMetric"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

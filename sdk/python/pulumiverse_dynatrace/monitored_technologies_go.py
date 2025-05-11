@@ -129,6 +129,9 @@ class _MonitoredTechnologiesGoState:
 
 
 class MonitoredTechnologiesGo(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/monitoredTechnologiesGo:MonitoredTechnologiesGo"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

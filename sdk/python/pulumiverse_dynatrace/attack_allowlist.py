@@ -296,6 +296,9 @@ class _AttackAllowlistState:
 
 
 class AttackAllowlist(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/attackAllowlist:AttackAllowlist"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

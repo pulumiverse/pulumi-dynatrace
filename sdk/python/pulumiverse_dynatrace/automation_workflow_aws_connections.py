@@ -131,6 +131,9 @@ class _AutomationWorkflowAwsConnectionsState:
 
 
 class AutomationWorkflowAwsConnections(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/automationWorkflowAwsConnections:AutomationWorkflowAwsConnections"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -201,6 +201,9 @@ class _CloudappWorkloaddetectionState:
 
 
 class CloudappWorkloaddetection(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

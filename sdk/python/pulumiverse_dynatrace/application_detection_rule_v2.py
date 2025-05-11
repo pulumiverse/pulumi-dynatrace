@@ -191,6 +191,9 @@ class _ApplicationDetectionRuleV2State:
 
 
 class ApplicationDetectionRuleV2(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/applicationDetectionRuleV2:ApplicationDetectionRuleV2"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

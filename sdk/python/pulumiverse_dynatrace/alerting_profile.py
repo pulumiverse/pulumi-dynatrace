@@ -235,6 +235,9 @@ class _AlertingProfileState:
 
 
 class AlertingProfile(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/alertingProfile:AlertingProfile"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

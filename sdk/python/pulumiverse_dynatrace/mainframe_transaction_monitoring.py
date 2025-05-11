@@ -251,6 +251,9 @@ class _MainframeTransactionMonitoringState:
 
 
 class MainframeTransactionMonitoring(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/mainframeTransactionMonitoring:MainframeTransactionMonitoring"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

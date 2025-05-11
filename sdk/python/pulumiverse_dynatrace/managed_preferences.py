@@ -478,6 +478,9 @@ class _ManagedPreferencesState:
 
 
 class ManagedPreferences(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/managedPreferences:ManagedPreferences"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

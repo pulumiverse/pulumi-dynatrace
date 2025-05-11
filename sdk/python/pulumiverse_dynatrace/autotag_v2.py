@@ -164,6 +164,9 @@ class _AutotagV2State:
 
 
 class AutotagV2(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/autotagV2:AutotagV2"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

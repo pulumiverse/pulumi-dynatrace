@@ -128,6 +128,9 @@ class _PagerdutyConnectionState:
 
 
 class PagerdutyConnection(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/pagerdutyConnection:PagerdutyConnection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

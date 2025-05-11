@@ -225,6 +225,9 @@ class _HubExtensionConfigState:
 
 
 class HubExtensionConfig(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/hubExtensionConfig:HubExtensionConfig"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

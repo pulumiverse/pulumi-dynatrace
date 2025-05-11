@@ -528,6 +528,9 @@ class _AppsecNotificationState:
 
 
 class AppsecNotification(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/appsecNotification:AppsecNotification"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

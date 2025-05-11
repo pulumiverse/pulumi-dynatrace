@@ -321,6 +321,9 @@ class _RequestAttributeState:
 
 
 class RequestAttribute(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/requestAttribute:RequestAttribute"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

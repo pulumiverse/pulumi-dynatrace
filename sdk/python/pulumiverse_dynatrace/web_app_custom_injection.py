@@ -254,6 +254,9 @@ class _WebAppCustomInjectionState:
 
 
 class WebAppCustomInjection(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/webAppCustomInjection:WebAppCustomInjection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

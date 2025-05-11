@@ -27,7 +27,7 @@ class GetDqlResult:
     """
     A collection of values returned by getDql.
     """
-    def __init__(__self__, default_sampling_ratio=None, default_scan_limit_gbytes=None, default_timeframe_end=None, default_timeframe_start=None, fetch_timeout_seconds=None, id=None, locale=None, max_result_bytes=None, max_result_records=None, query=None, records=None, request_timeout_milliseconds=None, timezone=None):
+    def __init__(__self__, default_sampling_ratio=None, default_scan_limit_gbytes=None, default_timeframe_end=None, default_timeframe_start=None, fetch_timeout_seconds=None, id=None, locale=None, max_result_bytes=None, max_result_records=None, query=None, records=None, timezone=None):
         if default_sampling_ratio and not isinstance(default_sampling_ratio, float):
             raise TypeError("Expected argument 'default_sampling_ratio' to be a float")
         pulumi.set(__self__, "default_sampling_ratio", default_sampling_ratio)
@@ -61,9 +61,6 @@ class GetDqlResult:
         if records and not isinstance(records, str):
             raise TypeError("Expected argument 'records' to be a str")
         pulumi.set(__self__, "records", records)
-        if request_timeout_milliseconds and not isinstance(request_timeout_milliseconds, int):
-            raise TypeError("Expected argument 'request_timeout_milliseconds' to be a int")
-        pulumi.set(__self__, "request_timeout_milliseconds", request_timeout_milliseconds)
         if timezone and not isinstance(timezone, str):
             raise TypeError("Expected argument 'timezone' to be a str")
         pulumi.set(__self__, "timezone", timezone)
@@ -71,41 +68,26 @@ class GetDqlResult:
     @property
     @pulumi.getter(name="defaultSamplingRatio")
     def default_sampling_ratio(self) -> Optional[builtins.float]:
-        """
-        In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
-        """
         return pulumi.get(self, "default_sampling_ratio")
 
     @property
     @pulumi.getter(name="defaultScanLimitGbytes")
     def default_scan_limit_gbytes(self) -> Optional[builtins.int]:
-        """
-        Limit in gigabytes for the amount data that will be scanned during read
-        """
         return pulumi.get(self, "default_scan_limit_gbytes")
 
     @property
     @pulumi.getter(name="defaultTimeframeEnd")
     def default_timeframe_end(self) -> Optional[builtins.str]:
-        """
-        The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
-        """
         return pulumi.get(self, "default_timeframe_end")
 
     @property
     @pulumi.getter(name="defaultTimeframeStart")
     def default_timeframe_start(self) -> Optional[builtins.str]:
-        """
-        The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
-        """
         return pulumi.get(self, "default_timeframe_start")
 
     @property
     @pulumi.getter(name="fetchTimeoutSeconds")
     def fetch_timeout_seconds(self) -> Optional[builtins.int]:
-        """
-        The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
-        """
         return pulumi.get(self, "fetch_timeout_seconds")
 
     @property
@@ -119,33 +101,21 @@ class GetDqlResult:
     @property
     @pulumi.getter
     def locale(self) -> Optional[builtins.str]:
-        """
-        The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
-        """
         return pulumi.get(self, "locale")
 
     @property
     @pulumi.getter(name="maxResultBytes")
     def max_result_bytes(self) -> Optional[builtins.int]:
-        """
-        The maximum number of result bytes that this query will return
-        """
         return pulumi.get(self, "max_result_bytes")
 
     @property
     @pulumi.getter(name="maxResultRecords")
     def max_result_records(self) -> Optional[builtins.int]:
-        """
-        The maximum number of result records that this query will return
-        """
         return pulumi.get(self, "max_result_records")
 
     @property
     @pulumi.getter
     def query(self) -> builtins.str:
-        """
-        example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
-        """
         return pulumi.get(self, "query")
 
     @property
@@ -154,19 +124,8 @@ class GetDqlResult:
         return pulumi.get(self, "records")
 
     @property
-    @pulumi.getter(name="requestTimeoutMilliseconds")
-    def request_timeout_milliseconds(self) -> Optional[builtins.int]:
-        """
-        The time a client is willing to wait for the query result. In case the query finishes within the specified timeout, the query result is returned. Otherwise, the requestToken is returned, allowing polling for the result
-        """
-        return pulumi.get(self, "request_timeout_milliseconds")
-
-    @property
     @pulumi.getter
     def timezone(self) -> Optional[builtins.str]:
-        """
-        The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
-        """
         return pulumi.get(self, "timezone")
 
 
@@ -187,7 +146,6 @@ class AwaitableGetDqlResult(GetDqlResult):
             max_result_records=self.max_result_records,
             query=self.query,
             records=self.records,
-            request_timeout_milliseconds=self.request_timeout_milliseconds,
             timezone=self.timezone)
 
 
@@ -200,23 +158,35 @@ def get_dql(default_sampling_ratio: Optional[builtins.float] = None,
             max_result_bytes: Optional[builtins.int] = None,
             max_result_records: Optional[builtins.int] = None,
             query: Optional[builtins.str] = None,
-            request_timeout_milliseconds: Optional[builtins.int] = None,
             timezone: Optional[builtins.str] = None,
             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDqlResult:
     """
-    Use this data source to access information about an existing resource.
+    ## Example Usage
 
-    :param builtins.float default_sampling_ratio: In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
-    :param builtins.int default_scan_limit_gbytes: Limit in gigabytes for the amount data that will be scanned during read
-    :param builtins.str default_timeframe_end: The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
-    :param builtins.str default_timeframe_start: The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
-    :param builtins.int fetch_timeout_seconds: The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
-    :param builtins.str locale: The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
-    :param builtins.int max_result_bytes: The maximum number of result bytes that this query will return
-    :param builtins.int max_result_records: The maximum number of result records that this query will return
-    :param builtins.str query: example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
-    :param builtins.int request_timeout_milliseconds: The time a client is willing to wait for the query result. In case the query finishes within the specified timeout, the query result is returned. Otherwise, the requestToken is returned, allowing polling for the result
-    :param builtins.str timezone: The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    this = dynatrace.get_dql(query="fetch events")
+    ```
+    will produce content for the `results` attribute like this:
+
+    You can also use Heredoc syntax for better readability of complex DQL queries.
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    this = dynatrace.get_dql(query=\"\"\"    fetch events |
+        filter event.type == "davis" AND davis.status != "CLOSED" |
+        fields timestamp, davis.title, davis.underMaintenance, davis.status |
+        sort timestamp |
+        limit 10  
+
+    \"\"\")
+    ```
+
+    {{ .SchemaMarkdown | trimspace }}
     """
     __args__ = dict()
     __args__['defaultSamplingRatio'] = default_sampling_ratio
@@ -228,7 +198,6 @@ def get_dql(default_sampling_ratio: Optional[builtins.float] = None,
     __args__['maxResultBytes'] = max_result_bytes
     __args__['maxResultRecords'] = max_result_records
     __args__['query'] = query
-    __args__['requestTimeoutMilliseconds'] = request_timeout_milliseconds
     __args__['timezone'] = timezone
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getDql:getDql', __args__, opts=opts, typ=GetDqlResult).value
@@ -245,7 +214,6 @@ def get_dql(default_sampling_ratio: Optional[builtins.float] = None,
         max_result_records=pulumi.get(__ret__, 'max_result_records'),
         query=pulumi.get(__ret__, 'query'),
         records=pulumi.get(__ret__, 'records'),
-        request_timeout_milliseconds=pulumi.get(__ret__, 'request_timeout_milliseconds'),
         timezone=pulumi.get(__ret__, 'timezone'))
 def get_dql_output(default_sampling_ratio: Optional[pulumi.Input[Optional[builtins.float]]] = None,
                    default_scan_limit_gbytes: Optional[pulumi.Input[Optional[builtins.int]]] = None,
@@ -256,23 +224,35 @@ def get_dql_output(default_sampling_ratio: Optional[pulumi.Input[Optional[builti
                    max_result_bytes: Optional[pulumi.Input[Optional[builtins.int]]] = None,
                    max_result_records: Optional[pulumi.Input[Optional[builtins.int]]] = None,
                    query: Optional[pulumi.Input[builtins.str]] = None,
-                   request_timeout_milliseconds: Optional[pulumi.Input[Optional[builtins.int]]] = None,
                    timezone: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDqlResult]:
     """
-    Use this data source to access information about an existing resource.
+    ## Example Usage
 
-    :param builtins.float default_sampling_ratio: In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
-    :param builtins.int default_scan_limit_gbytes: Limit in gigabytes for the amount data that will be scanned during read
-    :param builtins.str default_timeframe_end: The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
-    :param builtins.str default_timeframe_start: The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
-    :param builtins.int fetch_timeout_seconds: The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
-    :param builtins.str locale: The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
-    :param builtins.int max_result_bytes: The maximum number of result bytes that this query will return
-    :param builtins.int max_result_records: The maximum number of result records that this query will return
-    :param builtins.str query: example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
-    :param builtins.int request_timeout_milliseconds: The time a client is willing to wait for the query result. In case the query finishes within the specified timeout, the query result is returned. Otherwise, the requestToken is returned, allowing polling for the result
-    :param builtins.str timezone: The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    this = dynatrace.get_dql(query="fetch events")
+    ```
+    will produce content for the `results` attribute like this:
+
+    You can also use Heredoc syntax for better readability of complex DQL queries.
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    this = dynatrace.get_dql(query=\"\"\"    fetch events |
+        filter event.type == "davis" AND davis.status != "CLOSED" |
+        fields timestamp, davis.title, davis.underMaintenance, davis.status |
+        sort timestamp |
+        limit 10  
+
+    \"\"\")
+    ```
+
+    {{ .SchemaMarkdown | trimspace }}
     """
     __args__ = dict()
     __args__['defaultSamplingRatio'] = default_sampling_ratio
@@ -284,7 +264,6 @@ def get_dql_output(default_sampling_ratio: Optional[pulumi.Input[Optional[builti
     __args__['maxResultBytes'] = max_result_bytes
     __args__['maxResultRecords'] = max_result_records
     __args__['query'] = query
-    __args__['requestTimeoutMilliseconds'] = request_timeout_milliseconds
     __args__['timezone'] = timezone
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('dynatrace:index/getDql:getDql', __args__, opts=opts, typ=GetDqlResult)
@@ -300,5 +279,4 @@ def get_dql_output(default_sampling_ratio: Optional[pulumi.Input[Optional[builti
         max_result_records=pulumi.get(__response__, 'max_result_records'),
         query=pulumi.get(__response__, 'query'),
         records=pulumi.get(__response__, 'records'),
-        request_timeout_milliseconds=pulumi.get(__response__, 'request_timeout_milliseconds'),
         timezone=pulumi.get(__response__, 'timezone')))

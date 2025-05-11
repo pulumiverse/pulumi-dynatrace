@@ -99,6 +99,9 @@ class _KubernetesAppState:
 
 
 class KubernetesApp(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/kubernetesApp:KubernetesApp"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

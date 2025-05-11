@@ -99,6 +99,9 @@ class _BusinessEventsSecurityContextState:
 
 
 class BusinessEventsSecurityContext(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/businessEventsSecurityContext:BusinessEventsSecurityContext"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

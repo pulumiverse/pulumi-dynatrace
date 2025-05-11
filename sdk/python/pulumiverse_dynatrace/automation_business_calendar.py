@@ -259,6 +259,9 @@ class _AutomationBusinessCalendarState:
 
 
 class AutomationBusinessCalendar(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/automationBusinessCalendar:AutomationBusinessCalendar"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

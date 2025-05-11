@@ -97,6 +97,9 @@ class _RumIpDeterminationState:
 
 
 class RumIpDetermination(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/rumIpDetermination:RumIpDetermination"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

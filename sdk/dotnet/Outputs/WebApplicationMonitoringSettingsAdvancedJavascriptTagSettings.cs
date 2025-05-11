@@ -39,6 +39,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly int MaxErrorsToCapture;
         /// <summary>
+        /// Proxy wrapper enabled/disabled
+        /// </summary>
+        public readonly bool? ProxyWrapperEnabled;
+        /// <summary>
         /// Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `&lt;` and `&gt;`.
         /// </summary>
         public readonly string? SpecialCharactersToEscape;
@@ -50,6 +54,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
         /// </summary>
         public readonly bool? SyncBeaconInternetExplorer;
+        /// <summary>
+        /// User action name attribute
+        /// </summary>
+        public readonly string? UserActionNameAttribute;
 
         [OutputConstructor]
         private WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings(
@@ -65,11 +73,15 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             int maxErrorsToCapture,
 
+            bool? proxyWrapperEnabled,
+
             string? specialCharactersToEscape,
 
             bool? syncBeaconFirefox,
 
-            bool? syncBeaconInternetExplorer)
+            bool? syncBeaconInternetExplorer,
+
+            string? userActionNameAttribute)
         {
             AdditionalEventHandlers = additionalEventHandlers;
             EventWrapperSettings = eventWrapperSettings;
@@ -77,9 +89,11 @@ namespace Pulumiverse.Dynatrace.Outputs
             InstrumentUnsupportedAjaxFrameworks = instrumentUnsupportedAjaxFrameworks;
             MaxActionNameLength = maxActionNameLength;
             MaxErrorsToCapture = maxErrorsToCapture;
+            ProxyWrapperEnabled = proxyWrapperEnabled;
             SpecialCharactersToEscape = specialCharactersToEscape;
             SyncBeaconFirefox = syncBeaconFirefox;
             SyncBeaconInternetExplorer = syncBeaconInternetExplorer;
+            UserActionNameAttribute = userActionNameAttribute;
         }
     }
 }

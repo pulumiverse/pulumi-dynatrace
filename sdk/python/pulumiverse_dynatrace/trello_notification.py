@@ -378,6 +378,9 @@ class _TrelloNotificationState:
 
 
 class TrelloNotification(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/trelloNotification:TrelloNotification"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

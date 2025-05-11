@@ -161,6 +161,9 @@ class _WebAppKeyPerformanceLoadState:
 
 
 class WebAppKeyPerformanceLoad(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/webAppKeyPerformanceLoad:WebAppKeyPerformanceLoad"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

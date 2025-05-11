@@ -128,6 +128,9 @@ class _GrailSecurityContextState:
 
 
 class GrailSecurityContext(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/grailSecurityContext:GrailSecurityContext"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -286,6 +286,9 @@ class _DevobsDataMaskingState:
 
 
 class DevobsDataMasking(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/devobsDataMasking:DevobsDataMasking"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

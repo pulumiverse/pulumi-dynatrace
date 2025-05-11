@@ -230,6 +230,9 @@ class _ProcessGroupSimpleDetectionState:
 
 
 class ProcessGroupSimpleDetection(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/processGroupSimpleDetection:ProcessGroupSimpleDetection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

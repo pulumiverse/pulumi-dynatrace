@@ -196,6 +196,9 @@ class _DduPoolState:
 
 
 class DduPool(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/dduPool:DduPool"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

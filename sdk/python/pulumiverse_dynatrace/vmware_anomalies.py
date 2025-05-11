@@ -284,6 +284,9 @@ class _VmwareAnomaliesState:
 
 
 class VmwareAnomalies(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/vmwareAnomalies:VmwareAnomalies"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

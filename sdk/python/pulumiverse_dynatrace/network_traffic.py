@@ -131,6 +131,9 @@ class _NetworkTrafficState:
 
 
 class NetworkTraffic(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/networkTraffic:NetworkTraffic"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -162,6 +162,9 @@ class _MgmzPermissionState:
 
 
 class MgmzPermission(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/mgmzPermission:MgmzPermission"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -160,6 +160,9 @@ class _IamPolicyBindingsState:
 
 
 class IamPolicyBindings(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/iamPolicyBindings:IamPolicyBindings"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

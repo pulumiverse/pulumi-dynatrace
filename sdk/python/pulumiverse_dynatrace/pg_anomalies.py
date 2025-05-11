@@ -99,6 +99,9 @@ class _PgAnomaliesState:
 
 
 class PgAnomalies(pulumi.CustomResource):
+
+    pulumi_type = "dynatrace:index/pgAnomalies:PgAnomalies"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
