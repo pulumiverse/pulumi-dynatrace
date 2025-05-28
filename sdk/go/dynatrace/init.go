@@ -595,6 +595,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ServiceAnomalies{}
 	case "dynatrace:index/serviceAnomaliesV2:ServiceAnomaliesV2":
 		r = &ServiceAnomaliesV2{}
+	case "dynatrace:index/serviceDetectionRules:ServiceDetectionRules":
+		r = &ServiceDetectionRules{}
 	case "dynatrace:index/serviceExternalWebRequest:ServiceExternalWebRequest":
 		r = &ServiceExternalWebRequest{}
 	case "dynatrace:index/serviceExternalWebService:ServiceExternalWebService":
@@ -613,6 +615,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ServiceNamingOrder{}
 	case "dynatrace:index/serviceNowNotification:ServiceNowNotification":
 		r = &ServiceNowNotification{}
+	case "dynatrace:index/serviceSplitting:ServiceSplitting":
+		r = &ServiceSplitting{}
 	case "dynatrace:index/servicenowConnection:ServicenowConnection":
 		r = &ServicenowConnection{}
 	case "dynatrace:index/sessionReplayResourceCapture:SessionReplayResourceCapture":
@@ -685,6 +689,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &VulnerabilitySettings{}
 	case "dynatrace:index/vulnerabilityThirdParty:VulnerabilityThirdParty":
 		r = &VulnerabilityThirdParty{}
+	case "dynatrace:index/vulnerabilityThirdPartyAttr:VulnerabilityThirdPartyAttr":
+		r = &VulnerabilityThirdPartyAttr{}
+	case "dynatrace:index/vulnerabilityThirdPartyK8s:VulnerabilityThirdPartyK8s":
+		r = &VulnerabilityThirdPartyK8s{}
 	case "dynatrace:index/webAppAnomalies:WebAppAnomalies":
 		r = &WebAppAnomalies{}
 	case "dynatrace:index/webAppAutoInjection:WebAppAutoInjection":
@@ -699,10 +707,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &WebAppCustomErrors{}
 	case "dynatrace:index/webAppCustomInjection:WebAppCustomInjection":
 		r = &WebAppCustomInjection{}
+	case "dynatrace:index/webAppCustomPropRestrictions:WebAppCustomPropRestrictions":
+		r = &WebAppCustomPropRestrictions{}
 	case "dynatrace:index/webAppEnablement:WebAppEnablement":
 		r = &WebAppEnablement{}
 	case "dynatrace:index/webAppInjectionCookie:WebAppInjectionCookie":
 		r = &WebAppInjectionCookie{}
+	case "dynatrace:index/webAppJavascriptFilename:WebAppJavascriptFilename":
+		r = &WebAppJavascriptFilename{}
 	case "dynatrace:index/webAppJavascriptUpdates:WebAppJavascriptUpdates":
 		r = &WebAppJavascriptUpdates{}
 	case "dynatrace:index/webAppJavascriptVersion:WebAppJavascriptVersion":
@@ -2193,6 +2205,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/serviceDetectionRules",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/serviceExternalWebRequest",
 		&module{version},
 	)
@@ -2234,6 +2251,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/serviceNowNotification",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/serviceSplitting",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2418,6 +2440,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/vulnerabilityThirdPartyAttr",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/vulnerabilityThirdPartyK8s",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/webAppAnomalies",
 		&module{version},
 	)
@@ -2453,12 +2485,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/webAppCustomPropRestrictions",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/webAppEnablement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/webAppInjectionCookie",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/webAppJavascriptFilename",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

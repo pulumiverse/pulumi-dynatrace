@@ -64,10 +64,8 @@ class _OneagentDefaultModeState:
         pulumi.set(self, "default_mode", value)
 
 
+@pulumi.type_token("dynatrace:index/oneagentDefaultMode:OneagentDefaultMode")
 class OneagentDefaultMode(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/oneagentDefaultMode:OneagentDefaultMode"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

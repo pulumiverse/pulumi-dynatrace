@@ -221,10 +221,8 @@ class _ContainerRuleState:
         pulumi.set(self, "property", value)
 
 
+@pulumi.type_token("dynatrace:index/containerRule:ContainerRule")
 class ContainerRule(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/containerRule:ContainerRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

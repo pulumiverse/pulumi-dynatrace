@@ -96,10 +96,8 @@ class _UnifiedServicesMetricsState:
         pulumi.set(self, "service_id", value)
 
 
+@pulumi.type_token("dynatrace:index/unifiedServicesMetrics:UnifiedServicesMetrics")
 class UnifiedServicesMetrics(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/unifiedServicesMetrics:UnifiedServicesMetrics"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

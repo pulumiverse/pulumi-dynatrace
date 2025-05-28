@@ -159,10 +159,8 @@ class _WebAppResourceTypesState:
         pulumi.set(self, "secondary_resource_type", value)
 
 
+@pulumi.type_token("dynatrace:index/webAppResourceTypes:WebAppResourceTypes")
 class WebAppResourceTypes(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/webAppResourceTypes:WebAppResourceTypes"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

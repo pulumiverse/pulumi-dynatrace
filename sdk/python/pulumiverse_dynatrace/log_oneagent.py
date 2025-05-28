@@ -499,10 +499,8 @@ class _LogOneagentState:
         pulumi.set(self, "system_logs_detection_enabled", value)
 
 
+@pulumi.type_token("dynatrace:index/logOneagent:LogOneagent")
 class LogOneagent(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/logOneagent:LogOneagent"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

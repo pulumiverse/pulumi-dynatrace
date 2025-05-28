@@ -562,10 +562,8 @@ class _ProcessGroupDetectionFlagsState:
         pulumi.set(self, "use_docker_container_name", value)
 
 
+@pulumi.type_token("dynatrace:index/processGroupDetectionFlags:ProcessGroupDetectionFlags")
 class ProcessGroupDetectionFlags(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/processGroupDetectionFlags:ProcessGroupDetectionFlags"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

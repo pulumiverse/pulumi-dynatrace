@@ -289,10 +289,8 @@ class _ManagedNetworkZonesState:
         pulumi.set(self, "num_of_oneagents_using", value)
 
 
+@pulumi.type_token("dynatrace:index/managedNetworkZones:ManagedNetworkZones")
 class ManagedNetworkZones(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/managedNetworkZones:ManagedNetworkZones"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

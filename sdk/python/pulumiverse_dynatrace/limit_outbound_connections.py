@@ -66,10 +66,8 @@ class _LimitOutboundConnectionsState:
         pulumi.set(self, "allowed_outbound_connections", value)
 
 
+@pulumi.type_token("dynatrace:index/limitOutboundConnections:LimitOutboundConnections")
 class LimitOutboundConnections(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/limitOutboundConnections:LimitOutboundConnections"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

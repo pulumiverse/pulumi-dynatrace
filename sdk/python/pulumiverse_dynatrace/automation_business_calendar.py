@@ -258,10 +258,8 @@ class _AutomationBusinessCalendarState:
         pulumi.set(self, "week_start", value)
 
 
+@pulumi.type_token("dynatrace:index/automationBusinessCalendar:AutomationBusinessCalendar")
 class AutomationBusinessCalendar(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/automationBusinessCalendar:AutomationBusinessCalendar"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

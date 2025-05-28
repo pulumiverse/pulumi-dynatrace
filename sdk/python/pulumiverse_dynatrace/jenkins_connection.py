@@ -158,10 +158,8 @@ class _JenkinsConnectionState:
         pulumi.set(self, "username", value)
 
 
+@pulumi.type_token("dynatrace:index/jenkinsConnection:JenkinsConnection")
 class JenkinsConnection(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/jenkinsConnection:JenkinsConnection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

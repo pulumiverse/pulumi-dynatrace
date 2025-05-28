@@ -64,10 +64,8 @@ class _LogDebugSettingsState:
         pulumi.set(self, "enabled", value)
 
 
+@pulumi.type_token("dynatrace:index/logDebugSettings:LogDebugSettings")
 class LogDebugSettings(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/logDebugSettings:LogDebugSettings"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

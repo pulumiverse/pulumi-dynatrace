@@ -349,10 +349,8 @@ class _EmailNotificationState:
         pulumi.set(self, "tos", value)
 
 
+@pulumi.type_token("dynatrace:index/emailNotification:EmailNotification")
 class EmailNotification(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/emailNotification:EmailNotification"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

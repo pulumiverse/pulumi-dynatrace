@@ -226,10 +226,8 @@ class _PlatformSloState:
         pulumi.set(self, "tags", value)
 
 
+@pulumi.type_token("dynatrace:index/platformSlo:PlatformSlo")
 class PlatformSlo(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/platformSlo:PlatformSlo"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -129,10 +129,8 @@ class _MobileAppEnablementState:
         pulumi.set(self, "session_replay", value)
 
 
+@pulumi.type_token("dynatrace:index/mobileAppEnablement:MobileAppEnablement")
 class MobileAppEnablement(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/mobileAppEnablement:MobileAppEnablement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -72,10 +72,8 @@ class _HistogramMetricsState:
         pulumi.set(self, "enable_histogram_bucket_ingest", value)
 
 
+@pulumi.type_token("dynatrace:index/histogramMetrics:HistogramMetrics")
 class HistogramMetrics(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/histogramMetrics:HistogramMetrics"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -191,10 +191,8 @@ class _ServiceAnomaliesV2State:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/serviceAnomaliesV2:ServiceAnomaliesV2")
 class ServiceAnomaliesV2(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/serviceAnomaliesV2:ServiceAnomaliesV2"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

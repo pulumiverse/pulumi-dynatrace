@@ -190,10 +190,8 @@ class _MsentraidConnectionState:
         pulumi.set(self, "name", value)
 
 
+@pulumi.type_token("dynatrace:index/msentraidConnection:MsentraidConnection")
 class MsentraidConnection(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/msentraidConnection:MsentraidConnection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

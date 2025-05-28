@@ -335,10 +335,8 @@ class _K8sMonitoringState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/k8sMonitoring:K8sMonitoring")
 class K8sMonitoring(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/k8sMonitoring:K8sMonitoring"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

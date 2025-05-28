@@ -253,10 +253,8 @@ class _WebAppCustomInjectionState:
         pulumi.set(self, "url_pattern", value)
 
 
+@pulumi.type_token("dynatrace:index/webAppCustomInjection:WebAppCustomInjection")
 class WebAppCustomInjection(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/webAppCustomInjection:WebAppCustomInjection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -161,10 +161,8 @@ class _ReportState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("dynatrace:index/report:Report")
 class Report(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/report:Report"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

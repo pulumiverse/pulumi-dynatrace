@@ -253,10 +253,8 @@ class _PagerDutyNotificationState:
         pulumi.set(self, "service", value)
 
 
+@pulumi.type_token("dynatrace:index/pagerDutyNotification:PagerDutyNotification")
 class PagerDutyNotification(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/pagerDutyNotification:PagerDutyNotification"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

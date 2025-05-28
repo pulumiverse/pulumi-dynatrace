@@ -257,10 +257,8 @@ class _ServiceExternalWebRequestState:
         pulumi.set(self, "name", value)
 
 
+@pulumi.type_token("dynatrace:index/serviceExternalWebRequest:ServiceExternalWebRequest")
 class ServiceExternalWebRequest(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/serviceExternalWebRequest:ServiceExternalWebRequest"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -67,10 +67,8 @@ class _DefaultLaunchpadState:
         pulumi.set(self, "group_launchpads", value)
 
 
+@pulumi.type_token("dynatrace:index/defaultLaunchpad:DefaultLaunchpad")
 class DefaultLaunchpad(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/defaultLaunchpad:DefaultLaunchpad"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

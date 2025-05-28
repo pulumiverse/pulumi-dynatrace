@@ -222,10 +222,8 @@ class _K8sNamespaceAnomaliesState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/k8sNamespaceAnomalies:K8sNamespaceAnomalies")
 class K8sNamespaceAnomalies(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/k8sNamespaceAnomalies:K8sNamespaceAnomalies"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

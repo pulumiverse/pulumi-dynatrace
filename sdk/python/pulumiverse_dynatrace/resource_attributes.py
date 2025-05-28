@@ -67,10 +67,8 @@ class _ResourceAttributesState:
         pulumi.set(self, "keys", value)
 
 
+@pulumi.type_token("dynatrace:index/resourceAttributes:ResourceAttributes")
 class ResourceAttributes(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/resourceAttributes:ResourceAttributes"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

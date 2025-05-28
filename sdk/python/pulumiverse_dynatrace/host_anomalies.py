@@ -259,10 +259,8 @@ class _HostAnomaliesState:
         pulumi.set(self, "network", value)
 
 
+@pulumi.type_token("dynatrace:index/hostAnomalies:HostAnomalies")
 class HostAnomalies(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/hostAnomalies:HostAnomalies"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

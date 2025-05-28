@@ -73,6 +73,10 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     public readonly exeAgentworker!: pulumi.Output<boolean | undefined>;
     /**
+     * Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+     */
+    public readonly exeAnsible!: pulumi.Output<boolean | undefined>;
+    /**
      * Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
      */
     public readonly exeAuctioneer!: pulumi.Output<boolean | undefined>;
@@ -80,6 +84,14 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      * Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
      */
     public readonly exeAuditbeat!: pulumi.Output<boolean | undefined>;
+    /**
+     * Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+     */
+    public readonly exeAws!: pulumi.Output<boolean | undefined>;
+    /**
+     * Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+     */
+    public readonly exeAz!: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
      */
@@ -101,6 +113,10 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     public readonly exeCcuploader!: pulumi.Output<boolean | undefined>;
     /**
+     * Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+     */
+    public readonly exeConda!: pulumi.Output<boolean | undefined>;
+    /**
      * Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
      */
     public readonly exeDoppler!: pulumi.Output<boolean | undefined>;
@@ -121,6 +137,10 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     public readonly exeFunctionbeat!: pulumi.Output<boolean | undefined>;
     /**
+     * Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+     */
+    public readonly exeGcloud!: pulumi.Output<boolean | undefined>;
+    /**
      * Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
      */
     public readonly exeGorouter!: pulumi.Output<boolean | undefined>;
@@ -129,6 +149,10 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     public readonly exeGrootfs!: pulumi.Output<boolean | undefined>;
     /**
+     * Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+     */
+    public readonly exeHatch!: pulumi.Output<boolean | undefined>;
+    /**
      * Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
      */
     public readonly exeHeartbeat!: pulumi.Output<boolean | undefined>;
@@ -136,6 +160,10 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      * Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
      */
     public readonly exeInfluxd!: pulumi.Output<boolean | undefined>;
+    /**
+     * Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+     */
+    public readonly exeJupyter!: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 13 - Do monitor processes if EXE name equals 'locket'
      */
@@ -161,6 +189,10 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     public readonly exeOpenhandlecollector!: pulumi.Output<boolean | undefined>;
     /**
+     * Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+     */
+    public readonly exeOpenstack!: pulumi.Output<boolean | undefined>;
+    /**
      * Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
      */
     public readonly exeOptcnibinhostlocal!: pulumi.Output<boolean | undefined>;
@@ -172,6 +204,10 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      * Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
      */
     public readonly exePhpcgi!: pulumi.Output<boolean | undefined>;
+    /**
+     * Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+     */
+    public readonly exePip!: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 16 - Do monitor processes if EXE name equals 'rep'
      */
@@ -233,9 +269,17 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     public readonly exeW3wp!: pulumi.Output<boolean | undefined>;
     /**
+     * Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+     */
+    public readonly exeWheel!: pulumi.Output<boolean | undefined>;
+    /**
      * Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
      */
     public readonly exeYq!: pulumi.Output<boolean | undefined>;
+    /**
+     * Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+     */
+    public readonly exeYum!: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
      */
@@ -332,31 +376,40 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
             resourceInputs["exeAdapter"] = state ? state.exeAdapter : undefined;
             resourceInputs["exeAgentlistener"] = state ? state.exeAgentlistener : undefined;
             resourceInputs["exeAgentworker"] = state ? state.exeAgentworker : undefined;
+            resourceInputs["exeAnsible"] = state ? state.exeAnsible : undefined;
             resourceInputs["exeAuctioneer"] = state ? state.exeAuctioneer : undefined;
             resourceInputs["exeAuditbeat"] = state ? state.exeAuditbeat : undefined;
+            resourceInputs["exeAws"] = state ? state.exeAws : undefined;
+            resourceInputs["exeAz"] = state ? state.exeAz : undefined;
             resourceInputs["exeBbs"] = state ? state.exeBbs : undefined;
             resourceInputs["exeCaddy"] = state ? state.exeCaddy : undefined;
             resourceInputs["exeCaliconode"] = state ? state.exeCaliconode : undefined;
             resourceInputs["exeCasclient"] = state ? state.exeCasclient : undefined;
             resourceInputs["exeCcuploader"] = state ? state.exeCcuploader : undefined;
+            resourceInputs["exeConda"] = state ? state.exeConda : undefined;
             resourceInputs["exeDoppler"] = state ? state.exeDoppler : undefined;
             resourceInputs["exeFilebeat"] = state ? state.exeFilebeat : undefined;
             resourceInputs["exeFlexnetjobexecutorservice"] = state ? state.exeFlexnetjobexecutorservice : undefined;
             resourceInputs["exeFlexnetmaintenanceremotingservice"] = state ? state.exeFlexnetmaintenanceremotingservice : undefined;
             resourceInputs["exeFunctionbeat"] = state ? state.exeFunctionbeat : undefined;
+            resourceInputs["exeGcloud"] = state ? state.exeGcloud : undefined;
             resourceInputs["exeGorouter"] = state ? state.exeGorouter : undefined;
             resourceInputs["exeGrootfs"] = state ? state.exeGrootfs : undefined;
+            resourceInputs["exeHatch"] = state ? state.exeHatch : undefined;
             resourceInputs["exeHeartbeat"] = state ? state.exeHeartbeat : undefined;
             resourceInputs["exeInfluxd"] = state ? state.exeInfluxd : undefined;
+            resourceInputs["exeJupyter"] = state ? state.exeJupyter : undefined;
             resourceInputs["exeLocket"] = state ? state.exeLocket : undefined;
             resourceInputs["exeMetricbeat"] = state ? state.exeMetricbeat : undefined;
             resourceInputs["exeMetron"] = state ? state.exeMetron : undefined;
             resourceInputs["exeMqsi"] = state ? state.exeMqsi : undefined;
             resourceInputs["exeOc"] = state ? state.exeOc : undefined;
             resourceInputs["exeOpenhandlecollector"] = state ? state.exeOpenhandlecollector : undefined;
+            resourceInputs["exeOpenstack"] = state ? state.exeOpenstack : undefined;
             resourceInputs["exeOptcnibinhostlocal"] = state ? state.exeOptcnibinhostlocal : undefined;
             resourceInputs["exePacketbeat"] = state ? state.exePacketbeat : undefined;
             resourceInputs["exePhpcgi"] = state ? state.exePhpcgi : undefined;
+            resourceInputs["exePip"] = state ? state.exePip : undefined;
             resourceInputs["exeRep"] = state ? state.exeRep : undefined;
             resourceInputs["exeRouteemitter"] = state ? state.exeRouteemitter : undefined;
             resourceInputs["exeRouteregistrar"] = state ? state.exeRouteregistrar : undefined;
@@ -372,7 +425,9 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
             resourceInputs["exeUipath"] = state ? state.exeUipath : undefined;
             resourceInputs["exeUserbinpiper"] = state ? state.exeUserbinpiper : undefined;
             resourceInputs["exeW3wp"] = state ? state.exeW3wp : undefined;
+            resourceInputs["exeWheel"] = state ? state.exeWheel : undefined;
             resourceInputs["exeYq"] = state ? state.exeYq : undefined;
+            resourceInputs["exeYum"] = state ? state.exeYum : undefined;
             resourceInputs["goStatic"] = state ? state.goStatic : undefined;
             resourceInputs["hostGroupId"] = state ? state.hostGroupId : undefined;
             resourceInputs["jarDtibmmqconnector"] = state ? state.jarDtibmmqconnector : undefined;
@@ -403,31 +458,40 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
             resourceInputs["exeAdapter"] = args ? args.exeAdapter : undefined;
             resourceInputs["exeAgentlistener"] = args ? args.exeAgentlistener : undefined;
             resourceInputs["exeAgentworker"] = args ? args.exeAgentworker : undefined;
+            resourceInputs["exeAnsible"] = args ? args.exeAnsible : undefined;
             resourceInputs["exeAuctioneer"] = args ? args.exeAuctioneer : undefined;
             resourceInputs["exeAuditbeat"] = args ? args.exeAuditbeat : undefined;
+            resourceInputs["exeAws"] = args ? args.exeAws : undefined;
+            resourceInputs["exeAz"] = args ? args.exeAz : undefined;
             resourceInputs["exeBbs"] = args ? args.exeBbs : undefined;
             resourceInputs["exeCaddy"] = args ? args.exeCaddy : undefined;
             resourceInputs["exeCaliconode"] = args ? args.exeCaliconode : undefined;
             resourceInputs["exeCasclient"] = args ? args.exeCasclient : undefined;
             resourceInputs["exeCcuploader"] = args ? args.exeCcuploader : undefined;
+            resourceInputs["exeConda"] = args ? args.exeConda : undefined;
             resourceInputs["exeDoppler"] = args ? args.exeDoppler : undefined;
             resourceInputs["exeFilebeat"] = args ? args.exeFilebeat : undefined;
             resourceInputs["exeFlexnetjobexecutorservice"] = args ? args.exeFlexnetjobexecutorservice : undefined;
             resourceInputs["exeFlexnetmaintenanceremotingservice"] = args ? args.exeFlexnetmaintenanceremotingservice : undefined;
             resourceInputs["exeFunctionbeat"] = args ? args.exeFunctionbeat : undefined;
+            resourceInputs["exeGcloud"] = args ? args.exeGcloud : undefined;
             resourceInputs["exeGorouter"] = args ? args.exeGorouter : undefined;
             resourceInputs["exeGrootfs"] = args ? args.exeGrootfs : undefined;
+            resourceInputs["exeHatch"] = args ? args.exeHatch : undefined;
             resourceInputs["exeHeartbeat"] = args ? args.exeHeartbeat : undefined;
             resourceInputs["exeInfluxd"] = args ? args.exeInfluxd : undefined;
+            resourceInputs["exeJupyter"] = args ? args.exeJupyter : undefined;
             resourceInputs["exeLocket"] = args ? args.exeLocket : undefined;
             resourceInputs["exeMetricbeat"] = args ? args.exeMetricbeat : undefined;
             resourceInputs["exeMetron"] = args ? args.exeMetron : undefined;
             resourceInputs["exeMqsi"] = args ? args.exeMqsi : undefined;
             resourceInputs["exeOc"] = args ? args.exeOc : undefined;
             resourceInputs["exeOpenhandlecollector"] = args ? args.exeOpenhandlecollector : undefined;
+            resourceInputs["exeOpenstack"] = args ? args.exeOpenstack : undefined;
             resourceInputs["exeOptcnibinhostlocal"] = args ? args.exeOptcnibinhostlocal : undefined;
             resourceInputs["exePacketbeat"] = args ? args.exePacketbeat : undefined;
             resourceInputs["exePhpcgi"] = args ? args.exePhpcgi : undefined;
+            resourceInputs["exePip"] = args ? args.exePip : undefined;
             resourceInputs["exeRep"] = args ? args.exeRep : undefined;
             resourceInputs["exeRouteemitter"] = args ? args.exeRouteemitter : undefined;
             resourceInputs["exeRouteregistrar"] = args ? args.exeRouteregistrar : undefined;
@@ -443,7 +507,9 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
             resourceInputs["exeUipath"] = args ? args.exeUipath : undefined;
             resourceInputs["exeUserbinpiper"] = args ? args.exeUserbinpiper : undefined;
             resourceInputs["exeW3wp"] = args ? args.exeW3wp : undefined;
+            resourceInputs["exeWheel"] = args ? args.exeWheel : undefined;
             resourceInputs["exeYq"] = args ? args.exeYq : undefined;
+            resourceInputs["exeYum"] = args ? args.exeYum : undefined;
             resourceInputs["goStatic"] = args ? args.goStatic : undefined;
             resourceInputs["hostGroupId"] = args ? args.hostGroupId : undefined;
             resourceInputs["jarDtibmmqconnector"] = args ? args.jarDtibmmqconnector : undefined;
@@ -513,6 +579,10 @@ export interface BuiltinProcessMonitoringState {
      */
     exeAgentworker?: pulumi.Input<boolean>;
     /**
+     * Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+     */
+    exeAnsible?: pulumi.Input<boolean>;
+    /**
      * Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
      */
     exeAuctioneer?: pulumi.Input<boolean>;
@@ -520,6 +590,14 @@ export interface BuiltinProcessMonitoringState {
      * Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
      */
     exeAuditbeat?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+     */
+    exeAws?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+     */
+    exeAz?: pulumi.Input<boolean>;
     /**
      * Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
      */
@@ -541,6 +619,10 @@ export interface BuiltinProcessMonitoringState {
      */
     exeCcuploader?: pulumi.Input<boolean>;
     /**
+     * Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+     */
+    exeConda?: pulumi.Input<boolean>;
+    /**
      * Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
      */
     exeDoppler?: pulumi.Input<boolean>;
@@ -561,6 +643,10 @@ export interface BuiltinProcessMonitoringState {
      */
     exeFunctionbeat?: pulumi.Input<boolean>;
     /**
+     * Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+     */
+    exeGcloud?: pulumi.Input<boolean>;
+    /**
      * Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
      */
     exeGorouter?: pulumi.Input<boolean>;
@@ -569,6 +655,10 @@ export interface BuiltinProcessMonitoringState {
      */
     exeGrootfs?: pulumi.Input<boolean>;
     /**
+     * Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+     */
+    exeHatch?: pulumi.Input<boolean>;
+    /**
      * Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
      */
     exeHeartbeat?: pulumi.Input<boolean>;
@@ -576,6 +666,10 @@ export interface BuiltinProcessMonitoringState {
      * Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
      */
     exeInfluxd?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+     */
+    exeJupyter?: pulumi.Input<boolean>;
     /**
      * Rule id: 13 - Do monitor processes if EXE name equals 'locket'
      */
@@ -601,6 +695,10 @@ export interface BuiltinProcessMonitoringState {
      */
     exeOpenhandlecollector?: pulumi.Input<boolean>;
     /**
+     * Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+     */
+    exeOpenstack?: pulumi.Input<boolean>;
+    /**
      * Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
      */
     exeOptcnibinhostlocal?: pulumi.Input<boolean>;
@@ -612,6 +710,10 @@ export interface BuiltinProcessMonitoringState {
      * Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
      */
     exePhpcgi?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+     */
+    exePip?: pulumi.Input<boolean>;
     /**
      * Rule id: 16 - Do monitor processes if EXE name equals 'rep'
      */
@@ -673,9 +775,17 @@ export interface BuiltinProcessMonitoringState {
      */
     exeW3wp?: pulumi.Input<boolean>;
     /**
+     * Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+     */
+    exeWheel?: pulumi.Input<boolean>;
+    /**
      * Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
      */
     exeYq?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+     */
+    exeYum?: pulumi.Input<boolean>;
     /**
      * Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
      */
@@ -795,6 +905,10 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeAgentworker?: pulumi.Input<boolean>;
     /**
+     * Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+     */
+    exeAnsible?: pulumi.Input<boolean>;
+    /**
      * Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
      */
     exeAuctioneer?: pulumi.Input<boolean>;
@@ -802,6 +916,14 @@ export interface BuiltinProcessMonitoringArgs {
      * Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
      */
     exeAuditbeat?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+     */
+    exeAws?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+     */
+    exeAz?: pulumi.Input<boolean>;
     /**
      * Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
      */
@@ -823,6 +945,10 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeCcuploader?: pulumi.Input<boolean>;
     /**
+     * Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+     */
+    exeConda?: pulumi.Input<boolean>;
+    /**
      * Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
      */
     exeDoppler?: pulumi.Input<boolean>;
@@ -843,6 +969,10 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeFunctionbeat?: pulumi.Input<boolean>;
     /**
+     * Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+     */
+    exeGcloud?: pulumi.Input<boolean>;
+    /**
      * Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
      */
     exeGorouter?: pulumi.Input<boolean>;
@@ -851,6 +981,10 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeGrootfs?: pulumi.Input<boolean>;
     /**
+     * Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+     */
+    exeHatch?: pulumi.Input<boolean>;
+    /**
      * Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
      */
     exeHeartbeat?: pulumi.Input<boolean>;
@@ -858,6 +992,10 @@ export interface BuiltinProcessMonitoringArgs {
      * Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
      */
     exeInfluxd?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+     */
+    exeJupyter?: pulumi.Input<boolean>;
     /**
      * Rule id: 13 - Do monitor processes if EXE name equals 'locket'
      */
@@ -883,6 +1021,10 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeOpenhandlecollector?: pulumi.Input<boolean>;
     /**
+     * Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+     */
+    exeOpenstack?: pulumi.Input<boolean>;
+    /**
      * Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
      */
     exeOptcnibinhostlocal?: pulumi.Input<boolean>;
@@ -894,6 +1036,10 @@ export interface BuiltinProcessMonitoringArgs {
      * Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
      */
     exePhpcgi?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+     */
+    exePip?: pulumi.Input<boolean>;
     /**
      * Rule id: 16 - Do monitor processes if EXE name equals 'rep'
      */
@@ -955,9 +1101,17 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeW3wp?: pulumi.Input<boolean>;
     /**
+     * Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+     */
+    exeWheel?: pulumi.Input<boolean>;
+    /**
      * Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
      */
     exeYq?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+     */
+    exeYum?: pulumi.Input<boolean>;
     /**
      * Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
      */

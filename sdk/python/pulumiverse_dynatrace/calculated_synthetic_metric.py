@@ -287,10 +287,8 @@ class _CalculatedSyntheticMetricState:
         pulumi.set(self, "name", value)
 
 
+@pulumi.type_token("dynatrace:index/calculatedSyntheticMetric:CalculatedSyntheticMetric")
 class CalculatedSyntheticMetric(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/calculatedSyntheticMetric:CalculatedSyntheticMetric"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

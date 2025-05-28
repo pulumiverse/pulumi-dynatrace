@@ -96,10 +96,8 @@ class _DevobsAgentOptinState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/devobsAgentOptin:DevobsAgentOptin")
 class DevobsAgentOptin(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/devobsAgentOptin:DevobsAgentOptin"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

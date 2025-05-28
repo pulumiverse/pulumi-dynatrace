@@ -346,10 +346,8 @@ class _IssueTrackingState:
         pulumi.set(self, "username", value)
 
 
+@pulumi.type_token("dynatrace:index/issueTracking:IssueTracking")
 class IssueTracking(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/issueTracking:IssueTracking"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

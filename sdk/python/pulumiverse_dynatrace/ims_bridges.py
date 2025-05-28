@@ -99,10 +99,8 @@ class _ImsBridgesState:
         pulumi.set(self, "queue_managers", value)
 
 
+@pulumi.type_token("dynatrace:index/imsBridges:ImsBridges")
 class ImsBridges(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/imsBridges:ImsBridges"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

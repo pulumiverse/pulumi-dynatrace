@@ -263,10 +263,8 @@ class _RumIpLocationsState:
         pulumi.set(self, "region_code", value)
 
 
+@pulumi.type_token("dynatrace:index/rumIpLocations:RumIpLocations")
 class RumIpLocations(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/rumIpLocations:RumIpLocations"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -218,10 +218,8 @@ class _AutomationSchedulingRuleState:
         pulumi.set(self, "title", value)
 
 
+@pulumi.type_token("dynatrace:index/automationSchedulingRule:AutomationSchedulingRule")
 class AutomationSchedulingRule(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/automationSchedulingRule:AutomationSchedulingRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

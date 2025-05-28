@@ -191,10 +191,8 @@ class _WebAppAnomaliesState:
         pulumi.set(self, "traffic_spikes", value)
 
 
+@pulumi.type_token("dynatrace:index/webAppAnomalies:WebAppAnomalies")
 class WebAppAnomalies(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/webAppAnomalies:WebAppAnomalies"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -97,10 +97,8 @@ class _DiscoveryDefaultRulesState:
         pulumi.set(self, "settings", value)
 
 
+@pulumi.type_token("dynatrace:index/discoveryDefaultRules:DiscoveryDefaultRules")
 class DiscoveryDefaultRules(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/discoveryDefaultRules:DiscoveryDefaultRules"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

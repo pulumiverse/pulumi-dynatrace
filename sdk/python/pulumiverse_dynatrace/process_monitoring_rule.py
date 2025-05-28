@@ -192,10 +192,8 @@ class _ProcessMonitoringRuleState:
         pulumi.set(self, "mode", value)
 
 
+@pulumi.type_token("dynatrace:index/processMonitoringRule:ProcessMonitoringRule")
 class ProcessMonitoringRule(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/processMonitoringRule:ProcessMonitoringRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

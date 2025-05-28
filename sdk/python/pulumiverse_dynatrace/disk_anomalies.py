@@ -318,10 +318,8 @@ class _DiskAnomaliesState:
         pulumi.set(self, "violating_samples", value)
 
 
+@pulumi.type_token("dynatrace:index/diskAnomalies:DiskAnomalies")
 class DiskAnomalies(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/diskAnomalies:DiskAnomalies"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

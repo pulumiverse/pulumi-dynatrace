@@ -128,10 +128,8 @@ class _KeyRequestsState:
         pulumi.set(self, "service", value)
 
 
+@pulumi.type_token("dynatrace:index/keyRequests:KeyRequests")
 class KeyRequests(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/keyRequests:KeyRequests"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

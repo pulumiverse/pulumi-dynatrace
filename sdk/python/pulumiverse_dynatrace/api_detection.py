@@ -224,10 +224,8 @@ class _ApiDetectionState:
         pulumi.set(self, "third_party_api", value)
 
 
+@pulumi.type_token("dynatrace:index/apiDetection:ApiDetection")
 class ApiDetection(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/apiDetection:ApiDetection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

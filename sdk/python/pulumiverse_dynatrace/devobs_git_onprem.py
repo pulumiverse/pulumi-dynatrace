@@ -127,10 +127,8 @@ class _DevobsGitOnpremState:
         pulumi.set(self, "url", value)
 
 
+@pulumi.type_token("dynatrace:index/devobsGitOnprem:DevobsGitOnprem")
 class DevobsGitOnprem(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/devobsGitOnprem:DevobsGitOnprem"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

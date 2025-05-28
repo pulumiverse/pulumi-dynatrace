@@ -95,10 +95,8 @@ class _WebAppBeaconOriginsState:
         pulumi.set(self, "pattern", value)
 
 
+@pulumi.type_token("dynatrace:index/webAppBeaconOrigins:WebAppBeaconOrigins")
 class WebAppBeaconOrigins(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/webAppBeaconOrigins:WebAppBeaconOrigins"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

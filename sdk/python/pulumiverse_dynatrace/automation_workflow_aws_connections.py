@@ -130,10 +130,8 @@ class _AutomationWorkflowAwsConnectionsState:
         pulumi.set(self, "web_identity", value)
 
 
+@pulumi.type_token("dynatrace:index/automationWorkflowAwsConnections:AutomationWorkflowAwsConnections")
 class AutomationWorkflowAwsConnections(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/automationWorkflowAwsConnections:AutomationWorkflowAwsConnections"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

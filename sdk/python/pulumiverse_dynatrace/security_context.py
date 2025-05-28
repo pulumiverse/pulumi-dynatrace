@@ -64,10 +64,8 @@ class _SecurityContextState:
         pulumi.set(self, "enabled", value)
 
 
+@pulumi.type_token("dynatrace:index/securityContext:SecurityContext")
 class SecurityContext(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/securityContext:SecurityContext"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -251,10 +251,8 @@ class _CloudFoundryState:
         pulumi.set(self, "username", value)
 
 
+@pulumi.type_token("dynatrace:index/cloudFoundry:CloudFoundry")
 class CloudFoundry(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/cloudFoundry:CloudFoundry"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

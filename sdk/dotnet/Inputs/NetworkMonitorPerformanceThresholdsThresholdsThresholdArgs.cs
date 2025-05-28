@@ -41,7 +41,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// Notify if monitor request takes longer than X milliseconds to execute
         /// </summary>
         [Input("threshold")]
-        public Input<int>? Threshold { get; set; }
+        public Input<double>? Threshold { get; set; }
 
         /// <summary>
         /// Number of violating request executions in analyzed sliding window

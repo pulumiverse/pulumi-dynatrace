@@ -119,10 +119,8 @@ class _SpanAttributedState:
         pulumi.set(self, "persistent", value)
 
 
+@pulumi.type_token("dynatrace:index/spanAttributed:SpanAttributed")
 class SpanAttributed(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/spanAttributed:SpanAttributed"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

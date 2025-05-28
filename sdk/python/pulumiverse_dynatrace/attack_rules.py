@@ -255,10 +255,8 @@ class _AttackRulesState:
         pulumi.set(self, "rule_name", value)
 
 
+@pulumi.type_token("dynatrace:index/attackRules:AttackRules")
 class AttackRules(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/attackRules:AttackRules"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

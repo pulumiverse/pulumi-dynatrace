@@ -192,10 +192,8 @@ class _ApplicationDataPrivacyState:
         pulumi.set(self, "web_application_id", value)
 
 
+@pulumi.type_token("dynatrace:index/applicationDataPrivacy:ApplicationDataPrivacy")
 class ApplicationDataPrivacy(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/applicationDataPrivacy:ApplicationDataPrivacy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

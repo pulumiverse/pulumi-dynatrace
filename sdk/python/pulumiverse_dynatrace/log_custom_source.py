@@ -193,10 +193,8 @@ class _LogCustomSourceState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/logCustomSource:LogCustomSource")
 class LogCustomSource(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/logCustomSource:LogCustomSource"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

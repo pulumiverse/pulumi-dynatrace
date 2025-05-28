@@ -136,10 +136,8 @@ class _AutomationWorkflowSlackState:
         pulumi.set(self, "token", value)
 
 
+@pulumi.type_token("dynatrace:index/automationWorkflowSlack:AutomationWorkflowSlack")
 class AutomationWorkflowSlack(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/automationWorkflowSlack:AutomationWorkflowSlack"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

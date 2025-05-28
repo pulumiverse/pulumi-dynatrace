@@ -128,10 +128,8 @@ class _SessionReplayResourceCaptureState:
         pulumi.set(self, "resource_capture_url_exclusion_pattern_lists", value)
 
 
+@pulumi.type_token("dynatrace:index/sessionReplayResourceCapture:SessionReplayResourceCapture")
 class SessionReplayResourceCapture(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/sessionReplayResourceCapture:SessionReplayResourceCapture"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

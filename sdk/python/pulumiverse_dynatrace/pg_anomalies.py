@@ -98,10 +98,8 @@ class _PgAnomaliesState:
         pulumi.set(self, "pg_id", value)
 
 
+@pulumi.type_token("dynatrace:index/pgAnomalies:PgAnomalies")
 class PgAnomalies(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/pgAnomalies:PgAnomalies"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -95,10 +95,8 @@ class _DiskAnalyticsState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/diskAnalytics:DiskAnalytics")
 class DiskAnalytics(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/diskAnalytics:DiskAnalytics"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

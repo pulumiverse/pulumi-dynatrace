@@ -285,10 +285,8 @@ class _DevobsDataMaskingState:
         pulumi.set(self, "rule_var_name", value)
 
 
+@pulumi.type_token("dynatrace:index/devobsDataMasking:DevobsDataMasking")
 class DevobsDataMasking(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/devobsDataMasking:DevobsDataMasking"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

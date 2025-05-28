@@ -257,10 +257,8 @@ class _UpdateWindowsState:
         pulumi.set(self, "weekly_recurrence", value)
 
 
+@pulumi.type_token("dynatrace:index/updateWindows:UpdateWindows")
 class UpdateWindows(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/updateWindows:UpdateWindows"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

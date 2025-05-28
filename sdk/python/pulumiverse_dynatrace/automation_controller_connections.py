@@ -159,10 +159,8 @@ class _AutomationControllerConnectionsState:
         pulumi.set(self, "url", value)
 
 
+@pulumi.type_token("dynatrace:index/automationControllerConnections:AutomationControllerConnections")
 class AutomationControllerConnections(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/automationControllerConnections:AutomationControllerConnections"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

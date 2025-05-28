@@ -157,10 +157,8 @@ class _UserExperienceScoreState:
         pulumi.set(self, "min_satisfied_user_actions_threshold", value)
 
 
+@pulumi.type_token("dynatrace:index/userExperienceScore:UserExperienceScore")
 class UserExperienceScore(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/userExperienceScore:UserExperienceScore"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

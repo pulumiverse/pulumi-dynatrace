@@ -449,10 +449,8 @@ class _HostNamingState:
         pulumi.set(self, "unknowns", value)
 
 
+@pulumi.type_token("dynatrace:index/hostNaming:HostNaming")
 class HostNaming(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/hostNaming:HostNaming"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

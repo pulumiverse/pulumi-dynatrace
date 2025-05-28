@@ -191,10 +191,8 @@ class _ServicenowConnectionState:
         pulumi.set(self, "user", value)
 
 
+@pulumi.type_token("dynatrace:index/servicenowConnection:ServicenowConnection")
 class ServicenowConnection(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/servicenowConnection:ServicenowConnection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

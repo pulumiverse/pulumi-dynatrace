@@ -192,10 +192,8 @@ class _InfraopsAppFeatureFlagsState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("dynatrace:index/infraopsAppFeatureFlags:InfraopsAppFeatureFlags")
 class InfraopsAppFeatureFlags(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/infraopsAppFeatureFlags:InfraopsAppFeatureFlags"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

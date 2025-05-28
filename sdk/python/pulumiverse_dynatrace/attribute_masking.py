@@ -126,10 +126,8 @@ class _AttributeMaskingState:
         pulumi.set(self, "masking", value)
 
 
+@pulumi.type_token("dynatrace:index/attributeMasking:AttributeMasking")
 class AttributeMasking(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/attributeMasking:AttributeMasking"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

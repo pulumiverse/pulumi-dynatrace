@@ -65,10 +65,8 @@ class _HostNamingOrderState:
         pulumi.set(self, "naming_rule_ids", value)
 
 
+@pulumi.type_token("dynatrace:index/hostNamingOrder:HostNamingOrder")
 class HostNamingOrder(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/hostNamingOrder:HostNamingOrder"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -64,10 +64,8 @@ class _SloNormalizationState:
         pulumi.set(self, "normalize", value)
 
 
+@pulumi.type_token("dynatrace:index/sloNormalization:SloNormalization")
 class SloNormalization(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/sloNormalization:SloNormalization"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

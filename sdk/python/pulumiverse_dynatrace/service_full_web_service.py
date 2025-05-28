@@ -257,10 +257,8 @@ class _ServiceFullWebServiceState:
         pulumi.set(self, "name", value)
 
 
+@pulumi.type_token("dynatrace:index/serviceFullWebService:ServiceFullWebService")
 class ServiceFullWebService(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/serviceFullWebService:ServiceFullWebService"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

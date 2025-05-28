@@ -159,10 +159,8 @@ class _WebAppResourceCleanupState:
         pulumi.set(self, "replace_with", value)
 
 
+@pulumi.type_token("dynatrace:index/webAppResourceCleanup:WebAppResourceCleanup")
 class WebAppResourceCleanup(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/webAppResourceCleanup:WebAppResourceCleanup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

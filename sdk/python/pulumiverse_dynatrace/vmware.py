@@ -228,10 +228,8 @@ class _VmwareState:
         pulumi.set(self, "username", value)
 
 
+@pulumi.type_token("dynatrace:index/vmware:Vmware")
 class Vmware(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/vmware:Vmware"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

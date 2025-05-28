@@ -227,10 +227,8 @@ class _ManagementZoneState:
         pulumi.set(self, "unknowns", value)
 
 
+@pulumi.type_token("dynatrace:index/managementZone:ManagementZone")
 class ManagementZone(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/managementZone:ManagementZone"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

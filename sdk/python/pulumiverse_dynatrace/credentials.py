@@ -523,10 +523,8 @@ class _CredentialsState:
         pulumi.set(self, "username", value)
 
 
+@pulumi.type_token("dynatrace:index/credentials:Credentials")
 class Credentials(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/credentials:Credentials"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

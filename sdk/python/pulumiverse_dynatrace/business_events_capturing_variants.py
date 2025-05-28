@@ -190,10 +190,8 @@ class _BusinessEventsCapturingVariantsState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/businessEventsCapturingVariants:BusinessEventsCapturingVariants")
 class BusinessEventsCapturingVariants(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/businessEventsCapturingVariants:BusinessEventsCapturingVariants"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

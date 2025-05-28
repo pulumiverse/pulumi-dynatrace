@@ -98,10 +98,8 @@ class _MobileAppCrashRateState:
         pulumi.set(self, "crash_rate_increase", value)
 
 
+@pulumi.type_token("dynatrace:index/mobileAppCrashRate:MobileAppCrashRate")
 class MobileAppCrashRate(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/mobileAppCrashRate:MobileAppCrashRate"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

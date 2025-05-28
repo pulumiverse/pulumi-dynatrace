@@ -234,10 +234,8 @@ class _AlertingProfileState:
         pulumi.set(self, "unknowns", value)
 
 
+@pulumi.type_token("dynatrace:index/alertingProfile:AlertingProfile")
 class AlertingProfile(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/alertingProfile:AlertingProfile"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -192,10 +192,8 @@ class _FailureDetectionParametersState:
         pulumi.set(self, "name", value)
 
 
+@pulumi.type_token("dynatrace:index/failureDetectionParameters:FailureDetectionParameters")
 class FailureDetectionParameters(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/failureDetectionParameters:FailureDetectionParameters"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -225,10 +225,8 @@ class _EnvironmentState:
         pulumi.set(self, "trial", value)
 
 
+@pulumi.type_token("dynatrace:index/environment:Environment")
 class Environment(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/environment:Environment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

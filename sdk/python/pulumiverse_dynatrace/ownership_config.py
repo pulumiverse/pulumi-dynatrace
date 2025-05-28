@@ -66,10 +66,8 @@ class _OwnershipConfigState:
         pulumi.set(self, "ownership_identifiers", value)
 
 
+@pulumi.type_token("dynatrace:index/ownershipConfig:OwnershipConfig")
 class OwnershipConfig(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/ownershipConfig:OwnershipConfig"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

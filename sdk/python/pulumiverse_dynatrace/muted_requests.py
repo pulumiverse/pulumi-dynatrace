@@ -96,10 +96,8 @@ class _MutedRequestsState:
         pulumi.set(self, "service_id", value)
 
 
+@pulumi.type_token("dynatrace:index/mutedRequests:MutedRequests")
 class MutedRequests(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/mutedRequests:MutedRequests"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

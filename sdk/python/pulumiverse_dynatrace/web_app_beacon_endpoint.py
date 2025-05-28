@@ -159,10 +159,8 @@ class _WebAppBeaconEndpointState:
         pulumi.set(self, "use_cors", value)
 
 
+@pulumi.type_token("dynatrace:index/webAppBeaconEndpoint:WebAppBeaconEndpoint")
 class WebAppBeaconEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/webAppBeaconEndpoint:WebAppBeaconEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

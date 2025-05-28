@@ -234,10 +234,8 @@ class _LogProcessingState:
         pulumi.set(self, "rule_testing", value)
 
 
+@pulumi.type_token("dynatrace:index/logProcessing:LogProcessing")
 class LogProcessing(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/logProcessing:LogProcessing"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

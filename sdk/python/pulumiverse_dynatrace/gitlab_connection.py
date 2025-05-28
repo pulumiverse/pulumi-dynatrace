@@ -127,10 +127,8 @@ class _GitlabConnectionState:
         pulumi.set(self, "url", value)
 
 
+@pulumi.type_token("dynatrace:index/gitlabConnection:GitlabConnection")
 class GitlabConnection(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/gitlabConnection:GitlabConnection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

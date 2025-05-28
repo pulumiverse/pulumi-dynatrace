@@ -158,10 +158,8 @@ class _WebAppInjectionCookieState:
         pulumi.set(self, "use_secure_cookie_attribute", value)
 
 
+@pulumi.type_token("dynatrace:index/webAppInjectionCookie:WebAppInjectionCookie")
 class WebAppInjectionCookie(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/webAppInjectionCookie:WebAppInjectionCookie"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

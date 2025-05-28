@@ -377,10 +377,8 @@ class _JiraNotificationState:
         pulumi.set(self, "username", value)
 
 
+@pulumi.type_token("dynatrace:index/jiraNotification:JiraNotification")
 class JiraNotification(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/jiraNotification:JiraNotification"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

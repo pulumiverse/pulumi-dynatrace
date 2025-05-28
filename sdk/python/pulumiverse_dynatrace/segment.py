@@ -194,10 +194,8 @@ class _SegmentState:
         pulumi.set(self, "variables", value)
 
 
+@pulumi.type_token("dynatrace:index/segment:Segment")
 class Segment(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/segment:Segment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

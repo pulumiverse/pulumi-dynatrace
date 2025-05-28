@@ -225,10 +225,8 @@ class _LogSensitiveDataMaskingState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/logSensitiveDataMasking:LogSensitiveDataMasking")
 class LogSensitiveDataMasking(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/logSensitiveDataMasking:LogSensitiveDataMasking"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -192,10 +192,8 @@ class _ExtensionExecutionControllerState:
         pulumi.set(self, "statsd_active", value)
 
 
+@pulumi.type_token("dynatrace:index/extensionExecutionController:ExtensionExecutionController")
 class ExtensionExecutionController(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/extensionExecutionController:ExtensionExecutionController"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

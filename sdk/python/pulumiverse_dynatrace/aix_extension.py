@@ -127,10 +127,8 @@ class _AixExtensionState:
         pulumi.set(self, "use_global_settings", value)
 
 
+@pulumi.type_token("dynatrace:index/aixExtension:AixExtension")
 class AixExtension(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/aixExtension:AixExtension"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

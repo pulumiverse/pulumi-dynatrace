@@ -127,10 +127,8 @@ class _ProcessVisibilityState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/processVisibility:ProcessVisibility")
 class ProcessVisibility(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/processVisibility:ProcessVisibility"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

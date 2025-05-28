@@ -67,10 +67,8 @@ class _HubSubscriptionsState:
         pulumi.set(self, "token_subscriptions", value)
 
 
+@pulumi.type_token("dynatrace:index/hubSubscriptions:HubSubscriptions")
 class HubSubscriptions(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/hubSubscriptions:HubSubscriptions"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

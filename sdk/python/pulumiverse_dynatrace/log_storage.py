@@ -225,10 +225,8 @@ class _LogStorageState:
         pulumi.set(self, "send_to_storage", value)
 
 
+@pulumi.type_token("dynatrace:index/logStorage:LogStorage")
 class LogStorage(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/logStorage:LogStorage"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

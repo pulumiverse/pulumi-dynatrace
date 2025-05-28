@@ -253,10 +253,8 @@ class _VictorOpsNotificationState:
         pulumi.set(self, "routing_key", value)
 
 
+@pulumi.type_token("dynatrace:index/victorOpsNotification:VictorOpsNotification")
 class VictorOpsNotification(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/victorOpsNotification:VictorOpsNotification"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

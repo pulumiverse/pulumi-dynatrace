@@ -32,6 +32,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? EntityTagsMatch { get; set; }
 
         /// <summary>
+        /// The Davis Events to match on
+        /// </summary>
+        [Input("names")]
+        public Input<Inputs.AutomationWorkflowTriggerEventConfigDavisEventNamesGetArgs>? Names { get; set; }
+
+        /// <summary>
         /// If set to `true` closing a problem also is considered an event that triggers the execution
         /// </summary>
         [Input("onProblemClose")]

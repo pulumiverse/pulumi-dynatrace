@@ -34,10 +34,16 @@ type BuiltinProcessMonitoring struct {
 	ExeAgentlistener pulumi.BoolPtrOutput `pulumi:"exeAgentlistener"`
 	// Rule id: 61 - Do not monitor processes if EXE name contains 'Agent.Worker'
 	ExeAgentworker pulumi.BoolPtrOutput `pulumi:"exeAgentworker"`
+	// Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+	ExeAnsible pulumi.BoolPtrOutput `pulumi:"exeAnsible"`
 	// Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
 	ExeAuctioneer pulumi.BoolPtrOutput `pulumi:"exeAuctioneer"`
 	// Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
 	ExeAuditbeat pulumi.BoolPtrOutput `pulumi:"exeAuditbeat"`
+	// Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+	ExeAws pulumi.BoolPtrOutput `pulumi:"exeAws"`
+	// Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+	ExeAz pulumi.BoolPtrOutput `pulumi:"exeAz"`
 	// Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
 	ExeBbs pulumi.BoolPtrOutput `pulumi:"exeBbs"`
 	// Rule id: 5 - Do monitor processes if EXE name equals 'caddy'
@@ -48,6 +54,8 @@ type BuiltinProcessMonitoring struct {
 	ExeCasclient pulumi.BoolPtrOutput `pulumi:"exeCasclient"`
 	// Rule id: 10 - Do monitor processes if EXE name equals 'cc-uploader'
 	ExeCcuploader pulumi.BoolPtrOutput `pulumi:"exeCcuploader"`
+	// Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+	ExeConda pulumi.BoolPtrOutput `pulumi:"exeConda"`
 	// Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
 	ExeDoppler pulumi.BoolPtrOutput `pulumi:"exeDoppler"`
 	// Rule id: 49 - Do not monitor processes if EXE name equals 'filebeat'
@@ -58,14 +66,20 @@ type BuiltinProcessMonitoring struct {
 	ExeFlexnetmaintenanceremotingservice pulumi.BoolPtrOutput `pulumi:"exeFlexnetmaintenanceremotingservice"`
 	// Rule id: 54 - Do not monitor processes if EXE name equals 'functionbeat'
 	ExeFunctionbeat pulumi.BoolPtrOutput `pulumi:"exeFunctionbeat"`
+	// Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+	ExeGcloud pulumi.BoolPtrOutput `pulumi:"exeGcloud"`
 	// Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
 	ExeGorouter pulumi.BoolPtrOutput `pulumi:"exeGorouter"`
 	// Rule id: 55 - Do not monitor processes if EXE name equals 'grootfs'
 	ExeGrootfs pulumi.BoolPtrOutput `pulumi:"exeGrootfs"`
+	// Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+	ExeHatch pulumi.BoolPtrOutput `pulumi:"exeHatch"`
 	// Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
 	ExeHeartbeat pulumi.BoolPtrOutput `pulumi:"exeHeartbeat"`
 	// Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
 	ExeInfluxd pulumi.BoolPtrOutput `pulumi:"exeInfluxd"`
+	// Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+	ExeJupyter pulumi.BoolPtrOutput `pulumi:"exeJupyter"`
 	// Rule id: 13 - Do monitor processes if EXE name equals 'locket'
 	ExeLocket pulumi.BoolPtrOutput `pulumi:"exeLocket"`
 	// Rule id: 50 - Do not monitor processes if EXE name equals 'metricbeat'
@@ -78,12 +92,16 @@ type BuiltinProcessMonitoring struct {
 	ExeOc pulumi.BoolPtrOutput `pulumi:"exeOc"`
 	// Rule id: 71 - Do not monitor processes if EXE name equals 'openhandlecollector.exe'
 	ExeOpenhandlecollector pulumi.BoolPtrOutput `pulumi:"exeOpenhandlecollector"`
+	// Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+	ExeOpenstack pulumi.BoolPtrOutput `pulumi:"exeOpenstack"`
 	// Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
 	ExeOptcnibinhostlocal pulumi.BoolPtrOutput `pulumi:"exeOptcnibinhostlocal"`
 	// Rule id: 51 - Do not monitor processes if EXE name equals 'packetbeat'
 	ExePacketbeat pulumi.BoolPtrOutput `pulumi:"exePacketbeat"`
 	// Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
 	ExePhpcgi pulumi.BoolPtrOutput `pulumi:"exePhpcgi"`
+	// Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+	ExePip pulumi.BoolPtrOutput `pulumi:"exePip"`
 	// Rule id: 16 - Do monitor processes if EXE name equals 'rep'
 	ExeRep pulumi.BoolPtrOutput `pulumi:"exeRep"`
 	// Rule id: 17 - Do monitor processes if EXE name equals 'route-emitter'
@@ -114,8 +132,12 @@ type BuiltinProcessMonitoring struct {
 	ExeUserbinpiper pulumi.BoolPtrOutput `pulumi:"exeUserbinpiper"`
 	// Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
 	ExeW3wp pulumi.BoolPtrOutput `pulumi:"exeW3wp"`
+	// Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+	ExeWheel pulumi.BoolPtrOutput `pulumi:"exeWheel"`
 	// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
 	ExeYq pulumi.BoolPtrOutput `pulumi:"exeYq"`
+	// Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+	ExeYum pulumi.BoolPtrOutput `pulumi:"exeYum"`
 	// Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
 	GoStatic pulumi.BoolPtrOutput `pulumi:"goStatic"`
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -204,10 +226,16 @@ type builtinProcessMonitoringState struct {
 	ExeAgentlistener *bool `pulumi:"exeAgentlistener"`
 	// Rule id: 61 - Do not monitor processes if EXE name contains 'Agent.Worker'
 	ExeAgentworker *bool `pulumi:"exeAgentworker"`
+	// Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+	ExeAnsible *bool `pulumi:"exeAnsible"`
 	// Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
 	ExeAuctioneer *bool `pulumi:"exeAuctioneer"`
 	// Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
 	ExeAuditbeat *bool `pulumi:"exeAuditbeat"`
+	// Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+	ExeAws *bool `pulumi:"exeAws"`
+	// Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+	ExeAz *bool `pulumi:"exeAz"`
 	// Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
 	ExeBbs *bool `pulumi:"exeBbs"`
 	// Rule id: 5 - Do monitor processes if EXE name equals 'caddy'
@@ -218,6 +246,8 @@ type builtinProcessMonitoringState struct {
 	ExeCasclient *bool `pulumi:"exeCasclient"`
 	// Rule id: 10 - Do monitor processes if EXE name equals 'cc-uploader'
 	ExeCcuploader *bool `pulumi:"exeCcuploader"`
+	// Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+	ExeConda *bool `pulumi:"exeConda"`
 	// Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
 	ExeDoppler *bool `pulumi:"exeDoppler"`
 	// Rule id: 49 - Do not monitor processes if EXE name equals 'filebeat'
@@ -228,14 +258,20 @@ type builtinProcessMonitoringState struct {
 	ExeFlexnetmaintenanceremotingservice *bool `pulumi:"exeFlexnetmaintenanceremotingservice"`
 	// Rule id: 54 - Do not monitor processes if EXE name equals 'functionbeat'
 	ExeFunctionbeat *bool `pulumi:"exeFunctionbeat"`
+	// Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+	ExeGcloud *bool `pulumi:"exeGcloud"`
 	// Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
 	ExeGorouter *bool `pulumi:"exeGorouter"`
 	// Rule id: 55 - Do not monitor processes if EXE name equals 'grootfs'
 	ExeGrootfs *bool `pulumi:"exeGrootfs"`
+	// Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+	ExeHatch *bool `pulumi:"exeHatch"`
 	// Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
 	ExeHeartbeat *bool `pulumi:"exeHeartbeat"`
 	// Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
 	ExeInfluxd *bool `pulumi:"exeInfluxd"`
+	// Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+	ExeJupyter *bool `pulumi:"exeJupyter"`
 	// Rule id: 13 - Do monitor processes if EXE name equals 'locket'
 	ExeLocket *bool `pulumi:"exeLocket"`
 	// Rule id: 50 - Do not monitor processes if EXE name equals 'metricbeat'
@@ -248,12 +284,16 @@ type builtinProcessMonitoringState struct {
 	ExeOc *bool `pulumi:"exeOc"`
 	// Rule id: 71 - Do not monitor processes if EXE name equals 'openhandlecollector.exe'
 	ExeOpenhandlecollector *bool `pulumi:"exeOpenhandlecollector"`
+	// Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+	ExeOpenstack *bool `pulumi:"exeOpenstack"`
 	// Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
 	ExeOptcnibinhostlocal *bool `pulumi:"exeOptcnibinhostlocal"`
 	// Rule id: 51 - Do not monitor processes if EXE name equals 'packetbeat'
 	ExePacketbeat *bool `pulumi:"exePacketbeat"`
 	// Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
 	ExePhpcgi *bool `pulumi:"exePhpcgi"`
+	// Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+	ExePip *bool `pulumi:"exePip"`
 	// Rule id: 16 - Do monitor processes if EXE name equals 'rep'
 	ExeRep *bool `pulumi:"exeRep"`
 	// Rule id: 17 - Do monitor processes if EXE name equals 'route-emitter'
@@ -284,8 +324,12 @@ type builtinProcessMonitoringState struct {
 	ExeUserbinpiper *bool `pulumi:"exeUserbinpiper"`
 	// Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
 	ExeW3wp *bool `pulumi:"exeW3wp"`
+	// Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+	ExeWheel *bool `pulumi:"exeWheel"`
 	// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
 	ExeYq *bool `pulumi:"exeYq"`
+	// Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+	ExeYum *bool `pulumi:"exeYum"`
 	// Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
 	GoStatic *bool `pulumi:"goStatic"`
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -345,10 +389,16 @@ type BuiltinProcessMonitoringState struct {
 	ExeAgentlistener pulumi.BoolPtrInput
 	// Rule id: 61 - Do not monitor processes if EXE name contains 'Agent.Worker'
 	ExeAgentworker pulumi.BoolPtrInput
+	// Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+	ExeAnsible pulumi.BoolPtrInput
 	// Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
 	ExeAuctioneer pulumi.BoolPtrInput
 	// Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
 	ExeAuditbeat pulumi.BoolPtrInput
+	// Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+	ExeAws pulumi.BoolPtrInput
+	// Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+	ExeAz pulumi.BoolPtrInput
 	// Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
 	ExeBbs pulumi.BoolPtrInput
 	// Rule id: 5 - Do monitor processes if EXE name equals 'caddy'
@@ -359,6 +409,8 @@ type BuiltinProcessMonitoringState struct {
 	ExeCasclient pulumi.BoolPtrInput
 	// Rule id: 10 - Do monitor processes if EXE name equals 'cc-uploader'
 	ExeCcuploader pulumi.BoolPtrInput
+	// Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+	ExeConda pulumi.BoolPtrInput
 	// Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
 	ExeDoppler pulumi.BoolPtrInput
 	// Rule id: 49 - Do not monitor processes if EXE name equals 'filebeat'
@@ -369,14 +421,20 @@ type BuiltinProcessMonitoringState struct {
 	ExeFlexnetmaintenanceremotingservice pulumi.BoolPtrInput
 	// Rule id: 54 - Do not monitor processes if EXE name equals 'functionbeat'
 	ExeFunctionbeat pulumi.BoolPtrInput
+	// Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+	ExeGcloud pulumi.BoolPtrInput
 	// Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
 	ExeGorouter pulumi.BoolPtrInput
 	// Rule id: 55 - Do not monitor processes if EXE name equals 'grootfs'
 	ExeGrootfs pulumi.BoolPtrInput
+	// Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+	ExeHatch pulumi.BoolPtrInput
 	// Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
 	ExeHeartbeat pulumi.BoolPtrInput
 	// Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
 	ExeInfluxd pulumi.BoolPtrInput
+	// Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+	ExeJupyter pulumi.BoolPtrInput
 	// Rule id: 13 - Do monitor processes if EXE name equals 'locket'
 	ExeLocket pulumi.BoolPtrInput
 	// Rule id: 50 - Do not monitor processes if EXE name equals 'metricbeat'
@@ -389,12 +447,16 @@ type BuiltinProcessMonitoringState struct {
 	ExeOc pulumi.BoolPtrInput
 	// Rule id: 71 - Do not monitor processes if EXE name equals 'openhandlecollector.exe'
 	ExeOpenhandlecollector pulumi.BoolPtrInput
+	// Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+	ExeOpenstack pulumi.BoolPtrInput
 	// Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
 	ExeOptcnibinhostlocal pulumi.BoolPtrInput
 	// Rule id: 51 - Do not monitor processes if EXE name equals 'packetbeat'
 	ExePacketbeat pulumi.BoolPtrInput
 	// Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
 	ExePhpcgi pulumi.BoolPtrInput
+	// Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+	ExePip pulumi.BoolPtrInput
 	// Rule id: 16 - Do monitor processes if EXE name equals 'rep'
 	ExeRep pulumi.BoolPtrInput
 	// Rule id: 17 - Do monitor processes if EXE name equals 'route-emitter'
@@ -425,8 +487,12 @@ type BuiltinProcessMonitoringState struct {
 	ExeUserbinpiper pulumi.BoolPtrInput
 	// Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
 	ExeW3wp pulumi.BoolPtrInput
+	// Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+	ExeWheel pulumi.BoolPtrInput
 	// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
 	ExeYq pulumi.BoolPtrInput
+	// Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+	ExeYum pulumi.BoolPtrInput
 	// Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
 	GoStatic pulumi.BoolPtrInput
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -490,10 +556,16 @@ type builtinProcessMonitoringArgs struct {
 	ExeAgentlistener *bool `pulumi:"exeAgentlistener"`
 	// Rule id: 61 - Do not monitor processes if EXE name contains 'Agent.Worker'
 	ExeAgentworker *bool `pulumi:"exeAgentworker"`
+	// Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+	ExeAnsible *bool `pulumi:"exeAnsible"`
 	// Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
 	ExeAuctioneer *bool `pulumi:"exeAuctioneer"`
 	// Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
 	ExeAuditbeat *bool `pulumi:"exeAuditbeat"`
+	// Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+	ExeAws *bool `pulumi:"exeAws"`
+	// Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+	ExeAz *bool `pulumi:"exeAz"`
 	// Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
 	ExeBbs *bool `pulumi:"exeBbs"`
 	// Rule id: 5 - Do monitor processes if EXE name equals 'caddy'
@@ -504,6 +576,8 @@ type builtinProcessMonitoringArgs struct {
 	ExeCasclient *bool `pulumi:"exeCasclient"`
 	// Rule id: 10 - Do monitor processes if EXE name equals 'cc-uploader'
 	ExeCcuploader *bool `pulumi:"exeCcuploader"`
+	// Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+	ExeConda *bool `pulumi:"exeConda"`
 	// Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
 	ExeDoppler *bool `pulumi:"exeDoppler"`
 	// Rule id: 49 - Do not monitor processes if EXE name equals 'filebeat'
@@ -514,14 +588,20 @@ type builtinProcessMonitoringArgs struct {
 	ExeFlexnetmaintenanceremotingservice *bool `pulumi:"exeFlexnetmaintenanceremotingservice"`
 	// Rule id: 54 - Do not monitor processes if EXE name equals 'functionbeat'
 	ExeFunctionbeat *bool `pulumi:"exeFunctionbeat"`
+	// Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+	ExeGcloud *bool `pulumi:"exeGcloud"`
 	// Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
 	ExeGorouter *bool `pulumi:"exeGorouter"`
 	// Rule id: 55 - Do not monitor processes if EXE name equals 'grootfs'
 	ExeGrootfs *bool `pulumi:"exeGrootfs"`
+	// Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+	ExeHatch *bool `pulumi:"exeHatch"`
 	// Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
 	ExeHeartbeat *bool `pulumi:"exeHeartbeat"`
 	// Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
 	ExeInfluxd *bool `pulumi:"exeInfluxd"`
+	// Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+	ExeJupyter *bool `pulumi:"exeJupyter"`
 	// Rule id: 13 - Do monitor processes if EXE name equals 'locket'
 	ExeLocket *bool `pulumi:"exeLocket"`
 	// Rule id: 50 - Do not monitor processes if EXE name equals 'metricbeat'
@@ -534,12 +614,16 @@ type builtinProcessMonitoringArgs struct {
 	ExeOc *bool `pulumi:"exeOc"`
 	// Rule id: 71 - Do not monitor processes if EXE name equals 'openhandlecollector.exe'
 	ExeOpenhandlecollector *bool `pulumi:"exeOpenhandlecollector"`
+	// Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+	ExeOpenstack *bool `pulumi:"exeOpenstack"`
 	// Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
 	ExeOptcnibinhostlocal *bool `pulumi:"exeOptcnibinhostlocal"`
 	// Rule id: 51 - Do not monitor processes if EXE name equals 'packetbeat'
 	ExePacketbeat *bool `pulumi:"exePacketbeat"`
 	// Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
 	ExePhpcgi *bool `pulumi:"exePhpcgi"`
+	// Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+	ExePip *bool `pulumi:"exePip"`
 	// Rule id: 16 - Do monitor processes if EXE name equals 'rep'
 	ExeRep *bool `pulumi:"exeRep"`
 	// Rule id: 17 - Do monitor processes if EXE name equals 'route-emitter'
@@ -570,8 +654,12 @@ type builtinProcessMonitoringArgs struct {
 	ExeUserbinpiper *bool `pulumi:"exeUserbinpiper"`
 	// Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
 	ExeW3wp *bool `pulumi:"exeW3wp"`
+	// Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+	ExeWheel *bool `pulumi:"exeWheel"`
 	// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
 	ExeYq *bool `pulumi:"exeYq"`
+	// Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+	ExeYum *bool `pulumi:"exeYum"`
 	// Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
 	GoStatic *bool `pulumi:"goStatic"`
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -632,10 +720,16 @@ type BuiltinProcessMonitoringArgs struct {
 	ExeAgentlistener pulumi.BoolPtrInput
 	// Rule id: 61 - Do not monitor processes if EXE name contains 'Agent.Worker'
 	ExeAgentworker pulumi.BoolPtrInput
+	// Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+	ExeAnsible pulumi.BoolPtrInput
 	// Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
 	ExeAuctioneer pulumi.BoolPtrInput
 	// Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
 	ExeAuditbeat pulumi.BoolPtrInput
+	// Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+	ExeAws pulumi.BoolPtrInput
+	// Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+	ExeAz pulumi.BoolPtrInput
 	// Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
 	ExeBbs pulumi.BoolPtrInput
 	// Rule id: 5 - Do monitor processes if EXE name equals 'caddy'
@@ -646,6 +740,8 @@ type BuiltinProcessMonitoringArgs struct {
 	ExeCasclient pulumi.BoolPtrInput
 	// Rule id: 10 - Do monitor processes if EXE name equals 'cc-uploader'
 	ExeCcuploader pulumi.BoolPtrInput
+	// Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+	ExeConda pulumi.BoolPtrInput
 	// Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
 	ExeDoppler pulumi.BoolPtrInput
 	// Rule id: 49 - Do not monitor processes if EXE name equals 'filebeat'
@@ -656,14 +752,20 @@ type BuiltinProcessMonitoringArgs struct {
 	ExeFlexnetmaintenanceremotingservice pulumi.BoolPtrInput
 	// Rule id: 54 - Do not monitor processes if EXE name equals 'functionbeat'
 	ExeFunctionbeat pulumi.BoolPtrInput
+	// Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+	ExeGcloud pulumi.BoolPtrInput
 	// Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
 	ExeGorouter pulumi.BoolPtrInput
 	// Rule id: 55 - Do not monitor processes if EXE name equals 'grootfs'
 	ExeGrootfs pulumi.BoolPtrInput
+	// Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+	ExeHatch pulumi.BoolPtrInput
 	// Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
 	ExeHeartbeat pulumi.BoolPtrInput
 	// Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
 	ExeInfluxd pulumi.BoolPtrInput
+	// Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+	ExeJupyter pulumi.BoolPtrInput
 	// Rule id: 13 - Do monitor processes if EXE name equals 'locket'
 	ExeLocket pulumi.BoolPtrInput
 	// Rule id: 50 - Do not monitor processes if EXE name equals 'metricbeat'
@@ -676,12 +778,16 @@ type BuiltinProcessMonitoringArgs struct {
 	ExeOc pulumi.BoolPtrInput
 	// Rule id: 71 - Do not monitor processes if EXE name equals 'openhandlecollector.exe'
 	ExeOpenhandlecollector pulumi.BoolPtrInput
+	// Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+	ExeOpenstack pulumi.BoolPtrInput
 	// Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
 	ExeOptcnibinhostlocal pulumi.BoolPtrInput
 	// Rule id: 51 - Do not monitor processes if EXE name equals 'packetbeat'
 	ExePacketbeat pulumi.BoolPtrInput
 	// Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
 	ExePhpcgi pulumi.BoolPtrInput
+	// Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+	ExePip pulumi.BoolPtrInput
 	// Rule id: 16 - Do monitor processes if EXE name equals 'rep'
 	ExeRep pulumi.BoolPtrInput
 	// Rule id: 17 - Do monitor processes if EXE name equals 'route-emitter'
@@ -712,8 +818,12 @@ type BuiltinProcessMonitoringArgs struct {
 	ExeUserbinpiper pulumi.BoolPtrInput
 	// Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
 	ExeW3wp pulumi.BoolPtrInput
+	// Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+	ExeWheel pulumi.BoolPtrInput
 	// Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
 	ExeYq pulumi.BoolPtrInput
+	// Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+	ExeYum pulumi.BoolPtrInput
 	// Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
 	GoStatic pulumi.BoolPtrInput
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -889,6 +999,11 @@ func (o BuiltinProcessMonitoringOutput) ExeAgentworker() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeAgentworker }).(pulumi.BoolPtrOutput)
 }
 
+// Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+func (o BuiltinProcessMonitoringOutput) ExeAnsible() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeAnsible }).(pulumi.BoolPtrOutput)
+}
+
 // Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
 func (o BuiltinProcessMonitoringOutput) ExeAuctioneer() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeAuctioneer }).(pulumi.BoolPtrOutput)
@@ -897,6 +1012,16 @@ func (o BuiltinProcessMonitoringOutput) ExeAuctioneer() pulumi.BoolPtrOutput {
 // Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
 func (o BuiltinProcessMonitoringOutput) ExeAuditbeat() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeAuditbeat }).(pulumi.BoolPtrOutput)
+}
+
+// Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+func (o BuiltinProcessMonitoringOutput) ExeAws() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeAws }).(pulumi.BoolPtrOutput)
+}
+
+// Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+func (o BuiltinProcessMonitoringOutput) ExeAz() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeAz }).(pulumi.BoolPtrOutput)
 }
 
 // Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
@@ -924,6 +1049,11 @@ func (o BuiltinProcessMonitoringOutput) ExeCcuploader() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeCcuploader }).(pulumi.BoolPtrOutput)
 }
 
+// Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+func (o BuiltinProcessMonitoringOutput) ExeConda() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeConda }).(pulumi.BoolPtrOutput)
+}
+
 // Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
 func (o BuiltinProcessMonitoringOutput) ExeDoppler() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeDoppler }).(pulumi.BoolPtrOutput)
@@ -949,6 +1079,11 @@ func (o BuiltinProcessMonitoringOutput) ExeFunctionbeat() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeFunctionbeat }).(pulumi.BoolPtrOutput)
 }
 
+// Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+func (o BuiltinProcessMonitoringOutput) ExeGcloud() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeGcloud }).(pulumi.BoolPtrOutput)
+}
+
 // Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
 func (o BuiltinProcessMonitoringOutput) ExeGorouter() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeGorouter }).(pulumi.BoolPtrOutput)
@@ -959,6 +1094,11 @@ func (o BuiltinProcessMonitoringOutput) ExeGrootfs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeGrootfs }).(pulumi.BoolPtrOutput)
 }
 
+// Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+func (o BuiltinProcessMonitoringOutput) ExeHatch() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeHatch }).(pulumi.BoolPtrOutput)
+}
+
 // Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
 func (o BuiltinProcessMonitoringOutput) ExeHeartbeat() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeHeartbeat }).(pulumi.BoolPtrOutput)
@@ -967,6 +1107,11 @@ func (o BuiltinProcessMonitoringOutput) ExeHeartbeat() pulumi.BoolPtrOutput {
 // Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
 func (o BuiltinProcessMonitoringOutput) ExeInfluxd() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeInfluxd }).(pulumi.BoolPtrOutput)
+}
+
+// Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+func (o BuiltinProcessMonitoringOutput) ExeJupyter() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeJupyter }).(pulumi.BoolPtrOutput)
 }
 
 // Rule id: 13 - Do monitor processes if EXE name equals 'locket'
@@ -999,6 +1144,11 @@ func (o BuiltinProcessMonitoringOutput) ExeOpenhandlecollector() pulumi.BoolPtrO
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeOpenhandlecollector }).(pulumi.BoolPtrOutput)
 }
 
+// Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+func (o BuiltinProcessMonitoringOutput) ExeOpenstack() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeOpenstack }).(pulumi.BoolPtrOutput)
+}
+
 // Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
 func (o BuiltinProcessMonitoringOutput) ExeOptcnibinhostlocal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeOptcnibinhostlocal }).(pulumi.BoolPtrOutput)
@@ -1012,6 +1162,11 @@ func (o BuiltinProcessMonitoringOutput) ExePacketbeat() pulumi.BoolPtrOutput {
 // Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
 func (o BuiltinProcessMonitoringOutput) ExePhpcgi() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExePhpcgi }).(pulumi.BoolPtrOutput)
+}
+
+// Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+func (o BuiltinProcessMonitoringOutput) ExePip() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExePip }).(pulumi.BoolPtrOutput)
 }
 
 // Rule id: 16 - Do monitor processes if EXE name equals 'rep'
@@ -1089,9 +1244,19 @@ func (o BuiltinProcessMonitoringOutput) ExeW3wp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeW3wp }).(pulumi.BoolPtrOutput)
 }
 
+// Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+func (o BuiltinProcessMonitoringOutput) ExeWheel() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeWheel }).(pulumi.BoolPtrOutput)
+}
+
 // Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
 func (o BuiltinProcessMonitoringOutput) ExeYq() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeYq }).(pulumi.BoolPtrOutput)
+}
+
+// Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+func (o BuiltinProcessMonitoringOutput) ExeYum() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.ExeYum }).(pulumi.BoolPtrOutput)
 }
 
 // Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'

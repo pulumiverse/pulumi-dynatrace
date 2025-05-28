@@ -259,10 +259,8 @@ class _OpentelemetryMetricsState:
         pulumi.set(self, "to_drop_attributes", value)
 
 
+@pulumi.type_token("dynatrace:index/opentelemetryMetrics:OpentelemetryMetrics")
 class OpentelemetryMetrics(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/opentelemetryMetrics:OpentelemetryMetrics"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

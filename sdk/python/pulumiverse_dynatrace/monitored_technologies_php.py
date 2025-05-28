@@ -160,10 +160,8 @@ class _MonitoredTechnologiesPhpState:
         pulumi.set(self, "host_id", value)
 
 
+@pulumi.type_token("dynatrace:index/monitoredTechnologiesPhp:MonitoredTechnologiesPhp")
 class MonitoredTechnologiesPhp(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/monitoredTechnologiesPhp:MonitoredTechnologiesPhp"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

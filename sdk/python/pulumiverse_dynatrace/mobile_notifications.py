@@ -64,10 +64,8 @@ class _MobileNotificationsState:
         pulumi.set(self, "enabled", value)
 
 
+@pulumi.type_token("dynatrace:index/mobileNotifications:MobileNotifications")
 class MobileNotifications(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/mobileNotifications:MobileNotifications"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

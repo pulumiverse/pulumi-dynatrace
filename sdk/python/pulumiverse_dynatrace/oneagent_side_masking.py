@@ -189,10 +189,8 @@ class _OneagentSideMaskingState:
         pulumi.set(self, "process_group_id", value)
 
 
+@pulumi.type_token("dynatrace:index/oneagentSideMasking:OneagentSideMasking")
 class OneagentSideMasking(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/oneagentSideMasking:OneagentSideMasking"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

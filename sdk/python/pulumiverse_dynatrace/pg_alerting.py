@@ -159,10 +159,8 @@ class _PgAlertingState:
         pulumi.set(self, "process_group", value)
 
 
+@pulumi.type_token("dynatrace:index/pgAlerting:PgAlerting")
 class PgAlerting(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/pgAlerting:PgAlerting"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

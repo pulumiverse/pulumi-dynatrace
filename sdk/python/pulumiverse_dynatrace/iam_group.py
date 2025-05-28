@@ -131,10 +131,8 @@ class _IamGroupState:
         pulumi.set(self, "permissions", value)
 
 
+@pulumi.type_token("dynatrace:index/iamGroup:IamGroup")
 class IamGroup(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/iamGroup:IamGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

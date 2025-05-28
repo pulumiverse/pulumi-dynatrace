@@ -325,10 +325,8 @@ class _BrowserMonitorState:
         pulumi.set(self, "tags", value)
 
 
+@pulumi.type_token("dynatrace:index/browserMonitor:BrowserMonitor")
 class BrowserMonitor(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/browserMonitor:BrowserMonitor"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

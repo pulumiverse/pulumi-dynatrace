@@ -130,10 +130,8 @@ class _DavisCopilotState:
         pulumi.set(self, "enable_tenant_aware_data_mining", value)
 
 
+@pulumi.type_token("dynatrace:index/davisCopilot:DavisCopilot")
 class DavisCopilot(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/davisCopilot:DavisCopilot"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

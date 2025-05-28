@@ -487,10 +487,8 @@ class _SloState:
         pulumi.set(self, "warning", value)
 
 
+@pulumi.type_token("dynatrace:index/slo:Slo")
 class Slo(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/slo:Slo"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

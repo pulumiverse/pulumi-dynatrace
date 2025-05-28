@@ -496,10 +496,8 @@ class _CustomAnomaliesState:
         pulumi.set(self, "warning_reason", value)
 
 
+@pulumi.type_token("dynatrace:index/customAnomalies:CustomAnomalies")
 class CustomAnomalies(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/customAnomalies:CustomAnomalies"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

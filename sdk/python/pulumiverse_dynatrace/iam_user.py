@@ -92,10 +92,8 @@ class _IamUserState:
         pulumi.set(self, "uid", value)
 
 
+@pulumi.type_token("dynatrace:index/iamUser:IamUser")
 class IamUser(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/iamUser:IamUser"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

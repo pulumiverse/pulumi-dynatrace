@@ -221,10 +221,8 @@ class _LogMetricsState:
         pulumi.set(self, "query", value)
 
 
+@pulumi.type_token("dynatrace:index/logMetrics:LogMetrics")
 class LogMetrics(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/logMetrics:LogMetrics"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

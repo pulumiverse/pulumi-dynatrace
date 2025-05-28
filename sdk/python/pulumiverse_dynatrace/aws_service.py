@@ -174,10 +174,8 @@ class _AwsServiceState:
         pulumi.set(self, "use_recommended_metrics", value)
 
 
+@pulumi.type_token("dynatrace:index/awsService:AwsService")
 class AwsService(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/awsService:AwsService"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

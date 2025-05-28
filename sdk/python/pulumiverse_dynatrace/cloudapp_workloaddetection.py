@@ -200,10 +200,8 @@ class _CloudappWorkloaddetectionState:
         pulumi.set(self, "serverless", value)
 
 
+@pulumi.type_token("dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection")
 class CloudappWorkloaddetection(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

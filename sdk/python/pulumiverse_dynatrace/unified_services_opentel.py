@@ -64,10 +64,8 @@ class _UnifiedServicesOpentelState:
         pulumi.set(self, "enabled", value)
 
 
+@pulumi.type_token("dynatrace:index/unifiedServicesOpentel:UnifiedServicesOpentel")
 class UnifiedServicesOpentel(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/unifiedServicesOpentel:UnifiedServicesOpentel"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -161,10 +161,8 @@ class _TransactionStartFiltersState:
         pulumi.set(self, "ims_transaction_ids", value)
 
 
+@pulumi.type_token("dynatrace:index/transactionStartFilters:TransactionStartFilters")
 class TransactionStartFilters(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/transactionStartFilters:TransactionStartFilters"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

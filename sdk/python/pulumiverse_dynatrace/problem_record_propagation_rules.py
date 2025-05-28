@@ -126,10 +126,8 @@ class _ProblemRecordPropagationRulesState:
         pulumi.set(self, "target_attribute_key", value)
 
 
+@pulumi.type_token("dynatrace:index/problemRecordPropagationRules:ProblemRecordPropagationRules")
 class ProblemRecordPropagationRules(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/problemRecordPropagationRules:ProblemRecordPropagationRules"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

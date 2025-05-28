@@ -205,10 +205,8 @@ class _DeclarativeGroupingState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/declarativeGrouping:DeclarativeGrouping")
 class DeclarativeGrouping(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/declarativeGrouping:DeclarativeGrouping"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -225,10 +225,8 @@ class _IbmMqFiltersState:
         pulumi.set(self, "ims_mq_queue_id_includes", value)
 
 
+@pulumi.type_token("dynatrace:index/ibmMqFilters:IbmMqFilters")
 class IbmMqFilters(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/ibmMqFilters:IbmMqFilters"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

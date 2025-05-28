@@ -96,10 +96,8 @@ class _MonitoredTechnologiesIisState:
         pulumi.set(self, "host_id", value)
 
 
+@pulumi.type_token("dynatrace:index/monitoredTechnologiesIis:MonitoredTechnologiesIis")
 class MonitoredTechnologiesIis(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/monitoredTechnologiesIis:MonitoredTechnologiesIis"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

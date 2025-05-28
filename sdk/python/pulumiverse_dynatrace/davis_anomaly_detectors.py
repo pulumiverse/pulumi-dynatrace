@@ -252,10 +252,8 @@ class _DavisAnomalyDetectorsState:
         pulumi.set(self, "title", value)
 
 
+@pulumi.type_token("dynatrace:index/davisAnomalyDetectors:DavisAnomalyDetectors")
 class DavisAnomalyDetectors(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/davisAnomalyDetectors:DavisAnomalyDetectors"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

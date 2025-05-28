@@ -287,10 +287,8 @@ class _CalculatedMobileMetricState:
         pulumi.set(self, "user_action_filter", value)
 
 
+@pulumi.type_token("dynatrace:index/calculatedMobileMetric:CalculatedMobileMetric")
 class CalculatedMobileMetric(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/calculatedMobileMetric:CalculatedMobileMetric"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

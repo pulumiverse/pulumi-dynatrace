@@ -64,10 +64,8 @@ class _SyntheticAvailabilityState:
         pulumi.set(self, "exclude_maintenance_windows", value)
 
 
+@pulumi.type_token("dynatrace:index/syntheticAvailability:SyntheticAvailability")
 class SyntheticAvailability(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/syntheticAvailability:SyntheticAvailability"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

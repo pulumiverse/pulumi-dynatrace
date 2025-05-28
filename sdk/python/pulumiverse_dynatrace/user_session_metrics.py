@@ -192,10 +192,8 @@ class _UserSessionMetricsState:
         pulumi.set(self, "value", value)
 
 
+@pulumi.type_token("dynatrace:index/userSessionMetrics:UserSessionMetrics")
 class UserSessionMetrics(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/userSessionMetrics:UserSessionMetrics"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

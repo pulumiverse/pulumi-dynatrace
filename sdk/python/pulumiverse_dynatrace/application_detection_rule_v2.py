@@ -190,10 +190,8 @@ class _ApplicationDetectionRuleV2State:
         pulumi.set(self, "pattern", value)
 
 
+@pulumi.type_token("dynatrace:index/applicationDetectionRuleV2:ApplicationDetectionRuleV2")
 class ApplicationDetectionRuleV2(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/applicationDetectionRuleV2:ApplicationDetectionRuleV2"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

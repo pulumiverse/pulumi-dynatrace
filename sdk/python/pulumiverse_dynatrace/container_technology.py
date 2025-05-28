@@ -313,10 +313,8 @@ class _ContainerTechnologyState:
         pulumi.set(self, "winc", value)
 
 
+@pulumi.type_token("dynatrace:index/containerTechnology:ContainerTechnology")
 class ContainerTechnology(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/containerTechnology:ContainerTechnology"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

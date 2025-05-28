@@ -95,10 +95,8 @@ class _AttributeAllowListState:
         pulumi.set(self, "key", value)
 
 
+@pulumi.type_token("dynatrace:index/attributeAllowList:AttributeAllowList")
 class AttributeAllowList(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/attributeAllowList:AttributeAllowList"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

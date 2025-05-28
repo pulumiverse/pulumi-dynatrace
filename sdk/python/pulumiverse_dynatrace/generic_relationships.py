@@ -285,10 +285,8 @@ class _GenericRelationshipsState:
         pulumi.set(self, "type_of_relation", value)
 
 
+@pulumi.type_token("dynatrace:index/genericRelationships:GenericRelationships")
 class GenericRelationships(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/genericRelationships:GenericRelationships"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -250,10 +250,8 @@ class _MainframeTransactionMonitoringState:
         pulumi.set(self, "zos_ims_service_detection_uses_transaction_id", value)
 
 
+@pulumi.type_token("dynatrace:index/mainframeTransactionMonitoring:MainframeTransactionMonitoring")
 class MainframeTransactionMonitoring(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/mainframeTransactionMonitoring:MainframeTransactionMonitoring"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

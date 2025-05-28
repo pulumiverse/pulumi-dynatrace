@@ -64,10 +64,8 @@ class _RumOverloadPreventionState:
         pulumi.set(self, "overload_prevention_limit", value)
 
 
+@pulumi.type_token("dynatrace:index/rumOverloadPrevention:RumOverloadPrevention")
 class RumOverloadPrevention(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/rumOverloadPrevention:RumOverloadPrevention"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

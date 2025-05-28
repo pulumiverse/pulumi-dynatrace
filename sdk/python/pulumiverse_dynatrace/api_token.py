@@ -368,10 +368,8 @@ class _ApiTokenState:
         pulumi.set(self, "token", value)
 
 
+@pulumi.type_token("dynatrace:index/apiToken:ApiToken")
 class ApiToken(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/apiToken:ApiToken"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

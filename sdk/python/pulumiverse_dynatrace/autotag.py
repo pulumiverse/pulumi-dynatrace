@@ -203,10 +203,8 @@ class _AutotagState:
         pulumi.set(self, "unknowns", value)
 
 
+@pulumi.type_token("dynatrace:index/autotag:Autotag")
 class Autotag(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/autotag:Autotag"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

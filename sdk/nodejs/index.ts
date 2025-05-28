@@ -1615,10 +1615,8 @@ export type ProcessgroupNamingOrder = import("./processgroupNamingOrder").Proces
 export const ProcessgroupNamingOrder: typeof import("./processgroupNamingOrder").ProcessgroupNamingOrder = null as any;
 utilities.lazyLoad(exports, ["ProcessgroupNamingOrder"], () => require("./processgroupNamingOrder"));
 
-export { ProviderArgs } from "./provider";
-export type Provider = import("./provider").Provider;
-export const Provider: typeof import("./provider").Provider = null as any;
-utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
+export * from "./provider";
+import { Provider } from "./provider";
 
 export { QueueManagerArgs, QueueManagerState } from "./queueManager";
 export type QueueManager = import("./queueManager").QueueManager;
@@ -1710,6 +1708,11 @@ export type ServiceAnomaliesV2 = import("./serviceAnomaliesV2").ServiceAnomalies
 export const ServiceAnomaliesV2: typeof import("./serviceAnomaliesV2").ServiceAnomaliesV2 = null as any;
 utilities.lazyLoad(exports, ["ServiceAnomaliesV2"], () => require("./serviceAnomaliesV2"));
 
+export { ServiceDetectionRulesArgs, ServiceDetectionRulesState } from "./serviceDetectionRules";
+export type ServiceDetectionRules = import("./serviceDetectionRules").ServiceDetectionRules;
+export const ServiceDetectionRules: typeof import("./serviceDetectionRules").ServiceDetectionRules = null as any;
+utilities.lazyLoad(exports, ["ServiceDetectionRules"], () => require("./serviceDetectionRules"));
+
 export { ServiceExternalWebRequestArgs, ServiceExternalWebRequestState } from "./serviceExternalWebRequest";
 export type ServiceExternalWebRequest = import("./serviceExternalWebRequest").ServiceExternalWebRequest;
 export const ServiceExternalWebRequest: typeof import("./serviceExternalWebRequest").ServiceExternalWebRequest = null as any;
@@ -1754,6 +1757,11 @@ export { ServiceNowNotificationArgs, ServiceNowNotificationState } from "./servi
 export type ServiceNowNotification = import("./serviceNowNotification").ServiceNowNotification;
 export const ServiceNowNotification: typeof import("./serviceNowNotification").ServiceNowNotification = null as any;
 utilities.lazyLoad(exports, ["ServiceNowNotification"], () => require("./serviceNowNotification"));
+
+export { ServiceSplittingArgs, ServiceSplittingState } from "./serviceSplitting";
+export type ServiceSplitting = import("./serviceSplitting").ServiceSplitting;
+export const ServiceSplitting: typeof import("./serviceSplitting").ServiceSplitting = null as any;
+utilities.lazyLoad(exports, ["ServiceSplitting"], () => require("./serviceSplitting"));
 
 export { ServicenowConnectionArgs, ServicenowConnectionState } from "./servicenowConnection";
 export type ServicenowConnection = import("./servicenowConnection").ServicenowConnection;
@@ -1935,6 +1943,16 @@ export type VulnerabilityThirdParty = import("./vulnerabilityThirdParty").Vulner
 export const VulnerabilityThirdParty: typeof import("./vulnerabilityThirdParty").VulnerabilityThirdParty = null as any;
 utilities.lazyLoad(exports, ["VulnerabilityThirdParty"], () => require("./vulnerabilityThirdParty"));
 
+export { VulnerabilityThirdPartyAttrArgs, VulnerabilityThirdPartyAttrState } from "./vulnerabilityThirdPartyAttr";
+export type VulnerabilityThirdPartyAttr = import("./vulnerabilityThirdPartyAttr").VulnerabilityThirdPartyAttr;
+export const VulnerabilityThirdPartyAttr: typeof import("./vulnerabilityThirdPartyAttr").VulnerabilityThirdPartyAttr = null as any;
+utilities.lazyLoad(exports, ["VulnerabilityThirdPartyAttr"], () => require("./vulnerabilityThirdPartyAttr"));
+
+export { VulnerabilityThirdPartyK8sArgs, VulnerabilityThirdPartyK8sState } from "./vulnerabilityThirdPartyK8s";
+export type VulnerabilityThirdPartyK8s = import("./vulnerabilityThirdPartyK8s").VulnerabilityThirdPartyK8s;
+export const VulnerabilityThirdPartyK8s: typeof import("./vulnerabilityThirdPartyK8s").VulnerabilityThirdPartyK8s = null as any;
+utilities.lazyLoad(exports, ["VulnerabilityThirdPartyK8s"], () => require("./vulnerabilityThirdPartyK8s"));
+
 export { WebAppAnomaliesArgs, WebAppAnomaliesState } from "./webAppAnomalies";
 export type WebAppAnomalies = import("./webAppAnomalies").WebAppAnomalies;
 export const WebAppAnomalies: typeof import("./webAppAnomalies").WebAppAnomalies = null as any;
@@ -1970,6 +1988,11 @@ export type WebAppCustomInjection = import("./webAppCustomInjection").WebAppCust
 export const WebAppCustomInjection: typeof import("./webAppCustomInjection").WebAppCustomInjection = null as any;
 utilities.lazyLoad(exports, ["WebAppCustomInjection"], () => require("./webAppCustomInjection"));
 
+export { WebAppCustomPropRestrictionsArgs, WebAppCustomPropRestrictionsState } from "./webAppCustomPropRestrictions";
+export type WebAppCustomPropRestrictions = import("./webAppCustomPropRestrictions").WebAppCustomPropRestrictions;
+export const WebAppCustomPropRestrictions: typeof import("./webAppCustomPropRestrictions").WebAppCustomPropRestrictions = null as any;
+utilities.lazyLoad(exports, ["WebAppCustomPropRestrictions"], () => require("./webAppCustomPropRestrictions"));
+
 export { WebAppEnablementArgs, WebAppEnablementState } from "./webAppEnablement";
 export type WebAppEnablement = import("./webAppEnablement").WebAppEnablement;
 export const WebAppEnablement: typeof import("./webAppEnablement").WebAppEnablement = null as any;
@@ -1979,6 +2002,11 @@ export { WebAppInjectionCookieArgs, WebAppInjectionCookieState } from "./webAppI
 export type WebAppInjectionCookie = import("./webAppInjectionCookie").WebAppInjectionCookie;
 export const WebAppInjectionCookie: typeof import("./webAppInjectionCookie").WebAppInjectionCookie = null as any;
 utilities.lazyLoad(exports, ["WebAppInjectionCookie"], () => require("./webAppInjectionCookie"));
+
+export { WebAppJavascriptFilenameArgs, WebAppJavascriptFilenameState } from "./webAppJavascriptFilename";
+export type WebAppJavascriptFilename = import("./webAppJavascriptFilename").WebAppJavascriptFilename;
+export const WebAppJavascriptFilename: typeof import("./webAppJavascriptFilename").WebAppJavascriptFilename = null as any;
+utilities.lazyLoad(exports, ["WebAppJavascriptFilename"], () => require("./webAppJavascriptFilename"));
 
 export { WebAppJavascriptUpdatesArgs, WebAppJavascriptUpdatesState } from "./webAppJavascriptUpdates";
 export type WebAppJavascriptUpdates = import("./webAppJavascriptUpdates").WebAppJavascriptUpdates;
@@ -2623,6 +2651,8 @@ const _module = {
                 return new ServiceAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/serviceAnomaliesV2:ServiceAnomaliesV2":
                 return new ServiceAnomaliesV2(name, <any>undefined, { urn })
+            case "dynatrace:index/serviceDetectionRules:ServiceDetectionRules":
+                return new ServiceDetectionRules(name, <any>undefined, { urn })
             case "dynatrace:index/serviceExternalWebRequest:ServiceExternalWebRequest":
                 return new ServiceExternalWebRequest(name, <any>undefined, { urn })
             case "dynatrace:index/serviceExternalWebService:ServiceExternalWebService":
@@ -2641,6 +2671,8 @@ const _module = {
                 return new ServiceNamingOrder(name, <any>undefined, { urn })
             case "dynatrace:index/serviceNowNotification:ServiceNowNotification":
                 return new ServiceNowNotification(name, <any>undefined, { urn })
+            case "dynatrace:index/serviceSplitting:ServiceSplitting":
+                return new ServiceSplitting(name, <any>undefined, { urn })
             case "dynatrace:index/servicenowConnection:ServicenowConnection":
                 return new ServicenowConnection(name, <any>undefined, { urn })
             case "dynatrace:index/sessionReplayResourceCapture:SessionReplayResourceCapture":
@@ -2713,6 +2745,10 @@ const _module = {
                 return new VulnerabilitySettings(name, <any>undefined, { urn })
             case "dynatrace:index/vulnerabilityThirdParty:VulnerabilityThirdParty":
                 return new VulnerabilityThirdParty(name, <any>undefined, { urn })
+            case "dynatrace:index/vulnerabilityThirdPartyAttr:VulnerabilityThirdPartyAttr":
+                return new VulnerabilityThirdPartyAttr(name, <any>undefined, { urn })
+            case "dynatrace:index/vulnerabilityThirdPartyK8s:VulnerabilityThirdPartyK8s":
+                return new VulnerabilityThirdPartyK8s(name, <any>undefined, { urn })
             case "dynatrace:index/webAppAnomalies:WebAppAnomalies":
                 return new WebAppAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/webAppAutoInjection:WebAppAutoInjection":
@@ -2727,10 +2763,14 @@ const _module = {
                 return new WebAppCustomErrors(name, <any>undefined, { urn })
             case "dynatrace:index/webAppCustomInjection:WebAppCustomInjection":
                 return new WebAppCustomInjection(name, <any>undefined, { urn })
+            case "dynatrace:index/webAppCustomPropRestrictions:WebAppCustomPropRestrictions":
+                return new WebAppCustomPropRestrictions(name, <any>undefined, { urn })
             case "dynatrace:index/webAppEnablement:WebAppEnablement":
                 return new WebAppEnablement(name, <any>undefined, { urn })
             case "dynatrace:index/webAppInjectionCookie:WebAppInjectionCookie":
                 return new WebAppInjectionCookie(name, <any>undefined, { urn })
+            case "dynatrace:index/webAppJavascriptFilename:WebAppJavascriptFilename":
+                return new WebAppJavascriptFilename(name, <any>undefined, { urn })
             case "dynatrace:index/webAppJavascriptUpdates:WebAppJavascriptUpdates":
                 return new WebAppJavascriptUpdates(name, <any>undefined, { urn })
             case "dynatrace:index/webAppJavascriptVersion:WebAppJavascriptVersion":
@@ -3045,6 +3085,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/securityContext", _mod
 pulumi.runtime.registerResourceModule("dynatrace", "index/segment", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceAnomaliesV2", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/serviceDetectionRules", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceExternalWebRequest", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceExternalWebService", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceFailure", _module)
@@ -3054,6 +3095,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/serviceHttpFailure", _
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceNaming", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceNamingOrder", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceNowNotification", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/serviceSplitting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/servicenowConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/sessionReplayResourceCapture", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/sessionReplayWebPrivacy", _module)
@@ -3090,6 +3132,8 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/vulnerabilityAlerting"
 pulumi.runtime.registerResourceModule("dynatrace", "index/vulnerabilityCode", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/vulnerabilitySettings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/vulnerabilityThirdParty", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/vulnerabilityThirdPartyAttr", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/vulnerabilityThirdPartyK8s", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppAutoInjection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppBeaconEndpoint", _module)
@@ -3097,8 +3141,10 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/webAppBeaconOrigins", 
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppCustomConfigProperties", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppCustomErrors", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppCustomInjection", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/webAppCustomPropRestrictions", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppEnablement", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppInjectionCookie", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/webAppJavascriptFilename", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppJavascriptUpdates", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppJavascriptVersion", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppKeyPerformanceCustom", _module)

@@ -456,10 +456,8 @@ class _AzureCredentialsState:
         pulumi.set(self, "unknowns", value)
 
 
+@pulumi.type_token("dynatrace:index/azureCredentials:AzureCredentials")
 class AzureCredentials(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/azureCredentials:AzureCredentials"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

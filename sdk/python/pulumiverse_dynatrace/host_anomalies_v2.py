@@ -128,10 +128,8 @@ class _HostAnomaliesV2State:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/hostAnomaliesV2:HostAnomaliesV2")
 class HostAnomaliesV2(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/hostAnomaliesV2:HostAnomaliesV2"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

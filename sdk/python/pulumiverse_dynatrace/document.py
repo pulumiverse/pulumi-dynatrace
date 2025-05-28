@@ -239,10 +239,8 @@ class _DocumentState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("dynatrace:index/document:Document")
 class Document(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/document:Document"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

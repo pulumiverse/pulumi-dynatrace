@@ -158,10 +158,8 @@ class _CustomUnitsState:
         pulumi.set(self, "symbol", value)
 
 
+@pulumi.type_token("dynatrace:index/customUnits:CustomUnits")
 class CustomUnits(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/customUnits:CustomUnits"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

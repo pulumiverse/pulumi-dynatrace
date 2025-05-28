@@ -326,10 +326,8 @@ class _HttpMonitorState:
         pulumi.set(self, "tags", value)
 
 
+@pulumi.type_token("dynatrace:index/httpMonitor:HttpMonitor")
 class HttpMonitor(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/httpMonitor:HttpMonitor"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -189,10 +189,8 @@ class _LogBucketsState:
         pulumi.set(self, "rule_name", value)
 
 
+@pulumi.type_token("dynatrace:index/logBuckets:LogBuckets")
 class LogBuckets(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/logBuckets:LogBuckets"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

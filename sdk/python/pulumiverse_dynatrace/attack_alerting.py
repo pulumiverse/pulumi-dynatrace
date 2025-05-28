@@ -128,10 +128,8 @@ class _AttackAlertingState:
         pulumi.set(self, "name", value)
 
 
+@pulumi.type_token("dynatrace:index/attackAlerting:AttackAlerting")
 class AttackAlerting(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/attackAlerting:AttackAlerting"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

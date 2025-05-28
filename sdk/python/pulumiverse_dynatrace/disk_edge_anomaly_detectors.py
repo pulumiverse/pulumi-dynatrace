@@ -321,10 +321,8 @@ class _DiskEdgeAnomalyDetectorsState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/diskEdgeAnomalyDetectors:DiskEdgeAnomalyDetectors")
 class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/diskEdgeAnomalyDetectors:DiskEdgeAnomalyDetectors"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

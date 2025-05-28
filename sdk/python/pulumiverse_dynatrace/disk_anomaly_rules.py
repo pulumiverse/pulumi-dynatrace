@@ -319,10 +319,8 @@ class _DiskAnomalyRulesState:
         pulumi.set(self, "threshold_percent", value)
 
 
+@pulumi.type_token("dynatrace:index/diskAnomalyRules:DiskAnomalyRules")
 class DiskAnomalyRules(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/diskAnomalyRules:DiskAnomalyRules"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
