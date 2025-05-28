@@ -192,10 +192,8 @@ class _DbAppFeatureFlagsState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("dynatrace:index/dbAppFeatureFlags:DbAppFeatureFlags")
 class DbAppFeatureFlags(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/dbAppFeatureFlags:DbAppFeatureFlags"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

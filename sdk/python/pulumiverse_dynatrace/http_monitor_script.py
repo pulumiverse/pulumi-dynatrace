@@ -97,10 +97,8 @@ class _HttpMonitorScriptState:
         pulumi.set(self, "script", value)
 
 
+@pulumi.type_token("dynatrace:index/httpMonitorScript:HttpMonitorScript")
 class HttpMonitorScript(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/httpMonitorScript:HttpMonitorScript"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

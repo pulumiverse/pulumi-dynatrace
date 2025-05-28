@@ -158,10 +158,8 @@ class _FrequentIssuesState:
         pulumi.set(self, "detect_txn", value)
 
 
+@pulumi.type_token("dynatrace:index/frequentIssues:FrequentIssues")
 class FrequentIssues(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/frequentIssues:FrequentIssues"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

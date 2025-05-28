@@ -131,10 +131,8 @@ class _OpenpipelineSdlcEventsState:
         pulumi.set(self, "routing", value)
 
 
+@pulumi.type_token("dynatrace:index/openpipelineSdlcEvents:OpenpipelineSdlcEvents")
 class OpenpipelineSdlcEvents(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/openpipelineSdlcEvents:OpenpipelineSdlcEvents"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

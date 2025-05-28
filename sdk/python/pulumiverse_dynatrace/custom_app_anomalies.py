@@ -191,10 +191,8 @@ class _CustomAppAnomaliesState:
         pulumi.set(self, "unexpected_low_load", value)
 
 
+@pulumi.type_token("dynatrace:index/customAppAnomalies:CustomAppAnomalies")
 class CustomAppAnomalies(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/customAppAnomalies:CustomAppAnomalies"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

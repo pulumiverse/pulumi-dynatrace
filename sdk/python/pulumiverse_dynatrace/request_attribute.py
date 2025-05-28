@@ -320,10 +320,8 @@ class _RequestAttributeState:
         pulumi.set(self, "unknowns", value)
 
 
+@pulumi.type_token("dynatrace:index/requestAttribute:RequestAttribute")
 class RequestAttribute(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/requestAttribute:RequestAttribute"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

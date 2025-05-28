@@ -221,10 +221,8 @@ class _BusinessEventsMetricsState:
         pulumi.set(self, "measure_attribute", value)
 
 
+@pulumi.type_token("dynatrace:index/businessEventsMetrics:BusinessEventsMetrics")
 class BusinessEventsMetrics(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/businessEventsMetrics:BusinessEventsMetrics"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

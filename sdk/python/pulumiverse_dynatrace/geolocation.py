@@ -96,10 +96,8 @@ class _GeolocationState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/geolocation:Geolocation")
 class Geolocation(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/geolocation:Geolocation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

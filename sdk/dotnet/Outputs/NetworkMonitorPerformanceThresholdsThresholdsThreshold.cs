@@ -33,7 +33,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Notify if monitor request takes longer than X milliseconds to execute
         /// </summary>
-        public readonly int? Threshold;
+        public readonly double? Threshold;
         /// <summary>
         /// Number of violating request executions in analyzed sliding window
         /// </summary>
@@ -49,7 +49,7 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             int? stepIndex,
 
-            int? threshold,
+            double? threshold,
 
             int? violatingSamples)
         {

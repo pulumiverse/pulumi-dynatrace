@@ -64,10 +64,8 @@ class _AttributesPreferencesState:
         pulumi.set(self, "persistence_mode", value)
 
 
+@pulumi.type_token("dynatrace:index/attributesPreferences:AttributesPreferences")
 class AttributesPreferences(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/attributesPreferences:AttributesPreferences"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

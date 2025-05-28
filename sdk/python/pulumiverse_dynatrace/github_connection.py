@@ -128,10 +128,8 @@ class _GithubConnectionState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("dynatrace:index/githubConnection:GithubConnection")
 class GithubConnection(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/githubConnection:GithubConnection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

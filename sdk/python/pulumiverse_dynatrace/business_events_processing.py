@@ -262,10 +262,8 @@ class _BusinessEventsProcessingState:
         pulumi.set(self, "transformation_fields", value)
 
 
+@pulumi.type_token("dynatrace:index/businessEventsProcessing:BusinessEventsProcessing")
 class BusinessEventsProcessing(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/businessEventsProcessing:BusinessEventsProcessing"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

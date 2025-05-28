@@ -175,10 +175,8 @@ class _PlatformBucketState:
         pulumi.set(self, "table", value)
 
 
+@pulumi.type_token("dynatrace:index/platformBucket:PlatformBucket")
 class PlatformBucket(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/platformBucket:PlatformBucket"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

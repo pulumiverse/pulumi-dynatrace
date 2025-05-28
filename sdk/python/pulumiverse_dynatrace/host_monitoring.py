@@ -175,10 +175,8 @@ class _HostMonitoringState:
         pulumi.set(self, "host_id", value)
 
 
+@pulumi.type_token("dynatrace:index/hostMonitoring:HostMonitoring")
 class HostMonitoring(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/hostMonitoring:HostMonitoring"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -49,6 +49,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// no documentation available
         /// </summary>
+        public readonly Outputs.SiteReliabilityGuardianObjectivesObjectiveSegments? Segments;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly double? Target;
         /// <summary>
         /// no documentation available
@@ -73,6 +77,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? referenceSlo,
 
+            Outputs.SiteReliabilityGuardianObjectivesObjectiveSegments? segments,
+
             double? target,
 
             double? warning)
@@ -85,6 +91,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             Name = name;
             ObjectiveType = objectiveType;
             ReferenceSlo = referenceSlo;
+            Segments = segments;
             Target = target;
             Warning = warning;
         }

@@ -317,10 +317,8 @@ class _AnsibleTowerNotificationState:
         pulumi.set(self, "username", value)
 
 
+@pulumi.type_token("dynatrace:index/ansibleTowerNotification:AnsibleTowerNotification")
 class AnsibleTowerNotification(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/ansibleTowerNotification:AnsibleTowerNotification"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

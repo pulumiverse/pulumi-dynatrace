@@ -13,6 +13,501 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ServiceExternalWebRequestIdContributorsContextRoot struct {
+	// Transform this value before letting it contribute to the Service Id
+	EnableIdContributor bool `pulumi:"enableIdContributor"`
+	// no documentation available
+	ServiceIdContributor *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor `pulumi:"serviceIdContributor"`
+}
+
+// ServiceExternalWebRequestIdContributorsContextRootInput is an input type that accepts ServiceExternalWebRequestIdContributorsContextRootArgs and ServiceExternalWebRequestIdContributorsContextRootOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsContextRootInput` via:
+//
+//	ServiceExternalWebRequestIdContributorsContextRootArgs{...}
+type ServiceExternalWebRequestIdContributorsContextRootInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsContextRootOutput() ServiceExternalWebRequestIdContributorsContextRootOutput
+	ToServiceExternalWebRequestIdContributorsContextRootOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsContextRootOutput
+}
+
+type ServiceExternalWebRequestIdContributorsContextRootArgs struct {
+	// Transform this value before letting it contribute to the Service Id
+	EnableIdContributor pulumi.BoolInput `pulumi:"enableIdContributor"`
+	// no documentation available
+	ServiceIdContributor ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrInput `pulumi:"serviceIdContributor"`
+}
+
+func (ServiceExternalWebRequestIdContributorsContextRootArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRoot)(nil)).Elem()
+}
+
+func (i ServiceExternalWebRequestIdContributorsContextRootArgs) ToServiceExternalWebRequestIdContributorsContextRootOutput() ServiceExternalWebRequestIdContributorsContextRootOutput {
+	return i.ToServiceExternalWebRequestIdContributorsContextRootOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsContextRootArgs) ToServiceExternalWebRequestIdContributorsContextRootOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsContextRootOutput)
+}
+
+func (i ServiceExternalWebRequestIdContributorsContextRootArgs) ToServiceExternalWebRequestIdContributorsContextRootPtrOutput() ServiceExternalWebRequestIdContributorsContextRootPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsContextRootPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsContextRootArgs) ToServiceExternalWebRequestIdContributorsContextRootPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsContextRootOutput).ToServiceExternalWebRequestIdContributorsContextRootPtrOutputWithContext(ctx)
+}
+
+// ServiceExternalWebRequestIdContributorsContextRootPtrInput is an input type that accepts ServiceExternalWebRequestIdContributorsContextRootArgs, ServiceExternalWebRequestIdContributorsContextRootPtr and ServiceExternalWebRequestIdContributorsContextRootPtrOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsContextRootPtrInput` via:
+//
+//	        ServiceExternalWebRequestIdContributorsContextRootArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceExternalWebRequestIdContributorsContextRootPtrInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsContextRootPtrOutput() ServiceExternalWebRequestIdContributorsContextRootPtrOutput
+	ToServiceExternalWebRequestIdContributorsContextRootPtrOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsContextRootPtrOutput
+}
+
+type serviceExternalWebRequestIdContributorsContextRootPtrType ServiceExternalWebRequestIdContributorsContextRootArgs
+
+func ServiceExternalWebRequestIdContributorsContextRootPtr(v *ServiceExternalWebRequestIdContributorsContextRootArgs) ServiceExternalWebRequestIdContributorsContextRootPtrInput {
+	return (*serviceExternalWebRequestIdContributorsContextRootPtrType)(v)
+}
+
+func (*serviceExternalWebRequestIdContributorsContextRootPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsContextRoot)(nil)).Elem()
+}
+
+func (i *serviceExternalWebRequestIdContributorsContextRootPtrType) ToServiceExternalWebRequestIdContributorsContextRootPtrOutput() ServiceExternalWebRequestIdContributorsContextRootPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsContextRootPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceExternalWebRequestIdContributorsContextRootPtrType) ToServiceExternalWebRequestIdContributorsContextRootPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsContextRootPtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsContextRootOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsContextRootOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRoot)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootOutput) ToServiceExternalWebRequestIdContributorsContextRootOutput() ServiceExternalWebRequestIdContributorsContextRootOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootOutput) ToServiceExternalWebRequestIdContributorsContextRootOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootOutput) ToServiceExternalWebRequestIdContributorsContextRootPtrOutput() ServiceExternalWebRequestIdContributorsContextRootPtrOutput {
+	return o.ToServiceExternalWebRequestIdContributorsContextRootPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootOutput) ToServiceExternalWebRequestIdContributorsContextRootPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceExternalWebRequestIdContributorsContextRoot) *ServiceExternalWebRequestIdContributorsContextRoot {
+		return &v
+	}).(ServiceExternalWebRequestIdContributorsContextRootPtrOutput)
+}
+
+// Transform this value before letting it contribute to the Service Id
+func (o ServiceExternalWebRequestIdContributorsContextRootOutput) EnableIdContributor() pulumi.BoolOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsContextRoot) bool { return v.EnableIdContributor }).(pulumi.BoolOutput)
+}
+
+// no documentation available
+func (o ServiceExternalWebRequestIdContributorsContextRootOutput) ServiceIdContributor() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsContextRoot) *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor {
+		return v.ServiceIdContributor
+	}).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsContextRootPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsContextRootPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsContextRoot)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootPtrOutput) ToServiceExternalWebRequestIdContributorsContextRootPtrOutput() ServiceExternalWebRequestIdContributorsContextRootPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootPtrOutput) ToServiceExternalWebRequestIdContributorsContextRootPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootPtrOutput) Elem() ServiceExternalWebRequestIdContributorsContextRootOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsContextRoot) ServiceExternalWebRequestIdContributorsContextRoot {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceExternalWebRequestIdContributorsContextRoot
+		return ret
+	}).(ServiceExternalWebRequestIdContributorsContextRootOutput)
+}
+
+// Transform this value before letting it contribute to the Service Id
+func (o ServiceExternalWebRequestIdContributorsContextRootPtrOutput) EnableIdContributor() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsContextRoot) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.EnableIdContributor
+	}).(pulumi.BoolPtrOutput)
+}
+
+// no documentation available
+func (o ServiceExternalWebRequestIdContributorsContextRootPtrOutput) ServiceIdContributor() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsContextRoot) *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor {
+		if v == nil {
+			return nil
+		}
+		return v.ServiceIdContributor
+	}).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor struct {
+	// Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
+	ContributionType string `pulumi:"contributionType"`
+	// The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
+	SegmentCount *int `pulumi:"segmentCount"`
+	// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+	Transformations *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations `pulumi:"transformations"`
+	// The value to be used instead of the detected value.
+	ValueOverride *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride `pulumi:"valueOverride"`
+}
+
+// ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorInput is an input type that accepts ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs and ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorInput` via:
+//
+//	ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs{...}
+type ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput
+	ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput
+}
+
+type ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs struct {
+	// Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
+	ContributionType pulumi.StringInput `pulumi:"contributionType"`
+	// The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
+	SegmentCount pulumi.IntPtrInput `pulumi:"segmentCount"`
+	// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+	Transformations ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrInput `pulumi:"transformations"`
+	// The value to be used instead of the detected value.
+	ValueOverride ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverridePtrInput `pulumi:"valueOverride"`
+}
+
+func (ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor)(nil)).Elem()
+}
+
+func (i ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput {
+	return i.ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput)
+}
+
+func (i ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput).ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutputWithContext(ctx)
+}
+
+// ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrInput is an input type that accepts ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs, ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtr and ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrInput` via:
+//
+//	        ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput
+	ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput
+}
+
+type serviceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrType ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs
+
+func ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtr(v *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrInput {
+	return (*serviceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrType)(v)
+}
+
+func (*serviceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor)(nil)).Elem()
+}
+
+func (i *serviceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrType) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrType) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput {
+	return o.ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor) *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor {
+		return &v
+	}).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput)
+}
+
+// Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput) ContributionType() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor) string {
+		return v.ContributionType
+	}).(pulumi.StringOutput)
+}
+
+// The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput) SegmentCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor) *int {
+		return v.SegmentCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput) Transformations() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor) *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations {
+		return v.Transformations
+	}).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput)
+}
+
+// The value to be used instead of the detected value.
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput) ValueOverride() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverridePtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor) *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride {
+		return v.ValueOverride
+	}).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverridePtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput) Elem() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor
+		return ret
+	}).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput)
+}
+
+// Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput) ContributionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ContributionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput) SegmentCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor) *int {
+		if v == nil {
+			return nil
+		}
+		return v.SegmentCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput) Transformations() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor) *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations {
+		if v == nil {
+			return nil
+		}
+		return v.Transformations
+	}).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput)
+}
+
+// The value to be used instead of the detected value.
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput) ValueOverride() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverridePtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor) *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride {
+		if v == nil {
+			return nil
+		}
+		return v.ValueOverride
+	}).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverridePtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations struct {
+	Transformations []ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation `pulumi:"transformations"`
+}
+
+// ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsInput is an input type that accepts ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs and ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsInput` via:
+//
+//	ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs{...}
+type ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput
+	ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput
+}
+
+type ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs struct {
+	Transformations ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArrayInput `pulumi:"transformations"`
+}
+
+func (ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (i ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput {
+	return i.ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput)
+}
+
+func (i ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput).ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutputWithContext(ctx)
+}
+
+// ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrInput is an input type that accepts ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs, ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtr and ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrInput` via:
+//
+//	        ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput
+	ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput
+}
+
+type serviceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrType ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs
+
+func ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtr(v *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrInput {
+	return (*serviceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrType)(v)
+}
+
+func (*serviceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (i *serviceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrType) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrType) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput {
+	return o.ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations) *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations {
+		return &v
+	}).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput)
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput) Transformations() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArrayOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations) []ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+		return v.Transformations
+	}).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArrayOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput) ToServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput) Elem() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations) ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations
+		return ret
+	}).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput)
+}
+
+func (o ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput) Transformations() ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArrayOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations) []ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+		if v == nil {
+			return nil
+		}
+		return v.Transformations
+	}).(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArrayOutput)
+}
+
 type ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation struct {
 	// include hexadecimal numbers
 	IncludeHexNumbers *bool `pulumi:"includeHexNumbers"`
@@ -23299,6 +23794,434 @@ func (o ServiceNamingConditionConditionTechValuePtrOutput) VerbatimType() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
+type ServiceSplittingRule struct {
+	// Limits the scope of the service splitting rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes..  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+	Condition *string `pulumi:"condition"`
+	// no documentation available
+	Description *string `pulumi:"description"`
+	// Rule name
+	RuleName string `pulumi:"ruleName"`
+	// Define the entire set of resource attributes that should split your services in the matching scope.. Each attribute that exists will contribute to the final service ID.
+	ServiceSplittingAttributes *ServiceSplittingRuleServiceSplittingAttributes `pulumi:"serviceSplittingAttributes"`
+}
+
+// ServiceSplittingRuleInput is an input type that accepts ServiceSplittingRuleArgs and ServiceSplittingRuleOutput values.
+// You can construct a concrete instance of `ServiceSplittingRuleInput` via:
+//
+//	ServiceSplittingRuleArgs{...}
+type ServiceSplittingRuleInput interface {
+	pulumi.Input
+
+	ToServiceSplittingRuleOutput() ServiceSplittingRuleOutput
+	ToServiceSplittingRuleOutputWithContext(context.Context) ServiceSplittingRuleOutput
+}
+
+type ServiceSplittingRuleArgs struct {
+	// Limits the scope of the service splitting rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes..  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+	Condition pulumi.StringPtrInput `pulumi:"condition"`
+	// no documentation available
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Rule name
+	RuleName pulumi.StringInput `pulumi:"ruleName"`
+	// Define the entire set of resource attributes that should split your services in the matching scope.. Each attribute that exists will contribute to the final service ID.
+	ServiceSplittingAttributes ServiceSplittingRuleServiceSplittingAttributesPtrInput `pulumi:"serviceSplittingAttributes"`
+}
+
+func (ServiceSplittingRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceSplittingRule)(nil)).Elem()
+}
+
+func (i ServiceSplittingRuleArgs) ToServiceSplittingRuleOutput() ServiceSplittingRuleOutput {
+	return i.ToServiceSplittingRuleOutputWithContext(context.Background())
+}
+
+func (i ServiceSplittingRuleArgs) ToServiceSplittingRuleOutputWithContext(ctx context.Context) ServiceSplittingRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleOutput)
+}
+
+func (i ServiceSplittingRuleArgs) ToServiceSplittingRulePtrOutput() ServiceSplittingRulePtrOutput {
+	return i.ToServiceSplittingRulePtrOutputWithContext(context.Background())
+}
+
+func (i ServiceSplittingRuleArgs) ToServiceSplittingRulePtrOutputWithContext(ctx context.Context) ServiceSplittingRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleOutput).ToServiceSplittingRulePtrOutputWithContext(ctx)
+}
+
+// ServiceSplittingRulePtrInput is an input type that accepts ServiceSplittingRuleArgs, ServiceSplittingRulePtr and ServiceSplittingRulePtrOutput values.
+// You can construct a concrete instance of `ServiceSplittingRulePtrInput` via:
+//
+//	        ServiceSplittingRuleArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceSplittingRulePtrInput interface {
+	pulumi.Input
+
+	ToServiceSplittingRulePtrOutput() ServiceSplittingRulePtrOutput
+	ToServiceSplittingRulePtrOutputWithContext(context.Context) ServiceSplittingRulePtrOutput
+}
+
+type serviceSplittingRulePtrType ServiceSplittingRuleArgs
+
+func ServiceSplittingRulePtr(v *ServiceSplittingRuleArgs) ServiceSplittingRulePtrInput {
+	return (*serviceSplittingRulePtrType)(v)
+}
+
+func (*serviceSplittingRulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceSplittingRule)(nil)).Elem()
+}
+
+func (i *serviceSplittingRulePtrType) ToServiceSplittingRulePtrOutput() ServiceSplittingRulePtrOutput {
+	return i.ToServiceSplittingRulePtrOutputWithContext(context.Background())
+}
+
+func (i *serviceSplittingRulePtrType) ToServiceSplittingRulePtrOutputWithContext(ctx context.Context) ServiceSplittingRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRulePtrOutput)
+}
+
+type ServiceSplittingRuleOutput struct{ *pulumi.OutputState }
+
+func (ServiceSplittingRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceSplittingRule)(nil)).Elem()
+}
+
+func (o ServiceSplittingRuleOutput) ToServiceSplittingRuleOutput() ServiceSplittingRuleOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleOutput) ToServiceSplittingRuleOutputWithContext(ctx context.Context) ServiceSplittingRuleOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleOutput) ToServiceSplittingRulePtrOutput() ServiceSplittingRulePtrOutput {
+	return o.ToServiceSplittingRulePtrOutputWithContext(context.Background())
+}
+
+func (o ServiceSplittingRuleOutput) ToServiceSplittingRulePtrOutputWithContext(ctx context.Context) ServiceSplittingRulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceSplittingRule) *ServiceSplittingRule {
+		return &v
+	}).(ServiceSplittingRulePtrOutput)
+}
+
+// Limits the scope of the service splitting rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes..  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+func (o ServiceSplittingRuleOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceSplittingRule) *string { return v.Condition }).(pulumi.StringPtrOutput)
+}
+
+// no documentation available
+func (o ServiceSplittingRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceSplittingRule) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Rule name
+func (o ServiceSplittingRuleOutput) RuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceSplittingRule) string { return v.RuleName }).(pulumi.StringOutput)
+}
+
+// Define the entire set of resource attributes that should split your services in the matching scope.. Each attribute that exists will contribute to the final service ID.
+func (o ServiceSplittingRuleOutput) ServiceSplittingAttributes() ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return o.ApplyT(func(v ServiceSplittingRule) *ServiceSplittingRuleServiceSplittingAttributes {
+		return v.ServiceSplittingAttributes
+	}).(ServiceSplittingRuleServiceSplittingAttributesPtrOutput)
+}
+
+type ServiceSplittingRulePtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceSplittingRulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceSplittingRule)(nil)).Elem()
+}
+
+func (o ServiceSplittingRulePtrOutput) ToServiceSplittingRulePtrOutput() ServiceSplittingRulePtrOutput {
+	return o
+}
+
+func (o ServiceSplittingRulePtrOutput) ToServiceSplittingRulePtrOutputWithContext(ctx context.Context) ServiceSplittingRulePtrOutput {
+	return o
+}
+
+func (o ServiceSplittingRulePtrOutput) Elem() ServiceSplittingRuleOutput {
+	return o.ApplyT(func(v *ServiceSplittingRule) ServiceSplittingRule {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceSplittingRule
+		return ret
+	}).(ServiceSplittingRuleOutput)
+}
+
+// Limits the scope of the service splitting rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes..  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+func (o ServiceSplittingRulePtrOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceSplittingRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Condition
+	}).(pulumi.StringPtrOutput)
+}
+
+// no documentation available
+func (o ServiceSplittingRulePtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceSplittingRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// Rule name
+func (o ServiceSplittingRulePtrOutput) RuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceSplittingRule) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.RuleName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Define the entire set of resource attributes that should split your services in the matching scope.. Each attribute that exists will contribute to the final service ID.
+func (o ServiceSplittingRulePtrOutput) ServiceSplittingAttributes() ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return o.ApplyT(func(v *ServiceSplittingRule) *ServiceSplittingRuleServiceSplittingAttributes {
+		if v == nil {
+			return nil
+		}
+		return v.ServiceSplittingAttributes
+	}).(ServiceSplittingRuleServiceSplittingAttributesPtrOutput)
+}
+
+type ServiceSplittingRuleServiceSplittingAttributes struct {
+	ServiceSplittingAttributes []ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute `pulumi:"serviceSplittingAttributes"`
+}
+
+// ServiceSplittingRuleServiceSplittingAttributesInput is an input type that accepts ServiceSplittingRuleServiceSplittingAttributesArgs and ServiceSplittingRuleServiceSplittingAttributesOutput values.
+// You can construct a concrete instance of `ServiceSplittingRuleServiceSplittingAttributesInput` via:
+//
+//	ServiceSplittingRuleServiceSplittingAttributesArgs{...}
+type ServiceSplittingRuleServiceSplittingAttributesInput interface {
+	pulumi.Input
+
+	ToServiceSplittingRuleServiceSplittingAttributesOutput() ServiceSplittingRuleServiceSplittingAttributesOutput
+	ToServiceSplittingRuleServiceSplittingAttributesOutputWithContext(context.Context) ServiceSplittingRuleServiceSplittingAttributesOutput
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesArgs struct {
+	ServiceSplittingAttributes ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayInput `pulumi:"serviceSplittingAttributes"`
+}
+
+func (ServiceSplittingRuleServiceSplittingAttributesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributes)(nil)).Elem()
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesArgs) ToServiceSplittingRuleServiceSplittingAttributesOutput() ServiceSplittingRuleServiceSplittingAttributesOutput {
+	return i.ToServiceSplittingRuleServiceSplittingAttributesOutputWithContext(context.Background())
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesArgs) ToServiceSplittingRuleServiceSplittingAttributesOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleServiceSplittingAttributesOutput)
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesArgs) ToServiceSplittingRuleServiceSplittingAttributesPtrOutput() ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return i.ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesArgs) ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleServiceSplittingAttributesOutput).ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(ctx)
+}
+
+// ServiceSplittingRuleServiceSplittingAttributesPtrInput is an input type that accepts ServiceSplittingRuleServiceSplittingAttributesArgs, ServiceSplittingRuleServiceSplittingAttributesPtr and ServiceSplittingRuleServiceSplittingAttributesPtrOutput values.
+// You can construct a concrete instance of `ServiceSplittingRuleServiceSplittingAttributesPtrInput` via:
+//
+//	        ServiceSplittingRuleServiceSplittingAttributesArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceSplittingRuleServiceSplittingAttributesPtrInput interface {
+	pulumi.Input
+
+	ToServiceSplittingRuleServiceSplittingAttributesPtrOutput() ServiceSplittingRuleServiceSplittingAttributesPtrOutput
+	ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(context.Context) ServiceSplittingRuleServiceSplittingAttributesPtrOutput
+}
+
+type serviceSplittingRuleServiceSplittingAttributesPtrType ServiceSplittingRuleServiceSplittingAttributesArgs
+
+func ServiceSplittingRuleServiceSplittingAttributesPtr(v *ServiceSplittingRuleServiceSplittingAttributesArgs) ServiceSplittingRuleServiceSplittingAttributesPtrInput {
+	return (*serviceSplittingRuleServiceSplittingAttributesPtrType)(v)
+}
+
+func (*serviceSplittingRuleServiceSplittingAttributesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceSplittingRuleServiceSplittingAttributes)(nil)).Elem()
+}
+
+func (i *serviceSplittingRuleServiceSplittingAttributesPtrType) ToServiceSplittingRuleServiceSplittingAttributesPtrOutput() ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return i.ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceSplittingRuleServiceSplittingAttributesPtrType) ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleServiceSplittingAttributesPtrOutput)
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesOutput struct{ *pulumi.OutputState }
+
+func (ServiceSplittingRuleServiceSplittingAttributesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributes)(nil)).Elem()
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesOutput) ToServiceSplittingRuleServiceSplittingAttributesOutput() ServiceSplittingRuleServiceSplittingAttributesOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesOutput) ToServiceSplittingRuleServiceSplittingAttributesOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesOutput) ToServiceSplittingRuleServiceSplittingAttributesPtrOutput() ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return o.ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesOutput) ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceSplittingRuleServiceSplittingAttributes) *ServiceSplittingRuleServiceSplittingAttributes {
+		return &v
+	}).(ServiceSplittingRuleServiceSplittingAttributesPtrOutput)
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesOutput) ServiceSplittingAttributes() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput {
+	return o.ApplyT(func(v ServiceSplittingRuleServiceSplittingAttributes) []ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute {
+		return v.ServiceSplittingAttributes
+	}).(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput)
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceSplittingRuleServiceSplittingAttributesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceSplittingRuleServiceSplittingAttributes)(nil)).Elem()
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesPtrOutput) ToServiceSplittingRuleServiceSplittingAttributesPtrOutput() ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesPtrOutput) ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesPtrOutput) Elem() ServiceSplittingRuleServiceSplittingAttributesOutput {
+	return o.ApplyT(func(v *ServiceSplittingRuleServiceSplittingAttributes) ServiceSplittingRuleServiceSplittingAttributes {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceSplittingRuleServiceSplittingAttributes
+		return ret
+	}).(ServiceSplittingRuleServiceSplittingAttributesOutput)
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesPtrOutput) ServiceSplittingAttributes() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput {
+	return o.ApplyT(func(v *ServiceSplittingRuleServiceSplittingAttributes) []ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute {
+		if v == nil {
+			return nil
+		}
+		return v.ServiceSplittingAttributes
+	}).(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput)
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute struct {
+	// Attribute key
+	Key string `pulumi:"key"`
+}
+
+// ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeInput is an input type that accepts ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs and ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput values.
+// You can construct a concrete instance of `ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeInput` via:
+//
+//	ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs{...}
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeInput interface {
+	pulumi.Input
+
+	ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput
+	ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutputWithContext(context.Context) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs struct {
+	// Attribute key
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute)(nil)).Elem()
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput {
+	return i.ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutputWithContext(context.Background())
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput)
+}
+
+// ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayInput is an input type that accepts ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray and ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput values.
+// You can construct a concrete instance of `ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayInput` via:
+//
+//	ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray{ ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs{...} }
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayInput interface {
+	pulumi.Input
+
+	ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput
+	ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutputWithContext(context.Context) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray []ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeInput
+
+func (ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute)(nil)).Elem()
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput {
+	return i.ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput)
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput struct{ *pulumi.OutputState }
+
+func (ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute)(nil)).Elem()
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput {
+	return o
+}
+
+// Attribute key
+func (o ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute) string { return v.Key }).(pulumi.StringOutput)
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute)(nil)).Elem()
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput) Index(i pulumi.IntInput) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute {
+		return vs[0].([]ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute)[vs[1].(int)]
+	}).(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput)
+}
+
 type SessionReplayWebPrivacyMaskingPresets struct {
 	// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
 	PlaybackMaskingAllowListRules *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules `pulumi:"playbackMaskingAllowListRules"`
@@ -24738,6 +25661,8 @@ type SiteReliabilityGuardianObjectivesObjective struct {
 	// Please enter the metric key of your desired SLO. SLO metric keys have to start with 'func:slo.'
 	ReferenceSlo *string `pulumi:"referenceSlo"`
 	// no documentation available
+	Segments *SiteReliabilityGuardianObjectivesObjectiveSegments `pulumi:"segments"`
+	// no documentation available
 	Target *float64 `pulumi:"target"`
 	// no documentation available
 	Warning *float64 `pulumi:"warning"`
@@ -24771,6 +25696,8 @@ type SiteReliabilityGuardianObjectivesObjectiveArgs struct {
 	ObjectiveType pulumi.StringInput `pulumi:"objectiveType"`
 	// Please enter the metric key of your desired SLO. SLO metric keys have to start with 'func:slo.'
 	ReferenceSlo pulumi.StringPtrInput `pulumi:"referenceSlo"`
+	// no documentation available
+	Segments SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrInput `pulumi:"segments"`
 	// no documentation available
 	Target pulumi.Float64PtrInput `pulumi:"target"`
 	// no documentation available
@@ -24868,6 +25795,13 @@ func (o SiteReliabilityGuardianObjectivesObjectiveOutput) ObjectiveType() pulumi
 // Please enter the metric key of your desired SLO. SLO metric keys have to start with 'func:slo.'
 func (o SiteReliabilityGuardianObjectivesObjectiveOutput) ReferenceSlo() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) *string { return v.ReferenceSlo }).(pulumi.StringPtrOutput)
+}
+
+// no documentation available
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) Segments() SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) *SiteReliabilityGuardianObjectivesObjectiveSegments {
+		return v.Segments
+	}).(SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput)
 }
 
 // no documentation available
@@ -25073,6 +26007,494 @@ func (o SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput) Display(
 		}
 		return &v.Display
 	}).(pulumi.StringPtrOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegments struct {
+	Segments []SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment `pulumi:"segments"`
+}
+
+// SiteReliabilityGuardianObjectivesObjectiveSegmentsInput is an input type that accepts SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs and SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesObjectiveSegmentsInput` via:
+//
+//	SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs{...}
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs struct {
+	Segments SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayInput `pulumi:"segments"`
+}
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegments)(nil)).Elem()
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveSegmentsOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput)
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput).ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutputWithContext(ctx)
+}
+
+// SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrInput is an input type that accepts SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs, SiteReliabilityGuardianObjectivesObjectiveSegmentsPtr and SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrInput` via:
+//
+//	        SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs{...}
+//
+//	or:
+//
+//	        nil
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput
+}
+
+type siteReliabilityGuardianObjectivesObjectiveSegmentsPtrType SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs
+
+func SiteReliabilityGuardianObjectivesObjectiveSegmentsPtr(v *SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs) SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrInput {
+	return (*siteReliabilityGuardianObjectivesObjectiveSegmentsPtrType)(v)
+}
+
+func (*siteReliabilityGuardianObjectivesObjectiveSegmentsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SiteReliabilityGuardianObjectivesObjectiveSegments)(nil)).Elem()
+}
+
+func (i *siteReliabilityGuardianObjectivesObjectiveSegmentsPtrType) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutputWithContext(context.Background())
+}
+
+func (i *siteReliabilityGuardianObjectivesObjectiveSegmentsPtrType) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegments)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput {
+	return o.ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutputWithContext(context.Background())
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SiteReliabilityGuardianObjectivesObjectiveSegments) *SiteReliabilityGuardianObjectivesObjectiveSegments {
+		return &v
+	}).(SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput)
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput) Segments() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjectiveSegments) []SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment {
+		return v.Segments
+	}).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SiteReliabilityGuardianObjectivesObjectiveSegments)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput) Elem() SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput {
+	return o.ApplyT(func(v *SiteReliabilityGuardianObjectivesObjectiveSegments) SiteReliabilityGuardianObjectivesObjectiveSegments {
+		if v != nil {
+			return *v
+		}
+		var ret SiteReliabilityGuardianObjectivesObjectiveSegments
+		return ret
+	}).(SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput)
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput) Segments() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput {
+	return o.ApplyT(func(v *SiteReliabilityGuardianObjectivesObjectiveSegments) []SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment {
+		if v == nil {
+			return nil
+		}
+		return v.Segments
+	}).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment struct {
+	// Segment ID
+	Id string `pulumi:"id"`
+	// Segment Variables
+	Variables *SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables `pulumi:"variables"`
+}
+
+// SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentInput is an input type that accepts SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArgs and SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentInput` via:
+//
+//	SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArgs{...}
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArgs struct {
+	// Segment ID
+	Id pulumi.StringInput `pulumi:"id"`
+	// Segment Variables
+	Variables SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrInput `pulumi:"variables"`
+}
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment)(nil)).Elem()
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArgs) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArgs) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput)
+}
+
+// SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayInput is an input type that accepts SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArray and SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayInput` via:
+//
+//	SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArray{ SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArgs{...} }
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArray []SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentInput
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment)(nil)).Elem()
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArray) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArray) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput {
+	return o
+}
+
+// Segment ID
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Segment Variables
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput) Variables() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment) *SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables {
+		return v.Variables
+	}).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput) Index(i pulumi.IntInput) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment {
+		return vs[0].([]SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment)[vs[1].(int)]
+	}).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables struct {
+	Variables []SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable `pulumi:"variables"`
+}
+
+// SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesInput is an input type that accepts SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs and SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesInput` via:
+//
+//	SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs{...}
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs struct {
+	Variables SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayInput `pulumi:"variables"`
+}
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables)(nil)).Elem()
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput)
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput).ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutputWithContext(ctx)
+}
+
+// SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrInput is an input type that accepts SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs, SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtr and SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrInput` via:
+//
+//	        SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs{...}
+//
+//	or:
+//
+//	        nil
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput
+}
+
+type siteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrType SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs
+
+func SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtr(v *SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrInput {
+	return (*siteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrType)(v)
+}
+
+func (*siteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables)(nil)).Elem()
+}
+
+func (i *siteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrType) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutputWithContext(context.Background())
+}
+
+func (i *siteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrType) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput {
+	return o.ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutputWithContext(context.Background())
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables) *SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables {
+		return &v
+	}).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput)
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput) Variables() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables) []SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable {
+		return v.Variables
+	}).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput) Elem() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput {
+	return o.ApplyT(func(v *SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables {
+		if v != nil {
+			return *v
+		}
+		var ret SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables
+		return ret
+	}).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput)
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput) Variables() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput {
+	return o.ApplyT(func(v *SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables) []SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable {
+		if v == nil {
+			return nil
+		}
+		return v.Variables
+	}).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable struct {
+	// Variable Name
+	Name string `pulumi:"name"`
+	// Variable Values
+	Values []string `pulumi:"values"`
+}
+
+// SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableInput is an input type that accepts SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArgs and SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableInput` via:
+//
+//	SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArgs{...}
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArgs struct {
+	// Variable Name
+	Name pulumi.StringInput `pulumi:"name"`
+	// Variable Values
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable)(nil)).Elem()
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArgs) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArgs) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput)
+}
+
+// SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayInput is an input type that accepts SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArray and SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayInput` via:
+//
+//	SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArray{ SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArgs{...} }
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput
+	ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArray []SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableInput
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable)(nil)).Elem()
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArray) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArray) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput {
+	return o
+}
+
+// Variable Name
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Variable Values
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable) []string {
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput() SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput) ToSiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput) Index(i pulumi.IntInput) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable {
+		return vs[0].([]SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable)[vs[1].(int)]
+	}).(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput)
 }
 
 type SiteReliabilityGuardianVariables struct {
@@ -33541,6 +34963,1066 @@ func (o VulnerabilitySettingsTechnologiesPtrOutput) EnablePythonRuntime() pulumi
 	}).(pulumi.BoolPtrOutput)
 }
 
+type VulnerabilityThirdPartyAttrMetadata struct {
+	// no documentation available
+	Comment string `pulumi:"comment"`
+}
+
+// VulnerabilityThirdPartyAttrMetadataInput is an input type that accepts VulnerabilityThirdPartyAttrMetadataArgs and VulnerabilityThirdPartyAttrMetadataOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrMetadataInput` via:
+//
+//	VulnerabilityThirdPartyAttrMetadataArgs{...}
+type VulnerabilityThirdPartyAttrMetadataInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrMetadataOutput() VulnerabilityThirdPartyAttrMetadataOutput
+	ToVulnerabilityThirdPartyAttrMetadataOutputWithContext(context.Context) VulnerabilityThirdPartyAttrMetadataOutput
+}
+
+type VulnerabilityThirdPartyAttrMetadataArgs struct {
+	// no documentation available
+	Comment pulumi.StringInput `pulumi:"comment"`
+}
+
+func (VulnerabilityThirdPartyAttrMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrMetadata)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyAttrMetadataArgs) ToVulnerabilityThirdPartyAttrMetadataOutput() VulnerabilityThirdPartyAttrMetadataOutput {
+	return i.ToVulnerabilityThirdPartyAttrMetadataOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrMetadataArgs) ToVulnerabilityThirdPartyAttrMetadataOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrMetadataOutput)
+}
+
+func (i VulnerabilityThirdPartyAttrMetadataArgs) ToVulnerabilityThirdPartyAttrMetadataPtrOutput() VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return i.ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrMetadataArgs) ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrMetadataOutput).ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityThirdPartyAttrMetadataPtrInput is an input type that accepts VulnerabilityThirdPartyAttrMetadataArgs, VulnerabilityThirdPartyAttrMetadataPtr and VulnerabilityThirdPartyAttrMetadataPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrMetadataPtrInput` via:
+//
+//	        VulnerabilityThirdPartyAttrMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityThirdPartyAttrMetadataPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrMetadataPtrOutput() VulnerabilityThirdPartyAttrMetadataPtrOutput
+	ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(context.Context) VulnerabilityThirdPartyAttrMetadataPtrOutput
+}
+
+type vulnerabilityThirdPartyAttrMetadataPtrType VulnerabilityThirdPartyAttrMetadataArgs
+
+func VulnerabilityThirdPartyAttrMetadataPtr(v *VulnerabilityThirdPartyAttrMetadataArgs) VulnerabilityThirdPartyAttrMetadataPtrInput {
+	return (*vulnerabilityThirdPartyAttrMetadataPtrType)(v)
+}
+
+func (*vulnerabilityThirdPartyAttrMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyAttrMetadata)(nil)).Elem()
+}
+
+func (i *vulnerabilityThirdPartyAttrMetadataPtrType) ToVulnerabilityThirdPartyAttrMetadataPtrOutput() VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return i.ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityThirdPartyAttrMetadataPtrType) ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrMetadataPtrOutput)
+}
+
+type VulnerabilityThirdPartyAttrMetadataOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrMetadata)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataOutput) ToVulnerabilityThirdPartyAttrMetadataOutput() VulnerabilityThirdPartyAttrMetadataOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataOutput) ToVulnerabilityThirdPartyAttrMetadataOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrMetadataOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataOutput) ToVulnerabilityThirdPartyAttrMetadataPtrOutput() VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return o.ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataOutput) ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityThirdPartyAttrMetadata) *VulnerabilityThirdPartyAttrMetadata {
+		return &v
+	}).(VulnerabilityThirdPartyAttrMetadataPtrOutput)
+}
+
+// no documentation available
+func (o VulnerabilityThirdPartyAttrMetadataOutput) Comment() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyAttrMetadata) string { return v.Comment }).(pulumi.StringOutput)
+}
+
+type VulnerabilityThirdPartyAttrMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyAttrMetadata)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataPtrOutput) ToVulnerabilityThirdPartyAttrMetadataPtrOutput() VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataPtrOutput) ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataPtrOutput) Elem() VulnerabilityThirdPartyAttrMetadataOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyAttrMetadata) VulnerabilityThirdPartyAttrMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityThirdPartyAttrMetadata
+		return ret
+	}).(VulnerabilityThirdPartyAttrMetadataOutput)
+}
+
+// no documentation available
+func (o VulnerabilityThirdPartyAttrMetadataPtrOutput) Comment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyAttrMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Comment
+	}).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditions struct {
+	ResourceAttributeConditions []VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition `pulumi:"resourceAttributeConditions"`
+}
+
+// VulnerabilityThirdPartyAttrResourceAttributeConditionsInput is an input type that accepts VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs and VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrResourceAttributeConditionsInput` via:
+//
+//	VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs{...}
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutputWithContext(context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs struct {
+	ResourceAttributeConditions VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayInput `pulumi:"resourceAttributeConditions"`
+}
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditions)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput {
+	return i.ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput)
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return i.ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput).ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrInput is an input type that accepts VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs, VulnerabilityThirdPartyAttrResourceAttributeConditionsPtr and VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrInput` via:
+//
+//	        VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput
+}
+
+type vulnerabilityThirdPartyAttrResourceAttributeConditionsPtrType VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs
+
+func VulnerabilityThirdPartyAttrResourceAttributeConditionsPtr(v *VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs) VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrInput {
+	return (*vulnerabilityThirdPartyAttrResourceAttributeConditionsPtrType)(v)
+}
+
+func (*vulnerabilityThirdPartyAttrResourceAttributeConditionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyAttrResourceAttributeConditions)(nil)).Elem()
+}
+
+func (i *vulnerabilityThirdPartyAttrResourceAttributeConditionsPtrType) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return i.ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityThirdPartyAttrResourceAttributeConditionsPtrType) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput)
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditions)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return o.ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityThirdPartyAttrResourceAttributeConditions) *VulnerabilityThirdPartyAttrResourceAttributeConditions {
+		return &v
+	}).(VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput)
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput) ResourceAttributeConditions() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyAttrResourceAttributeConditions) []VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition {
+		return v.ResourceAttributeConditions
+	}).(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput)
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyAttrResourceAttributeConditions)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput) Elem() VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyAttrResourceAttributeConditions) VulnerabilityThirdPartyAttrResourceAttributeConditions {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityThirdPartyAttrResourceAttributeConditions
+		return ret
+	}).(VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput)
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput) ResourceAttributeConditions() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyAttrResourceAttributeConditions) []VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceAttributeConditions
+	}).(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput)
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition struct {
+	// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+	Matcher string `pulumi:"matcher"`
+	// Resource attribute key
+	ResourceAttributeKey string `pulumi:"resourceAttributeKey"`
+	// Resource attribute value
+	ResourceAttributeValue *string `pulumi:"resourceAttributeValue"`
+}
+
+// VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionInput is an input type that accepts VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs and VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionInput` via:
+//
+//	VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs{...}
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutputWithContext(context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs struct {
+	// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+	Matcher pulumi.StringInput `pulumi:"matcher"`
+	// Resource attribute key
+	ResourceAttributeKey pulumi.StringInput `pulumi:"resourceAttributeKey"`
+	// Resource attribute value
+	ResourceAttributeValue pulumi.StringPtrInput `pulumi:"resourceAttributeValue"`
+}
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput {
+	return i.ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput)
+}
+
+// VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayInput is an input type that accepts VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray and VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayInput` via:
+//
+//	VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray{ VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs{...} }
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutputWithContext(context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray []VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionInput
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return i.ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput)
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput {
+	return o
+}
+
+// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput) Matcher() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition) string {
+		return v.Matcher
+	}).(pulumi.StringOutput)
+}
+
+// Resource attribute key
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput) ResourceAttributeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition) string {
+		return v.ResourceAttributeKey
+	}).(pulumi.StringOutput)
+}
+
+// Resource attribute value
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput) ResourceAttributeValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition) *string {
+		return v.ResourceAttributeValue
+	}).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput) Index(i pulumi.IntInput) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition {
+		return vs[0].([]VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition)[vs[1].(int)]
+	}).(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput)
+}
+
+type VulnerabilityThirdPartyAttrVulnerabilityDetectionControl struct {
+	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	MonitoringMode string `pulumi:"monitoringMode"`
+}
+
+// VulnerabilityThirdPartyAttrVulnerabilityDetectionControlInput is an input type that accepts VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs and VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrVulnerabilityDetectionControlInput` via:
+//
+//	VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs{...}
+type VulnerabilityThirdPartyAttrVulnerabilityDetectionControlInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput
+	ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutputWithContext(context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput
+}
+
+type VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs struct {
+	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	MonitoringMode pulumi.StringInput `pulumi:"monitoringMode"`
+}
+
+func (VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput {
+	return i.ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput)
+}
+
+func (i VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return i.ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput).ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrInput is an input type that accepts VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs, VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtr and VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrInput` via:
+//
+//	        VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput
+	ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput
+}
+
+type vulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrType VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs
+
+func VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtr(v *VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrInput {
+	return (*vulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrType)(v)
+}
+
+func (*vulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyAttrVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (i *vulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrType) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return i.ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrType) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput)
+}
+
+type VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return o.ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityThirdPartyAttrVulnerabilityDetectionControl) *VulnerabilityThirdPartyAttrVulnerabilityDetectionControl {
+		return &v
+	}).(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput)
+}
+
+// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput) MonitoringMode() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyAttrVulnerabilityDetectionControl) string { return v.MonitoringMode }).(pulumi.StringOutput)
+}
+
+type VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyAttrVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput) Elem() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyAttrVulnerabilityDetectionControl) VulnerabilityThirdPartyAttrVulnerabilityDetectionControl {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityThirdPartyAttrVulnerabilityDetectionControl
+		return ret
+	}).(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput)
+}
+
+// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput) MonitoringMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyAttrVulnerabilityDetectionControl) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.MonitoringMode
+	}).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditions struct {
+	KubernetesLabelConditions []VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition `pulumi:"kubernetesLabelConditions"`
+}
+
+// VulnerabilityThirdPartyK8sKubernetesLabelConditionsInput is an input type that accepts VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs and VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sKubernetesLabelConditionsInput` via:
+//
+//	VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs{...}
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutputWithContext(context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs struct {
+	KubernetesLabelConditions VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayInput `pulumi:"kubernetesLabelConditions"`
+}
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditions)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput {
+	return i.ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput)
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return i.ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput).ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrInput is an input type that accepts VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs, VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtr and VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrInput` via:
+//
+//	        VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput
+}
+
+type vulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrType VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs
+
+func VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtr(v *VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs) VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrInput {
+	return (*vulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrType)(v)
+}
+
+func (*vulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyK8sKubernetesLabelConditions)(nil)).Elem()
+}
+
+func (i *vulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrType) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return i.ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrType) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput)
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditions)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return o.ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityThirdPartyK8sKubernetesLabelConditions) *VulnerabilityThirdPartyK8sKubernetesLabelConditions {
+		return &v
+	}).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput)
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput) KubernetesLabelConditions() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyK8sKubernetesLabelConditions) []VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition {
+		return v.KubernetesLabelConditions
+	}).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput)
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyK8sKubernetesLabelConditions)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput) Elem() VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyK8sKubernetesLabelConditions) VulnerabilityThirdPartyK8sKubernetesLabelConditions {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityThirdPartyK8sKubernetesLabelConditions
+		return ret
+	}).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput)
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput) KubernetesLabelConditions() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyK8sKubernetesLabelConditions) []VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition {
+		if v == nil {
+			return nil
+		}
+		return v.KubernetesLabelConditions
+	}).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput)
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition struct {
+	// Kubernetes label key
+	KubernetesLabelKey string `pulumi:"kubernetesLabelKey"`
+	// Kubernetes label value
+	KubernetesLabelValue *string `pulumi:"kubernetesLabelValue"`
+	// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+	Matcher string `pulumi:"matcher"`
+}
+
+// VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionInput is an input type that accepts VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs and VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionInput` via:
+//
+//	VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs{...}
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutputWithContext(context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs struct {
+	// Kubernetes label key
+	KubernetesLabelKey pulumi.StringInput `pulumi:"kubernetesLabelKey"`
+	// Kubernetes label value
+	KubernetesLabelValue pulumi.StringPtrInput `pulumi:"kubernetesLabelValue"`
+	// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+	Matcher pulumi.StringInput `pulumi:"matcher"`
+}
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput {
+	return i.ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput)
+}
+
+// VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayInput is an input type that accepts VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray and VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayInput` via:
+//
+//	VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray{ VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs{...} }
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutputWithContext(context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray []VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionInput
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput {
+	return i.ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput)
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput {
+	return o
+}
+
+// Kubernetes label key
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput) KubernetesLabelKey() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition) string {
+		return v.KubernetesLabelKey
+	}).(pulumi.StringOutput)
+}
+
+// Kubernetes label value
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput) KubernetesLabelValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition) *string {
+		return v.KubernetesLabelValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput) Matcher() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition) string {
+		return v.Matcher
+	}).(pulumi.StringOutput)
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput) Index(i pulumi.IntInput) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition {
+		return vs[0].([]VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition)[vs[1].(int)]
+	}).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput)
+}
+
+type VulnerabilityThirdPartyK8sMetadata struct {
+	// no documentation available
+	Comment string `pulumi:"comment"`
+}
+
+// VulnerabilityThirdPartyK8sMetadataInput is an input type that accepts VulnerabilityThirdPartyK8sMetadataArgs and VulnerabilityThirdPartyK8sMetadataOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sMetadataInput` via:
+//
+//	VulnerabilityThirdPartyK8sMetadataArgs{...}
+type VulnerabilityThirdPartyK8sMetadataInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sMetadataOutput() VulnerabilityThirdPartyK8sMetadataOutput
+	ToVulnerabilityThirdPartyK8sMetadataOutputWithContext(context.Context) VulnerabilityThirdPartyK8sMetadataOutput
+}
+
+type VulnerabilityThirdPartyK8sMetadataArgs struct {
+	// no documentation available
+	Comment pulumi.StringInput `pulumi:"comment"`
+}
+
+func (VulnerabilityThirdPartyK8sMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sMetadata)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyK8sMetadataArgs) ToVulnerabilityThirdPartyK8sMetadataOutput() VulnerabilityThirdPartyK8sMetadataOutput {
+	return i.ToVulnerabilityThirdPartyK8sMetadataOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sMetadataArgs) ToVulnerabilityThirdPartyK8sMetadataOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sMetadataOutput)
+}
+
+func (i VulnerabilityThirdPartyK8sMetadataArgs) ToVulnerabilityThirdPartyK8sMetadataPtrOutput() VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return i.ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sMetadataArgs) ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sMetadataOutput).ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityThirdPartyK8sMetadataPtrInput is an input type that accepts VulnerabilityThirdPartyK8sMetadataArgs, VulnerabilityThirdPartyK8sMetadataPtr and VulnerabilityThirdPartyK8sMetadataPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sMetadataPtrInput` via:
+//
+//	        VulnerabilityThirdPartyK8sMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityThirdPartyK8sMetadataPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sMetadataPtrOutput() VulnerabilityThirdPartyK8sMetadataPtrOutput
+	ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(context.Context) VulnerabilityThirdPartyK8sMetadataPtrOutput
+}
+
+type vulnerabilityThirdPartyK8sMetadataPtrType VulnerabilityThirdPartyK8sMetadataArgs
+
+func VulnerabilityThirdPartyK8sMetadataPtr(v *VulnerabilityThirdPartyK8sMetadataArgs) VulnerabilityThirdPartyK8sMetadataPtrInput {
+	return (*vulnerabilityThirdPartyK8sMetadataPtrType)(v)
+}
+
+func (*vulnerabilityThirdPartyK8sMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyK8sMetadata)(nil)).Elem()
+}
+
+func (i *vulnerabilityThirdPartyK8sMetadataPtrType) ToVulnerabilityThirdPartyK8sMetadataPtrOutput() VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return i.ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityThirdPartyK8sMetadataPtrType) ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sMetadataPtrOutput)
+}
+
+type VulnerabilityThirdPartyK8sMetadataOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sMetadata)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataOutput) ToVulnerabilityThirdPartyK8sMetadataOutput() VulnerabilityThirdPartyK8sMetadataOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataOutput) ToVulnerabilityThirdPartyK8sMetadataOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sMetadataOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataOutput) ToVulnerabilityThirdPartyK8sMetadataPtrOutput() VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return o.ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataOutput) ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityThirdPartyK8sMetadata) *VulnerabilityThirdPartyK8sMetadata {
+		return &v
+	}).(VulnerabilityThirdPartyK8sMetadataPtrOutput)
+}
+
+// no documentation available
+func (o VulnerabilityThirdPartyK8sMetadataOutput) Comment() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyK8sMetadata) string { return v.Comment }).(pulumi.StringOutput)
+}
+
+type VulnerabilityThirdPartyK8sMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyK8sMetadata)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataPtrOutput) ToVulnerabilityThirdPartyK8sMetadataPtrOutput() VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataPtrOutput) ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataPtrOutput) Elem() VulnerabilityThirdPartyK8sMetadataOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyK8sMetadata) VulnerabilityThirdPartyK8sMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityThirdPartyK8sMetadata
+		return ret
+	}).(VulnerabilityThirdPartyK8sMetadataOutput)
+}
+
+// no documentation available
+func (o VulnerabilityThirdPartyK8sMetadataPtrOutput) Comment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyK8sMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Comment
+	}).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilityThirdPartyK8sVulnerabilityDetectionControl struct {
+	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	MonitoringMode string `pulumi:"monitoringMode"`
+}
+
+// VulnerabilityThirdPartyK8sVulnerabilityDetectionControlInput is an input type that accepts VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs and VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sVulnerabilityDetectionControlInput` via:
+//
+//	VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs{...}
+type VulnerabilityThirdPartyK8sVulnerabilityDetectionControlInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput
+	ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutputWithContext(context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput
+}
+
+type VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs struct {
+	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	MonitoringMode pulumi.StringInput `pulumi:"monitoringMode"`
+}
+
+func (VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput {
+	return i.ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput)
+}
+
+func (i VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return i.ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput).ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrInput is an input type that accepts VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs, VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtr and VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrInput` via:
+//
+//	        VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput
+	ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput
+}
+
+type vulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrType VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs
+
+func VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtr(v *VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrInput {
+	return (*vulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrType)(v)
+}
+
+func (*vulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyK8sVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (i *vulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrType) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return i.ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrType) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput)
+}
+
+type VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return o.ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityThirdPartyK8sVulnerabilityDetectionControl) *VulnerabilityThirdPartyK8sVulnerabilityDetectionControl {
+		return &v
+	}).(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput)
+}
+
+// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput) MonitoringMode() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyK8sVulnerabilityDetectionControl) string { return v.MonitoringMode }).(pulumi.StringOutput)
+}
+
+type VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyK8sVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput) Elem() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyK8sVulnerabilityDetectionControl) VulnerabilityThirdPartyK8sVulnerabilityDetectionControl {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityThirdPartyK8sVulnerabilityDetectionControl
+		return ret
+	}).(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput)
+}
+
+// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput) MonitoringMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyK8sVulnerabilityDetectionControl) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.MonitoringMode
+	}).(pulumi.StringPtrOutput)
+}
+
 type WebAppAnomaliesErrorRate struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
@@ -37172,6 +39654,496 @@ func (o WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput) ConsiderForA
 // Include error in Apdex calculations
 func (o WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput) ImpactApdex() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings) *bool { return v.ImpactApdex }).(pulumi.BoolPtrOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowList struct {
+	CustomSessionPropertiesAllows []WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow `pulumi:"customSessionPropertiesAllows"`
+}
+
+// WebAppCustomPropRestrictionsCustomEventPropertiesAllowListInput is an input type that accepts WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs and WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomEventPropertiesAllowListInput` via:
+//
+//	WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs{...}
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs struct {
+	CustomSessionPropertiesAllows WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayInput `pulumi:"customSessionPropertiesAllows"`
+}
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowList)(nil)).Elem()
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput)
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput).ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(ctx)
+}
+
+// WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrInput is an input type that accepts WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs, WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtr and WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrInput` via:
+//
+//	        WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput
+}
+
+type webAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrType WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs
+
+func WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtr(v *WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrInput {
+	return (*webAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrType)(v)
+}
+
+func (*webAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppCustomPropRestrictionsCustomEventPropertiesAllowList)(nil)).Elem()
+}
+
+func (i *webAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrType) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrType) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowList)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return o.ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppCustomPropRestrictionsCustomEventPropertiesAllowList) *WebAppCustomPropRestrictionsCustomEventPropertiesAllowList {
+		return &v
+	}).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput)
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput) CustomSessionPropertiesAllows() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomEventPropertiesAllowList) []WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow {
+		return v.CustomSessionPropertiesAllows
+	}).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppCustomPropRestrictionsCustomEventPropertiesAllowList)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput) Elem() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput {
+	return o.ApplyT(func(v *WebAppCustomPropRestrictionsCustomEventPropertiesAllowList) WebAppCustomPropRestrictionsCustomEventPropertiesAllowList {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppCustomPropRestrictionsCustomEventPropertiesAllowList
+		return ret
+	}).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput)
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput) CustomSessionPropertiesAllows() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o.ApplyT(func(v *WebAppCustomPropRestrictionsCustomEventPropertiesAllowList) []WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow {
+		if v == nil {
+			return nil
+		}
+		return v.CustomSessionPropertiesAllows
+	}).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow struct {
+	// Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+	FieldDataType string `pulumi:"fieldDataType"`
+	// Field name
+	FieldName string `pulumi:"fieldName"`
+}
+
+// WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowInput is an input type that accepts WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs and WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowInput` via:
+//
+//	WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs{...}
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs struct {
+	// Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+	FieldDataType pulumi.StringInput `pulumi:"fieldDataType"`
+	// Field name
+	FieldName pulumi.StringInput `pulumi:"fieldName"`
+}
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput)
+}
+
+// WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayInput is an input type that accepts WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray and WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayInput` via:
+//
+//	WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray{ WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs{...} }
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray []WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowInput
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return o
+}
+
+// Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput) FieldDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow) string {
+		return v.FieldDataType
+	}).(pulumi.StringOutput)
+}
+
+// Field name
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput) FieldName() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow) string {
+		return v.FieldName
+	}).(pulumi.StringOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) Index(i pulumi.IntInput) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow {
+		return vs[0].([]WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow)[vs[1].(int)]
+	}).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList struct {
+	CustomSessionPropertiesAllows []WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow `pulumi:"customSessionPropertiesAllows"`
+}
+
+// WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListInput is an input type that accepts WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs and WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListInput` via:
+//
+//	WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs{...}
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs struct {
+	CustomSessionPropertiesAllows WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayInput `pulumi:"customSessionPropertiesAllows"`
+}
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList)(nil)).Elem()
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput)
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput).ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(ctx)
+}
+
+// WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrInput is an input type that accepts WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs, WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtr and WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrInput` via:
+//
+//	        WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput
+}
+
+type webAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrType WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs
+
+func WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtr(v *WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrInput {
+	return (*webAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrType)(v)
+}
+
+func (*webAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList)(nil)).Elem()
+}
+
+func (i *webAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrType) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrType) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return o.ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList) *WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList {
+		return &v
+	}).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput)
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput) CustomSessionPropertiesAllows() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList) []WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow {
+		return v.CustomSessionPropertiesAllows
+	}).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput) Elem() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput {
+	return o.ApplyT(func(v *WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList
+		return ret
+	}).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput)
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput) CustomSessionPropertiesAllows() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o.ApplyT(func(v *WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList) []WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow {
+		if v == nil {
+			return nil
+		}
+		return v.CustomSessionPropertiesAllows
+	}).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow struct {
+	// Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+	FieldDataType string `pulumi:"fieldDataType"`
+	// Field name
+	FieldName string `pulumi:"fieldName"`
+}
+
+// WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowInput is an input type that accepts WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs and WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowInput` via:
+//
+//	WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs{...}
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs struct {
+	// Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+	FieldDataType pulumi.StringInput `pulumi:"fieldDataType"`
+	// Field name
+	FieldName pulumi.StringInput `pulumi:"fieldName"`
+}
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput)
+}
+
+// WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayInput is an input type that accepts WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray and WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayInput` via:
+//
+//	WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray{ WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs{...} }
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray []WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowInput
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return o
+}
+
+// Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput) FieldDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow) string {
+		return v.FieldDataType
+	}).(pulumi.StringOutput)
+}
+
+// Field name
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput) FieldName() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow) string {
+		return v.FieldName
+	}).(pulumi.StringOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) Index(i pulumi.IntInput) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow {
+		return vs[0].([]WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow)[vs[1].(int)]
+	}).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput)
 }
 
 type WebAppEnablementRum struct {
@@ -51727,6 +54699,12 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsContextRootArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootPtrInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsContextRootArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArrayInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverrideInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverrideArgs{})
@@ -52024,6 +55002,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceNamingConditionConditionTechArrayInput)(nil)).Elem(), ServiceNamingConditionConditionTechArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceNamingConditionConditionTechValueInput)(nil)).Elem(), ServiceNamingConditionConditionTechValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceNamingConditionConditionTechValuePtrInput)(nil)).Elem(), ServiceNamingConditionConditionTechValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceSplittingRuleInput)(nil)).Elem(), ServiceSplittingRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceSplittingRulePtrInput)(nil)).Elem(), ServiceSplittingRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributesInput)(nil)).Elem(), ServiceSplittingRuleServiceSplittingAttributesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributesPtrInput)(nil)).Elem(), ServiceSplittingRuleServiceSplittingAttributesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeInput)(nil)).Elem(), ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayInput)(nil)).Elem(), ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPtrInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs{})
@@ -52048,6 +55032,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveArrayInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveDisplayUnitInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianVariablesInput)(nil)).Elem(), SiteReliabilityGuardianVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianVariablesPtrInput)(nil)).Elem(), SiteReliabilityGuardianVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianVariablesVariableInput)(nil)).Elem(), SiteReliabilityGuardianVariablesVariableArgs{})
@@ -52156,6 +55148,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityCodeVulnerabilityDetectionControlPtrInput)(nil)).Elem(), VulnerabilityCodeVulnerabilityDetectionControlArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilitySettingsTechnologiesInput)(nil)).Elem(), VulnerabilitySettingsTechnologiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilitySettingsTechnologiesPtrInput)(nil)).Elem(), VulnerabilitySettingsTechnologiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrMetadataInput)(nil)).Elem(), VulnerabilityThirdPartyAttrMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrMetadataPtrInput)(nil)).Elem(), VulnerabilityThirdPartyAttrMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditionsInput)(nil)).Elem(), VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrInput)(nil)).Elem(), VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionInput)(nil)).Elem(), VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayInput)(nil)).Elem(), VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrVulnerabilityDetectionControlInput)(nil)).Elem(), VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrInput)(nil)).Elem(), VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditionsInput)(nil)).Elem(), VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrInput)(nil)).Elem(), VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionInput)(nil)).Elem(), VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayInput)(nil)).Elem(), VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sMetadataInput)(nil)).Elem(), VulnerabilityThirdPartyK8sMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sMetadataPtrInput)(nil)).Elem(), VulnerabilityThirdPartyK8sMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sVulnerabilityDetectionControlInput)(nil)).Elem(), VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrInput)(nil)).Elem(), VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesErrorRateInput)(nil)).Elem(), WebAppAnomaliesErrorRateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesErrorRatePtrInput)(nil)).Elem(), WebAppAnomaliesErrorRateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesErrorRateErrorRateAutoInput)(nil)).Elem(), WebAppAnomaliesErrorRateErrorRateAutoArgs{})
@@ -52201,6 +55209,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomErrorsErrorRulesErrorRuleInput)(nil)).Elem(), WebAppCustomErrorsErrorRulesErrorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomErrorsErrorRulesErrorRuleArrayInput)(nil)).Elem(), WebAppCustomErrorsErrorRulesErrorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsInput)(nil)).Elem(), WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowListInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementRumInput)(nil)).Elem(), WebAppEnablementRumArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementRumPtrInput)(nil)).Elem(), WebAppEnablementRumArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementSessionReplayInput)(nil)).Elem(), WebAppEnablementSessionReplayArgs{})
@@ -52375,6 +55391,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsContextRootOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsContextRootPtrOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorPtrOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsPtrOutput{})
 	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationOutput{})
 	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArrayOutput{})
 	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverrideOutput{})
@@ -52672,6 +55694,12 @@ func init() {
 	pulumi.RegisterOutputType(ServiceNamingConditionConditionTechArrayOutput{})
 	pulumi.RegisterOutputType(ServiceNamingConditionConditionTechValueOutput{})
 	pulumi.RegisterOutputType(ServiceNamingConditionConditionTechValuePtrOutput{})
+	pulumi.RegisterOutputType(ServiceSplittingRuleOutput{})
+	pulumi.RegisterOutputType(ServiceSplittingRulePtrOutput{})
+	pulumi.RegisterOutputType(ServiceSplittingRuleServiceSplittingAttributesOutput{})
+	pulumi.RegisterOutputType(ServiceSplittingRuleServiceSplittingAttributesPtrOutput{})
+	pulumi.RegisterOutputType(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput{})
+	pulumi.RegisterOutputType(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput{})
 	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsOutput{})
 	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsPtrOutput{})
 	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput{})
@@ -52696,6 +55724,14 @@ func init() {
 	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveArrayOutput{})
 	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput{})
 	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentArrayOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesPtrOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArrayOutput{})
 	pulumi.RegisterOutputType(SiteReliabilityGuardianVariablesOutput{})
 	pulumi.RegisterOutputType(SiteReliabilityGuardianVariablesPtrOutput{})
 	pulumi.RegisterOutputType(SiteReliabilityGuardianVariablesVariableOutput{})
@@ -52804,6 +55840,22 @@ func init() {
 	pulumi.RegisterOutputType(VulnerabilityCodeVulnerabilityDetectionControlPtrOutput{})
 	pulumi.RegisterOutputType(VulnerabilitySettingsTechnologiesOutput{})
 	pulumi.RegisterOutputType(VulnerabilitySettingsTechnologiesPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrMetadataOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrMetadataPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sMetadataOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sMetadataPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput{})
 	pulumi.RegisterOutputType(WebAppAnomaliesErrorRateOutput{})
 	pulumi.RegisterOutputType(WebAppAnomaliesErrorRatePtrOutput{})
 	pulumi.RegisterOutputType(WebAppAnomaliesErrorRateErrorRateAutoOutput{})
@@ -52849,6 +55901,14 @@ func init() {
 	pulumi.RegisterOutputType(WebAppCustomErrorsErrorRulesErrorRuleOutput{})
 	pulumi.RegisterOutputType(WebAppCustomErrorsErrorRulesErrorRuleArrayOutput{})
 	pulumi.RegisterOutputType(WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput{})
 	pulumi.RegisterOutputType(WebAppEnablementRumOutput{})
 	pulumi.RegisterOutputType(WebAppEnablementRumPtrOutput{})
 	pulumi.RegisterOutputType(WebAppEnablementSessionReplayOutput{})

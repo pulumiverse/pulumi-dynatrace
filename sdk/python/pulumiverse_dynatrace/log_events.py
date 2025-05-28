@@ -159,10 +159,8 @@ class _LogEventsState:
         pulumi.set(self, "summary", value)
 
 
+@pulumi.type_token("dynatrace:index/logEvents:LogEvents")
 class LogEvents(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/logEvents:LogEvents"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

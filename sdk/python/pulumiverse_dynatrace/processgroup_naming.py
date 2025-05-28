@@ -449,10 +449,8 @@ class _ProcessgroupNamingState:
         pulumi.set(self, "unknowns", value)
 
 
+@pulumi.type_token("dynatrace:index/processgroupNaming:ProcessgroupNaming")
 class ProcessgroupNaming(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/processgroupNaming:ProcessgroupNaming"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

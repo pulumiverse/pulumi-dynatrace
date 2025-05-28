@@ -495,10 +495,8 @@ class _OsServicesState:
         pulumi.set(self, "system", value)
 
 
+@pulumi.type_token("dynatrace:index/osServices:OsServices")
 class OsServices(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/osServices:OsServices"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

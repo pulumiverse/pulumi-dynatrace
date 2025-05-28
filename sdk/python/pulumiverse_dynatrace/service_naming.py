@@ -449,10 +449,8 @@ class _ServiceNamingState:
         pulumi.set(self, "unknowns", value)
 
 
+@pulumi.type_token("dynatrace:index/serviceNaming:ServiceNaming")
 class ServiceNaming(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/serviceNaming:ServiceNaming"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

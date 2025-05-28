@@ -65,10 +65,8 @@ class _WebAppJavascriptVersionState:
         pulumi.set(self, "custom_javascript_version", value)
 
 
+@pulumi.type_token("dynatrace:index/webAppJavascriptVersion:WebAppJavascriptVersion")
 class WebAppJavascriptVersion(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/webAppJavascriptVersion:WebAppJavascriptVersion"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

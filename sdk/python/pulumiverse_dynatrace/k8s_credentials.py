@@ -482,10 +482,8 @@ class _K8sCredentialsState:
         pulumi.set(self, "workload_integration_enabled", value)
 
 
+@pulumi.type_token("dynatrace:index/k8sCredentials:K8sCredentials")
 class K8sCredentials(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/k8sCredentials:K8sCredentials"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

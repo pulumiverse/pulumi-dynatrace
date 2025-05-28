@@ -98,10 +98,8 @@ class _DashboardsPresetsState:
         pulumi.set(self, "enable_dashboard_presets", value)
 
 
+@pulumi.type_token("dynatrace:index/dashboardsPresets:DashboardsPresets")
 class DashboardsPresets(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/dashboardsPresets:DashboardsPresets"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

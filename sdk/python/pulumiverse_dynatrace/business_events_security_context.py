@@ -98,10 +98,8 @@ class _BusinessEventsSecurityContextState:
         pulumi.set(self, "security_context_rule", value)
 
 
+@pulumi.type_token("dynatrace:index/businessEventsSecurityContext:BusinessEventsSecurityContext")
 class BusinessEventsSecurityContext(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/businessEventsSecurityContext:BusinessEventsSecurityContext"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

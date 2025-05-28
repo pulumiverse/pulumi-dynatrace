@@ -30,31 +30,40 @@ class BuiltinProcessMonitoringArgs:
                  exe_adapter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_agentlistener: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_agentworker: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_ansible: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_auctioneer: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_auditbeat: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_aws: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_az: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_bbs: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_caddy: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_caliconode: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_casclient: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_ccuploader: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_conda: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_doppler: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_filebeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_flexnetjobexecutorservice: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_flexnetmaintenanceremotingservice: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_functionbeat: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_gcloud: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_gorouter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_grootfs: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_hatch: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_heartbeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_influxd: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_jupyter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_locket: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_metricbeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_metron: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_mqsi: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_oc: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_openhandlecollector: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_openstack: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_optcnibinhostlocal: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_packetbeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_phpcgi: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_pip: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_rep: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_routeemitter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_routeregistrar: Optional[pulumi.Input[builtins.bool]] = None,
@@ -70,7 +79,9 @@ class BuiltinProcessMonitoringArgs:
                  exe_uipath: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_userbinpiper: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_w3wp: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_wheel: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_yq: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_yum: Optional[pulumi.Input[builtins.bool]] = None,
                  go_static: Optional[pulumi.Input[builtins.bool]] = None,
                  host_group_id: Optional[pulumi.Input[builtins.str]] = None,
                  jar_dtibmmqconnector: Optional[pulumi.Input[builtins.bool]] = None,
@@ -101,31 +112,40 @@ class BuiltinProcessMonitoringArgs:
         :param pulumi.Input[builtins.bool] exe_adapter: Rule id: 7 - Do monitor processes if EXE name equals 'adapter'
         :param pulumi.Input[builtins.bool] exe_agentlistener: Rule id: 63 - Do not monitor processes if EXE name contains 'Agent.Listener'
         :param pulumi.Input[builtins.bool] exe_agentworker: Rule id: 61 - Do not monitor processes if EXE name contains 'Agent.Worker'
+        :param pulumi.Input[builtins.bool] exe_ansible: Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
         :param pulumi.Input[builtins.bool] exe_auctioneer: Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
         :param pulumi.Input[builtins.bool] exe_auditbeat: Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
+        :param pulumi.Input[builtins.bool] exe_aws: Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+        :param pulumi.Input[builtins.bool] exe_az: Rule id: 82 - Do not monitor processes if EXE name equals 'az'
         :param pulumi.Input[builtins.bool] exe_bbs: Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
         :param pulumi.Input[builtins.bool] exe_caddy: Rule id: 5 - Do monitor processes if EXE name equals 'caddy'
         :param pulumi.Input[builtins.bool] exe_caliconode: Rule id: 58 - Do not monitor processes if EXE name equals 'calico-node'
         :param pulumi.Input[builtins.bool] exe_casclient: Rule id: 59 - Do not monitor processes if EXE name equals 'casclient.exe'
         :param pulumi.Input[builtins.bool] exe_ccuploader: Rule id: 10 - Do monitor processes if EXE name equals 'cc-uploader'
+        :param pulumi.Input[builtins.bool] exe_conda: Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
         :param pulumi.Input[builtins.bool] exe_doppler: Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
         :param pulumi.Input[builtins.bool] exe_filebeat: Rule id: 49 - Do not monitor processes if EXE name equals 'filebeat'
         :param pulumi.Input[builtins.bool] exe_flexnetjobexecutorservice: Rule id: 65 - Do not monitor processes if EXE name equals 'FlexNetJobExecutorService'
         :param pulumi.Input[builtins.bool] exe_flexnetmaintenanceremotingservice: Rule id: 66 - Do not monitor processes if EXE name equals 'FlexNetMaintenanceRemotingService'
         :param pulumi.Input[builtins.bool] exe_functionbeat: Rule id: 54 - Do not monitor processes if EXE name equals 'functionbeat'
+        :param pulumi.Input[builtins.bool] exe_gcloud: Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
         :param pulumi.Input[builtins.bool] exe_gorouter: Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
         :param pulumi.Input[builtins.bool] exe_grootfs: Rule id: 55 - Do not monitor processes if EXE name equals 'grootfs'
+        :param pulumi.Input[builtins.bool] exe_hatch: Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
         :param pulumi.Input[builtins.bool] exe_heartbeat: Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
         :param pulumi.Input[builtins.bool] exe_influxd: Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
+        :param pulumi.Input[builtins.bool] exe_jupyter: Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
         :param pulumi.Input[builtins.bool] exe_locket: Rule id: 13 - Do monitor processes if EXE name equals 'locket'
         :param pulumi.Input[builtins.bool] exe_metricbeat: Rule id: 50 - Do not monitor processes if EXE name equals 'metricbeat'
         :param pulumi.Input[builtins.bool] exe_metron: Rule id: 14 - Do monitor processes if EXE name equals 'metron'
         :param pulumi.Input[builtins.bool] exe_mqsi: Rule id: 48 - Do not monitor processes if EXE name begins with 'mqsi'
         :param pulumi.Input[builtins.bool] exe_oc: Rule id: 44 - Do not monitor processes if EXE name equals 'oc'
         :param pulumi.Input[builtins.bool] exe_openhandlecollector: Rule id: 71 - Do not monitor processes if EXE name equals 'openhandlecollector.exe'
+        :param pulumi.Input[builtins.bool] exe_openstack: Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
         :param pulumi.Input[builtins.bool] exe_optcnibinhostlocal: Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
         :param pulumi.Input[builtins.bool] exe_packetbeat: Rule id: 51 - Do not monitor processes if EXE name equals 'packetbeat'
         :param pulumi.Input[builtins.bool] exe_phpcgi: Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
+        :param pulumi.Input[builtins.bool] exe_pip: Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
         :param pulumi.Input[builtins.bool] exe_rep: Rule id: 16 - Do monitor processes if EXE name equals 'rep'
         :param pulumi.Input[builtins.bool] exe_routeemitter: Rule id: 17 - Do monitor processes if EXE name equals 'route-emitter'
         :param pulumi.Input[builtins.bool] exe_routeregistrar: Rule id: 18 - Do monitor processes if EXE name equals 'route-registrar'
@@ -141,7 +161,9 @@ class BuiltinProcessMonitoringArgs:
         :param pulumi.Input[builtins.bool] exe_uipath: Rule id: 70 - Do not monitor processes if EXE name contains 'UiPath'
         :param pulumi.Input[builtins.bool] exe_userbinpiper: Rule id: 67 - Do not monitor processes if EXE path equals '/usr/bin/piper'
         :param pulumi.Input[builtins.bool] exe_w3wp: Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
+        :param pulumi.Input[builtins.bool] exe_wheel: Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
         :param pulumi.Input[builtins.bool] exe_yq: Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+        :param pulumi.Input[builtins.bool] exe_yum: Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
         :param pulumi.Input[builtins.bool] go_static: Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
         :param pulumi.Input[builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[builtins.bool] jar_dtibmmqconnector: Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
@@ -181,10 +203,16 @@ class BuiltinProcessMonitoringArgs:
             pulumi.set(__self__, "exe_agentlistener", exe_agentlistener)
         if exe_agentworker is not None:
             pulumi.set(__self__, "exe_agentworker", exe_agentworker)
+        if exe_ansible is not None:
+            pulumi.set(__self__, "exe_ansible", exe_ansible)
         if exe_auctioneer is not None:
             pulumi.set(__self__, "exe_auctioneer", exe_auctioneer)
         if exe_auditbeat is not None:
             pulumi.set(__self__, "exe_auditbeat", exe_auditbeat)
+        if exe_aws is not None:
+            pulumi.set(__self__, "exe_aws", exe_aws)
+        if exe_az is not None:
+            pulumi.set(__self__, "exe_az", exe_az)
         if exe_bbs is not None:
             pulumi.set(__self__, "exe_bbs", exe_bbs)
         if exe_caddy is not None:
@@ -195,6 +223,8 @@ class BuiltinProcessMonitoringArgs:
             pulumi.set(__self__, "exe_casclient", exe_casclient)
         if exe_ccuploader is not None:
             pulumi.set(__self__, "exe_ccuploader", exe_ccuploader)
+        if exe_conda is not None:
+            pulumi.set(__self__, "exe_conda", exe_conda)
         if exe_doppler is not None:
             pulumi.set(__self__, "exe_doppler", exe_doppler)
         if exe_filebeat is not None:
@@ -205,14 +235,20 @@ class BuiltinProcessMonitoringArgs:
             pulumi.set(__self__, "exe_flexnetmaintenanceremotingservice", exe_flexnetmaintenanceremotingservice)
         if exe_functionbeat is not None:
             pulumi.set(__self__, "exe_functionbeat", exe_functionbeat)
+        if exe_gcloud is not None:
+            pulumi.set(__self__, "exe_gcloud", exe_gcloud)
         if exe_gorouter is not None:
             pulumi.set(__self__, "exe_gorouter", exe_gorouter)
         if exe_grootfs is not None:
             pulumi.set(__self__, "exe_grootfs", exe_grootfs)
+        if exe_hatch is not None:
+            pulumi.set(__self__, "exe_hatch", exe_hatch)
         if exe_heartbeat is not None:
             pulumi.set(__self__, "exe_heartbeat", exe_heartbeat)
         if exe_influxd is not None:
             pulumi.set(__self__, "exe_influxd", exe_influxd)
+        if exe_jupyter is not None:
+            pulumi.set(__self__, "exe_jupyter", exe_jupyter)
         if exe_locket is not None:
             pulumi.set(__self__, "exe_locket", exe_locket)
         if exe_metricbeat is not None:
@@ -225,12 +261,16 @@ class BuiltinProcessMonitoringArgs:
             pulumi.set(__self__, "exe_oc", exe_oc)
         if exe_openhandlecollector is not None:
             pulumi.set(__self__, "exe_openhandlecollector", exe_openhandlecollector)
+        if exe_openstack is not None:
+            pulumi.set(__self__, "exe_openstack", exe_openstack)
         if exe_optcnibinhostlocal is not None:
             pulumi.set(__self__, "exe_optcnibinhostlocal", exe_optcnibinhostlocal)
         if exe_packetbeat is not None:
             pulumi.set(__self__, "exe_packetbeat", exe_packetbeat)
         if exe_phpcgi is not None:
             pulumi.set(__self__, "exe_phpcgi", exe_phpcgi)
+        if exe_pip is not None:
+            pulumi.set(__self__, "exe_pip", exe_pip)
         if exe_rep is not None:
             pulumi.set(__self__, "exe_rep", exe_rep)
         if exe_routeemitter is not None:
@@ -261,8 +301,12 @@ class BuiltinProcessMonitoringArgs:
             pulumi.set(__self__, "exe_userbinpiper", exe_userbinpiper)
         if exe_w3wp is not None:
             pulumi.set(__self__, "exe_w3wp", exe_w3wp)
+        if exe_wheel is not None:
+            pulumi.set(__self__, "exe_wheel", exe_wheel)
         if exe_yq is not None:
             pulumi.set(__self__, "exe_yq", exe_yq)
+        if exe_yum is not None:
+            pulumi.set(__self__, "exe_yum", exe_yum)
         if go_static is not None:
             pulumi.set(__self__, "go_static", go_static)
         if host_group_id is not None:
@@ -421,6 +465,18 @@ class BuiltinProcessMonitoringArgs:
         pulumi.set(self, "exe_agentworker", value)
 
     @property
+    @pulumi.getter(name="exeAnsible")
+    def exe_ansible(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+        """
+        return pulumi.get(self, "exe_ansible")
+
+    @exe_ansible.setter
+    def exe_ansible(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_ansible", value)
+
+    @property
     @pulumi.getter(name="exeAuctioneer")
     def exe_auctioneer(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -443,6 +499,30 @@ class BuiltinProcessMonitoringArgs:
     @exe_auditbeat.setter
     def exe_auditbeat(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "exe_auditbeat", value)
+
+    @property
+    @pulumi.getter(name="exeAws")
+    def exe_aws(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+        """
+        return pulumi.get(self, "exe_aws")
+
+    @exe_aws.setter
+    def exe_aws(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_aws", value)
+
+    @property
+    @pulumi.getter(name="exeAz")
+    def exe_az(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+        """
+        return pulumi.get(self, "exe_az")
+
+    @exe_az.setter
+    def exe_az(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_az", value)
 
     @property
     @pulumi.getter(name="exeBbs")
@@ -505,6 +585,18 @@ class BuiltinProcessMonitoringArgs:
         pulumi.set(self, "exe_ccuploader", value)
 
     @property
+    @pulumi.getter(name="exeConda")
+    def exe_conda(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+        """
+        return pulumi.get(self, "exe_conda")
+
+    @exe_conda.setter
+    def exe_conda(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_conda", value)
+
+    @property
     @pulumi.getter(name="exeDoppler")
     def exe_doppler(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -565,6 +657,18 @@ class BuiltinProcessMonitoringArgs:
         pulumi.set(self, "exe_functionbeat", value)
 
     @property
+    @pulumi.getter(name="exeGcloud")
+    def exe_gcloud(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+        """
+        return pulumi.get(self, "exe_gcloud")
+
+    @exe_gcloud.setter
+    def exe_gcloud(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_gcloud", value)
+
+    @property
     @pulumi.getter(name="exeGorouter")
     def exe_gorouter(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -589,6 +693,18 @@ class BuiltinProcessMonitoringArgs:
         pulumi.set(self, "exe_grootfs", value)
 
     @property
+    @pulumi.getter(name="exeHatch")
+    def exe_hatch(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+        """
+        return pulumi.get(self, "exe_hatch")
+
+    @exe_hatch.setter
+    def exe_hatch(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_hatch", value)
+
+    @property
     @pulumi.getter(name="exeHeartbeat")
     def exe_heartbeat(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -611,6 +727,18 @@ class BuiltinProcessMonitoringArgs:
     @exe_influxd.setter
     def exe_influxd(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "exe_influxd", value)
+
+    @property
+    @pulumi.getter(name="exeJupyter")
+    def exe_jupyter(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+        """
+        return pulumi.get(self, "exe_jupyter")
+
+    @exe_jupyter.setter
+    def exe_jupyter(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_jupyter", value)
 
     @property
     @pulumi.getter(name="exeLocket")
@@ -685,6 +813,18 @@ class BuiltinProcessMonitoringArgs:
         pulumi.set(self, "exe_openhandlecollector", value)
 
     @property
+    @pulumi.getter(name="exeOpenstack")
+    def exe_openstack(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+        """
+        return pulumi.get(self, "exe_openstack")
+
+    @exe_openstack.setter
+    def exe_openstack(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_openstack", value)
+
+    @property
     @pulumi.getter(name="exeOptcnibinhostlocal")
     def exe_optcnibinhostlocal(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -719,6 +859,18 @@ class BuiltinProcessMonitoringArgs:
     @exe_phpcgi.setter
     def exe_phpcgi(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "exe_phpcgi", value)
+
+    @property
+    @pulumi.getter(name="exePip")
+    def exe_pip(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+        """
+        return pulumi.get(self, "exe_pip")
+
+    @exe_pip.setter
+    def exe_pip(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_pip", value)
 
     @property
     @pulumi.getter(name="exeRep")
@@ -901,6 +1053,18 @@ class BuiltinProcessMonitoringArgs:
         pulumi.set(self, "exe_w3wp", value)
 
     @property
+    @pulumi.getter(name="exeWheel")
+    def exe_wheel(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+        """
+        return pulumi.get(self, "exe_wheel")
+
+    @exe_wheel.setter
+    def exe_wheel(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_wheel", value)
+
+    @property
     @pulumi.getter(name="exeYq")
     def exe_yq(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -911,6 +1075,18 @@ class BuiltinProcessMonitoringArgs:
     @exe_yq.setter
     def exe_yq(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "exe_yq", value)
+
+    @property
+    @pulumi.getter(name="exeYum")
+    def exe_yum(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+        """
+        return pulumi.get(self, "exe_yum")
+
+    @exe_yum.setter
+    def exe_yum(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_yum", value)
 
     @property
     @pulumi.getter(name="goStatic")
@@ -1142,31 +1318,40 @@ class _BuiltinProcessMonitoringState:
                  exe_adapter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_agentlistener: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_agentworker: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_ansible: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_auctioneer: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_auditbeat: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_aws: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_az: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_bbs: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_caddy: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_caliconode: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_casclient: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_ccuploader: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_conda: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_doppler: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_filebeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_flexnetjobexecutorservice: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_flexnetmaintenanceremotingservice: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_functionbeat: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_gcloud: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_gorouter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_grootfs: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_hatch: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_heartbeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_influxd: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_jupyter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_locket: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_metricbeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_metron: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_mqsi: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_oc: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_openhandlecollector: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_openstack: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_optcnibinhostlocal: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_packetbeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_phpcgi: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_pip: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_rep: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_routeemitter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_routeregistrar: Optional[pulumi.Input[builtins.bool]] = None,
@@ -1182,7 +1367,9 @@ class _BuiltinProcessMonitoringState:
                  exe_uipath: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_userbinpiper: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_w3wp: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_wheel: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_yq: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_yum: Optional[pulumi.Input[builtins.bool]] = None,
                  go_static: Optional[pulumi.Input[builtins.bool]] = None,
                  host_group_id: Optional[pulumi.Input[builtins.str]] = None,
                  jar_dtibmmqconnector: Optional[pulumi.Input[builtins.bool]] = None,
@@ -1213,31 +1400,40 @@ class _BuiltinProcessMonitoringState:
         :param pulumi.Input[builtins.bool] exe_adapter: Rule id: 7 - Do monitor processes if EXE name equals 'adapter'
         :param pulumi.Input[builtins.bool] exe_agentlistener: Rule id: 63 - Do not monitor processes if EXE name contains 'Agent.Listener'
         :param pulumi.Input[builtins.bool] exe_agentworker: Rule id: 61 - Do not monitor processes if EXE name contains 'Agent.Worker'
+        :param pulumi.Input[builtins.bool] exe_ansible: Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
         :param pulumi.Input[builtins.bool] exe_auctioneer: Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
         :param pulumi.Input[builtins.bool] exe_auditbeat: Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
+        :param pulumi.Input[builtins.bool] exe_aws: Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+        :param pulumi.Input[builtins.bool] exe_az: Rule id: 82 - Do not monitor processes if EXE name equals 'az'
         :param pulumi.Input[builtins.bool] exe_bbs: Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
         :param pulumi.Input[builtins.bool] exe_caddy: Rule id: 5 - Do monitor processes if EXE name equals 'caddy'
         :param pulumi.Input[builtins.bool] exe_caliconode: Rule id: 58 - Do not monitor processes if EXE name equals 'calico-node'
         :param pulumi.Input[builtins.bool] exe_casclient: Rule id: 59 - Do not monitor processes if EXE name equals 'casclient.exe'
         :param pulumi.Input[builtins.bool] exe_ccuploader: Rule id: 10 - Do monitor processes if EXE name equals 'cc-uploader'
+        :param pulumi.Input[builtins.bool] exe_conda: Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
         :param pulumi.Input[builtins.bool] exe_doppler: Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
         :param pulumi.Input[builtins.bool] exe_filebeat: Rule id: 49 - Do not monitor processes if EXE name equals 'filebeat'
         :param pulumi.Input[builtins.bool] exe_flexnetjobexecutorservice: Rule id: 65 - Do not monitor processes if EXE name equals 'FlexNetJobExecutorService'
         :param pulumi.Input[builtins.bool] exe_flexnetmaintenanceremotingservice: Rule id: 66 - Do not monitor processes if EXE name equals 'FlexNetMaintenanceRemotingService'
         :param pulumi.Input[builtins.bool] exe_functionbeat: Rule id: 54 - Do not monitor processes if EXE name equals 'functionbeat'
+        :param pulumi.Input[builtins.bool] exe_gcloud: Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
         :param pulumi.Input[builtins.bool] exe_gorouter: Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
         :param pulumi.Input[builtins.bool] exe_grootfs: Rule id: 55 - Do not monitor processes if EXE name equals 'grootfs'
+        :param pulumi.Input[builtins.bool] exe_hatch: Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
         :param pulumi.Input[builtins.bool] exe_heartbeat: Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
         :param pulumi.Input[builtins.bool] exe_influxd: Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
+        :param pulumi.Input[builtins.bool] exe_jupyter: Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
         :param pulumi.Input[builtins.bool] exe_locket: Rule id: 13 - Do monitor processes if EXE name equals 'locket'
         :param pulumi.Input[builtins.bool] exe_metricbeat: Rule id: 50 - Do not monitor processes if EXE name equals 'metricbeat'
         :param pulumi.Input[builtins.bool] exe_metron: Rule id: 14 - Do monitor processes if EXE name equals 'metron'
         :param pulumi.Input[builtins.bool] exe_mqsi: Rule id: 48 - Do not monitor processes if EXE name begins with 'mqsi'
         :param pulumi.Input[builtins.bool] exe_oc: Rule id: 44 - Do not monitor processes if EXE name equals 'oc'
         :param pulumi.Input[builtins.bool] exe_openhandlecollector: Rule id: 71 - Do not monitor processes if EXE name equals 'openhandlecollector.exe'
+        :param pulumi.Input[builtins.bool] exe_openstack: Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
         :param pulumi.Input[builtins.bool] exe_optcnibinhostlocal: Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
         :param pulumi.Input[builtins.bool] exe_packetbeat: Rule id: 51 - Do not monitor processes if EXE name equals 'packetbeat'
         :param pulumi.Input[builtins.bool] exe_phpcgi: Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
+        :param pulumi.Input[builtins.bool] exe_pip: Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
         :param pulumi.Input[builtins.bool] exe_rep: Rule id: 16 - Do monitor processes if EXE name equals 'rep'
         :param pulumi.Input[builtins.bool] exe_routeemitter: Rule id: 17 - Do monitor processes if EXE name equals 'route-emitter'
         :param pulumi.Input[builtins.bool] exe_routeregistrar: Rule id: 18 - Do monitor processes if EXE name equals 'route-registrar'
@@ -1253,7 +1449,9 @@ class _BuiltinProcessMonitoringState:
         :param pulumi.Input[builtins.bool] exe_uipath: Rule id: 70 - Do not monitor processes if EXE name contains 'UiPath'
         :param pulumi.Input[builtins.bool] exe_userbinpiper: Rule id: 67 - Do not monitor processes if EXE path equals '/usr/bin/piper'
         :param pulumi.Input[builtins.bool] exe_w3wp: Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
+        :param pulumi.Input[builtins.bool] exe_wheel: Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
         :param pulumi.Input[builtins.bool] exe_yq: Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+        :param pulumi.Input[builtins.bool] exe_yum: Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
         :param pulumi.Input[builtins.bool] go_static: Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
         :param pulumi.Input[builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[builtins.bool] jar_dtibmmqconnector: Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
@@ -1293,10 +1491,16 @@ class _BuiltinProcessMonitoringState:
             pulumi.set(__self__, "exe_agentlistener", exe_agentlistener)
         if exe_agentworker is not None:
             pulumi.set(__self__, "exe_agentworker", exe_agentworker)
+        if exe_ansible is not None:
+            pulumi.set(__self__, "exe_ansible", exe_ansible)
         if exe_auctioneer is not None:
             pulumi.set(__self__, "exe_auctioneer", exe_auctioneer)
         if exe_auditbeat is not None:
             pulumi.set(__self__, "exe_auditbeat", exe_auditbeat)
+        if exe_aws is not None:
+            pulumi.set(__self__, "exe_aws", exe_aws)
+        if exe_az is not None:
+            pulumi.set(__self__, "exe_az", exe_az)
         if exe_bbs is not None:
             pulumi.set(__self__, "exe_bbs", exe_bbs)
         if exe_caddy is not None:
@@ -1307,6 +1511,8 @@ class _BuiltinProcessMonitoringState:
             pulumi.set(__self__, "exe_casclient", exe_casclient)
         if exe_ccuploader is not None:
             pulumi.set(__self__, "exe_ccuploader", exe_ccuploader)
+        if exe_conda is not None:
+            pulumi.set(__self__, "exe_conda", exe_conda)
         if exe_doppler is not None:
             pulumi.set(__self__, "exe_doppler", exe_doppler)
         if exe_filebeat is not None:
@@ -1317,14 +1523,20 @@ class _BuiltinProcessMonitoringState:
             pulumi.set(__self__, "exe_flexnetmaintenanceremotingservice", exe_flexnetmaintenanceremotingservice)
         if exe_functionbeat is not None:
             pulumi.set(__self__, "exe_functionbeat", exe_functionbeat)
+        if exe_gcloud is not None:
+            pulumi.set(__self__, "exe_gcloud", exe_gcloud)
         if exe_gorouter is not None:
             pulumi.set(__self__, "exe_gorouter", exe_gorouter)
         if exe_grootfs is not None:
             pulumi.set(__self__, "exe_grootfs", exe_grootfs)
+        if exe_hatch is not None:
+            pulumi.set(__self__, "exe_hatch", exe_hatch)
         if exe_heartbeat is not None:
             pulumi.set(__self__, "exe_heartbeat", exe_heartbeat)
         if exe_influxd is not None:
             pulumi.set(__self__, "exe_influxd", exe_influxd)
+        if exe_jupyter is not None:
+            pulumi.set(__self__, "exe_jupyter", exe_jupyter)
         if exe_locket is not None:
             pulumi.set(__self__, "exe_locket", exe_locket)
         if exe_metricbeat is not None:
@@ -1337,12 +1549,16 @@ class _BuiltinProcessMonitoringState:
             pulumi.set(__self__, "exe_oc", exe_oc)
         if exe_openhandlecollector is not None:
             pulumi.set(__self__, "exe_openhandlecollector", exe_openhandlecollector)
+        if exe_openstack is not None:
+            pulumi.set(__self__, "exe_openstack", exe_openstack)
         if exe_optcnibinhostlocal is not None:
             pulumi.set(__self__, "exe_optcnibinhostlocal", exe_optcnibinhostlocal)
         if exe_packetbeat is not None:
             pulumi.set(__self__, "exe_packetbeat", exe_packetbeat)
         if exe_phpcgi is not None:
             pulumi.set(__self__, "exe_phpcgi", exe_phpcgi)
+        if exe_pip is not None:
+            pulumi.set(__self__, "exe_pip", exe_pip)
         if exe_rep is not None:
             pulumi.set(__self__, "exe_rep", exe_rep)
         if exe_routeemitter is not None:
@@ -1373,8 +1589,12 @@ class _BuiltinProcessMonitoringState:
             pulumi.set(__self__, "exe_userbinpiper", exe_userbinpiper)
         if exe_w3wp is not None:
             pulumi.set(__self__, "exe_w3wp", exe_w3wp)
+        if exe_wheel is not None:
+            pulumi.set(__self__, "exe_wheel", exe_wheel)
         if exe_yq is not None:
             pulumi.set(__self__, "exe_yq", exe_yq)
+        if exe_yum is not None:
+            pulumi.set(__self__, "exe_yum", exe_yum)
         if go_static is not None:
             pulumi.set(__self__, "go_static", go_static)
         if host_group_id is not None:
@@ -1533,6 +1753,18 @@ class _BuiltinProcessMonitoringState:
         pulumi.set(self, "exe_agentworker", value)
 
     @property
+    @pulumi.getter(name="exeAnsible")
+    def exe_ansible(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+        """
+        return pulumi.get(self, "exe_ansible")
+
+    @exe_ansible.setter
+    def exe_ansible(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_ansible", value)
+
+    @property
     @pulumi.getter(name="exeAuctioneer")
     def exe_auctioneer(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -1555,6 +1787,30 @@ class _BuiltinProcessMonitoringState:
     @exe_auditbeat.setter
     def exe_auditbeat(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "exe_auditbeat", value)
+
+    @property
+    @pulumi.getter(name="exeAws")
+    def exe_aws(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+        """
+        return pulumi.get(self, "exe_aws")
+
+    @exe_aws.setter
+    def exe_aws(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_aws", value)
+
+    @property
+    @pulumi.getter(name="exeAz")
+    def exe_az(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+        """
+        return pulumi.get(self, "exe_az")
+
+    @exe_az.setter
+    def exe_az(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_az", value)
 
     @property
     @pulumi.getter(name="exeBbs")
@@ -1617,6 +1873,18 @@ class _BuiltinProcessMonitoringState:
         pulumi.set(self, "exe_ccuploader", value)
 
     @property
+    @pulumi.getter(name="exeConda")
+    def exe_conda(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+        """
+        return pulumi.get(self, "exe_conda")
+
+    @exe_conda.setter
+    def exe_conda(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_conda", value)
+
+    @property
     @pulumi.getter(name="exeDoppler")
     def exe_doppler(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -1677,6 +1945,18 @@ class _BuiltinProcessMonitoringState:
         pulumi.set(self, "exe_functionbeat", value)
 
     @property
+    @pulumi.getter(name="exeGcloud")
+    def exe_gcloud(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+        """
+        return pulumi.get(self, "exe_gcloud")
+
+    @exe_gcloud.setter
+    def exe_gcloud(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_gcloud", value)
+
+    @property
     @pulumi.getter(name="exeGorouter")
     def exe_gorouter(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -1701,6 +1981,18 @@ class _BuiltinProcessMonitoringState:
         pulumi.set(self, "exe_grootfs", value)
 
     @property
+    @pulumi.getter(name="exeHatch")
+    def exe_hatch(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+        """
+        return pulumi.get(self, "exe_hatch")
+
+    @exe_hatch.setter
+    def exe_hatch(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_hatch", value)
+
+    @property
     @pulumi.getter(name="exeHeartbeat")
     def exe_heartbeat(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -1723,6 +2015,18 @@ class _BuiltinProcessMonitoringState:
     @exe_influxd.setter
     def exe_influxd(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "exe_influxd", value)
+
+    @property
+    @pulumi.getter(name="exeJupyter")
+    def exe_jupyter(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+        """
+        return pulumi.get(self, "exe_jupyter")
+
+    @exe_jupyter.setter
+    def exe_jupyter(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_jupyter", value)
 
     @property
     @pulumi.getter(name="exeLocket")
@@ -1797,6 +2101,18 @@ class _BuiltinProcessMonitoringState:
         pulumi.set(self, "exe_openhandlecollector", value)
 
     @property
+    @pulumi.getter(name="exeOpenstack")
+    def exe_openstack(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+        """
+        return pulumi.get(self, "exe_openstack")
+
+    @exe_openstack.setter
+    def exe_openstack(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_openstack", value)
+
+    @property
     @pulumi.getter(name="exeOptcnibinhostlocal")
     def exe_optcnibinhostlocal(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -1831,6 +2147,18 @@ class _BuiltinProcessMonitoringState:
     @exe_phpcgi.setter
     def exe_phpcgi(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "exe_phpcgi", value)
+
+    @property
+    @pulumi.getter(name="exePip")
+    def exe_pip(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+        """
+        return pulumi.get(self, "exe_pip")
+
+    @exe_pip.setter
+    def exe_pip(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_pip", value)
 
     @property
     @pulumi.getter(name="exeRep")
@@ -2013,6 +2341,18 @@ class _BuiltinProcessMonitoringState:
         pulumi.set(self, "exe_w3wp", value)
 
     @property
+    @pulumi.getter(name="exeWheel")
+    def exe_wheel(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+        """
+        return pulumi.get(self, "exe_wheel")
+
+    @exe_wheel.setter
+    def exe_wheel(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_wheel", value)
+
+    @property
     @pulumi.getter(name="exeYq")
     def exe_yq(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -2023,6 +2363,18 @@ class _BuiltinProcessMonitoringState:
     @exe_yq.setter
     def exe_yq(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "exe_yq", value)
+
+    @property
+    @pulumi.getter(name="exeYum")
+    def exe_yum(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+        """
+        return pulumi.get(self, "exe_yum")
+
+    @exe_yum.setter
+    def exe_yum(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "exe_yum", value)
 
     @property
     @pulumi.getter(name="goStatic")
@@ -2241,10 +2593,8 @@ class _BuiltinProcessMonitoringState:
         pulumi.set(self, "php_script", value)
 
 
+@pulumi.type_token("dynatrace:index/builtinProcessMonitoring:BuiltinProcessMonitoring")
 class BuiltinProcessMonitoring(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/builtinProcessMonitoring:BuiltinProcessMonitoring"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
@@ -2259,31 +2609,40 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
                  exe_adapter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_agentlistener: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_agentworker: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_ansible: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_auctioneer: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_auditbeat: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_aws: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_az: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_bbs: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_caddy: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_caliconode: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_casclient: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_ccuploader: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_conda: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_doppler: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_filebeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_flexnetjobexecutorservice: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_flexnetmaintenanceremotingservice: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_functionbeat: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_gcloud: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_gorouter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_grootfs: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_hatch: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_heartbeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_influxd: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_jupyter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_locket: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_metricbeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_metron: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_mqsi: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_oc: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_openhandlecollector: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_openstack: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_optcnibinhostlocal: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_packetbeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_phpcgi: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_pip: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_rep: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_routeemitter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_routeregistrar: Optional[pulumi.Input[builtins.bool]] = None,
@@ -2299,7 +2658,9 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
                  exe_uipath: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_userbinpiper: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_w3wp: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_wheel: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_yq: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_yum: Optional[pulumi.Input[builtins.bool]] = None,
                  go_static: Optional[pulumi.Input[builtins.bool]] = None,
                  host_group_id: Optional[pulumi.Input[builtins.str]] = None,
                  jar_dtibmmqconnector: Optional[pulumi.Input[builtins.bool]] = None,
@@ -2333,31 +2694,40 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         :param pulumi.Input[builtins.bool] exe_adapter: Rule id: 7 - Do monitor processes if EXE name equals 'adapter'
         :param pulumi.Input[builtins.bool] exe_agentlistener: Rule id: 63 - Do not monitor processes if EXE name contains 'Agent.Listener'
         :param pulumi.Input[builtins.bool] exe_agentworker: Rule id: 61 - Do not monitor processes if EXE name contains 'Agent.Worker'
+        :param pulumi.Input[builtins.bool] exe_ansible: Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
         :param pulumi.Input[builtins.bool] exe_auctioneer: Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
         :param pulumi.Input[builtins.bool] exe_auditbeat: Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
+        :param pulumi.Input[builtins.bool] exe_aws: Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+        :param pulumi.Input[builtins.bool] exe_az: Rule id: 82 - Do not monitor processes if EXE name equals 'az'
         :param pulumi.Input[builtins.bool] exe_bbs: Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
         :param pulumi.Input[builtins.bool] exe_caddy: Rule id: 5 - Do monitor processes if EXE name equals 'caddy'
         :param pulumi.Input[builtins.bool] exe_caliconode: Rule id: 58 - Do not monitor processes if EXE name equals 'calico-node'
         :param pulumi.Input[builtins.bool] exe_casclient: Rule id: 59 - Do not monitor processes if EXE name equals 'casclient.exe'
         :param pulumi.Input[builtins.bool] exe_ccuploader: Rule id: 10 - Do monitor processes if EXE name equals 'cc-uploader'
+        :param pulumi.Input[builtins.bool] exe_conda: Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
         :param pulumi.Input[builtins.bool] exe_doppler: Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
         :param pulumi.Input[builtins.bool] exe_filebeat: Rule id: 49 - Do not monitor processes if EXE name equals 'filebeat'
         :param pulumi.Input[builtins.bool] exe_flexnetjobexecutorservice: Rule id: 65 - Do not monitor processes if EXE name equals 'FlexNetJobExecutorService'
         :param pulumi.Input[builtins.bool] exe_flexnetmaintenanceremotingservice: Rule id: 66 - Do not monitor processes if EXE name equals 'FlexNetMaintenanceRemotingService'
         :param pulumi.Input[builtins.bool] exe_functionbeat: Rule id: 54 - Do not monitor processes if EXE name equals 'functionbeat'
+        :param pulumi.Input[builtins.bool] exe_gcloud: Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
         :param pulumi.Input[builtins.bool] exe_gorouter: Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
         :param pulumi.Input[builtins.bool] exe_grootfs: Rule id: 55 - Do not monitor processes if EXE name equals 'grootfs'
+        :param pulumi.Input[builtins.bool] exe_hatch: Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
         :param pulumi.Input[builtins.bool] exe_heartbeat: Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
         :param pulumi.Input[builtins.bool] exe_influxd: Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
+        :param pulumi.Input[builtins.bool] exe_jupyter: Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
         :param pulumi.Input[builtins.bool] exe_locket: Rule id: 13 - Do monitor processes if EXE name equals 'locket'
         :param pulumi.Input[builtins.bool] exe_metricbeat: Rule id: 50 - Do not monitor processes if EXE name equals 'metricbeat'
         :param pulumi.Input[builtins.bool] exe_metron: Rule id: 14 - Do monitor processes if EXE name equals 'metron'
         :param pulumi.Input[builtins.bool] exe_mqsi: Rule id: 48 - Do not monitor processes if EXE name begins with 'mqsi'
         :param pulumi.Input[builtins.bool] exe_oc: Rule id: 44 - Do not monitor processes if EXE name equals 'oc'
         :param pulumi.Input[builtins.bool] exe_openhandlecollector: Rule id: 71 - Do not monitor processes if EXE name equals 'openhandlecollector.exe'
+        :param pulumi.Input[builtins.bool] exe_openstack: Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
         :param pulumi.Input[builtins.bool] exe_optcnibinhostlocal: Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
         :param pulumi.Input[builtins.bool] exe_packetbeat: Rule id: 51 - Do not monitor processes if EXE name equals 'packetbeat'
         :param pulumi.Input[builtins.bool] exe_phpcgi: Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
+        :param pulumi.Input[builtins.bool] exe_pip: Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
         :param pulumi.Input[builtins.bool] exe_rep: Rule id: 16 - Do monitor processes if EXE name equals 'rep'
         :param pulumi.Input[builtins.bool] exe_routeemitter: Rule id: 17 - Do monitor processes if EXE name equals 'route-emitter'
         :param pulumi.Input[builtins.bool] exe_routeregistrar: Rule id: 18 - Do monitor processes if EXE name equals 'route-registrar'
@@ -2373,7 +2743,9 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         :param pulumi.Input[builtins.bool] exe_uipath: Rule id: 70 - Do not monitor processes if EXE name contains 'UiPath'
         :param pulumi.Input[builtins.bool] exe_userbinpiper: Rule id: 67 - Do not monitor processes if EXE path equals '/usr/bin/piper'
         :param pulumi.Input[builtins.bool] exe_w3wp: Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
+        :param pulumi.Input[builtins.bool] exe_wheel: Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
         :param pulumi.Input[builtins.bool] exe_yq: Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+        :param pulumi.Input[builtins.bool] exe_yum: Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
         :param pulumi.Input[builtins.bool] go_static: Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
         :param pulumi.Input[builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[builtins.bool] jar_dtibmmqconnector: Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
@@ -2426,31 +2798,40 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
                  exe_adapter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_agentlistener: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_agentworker: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_ansible: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_auctioneer: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_auditbeat: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_aws: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_az: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_bbs: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_caddy: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_caliconode: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_casclient: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_ccuploader: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_conda: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_doppler: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_filebeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_flexnetjobexecutorservice: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_flexnetmaintenanceremotingservice: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_functionbeat: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_gcloud: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_gorouter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_grootfs: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_hatch: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_heartbeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_influxd: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_jupyter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_locket: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_metricbeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_metron: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_mqsi: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_oc: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_openhandlecollector: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_openstack: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_optcnibinhostlocal: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_packetbeat: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_phpcgi: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_pip: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_rep: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_routeemitter: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_routeregistrar: Optional[pulumi.Input[builtins.bool]] = None,
@@ -2466,7 +2847,9 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
                  exe_uipath: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_userbinpiper: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_w3wp: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_wheel: Optional[pulumi.Input[builtins.bool]] = None,
                  exe_yq: Optional[pulumi.Input[builtins.bool]] = None,
+                 exe_yum: Optional[pulumi.Input[builtins.bool]] = None,
                  go_static: Optional[pulumi.Input[builtins.bool]] = None,
                  host_group_id: Optional[pulumi.Input[builtins.str]] = None,
                  jar_dtibmmqconnector: Optional[pulumi.Input[builtins.bool]] = None,
@@ -2504,31 +2887,40 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
             __props__.__dict__["exe_adapter"] = exe_adapter
             __props__.__dict__["exe_agentlistener"] = exe_agentlistener
             __props__.__dict__["exe_agentworker"] = exe_agentworker
+            __props__.__dict__["exe_ansible"] = exe_ansible
             __props__.__dict__["exe_auctioneer"] = exe_auctioneer
             __props__.__dict__["exe_auditbeat"] = exe_auditbeat
+            __props__.__dict__["exe_aws"] = exe_aws
+            __props__.__dict__["exe_az"] = exe_az
             __props__.__dict__["exe_bbs"] = exe_bbs
             __props__.__dict__["exe_caddy"] = exe_caddy
             __props__.__dict__["exe_caliconode"] = exe_caliconode
             __props__.__dict__["exe_casclient"] = exe_casclient
             __props__.__dict__["exe_ccuploader"] = exe_ccuploader
+            __props__.__dict__["exe_conda"] = exe_conda
             __props__.__dict__["exe_doppler"] = exe_doppler
             __props__.__dict__["exe_filebeat"] = exe_filebeat
             __props__.__dict__["exe_flexnetjobexecutorservice"] = exe_flexnetjobexecutorservice
             __props__.__dict__["exe_flexnetmaintenanceremotingservice"] = exe_flexnetmaintenanceremotingservice
             __props__.__dict__["exe_functionbeat"] = exe_functionbeat
+            __props__.__dict__["exe_gcloud"] = exe_gcloud
             __props__.__dict__["exe_gorouter"] = exe_gorouter
             __props__.__dict__["exe_grootfs"] = exe_grootfs
+            __props__.__dict__["exe_hatch"] = exe_hatch
             __props__.__dict__["exe_heartbeat"] = exe_heartbeat
             __props__.__dict__["exe_influxd"] = exe_influxd
+            __props__.__dict__["exe_jupyter"] = exe_jupyter
             __props__.__dict__["exe_locket"] = exe_locket
             __props__.__dict__["exe_metricbeat"] = exe_metricbeat
             __props__.__dict__["exe_metron"] = exe_metron
             __props__.__dict__["exe_mqsi"] = exe_mqsi
             __props__.__dict__["exe_oc"] = exe_oc
             __props__.__dict__["exe_openhandlecollector"] = exe_openhandlecollector
+            __props__.__dict__["exe_openstack"] = exe_openstack
             __props__.__dict__["exe_optcnibinhostlocal"] = exe_optcnibinhostlocal
             __props__.__dict__["exe_packetbeat"] = exe_packetbeat
             __props__.__dict__["exe_phpcgi"] = exe_phpcgi
+            __props__.__dict__["exe_pip"] = exe_pip
             __props__.__dict__["exe_rep"] = exe_rep
             __props__.__dict__["exe_routeemitter"] = exe_routeemitter
             __props__.__dict__["exe_routeregistrar"] = exe_routeregistrar
@@ -2544,7 +2936,9 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
             __props__.__dict__["exe_uipath"] = exe_uipath
             __props__.__dict__["exe_userbinpiper"] = exe_userbinpiper
             __props__.__dict__["exe_w3wp"] = exe_w3wp
+            __props__.__dict__["exe_wheel"] = exe_wheel
             __props__.__dict__["exe_yq"] = exe_yq
+            __props__.__dict__["exe_yum"] = exe_yum
             __props__.__dict__["go_static"] = go_static
             __props__.__dict__["host_group_id"] = host_group_id
             __props__.__dict__["jar_dtibmmqconnector"] = jar_dtibmmqconnector
@@ -2583,31 +2977,40 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
             exe_adapter: Optional[pulumi.Input[builtins.bool]] = None,
             exe_agentlistener: Optional[pulumi.Input[builtins.bool]] = None,
             exe_agentworker: Optional[pulumi.Input[builtins.bool]] = None,
+            exe_ansible: Optional[pulumi.Input[builtins.bool]] = None,
             exe_auctioneer: Optional[pulumi.Input[builtins.bool]] = None,
             exe_auditbeat: Optional[pulumi.Input[builtins.bool]] = None,
+            exe_aws: Optional[pulumi.Input[builtins.bool]] = None,
+            exe_az: Optional[pulumi.Input[builtins.bool]] = None,
             exe_bbs: Optional[pulumi.Input[builtins.bool]] = None,
             exe_caddy: Optional[pulumi.Input[builtins.bool]] = None,
             exe_caliconode: Optional[pulumi.Input[builtins.bool]] = None,
             exe_casclient: Optional[pulumi.Input[builtins.bool]] = None,
             exe_ccuploader: Optional[pulumi.Input[builtins.bool]] = None,
+            exe_conda: Optional[pulumi.Input[builtins.bool]] = None,
             exe_doppler: Optional[pulumi.Input[builtins.bool]] = None,
             exe_filebeat: Optional[pulumi.Input[builtins.bool]] = None,
             exe_flexnetjobexecutorservice: Optional[pulumi.Input[builtins.bool]] = None,
             exe_flexnetmaintenanceremotingservice: Optional[pulumi.Input[builtins.bool]] = None,
             exe_functionbeat: Optional[pulumi.Input[builtins.bool]] = None,
+            exe_gcloud: Optional[pulumi.Input[builtins.bool]] = None,
             exe_gorouter: Optional[pulumi.Input[builtins.bool]] = None,
             exe_grootfs: Optional[pulumi.Input[builtins.bool]] = None,
+            exe_hatch: Optional[pulumi.Input[builtins.bool]] = None,
             exe_heartbeat: Optional[pulumi.Input[builtins.bool]] = None,
             exe_influxd: Optional[pulumi.Input[builtins.bool]] = None,
+            exe_jupyter: Optional[pulumi.Input[builtins.bool]] = None,
             exe_locket: Optional[pulumi.Input[builtins.bool]] = None,
             exe_metricbeat: Optional[pulumi.Input[builtins.bool]] = None,
             exe_metron: Optional[pulumi.Input[builtins.bool]] = None,
             exe_mqsi: Optional[pulumi.Input[builtins.bool]] = None,
             exe_oc: Optional[pulumi.Input[builtins.bool]] = None,
             exe_openhandlecollector: Optional[pulumi.Input[builtins.bool]] = None,
+            exe_openstack: Optional[pulumi.Input[builtins.bool]] = None,
             exe_optcnibinhostlocal: Optional[pulumi.Input[builtins.bool]] = None,
             exe_packetbeat: Optional[pulumi.Input[builtins.bool]] = None,
             exe_phpcgi: Optional[pulumi.Input[builtins.bool]] = None,
+            exe_pip: Optional[pulumi.Input[builtins.bool]] = None,
             exe_rep: Optional[pulumi.Input[builtins.bool]] = None,
             exe_routeemitter: Optional[pulumi.Input[builtins.bool]] = None,
             exe_routeregistrar: Optional[pulumi.Input[builtins.bool]] = None,
@@ -2623,7 +3026,9 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
             exe_uipath: Optional[pulumi.Input[builtins.bool]] = None,
             exe_userbinpiper: Optional[pulumi.Input[builtins.bool]] = None,
             exe_w3wp: Optional[pulumi.Input[builtins.bool]] = None,
+            exe_wheel: Optional[pulumi.Input[builtins.bool]] = None,
             exe_yq: Optional[pulumi.Input[builtins.bool]] = None,
+            exe_yum: Optional[pulumi.Input[builtins.bool]] = None,
             go_static: Optional[pulumi.Input[builtins.bool]] = None,
             host_group_id: Optional[pulumi.Input[builtins.str]] = None,
             jar_dtibmmqconnector: Optional[pulumi.Input[builtins.bool]] = None,
@@ -2659,31 +3064,40 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         :param pulumi.Input[builtins.bool] exe_adapter: Rule id: 7 - Do monitor processes if EXE name equals 'adapter'
         :param pulumi.Input[builtins.bool] exe_agentlistener: Rule id: 63 - Do not monitor processes if EXE name contains 'Agent.Listener'
         :param pulumi.Input[builtins.bool] exe_agentworker: Rule id: 61 - Do not monitor processes if EXE name contains 'Agent.Worker'
+        :param pulumi.Input[builtins.bool] exe_ansible: Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
         :param pulumi.Input[builtins.bool] exe_auctioneer: Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
         :param pulumi.Input[builtins.bool] exe_auditbeat: Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
+        :param pulumi.Input[builtins.bool] exe_aws: Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+        :param pulumi.Input[builtins.bool] exe_az: Rule id: 82 - Do not monitor processes if EXE name equals 'az'
         :param pulumi.Input[builtins.bool] exe_bbs: Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
         :param pulumi.Input[builtins.bool] exe_caddy: Rule id: 5 - Do monitor processes if EXE name equals 'caddy'
         :param pulumi.Input[builtins.bool] exe_caliconode: Rule id: 58 - Do not monitor processes if EXE name equals 'calico-node'
         :param pulumi.Input[builtins.bool] exe_casclient: Rule id: 59 - Do not monitor processes if EXE name equals 'casclient.exe'
         :param pulumi.Input[builtins.bool] exe_ccuploader: Rule id: 10 - Do monitor processes if EXE name equals 'cc-uploader'
+        :param pulumi.Input[builtins.bool] exe_conda: Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
         :param pulumi.Input[builtins.bool] exe_doppler: Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
         :param pulumi.Input[builtins.bool] exe_filebeat: Rule id: 49 - Do not monitor processes if EXE name equals 'filebeat'
         :param pulumi.Input[builtins.bool] exe_flexnetjobexecutorservice: Rule id: 65 - Do not monitor processes if EXE name equals 'FlexNetJobExecutorService'
         :param pulumi.Input[builtins.bool] exe_flexnetmaintenanceremotingservice: Rule id: 66 - Do not monitor processes if EXE name equals 'FlexNetMaintenanceRemotingService'
         :param pulumi.Input[builtins.bool] exe_functionbeat: Rule id: 54 - Do not monitor processes if EXE name equals 'functionbeat'
+        :param pulumi.Input[builtins.bool] exe_gcloud: Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
         :param pulumi.Input[builtins.bool] exe_gorouter: Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
         :param pulumi.Input[builtins.bool] exe_grootfs: Rule id: 55 - Do not monitor processes if EXE name equals 'grootfs'
+        :param pulumi.Input[builtins.bool] exe_hatch: Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
         :param pulumi.Input[builtins.bool] exe_heartbeat: Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
         :param pulumi.Input[builtins.bool] exe_influxd: Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
+        :param pulumi.Input[builtins.bool] exe_jupyter: Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
         :param pulumi.Input[builtins.bool] exe_locket: Rule id: 13 - Do monitor processes if EXE name equals 'locket'
         :param pulumi.Input[builtins.bool] exe_metricbeat: Rule id: 50 - Do not monitor processes if EXE name equals 'metricbeat'
         :param pulumi.Input[builtins.bool] exe_metron: Rule id: 14 - Do monitor processes if EXE name equals 'metron'
         :param pulumi.Input[builtins.bool] exe_mqsi: Rule id: 48 - Do not monitor processes if EXE name begins with 'mqsi'
         :param pulumi.Input[builtins.bool] exe_oc: Rule id: 44 - Do not monitor processes if EXE name equals 'oc'
         :param pulumi.Input[builtins.bool] exe_openhandlecollector: Rule id: 71 - Do not monitor processes if EXE name equals 'openhandlecollector.exe'
+        :param pulumi.Input[builtins.bool] exe_openstack: Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
         :param pulumi.Input[builtins.bool] exe_optcnibinhostlocal: Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
         :param pulumi.Input[builtins.bool] exe_packetbeat: Rule id: 51 - Do not monitor processes if EXE name equals 'packetbeat'
         :param pulumi.Input[builtins.bool] exe_phpcgi: Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
+        :param pulumi.Input[builtins.bool] exe_pip: Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
         :param pulumi.Input[builtins.bool] exe_rep: Rule id: 16 - Do monitor processes if EXE name equals 'rep'
         :param pulumi.Input[builtins.bool] exe_routeemitter: Rule id: 17 - Do monitor processes if EXE name equals 'route-emitter'
         :param pulumi.Input[builtins.bool] exe_routeregistrar: Rule id: 18 - Do monitor processes if EXE name equals 'route-registrar'
@@ -2699,7 +3113,9 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         :param pulumi.Input[builtins.bool] exe_uipath: Rule id: 70 - Do not monitor processes if EXE name contains 'UiPath'
         :param pulumi.Input[builtins.bool] exe_userbinpiper: Rule id: 67 - Do not monitor processes if EXE path equals '/usr/bin/piper'
         :param pulumi.Input[builtins.bool] exe_w3wp: Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
+        :param pulumi.Input[builtins.bool] exe_wheel: Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
         :param pulumi.Input[builtins.bool] exe_yq: Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
+        :param pulumi.Input[builtins.bool] exe_yum: Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
         :param pulumi.Input[builtins.bool] go_static: Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
         :param pulumi.Input[builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[builtins.bool] jar_dtibmmqconnector: Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
@@ -2733,31 +3149,40 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         __props__.__dict__["exe_adapter"] = exe_adapter
         __props__.__dict__["exe_agentlistener"] = exe_agentlistener
         __props__.__dict__["exe_agentworker"] = exe_agentworker
+        __props__.__dict__["exe_ansible"] = exe_ansible
         __props__.__dict__["exe_auctioneer"] = exe_auctioneer
         __props__.__dict__["exe_auditbeat"] = exe_auditbeat
+        __props__.__dict__["exe_aws"] = exe_aws
+        __props__.__dict__["exe_az"] = exe_az
         __props__.__dict__["exe_bbs"] = exe_bbs
         __props__.__dict__["exe_caddy"] = exe_caddy
         __props__.__dict__["exe_caliconode"] = exe_caliconode
         __props__.__dict__["exe_casclient"] = exe_casclient
         __props__.__dict__["exe_ccuploader"] = exe_ccuploader
+        __props__.__dict__["exe_conda"] = exe_conda
         __props__.__dict__["exe_doppler"] = exe_doppler
         __props__.__dict__["exe_filebeat"] = exe_filebeat
         __props__.__dict__["exe_flexnetjobexecutorservice"] = exe_flexnetjobexecutorservice
         __props__.__dict__["exe_flexnetmaintenanceremotingservice"] = exe_flexnetmaintenanceremotingservice
         __props__.__dict__["exe_functionbeat"] = exe_functionbeat
+        __props__.__dict__["exe_gcloud"] = exe_gcloud
         __props__.__dict__["exe_gorouter"] = exe_gorouter
         __props__.__dict__["exe_grootfs"] = exe_grootfs
+        __props__.__dict__["exe_hatch"] = exe_hatch
         __props__.__dict__["exe_heartbeat"] = exe_heartbeat
         __props__.__dict__["exe_influxd"] = exe_influxd
+        __props__.__dict__["exe_jupyter"] = exe_jupyter
         __props__.__dict__["exe_locket"] = exe_locket
         __props__.__dict__["exe_metricbeat"] = exe_metricbeat
         __props__.__dict__["exe_metron"] = exe_metron
         __props__.__dict__["exe_mqsi"] = exe_mqsi
         __props__.__dict__["exe_oc"] = exe_oc
         __props__.__dict__["exe_openhandlecollector"] = exe_openhandlecollector
+        __props__.__dict__["exe_openstack"] = exe_openstack
         __props__.__dict__["exe_optcnibinhostlocal"] = exe_optcnibinhostlocal
         __props__.__dict__["exe_packetbeat"] = exe_packetbeat
         __props__.__dict__["exe_phpcgi"] = exe_phpcgi
+        __props__.__dict__["exe_pip"] = exe_pip
         __props__.__dict__["exe_rep"] = exe_rep
         __props__.__dict__["exe_routeemitter"] = exe_routeemitter
         __props__.__dict__["exe_routeregistrar"] = exe_routeregistrar
@@ -2773,7 +3198,9 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         __props__.__dict__["exe_uipath"] = exe_uipath
         __props__.__dict__["exe_userbinpiper"] = exe_userbinpiper
         __props__.__dict__["exe_w3wp"] = exe_w3wp
+        __props__.__dict__["exe_wheel"] = exe_wheel
         __props__.__dict__["exe_yq"] = exe_yq
+        __props__.__dict__["exe_yum"] = exe_yum
         __props__.__dict__["go_static"] = go_static
         __props__.__dict__["host_group_id"] = host_group_id
         __props__.__dict__["jar_dtibmmqconnector"] = jar_dtibmmqconnector
@@ -2875,6 +3302,14 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         return pulumi.get(self, "exe_agentworker")
 
     @property
+    @pulumi.getter(name="exeAnsible")
+    def exe_ansible(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+        """
+        return pulumi.get(self, "exe_ansible")
+
+    @property
     @pulumi.getter(name="exeAuctioneer")
     def exe_auctioneer(self) -> pulumi.Output[Optional[builtins.bool]]:
         """
@@ -2889,6 +3324,22 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
         """
         return pulumi.get(self, "exe_auditbeat")
+
+    @property
+    @pulumi.getter(name="exeAws")
+    def exe_aws(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+        """
+        return pulumi.get(self, "exe_aws")
+
+    @property
+    @pulumi.getter(name="exeAz")
+    def exe_az(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+        """
+        return pulumi.get(self, "exe_az")
 
     @property
     @pulumi.getter(name="exeBbs")
@@ -2931,6 +3382,14 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         return pulumi.get(self, "exe_ccuploader")
 
     @property
+    @pulumi.getter(name="exeConda")
+    def exe_conda(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+        """
+        return pulumi.get(self, "exe_conda")
+
+    @property
     @pulumi.getter(name="exeDoppler")
     def exe_doppler(self) -> pulumi.Output[Optional[builtins.bool]]:
         """
@@ -2971,6 +3430,14 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         return pulumi.get(self, "exe_functionbeat")
 
     @property
+    @pulumi.getter(name="exeGcloud")
+    def exe_gcloud(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+        """
+        return pulumi.get(self, "exe_gcloud")
+
+    @property
     @pulumi.getter(name="exeGorouter")
     def exe_gorouter(self) -> pulumi.Output[Optional[builtins.bool]]:
         """
@@ -2987,6 +3454,14 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         return pulumi.get(self, "exe_grootfs")
 
     @property
+    @pulumi.getter(name="exeHatch")
+    def exe_hatch(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+        """
+        return pulumi.get(self, "exe_hatch")
+
+    @property
     @pulumi.getter(name="exeHeartbeat")
     def exe_heartbeat(self) -> pulumi.Output[Optional[builtins.bool]]:
         """
@@ -3001,6 +3476,14 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
         """
         return pulumi.get(self, "exe_influxd")
+
+    @property
+    @pulumi.getter(name="exeJupyter")
+    def exe_jupyter(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+        """
+        return pulumi.get(self, "exe_jupyter")
 
     @property
     @pulumi.getter(name="exeLocket")
@@ -3051,6 +3534,14 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         return pulumi.get(self, "exe_openhandlecollector")
 
     @property
+    @pulumi.getter(name="exeOpenstack")
+    def exe_openstack(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+        """
+        return pulumi.get(self, "exe_openstack")
+
+    @property
     @pulumi.getter(name="exeOptcnibinhostlocal")
     def exe_optcnibinhostlocal(self) -> pulumi.Output[Optional[builtins.bool]]:
         """
@@ -3073,6 +3564,14 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
         """
         return pulumi.get(self, "exe_phpcgi")
+
+    @property
+    @pulumi.getter(name="exePip")
+    def exe_pip(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+        """
+        return pulumi.get(self, "exe_pip")
 
     @property
     @pulumi.getter(name="exeRep")
@@ -3195,12 +3694,28 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         return pulumi.get(self, "exe_w3wp")
 
     @property
+    @pulumi.getter(name="exeWheel")
+    def exe_wheel(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+        """
+        return pulumi.get(self, "exe_wheel")
+
+    @property
     @pulumi.getter(name="exeYq")
     def exe_yq(self) -> pulumi.Output[Optional[builtins.bool]]:
         """
         Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
         """
         return pulumi.get(self, "exe_yq")
+
+    @property
+    @pulumi.getter(name="exeYum")
+    def exe_yum(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+        """
+        return pulumi.get(self, "exe_yum")
 
     @property
     @pulumi.getter(name="goStatic")

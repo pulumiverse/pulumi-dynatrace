@@ -352,10 +352,8 @@ class _NetworkMonitorState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("dynatrace:index/networkMonitor:NetworkMonitor")
 class NetworkMonitor(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/networkMonitor:NetworkMonitor"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

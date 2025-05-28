@@ -193,10 +193,8 @@ class _CustomServiceOrderState:
         pulumi.set(self, "phps", value)
 
 
+@pulumi.type_token("dynatrace:index/customServiceOrder:CustomServiceOrder")
 class CustomServiceOrder(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/customServiceOrder:CustomServiceOrder"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

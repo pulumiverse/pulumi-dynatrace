@@ -100,10 +100,8 @@ class _UsabilityAnalyticsState:
         pulumi.set(self, "detect_rage_clicks", value)
 
 
+@pulumi.type_token("dynatrace:index/usabilityAnalytics:UsabilityAnalytics")
 class UsabilityAnalytics(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/usabilityAnalytics:UsabilityAnalytics"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

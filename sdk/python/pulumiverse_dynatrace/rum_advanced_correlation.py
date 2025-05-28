@@ -95,10 +95,8 @@ class _RumAdvancedCorrelationState:
         pulumi.set(self, "pattern", value)
 
 
+@pulumi.type_token("dynatrace:index/rumAdvancedCorrelation:RumAdvancedCorrelation")
 class RumAdvancedCorrelation(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/rumAdvancedCorrelation:RumAdvancedCorrelation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

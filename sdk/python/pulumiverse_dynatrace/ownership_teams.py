@@ -321,10 +321,8 @@ class _OwnershipTeamsState:
         pulumi.set(self, "supplementary_identifiers", value)
 
 
+@pulumi.type_token("dynatrace:index/ownershipTeams:OwnershipTeams")
 class OwnershipTeams(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/ownershipTeams:OwnershipTeams"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

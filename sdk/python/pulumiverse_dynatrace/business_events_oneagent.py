@@ -223,10 +223,8 @@ class _BusinessEventsOneagentState:
         pulumi.set(self, "triggers", value)
 
 
+@pulumi.type_token("dynatrace:index/businessEventsOneagent:BusinessEventsOneagent")
 class BusinessEventsOneagent(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/businessEventsOneagent:BusinessEventsOneagent"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

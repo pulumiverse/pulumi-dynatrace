@@ -229,10 +229,8 @@ class _ProcessGroupSimpleDetectionState:
         pulumi.set(self, "rule_type", value)
 
 
+@pulumi.type_token("dynatrace:index/processGroupSimpleDetection:ProcessGroupSimpleDetection")
 class ProcessGroupSimpleDetection(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/processGroupSimpleDetection:ProcessGroupSimpleDetection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

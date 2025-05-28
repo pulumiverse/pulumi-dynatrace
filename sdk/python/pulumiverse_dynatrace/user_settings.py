@@ -316,10 +316,8 @@ class _UserSettingsState:
         pulumi.set(self, "timezone", value)
 
 
+@pulumi.type_token("dynatrace:index/userSettings:UserSettings")
 class UserSettings(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/userSettings:UserSettings"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -65,10 +65,8 @@ class _ServiceNamingOrderState:
         pulumi.set(self, "naming_rule_ids", value)
 
 
+@pulumi.type_token("dynatrace:index/serviceNamingOrder:ServiceNamingOrder")
 class ServiceNamingOrder(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/serviceNamingOrder:ServiceNamingOrder"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

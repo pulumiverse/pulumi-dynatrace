@@ -255,10 +255,8 @@ class _DiskSpecificAnomaliesV2State:
         pulumi.set(self, "override_slow_writes_and_reads_detection", value)
 
 
+@pulumi.type_token("dynatrace:index/diskSpecificAnomaliesV2:DiskSpecificAnomaliesV2")
 class DiskSpecificAnomaliesV2(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/diskSpecificAnomaliesV2:DiskSpecificAnomaliesV2"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

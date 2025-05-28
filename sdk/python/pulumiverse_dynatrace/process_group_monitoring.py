@@ -95,10 +95,8 @@ class _ProcessGroupMonitoringState:
         pulumi.set(self, "process_group_id", value)
 
 
+@pulumi.type_token("dynatrace:index/processGroupMonitoring:ProcessGroupMonitoring")
 class ProcessGroupMonitoring(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/processGroupMonitoring:ProcessGroupMonitoring"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

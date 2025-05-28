@@ -248,10 +248,8 @@ class _IamPolicyState:
         pulumi.set(self, "uuid", value)
 
 
+@pulumi.type_token("dynatrace:index/iamPolicy:IamPolicy")
 class IamPolicy(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/iamPolicy:IamPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

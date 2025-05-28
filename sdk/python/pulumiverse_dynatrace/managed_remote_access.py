@@ -189,10 +189,8 @@ class _ManagedRemoteAccessState:
         pulumi.set(self, "user_id", value)
 
 
+@pulumi.type_token("dynatrace:index/managedRemoteAccess:ManagedRemoteAccess")
 class ManagedRemoteAccess(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/managedRemoteAccess:ManagedRemoteAccess"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

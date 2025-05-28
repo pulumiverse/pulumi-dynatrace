@@ -477,10 +477,8 @@ class _ManagedPreferencesState:
         pulumi.set(self, "telemetry_sharing", value)
 
 
+@pulumi.type_token("dynatrace:index/managedPreferences:ManagedPreferences")
 class ManagedPreferences(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/managedPreferences:ManagedPreferences"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

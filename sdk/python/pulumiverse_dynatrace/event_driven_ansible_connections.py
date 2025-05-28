@@ -159,10 +159,8 @@ class _EventDrivenAnsibleConnectionsState:
         pulumi.set(self, "url", value)
 
 
+@pulumi.type_token("dynatrace:index/eventDrivenAnsibleConnections:EventDrivenAnsibleConnections")
 class EventDrivenAnsibleConnections(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/eventDrivenAnsibleConnections:EventDrivenAnsibleConnections"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -96,10 +96,8 @@ class _ActivegateUpdatesState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/activegateUpdates:ActivegateUpdates")
 class ActivegateUpdates(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/activegateUpdates:ActivegateUpdates"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

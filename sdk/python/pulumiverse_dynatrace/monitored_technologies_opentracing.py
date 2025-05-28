@@ -96,10 +96,8 @@ class _MonitoredTechnologiesOpentracingState:
         pulumi.set(self, "host_id", value)
 
 
+@pulumi.type_token("dynatrace:index/monitoredTechnologiesOpentracing:MonitoredTechnologiesOpentracing")
 class MonitoredTechnologiesOpentracing(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/monitoredTechnologiesOpentracing:MonitoredTechnologiesOpentracing"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

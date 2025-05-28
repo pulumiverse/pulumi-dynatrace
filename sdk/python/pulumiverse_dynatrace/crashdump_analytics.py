@@ -95,10 +95,8 @@ class _CrashdumpAnalyticsState:
         pulumi.set(self, "host_id", value)
 
 
+@pulumi.type_token("dynatrace:index/crashdumpAnalytics:CrashdumpAnalytics")
 class CrashdumpAnalytics(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/crashdumpAnalytics:CrashdumpAnalytics"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

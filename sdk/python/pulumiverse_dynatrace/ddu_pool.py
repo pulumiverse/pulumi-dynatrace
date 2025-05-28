@@ -195,10 +195,8 @@ class _DduPoolState:
         pulumi.set(self, "traces", value)
 
 
+@pulumi.type_token("dynatrace:index/dduPool:DduPool")
 class DduPool(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/dduPool:DduPool"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

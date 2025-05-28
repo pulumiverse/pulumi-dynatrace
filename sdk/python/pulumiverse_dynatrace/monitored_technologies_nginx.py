@@ -96,10 +96,8 @@ class _MonitoredTechnologiesNginxState:
         pulumi.set(self, "host_id", value)
 
 
+@pulumi.type_token("dynatrace:index/monitoredTechnologiesNginx:MonitoredTechnologiesNginx")
 class MonitoredTechnologiesNginx(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/monitoredTechnologiesNginx:MonitoredTechnologiesNginx"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

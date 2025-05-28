@@ -156,10 +156,8 @@ class _LogAgentFeatureFlagsState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/logAgentFeatureFlags:LogAgentFeatureFlags")
 class LogAgentFeatureFlags(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/logAgentFeatureFlags:LogAgentFeatureFlags"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

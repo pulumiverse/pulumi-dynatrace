@@ -157,10 +157,8 @@ class _ContainerBuiltinRuleState:
         pulumi.set(self, "ignore_open_shift_sdn_namespace", value)
 
 
+@pulumi.type_token("dynatrace:index/containerBuiltinRule:ContainerBuiltinRule")
 class ContainerBuiltinRule(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/containerBuiltinRule:ContainerBuiltinRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

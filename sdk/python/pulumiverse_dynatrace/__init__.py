@@ -347,6 +347,7 @@ from .security_context import *
 from .segment import *
 from .service_anomalies import *
 from .service_anomalies_v2 import *
+from .service_detection_rules import *
 from .service_external_web_request import *
 from .service_external_web_service import *
 from .service_failure import *
@@ -356,6 +357,7 @@ from .service_http_failure import *
 from .service_naming import *
 from .service_naming_order import *
 from .service_now_notification import *
+from .service_splitting import *
 from .servicenow_connection import *
 from .session_replay_resource_capture import *
 from .session_replay_web_privacy import *
@@ -392,6 +394,8 @@ from .vulnerability_alerting import *
 from .vulnerability_code import *
 from .vulnerability_settings import *
 from .vulnerability_third_party import *
+from .vulnerability_third_party_attr import *
+from .vulnerability_third_party_k8s import *
 from .web_app_anomalies import *
 from .web_app_auto_injection import *
 from .web_app_beacon_endpoint import *
@@ -399,8 +403,10 @@ from .web_app_beacon_origins import *
 from .web_app_custom_config_properties import *
 from .web_app_custom_errors import *
 from .web_app_custom_injection import *
+from .web_app_custom_prop_restrictions import *
 from .web_app_enablement import *
 from .web_app_injection_cookie import *
+from .web_app_javascript_filename import *
 from .web_app_javascript_updates import *
 from .web_app_javascript_version import *
 from .web_app_key_performance_custom import *
@@ -2723,6 +2729,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/serviceDetectionRules",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/serviceDetectionRules:ServiceDetectionRules": "ServiceDetectionRules"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/serviceExternalWebRequest",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2791,6 +2805,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/serviceNowNotification:ServiceNowNotification": "ServiceNowNotification"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/serviceSplitting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/serviceSplitting:ServiceSplitting": "ServiceSplitting"
   }
  },
  {
@@ -3083,6 +3105,22 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/vulnerabilityThirdPartyAttr",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/vulnerabilityThirdPartyAttr:VulnerabilityThirdPartyAttr": "VulnerabilityThirdPartyAttr"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/vulnerabilityThirdPartyK8s",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/vulnerabilityThirdPartyK8s:VulnerabilityThirdPartyK8s": "VulnerabilityThirdPartyK8s"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/webAppAnomalies",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -3139,6 +3177,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/webAppCustomPropRestrictions",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/webAppCustomPropRestrictions:WebAppCustomPropRestrictions": "WebAppCustomPropRestrictions"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/webAppEnablement",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -3151,6 +3197,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/webAppInjectionCookie:WebAppInjectionCookie": "WebAppInjectionCookie"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/webAppJavascriptFilename",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/webAppJavascriptFilename:WebAppJavascriptFilename": "WebAppJavascriptFilename"
   }
  },
  {

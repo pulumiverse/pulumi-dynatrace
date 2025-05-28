@@ -222,10 +222,8 @@ class _K8sClusterAnomaliesState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/k8sClusterAnomalies:K8sClusterAnomalies")
 class K8sClusterAnomalies(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/k8sClusterAnomalies:K8sClusterAnomalies"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

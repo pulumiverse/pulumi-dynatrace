@@ -95,10 +95,8 @@ class _AttributeBlockListState:
         pulumi.set(self, "key", value)
 
 
+@pulumi.type_token("dynatrace:index/attributeBlockList:AttributeBlockList")
 class AttributeBlockList(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/attributeBlockList:AttributeBlockList"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

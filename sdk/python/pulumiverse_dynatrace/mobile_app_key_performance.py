@@ -128,10 +128,8 @@ class _MobileAppKeyPerformanceState:
         pulumi.set(self, "thresholds", value)
 
 
+@pulumi.type_token("dynatrace:index/mobileAppKeyPerformance:MobileAppKeyPerformance")
 class MobileAppKeyPerformance(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/mobileAppKeyPerformance:MobileAppKeyPerformance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

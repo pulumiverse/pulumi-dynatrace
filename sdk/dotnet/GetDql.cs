@@ -69,8 +69,6 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// });
         /// ```
-        /// 
-        /// {{ .SchemaMarkdown | trimspace }}
         /// </summary>
         public static Task<GetDqlResult> InvokeAsync(GetDqlArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDqlResult>("dynatrace:index/getDql:getDql", args ?? new GetDqlArgs(), options.WithDefaults());
@@ -132,8 +130,6 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// });
         /// ```
-        /// 
-        /// {{ .SchemaMarkdown | trimspace }}
         /// </summary>
         public static Output<GetDqlResult> Invoke(GetDqlInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDqlResult>("dynatrace:index/getDql:getDql", args ?? new GetDqlInvokeArgs(), options.WithDefaults());
@@ -195,8 +191,6 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// });
         /// ```
-        /// 
-        /// {{ .SchemaMarkdown | trimspace }}
         /// </summary>
         public static Output<GetDqlResult> Invoke(GetDqlInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetDqlResult>("dynatrace:index/getDql:getDql", args ?? new GetDqlInvokeArgs(), options.WithDefaults());
@@ -205,33 +199,63 @@ namespace Pulumiverse.Dynatrace
 
     public sealed class GetDqlArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
+        /// </summary>
         [Input("defaultSamplingRatio")]
         public double? DefaultSamplingRatio { get; set; }
 
+        /// <summary>
+        /// Limit in gigabytes for the amount data that will be scanned during read
+        /// </summary>
         [Input("defaultScanLimitGbytes")]
         public int? DefaultScanLimitGbytes { get; set; }
 
+        /// <summary>
+        /// The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
+        /// </summary>
         [Input("defaultTimeframeEnd")]
         public string? DefaultTimeframeEnd { get; set; }
 
+        /// <summary>
+        /// The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
+        /// </summary>
         [Input("defaultTimeframeStart")]
         public string? DefaultTimeframeStart { get; set; }
 
+        /// <summary>
+        /// The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
+        /// </summary>
         [Input("fetchTimeoutSeconds")]
         public int? FetchTimeoutSeconds { get; set; }
 
+        /// <summary>
+        /// The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
+        /// </summary>
         [Input("locale")]
         public string? Locale { get; set; }
 
+        /// <summary>
+        /// The maximum number of result bytes that this query will return
+        /// </summary>
         [Input("maxResultBytes")]
         public int? MaxResultBytes { get; set; }
 
+        /// <summary>
+        /// The maximum number of result records that this query will return
+        /// </summary>
         [Input("maxResultRecords")]
         public int? MaxResultRecords { get; set; }
 
+        /// <summary>
+        /// example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
+        /// </summary>
         [Input("query", required: true)]
         public string Query { get; set; } = null!;
 
+        /// <summary>
+        /// The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
+        /// </summary>
         [Input("timezone")]
         public string? Timezone { get; set; }
 
@@ -243,33 +267,63 @@ namespace Pulumiverse.Dynatrace
 
     public sealed class GetDqlInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
+        /// </summary>
         [Input("defaultSamplingRatio")]
         public Input<double>? DefaultSamplingRatio { get; set; }
 
+        /// <summary>
+        /// Limit in gigabytes for the amount data that will be scanned during read
+        /// </summary>
         [Input("defaultScanLimitGbytes")]
         public Input<int>? DefaultScanLimitGbytes { get; set; }
 
+        /// <summary>
+        /// The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
+        /// </summary>
         [Input("defaultTimeframeEnd")]
         public Input<string>? DefaultTimeframeEnd { get; set; }
 
+        /// <summary>
+        /// The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
+        /// </summary>
         [Input("defaultTimeframeStart")]
         public Input<string>? DefaultTimeframeStart { get; set; }
 
+        /// <summary>
+        /// The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
+        /// </summary>
         [Input("fetchTimeoutSeconds")]
         public Input<int>? FetchTimeoutSeconds { get; set; }
 
+        /// <summary>
+        /// The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
+        /// </summary>
         [Input("locale")]
         public Input<string>? Locale { get; set; }
 
+        /// <summary>
+        /// The maximum number of result bytes that this query will return
+        /// </summary>
         [Input("maxResultBytes")]
         public Input<int>? MaxResultBytes { get; set; }
 
+        /// <summary>
+        /// The maximum number of result records that this query will return
+        /// </summary>
         [Input("maxResultRecords")]
         public Input<int>? MaxResultRecords { get; set; }
 
+        /// <summary>
+        /// example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
+        /// </summary>
         [Input("query", required: true)]
         public Input<string> Query { get; set; } = null!;
 
+        /// <summary>
+        /// The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
+        /// </summary>
         [Input("timezone")]
         public Input<string>? Timezone { get; set; }
 
@@ -283,20 +337,50 @@ namespace Pulumiverse.Dynatrace
     [OutputType]
     public sealed class GetDqlResult
     {
+        /// <summary>
+        /// In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
+        /// </summary>
         public readonly double? DefaultSamplingRatio;
+        /// <summary>
+        /// Limit in gigabytes for the amount data that will be scanned during read
+        /// </summary>
         public readonly int? DefaultScanLimitGbytes;
+        /// <summary>
+        /// The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
+        /// </summary>
         public readonly string? DefaultTimeframeEnd;
+        /// <summary>
+        /// The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
+        /// </summary>
         public readonly string? DefaultTimeframeStart;
+        /// <summary>
+        /// The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
+        /// </summary>
         public readonly int? FetchTimeoutSeconds;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
+        /// </summary>
         public readonly string? Locale;
+        /// <summary>
+        /// The maximum number of result bytes that this query will return
+        /// </summary>
         public readonly int? MaxResultBytes;
+        /// <summary>
+        /// The maximum number of result records that this query will return
+        /// </summary>
         public readonly int? MaxResultRecords;
+        /// <summary>
+        /// example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
+        /// </summary>
         public readonly string Query;
         public readonly string Records;
+        /// <summary>
+        /// The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
+        /// </summary>
         public readonly string? Timezone;
 
         [OutputConstructor]

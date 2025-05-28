@@ -171,10 +171,8 @@ class _DashboardState:
         pulumi.set(self, "unknowns", value)
 
 
+@pulumi.type_token("dynatrace:index/dashboard:Dashboard")
 class Dashboard(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/dashboard:Dashboard"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

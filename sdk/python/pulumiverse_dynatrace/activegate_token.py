@@ -95,10 +95,8 @@ class _ActivegateTokenState:
         pulumi.set(self, "expiring_token_notifications_enabled", value)
 
 
+@pulumi.type_token("dynatrace:index/activegateToken:ActivegateToken")
 class ActivegateToken(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/activegateToken:ActivegateToken"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

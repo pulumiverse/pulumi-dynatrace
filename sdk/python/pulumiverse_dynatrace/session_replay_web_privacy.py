@@ -161,10 +161,8 @@ class _SessionReplayWebPrivacyState:
         pulumi.set(self, "url_exclusion_pattern_lists", value)
 
 
+@pulumi.type_token("dynatrace:index/sessionReplayWebPrivacy:SessionReplayWebPrivacy")
 class SessionReplayWebPrivacy(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/sessionReplayWebPrivacy:SessionReplayWebPrivacy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

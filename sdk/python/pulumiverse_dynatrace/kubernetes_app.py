@@ -98,10 +98,8 @@ class _KubernetesAppState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/kubernetesApp:KubernetesApp")
 class KubernetesApp(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/kubernetesApp:KubernetesApp"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -126,10 +126,8 @@ class _ProblemFieldsState:
         pulumi.set(self, "problem_field", value)
 
 
+@pulumi.type_token("dynatrace:index/problemFields:ProblemFields")
 class ProblemFields(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/problemFields:ProblemFields"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

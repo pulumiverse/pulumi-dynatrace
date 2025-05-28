@@ -210,10 +210,8 @@ class _DashboardSharingState:
         pulumi.set(self, "public", value)
 
 
+@pulumi.type_token("dynatrace:index/dashboardSharing:DashboardSharing")
 class DashboardSharing(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/dashboardSharing:DashboardSharing"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

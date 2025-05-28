@@ -96,10 +96,8 @@ class _RumIpDeterminationState:
         pulumi.set(self, "insert_after", value)
 
 
+@pulumi.type_token("dynatrace:index/rumIpDetermination:RumIpDetermination")
 class RumIpDetermination(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/rumIpDetermination:RumIpDetermination"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

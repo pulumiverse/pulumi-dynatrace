@@ -128,10 +128,8 @@ class _IpAddressMaskingState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("dynatrace:index/ipAddressMasking:IpAddressMasking")
 class IpAddressMasking(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/ipAddressMasking:IpAddressMasking"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

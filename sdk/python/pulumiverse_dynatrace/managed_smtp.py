@@ -317,10 +317,8 @@ class _ManagedSmtpState:
         pulumi.set(self, "user_name", value)
 
 
+@pulumi.type_token("dynatrace:index/managedSmtp:ManagedSmtp")
 class ManagedSmtp(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/managedSmtp:ManagedSmtp"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

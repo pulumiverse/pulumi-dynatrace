@@ -64,6 +64,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// no documentation available
         /// </summary>
+        [Input("segments")]
+        public Input<Inputs.SiteReliabilityGuardianObjectivesObjectiveSegmentsGetArgs>? Segments { get; set; }
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("target")]
         public Input<double>? Target { get; set; }
 

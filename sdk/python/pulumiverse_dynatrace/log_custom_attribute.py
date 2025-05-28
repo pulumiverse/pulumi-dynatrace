@@ -95,10 +95,8 @@ class _LogCustomAttributeState:
         pulumi.set(self, "sidebar", value)
 
 
+@pulumi.type_token("dynatrace:index/logCustomAttribute:LogCustomAttribute")
 class LogCustomAttribute(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/logCustomAttribute:LogCustomAttribute"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

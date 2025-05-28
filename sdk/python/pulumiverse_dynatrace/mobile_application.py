@@ -461,10 +461,8 @@ class _MobileApplicationState:
         pulumi.set(self, "user_session_percentage", value)
 
 
+@pulumi.type_token("dynatrace:index/mobileApplication:MobileApplication")
 class MobileApplication(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/mobileApplication:MobileApplication"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

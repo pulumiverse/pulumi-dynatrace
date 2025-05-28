@@ -95,10 +95,8 @@ class _ConnectivityAlertsState:
         pulumi.set(self, "process_group_id", value)
 
 
+@pulumi.type_token("dynatrace:index/connectivityAlerts:ConnectivityAlerts")
 class ConnectivityAlerts(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/connectivityAlerts:ConnectivityAlerts"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

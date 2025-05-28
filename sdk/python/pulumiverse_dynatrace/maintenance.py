@@ -196,10 +196,8 @@ class _MaintenanceState:
         pulumi.set(self, "schedule", value)
 
 
+@pulumi.type_token("dynatrace:index/maintenance:Maintenance")
 class Maintenance(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/maintenance:Maintenance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

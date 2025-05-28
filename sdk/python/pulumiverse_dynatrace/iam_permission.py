@@ -192,10 +192,8 @@ class _IamPermissionState:
         pulumi.set(self, "name", value)
 
 
+@pulumi.type_token("dynatrace:index/iamPermission:IamPermission")
 class IamPermission(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/iamPermission:IamPermission"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

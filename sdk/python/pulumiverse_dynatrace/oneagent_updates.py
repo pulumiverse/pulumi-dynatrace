@@ -194,10 +194,8 @@ class _OneagentUpdatesState:
         pulumi.set(self, "update_mode", value)
 
 
+@pulumi.type_token("dynatrace:index/oneagentUpdates:OneagentUpdates")
 class OneagentUpdates(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/oneagentUpdates:OneagentUpdates"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

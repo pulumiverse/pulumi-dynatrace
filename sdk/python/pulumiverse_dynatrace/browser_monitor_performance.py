@@ -129,10 +129,8 @@ class _BrowserMonitorPerformanceState:
         pulumi.set(self, "thresholds", value)
 
 
+@pulumi.type_token("dynatrace:index/browserMonitorPerformance:BrowserMonitorPerformance")
 class BrowserMonitorPerformance(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/browserMonitorPerformance:BrowserMonitorPerformance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

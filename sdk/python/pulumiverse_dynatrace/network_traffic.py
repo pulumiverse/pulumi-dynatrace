@@ -130,10 +130,8 @@ class _NetworkTrafficState:
         pulumi.set(self, "host_id", value)
 
 
+@pulumi.type_token("dynatrace:index/networkTraffic:NetworkTraffic")
 class NetworkTraffic(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/networkTraffic:NetworkTraffic"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

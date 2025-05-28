@@ -1322,6 +1322,10 @@ export interface AutomationWorkflowTriggerEventConfigDavisEvent {
      */
     entityTagsMatch?: string;
     /**
+     * The Davis Events to match on
+     */
+    names?: outputs.AutomationWorkflowTriggerEventConfigDavisEventNames;
+    /**
      * If set to `true` closing a problem also is considered an event that triggers the execution
      */
     onProblemClose?: boolean;
@@ -1329,6 +1333,24 @@ export interface AutomationWorkflowTriggerEventConfigDavisEvent {
      * The types of davis events to trigger an execution. Possible values are `CUSTOM_ANNOTATION`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `APPLICATION_OVERLOAD_PREVENTION`, `APPLICATION_SLOWDOWN`, `AVAILABILITY_EVENT`, `LOG_AVAILABILITY`, `EC2_HIGH_CPU`, `RDS_BACKUP_COMPLETED`, `RDS_BACKUP_STARTED`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_TEST_LOCATION_SLOWDOWN`, `CUSTOM_CONFIGURATION`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `OSI_HIGH_CPU`, `CUSTOM_ALERT`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APPLICATION_OVERLOAD_PREVENTION`, `CUSTOM_APPLICATION_SLOWDOWN`, `PGI_CUSTOM_AVAILABILITY`, `PGI_CUSTOM_ERROR`, `CUSTOM_INFO`, `PGI_CUSTOM_PERFORMANCE`, `CUSTOM_DEPLOYMENT`, `DEPLOYMENT_CHANGED_CHANGE`, `DEPLOYMENT_CHANGED_NEW`, `DEPLOYMENT_CHANGED_REMOVED`, `EBS_VOLUME_HIGH_LATENCY`, `ERROR_EVENT`, `LOG_ERROR`, `ESXI_HOST_CONNECTION_FAILED`, `ESXI_HOST_CONNECTION_LOST`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_MAINTENANCE`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_NO_CONNECTION`, `ESXI_HOST_SHUTDOWN`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_UP`, `ESXI_HOST_TIMEOUT`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `DATABASE_CONNECTION_FAILURE`, `RDS_AZ_FAILOVER_COMPLETED`, `RDS_AZ_FAILOVER_STARTED`, `SERVICE_ERROR_RATE_INCREASED`, `RDS_HIGH_LATENCY`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_NIC_ERRORS_HIGH`, `PGI_HAPROXY_QUEUED_REQUESTS_HIGH`, `PGI_RMQ_HIGH_FILE_DESC_USAGE`, `PGI_RMQ_HIGH_MEM_USAGE`, `PGI_RMQ_HIGH_PROCESS_USAGE`, `PGI_RMQ_HIGH_SOCKETS_USAGE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `PGI_MYSQL_SLOW_QUERIES_RATE_HIGH`, `PGI_KEYSTONE_SLOW`, `PGI_HAPROXY_SESSION_USAGE_HIGH`, `HOST_LOG_AVAILABILITY`, `HOST_LOG_ERROR`, `OSI_GRACEFULLY_SHUTDOWN`, `HOST_LOG_MATCHED`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `HOST_LOG_PERFORMANCE`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `ESXI_HOST_DISK_QUEUE_SLOW`, `LOG_MATCHED`, `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_JS_FRAMEWORK_DETECTED`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ELB_HIGH_FRONTEND_ERROR_RATE`, `ELB_HIGH_UNHEALTHY_HOST_RATE`, `PROCESS_HIGH_GC_ACTIVITY`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_DATA_SPACE`, `OSI_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_METADATA_SPACE`, `OSI_DISK_LOW_INODES`, `PGI_RMQ_LOW_DISK_SPACE`, `RDS_LOW_STORAGE_SPACE`, `MARKED_FOR_TERMINATION`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `OSI_HIGH_MEMORY`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_OVERLOAD_PREVENTION`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MONITORING_UNAVAILABLE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PGI_KEYSTONE_UNHEALTHY`, `ESXI_HOST_OVERLOADED_STORAGE`, `PERFORMANCE_EVENT`, `LOG_PERFORMANCE`, `PGI_LOG_AVAILABILITY`, `PGI_CRASHED_INFO`, `PROCESS_CRASHED`, `PGI_LOG_ERROR`, `PG_LOW_INSTANCE_COUNT`, `PGI_LOG_MATCHED`, `PGI_MEMDUMP`, `PGI_LOG_PERFORMANCE`, `PROCESS_RESTART`, `PGI_UNAVAILABLE`, `RDS_HIGH_CPU`, `RDS_LOW_MEMORY`, `RDS_OF_SERVICE_UNAVAILABLE`, `RESOURCE_CONTENTION_EVENT`, `SERVICE_SLOWDOWN`, `RDS_RESTART`, `RDS_RESTART_SEQUENCE`, `PGI_OF_SERVICE_UNAVAILABLE`, `OSI_SLOW_DISK`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `ESXI_VM_DISCONNECTED`, `OPENSTACK_VM_LAUNCH_FAILED`, `ESXI_HOST_VM_MOTION_LEFT`, `ESXI_HOST_VM_MOTION_ARRIVED`, `ESXI_VM_MOTION`, `OPENSTACK_VM_MOTION`, `ESXI_VM_POWER_OFF`, `ESXI_VM_SHUTDOWN`, `OPENSTACK_HOST_VM_SHUTDOWN`, `ESXI_VM_START`, `ESXI_HOST_VM_STARTED`, `OPENSTACK_HOST_VM_STARTED`
      */
     types?: string[];
+}
+
+export interface AutomationWorkflowTriggerEventConfigDavisEventNames {
+    /**
+     * A combination of name and match
+     */
+    names?: outputs.AutomationWorkflowTriggerEventConfigDavisEventNamesName[];
+}
+
+export interface AutomationWorkflowTriggerEventConfigDavisEventNamesName {
+    /**
+     * Possible values: `equals` and `contains`. The Davis event name must equal or contain the string provided in attribute `name`
+     */
+    match: string;
+    /**
+     * The event name
+     */
+    name: string;
 }
 
 export interface AutomationWorkflowTriggerEventConfigDavisProblem {
@@ -27060,6 +27082,33 @@ export interface ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest
     slowestDegradationMilliseconds: number;
 }
 
+export interface ServiceDetectionRulesRule {
+    /**
+     * Define resource attributes that should not be part of the name but are required to detect the service, e.g. service.namespace or k8s.workload.kind.. Attributes specified here are required to apply the rule. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
+     *
+     * All attribute values contribute to the final service ID.
+     */
+    additionalRequiredAttributes?: string[];
+    /**
+     * Limits the scope of the service detection rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes.. A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+     *
+     * If empty, the condition will always match.
+     */
+    condition?: string;
+    /**
+     * no documentation available
+     */
+    description?: string;
+    /**
+     * Rule name
+     */
+    ruleName: string;
+    /**
+     * Specify resource attribute placeholders in curly braces, e.g. {service.name} or {k8s.workload.name}.. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
+     */
+    serviceNameTemplate: string;
+}
+
 export interface ServiceExternalWebRequestConditions {
     conditions: outputs.ServiceExternalWebRequestConditionsCondition[];
 }
@@ -30466,6 +30515,36 @@ export interface ServiceNamingConditionConditionTechValue {
     verbatimType?: string;
 }
 
+export interface ServiceSplittingRule {
+    /**
+     * Limits the scope of the service splitting rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes..  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+     */
+    condition?: string;
+    /**
+     * no documentation available
+     */
+    description?: string;
+    /**
+     * Rule name
+     */
+    ruleName: string;
+    /**
+     * Define the entire set of resource attributes that should split your services in the matching scope.. Each attribute that exists will contribute to the final service ID.
+     */
+    serviceSplittingAttributes?: outputs.ServiceSplittingRuleServiceSplittingAttributes;
+}
+
+export interface ServiceSplittingRuleServiceSplittingAttributes {
+    serviceSplittingAttributes: outputs.ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute[];
+}
+
+export interface ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute {
+    /**
+     * Attribute key
+     */
+    key: string;
+}
+
 export interface SessionReplayWebPrivacyMaskingPresets {
     /**
      * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
@@ -30617,6 +30696,10 @@ export interface SiteReliabilityGuardianObjectivesObjective {
     /**
      * no documentation available
      */
+    segments?: outputs.SiteReliabilityGuardianObjectivesObjectiveSegments;
+    /**
+     * no documentation available
+     */
     target?: number;
     /**
      * no documentation available
@@ -30637,6 +30720,36 @@ export interface SiteReliabilityGuardianObjectivesObjectiveDisplayUnit {
      * display as unit
      */
     display: string;
+}
+
+export interface SiteReliabilityGuardianObjectivesObjectiveSegments {
+    segments: outputs.SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment[];
+}
+
+export interface SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment {
+    /**
+     * Segment ID
+     */
+    id: string;
+    /**
+     * Segment Variables
+     */
+    variables?: outputs.SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables;
+}
+
+export interface SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables {
+    variables: outputs.SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable[];
+}
+
+export interface SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable {
+    /**
+     * Variable Name
+     */
+    name: string;
+    /**
+     * Variable Values
+     */
+    values?: string[];
 }
 
 export interface SiteReliabilityGuardianVariables {
@@ -31350,6 +31463,72 @@ export interface VulnerabilitySettingsTechnologies {
     enablePythonRuntime?: boolean;
 }
 
+export interface VulnerabilityThirdPartyAttrMetadata {
+    /**
+     * no documentation available
+     */
+    comment: string;
+}
+
+export interface VulnerabilityThirdPartyAttrResourceAttributeConditions {
+    resourceAttributeConditions: outputs.VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition[];
+}
+
+export interface VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition {
+    /**
+     * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+     */
+    matcher: string;
+    /**
+     * Resource attribute key
+     */
+    resourceAttributeKey: string;
+    /**
+     * Resource attribute value
+     */
+    resourceAttributeValue?: string;
+}
+
+export interface VulnerabilityThirdPartyAttrVulnerabilityDetectionControl {
+    /**
+     * Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+     */
+    monitoringMode: string;
+}
+
+export interface VulnerabilityThirdPartyK8sKubernetesLabelConditions {
+    kubernetesLabelConditions: outputs.VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition[];
+}
+
+export interface VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition {
+    /**
+     * Kubernetes label key
+     */
+    kubernetesLabelKey: string;
+    /**
+     * Kubernetes label value
+     */
+    kubernetesLabelValue?: string;
+    /**
+     * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+     */
+    matcher: string;
+}
+
+export interface VulnerabilityThirdPartyK8sMetadata {
+    /**
+     * no documentation available
+     */
+    comment: string;
+}
+
+export interface VulnerabilityThirdPartyK8sVulnerabilityDetectionControl {
+    /**
+     * Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+     */
+    monitoringMode: string;
+}
+
 export interface WebAppAnomaliesErrorRate {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
@@ -31638,6 +31817,36 @@ export interface WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings {
      * Include error in Apdex calculations
      */
     impactApdex?: boolean;
+}
+
+export interface WebAppCustomPropRestrictionsCustomEventPropertiesAllowList {
+    customSessionPropertiesAllows: outputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow[];
+}
+
+export interface WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow {
+    /**
+     * Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+     */
+    fieldDataType: string;
+    /**
+     * Field name
+     */
+    fieldName: string;
+}
+
+export interface WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList {
+    customSessionPropertiesAllows: outputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow[];
+}
+
+export interface WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow {
+    /**
+     * Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+     */
+    fieldDataType: string;
+    /**
+     * Field name
+     */
+    fieldName: string;
 }
 
 export interface WebAppEnablementRum {

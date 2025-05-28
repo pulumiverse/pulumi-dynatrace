@@ -627,10 +627,8 @@ class _SyntheticLocationState:
         pulumi.set(self, "use_new_kubernetes_version", value)
 
 
+@pulumi.type_token("dynatrace:index/syntheticLocation:SyntheticLocation")
 class SyntheticLocation(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/syntheticLocation:SyntheticLocation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

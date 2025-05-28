@@ -163,10 +163,8 @@ class _DatabaseAnomaliesState:
         pulumi.set(self, "response_time", value)
 
 
+@pulumi.type_token("dynatrace:index/databaseAnomalies:DatabaseAnomalies")
 class DatabaseAnomalies(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/databaseAnomalies:DatabaseAnomalies"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -642,10 +642,8 @@ class _WebApplicationState:
         pulumi.set(self, "xhr_action_key_performance_metric", value)
 
 
+@pulumi.type_token("dynatrace:index/webApplication:WebApplication")
 class WebApplication(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/webApplication:WebApplication"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

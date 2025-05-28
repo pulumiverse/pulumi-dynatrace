@@ -95,10 +95,8 @@ class _SpanEventsState:
         pulumi.set(self, "masking", value)
 
 
+@pulumi.type_token("dynatrace:index/spanEvents:SpanEvents")
 class SpanEvents(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/spanEvents:SpanEvents"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

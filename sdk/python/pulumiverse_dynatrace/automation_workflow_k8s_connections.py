@@ -198,10 +198,8 @@ class _AutomationWorkflowK8sConnectionsState:
         pulumi.set(self, "uid", value)
 
 
+@pulumi.type_token("dynatrace:index/automationWorkflowK8sConnections:AutomationWorkflowK8sConnections")
 class AutomationWorkflowK8sConnections(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/automationWorkflowK8sConnections:AutomationWorkflowK8sConnections"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

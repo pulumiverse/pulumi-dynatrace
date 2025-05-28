@@ -23,6 +23,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? EntityTagsMatch;
         /// <summary>
+        /// The Davis Events to match on
+        /// </summary>
+        public readonly Outputs.AutomationWorkflowTriggerEventConfigDavisEventNames? Names;
+        /// <summary>
         /// If set to `true` closing a problem also is considered an event that triggers the execution
         /// </summary>
         public readonly bool? OnProblemClose;
@@ -37,12 +41,15 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? entityTagsMatch,
 
+            Outputs.AutomationWorkflowTriggerEventConfigDavisEventNames? names,
+
             bool? onProblemClose,
 
             ImmutableArray<string> types)
         {
             EntityTags = entityTags;
             EntityTagsMatch = entityTagsMatch;
+            Names = names;
             OnProblemClose = onProblemClose;
             Types = types;
         }

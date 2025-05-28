@@ -477,10 +477,8 @@ class _CalculatedServiceMetricState:
         pulumi.set(self, "unknowns", value)
 
 
+@pulumi.type_token("dynatrace:index/calculatedServiceMetric:CalculatedServiceMetric")
 class CalculatedServiceMetric(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/calculatedServiceMetric:CalculatedServiceMetric"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

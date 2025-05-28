@@ -174,10 +174,8 @@ class _AzureServiceState:
         pulumi.set(self, "use_recommended_metrics", value)
 
 
+@pulumi.type_token("dynatrace:index/azureService:AzureService")
 class AzureService(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/azureService:AzureService"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

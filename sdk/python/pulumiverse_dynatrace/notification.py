@@ -419,10 +419,8 @@ class _NotificationState:
         pulumi.set(self, "xmatters", value)
 
 
+@pulumi.type_token("dynatrace:index/notification:Notification")
 class Notification(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/notification:Notification"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

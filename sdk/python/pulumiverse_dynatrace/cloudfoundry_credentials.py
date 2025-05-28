@@ -254,10 +254,8 @@ class _CloudfoundryCredentialsState:
         pulumi.set(self, "username", value)
 
 
+@pulumi.type_token("dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials")
 class CloudfoundryCredentials(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

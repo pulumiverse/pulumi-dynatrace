@@ -253,10 +253,8 @@ class _OpsGenieNotificationState:
         pulumi.set(self, "profile", value)
 
 
+@pulumi.type_token("dynatrace:index/opsGenieNotification:OpsGenieNotification")
 class OpsGenieNotification(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/opsGenieNotification:OpsGenieNotification"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

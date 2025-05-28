@@ -127,10 +127,8 @@ class _HostMonitoringAdvancedState:
         pulumi.set(self, "process_agent_injection", value)
 
 
+@pulumi.type_token("dynatrace:index/hostMonitoringAdvanced:HostMonitoringAdvanced")
 class HostMonitoringAdvanced(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/hostMonitoringAdvanced:HostMonitoringAdvanced"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

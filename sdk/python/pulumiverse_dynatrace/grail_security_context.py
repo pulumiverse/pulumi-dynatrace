@@ -127,10 +127,8 @@ class _GrailSecurityContextState:
         pulumi.set(self, "insert_after", value)
 
 
+@pulumi.type_token("dynatrace:index/grailSecurityContext:GrailSecurityContext")
 class GrailSecurityContext(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/grailSecurityContext:GrailSecurityContext"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

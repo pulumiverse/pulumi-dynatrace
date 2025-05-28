@@ -68,26 +68,41 @@ class GetDqlResult:
     @property
     @pulumi.getter(name="defaultSamplingRatio")
     def default_sampling_ratio(self) -> Optional[builtins.float]:
+        """
+        In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
+        """
         return pulumi.get(self, "default_sampling_ratio")
 
     @property
     @pulumi.getter(name="defaultScanLimitGbytes")
     def default_scan_limit_gbytes(self) -> Optional[builtins.int]:
+        """
+        Limit in gigabytes for the amount data that will be scanned during read
+        """
         return pulumi.get(self, "default_scan_limit_gbytes")
 
     @property
     @pulumi.getter(name="defaultTimeframeEnd")
     def default_timeframe_end(self) -> Optional[builtins.str]:
+        """
+        The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
+        """
         return pulumi.get(self, "default_timeframe_end")
 
     @property
     @pulumi.getter(name="defaultTimeframeStart")
     def default_timeframe_start(self) -> Optional[builtins.str]:
+        """
+        The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
+        """
         return pulumi.get(self, "default_timeframe_start")
 
     @property
     @pulumi.getter(name="fetchTimeoutSeconds")
     def fetch_timeout_seconds(self) -> Optional[builtins.int]:
+        """
+        The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
+        """
         return pulumi.get(self, "fetch_timeout_seconds")
 
     @property
@@ -101,21 +116,33 @@ class GetDqlResult:
     @property
     @pulumi.getter
     def locale(self) -> Optional[builtins.str]:
+        """
+        The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
+        """
         return pulumi.get(self, "locale")
 
     @property
     @pulumi.getter(name="maxResultBytes")
     def max_result_bytes(self) -> Optional[builtins.int]:
+        """
+        The maximum number of result bytes that this query will return
+        """
         return pulumi.get(self, "max_result_bytes")
 
     @property
     @pulumi.getter(name="maxResultRecords")
     def max_result_records(self) -> Optional[builtins.int]:
+        """
+        The maximum number of result records that this query will return
+        """
         return pulumi.get(self, "max_result_records")
 
     @property
     @pulumi.getter
     def query(self) -> builtins.str:
+        """
+        example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
+        """
         return pulumi.get(self, "query")
 
     @property
@@ -126,6 +153,9 @@ class GetDqlResult:
     @property
     @pulumi.getter
     def timezone(self) -> Optional[builtins.str]:
+        """
+        The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
+        """
         return pulumi.get(self, "timezone")
 
 
@@ -186,7 +216,17 @@ def get_dql(default_sampling_ratio: Optional[builtins.float] = None,
     \"\"\")
     ```
 
-    {{ .SchemaMarkdown | trimspace }}
+
+    :param builtins.float default_sampling_ratio: In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
+    :param builtins.int default_scan_limit_gbytes: Limit in gigabytes for the amount data that will be scanned during read
+    :param builtins.str default_timeframe_end: The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
+    :param builtins.str default_timeframe_start: The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
+    :param builtins.int fetch_timeout_seconds: The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
+    :param builtins.str locale: The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
+    :param builtins.int max_result_bytes: The maximum number of result bytes that this query will return
+    :param builtins.int max_result_records: The maximum number of result records that this query will return
+    :param builtins.str query: example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
+    :param builtins.str timezone: The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
     """
     __args__ = dict()
     __args__['defaultSamplingRatio'] = default_sampling_ratio
@@ -252,7 +292,17 @@ def get_dql_output(default_sampling_ratio: Optional[pulumi.Input[Optional[builti
     \"\"\")
     ```
 
-    {{ .SchemaMarkdown | trimspace }}
+
+    :param builtins.float default_sampling_ratio: In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
+    :param builtins.int default_scan_limit_gbytes: Limit in gigabytes for the amount data that will be scanned during read
+    :param builtins.str default_timeframe_end: The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
+    :param builtins.str default_timeframe_start: The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
+    :param builtins.int fetch_timeout_seconds: The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
+    :param builtins.str locale: The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
+    :param builtins.int max_result_bytes: The maximum number of result bytes that this query will return
+    :param builtins.int max_result_records: The maximum number of result records that this query will return
+    :param builtins.str query: example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
+    :param builtins.str timezone: The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
     """
     __args__ = dict()
     __args__['defaultSamplingRatio'] = default_sampling_ratio

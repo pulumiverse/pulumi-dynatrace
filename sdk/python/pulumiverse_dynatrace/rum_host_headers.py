@@ -96,10 +96,8 @@ class _RumHostHeadersState:
         pulumi.set(self, "insert_after", value)
 
 
+@pulumi.type_token("dynatrace:index/rumHostHeaders:RumHostHeaders")
 class RumHostHeaders(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/rumHostHeaders:RumHostHeaders"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -412,10 +412,8 @@ class _ServiceNowNotificationState:
         pulumi.set(self, "username", value)
 
 
+@pulumi.type_token("dynatrace:index/serviceNowNotification:ServiceNowNotification")
 class ServiceNowNotification(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/serviceNowNotification:ServiceNowNotification"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

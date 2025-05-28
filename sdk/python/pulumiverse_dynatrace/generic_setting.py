@@ -115,10 +115,8 @@ class _GenericSettingState:
         pulumi.set(self, "value", value)
 
 
+@pulumi.type_token("dynatrace:index/genericSetting:GenericSetting")
 class GenericSetting(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/genericSetting:GenericSetting"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

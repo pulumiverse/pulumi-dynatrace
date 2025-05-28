@@ -95,10 +95,8 @@ class _LogGrailState:
         pulumi.set(self, "parallel_ingest_period", value)
 
 
+@pulumi.type_token("dynatrace:index/logGrail:LogGrail")
 class LogGrail(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/logGrail:LogGrail"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

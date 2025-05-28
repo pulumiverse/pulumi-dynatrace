@@ -289,10 +289,8 @@ class _AutomationWorkflowState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("dynatrace:index/automationWorkflow:AutomationWorkflow")
 class AutomationWorkflow(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/automationWorkflow:AutomationWorkflow"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

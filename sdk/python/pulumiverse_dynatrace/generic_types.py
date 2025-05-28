@@ -223,10 +223,8 @@ class _GenericTypesState:
         pulumi.set(self, "rules", value)
 
 
+@pulumi.type_token("dynatrace:index/genericTypes:GenericTypes")
 class GenericTypes(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/genericTypes:GenericTypes"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

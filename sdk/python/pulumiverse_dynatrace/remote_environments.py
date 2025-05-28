@@ -158,10 +158,8 @@ class _RemoteEnvironmentsState:
         pulumi.set(self, "uri", value)
 
 
+@pulumi.type_token("dynatrace:index/remoteEnvironments:RemoteEnvironments")
 class RemoteEnvironments(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/remoteEnvironments:RemoteEnvironments"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

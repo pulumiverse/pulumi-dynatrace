@@ -287,10 +287,8 @@ class _CalculatedWebMetricState:
         pulumi.set(self, "user_action_filter", value)
 
 
+@pulumi.type_token("dynatrace:index/calculatedWebMetric:CalculatedWebMetric")
 class CalculatedWebMetric(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/calculatedWebMetric:CalculatedWebMetric"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

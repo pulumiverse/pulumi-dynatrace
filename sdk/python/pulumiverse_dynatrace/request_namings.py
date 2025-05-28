@@ -65,10 +65,8 @@ class _RequestNamingsState:
         pulumi.set(self, "ids", value)
 
 
+@pulumi.type_token("dynatrace:index/requestNamings:RequestNamings")
 class RequestNamings(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/requestNamings:RequestNamings"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

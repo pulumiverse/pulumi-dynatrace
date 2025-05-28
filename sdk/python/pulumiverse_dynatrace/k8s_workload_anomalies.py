@@ -501,10 +501,8 @@ class _K8sWorkloadAnomaliesState:
         pulumi.set(self, "workload_without_ready_pods", value)
 
 
+@pulumi.type_token("dynatrace:index/k8sWorkloadAnomalies:K8sWorkloadAnomalies")
 class K8sWorkloadAnomalies(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/k8sWorkloadAnomalies:K8sWorkloadAnomalies"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

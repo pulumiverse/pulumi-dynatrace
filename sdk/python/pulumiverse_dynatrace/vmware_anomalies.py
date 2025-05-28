@@ -283,10 +283,8 @@ class _VmwareAnomaliesState:
         pulumi.set(self, "undersized_storage_detection", value)
 
 
+@pulumi.type_token("dynatrace:index/vmwareAnomalies:VmwareAnomalies")
 class VmwareAnomalies(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/vmwareAnomalies:VmwareAnomalies"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

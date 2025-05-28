@@ -96,10 +96,8 @@ class _MonitoredTechnologiesVarnishState:
         pulumi.set(self, "host_id", value)
 
 
+@pulumi.type_token("dynatrace:index/monitoredTechnologiesVarnish:MonitoredTechnologiesVarnish")
 class MonitoredTechnologiesVarnish(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/monitoredTechnologiesVarnish:MonitoredTechnologiesVarnish"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

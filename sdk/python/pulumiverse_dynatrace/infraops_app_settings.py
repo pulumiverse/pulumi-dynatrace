@@ -127,10 +127,8 @@ class _InfraopsAppSettingsState:
         pulumi.set(self, "show_standalone_hosts", value)
 
 
+@pulumi.type_token("dynatrace:index/infraopsAppSettings:InfraopsAppSettings")
 class InfraopsAppSettings(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/infraopsAppSettings:InfraopsAppSettings"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

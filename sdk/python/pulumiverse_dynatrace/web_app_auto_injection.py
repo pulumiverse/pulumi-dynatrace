@@ -159,10 +159,8 @@ class _WebAppAutoInjectionState:
         pulumi.set(self, "snippet_format", value)
 
 
+@pulumi.type_token("dynatrace:index/webAppAutoInjection:WebAppAutoInjection")
 class WebAppAutoInjection(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/webAppAutoInjection:WebAppAutoInjection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

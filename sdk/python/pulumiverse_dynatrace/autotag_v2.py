@@ -163,10 +163,8 @@ class _AutotagV2State:
         pulumi.set(self, "rules_maintained_externally", value)
 
 
+@pulumi.type_token("dynatrace:index/autotagV2:AutotagV2")
 class AutotagV2(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/autotagV2:AutotagV2"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

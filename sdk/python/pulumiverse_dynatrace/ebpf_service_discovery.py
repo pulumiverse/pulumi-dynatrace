@@ -96,10 +96,8 @@ class _EbpfServiceDiscoveryState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/ebpfServiceDiscovery:EbpfServiceDiscovery")
 class EbpfServiceDiscovery(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/ebpfServiceDiscovery:EbpfServiceDiscovery"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

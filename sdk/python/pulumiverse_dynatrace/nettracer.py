@@ -96,10 +96,8 @@ class _NettracerState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/nettracer:Nettracer")
 class Nettracer(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/nettracer:Nettracer"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

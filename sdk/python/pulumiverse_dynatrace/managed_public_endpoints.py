@@ -161,10 +161,8 @@ class _ManagedPublicEndpointsState:
         pulumi.set(self, "web_ui_address", value)
 
 
+@pulumi.type_token("dynatrace:index/managedPublicEndpoints:ManagedPublicEndpoints")
 class ManagedPublicEndpoints(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/managedPublicEndpoints:ManagedPublicEndpoints"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

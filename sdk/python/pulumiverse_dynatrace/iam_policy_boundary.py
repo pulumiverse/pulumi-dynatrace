@@ -96,10 +96,8 @@ class _IamPolicyBoundaryState:
         pulumi.set(self, "query", value)
 
 
+@pulumi.type_token("dynatrace:index/iamPolicyBoundary:IamPolicyBoundary")
 class IamPolicyBoundary(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/iamPolicyBoundary:IamPolicyBoundary"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

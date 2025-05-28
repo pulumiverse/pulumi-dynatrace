@@ -199,10 +199,8 @@ class _DataPrivacyState:
         pulumi.set(self, "user_tracking", value)
 
 
+@pulumi.type_token("dynatrace:index/dataPrivacy:DataPrivacy")
 class DataPrivacy(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/dataPrivacy:DataPrivacy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

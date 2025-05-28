@@ -64,10 +64,8 @@ class _NetworkZonesState:
         pulumi.set(self, "enabled", value)
 
 
+@pulumi.type_token("dynatrace:index/networkZones:NetworkZones")
 class NetworkZones(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/networkZones:NetworkZones"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

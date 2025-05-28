@@ -159,10 +159,8 @@ class _KeyUserActionState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("dynatrace:index/keyUserAction:KeyUserAction")
 class KeyUserAction(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/keyUserAction:KeyUserAction"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

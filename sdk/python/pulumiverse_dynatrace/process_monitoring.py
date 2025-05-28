@@ -100,10 +100,8 @@ class _ProcessMonitoringState:
         pulumi.set(self, "host_group_id", value)
 
 
+@pulumi.type_token("dynatrace:index/processMonitoring:ProcessMonitoring")
 class ProcessMonitoring(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/processMonitoring:ProcessMonitoring"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

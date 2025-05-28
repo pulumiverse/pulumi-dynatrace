@@ -223,10 +223,8 @@ class _NetworkMonitorOutageState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("dynatrace:index/networkMonitorOutage:NetworkMonitorOutage")
 class NetworkMonitorOutage(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/networkMonitorOutage:NetworkMonitorOutage"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

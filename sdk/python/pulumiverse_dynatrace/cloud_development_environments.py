@@ -65,10 +65,8 @@ class _CloudDevelopmentEnvironmentsState:
         pulumi.set(self, "cloud_development_environments", value)
 
 
+@pulumi.type_token("dynatrace:index/cloudDevelopmentEnvironments:CloudDevelopmentEnvironments")
 class CloudDevelopmentEnvironments(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/cloudDevelopmentEnvironments:CloudDevelopmentEnvironments"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

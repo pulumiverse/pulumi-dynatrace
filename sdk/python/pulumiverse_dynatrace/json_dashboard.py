@@ -96,10 +96,8 @@ class _JsonDashboardState:
         pulumi.set(self, "link_id", value)
 
 
+@pulumi.type_token("dynatrace:index/jsonDashboard:JsonDashboard")
 class JsonDashboard(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/jsonDashboard:JsonDashboard"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

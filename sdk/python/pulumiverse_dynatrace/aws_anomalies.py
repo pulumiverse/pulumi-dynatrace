@@ -283,10 +283,8 @@ class _AwsAnomaliesState:
         pulumi.set(self, "rds_restarts_sequence_detection", value)
 
 
+@pulumi.type_token("dynatrace:index/awsAnomalies:AwsAnomalies")
 class AwsAnomalies(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/awsAnomalies:AwsAnomalies"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

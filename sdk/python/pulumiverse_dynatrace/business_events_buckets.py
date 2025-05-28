@@ -189,10 +189,8 @@ class _BusinessEventsBucketsState:
         pulumi.set(self, "rule_name", value)
 
 
+@pulumi.type_token("dynatrace:index/businessEventsBuckets:BusinessEventsBuckets")
 class BusinessEventsBuckets(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/businessEventsBuckets:BusinessEventsBuckets"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

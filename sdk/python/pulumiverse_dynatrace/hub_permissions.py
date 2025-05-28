@@ -95,10 +95,8 @@ class _HubPermissionsState:
         pulumi.set(self, "email", value)
 
 
+@pulumi.type_token("dynatrace:index/hubPermissions:HubPermissions")
 class HubPermissions(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/hubPermissions:HubPermissions"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

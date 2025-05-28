@@ -319,10 +319,8 @@ class _LogTimestampState:
         pulumi.set(self, "timezone", value)
 
 
+@pulumi.type_token("dynatrace:index/logTimestamp:LogTimestamp")
 class LogTimestamp(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/logTimestamp:LogTimestamp"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

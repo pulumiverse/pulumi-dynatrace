@@ -67,10 +67,8 @@ class _DashboardsAllowlistState:
         pulumi.set(self, "allowlist", value)
 
 
+@pulumi.type_token("dynatrace:index/dashboardsAllowlist:DashboardsAllowlist")
 class DashboardsAllowlist(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/dashboardsAllowlist:DashboardsAllowlist"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

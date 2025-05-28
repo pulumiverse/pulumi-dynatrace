@@ -377,10 +377,8 @@ class _TrelloNotificationState:
         pulumi.set(self, "text", value)
 
 
+@pulumi.type_token("dynatrace:index/trelloNotification:TrelloNotification")
 class TrelloNotification(pulumi.CustomResource):
-
-    pulumi_type = "dynatrace:index/trelloNotification:TrelloNotification"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
