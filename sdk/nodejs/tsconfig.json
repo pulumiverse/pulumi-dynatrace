@@ -420,6 +420,7 @@
         "webAppCustomPropRestrictions.ts",
         "webAppEnablement.ts",
         "webAppInjectionCookie.ts",
+        "webAppIpAddressExclusion.ts",
         "webAppJavascriptFilename.ts",
         "webAppJavascriptUpdates.ts",
         "webAppJavascriptVersion.ts",
