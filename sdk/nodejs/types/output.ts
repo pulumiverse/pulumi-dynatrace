@@ -5137,9 +5137,17 @@ export interface BrowserMonitorScriptEventsEventNavigate {
 
 export interface BrowserMonitorScriptEventsEventNavigateAuthentication {
     /**
+     * List of allowed servers, optional with Kerberos authentication
+     */
+    authServerAllowlist?: string;
+    /**
      * A reference to the entry within the credential vault
      */
     creds: string;
+    /**
+     * User's domain name, required with Kerberos authentication
+     */
+    domain?: string;
     /**
      * The type of authentication
      */
@@ -19031,6 +19039,10 @@ export interface OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessor 
      */
     dqlProcessor?: outputs.OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorDqlProcessor;
     /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: outputs.OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorDropProcessor;
+    /**
      * Processor to add fields
      */
     fieldsAddProcessor?: outputs.OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor;
@@ -19053,6 +19065,29 @@ export interface OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorD
      * The DQL script to apply on the record
      */
     dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsEndpointsEndpointProcessorsProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
     /**
      * Indicates if the object is active
      */
@@ -19260,6 +19295,9 @@ export interface OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProces
      * Strategy to assign a value
      */
     eventType: outputs.OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType;
+    /**
+     * Definition of the field extraction
+     */
     fieldExtraction?: outputs.OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction;
     /**
      * Identifier of the processor. Must be unique within a stage.
@@ -19306,7 +19344,13 @@ export interface OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProces
 }
 
 export interface OpenpipelineBusinessEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
-    fields: string[];
+    /**
+     * Unique fields to include/exclude in the extracted record
+     */
+    fields?: string[];
+    /**
+     * Defines how the fields of the source record should be extracted
+     */
     semantic: string;
 }
 
@@ -19446,6 +19490,10 @@ export interface OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessor 
      */
     dqlProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorDqlProcessor;
     /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorDropProcessor;
+    /**
      * Processor to add fields
      */
     fieldsAddProcessor?: outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor;
@@ -19472,6 +19520,29 @@ export interface OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorD
      * The DQL script to apply on the record
      */
     dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
     /**
      * Indicates if the object is active
      */
@@ -19824,6 +19895,10 @@ export interface OpenpipelineEventsEndpointsEndpointProcessorsProcessor {
      */
     dqlProcessor?: outputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorDqlProcessor;
     /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: outputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorDropProcessor;
+    /**
      * Processor to add fields
      */
     fieldsAddProcessor?: outputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor;
@@ -19846,6 +19921,29 @@ export interface OpenpipelineEventsEndpointsEndpointProcessorsProcessorDqlProces
      * The DQL script to apply on the record
      */
     dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsEndpointsEndpointProcessorsProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
     /**
      * Indicates if the object is active
      */
@@ -20053,6 +20151,9 @@ export interface OpenpipelineEventsPipelinesPipelineDataExtractionProcessorBizev
      * Strategy to assign a value
      */
     eventType: outputs.OpenpipelineEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType;
+    /**
+     * Definition of the field extraction
+     */
     fieldExtraction?: outputs.OpenpipelineEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction;
     /**
      * Identifier of the processor. Must be unique within a stage.
@@ -20099,7 +20200,13 @@ export interface OpenpipelineEventsPipelinesPipelineDataExtractionProcessorBizev
 }
 
 export interface OpenpipelineEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
-    fields: string[];
+    /**
+     * Unique fields to include/exclude in the extracted record
+     */
+    fields?: string[];
+    /**
+     * Defines how the fields of the source record should be extracted
+     */
     semantic: string;
 }
 
@@ -20239,6 +20346,10 @@ export interface OpenpipelineEventsPipelinesPipelineProcessingProcessor {
      */
     dqlProcessor?: outputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorDqlProcessor;
     /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: outputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorDropProcessor;
+    /**
      * Processor to add fields
      */
     fieldsAddProcessor?: outputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor;
@@ -20265,6 +20376,29 @@ export interface OpenpipelineEventsPipelinesPipelineProcessingProcessorDqlProces
      * The DQL script to apply on the record
      */
     dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineEventsPipelinesPipelineProcessingProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
     /**
      * Indicates if the object is active
      */
@@ -20617,6 +20751,10 @@ export interface OpenpipelineLogsEndpointsEndpointProcessorsProcessor {
      */
     dqlProcessor?: outputs.OpenpipelineLogsEndpointsEndpointProcessorsProcessorDqlProcessor;
     /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: outputs.OpenpipelineLogsEndpointsEndpointProcessorsProcessorDropProcessor;
+    /**
      * Processor to add fields
      */
     fieldsAddProcessor?: outputs.OpenpipelineLogsEndpointsEndpointProcessorsProcessorFieldsAddProcessor;
@@ -20639,6 +20777,29 @@ export interface OpenpipelineLogsEndpointsEndpointProcessorsProcessorDqlProcesso
      * The DQL script to apply on the record
      */
     dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsEndpointsEndpointProcessorsProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
     /**
      * Indicates if the object is active
      */
@@ -20846,6 +21007,9 @@ export interface OpenpipelineLogsPipelinesPipelineDataExtractionProcessorBizeven
      * Strategy to assign a value
      */
     eventType: outputs.OpenpipelineLogsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType;
+    /**
+     * Definition of the field extraction
+     */
     fieldExtraction?: outputs.OpenpipelineLogsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction;
     /**
      * Identifier of the processor. Must be unique within a stage.
@@ -20892,7 +21056,13 @@ export interface OpenpipelineLogsPipelinesPipelineDataExtractionProcessorBizeven
 }
 
 export interface OpenpipelineLogsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
-    fields: string[];
+    /**
+     * Unique fields to include/exclude in the extracted record
+     */
+    fields?: string[];
+    /**
+     * Defines how the fields of the source record should be extracted
+     */
     semantic: string;
 }
 
@@ -21032,6 +21202,10 @@ export interface OpenpipelineLogsPipelinesPipelineProcessingProcessor {
      */
     dqlProcessor?: outputs.OpenpipelineLogsPipelinesPipelineProcessingProcessorDqlProcessor;
     /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: outputs.OpenpipelineLogsPipelinesPipelineProcessingProcessorDropProcessor;
+    /**
      * Processor to add fields
      */
     fieldsAddProcessor?: outputs.OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsAddProcessor;
@@ -21058,6 +21232,29 @@ export interface OpenpipelineLogsPipelinesPipelineProcessingProcessorDqlProcesso
      * The DQL script to apply on the record
      */
     dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineLogsPipelinesPipelineProcessingProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
     /**
      * Indicates if the object is active
      */
@@ -21410,6 +21607,10 @@ export interface OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessor {
      */
     dqlProcessor?: outputs.OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorDqlProcessor;
     /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: outputs.OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorDropProcessor;
+    /**
      * Processor to add fields
      */
     fieldsAddProcessor?: outputs.OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor;
@@ -21432,6 +21633,29 @@ export interface OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorDqlPr
      * The DQL script to apply on the record
      */
     dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
     /**
      * Indicates if the object is active
      */
@@ -21639,6 +21863,9 @@ export interface OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorB
      * Strategy to assign a value
      */
     eventType: outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType;
+    /**
+     * Definition of the field extraction
+     */
     fieldExtraction?: outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction;
     /**
      * Identifier of the processor. Must be unique within a stage.
@@ -21685,7 +21912,13 @@ export interface OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorB
 }
 
 export interface OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
-    fields: string[];
+    /**
+     * Unique fields to include/exclude in the extracted record
+     */
+    fields?: string[];
+    /**
+     * Defines how the fields of the source record should be extracted
+     */
     semantic: string;
 }
 
@@ -21825,6 +22058,10 @@ export interface OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessor {
      */
     dqlProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorDqlProcessor;
     /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorDropProcessor;
+    /**
      * Processor to add fields
      */
     fieldsAddProcessor?: outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor;
@@ -21851,6 +22088,29 @@ export interface OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorDqlPr
      * The DQL script to apply on the record
      */
     dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
     /**
      * Indicates if the object is active
      */
@@ -22203,6 +22463,10 @@ export interface OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessor 
      */
     dqlProcessor?: outputs.OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorDqlProcessor;
     /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: outputs.OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorDropProcessor;
+    /**
      * Processor to add fields
      */
     fieldsAddProcessor?: outputs.OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor;
@@ -22225,6 +22489,29 @@ export interface OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorD
      * The DQL script to apply on the record
      */
     dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsEndpointsEndpointProcessorsProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
     /**
      * Indicates if the object is active
      */
@@ -22432,6 +22719,9 @@ export interface OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProces
      * Strategy to assign a value
      */
     eventType: outputs.OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType;
+    /**
+     * Definition of the field extraction
+     */
     fieldExtraction?: outputs.OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction;
     /**
      * Identifier of the processor. Must be unique within a stage.
@@ -22478,7 +22768,13 @@ export interface OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProces
 }
 
 export interface OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
-    fields: string[];
+    /**
+     * Unique fields to include/exclude in the extracted record
+     */
+    fields?: string[];
+    /**
+     * Defines how the fields of the source record should be extracted
+     */
     semantic: string;
 }
 
@@ -22618,6 +22914,10 @@ export interface OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessor 
      */
     dqlProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorDqlProcessor;
     /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorDropProcessor;
+    /**
      * Processor to add fields
      */
     fieldsAddProcessor?: outputs.OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor;
@@ -22644,6 +22944,29 @@ export interface OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorD
      * The DQL script to apply on the record
      */
     dqlScript: string;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: boolean;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: string;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: string;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: string;
+}
+
+export interface OpenpipelineSecurityEventsPipelinesPipelineProcessingProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: string;
     /**
      * Indicates if the object is active
      */
@@ -31851,6 +32174,13 @@ export interface WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCus
      * Field name
      */
     fieldName: string;
+}
+
+export interface WebAppEnablementExperienceAnalytics {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
 }
 
 export interface WebAppEnablementRum {

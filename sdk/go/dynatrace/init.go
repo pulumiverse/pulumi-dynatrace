@@ -575,6 +575,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &RequestNamings{}
 	case "dynatrace:index/resourceAttributes:ResourceAttributes":
 		r = &ResourceAttributes{}
+	case "dynatrace:index/rpcBasedSampling:RpcBasedSampling":
+		r = &RpcBasedSampling{}
 	case "dynatrace:index/rumAdvancedCorrelation:RumAdvancedCorrelation":
 		r = &RumAdvancedCorrelation{}
 	case "dynatrace:index/rumHostHeaders:RumHostHeaders":
@@ -2153,6 +2155,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/resourceAttributes",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/rpcBasedSampling",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

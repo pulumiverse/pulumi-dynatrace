@@ -24,17 +24,21 @@ class WebAppEnablementArgs:
     def __init__(__self__, *,
                  rum: pulumi.Input['WebAppEnablementRumArgs'],
                  session_replay: pulumi.Input['WebAppEnablementSessionReplayArgs'],
-                 application_id: Optional[pulumi.Input[builtins.str]] = None):
+                 application_id: Optional[pulumi.Input[builtins.str]] = None,
+                 experience_analytics: Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']] = None):
         """
         The set of arguments for constructing a WebAppEnablement resource.
         :param pulumi.Input['WebAppEnablementRumArgs'] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         :param pulumi.Input['WebAppEnablementSessionReplayArgs'] session_replay: [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         :param pulumi.Input[builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input['WebAppEnablementExperienceAnalyticsArgs'] experience_analytics: Experience Analytics
         """
         pulumi.set(__self__, "rum", rum)
         pulumi.set(__self__, "session_replay", session_replay)
         if application_id is not None:
             pulumi.set(__self__, "application_id", application_id)
+        if experience_analytics is not None:
+            pulumi.set(__self__, "experience_analytics", experience_analytics)
 
     @property
     @pulumi.getter
@@ -72,21 +76,37 @@ class WebAppEnablementArgs:
     def application_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "application_id", value)
 
+    @property
+    @pulumi.getter(name="experienceAnalytics")
+    def experience_analytics(self) -> Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']]:
+        """
+        Experience Analytics
+        """
+        return pulumi.get(self, "experience_analytics")
+
+    @experience_analytics.setter
+    def experience_analytics(self, value: Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']]):
+        pulumi.set(self, "experience_analytics", value)
+
 
 @pulumi.input_type
 class _WebAppEnablementState:
     def __init__(__self__, *,
                  application_id: Optional[pulumi.Input[builtins.str]] = None,
+                 experience_analytics: Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']] = None,
                  rum: Optional[pulumi.Input['WebAppEnablementRumArgs']] = None,
                  session_replay: Optional[pulumi.Input['WebAppEnablementSessionReplayArgs']] = None):
         """
         Input properties used for looking up and filtering WebAppEnablement resources.
         :param pulumi.Input[builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input['WebAppEnablementExperienceAnalyticsArgs'] experience_analytics: Experience Analytics
         :param pulumi.Input['WebAppEnablementRumArgs'] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         :param pulumi.Input['WebAppEnablementSessionReplayArgs'] session_replay: [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
         if application_id is not None:
             pulumi.set(__self__, "application_id", application_id)
+        if experience_analytics is not None:
+            pulumi.set(__self__, "experience_analytics", experience_analytics)
         if rum is not None:
             pulumi.set(__self__, "rum", rum)
         if session_replay is not None:
@@ -103,6 +123,18 @@ class _WebAppEnablementState:
     @application_id.setter
     def application_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "application_id", value)
+
+    @property
+    @pulumi.getter(name="experienceAnalytics")
+    def experience_analytics(self) -> Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']]:
+        """
+        Experience Analytics
+        """
+        return pulumi.get(self, "experience_analytics")
+
+    @experience_analytics.setter
+    def experience_analytics(self, value: Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']]):
+        pulumi.set(self, "experience_analytics", value)
 
     @property
     @pulumi.getter
@@ -136,6 +168,7 @@ class WebAppEnablement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: Optional[pulumi.Input[builtins.str]] = None,
+                 experience_analytics: Optional[pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']]] = None,
                  rum: Optional[pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']]] = None,
                  session_replay: Optional[pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']]] = None,
                  __props__=None):
@@ -144,6 +177,7 @@ class WebAppEnablement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']] experience_analytics: Experience Analytics
         :param pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         :param pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']] session_replay: [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
@@ -171,6 +205,7 @@ class WebAppEnablement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: Optional[pulumi.Input[builtins.str]] = None,
+                 experience_analytics: Optional[pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']]] = None,
                  rum: Optional[pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']]] = None,
                  session_replay: Optional[pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']]] = None,
                  __props__=None):
@@ -183,6 +218,7 @@ class WebAppEnablement(pulumi.CustomResource):
             __props__ = WebAppEnablementArgs.__new__(WebAppEnablementArgs)
 
             __props__.__dict__["application_id"] = application_id
+            __props__.__dict__["experience_analytics"] = experience_analytics
             if rum is None and not opts.urn:
                 raise TypeError("Missing required property 'rum'")
             __props__.__dict__["rum"] = rum
@@ -200,6 +236,7 @@ class WebAppEnablement(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             application_id: Optional[pulumi.Input[builtins.str]] = None,
+            experience_analytics: Optional[pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']]] = None,
             rum: Optional[pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']]] = None,
             session_replay: Optional[pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']]] = None) -> 'WebAppEnablement':
         """
@@ -210,6 +247,7 @@ class WebAppEnablement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']] experience_analytics: Experience Analytics
         :param pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         :param pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']] session_replay: [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
@@ -218,6 +256,7 @@ class WebAppEnablement(pulumi.CustomResource):
         __props__ = _WebAppEnablementState.__new__(_WebAppEnablementState)
 
         __props__.__dict__["application_id"] = application_id
+        __props__.__dict__["experience_analytics"] = experience_analytics
         __props__.__dict__["rum"] = rum
         __props__.__dict__["session_replay"] = session_replay
         return WebAppEnablement(resource_name, opts=opts, __props__=__props__)
@@ -229,6 +268,14 @@ class WebAppEnablement(pulumi.CustomResource):
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
+
+    @property
+    @pulumi.getter(name="experienceAnalytics")
+    def experience_analytics(self) -> pulumi.Output[Optional['outputs.WebAppEnablementExperienceAnalytics']]:
+        """
+        Experience Analytics
+        """
+        return pulumi.get(self, "experience_analytics")
 
     @property
     @pulumi.getter

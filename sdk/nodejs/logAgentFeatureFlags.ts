@@ -42,7 +42,7 @@ export class LogAgentFeatureFlags extends pulumi.CustomResource {
      * collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
      * processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
      * * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-     * configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.1+**. For
+     * configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
      * more details, check our [documentation](https://dt-url.net/jn02ey0).
      */
     public readonly newContainerLogDetector!: pulumi.Output<boolean>;
@@ -51,6 +51,10 @@ export class LogAgentFeatureFlags extends pulumi.CustomResource {
      * environment.
      */
     public readonly scope!: pulumi.Output<string | undefined>;
+    /**
+     * Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
+     */
+    public readonly userAndEventData!: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a LogAgentFeatureFlags resource with the given unique name, arguments, and options.
@@ -68,6 +72,7 @@ export class LogAgentFeatureFlags extends pulumi.CustomResource {
             resourceInputs["journaldLogDetector"] = state ? state.journaldLogDetector : undefined;
             resourceInputs["newContainerLogDetector"] = state ? state.newContainerLogDetector : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["userAndEventData"] = state ? state.userAndEventData : undefined;
         } else {
             const args = argsOrState as LogAgentFeatureFlagsArgs | undefined;
             if ((!args || args.newContainerLogDetector === undefined) && !opts.urn) {
@@ -76,6 +81,7 @@ export class LogAgentFeatureFlags extends pulumi.CustomResource {
             resourceInputs["journaldLogDetector"] = args ? args.journaldLogDetector : undefined;
             resourceInputs["newContainerLogDetector"] = args ? args.newContainerLogDetector : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["userAndEventData"] = args ? args.userAndEventData : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogAgentFeatureFlags.__pulumiType, name, resourceInputs, opts);
@@ -96,7 +102,7 @@ export interface LogAgentFeatureFlagsState {
      * collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
      * processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
      * * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-     * configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.1+**. For
+     * configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
      * more details, check our [documentation](https://dt-url.net/jn02ey0).
      */
     newContainerLogDetector?: pulumi.Input<boolean>;
@@ -105,6 +111,10 @@ export interface LogAgentFeatureFlagsState {
      * environment.
      */
     scope?: pulumi.Input<string>;
+    /**
+     * Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
+     */
+    userAndEventData?: pulumi.Input<boolean>;
 }
 
 /**
@@ -121,7 +131,7 @@ export interface LogAgentFeatureFlagsArgs {
      * collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
      * processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
      * * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-     * configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.1+**. For
+     * configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
      * more details, check our [documentation](https://dt-url.net/jn02ey0).
      */
     newContainerLogDetector: pulumi.Input<boolean>;
@@ -130,4 +140,8 @@ export interface LogAgentFeatureFlagsArgs {
      * environment.
      */
     scope?: pulumi.Input<string>;
+    /**
+     * Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
+     */
+    userAndEventData?: pulumi.Input<boolean>;
 }

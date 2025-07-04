@@ -37,6 +37,9 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("eventType", required: true)]
         public Input<Inputs.OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeGetArgs> EventType { get; set; } = null!;
 
+        /// <summary>
+        /// Definition of the field extraction
+        /// </summary>
         [Input("fieldExtraction")]
         public Input<Inputs.OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtractionGetArgs>? FieldExtraction { get; set; }
 
