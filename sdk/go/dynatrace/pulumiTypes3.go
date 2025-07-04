@@ -13,6 +13,1698 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest struct {
+	// Alert if the response time of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+	SlowestDegradationMilliseconds float64 `pulumi:"slowestDegradationMilliseconds"`
+}
+
+// ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestInput is an input type that accepts ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs and ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput values.
+// You can construct a concrete instance of `ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestInput` via:
+//
+//	ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs{...}
+type ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestInput interface {
+	pulumi.Input
+
+	ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput() ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput
+	ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutputWithContext(context.Context) ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput
+}
+
+type ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs struct {
+	// Alert if the response time of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+	SlowestDegradationMilliseconds pulumi.Float64Input `pulumi:"slowestDegradationMilliseconds"`
+}
+
+func (ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest)(nil)).Elem()
+}
+
+func (i ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs) ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput() ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput {
+	return i.ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutputWithContext(context.Background())
+}
+
+func (i ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs) ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutputWithContext(ctx context.Context) ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput)
+}
+
+func (i ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs) ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput() ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput {
+	return i.ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs) ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutputWithContext(ctx context.Context) ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput).ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutputWithContext(ctx)
+}
+
+// ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrInput is an input type that accepts ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs, ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtr and ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput values.
+// You can construct a concrete instance of `ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrInput` via:
+//
+//	        ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrInput interface {
+	pulumi.Input
+
+	ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput() ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput
+	ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutputWithContext(context.Context) ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput
+}
+
+type serviceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrType ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs
+
+func ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtr(v *ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs) ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrInput {
+	return (*serviceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrType)(v)
+}
+
+func (*serviceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest)(nil)).Elem()
+}
+
+func (i *serviceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrType) ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput() ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput {
+	return i.ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrType) ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutputWithContext(ctx context.Context) ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput)
+}
+
+type ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput struct{ *pulumi.OutputState }
+
+func (ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest)(nil)).Elem()
+}
+
+func (o ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput) ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput() ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput {
+	return o
+}
+
+func (o ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput) ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutputWithContext(ctx context.Context) ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput {
+	return o
+}
+
+func (o ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput) ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput() ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput {
+	return o.ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput) ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutputWithContext(ctx context.Context) ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest) *ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest {
+		return &v
+	}).(ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput)
+}
+
+// Alert if the response time of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+func (o ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput) SlowestDegradationMilliseconds() pulumi.Float64Output {
+	return o.ApplyT(func(v ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest) float64 {
+		return v.SlowestDegradationMilliseconds
+	}).(pulumi.Float64Output)
+}
+
+type ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest)(nil)).Elem()
+}
+
+func (o ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput) ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput() ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput {
+	return o
+}
+
+func (o ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput) ToServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutputWithContext(ctx context.Context) ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput {
+	return o
+}
+
+func (o ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput) Elem() ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput {
+	return o.ApplyT(func(v *ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest) ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest
+		return ret
+	}).(ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput)
+}
+
+// Alert if the response time of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+func (o ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput) SlowestDegradationMilliseconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.SlowestDegradationMilliseconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+type ServiceDetectionRulesRule struct {
+	// Define resource attributes that should not be part of the name but are required to detect the service, e.g. service.namespace or k8s.workload.kind.. Attributes specified here are required to apply the rule. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
+	//
+	// All attribute values contribute to the final service ID.
+	AdditionalRequiredAttributes []string `pulumi:"additionalRequiredAttributes"`
+	// Limits the scope of the service detection rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes.. A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+	//
+	// If empty, the condition will always match.
+	Condition *string `pulumi:"condition"`
+	// no documentation available
+	Description *string `pulumi:"description"`
+	// Rule name
+	RuleName string `pulumi:"ruleName"`
+	// Specify resource attribute placeholders in curly braces, e.g. {service.name} or {k8s.workload.name}.. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
+	ServiceNameTemplate string `pulumi:"serviceNameTemplate"`
+}
+
+// ServiceDetectionRulesRuleInput is an input type that accepts ServiceDetectionRulesRuleArgs and ServiceDetectionRulesRuleOutput values.
+// You can construct a concrete instance of `ServiceDetectionRulesRuleInput` via:
+//
+//	ServiceDetectionRulesRuleArgs{...}
+type ServiceDetectionRulesRuleInput interface {
+	pulumi.Input
+
+	ToServiceDetectionRulesRuleOutput() ServiceDetectionRulesRuleOutput
+	ToServiceDetectionRulesRuleOutputWithContext(context.Context) ServiceDetectionRulesRuleOutput
+}
+
+type ServiceDetectionRulesRuleArgs struct {
+	// Define resource attributes that should not be part of the name but are required to detect the service, e.g. service.namespace or k8s.workload.kind.. Attributes specified here are required to apply the rule. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
+	//
+	// All attribute values contribute to the final service ID.
+	AdditionalRequiredAttributes pulumi.StringArrayInput `pulumi:"additionalRequiredAttributes"`
+	// Limits the scope of the service detection rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes.. A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+	//
+	// If empty, the condition will always match.
+	Condition pulumi.StringPtrInput `pulumi:"condition"`
+	// no documentation available
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Rule name
+	RuleName pulumi.StringInput `pulumi:"ruleName"`
+	// Specify resource attribute placeholders in curly braces, e.g. {service.name} or {k8s.workload.name}.. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
+	ServiceNameTemplate pulumi.StringInput `pulumi:"serviceNameTemplate"`
+}
+
+func (ServiceDetectionRulesRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceDetectionRulesRule)(nil)).Elem()
+}
+
+func (i ServiceDetectionRulesRuleArgs) ToServiceDetectionRulesRuleOutput() ServiceDetectionRulesRuleOutput {
+	return i.ToServiceDetectionRulesRuleOutputWithContext(context.Background())
+}
+
+func (i ServiceDetectionRulesRuleArgs) ToServiceDetectionRulesRuleOutputWithContext(ctx context.Context) ServiceDetectionRulesRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceDetectionRulesRuleOutput)
+}
+
+func (i ServiceDetectionRulesRuleArgs) ToServiceDetectionRulesRulePtrOutput() ServiceDetectionRulesRulePtrOutput {
+	return i.ToServiceDetectionRulesRulePtrOutputWithContext(context.Background())
+}
+
+func (i ServiceDetectionRulesRuleArgs) ToServiceDetectionRulesRulePtrOutputWithContext(ctx context.Context) ServiceDetectionRulesRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceDetectionRulesRuleOutput).ToServiceDetectionRulesRulePtrOutputWithContext(ctx)
+}
+
+// ServiceDetectionRulesRulePtrInput is an input type that accepts ServiceDetectionRulesRuleArgs, ServiceDetectionRulesRulePtr and ServiceDetectionRulesRulePtrOutput values.
+// You can construct a concrete instance of `ServiceDetectionRulesRulePtrInput` via:
+//
+//	        ServiceDetectionRulesRuleArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceDetectionRulesRulePtrInput interface {
+	pulumi.Input
+
+	ToServiceDetectionRulesRulePtrOutput() ServiceDetectionRulesRulePtrOutput
+	ToServiceDetectionRulesRulePtrOutputWithContext(context.Context) ServiceDetectionRulesRulePtrOutput
+}
+
+type serviceDetectionRulesRulePtrType ServiceDetectionRulesRuleArgs
+
+func ServiceDetectionRulesRulePtr(v *ServiceDetectionRulesRuleArgs) ServiceDetectionRulesRulePtrInput {
+	return (*serviceDetectionRulesRulePtrType)(v)
+}
+
+func (*serviceDetectionRulesRulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceDetectionRulesRule)(nil)).Elem()
+}
+
+func (i *serviceDetectionRulesRulePtrType) ToServiceDetectionRulesRulePtrOutput() ServiceDetectionRulesRulePtrOutput {
+	return i.ToServiceDetectionRulesRulePtrOutputWithContext(context.Background())
+}
+
+func (i *serviceDetectionRulesRulePtrType) ToServiceDetectionRulesRulePtrOutputWithContext(ctx context.Context) ServiceDetectionRulesRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceDetectionRulesRulePtrOutput)
+}
+
+type ServiceDetectionRulesRuleOutput struct{ *pulumi.OutputState }
+
+func (ServiceDetectionRulesRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceDetectionRulesRule)(nil)).Elem()
+}
+
+func (o ServiceDetectionRulesRuleOutput) ToServiceDetectionRulesRuleOutput() ServiceDetectionRulesRuleOutput {
+	return o
+}
+
+func (o ServiceDetectionRulesRuleOutput) ToServiceDetectionRulesRuleOutputWithContext(ctx context.Context) ServiceDetectionRulesRuleOutput {
+	return o
+}
+
+func (o ServiceDetectionRulesRuleOutput) ToServiceDetectionRulesRulePtrOutput() ServiceDetectionRulesRulePtrOutput {
+	return o.ToServiceDetectionRulesRulePtrOutputWithContext(context.Background())
+}
+
+func (o ServiceDetectionRulesRuleOutput) ToServiceDetectionRulesRulePtrOutputWithContext(ctx context.Context) ServiceDetectionRulesRulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceDetectionRulesRule) *ServiceDetectionRulesRule {
+		return &v
+	}).(ServiceDetectionRulesRulePtrOutput)
+}
+
+// Define resource attributes that should not be part of the name but are required to detect the service, e.g. service.namespace or k8s.workload.kind.. Attributes specified here are required to apply the rule. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
+//
+// All attribute values contribute to the final service ID.
+func (o ServiceDetectionRulesRuleOutput) AdditionalRequiredAttributes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ServiceDetectionRulesRule) []string { return v.AdditionalRequiredAttributes }).(pulumi.StringArrayOutput)
+}
+
+// Limits the scope of the service detection rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes.. A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+//
+// If empty, the condition will always match.
+func (o ServiceDetectionRulesRuleOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceDetectionRulesRule) *string { return v.Condition }).(pulumi.StringPtrOutput)
+}
+
+// no documentation available
+func (o ServiceDetectionRulesRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceDetectionRulesRule) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Rule name
+func (o ServiceDetectionRulesRuleOutput) RuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceDetectionRulesRule) string { return v.RuleName }).(pulumi.StringOutput)
+}
+
+// Specify resource attribute placeholders in curly braces, e.g. {service.name} or {k8s.workload.name}.. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
+func (o ServiceDetectionRulesRuleOutput) ServiceNameTemplate() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceDetectionRulesRule) string { return v.ServiceNameTemplate }).(pulumi.StringOutput)
+}
+
+type ServiceDetectionRulesRulePtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceDetectionRulesRulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceDetectionRulesRule)(nil)).Elem()
+}
+
+func (o ServiceDetectionRulesRulePtrOutput) ToServiceDetectionRulesRulePtrOutput() ServiceDetectionRulesRulePtrOutput {
+	return o
+}
+
+func (o ServiceDetectionRulesRulePtrOutput) ToServiceDetectionRulesRulePtrOutputWithContext(ctx context.Context) ServiceDetectionRulesRulePtrOutput {
+	return o
+}
+
+func (o ServiceDetectionRulesRulePtrOutput) Elem() ServiceDetectionRulesRuleOutput {
+	return o.ApplyT(func(v *ServiceDetectionRulesRule) ServiceDetectionRulesRule {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceDetectionRulesRule
+		return ret
+	}).(ServiceDetectionRulesRuleOutput)
+}
+
+// Define resource attributes that should not be part of the name but are required to detect the service, e.g. service.namespace or k8s.workload.kind.. Attributes specified here are required to apply the rule. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
+//
+// All attribute values contribute to the final service ID.
+func (o ServiceDetectionRulesRulePtrOutput) AdditionalRequiredAttributes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ServiceDetectionRulesRule) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AdditionalRequiredAttributes
+	}).(pulumi.StringArrayOutput)
+}
+
+// Limits the scope of the service detection rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes.. A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+//
+// If empty, the condition will always match.
+func (o ServiceDetectionRulesRulePtrOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceDetectionRulesRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Condition
+	}).(pulumi.StringPtrOutput)
+}
+
+// no documentation available
+func (o ServiceDetectionRulesRulePtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceDetectionRulesRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// Rule name
+func (o ServiceDetectionRulesRulePtrOutput) RuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceDetectionRulesRule) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.RuleName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specify resource attribute placeholders in curly braces, e.g. {service.name} or {k8s.workload.name}.. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
+func (o ServiceDetectionRulesRulePtrOutput) ServiceNameTemplate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceDetectionRulesRule) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ServiceNameTemplate
+	}).(pulumi.StringPtrOutput)
+}
+
+type ServiceExternalWebRequestConditions struct {
+	Conditions []ServiceExternalWebRequestConditionsCondition `pulumi:"conditions"`
+}
+
+// ServiceExternalWebRequestConditionsInput is an input type that accepts ServiceExternalWebRequestConditionsArgs and ServiceExternalWebRequestConditionsOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestConditionsInput` via:
+//
+//	ServiceExternalWebRequestConditionsArgs{...}
+type ServiceExternalWebRequestConditionsInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestConditionsOutput() ServiceExternalWebRequestConditionsOutput
+	ToServiceExternalWebRequestConditionsOutputWithContext(context.Context) ServiceExternalWebRequestConditionsOutput
+}
+
+type ServiceExternalWebRequestConditionsArgs struct {
+	Conditions ServiceExternalWebRequestConditionsConditionArrayInput `pulumi:"conditions"`
+}
+
+func (ServiceExternalWebRequestConditionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestConditions)(nil)).Elem()
+}
+
+func (i ServiceExternalWebRequestConditionsArgs) ToServiceExternalWebRequestConditionsOutput() ServiceExternalWebRequestConditionsOutput {
+	return i.ToServiceExternalWebRequestConditionsOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestConditionsArgs) ToServiceExternalWebRequestConditionsOutputWithContext(ctx context.Context) ServiceExternalWebRequestConditionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestConditionsOutput)
+}
+
+func (i ServiceExternalWebRequestConditionsArgs) ToServiceExternalWebRequestConditionsPtrOutput() ServiceExternalWebRequestConditionsPtrOutput {
+	return i.ToServiceExternalWebRequestConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestConditionsArgs) ToServiceExternalWebRequestConditionsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestConditionsOutput).ToServiceExternalWebRequestConditionsPtrOutputWithContext(ctx)
+}
+
+// ServiceExternalWebRequestConditionsPtrInput is an input type that accepts ServiceExternalWebRequestConditionsArgs, ServiceExternalWebRequestConditionsPtr and ServiceExternalWebRequestConditionsPtrOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestConditionsPtrInput` via:
+//
+//	        ServiceExternalWebRequestConditionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceExternalWebRequestConditionsPtrInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestConditionsPtrOutput() ServiceExternalWebRequestConditionsPtrOutput
+	ToServiceExternalWebRequestConditionsPtrOutputWithContext(context.Context) ServiceExternalWebRequestConditionsPtrOutput
+}
+
+type serviceExternalWebRequestConditionsPtrType ServiceExternalWebRequestConditionsArgs
+
+func ServiceExternalWebRequestConditionsPtr(v *ServiceExternalWebRequestConditionsArgs) ServiceExternalWebRequestConditionsPtrInput {
+	return (*serviceExternalWebRequestConditionsPtrType)(v)
+}
+
+func (*serviceExternalWebRequestConditionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestConditions)(nil)).Elem()
+}
+
+func (i *serviceExternalWebRequestConditionsPtrType) ToServiceExternalWebRequestConditionsPtrOutput() ServiceExternalWebRequestConditionsPtrOutput {
+	return i.ToServiceExternalWebRequestConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceExternalWebRequestConditionsPtrType) ToServiceExternalWebRequestConditionsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestConditionsPtrOutput)
+}
+
+type ServiceExternalWebRequestConditionsOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestConditionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestConditions)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestConditionsOutput) ToServiceExternalWebRequestConditionsOutput() ServiceExternalWebRequestConditionsOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestConditionsOutput) ToServiceExternalWebRequestConditionsOutputWithContext(ctx context.Context) ServiceExternalWebRequestConditionsOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestConditionsOutput) ToServiceExternalWebRequestConditionsPtrOutput() ServiceExternalWebRequestConditionsPtrOutput {
+	return o.ToServiceExternalWebRequestConditionsPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceExternalWebRequestConditionsOutput) ToServiceExternalWebRequestConditionsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestConditionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceExternalWebRequestConditions) *ServiceExternalWebRequestConditions {
+		return &v
+	}).(ServiceExternalWebRequestConditionsPtrOutput)
+}
+
+func (o ServiceExternalWebRequestConditionsOutput) Conditions() ServiceExternalWebRequestConditionsConditionArrayOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestConditions) []ServiceExternalWebRequestConditionsCondition {
+		return v.Conditions
+	}).(ServiceExternalWebRequestConditionsConditionArrayOutput)
+}
+
+type ServiceExternalWebRequestConditionsPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestConditionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestConditions)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestConditionsPtrOutput) ToServiceExternalWebRequestConditionsPtrOutput() ServiceExternalWebRequestConditionsPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestConditionsPtrOutput) ToServiceExternalWebRequestConditionsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestConditionsPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestConditionsPtrOutput) Elem() ServiceExternalWebRequestConditionsOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestConditions) ServiceExternalWebRequestConditions {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceExternalWebRequestConditions
+		return ret
+	}).(ServiceExternalWebRequestConditionsOutput)
+}
+
+func (o ServiceExternalWebRequestConditionsPtrOutput) Conditions() ServiceExternalWebRequestConditionsConditionArrayOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestConditions) []ServiceExternalWebRequestConditionsCondition {
+		if v == nil {
+			return nil
+		}
+		return v.Conditions
+	}).(ServiceExternalWebRequestConditionsConditionArrayOutput)
+}
+
+type ServiceExternalWebRequestConditionsCondition struct {
+	// Take the value of this attribute
+	Attribute string `pulumi:"attribute"`
+	// Apply this operation
+	CompareOperationType string `pulumi:"compareOperationType"`
+	// Technology
+	Frameworks []string `pulumi:"frameworks"`
+	// Ignore case sensitivity for texts.
+	IgnoreCase *bool `pulumi:"ignoreCase"`
+	// Value
+	IntValue *int `pulumi:"intValue"`
+	// Values
+	IntValues []int `pulumi:"intValues"`
+	// From
+	IpRangeFrom *string `pulumi:"ipRangeFrom"`
+	// To
+	IpRangeTo *string `pulumi:"ipRangeTo"`
+	// If multiple values are specified, at least one of them must match for the condition to match
+	TagValues []string `pulumi:"tagValues"`
+	// If multiple values are specified, at least one of them must match for the condition to match
+	TextValues []string `pulumi:"textValues"`
+}
+
+// ServiceExternalWebRequestConditionsConditionInput is an input type that accepts ServiceExternalWebRequestConditionsConditionArgs and ServiceExternalWebRequestConditionsConditionOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestConditionsConditionInput` via:
+//
+//	ServiceExternalWebRequestConditionsConditionArgs{...}
+type ServiceExternalWebRequestConditionsConditionInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestConditionsConditionOutput() ServiceExternalWebRequestConditionsConditionOutput
+	ToServiceExternalWebRequestConditionsConditionOutputWithContext(context.Context) ServiceExternalWebRequestConditionsConditionOutput
+}
+
+type ServiceExternalWebRequestConditionsConditionArgs struct {
+	// Take the value of this attribute
+	Attribute pulumi.StringInput `pulumi:"attribute"`
+	// Apply this operation
+	CompareOperationType pulumi.StringInput `pulumi:"compareOperationType"`
+	// Technology
+	Frameworks pulumi.StringArrayInput `pulumi:"frameworks"`
+	// Ignore case sensitivity for texts.
+	IgnoreCase pulumi.BoolPtrInput `pulumi:"ignoreCase"`
+	// Value
+	IntValue pulumi.IntPtrInput `pulumi:"intValue"`
+	// Values
+	IntValues pulumi.IntArrayInput `pulumi:"intValues"`
+	// From
+	IpRangeFrom pulumi.StringPtrInput `pulumi:"ipRangeFrom"`
+	// To
+	IpRangeTo pulumi.StringPtrInput `pulumi:"ipRangeTo"`
+	// If multiple values are specified, at least one of them must match for the condition to match
+	TagValues pulumi.StringArrayInput `pulumi:"tagValues"`
+	// If multiple values are specified, at least one of them must match for the condition to match
+	TextValues pulumi.StringArrayInput `pulumi:"textValues"`
+}
+
+func (ServiceExternalWebRequestConditionsConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestConditionsCondition)(nil)).Elem()
+}
+
+func (i ServiceExternalWebRequestConditionsConditionArgs) ToServiceExternalWebRequestConditionsConditionOutput() ServiceExternalWebRequestConditionsConditionOutput {
+	return i.ToServiceExternalWebRequestConditionsConditionOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestConditionsConditionArgs) ToServiceExternalWebRequestConditionsConditionOutputWithContext(ctx context.Context) ServiceExternalWebRequestConditionsConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestConditionsConditionOutput)
+}
+
+// ServiceExternalWebRequestConditionsConditionArrayInput is an input type that accepts ServiceExternalWebRequestConditionsConditionArray and ServiceExternalWebRequestConditionsConditionArrayOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestConditionsConditionArrayInput` via:
+//
+//	ServiceExternalWebRequestConditionsConditionArray{ ServiceExternalWebRequestConditionsConditionArgs{...} }
+type ServiceExternalWebRequestConditionsConditionArrayInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestConditionsConditionArrayOutput() ServiceExternalWebRequestConditionsConditionArrayOutput
+	ToServiceExternalWebRequestConditionsConditionArrayOutputWithContext(context.Context) ServiceExternalWebRequestConditionsConditionArrayOutput
+}
+
+type ServiceExternalWebRequestConditionsConditionArray []ServiceExternalWebRequestConditionsConditionInput
+
+func (ServiceExternalWebRequestConditionsConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceExternalWebRequestConditionsCondition)(nil)).Elem()
+}
+
+func (i ServiceExternalWebRequestConditionsConditionArray) ToServiceExternalWebRequestConditionsConditionArrayOutput() ServiceExternalWebRequestConditionsConditionArrayOutput {
+	return i.ToServiceExternalWebRequestConditionsConditionArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestConditionsConditionArray) ToServiceExternalWebRequestConditionsConditionArrayOutputWithContext(ctx context.Context) ServiceExternalWebRequestConditionsConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestConditionsConditionArrayOutput)
+}
+
+type ServiceExternalWebRequestConditionsConditionOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestConditionsConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestConditionsCondition)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestConditionsConditionOutput) ToServiceExternalWebRequestConditionsConditionOutput() ServiceExternalWebRequestConditionsConditionOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestConditionsConditionOutput) ToServiceExternalWebRequestConditionsConditionOutputWithContext(ctx context.Context) ServiceExternalWebRequestConditionsConditionOutput {
+	return o
+}
+
+// Take the value of this attribute
+func (o ServiceExternalWebRequestConditionsConditionOutput) Attribute() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestConditionsCondition) string { return v.Attribute }).(pulumi.StringOutput)
+}
+
+// Apply this operation
+func (o ServiceExternalWebRequestConditionsConditionOutput) CompareOperationType() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestConditionsCondition) string { return v.CompareOperationType }).(pulumi.StringOutput)
+}
+
+// Technology
+func (o ServiceExternalWebRequestConditionsConditionOutput) Frameworks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestConditionsCondition) []string { return v.Frameworks }).(pulumi.StringArrayOutput)
+}
+
+// Ignore case sensitivity for texts.
+func (o ServiceExternalWebRequestConditionsConditionOutput) IgnoreCase() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestConditionsCondition) *bool { return v.IgnoreCase }).(pulumi.BoolPtrOutput)
+}
+
+// Value
+func (o ServiceExternalWebRequestConditionsConditionOutput) IntValue() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestConditionsCondition) *int { return v.IntValue }).(pulumi.IntPtrOutput)
+}
+
+// Values
+func (o ServiceExternalWebRequestConditionsConditionOutput) IntValues() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestConditionsCondition) []int { return v.IntValues }).(pulumi.IntArrayOutput)
+}
+
+// From
+func (o ServiceExternalWebRequestConditionsConditionOutput) IpRangeFrom() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestConditionsCondition) *string { return v.IpRangeFrom }).(pulumi.StringPtrOutput)
+}
+
+// To
+func (o ServiceExternalWebRequestConditionsConditionOutput) IpRangeTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestConditionsCondition) *string { return v.IpRangeTo }).(pulumi.StringPtrOutput)
+}
+
+// If multiple values are specified, at least one of them must match for the condition to match
+func (o ServiceExternalWebRequestConditionsConditionOutput) TagValues() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestConditionsCondition) []string { return v.TagValues }).(pulumi.StringArrayOutput)
+}
+
+// If multiple values are specified, at least one of them must match for the condition to match
+func (o ServiceExternalWebRequestConditionsConditionOutput) TextValues() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestConditionsCondition) []string { return v.TextValues }).(pulumi.StringArrayOutput)
+}
+
+type ServiceExternalWebRequestConditionsConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestConditionsConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceExternalWebRequestConditionsCondition)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestConditionsConditionArrayOutput) ToServiceExternalWebRequestConditionsConditionArrayOutput() ServiceExternalWebRequestConditionsConditionArrayOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestConditionsConditionArrayOutput) ToServiceExternalWebRequestConditionsConditionArrayOutputWithContext(ctx context.Context) ServiceExternalWebRequestConditionsConditionArrayOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestConditionsConditionArrayOutput) Index(i pulumi.IntInput) ServiceExternalWebRequestConditionsConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceExternalWebRequestConditionsCondition {
+		return vs[0].([]ServiceExternalWebRequestConditionsCondition)[vs[1].(int)]
+	}).(ServiceExternalWebRequestConditionsConditionOutput)
+}
+
+type ServiceExternalWebRequestIdContributors struct {
+	// Application identifier
+	ApplicationId ServiceExternalWebRequestIdContributorsApplicationId `pulumi:"applicationId"`
+	// URL context root
+	ContextRoot ServiceExternalWebRequestIdContributorsContextRoot `pulumi:"contextRoot"`
+	// Let the port contribute to the Service Id
+	PortForServiceId bool `pulumi:"portForServiceId"`
+	// Public domain name
+	PublicDomainName ServiceExternalWebRequestIdContributorsPublicDomainName `pulumi:"publicDomainName"`
+}
+
+// ServiceExternalWebRequestIdContributorsInput is an input type that accepts ServiceExternalWebRequestIdContributorsArgs and ServiceExternalWebRequestIdContributorsOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsInput` via:
+//
+//	ServiceExternalWebRequestIdContributorsArgs{...}
+type ServiceExternalWebRequestIdContributorsInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsOutput() ServiceExternalWebRequestIdContributorsOutput
+	ToServiceExternalWebRequestIdContributorsOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsOutput
+}
+
+type ServiceExternalWebRequestIdContributorsArgs struct {
+	// Application identifier
+	ApplicationId ServiceExternalWebRequestIdContributorsApplicationIdInput `pulumi:"applicationId"`
+	// URL context root
+	ContextRoot ServiceExternalWebRequestIdContributorsContextRootInput `pulumi:"contextRoot"`
+	// Let the port contribute to the Service Id
+	PortForServiceId pulumi.BoolInput `pulumi:"portForServiceId"`
+	// Public domain name
+	PublicDomainName ServiceExternalWebRequestIdContributorsPublicDomainNameInput `pulumi:"publicDomainName"`
+}
+
+func (ServiceExternalWebRequestIdContributorsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributors)(nil)).Elem()
+}
+
+func (i ServiceExternalWebRequestIdContributorsArgs) ToServiceExternalWebRequestIdContributorsOutput() ServiceExternalWebRequestIdContributorsOutput {
+	return i.ToServiceExternalWebRequestIdContributorsOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsArgs) ToServiceExternalWebRequestIdContributorsOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsOutput)
+}
+
+func (i ServiceExternalWebRequestIdContributorsArgs) ToServiceExternalWebRequestIdContributorsPtrOutput() ServiceExternalWebRequestIdContributorsPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsArgs) ToServiceExternalWebRequestIdContributorsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsOutput).ToServiceExternalWebRequestIdContributorsPtrOutputWithContext(ctx)
+}
+
+// ServiceExternalWebRequestIdContributorsPtrInput is an input type that accepts ServiceExternalWebRequestIdContributorsArgs, ServiceExternalWebRequestIdContributorsPtr and ServiceExternalWebRequestIdContributorsPtrOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsPtrInput` via:
+//
+//	        ServiceExternalWebRequestIdContributorsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceExternalWebRequestIdContributorsPtrInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsPtrOutput() ServiceExternalWebRequestIdContributorsPtrOutput
+	ToServiceExternalWebRequestIdContributorsPtrOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsPtrOutput
+}
+
+type serviceExternalWebRequestIdContributorsPtrType ServiceExternalWebRequestIdContributorsArgs
+
+func ServiceExternalWebRequestIdContributorsPtr(v *ServiceExternalWebRequestIdContributorsArgs) ServiceExternalWebRequestIdContributorsPtrInput {
+	return (*serviceExternalWebRequestIdContributorsPtrType)(v)
+}
+
+func (*serviceExternalWebRequestIdContributorsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributors)(nil)).Elem()
+}
+
+func (i *serviceExternalWebRequestIdContributorsPtrType) ToServiceExternalWebRequestIdContributorsPtrOutput() ServiceExternalWebRequestIdContributorsPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceExternalWebRequestIdContributorsPtrType) ToServiceExternalWebRequestIdContributorsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsPtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributors)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsOutput) ToServiceExternalWebRequestIdContributorsOutput() ServiceExternalWebRequestIdContributorsOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsOutput) ToServiceExternalWebRequestIdContributorsOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsOutput) ToServiceExternalWebRequestIdContributorsPtrOutput() ServiceExternalWebRequestIdContributorsPtrOutput {
+	return o.ToServiceExternalWebRequestIdContributorsPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceExternalWebRequestIdContributorsOutput) ToServiceExternalWebRequestIdContributorsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceExternalWebRequestIdContributors) *ServiceExternalWebRequestIdContributors {
+		return &v
+	}).(ServiceExternalWebRequestIdContributorsPtrOutput)
+}
+
+// Application identifier
+func (o ServiceExternalWebRequestIdContributorsOutput) ApplicationId() ServiceExternalWebRequestIdContributorsApplicationIdOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributors) ServiceExternalWebRequestIdContributorsApplicationId {
+		return v.ApplicationId
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdOutput)
+}
+
+// URL context root
+func (o ServiceExternalWebRequestIdContributorsOutput) ContextRoot() ServiceExternalWebRequestIdContributorsContextRootOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributors) ServiceExternalWebRequestIdContributorsContextRoot {
+		return v.ContextRoot
+	}).(ServiceExternalWebRequestIdContributorsContextRootOutput)
+}
+
+// Let the port contribute to the Service Id
+func (o ServiceExternalWebRequestIdContributorsOutput) PortForServiceId() pulumi.BoolOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributors) bool { return v.PortForServiceId }).(pulumi.BoolOutput)
+}
+
+// Public domain name
+func (o ServiceExternalWebRequestIdContributorsOutput) PublicDomainName() ServiceExternalWebRequestIdContributorsPublicDomainNameOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributors) ServiceExternalWebRequestIdContributorsPublicDomainName {
+		return v.PublicDomainName
+	}).(ServiceExternalWebRequestIdContributorsPublicDomainNameOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributors)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsPtrOutput) ToServiceExternalWebRequestIdContributorsPtrOutput() ServiceExternalWebRequestIdContributorsPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsPtrOutput) ToServiceExternalWebRequestIdContributorsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsPtrOutput) Elem() ServiceExternalWebRequestIdContributorsOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributors) ServiceExternalWebRequestIdContributors {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceExternalWebRequestIdContributors
+		return ret
+	}).(ServiceExternalWebRequestIdContributorsOutput)
+}
+
+// Application identifier
+func (o ServiceExternalWebRequestIdContributorsPtrOutput) ApplicationId() ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributors) *ServiceExternalWebRequestIdContributorsApplicationId {
+		if v == nil {
+			return nil
+		}
+		return &v.ApplicationId
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput)
+}
+
+// URL context root
+func (o ServiceExternalWebRequestIdContributorsPtrOutput) ContextRoot() ServiceExternalWebRequestIdContributorsContextRootPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributors) *ServiceExternalWebRequestIdContributorsContextRoot {
+		if v == nil {
+			return nil
+		}
+		return &v.ContextRoot
+	}).(ServiceExternalWebRequestIdContributorsContextRootPtrOutput)
+}
+
+// Let the port contribute to the Service Id
+func (o ServiceExternalWebRequestIdContributorsPtrOutput) PortForServiceId() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributors) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.PortForServiceId
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Public domain name
+func (o ServiceExternalWebRequestIdContributorsPtrOutput) PublicDomainName() ServiceExternalWebRequestIdContributorsPublicDomainNamePtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributors) *ServiceExternalWebRequestIdContributorsPublicDomainName {
+		if v == nil {
+			return nil
+		}
+		return &v.PublicDomainName
+	}).(ServiceExternalWebRequestIdContributorsPublicDomainNamePtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationId struct {
+	// Transform this value before letting it contribute to the Service Id
+	EnableIdContributor bool `pulumi:"enableIdContributor"`
+	// no documentation available
+	ServiceIdContributor *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor `pulumi:"serviceIdContributor"`
+}
+
+// ServiceExternalWebRequestIdContributorsApplicationIdInput is an input type that accepts ServiceExternalWebRequestIdContributorsApplicationIdArgs and ServiceExternalWebRequestIdContributorsApplicationIdOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsApplicationIdInput` via:
+//
+//	ServiceExternalWebRequestIdContributorsApplicationIdArgs{...}
+type ServiceExternalWebRequestIdContributorsApplicationIdInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsApplicationIdOutput() ServiceExternalWebRequestIdContributorsApplicationIdOutput
+	ToServiceExternalWebRequestIdContributorsApplicationIdOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsApplicationIdOutput
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdArgs struct {
+	// Transform this value before letting it contribute to the Service Id
+	EnableIdContributor pulumi.BoolInput `pulumi:"enableIdContributor"`
+	// no documentation available
+	ServiceIdContributor ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrInput `pulumi:"serviceIdContributor"`
+}
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationId)(nil)).Elem()
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdArgs) ToServiceExternalWebRequestIdContributorsApplicationIdOutput() ServiceExternalWebRequestIdContributorsApplicationIdOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdArgs) ToServiceExternalWebRequestIdContributorsApplicationIdOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdOutput)
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdArgs) ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdArgs) ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdOutput).ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutputWithContext(ctx)
+}
+
+// ServiceExternalWebRequestIdContributorsApplicationIdPtrInput is an input type that accepts ServiceExternalWebRequestIdContributorsApplicationIdArgs, ServiceExternalWebRequestIdContributorsApplicationIdPtr and ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsApplicationIdPtrInput` via:
+//
+//	        ServiceExternalWebRequestIdContributorsApplicationIdArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceExternalWebRequestIdContributorsApplicationIdPtrInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput
+	ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput
+}
+
+type serviceExternalWebRequestIdContributorsApplicationIdPtrType ServiceExternalWebRequestIdContributorsApplicationIdArgs
+
+func ServiceExternalWebRequestIdContributorsApplicationIdPtr(v *ServiceExternalWebRequestIdContributorsApplicationIdArgs) ServiceExternalWebRequestIdContributorsApplicationIdPtrInput {
+	return (*serviceExternalWebRequestIdContributorsApplicationIdPtrType)(v)
+}
+
+func (*serviceExternalWebRequestIdContributorsApplicationIdPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsApplicationId)(nil)).Elem()
+}
+
+func (i *serviceExternalWebRequestIdContributorsApplicationIdPtrType) ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceExternalWebRequestIdContributorsApplicationIdPtrType) ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationId)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdOutput) ToServiceExternalWebRequestIdContributorsApplicationIdOutput() ServiceExternalWebRequestIdContributorsApplicationIdOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdOutput) ToServiceExternalWebRequestIdContributorsApplicationIdOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdOutput) ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput {
+	return o.ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdOutput) ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceExternalWebRequestIdContributorsApplicationId) *ServiceExternalWebRequestIdContributorsApplicationId {
+		return &v
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput)
+}
+
+// Transform this value before letting it contribute to the Service Id
+func (o ServiceExternalWebRequestIdContributorsApplicationIdOutput) EnableIdContributor() pulumi.BoolOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationId) bool { return v.EnableIdContributor }).(pulumi.BoolOutput)
+}
+
+// no documentation available
+func (o ServiceExternalWebRequestIdContributorsApplicationIdOutput) ServiceIdContributor() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationId) *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor {
+		return v.ServiceIdContributor
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsApplicationId)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput) ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput) ToServiceExternalWebRequestIdContributorsApplicationIdPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput) Elem() ServiceExternalWebRequestIdContributorsApplicationIdOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsApplicationId) ServiceExternalWebRequestIdContributorsApplicationId {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceExternalWebRequestIdContributorsApplicationId
+		return ret
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdOutput)
+}
+
+// Transform this value before letting it contribute to the Service Id
+func (o ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput) EnableIdContributor() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsApplicationId) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.EnableIdContributor
+	}).(pulumi.BoolPtrOutput)
+}
+
+// no documentation available
+func (o ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput) ServiceIdContributor() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsApplicationId) *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor {
+		if v == nil {
+			return nil
+		}
+		return v.ServiceIdContributor
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor struct {
+	// Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+	ContributionType string `pulumi:"contributionType"`
+	// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+	Transformations *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations `pulumi:"transformations"`
+	// The value to be used instead of the detected value.
+	ValueOverride *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride `pulumi:"valueOverride"`
+}
+
+// ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorInput is an input type that accepts ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs and ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorInput` via:
+//
+//	ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs{...}
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs struct {
+	// Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+	ContributionType pulumi.StringInput `pulumi:"contributionType"`
+	// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+	Transformations ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrInput `pulumi:"transformations"`
+	// The value to be used instead of the detected value.
+	ValueOverride ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrInput `pulumi:"valueOverride"`
+}
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor)(nil)).Elem()
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput)
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput).ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutputWithContext(ctx)
+}
+
+// ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrInput is an input type that accepts ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs, ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtr and ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrInput` via:
+//
+//	        ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput
+}
+
+type serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrType ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs
+
+func ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtr(v *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrInput {
+	return (*serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrType)(v)
+}
+
+func (*serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor)(nil)).Elem()
+}
+
+func (i *serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrType) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrType) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput {
+	return o.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor) *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor {
+		return &v
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput)
+}
+
+// Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput) ContributionType() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor) string {
+		return v.ContributionType
+	}).(pulumi.StringOutput)
+}
+
+// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput) Transformations() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor) *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations {
+		return v.Transformations
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput)
+}
+
+// The value to be used instead of the detected value.
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput) ValueOverride() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor) *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride {
+		return v.ValueOverride
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput) Elem() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor
+		return ret
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput)
+}
+
+// Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput) ContributionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ContributionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput) Transformations() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor) *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations {
+		if v == nil {
+			return nil
+		}
+		return v.Transformations
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput)
+}
+
+// The value to be used instead of the detected value.
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput) ValueOverride() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor) *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride {
+		if v == nil {
+			return nil
+		}
+		return v.ValueOverride
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations struct {
+	Transformations []ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation `pulumi:"transformations"`
+}
+
+// ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsInput is an input type that accepts ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs and ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsInput` via:
+//
+//	ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs{...}
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs struct {
+	Transformations ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayInput `pulumi:"transformations"`
+}
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput)
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput).ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutputWithContext(ctx)
+}
+
+// ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrInput is an input type that accepts ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs, ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtr and ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrInput` via:
+//
+//	        ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput
+}
+
+type serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrType ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs
+
+func ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtr(v *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrInput {
+	return (*serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrType)(v)
+}
+
+func (*serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (i *serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrType) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrType) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput {
+	return o.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations) *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations {
+		return &v
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput)
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput) Transformations() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations) []ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+		return v.Transformations
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput) Elem() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations
+		return ret
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput)
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput) Transformations() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations) []ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+		if v == nil {
+			return nil
+		}
+		return v.Transformations
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation struct {
+	// include hexadecimal numbers
+	IncludeHexNumbers *bool `pulumi:"includeHexNumbers"`
+	// min digit count
+	MinDigitCount *int `pulumi:"minDigitCount"`
+	// no documentation available
+	Prefix *string `pulumi:"prefix"`
+	// replacement
+	ReplacementValue *string `pulumi:"replacementValue"`
+	// How many segments should be taken.
+	SegmentCount *int `pulumi:"segmentCount"`
+	// select index
+	SelectIndex *int `pulumi:"selectIndex"`
+	// split by
+	SplitDelimiter *string `pulumi:"splitDelimiter"`
+	// no documentation available
+	Suffix *string `pulumi:"suffix"`
+	// take from end
+	TakeFromEnd *bool `pulumi:"takeFromEnd"`
+	// Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+	TransformationType string `pulumi:"transformationType"`
+}
+
+// ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationInput is an input type that accepts ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs and ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationInput` via:
+//
+//	ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs{...}
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs struct {
+	// include hexadecimal numbers
+	IncludeHexNumbers pulumi.BoolPtrInput `pulumi:"includeHexNumbers"`
+	// min digit count
+	MinDigitCount pulumi.IntPtrInput `pulumi:"minDigitCount"`
+	// no documentation available
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+	// replacement
+	ReplacementValue pulumi.StringPtrInput `pulumi:"replacementValue"`
+	// How many segments should be taken.
+	SegmentCount pulumi.IntPtrInput `pulumi:"segmentCount"`
+	// select index
+	SelectIndex pulumi.IntPtrInput `pulumi:"selectIndex"`
+	// split by
+	SplitDelimiter pulumi.StringPtrInput `pulumi:"splitDelimiter"`
+	// no documentation available
+	Suffix pulumi.StringPtrInput `pulumi:"suffix"`
+	// take from end
+	TakeFromEnd pulumi.BoolPtrInput `pulumi:"takeFromEnd"`
+	// Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+	TransformationType pulumi.StringInput `pulumi:"transformationType"`
+}
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation)(nil)).Elem()
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput)
+}
+
+// ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayInput is an input type that accepts ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArray and ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayInput` via:
+//
+//	ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArray{ ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs{...} }
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArray []ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationInput
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation)(nil)).Elem()
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArray) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArray) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput {
+	return o
+}
+
+// include hexadecimal numbers
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput) IncludeHexNumbers() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation) *bool {
+		return v.IncludeHexNumbers
+	}).(pulumi.BoolPtrOutput)
+}
+
+// min digit count
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput) MinDigitCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation) *int {
+		return v.MinDigitCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// no documentation available
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation) *string {
+		return v.Prefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// replacement
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput) ReplacementValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation) *string {
+		return v.ReplacementValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// How many segments should be taken.
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput) SegmentCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation) *int {
+		return v.SegmentCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// select index
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput) SelectIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation) *int {
+		return v.SelectIndex
+	}).(pulumi.IntPtrOutput)
+}
+
+// split by
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput) SplitDelimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation) *string {
+		return v.SplitDelimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// no documentation available
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput) Suffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation) *string {
+		return v.Suffix
+	}).(pulumi.StringPtrOutput)
+}
+
+// take from end
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput) TakeFromEnd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation) *bool {
+		return v.TakeFromEnd
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput) TransformationType() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation) string {
+		return v.TransformationType
+	}).(pulumi.StringOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput) Index(i pulumi.IntInput) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+		return vs[0].([]ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation)[vs[1].(int)]
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride struct {
+	// no documentation available
+	Value string `pulumi:"value"`
+}
+
+// ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideInput is an input type that accepts ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs and ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideInput` via:
+//
+//	ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs{...}
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs struct {
+	// no documentation available
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride)(nil)).Elem()
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput)
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutputWithContext(context.Background())
+}
+
+func (i ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput).ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutputWithContext(ctx)
+}
+
+// ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrInput is an input type that accepts ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs, ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtr and ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput values.
+// You can construct a concrete instance of `ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrInput` via:
+//
+//	        ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrInput interface {
+	pulumi.Input
+
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput
+	ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutputWithContext(context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput
+}
+
+type serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrType ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs
+
+func ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtr(v *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrInput {
+	return (*serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrType)(v)
+}
+
+func (*serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride)(nil)).Elem()
+}
+
+func (i *serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrType) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput {
+	return i.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutputWithContext(context.Background())
+}
+
+func (i *serviceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrType) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput {
+	return o.ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutputWithContext(context.Background())
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride) *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride {
+		return &v
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput)
+}
+
+// no documentation available
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride)(nil)).Elem()
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput) ToServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutputWithContext(ctx context.Context) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput {
+	return o
+}
+
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput) Elem() ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride) ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride
+		return ret
+	}).(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput)
+}
+
+// no documentation available
+func (o ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
 type ServiceExternalWebRequestIdContributorsContextRoot struct {
 	// Transform this value before letting it contribute to the Service Id
 	EnableIdContributor bool `pulumi:"enableIdContributor"`
@@ -40146,6 +41838,143 @@ func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessio
 	}).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput)
 }
 
+type WebAppEnablementExperienceAnalytics struct {
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled bool `pulumi:"enabled"`
+}
+
+// WebAppEnablementExperienceAnalyticsInput is an input type that accepts WebAppEnablementExperienceAnalyticsArgs and WebAppEnablementExperienceAnalyticsOutput values.
+// You can construct a concrete instance of `WebAppEnablementExperienceAnalyticsInput` via:
+//
+//	WebAppEnablementExperienceAnalyticsArgs{...}
+type WebAppEnablementExperienceAnalyticsInput interface {
+	pulumi.Input
+
+	ToWebAppEnablementExperienceAnalyticsOutput() WebAppEnablementExperienceAnalyticsOutput
+	ToWebAppEnablementExperienceAnalyticsOutputWithContext(context.Context) WebAppEnablementExperienceAnalyticsOutput
+}
+
+type WebAppEnablementExperienceAnalyticsArgs struct {
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+}
+
+func (WebAppEnablementExperienceAnalyticsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppEnablementExperienceAnalytics)(nil)).Elem()
+}
+
+func (i WebAppEnablementExperienceAnalyticsArgs) ToWebAppEnablementExperienceAnalyticsOutput() WebAppEnablementExperienceAnalyticsOutput {
+	return i.ToWebAppEnablementExperienceAnalyticsOutputWithContext(context.Background())
+}
+
+func (i WebAppEnablementExperienceAnalyticsArgs) ToWebAppEnablementExperienceAnalyticsOutputWithContext(ctx context.Context) WebAppEnablementExperienceAnalyticsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppEnablementExperienceAnalyticsOutput)
+}
+
+func (i WebAppEnablementExperienceAnalyticsArgs) ToWebAppEnablementExperienceAnalyticsPtrOutput() WebAppEnablementExperienceAnalyticsPtrOutput {
+	return i.ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppEnablementExperienceAnalyticsArgs) ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(ctx context.Context) WebAppEnablementExperienceAnalyticsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppEnablementExperienceAnalyticsOutput).ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(ctx)
+}
+
+// WebAppEnablementExperienceAnalyticsPtrInput is an input type that accepts WebAppEnablementExperienceAnalyticsArgs, WebAppEnablementExperienceAnalyticsPtr and WebAppEnablementExperienceAnalyticsPtrOutput values.
+// You can construct a concrete instance of `WebAppEnablementExperienceAnalyticsPtrInput` via:
+//
+//	        WebAppEnablementExperienceAnalyticsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppEnablementExperienceAnalyticsPtrInput interface {
+	pulumi.Input
+
+	ToWebAppEnablementExperienceAnalyticsPtrOutput() WebAppEnablementExperienceAnalyticsPtrOutput
+	ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(context.Context) WebAppEnablementExperienceAnalyticsPtrOutput
+}
+
+type webAppEnablementExperienceAnalyticsPtrType WebAppEnablementExperienceAnalyticsArgs
+
+func WebAppEnablementExperienceAnalyticsPtr(v *WebAppEnablementExperienceAnalyticsArgs) WebAppEnablementExperienceAnalyticsPtrInput {
+	return (*webAppEnablementExperienceAnalyticsPtrType)(v)
+}
+
+func (*webAppEnablementExperienceAnalyticsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppEnablementExperienceAnalytics)(nil)).Elem()
+}
+
+func (i *webAppEnablementExperienceAnalyticsPtrType) ToWebAppEnablementExperienceAnalyticsPtrOutput() WebAppEnablementExperienceAnalyticsPtrOutput {
+	return i.ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppEnablementExperienceAnalyticsPtrType) ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(ctx context.Context) WebAppEnablementExperienceAnalyticsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppEnablementExperienceAnalyticsPtrOutput)
+}
+
+type WebAppEnablementExperienceAnalyticsOutput struct{ *pulumi.OutputState }
+
+func (WebAppEnablementExperienceAnalyticsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppEnablementExperienceAnalytics)(nil)).Elem()
+}
+
+func (o WebAppEnablementExperienceAnalyticsOutput) ToWebAppEnablementExperienceAnalyticsOutput() WebAppEnablementExperienceAnalyticsOutput {
+	return o
+}
+
+func (o WebAppEnablementExperienceAnalyticsOutput) ToWebAppEnablementExperienceAnalyticsOutputWithContext(ctx context.Context) WebAppEnablementExperienceAnalyticsOutput {
+	return o
+}
+
+func (o WebAppEnablementExperienceAnalyticsOutput) ToWebAppEnablementExperienceAnalyticsPtrOutput() WebAppEnablementExperienceAnalyticsPtrOutput {
+	return o.ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppEnablementExperienceAnalyticsOutput) ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(ctx context.Context) WebAppEnablementExperienceAnalyticsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppEnablementExperienceAnalytics) *WebAppEnablementExperienceAnalytics {
+		return &v
+	}).(WebAppEnablementExperienceAnalyticsPtrOutput)
+}
+
+// This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppEnablementExperienceAnalyticsOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppEnablementExperienceAnalytics) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+type WebAppEnablementExperienceAnalyticsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppEnablementExperienceAnalyticsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppEnablementExperienceAnalytics)(nil)).Elem()
+}
+
+func (o WebAppEnablementExperienceAnalyticsPtrOutput) ToWebAppEnablementExperienceAnalyticsPtrOutput() WebAppEnablementExperienceAnalyticsPtrOutput {
+	return o
+}
+
+func (o WebAppEnablementExperienceAnalyticsPtrOutput) ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(ctx context.Context) WebAppEnablementExperienceAnalyticsPtrOutput {
+	return o
+}
+
+func (o WebAppEnablementExperienceAnalyticsPtrOutput) Elem() WebAppEnablementExperienceAnalyticsOutput {
+	return o.ApplyT(func(v *WebAppEnablementExperienceAnalytics) WebAppEnablementExperienceAnalytics {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppEnablementExperienceAnalytics
+		return ret
+	}).(WebAppEnablementExperienceAnalyticsOutput)
+}
+
+// This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppEnablementExperienceAnalyticsPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppEnablementExperienceAnalytics) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
 type WebAppEnablementRum struct {
 	// (Field has overlap with `WebApplication`) Percentage of user sessions captured and analyzed
 	CostAndTrafficControl int `pulumi:"costAndTrafficControl"`
@@ -54978,6 +56807,26 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestInput)(nil)).Elem(), ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrInput)(nil)).Elem(), ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceDetectionRulesRuleInput)(nil)).Elem(), ServiceDetectionRulesRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceDetectionRulesRulePtrInput)(nil)).Elem(), ServiceDetectionRulesRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestConditionsInput)(nil)).Elem(), ServiceExternalWebRequestConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestConditionsPtrInput)(nil)).Elem(), ServiceExternalWebRequestConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestConditionsConditionInput)(nil)).Elem(), ServiceExternalWebRequestConditionsConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestConditionsConditionArrayInput)(nil)).Elem(), ServiceExternalWebRequestConditionsConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsPtrInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsApplicationIdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdPtrInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsApplicationIdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsContextRootArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootPtrInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsContextRootArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorInput)(nil)).Elem(), ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs{})
@@ -55496,6 +57345,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementExperienceAnalyticsInput)(nil)).Elem(), WebAppEnablementExperienceAnalyticsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementExperienceAnalyticsPtrInput)(nil)).Elem(), WebAppEnablementExperienceAnalyticsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementRumInput)(nil)).Elem(), WebAppEnablementRumArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementRumPtrInput)(nil)).Elem(), WebAppEnablementRumArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementSessionReplayInput)(nil)).Elem(), WebAppEnablementSessionReplayArgs{})
@@ -55674,6 +57525,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestOutput{})
+	pulumi.RegisterOutputType(ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestPtrOutput{})
+	pulumi.RegisterOutputType(ServiceDetectionRulesRuleOutput{})
+	pulumi.RegisterOutputType(ServiceDetectionRulesRulePtrOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestConditionsOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestConditionsPtrOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestConditionsConditionOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestConditionsConditionArrayOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsPtrOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsApplicationIdOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsApplicationIdPtrOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorPtrOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsPtrOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArrayOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideOutput{})
+	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverridePtrOutput{})
 	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsContextRootOutput{})
 	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsContextRootPtrOutput{})
 	pulumi.RegisterOutputType(ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorOutput{})
@@ -56192,6 +58063,8 @@ func init() {
 	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput{})
 	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput{})
 	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput{})
+	pulumi.RegisterOutputType(WebAppEnablementExperienceAnalyticsOutput{})
+	pulumi.RegisterOutputType(WebAppEnablementExperienceAnalyticsPtrOutput{})
 	pulumi.RegisterOutputType(WebAppEnablementRumOutput{})
 	pulumi.RegisterOutputType(WebAppEnablementRumPtrOutput{})
 	pulumi.RegisterOutputType(WebAppEnablementSessionReplayOutput{})

@@ -39,6 +39,10 @@ export class WebAppEnablement extends pulumi.CustomResource {
      */
     public readonly applicationId!: pulumi.Output<string | undefined>;
     /**
+     * Experience Analytics
+     */
+    public readonly experienceAnalytics!: pulumi.Output<outputs.WebAppEnablementExperienceAnalytics | undefined>;
+    /**
      * Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
      */
     public readonly rum!: pulumi.Output<outputs.WebAppEnablementRum>;
@@ -61,6 +65,7 @@ export class WebAppEnablement extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as WebAppEnablementState | undefined;
             resourceInputs["applicationId"] = state ? state.applicationId : undefined;
+            resourceInputs["experienceAnalytics"] = state ? state.experienceAnalytics : undefined;
             resourceInputs["rum"] = state ? state.rum : undefined;
             resourceInputs["sessionReplay"] = state ? state.sessionReplay : undefined;
         } else {
@@ -72,6 +77,7 @@ export class WebAppEnablement extends pulumi.CustomResource {
                 throw new Error("Missing required property 'sessionReplay'");
             }
             resourceInputs["applicationId"] = args ? args.applicationId : undefined;
+            resourceInputs["experienceAnalytics"] = args ? args.experienceAnalytics : undefined;
             resourceInputs["rum"] = args ? args.rum : undefined;
             resourceInputs["sessionReplay"] = args ? args.sessionReplay : undefined;
         }
@@ -88,6 +94,10 @@ export interface WebAppEnablementState {
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     applicationId?: pulumi.Input<string>;
+    /**
+     * Experience Analytics
+     */
+    experienceAnalytics?: pulumi.Input<inputs.WebAppEnablementExperienceAnalytics>;
     /**
      * Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
      */
@@ -106,6 +116,10 @@ export interface WebAppEnablementArgs {
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     applicationId?: pulumi.Input<string>;
+    /**
+     * Experience Analytics
+     */
+    experienceAnalytics?: pulumi.Input<inputs.WebAppEnablementExperienceAnalytics>;
     /**
      * Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
      */

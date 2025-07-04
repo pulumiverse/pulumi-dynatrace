@@ -25,7 +25,7 @@ namespace Pulumiverse.Dynatrace
         /// collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
         /// processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
         /// * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-        /// configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.1+**. For
+        /// configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
         /// more details, check our [documentation](https://dt-url.net/jn02ey0).
         /// </summary>
         [Output("newContainerLogDetector")]
@@ -37,6 +37,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("scope")]
         public Output<string?> Scope { get; private set; } = null!;
+
+        /// <summary>
+        /// Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
+        /// </summary>
+        [Output("userAndEventData")]
+        public Output<bool?> UserAndEventData { get; private set; } = null!;
 
 
         /// <summary>
@@ -97,7 +103,7 @@ namespace Pulumiverse.Dynatrace
         /// collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
         /// processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
         /// * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-        /// configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.1+**. For
+        /// configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
         /// more details, check our [documentation](https://dt-url.net/jn02ey0).
         /// </summary>
         [Input("newContainerLogDetector", required: true)]
@@ -109,6 +115,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
+
+        /// <summary>
+        /// Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
+        /// </summary>
+        [Input("userAndEventData")]
+        public Input<bool>? UserAndEventData { get; set; }
 
         public LogAgentFeatureFlagsArgs()
         {
@@ -130,7 +142,7 @@ namespace Pulumiverse.Dynatrace
         /// collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
         /// processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
         /// * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-        /// configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.1+**. For
+        /// configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
         /// more details, check our [documentation](https://dt-url.net/jn02ey0).
         /// </summary>
         [Input("newContainerLogDetector")]
@@ -142,6 +154,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
+
+        /// <summary>
+        /// Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
+        /// </summary>
+        [Input("userAndEventData")]
+        public Input<bool>? UserAndEventData { get; set; }
 
         public LogAgentFeatureFlagsState()
         {

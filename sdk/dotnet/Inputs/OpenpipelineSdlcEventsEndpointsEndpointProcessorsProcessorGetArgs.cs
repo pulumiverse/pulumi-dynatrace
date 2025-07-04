@@ -20,6 +20,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorDqlProcessorGetArgs>? DqlProcessor { get; set; }
 
         /// <summary>
+        /// Processor to drop the record either during the processing stage or at the endpoint
+        /// </summary>
+        [Input("dropProcessor")]
+        public Input<Inputs.OpenpipelineSdlcEventsEndpointsEndpointProcessorsProcessorDropProcessorGetArgs>? DropProcessor { get; set; }
+
+        /// <summary>
         /// Processor to add fields
         /// </summary>
         [Input("fieldsAddProcessor")]

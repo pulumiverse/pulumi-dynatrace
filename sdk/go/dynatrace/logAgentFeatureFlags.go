@@ -22,12 +22,14 @@ type LogAgentFeatureFlags struct {
 	// collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
 	// processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
 	// * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-	//   configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.1+**. For
+	//   configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
 	//   more details, check our [documentation](https://dt-url.net/jn02ey0).
 	NewContainerLogDetector pulumi.BoolOutput `pulumi:"newContainerLogDetector"`
 	// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole
 	// environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
+	// Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
+	UserAndEventData pulumi.BoolPtrOutput `pulumi:"userAndEventData"`
 }
 
 // NewLogAgentFeatureFlags registers a new resource with the given unique name, arguments, and options.
@@ -70,12 +72,14 @@ type logAgentFeatureFlagsState struct {
 	// collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
 	// processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
 	// * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-	//   configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.1+**. For
+	//   configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
 	//   more details, check our [documentation](https://dt-url.net/jn02ey0).
 	NewContainerLogDetector *bool `pulumi:"newContainerLogDetector"`
 	// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole
 	// environment.
 	Scope *string `pulumi:"scope"`
+	// Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
+	UserAndEventData *bool `pulumi:"userAndEventData"`
 }
 
 type LogAgentFeatureFlagsState struct {
@@ -86,12 +90,14 @@ type LogAgentFeatureFlagsState struct {
 	// collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
 	// processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
 	// * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-	//   configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.1+**. For
+	//   configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
 	//   more details, check our [documentation](https://dt-url.net/jn02ey0).
 	NewContainerLogDetector pulumi.BoolPtrInput
 	// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole
 	// environment.
 	Scope pulumi.StringPtrInput
+	// Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
+	UserAndEventData pulumi.BoolPtrInput
 }
 
 func (LogAgentFeatureFlagsState) ElementType() reflect.Type {
@@ -106,12 +112,14 @@ type logAgentFeatureFlagsArgs struct {
 	// collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
 	// processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
 	// * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-	//   configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.1+**. For
+	//   configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
 	//   more details, check our [documentation](https://dt-url.net/jn02ey0).
 	NewContainerLogDetector bool `pulumi:"newContainerLogDetector"`
 	// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole
 	// environment.
 	Scope *string `pulumi:"scope"`
+	// Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
+	UserAndEventData *bool `pulumi:"userAndEventData"`
 }
 
 // The set of arguments for constructing a LogAgentFeatureFlags resource.
@@ -123,12 +131,14 @@ type LogAgentFeatureFlagsArgs struct {
 	// collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
 	// processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
 	// * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-	//   configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.1+**. For
+	//   configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
 	//   more details, check our [documentation](https://dt-url.net/jn02ey0).
 	NewContainerLogDetector pulumi.BoolInput
 	// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole
 	// environment.
 	Scope pulumi.StringPtrInput
+	// Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
+	UserAndEventData pulumi.BoolPtrInput
 }
 
 func (LogAgentFeatureFlagsArgs) ElementType() reflect.Type {
@@ -228,7 +238,7 @@ func (o LogAgentFeatureFlagsOutput) JournaldLogDetector() pulumi.BoolPtrOutput {
 // collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
 // processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
 //   - Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-//     configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.1+**. For
+//     configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
 //     more details, check our [documentation](https://dt-url.net/jn02ey0).
 func (o LogAgentFeatureFlagsOutput) NewContainerLogDetector() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogAgentFeatureFlags) pulumi.BoolOutput { return v.NewContainerLogDetector }).(pulumi.BoolOutput)
@@ -238,6 +248,11 @@ func (o LogAgentFeatureFlagsOutput) NewContainerLogDetector() pulumi.BoolOutput 
 // environment.
 func (o LogAgentFeatureFlagsOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LogAgentFeatureFlags) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
+}
+
+// Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
+func (o LogAgentFeatureFlagsOutput) UserAndEventData() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LogAgentFeatureFlags) pulumi.BoolPtrOutput { return v.UserAndEventData }).(pulumi.BoolPtrOutput)
 }
 
 type LogAgentFeatureFlagsArrayOutput struct{ *pulumi.OutputState }

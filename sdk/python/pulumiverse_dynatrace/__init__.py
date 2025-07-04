@@ -337,6 +337,7 @@ from .request_attribute import *
 from .request_naming import *
 from .request_namings import *
 from .resource_attributes import *
+from .rpc_based_sampling import *
 from .rum_advanced_correlation import *
 from .rum_host_headers import *
 from .rum_ip_determination import *
@@ -2646,6 +2647,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/resourceAttributes:ResourceAttributes": "ResourceAttributes"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/rpcBasedSampling",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/rpcBasedSampling:RpcBasedSampling": "RpcBasedSampling"
   }
  },
  {

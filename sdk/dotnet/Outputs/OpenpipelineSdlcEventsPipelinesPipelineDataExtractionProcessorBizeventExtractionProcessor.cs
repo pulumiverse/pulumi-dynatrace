@@ -30,6 +30,9 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// Strategy to assign a value
         /// </summary>
         public readonly Outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType EventType;
+        /// <summary>
+        /// Definition of the field extraction
+        /// </summary>
         public readonly Outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction? FieldExtraction;
         /// <summary>
         /// Identifier of the processor. Must be unique within a stage.

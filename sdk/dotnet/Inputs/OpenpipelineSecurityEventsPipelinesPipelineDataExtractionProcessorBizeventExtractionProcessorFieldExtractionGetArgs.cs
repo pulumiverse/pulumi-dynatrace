@@ -13,14 +13,21 @@ namespace Pulumiverse.Dynatrace.Inputs
 
     public sealed class OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtractionGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("fields", required: true)]
+        [Input("fields")]
         private InputList<string>? _fields;
+
+        /// <summary>
+        /// Unique fields to include/exclude in the extracted record
+        /// </summary>
         public InputList<string> Fields
         {
             get => _fields ?? (_fields = new InputList<string>());
             set => _fields = value;
         }
 
+        /// <summary>
+        /// Defines how the fields of the source record should be extracted
+        /// </summary>
         [Input("semantic", required: true)]
         public Input<string> Semantic { get; set; } = null!;
 

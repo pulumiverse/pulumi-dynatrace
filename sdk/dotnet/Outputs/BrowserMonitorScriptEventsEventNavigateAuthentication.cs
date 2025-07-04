@@ -15,9 +15,17 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class BrowserMonitorScriptEventsEventNavigateAuthentication
     {
         /// <summary>
+        /// List of allowed servers, optional with Kerberos authentication
+        /// </summary>
+        public readonly string? AuthServerAllowlist;
+        /// <summary>
         /// A reference to the entry within the credential vault
         /// </summary>
         public readonly string Creds;
+        /// <summary>
+        /// User's domain name, required with Kerberos authentication
+        /// </summary>
+        public readonly string? Domain;
         /// <summary>
         /// The type of authentication
         /// </summary>
@@ -25,11 +33,17 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private BrowserMonitorScriptEventsEventNavigateAuthentication(
+            string? authServerAllowlist,
+
             string creds,
+
+            string? domain,
 
             string type)
         {
+            AuthServerAllowlist = authServerAllowlist;
             Creds = creds;
+            Domain = domain;
             Type = type;
         }
     }

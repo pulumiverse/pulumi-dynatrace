@@ -14,7 +14,13 @@ namespace Pulumiverse.Dynatrace.Outputs
     [OutputType]
     public sealed class OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction
     {
+        /// <summary>
+        /// Unique fields to include/exclude in the extracted record
+        /// </summary>
         public readonly ImmutableArray<string> Fields;
+        /// <summary>
+        /// Defines how the fields of the source record should be extracted
+        /// </summary>
         public readonly string Semantic;
 
         [OutputConstructor]

@@ -17,6 +17,8 @@ type WebAppEnablement struct {
 
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrOutput `pulumi:"applicationId"`
+	// Experience Analytics
+	ExperienceAnalytics WebAppEnablementExperienceAnalyticsPtrOutput `pulumi:"experienceAnalytics"`
 	// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum WebAppEnablementRumOutput `pulumi:"rum"`
 	// [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
@@ -61,6 +63,8 @@ func GetWebAppEnablement(ctx *pulumi.Context,
 type webAppEnablementState struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
+	// Experience Analytics
+	ExperienceAnalytics *WebAppEnablementExperienceAnalytics `pulumi:"experienceAnalytics"`
 	// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum *WebAppEnablementRum `pulumi:"rum"`
 	// [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
@@ -70,6 +74,8 @@ type webAppEnablementState struct {
 type WebAppEnablementState struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
+	// Experience Analytics
+	ExperienceAnalytics WebAppEnablementExperienceAnalyticsPtrInput
 	// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum WebAppEnablementRumPtrInput
 	// [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
@@ -83,6 +89,8 @@ func (WebAppEnablementState) ElementType() reflect.Type {
 type webAppEnablementArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
+	// Experience Analytics
+	ExperienceAnalytics *WebAppEnablementExperienceAnalytics `pulumi:"experienceAnalytics"`
 	// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum WebAppEnablementRum `pulumi:"rum"`
 	// [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
@@ -93,6 +101,8 @@ type webAppEnablementArgs struct {
 type WebAppEnablementArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
+	// Experience Analytics
+	ExperienceAnalytics WebAppEnablementExperienceAnalyticsPtrInput
 	// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum WebAppEnablementRumInput
 	// [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
@@ -189,6 +199,11 @@ func (o WebAppEnablementOutput) ToWebAppEnablementOutputWithContext(ctx context.
 // The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 func (o WebAppEnablementOutput) ApplicationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WebAppEnablement) pulumi.StringPtrOutput { return v.ApplicationId }).(pulumi.StringPtrOutput)
+}
+
+// Experience Analytics
+func (o WebAppEnablementOutput) ExperienceAnalytics() WebAppEnablementExperienceAnalyticsPtrOutput {
+	return o.ApplyT(func(v *WebAppEnablement) WebAppEnablementExperienceAnalyticsPtrOutput { return v.ExperienceAnalytics }).(WebAppEnablementExperienceAnalyticsPtrOutput)
 }
 
 // Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.

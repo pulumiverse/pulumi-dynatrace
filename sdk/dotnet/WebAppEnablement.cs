@@ -20,6 +20,12 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> ApplicationId { get; private set; } = null!;
 
         /// <summary>
+        /// Experience Analytics
+        /// </summary>
+        [Output("experienceAnalytics")]
+        public Output<Outputs.WebAppEnablementExperienceAnalytics?> ExperienceAnalytics { get; private set; } = null!;
+
+        /// <summary>
         /// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         /// </summary>
         [Output("rum")]
@@ -85,6 +91,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
+        /// Experience Analytics
+        /// </summary>
+        [Input("experienceAnalytics")]
+        public Input<Inputs.WebAppEnablementExperienceAnalyticsArgs>? ExperienceAnalytics { get; set; }
+
+        /// <summary>
         /// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         /// </summary>
         [Input("rum", required: true)]
@@ -109,6 +121,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("applicationId")]
         public Input<string>? ApplicationId { get; set; }
+
+        /// <summary>
+        /// Experience Analytics
+        /// </summary>
+        [Input("experienceAnalytics")]
+        public Input<Inputs.WebAppEnablementExperienceAnalyticsGetArgs>? ExperienceAnalytics { get; set; }
 
         /// <summary>
         /// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.

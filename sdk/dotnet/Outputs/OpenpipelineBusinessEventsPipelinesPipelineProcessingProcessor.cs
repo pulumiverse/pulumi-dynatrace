@@ -19,6 +19,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorDqlProcessor? DqlProcessor;
         /// <summary>
+        /// Processor to drop the record either during the processing stage or at the endpoint
+        /// </summary>
+        public readonly Outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorDropProcessor? DropProcessor;
+        /// <summary>
         /// Processor to add fields
         /// </summary>
         public readonly Outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor? FieldsAddProcessor;
@@ -39,6 +43,8 @@ namespace Pulumiverse.Dynatrace.Outputs
         private OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessor(
             Outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorDqlProcessor? dqlProcessor,
 
+            Outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorDropProcessor? dropProcessor,
+
             Outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor? fieldsAddProcessor,
 
             Outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor? fieldsRemoveProcessor,
@@ -48,6 +54,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             Outputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorTechnologyProcessor? technologyProcessor)
         {
             DqlProcessor = dqlProcessor;
+            DropProcessor = dropProcessor;
             FieldsAddProcessor = fieldsAddProcessor;
             FieldsRemoveProcessor = fieldsRemoveProcessor;
             FieldsRenameProcessor = fieldsRenameProcessor;

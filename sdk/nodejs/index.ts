@@ -1658,6 +1658,11 @@ export type ResourceAttributes = import("./resourceAttributes").ResourceAttribut
 export const ResourceAttributes: typeof import("./resourceAttributes").ResourceAttributes = null as any;
 utilities.lazyLoad(exports, ["ResourceAttributes"], () => require("./resourceAttributes"));
 
+export { RpcBasedSamplingArgs, RpcBasedSamplingState } from "./rpcBasedSampling";
+export type RpcBasedSampling = import("./rpcBasedSampling").RpcBasedSampling;
+export const RpcBasedSampling: typeof import("./rpcBasedSampling").RpcBasedSampling = null as any;
+utilities.lazyLoad(exports, ["RpcBasedSampling"], () => require("./rpcBasedSampling"));
+
 export { RumAdvancedCorrelationArgs, RumAdvancedCorrelationState } from "./rumAdvancedCorrelation";
 export type RumAdvancedCorrelation = import("./rumAdvancedCorrelation").RumAdvancedCorrelation;
 export const RumAdvancedCorrelation: typeof import("./rumAdvancedCorrelation").RumAdvancedCorrelation = null as any;
@@ -2636,6 +2641,8 @@ const _module = {
                 return new RequestNamings(name, <any>undefined, { urn })
             case "dynatrace:index/resourceAttributes:ResourceAttributes":
                 return new ResourceAttributes(name, <any>undefined, { urn })
+            case "dynatrace:index/rpcBasedSampling:RpcBasedSampling":
+                return new RpcBasedSampling(name, <any>undefined, { urn })
             case "dynatrace:index/rumAdvancedCorrelation:RumAdvancedCorrelation":
                 return new RumAdvancedCorrelation(name, <any>undefined, { urn })
             case "dynatrace:index/rumHostHeaders:RumHostHeaders":
@@ -3082,6 +3089,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/requestAttribute", _mo
 pulumi.runtime.registerResourceModule("dynatrace", "index/requestNaming", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/requestNamings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/resourceAttributes", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/rpcBasedSampling", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/rumAdvancedCorrelation", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/rumHostHeaders", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/rumIpDetermination", _module)
