@@ -1465,6 +1465,16 @@ export type OpenpipelineBusinessEvents = import("./openpipelineBusinessEvents").
 export const OpenpipelineBusinessEvents: typeof import("./openpipelineBusinessEvents").OpenpipelineBusinessEvents = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineBusinessEvents"], () => require("./openpipelineBusinessEvents"));
 
+export { OpenpipelineDavisEventsArgs, OpenpipelineDavisEventsState } from "./openpipelineDavisEvents";
+export type OpenpipelineDavisEvents = import("./openpipelineDavisEvents").OpenpipelineDavisEvents;
+export const OpenpipelineDavisEvents: typeof import("./openpipelineDavisEvents").OpenpipelineDavisEvents = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineDavisEvents"], () => require("./openpipelineDavisEvents"));
+
+export { OpenpipelineDavisProblemsArgs, OpenpipelineDavisProblemsState } from "./openpipelineDavisProblems";
+export type OpenpipelineDavisProblems = import("./openpipelineDavisProblems").OpenpipelineDavisProblems;
+export const OpenpipelineDavisProblems: typeof import("./openpipelineDavisProblems").OpenpipelineDavisProblems = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineDavisProblems"], () => require("./openpipelineDavisProblems"));
+
 export { OpenpipelineEventsArgs, OpenpipelineEventsState } from "./openpipelineEvents";
 export type OpenpipelineEvents = import("./openpipelineEvents").OpenpipelineEvents;
 export const OpenpipelineEvents: typeof import("./openpipelineEvents").OpenpipelineEvents = null as any;
@@ -1475,6 +1485,11 @@ export type OpenpipelineLogs = import("./openpipelineLogs").OpenpipelineLogs;
 export const OpenpipelineLogs: typeof import("./openpipelineLogs").OpenpipelineLogs = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineLogs"], () => require("./openpipelineLogs"));
 
+export { OpenpipelineMetricsArgs, OpenpipelineMetricsState } from "./openpipelineMetrics";
+export type OpenpipelineMetrics = import("./openpipelineMetrics").OpenpipelineMetrics;
+export const OpenpipelineMetrics: typeof import("./openpipelineMetrics").OpenpipelineMetrics = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineMetrics"], () => require("./openpipelineMetrics"));
+
 export { OpenpipelineSdlcEventsArgs, OpenpipelineSdlcEventsState } from "./openpipelineSdlcEvents";
 export type OpenpipelineSdlcEvents = import("./openpipelineSdlcEvents").OpenpipelineSdlcEvents;
 export const OpenpipelineSdlcEvents: typeof import("./openpipelineSdlcEvents").OpenpipelineSdlcEvents = null as any;
@@ -1484,6 +1499,26 @@ export { OpenpipelineSecurityEventsArgs, OpenpipelineSecurityEventsState } from 
 export type OpenpipelineSecurityEvents = import("./openpipelineSecurityEvents").OpenpipelineSecurityEvents;
 export const OpenpipelineSecurityEvents: typeof import("./openpipelineSecurityEvents").OpenpipelineSecurityEvents = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineSecurityEvents"], () => require("./openpipelineSecurityEvents"));
+
+export { OpenpipelineSpansArgs, OpenpipelineSpansState } from "./openpipelineSpans";
+export type OpenpipelineSpans = import("./openpipelineSpans").OpenpipelineSpans;
+export const OpenpipelineSpans: typeof import("./openpipelineSpans").OpenpipelineSpans = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineSpans"], () => require("./openpipelineSpans"));
+
+export { OpenpipelineSystemEventsArgs, OpenpipelineSystemEventsState } from "./openpipelineSystemEvents";
+export type OpenpipelineSystemEvents = import("./openpipelineSystemEvents").OpenpipelineSystemEvents;
+export const OpenpipelineSystemEvents: typeof import("./openpipelineSystemEvents").OpenpipelineSystemEvents = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineSystemEvents"], () => require("./openpipelineSystemEvents"));
+
+export { OpenpipelineUserEventsArgs, OpenpipelineUserEventsState } from "./openpipelineUserEvents";
+export type OpenpipelineUserEvents = import("./openpipelineUserEvents").OpenpipelineUserEvents;
+export const OpenpipelineUserEvents: typeof import("./openpipelineUserEvents").OpenpipelineUserEvents = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineUserEvents"], () => require("./openpipelineUserEvents"));
+
+export { OpenpipelineUserSessionsArgs, OpenpipelineUserSessionsState } from "./openpipelineUserSessions";
+export type OpenpipelineUserSessions = import("./openpipelineUserSessions").OpenpipelineUserSessions;
+export const OpenpipelineUserSessions: typeof import("./openpipelineUserSessions").OpenpipelineUserSessions = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineUserSessions"], () => require("./openpipelineUserSessions"));
 
 export { OpentelemetryMetricsArgs, OpentelemetryMetricsState } from "./opentelemetryMetrics";
 export type OpentelemetryMetrics = import("./opentelemetryMetrics").OpentelemetryMetrics;
@@ -2565,14 +2600,28 @@ const _module = {
                 return new OneagentUpdates(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineBusinessEvents:OpenpipelineBusinessEvents":
                 return new OpenpipelineBusinessEvents(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineDavisEvents:OpenpipelineDavisEvents":
+                return new OpenpipelineDavisEvents(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineDavisProblems:OpenpipelineDavisProblems":
+                return new OpenpipelineDavisProblems(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineEvents:OpenpipelineEvents":
                 return new OpenpipelineEvents(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineLogs:OpenpipelineLogs":
                 return new OpenpipelineLogs(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineMetrics:OpenpipelineMetrics":
+                return new OpenpipelineMetrics(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineSdlcEvents:OpenpipelineSdlcEvents":
                 return new OpenpipelineSdlcEvents(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineSecurityEvents:OpenpipelineSecurityEvents":
                 return new OpenpipelineSecurityEvents(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineSpans:OpenpipelineSpans":
+                return new OpenpipelineSpans(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineSystemEvents:OpenpipelineSystemEvents":
+                return new OpenpipelineSystemEvents(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineUserEvents:OpenpipelineUserEvents":
+                return new OpenpipelineUserEvents(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineUserSessions:OpenpipelineUserSessions":
+                return new OpenpipelineUserSessions(name, <any>undefined, { urn })
             case "dynatrace:index/opentelemetryMetrics:OpentelemetryMetrics":
                 return new OpentelemetryMetrics(name, <any>undefined, { urn })
             case "dynatrace:index/opsGenieNotification:OpsGenieNotification":
@@ -3051,10 +3100,17 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentFeatures", _mo
 pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentSideMasking", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentUpdates", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineBusinessEvents", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineDavisEvents", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineDavisProblems", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineEvents", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineLogs", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineMetrics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineSdlcEvents", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineSecurityEvents", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineSpans", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineSystemEvents", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineUserEvents", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineUserSessions", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/opentelemetryMetrics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/opsGenieNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/osServices", _module)

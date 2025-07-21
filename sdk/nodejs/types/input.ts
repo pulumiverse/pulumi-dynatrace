@@ -19513,6 +19513,1718 @@ export interface OpenpipelineBusinessEventsRoutingEntry {
     pipelineId: pulumi.Input<string>;
 }
 
+export interface OpenpipelineDavisEventsEndpoints {
+    /**
+     * Definition of a single ingest source
+     */
+    endpoints?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsEndpointsEndpoint>[]>;
+}
+
+export interface OpenpipelineDavisEventsEndpointsEndpoint {
+    /**
+     * The default bucket assigned to records for the ingest source
+     */
+    defaultBucket?: pulumi.Input<string>;
+    /**
+     * Display name of the ingest source
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The pre-processing done in the ingest source
+     */
+    processors?: pulumi.Input<inputs.OpenpipelineDavisEventsEndpointsEndpointProcessors>;
+    /**
+     * Routing strategy, either dynamic or static
+     */
+    routing: pulumi.Input<inputs.OpenpipelineDavisEventsEndpointsEndpointRouting>;
+    /**
+     * The segment of the ingest source, which is applied to the base path. Must be unique within a configuration."
+     */
+    segment: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsEndpointsEndpointProcessors {
+    /**
+     * Groups all processors applicable for processing in the EndpointDefinition.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessor>[]>;
+}
+
+export interface OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor>;
+}
+
+export interface OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsEndpointsEndpointRouting {
+    /**
+     * Pipeline ID of the static routing
+     */
+    pipelineId?: pulumi.Input<string>;
+    /**
+     * Type of routing, static or dynamic
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelines {
+    /**
+     * Definition of a single pipeline
+     */
+    pipelines?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipeline>[]>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipeline {
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    dataExtraction?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineDataExtraction>;
+    /**
+     * Display name of the pipeline
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the pipeline
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Metric extraction stage configuration of the pipeline
+     */
+    metricExtraction?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineMetricExtraction>;
+    /**
+     * Processing stage configuration of the pipeline
+     */
+    processing?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineProcessing>;
+    /**
+     * Security context stage configuration of the pipeline
+     */
+    securityContext?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineSecurityContext>;
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    storage?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineStorage>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineDataExtraction {
+    /**
+     * Groups all processors applicable for the DataExtractionStage.
+     * Applicable processors are DavisEventExtractionProcessor and BizeventExtractionProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessor {
+    bizeventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor>;
+    /**
+     * Processor to apply a DQL script
+     */
+    davisEventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Strategy to assign a value
+     */
+    eventProvider: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider>;
+    /**
+     * Strategy to assign a value
+     */
+    eventType: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType>;
+    /**
+     * Definition of the field extraction
+     */
+    fieldExtraction?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
+    /**
+     * Unique fields to include/exclude in the extracted record
+     */
+    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Defines how the fields of the source record should be extracted
+     */
+    semantic: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * List of properties for the extracted davis event
+     */
+    properties: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty>[]>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty {
+    /**
+     * The key to set on the davis event
+     */
+    key: pulumi.Input<string>;
+    /**
+     * The value assigned to the key
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineMetricExtraction {
+    /**
+     * Data extraction processor to use
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineMetricExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineMetricExtractionProcessor {
+    /**
+     * Processor to write the occurrences as a metric
+     */
+    counterMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor>;
+    /**
+     * Processor to extract a value from a field as a metric
+     */
+    valueMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The field to extract the value for the metric
+     */
+    field: pulumi.Input<string>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineProcessing {
+    /**
+     * Groups all processors applicable for the ProcessingStage.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor, TechnologyProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineProcessingProcessor>[]>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineProcessingProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor>;
+    /**
+     * Processor to apply a technology processors
+     */
+    technologyProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorTechnologyProcessor>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineProcessingProcessorTechnologyProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * The reference identifier to a specific technology. This technology is applied on the record.
+     */
+    technologyId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineSecurityContext {
+    /**
+     * Groups all processors applicable for the SecurityContextStage.
+     * Applicable processor is SecurityContextProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineSecurityContextProcessor>[]>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineSecurityContextProcessor {
+    /**
+     * Processor to set the security context field
+     */
+    securityContextProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    value: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineStorage {
+    /**
+     * Default bucket assigned to records which do not match any other storage processor
+     */
+    catchAllBucketName?: pulumi.Input<string>;
+    /**
+     * Groups all processors applicable for the StorageStage.
+     * Applicable processors are BucketAssignmentProcessor and NoStorageProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineStorageProcessor>[]>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineStorageProcessor {
+    /**
+     * Processor to assign a bucket
+     */
+    bucketAssignmentProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor>;
+    /**
+     * Processor to skip storage assignment
+     */
+    noStorageProcessor?: pulumi.Input<inputs.OpenpipelineDavisEventsPipelinesPipelineStorageProcessorNoStorageProcessor>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor {
+    /**
+     * Bucket that is assigned when the record is matched
+     */
+    bucketName: pulumi.Input<string>;
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsPipelinesPipelineStorageProcessorNoStorageProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisEventsRouting {
+    /**
+     * Dynamic routing entry
+     */
+    entries?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisEventsRoutingEntry>[]>;
+}
+
+export interface OpenpipelineDavisEventsRoutingEntry {
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Unique note describing the dynamic route
+     */
+    note: pulumi.Input<string>;
+    /**
+     * Identifier of the pipeline the record is routed into
+     */
+    pipelineId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsEndpoints {
+    /**
+     * Definition of a single ingest source
+     */
+    endpoints?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsEndpointsEndpoint>[]>;
+}
+
+export interface OpenpipelineDavisProblemsEndpointsEndpoint {
+    /**
+     * The default bucket assigned to records for the ingest source
+     */
+    defaultBucket?: pulumi.Input<string>;
+    /**
+     * Display name of the ingest source
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The pre-processing done in the ingest source
+     */
+    processors?: pulumi.Input<inputs.OpenpipelineDavisProblemsEndpointsEndpointProcessors>;
+    /**
+     * Routing strategy, either dynamic or static
+     */
+    routing: pulumi.Input<inputs.OpenpipelineDavisProblemsEndpointsEndpointRouting>;
+    /**
+     * The segment of the ingest source, which is applied to the base path. Must be unique within a configuration."
+     */
+    segment: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsEndpointsEndpointProcessors {
+    /**
+     * Groups all processors applicable for processing in the EndpointDefinition.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessor>[]>;
+}
+
+export interface OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor>;
+}
+
+export interface OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsEndpointsEndpointRouting {
+    /**
+     * Pipeline ID of the static routing
+     */
+    pipelineId?: pulumi.Input<string>;
+    /**
+     * Type of routing, static or dynamic
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelines {
+    /**
+     * Definition of a single pipeline
+     */
+    pipelines?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipeline>[]>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipeline {
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    dataExtraction?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineDataExtraction>;
+    /**
+     * Display name of the pipeline
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the pipeline
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Metric extraction stage configuration of the pipeline
+     */
+    metricExtraction?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineMetricExtraction>;
+    /**
+     * Processing stage configuration of the pipeline
+     */
+    processing?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessing>;
+    /**
+     * Security context stage configuration of the pipeline
+     */
+    securityContext?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineSecurityContext>;
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    storage?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineStorage>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineDataExtraction {
+    /**
+     * Groups all processors applicable for the DataExtractionStage.
+     * Applicable processors are DavisEventExtractionProcessor and BizeventExtractionProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessor {
+    bizeventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor>;
+    /**
+     * Processor to apply a DQL script
+     */
+    davisEventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Strategy to assign a value
+     */
+    eventProvider: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider>;
+    /**
+     * Strategy to assign a value
+     */
+    eventType: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType>;
+    /**
+     * Definition of the field extraction
+     */
+    fieldExtraction?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
+    /**
+     * Unique fields to include/exclude in the extracted record
+     */
+    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Defines how the fields of the source record should be extracted
+     */
+    semantic: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * List of properties for the extracted davis event
+     */
+    properties: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty>[]>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty {
+    /**
+     * The key to set on the davis event
+     */
+    key: pulumi.Input<string>;
+    /**
+     * The value assigned to the key
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineMetricExtraction {
+    /**
+     * Data extraction processor to use
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineMetricExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineMetricExtractionProcessor {
+    /**
+     * Processor to write the occurrences as a metric
+     */
+    counterMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor>;
+    /**
+     * Processor to extract a value from a field as a metric
+     */
+    valueMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The field to extract the value for the metric
+     */
+    field: pulumi.Input<string>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineProcessing {
+    /**
+     * Groups all processors applicable for the ProcessingStage.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor, TechnologyProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessor>[]>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsRenameProcessor>;
+    /**
+     * Processor to apply a technology processors
+     */
+    technologyProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorTechnologyProcessor>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorTechnologyProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * The reference identifier to a specific technology. This technology is applied on the record.
+     */
+    technologyId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineSecurityContext {
+    /**
+     * Groups all processors applicable for the SecurityContextStage.
+     * Applicable processor is SecurityContextProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineSecurityContextProcessor>[]>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineSecurityContextProcessor {
+    /**
+     * Processor to set the security context field
+     */
+    securityContextProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    value: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineStorage {
+    /**
+     * Default bucket assigned to records which do not match any other storage processor
+     */
+    catchAllBucketName?: pulumi.Input<string>;
+    /**
+     * Groups all processors applicable for the StorageStage.
+     * Applicable processors are BucketAssignmentProcessor and NoStorageProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineStorageProcessor>[]>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineStorageProcessor {
+    /**
+     * Processor to assign a bucket
+     */
+    bucketAssignmentProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineStorageProcessorBucketAssignmentProcessor>;
+    /**
+     * Processor to skip storage assignment
+     */
+    noStorageProcessor?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelinesPipelineStorageProcessorNoStorageProcessor>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineStorageProcessorBucketAssignmentProcessor {
+    /**
+     * Bucket that is assigned when the record is matched
+     */
+    bucketName: pulumi.Input<string>;
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsPipelinesPipelineStorageProcessorNoStorageProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineDavisProblemsRouting {
+    /**
+     * Dynamic routing entry
+     */
+    entries?: pulumi.Input<pulumi.Input<inputs.OpenpipelineDavisProblemsRoutingEntry>[]>;
+}
+
+export interface OpenpipelineDavisProblemsRoutingEntry {
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Unique note describing the dynamic route
+     */
+    note: pulumi.Input<string>;
+    /**
+     * Identifier of the pipeline the record is routed into
+     */
+    pipelineId: pulumi.Input<string>;
+}
+
 export interface OpenpipelineEventsEndpoints {
     /**
      * Definition of a single ingest source
@@ -21225,6 +22937,862 @@ export interface OpenpipelineLogsRoutingEntry {
     pipelineId: pulumi.Input<string>;
 }
 
+export interface OpenpipelineMetricsEndpoints {
+    /**
+     * Definition of a single ingest source
+     */
+    endpoints?: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsEndpointsEndpoint>[]>;
+}
+
+export interface OpenpipelineMetricsEndpointsEndpoint {
+    /**
+     * The default bucket assigned to records for the ingest source
+     */
+    defaultBucket?: pulumi.Input<string>;
+    /**
+     * Display name of the ingest source
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The pre-processing done in the ingest source
+     */
+    processors?: pulumi.Input<inputs.OpenpipelineMetricsEndpointsEndpointProcessors>;
+    /**
+     * Routing strategy, either dynamic or static
+     */
+    routing: pulumi.Input<inputs.OpenpipelineMetricsEndpointsEndpointRouting>;
+    /**
+     * The segment of the ingest source, which is applied to the base path. Must be unique within a configuration."
+     */
+    segment: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsEndpointsEndpointProcessors {
+    /**
+     * Groups all processors applicable for processing in the EndpointDefinition.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsEndpointsEndpointProcessorsProcessor>[]>;
+}
+
+export interface OpenpipelineMetricsEndpointsEndpointProcessorsProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineMetricsEndpointsEndpointProcessorsProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineMetricsEndpointsEndpointProcessorsProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineMetricsEndpointsEndpointProcessorsProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineMetricsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineMetricsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor>;
+}
+
+export interface OpenpipelineMetricsEndpointsEndpointProcessorsProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsEndpointsEndpointProcessorsProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsEndpointsEndpointProcessorsProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsEndpointsEndpointRouting {
+    /**
+     * Pipeline ID of the static routing
+     */
+    pipelineId?: pulumi.Input<string>;
+    /**
+     * Type of routing, static or dynamic
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelines {
+    /**
+     * Definition of a single pipeline
+     */
+    pipelines?: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipeline>[]>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipeline {
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    dataExtraction?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineDataExtraction>;
+    /**
+     * Display name of the pipeline
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the pipeline
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Metric extraction stage configuration of the pipeline
+     */
+    metricExtraction?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineMetricExtraction>;
+    /**
+     * Processing stage configuration of the pipeline
+     */
+    processing?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineProcessing>;
+    /**
+     * Security context stage configuration of the pipeline
+     */
+    securityContext?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineSecurityContext>;
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    storage?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineStorage>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineDataExtraction {
+    /**
+     * Groups all processors applicable for the DataExtractionStage.
+     * Applicable processors are DavisEventExtractionProcessor and BizeventExtractionProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineDataExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineDataExtractionProcessor {
+    bizeventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor>;
+    /**
+     * Processor to apply a DQL script
+     */
+    davisEventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Strategy to assign a value
+     */
+    eventProvider: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider>;
+    /**
+     * Strategy to assign a value
+     */
+    eventType: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType>;
+    /**
+     * Definition of the field extraction
+     */
+    fieldExtraction?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
+    /**
+     * Unique fields to include/exclude in the extracted record
+     */
+    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Defines how the fields of the source record should be extracted
+     */
+    semantic: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * List of properties for the extracted davis event
+     */
+    properties: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty>[]>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty {
+    /**
+     * The key to set on the davis event
+     */
+    key: pulumi.Input<string>;
+    /**
+     * The value assigned to the key
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineMetricExtraction {
+    /**
+     * Data extraction processor to use
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessor {
+    /**
+     * Processor to write the occurrences as a metric
+     */
+    counterMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor>;
+    /**
+     * Processor to extract a value from a field as a metric
+     */
+    valueMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The field to extract the value for the metric
+     */
+    field: pulumi.Input<string>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineProcessing {
+    /**
+     * Groups all processors applicable for the ProcessingStage.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor, TechnologyProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineProcessingProcessor>[]>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineProcessingProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineProcessingProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineProcessingProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineProcessingProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineProcessingProcessorFieldsRenameProcessor>;
+    /**
+     * Processor to apply a technology processors
+     */
+    technologyProcessor?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineProcessingProcessorTechnologyProcessor>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineProcessingProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineProcessingProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineProcessingProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineProcessingProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineProcessingProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineProcessingProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineProcessingProcessorTechnologyProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * The reference identifier to a specific technology. This technology is applied on the record.
+     */
+    technologyId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineSecurityContext {
+    /**
+     * Groups all processors applicable for the SecurityContextStage.
+     * Applicable processor is SecurityContextProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineSecurityContextProcessor>[]>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineSecurityContextProcessor {
+    /**
+     * Processor to set the security context field
+     */
+    securityContextProcessor?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    value: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineStorage {
+    /**
+     * Default bucket assigned to records which do not match any other storage processor
+     */
+    catchAllBucketName?: pulumi.Input<string>;
+    /**
+     * Groups all processors applicable for the StorageStage.
+     * Applicable processors are BucketAssignmentProcessor and NoStorageProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineStorageProcessor>[]>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineStorageProcessor {
+    /**
+     * Processor to assign a bucket
+     */
+    bucketAssignmentProcessor?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineStorageProcessorBucketAssignmentProcessor>;
+    /**
+     * Processor to skip storage assignment
+     */
+    noStorageProcessor?: pulumi.Input<inputs.OpenpipelineMetricsPipelinesPipelineStorageProcessorNoStorageProcessor>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineStorageProcessorBucketAssignmentProcessor {
+    /**
+     * Bucket that is assigned when the record is matched
+     */
+    bucketName: pulumi.Input<string>;
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsPipelinesPipelineStorageProcessorNoStorageProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineMetricsRouting {
+    /**
+     * Dynamic routing entry
+     */
+    entries?: pulumi.Input<pulumi.Input<inputs.OpenpipelineMetricsRoutingEntry>[]>;
+}
+
+export interface OpenpipelineMetricsRoutingEntry {
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Unique note describing the dynamic route
+     */
+    note: pulumi.Input<string>;
+    /**
+     * Identifier of the pipeline the record is routed into
+     */
+    pipelineId: pulumi.Input<string>;
+}
+
 export interface OpenpipelineSdlcEventsEndpoints {
     /**
      * Definition of a single ingest source
@@ -22919,6 +25487,3430 @@ export interface OpenpipelineSecurityEventsRouting {
 }
 
 export interface OpenpipelineSecurityEventsRoutingEntry {
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Unique note describing the dynamic route
+     */
+    note: pulumi.Input<string>;
+    /**
+     * Identifier of the pipeline the record is routed into
+     */
+    pipelineId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansEndpoints {
+    /**
+     * Definition of a single ingest source
+     */
+    endpoints?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansEndpointsEndpoint>[]>;
+}
+
+export interface OpenpipelineSpansEndpointsEndpoint {
+    /**
+     * The default bucket assigned to records for the ingest source
+     */
+    defaultBucket?: pulumi.Input<string>;
+    /**
+     * Display name of the ingest source
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The pre-processing done in the ingest source
+     */
+    processors?: pulumi.Input<inputs.OpenpipelineSpansEndpointsEndpointProcessors>;
+    /**
+     * Routing strategy, either dynamic or static
+     */
+    routing: pulumi.Input<inputs.OpenpipelineSpansEndpointsEndpointRouting>;
+    /**
+     * The segment of the ingest source, which is applied to the base path. Must be unique within a configuration."
+     */
+    segment: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansEndpointsEndpointProcessors {
+    /**
+     * Groups all processors applicable for processing in the EndpointDefinition.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessor>[]>;
+}
+
+export interface OpenpipelineSpansEndpointsEndpointProcessorsProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsRenameProcessor>;
+}
+
+export interface OpenpipelineSpansEndpointsEndpointProcessorsProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansEndpointsEndpointProcessorsProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansEndpointsEndpointRouting {
+    /**
+     * Pipeline ID of the static routing
+     */
+    pipelineId?: pulumi.Input<string>;
+    /**
+     * Type of routing, static or dynamic
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelines {
+    /**
+     * Definition of a single pipeline
+     */
+    pipelines?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansPipelinesPipeline>[]>;
+}
+
+export interface OpenpipelineSpansPipelinesPipeline {
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    dataExtraction?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineDataExtraction>;
+    /**
+     * Display name of the pipeline
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the pipeline
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Metric extraction stage configuration of the pipeline
+     */
+    metricExtraction?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineMetricExtraction>;
+    /**
+     * Processing stage configuration of the pipeline
+     */
+    processing?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineProcessing>;
+    /**
+     * Security context stage configuration of the pipeline
+     */
+    securityContext?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineSecurityContext>;
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    storage?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineStorage>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineDataExtraction {
+    /**
+     * Groups all processors applicable for the DataExtractionStage.
+     * Applicable processors are DavisEventExtractionProcessor and BizeventExtractionProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineDataExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineDataExtractionProcessor {
+    bizeventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor>;
+    /**
+     * Processor to apply a DQL script
+     */
+    davisEventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Strategy to assign a value
+     */
+    eventProvider: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider>;
+    /**
+     * Strategy to assign a value
+     */
+    eventType: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType>;
+    /**
+     * Definition of the field extraction
+     */
+    fieldExtraction?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
+    /**
+     * Unique fields to include/exclude in the extracted record
+     */
+    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Defines how the fields of the source record should be extracted
+     */
+    semantic: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * List of properties for the extracted davis event
+     */
+    properties: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty>[]>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty {
+    /**
+     * The key to set on the davis event
+     */
+    key: pulumi.Input<string>;
+    /**
+     * The value assigned to the key
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineMetricExtraction {
+    /**
+     * Data extraction processor to use
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineMetricExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineMetricExtractionProcessor {
+    /**
+     * Processor to write the occurrences as a metric
+     */
+    counterMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor>;
+    /**
+     * Processor to extract a value from a field as a metric
+     */
+    valueMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The field to extract the value for the metric
+     */
+    field: pulumi.Input<string>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineProcessing {
+    /**
+     * Groups all processors applicable for the ProcessingStage.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor, TechnologyProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineProcessingProcessor>[]>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineProcessingProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineProcessingProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineProcessingProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsRenameProcessor>;
+    /**
+     * Processor to apply a technology processors
+     */
+    technologyProcessor?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineProcessingProcessorTechnologyProcessor>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineProcessingProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineProcessingProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineProcessingProcessorTechnologyProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * The reference identifier to a specific technology. This technology is applied on the record.
+     */
+    technologyId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineSecurityContext {
+    /**
+     * Groups all processors applicable for the SecurityContextStage.
+     * Applicable processor is SecurityContextProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineSecurityContextProcessor>[]>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineSecurityContextProcessor {
+    /**
+     * Processor to set the security context field
+     */
+    securityContextProcessor?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineSecurityContextProcessorSecurityContextProcessor>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineSecurityContextProcessorSecurityContextProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    value: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineStorage {
+    /**
+     * Default bucket assigned to records which do not match any other storage processor
+     */
+    catchAllBucketName?: pulumi.Input<string>;
+    /**
+     * Groups all processors applicable for the StorageStage.
+     * Applicable processors are BucketAssignmentProcessor and NoStorageProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineStorageProcessor>[]>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineStorageProcessor {
+    /**
+     * Processor to assign a bucket
+     */
+    bucketAssignmentProcessor?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineStorageProcessorBucketAssignmentProcessor>;
+    /**
+     * Processor to skip storage assignment
+     */
+    noStorageProcessor?: pulumi.Input<inputs.OpenpipelineSpansPipelinesPipelineStorageProcessorNoStorageProcessor>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineStorageProcessorBucketAssignmentProcessor {
+    /**
+     * Bucket that is assigned when the record is matched
+     */
+    bucketName: pulumi.Input<string>;
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansPipelinesPipelineStorageProcessorNoStorageProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSpansRouting {
+    /**
+     * Dynamic routing entry
+     */
+    entries?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSpansRoutingEntry>[]>;
+}
+
+export interface OpenpipelineSpansRoutingEntry {
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Unique note describing the dynamic route
+     */
+    note: pulumi.Input<string>;
+    /**
+     * Identifier of the pipeline the record is routed into
+     */
+    pipelineId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsEndpoints {
+    /**
+     * Definition of a single ingest source
+     */
+    endpoints?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsEndpointsEndpoint>[]>;
+}
+
+export interface OpenpipelineSystemEventsEndpointsEndpoint {
+    /**
+     * The default bucket assigned to records for the ingest source
+     */
+    defaultBucket?: pulumi.Input<string>;
+    /**
+     * Display name of the ingest source
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The pre-processing done in the ingest source
+     */
+    processors?: pulumi.Input<inputs.OpenpipelineSystemEventsEndpointsEndpointProcessors>;
+    /**
+     * Routing strategy, either dynamic or static
+     */
+    routing: pulumi.Input<inputs.OpenpipelineSystemEventsEndpointsEndpointRouting>;
+    /**
+     * The segment of the ingest source, which is applied to the base path. Must be unique within a configuration."
+     */
+    segment: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsEndpointsEndpointProcessors {
+    /**
+     * Groups all processors applicable for processing in the EndpointDefinition.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessor>[]>;
+}
+
+export interface OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor>;
+}
+
+export interface OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsEndpointsEndpointRouting {
+    /**
+     * Pipeline ID of the static routing
+     */
+    pipelineId?: pulumi.Input<string>;
+    /**
+     * Type of routing, static or dynamic
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelines {
+    /**
+     * Definition of a single pipeline
+     */
+    pipelines?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipeline>[]>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipeline {
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    dataExtraction?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineDataExtraction>;
+    /**
+     * Display name of the pipeline
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the pipeline
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Metric extraction stage configuration of the pipeline
+     */
+    metricExtraction?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineMetricExtraction>;
+    /**
+     * Processing stage configuration of the pipeline
+     */
+    processing?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineProcessing>;
+    /**
+     * Security context stage configuration of the pipeline
+     */
+    securityContext?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineSecurityContext>;
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    storage?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineStorage>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineDataExtraction {
+    /**
+     * Groups all processors applicable for the DataExtractionStage.
+     * Applicable processors are DavisEventExtractionProcessor and BizeventExtractionProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessor {
+    bizeventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor>;
+    /**
+     * Processor to apply a DQL script
+     */
+    davisEventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Strategy to assign a value
+     */
+    eventProvider: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider>;
+    /**
+     * Strategy to assign a value
+     */
+    eventType: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType>;
+    /**
+     * Definition of the field extraction
+     */
+    fieldExtraction?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
+    /**
+     * Unique fields to include/exclude in the extracted record
+     */
+    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Defines how the fields of the source record should be extracted
+     */
+    semantic: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * List of properties for the extracted davis event
+     */
+    properties: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty>[]>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty {
+    /**
+     * The key to set on the davis event
+     */
+    key: pulumi.Input<string>;
+    /**
+     * The value assigned to the key
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineMetricExtraction {
+    /**
+     * Data extraction processor to use
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineMetricExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineMetricExtractionProcessor {
+    /**
+     * Processor to write the occurrences as a metric
+     */
+    counterMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor>;
+    /**
+     * Processor to extract a value from a field as a metric
+     */
+    valueMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The field to extract the value for the metric
+     */
+    field: pulumi.Input<string>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineProcessing {
+    /**
+     * Groups all processors applicable for the ProcessingStage.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor, TechnologyProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineProcessingProcessor>[]>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineProcessingProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor>;
+    /**
+     * Processor to apply a technology processors
+     */
+    technologyProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorTechnologyProcessor>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorTechnologyProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * The reference identifier to a specific technology. This technology is applied on the record.
+     */
+    technologyId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineSecurityContext {
+    /**
+     * Groups all processors applicable for the SecurityContextStage.
+     * Applicable processor is SecurityContextProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineSecurityContextProcessor>[]>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineSecurityContextProcessor {
+    /**
+     * Processor to set the security context field
+     */
+    securityContextProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    value: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineStorage {
+    /**
+     * Default bucket assigned to records which do not match any other storage processor
+     */
+    catchAllBucketName?: pulumi.Input<string>;
+    /**
+     * Groups all processors applicable for the StorageStage.
+     * Applicable processors are BucketAssignmentProcessor and NoStorageProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineStorageProcessor>[]>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineStorageProcessor {
+    /**
+     * Processor to assign a bucket
+     */
+    bucketAssignmentProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor>;
+    /**
+     * Processor to skip storage assignment
+     */
+    noStorageProcessor?: pulumi.Input<inputs.OpenpipelineSystemEventsPipelinesPipelineStorageProcessorNoStorageProcessor>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor {
+    /**
+     * Bucket that is assigned when the record is matched
+     */
+    bucketName: pulumi.Input<string>;
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsPipelinesPipelineStorageProcessorNoStorageProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineSystemEventsRouting {
+    /**
+     * Dynamic routing entry
+     */
+    entries?: pulumi.Input<pulumi.Input<inputs.OpenpipelineSystemEventsRoutingEntry>[]>;
+}
+
+export interface OpenpipelineSystemEventsRoutingEntry {
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Unique note describing the dynamic route
+     */
+    note: pulumi.Input<string>;
+    /**
+     * Identifier of the pipeline the record is routed into
+     */
+    pipelineId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsEndpoints {
+    /**
+     * Definition of a single ingest source
+     */
+    endpoints?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsEndpointsEndpoint>[]>;
+}
+
+export interface OpenpipelineUserEventsEndpointsEndpoint {
+    /**
+     * The default bucket assigned to records for the ingest source
+     */
+    defaultBucket?: pulumi.Input<string>;
+    /**
+     * Display name of the ingest source
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The pre-processing done in the ingest source
+     */
+    processors?: pulumi.Input<inputs.OpenpipelineUserEventsEndpointsEndpointProcessors>;
+    /**
+     * Routing strategy, either dynamic or static
+     */
+    routing: pulumi.Input<inputs.OpenpipelineUserEventsEndpointsEndpointRouting>;
+    /**
+     * The segment of the ingest source, which is applied to the base path. Must be unique within a configuration."
+     */
+    segment: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsEndpointsEndpointProcessors {
+    /**
+     * Groups all processors applicable for processing in the EndpointDefinition.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsEndpointsEndpointProcessorsProcessor>[]>;
+}
+
+export interface OpenpipelineUserEventsEndpointsEndpointProcessorsProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor>;
+}
+
+export interface OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsEndpointsEndpointRouting {
+    /**
+     * Pipeline ID of the static routing
+     */
+    pipelineId?: pulumi.Input<string>;
+    /**
+     * Type of routing, static or dynamic
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelines {
+    /**
+     * Definition of a single pipeline
+     */
+    pipelines?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipeline>[]>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipeline {
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    dataExtraction?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineDataExtraction>;
+    /**
+     * Display name of the pipeline
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the pipeline
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Metric extraction stage configuration of the pipeline
+     */
+    metricExtraction?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineMetricExtraction>;
+    /**
+     * Processing stage configuration of the pipeline
+     */
+    processing?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineProcessing>;
+    /**
+     * Security context stage configuration of the pipeline
+     */
+    securityContext?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineSecurityContext>;
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    storage?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineStorage>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineDataExtraction {
+    /**
+     * Groups all processors applicable for the DataExtractionStage.
+     * Applicable processors are DavisEventExtractionProcessor and BizeventExtractionProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessor {
+    bizeventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor>;
+    /**
+     * Processor to apply a DQL script
+     */
+    davisEventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Strategy to assign a value
+     */
+    eventProvider: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider>;
+    /**
+     * Strategy to assign a value
+     */
+    eventType: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType>;
+    /**
+     * Definition of the field extraction
+     */
+    fieldExtraction?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
+    /**
+     * Unique fields to include/exclude in the extracted record
+     */
+    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Defines how the fields of the source record should be extracted
+     */
+    semantic: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * List of properties for the extracted davis event
+     */
+    properties: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty>[]>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty {
+    /**
+     * The key to set on the davis event
+     */
+    key: pulumi.Input<string>;
+    /**
+     * The value assigned to the key
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineMetricExtraction {
+    /**
+     * Data extraction processor to use
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineMetricExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineMetricExtractionProcessor {
+    /**
+     * Processor to write the occurrences as a metric
+     */
+    counterMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor>;
+    /**
+     * Processor to extract a value from a field as a metric
+     */
+    valueMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The field to extract the value for the metric
+     */
+    field: pulumi.Input<string>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineProcessing {
+    /**
+     * Groups all processors applicable for the ProcessingStage.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor, TechnologyProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineProcessingProcessor>[]>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineProcessingProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineProcessingProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineProcessingProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor>;
+    /**
+     * Processor to apply a technology processors
+     */
+    technologyProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineProcessingProcessorTechnologyProcessor>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineProcessingProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineProcessingProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineProcessingProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineProcessingProcessorTechnologyProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * The reference identifier to a specific technology. This technology is applied on the record.
+     */
+    technologyId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineSecurityContext {
+    /**
+     * Groups all processors applicable for the SecurityContextStage.
+     * Applicable processor is SecurityContextProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineSecurityContextProcessor>[]>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineSecurityContextProcessor {
+    /**
+     * Processor to set the security context field
+     */
+    securityContextProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    value: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineStorage {
+    /**
+     * Default bucket assigned to records which do not match any other storage processor
+     */
+    catchAllBucketName?: pulumi.Input<string>;
+    /**
+     * Groups all processors applicable for the StorageStage.
+     * Applicable processors are BucketAssignmentProcessor and NoStorageProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineStorageProcessor>[]>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineStorageProcessor {
+    /**
+     * Processor to assign a bucket
+     */
+    bucketAssignmentProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor>;
+    /**
+     * Processor to skip storage assignment
+     */
+    noStorageProcessor?: pulumi.Input<inputs.OpenpipelineUserEventsPipelinesPipelineStorageProcessorNoStorageProcessor>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessor {
+    /**
+     * Bucket that is assigned when the record is matched
+     */
+    bucketName: pulumi.Input<string>;
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsPipelinesPipelineStorageProcessorNoStorageProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserEventsRouting {
+    /**
+     * Dynamic routing entry
+     */
+    entries?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserEventsRoutingEntry>[]>;
+}
+
+export interface OpenpipelineUserEventsRoutingEntry {
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Unique note describing the dynamic route
+     */
+    note: pulumi.Input<string>;
+    /**
+     * Identifier of the pipeline the record is routed into
+     */
+    pipelineId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsEndpoints {
+    /**
+     * Definition of a single ingest source
+     */
+    endpoints?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsEndpointsEndpoint>[]>;
+}
+
+export interface OpenpipelineUserSessionsEndpointsEndpoint {
+    /**
+     * The default bucket assigned to records for the ingest source
+     */
+    defaultBucket?: pulumi.Input<string>;
+    /**
+     * Display name of the ingest source
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The pre-processing done in the ingest source
+     */
+    processors?: pulumi.Input<inputs.OpenpipelineUserSessionsEndpointsEndpointProcessors>;
+    /**
+     * Routing strategy, either dynamic or static
+     */
+    routing: pulumi.Input<inputs.OpenpipelineUserSessionsEndpointsEndpointRouting>;
+    /**
+     * The segment of the ingest source, which is applied to the base path. Must be unique within a configuration."
+     */
+    segment: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsEndpointsEndpointProcessors {
+    /**
+     * Groups all processors applicable for processing in the EndpointDefinition.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessor>[]>;
+}
+
+export interface OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor>;
+}
+
+export interface OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsEndpointsEndpointRouting {
+    /**
+     * Pipeline ID of the static routing
+     */
+    pipelineId?: pulumi.Input<string>;
+    /**
+     * Type of routing, static or dynamic
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelines {
+    /**
+     * Definition of a single pipeline
+     */
+    pipelines?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipeline>[]>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipeline {
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    dataExtraction?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineDataExtraction>;
+    /**
+     * Display name of the pipeline
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the pipeline
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Metric extraction stage configuration of the pipeline
+     */
+    metricExtraction?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineMetricExtraction>;
+    /**
+     * Processing stage configuration of the pipeline
+     */
+    processing?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineProcessing>;
+    /**
+     * Security context stage configuration of the pipeline
+     */
+    securityContext?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineSecurityContext>;
+    /**
+     * Data extraction stage configuration of the pipeline
+     */
+    storage?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineStorage>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineDataExtraction {
+    /**
+     * Groups all processors applicable for the DataExtractionStage.
+     * Applicable processors are DavisEventExtractionProcessor and BizeventExtractionProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessor {
+    bizeventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor>;
+    /**
+     * Processor to apply a DQL script
+     */
+    davisEventExtractionProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Strategy to assign a value
+     */
+    eventProvider: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider>;
+    /**
+     * Strategy to assign a value
+     */
+    eventType: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType>;
+    /**
+     * Definition of the field extraction
+     */
+    fieldExtraction?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
+    /**
+     * Unique fields to include/exclude in the extracted record
+     */
+    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Defines how the fields of the source record should be extracted
+     */
+    semantic: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * List of properties for the extracted davis event
+     */
+    properties: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty>[]>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorProperty {
+    /**
+     * The key to set on the davis event
+     */
+    key: pulumi.Input<string>;
+    /**
+     * The value assigned to the key
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineMetricExtraction {
+    /**
+     * Data extraction processor to use
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineMetricExtractionProcessor>[]>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineMetricExtractionProcessor {
+    /**
+     * Processor to write the occurrences as a metric
+     */
+    counterMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor>;
+    /**
+     * Processor to extract a value from a field as a metric
+     */
+    valueMetricExtractionProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * List of dimensions to add to the metric
+     */
+    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The field to extract the value for the metric
+     */
+    field: pulumi.Input<string>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * The key of the metric to write
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineProcessing {
+    /**
+     * Groups all processors applicable for the ProcessingStage.
+     * Applicable processors are DqlProcessor, FieldsAddProcessor, FieldsRemoveProcessor, FieldsRenameProcessor, TechnologyProcessor and DropProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineProcessingProcessor>[]>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineProcessingProcessor {
+    /**
+     * Processor to apply a DQL script
+     */
+    dqlProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorDqlProcessor>;
+    /**
+     * Processor to drop the record either during the processing stage or at the endpoint
+     */
+    dropProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorDropProcessor>;
+    /**
+     * Processor to add fields
+     */
+    fieldsAddProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorFieldsAddProcessor>;
+    /**
+     * Processor to remove fields
+     */
+    fieldsRemoveProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor>;
+    /**
+     * Processor to rename fields
+     */
+    fieldsRenameProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorFieldsRenameProcessor>;
+    /**
+     * Processor to apply a technology processors
+     */
+    technologyProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorTechnologyProcessor>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorDqlProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The DQL script to apply on the record
+     */
+    dqlScript: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorDropProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorFieldsAddProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorFieldsAddProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorFieldsAddProcessorField {
+    /**
+     * Name of the field
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Value to assign to the field
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorFieldsRemoveProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to add to the record
+     */
+    fields: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorFieldsRenameProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Field to rename on the record
+     */
+    fields: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField>[]>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorFieldsRenameProcessorField {
+    /**
+     * The field to rename
+     */
+    fromName: pulumi.Input<string>;
+    /**
+     * The new field name
+     */
+    toName: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineProcessingProcessorTechnologyProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * The reference identifier to a specific technology. This technology is applied on the record.
+     */
+    technologyId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineSecurityContext {
+    /**
+     * Groups all processors applicable for the SecurityContextStage.
+     * Applicable processor is SecurityContextProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineSecurityContextProcessor>[]>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineSecurityContextProcessor {
+    /**
+     * Processor to set the security context field
+     */
+    securityContextProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineSecurityContextProcessorSecurityContextProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    value: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue {
+    /**
+     * Strategy to assign a value
+     */
+    constant?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    field?: pulumi.Input<string>;
+    /**
+     * Strategy to assign a value
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineStorage {
+    /**
+     * Default bucket assigned to records which do not match any other storage processor
+     */
+    catchAllBucketName?: pulumi.Input<string>;
+    /**
+     * Groups all processors applicable for the StorageStage.
+     * Applicable processors are BucketAssignmentProcessor and NoStorageProcessor.
+     */
+    processors?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineStorageProcessor>[]>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineStorageProcessor {
+    /**
+     * Processor to assign a bucket
+     */
+    bucketAssignmentProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineStorageProcessorBucketAssignmentProcessor>;
+    /**
+     * Processor to skip storage assignment
+     */
+    noStorageProcessor?: pulumi.Input<inputs.OpenpipelineUserSessionsPipelinesPipelineStorageProcessorNoStorageProcessor>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineStorageProcessorBucketAssignmentProcessor {
+    /**
+     * Bucket that is assigned when the record is matched
+     */
+    bucketName: pulumi.Input<string>;
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsPipelinesPipelineStorageProcessorNoStorageProcessor {
+    /**
+     * Name or description of the processor
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Indicates if the object is active
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Identifier of the processor. Must be unique within a stage.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Matching condition to apply on incoming records
+     */
+    matcher: pulumi.Input<string>;
+    /**
+     * Sample data related to the processor for documentation or testing
+     */
+    sampleData?: pulumi.Input<string>;
+}
+
+export interface OpenpipelineUserSessionsRouting {
+    /**
+     * Dynamic routing entry
+     */
+    entries?: pulumi.Input<pulumi.Input<inputs.OpenpipelineUserSessionsRoutingEntry>[]>;
+}
+
+export interface OpenpipelineUserSessionsRoutingEntry {
     /**
      * Indicates if the object is active
      */
