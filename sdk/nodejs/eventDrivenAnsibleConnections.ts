@@ -33,6 +33,10 @@ export class EventDrivenAnsibleConnections extends pulumi.CustomResource {
     }
 
     /**
+     * Flag if Red Hat Event Stream is use for Event-Driven Ansible
+     */
+    public readonly eventStreamEnabled!: pulumi.Output<boolean | undefined>;
+    /**
      * A unique and clearly identifiable connection name.
      */
     public readonly name!: pulumi.Output<string>;
@@ -62,6 +66,7 @@ export class EventDrivenAnsibleConnections extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EventDrivenAnsibleConnectionsState | undefined;
+            resourceInputs["eventStreamEnabled"] = state ? state.eventStreamEnabled : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["token"] = state ? state.token : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
@@ -74,6 +79,7 @@ export class EventDrivenAnsibleConnections extends pulumi.CustomResource {
             if ((!args || args.url === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
+            resourceInputs["eventStreamEnabled"] = args ? args.eventStreamEnabled : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["token"] = args?.token ? pulumi.secret(args.token) : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
@@ -90,6 +96,10 @@ export class EventDrivenAnsibleConnections extends pulumi.CustomResource {
  * Input properties used for looking up and filtering EventDrivenAnsibleConnections resources.
  */
 export interface EventDrivenAnsibleConnectionsState {
+    /**
+     * Flag if Red Hat Event Stream is use for Event-Driven Ansible
+     */
+    eventStreamEnabled?: pulumi.Input<boolean>;
     /**
      * A unique and clearly identifiable connection name.
      */
@@ -112,6 +122,10 @@ export interface EventDrivenAnsibleConnectionsState {
  * The set of arguments for constructing a EventDrivenAnsibleConnections resource.
  */
 export interface EventDrivenAnsibleConnectionsArgs {
+    /**
+     * Flag if Red Hat Event Stream is use for Event-Driven Ansible
+     */
+    eventStreamEnabled?: pulumi.Input<boolean>;
     /**
      * A unique and clearly identifiable connection name.
      */

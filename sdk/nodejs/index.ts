@@ -2078,6 +2078,11 @@ export type WebAppKeyPerformanceXhr = import("./webAppKeyPerformanceXhr").WebApp
 export const WebAppKeyPerformanceXhr: typeof import("./webAppKeyPerformanceXhr").WebAppKeyPerformanceXhr = null as any;
 utilities.lazyLoad(exports, ["WebAppKeyPerformanceXhr"], () => require("./webAppKeyPerformanceXhr"));
 
+export { WebAppManualInsertionArgs, WebAppManualInsertionState } from "./webAppManualInsertion";
+export type WebAppManualInsertion = import("./webAppManualInsertion").WebAppManualInsertion;
+export const WebAppManualInsertion: typeof import("./webAppManualInsertion").WebAppManualInsertion = null as any;
+utilities.lazyLoad(exports, ["WebAppManualInsertion"], () => require("./webAppManualInsertion"));
+
 export { WebAppRequestErrorsArgs, WebAppRequestErrorsState } from "./webAppRequestErrors";
 export type WebAppRequestErrors = import("./webAppRequestErrors").WebAppRequestErrors;
 export const WebAppRequestErrors: typeof import("./webAppRequestErrors").WebAppRequestErrors = null as any;
@@ -2844,6 +2849,8 @@ const _module = {
                 return new WebAppKeyPerformanceLoad(name, <any>undefined, { urn })
             case "dynatrace:index/webAppKeyPerformanceXhr:WebAppKeyPerformanceXhr":
                 return new WebAppKeyPerformanceXhr(name, <any>undefined, { urn })
+            case "dynatrace:index/webAppManualInsertion:WebAppManualInsertion":
+                return new WebAppManualInsertion(name, <any>undefined, { urn })
             case "dynatrace:index/webAppRequestErrors:WebAppRequestErrors":
                 return new WebAppRequestErrors(name, <any>undefined, { urn })
             case "dynatrace:index/webAppResourceCleanup:WebAppResourceCleanup":
@@ -3222,6 +3229,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/webAppJavascriptVersio
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppKeyPerformanceCustom", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppKeyPerformanceLoad", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppKeyPerformanceXhr", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/webAppManualInsertion", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppRequestErrors", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppResourceCleanup", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppResourceTypes", _module)

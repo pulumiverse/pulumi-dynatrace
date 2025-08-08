@@ -19,6 +19,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? CodeSnippetType;
         /// <summary>
+        /// Possible Values: `async`, `defer`, `none`
+        /// </summary>
+        public readonly string? ScriptExecutionAttribute;
+        /// <summary>
         /// Snippet format
         /// </summary>
         public readonly string SnippetFormat;
@@ -27,9 +31,12 @@ namespace Pulumiverse.Dynatrace.Outputs
         private WebAppAutoInjectionSnippetFormat(
             string? codeSnippetType,
 
+            string? scriptExecutionAttribute,
+
             string snippetFormat)
         {
             CodeSnippetType = codeSnippetType;
+            ScriptExecutionAttribute = scriptExecutionAttribute;
             SnippetFormat = snippetFormat;
         }
     }

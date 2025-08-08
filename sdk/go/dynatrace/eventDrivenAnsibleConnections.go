@@ -15,6 +15,8 @@ import (
 type EventDrivenAnsibleConnections struct {
 	pulumi.CustomResourceState
 
+	// Flag if Red Hat Event Stream is use for Event-Driven Ansible
+	EventStreamEnabled pulumi.BoolPtrOutput `pulumi:"eventStreamEnabled"`
 	// A unique and clearly identifiable connection name.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// API access token for the Event-Driven Ansible Controller. Please note that this token is not refreshed and can expire.
@@ -68,6 +70,8 @@ func GetEventDrivenAnsibleConnections(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering EventDrivenAnsibleConnections resources.
 type eventDrivenAnsibleConnectionsState struct {
+	// Flag if Red Hat Event Stream is use for Event-Driven Ansible
+	EventStreamEnabled *bool `pulumi:"eventStreamEnabled"`
 	// A unique and clearly identifiable connection name.
 	Name *string `pulumi:"name"`
 	// API access token for the Event-Driven Ansible Controller. Please note that this token is not refreshed and can expire.
@@ -79,6 +83,8 @@ type eventDrivenAnsibleConnectionsState struct {
 }
 
 type EventDrivenAnsibleConnectionsState struct {
+	// Flag if Red Hat Event Stream is use for Event-Driven Ansible
+	EventStreamEnabled pulumi.BoolPtrInput
 	// A unique and clearly identifiable connection name.
 	Name pulumi.StringPtrInput
 	// API access token for the Event-Driven Ansible Controller. Please note that this token is not refreshed and can expire.
@@ -94,6 +100,8 @@ func (EventDrivenAnsibleConnectionsState) ElementType() reflect.Type {
 }
 
 type eventDrivenAnsibleConnectionsArgs struct {
+	// Flag if Red Hat Event Stream is use for Event-Driven Ansible
+	EventStreamEnabled *bool `pulumi:"eventStreamEnabled"`
 	// A unique and clearly identifiable connection name.
 	Name *string `pulumi:"name"`
 	// API access token for the Event-Driven Ansible Controller. Please note that this token is not refreshed and can expire.
@@ -106,6 +114,8 @@ type eventDrivenAnsibleConnectionsArgs struct {
 
 // The set of arguments for constructing a EventDrivenAnsibleConnections resource.
 type EventDrivenAnsibleConnectionsArgs struct {
+	// Flag if Red Hat Event Stream is use for Event-Driven Ansible
+	EventStreamEnabled pulumi.BoolPtrInput
 	// A unique and clearly identifiable connection name.
 	Name pulumi.StringPtrInput
 	// API access token for the Event-Driven Ansible Controller. Please note that this token is not refreshed and can expire.
@@ -201,6 +211,11 @@ func (o EventDrivenAnsibleConnectionsOutput) ToEventDrivenAnsibleConnectionsOutp
 
 func (o EventDrivenAnsibleConnectionsOutput) ToEventDrivenAnsibleConnectionsOutputWithContext(ctx context.Context) EventDrivenAnsibleConnectionsOutput {
 	return o
+}
+
+// Flag if Red Hat Event Stream is use for Event-Driven Ansible
+func (o EventDrivenAnsibleConnectionsOutput) EventStreamEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *EventDrivenAnsibleConnections) pulumi.BoolPtrOutput { return v.EventStreamEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A unique and clearly identifiable connection name.

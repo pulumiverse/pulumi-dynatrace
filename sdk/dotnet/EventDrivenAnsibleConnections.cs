@@ -14,6 +14,12 @@ namespace Pulumiverse.Dynatrace
     public partial class EventDrivenAnsibleConnections : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Flag if Red Hat Event Stream is use for Event-Driven Ansible
+        /// </summary>
+        [Output("eventStreamEnabled")]
+        public Output<bool?> EventStreamEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// A unique and clearly identifiable connection name.
         /// </summary>
         [Output("name")]
@@ -89,6 +95,12 @@ namespace Pulumiverse.Dynatrace
     public sealed class EventDrivenAnsibleConnectionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Flag if Red Hat Event Stream is use for Event-Driven Ansible
+        /// </summary>
+        [Input("eventStreamEnabled")]
+        public Input<bool>? EventStreamEnabled { get; set; }
+
+        /// <summary>
         /// A unique and clearly identifiable connection name.
         /// </summary>
         [Input("name")]
@@ -130,6 +142,12 @@ namespace Pulumiverse.Dynatrace
 
     public sealed class EventDrivenAnsibleConnectionsState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Flag if Red Hat Event Stream is use for Event-Driven Ansible
+        /// </summary>
+        [Input("eventStreamEnabled")]
+        public Input<bool>? EventStreamEnabled { get; set; }
+
         /// <summary>
         /// A unique and clearly identifiable connection name.
         /// </summary>

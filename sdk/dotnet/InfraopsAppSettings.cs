@@ -14,10 +14,22 @@ namespace Pulumiverse.Dynatrace
     public partial class InfraopsAppSettings : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+        /// The threshold at which a network device interface is deemed to be saturated.
         /// </summary>
         [Output("interfaceSaturationThreshold")]
         public Output<double?> InterfaceSaturationThreshold { get; private set; } = null!;
+
+        /// <summary>
+        /// Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+        /// </summary>
+        [Output("invexDqlQueryLimit")]
+        public Output<int?> InvexDqlQueryLimit { get; private set; } = null!;
+
+        /// <summary>
+        /// Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        /// </summary>
+        [Output("invexDqlSortLimit")]
+        public Output<int?> InvexDqlSortLimit { get; private set; } = null!;
 
         /// <summary>
         /// When set to true, the app will display monitoring candidates in the Hosts table
@@ -79,10 +91,22 @@ namespace Pulumiverse.Dynatrace
     public sealed class InfraopsAppSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+        /// The threshold at which a network device interface is deemed to be saturated.
         /// </summary>
         [Input("interfaceSaturationThreshold")]
         public Input<double>? InterfaceSaturationThreshold { get; set; }
+
+        /// <summary>
+        /// Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+        /// </summary>
+        [Input("invexDqlQueryLimit")]
+        public Input<int>? InvexDqlQueryLimit { get; set; }
+
+        /// <summary>
+        /// Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        /// </summary>
+        [Input("invexDqlSortLimit")]
+        public Input<int>? InvexDqlSortLimit { get; set; }
 
         /// <summary>
         /// When set to true, the app will display monitoring candidates in the Hosts table
@@ -105,10 +129,22 @@ namespace Pulumiverse.Dynatrace
     public sealed class InfraopsAppSettingsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+        /// The threshold at which a network device interface is deemed to be saturated.
         /// </summary>
         [Input("interfaceSaturationThreshold")]
         public Input<double>? InterfaceSaturationThreshold { get; set; }
+
+        /// <summary>
+        /// Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+        /// </summary>
+        [Input("invexDqlQueryLimit")]
+        public Input<int>? InvexDqlQueryLimit { get; set; }
+
+        /// <summary>
+        /// Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        /// </summary>
+        [Input("invexDqlSortLimit")]
+        public Input<int>? InvexDqlSortLimit { get; set; }
 
         /// <summary>
         /// When set to true, the app will display monitoring candidates in the Hosts table

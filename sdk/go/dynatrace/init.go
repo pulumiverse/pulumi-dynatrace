@@ -743,6 +743,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &WebAppKeyPerformanceLoad{}
 	case "dynatrace:index/webAppKeyPerformanceXhr:WebAppKeyPerformanceXhr":
 		r = &WebAppKeyPerformanceXhr{}
+	case "dynatrace:index/webAppManualInsertion:WebAppManualInsertion":
+		r = &WebAppManualInsertion{}
 	case "dynatrace:index/webAppRequestErrors:WebAppRequestErrors":
 		r = &WebAppRequestErrors{}
 	case "dynatrace:index/webAppResourceCleanup:WebAppResourceCleanup":
@@ -2589,6 +2591,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/webAppKeyPerformanceXhr",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/webAppManualInsertion",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

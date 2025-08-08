@@ -13344,6 +13344,8 @@ func (o WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput) MonitoringCodeP
 type WebAppAutoInjectionSnippetFormat struct {
 	// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
 	CodeSnippetType *string `pulumi:"codeSnippetType"`
+	// Possible Values: `async`, `defer`, `none`
+	ScriptExecutionAttribute *string `pulumi:"scriptExecutionAttribute"`
 	// Snippet format
 	SnippetFormat string `pulumi:"snippetFormat"`
 }
@@ -13362,6 +13364,8 @@ type WebAppAutoInjectionSnippetFormatInput interface {
 type WebAppAutoInjectionSnippetFormatArgs struct {
 	// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
 	CodeSnippetType pulumi.StringPtrInput `pulumi:"codeSnippetType"`
+	// Possible Values: `async`, `defer`, `none`
+	ScriptExecutionAttribute pulumi.StringPtrInput `pulumi:"scriptExecutionAttribute"`
 	// Snippet format
 	SnippetFormat pulumi.StringInput `pulumi:"snippetFormat"`
 }
@@ -13448,6 +13452,11 @@ func (o WebAppAutoInjectionSnippetFormatOutput) CodeSnippetType() pulumi.StringP
 	return o.ApplyT(func(v WebAppAutoInjectionSnippetFormat) *string { return v.CodeSnippetType }).(pulumi.StringPtrOutput)
 }
 
+// Possible Values: `async`, `defer`, `none`
+func (o WebAppAutoInjectionSnippetFormatOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppAutoInjectionSnippetFormat) *string { return v.ScriptExecutionAttribute }).(pulumi.StringPtrOutput)
+}
+
 // Snippet format
 func (o WebAppAutoInjectionSnippetFormatOutput) SnippetFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v WebAppAutoInjectionSnippetFormat) string { return v.SnippetFormat }).(pulumi.StringOutput)
@@ -13484,6 +13493,16 @@ func (o WebAppAutoInjectionSnippetFormatPtrOutput) CodeSnippetType() pulumi.Stri
 			return nil
 		}
 		return v.CodeSnippetType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Possible Values: `async`, `defer`, `none`
+func (o WebAppAutoInjectionSnippetFormatPtrOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionSnippetFormat) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScriptExecutionAttribute
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -13971,6 +13990,8 @@ func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput) Cus
 }
 
 type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow struct {
+	// Field name validation should be case-insensitive
+	CaseInsensitiveNamingEnabled *bool `pulumi:"caseInsensitiveNamingEnabled"`
 	// Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
 	FieldDataType string `pulumi:"fieldDataType"`
 	// Field name
@@ -13989,6 +14010,8 @@ type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionProp
 }
 
 type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs struct {
+	// Field name validation should be case-insensitive
+	CaseInsensitiveNamingEnabled pulumi.BoolPtrInput `pulumi:"caseInsensitiveNamingEnabled"`
 	// Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
 	FieldDataType pulumi.StringInput `pulumi:"fieldDataType"`
 	// Field name
@@ -14044,6 +14067,13 @@ func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionP
 
 func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput {
 	return o
+}
+
+// Field name validation should be case-insensitive
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput) CaseInsensitiveNamingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow) *bool {
+		return v.CaseInsensitiveNamingEnabled
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
@@ -14216,6 +14246,8 @@ func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput) C
 }
 
 type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow struct {
+	// Field name validation should be case-insensitive
+	CaseInsensitiveNamingEnabled *bool `pulumi:"caseInsensitiveNamingEnabled"`
 	// Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
 	FieldDataType string `pulumi:"fieldDataType"`
 	// Field name
@@ -14234,6 +14266,8 @@ type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPr
 }
 
 type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs struct {
+	// Field name validation should be case-insensitive
+	CaseInsensitiveNamingEnabled pulumi.BoolPtrInput `pulumi:"caseInsensitiveNamingEnabled"`
 	// Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
 	FieldDataType pulumi.StringInput `pulumi:"fieldDataType"`
 	// Field name
@@ -14289,6 +14323,13 @@ func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessio
 
 func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput {
 	return o
+}
+
+// Field name validation should be case-insensitive
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput) CaseInsensitiveNamingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow) *bool {
+		return v.CaseInsensitiveNamingEnabled
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
@@ -15816,6 +15857,592 @@ func (o WebAppKeyPerformanceXhrThresholdsPtrOutput) ToleratedThresholdSeconds() 
 		}
 		return &v.ToleratedThresholdSeconds
 	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppManualInsertionCodeSnippet struct {
+	// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+	CodeSnippetType string `pulumi:"codeSnippetType"`
+}
+
+// WebAppManualInsertionCodeSnippetInput is an input type that accepts WebAppManualInsertionCodeSnippetArgs and WebAppManualInsertionCodeSnippetOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionCodeSnippetInput` via:
+//
+//	WebAppManualInsertionCodeSnippetArgs{...}
+type WebAppManualInsertionCodeSnippetInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionCodeSnippetOutput() WebAppManualInsertionCodeSnippetOutput
+	ToWebAppManualInsertionCodeSnippetOutputWithContext(context.Context) WebAppManualInsertionCodeSnippetOutput
+}
+
+type WebAppManualInsertionCodeSnippetArgs struct {
+	// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+	CodeSnippetType pulumi.StringInput `pulumi:"codeSnippetType"`
+}
+
+func (WebAppManualInsertionCodeSnippetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionCodeSnippet)(nil)).Elem()
+}
+
+func (i WebAppManualInsertionCodeSnippetArgs) ToWebAppManualInsertionCodeSnippetOutput() WebAppManualInsertionCodeSnippetOutput {
+	return i.ToWebAppManualInsertionCodeSnippetOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionCodeSnippetArgs) ToWebAppManualInsertionCodeSnippetOutputWithContext(ctx context.Context) WebAppManualInsertionCodeSnippetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionCodeSnippetOutput)
+}
+
+func (i WebAppManualInsertionCodeSnippetArgs) ToWebAppManualInsertionCodeSnippetPtrOutput() WebAppManualInsertionCodeSnippetPtrOutput {
+	return i.ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionCodeSnippetArgs) ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(ctx context.Context) WebAppManualInsertionCodeSnippetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionCodeSnippetOutput).ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(ctx)
+}
+
+// WebAppManualInsertionCodeSnippetPtrInput is an input type that accepts WebAppManualInsertionCodeSnippetArgs, WebAppManualInsertionCodeSnippetPtr and WebAppManualInsertionCodeSnippetPtrOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionCodeSnippetPtrInput` via:
+//
+//	        WebAppManualInsertionCodeSnippetArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppManualInsertionCodeSnippetPtrInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionCodeSnippetPtrOutput() WebAppManualInsertionCodeSnippetPtrOutput
+	ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(context.Context) WebAppManualInsertionCodeSnippetPtrOutput
+}
+
+type webAppManualInsertionCodeSnippetPtrType WebAppManualInsertionCodeSnippetArgs
+
+func WebAppManualInsertionCodeSnippetPtr(v *WebAppManualInsertionCodeSnippetArgs) WebAppManualInsertionCodeSnippetPtrInput {
+	return (*webAppManualInsertionCodeSnippetPtrType)(v)
+}
+
+func (*webAppManualInsertionCodeSnippetPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionCodeSnippet)(nil)).Elem()
+}
+
+func (i *webAppManualInsertionCodeSnippetPtrType) ToWebAppManualInsertionCodeSnippetPtrOutput() WebAppManualInsertionCodeSnippetPtrOutput {
+	return i.ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppManualInsertionCodeSnippetPtrType) ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(ctx context.Context) WebAppManualInsertionCodeSnippetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionCodeSnippetPtrOutput)
+}
+
+type WebAppManualInsertionCodeSnippetOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionCodeSnippetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionCodeSnippet)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionCodeSnippetOutput) ToWebAppManualInsertionCodeSnippetOutput() WebAppManualInsertionCodeSnippetOutput {
+	return o
+}
+
+func (o WebAppManualInsertionCodeSnippetOutput) ToWebAppManualInsertionCodeSnippetOutputWithContext(ctx context.Context) WebAppManualInsertionCodeSnippetOutput {
+	return o
+}
+
+func (o WebAppManualInsertionCodeSnippetOutput) ToWebAppManualInsertionCodeSnippetPtrOutput() WebAppManualInsertionCodeSnippetPtrOutput {
+	return o.ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppManualInsertionCodeSnippetOutput) ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(ctx context.Context) WebAppManualInsertionCodeSnippetPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppManualInsertionCodeSnippet) *WebAppManualInsertionCodeSnippet {
+		return &v
+	}).(WebAppManualInsertionCodeSnippetPtrOutput)
+}
+
+// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+func (o WebAppManualInsertionCodeSnippetOutput) CodeSnippetType() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppManualInsertionCodeSnippet) string { return v.CodeSnippetType }).(pulumi.StringOutput)
+}
+
+type WebAppManualInsertionCodeSnippetPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionCodeSnippetPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionCodeSnippet)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionCodeSnippetPtrOutput) ToWebAppManualInsertionCodeSnippetPtrOutput() WebAppManualInsertionCodeSnippetPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionCodeSnippetPtrOutput) ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(ctx context.Context) WebAppManualInsertionCodeSnippetPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionCodeSnippetPtrOutput) Elem() WebAppManualInsertionCodeSnippetOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionCodeSnippet) WebAppManualInsertionCodeSnippet {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppManualInsertionCodeSnippet
+		return ret
+	}).(WebAppManualInsertionCodeSnippetOutput)
+}
+
+// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+func (o WebAppManualInsertionCodeSnippetPtrOutput) CodeSnippetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionCodeSnippet) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CodeSnippetType
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebAppManualInsertionJavascriptTag struct {
+	// Duration in hours, possible Values: `1`, `12`, `144`, `24`, `3`, `6`, `72`
+	CacheDuration string `pulumi:"cacheDuration"`
+	// Add the `crossorigin=anonymous` attribute to capture JavaScript error messages and W3C resource timings
+	CrossoriginAnonymous bool `pulumi:"crossoriginAnonymous"`
+	// Possible Values: `Async`, `Defer`, `None`
+	ScriptExecutionAttribute *string `pulumi:"scriptExecutionAttribute"`
+}
+
+// WebAppManualInsertionJavascriptTagInput is an input type that accepts WebAppManualInsertionJavascriptTagArgs and WebAppManualInsertionJavascriptTagOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionJavascriptTagInput` via:
+//
+//	WebAppManualInsertionJavascriptTagArgs{...}
+type WebAppManualInsertionJavascriptTagInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionJavascriptTagOutput() WebAppManualInsertionJavascriptTagOutput
+	ToWebAppManualInsertionJavascriptTagOutputWithContext(context.Context) WebAppManualInsertionJavascriptTagOutput
+}
+
+type WebAppManualInsertionJavascriptTagArgs struct {
+	// Duration in hours, possible Values: `1`, `12`, `144`, `24`, `3`, `6`, `72`
+	CacheDuration pulumi.StringInput `pulumi:"cacheDuration"`
+	// Add the `crossorigin=anonymous` attribute to capture JavaScript error messages and W3C resource timings
+	CrossoriginAnonymous pulumi.BoolInput `pulumi:"crossoriginAnonymous"`
+	// Possible Values: `Async`, `Defer`, `None`
+	ScriptExecutionAttribute pulumi.StringPtrInput `pulumi:"scriptExecutionAttribute"`
+}
+
+func (WebAppManualInsertionJavascriptTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionJavascriptTag)(nil)).Elem()
+}
+
+func (i WebAppManualInsertionJavascriptTagArgs) ToWebAppManualInsertionJavascriptTagOutput() WebAppManualInsertionJavascriptTagOutput {
+	return i.ToWebAppManualInsertionJavascriptTagOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionJavascriptTagArgs) ToWebAppManualInsertionJavascriptTagOutputWithContext(ctx context.Context) WebAppManualInsertionJavascriptTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionJavascriptTagOutput)
+}
+
+func (i WebAppManualInsertionJavascriptTagArgs) ToWebAppManualInsertionJavascriptTagPtrOutput() WebAppManualInsertionJavascriptTagPtrOutput {
+	return i.ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionJavascriptTagArgs) ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionJavascriptTagPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionJavascriptTagOutput).ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(ctx)
+}
+
+// WebAppManualInsertionJavascriptTagPtrInput is an input type that accepts WebAppManualInsertionJavascriptTagArgs, WebAppManualInsertionJavascriptTagPtr and WebAppManualInsertionJavascriptTagPtrOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionJavascriptTagPtrInput` via:
+//
+//	        WebAppManualInsertionJavascriptTagArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppManualInsertionJavascriptTagPtrInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionJavascriptTagPtrOutput() WebAppManualInsertionJavascriptTagPtrOutput
+	ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(context.Context) WebAppManualInsertionJavascriptTagPtrOutput
+}
+
+type webAppManualInsertionJavascriptTagPtrType WebAppManualInsertionJavascriptTagArgs
+
+func WebAppManualInsertionJavascriptTagPtr(v *WebAppManualInsertionJavascriptTagArgs) WebAppManualInsertionJavascriptTagPtrInput {
+	return (*webAppManualInsertionJavascriptTagPtrType)(v)
+}
+
+func (*webAppManualInsertionJavascriptTagPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionJavascriptTag)(nil)).Elem()
+}
+
+func (i *webAppManualInsertionJavascriptTagPtrType) ToWebAppManualInsertionJavascriptTagPtrOutput() WebAppManualInsertionJavascriptTagPtrOutput {
+	return i.ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppManualInsertionJavascriptTagPtrType) ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionJavascriptTagPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionJavascriptTagPtrOutput)
+}
+
+type WebAppManualInsertionJavascriptTagOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionJavascriptTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionJavascriptTag)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionJavascriptTagOutput) ToWebAppManualInsertionJavascriptTagOutput() WebAppManualInsertionJavascriptTagOutput {
+	return o
+}
+
+func (o WebAppManualInsertionJavascriptTagOutput) ToWebAppManualInsertionJavascriptTagOutputWithContext(ctx context.Context) WebAppManualInsertionJavascriptTagOutput {
+	return o
+}
+
+func (o WebAppManualInsertionJavascriptTagOutput) ToWebAppManualInsertionJavascriptTagPtrOutput() WebAppManualInsertionJavascriptTagPtrOutput {
+	return o.ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppManualInsertionJavascriptTagOutput) ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionJavascriptTagPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppManualInsertionJavascriptTag) *WebAppManualInsertionJavascriptTag {
+		return &v
+	}).(WebAppManualInsertionJavascriptTagPtrOutput)
+}
+
+// Duration in hours, possible Values: `1`, `12`, `144`, `24`, `3`, `6`, `72`
+func (o WebAppManualInsertionJavascriptTagOutput) CacheDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppManualInsertionJavascriptTag) string { return v.CacheDuration }).(pulumi.StringOutput)
+}
+
+// Add the `crossorigin=anonymous` attribute to capture JavaScript error messages and W3C resource timings
+func (o WebAppManualInsertionJavascriptTagOutput) CrossoriginAnonymous() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppManualInsertionJavascriptTag) bool { return v.CrossoriginAnonymous }).(pulumi.BoolOutput)
+}
+
+// Possible Values: `Async`, `Defer`, `None`
+func (o WebAppManualInsertionJavascriptTagOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppManualInsertionJavascriptTag) *string { return v.ScriptExecutionAttribute }).(pulumi.StringPtrOutput)
+}
+
+type WebAppManualInsertionJavascriptTagPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionJavascriptTagPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionJavascriptTag)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionJavascriptTagPtrOutput) ToWebAppManualInsertionJavascriptTagPtrOutput() WebAppManualInsertionJavascriptTagPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionJavascriptTagPtrOutput) ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionJavascriptTagPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionJavascriptTagPtrOutput) Elem() WebAppManualInsertionJavascriptTagOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionJavascriptTag) WebAppManualInsertionJavascriptTag {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppManualInsertionJavascriptTag
+		return ret
+	}).(WebAppManualInsertionJavascriptTagOutput)
+}
+
+// Duration in hours, possible Values: `1`, `12`, `144`, `24`, `3`, `6`, `72`
+func (o WebAppManualInsertionJavascriptTagPtrOutput) CacheDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionJavascriptTag) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CacheDuration
+	}).(pulumi.StringPtrOutput)
+}
+
+// Add the `crossorigin=anonymous` attribute to capture JavaScript error messages and W3C resource timings
+func (o WebAppManualInsertionJavascriptTagPtrOutput) CrossoriginAnonymous() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionJavascriptTag) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.CrossoriginAnonymous
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Possible Values: `Async`, `Defer`, `None`
+func (o WebAppManualInsertionJavascriptTagPtrOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionJavascriptTag) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScriptExecutionAttribute
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebAppManualInsertionOneagentJavascriptTag struct {
+	// Possible Values: `Async`, `Defer`, `None`
+	ScriptExecutionAttribute *string `pulumi:"scriptExecutionAttribute"`
+}
+
+// WebAppManualInsertionOneagentJavascriptTagInput is an input type that accepts WebAppManualInsertionOneagentJavascriptTagArgs and WebAppManualInsertionOneagentJavascriptTagOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionOneagentJavascriptTagInput` via:
+//
+//	WebAppManualInsertionOneagentJavascriptTagArgs{...}
+type WebAppManualInsertionOneagentJavascriptTagInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionOneagentJavascriptTagOutput() WebAppManualInsertionOneagentJavascriptTagOutput
+	ToWebAppManualInsertionOneagentJavascriptTagOutputWithContext(context.Context) WebAppManualInsertionOneagentJavascriptTagOutput
+}
+
+type WebAppManualInsertionOneagentJavascriptTagArgs struct {
+	// Possible Values: `Async`, `Defer`, `None`
+	ScriptExecutionAttribute pulumi.StringPtrInput `pulumi:"scriptExecutionAttribute"`
+}
+
+func (WebAppManualInsertionOneagentJavascriptTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTag)(nil)).Elem()
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagArgs) ToWebAppManualInsertionOneagentJavascriptTagOutput() WebAppManualInsertionOneagentJavascriptTagOutput {
+	return i.ToWebAppManualInsertionOneagentJavascriptTagOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagArgs) ToWebAppManualInsertionOneagentJavascriptTagOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionOneagentJavascriptTagOutput)
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagArgs) ToWebAppManualInsertionOneagentJavascriptTagPtrOutput() WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return i.ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagArgs) ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionOneagentJavascriptTagOutput).ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(ctx)
+}
+
+// WebAppManualInsertionOneagentJavascriptTagPtrInput is an input type that accepts WebAppManualInsertionOneagentJavascriptTagArgs, WebAppManualInsertionOneagentJavascriptTagPtr and WebAppManualInsertionOneagentJavascriptTagPtrOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionOneagentJavascriptTagPtrInput` via:
+//
+//	        WebAppManualInsertionOneagentJavascriptTagArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppManualInsertionOneagentJavascriptTagPtrInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionOneagentJavascriptTagPtrOutput() WebAppManualInsertionOneagentJavascriptTagPtrOutput
+	ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(context.Context) WebAppManualInsertionOneagentJavascriptTagPtrOutput
+}
+
+type webAppManualInsertionOneagentJavascriptTagPtrType WebAppManualInsertionOneagentJavascriptTagArgs
+
+func WebAppManualInsertionOneagentJavascriptTagPtr(v *WebAppManualInsertionOneagentJavascriptTagArgs) WebAppManualInsertionOneagentJavascriptTagPtrInput {
+	return (*webAppManualInsertionOneagentJavascriptTagPtrType)(v)
+}
+
+func (*webAppManualInsertionOneagentJavascriptTagPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionOneagentJavascriptTag)(nil)).Elem()
+}
+
+func (i *webAppManualInsertionOneagentJavascriptTagPtrType) ToWebAppManualInsertionOneagentJavascriptTagPtrOutput() WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return i.ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppManualInsertionOneagentJavascriptTagPtrType) ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionOneagentJavascriptTagPtrOutput)
+}
+
+type WebAppManualInsertionOneagentJavascriptTagOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionOneagentJavascriptTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTag)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagOutput) ToWebAppManualInsertionOneagentJavascriptTagOutput() WebAppManualInsertionOneagentJavascriptTagOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagOutput) ToWebAppManualInsertionOneagentJavascriptTagOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagOutput) ToWebAppManualInsertionOneagentJavascriptTagPtrOutput() WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return o.ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagOutput) ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppManualInsertionOneagentJavascriptTag) *WebAppManualInsertionOneagentJavascriptTag {
+		return &v
+	}).(WebAppManualInsertionOneagentJavascriptTagPtrOutput)
+}
+
+// Possible Values: `Async`, `Defer`, `None`
+func (o WebAppManualInsertionOneagentJavascriptTagOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppManualInsertionOneagentJavascriptTag) *string { return v.ScriptExecutionAttribute }).(pulumi.StringPtrOutput)
+}
+
+type WebAppManualInsertionOneagentJavascriptTagPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionOneagentJavascriptTagPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionOneagentJavascriptTag)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagPtrOutput) ToWebAppManualInsertionOneagentJavascriptTagPtrOutput() WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagPtrOutput) ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagPtrOutput) Elem() WebAppManualInsertionOneagentJavascriptTagOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionOneagentJavascriptTag) WebAppManualInsertionOneagentJavascriptTag {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppManualInsertionOneagentJavascriptTag
+		return ret
+	}).(WebAppManualInsertionOneagentJavascriptTagOutput)
+}
+
+// Possible Values: `Async`, `Defer`, `None`
+func (o WebAppManualInsertionOneagentJavascriptTagPtrOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionOneagentJavascriptTag) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScriptExecutionAttribute
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebAppManualInsertionOneagentJavascriptTagSri struct {
+	// Possible Values: `Async`, `Defer`, `None`
+	ScriptExecutionAttribute *string `pulumi:"scriptExecutionAttribute"`
+}
+
+// WebAppManualInsertionOneagentJavascriptTagSriInput is an input type that accepts WebAppManualInsertionOneagentJavascriptTagSriArgs and WebAppManualInsertionOneagentJavascriptTagSriOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionOneagentJavascriptTagSriInput` via:
+//
+//	WebAppManualInsertionOneagentJavascriptTagSriArgs{...}
+type WebAppManualInsertionOneagentJavascriptTagSriInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionOneagentJavascriptTagSriOutput() WebAppManualInsertionOneagentJavascriptTagSriOutput
+	ToWebAppManualInsertionOneagentJavascriptTagSriOutputWithContext(context.Context) WebAppManualInsertionOneagentJavascriptTagSriOutput
+}
+
+type WebAppManualInsertionOneagentJavascriptTagSriArgs struct {
+	// Possible Values: `Async`, `Defer`, `None`
+	ScriptExecutionAttribute pulumi.StringPtrInput `pulumi:"scriptExecutionAttribute"`
+}
+
+func (WebAppManualInsertionOneagentJavascriptTagSriArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTagSri)(nil)).Elem()
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagSriArgs) ToWebAppManualInsertionOneagentJavascriptTagSriOutput() WebAppManualInsertionOneagentJavascriptTagSriOutput {
+	return i.ToWebAppManualInsertionOneagentJavascriptTagSriOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagSriArgs) ToWebAppManualInsertionOneagentJavascriptTagSriOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagSriOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionOneagentJavascriptTagSriOutput)
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagSriArgs) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutput() WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return i.ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagSriArgs) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionOneagentJavascriptTagSriOutput).ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(ctx)
+}
+
+// WebAppManualInsertionOneagentJavascriptTagSriPtrInput is an input type that accepts WebAppManualInsertionOneagentJavascriptTagSriArgs, WebAppManualInsertionOneagentJavascriptTagSriPtr and WebAppManualInsertionOneagentJavascriptTagSriPtrOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionOneagentJavascriptTagSriPtrInput` via:
+//
+//	        WebAppManualInsertionOneagentJavascriptTagSriArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppManualInsertionOneagentJavascriptTagSriPtrInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutput() WebAppManualInsertionOneagentJavascriptTagSriPtrOutput
+	ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(context.Context) WebAppManualInsertionOneagentJavascriptTagSriPtrOutput
+}
+
+type webAppManualInsertionOneagentJavascriptTagSriPtrType WebAppManualInsertionOneagentJavascriptTagSriArgs
+
+func WebAppManualInsertionOneagentJavascriptTagSriPtr(v *WebAppManualInsertionOneagentJavascriptTagSriArgs) WebAppManualInsertionOneagentJavascriptTagSriPtrInput {
+	return (*webAppManualInsertionOneagentJavascriptTagSriPtrType)(v)
+}
+
+func (*webAppManualInsertionOneagentJavascriptTagSriPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionOneagentJavascriptTagSri)(nil)).Elem()
+}
+
+func (i *webAppManualInsertionOneagentJavascriptTagSriPtrType) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutput() WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return i.ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppManualInsertionOneagentJavascriptTagSriPtrType) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionOneagentJavascriptTagSriPtrOutput)
+}
+
+type WebAppManualInsertionOneagentJavascriptTagSriOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionOneagentJavascriptTagSriOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTagSri)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriOutput) ToWebAppManualInsertionOneagentJavascriptTagSriOutput() WebAppManualInsertionOneagentJavascriptTagSriOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriOutput) ToWebAppManualInsertionOneagentJavascriptTagSriOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagSriOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriOutput) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutput() WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return o.ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriOutput) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppManualInsertionOneagentJavascriptTagSri) *WebAppManualInsertionOneagentJavascriptTagSri {
+		return &v
+	}).(WebAppManualInsertionOneagentJavascriptTagSriPtrOutput)
+}
+
+// Possible Values: `Async`, `Defer`, `None`
+func (o WebAppManualInsertionOneagentJavascriptTagSriOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppManualInsertionOneagentJavascriptTagSri) *string { return v.ScriptExecutionAttribute }).(pulumi.StringPtrOutput)
+}
+
+type WebAppManualInsertionOneagentJavascriptTagSriPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionOneagentJavascriptTagSriPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionOneagentJavascriptTagSri)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriPtrOutput) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutput() WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriPtrOutput) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriPtrOutput) Elem() WebAppManualInsertionOneagentJavascriptTagSriOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionOneagentJavascriptTagSri) WebAppManualInsertionOneagentJavascriptTagSri {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppManualInsertionOneagentJavascriptTagSri
+		return ret
+	}).(WebAppManualInsertionOneagentJavascriptTagSriOutput)
+}
+
+// Possible Values: `Async`, `Defer`, `None`
+func (o WebAppManualInsertionOneagentJavascriptTagSriPtrOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionOneagentJavascriptTagSri) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScriptExecutionAttribute
+	}).(pulumi.StringPtrOutput)
 }
 
 type WebAppRequestErrorsErrorRules struct {
@@ -29501,6 +30128,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceXhrFallbackThresholdsPtrInput)(nil)).Elem(), WebAppKeyPerformanceXhrFallbackThresholdsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceXhrThresholdsInput)(nil)).Elem(), WebAppKeyPerformanceXhrThresholdsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceXhrThresholdsPtrInput)(nil)).Elem(), WebAppKeyPerformanceXhrThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionCodeSnippetInput)(nil)).Elem(), WebAppManualInsertionCodeSnippetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionCodeSnippetPtrInput)(nil)).Elem(), WebAppManualInsertionCodeSnippetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionJavascriptTagInput)(nil)).Elem(), WebAppManualInsertionJavascriptTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionJavascriptTagPtrInput)(nil)).Elem(), WebAppManualInsertionJavascriptTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTagInput)(nil)).Elem(), WebAppManualInsertionOneagentJavascriptTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTagPtrInput)(nil)).Elem(), WebAppManualInsertionOneagentJavascriptTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTagSriInput)(nil)).Elem(), WebAppManualInsertionOneagentJavascriptTagSriArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTagSriPtrInput)(nil)).Elem(), WebAppManualInsertionOneagentJavascriptTagSriArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesPtrInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleArgs{})
@@ -29868,6 +30503,14 @@ func init() {
 	pulumi.RegisterOutputType(WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput{})
 	pulumi.RegisterOutputType(WebAppKeyPerformanceXhrThresholdsOutput{})
 	pulumi.RegisterOutputType(WebAppKeyPerformanceXhrThresholdsPtrOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionCodeSnippetOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionCodeSnippetPtrOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionJavascriptTagOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionJavascriptTagPtrOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionOneagentJavascriptTagOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionOneagentJavascriptTagPtrOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionOneagentJavascriptTagSriOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionOneagentJavascriptTagSriPtrOutput{})
 	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesOutput{})
 	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesPtrOutput{})
 	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleOutput{})

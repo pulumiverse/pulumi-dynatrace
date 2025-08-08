@@ -15,6 +15,10 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow
     {
         /// <summary>
+        /// Field name validation should be case-insensitive
+        /// </summary>
+        public readonly bool? CaseInsensitiveNamingEnabled;
+        /// <summary>
         /// Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
         /// </summary>
         public readonly string FieldDataType;
@@ -25,10 +29,13 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow(
+            bool? caseInsensitiveNamingEnabled,
+
             string fieldDataType,
 
             string fieldName)
         {
+            CaseInsensitiveNamingEnabled = caseInsensitiveNamingEnabled;
             FieldDataType = fieldDataType;
             FieldName = fieldName;
         }
