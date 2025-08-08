@@ -21,17 +21,21 @@ class EventDrivenAnsibleConnectionsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
                  url: pulumi.Input[_builtins.str],
+                 event_stream_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  token: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a EventDrivenAnsibleConnections resource.
         :param pulumi.Input[_builtins.str] type: Possible Values: `Api_token`
         :param pulumi.Input[_builtins.str] url: URL of the Event-Driven Ansible source plugin webhook. For example, https://eda.yourdomain.com:5010
+        :param pulumi.Input[_builtins.bool] event_stream_enabled: Flag if Red Hat Event Stream is use for Event-Driven Ansible
         :param pulumi.Input[_builtins.str] name: A unique and clearly identifiable connection name.
         :param pulumi.Input[_builtins.str] token: API access token for the Event-Driven Ansible Controller. Please note that this token is not refreshed and can expire.
         """
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "url", url)
+        if event_stream_enabled is not None:
+            pulumi.set(__self__, "event_stream_enabled", event_stream_enabled)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if token is not None:
@@ -62,6 +66,18 @@ class EventDrivenAnsibleConnectionsArgs:
         pulumi.set(self, "url", value)
 
     @_builtins.property
+    @pulumi.getter(name="eventStreamEnabled")
+    def event_stream_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Flag if Red Hat Event Stream is use for Event-Driven Ansible
+        """
+        return pulumi.get(self, "event_stream_enabled")
+
+    @event_stream_enabled.setter
+    def event_stream_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "event_stream_enabled", value)
+
+    @_builtins.property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -89,17 +105,21 @@ class EventDrivenAnsibleConnectionsArgs:
 @pulumi.input_type
 class _EventDrivenAnsibleConnectionsState:
     def __init__(__self__, *,
+                 event_stream_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  token: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EventDrivenAnsibleConnections resources.
+        :param pulumi.Input[_builtins.bool] event_stream_enabled: Flag if Red Hat Event Stream is use for Event-Driven Ansible
         :param pulumi.Input[_builtins.str] name: A unique and clearly identifiable connection name.
         :param pulumi.Input[_builtins.str] token: API access token for the Event-Driven Ansible Controller. Please note that this token is not refreshed and can expire.
         :param pulumi.Input[_builtins.str] type: Possible Values: `Api_token`
         :param pulumi.Input[_builtins.str] url: URL of the Event-Driven Ansible source plugin webhook. For example, https://eda.yourdomain.com:5010
         """
+        if event_stream_enabled is not None:
+            pulumi.set(__self__, "event_stream_enabled", event_stream_enabled)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if token is not None:
@@ -108,6 +128,18 @@ class _EventDrivenAnsibleConnectionsState:
             pulumi.set(__self__, "type", type)
         if url is not None:
             pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter(name="eventStreamEnabled")
+    def event_stream_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Flag if Red Hat Event Stream is use for Event-Driven Ansible
+        """
+        return pulumi.get(self, "event_stream_enabled")
+
+    @event_stream_enabled.setter
+    def event_stream_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "event_stream_enabled", value)
 
     @_builtins.property
     @pulumi.getter
@@ -164,6 +196,7 @@ class EventDrivenAnsibleConnections(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 event_stream_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  token: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -173,6 +206,7 @@ class EventDrivenAnsibleConnections(pulumi.CustomResource):
         Create a EventDrivenAnsibleConnections resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.bool] event_stream_enabled: Flag if Red Hat Event Stream is use for Event-Driven Ansible
         :param pulumi.Input[_builtins.str] name: A unique and clearly identifiable connection name.
         :param pulumi.Input[_builtins.str] token: API access token for the Event-Driven Ansible Controller. Please note that this token is not refreshed and can expire.
         :param pulumi.Input[_builtins.str] type: Possible Values: `Api_token`
@@ -201,6 +235,7 @@ class EventDrivenAnsibleConnections(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 event_stream_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  token: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -214,6 +249,7 @@ class EventDrivenAnsibleConnections(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = EventDrivenAnsibleConnectionsArgs.__new__(EventDrivenAnsibleConnectionsArgs)
 
+            __props__.__dict__["event_stream_enabled"] = event_stream_enabled
             __props__.__dict__["name"] = name
             __props__.__dict__["token"] = None if token is None else pulumi.Output.secret(token)
             if type is None and not opts.urn:
@@ -234,6 +270,7 @@ class EventDrivenAnsibleConnections(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            event_stream_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             token: Optional[pulumi.Input[_builtins.str]] = None,
             type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -245,6 +282,7 @@ class EventDrivenAnsibleConnections(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.bool] event_stream_enabled: Flag if Red Hat Event Stream is use for Event-Driven Ansible
         :param pulumi.Input[_builtins.str] name: A unique and clearly identifiable connection name.
         :param pulumi.Input[_builtins.str] token: API access token for the Event-Driven Ansible Controller. Please note that this token is not refreshed and can expire.
         :param pulumi.Input[_builtins.str] type: Possible Values: `Api_token`
@@ -254,11 +292,20 @@ class EventDrivenAnsibleConnections(pulumi.CustomResource):
 
         __props__ = _EventDrivenAnsibleConnectionsState.__new__(_EventDrivenAnsibleConnectionsState)
 
+        __props__.__dict__["event_stream_enabled"] = event_stream_enabled
         __props__.__dict__["name"] = name
         __props__.__dict__["token"] = token
         __props__.__dict__["type"] = type
         __props__.__dict__["url"] = url
         return EventDrivenAnsibleConnections(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="eventStreamEnabled")
+    def event_stream_enabled(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Flag if Red Hat Event Stream is use for Event-Driven Ansible
+        """
+        return pulumi.get(self, "event_stream_enabled")
 
     @_builtins.property
     @pulumi.getter

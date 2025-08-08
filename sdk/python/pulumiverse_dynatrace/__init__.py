@@ -421,6 +421,7 @@ from .web_app_javascript_version import *
 from .web_app_key_performance_custom import *
 from .web_app_key_performance_load import *
 from .web_app_key_performance_xhr import *
+from .web_app_manual_insertion import *
 from .web_app_request_errors import *
 from .web_app_resource_cleanup import *
 from .web_app_resource_types import *
@@ -3326,6 +3327,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/webAppKeyPerformanceXhr:WebAppKeyPerformanceXhr": "WebAppKeyPerformanceXhr"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/webAppManualInsertion",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/webAppManualInsertion:WebAppManualInsertion": "WebAppManualInsertion"
   }
  },
  {
