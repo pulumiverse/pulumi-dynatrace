@@ -14,6 +14,12 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Field name validation should be case-insensitive
+        /// </summary>
+        [Input("caseInsensitiveNamingEnabled")]
+        public Input<bool>? CaseInsensitiveNamingEnabled { get; set; }
+
+        /// <summary>
         /// Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
         /// </summary>
         [Input("fieldDataType", required: true)]

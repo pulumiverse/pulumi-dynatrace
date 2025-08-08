@@ -92,6 +92,12 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> ShortLivedProcessesMonitoring { get; private set; } = null!;
 
         /// <summary>
+        /// Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+        /// </summary>
+        [Output("splitDb2GroupingByInstances")]
+        public Output<bool?> SplitDb2GroupingByInstances { get; private set; } = null!;
+
+        /// <summary>
         /// Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
         /// </summary>
         [Output("splitOracleDatabasePg")]
@@ -241,6 +247,12 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> ShortLivedProcessesMonitoring { get; set; } = null!;
 
         /// <summary>
+        /// Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+        /// </summary>
+        [Input("splitDb2GroupingByInstances")]
+        public Input<bool>? SplitDb2GroupingByInstances { get; set; }
+
+        /// <summary>
         /// Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
         /// </summary>
         [Input("splitOracleDatabasePg", required: true)]
@@ -349,6 +361,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("shortLivedProcessesMonitoring")]
         public Input<bool>? ShortLivedProcessesMonitoring { get; set; }
+
+        /// <summary>
+        /// Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+        /// </summary>
+        [Input("splitDb2GroupingByInstances")]
+        public Input<bool>? SplitDb2GroupingByInstances { get; set; }
 
         /// <summary>
         /// Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.

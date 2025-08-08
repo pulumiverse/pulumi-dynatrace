@@ -37757,6 +37757,10 @@ export interface WebAppAutoInjectionSnippetFormat {
      */
     codeSnippetType?: pulumi.Input<string>;
     /**
+     * Possible Values: `async`, `defer`, `none`
+     */
+    scriptExecutionAttribute?: pulumi.Input<string>;
+    /**
      * Snippet format
      */
     snippetFormat: pulumi.Input<string>;
@@ -37810,6 +37814,10 @@ export interface WebAppCustomPropRestrictionsCustomEventPropertiesAllowList {
 
 export interface WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow {
     /**
+     * Field name validation should be case-insensitive
+     */
+    caseInsensitiveNamingEnabled?: pulumi.Input<boolean>;
+    /**
      * Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
      */
     fieldDataType: pulumi.Input<string>;
@@ -37824,6 +37832,10 @@ export interface WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList {
 }
 
 export interface WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow {
+    /**
+     * Field name validation should be case-insensitive
+     */
+    caseInsensitiveNamingEnabled?: pulumi.Input<boolean>;
     /**
      * Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
      */
@@ -37935,6 +37947,42 @@ export interface WebAppKeyPerformanceXhrThresholds {
      * If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
      */
     toleratedThresholdSeconds: pulumi.Input<number>;
+}
+
+export interface WebAppManualInsertionCodeSnippet {
+    /**
+     * Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+     */
+    codeSnippetType: pulumi.Input<string>;
+}
+
+export interface WebAppManualInsertionJavascriptTag {
+    /**
+     * Duration in hours, possible Values: `1`, `12`, `144`, `24`, `3`, `6`, `72`
+     */
+    cacheDuration: pulumi.Input<string>;
+    /**
+     * Add the `crossorigin=anonymous` attribute to capture JavaScript error messages and W3C resource timings
+     */
+    crossoriginAnonymous: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `Async`, `Defer`, `None`
+     */
+    scriptExecutionAttribute?: pulumi.Input<string>;
+}
+
+export interface WebAppManualInsertionOneagentJavascriptTag {
+    /**
+     * Possible Values: `Async`, `Defer`, `None`
+     */
+    scriptExecutionAttribute?: pulumi.Input<string>;
+}
+
+export interface WebAppManualInsertionOneagentJavascriptTagSri {
+    /**
+     * Possible Values: `Async`, `Defer`, `None`
+     */
+    scriptExecutionAttribute?: pulumi.Input<string>;
 }
 
 export interface WebAppRequestErrorsErrorRules {

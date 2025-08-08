@@ -85,6 +85,10 @@ export class ProcessGroupDetectionFlags extends pulumi.CustomResource {
      */
     public readonly shortLivedProcessesMonitoring!: pulumi.Output<boolean>;
     /**
+     * Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+     */
+    public readonly splitDb2GroupingByInstances!: pulumi.Output<boolean | undefined>;
+    /**
      * Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
      */
     public readonly splitOracleDatabasePg!: pulumi.Output<boolean>;
@@ -127,6 +131,7 @@ export class ProcessGroupDetectionFlags extends pulumi.CustomResource {
             resourceInputs["scope"] = state ? state.scope : undefined;
             resourceInputs["securitySoftwareDetectionEnabled"] = state ? state.securitySoftwareDetectionEnabled : undefined;
             resourceInputs["shortLivedProcessesMonitoring"] = state ? state.shortLivedProcessesMonitoring : undefined;
+            resourceInputs["splitDb2GroupingByInstances"] = state ? state.splitDb2GroupingByInstances : undefined;
             resourceInputs["splitOracleDatabasePg"] = state ? state.splitOracleDatabasePg : undefined;
             resourceInputs["splitOracleListenerPg"] = state ? state.splitOracleListenerPg : undefined;
             resourceInputs["useCatalinaBase"] = state ? state.useCatalinaBase : undefined;
@@ -191,6 +196,7 @@ export class ProcessGroupDetectionFlags extends pulumi.CustomResource {
             resourceInputs["scope"] = args ? args.scope : undefined;
             resourceInputs["securitySoftwareDetectionEnabled"] = args ? args.securitySoftwareDetectionEnabled : undefined;
             resourceInputs["shortLivedProcessesMonitoring"] = args ? args.shortLivedProcessesMonitoring : undefined;
+            resourceInputs["splitDb2GroupingByInstances"] = args ? args.splitDb2GroupingByInstances : undefined;
             resourceInputs["splitOracleDatabasePg"] = args ? args.splitOracleDatabasePg : undefined;
             resourceInputs["splitOracleListenerPg"] = args ? args.splitOracleListenerPg : undefined;
             resourceInputs["useCatalinaBase"] = args ? args.useCatalinaBase : undefined;
@@ -257,6 +263,10 @@ export interface ProcessGroupDetectionFlagsState {
      * Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
      */
     shortLivedProcessesMonitoring?: pulumi.Input<boolean>;
+    /**
+     * Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+     */
+    splitDb2GroupingByInstances?: pulumi.Input<boolean>;
     /**
      * Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
      */
@@ -331,6 +341,10 @@ export interface ProcessGroupDetectionFlagsArgs {
      * Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
      */
     shortLivedProcessesMonitoring: pulumi.Input<boolean>;
+    /**
+     * Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+     */
+    splitDb2GroupingByInstances?: pulumi.Input<boolean>;
     /**
      * Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
      */

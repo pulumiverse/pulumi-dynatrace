@@ -33,9 +33,17 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
     }
 
     /**
-     * (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+     * The threshold at which a network device interface is deemed to be saturated.
      */
     public readonly interfaceSaturationThreshold!: pulumi.Output<number | undefined>;
+    /**
+     * Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+     */
+    public readonly invexDqlQueryLimit!: pulumi.Output<number | undefined>;
+    /**
+     * Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+     */
+    public readonly invexDqlSortLimit!: pulumi.Output<number | undefined>;
     /**
      * When set to true, the app will display monitoring candidates in the Hosts table
      */
@@ -59,6 +67,8 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as InfraopsAppSettingsState | undefined;
             resourceInputs["interfaceSaturationThreshold"] = state ? state.interfaceSaturationThreshold : undefined;
+            resourceInputs["invexDqlQueryLimit"] = state ? state.invexDqlQueryLimit : undefined;
+            resourceInputs["invexDqlSortLimit"] = state ? state.invexDqlSortLimit : undefined;
             resourceInputs["showMonitoringCandidates"] = state ? state.showMonitoringCandidates : undefined;
             resourceInputs["showStandaloneHosts"] = state ? state.showStandaloneHosts : undefined;
         } else {
@@ -70,6 +80,8 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
                 throw new Error("Missing required property 'showStandaloneHosts'");
             }
             resourceInputs["interfaceSaturationThreshold"] = args ? args.interfaceSaturationThreshold : undefined;
+            resourceInputs["invexDqlQueryLimit"] = args ? args.invexDqlQueryLimit : undefined;
+            resourceInputs["invexDqlSortLimit"] = args ? args.invexDqlSortLimit : undefined;
             resourceInputs["showMonitoringCandidates"] = args ? args.showMonitoringCandidates : undefined;
             resourceInputs["showStandaloneHosts"] = args ? args.showStandaloneHosts : undefined;
         }
@@ -83,9 +95,17 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
  */
 export interface InfraopsAppSettingsState {
     /**
-     * (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+     * The threshold at which a network device interface is deemed to be saturated.
      */
     interfaceSaturationThreshold?: pulumi.Input<number>;
+    /**
+     * Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+     */
+    invexDqlQueryLimit?: pulumi.Input<number>;
+    /**
+     * Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+     */
+    invexDqlSortLimit?: pulumi.Input<number>;
     /**
      * When set to true, the app will display monitoring candidates in the Hosts table
      */
@@ -101,9 +121,17 @@ export interface InfraopsAppSettingsState {
  */
 export interface InfraopsAppSettingsArgs {
     /**
-     * (Required v305+) The threshold at which a network device interface is deemed to be saturated.
+     * The threshold at which a network device interface is deemed to be saturated.
      */
     interfaceSaturationThreshold?: pulumi.Input<number>;
+    /**
+     * Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+     */
+    invexDqlQueryLimit?: pulumi.Input<number>;
+    /**
+     * Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+     */
+    invexDqlSortLimit?: pulumi.Input<number>;
     /**
      * When set to true, the app will display monitoring candidates in the Hosts table
      */

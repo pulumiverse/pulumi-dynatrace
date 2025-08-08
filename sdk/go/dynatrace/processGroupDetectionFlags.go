@@ -41,6 +41,8 @@ type ProcessGroupDetectionFlags struct {
 	SecuritySoftwareDetectionEnabled pulumi.BoolPtrOutput `pulumi:"securitySoftwareDetectionEnabled"`
 	// Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
 	ShortLivedProcessesMonitoring pulumi.BoolOutput `pulumi:"shortLivedProcessesMonitoring"`
+	// Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+	SplitDb2GroupingByInstances pulumi.BoolPtrOutput `pulumi:"splitDb2GroupingByInstances"`
 	// Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
 	SplitOracleDatabasePg pulumi.BoolOutput `pulumi:"splitOracleDatabasePg"`
 	// Enable to group and separately analyze the processes of each Oracle Listener. Each process group receives a unique name based on the Oracle Listener name.
@@ -152,6 +154,8 @@ type processGroupDetectionFlagsState struct {
 	SecuritySoftwareDetectionEnabled *bool `pulumi:"securitySoftwareDetectionEnabled"`
 	// Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
 	ShortLivedProcessesMonitoring *bool `pulumi:"shortLivedProcessesMonitoring"`
+	// Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+	SplitDb2GroupingByInstances *bool `pulumi:"splitDb2GroupingByInstances"`
 	// Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
 	SplitOracleDatabasePg *bool `pulumi:"splitOracleDatabasePg"`
 	// Enable to group and separately analyze the processes of each Oracle Listener. Each process group receives a unique name based on the Oracle Listener name.
@@ -189,6 +193,8 @@ type ProcessGroupDetectionFlagsState struct {
 	SecuritySoftwareDetectionEnabled pulumi.BoolPtrInput
 	// Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
 	ShortLivedProcessesMonitoring pulumi.BoolPtrInput
+	// Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+	SplitDb2GroupingByInstances pulumi.BoolPtrInput
 	// Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
 	SplitOracleDatabasePg pulumi.BoolPtrInput
 	// Enable to group and separately analyze the processes of each Oracle Listener. Each process group receives a unique name based on the Oracle Listener name.
@@ -230,6 +236,8 @@ type processGroupDetectionFlagsArgs struct {
 	SecuritySoftwareDetectionEnabled *bool `pulumi:"securitySoftwareDetectionEnabled"`
 	// Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
 	ShortLivedProcessesMonitoring bool `pulumi:"shortLivedProcessesMonitoring"`
+	// Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+	SplitDb2GroupingByInstances *bool `pulumi:"splitDb2GroupingByInstances"`
 	// Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
 	SplitOracleDatabasePg bool `pulumi:"splitOracleDatabasePg"`
 	// Enable to group and separately analyze the processes of each Oracle Listener. Each process group receives a unique name based on the Oracle Listener name.
@@ -268,6 +276,8 @@ type ProcessGroupDetectionFlagsArgs struct {
 	SecuritySoftwareDetectionEnabled pulumi.BoolPtrInput
 	// Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
 	ShortLivedProcessesMonitoring pulumi.BoolInput
+	// Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+	SplitDb2GroupingByInstances pulumi.BoolPtrInput
 	// Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
 	SplitOracleDatabasePg pulumi.BoolInput
 	// Enable to group and separately analyze the processes of each Oracle Listener. Each process group receives a unique name based on the Oracle Listener name.
@@ -428,6 +438,11 @@ func (o ProcessGroupDetectionFlagsOutput) SecuritySoftwareDetectionEnabled() pul
 // Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
 func (o ProcessGroupDetectionFlagsOutput) ShortLivedProcessesMonitoring() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ProcessGroupDetectionFlags) pulumi.BoolOutput { return v.ShortLivedProcessesMonitoring }).(pulumi.BoolOutput)
+}
+
+// Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+func (o ProcessGroupDetectionFlagsOutput) SplitDb2GroupingByInstances() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ProcessGroupDetectionFlags) pulumi.BoolPtrOutput { return v.SplitDb2GroupingByInstances }).(pulumi.BoolPtrOutput)
 }
 
 // Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.

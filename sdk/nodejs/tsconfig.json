@@ -435,6 +435,7 @@
         "webAppKeyPerformanceCustom.ts",
         "webAppKeyPerformanceLoad.ts",
         "webAppKeyPerformanceXhr.ts",
+        "webAppManualInsertion.ts",
         "webAppRequestErrors.ts",
         "webAppResourceCleanup.ts",
         "webAppResourceTypes.ts",
