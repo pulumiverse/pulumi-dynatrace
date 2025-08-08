@@ -35,7 +35,8 @@ class ProcessGroupDetectionFlagsArgs:
                  use_catalina_base: pulumi.Input[_builtins.bool],
                  use_docker_container_name: pulumi.Input[_builtins.bool],
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_software_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 security_software_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 split_db2_grouping_by_instances: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ProcessGroupDetectionFlags resource.
         :param pulumi.Input[_builtins.bool] add_node_js_script_name: In older versions, Node.js applications were distinguished based on their directory name, omitting the script name. Changing this setting may change the general handling of Node.js process groups. Leave unchanged if in doubt.
@@ -55,6 +56,7 @@ class ProcessGroupDetectionFlagsArgs:
         :param pulumi.Input[_builtins.bool] use_docker_container_name: By default, Dynatrace uses image names as identifiers for individual process groups, with one process-group instance per host. Normally Docker container names can't serve as stable identifiers of process group instances because they are variable and auto-generated. You can however manually assign proper container names to their Docker instances. Such manually-assigned container names can serve as reliable process-group instance identifiers. This flag instructs Dynatrace to use Docker-provided names to distinguish between multiple instances of the same image. If this flag is not applied and you run multiple containers of the same image on the same host, the resulting processes will be consolidated into a single process view. Use this flag with caution!
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.bool] security_software_detection_enabled: This flag enables the detection of security software such as anti-malware protection.
+        :param pulumi.Input[_builtins.bool] split_db2_grouping_by_instances: Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
         """
         pulumi.set(__self__, "add_node_js_script_name", add_node_js_script_name)
         pulumi.set(__self__, "auto_detect_cassandra_clusters", auto_detect_cassandra_clusters)
@@ -75,6 +77,8 @@ class ProcessGroupDetectionFlagsArgs:
             pulumi.set(__self__, "scope", scope)
         if security_software_detection_enabled is not None:
             pulumi.set(__self__, "security_software_detection_enabled", security_software_detection_enabled)
+        if split_db2_grouping_by_instances is not None:
+            pulumi.set(__self__, "split_db2_grouping_by_instances", split_db2_grouping_by_instances)
 
     @_builtins.property
     @pulumi.getter(name="addNodeJsScriptName")
@@ -280,6 +284,18 @@ class ProcessGroupDetectionFlagsArgs:
     def security_software_detection_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "security_software_detection_enabled", value)
 
+    @_builtins.property
+    @pulumi.getter(name="splitDb2GroupingByInstances")
+    def split_db2_grouping_by_instances(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+        """
+        return pulumi.get(self, "split_db2_grouping_by_instances")
+
+    @split_db2_grouping_by_instances.setter
+    def split_db2_grouping_by_instances(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "split_db2_grouping_by_instances", value)
+
 
 @pulumi.input_type
 class _ProcessGroupDetectionFlagsState:
@@ -297,6 +313,7 @@ class _ProcessGroupDetectionFlagsState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  security_software_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  short_lived_processes_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
+                 split_db2_grouping_by_instances: Optional[pulumi.Input[_builtins.bool]] = None,
                  split_oracle_database_pg: Optional[pulumi.Input[_builtins.bool]] = None,
                  split_oracle_listener_pg: Optional[pulumi.Input[_builtins.bool]] = None,
                  use_catalina_base: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -316,6 +333,7 @@ class _ProcessGroupDetectionFlagsState:
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.bool] security_software_detection_enabled: This flag enables the detection of security software such as anti-malware protection.
         :param pulumi.Input[_builtins.bool] short_lived_processes_monitoring: Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
+        :param pulumi.Input[_builtins.bool] split_db2_grouping_by_instances: Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
         :param pulumi.Input[_builtins.bool] split_oracle_database_pg: Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
         :param pulumi.Input[_builtins.bool] split_oracle_listener_pg: Enable to group and separately analyze the processes of each Oracle Listener. Each process group receives a unique name based on the Oracle Listener name.
         :param pulumi.Input[_builtins.bool] use_catalina_base: By default, Tomcat clusters are identified and named based on the CATALINA*HOME directory name. This setting results in the use of the CATALINA*BASE directory name to identify multiple Tomcat nodes within each Tomcat cluster. If this setting is not enabled, each CATALINA*HOME+CATALINA*BASE combination will be considered a separate Tomcat cluster. In other words, Tomcat clusters can't have multiple nodes on a single host.
@@ -347,6 +365,8 @@ class _ProcessGroupDetectionFlagsState:
             pulumi.set(__self__, "security_software_detection_enabled", security_software_detection_enabled)
         if short_lived_processes_monitoring is not None:
             pulumi.set(__self__, "short_lived_processes_monitoring", short_lived_processes_monitoring)
+        if split_db2_grouping_by_instances is not None:
+            pulumi.set(__self__, "split_db2_grouping_by_instances", split_db2_grouping_by_instances)
         if split_oracle_database_pg is not None:
             pulumi.set(__self__, "split_oracle_database_pg", split_oracle_database_pg)
         if split_oracle_listener_pg is not None:
@@ -513,6 +533,18 @@ class _ProcessGroupDetectionFlagsState:
         pulumi.set(self, "short_lived_processes_monitoring", value)
 
     @_builtins.property
+    @pulumi.getter(name="splitDb2GroupingByInstances")
+    def split_db2_grouping_by_instances(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+        """
+        return pulumi.get(self, "split_db2_grouping_by_instances")
+
+    @split_db2_grouping_by_instances.setter
+    def split_db2_grouping_by_instances(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "split_db2_grouping_by_instances", value)
+
+    @_builtins.property
     @pulumi.getter(name="splitOracleDatabasePg")
     def split_oracle_database_pg(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
@@ -580,6 +612,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  security_software_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  short_lived_processes_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
+                 split_db2_grouping_by_instances: Optional[pulumi.Input[_builtins.bool]] = None,
                  split_oracle_database_pg: Optional[pulumi.Input[_builtins.bool]] = None,
                  split_oracle_listener_pg: Optional[pulumi.Input[_builtins.bool]] = None,
                  use_catalina_base: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -602,6 +635,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.bool] security_software_detection_enabled: This flag enables the detection of security software such as anti-malware protection.
         :param pulumi.Input[_builtins.bool] short_lived_processes_monitoring: Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
+        :param pulumi.Input[_builtins.bool] split_db2_grouping_by_instances: Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
         :param pulumi.Input[_builtins.bool] split_oracle_database_pg: Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
         :param pulumi.Input[_builtins.bool] split_oracle_listener_pg: Enable to group and separately analyze the processes of each Oracle Listener. Each process group receives a unique name based on the Oracle Listener name.
         :param pulumi.Input[_builtins.bool] use_catalina_base: By default, Tomcat clusters are identified and named based on the CATALINA*HOME directory name. This setting results in the use of the CATALINA*BASE directory name to identify multiple Tomcat nodes within each Tomcat cluster. If this setting is not enabled, each CATALINA*HOME+CATALINA*BASE combination will be considered a separate Tomcat cluster. In other words, Tomcat clusters can't have multiple nodes on a single host.
@@ -643,6 +677,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  security_software_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  short_lived_processes_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
+                 split_db2_grouping_by_instances: Optional[pulumi.Input[_builtins.bool]] = None,
                  split_oracle_database_pg: Optional[pulumi.Input[_builtins.bool]] = None,
                  split_oracle_listener_pg: Optional[pulumi.Input[_builtins.bool]] = None,
                  use_catalina_base: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -691,6 +726,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
             if short_lived_processes_monitoring is None and not opts.urn:
                 raise TypeError("Missing required property 'short_lived_processes_monitoring'")
             __props__.__dict__["short_lived_processes_monitoring"] = short_lived_processes_monitoring
+            __props__.__dict__["split_db2_grouping_by_instances"] = split_db2_grouping_by_instances
             if split_oracle_database_pg is None and not opts.urn:
                 raise TypeError("Missing required property 'split_oracle_database_pg'")
             __props__.__dict__["split_oracle_database_pg"] = split_oracle_database_pg
@@ -726,6 +762,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
             scope: Optional[pulumi.Input[_builtins.str]] = None,
             security_software_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
             short_lived_processes_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
+            split_db2_grouping_by_instances: Optional[pulumi.Input[_builtins.bool]] = None,
             split_oracle_database_pg: Optional[pulumi.Input[_builtins.bool]] = None,
             split_oracle_listener_pg: Optional[pulumi.Input[_builtins.bool]] = None,
             use_catalina_base: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -750,6 +787,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.bool] security_software_detection_enabled: This flag enables the detection of security software such as anti-malware protection.
         :param pulumi.Input[_builtins.bool] short_lived_processes_monitoring: Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
+        :param pulumi.Input[_builtins.bool] split_db2_grouping_by_instances: Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
         :param pulumi.Input[_builtins.bool] split_oracle_database_pg: Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
         :param pulumi.Input[_builtins.bool] split_oracle_listener_pg: Enable to group and separately analyze the processes of each Oracle Listener. Each process group receives a unique name based on the Oracle Listener name.
         :param pulumi.Input[_builtins.bool] use_catalina_base: By default, Tomcat clusters are identified and named based on the CATALINA*HOME directory name. This setting results in the use of the CATALINA*BASE directory name to identify multiple Tomcat nodes within each Tomcat cluster. If this setting is not enabled, each CATALINA*HOME+CATALINA*BASE combination will be considered a separate Tomcat cluster. In other words, Tomcat clusters can't have multiple nodes on a single host.
@@ -772,6 +810,7 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         __props__.__dict__["security_software_detection_enabled"] = security_software_detection_enabled
         __props__.__dict__["short_lived_processes_monitoring"] = short_lived_processes_monitoring
+        __props__.__dict__["split_db2_grouping_by_instances"] = split_db2_grouping_by_instances
         __props__.__dict__["split_oracle_database_pg"] = split_oracle_database_pg
         __props__.__dict__["split_oracle_listener_pg"] = split_oracle_listener_pg
         __props__.__dict__["use_catalina_base"] = use_catalina_base
@@ -881,6 +920,14 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
         Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
         """
         return pulumi.get(self, "short_lived_processes_monitoring")
+
+    @_builtins.property
+    @pulumi.getter(name="splitDb2GroupingByInstances")
+    def split_db2_grouping_by_instances(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
+        """
+        return pulumi.get(self, "split_db2_grouping_by_instances")
 
     @_builtins.property
     @pulumi.getter(name="splitOracleDatabasePg")
