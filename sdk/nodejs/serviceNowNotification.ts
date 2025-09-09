@@ -35,51 +35,51 @@ export class ServiceNowNotification extends pulumi.CustomResource {
     /**
      * The configuration is enabled (`true`) or disabled (`false`)
      */
-    public readonly active!: pulumi.Output<boolean>;
+    declare public readonly active: pulumi.Output<boolean>;
     /**
      * Send events into ServiceNow ITOM
      */
-    public readonly events!: pulumi.Output<boolean | undefined>;
+    declare public readonly events: pulumi.Output<boolean | undefined>;
     /**
      * Use text format for problem details instead of HTML.
      */
-    public readonly formatProblemDetailsAsText!: pulumi.Output<boolean | undefined>;
+    declare public readonly formatProblemDetailsAsText: pulumi.Output<boolean | undefined>;
     /**
      * Send incidents into ServiceNow ITSM
      */
-    public readonly incidents!: pulumi.Output<boolean>;
+    declare public readonly incidents: pulumi.Output<boolean>;
     /**
      * The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
      */
-    public readonly instance!: pulumi.Output<string | undefined>;
+    declare public readonly instance: pulumi.Output<string | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    public readonly legacyId!: pulumi.Output<string>;
+    declare public readonly legacyId: pulumi.Output<string>;
     /**
      * The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      */
-    public readonly message!: pulumi.Output<string>;
+    declare public readonly message: pulumi.Output<string>;
     /**
      * The name of the notification configuration
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The password to the ServiceNow account
      */
-    public readonly password!: pulumi.Output<string | undefined>;
+    declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * The ID of the associated alerting profile
      */
-    public readonly profile!: pulumi.Output<string>;
+    declare public readonly profile: pulumi.Output<string>;
     /**
      * The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
      */
-    public readonly url!: pulumi.Output<string | undefined>;
+    declare public readonly url: pulumi.Output<string | undefined>;
     /**
      * The username of the ServiceNow account.   Make sure that your user account has the `restService`, `webRequestAdmin`, and `x_dynat_ruxit.Integration` roles
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
 
     /**
      * Create a ServiceNowNotification resource with the given unique name, arguments, and options.
@@ -94,47 +94,47 @@ export class ServiceNowNotification extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ServiceNowNotificationState | undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["events"] = state ? state.events : undefined;
-            resourceInputs["formatProblemDetailsAsText"] = state ? state.formatProblemDetailsAsText : undefined;
-            resourceInputs["incidents"] = state ? state.incidents : undefined;
-            resourceInputs["instance"] = state ? state.instance : undefined;
-            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
-            resourceInputs["message"] = state ? state.message : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["profile"] = state ? state.profile : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["events"] = state?.events;
+            resourceInputs["formatProblemDetailsAsText"] = state?.formatProblemDetailsAsText;
+            resourceInputs["incidents"] = state?.incidents;
+            resourceInputs["instance"] = state?.instance;
+            resourceInputs["legacyId"] = state?.legacyId;
+            resourceInputs["message"] = state?.message;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["profile"] = state?.profile;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as ServiceNowNotificationArgs | undefined;
-            if ((!args || args.active === undefined) && !opts.urn) {
+            if (args?.active === undefined && !opts.urn) {
                 throw new Error("Missing required property 'active'");
             }
-            if ((!args || args.incidents === undefined) && !opts.urn) {
+            if (args?.incidents === undefined && !opts.urn) {
                 throw new Error("Missing required property 'incidents'");
             }
-            if ((!args || args.message === undefined) && !opts.urn) {
+            if (args?.message === undefined && !opts.urn) {
                 throw new Error("Missing required property 'message'");
             }
-            if ((!args || args.profile === undefined) && !opts.urn) {
+            if (args?.profile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profile'");
             }
-            if ((!args || args.username === undefined) && !opts.urn) {
+            if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
-            resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["events"] = args ? args.events : undefined;
-            resourceInputs["formatProblemDetailsAsText"] = args ? args.formatProblemDetailsAsText : undefined;
-            resourceInputs["incidents"] = args ? args.incidents : undefined;
-            resourceInputs["instance"] = args ? args.instance : undefined;
-            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
-            resourceInputs["message"] = args ? args.message : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["active"] = args?.active;
+            resourceInputs["events"] = args?.events;
+            resourceInputs["formatProblemDetailsAsText"] = args?.formatProblemDetailsAsText;
+            resourceInputs["incidents"] = args?.incidents;
+            resourceInputs["instance"] = args?.instance;
+            resourceInputs["legacyId"] = args?.legacyId;
+            resourceInputs["message"] = args?.message;
+            resourceInputs["name"] = args?.name;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["profile"] = args ? args.profile : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["profile"] = args?.profile;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["username"] = args?.username;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["password"] };

@@ -35,11 +35,11 @@ export class AttributeAllowList extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Key of the attribute to persist
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
 
     /**
      * Create a AttributeAllowList resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class AttributeAllowList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AttributeAllowListState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["key"] = state?.key;
         } else {
             const args = argsOrState as AttributeAllowListArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.key === undefined) && !opts.urn) {
+            if (args?.key === undefined && !opts.urn) {
                 throw new Error("Missing required property 'key'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["key"] = args?.key;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AttributeAllowList.__pulumiType, name, resourceInputs, opts);

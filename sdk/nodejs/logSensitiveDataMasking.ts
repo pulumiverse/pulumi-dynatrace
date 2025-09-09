@@ -37,27 +37,27 @@ export class LogSensitiveDataMasking extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * no documentation available
      */
-    public readonly masking!: pulumi.Output<outputs.LogSensitiveDataMaskingMasking>;
+    declare public readonly masking: pulumi.Output<outputs.LogSensitiveDataMaskingMasking>;
     /**
      * no documentation available
      */
-    public readonly matchers!: pulumi.Output<outputs.LogSensitiveDataMaskingMatchers | undefined>;
+    declare public readonly matchers: pulumi.Output<outputs.LogSensitiveDataMaskingMatchers | undefined>;
     /**
      * Name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a LogSensitiveDataMasking resource with the given unique name, arguments, and options.
@@ -72,26 +72,26 @@ export class LogSensitiveDataMasking extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogSensitiveDataMaskingState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["masking"] = state ? state.masking : undefined;
-            resourceInputs["matchers"] = state ? state.matchers : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["masking"] = state?.masking;
+            resourceInputs["matchers"] = state?.matchers;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as LogSensitiveDataMaskingArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.masking === undefined) && !opts.urn) {
+            if (args?.masking === undefined && !opts.urn) {
                 throw new Error("Missing required property 'masking'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["masking"] = args ? args.masking : undefined;
-            resourceInputs["matchers"] = args ? args.matchers : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["masking"] = args?.masking;
+            resourceInputs["matchers"] = args?.matchers;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogSensitiveDataMasking.__pulumiType, name, resourceInputs, opts);

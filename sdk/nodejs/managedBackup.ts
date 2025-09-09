@@ -35,47 +35,47 @@ export class ManagedBackup extends pulumi.CustomResource {
     /**
      * Cassandra backup bandwidth limit in Mbps
      */
-    public readonly bandwidthLimitMbits!: pulumi.Output<number | undefined>;
+    declare public readonly bandwidthLimitMbits: pulumi.Output<number | undefined>;
     /**
      * Hour to start Cassandra backups each day.
      */
-    public readonly cassandraScheduledTime!: pulumi.Output<number>;
+    declare public readonly cassandraScheduledTime: pulumi.Output<number>;
     /**
      * For internal use: current state of rules in JSON format
      */
-    public readonly currentState!: pulumi.Output<string>;
+    declare public readonly currentState: pulumi.Output<string>;
     /**
      * Datacenter which will create backups
      */
-    public readonly datacenter!: pulumi.Output<string | undefined>;
+    declare public readonly datacenter: pulumi.Output<string | undefined>;
     /**
      * Backups are enabled (true) or disabled (false).
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabled: pulumi.Output<boolean | undefined>;
     /**
      * Include (true) or exclude (false) Log Monitoring v2 data
      */
-    public readonly includeLm20Data!: pulumi.Output<boolean | undefined>;
+    declare public readonly includeLm20Data: pulumi.Output<boolean | undefined>;
     /**
      * Include user sessions (true) or GDPR compliance (false)
      */
-    public readonly includeRumData!: pulumi.Output<boolean | undefined>;
+    declare public readonly includeRumData: pulumi.Output<boolean | undefined>;
     /**
      * Include time series metric-data (true) or retain configuration data only (false))
      */
-    public readonly includeTsMetricData!: pulumi.Output<boolean | undefined>;
+    declare public readonly includeTsMetricData: pulumi.Output<boolean | undefined>;
     /**
      * Max number of Elasticsearch snapshots to clean. Elasticsearch snapshots won't be created anymore if there will be more backups to clean than this value.
      */
-    public readonly maxEsSnapshotsToClean!: pulumi.Output<number | undefined>;
+    declare public readonly maxEsSnapshotsToClean: pulumi.Output<number | undefined>;
     /**
      * Pauses Elasticsearch and Cassandra backups. In comparison to enable/disable backup, this option does not modify any configuration like Elasticsearch properties.
      */
-    public readonly pauseBackups!: pulumi.Output<boolean | undefined>;
+    declare public readonly pauseBackups: pulumi.Output<boolean | undefined>;
     /**
      * A full path to the backup archive
      */
-    public readonly storagePath!: pulumi.Output<string | undefined>;
+    declare public readonly storagePath: pulumi.Output<string | undefined>;
 
     /**
      * Create a ManagedBackup resource with the given unique name, arguments, and options.
@@ -90,33 +90,33 @@ export class ManagedBackup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedBackupState | undefined;
-            resourceInputs["bandwidthLimitMbits"] = state ? state.bandwidthLimitMbits : undefined;
-            resourceInputs["cassandraScheduledTime"] = state ? state.cassandraScheduledTime : undefined;
-            resourceInputs["currentState"] = state ? state.currentState : undefined;
-            resourceInputs["datacenter"] = state ? state.datacenter : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["includeLm20Data"] = state ? state.includeLm20Data : undefined;
-            resourceInputs["includeRumData"] = state ? state.includeRumData : undefined;
-            resourceInputs["includeTsMetricData"] = state ? state.includeTsMetricData : undefined;
-            resourceInputs["maxEsSnapshotsToClean"] = state ? state.maxEsSnapshotsToClean : undefined;
-            resourceInputs["pauseBackups"] = state ? state.pauseBackups : undefined;
-            resourceInputs["storagePath"] = state ? state.storagePath : undefined;
+            resourceInputs["bandwidthLimitMbits"] = state?.bandwidthLimitMbits;
+            resourceInputs["cassandraScheduledTime"] = state?.cassandraScheduledTime;
+            resourceInputs["currentState"] = state?.currentState;
+            resourceInputs["datacenter"] = state?.datacenter;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["includeLm20Data"] = state?.includeLm20Data;
+            resourceInputs["includeRumData"] = state?.includeRumData;
+            resourceInputs["includeTsMetricData"] = state?.includeTsMetricData;
+            resourceInputs["maxEsSnapshotsToClean"] = state?.maxEsSnapshotsToClean;
+            resourceInputs["pauseBackups"] = state?.pauseBackups;
+            resourceInputs["storagePath"] = state?.storagePath;
         } else {
             const args = argsOrState as ManagedBackupArgs | undefined;
-            if ((!args || args.cassandraScheduledTime === undefined) && !opts.urn) {
+            if (args?.cassandraScheduledTime === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cassandraScheduledTime'");
             }
-            resourceInputs["bandwidthLimitMbits"] = args ? args.bandwidthLimitMbits : undefined;
-            resourceInputs["cassandraScheduledTime"] = args ? args.cassandraScheduledTime : undefined;
-            resourceInputs["currentState"] = args ? args.currentState : undefined;
-            resourceInputs["datacenter"] = args ? args.datacenter : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["includeLm20Data"] = args ? args.includeLm20Data : undefined;
-            resourceInputs["includeRumData"] = args ? args.includeRumData : undefined;
-            resourceInputs["includeTsMetricData"] = args ? args.includeTsMetricData : undefined;
-            resourceInputs["maxEsSnapshotsToClean"] = args ? args.maxEsSnapshotsToClean : undefined;
-            resourceInputs["pauseBackups"] = args ? args.pauseBackups : undefined;
-            resourceInputs["storagePath"] = args ? args.storagePath : undefined;
+            resourceInputs["bandwidthLimitMbits"] = args?.bandwidthLimitMbits;
+            resourceInputs["cassandraScheduledTime"] = args?.cassandraScheduledTime;
+            resourceInputs["currentState"] = args?.currentState;
+            resourceInputs["datacenter"] = args?.datacenter;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["includeLm20Data"] = args?.includeLm20Data;
+            resourceInputs["includeRumData"] = args?.includeRumData;
+            resourceInputs["includeTsMetricData"] = args?.includeTsMetricData;
+            resourceInputs["maxEsSnapshotsToClean"] = args?.maxEsSnapshotsToClean;
+            resourceInputs["pauseBackups"] = args?.pauseBackups;
+            resourceInputs["storagePath"] = args?.storagePath;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedBackup.__pulumiType, name, resourceInputs, opts);

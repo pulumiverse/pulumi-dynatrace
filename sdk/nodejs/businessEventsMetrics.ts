@@ -35,27 +35,27 @@ export class BusinessEventsMetrics extends pulumi.CustomResource {
     /**
      * no documentation available
      */
-    public readonly dimensions!: pulumi.Output<string[] | undefined>;
+    declare public readonly dimensions: pulumi.Output<string[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Key
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
-    public readonly matcher!: pulumi.Output<string>;
+    declare public readonly matcher: pulumi.Output<string>;
     /**
      * Possible Values: `ATTRIBUTE`, `OCCURRENCE`
      */
-    public readonly measure!: pulumi.Output<string>;
+    declare public readonly measure: pulumi.Output<string>;
     /**
      * Attribute
      */
-    public readonly measureAttribute!: pulumi.Output<string | undefined>;
+    declare public readonly measureAttribute: pulumi.Output<string | undefined>;
 
     /**
      * Create a BusinessEventsMetrics resource with the given unique name, arguments, and options.
@@ -70,32 +70,32 @@ export class BusinessEventsMetrics extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BusinessEventsMetricsState | undefined;
-            resourceInputs["dimensions"] = state ? state.dimensions : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["matcher"] = state ? state.matcher : undefined;
-            resourceInputs["measure"] = state ? state.measure : undefined;
-            resourceInputs["measureAttribute"] = state ? state.measureAttribute : undefined;
+            resourceInputs["dimensions"] = state?.dimensions;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["matcher"] = state?.matcher;
+            resourceInputs["measure"] = state?.measure;
+            resourceInputs["measureAttribute"] = state?.measureAttribute;
         } else {
             const args = argsOrState as BusinessEventsMetricsArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.key === undefined) && !opts.urn) {
+            if (args?.key === undefined && !opts.urn) {
                 throw new Error("Missing required property 'key'");
             }
-            if ((!args || args.matcher === undefined) && !opts.urn) {
+            if (args?.matcher === undefined && !opts.urn) {
                 throw new Error("Missing required property 'matcher'");
             }
-            if ((!args || args.measure === undefined) && !opts.urn) {
+            if (args?.measure === undefined && !opts.urn) {
                 throw new Error("Missing required property 'measure'");
             }
-            resourceInputs["dimensions"] = args ? args.dimensions : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["matcher"] = args ? args.matcher : undefined;
-            resourceInputs["measure"] = args ? args.measure : undefined;
-            resourceInputs["measureAttribute"] = args ? args.measureAttribute : undefined;
+            resourceInputs["dimensions"] = args?.dimensions;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["matcher"] = args?.matcher;
+            resourceInputs["measure"] = args?.measure;
+            resourceInputs["measureAttribute"] = args?.measureAttribute;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BusinessEventsMetrics.__pulumiType, name, resourceInputs, opts);

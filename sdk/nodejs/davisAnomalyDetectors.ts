@@ -37,31 +37,31 @@ export class DavisAnomalyDetectors extends pulumi.CustomResource {
     /**
      * Analyzer input
      */
-    public readonly analyzer!: pulumi.Output<outputs.DavisAnomalyDetectorsAnalyzer>;
+    declare public readonly analyzer: pulumi.Output<outputs.DavisAnomalyDetectorsAnalyzer>;
     /**
      * The description of the anomaly detector
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Event template
      */
-    public readonly eventTemplate!: pulumi.Output<outputs.DavisAnomalyDetectorsEventTemplate>;
+    declare public readonly eventTemplate: pulumi.Output<outputs.DavisAnomalyDetectorsEventTemplate>;
     /**
      * Execution settings
      */
-    public readonly executionSettings!: pulumi.Output<outputs.DavisAnomalyDetectorsExecutionSettings>;
+    declare public readonly executionSettings: pulumi.Output<outputs.DavisAnomalyDetectorsExecutionSettings>;
     /**
      * Source
      */
-    public readonly source!: pulumi.Output<string>;
+    declare public readonly source: pulumi.Output<string>;
     /**
      * The title of the anomaly detector
      */
-    public readonly title!: pulumi.Output<string>;
+    declare public readonly title: pulumi.Output<string>;
 
     /**
      * Create a DavisAnomalyDetectors resource with the given unique name, arguments, and options.
@@ -76,43 +76,43 @@ export class DavisAnomalyDetectors extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DavisAnomalyDetectorsState | undefined;
-            resourceInputs["analyzer"] = state ? state.analyzer : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["eventTemplate"] = state ? state.eventTemplate : undefined;
-            resourceInputs["executionSettings"] = state ? state.executionSettings : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["title"] = state ? state.title : undefined;
+            resourceInputs["analyzer"] = state?.analyzer;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["eventTemplate"] = state?.eventTemplate;
+            resourceInputs["executionSettings"] = state?.executionSettings;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["title"] = state?.title;
         } else {
             const args = argsOrState as DavisAnomalyDetectorsArgs | undefined;
-            if ((!args || args.analyzer === undefined) && !opts.urn) {
+            if (args?.analyzer === undefined && !opts.urn) {
                 throw new Error("Missing required property 'analyzer'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.eventTemplate === undefined) && !opts.urn) {
+            if (args?.eventTemplate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'eventTemplate'");
             }
-            if ((!args || args.executionSettings === undefined) && !opts.urn) {
+            if (args?.executionSettings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'executionSettings'");
             }
-            if ((!args || args.source === undefined) && !opts.urn) {
+            if (args?.source === undefined && !opts.urn) {
                 throw new Error("Missing required property 'source'");
             }
-            if ((!args || args.title === undefined) && !opts.urn) {
+            if (args?.title === undefined && !opts.urn) {
                 throw new Error("Missing required property 'title'");
             }
-            resourceInputs["analyzer"] = args ? args.analyzer : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["eventTemplate"] = args ? args.eventTemplate : undefined;
-            resourceInputs["executionSettings"] = args ? args.executionSettings : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["title"] = args ? args.title : undefined;
+            resourceInputs["analyzer"] = args?.analyzer;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["eventTemplate"] = args?.eventTemplate;
+            resourceInputs["executionSettings"] = args?.executionSettings;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["title"] = args?.title;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DavisAnomalyDetectors.__pulumiType, name, resourceInputs, opts);

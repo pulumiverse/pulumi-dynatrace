@@ -37,11 +37,11 @@ export class CustomAppCrashRate extends pulumi.CustomResource {
     /**
      * Crash rate increase
      */
-    public readonly crashRateIncrease!: pulumi.Output<outputs.CustomAppCrashRateCrashRateIncrease>;
+    declare public readonly crashRateIncrease: pulumi.Output<outputs.CustomAppCrashRateCrashRateIncrease>;
     /**
      * The scope of this setting (CUSTOM_APPLICATION environment)
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a CustomAppCrashRate resource with the given unique name, arguments, and options.
@@ -56,15 +56,15 @@ export class CustomAppCrashRate extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CustomAppCrashRateState | undefined;
-            resourceInputs["crashRateIncrease"] = state ? state.crashRateIncrease : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["crashRateIncrease"] = state?.crashRateIncrease;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as CustomAppCrashRateArgs | undefined;
-            if ((!args || args.crashRateIncrease === undefined) && !opts.urn) {
+            if (args?.crashRateIncrease === undefined && !opts.urn) {
                 throw new Error("Missing required property 'crashRateIncrease'");
             }
-            resourceInputs["crashRateIncrease"] = args ? args.crashRateIncrease : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["crashRateIncrease"] = args?.crashRateIncrease;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CustomAppCrashRate.__pulumiType, name, resourceInputs, opts);

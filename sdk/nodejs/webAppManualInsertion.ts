@@ -64,23 +64,23 @@ export class WebAppManualInsertion extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string>;
+    declare public readonly applicationId: pulumi.Output<string>;
     /**
      * Code snippet is a piece of inline code that implements basic functionality and loads the full functionality either synchronously or deferred. Even though it implements an update mechanism, regular updates are still required to guarantee compatibility.
      */
-    public readonly codeSnippet!: pulumi.Output<outputs.WebAppManualInsertionCodeSnippet>;
+    declare public readonly codeSnippet: pulumi.Output<outputs.WebAppManualInsertionCodeSnippet>;
     /**
      * JavaScript tag references an external file containing monitoring code and configuration. Due to its dynamic update mechanism, it is recommended for most use cases.
      */
-    public readonly javascriptTag!: pulumi.Output<outputs.WebAppManualInsertionJavascriptTag>;
+    declare public readonly javascriptTag: pulumi.Output<outputs.WebAppManualInsertionJavascriptTag>;
     /**
      * OneAgent JavaScript tag includes configuration and a reference to an external file containing the monitoring code. It needs to be updated after configuration changes and monitoring code updates.
      */
-    public readonly oneagentJavascriptTag!: pulumi.Output<outputs.WebAppManualInsertionOneagentJavascriptTag | undefined>;
+    declare public readonly oneagentJavascriptTag: pulumi.Output<outputs.WebAppManualInsertionOneagentJavascriptTag | undefined>;
     /**
      * OneAgent JavaScript tag with SRI includes configuration, a reference to an external file containing the monitoring code, and a hash that allows the browser to verify the integrity of the monitoring code before executing it. It needs to be updated after configuration changes and monitoring code updates.
      */
-    public readonly oneagentJavascriptTagSri!: pulumi.Output<outputs.WebAppManualInsertionOneagentJavascriptTagSri | undefined>;
+    declare public readonly oneagentJavascriptTagSri: pulumi.Output<outputs.WebAppManualInsertionOneagentJavascriptTagSri | undefined>;
 
     /**
      * Create a WebAppManualInsertion resource with the given unique name, arguments, and options.
@@ -95,27 +95,27 @@ export class WebAppManualInsertion extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppManualInsertionState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["codeSnippet"] = state ? state.codeSnippet : undefined;
-            resourceInputs["javascriptTag"] = state ? state.javascriptTag : undefined;
-            resourceInputs["oneagentJavascriptTag"] = state ? state.oneagentJavascriptTag : undefined;
-            resourceInputs["oneagentJavascriptTagSri"] = state ? state.oneagentJavascriptTagSri : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["codeSnippet"] = state?.codeSnippet;
+            resourceInputs["javascriptTag"] = state?.javascriptTag;
+            resourceInputs["oneagentJavascriptTag"] = state?.oneagentJavascriptTag;
+            resourceInputs["oneagentJavascriptTagSri"] = state?.oneagentJavascriptTagSri;
         } else {
             const args = argsOrState as WebAppManualInsertionArgs | undefined;
-            if ((!args || args.applicationId === undefined) && !opts.urn) {
+            if (args?.applicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationId'");
             }
-            if ((!args || args.codeSnippet === undefined) && !opts.urn) {
+            if (args?.codeSnippet === undefined && !opts.urn) {
                 throw new Error("Missing required property 'codeSnippet'");
             }
-            if ((!args || args.javascriptTag === undefined) && !opts.urn) {
+            if (args?.javascriptTag === undefined && !opts.urn) {
                 throw new Error("Missing required property 'javascriptTag'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["codeSnippet"] = args ? args.codeSnippet : undefined;
-            resourceInputs["javascriptTag"] = args ? args.javascriptTag : undefined;
-            resourceInputs["oneagentJavascriptTag"] = args ? args.oneagentJavascriptTag : undefined;
-            resourceInputs["oneagentJavascriptTagSri"] = args ? args.oneagentJavascriptTagSri : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["codeSnippet"] = args?.codeSnippet;
+            resourceInputs["javascriptTag"] = args?.javascriptTag;
+            resourceInputs["oneagentJavascriptTag"] = args?.oneagentJavascriptTag;
+            resourceInputs["oneagentJavascriptTagSri"] = args?.oneagentJavascriptTagSri;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppManualInsertion.__pulumiType, name, resourceInputs, opts);

@@ -35,11 +35,11 @@ export class Geolocation extends pulumi.CustomResource {
     /**
      * Display the world map
      */
-    public readonly displayWorldmap!: pulumi.Output<boolean>;
+    declare public readonly displayWorldmap: pulumi.Output<boolean>;
     /**
      * The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a Geolocation resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class Geolocation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GeolocationState | undefined;
-            resourceInputs["displayWorldmap"] = state ? state.displayWorldmap : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["displayWorldmap"] = state?.displayWorldmap;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as GeolocationArgs | undefined;
-            if ((!args || args.displayWorldmap === undefined) && !opts.urn) {
+            if (args?.displayWorldmap === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayWorldmap'");
             }
-            resourceInputs["displayWorldmap"] = args ? args.displayWorldmap : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["displayWorldmap"] = args?.displayWorldmap;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Geolocation.__pulumiType, name, resourceInputs, opts);

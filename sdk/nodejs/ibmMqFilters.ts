@@ -35,27 +35,27 @@ export class IbmMqFilters extends pulumi.CustomResource {
     /**
      * CICS: Excluded MQ queues
      */
-    public readonly cicsMqQueueIdExcludes!: pulumi.Output<string[] | undefined>;
+    declare public readonly cicsMqQueueIdExcludes: pulumi.Output<string[] | undefined>;
     /**
      * CICS: Included MQ queues
      */
-    public readonly cicsMqQueueIdIncludes!: pulumi.Output<string[] | undefined>;
+    declare public readonly cicsMqQueueIdIncludes: pulumi.Output<string[] | undefined>;
     /**
      * When you add a transaction ID to the exclude list remaining transactions are still monitored.
      */
-    public readonly imsCrTrnIdExcludes!: pulumi.Output<string[] | undefined>;
+    declare public readonly imsCrTrnIdExcludes: pulumi.Output<string[] | undefined>;
     /**
      * When you add a transaction ID to the include list, all the remaining transactions are ignored.
      */
-    public readonly imsCrTrnIdIncludes!: pulumi.Output<string[] | undefined>;
+    declare public readonly imsCrTrnIdIncludes: pulumi.Output<string[] | undefined>;
     /**
      * IMS: Excluded MQ queues
      */
-    public readonly imsMqQueueIdExcludes!: pulumi.Output<string[] | undefined>;
+    declare public readonly imsMqQueueIdExcludes: pulumi.Output<string[] | undefined>;
     /**
      * IMS: Included MQ queues
      */
-    public readonly imsMqQueueIdIncludes!: pulumi.Output<string[] | undefined>;
+    declare public readonly imsMqQueueIdIncludes: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a IbmMqFilters resource with the given unique name, arguments, and options.
@@ -70,20 +70,20 @@ export class IbmMqFilters extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IbmMqFiltersState | undefined;
-            resourceInputs["cicsMqQueueIdExcludes"] = state ? state.cicsMqQueueIdExcludes : undefined;
-            resourceInputs["cicsMqQueueIdIncludes"] = state ? state.cicsMqQueueIdIncludes : undefined;
-            resourceInputs["imsCrTrnIdExcludes"] = state ? state.imsCrTrnIdExcludes : undefined;
-            resourceInputs["imsCrTrnIdIncludes"] = state ? state.imsCrTrnIdIncludes : undefined;
-            resourceInputs["imsMqQueueIdExcludes"] = state ? state.imsMqQueueIdExcludes : undefined;
-            resourceInputs["imsMqQueueIdIncludes"] = state ? state.imsMqQueueIdIncludes : undefined;
+            resourceInputs["cicsMqQueueIdExcludes"] = state?.cicsMqQueueIdExcludes;
+            resourceInputs["cicsMqQueueIdIncludes"] = state?.cicsMqQueueIdIncludes;
+            resourceInputs["imsCrTrnIdExcludes"] = state?.imsCrTrnIdExcludes;
+            resourceInputs["imsCrTrnIdIncludes"] = state?.imsCrTrnIdIncludes;
+            resourceInputs["imsMqQueueIdExcludes"] = state?.imsMqQueueIdExcludes;
+            resourceInputs["imsMqQueueIdIncludes"] = state?.imsMqQueueIdIncludes;
         } else {
             const args = argsOrState as IbmMqFiltersArgs | undefined;
-            resourceInputs["cicsMqQueueIdExcludes"] = args ? args.cicsMqQueueIdExcludes : undefined;
-            resourceInputs["cicsMqQueueIdIncludes"] = args ? args.cicsMqQueueIdIncludes : undefined;
-            resourceInputs["imsCrTrnIdExcludes"] = args ? args.imsCrTrnIdExcludes : undefined;
-            resourceInputs["imsCrTrnIdIncludes"] = args ? args.imsCrTrnIdIncludes : undefined;
-            resourceInputs["imsMqQueueIdExcludes"] = args ? args.imsMqQueueIdExcludes : undefined;
-            resourceInputs["imsMqQueueIdIncludes"] = args ? args.imsMqQueueIdIncludes : undefined;
+            resourceInputs["cicsMqQueueIdExcludes"] = args?.cicsMqQueueIdExcludes;
+            resourceInputs["cicsMqQueueIdIncludes"] = args?.cicsMqQueueIdIncludes;
+            resourceInputs["imsCrTrnIdExcludes"] = args?.imsCrTrnIdExcludes;
+            resourceInputs["imsCrTrnIdIncludes"] = args?.imsCrTrnIdIncludes;
+            resourceInputs["imsMqQueueIdExcludes"] = args?.imsMqQueueIdExcludes;
+            resourceInputs["imsMqQueueIdIncludes"] = args?.imsMqQueueIdIncludes;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IbmMqFilters.__pulumiType, name, resourceInputs, opts);

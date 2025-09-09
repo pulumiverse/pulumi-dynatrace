@@ -37,30 +37,30 @@ export class LogProcessing extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
      * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
      * specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
      * will find instructions and application [examples](https://dt-url.net/m24305t).
      */
-    public readonly processorDefinition!: pulumi.Output<outputs.LogProcessingProcessorDefinition>;
+    declare public readonly processorDefinition: pulumi.Output<outputs.LogProcessingProcessorDefinition>;
     /**
      * Matcher
      */
-    public readonly query!: pulumi.Output<string>;
+    declare public readonly query: pulumi.Output<string>;
     /**
      * Rule name
      */
-    public readonly ruleName!: pulumi.Output<string>;
+    declare public readonly ruleName: pulumi.Output<string>;
     /**
      * ## Rule testing ### 1. Paste a log / JSON sample
      */
-    public readonly ruleTesting!: pulumi.Output<outputs.LogProcessingRuleTesting>;
+    declare public readonly ruleTesting: pulumi.Output<outputs.LogProcessingRuleTesting>;
 
     /**
      * Create a LogProcessing resource with the given unique name, arguments, and options.
@@ -75,35 +75,35 @@ export class LogProcessing extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogProcessingState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["processorDefinition"] = state ? state.processorDefinition : undefined;
-            resourceInputs["query"] = state ? state.query : undefined;
-            resourceInputs["ruleName"] = state ? state.ruleName : undefined;
-            resourceInputs["ruleTesting"] = state ? state.ruleTesting : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["processorDefinition"] = state?.processorDefinition;
+            resourceInputs["query"] = state?.query;
+            resourceInputs["ruleName"] = state?.ruleName;
+            resourceInputs["ruleTesting"] = state?.ruleTesting;
         } else {
             const args = argsOrState as LogProcessingArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.processorDefinition === undefined) && !opts.urn) {
+            if (args?.processorDefinition === undefined && !opts.urn) {
                 throw new Error("Missing required property 'processorDefinition'");
             }
-            if ((!args || args.query === undefined) && !opts.urn) {
+            if (args?.query === undefined && !opts.urn) {
                 throw new Error("Missing required property 'query'");
             }
-            if ((!args || args.ruleName === undefined) && !opts.urn) {
+            if (args?.ruleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruleName'");
             }
-            if ((!args || args.ruleTesting === undefined) && !opts.urn) {
+            if (args?.ruleTesting === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruleTesting'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["processorDefinition"] = args ? args.processorDefinition : undefined;
-            resourceInputs["query"] = args ? args.query : undefined;
-            resourceInputs["ruleName"] = args ? args.ruleName : undefined;
-            resourceInputs["ruleTesting"] = args ? args.ruleTesting : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["processorDefinition"] = args?.processorDefinition;
+            resourceInputs["query"] = args?.query;
+            resourceInputs["ruleName"] = args?.ruleName;
+            resourceInputs["ruleTesting"] = args?.ruleTesting;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogProcessing.__pulumiType, name, resourceInputs, opts);

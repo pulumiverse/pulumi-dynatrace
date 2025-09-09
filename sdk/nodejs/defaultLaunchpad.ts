@@ -37,7 +37,7 @@ export class DefaultLaunchpad extends pulumi.CustomResource {
     /**
      * Set default launchpads for user groups. The highest ranked will be shown to the user of a group.
      */
-    public readonly groupLaunchpads!: pulumi.Output<outputs.DefaultLaunchpadGroupLaunchpads | undefined>;
+    declare public readonly groupLaunchpads: pulumi.Output<outputs.DefaultLaunchpadGroupLaunchpads | undefined>;
 
     /**
      * Create a DefaultLaunchpad resource with the given unique name, arguments, and options.
@@ -52,10 +52,10 @@ export class DefaultLaunchpad extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DefaultLaunchpadState | undefined;
-            resourceInputs["groupLaunchpads"] = state ? state.groupLaunchpads : undefined;
+            resourceInputs["groupLaunchpads"] = state?.groupLaunchpads;
         } else {
             const args = argsOrState as DefaultLaunchpadArgs | undefined;
-            resourceInputs["groupLaunchpads"] = args ? args.groupLaunchpads : undefined;
+            resourceInputs["groupLaunchpads"] = args?.groupLaunchpads;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DefaultLaunchpad.__pulumiType, name, resourceInputs, opts);

@@ -37,23 +37,23 @@ export class LogCustomSource extends pulumi.CustomResource {
     /**
      * Define Custom Log Source only within context if provided
      */
-    public readonly context!: pulumi.Output<outputs.LogCustomSourceContext | undefined>;
+    declare public readonly context: pulumi.Output<outputs.LogCustomSourceContext | undefined>;
     /**
      * no documentation available
      */
-    public readonly customLogSource!: pulumi.Output<outputs.LogCustomSourceCustomLogSource>;
+    declare public readonly customLogSource: pulumi.Output<outputs.LogCustomSourceCustomLogSource>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a LogCustomSource resource with the given unique name, arguments, and options.
@@ -68,24 +68,24 @@ export class LogCustomSource extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogCustomSourceState | undefined;
-            resourceInputs["context"] = state ? state.context : undefined;
-            resourceInputs["customLogSource"] = state ? state.customLogSource : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["context"] = state?.context;
+            resourceInputs["customLogSource"] = state?.customLogSource;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as LogCustomSourceArgs | undefined;
-            if ((!args || args.customLogSource === undefined) && !opts.urn) {
+            if (args?.customLogSource === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customLogSource'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            resourceInputs["context"] = args ? args.context : undefined;
-            resourceInputs["customLogSource"] = args ? args.customLogSource : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["context"] = args?.context;
+            resourceInputs["customLogSource"] = args?.customLogSource;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogCustomSource.__pulumiType, name, resourceInputs, opts);

@@ -37,11 +37,11 @@ export class BusinessEventsSecurityContext extends pulumi.CustomResource {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * no documentation available
      */
-    public readonly securityContextRule!: pulumi.Output<outputs.BusinessEventsSecurityContextSecurityContextRule>;
+    declare public readonly securityContextRule: pulumi.Output<outputs.BusinessEventsSecurityContextSecurityContextRule>;
 
     /**
      * Create a BusinessEventsSecurityContext resource with the given unique name, arguments, and options.
@@ -56,15 +56,15 @@ export class BusinessEventsSecurityContext extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BusinessEventsSecurityContextState | undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["securityContextRule"] = state ? state.securityContextRule : undefined;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["securityContextRule"] = state?.securityContextRule;
         } else {
             const args = argsOrState as BusinessEventsSecurityContextArgs | undefined;
-            if ((!args || args.securityContextRule === undefined) && !opts.urn) {
+            if (args?.securityContextRule === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityContextRule'");
             }
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["securityContextRule"] = args ? args.securityContextRule : undefined;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["securityContextRule"] = args?.securityContextRule;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BusinessEventsSecurityContext.__pulumiType, name, resourceInputs, opts);

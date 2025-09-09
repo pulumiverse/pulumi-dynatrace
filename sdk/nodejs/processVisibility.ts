@@ -35,15 +35,15 @@ export class ProcessVisibility extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * The maximum amount of processes that host may report is **100**
      */
-    public readonly maxProcesses!: pulumi.Output<number>;
+    declare public readonly maxProcesses: pulumi.Output<number>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a ProcessVisibility resource with the given unique name, arguments, and options.
@@ -58,20 +58,20 @@ export class ProcessVisibility extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProcessVisibilityState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["maxProcesses"] = state ? state.maxProcesses : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["maxProcesses"] = state?.maxProcesses;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as ProcessVisibilityArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.maxProcesses === undefined) && !opts.urn) {
+            if (args?.maxProcesses === undefined && !opts.urn) {
                 throw new Error("Missing required property 'maxProcesses'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["maxProcesses"] = args ? args.maxProcesses : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["maxProcesses"] = args?.maxProcesses;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProcessVisibility.__pulumiType, name, resourceInputs, opts);

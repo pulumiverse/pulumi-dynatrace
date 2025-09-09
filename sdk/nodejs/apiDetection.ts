@@ -37,27 +37,27 @@ export class ApiDetection extends pulumi.CustomResource {
     /**
      * This color will be used to highlight APIs when viewing code level data, such as distributed traces or method hotspots.
      */
-    public readonly apiColor!: pulumi.Output<string>;
+    declare public readonly apiColor: pulumi.Output<string>;
     /**
      * API name
      */
-    public readonly apiName!: pulumi.Output<string>;
+    declare public readonly apiName: pulumi.Output<string>;
     /**
      * List of conditions
      */
-    public readonly conditions!: pulumi.Output<outputs.ApiDetectionConditions | undefined>;
+    declare public readonly conditions: pulumi.Output<outputs.ApiDetectionConditions | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Restrict this rule to a specific technology.
      */
-    public readonly technology!: pulumi.Output<string | undefined>;
+    declare public readonly technology: pulumi.Output<string | undefined>;
     /**
      * This API defines a third party library
      */
-    public readonly thirdPartyApi!: pulumi.Output<boolean>;
+    declare public readonly thirdPartyApi: pulumi.Output<boolean>;
 
     /**
      * Create a ApiDetection resource with the given unique name, arguments, and options.
@@ -72,29 +72,29 @@ export class ApiDetection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ApiDetectionState | undefined;
-            resourceInputs["apiColor"] = state ? state.apiColor : undefined;
-            resourceInputs["apiName"] = state ? state.apiName : undefined;
-            resourceInputs["conditions"] = state ? state.conditions : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["technology"] = state ? state.technology : undefined;
-            resourceInputs["thirdPartyApi"] = state ? state.thirdPartyApi : undefined;
+            resourceInputs["apiColor"] = state?.apiColor;
+            resourceInputs["apiName"] = state?.apiName;
+            resourceInputs["conditions"] = state?.conditions;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["technology"] = state?.technology;
+            resourceInputs["thirdPartyApi"] = state?.thirdPartyApi;
         } else {
             const args = argsOrState as ApiDetectionArgs | undefined;
-            if ((!args || args.apiColor === undefined) && !opts.urn) {
+            if (args?.apiColor === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apiColor'");
             }
-            if ((!args || args.apiName === undefined) && !opts.urn) {
+            if (args?.apiName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apiName'");
             }
-            if ((!args || args.thirdPartyApi === undefined) && !opts.urn) {
+            if (args?.thirdPartyApi === undefined && !opts.urn) {
                 throw new Error("Missing required property 'thirdPartyApi'");
             }
-            resourceInputs["apiColor"] = args ? args.apiColor : undefined;
-            resourceInputs["apiName"] = args ? args.apiName : undefined;
-            resourceInputs["conditions"] = args ? args.conditions : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["technology"] = args ? args.technology : undefined;
-            resourceInputs["thirdPartyApi"] = args ? args.thirdPartyApi : undefined;
+            resourceInputs["apiColor"] = args?.apiColor;
+            resourceInputs["apiName"] = args?.apiName;
+            resourceInputs["conditions"] = args?.conditions;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["technology"] = args?.technology;
+            resourceInputs["thirdPartyApi"] = args?.thirdPartyApi;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ApiDetection.__pulumiType, name, resourceInputs, opts);

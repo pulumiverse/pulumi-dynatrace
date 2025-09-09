@@ -37,81 +37,81 @@ export class WebApplication extends pulumi.CustomResource {
     /**
      * A list of conversion goals of the application
      */
-    public readonly conversionGoals!: pulumi.Output<outputs.WebApplicationConversionGoals | undefined>;
+    declare public readonly conversionGoals: pulumi.Output<outputs.WebApplicationConversionGoals | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
      */
-    public readonly costControlUserSessionPercentage!: pulumi.Output<number>;
+    declare public readonly costControlUserSessionPercentage: pulumi.Output<number>;
     /**
      * Defines the Custom Action Apdex settings of an application
      */
-    public readonly customActionApdexSettings!: pulumi.Output<outputs.WebApplicationCustomActionApdexSettings>;
+    declare public readonly customActionApdexSettings: pulumi.Output<outputs.WebApplicationCustomActionApdexSettings>;
     /**
      * User Action names to be flagged as Key User Actions
      *
      * @deprecated Configuring Key User Actions within `dynatrace.WebApplication` is discouraged. Use the dedicated resource `dynatrace.KeyUserAction` instead.
      */
-    public readonly keyUserActions!: pulumi.Output<outputs.WebApplicationKeyUserAction[] | undefined>;
+    declare public readonly keyUserActions: pulumi.Output<outputs.WebApplicationKeyUserAction[] | undefined>;
     /**
      * Defines the Load Action Apdex settings of an application
      */
-    public readonly loadActionApdexSettings!: pulumi.Output<outputs.WebApplicationLoadActionApdexSettings>;
+    declare public readonly loadActionApdexSettings: pulumi.Output<outputs.WebApplicationLoadActionApdexSettings>;
     /**
      * The key performance metric of load actions. Possible values are `ACTION_DURATION`, `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX` and `VISUALLY_COMPLETE`
      */
-    public readonly loadActionKeyPerformanceMetric!: pulumi.Output<string>;
+    declare public readonly loadActionKeyPerformanceMetric: pulumi.Output<string>;
     /**
      * Java script agent meta data capture settings
      */
-    public readonly metaDataCaptureSettings!: pulumi.Output<outputs.WebApplicationMetaDataCaptureSettings | undefined>;
+    declare public readonly metaDataCaptureSettings: pulumi.Output<outputs.WebApplicationMetaDataCaptureSettings | undefined>;
     /**
      * Real user monitoring settings
      */
-    public readonly monitoringSettings!: pulumi.Output<outputs.WebApplicationMonitoringSettings>;
+    declare public readonly monitoringSettings: pulumi.Output<outputs.WebApplicationMonitoringSettings>;
     /**
      * The name of the web application, displayed in the UI
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
      */
-    public readonly realUserMonitoringEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly realUserMonitoringEnabled: pulumi.Output<boolean | undefined>;
     /**
      * Settings regarding Session Replay
      */
-    public readonly sessionReplayConfig!: pulumi.Output<outputs.WebApplicationSessionReplayConfig>;
+    declare public readonly sessionReplayConfig: pulumi.Output<outputs.WebApplicationSessionReplayConfig>;
     /**
      * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * URL injection pattern for manual web application
      */
-    public readonly urlInjectionPattern!: pulumi.Output<string | undefined>;
+    declare public readonly urlInjectionPattern: pulumi.Output<string | undefined>;
     /**
      * User action and session properties settings
      */
-    public readonly userActionAndSessionProperties!: pulumi.Output<outputs.WebApplicationUserActionAndSessionProperties | undefined>;
+    declare public readonly userActionAndSessionProperties: pulumi.Output<outputs.WebApplicationUserActionAndSessionProperties | undefined>;
     /**
      * The settings of user action naming
      */
-    public readonly userActionNamingSettings!: pulumi.Output<outputs.WebApplicationUserActionNamingSettings | undefined>;
+    declare public readonly userActionNamingSettings: pulumi.Output<outputs.WebApplicationUserActionNamingSettings | undefined>;
     /**
      * User tags settings
      */
-    public readonly userTags!: pulumi.Output<outputs.WebApplicationUserTags | undefined>;
+    declare public readonly userTags: pulumi.Output<outputs.WebApplicationUserTags | undefined>;
     /**
      * These settings influence the monitoring data you receive for 3rd party, CDN, and 1st party resources
      */
-    public readonly waterfallSettings!: pulumi.Output<outputs.WebApplicationWaterfallSettings>;
+    declare public readonly waterfallSettings: pulumi.Output<outputs.WebApplicationWaterfallSettings>;
     /**
      * Defines the XHR Action Apdex settings of an application
      */
-    public readonly xhrActionApdexSettings!: pulumi.Output<outputs.WebApplicationXhrActionApdexSettings>;
+    declare public readonly xhrActionApdexSettings: pulumi.Output<outputs.WebApplicationXhrActionApdexSettings>;
     /**
      * The key performance metric of XHR actions. Possible values are `ACTION_DURATION`, `RESPONSE_END`, `RESPONSE_START` and `VISUALLY_COMPLETE`.
      */
-    public readonly xhrActionKeyPerformanceMetric!: pulumi.Output<string>;
+    declare public readonly xhrActionKeyPerformanceMetric: pulumi.Output<string>;
 
     /**
      * Create a WebApplication resource with the given unique name, arguments, and options.
@@ -126,73 +126,73 @@ export class WebApplication extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebApplicationState | undefined;
-            resourceInputs["conversionGoals"] = state ? state.conversionGoals : undefined;
-            resourceInputs["costControlUserSessionPercentage"] = state ? state.costControlUserSessionPercentage : undefined;
-            resourceInputs["customActionApdexSettings"] = state ? state.customActionApdexSettings : undefined;
-            resourceInputs["keyUserActions"] = state ? state.keyUserActions : undefined;
-            resourceInputs["loadActionApdexSettings"] = state ? state.loadActionApdexSettings : undefined;
-            resourceInputs["loadActionKeyPerformanceMetric"] = state ? state.loadActionKeyPerformanceMetric : undefined;
-            resourceInputs["metaDataCaptureSettings"] = state ? state.metaDataCaptureSettings : undefined;
-            resourceInputs["monitoringSettings"] = state ? state.monitoringSettings : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["realUserMonitoringEnabled"] = state ? state.realUserMonitoringEnabled : undefined;
-            resourceInputs["sessionReplayConfig"] = state ? state.sessionReplayConfig : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["urlInjectionPattern"] = state ? state.urlInjectionPattern : undefined;
-            resourceInputs["userActionAndSessionProperties"] = state ? state.userActionAndSessionProperties : undefined;
-            resourceInputs["userActionNamingSettings"] = state ? state.userActionNamingSettings : undefined;
-            resourceInputs["userTags"] = state ? state.userTags : undefined;
-            resourceInputs["waterfallSettings"] = state ? state.waterfallSettings : undefined;
-            resourceInputs["xhrActionApdexSettings"] = state ? state.xhrActionApdexSettings : undefined;
-            resourceInputs["xhrActionKeyPerformanceMetric"] = state ? state.xhrActionKeyPerformanceMetric : undefined;
+            resourceInputs["conversionGoals"] = state?.conversionGoals;
+            resourceInputs["costControlUserSessionPercentage"] = state?.costControlUserSessionPercentage;
+            resourceInputs["customActionApdexSettings"] = state?.customActionApdexSettings;
+            resourceInputs["keyUserActions"] = state?.keyUserActions;
+            resourceInputs["loadActionApdexSettings"] = state?.loadActionApdexSettings;
+            resourceInputs["loadActionKeyPerformanceMetric"] = state?.loadActionKeyPerformanceMetric;
+            resourceInputs["metaDataCaptureSettings"] = state?.metaDataCaptureSettings;
+            resourceInputs["monitoringSettings"] = state?.monitoringSettings;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["realUserMonitoringEnabled"] = state?.realUserMonitoringEnabled;
+            resourceInputs["sessionReplayConfig"] = state?.sessionReplayConfig;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["urlInjectionPattern"] = state?.urlInjectionPattern;
+            resourceInputs["userActionAndSessionProperties"] = state?.userActionAndSessionProperties;
+            resourceInputs["userActionNamingSettings"] = state?.userActionNamingSettings;
+            resourceInputs["userTags"] = state?.userTags;
+            resourceInputs["waterfallSettings"] = state?.waterfallSettings;
+            resourceInputs["xhrActionApdexSettings"] = state?.xhrActionApdexSettings;
+            resourceInputs["xhrActionKeyPerformanceMetric"] = state?.xhrActionKeyPerformanceMetric;
         } else {
             const args = argsOrState as WebApplicationArgs | undefined;
-            if ((!args || args.costControlUserSessionPercentage === undefined) && !opts.urn) {
+            if (args?.costControlUserSessionPercentage === undefined && !opts.urn) {
                 throw new Error("Missing required property 'costControlUserSessionPercentage'");
             }
-            if ((!args || args.customActionApdexSettings === undefined) && !opts.urn) {
+            if (args?.customActionApdexSettings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customActionApdexSettings'");
             }
-            if ((!args || args.loadActionApdexSettings === undefined) && !opts.urn) {
+            if (args?.loadActionApdexSettings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadActionApdexSettings'");
             }
-            if ((!args || args.loadActionKeyPerformanceMetric === undefined) && !opts.urn) {
+            if (args?.loadActionKeyPerformanceMetric === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadActionKeyPerformanceMetric'");
             }
-            if ((!args || args.monitoringSettings === undefined) && !opts.urn) {
+            if (args?.monitoringSettings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitoringSettings'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            if ((!args || args.waterfallSettings === undefined) && !opts.urn) {
+            if (args?.waterfallSettings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'waterfallSettings'");
             }
-            if ((!args || args.xhrActionApdexSettings === undefined) && !opts.urn) {
+            if (args?.xhrActionApdexSettings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'xhrActionApdexSettings'");
             }
-            if ((!args || args.xhrActionKeyPerformanceMetric === undefined) && !opts.urn) {
+            if (args?.xhrActionKeyPerformanceMetric === undefined && !opts.urn) {
                 throw new Error("Missing required property 'xhrActionKeyPerformanceMetric'");
             }
-            resourceInputs["conversionGoals"] = args ? args.conversionGoals : undefined;
-            resourceInputs["costControlUserSessionPercentage"] = args ? args.costControlUserSessionPercentage : undefined;
-            resourceInputs["customActionApdexSettings"] = args ? args.customActionApdexSettings : undefined;
-            resourceInputs["keyUserActions"] = args ? args.keyUserActions : undefined;
-            resourceInputs["loadActionApdexSettings"] = args ? args.loadActionApdexSettings : undefined;
-            resourceInputs["loadActionKeyPerformanceMetric"] = args ? args.loadActionKeyPerformanceMetric : undefined;
-            resourceInputs["metaDataCaptureSettings"] = args ? args.metaDataCaptureSettings : undefined;
-            resourceInputs["monitoringSettings"] = args ? args.monitoringSettings : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["realUserMonitoringEnabled"] = args ? args.realUserMonitoringEnabled : undefined;
-            resourceInputs["sessionReplayConfig"] = args ? args.sessionReplayConfig : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["urlInjectionPattern"] = args ? args.urlInjectionPattern : undefined;
-            resourceInputs["userActionAndSessionProperties"] = args ? args.userActionAndSessionProperties : undefined;
-            resourceInputs["userActionNamingSettings"] = args ? args.userActionNamingSettings : undefined;
-            resourceInputs["userTags"] = args ? args.userTags : undefined;
-            resourceInputs["waterfallSettings"] = args ? args.waterfallSettings : undefined;
-            resourceInputs["xhrActionApdexSettings"] = args ? args.xhrActionApdexSettings : undefined;
-            resourceInputs["xhrActionKeyPerformanceMetric"] = args ? args.xhrActionKeyPerformanceMetric : undefined;
+            resourceInputs["conversionGoals"] = args?.conversionGoals;
+            resourceInputs["costControlUserSessionPercentage"] = args?.costControlUserSessionPercentage;
+            resourceInputs["customActionApdexSettings"] = args?.customActionApdexSettings;
+            resourceInputs["keyUserActions"] = args?.keyUserActions;
+            resourceInputs["loadActionApdexSettings"] = args?.loadActionApdexSettings;
+            resourceInputs["loadActionKeyPerformanceMetric"] = args?.loadActionKeyPerformanceMetric;
+            resourceInputs["metaDataCaptureSettings"] = args?.metaDataCaptureSettings;
+            resourceInputs["monitoringSettings"] = args?.monitoringSettings;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["realUserMonitoringEnabled"] = args?.realUserMonitoringEnabled;
+            resourceInputs["sessionReplayConfig"] = args?.sessionReplayConfig;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["urlInjectionPattern"] = args?.urlInjectionPattern;
+            resourceInputs["userActionAndSessionProperties"] = args?.userActionAndSessionProperties;
+            resourceInputs["userActionNamingSettings"] = args?.userActionNamingSettings;
+            resourceInputs["userTags"] = args?.userTags;
+            resourceInputs["waterfallSettings"] = args?.waterfallSettings;
+            resourceInputs["xhrActionApdexSettings"] = args?.xhrActionApdexSettings;
+            resourceInputs["xhrActionKeyPerformanceMetric"] = args?.xhrActionKeyPerformanceMetric;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebApplication.__pulumiType, name, resourceInputs, opts);

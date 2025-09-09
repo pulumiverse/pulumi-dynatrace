@@ -60,27 +60,27 @@ export class ManagedInternetProxy extends pulumi.CustomResource {
     /**
      * Definition of hosts for which proxy won't be used. You can define multiple hosts. Each host can start or end with wildcard '*' for instance to match whole domain.
      */
-    public readonly nonProxyHosts!: pulumi.Output<string[] | undefined>;
+    declare public readonly nonProxyHosts: pulumi.Output<string[] | undefined>;
     /**
      * Password of proxy server, null means do not change previous value
      */
-    public readonly password!: pulumi.Output<string | undefined>;
+    declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * Port of proxy server
      */
-    public readonly port!: pulumi.Output<number>;
+    declare public readonly port: pulumi.Output<number>;
     /**
      * Protocol which proxy server uses
      */
-    public readonly scheme!: pulumi.Output<string>;
+    declare public readonly scheme: pulumi.Output<string>;
     /**
      * Address (either IP or Hostname) of proxy server
      */
-    public readonly server!: pulumi.Output<string>;
+    declare public readonly server: pulumi.Output<string>;
     /**
      * User of proxy server, null means do not change previous value
      */
-    public readonly user!: pulumi.Output<string | undefined>;
+    declare public readonly user: pulumi.Output<string | undefined>;
 
     /**
      * Create a ManagedInternetProxy resource with the given unique name, arguments, and options.
@@ -95,29 +95,29 @@ export class ManagedInternetProxy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInternetProxyState | undefined;
-            resourceInputs["nonProxyHosts"] = state ? state.nonProxyHosts : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["scheme"] = state ? state.scheme : undefined;
-            resourceInputs["server"] = state ? state.server : undefined;
-            resourceInputs["user"] = state ? state.user : undefined;
+            resourceInputs["nonProxyHosts"] = state?.nonProxyHosts;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["scheme"] = state?.scheme;
+            resourceInputs["server"] = state?.server;
+            resourceInputs["user"] = state?.user;
         } else {
             const args = argsOrState as ManagedInternetProxyArgs | undefined;
-            if ((!args || args.port === undefined) && !opts.urn) {
+            if (args?.port === undefined && !opts.urn) {
                 throw new Error("Missing required property 'port'");
             }
-            if ((!args || args.scheme === undefined) && !opts.urn) {
+            if (args?.scheme === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scheme'");
             }
-            if ((!args || args.server === undefined) && !opts.urn) {
+            if (args?.server === undefined && !opts.urn) {
                 throw new Error("Missing required property 'server'");
             }
-            resourceInputs["nonProxyHosts"] = args ? args.nonProxyHosts : undefined;
+            resourceInputs["nonProxyHosts"] = args?.nonProxyHosts;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["scheme"] = args ? args.scheme : undefined;
-            resourceInputs["server"] = args ? args.server : undefined;
-            resourceInputs["user"] = args ? args.user : undefined;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["scheme"] = args?.scheme;
+            resourceInputs["server"] = args?.server;
+            resourceInputs["user"] = args?.user;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["password"] };

@@ -37,19 +37,19 @@ export class LogEvents extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Event template
      */
-    public readonly eventTemplate!: pulumi.Output<outputs.LogEventsEventTemplate>;
+    declare public readonly eventTemplate: pulumi.Output<outputs.LogEventsEventTemplate>;
     /**
      * Log query
      */
-    public readonly query!: pulumi.Output<string>;
+    declare public readonly query: pulumi.Output<string>;
     /**
      * The textual summary of the log event entry
      */
-    public readonly summary!: pulumi.Output<string>;
+    declare public readonly summary: pulumi.Output<string>;
 
     /**
      * Create a LogEvents resource with the given unique name, arguments, and options.
@@ -64,28 +64,28 @@ export class LogEvents extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogEventsState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["eventTemplate"] = state ? state.eventTemplate : undefined;
-            resourceInputs["query"] = state ? state.query : undefined;
-            resourceInputs["summary"] = state ? state.summary : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["eventTemplate"] = state?.eventTemplate;
+            resourceInputs["query"] = state?.query;
+            resourceInputs["summary"] = state?.summary;
         } else {
             const args = argsOrState as LogEventsArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.eventTemplate === undefined) && !opts.urn) {
+            if (args?.eventTemplate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'eventTemplate'");
             }
-            if ((!args || args.query === undefined) && !opts.urn) {
+            if (args?.query === undefined && !opts.urn) {
                 throw new Error("Missing required property 'query'");
             }
-            if ((!args || args.summary === undefined) && !opts.urn) {
+            if (args?.summary === undefined && !opts.urn) {
                 throw new Error("Missing required property 'summary'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["eventTemplate"] = args ? args.eventTemplate : undefined;
-            resourceInputs["query"] = args ? args.query : undefined;
-            resourceInputs["summary"] = args ? args.summary : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["eventTemplate"] = args?.eventTemplate;
+            resourceInputs["query"] = args?.query;
+            resourceInputs["summary"] = args?.summary;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogEvents.__pulumiType, name, resourceInputs, opts);

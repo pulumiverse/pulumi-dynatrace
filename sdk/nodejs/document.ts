@@ -187,31 +187,31 @@ export class Document extends pulumi.CustomResource {
     /**
      * The user context the executions of the document will happen with
      */
-    public readonly actor!: pulumi.Output<string>;
+    declare public readonly actor: pulumi.Output<string>;
     /**
      * Document content as JSON
      */
-    public readonly content!: pulumi.Output<string>;
+    declare public readonly content: pulumi.Output<string>;
     /**
      * The name/name of the document
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The ID of the owner of this document
      */
-    public readonly owner!: pulumi.Output<string>;
+    declare public readonly owner: pulumi.Output<string>;
     /**
      * Specifies whether the document is private or readable by everybody
      */
-    public readonly private!: pulumi.Output<boolean | undefined>;
+    declare public readonly private: pulumi.Output<boolean | undefined>;
     /**
      * Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * The version of the document
      */
-    public /*out*/ readonly version!: pulumi.Output<number>;
+    declare public /*out*/ readonly version: pulumi.Output<number>;
 
     /**
      * Create a Document resource with the given unique name, arguments, and options.
@@ -226,27 +226,27 @@ export class Document extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DocumentState | undefined;
-            resourceInputs["actor"] = state ? state.actor : undefined;
-            resourceInputs["content"] = state ? state.content : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["owner"] = state ? state.owner : undefined;
-            resourceInputs["private"] = state ? state.private : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["actor"] = state?.actor;
+            resourceInputs["content"] = state?.content;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["owner"] = state?.owner;
+            resourceInputs["private"] = state?.private;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as DocumentArgs | undefined;
-            if ((!args || args.content === undefined) && !opts.urn) {
+            if (args?.content === undefined && !opts.urn) {
                 throw new Error("Missing required property 'content'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["actor"] = args ? args.actor : undefined;
-            resourceInputs["content"] = args ? args.content : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["owner"] = args ? args.owner : undefined;
-            resourceInputs["private"] = args ? args.private : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["actor"] = args?.actor;
+            resourceInputs["content"] = args?.content;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["owner"] = args?.owner;
+            resourceInputs["private"] = args?.private;
+            resourceInputs["type"] = args?.type;
             resourceInputs["version"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

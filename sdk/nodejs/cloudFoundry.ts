@@ -35,31 +35,31 @@ export class CloudFoundry extends pulumi.CustomResource {
     /**
      * ActiveGate group
      */
-    public readonly activeGateGroup!: pulumi.Output<string | undefined>;
+    declare public readonly activeGateGroup: pulumi.Output<string | undefined>;
     /**
      * Cloud Foundry API Target
      */
-    public readonly apiUrl!: pulumi.Output<string>;
+    declare public readonly apiUrl: pulumi.Output<string>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Name this connection
      */
-    public readonly label!: pulumi.Output<string>;
+    declare public readonly label: pulumi.Output<string>;
     /**
      * Cloud Foundry Authentication Endpoint
      */
-    public readonly loginUrl!: pulumi.Output<string>;
+    declare public readonly loginUrl: pulumi.Output<string>;
     /**
      * Cloud Foundry Password
      */
-    public readonly password!: pulumi.Output<string>;
+    declare public readonly password: pulumi.Output<string>;
     /**
      * Cloud Foundry Username
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
 
     /**
      * Create a CloudFoundry resource with the given unique name, arguments, and options.
@@ -74,40 +74,40 @@ export class CloudFoundry extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudFoundryState | undefined;
-            resourceInputs["activeGateGroup"] = state ? state.activeGateGroup : undefined;
-            resourceInputs["apiUrl"] = state ? state.apiUrl : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["label"] = state ? state.label : undefined;
-            resourceInputs["loginUrl"] = state ? state.loginUrl : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
+            resourceInputs["activeGateGroup"] = state?.activeGateGroup;
+            resourceInputs["apiUrl"] = state?.apiUrl;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["label"] = state?.label;
+            resourceInputs["loginUrl"] = state?.loginUrl;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as CloudFoundryArgs | undefined;
-            if ((!args || args.apiUrl === undefined) && !opts.urn) {
+            if (args?.apiUrl === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apiUrl'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.label === undefined) && !opts.urn) {
+            if (args?.label === undefined && !opts.urn) {
                 throw new Error("Missing required property 'label'");
             }
-            if ((!args || args.loginUrl === undefined) && !opts.urn) {
+            if (args?.loginUrl === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loginUrl'");
             }
-            if ((!args || args.password === undefined) && !opts.urn) {
+            if (args?.password === undefined && !opts.urn) {
                 throw new Error("Missing required property 'password'");
             }
-            if ((!args || args.username === undefined) && !opts.urn) {
+            if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
-            resourceInputs["activeGateGroup"] = args ? args.activeGateGroup : undefined;
-            resourceInputs["apiUrl"] = args ? args.apiUrl : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["label"] = args ? args.label : undefined;
-            resourceInputs["loginUrl"] = args ? args.loginUrl : undefined;
+            resourceInputs["activeGateGroup"] = args?.activeGateGroup;
+            resourceInputs["apiUrl"] = args?.apiUrl;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["label"] = args?.label;
+            resourceInputs["loginUrl"] = args?.loginUrl;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["username"] = args?.username;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["password"] };

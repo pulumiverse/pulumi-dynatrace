@@ -35,15 +35,15 @@ export class MonitoredTechnologiesGo extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Learn more about the [known limitations for Go static monitoring](https://www.dynatrace.com/support/help/technology-support/application-software/go/support/go-known-limitations#limitations)
      */
-    public readonly enabledGoStaticMonitoring!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabledGoStaticMonitoring: pulumi.Output<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly hostId!: pulumi.Output<string | undefined>;
+    declare public readonly hostId: pulumi.Output<string | undefined>;
 
     /**
      * Create a MonitoredTechnologiesGo resource with the given unique name, arguments, and options.
@@ -58,17 +58,17 @@ export class MonitoredTechnologiesGo extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitoredTechnologiesGoState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["enabledGoStaticMonitoring"] = state ? state.enabledGoStaticMonitoring : undefined;
-            resourceInputs["hostId"] = state ? state.hostId : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["enabledGoStaticMonitoring"] = state?.enabledGoStaticMonitoring;
+            resourceInputs["hostId"] = state?.hostId;
         } else {
             const args = argsOrState as MonitoredTechnologiesGoArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["enabledGoStaticMonitoring"] = args ? args.enabledGoStaticMonitoring : undefined;
-            resourceInputs["hostId"] = args ? args.hostId : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["enabledGoStaticMonitoring"] = args?.enabledGoStaticMonitoring;
+            resourceInputs["hostId"] = args?.hostId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MonitoredTechnologiesGo.__pulumiType, name, resourceInputs, opts);

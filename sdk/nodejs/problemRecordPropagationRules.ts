@@ -35,15 +35,15 @@ export class ProblemRecordPropagationRules extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Attribute key from the event that will be propagated.
      */
-    public readonly sourceAttributeKey!: pulumi.Output<string>;
+    declare public readonly sourceAttributeKey: pulumi.Output<string>;
     /**
      * Attribute key under which the propagated event data will be stored on the problem.
      */
-    public readonly targetAttributeKey!: pulumi.Output<string>;
+    declare public readonly targetAttributeKey: pulumi.Output<string>;
 
     /**
      * Create a ProblemRecordPropagationRules resource with the given unique name, arguments, and options.
@@ -58,23 +58,23 @@ export class ProblemRecordPropagationRules extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProblemRecordPropagationRulesState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["sourceAttributeKey"] = state ? state.sourceAttributeKey : undefined;
-            resourceInputs["targetAttributeKey"] = state ? state.targetAttributeKey : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["sourceAttributeKey"] = state?.sourceAttributeKey;
+            resourceInputs["targetAttributeKey"] = state?.targetAttributeKey;
         } else {
             const args = argsOrState as ProblemRecordPropagationRulesArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.sourceAttributeKey === undefined) && !opts.urn) {
+            if (args?.sourceAttributeKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sourceAttributeKey'");
             }
-            if ((!args || args.targetAttributeKey === undefined) && !opts.urn) {
+            if (args?.targetAttributeKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetAttributeKey'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["sourceAttributeKey"] = args ? args.sourceAttributeKey : undefined;
-            resourceInputs["targetAttributeKey"] = args ? args.targetAttributeKey : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["sourceAttributeKey"] = args?.sourceAttributeKey;
+            resourceInputs["targetAttributeKey"] = args?.targetAttributeKey;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProblemRecordPropagationRules.__pulumiType, name, resourceInputs, opts);

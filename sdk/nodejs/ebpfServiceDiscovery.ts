@@ -35,11 +35,11 @@ export class EbpfServiceDiscovery extends pulumi.CustomResource {
     /**
      * When disabled, Dynatrace can only detect services in Full stack mode.
      */
-    public readonly ebpf!: pulumi.Output<boolean>;
+    declare public readonly ebpf: pulumi.Output<boolean>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a EbpfServiceDiscovery resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class EbpfServiceDiscovery extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EbpfServiceDiscoveryState | undefined;
-            resourceInputs["ebpf"] = state ? state.ebpf : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["ebpf"] = state?.ebpf;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as EbpfServiceDiscoveryArgs | undefined;
-            if ((!args || args.ebpf === undefined) && !opts.urn) {
+            if (args?.ebpf === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ebpf'");
             }
-            resourceInputs["ebpf"] = args ? args.ebpf : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["ebpf"] = args?.ebpf;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(EbpfServiceDiscovery.__pulumiType, name, resourceInputs, opts);

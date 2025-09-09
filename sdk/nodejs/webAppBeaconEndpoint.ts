@@ -35,19 +35,19 @@ export class WebAppBeaconEndpoint extends pulumi.CustomResource {
     /**
      * The scope of this setting
      */
-    public readonly applicationId!: pulumi.Output<string>;
+    declare public readonly applicationId: pulumi.Output<string>;
     /**
      * Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * You can specify either path segments or an absolute URL.
      */
-    public readonly url!: pulumi.Output<string | undefined>;
+    declare public readonly url: pulumi.Output<string | undefined>;
     /**
      * Learn more about [sending beacon data via CORS](https://dt-url.net/r7038sa)
      */
-    public readonly useCors!: pulumi.Output<boolean | undefined>;
+    declare public readonly useCors: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a WebAppBeaconEndpoint resource with the given unique name, arguments, and options.
@@ -62,22 +62,22 @@ export class WebAppBeaconEndpoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppBeaconEndpointState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["useCors"] = state ? state.useCors : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["useCors"] = state?.useCors;
         } else {
             const args = argsOrState as WebAppBeaconEndpointArgs | undefined;
-            if ((!args || args.applicationId === undefined) && !opts.urn) {
+            if (args?.applicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["useCors"] = args ? args.useCors : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["useCors"] = args?.useCors;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppBeaconEndpoint.__pulumiType, name, resourceInputs, opts);

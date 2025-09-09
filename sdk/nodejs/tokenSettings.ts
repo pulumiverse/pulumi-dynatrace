@@ -35,12 +35,12 @@ export class TokenSettings extends pulumi.CustomResource {
     /**
      * Check out this [blog post](http://www.dynatrace.com/blog/further-increased-security-of-your-api-tokens-by-automating-token-protection/) to find out more about the new Dynatrace API token format.
      */
-    public readonly newTokenFormat!: pulumi.Output<boolean>;
+    declare public readonly newTokenFormat: pulumi.Output<boolean>;
     /**
      * Allow users of this environment to generate personal access tokens based on user permissions.
      * Note that existing personal access tokens will become unusable while this setting is disabled.
      */
-    public readonly personalTokens!: pulumi.Output<boolean>;
+    declare public readonly personalTokens: pulumi.Output<boolean>;
 
     /**
      * Create a TokenSettings resource with the given unique name, arguments, and options.
@@ -55,18 +55,18 @@ export class TokenSettings extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TokenSettingsState | undefined;
-            resourceInputs["newTokenFormat"] = state ? state.newTokenFormat : undefined;
-            resourceInputs["personalTokens"] = state ? state.personalTokens : undefined;
+            resourceInputs["newTokenFormat"] = state?.newTokenFormat;
+            resourceInputs["personalTokens"] = state?.personalTokens;
         } else {
             const args = argsOrState as TokenSettingsArgs | undefined;
-            if ((!args || args.newTokenFormat === undefined) && !opts.urn) {
+            if (args?.newTokenFormat === undefined && !opts.urn) {
                 throw new Error("Missing required property 'newTokenFormat'");
             }
-            if ((!args || args.personalTokens === undefined) && !opts.urn) {
+            if (args?.personalTokens === undefined && !opts.urn) {
                 throw new Error("Missing required property 'personalTokens'");
             }
-            resourceInputs["newTokenFormat"] = args ? args.newTokenFormat : undefined;
-            resourceInputs["personalTokens"] = args ? args.personalTokens : undefined;
+            resourceInputs["newTokenFormat"] = args?.newTokenFormat;
+            resourceInputs["personalTokens"] = args?.personalTokens;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(TokenSettings.__pulumiType, name, resourceInputs, opts);

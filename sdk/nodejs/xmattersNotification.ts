@@ -37,35 +37,35 @@ export class XmattersNotification extends pulumi.CustomResource {
     /**
      * The configuration is enabled (`true`) or disabled (`false`)
      */
-    public readonly active!: pulumi.Output<boolean>;
+    declare public readonly active: pulumi.Output<boolean>;
     /**
      * A list of the additional HTTP headers
      */
-    public readonly headers!: pulumi.Output<outputs.XmattersNotificationHeaders | undefined>;
+    declare public readonly headers: pulumi.Output<outputs.XmattersNotificationHeaders | undefined>;
     /**
      * Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
      */
-    public readonly insecure!: pulumi.Output<boolean | undefined>;
+    declare public readonly insecure: pulumi.Output<boolean | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    public readonly legacyId!: pulumi.Output<string>;
+    declare public readonly legacyId: pulumi.Output<string>;
     /**
      * The name of the notification configuration
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      */
-    public readonly payload!: pulumi.Output<string>;
+    declare public readonly payload: pulumi.Output<string>;
     /**
      * The ID of the associated alerting profile
      */
-    public readonly profile!: pulumi.Output<string>;
+    declare public readonly profile: pulumi.Output<string>;
     /**
      * The URL of the WebHook endpoint
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
 
     /**
      * Create a XmattersNotification resource with the given unique name, arguments, and options.
@@ -80,36 +80,36 @@ export class XmattersNotification extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as XmattersNotificationState | undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["headers"] = state ? state.headers : undefined;
-            resourceInputs["insecure"] = state ? state.insecure : undefined;
-            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["payload"] = state ? state.payload : undefined;
-            resourceInputs["profile"] = state ? state.profile : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["headers"] = state?.headers;
+            resourceInputs["insecure"] = state?.insecure;
+            resourceInputs["legacyId"] = state?.legacyId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["payload"] = state?.payload;
+            resourceInputs["profile"] = state?.profile;
+            resourceInputs["url"] = state?.url;
         } else {
             const args = argsOrState as XmattersNotificationArgs | undefined;
-            if ((!args || args.active === undefined) && !opts.urn) {
+            if (args?.active === undefined && !opts.urn) {
                 throw new Error("Missing required property 'active'");
             }
-            if ((!args || args.payload === undefined) && !opts.urn) {
+            if (args?.payload === undefined && !opts.urn) {
                 throw new Error("Missing required property 'payload'");
             }
-            if ((!args || args.profile === undefined) && !opts.urn) {
+            if (args?.profile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profile'");
             }
-            if ((!args || args.url === undefined) && !opts.urn) {
+            if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["headers"] = args ? args.headers : undefined;
-            resourceInputs["insecure"] = args ? args.insecure : undefined;
-            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["payload"] = args ? args.payload : undefined;
-            resourceInputs["profile"] = args ? args.profile : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
+            resourceInputs["active"] = args?.active;
+            resourceInputs["headers"] = args?.headers;
+            resourceInputs["insecure"] = args?.insecure;
+            resourceInputs["legacyId"] = args?.legacyId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["payload"] = args?.payload;
+            resourceInputs["profile"] = args?.profile;
+            resourceInputs["url"] = args?.url;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(XmattersNotification.__pulumiType, name, resourceInputs, opts);

@@ -35,7 +35,7 @@ export class SyntheticAvailability extends pulumi.CustomResource {
     /**
      * Exclude periods with maintenance windows from availability calculation
      */
-    public readonly excludeMaintenanceWindows!: pulumi.Output<boolean>;
+    declare public readonly excludeMaintenanceWindows: pulumi.Output<boolean>;
 
     /**
      * Create a SyntheticAvailability resource with the given unique name, arguments, and options.
@@ -50,13 +50,13 @@ export class SyntheticAvailability extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SyntheticAvailabilityState | undefined;
-            resourceInputs["excludeMaintenanceWindows"] = state ? state.excludeMaintenanceWindows : undefined;
+            resourceInputs["excludeMaintenanceWindows"] = state?.excludeMaintenanceWindows;
         } else {
             const args = argsOrState as SyntheticAvailabilityArgs | undefined;
-            if ((!args || args.excludeMaintenanceWindows === undefined) && !opts.urn) {
+            if (args?.excludeMaintenanceWindows === undefined && !opts.urn) {
                 throw new Error("Missing required property 'excludeMaintenanceWindows'");
             }
-            resourceInputs["excludeMaintenanceWindows"] = args ? args.excludeMaintenanceWindows : undefined;
+            resourceInputs["excludeMaintenanceWindows"] = args?.excludeMaintenanceWindows;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SyntheticAvailability.__pulumiType, name, resourceInputs, opts);

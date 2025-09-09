@@ -37,7 +37,7 @@ export class DashboardsAllowlist extends pulumi.CustomResource {
     /**
      * List of URL pattern matchers
      */
-    public readonly allowlist!: pulumi.Output<outputs.DashboardsAllowlistAllowlist | undefined>;
+    declare public readonly allowlist: pulumi.Output<outputs.DashboardsAllowlistAllowlist | undefined>;
 
     /**
      * Create a DashboardsAllowlist resource with the given unique name, arguments, and options.
@@ -52,10 +52,10 @@ export class DashboardsAllowlist extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DashboardsAllowlistState | undefined;
-            resourceInputs["allowlist"] = state ? state.allowlist : undefined;
+            resourceInputs["allowlist"] = state?.allowlist;
         } else {
             const args = argsOrState as DashboardsAllowlistArgs | undefined;
-            resourceInputs["allowlist"] = args ? args.allowlist : undefined;
+            resourceInputs["allowlist"] = args?.allowlist;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DashboardsAllowlist.__pulumiType, name, resourceInputs, opts);

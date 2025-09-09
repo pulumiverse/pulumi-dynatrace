@@ -37,15 +37,15 @@ export class HttpMonitorPerformance extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * The scope of this setting (HTTP_CHECK)
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
     /**
      * Performance thresholds
      */
-    public readonly thresholds!: pulumi.Output<outputs.HttpMonitorPerformanceThresholds | undefined>;
+    declare public readonly thresholds: pulumi.Output<outputs.HttpMonitorPerformanceThresholds | undefined>;
 
     /**
      * Create a HttpMonitorPerformance resource with the given unique name, arguments, and options.
@@ -60,20 +60,20 @@ export class HttpMonitorPerformance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HttpMonitorPerformanceState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["thresholds"] = state ? state.thresholds : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["thresholds"] = state?.thresholds;
         } else {
             const args = argsOrState as HttpMonitorPerformanceArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["thresholds"] = args ? args.thresholds : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["thresholds"] = args?.thresholds;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HttpMonitorPerformance.__pulumiType, name, resourceInputs, opts);

@@ -37,24 +37,24 @@ export class Maintenance extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * ## Filters
      * Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
      */
-    public readonly filters!: pulumi.Output<outputs.MaintenanceFilters | undefined>;
+    declare public readonly filters: pulumi.Output<outputs.MaintenanceFilters | undefined>;
     /**
      * The general properties of the maintenance window
      */
-    public readonly generalProperties!: pulumi.Output<outputs.MaintenanceGeneralProperties>;
+    declare public readonly generalProperties: pulumi.Output<outputs.MaintenanceGeneralProperties>;
     /**
      * The ID of this setting when referred to by the Config REST API V1
      */
-    public readonly legacyId!: pulumi.Output<string>;
+    declare public readonly legacyId: pulumi.Output<string>;
     /**
      * The schedule of the maintenance window
      */
-    public readonly schedule!: pulumi.Output<outputs.MaintenanceSchedule>;
+    declare public readonly schedule: pulumi.Output<outputs.MaintenanceSchedule>;
 
     /**
      * Create a Maintenance resource with the given unique name, arguments, and options.
@@ -69,27 +69,27 @@ export class Maintenance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MaintenanceState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["filters"] = state ? state.filters : undefined;
-            resourceInputs["generalProperties"] = state ? state.generalProperties : undefined;
-            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
-            resourceInputs["schedule"] = state ? state.schedule : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["filters"] = state?.filters;
+            resourceInputs["generalProperties"] = state?.generalProperties;
+            resourceInputs["legacyId"] = state?.legacyId;
+            resourceInputs["schedule"] = state?.schedule;
         } else {
             const args = argsOrState as MaintenanceArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.generalProperties === undefined) && !opts.urn) {
+            if (args?.generalProperties === undefined && !opts.urn) {
                 throw new Error("Missing required property 'generalProperties'");
             }
-            if ((!args || args.schedule === undefined) && !opts.urn) {
+            if (args?.schedule === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schedule'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["filters"] = args ? args.filters : undefined;
-            resourceInputs["generalProperties"] = args ? args.generalProperties : undefined;
-            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
-            resourceInputs["schedule"] = args ? args.schedule : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["filters"] = args?.filters;
+            resourceInputs["generalProperties"] = args?.generalProperties;
+            resourceInputs["legacyId"] = args?.legacyId;
+            resourceInputs["schedule"] = args?.schedule;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Maintenance.__pulumiType, name, resourceInputs, opts);

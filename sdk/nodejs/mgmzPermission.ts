@@ -35,20 +35,20 @@ export class MgmzPermission extends pulumi.CustomResource {
     /**
      * The UUID of the environment
      */
-    public readonly environment!: pulumi.Output<string>;
+    declare public readonly environment: pulumi.Output<string>;
     /**
      * The ID of the group the permissions are valid for. You may refer to the id of a resource `dynatrace.UserGroup` here
      */
-    public readonly group!: pulumi.Output<string>;
+    declare public readonly group: pulumi.Output<string>;
     /**
      * The ID of the management zone the permissions are valid for. When referring to resource `dynatrace.ManagementZoneV2` or data source `dynatrace.ManagementZone` you need to refer to the attribute `legacyId`.
      */
-    public readonly managementZone!: pulumi.Output<string>;
+    declare public readonly managementZone: pulumi.Output<string>;
     /**
      * The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
      * Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
      */
-    public readonly permissions!: pulumi.Output<string[]>;
+    declare public readonly permissions: pulumi.Output<string[]>;
 
     /**
      * Create a MgmzPermission resource with the given unique name, arguments, and options.
@@ -63,28 +63,28 @@ export class MgmzPermission extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MgmzPermissionState | undefined;
-            resourceInputs["environment"] = state ? state.environment : undefined;
-            resourceInputs["group"] = state ? state.group : undefined;
-            resourceInputs["managementZone"] = state ? state.managementZone : undefined;
-            resourceInputs["permissions"] = state ? state.permissions : undefined;
+            resourceInputs["environment"] = state?.environment;
+            resourceInputs["group"] = state?.group;
+            resourceInputs["managementZone"] = state?.managementZone;
+            resourceInputs["permissions"] = state?.permissions;
         } else {
             const args = argsOrState as MgmzPermissionArgs | undefined;
-            if ((!args || args.environment === undefined) && !opts.urn) {
+            if (args?.environment === undefined && !opts.urn) {
                 throw new Error("Missing required property 'environment'");
             }
-            if ((!args || args.group === undefined) && !opts.urn) {
+            if (args?.group === undefined && !opts.urn) {
                 throw new Error("Missing required property 'group'");
             }
-            if ((!args || args.managementZone === undefined) && !opts.urn) {
+            if (args?.managementZone === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managementZone'");
             }
-            if ((!args || args.permissions === undefined) && !opts.urn) {
+            if (args?.permissions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'permissions'");
             }
-            resourceInputs["environment"] = args ? args.environment : undefined;
-            resourceInputs["group"] = args ? args.group : undefined;
-            resourceInputs["managementZone"] = args ? args.managementZone : undefined;
-            resourceInputs["permissions"] = args ? args.permissions : undefined;
+            resourceInputs["environment"] = args?.environment;
+            resourceInputs["group"] = args?.group;
+            resourceInputs["managementZone"] = args?.managementZone;
+            resourceInputs["permissions"] = args?.permissions;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MgmzPermission.__pulumiType, name, resourceInputs, opts);

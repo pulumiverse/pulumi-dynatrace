@@ -37,23 +37,23 @@ export class SiteReliabilityGuardian extends pulumi.CustomResource {
     /**
      * Description
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Objectives
      */
-    public readonly objectives!: pulumi.Output<outputs.SiteReliabilityGuardianObjectives>;
+    declare public readonly objectives: pulumi.Output<outputs.SiteReliabilityGuardianObjectives>;
     /**
      * Define key/value pairs that further describe this guardian.
      */
-    public readonly tags!: pulumi.Output<string[] | undefined>;
+    declare public readonly tags: pulumi.Output<string[] | undefined>;
     /**
      * Define variables for dynamically defining DQL queries
      */
-    public readonly variables!: pulumi.Output<outputs.SiteReliabilityGuardianVariables | undefined>;
+    declare public readonly variables: pulumi.Output<outputs.SiteReliabilityGuardianVariables | undefined>;
 
     /**
      * Create a SiteReliabilityGuardian resource with the given unique name, arguments, and options.
@@ -68,21 +68,21 @@ export class SiteReliabilityGuardian extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SiteReliabilityGuardianState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["objectives"] = state ? state.objectives : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["variables"] = state ? state.variables : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["objectives"] = state?.objectives;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["variables"] = state?.variables;
         } else {
             const args = argsOrState as SiteReliabilityGuardianArgs | undefined;
-            if ((!args || args.objectives === undefined) && !opts.urn) {
+            if (args?.objectives === undefined && !opts.urn) {
                 throw new Error("Missing required property 'objectives'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["objectives"] = args ? args.objectives : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["variables"] = args ? args.variables : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["objectives"] = args?.objectives;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["variables"] = args?.variables;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SiteReliabilityGuardian.__pulumiType, name, resourceInputs, opts);

@@ -37,23 +37,23 @@ export class AutomationWorkflowK8sConnections extends pulumi.CustomResource {
      *
      * @deprecated This resource is no longer ordered, please remove this attribute from the configuration
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * The name of the EdgeConnect deployment
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The namespace where EdgeConnect is deployed
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * Token
      */
-    public readonly token!: pulumi.Output<string>;
+    declare public readonly token: pulumi.Output<string>;
     /**
      * A pseudo-ID for the cluster, set to the UID of the kube-system namespace
      */
-    public readonly uid!: pulumi.Output<string>;
+    declare public readonly uid: pulumi.Output<string>;
 
     /**
      * Create a AutomationWorkflowK8sConnections resource with the given unique name, arguments, and options.
@@ -68,27 +68,27 @@ export class AutomationWorkflowK8sConnections extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutomationWorkflowK8sConnectionsState | undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["token"] = state ? state.token : undefined;
-            resourceInputs["uid"] = state ? state.uid : undefined;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["token"] = state?.token;
+            resourceInputs["uid"] = state?.uid;
         } else {
             const args = argsOrState as AutomationWorkflowK8sConnectionsArgs | undefined;
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.token === undefined) && !opts.urn) {
+            if (args?.token === undefined && !opts.urn) {
                 throw new Error("Missing required property 'token'");
             }
-            if ((!args || args.uid === undefined) && !opts.urn) {
+            if (args?.uid === undefined && !opts.urn) {
                 throw new Error("Missing required property 'uid'");
             }
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["namespace"] = args?.namespace;
             resourceInputs["token"] = args?.token ? pulumi.secret(args.token) : undefined;
-            resourceInputs["uid"] = args ? args.uid : undefined;
+            resourceInputs["uid"] = args?.uid;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["token"] };

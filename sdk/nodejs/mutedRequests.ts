@@ -35,11 +35,11 @@ export class MutedRequests extends pulumi.CustomResource {
     /**
      * Muted request names
      */
-    public readonly mutedRequestNames!: pulumi.Output<string[] | undefined>;
+    declare public readonly mutedRequestNames: pulumi.Output<string[] | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly serviceId!: pulumi.Output<string>;
+    declare public readonly serviceId: pulumi.Output<string>;
 
     /**
      * Create a MutedRequests resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class MutedRequests extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MutedRequestsState | undefined;
-            resourceInputs["mutedRequestNames"] = state ? state.mutedRequestNames : undefined;
-            resourceInputs["serviceId"] = state ? state.serviceId : undefined;
+            resourceInputs["mutedRequestNames"] = state?.mutedRequestNames;
+            resourceInputs["serviceId"] = state?.serviceId;
         } else {
             const args = argsOrState as MutedRequestsArgs | undefined;
-            if ((!args || args.serviceId === undefined) && !opts.urn) {
+            if (args?.serviceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceId'");
             }
-            resourceInputs["mutedRequestNames"] = args ? args.mutedRequestNames : undefined;
-            resourceInputs["serviceId"] = args ? args.serviceId : undefined;
+            resourceInputs["mutedRequestNames"] = args?.mutedRequestNames;
+            resourceInputs["serviceId"] = args?.serviceId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MutedRequests.__pulumiType, name, resourceInputs, opts);

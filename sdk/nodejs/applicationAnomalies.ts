@@ -37,15 +37,15 @@ export class ApplicationAnomalies extends pulumi.CustomResource {
     /**
      * Configuration of failure rate increase detection
      */
-    public readonly failureRate!: pulumi.Output<outputs.ApplicationAnomaliesFailureRate | undefined>;
+    declare public readonly failureRate: pulumi.Output<outputs.ApplicationAnomaliesFailureRate | undefined>;
     /**
      * Configuration of response time degradation detection
      */
-    public readonly responseTime!: pulumi.Output<outputs.ApplicationAnomaliesResponseTime | undefined>;
+    declare public readonly responseTime: pulumi.Output<outputs.ApplicationAnomaliesResponseTime | undefined>;
     /**
      * Configuration for anomalies regarding traffic
      */
-    public readonly traffic!: pulumi.Output<outputs.ApplicationAnomaliesTraffic | undefined>;
+    declare public readonly traffic: pulumi.Output<outputs.ApplicationAnomaliesTraffic | undefined>;
 
     /**
      * Create a ApplicationAnomalies resource with the given unique name, arguments, and options.
@@ -60,14 +60,14 @@ export class ApplicationAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ApplicationAnomaliesState | undefined;
-            resourceInputs["failureRate"] = state ? state.failureRate : undefined;
-            resourceInputs["responseTime"] = state ? state.responseTime : undefined;
-            resourceInputs["traffic"] = state ? state.traffic : undefined;
+            resourceInputs["failureRate"] = state?.failureRate;
+            resourceInputs["responseTime"] = state?.responseTime;
+            resourceInputs["traffic"] = state?.traffic;
         } else {
             const args = argsOrState as ApplicationAnomaliesArgs | undefined;
-            resourceInputs["failureRate"] = args ? args.failureRate : undefined;
-            resourceInputs["responseTime"] = args ? args.responseTime : undefined;
-            resourceInputs["traffic"] = args ? args.traffic : undefined;
+            resourceInputs["failureRate"] = args?.failureRate;
+            resourceInputs["responseTime"] = args?.responseTime;
+            resourceInputs["traffic"] = args?.traffic;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ApplicationAnomalies.__pulumiType, name, resourceInputs, opts);

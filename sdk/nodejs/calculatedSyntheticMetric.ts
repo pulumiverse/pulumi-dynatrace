@@ -37,35 +37,35 @@ export class CalculatedSyntheticMetric extends pulumi.CustomResource {
     /**
      * Descriptor of a calculated synthetic metric.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Dimension of the calculated synthetic metric.
      */
-    public readonly dimensions!: pulumi.Output<outputs.CalculatedSyntheticMetricDimension[] | undefined>;
+    declare public readonly dimensions: pulumi.Output<outputs.CalculatedSyntheticMetricDimension[] | undefined>;
     /**
      * The metric is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Filter of the calculated synthetic metric.
      */
-    public readonly filter!: pulumi.Output<outputs.CalculatedSyntheticMetricFilter | undefined>;
+    declare public readonly filter: pulumi.Output<outputs.CalculatedSyntheticMetricFilter | undefined>;
     /**
      * The type of the synthetic metric. Possible values: [ ApplicationCache, Callback, CumulativeLayoutShift, DNSLookup, DOMComplete, DOMContentLoaded, DOMInteractive, FailedRequestsResources, FirstContentfulPaint, FirstInputDelay, FirstInputStart, FirstPaint, HTMLDownloaded, HttpErrors, JavaScriptErrors, LargestContentfulPaint, LoadEventEnd, LoadEventStart, LongTasks, NavigationStart, OnDOMContentLoaded, OnLoad, Processing, RedirectTime, Request, RequestStart, ResourceCount, Response, SecureConnect, SpeedIndex, TCPConnect, TimeToFirstByte, TotalDuration, TransferSize, UserActionDuration, VisuallyComplete ]
      */
-    public readonly metric!: pulumi.Output<string>;
+    declare public readonly metric: pulumi.Output<string>;
     /**
      * The unique key of the calculated synthetic metric.
      */
-    public readonly metricKey!: pulumi.Output<string>;
+    declare public readonly metricKey: pulumi.Output<string>;
     /**
      * The Dynatrace entity ID of the monitor to which the metric belongs.
      */
-    public readonly monitorIdentifier!: pulumi.Output<string>;
+    declare public readonly monitorIdentifier: pulumi.Output<string>;
     /**
      * The displayed name of the metric.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a CalculatedSyntheticMetric resource with the given unique name, arguments, and options.
@@ -80,36 +80,36 @@ export class CalculatedSyntheticMetric extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CalculatedSyntheticMetricState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["dimensions"] = state ? state.dimensions : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["filter"] = state ? state.filter : undefined;
-            resourceInputs["metric"] = state ? state.metric : undefined;
-            resourceInputs["metricKey"] = state ? state.metricKey : undefined;
-            resourceInputs["monitorIdentifier"] = state ? state.monitorIdentifier : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["dimensions"] = state?.dimensions;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["filter"] = state?.filter;
+            resourceInputs["metric"] = state?.metric;
+            resourceInputs["metricKey"] = state?.metricKey;
+            resourceInputs["monitorIdentifier"] = state?.monitorIdentifier;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as CalculatedSyntheticMetricArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.metric === undefined) && !opts.urn) {
+            if (args?.metric === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metric'");
             }
-            if ((!args || args.metricKey === undefined) && !opts.urn) {
+            if (args?.metricKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricKey'");
             }
-            if ((!args || args.monitorIdentifier === undefined) && !opts.urn) {
+            if (args?.monitorIdentifier === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitorIdentifier'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["dimensions"] = args ? args.dimensions : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["filter"] = args ? args.filter : undefined;
-            resourceInputs["metric"] = args ? args.metric : undefined;
-            resourceInputs["metricKey"] = args ? args.metricKey : undefined;
-            resourceInputs["monitorIdentifier"] = args ? args.monitorIdentifier : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["dimensions"] = args?.dimensions;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["filter"] = args?.filter;
+            resourceInputs["metric"] = args?.metric;
+            resourceInputs["metricKey"] = args?.metricKey;
+            resourceInputs["monitorIdentifier"] = args?.monitorIdentifier;
+            resourceInputs["name"] = args?.name;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CalculatedSyntheticMetric.__pulumiType, name, resourceInputs, opts);

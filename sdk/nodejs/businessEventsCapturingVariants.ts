@@ -35,23 +35,23 @@ export class BusinessEventsCapturingVariants extends pulumi.CustomResource {
     /**
      * Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
      */
-    public readonly contentTypeMatcher!: pulumi.Output<string>;
+    declare public readonly contentTypeMatcher: pulumi.Output<string>;
     /**
      * Content-type match value
      */
-    public readonly contentTypeValue!: pulumi.Output<string>;
+    declare public readonly contentTypeValue: pulumi.Output<string>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Possible Values: `JSON`, `Raw`, `Text`, `URLencoded`, `XML`
      */
-    public readonly parser!: pulumi.Output<string>;
+    declare public readonly parser: pulumi.Output<string>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a BusinessEventsCapturingVariants resource with the given unique name, arguments, and options.
@@ -66,27 +66,27 @@ export class BusinessEventsCapturingVariants extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BusinessEventsCapturingVariantsState | undefined;
-            resourceInputs["contentTypeMatcher"] = state ? state.contentTypeMatcher : undefined;
-            resourceInputs["contentTypeValue"] = state ? state.contentTypeValue : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["parser"] = state ? state.parser : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["contentTypeMatcher"] = state?.contentTypeMatcher;
+            resourceInputs["contentTypeValue"] = state?.contentTypeValue;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["parser"] = state?.parser;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as BusinessEventsCapturingVariantsArgs | undefined;
-            if ((!args || args.contentTypeMatcher === undefined) && !opts.urn) {
+            if (args?.contentTypeMatcher === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contentTypeMatcher'");
             }
-            if ((!args || args.contentTypeValue === undefined) && !opts.urn) {
+            if (args?.contentTypeValue === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contentTypeValue'");
             }
-            if ((!args || args.parser === undefined) && !opts.urn) {
+            if (args?.parser === undefined && !opts.urn) {
                 throw new Error("Missing required property 'parser'");
             }
-            resourceInputs["contentTypeMatcher"] = args ? args.contentTypeMatcher : undefined;
-            resourceInputs["contentTypeValue"] = args ? args.contentTypeValue : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["parser"] = args ? args.parser : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["contentTypeMatcher"] = args?.contentTypeMatcher;
+            resourceInputs["contentTypeValue"] = args?.contentTypeValue;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["parser"] = args?.parser;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BusinessEventsCapturingVariants.__pulumiType, name, resourceInputs, opts);

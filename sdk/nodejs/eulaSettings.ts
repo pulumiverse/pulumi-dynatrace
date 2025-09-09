@@ -35,11 +35,11 @@ export class EulaSettings extends pulumi.CustomResource {
     /**
      * Display end user terms to new users logging in to the environment
      */
-    public readonly enableEula!: pulumi.Output<boolean>;
+    declare public readonly enableEula: pulumi.Output<boolean>;
     /**
      * The scope of this setting (environment)
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a EulaSettings resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class EulaSettings extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EulaSettingsState | undefined;
-            resourceInputs["enableEula"] = state ? state.enableEula : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["enableEula"] = state?.enableEula;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as EulaSettingsArgs | undefined;
-            if ((!args || args.enableEula === undefined) && !opts.urn) {
+            if (args?.enableEula === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableEula'");
             }
-            resourceInputs["enableEula"] = args ? args.enableEula : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["enableEula"] = args?.enableEula;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(EulaSettings.__pulumiType, name, resourceInputs, opts);

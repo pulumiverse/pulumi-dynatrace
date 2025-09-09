@@ -37,35 +37,35 @@ export class CustomService extends pulumi.CustomResource {
     /**
      * Custom service enabled/disabled
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * The name of the custom service, displayed in the UI
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The list of process groups the custom service should belong to
      */
-    public readonly processGroups!: pulumi.Output<string[] | undefined>;
+    declare public readonly processGroups: pulumi.Output<string[] | undefined>;
     /**
      * The queue entry point flag. Set to `true` for custom messaging services
      */
-    public readonly queueEntryPoint!: pulumi.Output<boolean | undefined>;
+    declare public readonly queueEntryPoint: pulumi.Output<boolean | undefined>;
     /**
      * The queue entry point type (IBM*MQ, JMS, KAFKA, MSMQ or RABBIT*MQ)
      */
-    public readonly queueEntryPointType!: pulumi.Output<string | undefined>;
+    declare public readonly queueEntryPointType: pulumi.Output<string | undefined>;
     /**
      * The list of rules defining the custom service
      */
-    public readonly rules!: pulumi.Output<outputs.CustomServiceRule[] | undefined>;
+    declare public readonly rules: pulumi.Output<outputs.CustomServiceRule[] | undefined>;
     /**
      * Matcher applying to the file name (ENDS*WITH, EQUALS or STARTS*WITH). Default value is ENDS_WITH (if applicable)
      */
-    public readonly technology!: pulumi.Output<string>;
+    declare public readonly technology: pulumi.Output<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
 
     /**
      * Create a CustomService resource with the given unique name, arguments, and options.
@@ -80,30 +80,30 @@ export class CustomService extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CustomServiceState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["processGroups"] = state ? state.processGroups : undefined;
-            resourceInputs["queueEntryPoint"] = state ? state.queueEntryPoint : undefined;
-            resourceInputs["queueEntryPointType"] = state ? state.queueEntryPointType : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["technology"] = state ? state.technology : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["processGroups"] = state?.processGroups;
+            resourceInputs["queueEntryPoint"] = state?.queueEntryPoint;
+            resourceInputs["queueEntryPointType"] = state?.queueEntryPointType;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["technology"] = state?.technology;
+            resourceInputs["unknowns"] = state?.unknowns;
         } else {
             const args = argsOrState as CustomServiceArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.technology === undefined) && !opts.urn) {
+            if (args?.technology === undefined && !opts.urn) {
                 throw new Error("Missing required property 'technology'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["processGroups"] = args ? args.processGroups : undefined;
-            resourceInputs["queueEntryPoint"] = args ? args.queueEntryPoint : undefined;
-            resourceInputs["queueEntryPointType"] = args ? args.queueEntryPointType : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
-            resourceInputs["technology"] = args ? args.technology : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["processGroups"] = args?.processGroups;
+            resourceInputs["queueEntryPoint"] = args?.queueEntryPoint;
+            resourceInputs["queueEntryPointType"] = args?.queueEntryPointType;
+            resourceInputs["rules"] = args?.rules;
+            resourceInputs["technology"] = args?.technology;
+            resourceInputs["unknowns"] = args?.unknowns;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CustomService.__pulumiType, name, resourceInputs, opts);

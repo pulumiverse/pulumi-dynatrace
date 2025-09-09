@@ -37,27 +37,27 @@ export class LogStorage extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * no documentation available
      */
-    public readonly matchers!: pulumi.Output<outputs.LogStorageMatchers | undefined>;
+    declare public readonly matchers: pulumi.Output<outputs.LogStorageMatchers | undefined>;
     /**
      * Name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
      */
-    public readonly sendToStorage!: pulumi.Output<boolean>;
+    declare public readonly sendToStorage: pulumi.Output<boolean>;
 
     /**
      * Create a LogStorage resource with the given unique name, arguments, and options.
@@ -72,26 +72,26 @@ export class LogStorage extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogStorageState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["matchers"] = state ? state.matchers : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["sendToStorage"] = state ? state.sendToStorage : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["matchers"] = state?.matchers;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["sendToStorage"] = state?.sendToStorage;
         } else {
             const args = argsOrState as LogStorageArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.sendToStorage === undefined) && !opts.urn) {
+            if (args?.sendToStorage === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sendToStorage'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["matchers"] = args ? args.matchers : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["sendToStorage"] = args ? args.sendToStorage : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["matchers"] = args?.matchers;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["sendToStorage"] = args?.sendToStorage;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogStorage.__pulumiType, name, resourceInputs, opts);

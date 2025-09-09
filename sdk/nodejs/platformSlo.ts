@@ -80,27 +80,27 @@ export class PlatformSlo extends pulumi.CustomResource {
     /**
      * Criteria of the SLO
      */
-    public readonly criteria!: pulumi.Output<outputs.PlatformSloCriteria>;
+    declare public readonly criteria: pulumi.Output<outputs.PlatformSloCriteria>;
     /**
      * Custom SLI of the SLO
      */
-    public readonly customSli!: pulumi.Output<outputs.PlatformSloCustomSli | undefined>;
+    declare public readonly customSli: pulumi.Output<outputs.PlatformSloCustomSli | undefined>;
     /**
      * Description of the SLO
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Name of the SLO
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * SLI reference of the SLO
      */
-    public readonly sliReference!: pulumi.Output<outputs.PlatformSloSliReference | undefined>;
+    declare public readonly sliReference: pulumi.Output<outputs.PlatformSloSliReference | undefined>;
     /**
      * Tags of the SLO. Example: `Stage:DEV`
      */
-    public readonly tags!: pulumi.Output<string[] | undefined>;
+    declare public readonly tags: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a PlatformSlo resource with the given unique name, arguments, and options.
@@ -115,23 +115,23 @@ export class PlatformSlo extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PlatformSloState | undefined;
-            resourceInputs["criteria"] = state ? state.criteria : undefined;
-            resourceInputs["customSli"] = state ? state.customSli : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["sliReference"] = state ? state.sliReference : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
+            resourceInputs["criteria"] = state?.criteria;
+            resourceInputs["customSli"] = state?.customSli;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["sliReference"] = state?.sliReference;
+            resourceInputs["tags"] = state?.tags;
         } else {
             const args = argsOrState as PlatformSloArgs | undefined;
-            if ((!args || args.criteria === undefined) && !opts.urn) {
+            if (args?.criteria === undefined && !opts.urn) {
                 throw new Error("Missing required property 'criteria'");
             }
-            resourceInputs["criteria"] = args ? args.criteria : undefined;
-            resourceInputs["customSli"] = args ? args.customSli : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["sliReference"] = args ? args.sliReference : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["criteria"] = args?.criteria;
+            resourceInputs["customSli"] = args?.customSli;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["sliReference"] = args?.sliReference;
+            resourceInputs["tags"] = args?.tags;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PlatformSlo.__pulumiType, name, resourceInputs, opts);

@@ -35,11 +35,11 @@ export class LogCustomAttribute extends pulumi.CustomResource {
     /**
      * The attribute key is case sensitive in log data ingestion.
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * Show attribute values in side bar
      */
-    public readonly sidebar!: pulumi.Output<boolean>;
+    declare public readonly sidebar: pulumi.Output<boolean>;
 
     /**
      * Create a LogCustomAttribute resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class LogCustomAttribute extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogCustomAttributeState | undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["sidebar"] = state ? state.sidebar : undefined;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["sidebar"] = state?.sidebar;
         } else {
             const args = argsOrState as LogCustomAttributeArgs | undefined;
-            if ((!args || args.key === undefined) && !opts.urn) {
+            if (args?.key === undefined && !opts.urn) {
                 throw new Error("Missing required property 'key'");
             }
-            if ((!args || args.sidebar === undefined) && !opts.urn) {
+            if (args?.sidebar === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sidebar'");
             }
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["sidebar"] = args ? args.sidebar : undefined;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["sidebar"] = args?.sidebar;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogCustomAttribute.__pulumiType, name, resourceInputs, opts);

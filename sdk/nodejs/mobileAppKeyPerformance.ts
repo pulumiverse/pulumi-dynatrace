@@ -37,15 +37,15 @@ export class MobileAppKeyPerformance extends pulumi.CustomResource {
     /**
      * Treat user actions with reported errors or web request errors as erroneous and rate their performance as Frustrating. Turn off this setting if errors should not affect the Apdex rate.
      */
-    public readonly frustratingIfReportedOrWebRequestError!: pulumi.Output<boolean>;
+    declare public readonly frustratingIfReportedOrWebRequestError: pulumi.Output<boolean>;
     /**
      * The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE*APPLICATION, CUSTOM*APPLICATION)
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
     /**
      * no documentation available
      */
-    public readonly thresholds!: pulumi.Output<outputs.MobileAppKeyPerformanceThresholds>;
+    declare public readonly thresholds: pulumi.Output<outputs.MobileAppKeyPerformanceThresholds>;
 
     /**
      * Create a MobileAppKeyPerformance resource with the given unique name, arguments, and options.
@@ -60,23 +60,23 @@ export class MobileAppKeyPerformance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MobileAppKeyPerformanceState | undefined;
-            resourceInputs["frustratingIfReportedOrWebRequestError"] = state ? state.frustratingIfReportedOrWebRequestError : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["thresholds"] = state ? state.thresholds : undefined;
+            resourceInputs["frustratingIfReportedOrWebRequestError"] = state?.frustratingIfReportedOrWebRequestError;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["thresholds"] = state?.thresholds;
         } else {
             const args = argsOrState as MobileAppKeyPerformanceArgs | undefined;
-            if ((!args || args.frustratingIfReportedOrWebRequestError === undefined) && !opts.urn) {
+            if (args?.frustratingIfReportedOrWebRequestError === undefined && !opts.urn) {
                 throw new Error("Missing required property 'frustratingIfReportedOrWebRequestError'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            if ((!args || args.thresholds === undefined) && !opts.urn) {
+            if (args?.thresholds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'thresholds'");
             }
-            resourceInputs["frustratingIfReportedOrWebRequestError"] = args ? args.frustratingIfReportedOrWebRequestError : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["thresholds"] = args ? args.thresholds : undefined;
+            resourceInputs["frustratingIfReportedOrWebRequestError"] = args?.frustratingIfReportedOrWebRequestError;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["thresholds"] = args?.thresholds;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MobileAppKeyPerformance.__pulumiType, name, resourceInputs, opts);

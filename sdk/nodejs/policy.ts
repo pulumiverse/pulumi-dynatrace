@@ -35,27 +35,27 @@ export class Policy extends pulumi.CustomResource {
     /**
      * The UUID of the cluster in case the policy should be applied to all environments of this cluster.
      */
-    public readonly cluster!: pulumi.Output<string | undefined>;
+    declare public readonly cluster: pulumi.Output<string | undefined>;
     /**
      * An optional description text for the policy
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * The ID of the environment if the policy should be applied to a specific environment
      */
-    public readonly environment!: pulumi.Output<string | undefined>;
+    declare public readonly environment: pulumi.Output<string | undefined>;
     /**
      * The name of the policy
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The Statement Query of the policy
      */
-    public readonly statementQuery!: pulumi.Output<string>;
+    declare public readonly statementQuery: pulumi.Output<string>;
     /**
      * Tags for this policy
      */
-    public readonly tags!: pulumi.Output<string[] | undefined>;
+    declare public readonly tags: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a Policy resource with the given unique name, arguments, and options.
@@ -70,23 +70,23 @@ export class Policy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PolicyState | undefined;
-            resourceInputs["cluster"] = state ? state.cluster : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["environment"] = state ? state.environment : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["statementQuery"] = state ? state.statementQuery : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
+            resourceInputs["cluster"] = state?.cluster;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["environment"] = state?.environment;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["statementQuery"] = state?.statementQuery;
+            resourceInputs["tags"] = state?.tags;
         } else {
             const args = argsOrState as PolicyArgs | undefined;
-            if ((!args || args.statementQuery === undefined) && !opts.urn) {
+            if (args?.statementQuery === undefined && !opts.urn) {
                 throw new Error("Missing required property 'statementQuery'");
             }
-            resourceInputs["cluster"] = args ? args.cluster : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["environment"] = args ? args.environment : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["statementQuery"] = args ? args.statementQuery : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["cluster"] = args?.cluster;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["environment"] = args?.environment;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["statementQuery"] = args?.statementQuery;
+            resourceInputs["tags"] = args?.tags;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Policy.__pulumiType, name, resourceInputs, opts);

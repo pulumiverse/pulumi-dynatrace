@@ -35,15 +35,15 @@ export class IpAddressMasking extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * The scope of this setting (MOBILE*APPLICATION, CUSTOM*APPLICATION, APPLICATION). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * Possible Values: `all`, `public`
      */
-    public readonly type!: pulumi.Output<string | undefined>;
+    declare public readonly type: pulumi.Output<string | undefined>;
 
     /**
      * Create a IpAddressMasking resource with the given unique name, arguments, and options.
@@ -58,17 +58,17 @@ export class IpAddressMasking extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IpAddressMaskingState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as IpAddressMaskingArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["type"] = args?.type;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IpAddressMasking.__pulumiType, name, resourceInputs, opts);

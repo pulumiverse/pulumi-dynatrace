@@ -35,19 +35,19 @@ export class MsteamsConnection extends pulumi.CustomResource {
     /**
      * Optional
      */
-    public readonly channelName!: pulumi.Output<string | undefined>;
+    declare public readonly channelName: pulumi.Output<string | undefined>;
     /**
      * The name of the Microsoft Teams connection
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Optional
      */
-    public readonly teamName!: pulumi.Output<string | undefined>;
+    declare public readonly teamName: pulumi.Output<string | undefined>;
     /**
      * The Webhook URL that links to the channel
      */
-    public readonly webhook!: pulumi.Output<string>;
+    declare public readonly webhook: pulumi.Output<string>;
 
     /**
      * Create a MsteamsConnection resource with the given unique name, arguments, and options.
@@ -62,18 +62,18 @@ export class MsteamsConnection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MsteamsConnectionState | undefined;
-            resourceInputs["channelName"] = state ? state.channelName : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["teamName"] = state ? state.teamName : undefined;
-            resourceInputs["webhook"] = state ? state.webhook : undefined;
+            resourceInputs["channelName"] = state?.channelName;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["teamName"] = state?.teamName;
+            resourceInputs["webhook"] = state?.webhook;
         } else {
             const args = argsOrState as MsteamsConnectionArgs | undefined;
-            if ((!args || args.webhook === undefined) && !opts.urn) {
+            if (args?.webhook === undefined && !opts.urn) {
                 throw new Error("Missing required property 'webhook'");
             }
-            resourceInputs["channelName"] = args ? args.channelName : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["teamName"] = args ? args.teamName : undefined;
+            resourceInputs["channelName"] = args?.channelName;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["teamName"] = args?.teamName;
             resourceInputs["webhook"] = args?.webhook ? pulumi.secret(args.webhook) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

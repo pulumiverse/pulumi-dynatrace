@@ -35,15 +35,15 @@ export class SessionReplayResourceCapture extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string | undefined>;
+    declare public readonly applicationId: pulumi.Output<string | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
      */
-    public readonly enableResourceCapturing!: pulumi.Output<boolean>;
+    declare public readonly enableResourceCapturing: pulumi.Output<boolean>;
     /**
      * (Field has overlap with `dynatrace.WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
      */
-    public readonly resourceCaptureUrlExclusionPatternLists!: pulumi.Output<string[] | undefined>;
+    declare public readonly resourceCaptureUrlExclusionPatternLists: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a SessionReplayResourceCapture resource with the given unique name, arguments, and options.
@@ -58,17 +58,17 @@ export class SessionReplayResourceCapture extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SessionReplayResourceCaptureState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["enableResourceCapturing"] = state ? state.enableResourceCapturing : undefined;
-            resourceInputs["resourceCaptureUrlExclusionPatternLists"] = state ? state.resourceCaptureUrlExclusionPatternLists : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["enableResourceCapturing"] = state?.enableResourceCapturing;
+            resourceInputs["resourceCaptureUrlExclusionPatternLists"] = state?.resourceCaptureUrlExclusionPatternLists;
         } else {
             const args = argsOrState as SessionReplayResourceCaptureArgs | undefined;
-            if ((!args || args.enableResourceCapturing === undefined) && !opts.urn) {
+            if (args?.enableResourceCapturing === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableResourceCapturing'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["enableResourceCapturing"] = args ? args.enableResourceCapturing : undefined;
-            resourceInputs["resourceCaptureUrlExclusionPatternLists"] = args ? args.resourceCaptureUrlExclusionPatternLists : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["enableResourceCapturing"] = args?.enableResourceCapturing;
+            resourceInputs["resourceCaptureUrlExclusionPatternLists"] = args?.resourceCaptureUrlExclusionPatternLists;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SessionReplayResourceCapture.__pulumiType, name, resourceInputs, opts);

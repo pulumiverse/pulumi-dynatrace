@@ -37,35 +37,35 @@ export class GenericRelationships extends pulumi.CustomResource {
     /**
      * The user or extension that created this relationship.
      */
-    public readonly createdBy!: pulumi.Output<string>;
+    declare public readonly createdBy: pulumi.Output<string>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Specify a role for the source entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the source type is considered for the relationship.
      */
-    public readonly fromRole!: pulumi.Output<string | undefined>;
+    declare public readonly fromRole: pulumi.Output<string | undefined>;
     /**
      * Define an entity type as the source of the relationship.
      */
-    public readonly fromType!: pulumi.Output<string>;
+    declare public readonly fromType: pulumi.Output<string>;
     /**
      * Specify all sources which should be evaluated for this relationship rule. The relationship is only created when any of the filters match.
      */
-    public readonly sources!: pulumi.Output<outputs.GenericRelationshipsSources>;
+    declare public readonly sources: pulumi.Output<outputs.GenericRelationshipsSources>;
     /**
      * Specify a role for the destination entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the destination type is considered for the relationship.
      */
-    public readonly toRole!: pulumi.Output<string | undefined>;
+    declare public readonly toRole: pulumi.Output<string | undefined>;
     /**
      * Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
      */
-    public readonly toType!: pulumi.Output<string>;
+    declare public readonly toType: pulumi.Output<string>;
     /**
      * Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
      */
-    public readonly typeOfRelation!: pulumi.Output<string>;
+    declare public readonly typeOfRelation: pulumi.Output<string>;
 
     /**
      * Create a GenericRelationships resource with the given unique name, arguments, and options.
@@ -80,42 +80,42 @@ export class GenericRelationships extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GenericRelationshipsState | undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["fromRole"] = state ? state.fromRole : undefined;
-            resourceInputs["fromType"] = state ? state.fromType : undefined;
-            resourceInputs["sources"] = state ? state.sources : undefined;
-            resourceInputs["toRole"] = state ? state.toRole : undefined;
-            resourceInputs["toType"] = state ? state.toType : undefined;
-            resourceInputs["typeOfRelation"] = state ? state.typeOfRelation : undefined;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["fromRole"] = state?.fromRole;
+            resourceInputs["fromType"] = state?.fromType;
+            resourceInputs["sources"] = state?.sources;
+            resourceInputs["toRole"] = state?.toRole;
+            resourceInputs["toType"] = state?.toType;
+            resourceInputs["typeOfRelation"] = state?.typeOfRelation;
         } else {
             const args = argsOrState as GenericRelationshipsArgs | undefined;
-            if ((!args || args.createdBy === undefined) && !opts.urn) {
+            if (args?.createdBy === undefined && !opts.urn) {
                 throw new Error("Missing required property 'createdBy'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.fromType === undefined) && !opts.urn) {
+            if (args?.fromType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fromType'");
             }
-            if ((!args || args.sources === undefined) && !opts.urn) {
+            if (args?.sources === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sources'");
             }
-            if ((!args || args.toType === undefined) && !opts.urn) {
+            if (args?.toType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'toType'");
             }
-            if ((!args || args.typeOfRelation === undefined) && !opts.urn) {
+            if (args?.typeOfRelation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'typeOfRelation'");
             }
-            resourceInputs["createdBy"] = args ? args.createdBy : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["fromRole"] = args ? args.fromRole : undefined;
-            resourceInputs["fromType"] = args ? args.fromType : undefined;
-            resourceInputs["sources"] = args ? args.sources : undefined;
-            resourceInputs["toRole"] = args ? args.toRole : undefined;
-            resourceInputs["toType"] = args ? args.toType : undefined;
-            resourceInputs["typeOfRelation"] = args ? args.typeOfRelation : undefined;
+            resourceInputs["createdBy"] = args?.createdBy;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["fromRole"] = args?.fromRole;
+            resourceInputs["fromType"] = args?.fromType;
+            resourceInputs["sources"] = args?.sources;
+            resourceInputs["toRole"] = args?.toRole;
+            resourceInputs["toType"] = args?.toType;
+            resourceInputs["typeOfRelation"] = args?.typeOfRelation;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(GenericRelationships.__pulumiType, name, resourceInputs, opts);

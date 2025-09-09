@@ -37,40 +37,40 @@ export class BrowserMonitor extends pulumi.CustomResource {
     /**
      * The anomaly detection configuration.
      */
-    public readonly anomalyDetection!: pulumi.Output<outputs.BrowserMonitorAnomalyDetection | undefined>;
+    declare public readonly anomalyDetection: pulumi.Output<outputs.BrowserMonitorAnomalyDetection | undefined>;
     /**
      * The monitor is enabled (`true`) or disabled (`false`).
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabled: pulumi.Output<boolean | undefined>;
     /**
      * The frequency of the monitor, in minutes.
      */
-    public readonly frequency!: pulumi.Output<number>;
+    declare public readonly frequency: pulumi.Output<number>;
     /**
      * The key performance metrics configuration
      */
-    public readonly keyPerformanceMetrics!: pulumi.Output<outputs.BrowserMonitorKeyPerformanceMetrics>;
+    declare public readonly keyPerformanceMetrics: pulumi.Output<outputs.BrowserMonitorKeyPerformanceMetrics>;
     /**
      * A list of locations from which the monitor is executed. To specify a location, use its entity ID.
      */
-    public readonly locations!: pulumi.Output<string[] | undefined>;
+    declare public readonly locations: pulumi.Output<string[] | undefined>;
     /**
      * A set of manually assigned applications.
      */
-    public readonly manuallyAssignedApps!: pulumi.Output<string[] | undefined>;
+    declare public readonly manuallyAssignedApps: pulumi.Output<string[] | undefined>;
     /**
      * The name of the monitor.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The Browser Script
      */
-    public readonly script!: pulumi.Output<outputs.BrowserMonitorScript | undefined>;
+    declare public readonly script: pulumi.Output<outputs.BrowserMonitorScript | undefined>;
     /**
      * A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
      * source 'USER' will be added automatically.
      */
-    public readonly tags!: pulumi.Output<outputs.BrowserMonitorTag[] | undefined>;
+    declare public readonly tags: pulumi.Output<outputs.BrowserMonitorTag[] | undefined>;
 
     /**
      * Create a BrowserMonitor resource with the given unique name, arguments, and options.
@@ -85,32 +85,32 @@ export class BrowserMonitor extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BrowserMonitorState | undefined;
-            resourceInputs["anomalyDetection"] = state ? state.anomalyDetection : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["frequency"] = state ? state.frequency : undefined;
-            resourceInputs["keyPerformanceMetrics"] = state ? state.keyPerformanceMetrics : undefined;
-            resourceInputs["locations"] = state ? state.locations : undefined;
-            resourceInputs["manuallyAssignedApps"] = state ? state.manuallyAssignedApps : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["script"] = state ? state.script : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
+            resourceInputs["anomalyDetection"] = state?.anomalyDetection;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["frequency"] = state?.frequency;
+            resourceInputs["keyPerformanceMetrics"] = state?.keyPerformanceMetrics;
+            resourceInputs["locations"] = state?.locations;
+            resourceInputs["manuallyAssignedApps"] = state?.manuallyAssignedApps;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["script"] = state?.script;
+            resourceInputs["tags"] = state?.tags;
         } else {
             const args = argsOrState as BrowserMonitorArgs | undefined;
-            if ((!args || args.frequency === undefined) && !opts.urn) {
+            if (args?.frequency === undefined && !opts.urn) {
                 throw new Error("Missing required property 'frequency'");
             }
-            if ((!args || args.keyPerformanceMetrics === undefined) && !opts.urn) {
+            if (args?.keyPerformanceMetrics === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keyPerformanceMetrics'");
             }
-            resourceInputs["anomalyDetection"] = args ? args.anomalyDetection : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["frequency"] = args ? args.frequency : undefined;
-            resourceInputs["keyPerformanceMetrics"] = args ? args.keyPerformanceMetrics : undefined;
-            resourceInputs["locations"] = args ? args.locations : undefined;
-            resourceInputs["manuallyAssignedApps"] = args ? args.manuallyAssignedApps : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["script"] = args ? args.script : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["anomalyDetection"] = args?.anomalyDetection;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["frequency"] = args?.frequency;
+            resourceInputs["keyPerformanceMetrics"] = args?.keyPerformanceMetrics;
+            resourceInputs["locations"] = args?.locations;
+            resourceInputs["manuallyAssignedApps"] = args?.manuallyAssignedApps;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["script"] = args?.script;
+            resourceInputs["tags"] = args?.tags;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BrowserMonitor.__pulumiType, name, resourceInputs, opts);

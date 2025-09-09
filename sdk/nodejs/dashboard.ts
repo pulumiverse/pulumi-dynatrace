@@ -37,21 +37,21 @@ export class Dashboard extends pulumi.CustomResource {
     /**
      * contains parameters of a dashboard
      */
-    public readonly dashboardMetadata!: pulumi.Output<outputs.DashboardDashboardMetadata | undefined>;
+    declare public readonly dashboardMetadata: pulumi.Output<outputs.DashboardDashboardMetadata | undefined>;
     /**
      * `metadata` exists for backwards compatibility but shouldn't get specified anymore
      *
      * @deprecated `metadata` exists for backwards compatibility but shouldn't get specified anymore
      */
-    public readonly metadata!: pulumi.Output<outputs.DashboardMetadata | undefined>;
+    declare public readonly metadata: pulumi.Output<outputs.DashboardMetadata | undefined>;
     /**
      * the tiles this Dashboard consist of
      */
-    public readonly tiles!: pulumi.Output<outputs.DashboardTile[] | undefined>;
+    declare public readonly tiles: pulumi.Output<outputs.DashboardTile[] | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
 
     /**
      * Create a Dashboard resource with the given unique name, arguments, and options.
@@ -66,16 +66,16 @@ export class Dashboard extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DashboardState | undefined;
-            resourceInputs["dashboardMetadata"] = state ? state.dashboardMetadata : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["tiles"] = state ? state.tiles : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
+            resourceInputs["dashboardMetadata"] = state?.dashboardMetadata;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["tiles"] = state?.tiles;
+            resourceInputs["unknowns"] = state?.unknowns;
         } else {
             const args = argsOrState as DashboardArgs | undefined;
-            resourceInputs["dashboardMetadata"] = args ? args.dashboardMetadata : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["tiles"] = args ? args.tiles : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
+            resourceInputs["dashboardMetadata"] = args?.dashboardMetadata;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["tiles"] = args?.tiles;
+            resourceInputs["unknowns"] = args?.unknowns;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Dashboard.__pulumiType, name, resourceInputs, opts);

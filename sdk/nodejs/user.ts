@@ -35,23 +35,23 @@ export class User extends pulumi.CustomResource {
     /**
      * User's email address
      */
-    public readonly email!: pulumi.Output<string>;
+    declare public readonly email: pulumi.Output<string>;
     /**
      * User's first name
      */
-    public readonly firstName!: pulumi.Output<string>;
+    declare public readonly firstName: pulumi.Output<string>;
     /**
      * List of user's user group IDs
      */
-    public readonly groups!: pulumi.Output<string[] | undefined>;
+    declare public readonly groups: pulumi.Output<string[] | undefined>;
     /**
      * User's last name
      */
-    public readonly lastName!: pulumi.Output<string>;
+    declare public readonly lastName: pulumi.Output<string>;
     /**
      * The User Name
      */
-    public readonly userName!: pulumi.Output<string>;
+    declare public readonly userName: pulumi.Output<string>;
 
     /**
      * Create a User resource with the given unique name, arguments, and options.
@@ -66,30 +66,30 @@ export class User extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserState | undefined;
-            resourceInputs["email"] = state ? state.email : undefined;
-            resourceInputs["firstName"] = state ? state.firstName : undefined;
-            resourceInputs["groups"] = state ? state.groups : undefined;
-            resourceInputs["lastName"] = state ? state.lastName : undefined;
-            resourceInputs["userName"] = state ? state.userName : undefined;
+            resourceInputs["email"] = state?.email;
+            resourceInputs["firstName"] = state?.firstName;
+            resourceInputs["groups"] = state?.groups;
+            resourceInputs["lastName"] = state?.lastName;
+            resourceInputs["userName"] = state?.userName;
         } else {
             const args = argsOrState as UserArgs | undefined;
-            if ((!args || args.email === undefined) && !opts.urn) {
+            if (args?.email === undefined && !opts.urn) {
                 throw new Error("Missing required property 'email'");
             }
-            if ((!args || args.firstName === undefined) && !opts.urn) {
+            if (args?.firstName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'firstName'");
             }
-            if ((!args || args.lastName === undefined) && !opts.urn) {
+            if (args?.lastName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lastName'");
             }
-            if ((!args || args.userName === undefined) && !opts.urn) {
+            if (args?.userName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userName'");
             }
-            resourceInputs["email"] = args ? args.email : undefined;
-            resourceInputs["firstName"] = args ? args.firstName : undefined;
-            resourceInputs["groups"] = args ? args.groups : undefined;
-            resourceInputs["lastName"] = args ? args.lastName : undefined;
-            resourceInputs["userName"] = args ? args.userName : undefined;
+            resourceInputs["email"] = args?.email;
+            resourceInputs["firstName"] = args?.firstName;
+            resourceInputs["groups"] = args?.groups;
+            resourceInputs["lastName"] = args?.lastName;
+            resourceInputs["userName"] = args?.userName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(User.__pulumiType, name, resourceInputs, opts);

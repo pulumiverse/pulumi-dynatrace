@@ -35,19 +35,19 @@ export class CustomUnits extends pulumi.CustomResource {
     /**
      * Unit description should provide additional information about the new unit
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Unit name has to be unique and is used as identifier.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unit plural name represent the plural form of the unit name.
      */
-    public readonly pluralName!: pulumi.Output<string>;
+    declare public readonly pluralName: pulumi.Output<string>;
     /**
      * Unit symbol has to be unique.
      */
-    public readonly symbol!: pulumi.Output<string>;
+    declare public readonly symbol: pulumi.Output<string>;
 
     /**
      * Create a CustomUnits resource with the given unique name, arguments, and options.
@@ -62,25 +62,25 @@ export class CustomUnits extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CustomUnitsState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["pluralName"] = state ? state.pluralName : undefined;
-            resourceInputs["symbol"] = state ? state.symbol : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["pluralName"] = state?.pluralName;
+            resourceInputs["symbol"] = state?.symbol;
         } else {
             const args = argsOrState as CustomUnitsArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.pluralName === undefined) && !opts.urn) {
+            if (args?.pluralName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pluralName'");
             }
-            if ((!args || args.symbol === undefined) && !opts.urn) {
+            if (args?.symbol === undefined && !opts.urn) {
                 throw new Error("Missing required property 'symbol'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["pluralName"] = args ? args.pluralName : undefined;
-            resourceInputs["symbol"] = args ? args.symbol : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["pluralName"] = args?.pluralName;
+            resourceInputs["symbol"] = args?.symbol;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CustomUnits.__pulumiType, name, resourceInputs, opts);

@@ -74,15 +74,15 @@ export class AutotagRules extends pulumi.CustomResource {
     /**
      * Automatically applied tag ID
      */
-    public readonly autoTagId!: pulumi.Output<string>;
+    declare public readonly autoTagId: pulumi.Output<string>;
     /**
      * For internal use: current state of rules in JSON format
      */
-    public readonly currentState!: pulumi.Output<string>;
+    declare public readonly currentState: pulumi.Output<string>;
     /**
      * Rules
      */
-    public readonly rules!: pulumi.Output<outputs.AutotagRulesRules | undefined>;
+    declare public readonly rules: pulumi.Output<outputs.AutotagRulesRules | undefined>;
 
     /**
      * Create a AutotagRules resource with the given unique name, arguments, and options.
@@ -97,17 +97,17 @@ export class AutotagRules extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutotagRulesState | undefined;
-            resourceInputs["autoTagId"] = state ? state.autoTagId : undefined;
-            resourceInputs["currentState"] = state ? state.currentState : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
+            resourceInputs["autoTagId"] = state?.autoTagId;
+            resourceInputs["currentState"] = state?.currentState;
+            resourceInputs["rules"] = state?.rules;
         } else {
             const args = argsOrState as AutotagRulesArgs | undefined;
-            if ((!args || args.autoTagId === undefined) && !opts.urn) {
+            if (args?.autoTagId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autoTagId'");
             }
-            resourceInputs["autoTagId"] = args ? args.autoTagId : undefined;
-            resourceInputs["currentState"] = args ? args.currentState : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["autoTagId"] = args?.autoTagId;
+            resourceInputs["currentState"] = args?.currentState;
+            resourceInputs["rules"] = args?.rules;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutotagRules.__pulumiType, name, resourceInputs, opts);

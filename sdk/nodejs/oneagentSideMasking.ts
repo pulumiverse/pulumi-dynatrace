@@ -35,23 +35,23 @@ export class OneagentSideMasking extends pulumi.CustomResource {
     /**
      * Exclude email addresses from URLs
      */
-    public readonly isEmailMaskingEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEmailMaskingEnabled: pulumi.Output<boolean>;
     /**
      * Exclude IBANs and payment card numbers from URLs
      */
-    public readonly isFinancialMaskingEnabled!: pulumi.Output<boolean>;
+    declare public readonly isFinancialMaskingEnabled: pulumi.Output<boolean>;
     /**
      * Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
      */
-    public readonly isNumbersMaskingEnabled!: pulumi.Output<boolean>;
+    declare public readonly isNumbersMaskingEnabled: pulumi.Output<boolean>;
     /**
      * Exclude query parameters from URLs and web requests
      */
-    public readonly isQueryMaskingEnabled!: pulumi.Output<boolean>;
+    declare public readonly isQueryMaskingEnabled: pulumi.Output<boolean>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly processGroupId!: pulumi.Output<string | undefined>;
+    declare public readonly processGroupId: pulumi.Output<string | undefined>;
 
     /**
      * Create a OneagentSideMasking resource with the given unique name, arguments, and options.
@@ -66,30 +66,30 @@ export class OneagentSideMasking extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OneagentSideMaskingState | undefined;
-            resourceInputs["isEmailMaskingEnabled"] = state ? state.isEmailMaskingEnabled : undefined;
-            resourceInputs["isFinancialMaskingEnabled"] = state ? state.isFinancialMaskingEnabled : undefined;
-            resourceInputs["isNumbersMaskingEnabled"] = state ? state.isNumbersMaskingEnabled : undefined;
-            resourceInputs["isQueryMaskingEnabled"] = state ? state.isQueryMaskingEnabled : undefined;
-            resourceInputs["processGroupId"] = state ? state.processGroupId : undefined;
+            resourceInputs["isEmailMaskingEnabled"] = state?.isEmailMaskingEnabled;
+            resourceInputs["isFinancialMaskingEnabled"] = state?.isFinancialMaskingEnabled;
+            resourceInputs["isNumbersMaskingEnabled"] = state?.isNumbersMaskingEnabled;
+            resourceInputs["isQueryMaskingEnabled"] = state?.isQueryMaskingEnabled;
+            resourceInputs["processGroupId"] = state?.processGroupId;
         } else {
             const args = argsOrState as OneagentSideMaskingArgs | undefined;
-            if ((!args || args.isEmailMaskingEnabled === undefined) && !opts.urn) {
+            if (args?.isEmailMaskingEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isEmailMaskingEnabled'");
             }
-            if ((!args || args.isFinancialMaskingEnabled === undefined) && !opts.urn) {
+            if (args?.isFinancialMaskingEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isFinancialMaskingEnabled'");
             }
-            if ((!args || args.isNumbersMaskingEnabled === undefined) && !opts.urn) {
+            if (args?.isNumbersMaskingEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isNumbersMaskingEnabled'");
             }
-            if ((!args || args.isQueryMaskingEnabled === undefined) && !opts.urn) {
+            if (args?.isQueryMaskingEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isQueryMaskingEnabled'");
             }
-            resourceInputs["isEmailMaskingEnabled"] = args ? args.isEmailMaskingEnabled : undefined;
-            resourceInputs["isFinancialMaskingEnabled"] = args ? args.isFinancialMaskingEnabled : undefined;
-            resourceInputs["isNumbersMaskingEnabled"] = args ? args.isNumbersMaskingEnabled : undefined;
-            resourceInputs["isQueryMaskingEnabled"] = args ? args.isQueryMaskingEnabled : undefined;
-            resourceInputs["processGroupId"] = args ? args.processGroupId : undefined;
+            resourceInputs["isEmailMaskingEnabled"] = args?.isEmailMaskingEnabled;
+            resourceInputs["isFinancialMaskingEnabled"] = args?.isFinancialMaskingEnabled;
+            resourceInputs["isNumbersMaskingEnabled"] = args?.isNumbersMaskingEnabled;
+            resourceInputs["isQueryMaskingEnabled"] = args?.isQueryMaskingEnabled;
+            resourceInputs["processGroupId"] = args?.processGroupId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OneagentSideMasking.__pulumiType, name, resourceInputs, opts);

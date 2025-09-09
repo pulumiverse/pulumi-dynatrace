@@ -37,11 +37,11 @@ export class ProcessGroupRum extends pulumi.CustomResource {
      * provide the necessary info to correlate RUM data with server-side PurePaths * forward beacons to the cluster * deliver
      * the monitoring code
      */
-    public readonly enable!: pulumi.Output<boolean>;
+    declare public readonly enable: pulumi.Output<boolean>;
     /**
      * The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
      */
-    public readonly processGroupId!: pulumi.Output<string>;
+    declare public readonly processGroupId: pulumi.Output<string>;
 
     /**
      * Create a ProcessGroupRum resource with the given unique name, arguments, and options.
@@ -56,18 +56,18 @@ export class ProcessGroupRum extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProcessGroupRumState | undefined;
-            resourceInputs["enable"] = state ? state.enable : undefined;
-            resourceInputs["processGroupId"] = state ? state.processGroupId : undefined;
+            resourceInputs["enable"] = state?.enable;
+            resourceInputs["processGroupId"] = state?.processGroupId;
         } else {
             const args = argsOrState as ProcessGroupRumArgs | undefined;
-            if ((!args || args.enable === undefined) && !opts.urn) {
+            if (args?.enable === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enable'");
             }
-            if ((!args || args.processGroupId === undefined) && !opts.urn) {
+            if (args?.processGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'processGroupId'");
             }
-            resourceInputs["enable"] = args ? args.enable : undefined;
-            resourceInputs["processGroupId"] = args ? args.processGroupId : undefined;
+            resourceInputs["enable"] = args?.enable;
+            resourceInputs["processGroupId"] = args?.processGroupId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProcessGroupRum.__pulumiType, name, resourceInputs, opts);

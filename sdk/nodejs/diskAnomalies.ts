@@ -37,39 +37,39 @@ export class DiskAnomalies extends pulumi.CustomResource {
     /**
      * Narrows the rule usage down to disks, matching the specified criteria
      */
-    public readonly diskName!: pulumi.Output<outputs.DiskAnomaliesDiskName | undefined>;
+    declare public readonly diskName: pulumi.Output<outputs.DiskAnomaliesDiskName | undefined>;
     /**
      * Disk event rule enabled/disabled
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Narrows the rule usage down to disks that run on hosts that themselves run on the specified host group
      */
-    public readonly hostGroupId!: pulumi.Output<string | undefined>;
+    declare public readonly hostGroupId: pulumi.Output<string | undefined>;
     /**
      * The metric to monitor. Possible values are: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING` and `WRITE_TIME_EXCEEDING`
      */
-    public readonly metric!: pulumi.Output<string>;
+    declare public readonly metric: pulumi.Output<string>;
     /**
      * The name of the disk event rule
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The number of samples to evaluate
      */
-    public readonly samples!: pulumi.Output<number>;
+    declare public readonly samples: pulumi.Output<number>;
     /**
      * Narrows the rule usage down to the hosts matching the specified tags
      */
-    public readonly tags!: pulumi.Output<outputs.DiskAnomaliesTags | undefined>;
+    declare public readonly tags: pulumi.Output<outputs.DiskAnomaliesTags | undefined>;
     /**
      * The threshold to trigger disk event.   * A percentage for `LowDiskSpace` or `LowInodes` metrics.   * In milliseconds for `ReadTimeExceeding` or `WriteTimeExceeding` metrics
      */
-    public readonly threshold!: pulumi.Output<number>;
+    declare public readonly threshold: pulumi.Output<number>;
     /**
      * The number of samples that must violate the threshold to trigger an event. Must not exceed the number of evaluated samples
      */
-    public readonly violatingSamples!: pulumi.Output<number>;
+    declare public readonly violatingSamples: pulumi.Output<number>;
 
     /**
      * Create a DiskAnomalies resource with the given unique name, arguments, and options.
@@ -84,41 +84,41 @@ export class DiskAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DiskAnomaliesState | undefined;
-            resourceInputs["diskName"] = state ? state.diskName : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["hostGroupId"] = state ? state.hostGroupId : undefined;
-            resourceInputs["metric"] = state ? state.metric : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["samples"] = state ? state.samples : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["threshold"] = state ? state.threshold : undefined;
-            resourceInputs["violatingSamples"] = state ? state.violatingSamples : undefined;
+            resourceInputs["diskName"] = state?.diskName;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["hostGroupId"] = state?.hostGroupId;
+            resourceInputs["metric"] = state?.metric;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["samples"] = state?.samples;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["threshold"] = state?.threshold;
+            resourceInputs["violatingSamples"] = state?.violatingSamples;
         } else {
             const args = argsOrState as DiskAnomaliesArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.metric === undefined) && !opts.urn) {
+            if (args?.metric === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metric'");
             }
-            if ((!args || args.samples === undefined) && !opts.urn) {
+            if (args?.samples === undefined && !opts.urn) {
                 throw new Error("Missing required property 'samples'");
             }
-            if ((!args || args.threshold === undefined) && !opts.urn) {
+            if (args?.threshold === undefined && !opts.urn) {
                 throw new Error("Missing required property 'threshold'");
             }
-            if ((!args || args.violatingSamples === undefined) && !opts.urn) {
+            if (args?.violatingSamples === undefined && !opts.urn) {
                 throw new Error("Missing required property 'violatingSamples'");
             }
-            resourceInputs["diskName"] = args ? args.diskName : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["hostGroupId"] = args ? args.hostGroupId : undefined;
-            resourceInputs["metric"] = args ? args.metric : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["samples"] = args ? args.samples : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["threshold"] = args ? args.threshold : undefined;
-            resourceInputs["violatingSamples"] = args ? args.violatingSamples : undefined;
+            resourceInputs["diskName"] = args?.diskName;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["hostGroupId"] = args?.hostGroupId;
+            resourceInputs["metric"] = args?.metric;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["samples"] = args?.samples;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["threshold"] = args?.threshold;
+            resourceInputs["violatingSamples"] = args?.violatingSamples;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DiskAnomalies.__pulumiType, name, resourceInputs, opts);

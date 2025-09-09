@@ -83,23 +83,23 @@ export class DduPool extends pulumi.CustomResource {
     /**
      * DDU pool settings for Events
      */
-    public readonly events!: pulumi.Output<outputs.DduPoolEvents | undefined>;
+    declare public readonly events: pulumi.Output<outputs.DduPoolEvents | undefined>;
     /**
      * DDU pool settings for Log Monitoring
      */
-    public readonly logMonitoring!: pulumi.Output<outputs.DduPoolLogMonitoring | undefined>;
+    declare public readonly logMonitoring: pulumi.Output<outputs.DduPoolLogMonitoring | undefined>;
     /**
      * DDU pool settings for Metrics
      */
-    public readonly metrics!: pulumi.Output<outputs.DduPoolMetrics | undefined>;
+    declare public readonly metrics: pulumi.Output<outputs.DduPoolMetrics | undefined>;
     /**
      * DDU pool settings for Serverless
      */
-    public readonly serverless!: pulumi.Output<outputs.DduPoolServerless | undefined>;
+    declare public readonly serverless: pulumi.Output<outputs.DduPoolServerless | undefined>;
     /**
      * DDU pool settings for Traces
      */
-    public readonly traces!: pulumi.Output<outputs.DduPoolTraces | undefined>;
+    declare public readonly traces: pulumi.Output<outputs.DduPoolTraces | undefined>;
 
     /**
      * Create a DduPool resource with the given unique name, arguments, and options.
@@ -114,18 +114,18 @@ export class DduPool extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DduPoolState | undefined;
-            resourceInputs["events"] = state ? state.events : undefined;
-            resourceInputs["logMonitoring"] = state ? state.logMonitoring : undefined;
-            resourceInputs["metrics"] = state ? state.metrics : undefined;
-            resourceInputs["serverless"] = state ? state.serverless : undefined;
-            resourceInputs["traces"] = state ? state.traces : undefined;
+            resourceInputs["events"] = state?.events;
+            resourceInputs["logMonitoring"] = state?.logMonitoring;
+            resourceInputs["metrics"] = state?.metrics;
+            resourceInputs["serverless"] = state?.serverless;
+            resourceInputs["traces"] = state?.traces;
         } else {
             const args = argsOrState as DduPoolArgs | undefined;
-            resourceInputs["events"] = args ? args.events : undefined;
-            resourceInputs["logMonitoring"] = args ? args.logMonitoring : undefined;
-            resourceInputs["metrics"] = args ? args.metrics : undefined;
-            resourceInputs["serverless"] = args ? args.serverless : undefined;
-            resourceInputs["traces"] = args ? args.traces : undefined;
+            resourceInputs["events"] = args?.events;
+            resourceInputs["logMonitoring"] = args?.logMonitoring;
+            resourceInputs["metrics"] = args?.metrics;
+            resourceInputs["serverless"] = args?.serverless;
+            resourceInputs["traces"] = args?.traces;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DduPool.__pulumiType, name, resourceInputs, opts);

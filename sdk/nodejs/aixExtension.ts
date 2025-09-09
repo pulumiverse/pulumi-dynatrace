@@ -35,15 +35,15 @@ export class AixExtension extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabled: pulumi.Output<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly hostId!: pulumi.Output<string>;
+    declare public readonly hostId: pulumi.Output<string>;
     /**
      * Use global settings
      */
-    public readonly useGlobalSettings!: pulumi.Output<boolean>;
+    declare public readonly useGlobalSettings: pulumi.Output<boolean>;
 
     /**
      * Create a AixExtension resource with the given unique name, arguments, and options.
@@ -58,20 +58,20 @@ export class AixExtension extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AixExtensionState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["hostId"] = state ? state.hostId : undefined;
-            resourceInputs["useGlobalSettings"] = state ? state.useGlobalSettings : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["hostId"] = state?.hostId;
+            resourceInputs["useGlobalSettings"] = state?.useGlobalSettings;
         } else {
             const args = argsOrState as AixExtensionArgs | undefined;
-            if ((!args || args.hostId === undefined) && !opts.urn) {
+            if (args?.hostId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostId'");
             }
-            if ((!args || args.useGlobalSettings === undefined) && !opts.urn) {
+            if (args?.useGlobalSettings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'useGlobalSettings'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["hostId"] = args ? args.hostId : undefined;
-            resourceInputs["useGlobalSettings"] = args ? args.useGlobalSettings : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["hostId"] = args?.hostId;
+            resourceInputs["useGlobalSettings"] = args?.useGlobalSettings;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AixExtension.__pulumiType, name, resourceInputs, opts);

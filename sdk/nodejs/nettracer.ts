@@ -35,11 +35,11 @@ export class Nettracer extends pulumi.CustomResource {
     /**
      * When disabled, OneAgent won't use NetTracer to collect network data from containers. Disabled by default. Applies only to Linux hosts. Requires OneAgent 1.231+.
      */
-    public readonly netTracer!: pulumi.Output<boolean>;
+    declare public readonly netTracer: pulumi.Output<boolean>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a Nettracer resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class Nettracer extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NettracerState | undefined;
-            resourceInputs["netTracer"] = state ? state.netTracer : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["netTracer"] = state?.netTracer;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as NettracerArgs | undefined;
-            if ((!args || args.netTracer === undefined) && !opts.urn) {
+            if (args?.netTracer === undefined && !opts.urn) {
                 throw new Error("Missing required property 'netTracer'");
             }
-            resourceInputs["netTracer"] = args ? args.netTracer : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["netTracer"] = args?.netTracer;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Nettracer.__pulumiType, name, resourceInputs, opts);

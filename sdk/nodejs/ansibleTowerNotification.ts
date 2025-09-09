@@ -35,39 +35,39 @@ export class AnsibleTowerNotification extends pulumi.CustomResource {
     /**
      * The notification is active (`true`) or inactive (`false`). Default is `false`.
      */
-    public readonly active!: pulumi.Output<boolean | undefined>;
+    declare public readonly active: pulumi.Output<boolean | undefined>;
     /**
      * The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      */
-    public readonly customMessage!: pulumi.Output<string>;
+    declare public readonly customMessage: pulumi.Output<string>;
     /**
      * Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
      */
-    public readonly insecure!: pulumi.Output<boolean | undefined>;
+    declare public readonly insecure: pulumi.Output<boolean | undefined>;
     /**
      * The URL of the target Ansible Tower job template
      */
-    public readonly jobTemplateUrl!: pulumi.Output<string>;
+    declare public readonly jobTemplateUrl: pulumi.Output<string>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    public readonly legacyId!: pulumi.Output<string>;
+    declare public readonly legacyId: pulumi.Output<string>;
     /**
      * The display name within the Dynatrace WebUI.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The password for the Ansible Tower account
      */
-    public readonly password!: pulumi.Output<string | undefined>;
+    declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * The ID of the associated alerting profile.
      */
-    public readonly profile!: pulumi.Output<string>;
+    declare public readonly profile: pulumi.Output<string>;
     /**
      * The username of the Ansible Tower account
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
 
     /**
      * Create a AnsibleTowerNotification resource with the given unique name, arguments, and options.
@@ -82,38 +82,38 @@ export class AnsibleTowerNotification extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AnsibleTowerNotificationState | undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["customMessage"] = state ? state.customMessage : undefined;
-            resourceInputs["insecure"] = state ? state.insecure : undefined;
-            resourceInputs["jobTemplateUrl"] = state ? state.jobTemplateUrl : undefined;
-            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["profile"] = state ? state.profile : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["customMessage"] = state?.customMessage;
+            resourceInputs["insecure"] = state?.insecure;
+            resourceInputs["jobTemplateUrl"] = state?.jobTemplateUrl;
+            resourceInputs["legacyId"] = state?.legacyId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["profile"] = state?.profile;
+            resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as AnsibleTowerNotificationArgs | undefined;
-            if ((!args || args.customMessage === undefined) && !opts.urn) {
+            if (args?.customMessage === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customMessage'");
             }
-            if ((!args || args.jobTemplateUrl === undefined) && !opts.urn) {
+            if (args?.jobTemplateUrl === undefined && !opts.urn) {
                 throw new Error("Missing required property 'jobTemplateUrl'");
             }
-            if ((!args || args.profile === undefined) && !opts.urn) {
+            if (args?.profile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profile'");
             }
-            if ((!args || args.username === undefined) && !opts.urn) {
+            if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
-            resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["customMessage"] = args ? args.customMessage : undefined;
-            resourceInputs["insecure"] = args ? args.insecure : undefined;
-            resourceInputs["jobTemplateUrl"] = args ? args.jobTemplateUrl : undefined;
-            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["active"] = args?.active;
+            resourceInputs["customMessage"] = args?.customMessage;
+            resourceInputs["insecure"] = args?.insecure;
+            resourceInputs["jobTemplateUrl"] = args?.jobTemplateUrl;
+            resourceInputs["legacyId"] = args?.legacyId;
+            resourceInputs["name"] = args?.name;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["profile"] = args ? args.profile : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["profile"] = args?.profile;
+            resourceInputs["username"] = args?.username;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["password"] };

@@ -37,57 +37,57 @@ export class AzureCredentials extends pulumi.CustomResource {
     /**
      * The monitoring is enabled (`true`) or disabled (`false`).  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected
      */
-    public readonly active!: pulumi.Output<boolean>;
+    declare public readonly active: pulumi.Output<boolean>;
     /**
      * The Application ID (also referred to as Client ID)  The combination of Application ID and Directory ID must be unique
      */
-    public readonly appId!: pulumi.Output<string | undefined>;
+    declare public readonly appId: pulumi.Output<string | undefined>;
     /**
      * The automatic capture of Azure tags is on (`true`) or off (`false`)
      */
-    public readonly autoTagging!: pulumi.Output<boolean | undefined>;
+    declare public readonly autoTagging: pulumi.Output<boolean | undefined>;
     /**
      * The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
      */
-    public readonly directoryId!: pulumi.Output<string | undefined>;
+    declare public readonly directoryId: pulumi.Output<string | undefined>;
     /**
      * The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
      */
-    public readonly key!: pulumi.Output<string | undefined>;
+    declare public readonly key: pulumi.Output<string | undefined>;
     /**
      * The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
      */
-    public readonly label!: pulumi.Output<string>;
+    declare public readonly label: pulumi.Output<string>;
     /**
      * A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
      */
-    public readonly monitorOnlyExcludingTagPairs!: pulumi.Output<outputs.AzureCredentialsMonitorOnlyExcludingTagPair[] | undefined>;
+    declare public readonly monitorOnlyExcludingTagPairs: pulumi.Output<outputs.AzureCredentialsMonitorOnlyExcludingTagPair[] | undefined>;
     /**
      * A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
      */
-    public readonly monitorOnlyTagPairs!: pulumi.Output<outputs.AzureCredentialsMonitorOnlyTagPair[] | undefined>;
+    declare public readonly monitorOnlyTagPairs: pulumi.Output<outputs.AzureCredentialsMonitorOnlyTagPair[] | undefined>;
     /**
      * Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
      */
-    public readonly monitorOnlyTaggedEntities!: pulumi.Output<boolean>;
+    declare public readonly monitorOnlyTaggedEntities: pulumi.Output<boolean>;
     /**
      * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `dynatrace.AzureService` subsequently won't get touched.
      */
-    public readonly removeDefaults!: pulumi.Output<boolean | undefined>;
+    declare public readonly removeDefaults: pulumi.Output<boolean | undefined>;
     /**
      * A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
      *
      * @deprecated Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `dynatrace.AzureService` instead.
      */
-    public readonly supportingServices!: pulumi.Output<outputs.AzureCredentialsSupportingService[] | undefined>;
+    declare public readonly supportingServices: pulumi.Output<outputs.AzureCredentialsSupportingService[] | undefined>;
     /**
      * @deprecated This attribute is deprecated and has no effect any more. It always defaults to `true`.
      */
-    public readonly supportingServicesManagedInDynatrace!: pulumi.Output<boolean | undefined>;
+    declare public readonly supportingServicesManagedInDynatrace: pulumi.Output<boolean | undefined>;
     /**
      * Any attributes that aren't yet supported by this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
 
     /**
      * Create a AzureCredentials resource with the given unique name, arguments, and options.
@@ -102,43 +102,43 @@ export class AzureCredentials extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AzureCredentialsState | undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["appId"] = state ? state.appId : undefined;
-            resourceInputs["autoTagging"] = state ? state.autoTagging : undefined;
-            resourceInputs["directoryId"] = state ? state.directoryId : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["label"] = state ? state.label : undefined;
-            resourceInputs["monitorOnlyExcludingTagPairs"] = state ? state.monitorOnlyExcludingTagPairs : undefined;
-            resourceInputs["monitorOnlyTagPairs"] = state ? state.monitorOnlyTagPairs : undefined;
-            resourceInputs["monitorOnlyTaggedEntities"] = state ? state.monitorOnlyTaggedEntities : undefined;
-            resourceInputs["removeDefaults"] = state ? state.removeDefaults : undefined;
-            resourceInputs["supportingServices"] = state ? state.supportingServices : undefined;
-            resourceInputs["supportingServicesManagedInDynatrace"] = state ? state.supportingServicesManagedInDynatrace : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["appId"] = state?.appId;
+            resourceInputs["autoTagging"] = state?.autoTagging;
+            resourceInputs["directoryId"] = state?.directoryId;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["label"] = state?.label;
+            resourceInputs["monitorOnlyExcludingTagPairs"] = state?.monitorOnlyExcludingTagPairs;
+            resourceInputs["monitorOnlyTagPairs"] = state?.monitorOnlyTagPairs;
+            resourceInputs["monitorOnlyTaggedEntities"] = state?.monitorOnlyTaggedEntities;
+            resourceInputs["removeDefaults"] = state?.removeDefaults;
+            resourceInputs["supportingServices"] = state?.supportingServices;
+            resourceInputs["supportingServicesManagedInDynatrace"] = state?.supportingServicesManagedInDynatrace;
+            resourceInputs["unknowns"] = state?.unknowns;
         } else {
             const args = argsOrState as AzureCredentialsArgs | undefined;
-            if ((!args || args.active === undefined) && !opts.urn) {
+            if (args?.active === undefined && !opts.urn) {
                 throw new Error("Missing required property 'active'");
             }
-            if ((!args || args.label === undefined) && !opts.urn) {
+            if (args?.label === undefined && !opts.urn) {
                 throw new Error("Missing required property 'label'");
             }
-            if ((!args || args.monitorOnlyTaggedEntities === undefined) && !opts.urn) {
+            if (args?.monitorOnlyTaggedEntities === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitorOnlyTaggedEntities'");
             }
-            resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["appId"] = args ? args.appId : undefined;
-            resourceInputs["autoTagging"] = args ? args.autoTagging : undefined;
-            resourceInputs["directoryId"] = args ? args.directoryId : undefined;
+            resourceInputs["active"] = args?.active;
+            resourceInputs["appId"] = args?.appId;
+            resourceInputs["autoTagging"] = args?.autoTagging;
+            resourceInputs["directoryId"] = args?.directoryId;
             resourceInputs["key"] = args?.key ? pulumi.secret(args.key) : undefined;
-            resourceInputs["label"] = args ? args.label : undefined;
-            resourceInputs["monitorOnlyExcludingTagPairs"] = args ? args.monitorOnlyExcludingTagPairs : undefined;
-            resourceInputs["monitorOnlyTagPairs"] = args ? args.monitorOnlyTagPairs : undefined;
-            resourceInputs["monitorOnlyTaggedEntities"] = args ? args.monitorOnlyTaggedEntities : undefined;
-            resourceInputs["removeDefaults"] = args ? args.removeDefaults : undefined;
-            resourceInputs["supportingServices"] = args ? args.supportingServices : undefined;
-            resourceInputs["supportingServicesManagedInDynatrace"] = args ? args.supportingServicesManagedInDynatrace : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
+            resourceInputs["label"] = args?.label;
+            resourceInputs["monitorOnlyExcludingTagPairs"] = args?.monitorOnlyExcludingTagPairs;
+            resourceInputs["monitorOnlyTagPairs"] = args?.monitorOnlyTagPairs;
+            resourceInputs["monitorOnlyTaggedEntities"] = args?.monitorOnlyTaggedEntities;
+            resourceInputs["removeDefaults"] = args?.removeDefaults;
+            resourceInputs["supportingServices"] = args?.supportingServices;
+            resourceInputs["supportingServicesManagedInDynatrace"] = args?.supportingServicesManagedInDynatrace;
+            resourceInputs["unknowns"] = args?.unknowns;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["key"] };

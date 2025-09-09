@@ -35,19 +35,19 @@ export class PgAlerting extends pulumi.CustomResource {
     /**
      * Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
      */
-    public readonly alertingMode!: pulumi.Output<string | undefined>;
+    declare public readonly alertingMode: pulumi.Output<string | undefined>;
     /**
      * Enable (`true`) or disable (`false`) process group availability monitoring
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Open a new problem if the number of active process instances in the group is fewer than X
      */
-    public readonly minimumInstanceThreshold!: pulumi.Output<number | undefined>;
+    declare public readonly minimumInstanceThreshold: pulumi.Output<number | undefined>;
     /**
      * The process group ID for availability monitoring
      */
-    public readonly processGroup!: pulumi.Output<string>;
+    declare public readonly processGroup: pulumi.Output<string>;
 
     /**
      * Create a PgAlerting resource with the given unique name, arguments, and options.
@@ -62,22 +62,22 @@ export class PgAlerting extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PgAlertingState | undefined;
-            resourceInputs["alertingMode"] = state ? state.alertingMode : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["minimumInstanceThreshold"] = state ? state.minimumInstanceThreshold : undefined;
-            resourceInputs["processGroup"] = state ? state.processGroup : undefined;
+            resourceInputs["alertingMode"] = state?.alertingMode;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["minimumInstanceThreshold"] = state?.minimumInstanceThreshold;
+            resourceInputs["processGroup"] = state?.processGroup;
         } else {
             const args = argsOrState as PgAlertingArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.processGroup === undefined) && !opts.urn) {
+            if (args?.processGroup === undefined && !opts.urn) {
                 throw new Error("Missing required property 'processGroup'");
             }
-            resourceInputs["alertingMode"] = args ? args.alertingMode : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["minimumInstanceThreshold"] = args ? args.minimumInstanceThreshold : undefined;
-            resourceInputs["processGroup"] = args ? args.processGroup : undefined;
+            resourceInputs["alertingMode"] = args?.alertingMode;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["minimumInstanceThreshold"] = args?.minimumInstanceThreshold;
+            resourceInputs["processGroup"] = args?.processGroup;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PgAlerting.__pulumiType, name, resourceInputs, opts);

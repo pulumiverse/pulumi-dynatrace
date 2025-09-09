@@ -37,31 +37,31 @@ export class AttackRules extends pulumi.CustomResource {
     /**
      * Step 1: Select attack protection behavior
      */
-    public readonly attackHandling!: pulumi.Output<outputs.AttackRulesAttackHandling>;
+    declare public readonly attackHandling: pulumi.Output<outputs.AttackRulesAttackHandling>;
     /**
      * Step 2: Select attack type
      */
-    public readonly criteria!: pulumi.Output<outputs.AttackRulesCriteria>;
+    declare public readonly criteria: pulumi.Output<outputs.AttackRulesCriteria>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Step 4: Leave comment (optional)
      */
-    public readonly metadata!: pulumi.Output<outputs.AttackRulesMetadata>;
+    declare public readonly metadata: pulumi.Output<outputs.AttackRulesMetadata>;
     /**
      * If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
      */
-    public readonly resourceAttributeConditions!: pulumi.Output<outputs.AttackRulesResourceAttributeConditions | undefined>;
+    declare public readonly resourceAttributeConditions: pulumi.Output<outputs.AttackRulesResourceAttributeConditions | undefined>;
     /**
      * Rule name
      */
-    public readonly ruleName!: pulumi.Output<string | undefined>;
+    declare public readonly ruleName: pulumi.Output<string | undefined>;
 
     /**
      * Create a AttackRules resource with the given unique name, arguments, and options.
@@ -76,34 +76,34 @@ export class AttackRules extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AttackRulesState | undefined;
-            resourceInputs["attackHandling"] = state ? state.attackHandling : undefined;
-            resourceInputs["criteria"] = state ? state.criteria : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["resourceAttributeConditions"] = state ? state.resourceAttributeConditions : undefined;
-            resourceInputs["ruleName"] = state ? state.ruleName : undefined;
+            resourceInputs["attackHandling"] = state?.attackHandling;
+            resourceInputs["criteria"] = state?.criteria;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["resourceAttributeConditions"] = state?.resourceAttributeConditions;
+            resourceInputs["ruleName"] = state?.ruleName;
         } else {
             const args = argsOrState as AttackRulesArgs | undefined;
-            if ((!args || args.attackHandling === undefined) && !opts.urn) {
+            if (args?.attackHandling === undefined && !opts.urn) {
                 throw new Error("Missing required property 'attackHandling'");
             }
-            if ((!args || args.criteria === undefined) && !opts.urn) {
+            if (args?.criteria === undefined && !opts.urn) {
                 throw new Error("Missing required property 'criteria'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.metadata === undefined) && !opts.urn) {
+            if (args?.metadata === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metadata'");
             }
-            resourceInputs["attackHandling"] = args ? args.attackHandling : undefined;
-            resourceInputs["criteria"] = args ? args.criteria : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["resourceAttributeConditions"] = args ? args.resourceAttributeConditions : undefined;
-            resourceInputs["ruleName"] = args ? args.ruleName : undefined;
+            resourceInputs["attackHandling"] = args?.attackHandling;
+            resourceInputs["criteria"] = args?.criteria;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["resourceAttributeConditions"] = args?.resourceAttributeConditions;
+            resourceInputs["ruleName"] = args?.ruleName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AttackRules.__pulumiType, name, resourceInputs, opts);

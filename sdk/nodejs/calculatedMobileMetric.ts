@@ -37,35 +37,35 @@ export class CalculatedMobileMetric extends pulumi.CustomResource {
     /**
      * The Dynatrace entity ID of the application to which the metric belongs.
      */
-    public readonly appIdentifier!: pulumi.Output<string>;
+    declare public readonly appIdentifier: pulumi.Output<string>;
     /**
      * Descriptor of a calculated mobile/custom app metric.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Parameters of a definition of a calculated mobile/custom app metric.
      */
-    public readonly dimensions!: pulumi.Output<outputs.CalculatedMobileMetricDimension[] | undefined>;
+    declare public readonly dimensions: pulumi.Output<outputs.CalculatedMobileMetricDimension[] | undefined>;
     /**
      * The metric is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * The unique key of the calculated mobile/custom app metric.
      */
-    public readonly metricKey!: pulumi.Output<string>;
+    declare public readonly metricKey: pulumi.Output<string>;
     /**
      * The type of the metric. Possible values: [ REPORTED*ERROR*COUNT, USER*ACTION*DURATION, WEB*REQUEST*COUNT, WEB*REQUEST*ERROR_COUNT ]
      */
-    public readonly metricType!: pulumi.Output<string>;
+    declare public readonly metricType: pulumi.Output<string>;
     /**
      * The displayed name of the metric.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Parameters of a definition of a calculated mobile/custom app metric.
      */
-    public readonly userActionFilter!: pulumi.Output<outputs.CalculatedMobileMetricUserActionFilter | undefined>;
+    declare public readonly userActionFilter: pulumi.Output<outputs.CalculatedMobileMetricUserActionFilter | undefined>;
 
     /**
      * Create a CalculatedMobileMetric resource with the given unique name, arguments, and options.
@@ -80,36 +80,36 @@ export class CalculatedMobileMetric extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CalculatedMobileMetricState | undefined;
-            resourceInputs["appIdentifier"] = state ? state.appIdentifier : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["dimensions"] = state ? state.dimensions : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["metricKey"] = state ? state.metricKey : undefined;
-            resourceInputs["metricType"] = state ? state.metricType : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["userActionFilter"] = state ? state.userActionFilter : undefined;
+            resourceInputs["appIdentifier"] = state?.appIdentifier;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["dimensions"] = state?.dimensions;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["metricKey"] = state?.metricKey;
+            resourceInputs["metricType"] = state?.metricType;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["userActionFilter"] = state?.userActionFilter;
         } else {
             const args = argsOrState as CalculatedMobileMetricArgs | undefined;
-            if ((!args || args.appIdentifier === undefined) && !opts.urn) {
+            if (args?.appIdentifier === undefined && !opts.urn) {
                 throw new Error("Missing required property 'appIdentifier'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.metricKey === undefined) && !opts.urn) {
+            if (args?.metricKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricKey'");
             }
-            if ((!args || args.metricType === undefined) && !opts.urn) {
+            if (args?.metricType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricType'");
             }
-            resourceInputs["appIdentifier"] = args ? args.appIdentifier : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["dimensions"] = args ? args.dimensions : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["metricKey"] = args ? args.metricKey : undefined;
-            resourceInputs["metricType"] = args ? args.metricType : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["userActionFilter"] = args ? args.userActionFilter : undefined;
+            resourceInputs["appIdentifier"] = args?.appIdentifier;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["dimensions"] = args?.dimensions;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["metricKey"] = args?.metricKey;
+            resourceInputs["metricType"] = args?.metricType;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["userActionFilter"] = args?.userActionFilter;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CalculatedMobileMetric.__pulumiType, name, resourceInputs, opts);

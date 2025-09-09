@@ -48,19 +48,19 @@ export class IamPolicyBindings extends pulumi.CustomResource {
     /**
      * The UUID of the account (`urn:dtaccount:<account-uuid>`). The attribute `policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
      */
-    public readonly account!: pulumi.Output<string | undefined>;
+    declare public readonly account: pulumi.Output<string | undefined>;
     /**
      * The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
      */
-    public readonly environment!: pulumi.Output<string | undefined>;
+    declare public readonly environment: pulumi.Output<string | undefined>;
     /**
      * The name of the policy
      */
-    public readonly group!: pulumi.Output<string>;
+    declare public readonly group: pulumi.Output<string>;
     /**
      * A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
      */
-    public readonly policies!: pulumi.Output<string[]>;
+    declare public readonly policies: pulumi.Output<string[]>;
 
     /**
      * Create a IamPolicyBindings resource with the given unique name, arguments, and options.
@@ -75,22 +75,22 @@ export class IamPolicyBindings extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamPolicyBindingsState | undefined;
-            resourceInputs["account"] = state ? state.account : undefined;
-            resourceInputs["environment"] = state ? state.environment : undefined;
-            resourceInputs["group"] = state ? state.group : undefined;
-            resourceInputs["policies"] = state ? state.policies : undefined;
+            resourceInputs["account"] = state?.account;
+            resourceInputs["environment"] = state?.environment;
+            resourceInputs["group"] = state?.group;
+            resourceInputs["policies"] = state?.policies;
         } else {
             const args = argsOrState as IamPolicyBindingsArgs | undefined;
-            if ((!args || args.group === undefined) && !opts.urn) {
+            if (args?.group === undefined && !opts.urn) {
                 throw new Error("Missing required property 'group'");
             }
-            if ((!args || args.policies === undefined) && !opts.urn) {
+            if (args?.policies === undefined && !opts.urn) {
                 throw new Error("Missing required property 'policies'");
             }
-            resourceInputs["account"] = args ? args.account : undefined;
-            resourceInputs["environment"] = args ? args.environment : undefined;
-            resourceInputs["group"] = args ? args.group : undefined;
-            resourceInputs["policies"] = args ? args.policies : undefined;
+            resourceInputs["account"] = args?.account;
+            resourceInputs["environment"] = args?.environment;
+            resourceInputs["group"] = args?.group;
+            resourceInputs["policies"] = args?.policies;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IamPolicyBindings.__pulumiType, name, resourceInputs, opts);

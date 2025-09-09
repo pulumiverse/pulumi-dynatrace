@@ -37,59 +37,59 @@ export class K8sCredentials extends pulumi.CustomResource {
     /**
      * Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
      */
-    public readonly active!: pulumi.Output<boolean | undefined>;
+    declare public readonly active: pulumi.Output<boolean | undefined>;
     /**
      * Active Gate group to filter active gates for this credentials.
      */
-    public readonly activeGateGroup!: pulumi.Output<string | undefined>;
+    declare public readonly activeGateGroup: pulumi.Output<string | undefined>;
     /**
      * The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
      */
-    public readonly authToken!: pulumi.Output<string | undefined>;
+    declare public readonly authToken: pulumi.Output<string | undefined>;
     /**
      * The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
      */
-    public readonly certificateCheckEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly certificateCheckEnabled: pulumi.Output<boolean | undefined>;
     /**
      * Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
      */
-    public readonly davisEventsIntegrationEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly davisEventsIntegrationEnabled: pulumi.Output<boolean | undefined>;
     /**
      * The URL of the Kubernetes API server.  It must be unique within a Dynatrace environment.  The URL must valid according to RFC 2396. Leading or trailing whitespaces are not allowed.
      */
-    public readonly endpointUrl!: pulumi.Output<string | undefined>;
+    declare public readonly endpointUrl: pulumi.Output<string | undefined>;
     /**
      * Event analysis and alerting is (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
      */
-    public readonly eventAnalysisAndAlertingEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly eventAnalysisAndAlertingEnabled: pulumi.Output<boolean | undefined>;
     /**
      * Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
      */
-    public readonly eventsFieldSelectors!: pulumi.Output<outputs.K8sCredentialsEventsFieldSelector[] | undefined>;
+    declare public readonly eventsFieldSelectors: pulumi.Output<outputs.K8sCredentialsEventsFieldSelector[] | undefined>;
     /**
      * Monitoring of events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `false` value is used.  If the field is omitted during an update, the old value remains unaffected.
      */
-    public readonly eventsIntegrationEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly eventsIntegrationEnabled: pulumi.Output<boolean | undefined>;
     /**
      * Verify hostname in certificate against Kubernetes API URL
      */
-    public readonly hostnameVerification!: pulumi.Output<boolean | undefined>;
+    declare public readonly hostnameVerification: pulumi.Output<boolean | undefined>;
     /**
      * The name of the Kubernetes credentials configuration.  Allowed characters are letters, numbers, whitespaces, and the following characters: `.+-_`. Leading or trailing whitespace is not allowed.
      */
-    public readonly label!: pulumi.Output<string>;
+    declare public readonly label: pulumi.Output<string>;
     /**
      * Prometheus exporters integration is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.If the field is omitted during an update, the old value remains unaffected
      */
-    public readonly prometheusExporters!: pulumi.Output<boolean | undefined>;
+    declare public readonly prometheusExporters: pulumi.Output<boolean | undefined>;
     /**
      * Any attributes that aren't yet supported by this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
     /**
      * Workload and cloud application processing is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
      */
-    public readonly workloadIntegrationEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly workloadIntegrationEnabled: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a K8sCredentials resource with the given unique name, arguments, and options.
@@ -104,39 +104,39 @@ export class K8sCredentials extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as K8sCredentialsState | undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["activeGateGroup"] = state ? state.activeGateGroup : undefined;
-            resourceInputs["authToken"] = state ? state.authToken : undefined;
-            resourceInputs["certificateCheckEnabled"] = state ? state.certificateCheckEnabled : undefined;
-            resourceInputs["davisEventsIntegrationEnabled"] = state ? state.davisEventsIntegrationEnabled : undefined;
-            resourceInputs["endpointUrl"] = state ? state.endpointUrl : undefined;
-            resourceInputs["eventAnalysisAndAlertingEnabled"] = state ? state.eventAnalysisAndAlertingEnabled : undefined;
-            resourceInputs["eventsFieldSelectors"] = state ? state.eventsFieldSelectors : undefined;
-            resourceInputs["eventsIntegrationEnabled"] = state ? state.eventsIntegrationEnabled : undefined;
-            resourceInputs["hostnameVerification"] = state ? state.hostnameVerification : undefined;
-            resourceInputs["label"] = state ? state.label : undefined;
-            resourceInputs["prometheusExporters"] = state ? state.prometheusExporters : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
-            resourceInputs["workloadIntegrationEnabled"] = state ? state.workloadIntegrationEnabled : undefined;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["activeGateGroup"] = state?.activeGateGroup;
+            resourceInputs["authToken"] = state?.authToken;
+            resourceInputs["certificateCheckEnabled"] = state?.certificateCheckEnabled;
+            resourceInputs["davisEventsIntegrationEnabled"] = state?.davisEventsIntegrationEnabled;
+            resourceInputs["endpointUrl"] = state?.endpointUrl;
+            resourceInputs["eventAnalysisAndAlertingEnabled"] = state?.eventAnalysisAndAlertingEnabled;
+            resourceInputs["eventsFieldSelectors"] = state?.eventsFieldSelectors;
+            resourceInputs["eventsIntegrationEnabled"] = state?.eventsIntegrationEnabled;
+            resourceInputs["hostnameVerification"] = state?.hostnameVerification;
+            resourceInputs["label"] = state?.label;
+            resourceInputs["prometheusExporters"] = state?.prometheusExporters;
+            resourceInputs["unknowns"] = state?.unknowns;
+            resourceInputs["workloadIntegrationEnabled"] = state?.workloadIntegrationEnabled;
         } else {
             const args = argsOrState as K8sCredentialsArgs | undefined;
-            if ((!args || args.label === undefined) && !opts.urn) {
+            if (args?.label === undefined && !opts.urn) {
                 throw new Error("Missing required property 'label'");
             }
-            resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["activeGateGroup"] = args ? args.activeGateGroup : undefined;
+            resourceInputs["active"] = args?.active;
+            resourceInputs["activeGateGroup"] = args?.activeGateGroup;
             resourceInputs["authToken"] = args?.authToken ? pulumi.secret(args.authToken) : undefined;
-            resourceInputs["certificateCheckEnabled"] = args ? args.certificateCheckEnabled : undefined;
-            resourceInputs["davisEventsIntegrationEnabled"] = args ? args.davisEventsIntegrationEnabled : undefined;
-            resourceInputs["endpointUrl"] = args ? args.endpointUrl : undefined;
-            resourceInputs["eventAnalysisAndAlertingEnabled"] = args ? args.eventAnalysisAndAlertingEnabled : undefined;
-            resourceInputs["eventsFieldSelectors"] = args ? args.eventsFieldSelectors : undefined;
-            resourceInputs["eventsIntegrationEnabled"] = args ? args.eventsIntegrationEnabled : undefined;
-            resourceInputs["hostnameVerification"] = args ? args.hostnameVerification : undefined;
-            resourceInputs["label"] = args ? args.label : undefined;
-            resourceInputs["prometheusExporters"] = args ? args.prometheusExporters : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
-            resourceInputs["workloadIntegrationEnabled"] = args ? args.workloadIntegrationEnabled : undefined;
+            resourceInputs["certificateCheckEnabled"] = args?.certificateCheckEnabled;
+            resourceInputs["davisEventsIntegrationEnabled"] = args?.davisEventsIntegrationEnabled;
+            resourceInputs["endpointUrl"] = args?.endpointUrl;
+            resourceInputs["eventAnalysisAndAlertingEnabled"] = args?.eventAnalysisAndAlertingEnabled;
+            resourceInputs["eventsFieldSelectors"] = args?.eventsFieldSelectors;
+            resourceInputs["eventsIntegrationEnabled"] = args?.eventsIntegrationEnabled;
+            resourceInputs["hostnameVerification"] = args?.hostnameVerification;
+            resourceInputs["label"] = args?.label;
+            resourceInputs["prometheusExporters"] = args?.prometheusExporters;
+            resourceInputs["unknowns"] = args?.unknowns;
+            resourceInputs["workloadIntegrationEnabled"] = args?.workloadIntegrationEnabled;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["authToken"] };

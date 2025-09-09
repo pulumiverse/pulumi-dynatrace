@@ -37,31 +37,31 @@ export class HostAnomalies extends pulumi.CustomResource {
     /**
      * Configuration of lost connection detection
      */
-    public readonly connections!: pulumi.Output<outputs.HostAnomaliesConnections | undefined>;
+    declare public readonly connections: pulumi.Output<outputs.HostAnomaliesConnections | undefined>;
     /**
      * Configuration of high CPU saturation detection
      */
-    public readonly cpu!: pulumi.Output<outputs.HostAnomaliesCpu | undefined>;
+    declare public readonly cpu: pulumi.Output<outputs.HostAnomaliesCpu | undefined>;
     /**
      * Configuration of disk related anomalies
      */
-    public readonly disks!: pulumi.Output<outputs.HostAnomaliesDisks | undefined>;
+    declare public readonly disks: pulumi.Output<outputs.HostAnomaliesDisks | undefined>;
     /**
      * Configuration of high Garbage Collector activity detection
      */
-    public readonly gc!: pulumi.Output<outputs.HostAnomaliesGc | undefined>;
+    declare public readonly gc: pulumi.Output<outputs.HostAnomaliesGc | undefined>;
     /**
      * Configuration of Java related anomalies
      */
-    public readonly java!: pulumi.Output<outputs.HostAnomaliesJava | undefined>;
+    declare public readonly java: pulumi.Output<outputs.HostAnomaliesJava | undefined>;
     /**
      * Configuration of high memory usage detection
      */
-    public readonly memory!: pulumi.Output<outputs.HostAnomaliesMemory | undefined>;
+    declare public readonly memory: pulumi.Output<outputs.HostAnomaliesMemory | undefined>;
     /**
      * Configuration of network related anomalies
      */
-    public readonly network!: pulumi.Output<outputs.HostAnomaliesNetwork | undefined>;
+    declare public readonly network: pulumi.Output<outputs.HostAnomaliesNetwork | undefined>;
 
     /**
      * Create a HostAnomalies resource with the given unique name, arguments, and options.
@@ -76,22 +76,22 @@ export class HostAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HostAnomaliesState | undefined;
-            resourceInputs["connections"] = state ? state.connections : undefined;
-            resourceInputs["cpu"] = state ? state.cpu : undefined;
-            resourceInputs["disks"] = state ? state.disks : undefined;
-            resourceInputs["gc"] = state ? state.gc : undefined;
-            resourceInputs["java"] = state ? state.java : undefined;
-            resourceInputs["memory"] = state ? state.memory : undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
+            resourceInputs["connections"] = state?.connections;
+            resourceInputs["cpu"] = state?.cpu;
+            resourceInputs["disks"] = state?.disks;
+            resourceInputs["gc"] = state?.gc;
+            resourceInputs["java"] = state?.java;
+            resourceInputs["memory"] = state?.memory;
+            resourceInputs["network"] = state?.network;
         } else {
             const args = argsOrState as HostAnomaliesArgs | undefined;
-            resourceInputs["connections"] = args ? args.connections : undefined;
-            resourceInputs["cpu"] = args ? args.cpu : undefined;
-            resourceInputs["disks"] = args ? args.disks : undefined;
-            resourceInputs["gc"] = args ? args.gc : undefined;
-            resourceInputs["java"] = args ? args.java : undefined;
-            resourceInputs["memory"] = args ? args.memory : undefined;
-            resourceInputs["network"] = args ? args.network : undefined;
+            resourceInputs["connections"] = args?.connections;
+            resourceInputs["cpu"] = args?.cpu;
+            resourceInputs["disks"] = args?.disks;
+            resourceInputs["gc"] = args?.gc;
+            resourceInputs["java"] = args?.java;
+            resourceInputs["memory"] = args?.memory;
+            resourceInputs["network"] = args?.network;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HostAnomalies.__pulumiType, name, resourceInputs, opts);

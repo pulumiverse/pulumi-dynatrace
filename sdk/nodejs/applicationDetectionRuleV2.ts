@@ -35,23 +35,23 @@ export class ApplicationDetectionRuleV2 extends pulumi.CustomResource {
     /**
      * Select an existing application or create a new one.
      */
-    public readonly applicationId!: pulumi.Output<string>;
+    declare public readonly applicationId: pulumi.Output<string>;
     /**
      * (v1.274) Add a description for your rule
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
      */
-    public readonly matcher!: pulumi.Output<string>;
+    declare public readonly matcher: pulumi.Output<string>;
     /**
      * Pattern
      */
-    public readonly pattern!: pulumi.Output<string>;
+    declare public readonly pattern: pulumi.Output<string>;
 
     /**
      * Create a ApplicationDetectionRuleV2 resource with the given unique name, arguments, and options.
@@ -66,27 +66,27 @@ export class ApplicationDetectionRuleV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ApplicationDetectionRuleV2State | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["matcher"] = state ? state.matcher : undefined;
-            resourceInputs["pattern"] = state ? state.pattern : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["matcher"] = state?.matcher;
+            resourceInputs["pattern"] = state?.pattern;
         } else {
             const args = argsOrState as ApplicationDetectionRuleV2Args | undefined;
-            if ((!args || args.applicationId === undefined) && !opts.urn) {
+            if (args?.applicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationId'");
             }
-            if ((!args || args.matcher === undefined) && !opts.urn) {
+            if (args?.matcher === undefined && !opts.urn) {
                 throw new Error("Missing required property 'matcher'");
             }
-            if ((!args || args.pattern === undefined) && !opts.urn) {
+            if (args?.pattern === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pattern'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["matcher"] = args ? args.matcher : undefined;
-            resourceInputs["pattern"] = args ? args.pattern : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["matcher"] = args?.matcher;
+            resourceInputs["pattern"] = args?.pattern;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ApplicationDetectionRuleV2.__pulumiType, name, resourceInputs, opts);
