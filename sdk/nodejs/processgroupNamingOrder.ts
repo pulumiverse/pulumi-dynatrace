@@ -35,7 +35,7 @@ export class ProcessgroupNamingOrder extends pulumi.CustomResource {
     /**
      * The IDs of the naming rules to define the order for
      */
-    public readonly namingRuleIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly namingRuleIds: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a ProcessgroupNamingOrder resource with the given unique name, arguments, and options.
@@ -50,10 +50,10 @@ export class ProcessgroupNamingOrder extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProcessgroupNamingOrderState | undefined;
-            resourceInputs["namingRuleIds"] = state ? state.namingRuleIds : undefined;
+            resourceInputs["namingRuleIds"] = state?.namingRuleIds;
         } else {
             const args = argsOrState as ProcessgroupNamingOrderArgs | undefined;
-            resourceInputs["namingRuleIds"] = args ? args.namingRuleIds : undefined;
+            resourceInputs["namingRuleIds"] = args?.namingRuleIds;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProcessgroupNamingOrder.__pulumiType, name, resourceInputs, opts);

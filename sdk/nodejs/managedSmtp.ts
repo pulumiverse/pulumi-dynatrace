@@ -35,39 +35,39 @@ export class ManagedSmtp extends pulumi.CustomResource {
     /**
      * If true, we will send e-mails via Mission Control in case of problems with SMTP server.
      */
-    public readonly allowFallbackViaMissionControl!: pulumi.Output<boolean | undefined>;
+    declare public readonly allowFallbackViaMissionControl: pulumi.Output<boolean | undefined>;
     /**
      * Connection security, possible values: `NO_ENCRYPTION`, `OPTIONAL_STARTTLS`, `REQUIRE_STARTTLS`, `TLS`. Default: `NO_ENCRYPTION`
      */
-    public readonly connectionSecurity!: pulumi.Output<string | undefined>;
+    declare public readonly connectionSecurity: pulumi.Output<string | undefined>;
     /**
      * Host Name
      */
-    public readonly hostName!: pulumi.Output<string>;
+    declare public readonly hostName: pulumi.Output<string>;
     /**
      * If true, a password has been configured. Default: `false`.
      */
-    public readonly isPasswordConfigured!: pulumi.Output<boolean | undefined>;
+    declare public readonly isPasswordConfigured: pulumi.Output<boolean | undefined>;
     /**
      * Password
      */
-    public readonly password!: pulumi.Output<string>;
+    declare public readonly password: pulumi.Output<string>;
     /**
      * Integer value of port. Default: `25`
      */
-    public readonly port!: pulumi.Output<number | undefined>;
+    declare public readonly port: pulumi.Output<number | undefined>;
     /**
      * Sender email address
      */
-    public readonly senderEmailAddress!: pulumi.Output<string>;
+    declare public readonly senderEmailAddress: pulumi.Output<string>;
     /**
      * If true, we will send e-mails via SMTP server.
      */
-    public readonly useSmtpServer!: pulumi.Output<boolean | undefined>;
+    declare public readonly useSmtpServer: pulumi.Output<boolean | undefined>;
     /**
      * User Name
      */
-    public readonly userName!: pulumi.Output<string>;
+    declare public readonly userName: pulumi.Output<string>;
 
     /**
      * Create a ManagedSmtp resource with the given unique name, arguments, and options.
@@ -82,38 +82,38 @@ export class ManagedSmtp extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedSmtpState | undefined;
-            resourceInputs["allowFallbackViaMissionControl"] = state ? state.allowFallbackViaMissionControl : undefined;
-            resourceInputs["connectionSecurity"] = state ? state.connectionSecurity : undefined;
-            resourceInputs["hostName"] = state ? state.hostName : undefined;
-            resourceInputs["isPasswordConfigured"] = state ? state.isPasswordConfigured : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["senderEmailAddress"] = state ? state.senderEmailAddress : undefined;
-            resourceInputs["useSmtpServer"] = state ? state.useSmtpServer : undefined;
-            resourceInputs["userName"] = state ? state.userName : undefined;
+            resourceInputs["allowFallbackViaMissionControl"] = state?.allowFallbackViaMissionControl;
+            resourceInputs["connectionSecurity"] = state?.connectionSecurity;
+            resourceInputs["hostName"] = state?.hostName;
+            resourceInputs["isPasswordConfigured"] = state?.isPasswordConfigured;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["senderEmailAddress"] = state?.senderEmailAddress;
+            resourceInputs["useSmtpServer"] = state?.useSmtpServer;
+            resourceInputs["userName"] = state?.userName;
         } else {
             const args = argsOrState as ManagedSmtpArgs | undefined;
-            if ((!args || args.hostName === undefined) && !opts.urn) {
+            if (args?.hostName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostName'");
             }
-            if ((!args || args.password === undefined) && !opts.urn) {
+            if (args?.password === undefined && !opts.urn) {
                 throw new Error("Missing required property 'password'");
             }
-            if ((!args || args.senderEmailAddress === undefined) && !opts.urn) {
+            if (args?.senderEmailAddress === undefined && !opts.urn) {
                 throw new Error("Missing required property 'senderEmailAddress'");
             }
-            if ((!args || args.userName === undefined) && !opts.urn) {
+            if (args?.userName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userName'");
             }
-            resourceInputs["allowFallbackViaMissionControl"] = args ? args.allowFallbackViaMissionControl : undefined;
-            resourceInputs["connectionSecurity"] = args ? args.connectionSecurity : undefined;
-            resourceInputs["hostName"] = args ? args.hostName : undefined;
-            resourceInputs["isPasswordConfigured"] = args ? args.isPasswordConfigured : undefined;
+            resourceInputs["allowFallbackViaMissionControl"] = args?.allowFallbackViaMissionControl;
+            resourceInputs["connectionSecurity"] = args?.connectionSecurity;
+            resourceInputs["hostName"] = args?.hostName;
+            resourceInputs["isPasswordConfigured"] = args?.isPasswordConfigured;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["senderEmailAddress"] = args ? args.senderEmailAddress : undefined;
-            resourceInputs["useSmtpServer"] = args ? args.useSmtpServer : undefined;
-            resourceInputs["userName"] = args ? args.userName : undefined;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["senderEmailAddress"] = args?.senderEmailAddress;
+            resourceInputs["useSmtpServer"] = args?.useSmtpServer;
+            resourceInputs["userName"] = args?.userName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["password"] };

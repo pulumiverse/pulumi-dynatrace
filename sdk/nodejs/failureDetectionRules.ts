@@ -37,27 +37,27 @@ export class FailureDetectionRules extends pulumi.CustomResource {
     /**
      * Conditions
      */
-    public readonly conditions!: pulumi.Output<outputs.FailureDetectionRulesConditions>;
+    declare public readonly conditions: pulumi.Output<outputs.FailureDetectionRulesConditions>;
     /**
      * Rule description
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Rule name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Failure detection parameters
      */
-    public readonly parameterId!: pulumi.Output<string>;
+    declare public readonly parameterId: pulumi.Output<string>;
 
     /**
      * Create a FailureDetectionRules resource with the given unique name, arguments, and options.
@@ -72,29 +72,29 @@ export class FailureDetectionRules extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FailureDetectionRulesState | undefined;
-            resourceInputs["conditions"] = state ? state.conditions : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["parameterId"] = state ? state.parameterId : undefined;
+            resourceInputs["conditions"] = state?.conditions;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["parameterId"] = state?.parameterId;
         } else {
             const args = argsOrState as FailureDetectionRulesArgs | undefined;
-            if ((!args || args.conditions === undefined) && !opts.urn) {
+            if (args?.conditions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'conditions'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.parameterId === undefined) && !opts.urn) {
+            if (args?.parameterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'parameterId'");
             }
-            resourceInputs["conditions"] = args ? args.conditions : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["parameterId"] = args ? args.parameterId : undefined;
+            resourceInputs["conditions"] = args?.conditions;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["parameterId"] = args?.parameterId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(FailureDetectionRules.__pulumiType, name, resourceInputs, opts);

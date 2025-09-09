@@ -35,80 +35,80 @@ export class SyntheticLocation extends pulumi.CustomResource {
     /**
      * Auto upgrade of Chromium is enabled (`true`) or disabled (`false`)
      */
-    public readonly autoUpdateChromium!: pulumi.Output<boolean | undefined>;
+    declare public readonly autoUpdateChromium: pulumi.Output<boolean | undefined>;
     /**
      * The alerting of location outage is enabled (`true`) or disabled (`false`)
      */
-    public readonly availabilityLocationOutage!: pulumi.Output<boolean | undefined>;
+    declare public readonly availabilityLocationOutage: pulumi.Output<boolean | undefined>;
     /**
      * The alerting of node outage is enabled (`true`) or disabled (`false`).
      */
-    public readonly availabilityNodeOutage!: pulumi.Output<boolean | undefined>;
+    declare public readonly availabilityNodeOutage: pulumi.Output<boolean | undefined>;
     /**
      * The notifications of location and node outage is enabled (`true`) or disabled (`false`)
      */
-    public readonly availabilityNotificationsEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly availabilityNotificationsEnabled: pulumi.Output<boolean | undefined>;
     /**
      * The city of the location
      */
-    public readonly city!: pulumi.Output<string | undefined>;
+    declare public readonly city: pulumi.Output<string | undefined>;
     /**
      * The country code of the location. To fetch the list of available country codes, use the [GET all
      * countries](https://dt-url.net/37030go) request
      */
-    public readonly countryCode!: pulumi.Output<string | undefined>;
+    declare public readonly countryCode: pulumi.Output<string | undefined>;
     /**
      * The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
      * location is deployed on Kubernetes
      */
-    public readonly deploymentType!: pulumi.Output<string | undefined>;
+    declare public readonly deploymentType: pulumi.Output<string | undefined>;
     /**
      * The latitude of the location in `DDD.dddd` format
      */
-    public readonly latitude!: pulumi.Output<number>;
+    declare public readonly latitude: pulumi.Output<number>;
     /**
      * Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
      * **availability_location_outage** or **availability_node_outage** is set to `true`
      */
-    public readonly locationNodeOutageDelayInMinutes!: pulumi.Output<number | undefined>;
+    declare public readonly locationNodeOutageDelayInMinutes: pulumi.Output<number | undefined>;
     /**
      * The longitude of the location in `DDD.dddd` format
      */
-    public readonly longitude!: pulumi.Output<number>;
+    declare public readonly longitude: pulumi.Output<number>;
     /**
      * The maximum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
      */
-    public readonly maxActiveGateCount!: pulumi.Output<number | undefined>;
+    declare public readonly maxActiveGateCount: pulumi.Output<number | undefined>;
     /**
      * The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
      */
-    public readonly minActiveGateCount!: pulumi.Output<number | undefined>;
+    declare public readonly minActiveGateCount: pulumi.Output<number | undefined>;
     /**
      * Boolean value describes if icmp monitors will be executed on this location
      */
-    public readonly namExecutionSupported!: pulumi.Output<boolean | undefined>;
+    declare public readonly namExecutionSupported: pulumi.Output<boolean | undefined>;
     /**
      * The name of the location
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
      */
-    public readonly nodeSize!: pulumi.Output<string | undefined>;
+    declare public readonly nodeSize: pulumi.Output<string | undefined>;
     /**
      * A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
      * nodes](https://dt-url.net/miy3rpl) call
      */
-    public readonly nodes!: pulumi.Output<string[] | undefined>;
+    declare public readonly nodes: pulumi.Output<string[] | undefined>;
     /**
      * The region code of the location. To fetch the list of available region codes, use the [GET regions of the
      * country](https://dt-url.net/az230x0) request
      */
-    public readonly regionCode!: pulumi.Output<string | undefined>;
+    declare public readonly regionCode: pulumi.Output<string | undefined>;
     /**
      * Boolean value describes which kubernetes version will be used
      */
-    public readonly useNewKubernetesVersion!: pulumi.Output<boolean | undefined>;
+    declare public readonly useNewKubernetesVersion: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a SyntheticLocation resource with the given unique name, arguments, and options.
@@ -123,50 +123,50 @@ export class SyntheticLocation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SyntheticLocationState | undefined;
-            resourceInputs["autoUpdateChromium"] = state ? state.autoUpdateChromium : undefined;
-            resourceInputs["availabilityLocationOutage"] = state ? state.availabilityLocationOutage : undefined;
-            resourceInputs["availabilityNodeOutage"] = state ? state.availabilityNodeOutage : undefined;
-            resourceInputs["availabilityNotificationsEnabled"] = state ? state.availabilityNotificationsEnabled : undefined;
-            resourceInputs["city"] = state ? state.city : undefined;
-            resourceInputs["countryCode"] = state ? state.countryCode : undefined;
-            resourceInputs["deploymentType"] = state ? state.deploymentType : undefined;
-            resourceInputs["latitude"] = state ? state.latitude : undefined;
-            resourceInputs["locationNodeOutageDelayInMinutes"] = state ? state.locationNodeOutageDelayInMinutes : undefined;
-            resourceInputs["longitude"] = state ? state.longitude : undefined;
-            resourceInputs["maxActiveGateCount"] = state ? state.maxActiveGateCount : undefined;
-            resourceInputs["minActiveGateCount"] = state ? state.minActiveGateCount : undefined;
-            resourceInputs["namExecutionSupported"] = state ? state.namExecutionSupported : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nodeSize"] = state ? state.nodeSize : undefined;
-            resourceInputs["nodes"] = state ? state.nodes : undefined;
-            resourceInputs["regionCode"] = state ? state.regionCode : undefined;
-            resourceInputs["useNewKubernetesVersion"] = state ? state.useNewKubernetesVersion : undefined;
+            resourceInputs["autoUpdateChromium"] = state?.autoUpdateChromium;
+            resourceInputs["availabilityLocationOutage"] = state?.availabilityLocationOutage;
+            resourceInputs["availabilityNodeOutage"] = state?.availabilityNodeOutage;
+            resourceInputs["availabilityNotificationsEnabled"] = state?.availabilityNotificationsEnabled;
+            resourceInputs["city"] = state?.city;
+            resourceInputs["countryCode"] = state?.countryCode;
+            resourceInputs["deploymentType"] = state?.deploymentType;
+            resourceInputs["latitude"] = state?.latitude;
+            resourceInputs["locationNodeOutageDelayInMinutes"] = state?.locationNodeOutageDelayInMinutes;
+            resourceInputs["longitude"] = state?.longitude;
+            resourceInputs["maxActiveGateCount"] = state?.maxActiveGateCount;
+            resourceInputs["minActiveGateCount"] = state?.minActiveGateCount;
+            resourceInputs["namExecutionSupported"] = state?.namExecutionSupported;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nodeSize"] = state?.nodeSize;
+            resourceInputs["nodes"] = state?.nodes;
+            resourceInputs["regionCode"] = state?.regionCode;
+            resourceInputs["useNewKubernetesVersion"] = state?.useNewKubernetesVersion;
         } else {
             const args = argsOrState as SyntheticLocationArgs | undefined;
-            if ((!args || args.latitude === undefined) && !opts.urn) {
+            if (args?.latitude === undefined && !opts.urn) {
                 throw new Error("Missing required property 'latitude'");
             }
-            if ((!args || args.longitude === undefined) && !opts.urn) {
+            if (args?.longitude === undefined && !opts.urn) {
                 throw new Error("Missing required property 'longitude'");
             }
-            resourceInputs["autoUpdateChromium"] = args ? args.autoUpdateChromium : undefined;
-            resourceInputs["availabilityLocationOutage"] = args ? args.availabilityLocationOutage : undefined;
-            resourceInputs["availabilityNodeOutage"] = args ? args.availabilityNodeOutage : undefined;
-            resourceInputs["availabilityNotificationsEnabled"] = args ? args.availabilityNotificationsEnabled : undefined;
-            resourceInputs["city"] = args ? args.city : undefined;
-            resourceInputs["countryCode"] = args ? args.countryCode : undefined;
-            resourceInputs["deploymentType"] = args ? args.deploymentType : undefined;
-            resourceInputs["latitude"] = args ? args.latitude : undefined;
-            resourceInputs["locationNodeOutageDelayInMinutes"] = args ? args.locationNodeOutageDelayInMinutes : undefined;
-            resourceInputs["longitude"] = args ? args.longitude : undefined;
-            resourceInputs["maxActiveGateCount"] = args ? args.maxActiveGateCount : undefined;
-            resourceInputs["minActiveGateCount"] = args ? args.minActiveGateCount : undefined;
-            resourceInputs["namExecutionSupported"] = args ? args.namExecutionSupported : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["nodeSize"] = args ? args.nodeSize : undefined;
-            resourceInputs["nodes"] = args ? args.nodes : undefined;
-            resourceInputs["regionCode"] = args ? args.regionCode : undefined;
-            resourceInputs["useNewKubernetesVersion"] = args ? args.useNewKubernetesVersion : undefined;
+            resourceInputs["autoUpdateChromium"] = args?.autoUpdateChromium;
+            resourceInputs["availabilityLocationOutage"] = args?.availabilityLocationOutage;
+            resourceInputs["availabilityNodeOutage"] = args?.availabilityNodeOutage;
+            resourceInputs["availabilityNotificationsEnabled"] = args?.availabilityNotificationsEnabled;
+            resourceInputs["city"] = args?.city;
+            resourceInputs["countryCode"] = args?.countryCode;
+            resourceInputs["deploymentType"] = args?.deploymentType;
+            resourceInputs["latitude"] = args?.latitude;
+            resourceInputs["locationNodeOutageDelayInMinutes"] = args?.locationNodeOutageDelayInMinutes;
+            resourceInputs["longitude"] = args?.longitude;
+            resourceInputs["maxActiveGateCount"] = args?.maxActiveGateCount;
+            resourceInputs["minActiveGateCount"] = args?.minActiveGateCount;
+            resourceInputs["namExecutionSupported"] = args?.namExecutionSupported;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["nodeSize"] = args?.nodeSize;
+            resourceInputs["nodes"] = args?.nodes;
+            resourceInputs["regionCode"] = args?.regionCode;
+            resourceInputs["useNewKubernetesVersion"] = args?.useNewKubernetesVersion;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SyntheticLocation.__pulumiType, name, resourceInputs, opts);

@@ -35,11 +35,11 @@ export class JsonDashboard extends pulumi.CustomResource {
     /**
      * Contains the JSON Code of the Dashboard
      */
-    public readonly contents!: pulumi.Output<string>;
+    declare public readonly contents: pulumi.Output<string>;
     /**
      * ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `dynatrace.JsonDashboardBase` for a concrete example.
      */
-    public readonly linkId!: pulumi.Output<string>;
+    declare public readonly linkId: pulumi.Output<string>;
 
     /**
      * Create a JsonDashboard resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class JsonDashboard extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as JsonDashboardState | undefined;
-            resourceInputs["contents"] = state ? state.contents : undefined;
-            resourceInputs["linkId"] = state ? state.linkId : undefined;
+            resourceInputs["contents"] = state?.contents;
+            resourceInputs["linkId"] = state?.linkId;
         } else {
             const args = argsOrState as JsonDashboardArgs | undefined;
-            if ((!args || args.contents === undefined) && !opts.urn) {
+            if (args?.contents === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contents'");
             }
-            resourceInputs["contents"] = args ? args.contents : undefined;
-            resourceInputs["linkId"] = args ? args.linkId : undefined;
+            resourceInputs["contents"] = args?.contents;
+            resourceInputs["linkId"] = args?.linkId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(JsonDashboard.__pulumiType, name, resourceInputs, opts);

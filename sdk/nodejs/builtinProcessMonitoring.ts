@@ -35,323 +35,323 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
     /**
      * Rule id: 3 - Do monitor processes if ASP.NET Core application path exists
      */
-    public readonly aspnetcore!: pulumi.Output<boolean | undefined>;
+    declare public readonly aspnetcore: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 64 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Listener'
      */
-    public readonly aspnetcoreAgentlistener!: pulumi.Output<boolean | undefined>;
+    declare public readonly aspnetcoreAgentlistener: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 62 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Worker'
      */
-    public readonly aspnetcoreAgentworker!: pulumi.Output<boolean | undefined>;
+    declare public readonly aspnetcoreAgentworker: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 37 - Do monitor processes if Cloud Foundry application exists
      */
-    public readonly cf!: pulumi.Output<boolean | undefined>;
+    declare public readonly cf: pulumi.Output<boolean | undefined>;
     /**
      * Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
      */
-    public readonly cfAppsmanagerjs!: pulumi.Output<boolean | undefined>;
+    declare public readonly cfAppsmanagerjs: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 41 - Do monitor processes if container name exists
      */
-    public readonly container!: pulumi.Output<boolean | undefined>;
+    declare public readonly container: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 39 - Do not monitor processes if Docker stripped image contains 'pause-amd64'
      */
-    public readonly dockerPauseamd64!: pulumi.Output<boolean | undefined>;
+    declare public readonly dockerPauseamd64: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 7 - Do monitor processes if EXE name equals 'adapter'
      */
-    public readonly exeAdapter!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeAdapter: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 63 - Do not monitor processes if EXE name contains 'Agent.Listener'
      */
-    public readonly exeAgentlistener!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeAgentlistener: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 61 - Do not monitor processes if EXE name contains 'Agent.Worker'
      */
-    public readonly exeAgentworker!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeAgentworker: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
      */
-    public readonly exeAnsible!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeAnsible: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
      */
-    public readonly exeAuctioneer!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeAuctioneer: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
      */
-    public readonly exeAuditbeat!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeAuditbeat: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
      */
-    public readonly exeAws!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeAws: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 82 - Do not monitor processes if EXE name equals 'az'
      */
-    public readonly exeAz!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeAz: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
      */
-    public readonly exeBbs!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeBbs: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 5 - Do monitor processes if EXE name equals 'caddy'
      */
-    public readonly exeCaddy!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeCaddy: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 58 - Do not monitor processes if EXE name equals 'calico-node'
      */
-    public readonly exeCaliconode!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeCaliconode: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 59 - Do not monitor processes if EXE name equals 'casclient.exe'
      */
-    public readonly exeCasclient!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeCasclient: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 10 - Do monitor processes if EXE name equals 'cc-uploader'
      */
-    public readonly exeCcuploader!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeCcuploader: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
      */
-    public readonly exeConda!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeConda: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
      */
-    public readonly exeDoppler!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeDoppler: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 49 - Do not monitor processes if EXE name equals 'filebeat'
      */
-    public readonly exeFilebeat!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeFilebeat: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 65 - Do not monitor processes if EXE name equals 'FlexNetJobExecutorService'
      */
-    public readonly exeFlexnetjobexecutorservice!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeFlexnetjobexecutorservice: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 66 - Do not monitor processes if EXE name equals 'FlexNetMaintenanceRemotingService'
      */
-    public readonly exeFlexnetmaintenanceremotingservice!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeFlexnetmaintenanceremotingservice: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 54 - Do not monitor processes if EXE name equals 'functionbeat'
      */
-    public readonly exeFunctionbeat!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeFunctionbeat: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
      */
-    public readonly exeGcloud!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeGcloud: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
      */
-    public readonly exeGorouter!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeGorouter: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 55 - Do not monitor processes if EXE name equals 'grootfs'
      */
-    public readonly exeGrootfs!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeGrootfs: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
      */
-    public readonly exeHatch!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeHatch: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
      */
-    public readonly exeHeartbeat!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeHeartbeat: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
      */
-    public readonly exeInfluxd!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeInfluxd: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
      */
-    public readonly exeJupyter!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeJupyter: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 13 - Do monitor processes if EXE name equals 'locket'
      */
-    public readonly exeLocket!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeLocket: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 50 - Do not monitor processes if EXE name equals 'metricbeat'
      */
-    public readonly exeMetricbeat!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeMetricbeat: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 14 - Do monitor processes if EXE name equals 'metron'
      */
-    public readonly exeMetron!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeMetron: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 48 - Do not monitor processes if EXE name begins with 'mqsi'
      */
-    public readonly exeMqsi!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeMqsi: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 44 - Do not monitor processes if EXE name equals 'oc'
      */
-    public readonly exeOc!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeOc: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 71 - Do not monitor processes if EXE name equals 'openhandlecollector.exe'
      */
-    public readonly exeOpenhandlecollector!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeOpenhandlecollector: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
      */
-    public readonly exeOpenstack!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeOpenstack: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
      */
-    public readonly exeOptcnibinhostlocal!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeOptcnibinhostlocal: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 51 - Do not monitor processes if EXE name equals 'packetbeat'
      */
-    public readonly exePacketbeat!: pulumi.Output<boolean | undefined>;
+    declare public readonly exePacketbeat: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
      */
-    public readonly exePhpcgi!: pulumi.Output<boolean | undefined>;
+    declare public readonly exePhpcgi: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
      */
-    public readonly exePip!: pulumi.Output<boolean | undefined>;
+    declare public readonly exePip: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 16 - Do monitor processes if EXE name equals 'rep'
      */
-    public readonly exeRep!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeRep: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 17 - Do monitor processes if EXE name equals 'route-emitter'
      */
-    public readonly exeRouteemitter!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeRouteemitter: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 18 - Do monitor processes if EXE name equals 'route-registrar'
      */
-    public readonly exeRouteregistrar!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeRouteregistrar: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 19 - Do monitor processes if EXE name equals 'routing-api'
      */
-    public readonly exeRoutingapi!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeRoutingapi: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 20 - Do monitor processes if EXE name equals 'scheduler'
      */
-    public readonly exeSchedular!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeSchedular: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 21 - Do monitor processes if EXE name equals 'silk-daemon'
      */
-    public readonly exeSilkdaemon!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeSilkdaemon: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 22 - Do monitor processes if EXE name equals 'switchboard'
      */
-    public readonly exeSwitchboard!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeSwitchboard: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 23 - Do monitor processes if EXE name equals 'syslog*drain*binder'
      */
-    public readonly exeSyslogdrainbinder!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeSyslogdrainbinder: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 56 - Do not monitor processes if EXE name equals 'tardis'
      */
-    public readonly exeTardis!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeTardis: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 43 - Do not monitor processes if EXE path begins with '/tmp/buildpacks/'
      */
-    public readonly exeTmpbuildpacks!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeTmpbuildpacks: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 24 - Do monitor processes if EXE name equals 'tps-watcher'
      */
-    public readonly exeTpswatcher!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeTpswatcher: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 25 - Do monitor processes if EXE name equals 'trafficcontroller'
      */
-    public readonly exeTrafficcontroller!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeTrafficcontroller: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 70 - Do not monitor processes if EXE name contains 'UiPath'
      */
-    public readonly exeUipath!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeUipath: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 67 - Do not monitor processes if EXE path equals '/usr/bin/piper'
      */
-    public readonly exeUserbinpiper!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeUserbinpiper: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
      */
-    public readonly exeW3wp!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeW3wp: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
      */
-    public readonly exeWheel!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeWheel: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
      */
-    public readonly exeYq!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeYq: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
      */
-    public readonly exeYum!: pulumi.Output<boolean | undefined>;
+    declare public readonly exeYum: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
      */
-    public readonly goStatic!: pulumi.Output<boolean | undefined>;
+    declare public readonly goStatic: pulumi.Output<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly hostGroupId!: pulumi.Output<string | undefined>;
+    declare public readonly hostGroupId: pulumi.Output<string | undefined>;
     /**
      * Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
      */
-    public readonly jarDtibmmqconnector!: pulumi.Output<boolean | undefined>;
+    declare public readonly jarDtibmmqconnector: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
      */
-    public readonly jarEclipseequinox!: pulumi.Output<boolean | undefined>;
+    declare public readonly jarEclipseequinox: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
      */
-    public readonly k8sCassandraoperator!: pulumi.Output<boolean | undefined>;
+    declare public readonly k8sCassandraoperator: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 38 - Do not monitor processes if Kubernetes container name equals 'POD'
      */
-    public readonly k8sContainerpod!: pulumi.Output<boolean | undefined>;
+    declare public readonly k8sContainerpod: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 40 - Do monitor processes if Kubernetes namespace exists
      */
-    public readonly k8sNamespace!: pulumi.Output<boolean | undefined>;
+    declare public readonly k8sNamespace: pulumi.Output<boolean | undefined>;
     /**
      * Do not monitor processes if Node.js script equals 'bin/pm2'
      */
-    public readonly nodeBinpm2!: pulumi.Output<boolean | undefined>;
+    declare public readonly nodeBinpm2: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 68 - Do not monitor processes if Node.js application equals 'corepack'
      */
-    public readonly nodeCorepack!: pulumi.Output<boolean | undefined>;
+    declare public readonly nodeCorepack: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 28 - Do not monitor processes if Node.js application base directory ends with '/node_modules/grunt'
      */
-    public readonly nodeGrunt!: pulumi.Output<boolean | undefined>;
+    declare public readonly nodeGrunt: pulumi.Output<boolean | undefined>;
     /**
      * Do not monitor processes if Node.js application base directory ends with '/node_modules/gulp-cli'
      */
-    public readonly nodeGulpcli!: pulumi.Output<boolean | undefined>;
+    declare public readonly nodeGulpcli: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 33 - Do not monitor processes if Node.js application base directory ends with '/node_modules/node-gyp'
      */
-    public readonly nodeNodegyp!: pulumi.Output<boolean | undefined>;
+    declare public readonly nodeNodegyp: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 32 - Do not monitor processes if Node.js application base directory ends with '/node_modules/node-pre-gyp'
      */
-    public readonly nodeNodepregyp!: pulumi.Output<boolean | undefined>;
+    declare public readonly nodeNodepregyp: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 27 - Do not monitor processes if Node.js application base directory ends with '/node_modules/npm'
      */
-    public readonly nodeNpm!: pulumi.Output<boolean | undefined>;
+    declare public readonly nodeNpm: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 26 - Do not monitor processes if Node.js application base directory ends with '/node_modules/prebuild-install'
      */
-    public readonly nodePrebuildinstall!: pulumi.Output<boolean | undefined>;
+    declare public readonly nodePrebuildinstall: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 29 - Do not monitor processes if Node.js application base directory ends with '/node_modules/typescript'
      */
-    public readonly nodeTypescript!: pulumi.Output<boolean | undefined>;
+    declare public readonly nodeTypescript: pulumi.Output<boolean | undefined>;
     /**
      * Rule id: 45 - Do not monitor processes if Node.js application equals 'yarn'
      */
-    public readonly nodeYarn!: pulumi.Output<boolean | undefined>;
+    declare public readonly nodeYarn: pulumi.Output<boolean | undefined>;
     /**
      * (v1.274) Rule id: 1 - Do not monitor processes if PHP script exists
      */
-    public readonly phpScript!: pulumi.Output<boolean | undefined>;
+    declare public readonly phpScript: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a BuiltinProcessMonitoring resource with the given unique name, arguments, and options.
@@ -366,168 +366,168 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BuiltinProcessMonitoringState | undefined;
-            resourceInputs["aspnetcore"] = state ? state.aspnetcore : undefined;
-            resourceInputs["aspnetcoreAgentlistener"] = state ? state.aspnetcoreAgentlistener : undefined;
-            resourceInputs["aspnetcoreAgentworker"] = state ? state.aspnetcoreAgentworker : undefined;
-            resourceInputs["cf"] = state ? state.cf : undefined;
-            resourceInputs["cfAppsmanagerjs"] = state ? state.cfAppsmanagerjs : undefined;
-            resourceInputs["container"] = state ? state.container : undefined;
-            resourceInputs["dockerPauseamd64"] = state ? state.dockerPauseamd64 : undefined;
-            resourceInputs["exeAdapter"] = state ? state.exeAdapter : undefined;
-            resourceInputs["exeAgentlistener"] = state ? state.exeAgentlistener : undefined;
-            resourceInputs["exeAgentworker"] = state ? state.exeAgentworker : undefined;
-            resourceInputs["exeAnsible"] = state ? state.exeAnsible : undefined;
-            resourceInputs["exeAuctioneer"] = state ? state.exeAuctioneer : undefined;
-            resourceInputs["exeAuditbeat"] = state ? state.exeAuditbeat : undefined;
-            resourceInputs["exeAws"] = state ? state.exeAws : undefined;
-            resourceInputs["exeAz"] = state ? state.exeAz : undefined;
-            resourceInputs["exeBbs"] = state ? state.exeBbs : undefined;
-            resourceInputs["exeCaddy"] = state ? state.exeCaddy : undefined;
-            resourceInputs["exeCaliconode"] = state ? state.exeCaliconode : undefined;
-            resourceInputs["exeCasclient"] = state ? state.exeCasclient : undefined;
-            resourceInputs["exeCcuploader"] = state ? state.exeCcuploader : undefined;
-            resourceInputs["exeConda"] = state ? state.exeConda : undefined;
-            resourceInputs["exeDoppler"] = state ? state.exeDoppler : undefined;
-            resourceInputs["exeFilebeat"] = state ? state.exeFilebeat : undefined;
-            resourceInputs["exeFlexnetjobexecutorservice"] = state ? state.exeFlexnetjobexecutorservice : undefined;
-            resourceInputs["exeFlexnetmaintenanceremotingservice"] = state ? state.exeFlexnetmaintenanceremotingservice : undefined;
-            resourceInputs["exeFunctionbeat"] = state ? state.exeFunctionbeat : undefined;
-            resourceInputs["exeGcloud"] = state ? state.exeGcloud : undefined;
-            resourceInputs["exeGorouter"] = state ? state.exeGorouter : undefined;
-            resourceInputs["exeGrootfs"] = state ? state.exeGrootfs : undefined;
-            resourceInputs["exeHatch"] = state ? state.exeHatch : undefined;
-            resourceInputs["exeHeartbeat"] = state ? state.exeHeartbeat : undefined;
-            resourceInputs["exeInfluxd"] = state ? state.exeInfluxd : undefined;
-            resourceInputs["exeJupyter"] = state ? state.exeJupyter : undefined;
-            resourceInputs["exeLocket"] = state ? state.exeLocket : undefined;
-            resourceInputs["exeMetricbeat"] = state ? state.exeMetricbeat : undefined;
-            resourceInputs["exeMetron"] = state ? state.exeMetron : undefined;
-            resourceInputs["exeMqsi"] = state ? state.exeMqsi : undefined;
-            resourceInputs["exeOc"] = state ? state.exeOc : undefined;
-            resourceInputs["exeOpenhandlecollector"] = state ? state.exeOpenhandlecollector : undefined;
-            resourceInputs["exeOpenstack"] = state ? state.exeOpenstack : undefined;
-            resourceInputs["exeOptcnibinhostlocal"] = state ? state.exeOptcnibinhostlocal : undefined;
-            resourceInputs["exePacketbeat"] = state ? state.exePacketbeat : undefined;
-            resourceInputs["exePhpcgi"] = state ? state.exePhpcgi : undefined;
-            resourceInputs["exePip"] = state ? state.exePip : undefined;
-            resourceInputs["exeRep"] = state ? state.exeRep : undefined;
-            resourceInputs["exeRouteemitter"] = state ? state.exeRouteemitter : undefined;
-            resourceInputs["exeRouteregistrar"] = state ? state.exeRouteregistrar : undefined;
-            resourceInputs["exeRoutingapi"] = state ? state.exeRoutingapi : undefined;
-            resourceInputs["exeSchedular"] = state ? state.exeSchedular : undefined;
-            resourceInputs["exeSilkdaemon"] = state ? state.exeSilkdaemon : undefined;
-            resourceInputs["exeSwitchboard"] = state ? state.exeSwitchboard : undefined;
-            resourceInputs["exeSyslogdrainbinder"] = state ? state.exeSyslogdrainbinder : undefined;
-            resourceInputs["exeTardis"] = state ? state.exeTardis : undefined;
-            resourceInputs["exeTmpbuildpacks"] = state ? state.exeTmpbuildpacks : undefined;
-            resourceInputs["exeTpswatcher"] = state ? state.exeTpswatcher : undefined;
-            resourceInputs["exeTrafficcontroller"] = state ? state.exeTrafficcontroller : undefined;
-            resourceInputs["exeUipath"] = state ? state.exeUipath : undefined;
-            resourceInputs["exeUserbinpiper"] = state ? state.exeUserbinpiper : undefined;
-            resourceInputs["exeW3wp"] = state ? state.exeW3wp : undefined;
-            resourceInputs["exeWheel"] = state ? state.exeWheel : undefined;
-            resourceInputs["exeYq"] = state ? state.exeYq : undefined;
-            resourceInputs["exeYum"] = state ? state.exeYum : undefined;
-            resourceInputs["goStatic"] = state ? state.goStatic : undefined;
-            resourceInputs["hostGroupId"] = state ? state.hostGroupId : undefined;
-            resourceInputs["jarDtibmmqconnector"] = state ? state.jarDtibmmqconnector : undefined;
-            resourceInputs["jarEclipseequinox"] = state ? state.jarEclipseequinox : undefined;
-            resourceInputs["k8sCassandraoperator"] = state ? state.k8sCassandraoperator : undefined;
-            resourceInputs["k8sContainerpod"] = state ? state.k8sContainerpod : undefined;
-            resourceInputs["k8sNamespace"] = state ? state.k8sNamespace : undefined;
-            resourceInputs["nodeBinpm2"] = state ? state.nodeBinpm2 : undefined;
-            resourceInputs["nodeCorepack"] = state ? state.nodeCorepack : undefined;
-            resourceInputs["nodeGrunt"] = state ? state.nodeGrunt : undefined;
-            resourceInputs["nodeGulpcli"] = state ? state.nodeGulpcli : undefined;
-            resourceInputs["nodeNodegyp"] = state ? state.nodeNodegyp : undefined;
-            resourceInputs["nodeNodepregyp"] = state ? state.nodeNodepregyp : undefined;
-            resourceInputs["nodeNpm"] = state ? state.nodeNpm : undefined;
-            resourceInputs["nodePrebuildinstall"] = state ? state.nodePrebuildinstall : undefined;
-            resourceInputs["nodeTypescript"] = state ? state.nodeTypescript : undefined;
-            resourceInputs["nodeYarn"] = state ? state.nodeYarn : undefined;
-            resourceInputs["phpScript"] = state ? state.phpScript : undefined;
+            resourceInputs["aspnetcore"] = state?.aspnetcore;
+            resourceInputs["aspnetcoreAgentlistener"] = state?.aspnetcoreAgentlistener;
+            resourceInputs["aspnetcoreAgentworker"] = state?.aspnetcoreAgentworker;
+            resourceInputs["cf"] = state?.cf;
+            resourceInputs["cfAppsmanagerjs"] = state?.cfAppsmanagerjs;
+            resourceInputs["container"] = state?.container;
+            resourceInputs["dockerPauseamd64"] = state?.dockerPauseamd64;
+            resourceInputs["exeAdapter"] = state?.exeAdapter;
+            resourceInputs["exeAgentlistener"] = state?.exeAgentlistener;
+            resourceInputs["exeAgentworker"] = state?.exeAgentworker;
+            resourceInputs["exeAnsible"] = state?.exeAnsible;
+            resourceInputs["exeAuctioneer"] = state?.exeAuctioneer;
+            resourceInputs["exeAuditbeat"] = state?.exeAuditbeat;
+            resourceInputs["exeAws"] = state?.exeAws;
+            resourceInputs["exeAz"] = state?.exeAz;
+            resourceInputs["exeBbs"] = state?.exeBbs;
+            resourceInputs["exeCaddy"] = state?.exeCaddy;
+            resourceInputs["exeCaliconode"] = state?.exeCaliconode;
+            resourceInputs["exeCasclient"] = state?.exeCasclient;
+            resourceInputs["exeCcuploader"] = state?.exeCcuploader;
+            resourceInputs["exeConda"] = state?.exeConda;
+            resourceInputs["exeDoppler"] = state?.exeDoppler;
+            resourceInputs["exeFilebeat"] = state?.exeFilebeat;
+            resourceInputs["exeFlexnetjobexecutorservice"] = state?.exeFlexnetjobexecutorservice;
+            resourceInputs["exeFlexnetmaintenanceremotingservice"] = state?.exeFlexnetmaintenanceremotingservice;
+            resourceInputs["exeFunctionbeat"] = state?.exeFunctionbeat;
+            resourceInputs["exeGcloud"] = state?.exeGcloud;
+            resourceInputs["exeGorouter"] = state?.exeGorouter;
+            resourceInputs["exeGrootfs"] = state?.exeGrootfs;
+            resourceInputs["exeHatch"] = state?.exeHatch;
+            resourceInputs["exeHeartbeat"] = state?.exeHeartbeat;
+            resourceInputs["exeInfluxd"] = state?.exeInfluxd;
+            resourceInputs["exeJupyter"] = state?.exeJupyter;
+            resourceInputs["exeLocket"] = state?.exeLocket;
+            resourceInputs["exeMetricbeat"] = state?.exeMetricbeat;
+            resourceInputs["exeMetron"] = state?.exeMetron;
+            resourceInputs["exeMqsi"] = state?.exeMqsi;
+            resourceInputs["exeOc"] = state?.exeOc;
+            resourceInputs["exeOpenhandlecollector"] = state?.exeOpenhandlecollector;
+            resourceInputs["exeOpenstack"] = state?.exeOpenstack;
+            resourceInputs["exeOptcnibinhostlocal"] = state?.exeOptcnibinhostlocal;
+            resourceInputs["exePacketbeat"] = state?.exePacketbeat;
+            resourceInputs["exePhpcgi"] = state?.exePhpcgi;
+            resourceInputs["exePip"] = state?.exePip;
+            resourceInputs["exeRep"] = state?.exeRep;
+            resourceInputs["exeRouteemitter"] = state?.exeRouteemitter;
+            resourceInputs["exeRouteregistrar"] = state?.exeRouteregistrar;
+            resourceInputs["exeRoutingapi"] = state?.exeRoutingapi;
+            resourceInputs["exeSchedular"] = state?.exeSchedular;
+            resourceInputs["exeSilkdaemon"] = state?.exeSilkdaemon;
+            resourceInputs["exeSwitchboard"] = state?.exeSwitchboard;
+            resourceInputs["exeSyslogdrainbinder"] = state?.exeSyslogdrainbinder;
+            resourceInputs["exeTardis"] = state?.exeTardis;
+            resourceInputs["exeTmpbuildpacks"] = state?.exeTmpbuildpacks;
+            resourceInputs["exeTpswatcher"] = state?.exeTpswatcher;
+            resourceInputs["exeTrafficcontroller"] = state?.exeTrafficcontroller;
+            resourceInputs["exeUipath"] = state?.exeUipath;
+            resourceInputs["exeUserbinpiper"] = state?.exeUserbinpiper;
+            resourceInputs["exeW3wp"] = state?.exeW3wp;
+            resourceInputs["exeWheel"] = state?.exeWheel;
+            resourceInputs["exeYq"] = state?.exeYq;
+            resourceInputs["exeYum"] = state?.exeYum;
+            resourceInputs["goStatic"] = state?.goStatic;
+            resourceInputs["hostGroupId"] = state?.hostGroupId;
+            resourceInputs["jarDtibmmqconnector"] = state?.jarDtibmmqconnector;
+            resourceInputs["jarEclipseequinox"] = state?.jarEclipseequinox;
+            resourceInputs["k8sCassandraoperator"] = state?.k8sCassandraoperator;
+            resourceInputs["k8sContainerpod"] = state?.k8sContainerpod;
+            resourceInputs["k8sNamespace"] = state?.k8sNamespace;
+            resourceInputs["nodeBinpm2"] = state?.nodeBinpm2;
+            resourceInputs["nodeCorepack"] = state?.nodeCorepack;
+            resourceInputs["nodeGrunt"] = state?.nodeGrunt;
+            resourceInputs["nodeGulpcli"] = state?.nodeGulpcli;
+            resourceInputs["nodeNodegyp"] = state?.nodeNodegyp;
+            resourceInputs["nodeNodepregyp"] = state?.nodeNodepregyp;
+            resourceInputs["nodeNpm"] = state?.nodeNpm;
+            resourceInputs["nodePrebuildinstall"] = state?.nodePrebuildinstall;
+            resourceInputs["nodeTypescript"] = state?.nodeTypescript;
+            resourceInputs["nodeYarn"] = state?.nodeYarn;
+            resourceInputs["phpScript"] = state?.phpScript;
         } else {
             const args = argsOrState as BuiltinProcessMonitoringArgs | undefined;
-            resourceInputs["aspnetcore"] = args ? args.aspnetcore : undefined;
-            resourceInputs["aspnetcoreAgentlistener"] = args ? args.aspnetcoreAgentlistener : undefined;
-            resourceInputs["aspnetcoreAgentworker"] = args ? args.aspnetcoreAgentworker : undefined;
-            resourceInputs["cf"] = args ? args.cf : undefined;
-            resourceInputs["cfAppsmanagerjs"] = args ? args.cfAppsmanagerjs : undefined;
-            resourceInputs["container"] = args ? args.container : undefined;
-            resourceInputs["dockerPauseamd64"] = args ? args.dockerPauseamd64 : undefined;
-            resourceInputs["exeAdapter"] = args ? args.exeAdapter : undefined;
-            resourceInputs["exeAgentlistener"] = args ? args.exeAgentlistener : undefined;
-            resourceInputs["exeAgentworker"] = args ? args.exeAgentworker : undefined;
-            resourceInputs["exeAnsible"] = args ? args.exeAnsible : undefined;
-            resourceInputs["exeAuctioneer"] = args ? args.exeAuctioneer : undefined;
-            resourceInputs["exeAuditbeat"] = args ? args.exeAuditbeat : undefined;
-            resourceInputs["exeAws"] = args ? args.exeAws : undefined;
-            resourceInputs["exeAz"] = args ? args.exeAz : undefined;
-            resourceInputs["exeBbs"] = args ? args.exeBbs : undefined;
-            resourceInputs["exeCaddy"] = args ? args.exeCaddy : undefined;
-            resourceInputs["exeCaliconode"] = args ? args.exeCaliconode : undefined;
-            resourceInputs["exeCasclient"] = args ? args.exeCasclient : undefined;
-            resourceInputs["exeCcuploader"] = args ? args.exeCcuploader : undefined;
-            resourceInputs["exeConda"] = args ? args.exeConda : undefined;
-            resourceInputs["exeDoppler"] = args ? args.exeDoppler : undefined;
-            resourceInputs["exeFilebeat"] = args ? args.exeFilebeat : undefined;
-            resourceInputs["exeFlexnetjobexecutorservice"] = args ? args.exeFlexnetjobexecutorservice : undefined;
-            resourceInputs["exeFlexnetmaintenanceremotingservice"] = args ? args.exeFlexnetmaintenanceremotingservice : undefined;
-            resourceInputs["exeFunctionbeat"] = args ? args.exeFunctionbeat : undefined;
-            resourceInputs["exeGcloud"] = args ? args.exeGcloud : undefined;
-            resourceInputs["exeGorouter"] = args ? args.exeGorouter : undefined;
-            resourceInputs["exeGrootfs"] = args ? args.exeGrootfs : undefined;
-            resourceInputs["exeHatch"] = args ? args.exeHatch : undefined;
-            resourceInputs["exeHeartbeat"] = args ? args.exeHeartbeat : undefined;
-            resourceInputs["exeInfluxd"] = args ? args.exeInfluxd : undefined;
-            resourceInputs["exeJupyter"] = args ? args.exeJupyter : undefined;
-            resourceInputs["exeLocket"] = args ? args.exeLocket : undefined;
-            resourceInputs["exeMetricbeat"] = args ? args.exeMetricbeat : undefined;
-            resourceInputs["exeMetron"] = args ? args.exeMetron : undefined;
-            resourceInputs["exeMqsi"] = args ? args.exeMqsi : undefined;
-            resourceInputs["exeOc"] = args ? args.exeOc : undefined;
-            resourceInputs["exeOpenhandlecollector"] = args ? args.exeOpenhandlecollector : undefined;
-            resourceInputs["exeOpenstack"] = args ? args.exeOpenstack : undefined;
-            resourceInputs["exeOptcnibinhostlocal"] = args ? args.exeOptcnibinhostlocal : undefined;
-            resourceInputs["exePacketbeat"] = args ? args.exePacketbeat : undefined;
-            resourceInputs["exePhpcgi"] = args ? args.exePhpcgi : undefined;
-            resourceInputs["exePip"] = args ? args.exePip : undefined;
-            resourceInputs["exeRep"] = args ? args.exeRep : undefined;
-            resourceInputs["exeRouteemitter"] = args ? args.exeRouteemitter : undefined;
-            resourceInputs["exeRouteregistrar"] = args ? args.exeRouteregistrar : undefined;
-            resourceInputs["exeRoutingapi"] = args ? args.exeRoutingapi : undefined;
-            resourceInputs["exeSchedular"] = args ? args.exeSchedular : undefined;
-            resourceInputs["exeSilkdaemon"] = args ? args.exeSilkdaemon : undefined;
-            resourceInputs["exeSwitchboard"] = args ? args.exeSwitchboard : undefined;
-            resourceInputs["exeSyslogdrainbinder"] = args ? args.exeSyslogdrainbinder : undefined;
-            resourceInputs["exeTardis"] = args ? args.exeTardis : undefined;
-            resourceInputs["exeTmpbuildpacks"] = args ? args.exeTmpbuildpacks : undefined;
-            resourceInputs["exeTpswatcher"] = args ? args.exeTpswatcher : undefined;
-            resourceInputs["exeTrafficcontroller"] = args ? args.exeTrafficcontroller : undefined;
-            resourceInputs["exeUipath"] = args ? args.exeUipath : undefined;
-            resourceInputs["exeUserbinpiper"] = args ? args.exeUserbinpiper : undefined;
-            resourceInputs["exeW3wp"] = args ? args.exeW3wp : undefined;
-            resourceInputs["exeWheel"] = args ? args.exeWheel : undefined;
-            resourceInputs["exeYq"] = args ? args.exeYq : undefined;
-            resourceInputs["exeYum"] = args ? args.exeYum : undefined;
-            resourceInputs["goStatic"] = args ? args.goStatic : undefined;
-            resourceInputs["hostGroupId"] = args ? args.hostGroupId : undefined;
-            resourceInputs["jarDtibmmqconnector"] = args ? args.jarDtibmmqconnector : undefined;
-            resourceInputs["jarEclipseequinox"] = args ? args.jarEclipseequinox : undefined;
-            resourceInputs["k8sCassandraoperator"] = args ? args.k8sCassandraoperator : undefined;
-            resourceInputs["k8sContainerpod"] = args ? args.k8sContainerpod : undefined;
-            resourceInputs["k8sNamespace"] = args ? args.k8sNamespace : undefined;
-            resourceInputs["nodeBinpm2"] = args ? args.nodeBinpm2 : undefined;
-            resourceInputs["nodeCorepack"] = args ? args.nodeCorepack : undefined;
-            resourceInputs["nodeGrunt"] = args ? args.nodeGrunt : undefined;
-            resourceInputs["nodeGulpcli"] = args ? args.nodeGulpcli : undefined;
-            resourceInputs["nodeNodegyp"] = args ? args.nodeNodegyp : undefined;
-            resourceInputs["nodeNodepregyp"] = args ? args.nodeNodepregyp : undefined;
-            resourceInputs["nodeNpm"] = args ? args.nodeNpm : undefined;
-            resourceInputs["nodePrebuildinstall"] = args ? args.nodePrebuildinstall : undefined;
-            resourceInputs["nodeTypescript"] = args ? args.nodeTypescript : undefined;
-            resourceInputs["nodeYarn"] = args ? args.nodeYarn : undefined;
-            resourceInputs["phpScript"] = args ? args.phpScript : undefined;
+            resourceInputs["aspnetcore"] = args?.aspnetcore;
+            resourceInputs["aspnetcoreAgentlistener"] = args?.aspnetcoreAgentlistener;
+            resourceInputs["aspnetcoreAgentworker"] = args?.aspnetcoreAgentworker;
+            resourceInputs["cf"] = args?.cf;
+            resourceInputs["cfAppsmanagerjs"] = args?.cfAppsmanagerjs;
+            resourceInputs["container"] = args?.container;
+            resourceInputs["dockerPauseamd64"] = args?.dockerPauseamd64;
+            resourceInputs["exeAdapter"] = args?.exeAdapter;
+            resourceInputs["exeAgentlistener"] = args?.exeAgentlistener;
+            resourceInputs["exeAgentworker"] = args?.exeAgentworker;
+            resourceInputs["exeAnsible"] = args?.exeAnsible;
+            resourceInputs["exeAuctioneer"] = args?.exeAuctioneer;
+            resourceInputs["exeAuditbeat"] = args?.exeAuditbeat;
+            resourceInputs["exeAws"] = args?.exeAws;
+            resourceInputs["exeAz"] = args?.exeAz;
+            resourceInputs["exeBbs"] = args?.exeBbs;
+            resourceInputs["exeCaddy"] = args?.exeCaddy;
+            resourceInputs["exeCaliconode"] = args?.exeCaliconode;
+            resourceInputs["exeCasclient"] = args?.exeCasclient;
+            resourceInputs["exeCcuploader"] = args?.exeCcuploader;
+            resourceInputs["exeConda"] = args?.exeConda;
+            resourceInputs["exeDoppler"] = args?.exeDoppler;
+            resourceInputs["exeFilebeat"] = args?.exeFilebeat;
+            resourceInputs["exeFlexnetjobexecutorservice"] = args?.exeFlexnetjobexecutorservice;
+            resourceInputs["exeFlexnetmaintenanceremotingservice"] = args?.exeFlexnetmaintenanceremotingservice;
+            resourceInputs["exeFunctionbeat"] = args?.exeFunctionbeat;
+            resourceInputs["exeGcloud"] = args?.exeGcloud;
+            resourceInputs["exeGorouter"] = args?.exeGorouter;
+            resourceInputs["exeGrootfs"] = args?.exeGrootfs;
+            resourceInputs["exeHatch"] = args?.exeHatch;
+            resourceInputs["exeHeartbeat"] = args?.exeHeartbeat;
+            resourceInputs["exeInfluxd"] = args?.exeInfluxd;
+            resourceInputs["exeJupyter"] = args?.exeJupyter;
+            resourceInputs["exeLocket"] = args?.exeLocket;
+            resourceInputs["exeMetricbeat"] = args?.exeMetricbeat;
+            resourceInputs["exeMetron"] = args?.exeMetron;
+            resourceInputs["exeMqsi"] = args?.exeMqsi;
+            resourceInputs["exeOc"] = args?.exeOc;
+            resourceInputs["exeOpenhandlecollector"] = args?.exeOpenhandlecollector;
+            resourceInputs["exeOpenstack"] = args?.exeOpenstack;
+            resourceInputs["exeOptcnibinhostlocal"] = args?.exeOptcnibinhostlocal;
+            resourceInputs["exePacketbeat"] = args?.exePacketbeat;
+            resourceInputs["exePhpcgi"] = args?.exePhpcgi;
+            resourceInputs["exePip"] = args?.exePip;
+            resourceInputs["exeRep"] = args?.exeRep;
+            resourceInputs["exeRouteemitter"] = args?.exeRouteemitter;
+            resourceInputs["exeRouteregistrar"] = args?.exeRouteregistrar;
+            resourceInputs["exeRoutingapi"] = args?.exeRoutingapi;
+            resourceInputs["exeSchedular"] = args?.exeSchedular;
+            resourceInputs["exeSilkdaemon"] = args?.exeSilkdaemon;
+            resourceInputs["exeSwitchboard"] = args?.exeSwitchboard;
+            resourceInputs["exeSyslogdrainbinder"] = args?.exeSyslogdrainbinder;
+            resourceInputs["exeTardis"] = args?.exeTardis;
+            resourceInputs["exeTmpbuildpacks"] = args?.exeTmpbuildpacks;
+            resourceInputs["exeTpswatcher"] = args?.exeTpswatcher;
+            resourceInputs["exeTrafficcontroller"] = args?.exeTrafficcontroller;
+            resourceInputs["exeUipath"] = args?.exeUipath;
+            resourceInputs["exeUserbinpiper"] = args?.exeUserbinpiper;
+            resourceInputs["exeW3wp"] = args?.exeW3wp;
+            resourceInputs["exeWheel"] = args?.exeWheel;
+            resourceInputs["exeYq"] = args?.exeYq;
+            resourceInputs["exeYum"] = args?.exeYum;
+            resourceInputs["goStatic"] = args?.goStatic;
+            resourceInputs["hostGroupId"] = args?.hostGroupId;
+            resourceInputs["jarDtibmmqconnector"] = args?.jarDtibmmqconnector;
+            resourceInputs["jarEclipseequinox"] = args?.jarEclipseequinox;
+            resourceInputs["k8sCassandraoperator"] = args?.k8sCassandraoperator;
+            resourceInputs["k8sContainerpod"] = args?.k8sContainerpod;
+            resourceInputs["k8sNamespace"] = args?.k8sNamespace;
+            resourceInputs["nodeBinpm2"] = args?.nodeBinpm2;
+            resourceInputs["nodeCorepack"] = args?.nodeCorepack;
+            resourceInputs["nodeGrunt"] = args?.nodeGrunt;
+            resourceInputs["nodeGulpcli"] = args?.nodeGulpcli;
+            resourceInputs["nodeNodegyp"] = args?.nodeNodegyp;
+            resourceInputs["nodeNodepregyp"] = args?.nodeNodepregyp;
+            resourceInputs["nodeNpm"] = args?.nodeNpm;
+            resourceInputs["nodePrebuildinstall"] = args?.nodePrebuildinstall;
+            resourceInputs["nodeTypescript"] = args?.nodeTypescript;
+            resourceInputs["nodeYarn"] = args?.nodeYarn;
+            resourceInputs["phpScript"] = args?.phpScript;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BuiltinProcessMonitoring.__pulumiType, name, resourceInputs, opts);

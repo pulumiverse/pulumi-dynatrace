@@ -35,7 +35,7 @@ export class RumOverloadPrevention extends pulumi.CustomResource {
     /**
      * Once this limit is reached, Dynatrace [throttles the number of captured user sessions](https://dt-url.net/fm3v0p7g).
      */
-    public readonly overloadPreventionLimit!: pulumi.Output<number>;
+    declare public readonly overloadPreventionLimit: pulumi.Output<number>;
 
     /**
      * Create a RumOverloadPrevention resource with the given unique name, arguments, and options.
@@ -50,13 +50,13 @@ export class RumOverloadPrevention extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RumOverloadPreventionState | undefined;
-            resourceInputs["overloadPreventionLimit"] = state ? state.overloadPreventionLimit : undefined;
+            resourceInputs["overloadPreventionLimit"] = state?.overloadPreventionLimit;
         } else {
             const args = argsOrState as RumOverloadPreventionArgs | undefined;
-            if ((!args || args.overloadPreventionLimit === undefined) && !opts.urn) {
+            if (args?.overloadPreventionLimit === undefined && !opts.urn) {
                 throw new Error("Missing required property 'overloadPreventionLimit'");
             }
-            resourceInputs["overloadPreventionLimit"] = args ? args.overloadPreventionLimit : undefined;
+            resourceInputs["overloadPreventionLimit"] = args?.overloadPreventionLimit;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RumOverloadPrevention.__pulumiType, name, resourceInputs, opts);

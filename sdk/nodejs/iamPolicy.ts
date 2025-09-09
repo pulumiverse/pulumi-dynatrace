@@ -70,33 +70,33 @@ export class IamPolicy extends pulumi.CustomResource {
     /**
      * The UUID of the account (`urn:dtaccount:<account-uuid>`) in case the policy should be applied to all environments of this account. The prefix `urn:dtaccount:` MUST be omitted here.
      */
-    public readonly account!: pulumi.Output<string | undefined>;
+    declare public readonly account: pulumi.Output<string | undefined>;
     /**
      * An optional description text for the policy
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
      *
      * @deprecated Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead
      */
-    public readonly environment!: pulumi.Output<string | undefined>;
+    declare public readonly environment: pulumi.Output<string | undefined>;
     /**
      * The name of the policy
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The Statement Query of the policy
      */
-    public readonly statementQuery!: pulumi.Output<string>;
+    declare public readonly statementQuery: pulumi.Output<string>;
     /**
      * Tags for this policy
      */
-    public readonly tags!: pulumi.Output<string[] | undefined>;
+    declare public readonly tags: pulumi.Output<string[] | undefined>;
     /**
      * The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
      */
-    public /*out*/ readonly uuid!: pulumi.Output<string>;
+    declare public /*out*/ readonly uuid: pulumi.Output<string>;
 
     /**
      * Create a IamPolicy resource with the given unique name, arguments, and options.
@@ -111,24 +111,24 @@ export class IamPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamPolicyState | undefined;
-            resourceInputs["account"] = state ? state.account : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["environment"] = state ? state.environment : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["statementQuery"] = state ? state.statementQuery : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["uuid"] = state ? state.uuid : undefined;
+            resourceInputs["account"] = state?.account;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["environment"] = state?.environment;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["statementQuery"] = state?.statementQuery;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["uuid"] = state?.uuid;
         } else {
             const args = argsOrState as IamPolicyArgs | undefined;
-            if ((!args || args.statementQuery === undefined) && !opts.urn) {
+            if (args?.statementQuery === undefined && !opts.urn) {
                 throw new Error("Missing required property 'statementQuery'");
             }
-            resourceInputs["account"] = args ? args.account : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["environment"] = args ? args.environment : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["statementQuery"] = args ? args.statementQuery : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["account"] = args?.account;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["environment"] = args?.environment;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["statementQuery"] = args?.statementQuery;
+            resourceInputs["tags"] = args?.tags;
             resourceInputs["uuid"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

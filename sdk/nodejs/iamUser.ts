@@ -57,9 +57,9 @@ export class IamUser extends pulumi.CustomResource {
         return obj['__pulumiType'] === IamUser.__pulumiType;
     }
 
-    public readonly email!: pulumi.Output<string>;
-    public readonly groups!: pulumi.Output<string[] | undefined>;
-    public /*out*/ readonly uid!: pulumi.Output<string>;
+    declare public readonly email: pulumi.Output<string>;
+    declare public readonly groups: pulumi.Output<string[] | undefined>;
+    declare public /*out*/ readonly uid: pulumi.Output<string>;
 
     /**
      * Create a IamUser resource with the given unique name, arguments, and options.
@@ -74,16 +74,16 @@ export class IamUser extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamUserState | undefined;
-            resourceInputs["email"] = state ? state.email : undefined;
-            resourceInputs["groups"] = state ? state.groups : undefined;
-            resourceInputs["uid"] = state ? state.uid : undefined;
+            resourceInputs["email"] = state?.email;
+            resourceInputs["groups"] = state?.groups;
+            resourceInputs["uid"] = state?.uid;
         } else {
             const args = argsOrState as IamUserArgs | undefined;
-            if ((!args || args.email === undefined) && !opts.urn) {
+            if (args?.email === undefined && !opts.urn) {
                 throw new Error("Missing required property 'email'");
             }
-            resourceInputs["email"] = args ? args.email : undefined;
-            resourceInputs["groups"] = args ? args.groups : undefined;
+            resourceInputs["email"] = args?.email;
+            resourceInputs["groups"] = args?.groups;
             resourceInputs["uid"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -35,7 +35,7 @@ export class CloudDevelopmentEnvironments extends pulumi.CustomResource {
     /**
      * The URL to allow app development from. E.g. `https://*.my-company.my-cde-provider.com`.
      */
-    public readonly cloudDevelopmentEnvironments!: pulumi.Output<string[] | undefined>;
+    declare public readonly cloudDevelopmentEnvironments: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a CloudDevelopmentEnvironments resource with the given unique name, arguments, and options.
@@ -50,10 +50,10 @@ export class CloudDevelopmentEnvironments extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudDevelopmentEnvironmentsState | undefined;
-            resourceInputs["cloudDevelopmentEnvironments"] = state ? state.cloudDevelopmentEnvironments : undefined;
+            resourceInputs["cloudDevelopmentEnvironments"] = state?.cloudDevelopmentEnvironments;
         } else {
             const args = argsOrState as CloudDevelopmentEnvironmentsArgs | undefined;
-            resourceInputs["cloudDevelopmentEnvironments"] = args ? args.cloudDevelopmentEnvironments : undefined;
+            resourceInputs["cloudDevelopmentEnvironments"] = args?.cloudDevelopmentEnvironments;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CloudDevelopmentEnvironments.__pulumiType, name, resourceInputs, opts);

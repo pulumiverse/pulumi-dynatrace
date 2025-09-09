@@ -37,19 +37,19 @@ export class DatabaseAnomalies extends pulumi.CustomResource {
     /**
      * Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
      */
-    public readonly dbConnectFailures!: pulumi.Output<outputs.DatabaseAnomaliesDbConnectFailures | undefined>;
+    declare public readonly dbConnectFailures: pulumi.Output<outputs.DatabaseAnomaliesDbConnectFailures | undefined>;
     /**
      * Configuration of failure rate increase detection
      */
-    public readonly failureRate!: pulumi.Output<outputs.DatabaseAnomaliesFailureRate | undefined>;
+    declare public readonly failureRate: pulumi.Output<outputs.DatabaseAnomaliesFailureRate | undefined>;
     /**
      * Configuration for anomalies regarding load drops and spikes
      */
-    public readonly load!: pulumi.Output<outputs.DatabaseAnomaliesLoad | undefined>;
+    declare public readonly load: pulumi.Output<outputs.DatabaseAnomaliesLoad | undefined>;
     /**
      * Configuration of response time degradation detection
      */
-    public readonly responseTime!: pulumi.Output<outputs.DatabaseAnomaliesResponseTime | undefined>;
+    declare public readonly responseTime: pulumi.Output<outputs.DatabaseAnomaliesResponseTime | undefined>;
 
     /**
      * Create a DatabaseAnomalies resource with the given unique name, arguments, and options.
@@ -64,16 +64,16 @@ export class DatabaseAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DatabaseAnomaliesState | undefined;
-            resourceInputs["dbConnectFailures"] = state ? state.dbConnectFailures : undefined;
-            resourceInputs["failureRate"] = state ? state.failureRate : undefined;
-            resourceInputs["load"] = state ? state.load : undefined;
-            resourceInputs["responseTime"] = state ? state.responseTime : undefined;
+            resourceInputs["dbConnectFailures"] = state?.dbConnectFailures;
+            resourceInputs["failureRate"] = state?.failureRate;
+            resourceInputs["load"] = state?.load;
+            resourceInputs["responseTime"] = state?.responseTime;
         } else {
             const args = argsOrState as DatabaseAnomaliesArgs | undefined;
-            resourceInputs["dbConnectFailures"] = args ? args.dbConnectFailures : undefined;
-            resourceInputs["failureRate"] = args ? args.failureRate : undefined;
-            resourceInputs["load"] = args ? args.load : undefined;
-            resourceInputs["responseTime"] = args ? args.responseTime : undefined;
+            resourceInputs["dbConnectFailures"] = args?.dbConnectFailures;
+            resourceInputs["failureRate"] = args?.failureRate;
+            resourceInputs["load"] = args?.load;
+            resourceInputs["responseTime"] = args?.responseTime;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DatabaseAnomalies.__pulumiType, name, resourceInputs, opts);

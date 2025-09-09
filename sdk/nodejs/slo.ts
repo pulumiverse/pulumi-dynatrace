@@ -37,61 +37,61 @@ export class Slo extends pulumi.CustomResource {
     /**
      * The total count metric (the denominator in rate calculation)
      */
-    public readonly denominator!: pulumi.Output<string | undefined>;
+    declare public readonly denominator: pulumi.Output<string | undefined>;
     /**
      * The custom description of the SLO (optional)
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * The SLO is enabled (`false`) or disabled (`true`)
      */
-    public readonly disabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly disabled: pulumi.Output<boolean | undefined>;
     /**
      * Error budget burn rate configuration of a service-level objective (SLO).
      */
-    public readonly errorBudgetBurnRate!: pulumi.Output<outputs.SloErrorBudgetBurnRate | undefined>;
+    declare public readonly errorBudgetBurnRate: pulumi.Output<outputs.SloErrorBudgetBurnRate | undefined>;
     /**
      * The evaluation type of the SLO. Currently only `AGGREGATE` is supported
      */
-    public readonly evaluation!: pulumi.Output<string>;
+    declare public readonly evaluation: pulumi.Output<string>;
     /**
      * The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
      */
-    public readonly filter!: pulumi.Output<string | undefined>;
+    declare public readonly filter: pulumi.Output<string | undefined>;
     /**
      * The percentage-based metric expression for the calculation of the SLO
      */
-    public readonly metricExpression!: pulumi.Output<string | undefined>;
+    declare public readonly metricExpression: pulumi.Output<string | undefined>;
     /**
      * The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
      */
-    public readonly metricName!: pulumi.Output<string | undefined>;
+    declare public readonly metricName: pulumi.Output<string | undefined>;
     /**
      * The name of the rule
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The metric for the count of successes (the numerator in rate calculation)
      *
      * @deprecated `numerator` and `denominator` have been replaced by `metricExpression`
      */
-    public readonly numerator!: pulumi.Output<string | undefined>;
+    declare public readonly numerator: pulumi.Output<string | undefined>;
     /**
      * The percentage-based metric for the calculation of the SLO
      */
-    public readonly rate!: pulumi.Output<string | undefined>;
+    declare public readonly rate: pulumi.Output<string | undefined>;
     /**
      * The target value of the SLO
      */
-    public readonly target!: pulumi.Output<number>;
+    declare public readonly target: pulumi.Output<number>;
     /**
      * The timeframe for the SLO evaluation. Use the syntax of the global timeframe selector
      */
-    public readonly timeframe!: pulumi.Output<string>;
+    declare public readonly timeframe: pulumi.Output<string>;
     /**
      * The warning value of the SLO. At warning state the SLO is still fulfilled but is getting close to failure
      */
-    public readonly warning!: pulumi.Output<number>;
+    declare public readonly warning: pulumi.Output<number>;
 
     /**
      * Create a Slo resource with the given unique name, arguments, and options.
@@ -106,48 +106,48 @@ export class Slo extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SloState | undefined;
-            resourceInputs["denominator"] = state ? state.denominator : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["disabled"] = state ? state.disabled : undefined;
-            resourceInputs["errorBudgetBurnRate"] = state ? state.errorBudgetBurnRate : undefined;
-            resourceInputs["evaluation"] = state ? state.evaluation : undefined;
-            resourceInputs["filter"] = state ? state.filter : undefined;
-            resourceInputs["metricExpression"] = state ? state.metricExpression : undefined;
-            resourceInputs["metricName"] = state ? state.metricName : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["numerator"] = state ? state.numerator : undefined;
-            resourceInputs["rate"] = state ? state.rate : undefined;
-            resourceInputs["target"] = state ? state.target : undefined;
-            resourceInputs["timeframe"] = state ? state.timeframe : undefined;
-            resourceInputs["warning"] = state ? state.warning : undefined;
+            resourceInputs["denominator"] = state?.denominator;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["disabled"] = state?.disabled;
+            resourceInputs["errorBudgetBurnRate"] = state?.errorBudgetBurnRate;
+            resourceInputs["evaluation"] = state?.evaluation;
+            resourceInputs["filter"] = state?.filter;
+            resourceInputs["metricExpression"] = state?.metricExpression;
+            resourceInputs["metricName"] = state?.metricName;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["numerator"] = state?.numerator;
+            resourceInputs["rate"] = state?.rate;
+            resourceInputs["target"] = state?.target;
+            resourceInputs["timeframe"] = state?.timeframe;
+            resourceInputs["warning"] = state?.warning;
         } else {
             const args = argsOrState as SloArgs | undefined;
-            if ((!args || args.evaluation === undefined) && !opts.urn) {
+            if (args?.evaluation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'evaluation'");
             }
-            if ((!args || args.target === undefined) && !opts.urn) {
+            if (args?.target === undefined && !opts.urn) {
                 throw new Error("Missing required property 'target'");
             }
-            if ((!args || args.timeframe === undefined) && !opts.urn) {
+            if (args?.timeframe === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeframe'");
             }
-            if ((!args || args.warning === undefined) && !opts.urn) {
+            if (args?.warning === undefined && !opts.urn) {
                 throw new Error("Missing required property 'warning'");
             }
-            resourceInputs["denominator"] = args ? args.denominator : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["disabled"] = args ? args.disabled : undefined;
-            resourceInputs["errorBudgetBurnRate"] = args ? args.errorBudgetBurnRate : undefined;
-            resourceInputs["evaluation"] = args ? args.evaluation : undefined;
-            resourceInputs["filter"] = args ? args.filter : undefined;
-            resourceInputs["metricExpression"] = args ? args.metricExpression : undefined;
-            resourceInputs["metricName"] = args ? args.metricName : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["numerator"] = args ? args.numerator : undefined;
-            resourceInputs["rate"] = args ? args.rate : undefined;
-            resourceInputs["target"] = args ? args.target : undefined;
-            resourceInputs["timeframe"] = args ? args.timeframe : undefined;
-            resourceInputs["warning"] = args ? args.warning : undefined;
+            resourceInputs["denominator"] = args?.denominator;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["disabled"] = args?.disabled;
+            resourceInputs["errorBudgetBurnRate"] = args?.errorBudgetBurnRate;
+            resourceInputs["evaluation"] = args?.evaluation;
+            resourceInputs["filter"] = args?.filter;
+            resourceInputs["metricExpression"] = args?.metricExpression;
+            resourceInputs["metricName"] = args?.metricName;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["numerator"] = args?.numerator;
+            resourceInputs["rate"] = args?.rate;
+            resourceInputs["target"] = args?.target;
+            resourceInputs["timeframe"] = args?.timeframe;
+            resourceInputs["warning"] = args?.warning;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Slo.__pulumiType, name, resourceInputs, opts);

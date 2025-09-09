@@ -35,11 +35,11 @@ export class UnifiedServicesMetrics extends pulumi.CustomResource {
     /**
      * Should metrics be written for endpoints? Please be aware that this setting has billing implications. Check out this [documentation](https://dt-url.net/td23cgh) for further details.
      */
-    public readonly enableEndpointMetrics!: pulumi.Output<boolean>;
+    declare public readonly enableEndpointMetrics: pulumi.Output<boolean>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly serviceId!: pulumi.Output<string | undefined>;
+    declare public readonly serviceId: pulumi.Output<string | undefined>;
 
     /**
      * Create a UnifiedServicesMetrics resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class UnifiedServicesMetrics extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UnifiedServicesMetricsState | undefined;
-            resourceInputs["enableEndpointMetrics"] = state ? state.enableEndpointMetrics : undefined;
-            resourceInputs["serviceId"] = state ? state.serviceId : undefined;
+            resourceInputs["enableEndpointMetrics"] = state?.enableEndpointMetrics;
+            resourceInputs["serviceId"] = state?.serviceId;
         } else {
             const args = argsOrState as UnifiedServicesMetricsArgs | undefined;
-            if ((!args || args.enableEndpointMetrics === undefined) && !opts.urn) {
+            if (args?.enableEndpointMetrics === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableEndpointMetrics'");
             }
-            resourceInputs["enableEndpointMetrics"] = args ? args.enableEndpointMetrics : undefined;
-            resourceInputs["serviceId"] = args ? args.serviceId : undefined;
+            resourceInputs["enableEndpointMetrics"] = args?.enableEndpointMetrics;
+            resourceInputs["serviceId"] = args?.serviceId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(UnifiedServicesMetrics.__pulumiType, name, resourceInputs, opts);

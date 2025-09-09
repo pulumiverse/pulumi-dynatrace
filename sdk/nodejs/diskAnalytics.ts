@@ -35,11 +35,11 @@ export class DiskAnalytics extends pulumi.CustomResource {
     /**
      * The Disk Analytics feature requires an extension to be added to your environment. The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * The scope of this setting (HOST, HOST_GROUP)
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
 
     /**
      * Create a DiskAnalytics resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class DiskAnalytics extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DiskAnalyticsState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as DiskAnalyticsArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DiskAnalytics.__pulumiType, name, resourceInputs, opts);

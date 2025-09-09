@@ -37,35 +37,35 @@ export class AwsAnomalies extends pulumi.CustomResource {
     /**
      * no documentation available
      */
-    public readonly ec2CandidateHighCpuDetection!: pulumi.Output<outputs.AwsAnomaliesEc2CandidateHighCpuDetection>;
+    declare public readonly ec2CandidateHighCpuDetection: pulumi.Output<outputs.AwsAnomaliesEc2CandidateHighCpuDetection>;
     /**
      * no documentation available
      */
-    public readonly elbHighConnectionErrorsDetection!: pulumi.Output<outputs.AwsAnomaliesElbHighConnectionErrorsDetection>;
+    declare public readonly elbHighConnectionErrorsDetection: pulumi.Output<outputs.AwsAnomaliesElbHighConnectionErrorsDetection>;
     /**
      * no documentation available
      */
-    public readonly lambdaHighErrorRateDetection!: pulumi.Output<outputs.AwsAnomaliesLambdaHighErrorRateDetection>;
+    declare public readonly lambdaHighErrorRateDetection: pulumi.Output<outputs.AwsAnomaliesLambdaHighErrorRateDetection>;
     /**
      * no documentation available
      */
-    public readonly rdsHighCpuDetection!: pulumi.Output<outputs.AwsAnomaliesRdsHighCpuDetection>;
+    declare public readonly rdsHighCpuDetection: pulumi.Output<outputs.AwsAnomaliesRdsHighCpuDetection>;
     /**
      * no documentation available
      */
-    public readonly rdsHighMemoryDetection!: pulumi.Output<outputs.AwsAnomaliesRdsHighMemoryDetection>;
+    declare public readonly rdsHighMemoryDetection: pulumi.Output<outputs.AwsAnomaliesRdsHighMemoryDetection>;
     /**
      * no documentation available
      */
-    public readonly rdsHighWriteReadLatencyDetection!: pulumi.Output<outputs.AwsAnomaliesRdsHighWriteReadLatencyDetection>;
+    declare public readonly rdsHighWriteReadLatencyDetection: pulumi.Output<outputs.AwsAnomaliesRdsHighWriteReadLatencyDetection>;
     /**
      * no documentation available
      */
-    public readonly rdsLowStorageDetection!: pulumi.Output<outputs.AwsAnomaliesRdsLowStorageDetection>;
+    declare public readonly rdsLowStorageDetection: pulumi.Output<outputs.AwsAnomaliesRdsLowStorageDetection>;
     /**
      * no documentation available
      */
-    public readonly rdsRestartsSequenceDetection!: pulumi.Output<outputs.AwsAnomaliesRdsRestartsSequenceDetection>;
+    declare public readonly rdsRestartsSequenceDetection: pulumi.Output<outputs.AwsAnomaliesRdsRestartsSequenceDetection>;
 
     /**
      * Create a AwsAnomalies resource with the given unique name, arguments, and options.
@@ -80,48 +80,48 @@ export class AwsAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AwsAnomaliesState | undefined;
-            resourceInputs["ec2CandidateHighCpuDetection"] = state ? state.ec2CandidateHighCpuDetection : undefined;
-            resourceInputs["elbHighConnectionErrorsDetection"] = state ? state.elbHighConnectionErrorsDetection : undefined;
-            resourceInputs["lambdaHighErrorRateDetection"] = state ? state.lambdaHighErrorRateDetection : undefined;
-            resourceInputs["rdsHighCpuDetection"] = state ? state.rdsHighCpuDetection : undefined;
-            resourceInputs["rdsHighMemoryDetection"] = state ? state.rdsHighMemoryDetection : undefined;
-            resourceInputs["rdsHighWriteReadLatencyDetection"] = state ? state.rdsHighWriteReadLatencyDetection : undefined;
-            resourceInputs["rdsLowStorageDetection"] = state ? state.rdsLowStorageDetection : undefined;
-            resourceInputs["rdsRestartsSequenceDetection"] = state ? state.rdsRestartsSequenceDetection : undefined;
+            resourceInputs["ec2CandidateHighCpuDetection"] = state?.ec2CandidateHighCpuDetection;
+            resourceInputs["elbHighConnectionErrorsDetection"] = state?.elbHighConnectionErrorsDetection;
+            resourceInputs["lambdaHighErrorRateDetection"] = state?.lambdaHighErrorRateDetection;
+            resourceInputs["rdsHighCpuDetection"] = state?.rdsHighCpuDetection;
+            resourceInputs["rdsHighMemoryDetection"] = state?.rdsHighMemoryDetection;
+            resourceInputs["rdsHighWriteReadLatencyDetection"] = state?.rdsHighWriteReadLatencyDetection;
+            resourceInputs["rdsLowStorageDetection"] = state?.rdsLowStorageDetection;
+            resourceInputs["rdsRestartsSequenceDetection"] = state?.rdsRestartsSequenceDetection;
         } else {
             const args = argsOrState as AwsAnomaliesArgs | undefined;
-            if ((!args || args.ec2CandidateHighCpuDetection === undefined) && !opts.urn) {
+            if (args?.ec2CandidateHighCpuDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ec2CandidateHighCpuDetection'");
             }
-            if ((!args || args.elbHighConnectionErrorsDetection === undefined) && !opts.urn) {
+            if (args?.elbHighConnectionErrorsDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'elbHighConnectionErrorsDetection'");
             }
-            if ((!args || args.lambdaHighErrorRateDetection === undefined) && !opts.urn) {
+            if (args?.lambdaHighErrorRateDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lambdaHighErrorRateDetection'");
             }
-            if ((!args || args.rdsHighCpuDetection === undefined) && !opts.urn) {
+            if (args?.rdsHighCpuDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rdsHighCpuDetection'");
             }
-            if ((!args || args.rdsHighMemoryDetection === undefined) && !opts.urn) {
+            if (args?.rdsHighMemoryDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rdsHighMemoryDetection'");
             }
-            if ((!args || args.rdsHighWriteReadLatencyDetection === undefined) && !opts.urn) {
+            if (args?.rdsHighWriteReadLatencyDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rdsHighWriteReadLatencyDetection'");
             }
-            if ((!args || args.rdsLowStorageDetection === undefined) && !opts.urn) {
+            if (args?.rdsLowStorageDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rdsLowStorageDetection'");
             }
-            if ((!args || args.rdsRestartsSequenceDetection === undefined) && !opts.urn) {
+            if (args?.rdsRestartsSequenceDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rdsRestartsSequenceDetection'");
             }
-            resourceInputs["ec2CandidateHighCpuDetection"] = args ? args.ec2CandidateHighCpuDetection : undefined;
-            resourceInputs["elbHighConnectionErrorsDetection"] = args ? args.elbHighConnectionErrorsDetection : undefined;
-            resourceInputs["lambdaHighErrorRateDetection"] = args ? args.lambdaHighErrorRateDetection : undefined;
-            resourceInputs["rdsHighCpuDetection"] = args ? args.rdsHighCpuDetection : undefined;
-            resourceInputs["rdsHighMemoryDetection"] = args ? args.rdsHighMemoryDetection : undefined;
-            resourceInputs["rdsHighWriteReadLatencyDetection"] = args ? args.rdsHighWriteReadLatencyDetection : undefined;
-            resourceInputs["rdsLowStorageDetection"] = args ? args.rdsLowStorageDetection : undefined;
-            resourceInputs["rdsRestartsSequenceDetection"] = args ? args.rdsRestartsSequenceDetection : undefined;
+            resourceInputs["ec2CandidateHighCpuDetection"] = args?.ec2CandidateHighCpuDetection;
+            resourceInputs["elbHighConnectionErrorsDetection"] = args?.elbHighConnectionErrorsDetection;
+            resourceInputs["lambdaHighErrorRateDetection"] = args?.lambdaHighErrorRateDetection;
+            resourceInputs["rdsHighCpuDetection"] = args?.rdsHighCpuDetection;
+            resourceInputs["rdsHighMemoryDetection"] = args?.rdsHighMemoryDetection;
+            resourceInputs["rdsHighWriteReadLatencyDetection"] = args?.rdsHighWriteReadLatencyDetection;
+            resourceInputs["rdsLowStorageDetection"] = args?.rdsLowStorageDetection;
+            resourceInputs["rdsRestartsSequenceDetection"] = args?.rdsRestartsSequenceDetection;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AwsAnomalies.__pulumiType, name, resourceInputs, opts);

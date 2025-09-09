@@ -37,19 +37,19 @@ export class WebAppEnablement extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string | undefined>;
+    declare public readonly applicationId: pulumi.Output<string | undefined>;
     /**
      * Experience Analytics
      */
-    public readonly experienceAnalytics!: pulumi.Output<outputs.WebAppEnablementExperienceAnalytics | undefined>;
+    declare public readonly experienceAnalytics: pulumi.Output<outputs.WebAppEnablementExperienceAnalytics | undefined>;
     /**
      * Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
      */
-    public readonly rum!: pulumi.Output<outputs.WebAppEnablementRum>;
+    declare public readonly rum: pulumi.Output<outputs.WebAppEnablementRum>;
     /**
      * [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
      */
-    public readonly sessionReplay!: pulumi.Output<outputs.WebAppEnablementSessionReplay>;
+    declare public readonly sessionReplay: pulumi.Output<outputs.WebAppEnablementSessionReplay>;
 
     /**
      * Create a WebAppEnablement resource with the given unique name, arguments, and options.
@@ -64,22 +64,22 @@ export class WebAppEnablement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppEnablementState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["experienceAnalytics"] = state ? state.experienceAnalytics : undefined;
-            resourceInputs["rum"] = state ? state.rum : undefined;
-            resourceInputs["sessionReplay"] = state ? state.sessionReplay : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["experienceAnalytics"] = state?.experienceAnalytics;
+            resourceInputs["rum"] = state?.rum;
+            resourceInputs["sessionReplay"] = state?.sessionReplay;
         } else {
             const args = argsOrState as WebAppEnablementArgs | undefined;
-            if ((!args || args.rum === undefined) && !opts.urn) {
+            if (args?.rum === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rum'");
             }
-            if ((!args || args.sessionReplay === undefined) && !opts.urn) {
+            if (args?.sessionReplay === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sessionReplay'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["experienceAnalytics"] = args ? args.experienceAnalytics : undefined;
-            resourceInputs["rum"] = args ? args.rum : undefined;
-            resourceInputs["sessionReplay"] = args ? args.sessionReplay : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["experienceAnalytics"] = args?.experienceAnalytics;
+            resourceInputs["rum"] = args?.rum;
+            resourceInputs["sessionReplay"] = args?.sessionReplay;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppEnablement.__pulumiType, name, resourceInputs, opts);

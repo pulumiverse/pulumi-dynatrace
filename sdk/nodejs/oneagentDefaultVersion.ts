@@ -35,11 +35,11 @@ export class OneagentDefaultVersion extends pulumi.CustomResource {
     /**
      * Default version
      */
-    public readonly defaultVersion!: pulumi.Output<string>;
+    declare public readonly defaultVersion: pulumi.Output<string>;
     /**
      * Revision
      */
-    public readonly revision!: pulumi.Output<string | undefined>;
+    declare public readonly revision: pulumi.Output<string | undefined>;
 
     /**
      * Create a OneagentDefaultVersion resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class OneagentDefaultVersion extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OneagentDefaultVersionState | undefined;
-            resourceInputs["defaultVersion"] = state ? state.defaultVersion : undefined;
-            resourceInputs["revision"] = state ? state.revision : undefined;
+            resourceInputs["defaultVersion"] = state?.defaultVersion;
+            resourceInputs["revision"] = state?.revision;
         } else {
             const args = argsOrState as OneagentDefaultVersionArgs | undefined;
-            if ((!args || args.defaultVersion === undefined) && !opts.urn) {
+            if (args?.defaultVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'defaultVersion'");
             }
-            resourceInputs["defaultVersion"] = args ? args.defaultVersion : undefined;
-            resourceInputs["revision"] = args ? args.revision : undefined;
+            resourceInputs["defaultVersion"] = args?.defaultVersion;
+            resourceInputs["revision"] = args?.revision;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OneagentDefaultVersion.__pulumiType, name, resourceInputs, opts);

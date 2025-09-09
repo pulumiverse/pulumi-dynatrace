@@ -82,39 +82,39 @@ export class MaintenanceWindow extends pulumi.CustomResource {
     /**
      * A short description of the maintenance purpose
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * The Maintenance Window is enabled or disabled
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabled: pulumi.Output<boolean | undefined>;
     /**
      * The name of the maintenance window, displayed in the UI
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The schedule of the maintenance window
      */
-    public readonly schedule!: pulumi.Output<outputs.MaintenanceWindowSchedule | undefined>;
+    declare public readonly schedule: pulumi.Output<outputs.MaintenanceWindowSchedule | undefined>;
     /**
      * the tiles this Dashboard consist of
      */
-    public readonly scope!: pulumi.Output<outputs.MaintenanceWindowScope | undefined>;
+    declare public readonly scope: pulumi.Output<outputs.MaintenanceWindowScope | undefined>;
     /**
      * Suppress execution of synthetic monitors during the maintenance
      */
-    public readonly suppressSynthMonExec!: pulumi.Output<boolean | undefined>;
+    declare public readonly suppressSynthMonExec: pulumi.Output<boolean | undefined>;
     /**
      * The type of suppression of alerting and problem detection during the maintenance
      */
-    public readonly suppression!: pulumi.Output<string>;
+    declare public readonly suppression: pulumi.Output<string>;
     /**
      * The type of the maintenance: planned or unplanned
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
 
     /**
      * Create a MaintenanceWindow resource with the given unique name, arguments, and options.
@@ -129,32 +129,32 @@ export class MaintenanceWindow extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MaintenanceWindowState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["schedule"] = state ? state.schedule : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["suppressSynthMonExec"] = state ? state.suppressSynthMonExec : undefined;
-            resourceInputs["suppression"] = state ? state.suppression : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["schedule"] = state?.schedule;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["suppressSynthMonExec"] = state?.suppressSynthMonExec;
+            resourceInputs["suppression"] = state?.suppression;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["unknowns"] = state?.unknowns;
         } else {
             const args = argsOrState as MaintenanceWindowArgs | undefined;
-            if ((!args || args.suppression === undefined) && !opts.urn) {
+            if (args?.suppression === undefined && !opts.urn) {
                 throw new Error("Missing required property 'suppression'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["schedule"] = args ? args.schedule : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["suppressSynthMonExec"] = args ? args.suppressSynthMonExec : undefined;
-            resourceInputs["suppression"] = args ? args.suppression : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["schedule"] = args?.schedule;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["suppressSynthMonExec"] = args?.suppressSynthMonExec;
+            resourceInputs["suppression"] = args?.suppression;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["unknowns"] = args?.unknowns;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MaintenanceWindow.__pulumiType, name, resourceInputs, opts);

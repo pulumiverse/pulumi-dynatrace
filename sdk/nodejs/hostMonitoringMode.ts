@@ -35,11 +35,11 @@ export class HostMonitoringMode extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly hostId!: pulumi.Output<string>;
+    declare public readonly hostId: pulumi.Output<string>;
     /**
      * Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRA_ONLY`
      */
-    public readonly monitoringMode!: pulumi.Output<string>;
+    declare public readonly monitoringMode: pulumi.Output<string>;
 
     /**
      * Create a HostMonitoringMode resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class HostMonitoringMode extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HostMonitoringModeState | undefined;
-            resourceInputs["hostId"] = state ? state.hostId : undefined;
-            resourceInputs["monitoringMode"] = state ? state.monitoringMode : undefined;
+            resourceInputs["hostId"] = state?.hostId;
+            resourceInputs["monitoringMode"] = state?.monitoringMode;
         } else {
             const args = argsOrState as HostMonitoringModeArgs | undefined;
-            if ((!args || args.hostId === undefined) && !opts.urn) {
+            if (args?.hostId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostId'");
             }
-            if ((!args || args.monitoringMode === undefined) && !opts.urn) {
+            if (args?.monitoringMode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitoringMode'");
             }
-            resourceInputs["hostId"] = args ? args.hostId : undefined;
-            resourceInputs["monitoringMode"] = args ? args.monitoringMode : undefined;
+            resourceInputs["hostId"] = args?.hostId;
+            resourceInputs["monitoringMode"] = args?.monitoringMode;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HostMonitoringMode.__pulumiType, name, resourceInputs, opts);

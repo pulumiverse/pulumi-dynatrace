@@ -37,35 +37,35 @@ export class VmwareAnomalies extends pulumi.CustomResource {
     /**
      * no documentation available
      */
-    public readonly droppedPacketsDetection!: pulumi.Output<outputs.VmwareAnomaliesDroppedPacketsDetection>;
+    declare public readonly droppedPacketsDetection: pulumi.Output<outputs.VmwareAnomaliesDroppedPacketsDetection>;
     /**
      * no documentation available
      */
-    public readonly esxiHighCpuDetection!: pulumi.Output<outputs.VmwareAnomaliesEsxiHighCpuDetection>;
+    declare public readonly esxiHighCpuDetection: pulumi.Output<outputs.VmwareAnomaliesEsxiHighCpuDetection>;
     /**
      * no documentation available
      */
-    public readonly esxiHighMemoryDetection!: pulumi.Output<outputs.VmwareAnomaliesEsxiHighMemoryDetection>;
+    declare public readonly esxiHighMemoryDetection: pulumi.Output<outputs.VmwareAnomaliesEsxiHighMemoryDetection>;
     /**
      * no documentation available
      */
-    public readonly guestCpuLimitDetection!: pulumi.Output<outputs.VmwareAnomaliesGuestCpuLimitDetection>;
+    declare public readonly guestCpuLimitDetection: pulumi.Output<outputs.VmwareAnomaliesGuestCpuLimitDetection>;
     /**
      * no documentation available
      */
-    public readonly lowDatastoreSpaceDetection!: pulumi.Output<outputs.VmwareAnomaliesLowDatastoreSpaceDetection>;
+    declare public readonly lowDatastoreSpaceDetection: pulumi.Output<outputs.VmwareAnomaliesLowDatastoreSpaceDetection>;
     /**
      * no documentation available
      */
-    public readonly overloadedStorageDetection!: pulumi.Output<outputs.VmwareAnomaliesOverloadedStorageDetection>;
+    declare public readonly overloadedStorageDetection: pulumi.Output<outputs.VmwareAnomaliesOverloadedStorageDetection>;
     /**
      * no documentation available
      */
-    public readonly slowPhysicalStorageDetection!: pulumi.Output<outputs.VmwareAnomaliesSlowPhysicalStorageDetection>;
+    declare public readonly slowPhysicalStorageDetection: pulumi.Output<outputs.VmwareAnomaliesSlowPhysicalStorageDetection>;
     /**
      * no documentation available
      */
-    public readonly undersizedStorageDetection!: pulumi.Output<outputs.VmwareAnomaliesUndersizedStorageDetection>;
+    declare public readonly undersizedStorageDetection: pulumi.Output<outputs.VmwareAnomaliesUndersizedStorageDetection>;
 
     /**
      * Create a VmwareAnomalies resource with the given unique name, arguments, and options.
@@ -80,48 +80,48 @@ export class VmwareAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmwareAnomaliesState | undefined;
-            resourceInputs["droppedPacketsDetection"] = state ? state.droppedPacketsDetection : undefined;
-            resourceInputs["esxiHighCpuDetection"] = state ? state.esxiHighCpuDetection : undefined;
-            resourceInputs["esxiHighMemoryDetection"] = state ? state.esxiHighMemoryDetection : undefined;
-            resourceInputs["guestCpuLimitDetection"] = state ? state.guestCpuLimitDetection : undefined;
-            resourceInputs["lowDatastoreSpaceDetection"] = state ? state.lowDatastoreSpaceDetection : undefined;
-            resourceInputs["overloadedStorageDetection"] = state ? state.overloadedStorageDetection : undefined;
-            resourceInputs["slowPhysicalStorageDetection"] = state ? state.slowPhysicalStorageDetection : undefined;
-            resourceInputs["undersizedStorageDetection"] = state ? state.undersizedStorageDetection : undefined;
+            resourceInputs["droppedPacketsDetection"] = state?.droppedPacketsDetection;
+            resourceInputs["esxiHighCpuDetection"] = state?.esxiHighCpuDetection;
+            resourceInputs["esxiHighMemoryDetection"] = state?.esxiHighMemoryDetection;
+            resourceInputs["guestCpuLimitDetection"] = state?.guestCpuLimitDetection;
+            resourceInputs["lowDatastoreSpaceDetection"] = state?.lowDatastoreSpaceDetection;
+            resourceInputs["overloadedStorageDetection"] = state?.overloadedStorageDetection;
+            resourceInputs["slowPhysicalStorageDetection"] = state?.slowPhysicalStorageDetection;
+            resourceInputs["undersizedStorageDetection"] = state?.undersizedStorageDetection;
         } else {
             const args = argsOrState as VmwareAnomaliesArgs | undefined;
-            if ((!args || args.droppedPacketsDetection === undefined) && !opts.urn) {
+            if (args?.droppedPacketsDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'droppedPacketsDetection'");
             }
-            if ((!args || args.esxiHighCpuDetection === undefined) && !opts.urn) {
+            if (args?.esxiHighCpuDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'esxiHighCpuDetection'");
             }
-            if ((!args || args.esxiHighMemoryDetection === undefined) && !opts.urn) {
+            if (args?.esxiHighMemoryDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'esxiHighMemoryDetection'");
             }
-            if ((!args || args.guestCpuLimitDetection === undefined) && !opts.urn) {
+            if (args?.guestCpuLimitDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'guestCpuLimitDetection'");
             }
-            if ((!args || args.lowDatastoreSpaceDetection === undefined) && !opts.urn) {
+            if (args?.lowDatastoreSpaceDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lowDatastoreSpaceDetection'");
             }
-            if ((!args || args.overloadedStorageDetection === undefined) && !opts.urn) {
+            if (args?.overloadedStorageDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'overloadedStorageDetection'");
             }
-            if ((!args || args.slowPhysicalStorageDetection === undefined) && !opts.urn) {
+            if (args?.slowPhysicalStorageDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'slowPhysicalStorageDetection'");
             }
-            if ((!args || args.undersizedStorageDetection === undefined) && !opts.urn) {
+            if (args?.undersizedStorageDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'undersizedStorageDetection'");
             }
-            resourceInputs["droppedPacketsDetection"] = args ? args.droppedPacketsDetection : undefined;
-            resourceInputs["esxiHighCpuDetection"] = args ? args.esxiHighCpuDetection : undefined;
-            resourceInputs["esxiHighMemoryDetection"] = args ? args.esxiHighMemoryDetection : undefined;
-            resourceInputs["guestCpuLimitDetection"] = args ? args.guestCpuLimitDetection : undefined;
-            resourceInputs["lowDatastoreSpaceDetection"] = args ? args.lowDatastoreSpaceDetection : undefined;
-            resourceInputs["overloadedStorageDetection"] = args ? args.overloadedStorageDetection : undefined;
-            resourceInputs["slowPhysicalStorageDetection"] = args ? args.slowPhysicalStorageDetection : undefined;
-            resourceInputs["undersizedStorageDetection"] = args ? args.undersizedStorageDetection : undefined;
+            resourceInputs["droppedPacketsDetection"] = args?.droppedPacketsDetection;
+            resourceInputs["esxiHighCpuDetection"] = args?.esxiHighCpuDetection;
+            resourceInputs["esxiHighMemoryDetection"] = args?.esxiHighMemoryDetection;
+            resourceInputs["guestCpuLimitDetection"] = args?.guestCpuLimitDetection;
+            resourceInputs["lowDatastoreSpaceDetection"] = args?.lowDatastoreSpaceDetection;
+            resourceInputs["overloadedStorageDetection"] = args?.overloadedStorageDetection;
+            resourceInputs["slowPhysicalStorageDetection"] = args?.slowPhysicalStorageDetection;
+            resourceInputs["undersizedStorageDetection"] = args?.undersizedStorageDetection;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VmwareAnomalies.__pulumiType, name, resourceInputs, opts);

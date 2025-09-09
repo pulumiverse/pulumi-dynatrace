@@ -48,27 +48,27 @@ export class DashboardSharing extends pulumi.CustomResource {
     /**
      * The Dynatrace entity ID of the dashboard
      */
-    public readonly dashboardId!: pulumi.Output<string>;
+    declare public readonly dashboardId: pulumi.Output<string>;
     /**
      * The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabled: pulumi.Output<boolean | undefined>;
     /**
      * Reserved for internal use by the provider
      */
-    public /*out*/ readonly muted!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly muted: pulumi.Output<boolean>;
     /**
      * Access permissions of the dashboard
      */
-    public readonly permissions!: pulumi.Output<outputs.DashboardSharingPermissions | undefined>;
+    declare public readonly permissions: pulumi.Output<outputs.DashboardSharingPermissions | undefined>;
     /**
      * If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
      */
-    public readonly preset!: pulumi.Output<boolean | undefined>;
+    declare public readonly preset: pulumi.Output<boolean | undefined>;
     /**
      * Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
      */
-    public readonly public!: pulumi.Output<outputs.DashboardSharingPublic | undefined>;
+    declare public readonly public: pulumi.Output<outputs.DashboardSharingPublic | undefined>;
 
     /**
      * Create a DashboardSharing resource with the given unique name, arguments, and options.
@@ -83,22 +83,22 @@ export class DashboardSharing extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DashboardSharingState | undefined;
-            resourceInputs["dashboardId"] = state ? state.dashboardId : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["muted"] = state ? state.muted : undefined;
-            resourceInputs["permissions"] = state ? state.permissions : undefined;
-            resourceInputs["preset"] = state ? state.preset : undefined;
-            resourceInputs["public"] = state ? state.public : undefined;
+            resourceInputs["dashboardId"] = state?.dashboardId;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["muted"] = state?.muted;
+            resourceInputs["permissions"] = state?.permissions;
+            resourceInputs["preset"] = state?.preset;
+            resourceInputs["public"] = state?.public;
         } else {
             const args = argsOrState as DashboardSharingArgs | undefined;
-            if ((!args || args.dashboardId === undefined) && !opts.urn) {
+            if (args?.dashboardId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dashboardId'");
             }
-            resourceInputs["dashboardId"] = args ? args.dashboardId : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["permissions"] = args ? args.permissions : undefined;
-            resourceInputs["preset"] = args ? args.preset : undefined;
-            resourceInputs["public"] = args ? args.public : undefined;
+            resourceInputs["dashboardId"] = args?.dashboardId;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["permissions"] = args?.permissions;
+            resourceInputs["preset"] = args?.preset;
+            resourceInputs["public"] = args?.public;
             resourceInputs["muted"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

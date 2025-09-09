@@ -54,54 +54,54 @@ export class CustomDevice extends pulumi.CustomResource {
     /**
      * The URL of a configuration web page for the custom device, such as a login page for a firewall or router.
      */
-    public readonly configUrl!: pulumi.Output<string | undefined>;
-    public readonly customDeviceId!: pulumi.Output<string>;
+    declare public readonly configUrl: pulumi.Output<string | undefined>;
+    declare public readonly customDeviceId: pulumi.Output<string>;
     /**
      * The name of the custom device, displayed in the UI.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The list of DNS names related to the custom device.
      */
-    public readonly dnsNames!: pulumi.Output<string[] | undefined>;
+    declare public readonly dnsNames: pulumi.Output<string[] | undefined>;
     /**
      * The Dynatrace EntityID of this resource. If you need to refer to this custom device within other resources you want to use this ID
      */
-    public /*out*/ readonly entityId!: pulumi.Output<string>;
+    declare public /*out*/ readonly entityId: pulumi.Output<string>;
     /**
      * The icon to be displayed for your custom component within Smartscape. Provide the full URL of the icon file.
      */
-    public readonly faviconUrl!: pulumi.Output<string | undefined>;
+    declare public readonly faviconUrl: pulumi.Output<string | undefined>;
     /**
      * User defined group of entity. Changing the group requires a new custom device to be created.
      */
-    public readonly group!: pulumi.Output<string>;
+    declare public readonly group: pulumi.Output<string>;
     /**
      * The list of IP addresses that belong to the custom device.
      */
-    public readonly ipAddresses!: pulumi.Output<string[] | undefined>;
+    declare public readonly ipAddresses: pulumi.Output<string[] | undefined>;
     /**
      * The list of ports the custom devices listens to.
      */
-    public readonly listenPorts!: pulumi.Output<number[] | undefined>;
+    declare public readonly listenPorts: pulumi.Output<number[] | undefined>;
     /**
      * The list of key-value pair properties that will be shown beneath the infographics of your custom device.
      *
      * @deprecated Please use the attribute `props` instead
      */
-    public readonly properties!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly properties: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The list of key-value pair properties that will be shown beneath the infographics of your custom device.
      */
-    public readonly props!: pulumi.Output<string | undefined>;
+    declare public readonly props: pulumi.Output<string | undefined>;
     /**
      * The technology type definition of the custom device.
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * If `true` the custom device will be handled as if it was created via UI. It will be refreshed automatically and won't age out. This attribute is taken into consideration when creating the custom device. Changing it afterwards won't have an effect.
      */
-    public readonly uiBased!: pulumi.Output<boolean | undefined>;
+    declare public readonly uiBased: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a CustomDevice resource with the given unique name, arguments, and options.
@@ -116,36 +116,36 @@ export class CustomDevice extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CustomDeviceState | undefined;
-            resourceInputs["configUrl"] = state ? state.configUrl : undefined;
-            resourceInputs["customDeviceId"] = state ? state.customDeviceId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dnsNames"] = state ? state.dnsNames : undefined;
-            resourceInputs["entityId"] = state ? state.entityId : undefined;
-            resourceInputs["faviconUrl"] = state ? state.faviconUrl : undefined;
-            resourceInputs["group"] = state ? state.group : undefined;
-            resourceInputs["ipAddresses"] = state ? state.ipAddresses : undefined;
-            resourceInputs["listenPorts"] = state ? state.listenPorts : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["props"] = state ? state.props : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["uiBased"] = state ? state.uiBased : undefined;
+            resourceInputs["configUrl"] = state?.configUrl;
+            resourceInputs["customDeviceId"] = state?.customDeviceId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dnsNames"] = state?.dnsNames;
+            resourceInputs["entityId"] = state?.entityId;
+            resourceInputs["faviconUrl"] = state?.faviconUrl;
+            resourceInputs["group"] = state?.group;
+            resourceInputs["ipAddresses"] = state?.ipAddresses;
+            resourceInputs["listenPorts"] = state?.listenPorts;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["props"] = state?.props;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["uiBased"] = state?.uiBased;
         } else {
             const args = argsOrState as CustomDeviceArgs | undefined;
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["configUrl"] = args ? args.configUrl : undefined;
-            resourceInputs["customDeviceId"] = args ? args.customDeviceId : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dnsNames"] = args ? args.dnsNames : undefined;
-            resourceInputs["faviconUrl"] = args ? args.faviconUrl : undefined;
-            resourceInputs["group"] = args ? args.group : undefined;
-            resourceInputs["ipAddresses"] = args ? args.ipAddresses : undefined;
-            resourceInputs["listenPorts"] = args ? args.listenPorts : undefined;
-            resourceInputs["properties"] = args ? args.properties : undefined;
-            resourceInputs["props"] = args ? args.props : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["uiBased"] = args ? args.uiBased : undefined;
+            resourceInputs["configUrl"] = args?.configUrl;
+            resourceInputs["customDeviceId"] = args?.customDeviceId;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dnsNames"] = args?.dnsNames;
+            resourceInputs["faviconUrl"] = args?.faviconUrl;
+            resourceInputs["group"] = args?.group;
+            resourceInputs["ipAddresses"] = args?.ipAddresses;
+            resourceInputs["listenPorts"] = args?.listenPorts;
+            resourceInputs["properties"] = args?.properties;
+            resourceInputs["props"] = args?.props;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["uiBased"] = args?.uiBased;
             resourceInputs["entityId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

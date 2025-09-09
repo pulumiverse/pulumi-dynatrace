@@ -35,19 +35,19 @@ export class RemoteEnvironments extends pulumi.CustomResource {
     /**
      * Name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Possible Values: `CLUSTER`, `EXTERNAL`, `INTERNAL`
      */
-    public readonly networkScope!: pulumi.Output<string>;
+    declare public readonly networkScope: pulumi.Output<string>;
     /**
      * Provide a valid token created on the remote environment.
      */
-    public readonly token!: pulumi.Output<string>;
+    declare public readonly token: pulumi.Output<string>;
     /**
      * Specify the full URI to the remote environment. Your local environment will have to be able to connect this URI on a network level.
      */
-    public readonly uri!: pulumi.Output<string>;
+    declare public readonly uri: pulumi.Output<string>;
 
     /**
      * Create a RemoteEnvironments resource with the given unique name, arguments, and options.
@@ -62,25 +62,25 @@ export class RemoteEnvironments extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RemoteEnvironmentsState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkScope"] = state ? state.networkScope : undefined;
-            resourceInputs["token"] = state ? state.token : undefined;
-            resourceInputs["uri"] = state ? state.uri : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkScope"] = state?.networkScope;
+            resourceInputs["token"] = state?.token;
+            resourceInputs["uri"] = state?.uri;
         } else {
             const args = argsOrState as RemoteEnvironmentsArgs | undefined;
-            if ((!args || args.networkScope === undefined) && !opts.urn) {
+            if (args?.networkScope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkScope'");
             }
-            if ((!args || args.token === undefined) && !opts.urn) {
+            if (args?.token === undefined && !opts.urn) {
                 throw new Error("Missing required property 'token'");
             }
-            if ((!args || args.uri === undefined) && !opts.urn) {
+            if (args?.uri === undefined && !opts.urn) {
                 throw new Error("Missing required property 'uri'");
             }
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkScope"] = args ? args.networkScope : undefined;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkScope"] = args?.networkScope;
             resourceInputs["token"] = args?.token ? pulumi.secret(args.token) : undefined;
-            resourceInputs["uri"] = args ? args.uri : undefined;
+            resourceInputs["uri"] = args?.uri;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["token"] };

@@ -35,27 +35,27 @@ export class ContainerRule extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Possible Values: `MONITORING_OFF`, `MONITORING_ON`
      */
-    public readonly mode!: pulumi.Output<string>;
+    declare public readonly mode: pulumi.Output<string>;
     /**
      * Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
      */
-    public readonly operator!: pulumi.Output<string>;
+    declare public readonly operator: pulumi.Output<string>;
     /**
      * Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
      */
-    public readonly property!: pulumi.Output<string>;
+    declare public readonly property: pulumi.Output<string>;
     /**
      * Condition value
      */
-    public readonly value!: pulumi.Output<string | undefined>;
+    declare public readonly value: pulumi.Output<string | undefined>;
 
     /**
      * Create a ContainerRule resource with the given unique name, arguments, and options.
@@ -70,32 +70,32 @@ export class ContainerRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ContainerRuleState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["mode"] = state ? state.mode : undefined;
-            resourceInputs["operator"] = state ? state.operator : undefined;
-            resourceInputs["property"] = state ? state.property : undefined;
-            resourceInputs["value"] = state ? state.value : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["mode"] = state?.mode;
+            resourceInputs["operator"] = state?.operator;
+            resourceInputs["property"] = state?.property;
+            resourceInputs["value"] = state?.value;
         } else {
             const args = argsOrState as ContainerRuleArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.mode === undefined) && !opts.urn) {
+            if (args?.mode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'mode'");
             }
-            if ((!args || args.operator === undefined) && !opts.urn) {
+            if (args?.operator === undefined && !opts.urn) {
                 throw new Error("Missing required property 'operator'");
             }
-            if ((!args || args.property === undefined) && !opts.urn) {
+            if (args?.property === undefined && !opts.urn) {
                 throw new Error("Missing required property 'property'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["mode"] = args ? args.mode : undefined;
-            resourceInputs["operator"] = args ? args.operator : undefined;
-            resourceInputs["property"] = args ? args.property : undefined;
-            resourceInputs["value"] = args ? args.value : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["mode"] = args?.mode;
+            resourceInputs["operator"] = args?.operator;
+            resourceInputs["property"] = args?.property;
+            resourceInputs["value"] = args?.value;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ContainerRule.__pulumiType, name, resourceInputs, opts);

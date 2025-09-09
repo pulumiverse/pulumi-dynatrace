@@ -39,65 +39,65 @@ export class AppsecNotification extends pulumi.CustomResource {
      * profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
      * delivery of security notifications related to this integration.
      */
-    public readonly attackCandidateBasedAlertingProfile!: pulumi.Output<string | undefined>;
+    declare public readonly attackCandidateBasedAlertingProfile: pulumi.Output<string | undefined>;
     /**
      * Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
      */
-    public readonly attackCandidateBasedEmailPayload!: pulumi.Output<outputs.AppsecNotificationAttackCandidateBasedEmailPayload | undefined>;
+    declare public readonly attackCandidateBasedEmailPayload: pulumi.Output<outputs.AppsecNotificationAttackCandidateBasedEmailPayload | undefined>;
     /**
      * Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
      */
-    public readonly attackCandidateBasedJiraPayload!: pulumi.Output<outputs.AppsecNotificationAttackCandidateBasedJiraPayload | undefined>;
+    declare public readonly attackCandidateBasedJiraPayload: pulumi.Output<outputs.AppsecNotificationAttackCandidateBasedJiraPayload | undefined>;
     /**
      * Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
      */
-    public readonly attackCandidateBasedWebhookPayload!: pulumi.Output<outputs.AppsecNotificationAttackCandidateBasedWebhookPayload | undefined>;
+    declare public readonly attackCandidateBasedWebhookPayload: pulumi.Output<outputs.AppsecNotificationAttackCandidateBasedWebhookPayload | undefined>;
     /**
      * Display name of the security notification
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Email configuration, required when `type` equals `EMAIL`
      */
-    public readonly emailConfiguration!: pulumi.Output<outputs.AppsecNotificationEmailConfiguration | undefined>;
+    declare public readonly emailConfiguration: pulumi.Output<outputs.AppsecNotificationEmailConfiguration | undefined>;
     /**
      * Enable/Disable the security notification, enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Jira configuration, required when `type` equals `JIRA`
      */
-    public readonly jiraConfiguration!: pulumi.Output<outputs.AppsecNotificationJiraConfiguration | undefined>;
+    declare public readonly jiraConfiguration: pulumi.Output<outputs.AppsecNotificationJiraConfiguration | undefined>;
     /**
      * For security problem alerts, select an [alerting
      * profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
      * security notifications related to this integration.
      */
-    public readonly securityProblemBasedAlertingProfile!: pulumi.Output<string | undefined>;
+    declare public readonly securityProblemBasedAlertingProfile: pulumi.Output<string | undefined>;
     /**
      * Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
      */
-    public readonly securityProblemBasedEmailPayload!: pulumi.Output<outputs.AppsecNotificationSecurityProblemBasedEmailPayload | undefined>;
+    declare public readonly securityProblemBasedEmailPayload: pulumi.Output<outputs.AppsecNotificationSecurityProblemBasedEmailPayload | undefined>;
     /**
      * Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
      */
-    public readonly securityProblemBasedJiraPayload!: pulumi.Output<outputs.AppsecNotificationSecurityProblemBasedJiraPayload | undefined>;
+    declare public readonly securityProblemBasedJiraPayload: pulumi.Output<outputs.AppsecNotificationSecurityProblemBasedJiraPayload | undefined>;
     /**
      * Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
      */
-    public readonly securityProblemBasedWebhookPayload!: pulumi.Output<outputs.AppsecNotificationSecurityProblemBasedWebhookPayload | undefined>;
+    declare public readonly securityProblemBasedWebhookPayload: pulumi.Output<outputs.AppsecNotificationSecurityProblemBasedWebhookPayload | undefined>;
     /**
      * Security alert type, possible Values: `ATTACK_CANDIDATE`, `SECURITY_PROBLEM`
      */
-    public readonly trigger!: pulumi.Output<string>;
+    declare public readonly trigger: pulumi.Output<string>;
     /**
      * Notification type, possible Values: `EMAIL`, `JIRA`, `WEBHOOK`
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * Webhook configuration, required when `type` equals `WEBHOOK`
      */
-    public readonly webhookConfiguration!: pulumi.Output<outputs.AppsecNotificationWebhookConfiguration | undefined>;
+    declare public readonly webhookConfiguration: pulumi.Output<outputs.AppsecNotificationWebhookConfiguration | undefined>;
 
     /**
      * Create a AppsecNotification resource with the given unique name, arguments, and options.
@@ -112,50 +112,50 @@ export class AppsecNotification extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppsecNotificationState | undefined;
-            resourceInputs["attackCandidateBasedAlertingProfile"] = state ? state.attackCandidateBasedAlertingProfile : undefined;
-            resourceInputs["attackCandidateBasedEmailPayload"] = state ? state.attackCandidateBasedEmailPayload : undefined;
-            resourceInputs["attackCandidateBasedJiraPayload"] = state ? state.attackCandidateBasedJiraPayload : undefined;
-            resourceInputs["attackCandidateBasedWebhookPayload"] = state ? state.attackCandidateBasedWebhookPayload : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["emailConfiguration"] = state ? state.emailConfiguration : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["jiraConfiguration"] = state ? state.jiraConfiguration : undefined;
-            resourceInputs["securityProblemBasedAlertingProfile"] = state ? state.securityProblemBasedAlertingProfile : undefined;
-            resourceInputs["securityProblemBasedEmailPayload"] = state ? state.securityProblemBasedEmailPayload : undefined;
-            resourceInputs["securityProblemBasedJiraPayload"] = state ? state.securityProblemBasedJiraPayload : undefined;
-            resourceInputs["securityProblemBasedWebhookPayload"] = state ? state.securityProblemBasedWebhookPayload : undefined;
-            resourceInputs["trigger"] = state ? state.trigger : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["webhookConfiguration"] = state ? state.webhookConfiguration : undefined;
+            resourceInputs["attackCandidateBasedAlertingProfile"] = state?.attackCandidateBasedAlertingProfile;
+            resourceInputs["attackCandidateBasedEmailPayload"] = state?.attackCandidateBasedEmailPayload;
+            resourceInputs["attackCandidateBasedJiraPayload"] = state?.attackCandidateBasedJiraPayload;
+            resourceInputs["attackCandidateBasedWebhookPayload"] = state?.attackCandidateBasedWebhookPayload;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["emailConfiguration"] = state?.emailConfiguration;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["jiraConfiguration"] = state?.jiraConfiguration;
+            resourceInputs["securityProblemBasedAlertingProfile"] = state?.securityProblemBasedAlertingProfile;
+            resourceInputs["securityProblemBasedEmailPayload"] = state?.securityProblemBasedEmailPayload;
+            resourceInputs["securityProblemBasedJiraPayload"] = state?.securityProblemBasedJiraPayload;
+            resourceInputs["securityProblemBasedWebhookPayload"] = state?.securityProblemBasedWebhookPayload;
+            resourceInputs["trigger"] = state?.trigger;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["webhookConfiguration"] = state?.webhookConfiguration;
         } else {
             const args = argsOrState as AppsecNotificationArgs | undefined;
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.trigger === undefined) && !opts.urn) {
+            if (args?.trigger === undefined && !opts.urn) {
                 throw new Error("Missing required property 'trigger'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["attackCandidateBasedAlertingProfile"] = args ? args.attackCandidateBasedAlertingProfile : undefined;
-            resourceInputs["attackCandidateBasedEmailPayload"] = args ? args.attackCandidateBasedEmailPayload : undefined;
-            resourceInputs["attackCandidateBasedJiraPayload"] = args ? args.attackCandidateBasedJiraPayload : undefined;
-            resourceInputs["attackCandidateBasedWebhookPayload"] = args ? args.attackCandidateBasedWebhookPayload : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["emailConfiguration"] = args ? args.emailConfiguration : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["jiraConfiguration"] = args ? args.jiraConfiguration : undefined;
-            resourceInputs["securityProblemBasedAlertingProfile"] = args ? args.securityProblemBasedAlertingProfile : undefined;
-            resourceInputs["securityProblemBasedEmailPayload"] = args ? args.securityProblemBasedEmailPayload : undefined;
-            resourceInputs["securityProblemBasedJiraPayload"] = args ? args.securityProblemBasedJiraPayload : undefined;
-            resourceInputs["securityProblemBasedWebhookPayload"] = args ? args.securityProblemBasedWebhookPayload : undefined;
-            resourceInputs["trigger"] = args ? args.trigger : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["webhookConfiguration"] = args ? args.webhookConfiguration : undefined;
+            resourceInputs["attackCandidateBasedAlertingProfile"] = args?.attackCandidateBasedAlertingProfile;
+            resourceInputs["attackCandidateBasedEmailPayload"] = args?.attackCandidateBasedEmailPayload;
+            resourceInputs["attackCandidateBasedJiraPayload"] = args?.attackCandidateBasedJiraPayload;
+            resourceInputs["attackCandidateBasedWebhookPayload"] = args?.attackCandidateBasedWebhookPayload;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["emailConfiguration"] = args?.emailConfiguration;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["jiraConfiguration"] = args?.jiraConfiguration;
+            resourceInputs["securityProblemBasedAlertingProfile"] = args?.securityProblemBasedAlertingProfile;
+            resourceInputs["securityProblemBasedEmailPayload"] = args?.securityProblemBasedEmailPayload;
+            resourceInputs["securityProblemBasedJiraPayload"] = args?.securityProblemBasedJiraPayload;
+            resourceInputs["securityProblemBasedWebhookPayload"] = args?.securityProblemBasedWebhookPayload;
+            resourceInputs["trigger"] = args?.trigger;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["webhookConfiguration"] = args?.webhookConfiguration;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppsecNotification.__pulumiType, name, resourceInputs, opts);

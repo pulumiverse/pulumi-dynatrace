@@ -35,11 +35,11 @@ export class RumIpDetermination extends pulumi.CustomResource {
     /**
      * Client IP header name
      */
-    public readonly headerName!: pulumi.Output<string>;
+    declare public readonly headerName: pulumi.Output<string>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
 
     /**
      * Create a RumIpDetermination resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class RumIpDetermination extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RumIpDeterminationState | undefined;
-            resourceInputs["headerName"] = state ? state.headerName : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
+            resourceInputs["headerName"] = state?.headerName;
+            resourceInputs["insertAfter"] = state?.insertAfter;
         } else {
             const args = argsOrState as RumIpDeterminationArgs | undefined;
-            if ((!args || args.headerName === undefined) && !opts.urn) {
+            if (args?.headerName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'headerName'");
             }
-            resourceInputs["headerName"] = args ? args.headerName : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
+            resourceInputs["headerName"] = args?.headerName;
+            resourceInputs["insertAfter"] = args?.insertAfter;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RumIpDetermination.__pulumiType, name, resourceInputs, opts);

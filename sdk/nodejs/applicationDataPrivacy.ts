@@ -37,23 +37,23 @@ export class ApplicationDataPrivacy extends pulumi.CustomResource {
     /**
      * (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
      */
-    public readonly dataCaptureOptIn!: pulumi.Output<boolean | undefined>;
+    declare public readonly dataCaptureOptIn: pulumi.Output<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.DataPrivacy`) How to handle the "Do Not Track" header:
      */
-    public readonly doNotTrackBehaviour!: pulumi.Output<string>;
+    declare public readonly doNotTrackBehaviour: pulumi.Output<string>;
     /**
      * (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
      */
-    public readonly persistentCookieForUserTracking!: pulumi.Output<boolean | undefined>;
+    declare public readonly persistentCookieForUserTracking: pulumi.Output<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Data privacy settings for Session Replay
      */
-    public readonly sessionReplayDataPrivacy!: pulumi.Output<outputs.ApplicationDataPrivacySessionReplayDataPrivacy>;
+    declare public readonly sessionReplayDataPrivacy: pulumi.Output<outputs.ApplicationDataPrivacySessionReplayDataPrivacy>;
     /**
      * Dynatrace entity ID of the web application
      */
-    public readonly webApplicationId!: pulumi.Output<string>;
+    declare public readonly webApplicationId: pulumi.Output<string>;
 
     /**
      * Create a ApplicationDataPrivacy resource with the given unique name, arguments, and options.
@@ -68,27 +68,27 @@ export class ApplicationDataPrivacy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ApplicationDataPrivacyState | undefined;
-            resourceInputs["dataCaptureOptIn"] = state ? state.dataCaptureOptIn : undefined;
-            resourceInputs["doNotTrackBehaviour"] = state ? state.doNotTrackBehaviour : undefined;
-            resourceInputs["persistentCookieForUserTracking"] = state ? state.persistentCookieForUserTracking : undefined;
-            resourceInputs["sessionReplayDataPrivacy"] = state ? state.sessionReplayDataPrivacy : undefined;
-            resourceInputs["webApplicationId"] = state ? state.webApplicationId : undefined;
+            resourceInputs["dataCaptureOptIn"] = state?.dataCaptureOptIn;
+            resourceInputs["doNotTrackBehaviour"] = state?.doNotTrackBehaviour;
+            resourceInputs["persistentCookieForUserTracking"] = state?.persistentCookieForUserTracking;
+            resourceInputs["sessionReplayDataPrivacy"] = state?.sessionReplayDataPrivacy;
+            resourceInputs["webApplicationId"] = state?.webApplicationId;
         } else {
             const args = argsOrState as ApplicationDataPrivacyArgs | undefined;
-            if ((!args || args.doNotTrackBehaviour === undefined) && !opts.urn) {
+            if (args?.doNotTrackBehaviour === undefined && !opts.urn) {
                 throw new Error("Missing required property 'doNotTrackBehaviour'");
             }
-            if ((!args || args.sessionReplayDataPrivacy === undefined) && !opts.urn) {
+            if (args?.sessionReplayDataPrivacy === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sessionReplayDataPrivacy'");
             }
-            if ((!args || args.webApplicationId === undefined) && !opts.urn) {
+            if (args?.webApplicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'webApplicationId'");
             }
-            resourceInputs["dataCaptureOptIn"] = args ? args.dataCaptureOptIn : undefined;
-            resourceInputs["doNotTrackBehaviour"] = args ? args.doNotTrackBehaviour : undefined;
-            resourceInputs["persistentCookieForUserTracking"] = args ? args.persistentCookieForUserTracking : undefined;
-            resourceInputs["sessionReplayDataPrivacy"] = args ? args.sessionReplayDataPrivacy : undefined;
-            resourceInputs["webApplicationId"] = args ? args.webApplicationId : undefined;
+            resourceInputs["dataCaptureOptIn"] = args?.dataCaptureOptIn;
+            resourceInputs["doNotTrackBehaviour"] = args?.doNotTrackBehaviour;
+            resourceInputs["persistentCookieForUserTracking"] = args?.persistentCookieForUserTracking;
+            resourceInputs["sessionReplayDataPrivacy"] = args?.sessionReplayDataPrivacy;
+            resourceInputs["webApplicationId"] = args?.webApplicationId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ApplicationDataPrivacy.__pulumiType, name, resourceInputs, opts);

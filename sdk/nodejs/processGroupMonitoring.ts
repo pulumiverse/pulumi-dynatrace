@@ -35,11 +35,11 @@ export class ProcessGroupMonitoring extends pulumi.CustomResource {
     /**
      * Possible Values: `DEFAULT`, `MONITORING_OFF`, `MONITORING_ON`
      */
-    public readonly monitoringState!: pulumi.Output<string>;
+    declare public readonly monitoringState: pulumi.Output<string>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly processGroupId!: pulumi.Output<string>;
+    declare public readonly processGroupId: pulumi.Output<string>;
 
     /**
      * Create a ProcessGroupMonitoring resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class ProcessGroupMonitoring extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProcessGroupMonitoringState | undefined;
-            resourceInputs["monitoringState"] = state ? state.monitoringState : undefined;
-            resourceInputs["processGroupId"] = state ? state.processGroupId : undefined;
+            resourceInputs["monitoringState"] = state?.monitoringState;
+            resourceInputs["processGroupId"] = state?.processGroupId;
         } else {
             const args = argsOrState as ProcessGroupMonitoringArgs | undefined;
-            if ((!args || args.monitoringState === undefined) && !opts.urn) {
+            if (args?.monitoringState === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitoringState'");
             }
-            if ((!args || args.processGroupId === undefined) && !opts.urn) {
+            if (args?.processGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'processGroupId'");
             }
-            resourceInputs["monitoringState"] = args ? args.monitoringState : undefined;
-            resourceInputs["processGroupId"] = args ? args.processGroupId : undefined;
+            resourceInputs["monitoringState"] = args?.monitoringState;
+            resourceInputs["processGroupId"] = args?.processGroupId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProcessGroupMonitoring.__pulumiType, name, resourceInputs, opts);

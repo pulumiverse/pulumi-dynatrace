@@ -35,19 +35,19 @@ export class ContainerBuiltinRule extends pulumi.CustomResource {
     /**
      * Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
      */
-    public readonly ignoreDockerPauseContainer!: pulumi.Output<boolean>;
+    declare public readonly ignoreDockerPauseContainer: pulumi.Output<boolean>;
     /**
      * Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
      */
-    public readonly ignoreKubernetesPauseContainer!: pulumi.Output<boolean>;
+    declare public readonly ignoreKubernetesPauseContainer: pulumi.Output<boolean>;
     /**
      * Disable monitoring of intermediate containers created during image build.
      */
-    public readonly ignoreOpenShiftBuildPodName!: pulumi.Output<boolean>;
+    declare public readonly ignoreOpenShiftBuildPodName: pulumi.Output<boolean>;
     /**
      * Disable monitoring of platform internal containers in the openshift-sdn namespace.
      */
-    public readonly ignoreOpenShiftSdnNamespace!: pulumi.Output<boolean>;
+    declare public readonly ignoreOpenShiftSdnNamespace: pulumi.Output<boolean>;
 
     /**
      * Create a ContainerBuiltinRule resource with the given unique name, arguments, and options.
@@ -62,28 +62,28 @@ export class ContainerBuiltinRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ContainerBuiltinRuleState | undefined;
-            resourceInputs["ignoreDockerPauseContainer"] = state ? state.ignoreDockerPauseContainer : undefined;
-            resourceInputs["ignoreKubernetesPauseContainer"] = state ? state.ignoreKubernetesPauseContainer : undefined;
-            resourceInputs["ignoreOpenShiftBuildPodName"] = state ? state.ignoreOpenShiftBuildPodName : undefined;
-            resourceInputs["ignoreOpenShiftSdnNamespace"] = state ? state.ignoreOpenShiftSdnNamespace : undefined;
+            resourceInputs["ignoreDockerPauseContainer"] = state?.ignoreDockerPauseContainer;
+            resourceInputs["ignoreKubernetesPauseContainer"] = state?.ignoreKubernetesPauseContainer;
+            resourceInputs["ignoreOpenShiftBuildPodName"] = state?.ignoreOpenShiftBuildPodName;
+            resourceInputs["ignoreOpenShiftSdnNamespace"] = state?.ignoreOpenShiftSdnNamespace;
         } else {
             const args = argsOrState as ContainerBuiltinRuleArgs | undefined;
-            if ((!args || args.ignoreDockerPauseContainer === undefined) && !opts.urn) {
+            if (args?.ignoreDockerPauseContainer === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ignoreDockerPauseContainer'");
             }
-            if ((!args || args.ignoreKubernetesPauseContainer === undefined) && !opts.urn) {
+            if (args?.ignoreKubernetesPauseContainer === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ignoreKubernetesPauseContainer'");
             }
-            if ((!args || args.ignoreOpenShiftBuildPodName === undefined) && !opts.urn) {
+            if (args?.ignoreOpenShiftBuildPodName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ignoreOpenShiftBuildPodName'");
             }
-            if ((!args || args.ignoreOpenShiftSdnNamespace === undefined) && !opts.urn) {
+            if (args?.ignoreOpenShiftSdnNamespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ignoreOpenShiftSdnNamespace'");
             }
-            resourceInputs["ignoreDockerPauseContainer"] = args ? args.ignoreDockerPauseContainer : undefined;
-            resourceInputs["ignoreKubernetesPauseContainer"] = args ? args.ignoreKubernetesPauseContainer : undefined;
-            resourceInputs["ignoreOpenShiftBuildPodName"] = args ? args.ignoreOpenShiftBuildPodName : undefined;
-            resourceInputs["ignoreOpenShiftSdnNamespace"] = args ? args.ignoreOpenShiftSdnNamespace : undefined;
+            resourceInputs["ignoreDockerPauseContainer"] = args?.ignoreDockerPauseContainer;
+            resourceInputs["ignoreKubernetesPauseContainer"] = args?.ignoreKubernetesPauseContainer;
+            resourceInputs["ignoreOpenShiftBuildPodName"] = args?.ignoreOpenShiftBuildPodName;
+            resourceInputs["ignoreOpenShiftSdnNamespace"] = args?.ignoreOpenShiftSdnNamespace;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ContainerBuiltinRule.__pulumiType, name, resourceInputs, opts);

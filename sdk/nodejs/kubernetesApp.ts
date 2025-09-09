@@ -37,11 +37,11 @@ export class KubernetesApp extends pulumi.CustomResource {
     /**
      * no documentation available
      */
-    public readonly kubernetesAppOptions!: pulumi.Output<outputs.KubernetesAppKubernetesAppOptions>;
+    declare public readonly kubernetesAppOptions: pulumi.Output<outputs.KubernetesAppKubernetesAppOptions>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a KubernetesApp resource with the given unique name, arguments, and options.
@@ -56,15 +56,15 @@ export class KubernetesApp extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KubernetesAppState | undefined;
-            resourceInputs["kubernetesAppOptions"] = state ? state.kubernetesAppOptions : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["kubernetesAppOptions"] = state?.kubernetesAppOptions;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as KubernetesAppArgs | undefined;
-            if ((!args || args.kubernetesAppOptions === undefined) && !opts.urn) {
+            if (args?.kubernetesAppOptions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'kubernetesAppOptions'");
             }
-            resourceInputs["kubernetesAppOptions"] = args ? args.kubernetesAppOptions : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["kubernetesAppOptions"] = args?.kubernetesAppOptions;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(KubernetesApp.__pulumiType, name, resourceInputs, opts);

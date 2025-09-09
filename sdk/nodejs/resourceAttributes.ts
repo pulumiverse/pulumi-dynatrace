@@ -37,7 +37,7 @@ export class ResourceAttributes extends pulumi.CustomResource {
     /**
      * Attribute key allow-list
      */
-    public readonly keys!: pulumi.Output<outputs.ResourceAttributesKeys | undefined>;
+    declare public readonly keys: pulumi.Output<outputs.ResourceAttributesKeys | undefined>;
 
     /**
      * Create a ResourceAttributes resource with the given unique name, arguments, and options.
@@ -52,10 +52,10 @@ export class ResourceAttributes extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ResourceAttributesState | undefined;
-            resourceInputs["keys"] = state ? state.keys : undefined;
+            resourceInputs["keys"] = state?.keys;
         } else {
             const args = argsOrState as ResourceAttributesArgs | undefined;
-            resourceInputs["keys"] = args ? args.keys : undefined;
+            resourceInputs["keys"] = args?.keys;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ResourceAttributes.__pulumiType, name, resourceInputs, opts);

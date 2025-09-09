@@ -35,7 +35,7 @@ export class AuditLog extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
 
     /**
      * Create a AuditLog resource with the given unique name, arguments, and options.
@@ -50,13 +50,13 @@ export class AuditLog extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AuditLogState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
+            resourceInputs["enabled"] = state?.enabled;
         } else {
             const args = argsOrState as AuditLogArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
+            resourceInputs["enabled"] = args?.enabled;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AuditLog.__pulumiType, name, resourceInputs, opts);

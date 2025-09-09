@@ -37,23 +37,23 @@ export class UserSessionMetrics extends pulumi.CustomResource {
     /**
      * Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "browserFamily", "userType", "country". For example, using "userType" as a dimension allows you to split chart data based on user types.
      */
-    public readonly dimensions!: pulumi.Output<string[] | undefined>;
+    declare public readonly dimensions: pulumi.Output<string[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Defines the filters for the user session. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "userType equals REAL_USER" will give you only data from real users, while forcing the synthetic sessions to be ignored.
      */
-    public readonly filters!: pulumi.Output<outputs.UserSessionMetricsFilters | undefined>;
+    declare public readonly filters: pulumi.Output<outputs.UserSessionMetricsFilters | undefined>;
     /**
      * Metric key
      */
-    public readonly metricKey!: pulumi.Output<string>;
+    declare public readonly metricKey: pulumi.Output<string>;
     /**
      * Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
      */
-    public readonly value!: pulumi.Output<outputs.UserSessionMetricsValue>;
+    declare public readonly value: pulumi.Output<outputs.UserSessionMetricsValue>;
 
     /**
      * Create a UserSessionMetrics resource with the given unique name, arguments, and options.
@@ -68,27 +68,27 @@ export class UserSessionMetrics extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserSessionMetricsState | undefined;
-            resourceInputs["dimensions"] = state ? state.dimensions : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["filters"] = state ? state.filters : undefined;
-            resourceInputs["metricKey"] = state ? state.metricKey : undefined;
-            resourceInputs["value"] = state ? state.value : undefined;
+            resourceInputs["dimensions"] = state?.dimensions;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["filters"] = state?.filters;
+            resourceInputs["metricKey"] = state?.metricKey;
+            resourceInputs["value"] = state?.value;
         } else {
             const args = argsOrState as UserSessionMetricsArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.metricKey === undefined) && !opts.urn) {
+            if (args?.metricKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricKey'");
             }
-            if ((!args || args.value === undefined) && !opts.urn) {
+            if (args?.value === undefined && !opts.urn) {
                 throw new Error("Missing required property 'value'");
             }
-            resourceInputs["dimensions"] = args ? args.dimensions : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["filters"] = args ? args.filters : undefined;
-            resourceInputs["metricKey"] = args ? args.metricKey : undefined;
-            resourceInputs["value"] = args ? args.value : undefined;
+            resourceInputs["dimensions"] = args?.dimensions;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["filters"] = args?.filters;
+            resourceInputs["metricKey"] = args?.metricKey;
+            resourceInputs["value"] = args?.value;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(UserSessionMetrics.__pulumiType, name, resourceInputs, opts);

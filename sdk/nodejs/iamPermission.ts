@@ -60,23 +60,23 @@ export class IamPermission extends pulumi.CustomResource {
     /**
      * The UUID of the account this permission is valid for
      */
-    public readonly account!: pulumi.Output<string | undefined>;
+    declare public readonly account: pulumi.Output<string | undefined>;
     /**
      * The environment this permission is valid (`https://<environmentid>.live.dynatrace.com`). Also required in when trying to specify a management zone permission.
      */
-    public readonly environment!: pulumi.Output<string | undefined>;
+    declare public readonly environment: pulumi.Output<string | undefined>;
     /**
      * The ID of the group this permission is valid for
      */
-    public readonly group!: pulumi.Output<string>;
+    declare public readonly group: pulumi.Output<string>;
     /**
      * The management zone this permission is valid for. You need to use the attribute `legacyId` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`. The attribute `environment` is required to get specified also in order to identify the management zone uniquely.
      */
-    public readonly managementZone!: pulumi.Output<string | undefined>;
+    declare public readonly managementZone: pulumi.Output<string | undefined>;
     /**
      * Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `account-saml-flexible-federation`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-view-security-problems`, `tenant-manage-support-tickets`
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a IamPermission resource with the given unique name, arguments, and options.
@@ -91,21 +91,21 @@ export class IamPermission extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamPermissionState | undefined;
-            resourceInputs["account"] = state ? state.account : undefined;
-            resourceInputs["environment"] = state ? state.environment : undefined;
-            resourceInputs["group"] = state ? state.group : undefined;
-            resourceInputs["managementZone"] = state ? state.managementZone : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["account"] = state?.account;
+            resourceInputs["environment"] = state?.environment;
+            resourceInputs["group"] = state?.group;
+            resourceInputs["managementZone"] = state?.managementZone;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as IamPermissionArgs | undefined;
-            if ((!args || args.group === undefined) && !opts.urn) {
+            if (args?.group === undefined && !opts.urn) {
                 throw new Error("Missing required property 'group'");
             }
-            resourceInputs["account"] = args ? args.account : undefined;
-            resourceInputs["environment"] = args ? args.environment : undefined;
-            resourceInputs["group"] = args ? args.group : undefined;
-            resourceInputs["managementZone"] = args ? args.managementZone : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["account"] = args?.account;
+            resourceInputs["environment"] = args?.environment;
+            resourceInputs["group"] = args?.group;
+            resourceInputs["managementZone"] = args?.managementZone;
+            resourceInputs["name"] = args?.name;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IamPermission.__pulumiType, name, resourceInputs, opts);

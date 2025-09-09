@@ -35,23 +35,23 @@ export class CustomServiceOrder extends pulumi.CustomResource {
     /**
      * The IDs of Custom Services for .Net in the desired order
      */
-    public readonly dotnets!: pulumi.Output<string[] | undefined>;
+    declare public readonly dotnets: pulumi.Output<string[] | undefined>;
     /**
      * The IDs of Custom Services for Golang in the desired order
      */
-    public readonly golangs!: pulumi.Output<string[] | undefined>;
+    declare public readonly golangs: pulumi.Output<string[] | undefined>;
     /**
      * The IDs of Custom Services for Java in the desired order
      */
-    public readonly javas!: pulumi.Output<string[] | undefined>;
+    declare public readonly javas: pulumi.Output<string[] | undefined>;
     /**
      * The IDs of Custom Services for NodeJS in the desired order
      */
-    public readonly nodejs!: pulumi.Output<string[] | undefined>;
+    declare public readonly nodejs: pulumi.Output<string[] | undefined>;
     /**
      * The IDs of Custom Services for PHP in the desired order
      */
-    public readonly phps!: pulumi.Output<string[] | undefined>;
+    declare public readonly phps: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a CustomServiceOrder resource with the given unique name, arguments, and options.
@@ -66,18 +66,18 @@ export class CustomServiceOrder extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CustomServiceOrderState | undefined;
-            resourceInputs["dotnets"] = state ? state.dotnets : undefined;
-            resourceInputs["golangs"] = state ? state.golangs : undefined;
-            resourceInputs["javas"] = state ? state.javas : undefined;
-            resourceInputs["nodejs"] = state ? state.nodejs : undefined;
-            resourceInputs["phps"] = state ? state.phps : undefined;
+            resourceInputs["dotnets"] = state?.dotnets;
+            resourceInputs["golangs"] = state?.golangs;
+            resourceInputs["javas"] = state?.javas;
+            resourceInputs["nodejs"] = state?.nodejs;
+            resourceInputs["phps"] = state?.phps;
         } else {
             const args = argsOrState as CustomServiceOrderArgs | undefined;
-            resourceInputs["dotnets"] = args ? args.dotnets : undefined;
-            resourceInputs["golangs"] = args ? args.golangs : undefined;
-            resourceInputs["javas"] = args ? args.javas : undefined;
-            resourceInputs["nodejs"] = args ? args.nodejs : undefined;
-            resourceInputs["phps"] = args ? args.phps : undefined;
+            resourceInputs["dotnets"] = args?.dotnets;
+            resourceInputs["golangs"] = args?.golangs;
+            resourceInputs["javas"] = args?.javas;
+            resourceInputs["nodejs"] = args?.nodejs;
+            resourceInputs["phps"] = args?.phps;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CustomServiceOrder.__pulumiType, name, resourceInputs, opts);

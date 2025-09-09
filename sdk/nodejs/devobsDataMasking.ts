@@ -35,35 +35,35 @@ export class DevobsDataMasking extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * no documentation available
      */
-    public readonly replacementPattern!: pulumi.Output<string | undefined>;
+    declare public readonly replacementPattern: pulumi.Output<string | undefined>;
     /**
      * Possible Values: `SHA256`, `STRING`
      */
-    public readonly replacementType!: pulumi.Output<string>;
+    declare public readonly replacementType: pulumi.Output<string>;
     /**
      * Rule Name
      */
-    public readonly ruleName!: pulumi.Output<string>;
+    declare public readonly ruleName: pulumi.Output<string>;
     /**
      * no documentation available
      */
-    public readonly ruleRegex!: pulumi.Output<string | undefined>;
+    declare public readonly ruleRegex: pulumi.Output<string | undefined>;
     /**
      * Possible Values: `REGEX`, `VAR_NAME`
      */
-    public readonly ruleType!: pulumi.Output<string>;
+    declare public readonly ruleType: pulumi.Output<string>;
     /**
      * no documentation available
      */
-    public readonly ruleVarName!: pulumi.Output<string | undefined>;
+    declare public readonly ruleVarName: pulumi.Output<string | undefined>;
 
     /**
      * Create a DevobsDataMasking resource with the given unique name, arguments, and options.
@@ -78,36 +78,36 @@ export class DevobsDataMasking extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DevobsDataMaskingState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["replacementPattern"] = state ? state.replacementPattern : undefined;
-            resourceInputs["replacementType"] = state ? state.replacementType : undefined;
-            resourceInputs["ruleName"] = state ? state.ruleName : undefined;
-            resourceInputs["ruleRegex"] = state ? state.ruleRegex : undefined;
-            resourceInputs["ruleType"] = state ? state.ruleType : undefined;
-            resourceInputs["ruleVarName"] = state ? state.ruleVarName : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["replacementPattern"] = state?.replacementPattern;
+            resourceInputs["replacementType"] = state?.replacementType;
+            resourceInputs["ruleName"] = state?.ruleName;
+            resourceInputs["ruleRegex"] = state?.ruleRegex;
+            resourceInputs["ruleType"] = state?.ruleType;
+            resourceInputs["ruleVarName"] = state?.ruleVarName;
         } else {
             const args = argsOrState as DevobsDataMaskingArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.replacementType === undefined) && !opts.urn) {
+            if (args?.replacementType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'replacementType'");
             }
-            if ((!args || args.ruleName === undefined) && !opts.urn) {
+            if (args?.ruleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruleName'");
             }
-            if ((!args || args.ruleType === undefined) && !opts.urn) {
+            if (args?.ruleType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruleType'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["replacementPattern"] = args ? args.replacementPattern : undefined;
-            resourceInputs["replacementType"] = args ? args.replacementType : undefined;
-            resourceInputs["ruleName"] = args ? args.ruleName : undefined;
-            resourceInputs["ruleRegex"] = args ? args.ruleRegex : undefined;
-            resourceInputs["ruleType"] = args ? args.ruleType : undefined;
-            resourceInputs["ruleVarName"] = args ? args.ruleVarName : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["replacementPattern"] = args?.replacementPattern;
+            resourceInputs["replacementType"] = args?.replacementType;
+            resourceInputs["ruleName"] = args?.ruleName;
+            resourceInputs["ruleRegex"] = args?.ruleRegex;
+            resourceInputs["ruleType"] = args?.ruleType;
+            resourceInputs["ruleVarName"] = args?.ruleVarName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DevobsDataMasking.__pulumiType, name, resourceInputs, opts);

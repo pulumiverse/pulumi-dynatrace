@@ -37,27 +37,27 @@ export class RumProviderBreakdown extends pulumi.CustomResource {
     /**
      * Domain name pattern
      */
-    public readonly domainNamePatternList!: pulumi.Output<outputs.RumProviderBreakdownDomainNamePatternList>;
+    declare public readonly domainNamePatternList: pulumi.Output<outputs.RumProviderBreakdownDomainNamePatternList>;
     /**
      * Specify an URL for the provider's brand icon
      */
-    public readonly iconUrl!: pulumi.Output<string | undefined>;
+    declare public readonly iconUrl: pulumi.Output<string | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
      */
-    public readonly reportPublicImprovement!: pulumi.Output<boolean>;
+    declare public readonly reportPublicImprovement: pulumi.Output<boolean>;
     /**
      * Resource name
      */
-    public readonly resourceName!: pulumi.Output<string>;
+    declare public readonly resourceName: pulumi.Output<string>;
     /**
      * Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
      */
-    public readonly resourceType!: pulumi.Output<string>;
+    declare public readonly resourceType: pulumi.Output<string>;
 
     /**
      * Create a RumProviderBreakdown resource with the given unique name, arguments, and options.
@@ -72,32 +72,32 @@ export class RumProviderBreakdown extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RumProviderBreakdownState | undefined;
-            resourceInputs["domainNamePatternList"] = state ? state.domainNamePatternList : undefined;
-            resourceInputs["iconUrl"] = state ? state.iconUrl : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["reportPublicImprovement"] = state ? state.reportPublicImprovement : undefined;
-            resourceInputs["resourceName"] = state ? state.resourceName : undefined;
-            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
+            resourceInputs["domainNamePatternList"] = state?.domainNamePatternList;
+            resourceInputs["iconUrl"] = state?.iconUrl;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["reportPublicImprovement"] = state?.reportPublicImprovement;
+            resourceInputs["resourceName"] = state?.resourceName;
+            resourceInputs["resourceType"] = state?.resourceType;
         } else {
             const args = argsOrState as RumProviderBreakdownArgs | undefined;
-            if ((!args || args.domainNamePatternList === undefined) && !opts.urn) {
+            if (args?.domainNamePatternList === undefined && !opts.urn) {
                 throw new Error("Missing required property 'domainNamePatternList'");
             }
-            if ((!args || args.reportPublicImprovement === undefined) && !opts.urn) {
+            if (args?.reportPublicImprovement === undefined && !opts.urn) {
                 throw new Error("Missing required property 'reportPublicImprovement'");
             }
-            if ((!args || args.resourceName === undefined) && !opts.urn) {
+            if (args?.resourceName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceName'");
             }
-            if ((!args || args.resourceType === undefined) && !opts.urn) {
+            if (args?.resourceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceType'");
             }
-            resourceInputs["domainNamePatternList"] = args ? args.domainNamePatternList : undefined;
-            resourceInputs["iconUrl"] = args ? args.iconUrl : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["reportPublicImprovement"] = args ? args.reportPublicImprovement : undefined;
-            resourceInputs["resourceName"] = args ? args.resourceName : undefined;
-            resourceInputs["resourceType"] = args ? args.resourceType : undefined;
+            resourceInputs["domainNamePatternList"] = args?.domainNamePatternList;
+            resourceInputs["iconUrl"] = args?.iconUrl;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["reportPublicImprovement"] = args?.reportPublicImprovement;
+            resourceInputs["resourceName"] = args?.resourceName;
+            resourceInputs["resourceType"] = args?.resourceType;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RumProviderBreakdown.__pulumiType, name, resourceInputs, opts);

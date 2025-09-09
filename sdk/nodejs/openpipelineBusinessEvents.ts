@@ -37,15 +37,15 @@ export class OpenpipelineBusinessEvents extends pulumi.CustomResource {
     /**
      * List of all ingest sources of the configuration
      */
-    public readonly endpoints!: pulumi.Output<outputs.OpenpipelineBusinessEventsEndpoints | undefined>;
+    declare public readonly endpoints: pulumi.Output<outputs.OpenpipelineBusinessEventsEndpoints | undefined>;
     /**
      * List of all pipelines of the configuration
      */
-    public readonly pipelines!: pulumi.Output<outputs.OpenpipelineBusinessEventsPipelines | undefined>;
+    declare public readonly pipelines: pulumi.Output<outputs.OpenpipelineBusinessEventsPipelines | undefined>;
     /**
      * Dynamic routing definition
      */
-    public readonly routing!: pulumi.Output<outputs.OpenpipelineBusinessEventsRouting | undefined>;
+    declare public readonly routing: pulumi.Output<outputs.OpenpipelineBusinessEventsRouting | undefined>;
 
     /**
      * Create a OpenpipelineBusinessEvents resource with the given unique name, arguments, and options.
@@ -60,14 +60,14 @@ export class OpenpipelineBusinessEvents extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OpenpipelineBusinessEventsState | undefined;
-            resourceInputs["endpoints"] = state ? state.endpoints : undefined;
-            resourceInputs["pipelines"] = state ? state.pipelines : undefined;
-            resourceInputs["routing"] = state ? state.routing : undefined;
+            resourceInputs["endpoints"] = state?.endpoints;
+            resourceInputs["pipelines"] = state?.pipelines;
+            resourceInputs["routing"] = state?.routing;
         } else {
             const args = argsOrState as OpenpipelineBusinessEventsArgs | undefined;
-            resourceInputs["endpoints"] = args ? args.endpoints : undefined;
-            resourceInputs["pipelines"] = args ? args.pipelines : undefined;
-            resourceInputs["routing"] = args ? args.routing : undefined;
+            resourceInputs["endpoints"] = args?.endpoints;
+            resourceInputs["pipelines"] = args?.pipelines;
+            resourceInputs["routing"] = args?.routing;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OpenpipelineBusinessEvents.__pulumiType, name, resourceInputs, opts);

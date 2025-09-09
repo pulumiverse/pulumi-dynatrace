@@ -37,31 +37,31 @@ export class ServiceExternalWebRequest extends pulumi.CustomResource {
     /**
      * A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
      */
-    public readonly conditions!: pulumi.Output<outputs.ServiceExternalWebRequestConditions | undefined>;
+    declare public readonly conditions: pulumi.Output<outputs.ServiceExternalWebRequestConditions | undefined>;
     /**
      * Description
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Contributors to the Service Identifier calculation. All of the Contributors except for the port are always applied. You can exclude the port contribution by disabling the switch.
      */
-    public readonly idContributors!: pulumi.Output<outputs.ServiceExternalWebRequestIdContributors>;
+    declare public readonly idContributors: pulumi.Output<outputs.ServiceExternalWebRequestIdContributors>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
      */
-    public readonly managementZones!: pulumi.Output<string[] | undefined>;
+    declare public readonly managementZones: pulumi.Output<string[] | undefined>;
     /**
      * Rule name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a ServiceExternalWebRequest resource with the given unique name, arguments, and options.
@@ -76,28 +76,28 @@ export class ServiceExternalWebRequest extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ServiceExternalWebRequestState | undefined;
-            resourceInputs["conditions"] = state ? state.conditions : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["idContributors"] = state ? state.idContributors : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["managementZones"] = state ? state.managementZones : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["conditions"] = state?.conditions;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["idContributors"] = state?.idContributors;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["managementZones"] = state?.managementZones;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as ServiceExternalWebRequestArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.idContributors === undefined) && !opts.urn) {
+            if (args?.idContributors === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idContributors'");
             }
-            resourceInputs["conditions"] = args ? args.conditions : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["idContributors"] = args ? args.idContributors : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["managementZones"] = args ? args.managementZones : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["conditions"] = args?.conditions;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["idContributors"] = args?.idContributors;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["managementZones"] = args?.managementZones;
+            resourceInputs["name"] = args?.name;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ServiceExternalWebRequest.__pulumiType, name, resourceInputs, opts);

@@ -37,11 +37,11 @@ export class KubernetesEnrichment extends pulumi.CustomResource {
     /**
      * Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
      */
-    public readonly rules!: pulumi.Output<outputs.KubernetesEnrichmentRules | undefined>;
+    declare public readonly rules: pulumi.Output<outputs.KubernetesEnrichmentRules | undefined>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a KubernetesEnrichment resource with the given unique name, arguments, and options.
@@ -56,12 +56,12 @@ export class KubernetesEnrichment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KubernetesEnrichmentState | undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as KubernetesEnrichmentArgs | undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["rules"] = args?.rules;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(KubernetesEnrichment.__pulumiType, name, resourceInputs, opts);

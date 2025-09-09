@@ -35,63 +35,63 @@ export class LogOneagent extends pulumi.CustomResource {
     /**
      * Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
      */
-    public readonly containerTimezoneHeuristicEnabled!: pulumi.Output<boolean>;
+    declare public readonly containerTimezoneHeuristicEnabled: pulumi.Output<boolean>;
     /**
      * Allows detection of log messages written to the containerized application's stdout/stderr streams.
      */
-    public readonly containersLogsDetectionEnabled!: pulumi.Output<boolean>;
+    declare public readonly containersLogsDetectionEnabled: pulumi.Output<boolean>;
     /**
      * Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
      */
-    public readonly dateSearchLimitBytes!: pulumi.Output<number>;
+    declare public readonly dateSearchLimitBytes: pulumi.Output<number>;
     /**
      * Default timezone for agent if more specific configurations is not defined.
      */
-    public readonly defaultTimezone!: pulumi.Output<string>;
+    declare public readonly defaultTimezone: pulumi.Output<string>;
     /**
      * Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
      */
-    public readonly eventLogQueryTimeoutSec!: pulumi.Output<number>;
+    declare public readonly eventLogQueryTimeoutSec: pulumi.Output<number>;
     /**
      * Allows detection of logs and event logs written by IIS server.
      */
-    public readonly iisdetectionEnabled!: pulumi.Output<boolean>;
+    declare public readonly iisdetectionEnabled: pulumi.Output<boolean>;
     /**
      * Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
      */
-    public readonly logScannerLinuxNfsEnabled!: pulumi.Output<boolean>;
+    declare public readonly logScannerLinuxNfsEnabled: pulumi.Output<boolean>;
     /**
      * Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
      */
-    public readonly maxLgisPerEntityCount!: pulumi.Output<number>;
+    declare public readonly maxLgisPerEntityCount: pulumi.Output<number>;
     /**
      * Defines the minimum number of bytes in log file required for binary detection.
      */
-    public readonly minBinaryDetectionLimitBytes!: pulumi.Output<number>;
+    declare public readonly minBinaryDetectionLimitBytes: pulumi.Output<number>;
     /**
      * Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
      */
-    public readonly monitorOwnLogsEnabled!: pulumi.Output<boolean>;
+    declare public readonly monitorOwnLogsEnabled: pulumi.Output<boolean>;
     /**
      * Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
      */
-    public readonly openLogFilesDetectionEnabled!: pulumi.Output<boolean>;
+    declare public readonly openLogFilesDetectionEnabled: pulumi.Output<boolean>;
     /**
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
      */
-    public readonly severityDetectionLimitBytes!: pulumi.Output<number>;
+    declare public readonly severityDetectionLimitBytes: pulumi.Output<number>;
     /**
      * Defines the number of the first lines of every log entry where severity is searched.
      */
-    public readonly severityDetectionLinesLimit!: pulumi.Output<number>;
+    declare public readonly severityDetectionLinesLimit: pulumi.Output<number>;
     /**
      * Linux: syslog, message log Windows: system, application, security event logs
      */
-    public readonly systemLogsDetectionEnabled!: pulumi.Output<boolean>;
+    declare public readonly systemLogsDetectionEnabled: pulumi.Output<boolean>;
 
     /**
      * Create a LogOneagent resource with the given unique name, arguments, and options.
@@ -106,80 +106,80 @@ export class LogOneagent extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogOneagentState | undefined;
-            resourceInputs["containerTimezoneHeuristicEnabled"] = state ? state.containerTimezoneHeuristicEnabled : undefined;
-            resourceInputs["containersLogsDetectionEnabled"] = state ? state.containersLogsDetectionEnabled : undefined;
-            resourceInputs["dateSearchLimitBytes"] = state ? state.dateSearchLimitBytes : undefined;
-            resourceInputs["defaultTimezone"] = state ? state.defaultTimezone : undefined;
-            resourceInputs["eventLogQueryTimeoutSec"] = state ? state.eventLogQueryTimeoutSec : undefined;
-            resourceInputs["iisdetectionEnabled"] = state ? state.iisdetectionEnabled : undefined;
-            resourceInputs["logScannerLinuxNfsEnabled"] = state ? state.logScannerLinuxNfsEnabled : undefined;
-            resourceInputs["maxLgisPerEntityCount"] = state ? state.maxLgisPerEntityCount : undefined;
-            resourceInputs["minBinaryDetectionLimitBytes"] = state ? state.minBinaryDetectionLimitBytes : undefined;
-            resourceInputs["monitorOwnLogsEnabled"] = state ? state.monitorOwnLogsEnabled : undefined;
-            resourceInputs["openLogFilesDetectionEnabled"] = state ? state.openLogFilesDetectionEnabled : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["severityDetectionLimitBytes"] = state ? state.severityDetectionLimitBytes : undefined;
-            resourceInputs["severityDetectionLinesLimit"] = state ? state.severityDetectionLinesLimit : undefined;
-            resourceInputs["systemLogsDetectionEnabled"] = state ? state.systemLogsDetectionEnabled : undefined;
+            resourceInputs["containerTimezoneHeuristicEnabled"] = state?.containerTimezoneHeuristicEnabled;
+            resourceInputs["containersLogsDetectionEnabled"] = state?.containersLogsDetectionEnabled;
+            resourceInputs["dateSearchLimitBytes"] = state?.dateSearchLimitBytes;
+            resourceInputs["defaultTimezone"] = state?.defaultTimezone;
+            resourceInputs["eventLogQueryTimeoutSec"] = state?.eventLogQueryTimeoutSec;
+            resourceInputs["iisdetectionEnabled"] = state?.iisdetectionEnabled;
+            resourceInputs["logScannerLinuxNfsEnabled"] = state?.logScannerLinuxNfsEnabled;
+            resourceInputs["maxLgisPerEntityCount"] = state?.maxLgisPerEntityCount;
+            resourceInputs["minBinaryDetectionLimitBytes"] = state?.minBinaryDetectionLimitBytes;
+            resourceInputs["monitorOwnLogsEnabled"] = state?.monitorOwnLogsEnabled;
+            resourceInputs["openLogFilesDetectionEnabled"] = state?.openLogFilesDetectionEnabled;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["severityDetectionLimitBytes"] = state?.severityDetectionLimitBytes;
+            resourceInputs["severityDetectionLinesLimit"] = state?.severityDetectionLinesLimit;
+            resourceInputs["systemLogsDetectionEnabled"] = state?.systemLogsDetectionEnabled;
         } else {
             const args = argsOrState as LogOneagentArgs | undefined;
-            if ((!args || args.containerTimezoneHeuristicEnabled === undefined) && !opts.urn) {
+            if (args?.containerTimezoneHeuristicEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'containerTimezoneHeuristicEnabled'");
             }
-            if ((!args || args.containersLogsDetectionEnabled === undefined) && !opts.urn) {
+            if (args?.containersLogsDetectionEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'containersLogsDetectionEnabled'");
             }
-            if ((!args || args.dateSearchLimitBytes === undefined) && !opts.urn) {
+            if (args?.dateSearchLimitBytes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dateSearchLimitBytes'");
             }
-            if ((!args || args.defaultTimezone === undefined) && !opts.urn) {
+            if (args?.defaultTimezone === undefined && !opts.urn) {
                 throw new Error("Missing required property 'defaultTimezone'");
             }
-            if ((!args || args.eventLogQueryTimeoutSec === undefined) && !opts.urn) {
+            if (args?.eventLogQueryTimeoutSec === undefined && !opts.urn) {
                 throw new Error("Missing required property 'eventLogQueryTimeoutSec'");
             }
-            if ((!args || args.iisdetectionEnabled === undefined) && !opts.urn) {
+            if (args?.iisdetectionEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'iisdetectionEnabled'");
             }
-            if ((!args || args.logScannerLinuxNfsEnabled === undefined) && !opts.urn) {
+            if (args?.logScannerLinuxNfsEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'logScannerLinuxNfsEnabled'");
             }
-            if ((!args || args.maxLgisPerEntityCount === undefined) && !opts.urn) {
+            if (args?.maxLgisPerEntityCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'maxLgisPerEntityCount'");
             }
-            if ((!args || args.minBinaryDetectionLimitBytes === undefined) && !opts.urn) {
+            if (args?.minBinaryDetectionLimitBytes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'minBinaryDetectionLimitBytes'");
             }
-            if ((!args || args.monitorOwnLogsEnabled === undefined) && !opts.urn) {
+            if (args?.monitorOwnLogsEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitorOwnLogsEnabled'");
             }
-            if ((!args || args.openLogFilesDetectionEnabled === undefined) && !opts.urn) {
+            if (args?.openLogFilesDetectionEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'openLogFilesDetectionEnabled'");
             }
-            if ((!args || args.severityDetectionLimitBytes === undefined) && !opts.urn) {
+            if (args?.severityDetectionLimitBytes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'severityDetectionLimitBytes'");
             }
-            if ((!args || args.severityDetectionLinesLimit === undefined) && !opts.urn) {
+            if (args?.severityDetectionLinesLimit === undefined && !opts.urn) {
                 throw new Error("Missing required property 'severityDetectionLinesLimit'");
             }
-            if ((!args || args.systemLogsDetectionEnabled === undefined) && !opts.urn) {
+            if (args?.systemLogsDetectionEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'systemLogsDetectionEnabled'");
             }
-            resourceInputs["containerTimezoneHeuristicEnabled"] = args ? args.containerTimezoneHeuristicEnabled : undefined;
-            resourceInputs["containersLogsDetectionEnabled"] = args ? args.containersLogsDetectionEnabled : undefined;
-            resourceInputs["dateSearchLimitBytes"] = args ? args.dateSearchLimitBytes : undefined;
-            resourceInputs["defaultTimezone"] = args ? args.defaultTimezone : undefined;
-            resourceInputs["eventLogQueryTimeoutSec"] = args ? args.eventLogQueryTimeoutSec : undefined;
-            resourceInputs["iisdetectionEnabled"] = args ? args.iisdetectionEnabled : undefined;
-            resourceInputs["logScannerLinuxNfsEnabled"] = args ? args.logScannerLinuxNfsEnabled : undefined;
-            resourceInputs["maxLgisPerEntityCount"] = args ? args.maxLgisPerEntityCount : undefined;
-            resourceInputs["minBinaryDetectionLimitBytes"] = args ? args.minBinaryDetectionLimitBytes : undefined;
-            resourceInputs["monitorOwnLogsEnabled"] = args ? args.monitorOwnLogsEnabled : undefined;
-            resourceInputs["openLogFilesDetectionEnabled"] = args ? args.openLogFilesDetectionEnabled : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["severityDetectionLimitBytes"] = args ? args.severityDetectionLimitBytes : undefined;
-            resourceInputs["severityDetectionLinesLimit"] = args ? args.severityDetectionLinesLimit : undefined;
-            resourceInputs["systemLogsDetectionEnabled"] = args ? args.systemLogsDetectionEnabled : undefined;
+            resourceInputs["containerTimezoneHeuristicEnabled"] = args?.containerTimezoneHeuristicEnabled;
+            resourceInputs["containersLogsDetectionEnabled"] = args?.containersLogsDetectionEnabled;
+            resourceInputs["dateSearchLimitBytes"] = args?.dateSearchLimitBytes;
+            resourceInputs["defaultTimezone"] = args?.defaultTimezone;
+            resourceInputs["eventLogQueryTimeoutSec"] = args?.eventLogQueryTimeoutSec;
+            resourceInputs["iisdetectionEnabled"] = args?.iisdetectionEnabled;
+            resourceInputs["logScannerLinuxNfsEnabled"] = args?.logScannerLinuxNfsEnabled;
+            resourceInputs["maxLgisPerEntityCount"] = args?.maxLgisPerEntityCount;
+            resourceInputs["minBinaryDetectionLimitBytes"] = args?.minBinaryDetectionLimitBytes;
+            resourceInputs["monitorOwnLogsEnabled"] = args?.monitorOwnLogsEnabled;
+            resourceInputs["openLogFilesDetectionEnabled"] = args?.openLogFilesDetectionEnabled;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["severityDetectionLimitBytes"] = args?.severityDetectionLimitBytes;
+            resourceInputs["severityDetectionLinesLimit"] = args?.severityDetectionLinesLimit;
+            resourceInputs["systemLogsDetectionEnabled"] = args?.systemLogsDetectionEnabled;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogOneagent.__pulumiType, name, resourceInputs, opts);

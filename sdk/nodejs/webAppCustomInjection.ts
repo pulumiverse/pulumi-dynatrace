@@ -35,31 +35,31 @@ export class WebAppCustomInjection extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string>;
+    declare public readonly applicationId: pulumi.Output<string>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * no documentation available
      */
-    public readonly htmlPattern!: pulumi.Output<string | undefined>;
+    declare public readonly htmlPattern: pulumi.Output<string | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
      */
-    public readonly operator!: pulumi.Output<string>;
+    declare public readonly operator: pulumi.Output<string>;
     /**
      * Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
      */
-    public readonly rule!: pulumi.Output<string>;
+    declare public readonly rule: pulumi.Output<string>;
     /**
      * URL pattern
      */
-    public readonly urlPattern!: pulumi.Output<string | undefined>;
+    declare public readonly urlPattern: pulumi.Output<string | undefined>;
 
     /**
      * Create a WebAppCustomInjection resource with the given unique name, arguments, and options.
@@ -74,34 +74,34 @@ export class WebAppCustomInjection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppCustomInjectionState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["htmlPattern"] = state ? state.htmlPattern : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["operator"] = state ? state.operator : undefined;
-            resourceInputs["rule"] = state ? state.rule : undefined;
-            resourceInputs["urlPattern"] = state ? state.urlPattern : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["htmlPattern"] = state?.htmlPattern;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["operator"] = state?.operator;
+            resourceInputs["rule"] = state?.rule;
+            resourceInputs["urlPattern"] = state?.urlPattern;
         } else {
             const args = argsOrState as WebAppCustomInjectionArgs | undefined;
-            if ((!args || args.applicationId === undefined) && !opts.urn) {
+            if (args?.applicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationId'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.operator === undefined) && !opts.urn) {
+            if (args?.operator === undefined && !opts.urn) {
                 throw new Error("Missing required property 'operator'");
             }
-            if ((!args || args.rule === undefined) && !opts.urn) {
+            if (args?.rule === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rule'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["htmlPattern"] = args ? args.htmlPattern : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["operator"] = args ? args.operator : undefined;
-            resourceInputs["rule"] = args ? args.rule : undefined;
-            resourceInputs["urlPattern"] = args ? args.urlPattern : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["htmlPattern"] = args?.htmlPattern;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["operator"] = args?.operator;
+            resourceInputs["rule"] = args?.rule;
+            resourceInputs["urlPattern"] = args?.urlPattern;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppCustomInjection.__pulumiType, name, resourceInputs, opts);

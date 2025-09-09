@@ -37,30 +37,30 @@ export class ApplicationErrorRules extends pulumi.CustomResource {
     /**
      * (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
      */
-    public readonly customErrors!: pulumi.Output<outputs.ApplicationErrorRulesCustomErrors | undefined>;
+    declare public readonly customErrors: pulumi.Output<outputs.ApplicationErrorRulesCustomErrors | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppRequestErrors`) An ordered list of HTTP errors. Rules are evaluated from top to
      * bottom; the first matching rule applies
      */
-    public readonly httpErrors!: pulumi.Output<outputs.ApplicationErrorRulesHttpErrors | undefined>;
+    declare public readonly httpErrors: pulumi.Output<outputs.ApplicationErrorRulesHttpErrors | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in
      * **customErrorRules** in Apdex calculation
      */
-    public readonly ignoreCustomErrorsApdex!: pulumi.Output<boolean | undefined>;
+    declare public readonly ignoreCustomErrorsApdex: pulumi.Output<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in
      * **httpErrorRules** in Apdex calculation
      */
-    public readonly ignoreHttpErrorsApdex!: pulumi.Output<boolean | undefined>;
+    declare public readonly ignoreHttpErrorsApdex: pulumi.Output<boolean | undefined>;
     /**
      * Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
      */
-    public readonly ignoreJsErrorsApdex!: pulumi.Output<boolean | undefined>;
+    declare public readonly ignoreJsErrorsApdex: pulumi.Output<boolean | undefined>;
     /**
      * The EntityID of the the WebApplication
      */
-    public readonly webApplicationId!: pulumi.Output<string | undefined>;
+    declare public readonly webApplicationId: pulumi.Output<string | undefined>;
 
     /**
      * Create a ApplicationErrorRules resource with the given unique name, arguments, and options.
@@ -75,20 +75,20 @@ export class ApplicationErrorRules extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ApplicationErrorRulesState | undefined;
-            resourceInputs["customErrors"] = state ? state.customErrors : undefined;
-            resourceInputs["httpErrors"] = state ? state.httpErrors : undefined;
-            resourceInputs["ignoreCustomErrorsApdex"] = state ? state.ignoreCustomErrorsApdex : undefined;
-            resourceInputs["ignoreHttpErrorsApdex"] = state ? state.ignoreHttpErrorsApdex : undefined;
-            resourceInputs["ignoreJsErrorsApdex"] = state ? state.ignoreJsErrorsApdex : undefined;
-            resourceInputs["webApplicationId"] = state ? state.webApplicationId : undefined;
+            resourceInputs["customErrors"] = state?.customErrors;
+            resourceInputs["httpErrors"] = state?.httpErrors;
+            resourceInputs["ignoreCustomErrorsApdex"] = state?.ignoreCustomErrorsApdex;
+            resourceInputs["ignoreHttpErrorsApdex"] = state?.ignoreHttpErrorsApdex;
+            resourceInputs["ignoreJsErrorsApdex"] = state?.ignoreJsErrorsApdex;
+            resourceInputs["webApplicationId"] = state?.webApplicationId;
         } else {
             const args = argsOrState as ApplicationErrorRulesArgs | undefined;
-            resourceInputs["customErrors"] = args ? args.customErrors : undefined;
-            resourceInputs["httpErrors"] = args ? args.httpErrors : undefined;
-            resourceInputs["ignoreCustomErrorsApdex"] = args ? args.ignoreCustomErrorsApdex : undefined;
-            resourceInputs["ignoreHttpErrorsApdex"] = args ? args.ignoreHttpErrorsApdex : undefined;
-            resourceInputs["ignoreJsErrorsApdex"] = args ? args.ignoreJsErrorsApdex : undefined;
-            resourceInputs["webApplicationId"] = args ? args.webApplicationId : undefined;
+            resourceInputs["customErrors"] = args?.customErrors;
+            resourceInputs["httpErrors"] = args?.httpErrors;
+            resourceInputs["ignoreCustomErrorsApdex"] = args?.ignoreCustomErrorsApdex;
+            resourceInputs["ignoreHttpErrorsApdex"] = args?.ignoreHttpErrorsApdex;
+            resourceInputs["ignoreJsErrorsApdex"] = args?.ignoreJsErrorsApdex;
+            resourceInputs["webApplicationId"] = args?.webApplicationId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ApplicationErrorRules.__pulumiType, name, resourceInputs, opts);

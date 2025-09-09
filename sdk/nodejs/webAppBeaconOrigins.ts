@@ -35,11 +35,11 @@ export class WebAppBeaconOrigins extends pulumi.CustomResource {
     /**
      * Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
      */
-    public readonly matcher!: pulumi.Output<string>;
+    declare public readonly matcher: pulumi.Output<string>;
     /**
      * Pattern
      */
-    public readonly pattern!: pulumi.Output<string>;
+    declare public readonly pattern: pulumi.Output<string>;
 
     /**
      * Create a WebAppBeaconOrigins resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class WebAppBeaconOrigins extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppBeaconOriginsState | undefined;
-            resourceInputs["matcher"] = state ? state.matcher : undefined;
-            resourceInputs["pattern"] = state ? state.pattern : undefined;
+            resourceInputs["matcher"] = state?.matcher;
+            resourceInputs["pattern"] = state?.pattern;
         } else {
             const args = argsOrState as WebAppBeaconOriginsArgs | undefined;
-            if ((!args || args.matcher === undefined) && !opts.urn) {
+            if (args?.matcher === undefined && !opts.urn) {
                 throw new Error("Missing required property 'matcher'");
             }
-            if ((!args || args.pattern === undefined) && !opts.urn) {
+            if (args?.pattern === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pattern'");
             }
-            resourceInputs["matcher"] = args ? args.matcher : undefined;
-            resourceInputs["pattern"] = args ? args.pattern : undefined;
+            resourceInputs["matcher"] = args?.matcher;
+            resourceInputs["pattern"] = args?.pattern;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppBeaconOrigins.__pulumiType, name, resourceInputs, opts);

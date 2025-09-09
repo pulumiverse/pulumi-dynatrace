@@ -37,7 +37,7 @@ export class OwnershipConfig extends pulumi.CustomResource {
     /**
      * Tags and metadata are key-value pairs. Define keys for tags and metadata that are considered for ownership. If a tag or any metadata starts with a key defined below, the value of the tag or metadata is considered a team identifier.
      */
-    public readonly ownershipIdentifiers!: pulumi.Output<outputs.OwnershipConfigOwnershipIdentifiers>;
+    declare public readonly ownershipIdentifiers: pulumi.Output<outputs.OwnershipConfigOwnershipIdentifiers>;
 
     /**
      * Create a OwnershipConfig resource with the given unique name, arguments, and options.
@@ -52,13 +52,13 @@ export class OwnershipConfig extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OwnershipConfigState | undefined;
-            resourceInputs["ownershipIdentifiers"] = state ? state.ownershipIdentifiers : undefined;
+            resourceInputs["ownershipIdentifiers"] = state?.ownershipIdentifiers;
         } else {
             const args = argsOrState as OwnershipConfigArgs | undefined;
-            if ((!args || args.ownershipIdentifiers === undefined) && !opts.urn) {
+            if (args?.ownershipIdentifiers === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ownershipIdentifiers'");
             }
-            resourceInputs["ownershipIdentifiers"] = args ? args.ownershipIdentifiers : undefined;
+            resourceInputs["ownershipIdentifiers"] = args?.ownershipIdentifiers;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OwnershipConfig.__pulumiType, name, resourceInputs, opts);

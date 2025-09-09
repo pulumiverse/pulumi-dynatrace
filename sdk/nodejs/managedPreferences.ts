@@ -35,59 +35,59 @@ export class ManagedPreferences extends pulumi.CustomResource {
     /**
      * Default: `false`
      */
-    public readonly certificateManagementEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly certificateManagementEnabled: pulumi.Output<boolean | undefined>;
     /**
      * Default: `true`
      */
-    public readonly certificateManagementPossible!: pulumi.Output<boolean | undefined>;
+    declare public readonly certificateManagementPossible: pulumi.Output<boolean | undefined>;
     /**
      * If true, each new user will get an invitation to set up a Dynatrace user account to access Dynatrace support resources user upon first login. Default: `false`
      */
-    public readonly communityCreateUser!: pulumi.Output<boolean | undefined>;
+    declare public readonly communityCreateUser: pulumi.Output<boolean | undefined>;
     /**
      * If true, results from Documentation are included in platform search. Default: `false`
      */
-    public readonly communityExternalSearch!: pulumi.Output<boolean | undefined>;
+    declare public readonly communityExternalSearch: pulumi.Output<boolean | undefined>;
     /**
      * If true, live, in-product assistance with our Product Experts is enabled. Default: `false`
      */
-    public readonly helpChatEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly helpChatEnabled: pulumi.Output<boolean | undefined>;
     /**
      * If true, audited, read-only remote access to your Dynatrace configuration settings is allowed. Default: `false`
      */
-    public readonly readOnlyRemoteAccessAllowed!: pulumi.Output<boolean | undefined>;
+    declare public readonly readOnlyRemoteAccessAllowed: pulumi.Output<boolean | undefined>;
     /**
      * If true, audited access to your Dynatrace cluster is allowed by approved Dynatrace employees otherwise by privileged Dynatrace employees. Default: `false`
      */
-    public readonly remoteAccessOnDemandOnly!: pulumi.Output<boolean | undefined>;
+    declare public readonly remoteAccessOnDemandOnly: pulumi.Output<boolean | undefined>;
     /**
      * If true, Dynatrace OneAgent monitors Dynatrace. Default: `true`
      */
-    public readonly ruxitMonitorsRuxit!: pulumi.Output<boolean>;
+    declare public readonly ruxitMonitorsRuxit: pulumi.Output<boolean>;
     /**
      * If true, audited remote-access to your Dynatrace configuration is allowed settings. Default: `true`
      */
-    public readonly supportAllowRemoteAccess!: pulumi.Output<boolean | undefined>;
+    declare public readonly supportAllowRemoteAccess: pulumi.Output<boolean | undefined>;
     /**
      * If true, usage and billing information will be reported.
      */
-    public readonly supportSendBilling!: pulumi.Output<boolean>;
+    declare public readonly supportSendBilling: pulumi.Output<boolean>;
     /**
      * If true, Dynatrace cluster health will be reported.
      */
-    public readonly supportSendClusterHealth!: pulumi.Output<boolean>;
+    declare public readonly supportSendClusterHealth: pulumi.Output<boolean>;
     /**
      * If true, Dynatrace cluster health and OneAgent events will be reported. Default: `true`
      */
-    public readonly supportSendEvents!: pulumi.Output<boolean | undefined>;
+    declare public readonly supportSendEvents: pulumi.Output<boolean | undefined>;
     /**
      * If true, usage and billing information will NOT be reported.
      */
-    public readonly suppressNonBillingRelevantData!: pulumi.Output<boolean>;
+    declare public readonly suppressNonBillingRelevantData: pulumi.Output<boolean>;
     /**
      * Default: `false`
      */
-    public readonly telemetrySharing!: pulumi.Output<boolean | undefined>;
+    declare public readonly telemetrySharing: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a ManagedPreferences resource with the given unique name, arguments, and options.
@@ -102,48 +102,48 @@ export class ManagedPreferences extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedPreferencesState | undefined;
-            resourceInputs["certificateManagementEnabled"] = state ? state.certificateManagementEnabled : undefined;
-            resourceInputs["certificateManagementPossible"] = state ? state.certificateManagementPossible : undefined;
-            resourceInputs["communityCreateUser"] = state ? state.communityCreateUser : undefined;
-            resourceInputs["communityExternalSearch"] = state ? state.communityExternalSearch : undefined;
-            resourceInputs["helpChatEnabled"] = state ? state.helpChatEnabled : undefined;
-            resourceInputs["readOnlyRemoteAccessAllowed"] = state ? state.readOnlyRemoteAccessAllowed : undefined;
-            resourceInputs["remoteAccessOnDemandOnly"] = state ? state.remoteAccessOnDemandOnly : undefined;
-            resourceInputs["ruxitMonitorsRuxit"] = state ? state.ruxitMonitorsRuxit : undefined;
-            resourceInputs["supportAllowRemoteAccess"] = state ? state.supportAllowRemoteAccess : undefined;
-            resourceInputs["supportSendBilling"] = state ? state.supportSendBilling : undefined;
-            resourceInputs["supportSendClusterHealth"] = state ? state.supportSendClusterHealth : undefined;
-            resourceInputs["supportSendEvents"] = state ? state.supportSendEvents : undefined;
-            resourceInputs["suppressNonBillingRelevantData"] = state ? state.suppressNonBillingRelevantData : undefined;
-            resourceInputs["telemetrySharing"] = state ? state.telemetrySharing : undefined;
+            resourceInputs["certificateManagementEnabled"] = state?.certificateManagementEnabled;
+            resourceInputs["certificateManagementPossible"] = state?.certificateManagementPossible;
+            resourceInputs["communityCreateUser"] = state?.communityCreateUser;
+            resourceInputs["communityExternalSearch"] = state?.communityExternalSearch;
+            resourceInputs["helpChatEnabled"] = state?.helpChatEnabled;
+            resourceInputs["readOnlyRemoteAccessAllowed"] = state?.readOnlyRemoteAccessAllowed;
+            resourceInputs["remoteAccessOnDemandOnly"] = state?.remoteAccessOnDemandOnly;
+            resourceInputs["ruxitMonitorsRuxit"] = state?.ruxitMonitorsRuxit;
+            resourceInputs["supportAllowRemoteAccess"] = state?.supportAllowRemoteAccess;
+            resourceInputs["supportSendBilling"] = state?.supportSendBilling;
+            resourceInputs["supportSendClusterHealth"] = state?.supportSendClusterHealth;
+            resourceInputs["supportSendEvents"] = state?.supportSendEvents;
+            resourceInputs["suppressNonBillingRelevantData"] = state?.suppressNonBillingRelevantData;
+            resourceInputs["telemetrySharing"] = state?.telemetrySharing;
         } else {
             const args = argsOrState as ManagedPreferencesArgs | undefined;
-            if ((!args || args.ruxitMonitorsRuxit === undefined) && !opts.urn) {
+            if (args?.ruxitMonitorsRuxit === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruxitMonitorsRuxit'");
             }
-            if ((!args || args.supportSendBilling === undefined) && !opts.urn) {
+            if (args?.supportSendBilling === undefined && !opts.urn) {
                 throw new Error("Missing required property 'supportSendBilling'");
             }
-            if ((!args || args.supportSendClusterHealth === undefined) && !opts.urn) {
+            if (args?.supportSendClusterHealth === undefined && !opts.urn) {
                 throw new Error("Missing required property 'supportSendClusterHealth'");
             }
-            if ((!args || args.suppressNonBillingRelevantData === undefined) && !opts.urn) {
+            if (args?.suppressNonBillingRelevantData === undefined && !opts.urn) {
                 throw new Error("Missing required property 'suppressNonBillingRelevantData'");
             }
-            resourceInputs["certificateManagementEnabled"] = args ? args.certificateManagementEnabled : undefined;
-            resourceInputs["certificateManagementPossible"] = args ? args.certificateManagementPossible : undefined;
-            resourceInputs["communityCreateUser"] = args ? args.communityCreateUser : undefined;
-            resourceInputs["communityExternalSearch"] = args ? args.communityExternalSearch : undefined;
-            resourceInputs["helpChatEnabled"] = args ? args.helpChatEnabled : undefined;
-            resourceInputs["readOnlyRemoteAccessAllowed"] = args ? args.readOnlyRemoteAccessAllowed : undefined;
-            resourceInputs["remoteAccessOnDemandOnly"] = args ? args.remoteAccessOnDemandOnly : undefined;
-            resourceInputs["ruxitMonitorsRuxit"] = args ? args.ruxitMonitorsRuxit : undefined;
-            resourceInputs["supportAllowRemoteAccess"] = args ? args.supportAllowRemoteAccess : undefined;
-            resourceInputs["supportSendBilling"] = args ? args.supportSendBilling : undefined;
-            resourceInputs["supportSendClusterHealth"] = args ? args.supportSendClusterHealth : undefined;
-            resourceInputs["supportSendEvents"] = args ? args.supportSendEvents : undefined;
-            resourceInputs["suppressNonBillingRelevantData"] = args ? args.suppressNonBillingRelevantData : undefined;
-            resourceInputs["telemetrySharing"] = args ? args.telemetrySharing : undefined;
+            resourceInputs["certificateManagementEnabled"] = args?.certificateManagementEnabled;
+            resourceInputs["certificateManagementPossible"] = args?.certificateManagementPossible;
+            resourceInputs["communityCreateUser"] = args?.communityCreateUser;
+            resourceInputs["communityExternalSearch"] = args?.communityExternalSearch;
+            resourceInputs["helpChatEnabled"] = args?.helpChatEnabled;
+            resourceInputs["readOnlyRemoteAccessAllowed"] = args?.readOnlyRemoteAccessAllowed;
+            resourceInputs["remoteAccessOnDemandOnly"] = args?.remoteAccessOnDemandOnly;
+            resourceInputs["ruxitMonitorsRuxit"] = args?.ruxitMonitorsRuxit;
+            resourceInputs["supportAllowRemoteAccess"] = args?.supportAllowRemoteAccess;
+            resourceInputs["supportSendBilling"] = args?.supportSendBilling;
+            resourceInputs["supportSendClusterHealth"] = args?.supportSendClusterHealth;
+            resourceInputs["supportSendEvents"] = args?.supportSendEvents;
+            resourceInputs["suppressNonBillingRelevantData"] = args?.suppressNonBillingRelevantData;
+            resourceInputs["telemetrySharing"] = args?.telemetrySharing;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedPreferences.__pulumiType, name, resourceInputs, opts);

@@ -37,21 +37,21 @@ export class ApplicationDetectionRule extends pulumi.CustomResource {
     /**
      * The Dynatrace entity ID of the application, for example APPLICATION-4A3B43
      */
-    public readonly applicationIdentifier!: pulumi.Output<string>;
+    declare public readonly applicationIdentifier: pulumi.Output<string>;
     /**
      * The condition of an application detection rule
      */
-    public readonly filterConfig!: pulumi.Output<outputs.ApplicationDetectionRuleFilterConfig>;
+    declare public readonly filterConfig: pulumi.Output<outputs.ApplicationDetectionRuleFilterConfig>;
     /**
      * The unique name of the Application detection rule
      *
      * @deprecated Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The order of the rule in the rules list
      */
-    public readonly order!: pulumi.Output<string | undefined>;
+    declare public readonly order: pulumi.Output<string | undefined>;
 
     /**
      * Create a ApplicationDetectionRule resource with the given unique name, arguments, and options.
@@ -66,22 +66,22 @@ export class ApplicationDetectionRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ApplicationDetectionRuleState | undefined;
-            resourceInputs["applicationIdentifier"] = state ? state.applicationIdentifier : undefined;
-            resourceInputs["filterConfig"] = state ? state.filterConfig : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["order"] = state ? state.order : undefined;
+            resourceInputs["applicationIdentifier"] = state?.applicationIdentifier;
+            resourceInputs["filterConfig"] = state?.filterConfig;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["order"] = state?.order;
         } else {
             const args = argsOrState as ApplicationDetectionRuleArgs | undefined;
-            if ((!args || args.applicationIdentifier === undefined) && !opts.urn) {
+            if (args?.applicationIdentifier === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationIdentifier'");
             }
-            if ((!args || args.filterConfig === undefined) && !opts.urn) {
+            if (args?.filterConfig === undefined && !opts.urn) {
                 throw new Error("Missing required property 'filterConfig'");
             }
-            resourceInputs["applicationIdentifier"] = args ? args.applicationIdentifier : undefined;
-            resourceInputs["filterConfig"] = args ? args.filterConfig : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["order"] = args ? args.order : undefined;
+            resourceInputs["applicationIdentifier"] = args?.applicationIdentifier;
+            resourceInputs["filterConfig"] = args?.filterConfig;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["order"] = args?.order;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ApplicationDetectionRule.__pulumiType, name, resourceInputs, opts);

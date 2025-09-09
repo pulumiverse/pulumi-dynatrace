@@ -35,31 +35,31 @@ export class PagerDutyNotification extends pulumi.CustomResource {
     /**
      * The name of the PagerDuty account
      */
-    public readonly account!: pulumi.Output<string>;
+    declare public readonly account: pulumi.Output<string>;
     /**
      * The configuration is enabled (`true`) or disabled (`false`)
      */
-    public readonly active!: pulumi.Output<boolean>;
+    declare public readonly active: pulumi.Output<boolean>;
     /**
      * The API key to access PagerDuty
      */
-    public readonly apiKey!: pulumi.Output<string | undefined>;
+    declare public readonly apiKey: pulumi.Output<string | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    public readonly legacyId!: pulumi.Output<string>;
+    declare public readonly legacyId: pulumi.Output<string>;
     /**
      * The name of the notification configuration
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The ID of the associated alerting profile
      */
-    public readonly profile!: pulumi.Output<string>;
+    declare public readonly profile: pulumi.Output<string>;
     /**
      * The name of the PagerDuty Service
      */
-    public readonly service!: pulumi.Output<string>;
+    declare public readonly service: pulumi.Output<string>;
 
     /**
      * Create a PagerDutyNotification resource with the given unique name, arguments, and options.
@@ -74,34 +74,34 @@ export class PagerDutyNotification extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PagerDutyNotificationState | undefined;
-            resourceInputs["account"] = state ? state.account : undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["apiKey"] = state ? state.apiKey : undefined;
-            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["profile"] = state ? state.profile : undefined;
-            resourceInputs["service"] = state ? state.service : undefined;
+            resourceInputs["account"] = state?.account;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["apiKey"] = state?.apiKey;
+            resourceInputs["legacyId"] = state?.legacyId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["profile"] = state?.profile;
+            resourceInputs["service"] = state?.service;
         } else {
             const args = argsOrState as PagerDutyNotificationArgs | undefined;
-            if ((!args || args.account === undefined) && !opts.urn) {
+            if (args?.account === undefined && !opts.urn) {
                 throw new Error("Missing required property 'account'");
             }
-            if ((!args || args.active === undefined) && !opts.urn) {
+            if (args?.active === undefined && !opts.urn) {
                 throw new Error("Missing required property 'active'");
             }
-            if ((!args || args.profile === undefined) && !opts.urn) {
+            if (args?.profile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profile'");
             }
-            if ((!args || args.service === undefined) && !opts.urn) {
+            if (args?.service === undefined && !opts.urn) {
                 throw new Error("Missing required property 'service'");
             }
-            resourceInputs["account"] = args ? args.account : undefined;
-            resourceInputs["active"] = args ? args.active : undefined;
+            resourceInputs["account"] = args?.account;
+            resourceInputs["active"] = args?.active;
             resourceInputs["apiKey"] = args?.apiKey ? pulumi.secret(args.apiKey) : undefined;
-            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["profile"] = args ? args.profile : undefined;
-            resourceInputs["service"] = args ? args.service : undefined;
+            resourceInputs["legacyId"] = args?.legacyId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["profile"] = args?.profile;
+            resourceInputs["service"] = args?.service;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["apiKey"] };

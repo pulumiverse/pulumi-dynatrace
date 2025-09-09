@@ -37,15 +37,15 @@ export class K8sPvcAnomalies extends pulumi.CustomResource {
     /**
      * Alerts on low disk space in megabytes for a persistent volume claim.
      */
-    public readonly lowDiskSpaceCritical!: pulumi.Output<outputs.K8sPvcAnomaliesLowDiskSpaceCritical>;
+    declare public readonly lowDiskSpaceCritical: pulumi.Output<outputs.K8sPvcAnomaliesLowDiskSpaceCritical>;
     /**
      * Alerts on low disk space in % for a persistent volume claim.
      */
-    public readonly lowDiskSpaceCriticalPercentage!: pulumi.Output<outputs.K8sPvcAnomaliesLowDiskSpaceCriticalPercentage>;
+    declare public readonly lowDiskSpaceCriticalPercentage: pulumi.Output<outputs.K8sPvcAnomaliesLowDiskSpaceCriticalPercentage>;
     /**
      * The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a K8sPvcAnomalies resource with the given unique name, arguments, and options.
@@ -60,20 +60,20 @@ export class K8sPvcAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as K8sPvcAnomaliesState | undefined;
-            resourceInputs["lowDiskSpaceCritical"] = state ? state.lowDiskSpaceCritical : undefined;
-            resourceInputs["lowDiskSpaceCriticalPercentage"] = state ? state.lowDiskSpaceCriticalPercentage : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["lowDiskSpaceCritical"] = state?.lowDiskSpaceCritical;
+            resourceInputs["lowDiskSpaceCriticalPercentage"] = state?.lowDiskSpaceCriticalPercentage;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as K8sPvcAnomaliesArgs | undefined;
-            if ((!args || args.lowDiskSpaceCritical === undefined) && !opts.urn) {
+            if (args?.lowDiskSpaceCritical === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lowDiskSpaceCritical'");
             }
-            if ((!args || args.lowDiskSpaceCriticalPercentage === undefined) && !opts.urn) {
+            if (args?.lowDiskSpaceCriticalPercentage === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lowDiskSpaceCriticalPercentage'");
             }
-            resourceInputs["lowDiskSpaceCritical"] = args ? args.lowDiskSpaceCritical : undefined;
-            resourceInputs["lowDiskSpaceCriticalPercentage"] = args ? args.lowDiskSpaceCriticalPercentage : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["lowDiskSpaceCritical"] = args?.lowDiskSpaceCritical;
+            resourceInputs["lowDiskSpaceCriticalPercentage"] = args?.lowDiskSpaceCriticalPercentage;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(K8sPvcAnomalies.__pulumiType, name, resourceInputs, opts);

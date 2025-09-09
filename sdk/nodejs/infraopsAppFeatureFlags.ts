@@ -35,23 +35,23 @@ export class InfraopsAppFeatureFlags extends pulumi.CustomResource {
     /**
      * State of boolean feature
      */
-    public readonly booleanValue!: pulumi.Output<boolean | undefined>;
+    declare public readonly booleanValue: pulumi.Output<boolean | undefined>;
     /**
      * Name of the feature
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * State of numeric feature
      */
-    public readonly numberValue!: pulumi.Output<number | undefined>;
+    declare public readonly numberValue: pulumi.Output<number | undefined>;
     /**
      * State of textual feature
      */
-    public readonly stringValue!: pulumi.Output<string | undefined>;
+    declare public readonly stringValue: pulumi.Output<string | undefined>;
     /**
      * Possible Values: `Boolean`, `Number`, `String`
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a InfraopsAppFeatureFlags resource with the given unique name, arguments, and options.
@@ -66,21 +66,21 @@ export class InfraopsAppFeatureFlags extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InfraopsAppFeatureFlagsState | undefined;
-            resourceInputs["booleanValue"] = state ? state.booleanValue : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["numberValue"] = state ? state.numberValue : undefined;
-            resourceInputs["stringValue"] = state ? state.stringValue : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["booleanValue"] = state?.booleanValue;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["numberValue"] = state?.numberValue;
+            resourceInputs["stringValue"] = state?.stringValue;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as InfraopsAppFeatureFlagsArgs | undefined;
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["booleanValue"] = args ? args.booleanValue : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["numberValue"] = args ? args.numberValue : undefined;
-            resourceInputs["stringValue"] = args ? args.stringValue : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["booleanValue"] = args?.booleanValue;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["numberValue"] = args?.numberValue;
+            resourceInputs["stringValue"] = args?.stringValue;
+            resourceInputs["type"] = args?.type;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(InfraopsAppFeatureFlags.__pulumiType, name, resourceInputs, opts);

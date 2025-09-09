@@ -37,39 +37,39 @@ export class LogTimestamp extends pulumi.CustomResource {
     /**
      * Name
      */
-    public readonly configItemTitle!: pulumi.Output<string>;
+    declare public readonly configItemTitle: pulumi.Output<string>;
     /**
      * Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
      */
-    public readonly dateSearchLimit!: pulumi.Output<number | undefined>;
+    declare public readonly dateSearchLimit: pulumi.Output<number | undefined>;
     /**
      * Date-time pattern
      */
-    public readonly dateTimePattern!: pulumi.Output<string>;
+    declare public readonly dateTimePattern: pulumi.Output<string>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
      */
-    public readonly entryBoundary!: pulumi.Output<outputs.LogTimestampEntryBoundary | undefined>;
+    declare public readonly entryBoundary: pulumi.Output<outputs.LogTimestampEntryBoundary | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * no documentation available
      */
-    public readonly matchers!: pulumi.Output<outputs.LogTimestampMatchers | undefined>;
+    declare public readonly matchers: pulumi.Output<outputs.LogTimestampMatchers | undefined>;
     /**
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * Timezone
      */
-    public readonly timezone!: pulumi.Output<string>;
+    declare public readonly timezone: pulumi.Output<string>;
 
     /**
      * Create a LogTimestamp resource with the given unique name, arguments, and options.
@@ -84,38 +84,38 @@ export class LogTimestamp extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogTimestampState | undefined;
-            resourceInputs["configItemTitle"] = state ? state.configItemTitle : undefined;
-            resourceInputs["dateSearchLimit"] = state ? state.dateSearchLimit : undefined;
-            resourceInputs["dateTimePattern"] = state ? state.dateTimePattern : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["entryBoundary"] = state ? state.entryBoundary : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["matchers"] = state ? state.matchers : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["timezone"] = state ? state.timezone : undefined;
+            resourceInputs["configItemTitle"] = state?.configItemTitle;
+            resourceInputs["dateSearchLimit"] = state?.dateSearchLimit;
+            resourceInputs["dateTimePattern"] = state?.dateTimePattern;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["entryBoundary"] = state?.entryBoundary;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["matchers"] = state?.matchers;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["timezone"] = state?.timezone;
         } else {
             const args = argsOrState as LogTimestampArgs | undefined;
-            if ((!args || args.configItemTitle === undefined) && !opts.urn) {
+            if (args?.configItemTitle === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configItemTitle'");
             }
-            if ((!args || args.dateTimePattern === undefined) && !opts.urn) {
+            if (args?.dateTimePattern === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dateTimePattern'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.timezone === undefined) && !opts.urn) {
+            if (args?.timezone === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timezone'");
             }
-            resourceInputs["configItemTitle"] = args ? args.configItemTitle : undefined;
-            resourceInputs["dateSearchLimit"] = args ? args.dateSearchLimit : undefined;
-            resourceInputs["dateTimePattern"] = args ? args.dateTimePattern : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["entryBoundary"] = args ? args.entryBoundary : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["matchers"] = args ? args.matchers : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["timezone"] = args ? args.timezone : undefined;
+            resourceInputs["configItemTitle"] = args?.configItemTitle;
+            resourceInputs["dateSearchLimit"] = args?.dateSearchLimit;
+            resourceInputs["dateTimePattern"] = args?.dateTimePattern;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["entryBoundary"] = args?.entryBoundary;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["matchers"] = args?.matchers;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["timezone"] = args?.timezone;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogTimestamp.__pulumiType, name, resourceInputs, opts);

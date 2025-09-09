@@ -35,7 +35,7 @@ export class ContainerRegistry extends pulumi.CustomResource {
     /**
      * Typically set without protocol. Leave empty to use default configuration
      */
-    public readonly containerRegistry!: pulumi.Output<string | undefined>;
+    declare public readonly containerRegistry: pulumi.Output<string | undefined>;
 
     /**
      * Create a ContainerRegistry resource with the given unique name, arguments, and options.
@@ -50,10 +50,10 @@ export class ContainerRegistry extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ContainerRegistryState | undefined;
-            resourceInputs["containerRegistry"] = state ? state.containerRegistry : undefined;
+            resourceInputs["containerRegistry"] = state?.containerRegistry;
         } else {
             const args = argsOrState as ContainerRegistryArgs | undefined;
-            resourceInputs["containerRegistry"] = args ? args.containerRegistry : undefined;
+            resourceInputs["containerRegistry"] = args?.containerRegistry;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ContainerRegistry.__pulumiType, name, resourceInputs, opts);

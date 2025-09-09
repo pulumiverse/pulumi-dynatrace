@@ -37,43 +37,43 @@ export class K8sMonitoring extends pulumi.CustomResource {
     /**
      * Monitor Kubernetes namespaces, services, workloads, and pods
      */
-    public readonly cloudApplicationPipelineEnabled!: pulumi.Output<boolean>;
+    declare public readonly cloudApplicationPipelineEnabled: pulumi.Output<boolean>;
     /**
      * Define Kubernetes event filters to ingest events into your environment. For more details, see the
      * [documentation](https://dt-url.net/2201p0u).
      */
-    public readonly eventPatterns!: pulumi.Output<outputs.K8sMonitoringEventPatterns | undefined>;
+    declare public readonly eventPatterns: pulumi.Output<outputs.K8sMonitoringEventPatterns | undefined>;
     /**
      * All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
      */
-    public readonly eventProcessingActive!: pulumi.Output<boolean>;
+    declare public readonly eventProcessingActive: pulumi.Output<boolean>;
     /**
      * Include only events specified by Events Field Selectors
      */
-    public readonly filterEvents!: pulumi.Output<boolean | undefined>;
+    declare public readonly filterEvents: pulumi.Output<boolean | undefined>;
     /**
      * For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
      */
-    public readonly includeAllFdiEvents!: pulumi.Output<boolean | undefined>;
+    declare public readonly includeAllFdiEvents: pulumi.Output<boolean | undefined>;
     /**
      * Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
      * this may increase the CPU/memory resource consumption of your ActiveGate.
      */
-    public readonly openMetricsBuiltinEnabled!: pulumi.Output<boolean>;
+    declare public readonly openMetricsBuiltinEnabled: pulumi.Output<boolean>;
     /**
      * For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
      */
-    public readonly openMetricsPipelineEnabled!: pulumi.Output<boolean>;
+    declare public readonly openMetricsPipelineEnabled: pulumi.Output<boolean>;
     /**
      * To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
      *
      * @deprecated This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.
      */
-    public readonly pvcMonitoringEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly pvcMonitoringEnabled: pulumi.Output<boolean | undefined>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a K8sMonitoring resource with the given unique name, arguments, and options.
@@ -88,38 +88,38 @@ export class K8sMonitoring extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as K8sMonitoringState | undefined;
-            resourceInputs["cloudApplicationPipelineEnabled"] = state ? state.cloudApplicationPipelineEnabled : undefined;
-            resourceInputs["eventPatterns"] = state ? state.eventPatterns : undefined;
-            resourceInputs["eventProcessingActive"] = state ? state.eventProcessingActive : undefined;
-            resourceInputs["filterEvents"] = state ? state.filterEvents : undefined;
-            resourceInputs["includeAllFdiEvents"] = state ? state.includeAllFdiEvents : undefined;
-            resourceInputs["openMetricsBuiltinEnabled"] = state ? state.openMetricsBuiltinEnabled : undefined;
-            resourceInputs["openMetricsPipelineEnabled"] = state ? state.openMetricsPipelineEnabled : undefined;
-            resourceInputs["pvcMonitoringEnabled"] = state ? state.pvcMonitoringEnabled : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["cloudApplicationPipelineEnabled"] = state?.cloudApplicationPipelineEnabled;
+            resourceInputs["eventPatterns"] = state?.eventPatterns;
+            resourceInputs["eventProcessingActive"] = state?.eventProcessingActive;
+            resourceInputs["filterEvents"] = state?.filterEvents;
+            resourceInputs["includeAllFdiEvents"] = state?.includeAllFdiEvents;
+            resourceInputs["openMetricsBuiltinEnabled"] = state?.openMetricsBuiltinEnabled;
+            resourceInputs["openMetricsPipelineEnabled"] = state?.openMetricsPipelineEnabled;
+            resourceInputs["pvcMonitoringEnabled"] = state?.pvcMonitoringEnabled;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as K8sMonitoringArgs | undefined;
-            if ((!args || args.cloudApplicationPipelineEnabled === undefined) && !opts.urn) {
+            if (args?.cloudApplicationPipelineEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudApplicationPipelineEnabled'");
             }
-            if ((!args || args.eventProcessingActive === undefined) && !opts.urn) {
+            if (args?.eventProcessingActive === undefined && !opts.urn) {
                 throw new Error("Missing required property 'eventProcessingActive'");
             }
-            if ((!args || args.openMetricsBuiltinEnabled === undefined) && !opts.urn) {
+            if (args?.openMetricsBuiltinEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'openMetricsBuiltinEnabled'");
             }
-            if ((!args || args.openMetricsPipelineEnabled === undefined) && !opts.urn) {
+            if (args?.openMetricsPipelineEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'openMetricsPipelineEnabled'");
             }
-            resourceInputs["cloudApplicationPipelineEnabled"] = args ? args.cloudApplicationPipelineEnabled : undefined;
-            resourceInputs["eventPatterns"] = args ? args.eventPatterns : undefined;
-            resourceInputs["eventProcessingActive"] = args ? args.eventProcessingActive : undefined;
-            resourceInputs["filterEvents"] = args ? args.filterEvents : undefined;
-            resourceInputs["includeAllFdiEvents"] = args ? args.includeAllFdiEvents : undefined;
-            resourceInputs["openMetricsBuiltinEnabled"] = args ? args.openMetricsBuiltinEnabled : undefined;
-            resourceInputs["openMetricsPipelineEnabled"] = args ? args.openMetricsPipelineEnabled : undefined;
-            resourceInputs["pvcMonitoringEnabled"] = args ? args.pvcMonitoringEnabled : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["cloudApplicationPipelineEnabled"] = args?.cloudApplicationPipelineEnabled;
+            resourceInputs["eventPatterns"] = args?.eventPatterns;
+            resourceInputs["eventProcessingActive"] = args?.eventProcessingActive;
+            resourceInputs["filterEvents"] = args?.filterEvents;
+            resourceInputs["includeAllFdiEvents"] = args?.includeAllFdiEvents;
+            resourceInputs["openMetricsBuiltinEnabled"] = args?.openMetricsBuiltinEnabled;
+            resourceInputs["openMetricsPipelineEnabled"] = args?.openMetricsPipelineEnabled;
+            resourceInputs["pvcMonitoringEnabled"] = args?.pvcMonitoringEnabled;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(K8sMonitoring.__pulumiType, name, resourceInputs, opts);

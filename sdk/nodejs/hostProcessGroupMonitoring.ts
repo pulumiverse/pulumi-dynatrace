@@ -35,15 +35,15 @@ export class HostProcessGroupMonitoring extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly hostId!: pulumi.Output<string>;
+    declare public readonly hostId: pulumi.Output<string>;
     /**
      * Possible Values: `DEFAULT`, `MONITORING_OFF`, `MONITORING_ON`
      */
-    public readonly monitoringState!: pulumi.Output<string>;
+    declare public readonly monitoringState: pulumi.Output<string>;
     /**
      * Process group
      */
-    public readonly processGroup!: pulumi.Output<string>;
+    declare public readonly processGroup: pulumi.Output<string>;
 
     /**
      * Create a HostProcessGroupMonitoring resource with the given unique name, arguments, and options.
@@ -58,23 +58,23 @@ export class HostProcessGroupMonitoring extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HostProcessGroupMonitoringState | undefined;
-            resourceInputs["hostId"] = state ? state.hostId : undefined;
-            resourceInputs["monitoringState"] = state ? state.monitoringState : undefined;
-            resourceInputs["processGroup"] = state ? state.processGroup : undefined;
+            resourceInputs["hostId"] = state?.hostId;
+            resourceInputs["monitoringState"] = state?.monitoringState;
+            resourceInputs["processGroup"] = state?.processGroup;
         } else {
             const args = argsOrState as HostProcessGroupMonitoringArgs | undefined;
-            if ((!args || args.hostId === undefined) && !opts.urn) {
+            if (args?.hostId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostId'");
             }
-            if ((!args || args.monitoringState === undefined) && !opts.urn) {
+            if (args?.monitoringState === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitoringState'");
             }
-            if ((!args || args.processGroup === undefined) && !opts.urn) {
+            if (args?.processGroup === undefined && !opts.urn) {
                 throw new Error("Missing required property 'processGroup'");
             }
-            resourceInputs["hostId"] = args ? args.hostId : undefined;
-            resourceInputs["monitoringState"] = args ? args.monitoringState : undefined;
-            resourceInputs["processGroup"] = args ? args.processGroup : undefined;
+            resourceInputs["hostId"] = args?.hostId;
+            resourceInputs["monitoringState"] = args?.monitoringState;
+            resourceInputs["processGroup"] = args?.processGroup;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HostProcessGroupMonitoring.__pulumiType, name, resourceInputs, opts);

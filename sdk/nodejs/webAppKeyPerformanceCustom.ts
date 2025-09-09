@@ -37,11 +37,11 @@ export class WebAppKeyPerformanceCustom extends pulumi.CustomResource {
     /**
      * The scope of this setting (APPLICATION_METHOD, APPLICATION)
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
     /**
      * User action duration thresholds
      */
-    public readonly thresholds!: pulumi.Output<outputs.WebAppKeyPerformanceCustomThresholds>;
+    declare public readonly thresholds: pulumi.Output<outputs.WebAppKeyPerformanceCustomThresholds>;
 
     /**
      * Create a WebAppKeyPerformanceCustom resource with the given unique name, arguments, and options.
@@ -56,18 +56,18 @@ export class WebAppKeyPerformanceCustom extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppKeyPerformanceCustomState | undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["thresholds"] = state ? state.thresholds : undefined;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["thresholds"] = state?.thresholds;
         } else {
             const args = argsOrState as WebAppKeyPerformanceCustomArgs | undefined;
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            if ((!args || args.thresholds === undefined) && !opts.urn) {
+            if (args?.thresholds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'thresholds'");
             }
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["thresholds"] = args ? args.thresholds : undefined;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["thresholds"] = args?.thresholds;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppKeyPerformanceCustom.__pulumiType, name, resourceInputs, opts);

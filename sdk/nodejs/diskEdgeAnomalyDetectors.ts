@@ -37,39 +37,39 @@ export class DiskEdgeAnomalyDetectors extends pulumi.CustomResource {
     /**
      * Alerts
      */
-    public readonly alerts!: pulumi.Output<outputs.DiskEdgeAnomalyDetectorsAlerts | undefined>;
+    declare public readonly alerts: pulumi.Output<outputs.DiskEdgeAnomalyDetectorsAlerts | undefined>;
     /**
      * Disk will be included in this policy if **any** of the filters match
      */
-    public readonly diskNameFilters!: pulumi.Output<string[] | undefined>;
+    declare public readonly diskNameFilters: pulumi.Output<string[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Set of additional key-value properties to be attached to the triggered event.
      */
-    public readonly eventProperties!: pulumi.Output<outputs.DiskEdgeAnomalyDetectorsEventProperties | undefined>;
+    declare public readonly eventProperties: pulumi.Output<outputs.DiskEdgeAnomalyDetectorsEventProperties | undefined>;
     /**
      * The policy will be enabled if **all** conditions are met
      */
-    public readonly hostMetadataConditions!: pulumi.Output<outputs.DiskEdgeAnomalyDetectorsHostMetadataConditions | undefined>;
+    declare public readonly hostMetadataConditions: pulumi.Output<outputs.DiskEdgeAnomalyDetectorsHostMetadataConditions | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Select the operating systems on which policy should be applied
      */
-    public readonly operatingSystems!: pulumi.Output<string[] | undefined>;
+    declare public readonly operatingSystems: pulumi.Output<string[] | undefined>;
     /**
      * Policy name
      */
-    public readonly policyName!: pulumi.Output<string>;
+    declare public readonly policyName: pulumi.Output<string>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a DiskEdgeAnomalyDetectors resource with the given unique name, arguments, and options.
@@ -84,32 +84,32 @@ export class DiskEdgeAnomalyDetectors extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DiskEdgeAnomalyDetectorsState | undefined;
-            resourceInputs["alerts"] = state ? state.alerts : undefined;
-            resourceInputs["diskNameFilters"] = state ? state.diskNameFilters : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["eventProperties"] = state ? state.eventProperties : undefined;
-            resourceInputs["hostMetadataConditions"] = state ? state.hostMetadataConditions : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["operatingSystems"] = state ? state.operatingSystems : undefined;
-            resourceInputs["policyName"] = state ? state.policyName : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["alerts"] = state?.alerts;
+            resourceInputs["diskNameFilters"] = state?.diskNameFilters;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["eventProperties"] = state?.eventProperties;
+            resourceInputs["hostMetadataConditions"] = state?.hostMetadataConditions;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["operatingSystems"] = state?.operatingSystems;
+            resourceInputs["policyName"] = state?.policyName;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as DiskEdgeAnomalyDetectorsArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.policyName === undefined) && !opts.urn) {
+            if (args?.policyName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'policyName'");
             }
-            resourceInputs["alerts"] = args ? args.alerts : undefined;
-            resourceInputs["diskNameFilters"] = args ? args.diskNameFilters : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["eventProperties"] = args ? args.eventProperties : undefined;
-            resourceInputs["hostMetadataConditions"] = args ? args.hostMetadataConditions : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["operatingSystems"] = args ? args.operatingSystems : undefined;
-            resourceInputs["policyName"] = args ? args.policyName : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["alerts"] = args?.alerts;
+            resourceInputs["diskNameFilters"] = args?.diskNameFilters;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["eventProperties"] = args?.eventProperties;
+            resourceInputs["hostMetadataConditions"] = args?.hostMetadataConditions;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["operatingSystems"] = args?.operatingSystems;
+            resourceInputs["policyName"] = args?.policyName;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DiskEdgeAnomalyDetectors.__pulumiType, name, resourceInputs, opts);

@@ -35,43 +35,43 @@ export class IssueTracking extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Set a label to identify these issues, for example, `releaseBlocker` or `non-critical`
      */
-    public readonly issuelabel!: pulumi.Output<string>;
+    declare public readonly issuelabel: pulumi.Output<string>;
     /**
      * You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
      */
-    public readonly issuequery!: pulumi.Output<string>;
+    declare public readonly issuequery: pulumi.Output<string>;
     /**
      * Possible Values: `ERROR`, `INFO`, `RESOLVED`
      */
-    public readonly issuetheme!: pulumi.Output<string>;
+    declare public readonly issuetheme: pulumi.Output<string>;
     /**
      * Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
      */
-    public readonly issuetrackersystem!: pulumi.Output<string>;
+    declare public readonly issuetrackersystem: pulumi.Output<string>;
     /**
      * Password
      */
-    public readonly password!: pulumi.Output<string | undefined>;
+    declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * Token
      */
-    public readonly token!: pulumi.Output<string | undefined>;
+    declare public readonly token: pulumi.Output<string | undefined>;
     /**
      * For Jira, use the base URL (for example, https://jira.yourcompany.com); for GitHub, use the repository URL (for example, https://github.com/org/repo); for GitLab, use the specific project API for a single project (for example, https://gitlab.com/api/v4/projects/:projectId), and the specific group API for a multiple projects (for example, https://gitlab.com/api/v4/groups/:groupId); for ServiceNow, use your company instance URL (for example, https://yourinstance.service-now.com/)
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
     /**
      * Username
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
 
     /**
      * Create a IssueTracking resource with the given unique name, arguments, and options.
@@ -86,49 +86,49 @@ export class IssueTracking extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IssueTrackingState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["issuelabel"] = state ? state.issuelabel : undefined;
-            resourceInputs["issuequery"] = state ? state.issuequery : undefined;
-            resourceInputs["issuetheme"] = state ? state.issuetheme : undefined;
-            resourceInputs["issuetrackersystem"] = state ? state.issuetrackersystem : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["token"] = state ? state.token : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["issuelabel"] = state?.issuelabel;
+            resourceInputs["issuequery"] = state?.issuequery;
+            resourceInputs["issuetheme"] = state?.issuetheme;
+            resourceInputs["issuetrackersystem"] = state?.issuetrackersystem;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["token"] = state?.token;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as IssueTrackingArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.issuelabel === undefined) && !opts.urn) {
+            if (args?.issuelabel === undefined && !opts.urn) {
                 throw new Error("Missing required property 'issuelabel'");
             }
-            if ((!args || args.issuequery === undefined) && !opts.urn) {
+            if (args?.issuequery === undefined && !opts.urn) {
                 throw new Error("Missing required property 'issuequery'");
             }
-            if ((!args || args.issuetheme === undefined) && !opts.urn) {
+            if (args?.issuetheme === undefined && !opts.urn) {
                 throw new Error("Missing required property 'issuetheme'");
             }
-            if ((!args || args.issuetrackersystem === undefined) && !opts.urn) {
+            if (args?.issuetrackersystem === undefined && !opts.urn) {
                 throw new Error("Missing required property 'issuetrackersystem'");
             }
-            if ((!args || args.url === undefined) && !opts.urn) {
+            if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            if ((!args || args.username === undefined) && !opts.urn) {
+            if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["issuelabel"] = args ? args.issuelabel : undefined;
-            resourceInputs["issuequery"] = args ? args.issuequery : undefined;
-            resourceInputs["issuetheme"] = args ? args.issuetheme : undefined;
-            resourceInputs["issuetrackersystem"] = args ? args.issuetrackersystem : undefined;
-            resourceInputs["password"] = args ? args.password : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["issuelabel"] = args?.issuelabel;
+            resourceInputs["issuequery"] = args?.issuequery;
+            resourceInputs["issuetheme"] = args?.issuetheme;
+            resourceInputs["issuetrackersystem"] = args?.issuetrackersystem;
+            resourceInputs["password"] = args?.password;
             resourceInputs["token"] = args?.token ? pulumi.secret(args.token) : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["username"] = args?.username;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["token"] };

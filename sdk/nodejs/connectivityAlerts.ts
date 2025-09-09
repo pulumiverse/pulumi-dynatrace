@@ -35,11 +35,11 @@ export class ConnectivityAlerts extends pulumi.CustomResource {
     /**
      * TCP connectivity problems
      */
-    public readonly connectivityAlerts!: pulumi.Output<boolean>;
+    declare public readonly connectivityAlerts: pulumi.Output<boolean>;
     /**
      * The scope of this settings
      */
-    public readonly processGroupId!: pulumi.Output<string>;
+    declare public readonly processGroupId: pulumi.Output<string>;
 
     /**
      * Create a ConnectivityAlerts resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class ConnectivityAlerts extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConnectivityAlertsState | undefined;
-            resourceInputs["connectivityAlerts"] = state ? state.connectivityAlerts : undefined;
-            resourceInputs["processGroupId"] = state ? state.processGroupId : undefined;
+            resourceInputs["connectivityAlerts"] = state?.connectivityAlerts;
+            resourceInputs["processGroupId"] = state?.processGroupId;
         } else {
             const args = argsOrState as ConnectivityAlertsArgs | undefined;
-            if ((!args || args.connectivityAlerts === undefined) && !opts.urn) {
+            if (args?.connectivityAlerts === undefined && !opts.urn) {
                 throw new Error("Missing required property 'connectivityAlerts'");
             }
-            if ((!args || args.processGroupId === undefined) && !opts.urn) {
+            if (args?.processGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'processGroupId'");
             }
-            resourceInputs["connectivityAlerts"] = args ? args.connectivityAlerts : undefined;
-            resourceInputs["processGroupId"] = args ? args.processGroupId : undefined;
+            resourceInputs["connectivityAlerts"] = args?.connectivityAlerts;
+            resourceInputs["processGroupId"] = args?.processGroupId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ConnectivityAlerts.__pulumiType, name, resourceInputs, opts);
