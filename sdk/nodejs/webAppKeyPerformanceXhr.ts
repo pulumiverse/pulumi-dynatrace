@@ -37,19 +37,19 @@ export class WebAppKeyPerformanceXhr extends pulumi.CustomResource {
     /**
      * If the selected key performance metric is not detected, the **User action duration** metric is used instead.
      */
-    public readonly fallbackThresholds!: pulumi.Output<outputs.WebAppKeyPerformanceXhrFallbackThresholds | undefined>;
+    declare public readonly fallbackThresholds: pulumi.Output<outputs.WebAppKeyPerformanceXhrFallbackThresholds | undefined>;
     /**
      * Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
      */
-    public readonly kpm!: pulumi.Output<string>;
+    declare public readonly kpm: pulumi.Output<string>;
     /**
      * The scope of this setting (APPLICATION_METHOD, APPLICATION)
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
     /**
      * Set the Tolerating and Frustrated performance thresholds for this action type.
      */
-    public readonly thresholds!: pulumi.Output<outputs.WebAppKeyPerformanceXhrThresholds>;
+    declare public readonly thresholds: pulumi.Output<outputs.WebAppKeyPerformanceXhrThresholds>;
 
     /**
      * Create a WebAppKeyPerformanceXhr resource with the given unique name, arguments, and options.
@@ -64,25 +64,25 @@ export class WebAppKeyPerformanceXhr extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppKeyPerformanceXhrState | undefined;
-            resourceInputs["fallbackThresholds"] = state ? state.fallbackThresholds : undefined;
-            resourceInputs["kpm"] = state ? state.kpm : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["thresholds"] = state ? state.thresholds : undefined;
+            resourceInputs["fallbackThresholds"] = state?.fallbackThresholds;
+            resourceInputs["kpm"] = state?.kpm;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["thresholds"] = state?.thresholds;
         } else {
             const args = argsOrState as WebAppKeyPerformanceXhrArgs | undefined;
-            if ((!args || args.kpm === undefined) && !opts.urn) {
+            if (args?.kpm === undefined && !opts.urn) {
                 throw new Error("Missing required property 'kpm'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            if ((!args || args.thresholds === undefined) && !opts.urn) {
+            if (args?.thresholds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'thresholds'");
             }
-            resourceInputs["fallbackThresholds"] = args ? args.fallbackThresholds : undefined;
-            resourceInputs["kpm"] = args ? args.kpm : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["thresholds"] = args ? args.thresholds : undefined;
+            resourceInputs["fallbackThresholds"] = args?.fallbackThresholds;
+            resourceInputs["kpm"] = args?.kpm;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["thresholds"] = args?.thresholds;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppKeyPerformanceXhr.__pulumiType, name, resourceInputs, opts);

@@ -35,11 +35,11 @@ export class SpanEvents extends pulumi.CustomResource {
     /**
      * Key of the span event attribute to store
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
      */
-    public readonly masking!: pulumi.Output<string>;
+    declare public readonly masking: pulumi.Output<string>;
 
     /**
      * Create a SpanEvents resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class SpanEvents extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SpanEventsState | undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["masking"] = state ? state.masking : undefined;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["masking"] = state?.masking;
         } else {
             const args = argsOrState as SpanEventsArgs | undefined;
-            if ((!args || args.key === undefined) && !opts.urn) {
+            if (args?.key === undefined && !opts.urn) {
                 throw new Error("Missing required property 'key'");
             }
-            if ((!args || args.masking === undefined) && !opts.urn) {
+            if (args?.masking === undefined && !opts.urn) {
                 throw new Error("Missing required property 'masking'");
             }
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["masking"] = args ? args.masking : undefined;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["masking"] = args?.masking;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SpanEvents.__pulumiType, name, resourceInputs, opts);

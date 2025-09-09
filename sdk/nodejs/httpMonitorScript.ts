@@ -37,11 +37,11 @@ export class HttpMonitorScript extends pulumi.CustomResource {
     /**
      * The ID of the HTTP monitor
      */
-    public readonly httpId!: pulumi.Output<string>;
+    declare public readonly httpId: pulumi.Output<string>;
     /**
      * The HTTP Script
      */
-    public readonly script!: pulumi.Output<outputs.HttpMonitorScriptScript>;
+    declare public readonly script: pulumi.Output<outputs.HttpMonitorScriptScript>;
 
     /**
      * Create a HttpMonitorScript resource with the given unique name, arguments, and options.
@@ -56,18 +56,18 @@ export class HttpMonitorScript extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HttpMonitorScriptState | undefined;
-            resourceInputs["httpId"] = state ? state.httpId : undefined;
-            resourceInputs["script"] = state ? state.script : undefined;
+            resourceInputs["httpId"] = state?.httpId;
+            resourceInputs["script"] = state?.script;
         } else {
             const args = argsOrState as HttpMonitorScriptArgs | undefined;
-            if ((!args || args.httpId === undefined) && !opts.urn) {
+            if (args?.httpId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'httpId'");
             }
-            if ((!args || args.script === undefined) && !opts.urn) {
+            if (args?.script === undefined && !opts.urn) {
                 throw new Error("Missing required property 'script'");
             }
-            resourceInputs["httpId"] = args ? args.httpId : undefined;
-            resourceInputs["script"] = args ? args.script : undefined;
+            resourceInputs["httpId"] = args?.httpId;
+            resourceInputs["script"] = args?.script;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HttpMonitorScript.__pulumiType, name, resourceInputs, opts);

@@ -35,12 +35,12 @@ export class UsabilityAnalytics extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string | undefined>;
+    declare public readonly applicationId: pulumi.Output<string | undefined>;
     /**
      * Three or more rapid clicks within the same area of a web page are considered to be rage clicks. Rage clicks commonly reflect slow-loading or failed page resources. Rage click counts are compiled for each session and considered in the [User Experience Score](https://dt-url.net/39034wt) .
      * With this setting enabled, a rage click count is compiled for each monitored user session.
      */
-    public readonly detectRageClicks!: pulumi.Output<boolean>;
+    declare public readonly detectRageClicks: pulumi.Output<boolean>;
 
     /**
      * Create a UsabilityAnalytics resource with the given unique name, arguments, and options.
@@ -55,15 +55,15 @@ export class UsabilityAnalytics extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UsabilityAnalyticsState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["detectRageClicks"] = state ? state.detectRageClicks : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["detectRageClicks"] = state?.detectRageClicks;
         } else {
             const args = argsOrState as UsabilityAnalyticsArgs | undefined;
-            if ((!args || args.detectRageClicks === undefined) && !opts.urn) {
+            if (args?.detectRageClicks === undefined && !opts.urn) {
                 throw new Error("Missing required property 'detectRageClicks'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["detectRageClicks"] = args ? args.detectRageClicks : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["detectRageClicks"] = args?.detectRageClicks;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(UsabilityAnalytics.__pulumiType, name, resourceInputs, opts);

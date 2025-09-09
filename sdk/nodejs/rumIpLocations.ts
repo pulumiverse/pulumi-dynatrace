@@ -35,33 +35,33 @@ export class RumIpLocations extends pulumi.CustomResource {
     /**
      * The city name of the location.
      */
-    public readonly city!: pulumi.Output<string | undefined>;
+    declare public readonly city: pulumi.Output<string | undefined>;
     /**
      * The country code of the location.
      */
-    public readonly countryCode!: pulumi.Output<string>;
+    declare public readonly countryCode: pulumi.Output<string>;
     /**
      * Single IP or IP range start address
      */
-    public readonly ip!: pulumi.Output<string>;
+    declare public readonly ip: pulumi.Output<string>;
     /**
      * IP range end
      */
-    public readonly ipTo!: pulumi.Output<string | undefined>;
+    declare public readonly ipTo: pulumi.Output<string | undefined>;
     /**
      * Latitude
      */
-    public readonly latitude!: pulumi.Output<number | undefined>;
+    declare public readonly latitude: pulumi.Output<number | undefined>;
     /**
      * Longitude
      */
-    public readonly longitude!: pulumi.Output<number | undefined>;
+    declare public readonly longitude: pulumi.Output<number | undefined>;
     /**
      * The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
      * use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
      * codes](https://dt-url.net/fipscodes) without country prefix.
      */
-    public readonly regionCode!: pulumi.Output<string | undefined>;
+    declare public readonly regionCode: pulumi.Output<string | undefined>;
 
     /**
      * Create a RumIpLocations resource with the given unique name, arguments, and options.
@@ -76,28 +76,28 @@ export class RumIpLocations extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RumIpLocationsState | undefined;
-            resourceInputs["city"] = state ? state.city : undefined;
-            resourceInputs["countryCode"] = state ? state.countryCode : undefined;
-            resourceInputs["ip"] = state ? state.ip : undefined;
-            resourceInputs["ipTo"] = state ? state.ipTo : undefined;
-            resourceInputs["latitude"] = state ? state.latitude : undefined;
-            resourceInputs["longitude"] = state ? state.longitude : undefined;
-            resourceInputs["regionCode"] = state ? state.regionCode : undefined;
+            resourceInputs["city"] = state?.city;
+            resourceInputs["countryCode"] = state?.countryCode;
+            resourceInputs["ip"] = state?.ip;
+            resourceInputs["ipTo"] = state?.ipTo;
+            resourceInputs["latitude"] = state?.latitude;
+            resourceInputs["longitude"] = state?.longitude;
+            resourceInputs["regionCode"] = state?.regionCode;
         } else {
             const args = argsOrState as RumIpLocationsArgs | undefined;
-            if ((!args || args.countryCode === undefined) && !opts.urn) {
+            if (args?.countryCode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'countryCode'");
             }
-            if ((!args || args.ip === undefined) && !opts.urn) {
+            if (args?.ip === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ip'");
             }
-            resourceInputs["city"] = args ? args.city : undefined;
-            resourceInputs["countryCode"] = args ? args.countryCode : undefined;
-            resourceInputs["ip"] = args ? args.ip : undefined;
-            resourceInputs["ipTo"] = args ? args.ipTo : undefined;
-            resourceInputs["latitude"] = args ? args.latitude : undefined;
-            resourceInputs["longitude"] = args ? args.longitude : undefined;
-            resourceInputs["regionCode"] = args ? args.regionCode : undefined;
+            resourceInputs["city"] = args?.city;
+            resourceInputs["countryCode"] = args?.countryCode;
+            resourceInputs["ip"] = args?.ip;
+            resourceInputs["ipTo"] = args?.ipTo;
+            resourceInputs["latitude"] = args?.latitude;
+            resourceInputs["longitude"] = args?.longitude;
+            resourceInputs["regionCode"] = args?.regionCode;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RumIpLocations.__pulumiType, name, resourceInputs, opts);

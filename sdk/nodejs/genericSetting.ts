@@ -32,10 +32,10 @@ export class GenericSetting extends pulumi.CustomResource {
         return obj['__pulumiType'] === GenericSetting.__pulumiType;
     }
 
-    public /*out*/ readonly localStorage!: pulumi.Output<string>;
-    public readonly schema!: pulumi.Output<string>;
-    public readonly scope!: pulumi.Output<string>;
-    public readonly value!: pulumi.Output<string>;
+    declare public /*out*/ readonly localStorage: pulumi.Output<string>;
+    declare public readonly schema: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
+    declare public readonly value: pulumi.Output<string>;
 
     /**
      * Create a GenericSetting resource with the given unique name, arguments, and options.
@@ -50,21 +50,21 @@ export class GenericSetting extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GenericSettingState | undefined;
-            resourceInputs["localStorage"] = state ? state.localStorage : undefined;
-            resourceInputs["schema"] = state ? state.schema : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["value"] = state ? state.value : undefined;
+            resourceInputs["localStorage"] = state?.localStorage;
+            resourceInputs["schema"] = state?.schema;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["value"] = state?.value;
         } else {
             const args = argsOrState as GenericSettingArgs | undefined;
-            if ((!args || args.schema === undefined) && !opts.urn) {
+            if (args?.schema === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schema'");
             }
-            if ((!args || args.value === undefined) && !opts.urn) {
+            if (args?.value === undefined && !opts.urn) {
                 throw new Error("Missing required property 'value'");
             }
-            resourceInputs["schema"] = args ? args.schema : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["value"] = args ? args.value : undefined;
+            resourceInputs["schema"] = args?.schema;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["value"] = args?.value;
             resourceInputs["localStorage"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

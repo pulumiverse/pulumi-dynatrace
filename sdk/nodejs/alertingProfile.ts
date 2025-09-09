@@ -176,29 +176,29 @@ export class AlertingProfile extends pulumi.CustomResource {
     /**
      * The name of the alerting profile, displayed in the UI
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
      */
-    public readonly eventTypeFilters!: pulumi.Output<outputs.AlertingProfileEventTypeFilter[] | undefined>;
+    declare public readonly eventTypeFilters: pulumi.Output<outputs.AlertingProfileEventTypeFilter[] | undefined>;
     /**
      * `metadata` exists for backwards compatibility but shouldn't get specified anymore
      *
      * @deprecated `metadata` exists for backwards compatibility but shouldn't get specified anymore
      */
-    public readonly metadata!: pulumi.Output<outputs.AlertingProfileMetadata | undefined>;
+    declare public readonly metadata: pulumi.Output<outputs.AlertingProfileMetadata | undefined>;
     /**
      * The ID of the management zone to which the alerting profile applies
      */
-    public readonly mzId!: pulumi.Output<string | undefined>;
+    declare public readonly mzId: pulumi.Output<string | undefined>;
     /**
      * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      */
-    public readonly rules!: pulumi.Output<outputs.AlertingProfileRule[] | undefined>;
+    declare public readonly rules: pulumi.Output<outputs.AlertingProfileRule[] | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
 
     /**
      * Create a AlertingProfile resource with the given unique name, arguments, and options.
@@ -213,23 +213,23 @@ export class AlertingProfile extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AlertingProfileState | undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["eventTypeFilters"] = state ? state.eventTypeFilters : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["mzId"] = state ? state.mzId : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["eventTypeFilters"] = state?.eventTypeFilters;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["mzId"] = state?.mzId;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["unknowns"] = state?.unknowns;
         } else {
             const args = argsOrState as AlertingProfileArgs | undefined;
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["eventTypeFilters"] = args ? args.eventTypeFilters : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["mzId"] = args ? args.mzId : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["eventTypeFilters"] = args?.eventTypeFilters;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["mzId"] = args?.mzId;
+            resourceInputs["rules"] = args?.rules;
+            resourceInputs["unknowns"] = args?.unknowns;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AlertingProfile.__pulumiType, name, resourceInputs, opts);

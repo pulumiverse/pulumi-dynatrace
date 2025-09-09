@@ -35,11 +35,11 @@ export class CrashdumpAnalytics extends pulumi.CustomResource {
     /**
      * Disable the feature to stop receiving information about crash details and potential problems. We recommend keeping the feature enabled.
      */
-    public readonly enableCrashDumpAnalytics!: pulumi.Output<boolean>;
+    declare public readonly enableCrashDumpAnalytics: pulumi.Output<boolean>;
     /**
      * The scope of this setting (HOST HOST_GROUP environment)
      */
-    public readonly hostId!: pulumi.Output<string>;
+    declare public readonly hostId: pulumi.Output<string>;
 
     /**
      * Create a CrashdumpAnalytics resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class CrashdumpAnalytics extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CrashdumpAnalyticsState | undefined;
-            resourceInputs["enableCrashDumpAnalytics"] = state ? state.enableCrashDumpAnalytics : undefined;
-            resourceInputs["hostId"] = state ? state.hostId : undefined;
+            resourceInputs["enableCrashDumpAnalytics"] = state?.enableCrashDumpAnalytics;
+            resourceInputs["hostId"] = state?.hostId;
         } else {
             const args = argsOrState as CrashdumpAnalyticsArgs | undefined;
-            if ((!args || args.enableCrashDumpAnalytics === undefined) && !opts.urn) {
+            if (args?.enableCrashDumpAnalytics === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableCrashDumpAnalytics'");
             }
-            if ((!args || args.hostId === undefined) && !opts.urn) {
+            if (args?.hostId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostId'");
             }
-            resourceInputs["enableCrashDumpAnalytics"] = args ? args.enableCrashDumpAnalytics : undefined;
-            resourceInputs["hostId"] = args ? args.hostId : undefined;
+            resourceInputs["enableCrashDumpAnalytics"] = args?.enableCrashDumpAnalytics;
+            resourceInputs["hostId"] = args?.hostId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CrashdumpAnalytics.__pulumiType, name, resourceInputs, opts);

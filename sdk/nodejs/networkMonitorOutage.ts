@@ -35,27 +35,27 @@ export class NetworkMonitorOutage extends pulumi.CustomResource {
     /**
      * Alert if all locations are unable to access my target address
      */
-    public readonly globalConsecutiveOutageCountThreshold!: pulumi.Output<number | undefined>;
+    declare public readonly globalConsecutiveOutageCountThreshold: pulumi.Output<number | undefined>;
     /**
      * Generate a problem and send an alert when the monitor is unavailable at all configured locations.
      */
-    public readonly globalOutages!: pulumi.Output<boolean>;
+    declare public readonly globalOutages: pulumi.Output<boolean>;
     /**
      * are unable to access my target address
      */
-    public readonly localConsecutiveOutageCountThreshold!: pulumi.Output<number | undefined>;
+    declare public readonly localConsecutiveOutageCountThreshold: pulumi.Output<number | undefined>;
     /**
      * Alert if at least
      */
-    public readonly localLocationOutageCountThreshold!: pulumi.Output<number | undefined>;
+    declare public readonly localLocationOutageCountThreshold: pulumi.Output<number | undefined>;
     /**
      * Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location.
      */
-    public readonly localOutages!: pulumi.Output<boolean>;
+    declare public readonly localOutages: pulumi.Output<boolean>;
     /**
      * The scope of this setting (MULTIPROTOCOL_MONITOR). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a NetworkMonitorOutage resource with the given unique name, arguments, and options.
@@ -70,26 +70,26 @@ export class NetworkMonitorOutage extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkMonitorOutageState | undefined;
-            resourceInputs["globalConsecutiveOutageCountThreshold"] = state ? state.globalConsecutiveOutageCountThreshold : undefined;
-            resourceInputs["globalOutages"] = state ? state.globalOutages : undefined;
-            resourceInputs["localConsecutiveOutageCountThreshold"] = state ? state.localConsecutiveOutageCountThreshold : undefined;
-            resourceInputs["localLocationOutageCountThreshold"] = state ? state.localLocationOutageCountThreshold : undefined;
-            resourceInputs["localOutages"] = state ? state.localOutages : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["globalConsecutiveOutageCountThreshold"] = state?.globalConsecutiveOutageCountThreshold;
+            resourceInputs["globalOutages"] = state?.globalOutages;
+            resourceInputs["localConsecutiveOutageCountThreshold"] = state?.localConsecutiveOutageCountThreshold;
+            resourceInputs["localLocationOutageCountThreshold"] = state?.localLocationOutageCountThreshold;
+            resourceInputs["localOutages"] = state?.localOutages;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as NetworkMonitorOutageArgs | undefined;
-            if ((!args || args.globalOutages === undefined) && !opts.urn) {
+            if (args?.globalOutages === undefined && !opts.urn) {
                 throw new Error("Missing required property 'globalOutages'");
             }
-            if ((!args || args.localOutages === undefined) && !opts.urn) {
+            if (args?.localOutages === undefined && !opts.urn) {
                 throw new Error("Missing required property 'localOutages'");
             }
-            resourceInputs["globalConsecutiveOutageCountThreshold"] = args ? args.globalConsecutiveOutageCountThreshold : undefined;
-            resourceInputs["globalOutages"] = args ? args.globalOutages : undefined;
-            resourceInputs["localConsecutiveOutageCountThreshold"] = args ? args.localConsecutiveOutageCountThreshold : undefined;
-            resourceInputs["localLocationOutageCountThreshold"] = args ? args.localLocationOutageCountThreshold : undefined;
-            resourceInputs["localOutages"] = args ? args.localOutages : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["globalConsecutiveOutageCountThreshold"] = args?.globalConsecutiveOutageCountThreshold;
+            resourceInputs["globalOutages"] = args?.globalOutages;
+            resourceInputs["localConsecutiveOutageCountThreshold"] = args?.localConsecutiveOutageCountThreshold;
+            resourceInputs["localLocationOutageCountThreshold"] = args?.localLocationOutageCountThreshold;
+            resourceInputs["localOutages"] = args?.localOutages;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NetworkMonitorOutage.__pulumiType, name, resourceInputs, opts);

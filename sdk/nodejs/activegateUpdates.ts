@@ -35,11 +35,11 @@ export class ActivegateUpdates extends pulumi.CustomResource {
     /**
      * Automatic updates at earliest convenience
      */
-    public readonly autoUpdate!: pulumi.Output<boolean>;
+    declare public readonly autoUpdate: pulumi.Output<boolean>;
     /**
      * The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a ActivegateUpdates resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class ActivegateUpdates extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ActivegateUpdatesState | undefined;
-            resourceInputs["autoUpdate"] = state ? state.autoUpdate : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["autoUpdate"] = state?.autoUpdate;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as ActivegateUpdatesArgs | undefined;
-            if ((!args || args.autoUpdate === undefined) && !opts.urn) {
+            if (args?.autoUpdate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autoUpdate'");
             }
-            resourceInputs["autoUpdate"] = args ? args.autoUpdate : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["autoUpdate"] = args?.autoUpdate;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ActivegateUpdates.__pulumiType, name, resourceInputs, opts);

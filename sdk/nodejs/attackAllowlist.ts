@@ -37,37 +37,37 @@ export class AttackAllowlist extends pulumi.CustomResource {
     /**
      * Step 1: Define attack control for chosen criteria
      */
-    public readonly attackHandling!: pulumi.Output<outputs.AttackAllowlistAttackHandling>;
+    declare public readonly attackHandling: pulumi.Output<outputs.AttackAllowlistAttackHandling>;
     /**
      * Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
      *
      * @deprecated The `criteria` attribute has been deprecated, please use the `rules` and `resourceAttributeConditions` attributes instead.
      */
-    public readonly criteria!: pulumi.Output<outputs.AttackAllowlistCriteria | undefined>;
+    declare public readonly criteria: pulumi.Output<outputs.AttackAllowlistCriteria | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Step 4: Leave comment (optional)
      */
-    public readonly metadata!: pulumi.Output<outputs.AttackAllowlistMetadata>;
+    declare public readonly metadata: pulumi.Output<outputs.AttackAllowlistMetadata>;
     /**
      * When you add multiple conditions, the rule applies if all conditions apply.
      */
-    public readonly resourceAttributeConditions!: pulumi.Output<outputs.AttackAllowlistResourceAttributeConditions | undefined>;
+    declare public readonly resourceAttributeConditions: pulumi.Output<outputs.AttackAllowlistResourceAttributeConditions | undefined>;
     /**
      * Rule name
      */
-    public readonly ruleName!: pulumi.Output<string | undefined>;
+    declare public readonly ruleName: pulumi.Output<string | undefined>;
     /**
      * Provide conditions that must be met by the detection finding you want to allowlist.
      */
-    public readonly rules!: pulumi.Output<outputs.AttackAllowlistRules>;
+    declare public readonly rules: pulumi.Output<outputs.AttackAllowlistRules>;
 
     /**
      * Create a AttackAllowlist resource with the given unique name, arguments, and options.
@@ -82,36 +82,36 @@ export class AttackAllowlist extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AttackAllowlistState | undefined;
-            resourceInputs["attackHandling"] = state ? state.attackHandling : undefined;
-            resourceInputs["criteria"] = state ? state.criteria : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["resourceAttributeConditions"] = state ? state.resourceAttributeConditions : undefined;
-            resourceInputs["ruleName"] = state ? state.ruleName : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
+            resourceInputs["attackHandling"] = state?.attackHandling;
+            resourceInputs["criteria"] = state?.criteria;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["resourceAttributeConditions"] = state?.resourceAttributeConditions;
+            resourceInputs["ruleName"] = state?.ruleName;
+            resourceInputs["rules"] = state?.rules;
         } else {
             const args = argsOrState as AttackAllowlistArgs | undefined;
-            if ((!args || args.attackHandling === undefined) && !opts.urn) {
+            if (args?.attackHandling === undefined && !opts.urn) {
                 throw new Error("Missing required property 'attackHandling'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.metadata === undefined) && !opts.urn) {
+            if (args?.metadata === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metadata'");
             }
-            if ((!args || args.rules === undefined) && !opts.urn) {
+            if (args?.rules === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rules'");
             }
-            resourceInputs["attackHandling"] = args ? args.attackHandling : undefined;
-            resourceInputs["criteria"] = args ? args.criteria : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["resourceAttributeConditions"] = args ? args.resourceAttributeConditions : undefined;
-            resourceInputs["ruleName"] = args ? args.ruleName : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["attackHandling"] = args?.attackHandling;
+            resourceInputs["criteria"] = args?.criteria;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["resourceAttributeConditions"] = args?.resourceAttributeConditions;
+            resourceInputs["ruleName"] = args?.ruleName;
+            resourceInputs["rules"] = args?.rules;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AttackAllowlist.__pulumiType, name, resourceInputs, opts);

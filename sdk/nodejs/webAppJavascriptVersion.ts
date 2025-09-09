@@ -35,7 +35,7 @@ export class WebAppJavascriptVersion extends pulumi.CustomResource {
     /**
      * Choose custom version
      */
-    public readonly customJavascriptVersion!: pulumi.Output<string | undefined>;
+    declare public readonly customJavascriptVersion: pulumi.Output<string | undefined>;
 
     /**
      * Create a WebAppJavascriptVersion resource with the given unique name, arguments, and options.
@@ -50,10 +50,10 @@ export class WebAppJavascriptVersion extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppJavascriptVersionState | undefined;
-            resourceInputs["customJavascriptVersion"] = state ? state.customJavascriptVersion : undefined;
+            resourceInputs["customJavascriptVersion"] = state?.customJavascriptVersion;
         } else {
             const args = argsOrState as WebAppJavascriptVersionArgs | undefined;
-            resourceInputs["customJavascriptVersion"] = args ? args.customJavascriptVersion : undefined;
+            resourceInputs["customJavascriptVersion"] = args?.customJavascriptVersion;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppJavascriptVersion.__pulumiType, name, resourceInputs, opts);

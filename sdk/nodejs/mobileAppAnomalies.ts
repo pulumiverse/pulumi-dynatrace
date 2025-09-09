@@ -37,23 +37,23 @@ export class MobileAppAnomalies extends pulumi.CustomResource {
     /**
      * Error rate increase
      */
-    public readonly errorRateIncrease!: pulumi.Output<outputs.MobileAppAnomaliesErrorRateIncrease>;
+    declare public readonly errorRateIncrease: pulumi.Output<outputs.MobileAppAnomaliesErrorRateIncrease>;
     /**
      * The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE_APPLICATION). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * Slow user actions
      */
-    public readonly slowUserActions!: pulumi.Output<outputs.MobileAppAnomaliesSlowUserActions>;
+    declare public readonly slowUserActions: pulumi.Output<outputs.MobileAppAnomaliesSlowUserActions>;
     /**
      * Unexpected high load
      */
-    public readonly unexpectedHighLoad!: pulumi.Output<outputs.MobileAppAnomaliesUnexpectedHighLoad>;
+    declare public readonly unexpectedHighLoad: pulumi.Output<outputs.MobileAppAnomaliesUnexpectedHighLoad>;
     /**
      * Unexpected low load
      */
-    public readonly unexpectedLowLoad!: pulumi.Output<outputs.MobileAppAnomaliesUnexpectedLowLoad>;
+    declare public readonly unexpectedLowLoad: pulumi.Output<outputs.MobileAppAnomaliesUnexpectedLowLoad>;
 
     /**
      * Create a MobileAppAnomalies resource with the given unique name, arguments, and options.
@@ -68,30 +68,30 @@ export class MobileAppAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MobileAppAnomaliesState | undefined;
-            resourceInputs["errorRateIncrease"] = state ? state.errorRateIncrease : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["slowUserActions"] = state ? state.slowUserActions : undefined;
-            resourceInputs["unexpectedHighLoad"] = state ? state.unexpectedHighLoad : undefined;
-            resourceInputs["unexpectedLowLoad"] = state ? state.unexpectedLowLoad : undefined;
+            resourceInputs["errorRateIncrease"] = state?.errorRateIncrease;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["slowUserActions"] = state?.slowUserActions;
+            resourceInputs["unexpectedHighLoad"] = state?.unexpectedHighLoad;
+            resourceInputs["unexpectedLowLoad"] = state?.unexpectedLowLoad;
         } else {
             const args = argsOrState as MobileAppAnomaliesArgs | undefined;
-            if ((!args || args.errorRateIncrease === undefined) && !opts.urn) {
+            if (args?.errorRateIncrease === undefined && !opts.urn) {
                 throw new Error("Missing required property 'errorRateIncrease'");
             }
-            if ((!args || args.slowUserActions === undefined) && !opts.urn) {
+            if (args?.slowUserActions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'slowUserActions'");
             }
-            if ((!args || args.unexpectedHighLoad === undefined) && !opts.urn) {
+            if (args?.unexpectedHighLoad === undefined && !opts.urn) {
                 throw new Error("Missing required property 'unexpectedHighLoad'");
             }
-            if ((!args || args.unexpectedLowLoad === undefined) && !opts.urn) {
+            if (args?.unexpectedLowLoad === undefined && !opts.urn) {
                 throw new Error("Missing required property 'unexpectedLowLoad'");
             }
-            resourceInputs["errorRateIncrease"] = args ? args.errorRateIncrease : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["slowUserActions"] = args ? args.slowUserActions : undefined;
-            resourceInputs["unexpectedHighLoad"] = args ? args.unexpectedHighLoad : undefined;
-            resourceInputs["unexpectedLowLoad"] = args ? args.unexpectedLowLoad : undefined;
+            resourceInputs["errorRateIncrease"] = args?.errorRateIncrease;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["slowUserActions"] = args?.slowUserActions;
+            resourceInputs["unexpectedHighLoad"] = args?.unexpectedHighLoad;
+            resourceInputs["unexpectedLowLoad"] = args?.unexpectedLowLoad;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MobileAppAnomalies.__pulumiType, name, resourceInputs, opts);

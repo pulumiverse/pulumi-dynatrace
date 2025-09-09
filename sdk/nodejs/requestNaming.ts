@@ -38,28 +38,28 @@ export class RequestNaming extends pulumi.CustomResource {
      * The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
      * **all** the specified conditions for the rule to trigger
      */
-    public readonly conditions!: pulumi.Output<outputs.RequestNamingConditions>;
+    declare public readonly conditions: pulumi.Output<outputs.RequestNamingConditions>;
     /**
      * The rule is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabled: pulumi.Output<boolean | undefined>;
     /**
      * Specifies the management zones for which this rule should be applied
      */
-    public readonly managementZones!: pulumi.Output<string[] | undefined>;
+    declare public readonly managementZones: pulumi.Output<string[] | undefined>;
     /**
      * The name to be assigned to matching requests
      */
-    public readonly namingPattern!: pulumi.Output<string>;
+    declare public readonly namingPattern: pulumi.Output<string>;
     /**
      * The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
      * other request attribute and use it in the request naming pattern.
      */
-    public readonly placeholders!: pulumi.Output<outputs.RequestNamingPlaceholders | undefined>;
+    declare public readonly placeholders: pulumi.Output<outputs.RequestNamingPlaceholders | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
 
     /**
      * Create a RequestNaming resource with the given unique name, arguments, and options.
@@ -74,26 +74,26 @@ export class RequestNaming extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RequestNamingState | undefined;
-            resourceInputs["conditions"] = state ? state.conditions : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["managementZones"] = state ? state.managementZones : undefined;
-            resourceInputs["namingPattern"] = state ? state.namingPattern : undefined;
-            resourceInputs["placeholders"] = state ? state.placeholders : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
+            resourceInputs["conditions"] = state?.conditions;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["managementZones"] = state?.managementZones;
+            resourceInputs["namingPattern"] = state?.namingPattern;
+            resourceInputs["placeholders"] = state?.placeholders;
+            resourceInputs["unknowns"] = state?.unknowns;
         } else {
             const args = argsOrState as RequestNamingArgs | undefined;
-            if ((!args || args.conditions === undefined) && !opts.urn) {
+            if (args?.conditions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'conditions'");
             }
-            if ((!args || args.namingPattern === undefined) && !opts.urn) {
+            if (args?.namingPattern === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namingPattern'");
             }
-            resourceInputs["conditions"] = args ? args.conditions : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["managementZones"] = args ? args.managementZones : undefined;
-            resourceInputs["namingPattern"] = args ? args.namingPattern : undefined;
-            resourceInputs["placeholders"] = args ? args.placeholders : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
+            resourceInputs["conditions"] = args?.conditions;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["managementZones"] = args?.managementZones;
+            resourceInputs["namingPattern"] = args?.namingPattern;
+            resourceInputs["placeholders"] = args?.placeholders;
+            resourceInputs["unknowns"] = args?.unknowns;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RequestNaming.__pulumiType, name, resourceInputs, opts);

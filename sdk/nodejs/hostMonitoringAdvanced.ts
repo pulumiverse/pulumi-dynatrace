@@ -35,15 +35,15 @@ export class HostMonitoringAdvanced extends pulumi.CustomResource {
     /**
      * Inject CodeModules in Discovery mode.
      */
-    public readonly codeModuleInjection!: pulumi.Output<boolean | undefined>;
+    declare public readonly codeModuleInjection: pulumi.Output<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly hostId!: pulumi.Output<string>;
+    declare public readonly hostId: pulumi.Output<string>;
     /**
      * Disabling this via [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
      */
-    public readonly processAgentInjection!: pulumi.Output<boolean>;
+    declare public readonly processAgentInjection: pulumi.Output<boolean>;
 
     /**
      * Create a HostMonitoringAdvanced resource with the given unique name, arguments, and options.
@@ -58,20 +58,20 @@ export class HostMonitoringAdvanced extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HostMonitoringAdvancedState | undefined;
-            resourceInputs["codeModuleInjection"] = state ? state.codeModuleInjection : undefined;
-            resourceInputs["hostId"] = state ? state.hostId : undefined;
-            resourceInputs["processAgentInjection"] = state ? state.processAgentInjection : undefined;
+            resourceInputs["codeModuleInjection"] = state?.codeModuleInjection;
+            resourceInputs["hostId"] = state?.hostId;
+            resourceInputs["processAgentInjection"] = state?.processAgentInjection;
         } else {
             const args = argsOrState as HostMonitoringAdvancedArgs | undefined;
-            if ((!args || args.hostId === undefined) && !opts.urn) {
+            if (args?.hostId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostId'");
             }
-            if ((!args || args.processAgentInjection === undefined) && !opts.urn) {
+            if (args?.processAgentInjection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'processAgentInjection'");
             }
-            resourceInputs["codeModuleInjection"] = args ? args.codeModuleInjection : undefined;
-            resourceInputs["hostId"] = args ? args.hostId : undefined;
-            resourceInputs["processAgentInjection"] = args ? args.processAgentInjection : undefined;
+            resourceInputs["codeModuleInjection"] = args?.codeModuleInjection;
+            resourceInputs["hostId"] = args?.hostId;
+            resourceInputs["processAgentInjection"] = args?.processAgentInjection;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HostMonitoringAdvanced.__pulumiType, name, resourceInputs, opts);

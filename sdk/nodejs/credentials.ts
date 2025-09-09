@@ -37,64 +37,64 @@ export class Credentials extends pulumi.CustomResource {
     /**
      * Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
      */
-    public readonly allowContextlessRequests!: pulumi.Output<boolean | undefined>;
+    declare public readonly allowContextlessRequests: pulumi.Output<boolean | undefined>;
     /**
      * The set of entities allowed to use the credential.
      */
-    public readonly allowedEntities!: pulumi.Output<outputs.CredentialsAllowedEntities | undefined>;
+    declare public readonly allowedEntities: pulumi.Output<outputs.CredentialsAllowedEntities | undefined>;
     /**
      * The certificate in the string format.
      */
-    public readonly certificate!: pulumi.Output<string | undefined>;
+    declare public readonly certificate: pulumi.Output<string | undefined>;
     /**
      * The list contains summary data related to the use of credentials
      *
      * @deprecated `credentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
      */
-    public readonly credentialUsageSummaries!: pulumi.Output<outputs.CredentialsCredentialUsageSummary[] | undefined>;
+    declare public readonly credentialUsageSummaries: pulumi.Output<outputs.CredentialsCredentialUsageSummary[] | undefined>;
     /**
      * A short description of the credentials set
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * External Vault Configuration
      */
-    public readonly external!: pulumi.Output<outputs.CredentialsExternal | undefined>;
+    declare public readonly external: pulumi.Output<outputs.CredentialsExternal | undefined>;
     /**
      * The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
      */
-    public readonly format!: pulumi.Output<string | undefined>;
+    declare public readonly format: pulumi.Output<string | undefined>;
     /**
      * The name of the credentials set
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The credentials set is available to every user (`false`) or to owner only (`true`)
      */
-    public readonly ownerAccessOnly!: pulumi.Output<boolean | undefined>;
-    public readonly password!: pulumi.Output<string | undefined>;
+    declare public readonly ownerAccessOnly: pulumi.Output<boolean | undefined>;
+    declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
      */
-    public readonly public!: pulumi.Output<boolean | undefined>;
+    declare public readonly public: pulumi.Output<boolean | undefined>;
     /**
      * The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
      *
      * @deprecated Deprecated(v279), please use `scopes` instead.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
      */
-    public readonly scopes!: pulumi.Output<string[] | undefined>;
+    declare public readonly scopes: pulumi.Output<string[] | undefined>;
     /**
      * Token in the string format. Specifying a token implies `Token Authentication`.
      */
-    public readonly token!: pulumi.Output<string | undefined>;
+    declare public readonly token: pulumi.Output<string | undefined>;
     /**
      * The username of the credentials set.
      */
-    public readonly username!: pulumi.Output<string | undefined>;
+    declare public readonly username: pulumi.Output<string | undefined>;
 
     /**
      * Create a Credentials resource with the given unique name, arguments, and options.
@@ -109,36 +109,36 @@ export class Credentials extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CredentialsState | undefined;
-            resourceInputs["allowContextlessRequests"] = state ? state.allowContextlessRequests : undefined;
-            resourceInputs["allowedEntities"] = state ? state.allowedEntities : undefined;
-            resourceInputs["certificate"] = state ? state.certificate : undefined;
-            resourceInputs["credentialUsageSummaries"] = state ? state.credentialUsageSummaries : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["external"] = state ? state.external : undefined;
-            resourceInputs["format"] = state ? state.format : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownerAccessOnly"] = state ? state.ownerAccessOnly : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["public"] = state ? state.public : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["scopes"] = state ? state.scopes : undefined;
-            resourceInputs["token"] = state ? state.token : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
+            resourceInputs["allowContextlessRequests"] = state?.allowContextlessRequests;
+            resourceInputs["allowedEntities"] = state?.allowedEntities;
+            resourceInputs["certificate"] = state?.certificate;
+            resourceInputs["credentialUsageSummaries"] = state?.credentialUsageSummaries;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["external"] = state?.external;
+            resourceInputs["format"] = state?.format;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownerAccessOnly"] = state?.ownerAccessOnly;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["public"] = state?.public;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["scopes"] = state?.scopes;
+            resourceInputs["token"] = state?.token;
+            resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as CredentialsArgs | undefined;
-            resourceInputs["allowContextlessRequests"] = args ? args.allowContextlessRequests : undefined;
-            resourceInputs["allowedEntities"] = args ? args.allowedEntities : undefined;
-            resourceInputs["certificate"] = args ? args.certificate : undefined;
-            resourceInputs["credentialUsageSummaries"] = args ? args.credentialUsageSummaries : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["external"] = args ? args.external : undefined;
-            resourceInputs["format"] = args ? args.format : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownerAccessOnly"] = args ? args.ownerAccessOnly : undefined;
+            resourceInputs["allowContextlessRequests"] = args?.allowContextlessRequests;
+            resourceInputs["allowedEntities"] = args?.allowedEntities;
+            resourceInputs["certificate"] = args?.certificate;
+            resourceInputs["credentialUsageSummaries"] = args?.credentialUsageSummaries;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["external"] = args?.external;
+            resourceInputs["format"] = args?.format;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownerAccessOnly"] = args?.ownerAccessOnly;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["public"] = args ? args.public : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["scopes"] = args ? args.scopes : undefined;
+            resourceInputs["public"] = args?.public;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["scopes"] = args?.scopes;
             resourceInputs["token"] = args?.token ? pulumi.secret(args.token) : undefined;
             resourceInputs["username"] = args?.username ? pulumi.secret(args.username) : undefined;
         }

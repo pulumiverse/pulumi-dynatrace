@@ -37,59 +37,59 @@ export class WebhookNotification extends pulumi.CustomResource {
     /**
      * The configuration is enabled (`true`) or disabled (`false`)
      */
-    public readonly active!: pulumi.Output<boolean>;
+    declare public readonly active: pulumi.Output<boolean>;
     /**
      * A list of the additional HTTP headers
      */
-    public readonly headers!: pulumi.Output<outputs.WebhookNotificationHeaders | undefined>;
+    declare public readonly headers: pulumi.Output<outputs.WebhookNotificationHeaders | undefined>;
     /**
      * Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
      */
-    public readonly insecure!: pulumi.Output<boolean | undefined>;
+    declare public readonly insecure: pulumi.Output<boolean | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    public readonly legacyId!: pulumi.Output<string>;
+    declare public readonly legacyId: pulumi.Output<string>;
     /**
      * The name of the notification configuration
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Send email if problem is closed
      */
-    public readonly notifyClosedProblems!: pulumi.Output<boolean | undefined>;
+    declare public readonly notifyClosedProblems: pulumi.Output<boolean | undefined>;
     /**
      * Call webhook if new events merge into existing problems
      */
-    public readonly notifyEventMerges!: pulumi.Output<boolean | undefined>;
+    declare public readonly notifyEventMerges: pulumi.Output<boolean | undefined>;
     /**
      * To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
      */
-    public readonly oauth2Credentials!: pulumi.Output<outputs.WebhookNotificationOauth2Credentials | undefined>;
+    declare public readonly oauth2Credentials: pulumi.Output<outputs.WebhookNotificationOauth2Credentials | undefined>;
     /**
      * The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      */
-    public readonly payload!: pulumi.Output<string>;
+    declare public readonly payload: pulumi.Output<string>;
     /**
      * The ID of the associated alerting profile
      */
-    public readonly profile!: pulumi.Output<string>;
+    declare public readonly profile: pulumi.Output<string>;
     /**
      * The secret URL of the webhook endpoint.
      */
-    public readonly secretUrl!: pulumi.Output<string | undefined>;
+    declare public readonly secretUrl: pulumi.Output<string | undefined>;
     /**
      * The URL of the WebHook endpoint
      */
-    public readonly url!: pulumi.Output<string | undefined>;
+    declare public readonly url: pulumi.Output<string | undefined>;
     /**
      * Secret webhook URL
      */
-    public readonly urlContainsSecret!: pulumi.Output<boolean | undefined>;
+    declare public readonly urlContainsSecret: pulumi.Output<boolean | undefined>;
     /**
      * Use OAuth 2.0 for authentication
      */
-    public readonly useOauth2!: pulumi.Output<boolean | undefined>;
+    declare public readonly useOauth2: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a WebhookNotification resource with the given unique name, arguments, and options.
@@ -104,45 +104,45 @@ export class WebhookNotification extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebhookNotificationState | undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["headers"] = state ? state.headers : undefined;
-            resourceInputs["insecure"] = state ? state.insecure : undefined;
-            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["notifyClosedProblems"] = state ? state.notifyClosedProblems : undefined;
-            resourceInputs["notifyEventMerges"] = state ? state.notifyEventMerges : undefined;
-            resourceInputs["oauth2Credentials"] = state ? state.oauth2Credentials : undefined;
-            resourceInputs["payload"] = state ? state.payload : undefined;
-            resourceInputs["profile"] = state ? state.profile : undefined;
-            resourceInputs["secretUrl"] = state ? state.secretUrl : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["urlContainsSecret"] = state ? state.urlContainsSecret : undefined;
-            resourceInputs["useOauth2"] = state ? state.useOauth2 : undefined;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["headers"] = state?.headers;
+            resourceInputs["insecure"] = state?.insecure;
+            resourceInputs["legacyId"] = state?.legacyId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["notifyClosedProblems"] = state?.notifyClosedProblems;
+            resourceInputs["notifyEventMerges"] = state?.notifyEventMerges;
+            resourceInputs["oauth2Credentials"] = state?.oauth2Credentials;
+            resourceInputs["payload"] = state?.payload;
+            resourceInputs["profile"] = state?.profile;
+            resourceInputs["secretUrl"] = state?.secretUrl;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["urlContainsSecret"] = state?.urlContainsSecret;
+            resourceInputs["useOauth2"] = state?.useOauth2;
         } else {
             const args = argsOrState as WebhookNotificationArgs | undefined;
-            if ((!args || args.active === undefined) && !opts.urn) {
+            if (args?.active === undefined && !opts.urn) {
                 throw new Error("Missing required property 'active'");
             }
-            if ((!args || args.payload === undefined) && !opts.urn) {
+            if (args?.payload === undefined && !opts.urn) {
                 throw new Error("Missing required property 'payload'");
             }
-            if ((!args || args.profile === undefined) && !opts.urn) {
+            if (args?.profile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profile'");
             }
-            resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["headers"] = args ? args.headers : undefined;
-            resourceInputs["insecure"] = args ? args.insecure : undefined;
-            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["notifyClosedProblems"] = args ? args.notifyClosedProblems : undefined;
-            resourceInputs["notifyEventMerges"] = args ? args.notifyEventMerges : undefined;
-            resourceInputs["oauth2Credentials"] = args ? args.oauth2Credentials : undefined;
-            resourceInputs["payload"] = args ? args.payload : undefined;
-            resourceInputs["profile"] = args ? args.profile : undefined;
+            resourceInputs["active"] = args?.active;
+            resourceInputs["headers"] = args?.headers;
+            resourceInputs["insecure"] = args?.insecure;
+            resourceInputs["legacyId"] = args?.legacyId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["notifyClosedProblems"] = args?.notifyClosedProblems;
+            resourceInputs["notifyEventMerges"] = args?.notifyEventMerges;
+            resourceInputs["oauth2Credentials"] = args?.oauth2Credentials;
+            resourceInputs["payload"] = args?.payload;
+            resourceInputs["profile"] = args?.profile;
             resourceInputs["secretUrl"] = args?.secretUrl ? pulumi.secret(args.secretUrl) : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["urlContainsSecret"] = args ? args.urlContainsSecret : undefined;
-            resourceInputs["useOauth2"] = args ? args.useOauth2 : undefined;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["urlContainsSecret"] = args?.urlContainsSecret;
+            resourceInputs["useOauth2"] = args?.useOauth2;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["secretUrl"] };

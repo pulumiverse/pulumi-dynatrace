@@ -46,27 +46,27 @@ export class Environment extends pulumi.CustomResource {
     /**
      * The display name of the environment
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Environment level consumption and quotas information
      */
-    public readonly quotas!: pulumi.Output<outputs.EnvironmentQuotas | undefined>;
+    declare public readonly quotas: pulumi.Output<outputs.EnvironmentQuotas | undefined>;
     /**
      * Indicates whether the environment is enabled or disabled. Possible values are `ENABLED` and `DISABLED`. The default value is ENABLED
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * Environment level storage usage and limit information
      */
-    public readonly storage!: pulumi.Output<outputs.EnvironmentStorage>;
+    declare public readonly storage: pulumi.Output<outputs.EnvironmentStorage>;
     /**
      * A set of tags that are assigned to this environment. Every tag can have a maximum length of 100 characters
      */
-    public readonly tags!: pulumi.Output<string[] | undefined>;
+    declare public readonly tags: pulumi.Output<string[] | undefined>;
     /**
      * Specifies whether the environment is a trial environment or a non-trial environment. Creating a trial environment is only possible if your license allows that. The default value is false (non-trial)
      */
-    public readonly trial!: pulumi.Output<boolean | undefined>;
+    declare public readonly trial: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a Environment resource with the given unique name, arguments, and options.
@@ -81,26 +81,26 @@ export class Environment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EnvironmentState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["quotas"] = state ? state.quotas : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storage"] = state ? state.storage : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["trial"] = state ? state.trial : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["quotas"] = state?.quotas;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storage"] = state?.storage;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["trial"] = state?.trial;
         } else {
             const args = argsOrState as EnvironmentArgs | undefined;
-            if ((!args || args.state === undefined) && !opts.urn) {
+            if (args?.state === undefined && !opts.urn) {
                 throw new Error("Missing required property 'state'");
             }
-            if ((!args || args.storage === undefined) && !opts.urn) {
+            if (args?.storage === undefined && !opts.urn) {
                 throw new Error("Missing required property 'storage'");
             }
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["quotas"] = args ? args.quotas : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["storage"] = args ? args.storage : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["trial"] = args ? args.trial : undefined;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["quotas"] = args?.quotas;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["storage"] = args?.storage;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["trial"] = args?.trial;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Environment.__pulumiType, name, resourceInputs, opts);

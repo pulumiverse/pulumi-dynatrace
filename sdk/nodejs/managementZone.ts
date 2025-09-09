@@ -37,27 +37,27 @@ export class ManagementZone extends pulumi.CustomResource {
     /**
      * The description of the management zone
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
      */
-    public readonly dimensionalRules!: pulumi.Output<outputs.ManagementZoneDimensionalRule[] | undefined>;
+    declare public readonly dimensionalRules: pulumi.Output<outputs.ManagementZoneDimensionalRule[] | undefined>;
     /**
      * A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
      */
-    public readonly entitySelectorBasedRules!: pulumi.Output<outputs.ManagementZoneEntitySelectorBasedRule[] | undefined>;
+    declare public readonly entitySelectorBasedRules: pulumi.Output<outputs.ManagementZoneEntitySelectorBasedRule[] | undefined>;
     /**
      * The name of the management zone
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A list of rules for management zone usage. Each rule is evaluated independently of all other rules
      */
-    public readonly rules!: pulumi.Output<outputs.ManagementZoneRule[] | undefined>;
+    declare public readonly rules: pulumi.Output<outputs.ManagementZoneRule[] | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
 
     /**
      * Create a ManagementZone resource with the given unique name, arguments, and options.
@@ -72,20 +72,20 @@ export class ManagementZone extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagementZoneState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["dimensionalRules"] = state ? state.dimensionalRules : undefined;
-            resourceInputs["entitySelectorBasedRules"] = state ? state.entitySelectorBasedRules : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["dimensionalRules"] = state?.dimensionalRules;
+            resourceInputs["entitySelectorBasedRules"] = state?.entitySelectorBasedRules;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["unknowns"] = state?.unknowns;
         } else {
             const args = argsOrState as ManagementZoneArgs | undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["dimensionalRules"] = args ? args.dimensionalRules : undefined;
-            resourceInputs["entitySelectorBasedRules"] = args ? args.entitySelectorBasedRules : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["dimensionalRules"] = args?.dimensionalRules;
+            resourceInputs["entitySelectorBasedRules"] = args?.entitySelectorBasedRules;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["rules"] = args?.rules;
+            resourceInputs["unknowns"] = args?.unknowns;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagementZone.__pulumiType, name, resourceInputs, opts);

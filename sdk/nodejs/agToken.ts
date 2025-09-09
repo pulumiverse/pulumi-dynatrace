@@ -41,28 +41,28 @@ export class AgToken extends pulumi.CustomResource {
      * can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are: -
      * m: minutes - h: hours - d: days - w: weeks - M: months - y: years
      */
-    public readonly expirationDate!: pulumi.Output<string | undefined>;
+    declare public readonly expirationDate: pulumi.Output<string | undefined>;
     /**
      * The name of the token.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The token is a seed token (true) or an individual token (false). We recommend the individual token option (false)
      */
-    public readonly seed!: pulumi.Output<boolean | undefined>;
+    declare public readonly seed: pulumi.Output<boolean | undefined>;
     /**
      * The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You
      * require the permission `InstallerDownload` for that attribute to get populated
      */
-    public /*out*/ readonly tenantToken!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantToken: pulumi.Output<string>;
     /**
      * The secret of the token.
      */
-    public /*out*/ readonly token!: pulumi.Output<string>;
+    declare public /*out*/ readonly token: pulumi.Output<string>;
     /**
      * The type of the ActiveGate for which the token is valid. Possible values are `ENVIRONMENT` or `CLUSTER`
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a AgToken resource with the given unique name, arguments, and options.
@@ -77,21 +77,21 @@ export class AgToken extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AgTokenState | undefined;
-            resourceInputs["expirationDate"] = state ? state.expirationDate : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["seed"] = state ? state.seed : undefined;
-            resourceInputs["tenantToken"] = state ? state.tenantToken : undefined;
-            resourceInputs["token"] = state ? state.token : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["expirationDate"] = state?.expirationDate;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["seed"] = state?.seed;
+            resourceInputs["tenantToken"] = state?.tenantToken;
+            resourceInputs["token"] = state?.token;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as AgTokenArgs | undefined;
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["expirationDate"] = args ? args.expirationDate : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["seed"] = args ? args.seed : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["expirationDate"] = args?.expirationDate;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["seed"] = args?.seed;
+            resourceInputs["type"] = args?.type;
             resourceInputs["tenantToken"] = undefined /*out*/;
             resourceInputs["token"] = undefined /*out*/;
         }

@@ -37,31 +37,31 @@ export class DiskSpecificAnomaliesV2 extends pulumi.CustomResource {
     /**
      * The id for the disk anomaly detection
      */
-    public readonly diskId!: pulumi.Output<string>;
+    declare public readonly diskId: pulumi.Output<string>;
     /**
      * no documentation available
      */
-    public readonly diskLowInodesDetection!: pulumi.Output<outputs.DiskSpecificAnomaliesV2DiskLowInodesDetection | undefined>;
+    declare public readonly diskLowInodesDetection: pulumi.Output<outputs.DiskSpecificAnomaliesV2DiskLowInodesDetection | undefined>;
     /**
      * no documentation available
      */
-    public readonly diskLowSpaceDetection!: pulumi.Output<outputs.DiskSpecificAnomaliesV2DiskLowSpaceDetection | undefined>;
+    declare public readonly diskLowSpaceDetection: pulumi.Output<outputs.DiskSpecificAnomaliesV2DiskLowSpaceDetection | undefined>;
     /**
      * no documentation available
      */
-    public readonly diskSlowWritesAndReadsDetection!: pulumi.Output<outputs.DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection | undefined>;
+    declare public readonly diskSlowWritesAndReadsDetection: pulumi.Output<outputs.DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection | undefined>;
     /**
      * Override low disk space detection settings
      */
-    public readonly overrideDiskLowSpaceDetection!: pulumi.Output<boolean>;
+    declare public readonly overrideDiskLowSpaceDetection: pulumi.Output<boolean>;
     /**
      * Override low inodes detection settings
      */
-    public readonly overrideLowInodesDetection!: pulumi.Output<boolean>;
+    declare public readonly overrideLowInodesDetection: pulumi.Output<boolean>;
     /**
      * Override slow writes and reads detection settings
      */
-    public readonly overrideSlowWritesAndReadsDetection!: pulumi.Output<boolean>;
+    declare public readonly overrideSlowWritesAndReadsDetection: pulumi.Output<boolean>;
 
     /**
      * Create a DiskSpecificAnomaliesV2 resource with the given unique name, arguments, and options.
@@ -76,34 +76,34 @@ export class DiskSpecificAnomaliesV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DiskSpecificAnomaliesV2State | undefined;
-            resourceInputs["diskId"] = state ? state.diskId : undefined;
-            resourceInputs["diskLowInodesDetection"] = state ? state.diskLowInodesDetection : undefined;
-            resourceInputs["diskLowSpaceDetection"] = state ? state.diskLowSpaceDetection : undefined;
-            resourceInputs["diskSlowWritesAndReadsDetection"] = state ? state.diskSlowWritesAndReadsDetection : undefined;
-            resourceInputs["overrideDiskLowSpaceDetection"] = state ? state.overrideDiskLowSpaceDetection : undefined;
-            resourceInputs["overrideLowInodesDetection"] = state ? state.overrideLowInodesDetection : undefined;
-            resourceInputs["overrideSlowWritesAndReadsDetection"] = state ? state.overrideSlowWritesAndReadsDetection : undefined;
+            resourceInputs["diskId"] = state?.diskId;
+            resourceInputs["diskLowInodesDetection"] = state?.diskLowInodesDetection;
+            resourceInputs["diskLowSpaceDetection"] = state?.diskLowSpaceDetection;
+            resourceInputs["diskSlowWritesAndReadsDetection"] = state?.diskSlowWritesAndReadsDetection;
+            resourceInputs["overrideDiskLowSpaceDetection"] = state?.overrideDiskLowSpaceDetection;
+            resourceInputs["overrideLowInodesDetection"] = state?.overrideLowInodesDetection;
+            resourceInputs["overrideSlowWritesAndReadsDetection"] = state?.overrideSlowWritesAndReadsDetection;
         } else {
             const args = argsOrState as DiskSpecificAnomaliesV2Args | undefined;
-            if ((!args || args.diskId === undefined) && !opts.urn) {
+            if (args?.diskId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'diskId'");
             }
-            if ((!args || args.overrideDiskLowSpaceDetection === undefined) && !opts.urn) {
+            if (args?.overrideDiskLowSpaceDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'overrideDiskLowSpaceDetection'");
             }
-            if ((!args || args.overrideLowInodesDetection === undefined) && !opts.urn) {
+            if (args?.overrideLowInodesDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'overrideLowInodesDetection'");
             }
-            if ((!args || args.overrideSlowWritesAndReadsDetection === undefined) && !opts.urn) {
+            if (args?.overrideSlowWritesAndReadsDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'overrideSlowWritesAndReadsDetection'");
             }
-            resourceInputs["diskId"] = args ? args.diskId : undefined;
-            resourceInputs["diskLowInodesDetection"] = args ? args.diskLowInodesDetection : undefined;
-            resourceInputs["diskLowSpaceDetection"] = args ? args.diskLowSpaceDetection : undefined;
-            resourceInputs["diskSlowWritesAndReadsDetection"] = args ? args.diskSlowWritesAndReadsDetection : undefined;
-            resourceInputs["overrideDiskLowSpaceDetection"] = args ? args.overrideDiskLowSpaceDetection : undefined;
-            resourceInputs["overrideLowInodesDetection"] = args ? args.overrideLowInodesDetection : undefined;
-            resourceInputs["overrideSlowWritesAndReadsDetection"] = args ? args.overrideSlowWritesAndReadsDetection : undefined;
+            resourceInputs["diskId"] = args?.diskId;
+            resourceInputs["diskLowInodesDetection"] = args?.diskLowInodesDetection;
+            resourceInputs["diskLowSpaceDetection"] = args?.diskLowSpaceDetection;
+            resourceInputs["diskSlowWritesAndReadsDetection"] = args?.diskSlowWritesAndReadsDetection;
+            resourceInputs["overrideDiskLowSpaceDetection"] = args?.overrideDiskLowSpaceDetection;
+            resourceInputs["overrideLowInodesDetection"] = args?.overrideLowInodesDetection;
+            resourceInputs["overrideSlowWritesAndReadsDetection"] = args?.overrideSlowWritesAndReadsDetection;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DiskSpecificAnomaliesV2.__pulumiType, name, resourceInputs, opts);

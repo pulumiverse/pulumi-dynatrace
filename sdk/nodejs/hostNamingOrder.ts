@@ -35,7 +35,7 @@ export class HostNamingOrder extends pulumi.CustomResource {
     /**
      * The IDs of the naming rules to define the order for
      */
-    public readonly namingRuleIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly namingRuleIds: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a HostNamingOrder resource with the given unique name, arguments, and options.
@@ -50,10 +50,10 @@ export class HostNamingOrder extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HostNamingOrderState | undefined;
-            resourceInputs["namingRuleIds"] = state ? state.namingRuleIds : undefined;
+            resourceInputs["namingRuleIds"] = state?.namingRuleIds;
         } else {
             const args = argsOrState as HostNamingOrderArgs | undefined;
-            resourceInputs["namingRuleIds"] = args ? args.namingRuleIds : undefined;
+            resourceInputs["namingRuleIds"] = args?.namingRuleIds;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HostNamingOrder.__pulumiType, name, resourceInputs, opts);

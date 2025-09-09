@@ -37,11 +37,11 @@ export class ServiceNaming extends pulumi.CustomResource {
     /**
      * A list of matching conditions of the rule. The rule applies only if **all** conditions are fulfilled
      */
-    public readonly conditions!: pulumi.Output<outputs.ServiceNamingCondition[] | undefined>;
+    declare public readonly conditions: pulumi.Output<outputs.ServiceNamingCondition[] | undefined>;
     /**
      * The rule is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * The name to be assigned to matching entities. You can use the following placeholders here: *
      * `{AwsAutoScalingGroup:Name}` * `{AwsAvailabilityZone:Name}` * `{AwsElasticLoadBalancer:Name}` *
@@ -109,15 +109,15 @@ export class ServiceNaming extends pulumi.CustomResource {
      * `{Service:WebServerName}` * `{Service:WebServiceNamespace}` * `{Service:WebServiceName}` * `{VmwareDatacenter:Name}` *
      * `{VmwareVm:Name}
      */
-    public readonly format!: pulumi.Output<string>;
+    declare public readonly format: pulumi.Output<string>;
     /**
      * The name of the rule
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
 
     /**
      * Create a ServiceNaming resource with the given unique name, arguments, and options.
@@ -132,24 +132,24 @@ export class ServiceNaming extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ServiceNamingState | undefined;
-            resourceInputs["conditions"] = state ? state.conditions : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["format"] = state ? state.format : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
+            resourceInputs["conditions"] = state?.conditions;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["format"] = state?.format;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["unknowns"] = state?.unknowns;
         } else {
             const args = argsOrState as ServiceNamingArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.format === undefined) && !opts.urn) {
+            if (args?.format === undefined && !opts.urn) {
                 throw new Error("Missing required property 'format'");
             }
-            resourceInputs["conditions"] = args ? args.conditions : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["format"] = args ? args.format : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
+            resourceInputs["conditions"] = args?.conditions;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["format"] = args?.format;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["unknowns"] = args?.unknowns;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ServiceNaming.__pulumiType, name, resourceInputs, opts);

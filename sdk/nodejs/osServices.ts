@@ -37,51 +37,51 @@ export class OsServices extends pulumi.CustomResource {
     /**
      * The number of **10-second measurement cycles** before alerting is triggered
      */
-    public readonly alertActivationDuration!: pulumi.Output<number | undefined>;
+    declare public readonly alertActivationDuration: pulumi.Output<number | undefined>;
     /**
      * Toggle the switch in order to enable or disable alerting for this policy
      */
-    public readonly alerting!: pulumi.Output<boolean>;
+    declare public readonly alerting: pulumi.Output<boolean>;
     /**
      * Detection rules
      */
-    public readonly detectionConditionsLinux!: pulumi.Output<outputs.OsServicesDetectionConditionsLinux | undefined>;
+    declare public readonly detectionConditionsLinux: pulumi.Output<outputs.OsServicesDetectionConditionsLinux | undefined>;
     /**
      * Detection rules
      */
-    public readonly detectionConditionsWindows!: pulumi.Output<outputs.OsServicesDetectionConditionsWindows | undefined>;
+    declare public readonly detectionConditionsWindows: pulumi.Output<outputs.OsServicesDetectionConditionsWindows | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Set of additional key-value properties to be attached to the triggered event.
      */
-    public readonly metadata!: pulumi.Output<outputs.OsServicesMetadata | undefined>;
+    declare public readonly metadata: pulumi.Output<outputs.OsServicesMetadata | undefined>;
     /**
      * Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
      */
-    public readonly monitoring!: pulumi.Output<boolean>;
+    declare public readonly monitoring: pulumi.Output<boolean>;
     /**
      * Rule name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
      */
-    public readonly notInstalledAlerting!: pulumi.Output<boolean | undefined>;
+    declare public readonly notInstalledAlerting: pulumi.Output<boolean | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
      */
-    public readonly statusConditionLinux!: pulumi.Output<string | undefined>;
+    declare public readonly statusConditionLinux: pulumi.Output<string | undefined>;
     /**
      * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
      * – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
@@ -89,11 +89,11 @@ export class OsServices extends pulumi.CustomResource {
      * paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
      * `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
      */
-    public readonly statusConditionWindows!: pulumi.Output<string | undefined>;
+    declare public readonly statusConditionWindows: pulumi.Output<string | undefined>;
     /**
      * Possible Values: `LINUX`, `WINDOWS`
      */
-    public readonly system!: pulumi.Output<string>;
+    declare public readonly system: pulumi.Output<string>;
 
     /**
      * Create a OsServices resource with the given unique name, arguments, and options.
@@ -108,48 +108,48 @@ export class OsServices extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OsServicesState | undefined;
-            resourceInputs["alertActivationDuration"] = state ? state.alertActivationDuration : undefined;
-            resourceInputs["alerting"] = state ? state.alerting : undefined;
-            resourceInputs["detectionConditionsLinux"] = state ? state.detectionConditionsLinux : undefined;
-            resourceInputs["detectionConditionsWindows"] = state ? state.detectionConditionsWindows : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["monitoring"] = state ? state.monitoring : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["notInstalledAlerting"] = state ? state.notInstalledAlerting : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["statusConditionLinux"] = state ? state.statusConditionLinux : undefined;
-            resourceInputs["statusConditionWindows"] = state ? state.statusConditionWindows : undefined;
-            resourceInputs["system"] = state ? state.system : undefined;
+            resourceInputs["alertActivationDuration"] = state?.alertActivationDuration;
+            resourceInputs["alerting"] = state?.alerting;
+            resourceInputs["detectionConditionsLinux"] = state?.detectionConditionsLinux;
+            resourceInputs["detectionConditionsWindows"] = state?.detectionConditionsWindows;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["monitoring"] = state?.monitoring;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["notInstalledAlerting"] = state?.notInstalledAlerting;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["statusConditionLinux"] = state?.statusConditionLinux;
+            resourceInputs["statusConditionWindows"] = state?.statusConditionWindows;
+            resourceInputs["system"] = state?.system;
         } else {
             const args = argsOrState as OsServicesArgs | undefined;
-            if ((!args || args.alerting === undefined) && !opts.urn) {
+            if (args?.alerting === undefined && !opts.urn) {
                 throw new Error("Missing required property 'alerting'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.monitoring === undefined) && !opts.urn) {
+            if (args?.monitoring === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitoring'");
             }
-            if ((!args || args.system === undefined) && !opts.urn) {
+            if (args?.system === undefined && !opts.urn) {
                 throw new Error("Missing required property 'system'");
             }
-            resourceInputs["alertActivationDuration"] = args ? args.alertActivationDuration : undefined;
-            resourceInputs["alerting"] = args ? args.alerting : undefined;
-            resourceInputs["detectionConditionsLinux"] = args ? args.detectionConditionsLinux : undefined;
-            resourceInputs["detectionConditionsWindows"] = args ? args.detectionConditionsWindows : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["monitoring"] = args ? args.monitoring : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["notInstalledAlerting"] = args ? args.notInstalledAlerting : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["statusConditionLinux"] = args ? args.statusConditionLinux : undefined;
-            resourceInputs["statusConditionWindows"] = args ? args.statusConditionWindows : undefined;
-            resourceInputs["system"] = args ? args.system : undefined;
+            resourceInputs["alertActivationDuration"] = args?.alertActivationDuration;
+            resourceInputs["alerting"] = args?.alerting;
+            resourceInputs["detectionConditionsLinux"] = args?.detectionConditionsLinux;
+            resourceInputs["detectionConditionsWindows"] = args?.detectionConditionsWindows;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["monitoring"] = args?.monitoring;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["notInstalledAlerting"] = args?.notInstalledAlerting;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["statusConditionLinux"] = args?.statusConditionLinux;
+            resourceInputs["statusConditionWindows"] = args?.statusConditionWindows;
+            resourceInputs["system"] = args?.system;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OsServices.__pulumiType, name, resourceInputs, opts);

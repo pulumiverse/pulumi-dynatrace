@@ -37,23 +37,23 @@ export class ProcessMonitoringRule extends pulumi.CustomResource {
     /**
      * Condition
      */
-    public readonly condition!: pulumi.Output<outputs.ProcessMonitoringRuleCondition>;
+    declare public readonly condition: pulumi.Output<outputs.ProcessMonitoringRuleCondition>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
      */
-    public readonly hostGroupId!: pulumi.Output<string | undefined>;
+    declare public readonly hostGroupId: pulumi.Output<string | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Possible Values: `MONITORING_ON`, `MONITORING_OFF`
      */
-    public readonly mode!: pulumi.Output<string>;
+    declare public readonly mode: pulumi.Output<string>;
 
     /**
      * Create a ProcessMonitoringRule resource with the given unique name, arguments, and options.
@@ -68,27 +68,27 @@ export class ProcessMonitoringRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProcessMonitoringRuleState | undefined;
-            resourceInputs["condition"] = state ? state.condition : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["hostGroupId"] = state ? state.hostGroupId : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["mode"] = state ? state.mode : undefined;
+            resourceInputs["condition"] = state?.condition;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["hostGroupId"] = state?.hostGroupId;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["mode"] = state?.mode;
         } else {
             const args = argsOrState as ProcessMonitoringRuleArgs | undefined;
-            if ((!args || args.condition === undefined) && !opts.urn) {
+            if (args?.condition === undefined && !opts.urn) {
                 throw new Error("Missing required property 'condition'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.mode === undefined) && !opts.urn) {
+            if (args?.mode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'mode'");
             }
-            resourceInputs["condition"] = args ? args.condition : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["hostGroupId"] = args ? args.hostGroupId : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["mode"] = args ? args.mode : undefined;
+            resourceInputs["condition"] = args?.condition;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["hostGroupId"] = args?.hostGroupId;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["mode"] = args?.mode;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProcessMonitoringRule.__pulumiType, name, resourceInputs, opts);

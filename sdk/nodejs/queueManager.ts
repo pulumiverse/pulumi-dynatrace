@@ -37,23 +37,23 @@ export class QueueManager extends pulumi.CustomResource {
     /**
      * The alias queues in the queue manager
      */
-    public readonly aliasQueues!: pulumi.Output<outputs.QueueManagerAliasQueue[] | undefined>;
+    declare public readonly aliasQueues: pulumi.Output<outputs.QueueManagerAliasQueue[] | undefined>;
     /**
      * The alias queues in the queue manager
      */
-    public readonly clusterQueues!: pulumi.Output<outputs.QueueManagerClusterQueue[] | undefined>;
+    declare public readonly clusterQueues: pulumi.Output<outputs.QueueManagerClusterQueue[] | undefined>;
     /**
      * Name of the cluster(s) this queue manager is part of
      */
-    public readonly clusters!: pulumi.Output<string[] | undefined>;
+    declare public readonly clusters: pulumi.Output<string[] | undefined>;
     /**
      * The name of the queue manager
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The alias queues in the queue manager
      */
-    public readonly remoteQueues!: pulumi.Output<outputs.QueueManagerRemoteQueue[] | undefined>;
+    declare public readonly remoteQueues: pulumi.Output<outputs.QueueManagerRemoteQueue[] | undefined>;
 
     /**
      * Create a QueueManager resource with the given unique name, arguments, and options.
@@ -68,18 +68,18 @@ export class QueueManager extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as QueueManagerState | undefined;
-            resourceInputs["aliasQueues"] = state ? state.aliasQueues : undefined;
-            resourceInputs["clusterQueues"] = state ? state.clusterQueues : undefined;
-            resourceInputs["clusters"] = state ? state.clusters : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["remoteQueues"] = state ? state.remoteQueues : undefined;
+            resourceInputs["aliasQueues"] = state?.aliasQueues;
+            resourceInputs["clusterQueues"] = state?.clusterQueues;
+            resourceInputs["clusters"] = state?.clusters;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["remoteQueues"] = state?.remoteQueues;
         } else {
             const args = argsOrState as QueueManagerArgs | undefined;
-            resourceInputs["aliasQueues"] = args ? args.aliasQueues : undefined;
-            resourceInputs["clusterQueues"] = args ? args.clusterQueues : undefined;
-            resourceInputs["clusters"] = args ? args.clusters : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["remoteQueues"] = args ? args.remoteQueues : undefined;
+            resourceInputs["aliasQueues"] = args?.aliasQueues;
+            resourceInputs["clusterQueues"] = args?.clusterQueues;
+            resourceInputs["clusters"] = args?.clusters;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["remoteQueues"] = args?.remoteQueues;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(QueueManager.__pulumiType, name, resourceInputs, opts);

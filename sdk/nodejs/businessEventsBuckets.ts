@@ -35,23 +35,23 @@ export class BusinessEventsBuckets extends pulumi.CustomResource {
     /**
      * Events will be stored in the selected bucket. Analyze bucket contents in the [log & event viewer.](https://www.terraform.io/ui/logs-events?advancedQueryMode=true&query=fetch+bizevents)
      */
-    public readonly bucketName!: pulumi.Output<string>;
+    declare public readonly bucketName: pulumi.Output<string>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
-    public readonly matcher!: pulumi.Output<string>;
+    declare public readonly matcher: pulumi.Output<string>;
     /**
      * Rule name
      */
-    public readonly ruleName!: pulumi.Output<string>;
+    declare public readonly ruleName: pulumi.Output<string>;
 
     /**
      * Create a BusinessEventsBuckets resource with the given unique name, arguments, and options.
@@ -66,30 +66,30 @@ export class BusinessEventsBuckets extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BusinessEventsBucketsState | undefined;
-            resourceInputs["bucketName"] = state ? state.bucketName : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["matcher"] = state ? state.matcher : undefined;
-            resourceInputs["ruleName"] = state ? state.ruleName : undefined;
+            resourceInputs["bucketName"] = state?.bucketName;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["matcher"] = state?.matcher;
+            resourceInputs["ruleName"] = state?.ruleName;
         } else {
             const args = argsOrState as BusinessEventsBucketsArgs | undefined;
-            if ((!args || args.bucketName === undefined) && !opts.urn) {
+            if (args?.bucketName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bucketName'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.matcher === undefined) && !opts.urn) {
+            if (args?.matcher === undefined && !opts.urn) {
                 throw new Error("Missing required property 'matcher'");
             }
-            if ((!args || args.ruleName === undefined) && !opts.urn) {
+            if (args?.ruleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruleName'");
             }
-            resourceInputs["bucketName"] = args ? args.bucketName : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["matcher"] = args ? args.matcher : undefined;
-            resourceInputs["ruleName"] = args ? args.ruleName : undefined;
+            resourceInputs["bucketName"] = args?.bucketName;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["matcher"] = args?.matcher;
+            resourceInputs["ruleName"] = args?.ruleName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BusinessEventsBuckets.__pulumiType, name, resourceInputs, opts);

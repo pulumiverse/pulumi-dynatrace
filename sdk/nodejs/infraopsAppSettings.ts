@@ -35,23 +35,23 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
     /**
      * The threshold at which a network device interface is deemed to be saturated.
      */
-    public readonly interfaceSaturationThreshold!: pulumi.Output<number | undefined>;
+    declare public readonly interfaceSaturationThreshold: pulumi.Output<number | undefined>;
     /**
      * Limit the number of results returned from Grail for Data center, Host, and Network device entities.
      */
-    public readonly invexDqlQueryLimit!: pulumi.Output<number | undefined>;
+    declare public readonly invexDqlQueryLimit: pulumi.Output<number | undefined>;
     /**
      * Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
      */
-    public readonly invexDqlSortLimit!: pulumi.Output<number | undefined>;
+    declare public readonly invexDqlSortLimit: pulumi.Output<number | undefined>;
     /**
      * When set to true, the app will display monitoring candidates in the Hosts table
      */
-    public readonly showMonitoringCandidates!: pulumi.Output<boolean>;
+    declare public readonly showMonitoringCandidates: pulumi.Output<boolean>;
     /**
      * When set to true, the app will display app only hosts in the Hosts table
      */
-    public readonly showStandaloneHosts!: pulumi.Output<boolean>;
+    declare public readonly showStandaloneHosts: pulumi.Output<boolean>;
 
     /**
      * Create a InfraopsAppSettings resource with the given unique name, arguments, and options.
@@ -66,24 +66,24 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InfraopsAppSettingsState | undefined;
-            resourceInputs["interfaceSaturationThreshold"] = state ? state.interfaceSaturationThreshold : undefined;
-            resourceInputs["invexDqlQueryLimit"] = state ? state.invexDqlQueryLimit : undefined;
-            resourceInputs["invexDqlSortLimit"] = state ? state.invexDqlSortLimit : undefined;
-            resourceInputs["showMonitoringCandidates"] = state ? state.showMonitoringCandidates : undefined;
-            resourceInputs["showStandaloneHosts"] = state ? state.showStandaloneHosts : undefined;
+            resourceInputs["interfaceSaturationThreshold"] = state?.interfaceSaturationThreshold;
+            resourceInputs["invexDqlQueryLimit"] = state?.invexDqlQueryLimit;
+            resourceInputs["invexDqlSortLimit"] = state?.invexDqlSortLimit;
+            resourceInputs["showMonitoringCandidates"] = state?.showMonitoringCandidates;
+            resourceInputs["showStandaloneHosts"] = state?.showStandaloneHosts;
         } else {
             const args = argsOrState as InfraopsAppSettingsArgs | undefined;
-            if ((!args || args.showMonitoringCandidates === undefined) && !opts.urn) {
+            if (args?.showMonitoringCandidates === undefined && !opts.urn) {
                 throw new Error("Missing required property 'showMonitoringCandidates'");
             }
-            if ((!args || args.showStandaloneHosts === undefined) && !opts.urn) {
+            if (args?.showStandaloneHosts === undefined && !opts.urn) {
                 throw new Error("Missing required property 'showStandaloneHosts'");
             }
-            resourceInputs["interfaceSaturationThreshold"] = args ? args.interfaceSaturationThreshold : undefined;
-            resourceInputs["invexDqlQueryLimit"] = args ? args.invexDqlQueryLimit : undefined;
-            resourceInputs["invexDqlSortLimit"] = args ? args.invexDqlSortLimit : undefined;
-            resourceInputs["showMonitoringCandidates"] = args ? args.showMonitoringCandidates : undefined;
-            resourceInputs["showStandaloneHosts"] = args ? args.showStandaloneHosts : undefined;
+            resourceInputs["interfaceSaturationThreshold"] = args?.interfaceSaturationThreshold;
+            resourceInputs["invexDqlQueryLimit"] = args?.invexDqlQueryLimit;
+            resourceInputs["invexDqlSortLimit"] = args?.invexDqlSortLimit;
+            resourceInputs["showMonitoringCandidates"] = args?.showMonitoringCandidates;
+            resourceInputs["showStandaloneHosts"] = args?.showStandaloneHosts;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(InfraopsAppSettings.__pulumiType, name, resourceInputs, opts);

@@ -35,15 +35,15 @@ export class DevobsGitOnprem extends pulumi.CustomResource {
     /**
      * Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
      */
-    public readonly gitProvider!: pulumi.Output<string>;
+    declare public readonly gitProvider: pulumi.Output<string>;
     /**
      * If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
      */
-    public readonly includeCredentials!: pulumi.Output<boolean | undefined>;
+    declare public readonly includeCredentials: pulumi.Output<boolean | undefined>;
     /**
      * An HTTP/HTTPS URL of your server
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
 
     /**
      * Create a DevobsGitOnprem resource with the given unique name, arguments, and options.
@@ -58,20 +58,20 @@ export class DevobsGitOnprem extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DevobsGitOnpremState | undefined;
-            resourceInputs["gitProvider"] = state ? state.gitProvider : undefined;
-            resourceInputs["includeCredentials"] = state ? state.includeCredentials : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
+            resourceInputs["gitProvider"] = state?.gitProvider;
+            resourceInputs["includeCredentials"] = state?.includeCredentials;
+            resourceInputs["url"] = state?.url;
         } else {
             const args = argsOrState as DevobsGitOnpremArgs | undefined;
-            if ((!args || args.gitProvider === undefined) && !opts.urn) {
+            if (args?.gitProvider === undefined && !opts.urn) {
                 throw new Error("Missing required property 'gitProvider'");
             }
-            if ((!args || args.url === undefined) && !opts.urn) {
+            if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            resourceInputs["gitProvider"] = args ? args.gitProvider : undefined;
-            resourceInputs["includeCredentials"] = args ? args.includeCredentials : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
+            resourceInputs["gitProvider"] = args?.gitProvider;
+            resourceInputs["includeCredentials"] = args?.includeCredentials;
+            resourceInputs["url"] = args?.url;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DevobsGitOnprem.__pulumiType, name, resourceInputs, opts);

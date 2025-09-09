@@ -44,7 +44,7 @@ export class RequestNamings extends pulumi.CustomResource {
     /**
      * The IDs of the request namings in the order they should be taken into consideration
      */
-    public readonly ids!: pulumi.Output<string[] | undefined>;
+    declare public readonly ids: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a RequestNamings resource with the given unique name, arguments, and options.
@@ -59,10 +59,10 @@ export class RequestNamings extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RequestNamingsState | undefined;
-            resourceInputs["ids"] = state ? state.ids : undefined;
+            resourceInputs["ids"] = state?.ids;
         } else {
             const args = argsOrState as RequestNamingsArgs | undefined;
-            resourceInputs["ids"] = args ? args.ids : undefined;
+            resourceInputs["ids"] = args?.ids;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RequestNamings.__pulumiType, name, resourceInputs, opts);

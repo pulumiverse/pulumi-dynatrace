@@ -35,27 +35,27 @@ export class HttpMonitorOutage extends pulumi.CustomResource {
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) Alert if all locations are unable to access my web application
      */
-    public readonly globalConsecutiveOutageCountThreshold!: pulumi.Output<number | undefined>;
+    declare public readonly globalConsecutiveOutageCountThreshold: pulumi.Output<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) Generate a problem and send an alert when the monitor is unavailable at all configured locations.
      */
-    public readonly globalOutages!: pulumi.Output<boolean>;
+    declare public readonly globalOutages: pulumi.Output<boolean>;
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) are unable to access my web application
      */
-    public readonly localConsecutiveOutageCountThreshold!: pulumi.Output<number | undefined>;
+    declare public readonly localConsecutiveOutageCountThreshold: pulumi.Output<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) Alert if at least
      */
-    public readonly localLocationOutageCountThreshold!: pulumi.Output<number | undefined>;
+    declare public readonly localLocationOutageCountThreshold: pulumi.Output<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location.
      */
-    public readonly localOutages!: pulumi.Output<boolean>;
+    declare public readonly localOutages: pulumi.Output<boolean>;
     /**
      * The scope of this setting (HTTP_CHECK). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a HttpMonitorOutage resource with the given unique name, arguments, and options.
@@ -70,26 +70,26 @@ export class HttpMonitorOutage extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HttpMonitorOutageState | undefined;
-            resourceInputs["globalConsecutiveOutageCountThreshold"] = state ? state.globalConsecutiveOutageCountThreshold : undefined;
-            resourceInputs["globalOutages"] = state ? state.globalOutages : undefined;
-            resourceInputs["localConsecutiveOutageCountThreshold"] = state ? state.localConsecutiveOutageCountThreshold : undefined;
-            resourceInputs["localLocationOutageCountThreshold"] = state ? state.localLocationOutageCountThreshold : undefined;
-            resourceInputs["localOutages"] = state ? state.localOutages : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["globalConsecutiveOutageCountThreshold"] = state?.globalConsecutiveOutageCountThreshold;
+            resourceInputs["globalOutages"] = state?.globalOutages;
+            resourceInputs["localConsecutiveOutageCountThreshold"] = state?.localConsecutiveOutageCountThreshold;
+            resourceInputs["localLocationOutageCountThreshold"] = state?.localLocationOutageCountThreshold;
+            resourceInputs["localOutages"] = state?.localOutages;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as HttpMonitorOutageArgs | undefined;
-            if ((!args || args.globalOutages === undefined) && !opts.urn) {
+            if (args?.globalOutages === undefined && !opts.urn) {
                 throw new Error("Missing required property 'globalOutages'");
             }
-            if ((!args || args.localOutages === undefined) && !opts.urn) {
+            if (args?.localOutages === undefined && !opts.urn) {
                 throw new Error("Missing required property 'localOutages'");
             }
-            resourceInputs["globalConsecutiveOutageCountThreshold"] = args ? args.globalConsecutiveOutageCountThreshold : undefined;
-            resourceInputs["globalOutages"] = args ? args.globalOutages : undefined;
-            resourceInputs["localConsecutiveOutageCountThreshold"] = args ? args.localConsecutiveOutageCountThreshold : undefined;
-            resourceInputs["localLocationOutageCountThreshold"] = args ? args.localLocationOutageCountThreshold : undefined;
-            resourceInputs["localOutages"] = args ? args.localOutages : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["globalConsecutiveOutageCountThreshold"] = args?.globalConsecutiveOutageCountThreshold;
+            resourceInputs["globalOutages"] = args?.globalOutages;
+            resourceInputs["localConsecutiveOutageCountThreshold"] = args?.localConsecutiveOutageCountThreshold;
+            resourceInputs["localLocationOutageCountThreshold"] = args?.localLocationOutageCountThreshold;
+            resourceInputs["localOutages"] = args?.localOutages;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HttpMonitorOutage.__pulumiType, name, resourceInputs, opts);

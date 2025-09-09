@@ -37,15 +37,15 @@ export class WebAppCustomErrors extends pulumi.CustomResource {
     /**
      * (Field has overlap with `dynatrace.ApplicationErrorRules`)
      */
-    public readonly errorRules!: pulumi.Output<outputs.WebAppCustomErrorsErrorRules | undefined>;
+    declare public readonly errorRules: pulumi.Output<outputs.WebAppCustomErrorsErrorRules | undefined>;
     /**
      * (Field has overlap with `dynatrace.ApplicationErrorRules`) This setting overrides Apdex settings for individual rules listed below
      */
-    public readonly ignoreCustomErrorsInApdexCalculation!: pulumi.Output<boolean>;
+    declare public readonly ignoreCustomErrorsInApdexCalculation: pulumi.Output<boolean>;
     /**
      * The scope of this setting (APPLICATION)
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
 
     /**
      * Create a WebAppCustomErrors resource with the given unique name, arguments, and options.
@@ -60,20 +60,20 @@ export class WebAppCustomErrors extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppCustomErrorsState | undefined;
-            resourceInputs["errorRules"] = state ? state.errorRules : undefined;
-            resourceInputs["ignoreCustomErrorsInApdexCalculation"] = state ? state.ignoreCustomErrorsInApdexCalculation : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["errorRules"] = state?.errorRules;
+            resourceInputs["ignoreCustomErrorsInApdexCalculation"] = state?.ignoreCustomErrorsInApdexCalculation;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as WebAppCustomErrorsArgs | undefined;
-            if ((!args || args.ignoreCustomErrorsInApdexCalculation === undefined) && !opts.urn) {
+            if (args?.ignoreCustomErrorsInApdexCalculation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ignoreCustomErrorsInApdexCalculation'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            resourceInputs["errorRules"] = args ? args.errorRules : undefined;
-            resourceInputs["ignoreCustomErrorsInApdexCalculation"] = args ? args.ignoreCustomErrorsInApdexCalculation : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["errorRules"] = args?.errorRules;
+            resourceInputs["ignoreCustomErrorsInApdexCalculation"] = args?.ignoreCustomErrorsInApdexCalculation;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppCustomErrors.__pulumiType, name, resourceInputs, opts);

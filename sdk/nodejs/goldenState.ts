@@ -38,692 +38,692 @@ export class GoldenState extends pulumi.CustomResource {
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceAixExtensions!: pulumi.Output<string[]>;
+    declare public readonly dynatraceAixExtensions: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.Alerting` this `dynatrace.GoldenState` should ignore (and therefore neither warn
      * about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
      * Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
-    public readonly dynatraceAlertings!: pulumi.Output<string[]>;
+    declare public readonly dynatraceAlertings: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.AnsibleTowerNotification` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceAnsibleTowerNotifications!: pulumi.Output<string[]>;
+    declare public readonly dynatraceAnsibleTowerNotifications: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ApplicationDetectionRule` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceApplicationDetectionRules!: pulumi.Output<string[]>;
+    declare public readonly dynatraceApplicationDetectionRules: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ApplicationErrorRules` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceApplicationErrorRules!: pulumi.Output<string[]>;
+    declare public readonly dynatraceApplicationErrorRules: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.AutotagV2` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceAutotagV2s!: pulumi.Output<string[]>;
+    declare public readonly dynatraceAutotagV2s: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.AwsCredentials` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceAwsCredentials!: pulumi.Output<string[]>;
+    declare public readonly dynatraceAwsCredentials: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.AzureCredentials` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceAzureCredentials!: pulumi.Output<string[]>;
+    declare public readonly dynatraceAzureCredentials: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.BrowserMonitor` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceBrowserMonitors!: pulumi.Output<string[]>;
+    declare public readonly dynatraceBrowserMonitors: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.CalculatedMobileMetric` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceCalculatedMobileMetrics!: pulumi.Output<string[]>;
+    declare public readonly dynatraceCalculatedMobileMetrics: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.CalculatedServiceMetric` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceCalculatedServiceMetrics!: pulumi.Output<string[]>;
+    declare public readonly dynatraceCalculatedServiceMetrics: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.CalculatedSyntheticMetric` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceCalculatedSyntheticMetrics!: pulumi.Output<string[]>;
+    declare public readonly dynatraceCalculatedSyntheticMetrics: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.CalculatedWebMetric` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceCalculatedWebMetrics!: pulumi.Output<string[]>;
+    declare public readonly dynatraceCalculatedWebMetrics: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.Credentials` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceCredentials!: pulumi.Output<string[]>;
+    declare public readonly dynatraceCredentials: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.CustomAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceCustomAppAnomalies!: pulumi.Output<string[]>;
+    declare public readonly dynatraceCustomAppAnomalies: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.CustomAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceCustomAppCrashRates!: pulumi.Output<string[]>;
+    declare public readonly dynatraceCustomAppCrashRates: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.CustomAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceCustomAppEnablements!: pulumi.Output<string[]>;
+    declare public readonly dynatraceCustomAppEnablements: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.CustomService` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceCustomServices!: pulumi.Output<string[]>;
+    declare public readonly dynatraceCustomServices: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.DataPrivacy` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceDataPrivacies!: pulumi.Output<string[]>;
+    declare public readonly dynatraceDataPrivacies: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.DatabaseAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceDatabaseAnomaliesV2s!: pulumi.Output<string[]>;
+    declare public readonly dynatraceDatabaseAnomaliesV2s: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.DeclarativeGrouping` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceDeclarativeGroupings!: pulumi.Output<string[]>;
+    declare public readonly dynatraceDeclarativeGroupings: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.DiskAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceDiskAnomaliesV2s!: pulumi.Output<string[]>;
+    declare public readonly dynatraceDiskAnomaliesV2s: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.DiskOptions` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceDiskOptions!: pulumi.Output<string[]>;
+    declare public readonly dynatraceDiskOptions: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.DiskSpecificAnomaliesV2` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceDiskSpecificAnomaliesV2s!: pulumi.Output<string[]>;
+    declare public readonly dynatraceDiskSpecificAnomaliesV2s: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.EmailNotification` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceEmailNotifications!: pulumi.Output<string[]>;
+    declare public readonly dynatraceEmailNotifications: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ExtensionExecutionController` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceExtensionExecutionControllers!: pulumi.Output<string[]>;
+    declare public readonly dynatraceExtensionExecutionControllers: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.GenericTypes` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceGenericTypes!: pulumi.Output<string[]>;
+    declare public readonly dynatraceGenericTypes: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.HostAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceHostAnomaliesV2s!: pulumi.Output<string[]>;
+    declare public readonly dynatraceHostAnomaliesV2s: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.HostNaming` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceHostNamings!: pulumi.Output<string[]>;
+    declare public readonly dynatraceHostNamings: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.HostProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceHostProcessGroupMonitorings!: pulumi.Output<string[]>;
+    declare public readonly dynatraceHostProcessGroupMonitorings: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.HttpMonitor` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceHttpMonitors!: pulumi.Output<string[]>;
+    declare public readonly dynatraceHttpMonitors: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ImsBridges` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceImsBridges!: pulumi.Output<string[]>;
+    declare public readonly dynatraceImsBridges: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.JiraNotification` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceJiraNotifications!: pulumi.Output<string[]>;
+    declare public readonly dynatraceJiraNotifications: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.K8sNamespaceAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceK8sNamespaceAnomalies!: pulumi.Output<string[]>;
+    declare public readonly dynatraceK8sNamespaceAnomalies: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.KeyRequests` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceKeyRequests!: pulumi.Output<string[]>;
+    declare public readonly dynatraceKeyRequests: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.LogMetrics` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceLogMetrics!: pulumi.Output<string[]>;
+    declare public readonly dynatraceLogMetrics: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.Maintenance` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceMaintenances!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMaintenances: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ManagementZoneV2` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceManagementZoneV2s!: pulumi.Output<string[]>;
+    declare public readonly dynatraceManagementZoneV2s: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MetricEvents` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceMetricEvents!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMetricEvents: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MobileAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceMobileAppAnomalies!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMobileAppAnomalies: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MobileAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceMobileAppCrashRates!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMobileAppCrashRates: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MobileAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceMobileAppEnablements!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMobileAppEnablements: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MobileApplication` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceMobileApplications!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMobileApplications: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MonitoredTechnologiesApache` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceMonitoredTechnologiesApaches!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMonitoredTechnologiesApaches: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MonitoredTechnologiesDotnet` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceMonitoredTechnologiesDotnets!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMonitoredTechnologiesDotnets: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MonitoredTechnologiesGo` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceMonitoredTechnologiesGos!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMonitoredTechnologiesGos: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MonitoredTechnologiesIis` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceMonitoredTechnologiesIis!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMonitoredTechnologiesIis: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MonitoredTechnologiesJava` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceMonitoredTechnologiesJavas!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMonitoredTechnologiesJavas: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MonitoredTechnologiesNginx` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceMonitoredTechnologiesNginxes!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMonitoredTechnologiesNginxes: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MonitoredTechnologiesNodejs` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceMonitoredTechnologiesNodejs!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMonitoredTechnologiesNodejs: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MonitoredTechnologiesOpentracing` this `dynatrace.GoldenState` should ignore
      * (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such
      * resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the
      * golden state of the environment.
      */
-    public readonly dynatraceMonitoredTechnologiesOpentracings!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMonitoredTechnologiesOpentracings: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MonitoredTechnologiesPhp` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceMonitoredTechnologiesPhps!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMonitoredTechnologiesPhps: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MonitoredTechnologiesVarnish` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceMonitoredTechnologiesVarnishes!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMonitoredTechnologiesVarnishes: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MonitoredTechnologiesWsmb` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceMonitoredTechnologiesWsmbs!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMonitoredTechnologiesWsmbs: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.MutedRequests` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceMutedRequests!: pulumi.Output<string[]>;
+    declare public readonly dynatraceMutedRequests: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.Nettracer` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceNettracers!: pulumi.Output<string[]>;
+    declare public readonly dynatraceNettracers: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.OneagentFeatures` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceOneagentFeatures!: pulumi.Output<string[]>;
+    declare public readonly dynatraceOneagentFeatures: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.OpsGenieNotification` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceOpsGenieNotifications!: pulumi.Output<string[]>;
+    declare public readonly dynatraceOpsGenieNotifications: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.PagerDutyNotification` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatracePagerDutyNotifications!: pulumi.Output<string[]>;
+    declare public readonly dynatracePagerDutyNotifications: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.PgAlerting` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatracePgAlertings!: pulumi.Output<string[]>;
+    declare public readonly dynatracePgAlertings: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ProcessAvailability` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceProcessAvailabilities!: pulumi.Output<string[]>;
+    declare public readonly dynatraceProcessAvailabilities: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ProcessGroupDetectionFlags` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceProcessGroupDetectionFlags!: pulumi.Output<string[]>;
+    declare public readonly dynatraceProcessGroupDetectionFlags: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ProcessGroupDetection` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceProcessGroupDetections!: pulumi.Output<string[]>;
+    declare public readonly dynatraceProcessGroupDetections: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceProcessGroupMonitorings!: pulumi.Output<string[]>;
+    declare public readonly dynatraceProcessGroupMonitorings: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ProcessGroupRum` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceProcessGroupRums!: pulumi.Output<string[]>;
+    declare public readonly dynatraceProcessGroupRums: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ProcessGroupSimpleDetection` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceProcessGroupSimpleDetections!: pulumi.Output<string[]>;
+    declare public readonly dynatraceProcessGroupSimpleDetections: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ProcessMonitoringRule` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceProcessMonitoringRules!: pulumi.Output<string[]>;
+    declare public readonly dynatraceProcessMonitoringRules: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ProcessMonitoring` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceProcessMonitorings!: pulumi.Output<string[]>;
+    declare public readonly dynatraceProcessMonitorings: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ProcessVisibility` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceProcessVisibilities!: pulumi.Output<string[]>;
+    declare public readonly dynatraceProcessVisibilities: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ProcessgroupNaming` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceProcessgroupNamings!: pulumi.Output<string[]>;
+    declare public readonly dynatraceProcessgroupNamings: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.QueueManager` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceQueueManagers!: pulumi.Output<string[]>;
+    declare public readonly dynatraceQueueManagers: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.QueueSharingGroups` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceQueueSharingGroups!: pulumi.Output<string[]>;
+    declare public readonly dynatraceQueueSharingGroups: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.RequestAttribute` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceRequestAttributes!: pulumi.Output<string[]>;
+    declare public readonly dynatraceRequestAttributes: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.RequestNaming` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceRequestNamings!: pulumi.Output<string[]>;
+    declare public readonly dynatraceRequestNamings: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.RumAdvancedCorrelation` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceRumAdvancedCorrelations!: pulumi.Output<string[]>;
+    declare public readonly dynatraceRumAdvancedCorrelations: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.RumIpLocations` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceRumIpLocations!: pulumi.Output<string[]>;
+    declare public readonly dynatraceRumIpLocations: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.RumProviderBreakdown` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceRumProviderBreakdowns!: pulumi.Output<string[]>;
+    declare public readonly dynatraceRumProviderBreakdowns: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ServiceFailure` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceServiceFailures!: pulumi.Output<string[]>;
+    declare public readonly dynatraceServiceFailures: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ServiceHttpFailure` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceServiceHttpFailures!: pulumi.Output<string[]>;
+    declare public readonly dynatraceServiceHttpFailures: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ServiceNaming` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceServiceNamings!: pulumi.Output<string[]>;
+    declare public readonly dynatraceServiceNamings: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.ServiceNowNotification` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceServiceNowNotifications!: pulumi.Output<string[]>;
+    declare public readonly dynatraceServiceNowNotifications: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.SessionReplayWebPrivacy` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceSessionReplayWebPrivacies!: pulumi.Output<string[]>;
+    declare public readonly dynatraceSessionReplayWebPrivacies: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.SlackNotification` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceSlackNotifications!: pulumi.Output<string[]>;
+    declare public readonly dynatraceSlackNotifications: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.SloV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn
      * about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
      * Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
-    public readonly dynatraceSloV2s!: pulumi.Output<string[]>;
+    declare public readonly dynatraceSloV2s: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.SpanCaptureRule` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceSpanCaptureRules!: pulumi.Output<string[]>;
+    declare public readonly dynatraceSpanCaptureRules: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.SpanContextPropagation` this `dynatrace.GoldenState` should ignore (and
      * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
      * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
      * of the environment.
      */
-    public readonly dynatraceSpanContextPropagations!: pulumi.Output<string[]>;
+    declare public readonly dynatraceSpanContextPropagations: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.SyntheticLocation` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceSyntheticLocations!: pulumi.Output<string[]>;
+    declare public readonly dynatraceSyntheticLocations: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.TrelloNotification` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceTrelloNotifications!: pulumi.Output<string[]>;
+    declare public readonly dynatraceTrelloNotifications: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.UpdateWindows` this `dynatrace.GoldenState` should ignore (and therefore neither
      * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceUpdateWindows!: pulumi.Output<string[]>;
+    declare public readonly dynatraceUpdateWindows: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.UsabilityAnalytics` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceUsabilityAnalytics!: pulumi.Output<string[]>;
+    declare public readonly dynatraceUsabilityAnalytics: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.VictorOpsNotification` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceVictorOpsNotifications!: pulumi.Output<string[]>;
+    declare public readonly dynatraceVictorOpsNotifications: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.WebAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceWebAppAnomalies!: pulumi.Output<string[]>;
+    declare public readonly dynatraceWebAppAnomalies: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.WebAppBeaconOrigins` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceWebAppBeaconOrigins!: pulumi.Output<string[]>;
+    declare public readonly dynatraceWebAppBeaconOrigins: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.WebAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceWebAppEnablements!: pulumi.Output<string[]>;
+    declare public readonly dynatraceWebAppEnablements: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.WebAppResourceCleanup` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceWebAppResourceCleanups!: pulumi.Output<string[]>;
+    declare public readonly dynatraceWebAppResourceCleanups: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.WebAppResourceTypes` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceWebAppResourceTypes!: pulumi.Output<string[]>;
+    declare public readonly dynatraceWebAppResourceTypes: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.WebApplication` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceWebApplications!: pulumi.Output<string[]>;
+    declare public readonly dynatraceWebApplications: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.WebhookNotification` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceWebhookNotifications!: pulumi.Output<string[]>;
+    declare public readonly dynatraceWebhookNotifications: pulumi.Output<string[]>;
     /**
      * The IDs for resource of type `dynatrace.XmattersNotification` this `dynatrace.GoldenState` should ignore (and therefore
      * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
      * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
      * environment.
      */
-    public readonly dynatraceXmattersNotifications!: pulumi.Output<string[]>;
-    public readonly mode!: pulumi.Output<string | undefined>;
+    declare public readonly dynatraceXmattersNotifications: pulumi.Output<string[]>;
+    declare public readonly mode: pulumi.Output<string | undefined>;
 
     /**
      * Create a GoldenState resource with the given unique name, arguments, and options.
@@ -738,208 +738,208 @@ export class GoldenState extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GoldenStateState | undefined;
-            resourceInputs["dynatraceAixExtensions"] = state ? state.dynatraceAixExtensions : undefined;
-            resourceInputs["dynatraceAlertings"] = state ? state.dynatraceAlertings : undefined;
-            resourceInputs["dynatraceAnsibleTowerNotifications"] = state ? state.dynatraceAnsibleTowerNotifications : undefined;
-            resourceInputs["dynatraceApplicationDetectionRules"] = state ? state.dynatraceApplicationDetectionRules : undefined;
-            resourceInputs["dynatraceApplicationErrorRules"] = state ? state.dynatraceApplicationErrorRules : undefined;
-            resourceInputs["dynatraceAutotagV2s"] = state ? state.dynatraceAutotagV2s : undefined;
-            resourceInputs["dynatraceAwsCredentials"] = state ? state.dynatraceAwsCredentials : undefined;
-            resourceInputs["dynatraceAzureCredentials"] = state ? state.dynatraceAzureCredentials : undefined;
-            resourceInputs["dynatraceBrowserMonitors"] = state ? state.dynatraceBrowserMonitors : undefined;
-            resourceInputs["dynatraceCalculatedMobileMetrics"] = state ? state.dynatraceCalculatedMobileMetrics : undefined;
-            resourceInputs["dynatraceCalculatedServiceMetrics"] = state ? state.dynatraceCalculatedServiceMetrics : undefined;
-            resourceInputs["dynatraceCalculatedSyntheticMetrics"] = state ? state.dynatraceCalculatedSyntheticMetrics : undefined;
-            resourceInputs["dynatraceCalculatedWebMetrics"] = state ? state.dynatraceCalculatedWebMetrics : undefined;
-            resourceInputs["dynatraceCredentials"] = state ? state.dynatraceCredentials : undefined;
-            resourceInputs["dynatraceCustomAppAnomalies"] = state ? state.dynatraceCustomAppAnomalies : undefined;
-            resourceInputs["dynatraceCustomAppCrashRates"] = state ? state.dynatraceCustomAppCrashRates : undefined;
-            resourceInputs["dynatraceCustomAppEnablements"] = state ? state.dynatraceCustomAppEnablements : undefined;
-            resourceInputs["dynatraceCustomServices"] = state ? state.dynatraceCustomServices : undefined;
-            resourceInputs["dynatraceDataPrivacies"] = state ? state.dynatraceDataPrivacies : undefined;
-            resourceInputs["dynatraceDatabaseAnomaliesV2s"] = state ? state.dynatraceDatabaseAnomaliesV2s : undefined;
-            resourceInputs["dynatraceDeclarativeGroupings"] = state ? state.dynatraceDeclarativeGroupings : undefined;
-            resourceInputs["dynatraceDiskAnomaliesV2s"] = state ? state.dynatraceDiskAnomaliesV2s : undefined;
-            resourceInputs["dynatraceDiskOptions"] = state ? state.dynatraceDiskOptions : undefined;
-            resourceInputs["dynatraceDiskSpecificAnomaliesV2s"] = state ? state.dynatraceDiskSpecificAnomaliesV2s : undefined;
-            resourceInputs["dynatraceEmailNotifications"] = state ? state.dynatraceEmailNotifications : undefined;
-            resourceInputs["dynatraceExtensionExecutionControllers"] = state ? state.dynatraceExtensionExecutionControllers : undefined;
-            resourceInputs["dynatraceGenericTypes"] = state ? state.dynatraceGenericTypes : undefined;
-            resourceInputs["dynatraceHostAnomaliesV2s"] = state ? state.dynatraceHostAnomaliesV2s : undefined;
-            resourceInputs["dynatraceHostNamings"] = state ? state.dynatraceHostNamings : undefined;
-            resourceInputs["dynatraceHostProcessGroupMonitorings"] = state ? state.dynatraceHostProcessGroupMonitorings : undefined;
-            resourceInputs["dynatraceHttpMonitors"] = state ? state.dynatraceHttpMonitors : undefined;
-            resourceInputs["dynatraceImsBridges"] = state ? state.dynatraceImsBridges : undefined;
-            resourceInputs["dynatraceJiraNotifications"] = state ? state.dynatraceJiraNotifications : undefined;
-            resourceInputs["dynatraceK8sNamespaceAnomalies"] = state ? state.dynatraceK8sNamespaceAnomalies : undefined;
-            resourceInputs["dynatraceKeyRequests"] = state ? state.dynatraceKeyRequests : undefined;
-            resourceInputs["dynatraceLogMetrics"] = state ? state.dynatraceLogMetrics : undefined;
-            resourceInputs["dynatraceMaintenances"] = state ? state.dynatraceMaintenances : undefined;
-            resourceInputs["dynatraceManagementZoneV2s"] = state ? state.dynatraceManagementZoneV2s : undefined;
-            resourceInputs["dynatraceMetricEvents"] = state ? state.dynatraceMetricEvents : undefined;
-            resourceInputs["dynatraceMobileAppAnomalies"] = state ? state.dynatraceMobileAppAnomalies : undefined;
-            resourceInputs["dynatraceMobileAppCrashRates"] = state ? state.dynatraceMobileAppCrashRates : undefined;
-            resourceInputs["dynatraceMobileAppEnablements"] = state ? state.dynatraceMobileAppEnablements : undefined;
-            resourceInputs["dynatraceMobileApplications"] = state ? state.dynatraceMobileApplications : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesApaches"] = state ? state.dynatraceMonitoredTechnologiesApaches : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesDotnets"] = state ? state.dynatraceMonitoredTechnologiesDotnets : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesGos"] = state ? state.dynatraceMonitoredTechnologiesGos : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesIis"] = state ? state.dynatraceMonitoredTechnologiesIis : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesJavas"] = state ? state.dynatraceMonitoredTechnologiesJavas : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesNginxes"] = state ? state.dynatraceMonitoredTechnologiesNginxes : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesNodejs"] = state ? state.dynatraceMonitoredTechnologiesNodejs : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesOpentracings"] = state ? state.dynatraceMonitoredTechnologiesOpentracings : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesPhps"] = state ? state.dynatraceMonitoredTechnologiesPhps : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesVarnishes"] = state ? state.dynatraceMonitoredTechnologiesVarnishes : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesWsmbs"] = state ? state.dynatraceMonitoredTechnologiesWsmbs : undefined;
-            resourceInputs["dynatraceMutedRequests"] = state ? state.dynatraceMutedRequests : undefined;
-            resourceInputs["dynatraceNettracers"] = state ? state.dynatraceNettracers : undefined;
-            resourceInputs["dynatraceOneagentFeatures"] = state ? state.dynatraceOneagentFeatures : undefined;
-            resourceInputs["dynatraceOpsGenieNotifications"] = state ? state.dynatraceOpsGenieNotifications : undefined;
-            resourceInputs["dynatracePagerDutyNotifications"] = state ? state.dynatracePagerDutyNotifications : undefined;
-            resourceInputs["dynatracePgAlertings"] = state ? state.dynatracePgAlertings : undefined;
-            resourceInputs["dynatraceProcessAvailabilities"] = state ? state.dynatraceProcessAvailabilities : undefined;
-            resourceInputs["dynatraceProcessGroupDetectionFlags"] = state ? state.dynatraceProcessGroupDetectionFlags : undefined;
-            resourceInputs["dynatraceProcessGroupDetections"] = state ? state.dynatraceProcessGroupDetections : undefined;
-            resourceInputs["dynatraceProcessGroupMonitorings"] = state ? state.dynatraceProcessGroupMonitorings : undefined;
-            resourceInputs["dynatraceProcessGroupRums"] = state ? state.dynatraceProcessGroupRums : undefined;
-            resourceInputs["dynatraceProcessGroupSimpleDetections"] = state ? state.dynatraceProcessGroupSimpleDetections : undefined;
-            resourceInputs["dynatraceProcessMonitoringRules"] = state ? state.dynatraceProcessMonitoringRules : undefined;
-            resourceInputs["dynatraceProcessMonitorings"] = state ? state.dynatraceProcessMonitorings : undefined;
-            resourceInputs["dynatraceProcessVisibilities"] = state ? state.dynatraceProcessVisibilities : undefined;
-            resourceInputs["dynatraceProcessgroupNamings"] = state ? state.dynatraceProcessgroupNamings : undefined;
-            resourceInputs["dynatraceQueueManagers"] = state ? state.dynatraceQueueManagers : undefined;
-            resourceInputs["dynatraceQueueSharingGroups"] = state ? state.dynatraceQueueSharingGroups : undefined;
-            resourceInputs["dynatraceRequestAttributes"] = state ? state.dynatraceRequestAttributes : undefined;
-            resourceInputs["dynatraceRequestNamings"] = state ? state.dynatraceRequestNamings : undefined;
-            resourceInputs["dynatraceRumAdvancedCorrelations"] = state ? state.dynatraceRumAdvancedCorrelations : undefined;
-            resourceInputs["dynatraceRumIpLocations"] = state ? state.dynatraceRumIpLocations : undefined;
-            resourceInputs["dynatraceRumProviderBreakdowns"] = state ? state.dynatraceRumProviderBreakdowns : undefined;
-            resourceInputs["dynatraceServiceFailures"] = state ? state.dynatraceServiceFailures : undefined;
-            resourceInputs["dynatraceServiceHttpFailures"] = state ? state.dynatraceServiceHttpFailures : undefined;
-            resourceInputs["dynatraceServiceNamings"] = state ? state.dynatraceServiceNamings : undefined;
-            resourceInputs["dynatraceServiceNowNotifications"] = state ? state.dynatraceServiceNowNotifications : undefined;
-            resourceInputs["dynatraceSessionReplayWebPrivacies"] = state ? state.dynatraceSessionReplayWebPrivacies : undefined;
-            resourceInputs["dynatraceSlackNotifications"] = state ? state.dynatraceSlackNotifications : undefined;
-            resourceInputs["dynatraceSloV2s"] = state ? state.dynatraceSloV2s : undefined;
-            resourceInputs["dynatraceSpanCaptureRules"] = state ? state.dynatraceSpanCaptureRules : undefined;
-            resourceInputs["dynatraceSpanContextPropagations"] = state ? state.dynatraceSpanContextPropagations : undefined;
-            resourceInputs["dynatraceSyntheticLocations"] = state ? state.dynatraceSyntheticLocations : undefined;
-            resourceInputs["dynatraceTrelloNotifications"] = state ? state.dynatraceTrelloNotifications : undefined;
-            resourceInputs["dynatraceUpdateWindows"] = state ? state.dynatraceUpdateWindows : undefined;
-            resourceInputs["dynatraceUsabilityAnalytics"] = state ? state.dynatraceUsabilityAnalytics : undefined;
-            resourceInputs["dynatraceVictorOpsNotifications"] = state ? state.dynatraceVictorOpsNotifications : undefined;
-            resourceInputs["dynatraceWebAppAnomalies"] = state ? state.dynatraceWebAppAnomalies : undefined;
-            resourceInputs["dynatraceWebAppBeaconOrigins"] = state ? state.dynatraceWebAppBeaconOrigins : undefined;
-            resourceInputs["dynatraceWebAppEnablements"] = state ? state.dynatraceWebAppEnablements : undefined;
-            resourceInputs["dynatraceWebAppResourceCleanups"] = state ? state.dynatraceWebAppResourceCleanups : undefined;
-            resourceInputs["dynatraceWebAppResourceTypes"] = state ? state.dynatraceWebAppResourceTypes : undefined;
-            resourceInputs["dynatraceWebApplications"] = state ? state.dynatraceWebApplications : undefined;
-            resourceInputs["dynatraceWebhookNotifications"] = state ? state.dynatraceWebhookNotifications : undefined;
-            resourceInputs["dynatraceXmattersNotifications"] = state ? state.dynatraceXmattersNotifications : undefined;
-            resourceInputs["mode"] = state ? state.mode : undefined;
+            resourceInputs["dynatraceAixExtensions"] = state?.dynatraceAixExtensions;
+            resourceInputs["dynatraceAlertings"] = state?.dynatraceAlertings;
+            resourceInputs["dynatraceAnsibleTowerNotifications"] = state?.dynatraceAnsibleTowerNotifications;
+            resourceInputs["dynatraceApplicationDetectionRules"] = state?.dynatraceApplicationDetectionRules;
+            resourceInputs["dynatraceApplicationErrorRules"] = state?.dynatraceApplicationErrorRules;
+            resourceInputs["dynatraceAutotagV2s"] = state?.dynatraceAutotagV2s;
+            resourceInputs["dynatraceAwsCredentials"] = state?.dynatraceAwsCredentials;
+            resourceInputs["dynatraceAzureCredentials"] = state?.dynatraceAzureCredentials;
+            resourceInputs["dynatraceBrowserMonitors"] = state?.dynatraceBrowserMonitors;
+            resourceInputs["dynatraceCalculatedMobileMetrics"] = state?.dynatraceCalculatedMobileMetrics;
+            resourceInputs["dynatraceCalculatedServiceMetrics"] = state?.dynatraceCalculatedServiceMetrics;
+            resourceInputs["dynatraceCalculatedSyntheticMetrics"] = state?.dynatraceCalculatedSyntheticMetrics;
+            resourceInputs["dynatraceCalculatedWebMetrics"] = state?.dynatraceCalculatedWebMetrics;
+            resourceInputs["dynatraceCredentials"] = state?.dynatraceCredentials;
+            resourceInputs["dynatraceCustomAppAnomalies"] = state?.dynatraceCustomAppAnomalies;
+            resourceInputs["dynatraceCustomAppCrashRates"] = state?.dynatraceCustomAppCrashRates;
+            resourceInputs["dynatraceCustomAppEnablements"] = state?.dynatraceCustomAppEnablements;
+            resourceInputs["dynatraceCustomServices"] = state?.dynatraceCustomServices;
+            resourceInputs["dynatraceDataPrivacies"] = state?.dynatraceDataPrivacies;
+            resourceInputs["dynatraceDatabaseAnomaliesV2s"] = state?.dynatraceDatabaseAnomaliesV2s;
+            resourceInputs["dynatraceDeclarativeGroupings"] = state?.dynatraceDeclarativeGroupings;
+            resourceInputs["dynatraceDiskAnomaliesV2s"] = state?.dynatraceDiskAnomaliesV2s;
+            resourceInputs["dynatraceDiskOptions"] = state?.dynatraceDiskOptions;
+            resourceInputs["dynatraceDiskSpecificAnomaliesV2s"] = state?.dynatraceDiskSpecificAnomaliesV2s;
+            resourceInputs["dynatraceEmailNotifications"] = state?.dynatraceEmailNotifications;
+            resourceInputs["dynatraceExtensionExecutionControllers"] = state?.dynatraceExtensionExecutionControllers;
+            resourceInputs["dynatraceGenericTypes"] = state?.dynatraceGenericTypes;
+            resourceInputs["dynatraceHostAnomaliesV2s"] = state?.dynatraceHostAnomaliesV2s;
+            resourceInputs["dynatraceHostNamings"] = state?.dynatraceHostNamings;
+            resourceInputs["dynatraceHostProcessGroupMonitorings"] = state?.dynatraceHostProcessGroupMonitorings;
+            resourceInputs["dynatraceHttpMonitors"] = state?.dynatraceHttpMonitors;
+            resourceInputs["dynatraceImsBridges"] = state?.dynatraceImsBridges;
+            resourceInputs["dynatraceJiraNotifications"] = state?.dynatraceJiraNotifications;
+            resourceInputs["dynatraceK8sNamespaceAnomalies"] = state?.dynatraceK8sNamespaceAnomalies;
+            resourceInputs["dynatraceKeyRequests"] = state?.dynatraceKeyRequests;
+            resourceInputs["dynatraceLogMetrics"] = state?.dynatraceLogMetrics;
+            resourceInputs["dynatraceMaintenances"] = state?.dynatraceMaintenances;
+            resourceInputs["dynatraceManagementZoneV2s"] = state?.dynatraceManagementZoneV2s;
+            resourceInputs["dynatraceMetricEvents"] = state?.dynatraceMetricEvents;
+            resourceInputs["dynatraceMobileAppAnomalies"] = state?.dynatraceMobileAppAnomalies;
+            resourceInputs["dynatraceMobileAppCrashRates"] = state?.dynatraceMobileAppCrashRates;
+            resourceInputs["dynatraceMobileAppEnablements"] = state?.dynatraceMobileAppEnablements;
+            resourceInputs["dynatraceMobileApplications"] = state?.dynatraceMobileApplications;
+            resourceInputs["dynatraceMonitoredTechnologiesApaches"] = state?.dynatraceMonitoredTechnologiesApaches;
+            resourceInputs["dynatraceMonitoredTechnologiesDotnets"] = state?.dynatraceMonitoredTechnologiesDotnets;
+            resourceInputs["dynatraceMonitoredTechnologiesGos"] = state?.dynatraceMonitoredTechnologiesGos;
+            resourceInputs["dynatraceMonitoredTechnologiesIis"] = state?.dynatraceMonitoredTechnologiesIis;
+            resourceInputs["dynatraceMonitoredTechnologiesJavas"] = state?.dynatraceMonitoredTechnologiesJavas;
+            resourceInputs["dynatraceMonitoredTechnologiesNginxes"] = state?.dynatraceMonitoredTechnologiesNginxes;
+            resourceInputs["dynatraceMonitoredTechnologiesNodejs"] = state?.dynatraceMonitoredTechnologiesNodejs;
+            resourceInputs["dynatraceMonitoredTechnologiesOpentracings"] = state?.dynatraceMonitoredTechnologiesOpentracings;
+            resourceInputs["dynatraceMonitoredTechnologiesPhps"] = state?.dynatraceMonitoredTechnologiesPhps;
+            resourceInputs["dynatraceMonitoredTechnologiesVarnishes"] = state?.dynatraceMonitoredTechnologiesVarnishes;
+            resourceInputs["dynatraceMonitoredTechnologiesWsmbs"] = state?.dynatraceMonitoredTechnologiesWsmbs;
+            resourceInputs["dynatraceMutedRequests"] = state?.dynatraceMutedRequests;
+            resourceInputs["dynatraceNettracers"] = state?.dynatraceNettracers;
+            resourceInputs["dynatraceOneagentFeatures"] = state?.dynatraceOneagentFeatures;
+            resourceInputs["dynatraceOpsGenieNotifications"] = state?.dynatraceOpsGenieNotifications;
+            resourceInputs["dynatracePagerDutyNotifications"] = state?.dynatracePagerDutyNotifications;
+            resourceInputs["dynatracePgAlertings"] = state?.dynatracePgAlertings;
+            resourceInputs["dynatraceProcessAvailabilities"] = state?.dynatraceProcessAvailabilities;
+            resourceInputs["dynatraceProcessGroupDetectionFlags"] = state?.dynatraceProcessGroupDetectionFlags;
+            resourceInputs["dynatraceProcessGroupDetections"] = state?.dynatraceProcessGroupDetections;
+            resourceInputs["dynatraceProcessGroupMonitorings"] = state?.dynatraceProcessGroupMonitorings;
+            resourceInputs["dynatraceProcessGroupRums"] = state?.dynatraceProcessGroupRums;
+            resourceInputs["dynatraceProcessGroupSimpleDetections"] = state?.dynatraceProcessGroupSimpleDetections;
+            resourceInputs["dynatraceProcessMonitoringRules"] = state?.dynatraceProcessMonitoringRules;
+            resourceInputs["dynatraceProcessMonitorings"] = state?.dynatraceProcessMonitorings;
+            resourceInputs["dynatraceProcessVisibilities"] = state?.dynatraceProcessVisibilities;
+            resourceInputs["dynatraceProcessgroupNamings"] = state?.dynatraceProcessgroupNamings;
+            resourceInputs["dynatraceQueueManagers"] = state?.dynatraceQueueManagers;
+            resourceInputs["dynatraceQueueSharingGroups"] = state?.dynatraceQueueSharingGroups;
+            resourceInputs["dynatraceRequestAttributes"] = state?.dynatraceRequestAttributes;
+            resourceInputs["dynatraceRequestNamings"] = state?.dynatraceRequestNamings;
+            resourceInputs["dynatraceRumAdvancedCorrelations"] = state?.dynatraceRumAdvancedCorrelations;
+            resourceInputs["dynatraceRumIpLocations"] = state?.dynatraceRumIpLocations;
+            resourceInputs["dynatraceRumProviderBreakdowns"] = state?.dynatraceRumProviderBreakdowns;
+            resourceInputs["dynatraceServiceFailures"] = state?.dynatraceServiceFailures;
+            resourceInputs["dynatraceServiceHttpFailures"] = state?.dynatraceServiceHttpFailures;
+            resourceInputs["dynatraceServiceNamings"] = state?.dynatraceServiceNamings;
+            resourceInputs["dynatraceServiceNowNotifications"] = state?.dynatraceServiceNowNotifications;
+            resourceInputs["dynatraceSessionReplayWebPrivacies"] = state?.dynatraceSessionReplayWebPrivacies;
+            resourceInputs["dynatraceSlackNotifications"] = state?.dynatraceSlackNotifications;
+            resourceInputs["dynatraceSloV2s"] = state?.dynatraceSloV2s;
+            resourceInputs["dynatraceSpanCaptureRules"] = state?.dynatraceSpanCaptureRules;
+            resourceInputs["dynatraceSpanContextPropagations"] = state?.dynatraceSpanContextPropagations;
+            resourceInputs["dynatraceSyntheticLocations"] = state?.dynatraceSyntheticLocations;
+            resourceInputs["dynatraceTrelloNotifications"] = state?.dynatraceTrelloNotifications;
+            resourceInputs["dynatraceUpdateWindows"] = state?.dynatraceUpdateWindows;
+            resourceInputs["dynatraceUsabilityAnalytics"] = state?.dynatraceUsabilityAnalytics;
+            resourceInputs["dynatraceVictorOpsNotifications"] = state?.dynatraceVictorOpsNotifications;
+            resourceInputs["dynatraceWebAppAnomalies"] = state?.dynatraceWebAppAnomalies;
+            resourceInputs["dynatraceWebAppBeaconOrigins"] = state?.dynatraceWebAppBeaconOrigins;
+            resourceInputs["dynatraceWebAppEnablements"] = state?.dynatraceWebAppEnablements;
+            resourceInputs["dynatraceWebAppResourceCleanups"] = state?.dynatraceWebAppResourceCleanups;
+            resourceInputs["dynatraceWebAppResourceTypes"] = state?.dynatraceWebAppResourceTypes;
+            resourceInputs["dynatraceWebApplications"] = state?.dynatraceWebApplications;
+            resourceInputs["dynatraceWebhookNotifications"] = state?.dynatraceWebhookNotifications;
+            resourceInputs["dynatraceXmattersNotifications"] = state?.dynatraceXmattersNotifications;
+            resourceInputs["mode"] = state?.mode;
         } else {
             const args = argsOrState as GoldenStateArgs | undefined;
-            resourceInputs["dynatraceAixExtensions"] = args ? args.dynatraceAixExtensions : undefined;
-            resourceInputs["dynatraceAlertings"] = args ? args.dynatraceAlertings : undefined;
-            resourceInputs["dynatraceAnsibleTowerNotifications"] = args ? args.dynatraceAnsibleTowerNotifications : undefined;
-            resourceInputs["dynatraceApplicationDetectionRules"] = args ? args.dynatraceApplicationDetectionRules : undefined;
-            resourceInputs["dynatraceApplicationErrorRules"] = args ? args.dynatraceApplicationErrorRules : undefined;
-            resourceInputs["dynatraceAutotagV2s"] = args ? args.dynatraceAutotagV2s : undefined;
-            resourceInputs["dynatraceAwsCredentials"] = args ? args.dynatraceAwsCredentials : undefined;
-            resourceInputs["dynatraceAzureCredentials"] = args ? args.dynatraceAzureCredentials : undefined;
-            resourceInputs["dynatraceBrowserMonitors"] = args ? args.dynatraceBrowserMonitors : undefined;
-            resourceInputs["dynatraceCalculatedMobileMetrics"] = args ? args.dynatraceCalculatedMobileMetrics : undefined;
-            resourceInputs["dynatraceCalculatedServiceMetrics"] = args ? args.dynatraceCalculatedServiceMetrics : undefined;
-            resourceInputs["dynatraceCalculatedSyntheticMetrics"] = args ? args.dynatraceCalculatedSyntheticMetrics : undefined;
-            resourceInputs["dynatraceCalculatedWebMetrics"] = args ? args.dynatraceCalculatedWebMetrics : undefined;
-            resourceInputs["dynatraceCredentials"] = args ? args.dynatraceCredentials : undefined;
-            resourceInputs["dynatraceCustomAppAnomalies"] = args ? args.dynatraceCustomAppAnomalies : undefined;
-            resourceInputs["dynatraceCustomAppCrashRates"] = args ? args.dynatraceCustomAppCrashRates : undefined;
-            resourceInputs["dynatraceCustomAppEnablements"] = args ? args.dynatraceCustomAppEnablements : undefined;
-            resourceInputs["dynatraceCustomServices"] = args ? args.dynatraceCustomServices : undefined;
-            resourceInputs["dynatraceDataPrivacies"] = args ? args.dynatraceDataPrivacies : undefined;
-            resourceInputs["dynatraceDatabaseAnomaliesV2s"] = args ? args.dynatraceDatabaseAnomaliesV2s : undefined;
-            resourceInputs["dynatraceDeclarativeGroupings"] = args ? args.dynatraceDeclarativeGroupings : undefined;
-            resourceInputs["dynatraceDiskAnomaliesV2s"] = args ? args.dynatraceDiskAnomaliesV2s : undefined;
-            resourceInputs["dynatraceDiskOptions"] = args ? args.dynatraceDiskOptions : undefined;
-            resourceInputs["dynatraceDiskSpecificAnomaliesV2s"] = args ? args.dynatraceDiskSpecificAnomaliesV2s : undefined;
-            resourceInputs["dynatraceEmailNotifications"] = args ? args.dynatraceEmailNotifications : undefined;
-            resourceInputs["dynatraceExtensionExecutionControllers"] = args ? args.dynatraceExtensionExecutionControllers : undefined;
-            resourceInputs["dynatraceGenericTypes"] = args ? args.dynatraceGenericTypes : undefined;
-            resourceInputs["dynatraceHostAnomaliesV2s"] = args ? args.dynatraceHostAnomaliesV2s : undefined;
-            resourceInputs["dynatraceHostNamings"] = args ? args.dynatraceHostNamings : undefined;
-            resourceInputs["dynatraceHostProcessGroupMonitorings"] = args ? args.dynatraceHostProcessGroupMonitorings : undefined;
-            resourceInputs["dynatraceHttpMonitors"] = args ? args.dynatraceHttpMonitors : undefined;
-            resourceInputs["dynatraceImsBridges"] = args ? args.dynatraceImsBridges : undefined;
-            resourceInputs["dynatraceJiraNotifications"] = args ? args.dynatraceJiraNotifications : undefined;
-            resourceInputs["dynatraceK8sNamespaceAnomalies"] = args ? args.dynatraceK8sNamespaceAnomalies : undefined;
-            resourceInputs["dynatraceKeyRequests"] = args ? args.dynatraceKeyRequests : undefined;
-            resourceInputs["dynatraceLogMetrics"] = args ? args.dynatraceLogMetrics : undefined;
-            resourceInputs["dynatraceMaintenances"] = args ? args.dynatraceMaintenances : undefined;
-            resourceInputs["dynatraceManagementZoneV2s"] = args ? args.dynatraceManagementZoneV2s : undefined;
-            resourceInputs["dynatraceMetricEvents"] = args ? args.dynatraceMetricEvents : undefined;
-            resourceInputs["dynatraceMobileAppAnomalies"] = args ? args.dynatraceMobileAppAnomalies : undefined;
-            resourceInputs["dynatraceMobileAppCrashRates"] = args ? args.dynatraceMobileAppCrashRates : undefined;
-            resourceInputs["dynatraceMobileAppEnablements"] = args ? args.dynatraceMobileAppEnablements : undefined;
-            resourceInputs["dynatraceMobileApplications"] = args ? args.dynatraceMobileApplications : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesApaches"] = args ? args.dynatraceMonitoredTechnologiesApaches : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesDotnets"] = args ? args.dynatraceMonitoredTechnologiesDotnets : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesGos"] = args ? args.dynatraceMonitoredTechnologiesGos : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesIis"] = args ? args.dynatraceMonitoredTechnologiesIis : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesJavas"] = args ? args.dynatraceMonitoredTechnologiesJavas : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesNginxes"] = args ? args.dynatraceMonitoredTechnologiesNginxes : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesNodejs"] = args ? args.dynatraceMonitoredTechnologiesNodejs : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesOpentracings"] = args ? args.dynatraceMonitoredTechnologiesOpentracings : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesPhps"] = args ? args.dynatraceMonitoredTechnologiesPhps : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesVarnishes"] = args ? args.dynatraceMonitoredTechnologiesVarnishes : undefined;
-            resourceInputs["dynatraceMonitoredTechnologiesWsmbs"] = args ? args.dynatraceMonitoredTechnologiesWsmbs : undefined;
-            resourceInputs["dynatraceMutedRequests"] = args ? args.dynatraceMutedRequests : undefined;
-            resourceInputs["dynatraceNettracers"] = args ? args.dynatraceNettracers : undefined;
-            resourceInputs["dynatraceOneagentFeatures"] = args ? args.dynatraceOneagentFeatures : undefined;
-            resourceInputs["dynatraceOpsGenieNotifications"] = args ? args.dynatraceOpsGenieNotifications : undefined;
-            resourceInputs["dynatracePagerDutyNotifications"] = args ? args.dynatracePagerDutyNotifications : undefined;
-            resourceInputs["dynatracePgAlertings"] = args ? args.dynatracePgAlertings : undefined;
-            resourceInputs["dynatraceProcessAvailabilities"] = args ? args.dynatraceProcessAvailabilities : undefined;
-            resourceInputs["dynatraceProcessGroupDetectionFlags"] = args ? args.dynatraceProcessGroupDetectionFlags : undefined;
-            resourceInputs["dynatraceProcessGroupDetections"] = args ? args.dynatraceProcessGroupDetections : undefined;
-            resourceInputs["dynatraceProcessGroupMonitorings"] = args ? args.dynatraceProcessGroupMonitorings : undefined;
-            resourceInputs["dynatraceProcessGroupRums"] = args ? args.dynatraceProcessGroupRums : undefined;
-            resourceInputs["dynatraceProcessGroupSimpleDetections"] = args ? args.dynatraceProcessGroupSimpleDetections : undefined;
-            resourceInputs["dynatraceProcessMonitoringRules"] = args ? args.dynatraceProcessMonitoringRules : undefined;
-            resourceInputs["dynatraceProcessMonitorings"] = args ? args.dynatraceProcessMonitorings : undefined;
-            resourceInputs["dynatraceProcessVisibilities"] = args ? args.dynatraceProcessVisibilities : undefined;
-            resourceInputs["dynatraceProcessgroupNamings"] = args ? args.dynatraceProcessgroupNamings : undefined;
-            resourceInputs["dynatraceQueueManagers"] = args ? args.dynatraceQueueManagers : undefined;
-            resourceInputs["dynatraceQueueSharingGroups"] = args ? args.dynatraceQueueSharingGroups : undefined;
-            resourceInputs["dynatraceRequestAttributes"] = args ? args.dynatraceRequestAttributes : undefined;
-            resourceInputs["dynatraceRequestNamings"] = args ? args.dynatraceRequestNamings : undefined;
-            resourceInputs["dynatraceRumAdvancedCorrelations"] = args ? args.dynatraceRumAdvancedCorrelations : undefined;
-            resourceInputs["dynatraceRumIpLocations"] = args ? args.dynatraceRumIpLocations : undefined;
-            resourceInputs["dynatraceRumProviderBreakdowns"] = args ? args.dynatraceRumProviderBreakdowns : undefined;
-            resourceInputs["dynatraceServiceFailures"] = args ? args.dynatraceServiceFailures : undefined;
-            resourceInputs["dynatraceServiceHttpFailures"] = args ? args.dynatraceServiceHttpFailures : undefined;
-            resourceInputs["dynatraceServiceNamings"] = args ? args.dynatraceServiceNamings : undefined;
-            resourceInputs["dynatraceServiceNowNotifications"] = args ? args.dynatraceServiceNowNotifications : undefined;
-            resourceInputs["dynatraceSessionReplayWebPrivacies"] = args ? args.dynatraceSessionReplayWebPrivacies : undefined;
-            resourceInputs["dynatraceSlackNotifications"] = args ? args.dynatraceSlackNotifications : undefined;
-            resourceInputs["dynatraceSloV2s"] = args ? args.dynatraceSloV2s : undefined;
-            resourceInputs["dynatraceSpanCaptureRules"] = args ? args.dynatraceSpanCaptureRules : undefined;
-            resourceInputs["dynatraceSpanContextPropagations"] = args ? args.dynatraceSpanContextPropagations : undefined;
-            resourceInputs["dynatraceSyntheticLocations"] = args ? args.dynatraceSyntheticLocations : undefined;
-            resourceInputs["dynatraceTrelloNotifications"] = args ? args.dynatraceTrelloNotifications : undefined;
-            resourceInputs["dynatraceUpdateWindows"] = args ? args.dynatraceUpdateWindows : undefined;
-            resourceInputs["dynatraceUsabilityAnalytics"] = args ? args.dynatraceUsabilityAnalytics : undefined;
-            resourceInputs["dynatraceVictorOpsNotifications"] = args ? args.dynatraceVictorOpsNotifications : undefined;
-            resourceInputs["dynatraceWebAppAnomalies"] = args ? args.dynatraceWebAppAnomalies : undefined;
-            resourceInputs["dynatraceWebAppBeaconOrigins"] = args ? args.dynatraceWebAppBeaconOrigins : undefined;
-            resourceInputs["dynatraceWebAppEnablements"] = args ? args.dynatraceWebAppEnablements : undefined;
-            resourceInputs["dynatraceWebAppResourceCleanups"] = args ? args.dynatraceWebAppResourceCleanups : undefined;
-            resourceInputs["dynatraceWebAppResourceTypes"] = args ? args.dynatraceWebAppResourceTypes : undefined;
-            resourceInputs["dynatraceWebApplications"] = args ? args.dynatraceWebApplications : undefined;
-            resourceInputs["dynatraceWebhookNotifications"] = args ? args.dynatraceWebhookNotifications : undefined;
-            resourceInputs["dynatraceXmattersNotifications"] = args ? args.dynatraceXmattersNotifications : undefined;
-            resourceInputs["mode"] = args ? args.mode : undefined;
+            resourceInputs["dynatraceAixExtensions"] = args?.dynatraceAixExtensions;
+            resourceInputs["dynatraceAlertings"] = args?.dynatraceAlertings;
+            resourceInputs["dynatraceAnsibleTowerNotifications"] = args?.dynatraceAnsibleTowerNotifications;
+            resourceInputs["dynatraceApplicationDetectionRules"] = args?.dynatraceApplicationDetectionRules;
+            resourceInputs["dynatraceApplicationErrorRules"] = args?.dynatraceApplicationErrorRules;
+            resourceInputs["dynatraceAutotagV2s"] = args?.dynatraceAutotagV2s;
+            resourceInputs["dynatraceAwsCredentials"] = args?.dynatraceAwsCredentials;
+            resourceInputs["dynatraceAzureCredentials"] = args?.dynatraceAzureCredentials;
+            resourceInputs["dynatraceBrowserMonitors"] = args?.dynatraceBrowserMonitors;
+            resourceInputs["dynatraceCalculatedMobileMetrics"] = args?.dynatraceCalculatedMobileMetrics;
+            resourceInputs["dynatraceCalculatedServiceMetrics"] = args?.dynatraceCalculatedServiceMetrics;
+            resourceInputs["dynatraceCalculatedSyntheticMetrics"] = args?.dynatraceCalculatedSyntheticMetrics;
+            resourceInputs["dynatraceCalculatedWebMetrics"] = args?.dynatraceCalculatedWebMetrics;
+            resourceInputs["dynatraceCredentials"] = args?.dynatraceCredentials;
+            resourceInputs["dynatraceCustomAppAnomalies"] = args?.dynatraceCustomAppAnomalies;
+            resourceInputs["dynatraceCustomAppCrashRates"] = args?.dynatraceCustomAppCrashRates;
+            resourceInputs["dynatraceCustomAppEnablements"] = args?.dynatraceCustomAppEnablements;
+            resourceInputs["dynatraceCustomServices"] = args?.dynatraceCustomServices;
+            resourceInputs["dynatraceDataPrivacies"] = args?.dynatraceDataPrivacies;
+            resourceInputs["dynatraceDatabaseAnomaliesV2s"] = args?.dynatraceDatabaseAnomaliesV2s;
+            resourceInputs["dynatraceDeclarativeGroupings"] = args?.dynatraceDeclarativeGroupings;
+            resourceInputs["dynatraceDiskAnomaliesV2s"] = args?.dynatraceDiskAnomaliesV2s;
+            resourceInputs["dynatraceDiskOptions"] = args?.dynatraceDiskOptions;
+            resourceInputs["dynatraceDiskSpecificAnomaliesV2s"] = args?.dynatraceDiskSpecificAnomaliesV2s;
+            resourceInputs["dynatraceEmailNotifications"] = args?.dynatraceEmailNotifications;
+            resourceInputs["dynatraceExtensionExecutionControllers"] = args?.dynatraceExtensionExecutionControllers;
+            resourceInputs["dynatraceGenericTypes"] = args?.dynatraceGenericTypes;
+            resourceInputs["dynatraceHostAnomaliesV2s"] = args?.dynatraceHostAnomaliesV2s;
+            resourceInputs["dynatraceHostNamings"] = args?.dynatraceHostNamings;
+            resourceInputs["dynatraceHostProcessGroupMonitorings"] = args?.dynatraceHostProcessGroupMonitorings;
+            resourceInputs["dynatraceHttpMonitors"] = args?.dynatraceHttpMonitors;
+            resourceInputs["dynatraceImsBridges"] = args?.dynatraceImsBridges;
+            resourceInputs["dynatraceJiraNotifications"] = args?.dynatraceJiraNotifications;
+            resourceInputs["dynatraceK8sNamespaceAnomalies"] = args?.dynatraceK8sNamespaceAnomalies;
+            resourceInputs["dynatraceKeyRequests"] = args?.dynatraceKeyRequests;
+            resourceInputs["dynatraceLogMetrics"] = args?.dynatraceLogMetrics;
+            resourceInputs["dynatraceMaintenances"] = args?.dynatraceMaintenances;
+            resourceInputs["dynatraceManagementZoneV2s"] = args?.dynatraceManagementZoneV2s;
+            resourceInputs["dynatraceMetricEvents"] = args?.dynatraceMetricEvents;
+            resourceInputs["dynatraceMobileAppAnomalies"] = args?.dynatraceMobileAppAnomalies;
+            resourceInputs["dynatraceMobileAppCrashRates"] = args?.dynatraceMobileAppCrashRates;
+            resourceInputs["dynatraceMobileAppEnablements"] = args?.dynatraceMobileAppEnablements;
+            resourceInputs["dynatraceMobileApplications"] = args?.dynatraceMobileApplications;
+            resourceInputs["dynatraceMonitoredTechnologiesApaches"] = args?.dynatraceMonitoredTechnologiesApaches;
+            resourceInputs["dynatraceMonitoredTechnologiesDotnets"] = args?.dynatraceMonitoredTechnologiesDotnets;
+            resourceInputs["dynatraceMonitoredTechnologiesGos"] = args?.dynatraceMonitoredTechnologiesGos;
+            resourceInputs["dynatraceMonitoredTechnologiesIis"] = args?.dynatraceMonitoredTechnologiesIis;
+            resourceInputs["dynatraceMonitoredTechnologiesJavas"] = args?.dynatraceMonitoredTechnologiesJavas;
+            resourceInputs["dynatraceMonitoredTechnologiesNginxes"] = args?.dynatraceMonitoredTechnologiesNginxes;
+            resourceInputs["dynatraceMonitoredTechnologiesNodejs"] = args?.dynatraceMonitoredTechnologiesNodejs;
+            resourceInputs["dynatraceMonitoredTechnologiesOpentracings"] = args?.dynatraceMonitoredTechnologiesOpentracings;
+            resourceInputs["dynatraceMonitoredTechnologiesPhps"] = args?.dynatraceMonitoredTechnologiesPhps;
+            resourceInputs["dynatraceMonitoredTechnologiesVarnishes"] = args?.dynatraceMonitoredTechnologiesVarnishes;
+            resourceInputs["dynatraceMonitoredTechnologiesWsmbs"] = args?.dynatraceMonitoredTechnologiesWsmbs;
+            resourceInputs["dynatraceMutedRequests"] = args?.dynatraceMutedRequests;
+            resourceInputs["dynatraceNettracers"] = args?.dynatraceNettracers;
+            resourceInputs["dynatraceOneagentFeatures"] = args?.dynatraceOneagentFeatures;
+            resourceInputs["dynatraceOpsGenieNotifications"] = args?.dynatraceOpsGenieNotifications;
+            resourceInputs["dynatracePagerDutyNotifications"] = args?.dynatracePagerDutyNotifications;
+            resourceInputs["dynatracePgAlertings"] = args?.dynatracePgAlertings;
+            resourceInputs["dynatraceProcessAvailabilities"] = args?.dynatraceProcessAvailabilities;
+            resourceInputs["dynatraceProcessGroupDetectionFlags"] = args?.dynatraceProcessGroupDetectionFlags;
+            resourceInputs["dynatraceProcessGroupDetections"] = args?.dynatraceProcessGroupDetections;
+            resourceInputs["dynatraceProcessGroupMonitorings"] = args?.dynatraceProcessGroupMonitorings;
+            resourceInputs["dynatraceProcessGroupRums"] = args?.dynatraceProcessGroupRums;
+            resourceInputs["dynatraceProcessGroupSimpleDetections"] = args?.dynatraceProcessGroupSimpleDetections;
+            resourceInputs["dynatraceProcessMonitoringRules"] = args?.dynatraceProcessMonitoringRules;
+            resourceInputs["dynatraceProcessMonitorings"] = args?.dynatraceProcessMonitorings;
+            resourceInputs["dynatraceProcessVisibilities"] = args?.dynatraceProcessVisibilities;
+            resourceInputs["dynatraceProcessgroupNamings"] = args?.dynatraceProcessgroupNamings;
+            resourceInputs["dynatraceQueueManagers"] = args?.dynatraceQueueManagers;
+            resourceInputs["dynatraceQueueSharingGroups"] = args?.dynatraceQueueSharingGroups;
+            resourceInputs["dynatraceRequestAttributes"] = args?.dynatraceRequestAttributes;
+            resourceInputs["dynatraceRequestNamings"] = args?.dynatraceRequestNamings;
+            resourceInputs["dynatraceRumAdvancedCorrelations"] = args?.dynatraceRumAdvancedCorrelations;
+            resourceInputs["dynatraceRumIpLocations"] = args?.dynatraceRumIpLocations;
+            resourceInputs["dynatraceRumProviderBreakdowns"] = args?.dynatraceRumProviderBreakdowns;
+            resourceInputs["dynatraceServiceFailures"] = args?.dynatraceServiceFailures;
+            resourceInputs["dynatraceServiceHttpFailures"] = args?.dynatraceServiceHttpFailures;
+            resourceInputs["dynatraceServiceNamings"] = args?.dynatraceServiceNamings;
+            resourceInputs["dynatraceServiceNowNotifications"] = args?.dynatraceServiceNowNotifications;
+            resourceInputs["dynatraceSessionReplayWebPrivacies"] = args?.dynatraceSessionReplayWebPrivacies;
+            resourceInputs["dynatraceSlackNotifications"] = args?.dynatraceSlackNotifications;
+            resourceInputs["dynatraceSloV2s"] = args?.dynatraceSloV2s;
+            resourceInputs["dynatraceSpanCaptureRules"] = args?.dynatraceSpanCaptureRules;
+            resourceInputs["dynatraceSpanContextPropagations"] = args?.dynatraceSpanContextPropagations;
+            resourceInputs["dynatraceSyntheticLocations"] = args?.dynatraceSyntheticLocations;
+            resourceInputs["dynatraceTrelloNotifications"] = args?.dynatraceTrelloNotifications;
+            resourceInputs["dynatraceUpdateWindows"] = args?.dynatraceUpdateWindows;
+            resourceInputs["dynatraceUsabilityAnalytics"] = args?.dynatraceUsabilityAnalytics;
+            resourceInputs["dynatraceVictorOpsNotifications"] = args?.dynatraceVictorOpsNotifications;
+            resourceInputs["dynatraceWebAppAnomalies"] = args?.dynatraceWebAppAnomalies;
+            resourceInputs["dynatraceWebAppBeaconOrigins"] = args?.dynatraceWebAppBeaconOrigins;
+            resourceInputs["dynatraceWebAppEnablements"] = args?.dynatraceWebAppEnablements;
+            resourceInputs["dynatraceWebAppResourceCleanups"] = args?.dynatraceWebAppResourceCleanups;
+            resourceInputs["dynatraceWebAppResourceTypes"] = args?.dynatraceWebAppResourceTypes;
+            resourceInputs["dynatraceWebApplications"] = args?.dynatraceWebApplications;
+            resourceInputs["dynatraceWebhookNotifications"] = args?.dynatraceWebhookNotifications;
+            resourceInputs["dynatraceXmattersNotifications"] = args?.dynatraceXmattersNotifications;
+            resourceInputs["mode"] = args?.mode;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(GoldenState.__pulumiType, name, resourceInputs, opts);

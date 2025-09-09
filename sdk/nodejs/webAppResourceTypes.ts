@@ -35,19 +35,19 @@ export class WebAppResourceTypes extends pulumi.CustomResource {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
      */
-    public readonly primaryResourceType!: pulumi.Output<string>;
+    declare public readonly primaryResourceType: pulumi.Output<string>;
     /**
      * The regular expression to detect the resource.
      */
-    public readonly regularExpression!: pulumi.Output<string>;
+    declare public readonly regularExpression: pulumi.Output<string>;
     /**
      * The secondary type of the resource.
      */
-    public readonly secondaryResourceType!: pulumi.Output<string | undefined>;
+    declare public readonly secondaryResourceType: pulumi.Output<string | undefined>;
 
     /**
      * Create a WebAppResourceTypes resource with the given unique name, arguments, and options.
@@ -62,22 +62,22 @@ export class WebAppResourceTypes extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppResourceTypesState | undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["primaryResourceType"] = state ? state.primaryResourceType : undefined;
-            resourceInputs["regularExpression"] = state ? state.regularExpression : undefined;
-            resourceInputs["secondaryResourceType"] = state ? state.secondaryResourceType : undefined;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["primaryResourceType"] = state?.primaryResourceType;
+            resourceInputs["regularExpression"] = state?.regularExpression;
+            resourceInputs["secondaryResourceType"] = state?.secondaryResourceType;
         } else {
             const args = argsOrState as WebAppResourceTypesArgs | undefined;
-            if ((!args || args.primaryResourceType === undefined) && !opts.urn) {
+            if (args?.primaryResourceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'primaryResourceType'");
             }
-            if ((!args || args.regularExpression === undefined) && !opts.urn) {
+            if (args?.regularExpression === undefined && !opts.urn) {
                 throw new Error("Missing required property 'regularExpression'");
             }
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["primaryResourceType"] = args ? args.primaryResourceType : undefined;
-            resourceInputs["regularExpression"] = args ? args.regularExpression : undefined;
-            resourceInputs["secondaryResourceType"] = args ? args.secondaryResourceType : undefined;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["primaryResourceType"] = args?.primaryResourceType;
+            resourceInputs["regularExpression"] = args?.regularExpression;
+            resourceInputs["secondaryResourceType"] = args?.secondaryResourceType;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppResourceTypes.__pulumiType, name, resourceInputs, opts);

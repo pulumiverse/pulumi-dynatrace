@@ -35,47 +35,47 @@ export class TrelloNotification extends pulumi.CustomResource {
     /**
      * The configuration is enabled (`true`) or disabled (`false`)
      */
-    public readonly active!: pulumi.Output<boolean>;
+    declare public readonly active: pulumi.Output<boolean>;
     /**
      * The application key for the Trello account
      */
-    public readonly applicationKey!: pulumi.Output<string>;
+    declare public readonly applicationKey: pulumi.Output<string>;
     /**
      * The application token for the Trello account
      */
-    public readonly authorizationToken!: pulumi.Output<string | undefined>;
+    declare public readonly authorizationToken: pulumi.Output<string | undefined>;
     /**
      * The Trello board to which the card should be assigned
      */
-    public readonly boardId!: pulumi.Output<string>;
+    declare public readonly boardId: pulumi.Output<string>;
     /**
      * The description of the Trello card.   You can use same placeholders as in card text
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    public readonly legacyId!: pulumi.Output<string>;
+    declare public readonly legacyId: pulumi.Output<string>;
     /**
      * The Trello list to which the card should be assigned
      */
-    public readonly listId!: pulumi.Output<string>;
+    declare public readonly listId: pulumi.Output<string>;
     /**
      * The name of the notification configuration
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The ID of the associated alerting profile
      */
-    public readonly profile!: pulumi.Output<string>;
+    declare public readonly profile: pulumi.Output<string>;
     /**
      * The Trello list to which the card of the resolved problem should be assigned
      */
-    public readonly resolvedListId!: pulumi.Output<string>;
+    declare public readonly resolvedListId: pulumi.Output<string>;
     /**
      * The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      */
-    public readonly text!: pulumi.Output<string>;
+    declare public readonly text: pulumi.Output<string>;
 
     /**
      * Create a TrelloNotification resource with the given unique name, arguments, and options.
@@ -90,54 +90,54 @@ export class TrelloNotification extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TrelloNotificationState | undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["applicationKey"] = state ? state.applicationKey : undefined;
-            resourceInputs["authorizationToken"] = state ? state.authorizationToken : undefined;
-            resourceInputs["boardId"] = state ? state.boardId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
-            resourceInputs["listId"] = state ? state.listId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["profile"] = state ? state.profile : undefined;
-            resourceInputs["resolvedListId"] = state ? state.resolvedListId : undefined;
-            resourceInputs["text"] = state ? state.text : undefined;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["applicationKey"] = state?.applicationKey;
+            resourceInputs["authorizationToken"] = state?.authorizationToken;
+            resourceInputs["boardId"] = state?.boardId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["legacyId"] = state?.legacyId;
+            resourceInputs["listId"] = state?.listId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["profile"] = state?.profile;
+            resourceInputs["resolvedListId"] = state?.resolvedListId;
+            resourceInputs["text"] = state?.text;
         } else {
             const args = argsOrState as TrelloNotificationArgs | undefined;
-            if ((!args || args.active === undefined) && !opts.urn) {
+            if (args?.active === undefined && !opts.urn) {
                 throw new Error("Missing required property 'active'");
             }
-            if ((!args || args.applicationKey === undefined) && !opts.urn) {
+            if (args?.applicationKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationKey'");
             }
-            if ((!args || args.boardId === undefined) && !opts.urn) {
+            if (args?.boardId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'boardId'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.listId === undefined) && !opts.urn) {
+            if (args?.listId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'listId'");
             }
-            if ((!args || args.profile === undefined) && !opts.urn) {
+            if (args?.profile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profile'");
             }
-            if ((!args || args.resolvedListId === undefined) && !opts.urn) {
+            if (args?.resolvedListId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resolvedListId'");
             }
-            if ((!args || args.text === undefined) && !opts.urn) {
+            if (args?.text === undefined && !opts.urn) {
                 throw new Error("Missing required property 'text'");
             }
-            resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["applicationKey"] = args ? args.applicationKey : undefined;
+            resourceInputs["active"] = args?.active;
+            resourceInputs["applicationKey"] = args?.applicationKey;
             resourceInputs["authorizationToken"] = args?.authorizationToken ? pulumi.secret(args.authorizationToken) : undefined;
-            resourceInputs["boardId"] = args ? args.boardId : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
-            resourceInputs["listId"] = args ? args.listId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["profile"] = args ? args.profile : undefined;
-            resourceInputs["resolvedListId"] = args ? args.resolvedListId : undefined;
-            resourceInputs["text"] = args ? args.text : undefined;
+            resourceInputs["boardId"] = args?.boardId;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["legacyId"] = args?.legacyId;
+            resourceInputs["listId"] = args?.listId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["profile"] = args?.profile;
+            resourceInputs["resolvedListId"] = args?.resolvedListId;
+            resourceInputs["text"] = args?.text;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["authorizationToken"] };

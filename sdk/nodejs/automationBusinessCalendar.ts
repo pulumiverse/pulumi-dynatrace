@@ -638,31 +638,31 @@ export class AutomationBusinessCalendar extends pulumi.CustomResource {
     /**
      * An optional description for the Business Calendar
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * A list of holidays valid in this calendar
      */
-    public readonly holidays!: pulumi.Output<outputs.AutomationBusinessCalendarHolidays | undefined>;
+    declare public readonly holidays: pulumi.Output<outputs.AutomationBusinessCalendarHolidays | undefined>;
     /**
      * The title / name of the Business Calendar
      */
-    public readonly title!: pulumi.Output<string>;
+    declare public readonly title: pulumi.Output<string>;
     /**
      * The date from when on this calendar is valid from. Example: `2023-07-04` for July 4th 2023
      */
-    public readonly validFrom!: pulumi.Output<string | undefined>;
+    declare public readonly validFrom: pulumi.Output<string | undefined>;
     /**
      * The date until when on this calendar is valid to. Example: `2023-07-04` for July 4th 2023
      */
-    public readonly validTo!: pulumi.Output<string | undefined>;
+    declare public readonly validTo: pulumi.Output<string | undefined>;
     /**
      * The days to be considered week days in this calendar. `1' =`Monday`,`2`=`Tuesday`,`3`=`Wednesday`,`4`=`Thursday`,`5`=`Friday`,`6`=`Saturday`,`7`=`Sunday`
      */
-    public readonly weekDays!: pulumi.Output<number[] | undefined>;
+    declare public readonly weekDays: pulumi.Output<number[] | undefined>;
     /**
      * Specifies the day of the week that's considered to be the first day in the week. `1` for Monday, `7` for Sunday
      */
-    public readonly weekStart!: pulumi.Output<number | undefined>;
+    declare public readonly weekStart: pulumi.Output<number | undefined>;
 
     /**
      * Create a AutomationBusinessCalendar resource with the given unique name, arguments, and options.
@@ -677,25 +677,25 @@ export class AutomationBusinessCalendar extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutomationBusinessCalendarState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["holidays"] = state ? state.holidays : undefined;
-            resourceInputs["title"] = state ? state.title : undefined;
-            resourceInputs["validFrom"] = state ? state.validFrom : undefined;
-            resourceInputs["validTo"] = state ? state.validTo : undefined;
-            resourceInputs["weekDays"] = state ? state.weekDays : undefined;
-            resourceInputs["weekStart"] = state ? state.weekStart : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["holidays"] = state?.holidays;
+            resourceInputs["title"] = state?.title;
+            resourceInputs["validFrom"] = state?.validFrom;
+            resourceInputs["validTo"] = state?.validTo;
+            resourceInputs["weekDays"] = state?.weekDays;
+            resourceInputs["weekStart"] = state?.weekStart;
         } else {
             const args = argsOrState as AutomationBusinessCalendarArgs | undefined;
-            if ((!args || args.title === undefined) && !opts.urn) {
+            if (args?.title === undefined && !opts.urn) {
                 throw new Error("Missing required property 'title'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["holidays"] = args ? args.holidays : undefined;
-            resourceInputs["title"] = args ? args.title : undefined;
-            resourceInputs["validFrom"] = args ? args.validFrom : undefined;
-            resourceInputs["validTo"] = args ? args.validTo : undefined;
-            resourceInputs["weekDays"] = args ? args.weekDays : undefined;
-            resourceInputs["weekStart"] = args ? args.weekStart : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["holidays"] = args?.holidays;
+            resourceInputs["title"] = args?.title;
+            resourceInputs["validFrom"] = args?.validFrom;
+            resourceInputs["validTo"] = args?.validTo;
+            resourceInputs["weekDays"] = args?.weekDays;
+            resourceInputs["weekStart"] = args?.weekStart;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutomationBusinessCalendar.__pulumiType, name, resourceInputs, opts);

@@ -37,92 +37,92 @@ export class Kubernetes extends pulumi.CustomResource {
     /**
      * ActiveGate Group
      */
-    public readonly activeGateGroup!: pulumi.Output<string | undefined>;
+    declare public readonly activeGateGroup: pulumi.Output<string | undefined>;
     /**
      * Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
      */
-    public readonly authToken!: pulumi.Output<string | undefined>;
+    declare public readonly authToken: pulumi.Output<string | undefined>;
     /**
      * Require valid certificates for communication with API server (recommended)
      */
-    public readonly certificateCheckEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly certificateCheckEnabled: pulumi.Output<boolean | undefined>;
     /**
      * Monitor Kubernetes namespaces, services, workloads, and pods
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    public readonly cloudApplicationPipelineEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly cloudApplicationPipelineEnabled: pulumi.Output<boolean | undefined>;
     /**
      * Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
      */
-    public readonly clusterId!: pulumi.Output<string | undefined>;
+    declare public readonly clusterId: pulumi.Output<string | undefined>;
     /**
      * For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
      */
-    public readonly clusterIdEnabled!: pulumi.Output<boolean>;
+    declare public readonly clusterIdEnabled: pulumi.Output<boolean>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
      */
-    public readonly endpointUrl!: pulumi.Output<string | undefined>;
+    declare public readonly endpointUrl: pulumi.Output<string | undefined>;
     /**
      * Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    public readonly eventPatterns!: pulumi.Output<outputs.KubernetesEventPatterns | undefined>;
+    declare public readonly eventPatterns: pulumi.Output<outputs.KubernetesEventPatterns | undefined>;
     /**
      * All events are monitored by default unless event filters are specified.
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    public readonly eventProcessingActive!: pulumi.Output<boolean | undefined>;
+    declare public readonly eventProcessingActive: pulumi.Output<boolean | undefined>;
     /**
      * Include only events specified by Events Field Selectors
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    public readonly filterEvents!: pulumi.Output<boolean | undefined>;
+    declare public readonly filterEvents: pulumi.Output<boolean | undefined>;
     /**
      * Verify hostname in certificate against Kubernetes API URL
      */
-    public readonly hostnameVerificationEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly hostnameVerificationEnabled: pulumi.Output<boolean | undefined>;
     /**
      * For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    public readonly includeAllFdiEvents!: pulumi.Output<boolean | undefined>;
+    declare public readonly includeAllFdiEvents: pulumi.Output<boolean | undefined>;
     /**
      * Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
      */
-    public readonly label!: pulumi.Output<string>;
+    declare public readonly label: pulumi.Output<string>;
     /**
      * The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
      * may increase the CPU/memory resource consumption of your ActiveGate.
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    public readonly openMetricsBuiltinEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly openMetricsBuiltinEnabled: pulumi.Output<boolean | undefined>;
     /**
      * For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    public readonly openMetricsPipelineEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly openMetricsPipelineEnabled: pulumi.Output<boolean | undefined>;
     /**
      * To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    public readonly pvcMonitoringEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly pvcMonitoringEnabled: pulumi.Output<boolean | undefined>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER)
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a Kubernetes resource with the given unique name, arguments, and options.
@@ -137,53 +137,53 @@ export class Kubernetes extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KubernetesState | undefined;
-            resourceInputs["activeGateGroup"] = state ? state.activeGateGroup : undefined;
-            resourceInputs["authToken"] = state ? state.authToken : undefined;
-            resourceInputs["certificateCheckEnabled"] = state ? state.certificateCheckEnabled : undefined;
-            resourceInputs["cloudApplicationPipelineEnabled"] = state ? state.cloudApplicationPipelineEnabled : undefined;
-            resourceInputs["clusterId"] = state ? state.clusterId : undefined;
-            resourceInputs["clusterIdEnabled"] = state ? state.clusterIdEnabled : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["endpointUrl"] = state ? state.endpointUrl : undefined;
-            resourceInputs["eventPatterns"] = state ? state.eventPatterns : undefined;
-            resourceInputs["eventProcessingActive"] = state ? state.eventProcessingActive : undefined;
-            resourceInputs["filterEvents"] = state ? state.filterEvents : undefined;
-            resourceInputs["hostnameVerificationEnabled"] = state ? state.hostnameVerificationEnabled : undefined;
-            resourceInputs["includeAllFdiEvents"] = state ? state.includeAllFdiEvents : undefined;
-            resourceInputs["label"] = state ? state.label : undefined;
-            resourceInputs["openMetricsBuiltinEnabled"] = state ? state.openMetricsBuiltinEnabled : undefined;
-            resourceInputs["openMetricsPipelineEnabled"] = state ? state.openMetricsPipelineEnabled : undefined;
-            resourceInputs["pvcMonitoringEnabled"] = state ? state.pvcMonitoringEnabled : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["activeGateGroup"] = state?.activeGateGroup;
+            resourceInputs["authToken"] = state?.authToken;
+            resourceInputs["certificateCheckEnabled"] = state?.certificateCheckEnabled;
+            resourceInputs["cloudApplicationPipelineEnabled"] = state?.cloudApplicationPipelineEnabled;
+            resourceInputs["clusterId"] = state?.clusterId;
+            resourceInputs["clusterIdEnabled"] = state?.clusterIdEnabled;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["endpointUrl"] = state?.endpointUrl;
+            resourceInputs["eventPatterns"] = state?.eventPatterns;
+            resourceInputs["eventProcessingActive"] = state?.eventProcessingActive;
+            resourceInputs["filterEvents"] = state?.filterEvents;
+            resourceInputs["hostnameVerificationEnabled"] = state?.hostnameVerificationEnabled;
+            resourceInputs["includeAllFdiEvents"] = state?.includeAllFdiEvents;
+            resourceInputs["label"] = state?.label;
+            resourceInputs["openMetricsBuiltinEnabled"] = state?.openMetricsBuiltinEnabled;
+            resourceInputs["openMetricsPipelineEnabled"] = state?.openMetricsPipelineEnabled;
+            resourceInputs["pvcMonitoringEnabled"] = state?.pvcMonitoringEnabled;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as KubernetesArgs | undefined;
-            if ((!args || args.clusterIdEnabled === undefined) && !opts.urn) {
+            if (args?.clusterIdEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterIdEnabled'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.label === undefined) && !opts.urn) {
+            if (args?.label === undefined && !opts.urn) {
                 throw new Error("Missing required property 'label'");
             }
-            resourceInputs["activeGateGroup"] = args ? args.activeGateGroup : undefined;
+            resourceInputs["activeGateGroup"] = args?.activeGateGroup;
             resourceInputs["authToken"] = args?.authToken ? pulumi.secret(args.authToken) : undefined;
-            resourceInputs["certificateCheckEnabled"] = args ? args.certificateCheckEnabled : undefined;
-            resourceInputs["cloudApplicationPipelineEnabled"] = args ? args.cloudApplicationPipelineEnabled : undefined;
-            resourceInputs["clusterId"] = args ? args.clusterId : undefined;
-            resourceInputs["clusterIdEnabled"] = args ? args.clusterIdEnabled : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["endpointUrl"] = args ? args.endpointUrl : undefined;
-            resourceInputs["eventPatterns"] = args ? args.eventPatterns : undefined;
-            resourceInputs["eventProcessingActive"] = args ? args.eventProcessingActive : undefined;
-            resourceInputs["filterEvents"] = args ? args.filterEvents : undefined;
-            resourceInputs["hostnameVerificationEnabled"] = args ? args.hostnameVerificationEnabled : undefined;
-            resourceInputs["includeAllFdiEvents"] = args ? args.includeAllFdiEvents : undefined;
-            resourceInputs["label"] = args ? args.label : undefined;
-            resourceInputs["openMetricsBuiltinEnabled"] = args ? args.openMetricsBuiltinEnabled : undefined;
-            resourceInputs["openMetricsPipelineEnabled"] = args ? args.openMetricsPipelineEnabled : undefined;
-            resourceInputs["pvcMonitoringEnabled"] = args ? args.pvcMonitoringEnabled : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["certificateCheckEnabled"] = args?.certificateCheckEnabled;
+            resourceInputs["cloudApplicationPipelineEnabled"] = args?.cloudApplicationPipelineEnabled;
+            resourceInputs["clusterId"] = args?.clusterId;
+            resourceInputs["clusterIdEnabled"] = args?.clusterIdEnabled;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["endpointUrl"] = args?.endpointUrl;
+            resourceInputs["eventPatterns"] = args?.eventPatterns;
+            resourceInputs["eventProcessingActive"] = args?.eventProcessingActive;
+            resourceInputs["filterEvents"] = args?.filterEvents;
+            resourceInputs["hostnameVerificationEnabled"] = args?.hostnameVerificationEnabled;
+            resourceInputs["includeAllFdiEvents"] = args?.includeAllFdiEvents;
+            resourceInputs["label"] = args?.label;
+            resourceInputs["openMetricsBuiltinEnabled"] = args?.openMetricsBuiltinEnabled;
+            resourceInputs["openMetricsPipelineEnabled"] = args?.openMetricsPipelineEnabled;
+            resourceInputs["pvcMonitoringEnabled"] = args?.pvcMonitoringEnabled;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["authToken"] };

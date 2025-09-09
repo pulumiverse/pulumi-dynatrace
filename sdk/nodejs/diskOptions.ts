@@ -37,21 +37,21 @@ export class DiskOptions extends pulumi.CustomResource {
     /**
      * Deactivate NFS monitoring on all supported systems
      */
-    public readonly disableNfsDiskMonitoring!: pulumi.Output<boolean | undefined>;
+    declare public readonly disableNfsDiskMonitoring: pulumi.Output<boolean | undefined>;
     /**
      * OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
      * disks from the monitoring list.
      */
-    public readonly exclusions!: pulumi.Output<outputs.DiskOptionsExclusions | undefined>;
+    declare public readonly exclusions: pulumi.Output<outputs.DiskOptionsExclusions | undefined>;
     /**
      * When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
      * Requires OneAgent 1.209 or later
      */
-    public readonly nfsShowAll!: pulumi.Output<boolean | undefined>;
+    declare public readonly nfsShowAll: pulumi.Output<boolean | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a DiskOptions resource with the given unique name, arguments, and options.
@@ -66,16 +66,16 @@ export class DiskOptions extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DiskOptionsState | undefined;
-            resourceInputs["disableNfsDiskMonitoring"] = state ? state.disableNfsDiskMonitoring : undefined;
-            resourceInputs["exclusions"] = state ? state.exclusions : undefined;
-            resourceInputs["nfsShowAll"] = state ? state.nfsShowAll : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["disableNfsDiskMonitoring"] = state?.disableNfsDiskMonitoring;
+            resourceInputs["exclusions"] = state?.exclusions;
+            resourceInputs["nfsShowAll"] = state?.nfsShowAll;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as DiskOptionsArgs | undefined;
-            resourceInputs["disableNfsDiskMonitoring"] = args ? args.disableNfsDiskMonitoring : undefined;
-            resourceInputs["exclusions"] = args ? args.exclusions : undefined;
-            resourceInputs["nfsShowAll"] = args ? args.nfsShowAll : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["disableNfsDiskMonitoring"] = args?.disableNfsDiskMonitoring;
+            resourceInputs["exclusions"] = args?.exclusions;
+            resourceInputs["nfsShowAll"] = args?.nfsShowAll;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DiskOptions.__pulumiType, name, resourceInputs, opts);

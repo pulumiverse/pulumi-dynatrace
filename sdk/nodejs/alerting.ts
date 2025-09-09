@@ -37,23 +37,23 @@ export class Alerting extends pulumi.CustomResource {
     /**
      * The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
      */
-    public readonly filters!: pulumi.Output<outputs.AlertingFilters | undefined>;
+    declare public readonly filters: pulumi.Output<outputs.AlertingFilters | undefined>;
     /**
      * The ID of this setting when referred to by the Config REST API V1
      */
-    public readonly legacyId!: pulumi.Output<string>;
+    declare public readonly legacyId: pulumi.Output<string>;
     /**
      * Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
      */
-    public readonly managementZone!: pulumi.Output<string | undefined>;
+    declare public readonly managementZone: pulumi.Output<string | undefined>;
     /**
      * The name of the alerting profile, displayed in the UI
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      */
-    public readonly rules!: pulumi.Output<outputs.AlertingRules | undefined>;
+    declare public readonly rules: pulumi.Output<outputs.AlertingRules | undefined>;
 
     /**
      * Create a Alerting resource with the given unique name, arguments, and options.
@@ -68,18 +68,18 @@ export class Alerting extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AlertingState | undefined;
-            resourceInputs["filters"] = state ? state.filters : undefined;
-            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
-            resourceInputs["managementZone"] = state ? state.managementZone : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
+            resourceInputs["filters"] = state?.filters;
+            resourceInputs["legacyId"] = state?.legacyId;
+            resourceInputs["managementZone"] = state?.managementZone;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["rules"] = state?.rules;
         } else {
             const args = argsOrState as AlertingArgs | undefined;
-            resourceInputs["filters"] = args ? args.filters : undefined;
-            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
-            resourceInputs["managementZone"] = args ? args.managementZone : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["filters"] = args?.filters;
+            resourceInputs["legacyId"] = args?.legacyId;
+            resourceInputs["managementZone"] = args?.managementZone;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["rules"] = args?.rules;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Alerting.__pulumiType, name, resourceInputs, opts);

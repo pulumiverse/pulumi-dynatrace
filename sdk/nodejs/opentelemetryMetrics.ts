@@ -37,23 +37,23 @@ export class OpentelemetryMetrics extends pulumi.CustomResource {
     /**
      * When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
      */
-    public readonly additionalAttributes!: pulumi.Output<outputs.OpentelemetryMetricsAdditionalAttributes | undefined>;
+    declare public readonly additionalAttributes: pulumi.Output<outputs.OpentelemetryMetricsAdditionalAttributes | undefined>;
     /**
      * Add the resource and scope attributes configured below as dimensions
      */
-    public readonly additionalAttributesToDimensionEnabled!: pulumi.Output<boolean>;
+    declare public readonly additionalAttributesToDimensionEnabled: pulumi.Output<boolean>;
     /**
      * When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs)
      * and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics. **Note:**
      * Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and
      * alerts that make use of these dimensions. In this case, they will need to be updated manually
      */
-    public readonly meterNameToDimensionEnabled!: pulumi.Output<boolean>;
-    public readonly mode!: pulumi.Output<string | undefined>;
+    declare public readonly meterNameToDimensionEnabled: pulumi.Output<boolean>;
+    declare public readonly mode: pulumi.Output<string | undefined>;
     /**
      * The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * The attributes defined in the list below will be dropped from all ingested OTLP metrics. Upon ingest, the *Allow list:
      * resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny
@@ -64,7 +64,7 @@ export class OpentelemetryMetrics extends pulumi.CustomResource {
      * these attributes to [Enrich
      * metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
      */
-    public readonly toDropAttributes!: pulumi.Output<outputs.OpentelemetryMetricsToDropAttributes | undefined>;
+    declare public readonly toDropAttributes: pulumi.Output<outputs.OpentelemetryMetricsToDropAttributes | undefined>;
 
     /**
      * Create a OpentelemetryMetrics resource with the given unique name, arguments, and options.
@@ -79,20 +79,20 @@ export class OpentelemetryMetrics extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OpentelemetryMetricsState | undefined;
-            resourceInputs["additionalAttributes"] = state ? state.additionalAttributes : undefined;
-            resourceInputs["additionalAttributesToDimensionEnabled"] = state ? state.additionalAttributesToDimensionEnabled : undefined;
-            resourceInputs["meterNameToDimensionEnabled"] = state ? state.meterNameToDimensionEnabled : undefined;
-            resourceInputs["mode"] = state ? state.mode : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["toDropAttributes"] = state ? state.toDropAttributes : undefined;
+            resourceInputs["additionalAttributes"] = state?.additionalAttributes;
+            resourceInputs["additionalAttributesToDimensionEnabled"] = state?.additionalAttributesToDimensionEnabled;
+            resourceInputs["meterNameToDimensionEnabled"] = state?.meterNameToDimensionEnabled;
+            resourceInputs["mode"] = state?.mode;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["toDropAttributes"] = state?.toDropAttributes;
         } else {
             const args = argsOrState as OpentelemetryMetricsArgs | undefined;
-            resourceInputs["additionalAttributes"] = args ? args.additionalAttributes : undefined;
-            resourceInputs["additionalAttributesToDimensionEnabled"] = args ? args.additionalAttributesToDimensionEnabled : undefined;
-            resourceInputs["meterNameToDimensionEnabled"] = args ? args.meterNameToDimensionEnabled : undefined;
-            resourceInputs["mode"] = args ? args.mode : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["toDropAttributes"] = args ? args.toDropAttributes : undefined;
+            resourceInputs["additionalAttributes"] = args?.additionalAttributes;
+            resourceInputs["additionalAttributesToDimensionEnabled"] = args?.additionalAttributesToDimensionEnabled;
+            resourceInputs["meterNameToDimensionEnabled"] = args?.meterNameToDimensionEnabled;
+            resourceInputs["mode"] = args?.mode;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["toDropAttributes"] = args?.toDropAttributes;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OpentelemetryMetrics.__pulumiType, name, resourceInputs, opts);

@@ -37,27 +37,27 @@ export class DatabaseAnomaliesV2 extends pulumi.CustomResource {
     /**
      * Alert if the number of failed database connects within the specified time exceeds the specified absolute threshold:
      */
-    public readonly databaseConnections!: pulumi.Output<outputs.DatabaseAnomaliesV2DatabaseConnections>;
+    declare public readonly databaseConnections: pulumi.Output<outputs.DatabaseAnomaliesV2DatabaseConnections>;
     /**
      * Failure rate
      */
-    public readonly failureRate!: pulumi.Output<outputs.DatabaseAnomaliesV2FailureRate>;
+    declare public readonly failureRate: pulumi.Output<outputs.DatabaseAnomaliesV2FailureRate>;
     /**
      * Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time.
      */
-    public readonly loadDrops!: pulumi.Output<outputs.DatabaseAnomaliesV2LoadDrops>;
+    declare public readonly loadDrops: pulumi.Output<outputs.DatabaseAnomaliesV2LoadDrops>;
     /**
      * Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time.
      */
-    public readonly loadSpikes!: pulumi.Output<outputs.DatabaseAnomaliesV2LoadSpikes>;
+    declare public readonly loadSpikes: pulumi.Output<outputs.DatabaseAnomaliesV2LoadSpikes>;
     /**
      * Response time
      */
-    public readonly responseTime!: pulumi.Output<outputs.DatabaseAnomaliesV2ResponseTime>;
+    declare public readonly responseTime: pulumi.Output<outputs.DatabaseAnomaliesV2ResponseTime>;
     /**
      * The scope for the database anomaly detection
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
 
     /**
      * Create a DatabaseAnomaliesV2 resource with the given unique name, arguments, and options.
@@ -72,38 +72,38 @@ export class DatabaseAnomaliesV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DatabaseAnomaliesV2State | undefined;
-            resourceInputs["databaseConnections"] = state ? state.databaseConnections : undefined;
-            resourceInputs["failureRate"] = state ? state.failureRate : undefined;
-            resourceInputs["loadDrops"] = state ? state.loadDrops : undefined;
-            resourceInputs["loadSpikes"] = state ? state.loadSpikes : undefined;
-            resourceInputs["responseTime"] = state ? state.responseTime : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["databaseConnections"] = state?.databaseConnections;
+            resourceInputs["failureRate"] = state?.failureRate;
+            resourceInputs["loadDrops"] = state?.loadDrops;
+            resourceInputs["loadSpikes"] = state?.loadSpikes;
+            resourceInputs["responseTime"] = state?.responseTime;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as DatabaseAnomaliesV2Args | undefined;
-            if ((!args || args.databaseConnections === undefined) && !opts.urn) {
+            if (args?.databaseConnections === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseConnections'");
             }
-            if ((!args || args.failureRate === undefined) && !opts.urn) {
+            if (args?.failureRate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'failureRate'");
             }
-            if ((!args || args.loadDrops === undefined) && !opts.urn) {
+            if (args?.loadDrops === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadDrops'");
             }
-            if ((!args || args.loadSpikes === undefined) && !opts.urn) {
+            if (args?.loadSpikes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadSpikes'");
             }
-            if ((!args || args.responseTime === undefined) && !opts.urn) {
+            if (args?.responseTime === undefined && !opts.urn) {
                 throw new Error("Missing required property 'responseTime'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            resourceInputs["databaseConnections"] = args ? args.databaseConnections : undefined;
-            resourceInputs["failureRate"] = args ? args.failureRate : undefined;
-            resourceInputs["loadDrops"] = args ? args.loadDrops : undefined;
-            resourceInputs["loadSpikes"] = args ? args.loadSpikes : undefined;
-            resourceInputs["responseTime"] = args ? args.responseTime : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["databaseConnections"] = args?.databaseConnections;
+            resourceInputs["failureRate"] = args?.failureRate;
+            resourceInputs["loadDrops"] = args?.loadDrops;
+            resourceInputs["loadSpikes"] = args?.loadSpikes;
+            resourceInputs["responseTime"] = args?.responseTime;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DatabaseAnomaliesV2.__pulumiType, name, resourceInputs, opts);

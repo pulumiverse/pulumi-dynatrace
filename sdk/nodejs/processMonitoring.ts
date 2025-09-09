@@ -36,11 +36,11 @@ export class ProcessMonitoring extends pulumi.CustomResource {
      * By disabling automatic deep monitoring the Dynatrace OneAgent will only deep monitor processes that are covered by a respective deep monitoring rule or where monitoring is enabled explicitly.
      * Disabling only works if all installed Agents have version 1.123 or higher.
      */
-    public readonly autoMonitoring!: pulumi.Output<boolean>;
+    declare public readonly autoMonitoring: pulumi.Output<boolean>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly hostGroupId!: pulumi.Output<string | undefined>;
+    declare public readonly hostGroupId: pulumi.Output<string | undefined>;
 
     /**
      * Create a ProcessMonitoring resource with the given unique name, arguments, and options.
@@ -55,15 +55,15 @@ export class ProcessMonitoring extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProcessMonitoringState | undefined;
-            resourceInputs["autoMonitoring"] = state ? state.autoMonitoring : undefined;
-            resourceInputs["hostGroupId"] = state ? state.hostGroupId : undefined;
+            resourceInputs["autoMonitoring"] = state?.autoMonitoring;
+            resourceInputs["hostGroupId"] = state?.hostGroupId;
         } else {
             const args = argsOrState as ProcessMonitoringArgs | undefined;
-            if ((!args || args.autoMonitoring === undefined) && !opts.urn) {
+            if (args?.autoMonitoring === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autoMonitoring'");
             }
-            resourceInputs["autoMonitoring"] = args ? args.autoMonitoring : undefined;
-            resourceInputs["hostGroupId"] = args ? args.hostGroupId : undefined;
+            resourceInputs["autoMonitoring"] = args?.autoMonitoring;
+            resourceInputs["hostGroupId"] = args?.hostGroupId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProcessMonitoring.__pulumiType, name, resourceInputs, opts);

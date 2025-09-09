@@ -37,11 +37,11 @@ export class MobileAppRequestErrors extends pulumi.CustomResource {
     /**
      * no documentation available
      */
-    public readonly errorRules!: pulumi.Output<outputs.MobileAppRequestErrorsErrorRules | undefined>;
+    declare public readonly errorRules: pulumi.Output<outputs.MobileAppRequestErrorsErrorRules | undefined>;
     /**
      * The scope of this setting (MOBILE*APPLICATION, CUSTOM*APPLICATION)
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
 
     /**
      * Create a MobileAppRequestErrors resource with the given unique name, arguments, and options.
@@ -56,15 +56,15 @@ export class MobileAppRequestErrors extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MobileAppRequestErrorsState | undefined;
-            resourceInputs["errorRules"] = state ? state.errorRules : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["errorRules"] = state?.errorRules;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as MobileAppRequestErrorsArgs | undefined;
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            resourceInputs["errorRules"] = args ? args.errorRules : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["errorRules"] = args?.errorRules;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MobileAppRequestErrors.__pulumiType, name, resourceInputs, opts);

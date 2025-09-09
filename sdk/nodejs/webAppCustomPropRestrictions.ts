@@ -81,15 +81,15 @@ export class WebAppCustomPropRestrictions extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string>;
+    declare public readonly applicationId: pulumi.Output<string>;
     /**
      * List of allowed custom event properties
      */
-    public readonly customEventPropertiesAllowList!: pulumi.Output<outputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowList | undefined>;
+    declare public readonly customEventPropertiesAllowList: pulumi.Output<outputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowList | undefined>;
     /**
      * List of allowed custom session properties
      */
-    public readonly customSessionPropertiesAllowList!: pulumi.Output<outputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList | undefined>;
+    declare public readonly customSessionPropertiesAllowList: pulumi.Output<outputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList | undefined>;
 
     /**
      * Create a WebAppCustomPropRestrictions resource with the given unique name, arguments, and options.
@@ -104,17 +104,17 @@ export class WebAppCustomPropRestrictions extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppCustomPropRestrictionsState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["customEventPropertiesAllowList"] = state ? state.customEventPropertiesAllowList : undefined;
-            resourceInputs["customSessionPropertiesAllowList"] = state ? state.customSessionPropertiesAllowList : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["customEventPropertiesAllowList"] = state?.customEventPropertiesAllowList;
+            resourceInputs["customSessionPropertiesAllowList"] = state?.customSessionPropertiesAllowList;
         } else {
             const args = argsOrState as WebAppCustomPropRestrictionsArgs | undefined;
-            if ((!args || args.applicationId === undefined) && !opts.urn) {
+            if (args?.applicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationId'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["customEventPropertiesAllowList"] = args ? args.customEventPropertiesAllowList : undefined;
-            resourceInputs["customSessionPropertiesAllowList"] = args ? args.customSessionPropertiesAllowList : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["customEventPropertiesAllowList"] = args?.customEventPropertiesAllowList;
+            resourceInputs["customSessionPropertiesAllowList"] = args?.customSessionPropertiesAllowList;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppCustomPropRestrictions.__pulumiType, name, resourceInputs, opts);

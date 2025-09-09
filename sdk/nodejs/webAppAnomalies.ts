@@ -37,23 +37,23 @@ export class WebAppAnomalies extends pulumi.CustomResource {
     /**
      * Error rate
      */
-    public readonly errorRate!: pulumi.Output<outputs.WebAppAnomaliesErrorRate>;
+    declare public readonly errorRate: pulumi.Output<outputs.WebAppAnomaliesErrorRate>;
     /**
      * Response time
      */
-    public readonly responseTime!: pulumi.Output<outputs.WebAppAnomaliesResponseTime>;
+    declare public readonly responseTime: pulumi.Output<outputs.WebAppAnomaliesResponseTime>;
     /**
      * The scope of this setting (APPLICATION_METHOD, APPLICATION). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * Detect traffic drops
      */
-    public readonly trafficDrops!: pulumi.Output<outputs.WebAppAnomaliesTrafficDrops>;
+    declare public readonly trafficDrops: pulumi.Output<outputs.WebAppAnomaliesTrafficDrops>;
     /**
      * Detect traffic spikes
      */
-    public readonly trafficSpikes!: pulumi.Output<outputs.WebAppAnomaliesTrafficSpikes>;
+    declare public readonly trafficSpikes: pulumi.Output<outputs.WebAppAnomaliesTrafficSpikes>;
 
     /**
      * Create a WebAppAnomalies resource with the given unique name, arguments, and options.
@@ -68,30 +68,30 @@ export class WebAppAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppAnomaliesState | undefined;
-            resourceInputs["errorRate"] = state ? state.errorRate : undefined;
-            resourceInputs["responseTime"] = state ? state.responseTime : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["trafficDrops"] = state ? state.trafficDrops : undefined;
-            resourceInputs["trafficSpikes"] = state ? state.trafficSpikes : undefined;
+            resourceInputs["errorRate"] = state?.errorRate;
+            resourceInputs["responseTime"] = state?.responseTime;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["trafficDrops"] = state?.trafficDrops;
+            resourceInputs["trafficSpikes"] = state?.trafficSpikes;
         } else {
             const args = argsOrState as WebAppAnomaliesArgs | undefined;
-            if ((!args || args.errorRate === undefined) && !opts.urn) {
+            if (args?.errorRate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'errorRate'");
             }
-            if ((!args || args.responseTime === undefined) && !opts.urn) {
+            if (args?.responseTime === undefined && !opts.urn) {
                 throw new Error("Missing required property 'responseTime'");
             }
-            if ((!args || args.trafficDrops === undefined) && !opts.urn) {
+            if (args?.trafficDrops === undefined && !opts.urn) {
                 throw new Error("Missing required property 'trafficDrops'");
             }
-            if ((!args || args.trafficSpikes === undefined) && !opts.urn) {
+            if (args?.trafficSpikes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'trafficSpikes'");
             }
-            resourceInputs["errorRate"] = args ? args.errorRate : undefined;
-            resourceInputs["responseTime"] = args ? args.responseTime : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["trafficDrops"] = args ? args.trafficDrops : undefined;
-            resourceInputs["trafficSpikes"] = args ? args.trafficSpikes : undefined;
+            resourceInputs["errorRate"] = args?.errorRate;
+            resourceInputs["responseTime"] = args?.responseTime;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["trafficDrops"] = args?.trafficDrops;
+            resourceInputs["trafficSpikes"] = args?.trafficSpikes;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppAnomalies.__pulumiType, name, resourceInputs, opts);
