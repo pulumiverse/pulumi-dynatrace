@@ -205,15 +205,15 @@ export class DirectShares extends pulumi.CustomResource {
     /**
      * Access grants. Possible values are `read` and `read-write`
      */
-    public readonly access!: pulumi.Output<string | undefined>;
+    declare public readonly access: pulumi.Output<string | undefined>;
     /**
      * Document ID
      */
-    public readonly documentId!: pulumi.Output<string>;
+    declare public readonly documentId: pulumi.Output<string>;
     /**
      * Recipients of the direct share
      */
-    public readonly recipients!: pulumi.Output<outputs.DirectSharesRecipients>;
+    declare public readonly recipients: pulumi.Output<outputs.DirectSharesRecipients>;
 
     /**
      * Create a DirectShares resource with the given unique name, arguments, and options.
@@ -228,20 +228,20 @@ export class DirectShares extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DirectSharesState | undefined;
-            resourceInputs["access"] = state ? state.access : undefined;
-            resourceInputs["documentId"] = state ? state.documentId : undefined;
-            resourceInputs["recipients"] = state ? state.recipients : undefined;
+            resourceInputs["access"] = state?.access;
+            resourceInputs["documentId"] = state?.documentId;
+            resourceInputs["recipients"] = state?.recipients;
         } else {
             const args = argsOrState as DirectSharesArgs | undefined;
-            if ((!args || args.documentId === undefined) && !opts.urn) {
+            if (args?.documentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'documentId'");
             }
-            if ((!args || args.recipients === undefined) && !opts.urn) {
+            if (args?.recipients === undefined && !opts.urn) {
                 throw new Error("Missing required property 'recipients'");
             }
-            resourceInputs["access"] = args ? args.access : undefined;
-            resourceInputs["documentId"] = args ? args.documentId : undefined;
-            resourceInputs["recipients"] = args ? args.recipients : undefined;
+            resourceInputs["access"] = args?.access;
+            resourceInputs["documentId"] = args?.documentId;
+            resourceInputs["recipients"] = args?.recipients;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DirectShares.__pulumiType, name, resourceInputs, opts);

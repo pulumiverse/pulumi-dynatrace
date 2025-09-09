@@ -37,19 +37,19 @@ export class SessionReplayWebPrivacy extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string | undefined>;
+    declare public readonly applicationId: pulumi.Output<string | undefined>;
     /**
      * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) When [Session Replay opt-in mode](https://dt-url.net/sr-opt-in-mode) is turned on, Session Replay is deactivated until explicitly activated via an API call.
      */
-    public readonly enableOptInMode!: pulumi.Output<boolean>;
+    declare public readonly enableOptInMode: pulumi.Output<boolean>;
     /**
      * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) To protect your end users' privacy, select or customize [predefined masking options](https://dt-url.net/sr-masking-preset-options) that suit your content recording and playback requirements.
      */
-    public readonly maskingPresets!: pulumi.Output<outputs.SessionReplayWebPrivacyMaskingPresets>;
+    declare public readonly maskingPresets: pulumi.Output<outputs.SessionReplayWebPrivacyMaskingPresets>;
     /**
      * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) Exclude webpages or views from Session Replay recording by adding [URL exclusion rules](https://dt-url.net/sr-url-exclusion)
      */
-    public readonly urlExclusionPatternLists!: pulumi.Output<string[] | undefined>;
+    declare public readonly urlExclusionPatternLists: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a SessionReplayWebPrivacy resource with the given unique name, arguments, and options.
@@ -64,22 +64,22 @@ export class SessionReplayWebPrivacy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SessionReplayWebPrivacyState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["enableOptInMode"] = state ? state.enableOptInMode : undefined;
-            resourceInputs["maskingPresets"] = state ? state.maskingPresets : undefined;
-            resourceInputs["urlExclusionPatternLists"] = state ? state.urlExclusionPatternLists : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["enableOptInMode"] = state?.enableOptInMode;
+            resourceInputs["maskingPresets"] = state?.maskingPresets;
+            resourceInputs["urlExclusionPatternLists"] = state?.urlExclusionPatternLists;
         } else {
             const args = argsOrState as SessionReplayWebPrivacyArgs | undefined;
-            if ((!args || args.enableOptInMode === undefined) && !opts.urn) {
+            if (args?.enableOptInMode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableOptInMode'");
             }
-            if ((!args || args.maskingPresets === undefined) && !opts.urn) {
+            if (args?.maskingPresets === undefined && !opts.urn) {
                 throw new Error("Missing required property 'maskingPresets'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["enableOptInMode"] = args ? args.enableOptInMode : undefined;
-            resourceInputs["maskingPresets"] = args ? args.maskingPresets : undefined;
-            resourceInputs["urlExclusionPatternLists"] = args ? args.urlExclusionPatternLists : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["enableOptInMode"] = args?.enableOptInMode;
+            resourceInputs["maskingPresets"] = args?.maskingPresets;
+            resourceInputs["urlExclusionPatternLists"] = args?.urlExclusionPatternLists;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SessionReplayWebPrivacy.__pulumiType, name, resourceInputs, opts);

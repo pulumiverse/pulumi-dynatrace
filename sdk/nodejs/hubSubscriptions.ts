@@ -37,7 +37,7 @@ export class HubSubscriptions extends pulumi.CustomResource {
     /**
      * Subscriptions
      */
-    public readonly tokenSubscriptions!: pulumi.Output<outputs.HubSubscriptionsTokenSubscriptions | undefined>;
+    declare public readonly tokenSubscriptions: pulumi.Output<outputs.HubSubscriptionsTokenSubscriptions | undefined>;
 
     /**
      * Create a HubSubscriptions resource with the given unique name, arguments, and options.
@@ -52,10 +52,10 @@ export class HubSubscriptions extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HubSubscriptionsState | undefined;
-            resourceInputs["tokenSubscriptions"] = state ? state.tokenSubscriptions : undefined;
+            resourceInputs["tokenSubscriptions"] = state?.tokenSubscriptions;
         } else {
             const args = argsOrState as HubSubscriptionsArgs | undefined;
-            resourceInputs["tokenSubscriptions"] = args ? args.tokenSubscriptions : undefined;
+            resourceInputs["tokenSubscriptions"] = args?.tokenSubscriptions;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HubSubscriptions.__pulumiType, name, resourceInputs, opts);

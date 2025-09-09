@@ -37,11 +37,11 @@ export class CustomAppEnablement extends pulumi.CustomResource {
     /**
      * Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
      */
-    public readonly rum!: pulumi.Output<outputs.CustomAppEnablementRum>;
+    declare public readonly rum: pulumi.Output<outputs.CustomAppEnablementRum>;
     /**
      * The scope of this setting (CUSTOM_APPLICATION). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a CustomAppEnablement resource with the given unique name, arguments, and options.
@@ -56,15 +56,15 @@ export class CustomAppEnablement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CustomAppEnablementState | undefined;
-            resourceInputs["rum"] = state ? state.rum : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["rum"] = state?.rum;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as CustomAppEnablementArgs | undefined;
-            if ((!args || args.rum === undefined) && !opts.urn) {
+            if (args?.rum === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rum'");
             }
-            resourceInputs["rum"] = args ? args.rum : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["rum"] = args?.rum;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CustomAppEnablement.__pulumiType, name, resourceInputs, opts);

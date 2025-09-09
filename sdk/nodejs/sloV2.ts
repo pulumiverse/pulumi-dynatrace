@@ -37,51 +37,51 @@ export class SloV2 extends pulumi.CustomResource {
     /**
      * The description of the SLO
      */
-    public readonly customDescription!: pulumi.Output<string | undefined>;
+    declare public readonly customDescription: pulumi.Output<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * ### Error budget burn rate
      */
-    public readonly errorBudgetBurnRate!: pulumi.Output<outputs.SloV2ErrorBudgetBurnRate>;
+    declare public readonly errorBudgetBurnRate: pulumi.Output<outputs.SloV2ErrorBudgetBurnRate>;
     /**
      * Possible Values: `AGGREGATE`
      */
-    public readonly evaluationType!: pulumi.Output<string>;
+    declare public readonly evaluationType: pulumi.Output<string>;
     /**
      * Define the timeframe during which the SLO is to be evaluated. For the timeframe you can enter expressions like -1h (last hour), -1w (last week) or complex expressions like -2d to now (last two days), -1d/d to now/d (beginning of yesterday to beginning of today).
      */
-    public readonly evaluationWindow!: pulumi.Output<string>;
+    declare public readonly evaluationWindow: pulumi.Output<string>;
     /**
      * Set a filter parameter (entitySelector) on any GET call to evaluate this SLO against specific services only (for example, type("SERVICE")).  For details, see the [Entity Selector documentation](https://dt-url.net/entityselector).
      */
-    public readonly filter!: pulumi.Output<string>;
+    declare public readonly filter: pulumi.Output<string>;
     /**
      * The ID of this setting when referred to by the Config REST API V1
      */
-    public readonly legacyId!: pulumi.Output<string>;
+    declare public readonly legacyId: pulumi.Output<string>;
     /**
      * For details, see the [Metrics page](https://www.terraform.io/ui/metrics).
      */
-    public readonly metricExpression!: pulumi.Output<string>;
+    declare public readonly metricExpression: pulumi.Output<string>;
     /**
      * Metric name
      */
-    public readonly metricName!: pulumi.Output<string>;
+    declare public readonly metricName: pulumi.Output<string>;
     /**
      * SLO name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Set the target value of the SLO. A percentage below this value indicates a failure.
      */
-    public readonly targetSuccess!: pulumi.Output<number>;
+    declare public readonly targetSuccess: pulumi.Output<number>;
     /**
      * Set the warning value of the SLO. At the warning state the SLO is fulfilled. However, it is getting close to a failure.
      */
-    public readonly targetWarning!: pulumi.Output<number>;
+    declare public readonly targetWarning: pulumi.Output<number>;
 
     /**
      * Create a SloV2 resource with the given unique name, arguments, and options.
@@ -96,56 +96,56 @@ export class SloV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SloV2State | undefined;
-            resourceInputs["customDescription"] = state ? state.customDescription : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["errorBudgetBurnRate"] = state ? state.errorBudgetBurnRate : undefined;
-            resourceInputs["evaluationType"] = state ? state.evaluationType : undefined;
-            resourceInputs["evaluationWindow"] = state ? state.evaluationWindow : undefined;
-            resourceInputs["filter"] = state ? state.filter : undefined;
-            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
-            resourceInputs["metricExpression"] = state ? state.metricExpression : undefined;
-            resourceInputs["metricName"] = state ? state.metricName : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["targetSuccess"] = state ? state.targetSuccess : undefined;
-            resourceInputs["targetWarning"] = state ? state.targetWarning : undefined;
+            resourceInputs["customDescription"] = state?.customDescription;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["errorBudgetBurnRate"] = state?.errorBudgetBurnRate;
+            resourceInputs["evaluationType"] = state?.evaluationType;
+            resourceInputs["evaluationWindow"] = state?.evaluationWindow;
+            resourceInputs["filter"] = state?.filter;
+            resourceInputs["legacyId"] = state?.legacyId;
+            resourceInputs["metricExpression"] = state?.metricExpression;
+            resourceInputs["metricName"] = state?.metricName;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["targetSuccess"] = state?.targetSuccess;
+            resourceInputs["targetWarning"] = state?.targetWarning;
         } else {
             const args = argsOrState as SloV2Args | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.errorBudgetBurnRate === undefined) && !opts.urn) {
+            if (args?.errorBudgetBurnRate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'errorBudgetBurnRate'");
             }
-            if ((!args || args.evaluationType === undefined) && !opts.urn) {
+            if (args?.evaluationType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'evaluationType'");
             }
-            if ((!args || args.evaluationWindow === undefined) && !opts.urn) {
+            if (args?.evaluationWindow === undefined && !opts.urn) {
                 throw new Error("Missing required property 'evaluationWindow'");
             }
-            if ((!args || args.filter === undefined) && !opts.urn) {
+            if (args?.filter === undefined && !opts.urn) {
                 throw new Error("Missing required property 'filter'");
             }
-            if ((!args || args.metricExpression === undefined) && !opts.urn) {
+            if (args?.metricExpression === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricExpression'");
             }
-            if ((!args || args.targetSuccess === undefined) && !opts.urn) {
+            if (args?.targetSuccess === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetSuccess'");
             }
-            if ((!args || args.targetWarning === undefined) && !opts.urn) {
+            if (args?.targetWarning === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetWarning'");
             }
-            resourceInputs["customDescription"] = args ? args.customDescription : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["errorBudgetBurnRate"] = args ? args.errorBudgetBurnRate : undefined;
-            resourceInputs["evaluationType"] = args ? args.evaluationType : undefined;
-            resourceInputs["evaluationWindow"] = args ? args.evaluationWindow : undefined;
-            resourceInputs["filter"] = args ? args.filter : undefined;
-            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
-            resourceInputs["metricExpression"] = args ? args.metricExpression : undefined;
-            resourceInputs["metricName"] = args ? args.metricName : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["targetSuccess"] = args ? args.targetSuccess : undefined;
-            resourceInputs["targetWarning"] = args ? args.targetWarning : undefined;
+            resourceInputs["customDescription"] = args?.customDescription;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["errorBudgetBurnRate"] = args?.errorBudgetBurnRate;
+            resourceInputs["evaluationType"] = args?.evaluationType;
+            resourceInputs["evaluationWindow"] = args?.evaluationWindow;
+            resourceInputs["filter"] = args?.filter;
+            resourceInputs["legacyId"] = args?.legacyId;
+            resourceInputs["metricExpression"] = args?.metricExpression;
+            resourceInputs["metricName"] = args?.metricName;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["targetSuccess"] = args?.targetSuccess;
+            resourceInputs["targetWarning"] = args?.targetWarning;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SloV2.__pulumiType, name, resourceInputs, opts);

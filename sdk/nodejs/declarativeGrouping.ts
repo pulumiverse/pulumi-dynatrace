@@ -38,25 +38,25 @@ export class DeclarativeGrouping extends pulumi.CustomResource {
      * Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
      * group.
      */
-    public readonly detection!: pulumi.Output<outputs.DeclarativeGroupingDetection>;
+    declare public readonly detection: pulumi.Output<outputs.DeclarativeGroupingDetection>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
      * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
      * specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Monitored technology name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a DeclarativeGrouping resource with the given unique name, arguments, and options.
@@ -71,24 +71,24 @@ export class DeclarativeGrouping extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DeclarativeGroupingState | undefined;
-            resourceInputs["detection"] = state ? state.detection : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["detection"] = state?.detection;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as DeclarativeGroupingArgs | undefined;
-            if ((!args || args.detection === undefined) && !opts.urn) {
+            if (args?.detection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'detection'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            resourceInputs["detection"] = args ? args.detection : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["detection"] = args?.detection;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DeclarativeGrouping.__pulumiType, name, resourceInputs, opts);

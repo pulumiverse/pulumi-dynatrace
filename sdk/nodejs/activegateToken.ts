@@ -35,11 +35,11 @@ export class ActivegateToken extends pulumi.CustomResource {
     /**
      * Manually enforce ActiveGate token authentication
      */
-    public readonly authTokenEnforcementManuallyEnabled!: pulumi.Output<boolean>;
+    declare public readonly authTokenEnforcementManuallyEnabled: pulumi.Output<boolean>;
     /**
      * Note: ActiveGate tokens notifications are sent only when you deployed ActiveGate tokens with expiration dates in your environment and notifications are defined ([see notification settings](https://www.terraform.io/ui/settings/builtin:problem.notifications))
      */
-    public readonly expiringTokenNotificationsEnabled!: pulumi.Output<boolean>;
+    declare public readonly expiringTokenNotificationsEnabled: pulumi.Output<boolean>;
 
     /**
      * Create a ActivegateToken resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class ActivegateToken extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ActivegateTokenState | undefined;
-            resourceInputs["authTokenEnforcementManuallyEnabled"] = state ? state.authTokenEnforcementManuallyEnabled : undefined;
-            resourceInputs["expiringTokenNotificationsEnabled"] = state ? state.expiringTokenNotificationsEnabled : undefined;
+            resourceInputs["authTokenEnforcementManuallyEnabled"] = state?.authTokenEnforcementManuallyEnabled;
+            resourceInputs["expiringTokenNotificationsEnabled"] = state?.expiringTokenNotificationsEnabled;
         } else {
             const args = argsOrState as ActivegateTokenArgs | undefined;
-            if ((!args || args.authTokenEnforcementManuallyEnabled === undefined) && !opts.urn) {
+            if (args?.authTokenEnforcementManuallyEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'authTokenEnforcementManuallyEnabled'");
             }
-            if ((!args || args.expiringTokenNotificationsEnabled === undefined) && !opts.urn) {
+            if (args?.expiringTokenNotificationsEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'expiringTokenNotificationsEnabled'");
             }
-            resourceInputs["authTokenEnforcementManuallyEnabled"] = args ? args.authTokenEnforcementManuallyEnabled : undefined;
-            resourceInputs["expiringTokenNotificationsEnabled"] = args ? args.expiringTokenNotificationsEnabled : undefined;
+            resourceInputs["authTokenEnforcementManuallyEnabled"] = args?.authTokenEnforcementManuallyEnabled;
+            resourceInputs["expiringTokenNotificationsEnabled"] = args?.expiringTokenNotificationsEnabled;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ActivegateToken.__pulumiType, name, resourceInputs, opts);

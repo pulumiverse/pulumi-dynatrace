@@ -35,15 +35,15 @@ export class GitlabConnection extends pulumi.CustomResource {
     /**
      * A unique and clearly identifiable connection name to your GitLab instance.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The GitLab token to use for authentication. Please note that this token is not refreshed and can expire.
      */
-    public readonly token!: pulumi.Output<string>;
+    declare public readonly token: pulumi.Output<string>;
     /**
      * The GitLab URL instance you want to connect. For example, https://gitlab.com
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
 
     /**
      * Create a GitlabConnection resource with the given unique name, arguments, and options.
@@ -58,20 +58,20 @@ export class GitlabConnection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GitlabConnectionState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["token"] = state ? state.token : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["token"] = state?.token;
+            resourceInputs["url"] = state?.url;
         } else {
             const args = argsOrState as GitlabConnectionArgs | undefined;
-            if ((!args || args.token === undefined) && !opts.urn) {
+            if (args?.token === undefined && !opts.urn) {
                 throw new Error("Missing required property 'token'");
             }
-            if ((!args || args.url === undefined) && !opts.urn) {
+            if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["name"] = args?.name;
             resourceInputs["token"] = args?.token ? pulumi.secret(args.token) : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
+            resourceInputs["url"] = args?.url;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["token"] };

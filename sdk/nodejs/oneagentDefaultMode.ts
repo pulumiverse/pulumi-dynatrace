@@ -35,7 +35,7 @@ export class OneagentDefaultMode extends pulumi.CustomResource {
     /**
      * Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
      */
-    public readonly defaultMode!: pulumi.Output<string>;
+    declare public readonly defaultMode: pulumi.Output<string>;
 
     /**
      * Create a OneagentDefaultMode resource with the given unique name, arguments, and options.
@@ -50,13 +50,13 @@ export class OneagentDefaultMode extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OneagentDefaultModeState | undefined;
-            resourceInputs["defaultMode"] = state ? state.defaultMode : undefined;
+            resourceInputs["defaultMode"] = state?.defaultMode;
         } else {
             const args = argsOrState as OneagentDefaultModeArgs | undefined;
-            if ((!args || args.defaultMode === undefined) && !opts.urn) {
+            if (args?.defaultMode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'defaultMode'");
             }
-            resourceInputs["defaultMode"] = args ? args.defaultMode : undefined;
+            resourceInputs["defaultMode"] = args?.defaultMode;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OneagentDefaultMode.__pulumiType, name, resourceInputs, opts);

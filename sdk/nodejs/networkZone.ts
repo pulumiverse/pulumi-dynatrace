@@ -35,35 +35,35 @@ export class NetworkZone extends pulumi.CustomResource {
     /**
      * A list of alternative network zones.
      */
-    public readonly alternativeZones!: pulumi.Output<string[] | undefined>;
+    declare public readonly alternativeZones: pulumi.Output<string[] | undefined>;
     /**
      * A short description of the network zone
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
      */
-    public readonly fallbackMode!: pulumi.Output<string | undefined>;
+    declare public readonly fallbackMode: pulumi.Output<string | undefined>;
     /**
      * Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The number of ActiveGates in the network zone.
      */
-    public readonly numOfConfiguredActivegates!: pulumi.Output<number | undefined>;
+    declare public readonly numOfConfiguredActivegates: pulumi.Output<number | undefined>;
     /**
      * The number of OneAgents that are configured to use the network zone as primary.
      */
-    public readonly numOfConfiguredOneagents!: pulumi.Output<number | undefined>;
+    declare public readonly numOfConfiguredOneagents: pulumi.Output<number | undefined>;
     /**
      * The number of OneAgents from other network zones that are using ActiveGates in the network zone.
      */
-    public readonly numOfOneagentsFromOtherZones!: pulumi.Output<number | undefined>;
+    declare public readonly numOfOneagentsFromOtherZones: pulumi.Output<number | undefined>;
     /**
      * The number of OneAgents that are using ActiveGates in the network zone.
      */
-    public readonly numOfOneagentsUsing!: pulumi.Output<number | undefined>;
+    declare public readonly numOfOneagentsUsing: pulumi.Output<number | undefined>;
 
     /**
      * Create a NetworkZone resource with the given unique name, arguments, and options.
@@ -78,24 +78,24 @@ export class NetworkZone extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkZoneState | undefined;
-            resourceInputs["alternativeZones"] = state ? state.alternativeZones : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["fallbackMode"] = state ? state.fallbackMode : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["numOfConfiguredActivegates"] = state ? state.numOfConfiguredActivegates : undefined;
-            resourceInputs["numOfConfiguredOneagents"] = state ? state.numOfConfiguredOneagents : undefined;
-            resourceInputs["numOfOneagentsFromOtherZones"] = state ? state.numOfOneagentsFromOtherZones : undefined;
-            resourceInputs["numOfOneagentsUsing"] = state ? state.numOfOneagentsUsing : undefined;
+            resourceInputs["alternativeZones"] = state?.alternativeZones;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["fallbackMode"] = state?.fallbackMode;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["numOfConfiguredActivegates"] = state?.numOfConfiguredActivegates;
+            resourceInputs["numOfConfiguredOneagents"] = state?.numOfConfiguredOneagents;
+            resourceInputs["numOfOneagentsFromOtherZones"] = state?.numOfOneagentsFromOtherZones;
+            resourceInputs["numOfOneagentsUsing"] = state?.numOfOneagentsUsing;
         } else {
             const args = argsOrState as NetworkZoneArgs | undefined;
-            resourceInputs["alternativeZones"] = args ? args.alternativeZones : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["fallbackMode"] = args ? args.fallbackMode : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["numOfConfiguredActivegates"] = args ? args.numOfConfiguredActivegates : undefined;
-            resourceInputs["numOfConfiguredOneagents"] = args ? args.numOfConfiguredOneagents : undefined;
-            resourceInputs["numOfOneagentsFromOtherZones"] = args ? args.numOfOneagentsFromOtherZones : undefined;
-            resourceInputs["numOfOneagentsUsing"] = args ? args.numOfOneagentsUsing : undefined;
+            resourceInputs["alternativeZones"] = args?.alternativeZones;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["fallbackMode"] = args?.fallbackMode;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["numOfConfiguredActivegates"] = args?.numOfConfiguredActivegates;
+            resourceInputs["numOfConfiguredOneagents"] = args?.numOfConfiguredOneagents;
+            resourceInputs["numOfOneagentsFromOtherZones"] = args?.numOfOneagentsFromOtherZones;
+            resourceInputs["numOfOneagentsUsing"] = args?.numOfOneagentsUsing;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NetworkZone.__pulumiType, name, resourceInputs, opts);

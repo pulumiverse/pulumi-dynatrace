@@ -35,11 +35,11 @@ export class LogGrail extends pulumi.CustomResource {
     /**
      * Activate logs powered by Grail.
      */
-    public readonly activated!: pulumi.Output<boolean>;
+    declare public readonly activated: pulumi.Output<boolean>;
     /**
      * Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
      */
-    public readonly parallelIngestPeriod!: pulumi.Output<string>;
+    declare public readonly parallelIngestPeriod: pulumi.Output<string>;
 
     /**
      * Create a LogGrail resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class LogGrail extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogGrailState | undefined;
-            resourceInputs["activated"] = state ? state.activated : undefined;
-            resourceInputs["parallelIngestPeriod"] = state ? state.parallelIngestPeriod : undefined;
+            resourceInputs["activated"] = state?.activated;
+            resourceInputs["parallelIngestPeriod"] = state?.parallelIngestPeriod;
         } else {
             const args = argsOrState as LogGrailArgs | undefined;
-            if ((!args || args.activated === undefined) && !opts.urn) {
+            if (args?.activated === undefined && !opts.urn) {
                 throw new Error("Missing required property 'activated'");
             }
-            if ((!args || args.parallelIngestPeriod === undefined) && !opts.urn) {
+            if (args?.parallelIngestPeriod === undefined && !opts.urn) {
                 throw new Error("Missing required property 'parallelIngestPeriod'");
             }
-            resourceInputs["activated"] = args ? args.activated : undefined;
-            resourceInputs["parallelIngestPeriod"] = args ? args.parallelIngestPeriod : undefined;
+            resourceInputs["activated"] = args?.activated;
+            resourceInputs["parallelIngestPeriod"] = args?.parallelIngestPeriod;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogGrail.__pulumiType, name, resourceInputs, opts);

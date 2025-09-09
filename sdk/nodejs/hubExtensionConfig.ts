@@ -35,27 +35,27 @@ export class HubExtensionConfig extends pulumi.CustomResource {
     /**
      * The name of the Active Gate Group this monitoring configuration will be defined for
      */
-    public readonly activeGateGroup!: pulumi.Output<string | undefined>;
+    declare public readonly activeGateGroup: pulumi.Output<string | undefined>;
     /**
      * The ID of the host this monitoring configuration will be defined for
      */
-    public readonly host!: pulumi.Output<string | undefined>;
+    declare public readonly host: pulumi.Output<string | undefined>;
     /**
      * The ID of the host group this monitoring configuration will be defined for
      */
-    public readonly hostGroup!: pulumi.Output<string | undefined>;
+    declare public readonly hostGroup: pulumi.Output<string | undefined>;
     /**
      * The name of the Management Zone this monitoring configuration will be defined for
      */
-    public readonly managementZone!: pulumi.Output<string | undefined>;
+    declare public readonly managementZone: pulumi.Output<string | undefined>;
     /**
      * The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `dynatrace.getHubItems`
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The JSON encoded value for this monitoring configuration
      */
-    public readonly value!: pulumi.Output<string>;
+    declare public readonly value: pulumi.Output<string>;
 
     /**
      * Create a HubExtensionConfig resource with the given unique name, arguments, and options.
@@ -70,23 +70,23 @@ export class HubExtensionConfig extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HubExtensionConfigState | undefined;
-            resourceInputs["activeGateGroup"] = state ? state.activeGateGroup : undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["hostGroup"] = state ? state.hostGroup : undefined;
-            resourceInputs["managementZone"] = state ? state.managementZone : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["value"] = state ? state.value : undefined;
+            resourceInputs["activeGateGroup"] = state?.activeGateGroup;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["hostGroup"] = state?.hostGroup;
+            resourceInputs["managementZone"] = state?.managementZone;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["value"] = state?.value;
         } else {
             const args = argsOrState as HubExtensionConfigArgs | undefined;
-            if ((!args || args.value === undefined) && !opts.urn) {
+            if (args?.value === undefined && !opts.urn) {
                 throw new Error("Missing required property 'value'");
             }
-            resourceInputs["activeGateGroup"] = args ? args.activeGateGroup : undefined;
-            resourceInputs["host"] = args ? args.host : undefined;
-            resourceInputs["hostGroup"] = args ? args.hostGroup : undefined;
-            resourceInputs["managementZone"] = args ? args.managementZone : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["value"] = args ? args.value : undefined;
+            resourceInputs["activeGateGroup"] = args?.activeGateGroup;
+            resourceInputs["host"] = args?.host;
+            resourceInputs["hostGroup"] = args?.hostGroup;
+            resourceInputs["managementZone"] = args?.managementZone;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["value"] = args?.value;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HubExtensionConfig.__pulumiType, name, resourceInputs, opts);

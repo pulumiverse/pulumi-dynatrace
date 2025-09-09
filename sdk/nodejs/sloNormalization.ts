@@ -35,7 +35,7 @@ export class SloNormalization extends pulumi.CustomResource {
     /**
      * When set to true, the error budget left will be shown in percent of the total error budget. For more details see [SLO normalization help](https://dt-url.net/slo-normalize-error-budget).
      */
-    public readonly normalize!: pulumi.Output<boolean>;
+    declare public readonly normalize: pulumi.Output<boolean>;
 
     /**
      * Create a SloNormalization resource with the given unique name, arguments, and options.
@@ -50,13 +50,13 @@ export class SloNormalization extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SloNormalizationState | undefined;
-            resourceInputs["normalize"] = state ? state.normalize : undefined;
+            resourceInputs["normalize"] = state?.normalize;
         } else {
             const args = argsOrState as SloNormalizationArgs | undefined;
-            if ((!args || args.normalize === undefined) && !opts.urn) {
+            if (args?.normalize === undefined && !opts.urn) {
                 throw new Error("Missing required property 'normalize'");
             }
-            resourceInputs["normalize"] = args ? args.normalize : undefined;
+            resourceInputs["normalize"] = args?.normalize;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SloNormalization.__pulumiType, name, resourceInputs, opts);

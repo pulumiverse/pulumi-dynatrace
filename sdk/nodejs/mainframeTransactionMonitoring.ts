@@ -35,31 +35,31 @@ export class MainframeTransactionMonitoring extends pulumi.CustomResource {
     /**
      * If enabled, CICS regions belonging to the same CICSPlex will be grouped into a single process group. If disabled, a process group will be created for each CICS region.
      */
-    public readonly groupCicsRegions!: pulumi.Output<boolean>;
+    declare public readonly groupCicsRegions: pulumi.Output<boolean>;
     /**
      * If enabled, IMS regions belonging to the same subsystem will be grouped into a single process group. If disabled, a process group will be created for each IMS region.
      */
-    public readonly groupImsRegions!: pulumi.Output<boolean>;
+    declare public readonly groupImsRegions: pulumi.Output<boolean>;
     /**
      * If enabled, the CICS Transaction Gateway sensor will trace all EXCI requests including those that are using the TCP/IP or SNA protocol.
      */
-    public readonly monitorAllCtgProtocols!: pulumi.Output<boolean>;
+    declare public readonly monitorAllCtgProtocols: pulumi.Output<boolean>;
     /**
      * Dynatrace automatically traces incoming web requests when they are called by already-monitored services. Enable this setting to monitor all incoming web requests. We recommend enabling it only over a short period of time.
      */
-    public readonly monitorAllIncomingWebRequests!: pulumi.Output<boolean>;
+    declare public readonly monitorAllIncomingWebRequests: pulumi.Output<boolean>;
     /**
      * We recommend the default limit of 500 nodes. The value 0 means unlimited number of nodes.
      */
-    public readonly nodeLimit!: pulumi.Output<number>;
+    declare public readonly nodeLimit: pulumi.Output<number>;
     /**
      * If enabled, a CICS service will be created for each monitored transaction ID within a process group. If disabled, a CICS service will be created for each monitored CICS region within a process group. We recommend enabling it only when the CICS regions are grouped by their CICSPlex.
      */
-    public readonly zosCicsServiceDetectionUsesTransactionId!: pulumi.Output<boolean>;
+    declare public readonly zosCicsServiceDetectionUsesTransactionId: pulumi.Output<boolean>;
     /**
      * If enabled, an IMS service will be created for each monitored transaction ID within a process group. If disabled, an IMS service will be created for each monitored IMS region within a process group. We recommend enabling it only when the IMS regions are grouped by their subsystem.
      */
-    public readonly zosImsServiceDetectionUsesTransactionId!: pulumi.Output<boolean>;
+    declare public readonly zosImsServiceDetectionUsesTransactionId: pulumi.Output<boolean>;
 
     /**
      * Create a MainframeTransactionMonitoring resource with the given unique name, arguments, and options.
@@ -74,43 +74,43 @@ export class MainframeTransactionMonitoring extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MainframeTransactionMonitoringState | undefined;
-            resourceInputs["groupCicsRegions"] = state ? state.groupCicsRegions : undefined;
-            resourceInputs["groupImsRegions"] = state ? state.groupImsRegions : undefined;
-            resourceInputs["monitorAllCtgProtocols"] = state ? state.monitorAllCtgProtocols : undefined;
-            resourceInputs["monitorAllIncomingWebRequests"] = state ? state.monitorAllIncomingWebRequests : undefined;
-            resourceInputs["nodeLimit"] = state ? state.nodeLimit : undefined;
-            resourceInputs["zosCicsServiceDetectionUsesTransactionId"] = state ? state.zosCicsServiceDetectionUsesTransactionId : undefined;
-            resourceInputs["zosImsServiceDetectionUsesTransactionId"] = state ? state.zosImsServiceDetectionUsesTransactionId : undefined;
+            resourceInputs["groupCicsRegions"] = state?.groupCicsRegions;
+            resourceInputs["groupImsRegions"] = state?.groupImsRegions;
+            resourceInputs["monitorAllCtgProtocols"] = state?.monitorAllCtgProtocols;
+            resourceInputs["monitorAllIncomingWebRequests"] = state?.monitorAllIncomingWebRequests;
+            resourceInputs["nodeLimit"] = state?.nodeLimit;
+            resourceInputs["zosCicsServiceDetectionUsesTransactionId"] = state?.zosCicsServiceDetectionUsesTransactionId;
+            resourceInputs["zosImsServiceDetectionUsesTransactionId"] = state?.zosImsServiceDetectionUsesTransactionId;
         } else {
             const args = argsOrState as MainframeTransactionMonitoringArgs | undefined;
-            if ((!args || args.groupCicsRegions === undefined) && !opts.urn) {
+            if (args?.groupCicsRegions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupCicsRegions'");
             }
-            if ((!args || args.groupImsRegions === undefined) && !opts.urn) {
+            if (args?.groupImsRegions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupImsRegions'");
             }
-            if ((!args || args.monitorAllCtgProtocols === undefined) && !opts.urn) {
+            if (args?.monitorAllCtgProtocols === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitorAllCtgProtocols'");
             }
-            if ((!args || args.monitorAllIncomingWebRequests === undefined) && !opts.urn) {
+            if (args?.monitorAllIncomingWebRequests === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitorAllIncomingWebRequests'");
             }
-            if ((!args || args.nodeLimit === undefined) && !opts.urn) {
+            if (args?.nodeLimit === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nodeLimit'");
             }
-            if ((!args || args.zosCicsServiceDetectionUsesTransactionId === undefined) && !opts.urn) {
+            if (args?.zosCicsServiceDetectionUsesTransactionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'zosCicsServiceDetectionUsesTransactionId'");
             }
-            if ((!args || args.zosImsServiceDetectionUsesTransactionId === undefined) && !opts.urn) {
+            if (args?.zosImsServiceDetectionUsesTransactionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'zosImsServiceDetectionUsesTransactionId'");
             }
-            resourceInputs["groupCicsRegions"] = args ? args.groupCicsRegions : undefined;
-            resourceInputs["groupImsRegions"] = args ? args.groupImsRegions : undefined;
-            resourceInputs["monitorAllCtgProtocols"] = args ? args.monitorAllCtgProtocols : undefined;
-            resourceInputs["monitorAllIncomingWebRequests"] = args ? args.monitorAllIncomingWebRequests : undefined;
-            resourceInputs["nodeLimit"] = args ? args.nodeLimit : undefined;
-            resourceInputs["zosCicsServiceDetectionUsesTransactionId"] = args ? args.zosCicsServiceDetectionUsesTransactionId : undefined;
-            resourceInputs["zosImsServiceDetectionUsesTransactionId"] = args ? args.zosImsServiceDetectionUsesTransactionId : undefined;
+            resourceInputs["groupCicsRegions"] = args?.groupCicsRegions;
+            resourceInputs["groupImsRegions"] = args?.groupImsRegions;
+            resourceInputs["monitorAllCtgProtocols"] = args?.monitorAllCtgProtocols;
+            resourceInputs["monitorAllIncomingWebRequests"] = args?.monitorAllIncomingWebRequests;
+            resourceInputs["nodeLimit"] = args?.nodeLimit;
+            resourceInputs["zosCicsServiceDetectionUsesTransactionId"] = args?.zosCicsServiceDetectionUsesTransactionId;
+            resourceInputs["zosImsServiceDetectionUsesTransactionId"] = args?.zosImsServiceDetectionUsesTransactionId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MainframeTransactionMonitoring.__pulumiType, name, resourceInputs, opts);

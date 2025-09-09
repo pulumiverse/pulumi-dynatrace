@@ -35,23 +35,23 @@ export class PlatformBucket extends pulumi.CustomResource {
     /**
      * The name of the bucket definition when visualized within the UI
      */
-    public readonly displayName!: pulumi.Output<string | undefined>;
+    declare public readonly displayName: pulumi.Output<string | undefined>;
     /**
      * The name / id of the bucket definition
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The retention of stored data in days
      */
-    public readonly retention!: pulumi.Output<number>;
+    declare public readonly retention: pulumi.Output<number>;
     /**
      * The status of the bucket definition. Usually has the value `active` unless an update or delete is currently happening
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * The table the bucket definition applies to. Possible values are `logs`, `spans`,	`events` and `bizevents`. Changing this attribute will result in deleting and re-creating the bucket definition
      */
-    public readonly table!: pulumi.Output<string>;
+    declare public readonly table: pulumi.Output<string>;
 
     /**
      * Create a PlatformBucket resource with the given unique name, arguments, and options.
@@ -66,23 +66,23 @@ export class PlatformBucket extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PlatformBucketState | undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["retention"] = state ? state.retention : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["table"] = state ? state.table : undefined;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["retention"] = state?.retention;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["table"] = state?.table;
         } else {
             const args = argsOrState as PlatformBucketArgs | undefined;
-            if ((!args || args.retention === undefined) && !opts.urn) {
+            if (args?.retention === undefined && !opts.urn) {
                 throw new Error("Missing required property 'retention'");
             }
-            if ((!args || args.table === undefined) && !opts.urn) {
+            if (args?.table === undefined && !opts.urn) {
                 throw new Error("Missing required property 'table'");
             }
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["retention"] = args ? args.retention : undefined;
-            resourceInputs["table"] = args ? args.table : undefined;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["retention"] = args?.retention;
+            resourceInputs["table"] = args?.table;
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

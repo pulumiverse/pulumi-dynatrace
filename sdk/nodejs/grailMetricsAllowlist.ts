@@ -37,7 +37,7 @@ export class GrailMetricsAllowlist extends pulumi.CustomResource {
     /**
      * Specify rules for forwarding metrics
      */
-    public readonly allowRules!: pulumi.Output<outputs.GrailMetricsAllowlistAllowRules | undefined>;
+    declare public readonly allowRules: pulumi.Output<outputs.GrailMetricsAllowlistAllowRules | undefined>;
 
     /**
      * Create a GrailMetricsAllowlist resource with the given unique name, arguments, and options.
@@ -52,10 +52,10 @@ export class GrailMetricsAllowlist extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GrailMetricsAllowlistState | undefined;
-            resourceInputs["allowRules"] = state ? state.allowRules : undefined;
+            resourceInputs["allowRules"] = state?.allowRules;
         } else {
             const args = argsOrState as GrailMetricsAllowlistArgs | undefined;
-            resourceInputs["allowRules"] = args ? args.allowRules : undefined;
+            resourceInputs["allowRules"] = args?.allowRules;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(GrailMetricsAllowlist.__pulumiType, name, resourceInputs, opts);

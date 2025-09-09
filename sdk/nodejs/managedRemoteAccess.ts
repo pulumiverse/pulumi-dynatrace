@@ -35,23 +35,23 @@ export class ManagedRemoteAccess extends pulumi.CustomResource {
     /**
      * Request reason description, cannot be changed once created
      */
-    public readonly reason!: pulumi.Output<string>;
+    declare public readonly reason: pulumi.Output<string>;
     /**
      * For how many days access is requested, cannot be changed once created
      */
-    public readonly requestedDays!: pulumi.Output<number>;
+    declare public readonly requestedDays: pulumi.Output<number>;
     /**
      * Requested role, cannot be changed once created
      */
-    public readonly role!: pulumi.Output<string>;
+    declare public readonly role: pulumi.Output<string>;
     /**
      * Access request state. Automatically set as `ACCEPTED` on create, state can be changed in subsequent updates.
      */
-    public readonly state!: pulumi.Output<string | undefined>;
+    declare public readonly state: pulumi.Output<string | undefined>;
     /**
      * User id, cannot be changed once created
      */
-    public readonly userId!: pulumi.Output<string>;
+    declare public readonly userId: pulumi.Output<string>;
 
     /**
      * Create a ManagedRemoteAccess resource with the given unique name, arguments, and options.
@@ -66,30 +66,30 @@ export class ManagedRemoteAccess extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedRemoteAccessState | undefined;
-            resourceInputs["reason"] = state ? state.reason : undefined;
-            resourceInputs["requestedDays"] = state ? state.requestedDays : undefined;
-            resourceInputs["role"] = state ? state.role : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["userId"] = state ? state.userId : undefined;
+            resourceInputs["reason"] = state?.reason;
+            resourceInputs["requestedDays"] = state?.requestedDays;
+            resourceInputs["role"] = state?.role;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["userId"] = state?.userId;
         } else {
             const args = argsOrState as ManagedRemoteAccessArgs | undefined;
-            if ((!args || args.reason === undefined) && !opts.urn) {
+            if (args?.reason === undefined && !opts.urn) {
                 throw new Error("Missing required property 'reason'");
             }
-            if ((!args || args.requestedDays === undefined) && !opts.urn) {
+            if (args?.requestedDays === undefined && !opts.urn) {
                 throw new Error("Missing required property 'requestedDays'");
             }
-            if ((!args || args.role === undefined) && !opts.urn) {
+            if (args?.role === undefined && !opts.urn) {
                 throw new Error("Missing required property 'role'");
             }
-            if ((!args || args.userId === undefined) && !opts.urn) {
+            if (args?.userId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userId'");
             }
-            resourceInputs["reason"] = args ? args.reason : undefined;
-            resourceInputs["requestedDays"] = args ? args.requestedDays : undefined;
-            resourceInputs["role"] = args ? args.role : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["userId"] = args ? args.userId : undefined;
+            resourceInputs["reason"] = args?.reason;
+            resourceInputs["requestedDays"] = args?.requestedDays;
+            resourceInputs["role"] = args?.role;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["userId"] = args?.userId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedRemoteAccess.__pulumiType, name, resourceInputs, opts);

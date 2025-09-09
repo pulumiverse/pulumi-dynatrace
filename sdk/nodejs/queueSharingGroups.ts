@@ -35,15 +35,15 @@ export class QueueSharingGroups extends pulumi.CustomResource {
     /**
      * Queue sharing group name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Queue managers
      */
-    public readonly queueManagers!: pulumi.Output<string[] | undefined>;
+    declare public readonly queueManagers: pulumi.Output<string[] | undefined>;
     /**
      * Shared queues
      */
-    public readonly sharedQueues!: pulumi.Output<string[] | undefined>;
+    declare public readonly sharedQueues: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a QueueSharingGroups resource with the given unique name, arguments, and options.
@@ -58,14 +58,14 @@ export class QueueSharingGroups extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as QueueSharingGroupsState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["queueManagers"] = state ? state.queueManagers : undefined;
-            resourceInputs["sharedQueues"] = state ? state.sharedQueues : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["queueManagers"] = state?.queueManagers;
+            resourceInputs["sharedQueues"] = state?.sharedQueues;
         } else {
             const args = argsOrState as QueueSharingGroupsArgs | undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["queueManagers"] = args ? args.queueManagers : undefined;
-            resourceInputs["sharedQueues"] = args ? args.sharedQueues : undefined;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["queueManagers"] = args?.queueManagers;
+            resourceInputs["sharedQueues"] = args?.sharedQueues;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(QueueSharingGroups.__pulumiType, name, resourceInputs, opts);

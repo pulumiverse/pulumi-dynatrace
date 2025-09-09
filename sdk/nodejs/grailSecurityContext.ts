@@ -35,15 +35,15 @@ export class GrailSecurityContext extends pulumi.CustomResource {
     /**
      * The case-sensitive name of a property of the destination type.
      */
-    public readonly destinationProperty!: pulumi.Output<string>;
+    declare public readonly destinationProperty: pulumi.Output<string>;
     /**
      * Type of the entity whose security context to override.
      */
-    public readonly entityType!: pulumi.Output<string>;
+    declare public readonly entityType: pulumi.Output<string>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
 
     /**
      * Create a GrailSecurityContext resource with the given unique name, arguments, and options.
@@ -58,20 +58,20 @@ export class GrailSecurityContext extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GrailSecurityContextState | undefined;
-            resourceInputs["destinationProperty"] = state ? state.destinationProperty : undefined;
-            resourceInputs["entityType"] = state ? state.entityType : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
+            resourceInputs["destinationProperty"] = state?.destinationProperty;
+            resourceInputs["entityType"] = state?.entityType;
+            resourceInputs["insertAfter"] = state?.insertAfter;
         } else {
             const args = argsOrState as GrailSecurityContextArgs | undefined;
-            if ((!args || args.destinationProperty === undefined) && !opts.urn) {
+            if (args?.destinationProperty === undefined && !opts.urn) {
                 throw new Error("Missing required property 'destinationProperty'");
             }
-            if ((!args || args.entityType === undefined) && !opts.urn) {
+            if (args?.entityType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'entityType'");
             }
-            resourceInputs["destinationProperty"] = args ? args.destinationProperty : undefined;
-            resourceInputs["entityType"] = args ? args.entityType : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
+            resourceInputs["destinationProperty"] = args?.destinationProperty;
+            resourceInputs["entityType"] = args?.entityType;
+            resourceInputs["insertAfter"] = args?.insertAfter;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(GrailSecurityContext.__pulumiType, name, resourceInputs, opts);

@@ -35,19 +35,19 @@ export class UserExperienceScore extends pulumi.CustomResource {
     /**
      * If last user action in a session is classified as Frustrating, classify the entire session as Frustrating
      */
-    public readonly considerLastAction!: pulumi.Output<boolean>;
+    declare public readonly considerLastAction: pulumi.Output<boolean>;
     /**
      * Consider rage clicks / rage taps in score calculation
      */
-    public readonly considerRageClick!: pulumi.Output<boolean>;
+    declare public readonly considerRageClick: pulumi.Output<boolean>;
     /**
      * User experience is considered Frustrating when the selected percentage or more of the user actions in a session are rated as Frustrating.
      */
-    public readonly maxFrustratedUserActionsThreshold!: pulumi.Output<number>;
+    declare public readonly maxFrustratedUserActionsThreshold: pulumi.Output<number>;
     /**
      * User experience is considered Satisfying when at least the selected percentage of the user actions in a session are rated as Satisfying.
      */
-    public readonly minSatisfiedUserActionsThreshold!: pulumi.Output<number>;
+    declare public readonly minSatisfiedUserActionsThreshold: pulumi.Output<number>;
 
     /**
      * Create a UserExperienceScore resource with the given unique name, arguments, and options.
@@ -62,28 +62,28 @@ export class UserExperienceScore extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserExperienceScoreState | undefined;
-            resourceInputs["considerLastAction"] = state ? state.considerLastAction : undefined;
-            resourceInputs["considerRageClick"] = state ? state.considerRageClick : undefined;
-            resourceInputs["maxFrustratedUserActionsThreshold"] = state ? state.maxFrustratedUserActionsThreshold : undefined;
-            resourceInputs["minSatisfiedUserActionsThreshold"] = state ? state.minSatisfiedUserActionsThreshold : undefined;
+            resourceInputs["considerLastAction"] = state?.considerLastAction;
+            resourceInputs["considerRageClick"] = state?.considerRageClick;
+            resourceInputs["maxFrustratedUserActionsThreshold"] = state?.maxFrustratedUserActionsThreshold;
+            resourceInputs["minSatisfiedUserActionsThreshold"] = state?.minSatisfiedUserActionsThreshold;
         } else {
             const args = argsOrState as UserExperienceScoreArgs | undefined;
-            if ((!args || args.considerLastAction === undefined) && !opts.urn) {
+            if (args?.considerLastAction === undefined && !opts.urn) {
                 throw new Error("Missing required property 'considerLastAction'");
             }
-            if ((!args || args.considerRageClick === undefined) && !opts.urn) {
+            if (args?.considerRageClick === undefined && !opts.urn) {
                 throw new Error("Missing required property 'considerRageClick'");
             }
-            if ((!args || args.maxFrustratedUserActionsThreshold === undefined) && !opts.urn) {
+            if (args?.maxFrustratedUserActionsThreshold === undefined && !opts.urn) {
                 throw new Error("Missing required property 'maxFrustratedUserActionsThreshold'");
             }
-            if ((!args || args.minSatisfiedUserActionsThreshold === undefined) && !opts.urn) {
+            if (args?.minSatisfiedUserActionsThreshold === undefined && !opts.urn) {
                 throw new Error("Missing required property 'minSatisfiedUserActionsThreshold'");
             }
-            resourceInputs["considerLastAction"] = args ? args.considerLastAction : undefined;
-            resourceInputs["considerRageClick"] = args ? args.considerRageClick : undefined;
-            resourceInputs["maxFrustratedUserActionsThreshold"] = args ? args.maxFrustratedUserActionsThreshold : undefined;
-            resourceInputs["minSatisfiedUserActionsThreshold"] = args ? args.minSatisfiedUserActionsThreshold : undefined;
+            resourceInputs["considerLastAction"] = args?.considerLastAction;
+            resourceInputs["considerRageClick"] = args?.considerRageClick;
+            resourceInputs["maxFrustratedUserActionsThreshold"] = args?.maxFrustratedUserActionsThreshold;
+            resourceInputs["minSatisfiedUserActionsThreshold"] = args?.minSatisfiedUserActionsThreshold;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(UserExperienceScore.__pulumiType, name, resourceInputs, opts);

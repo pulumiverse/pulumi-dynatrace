@@ -37,11 +37,11 @@ export class ImsBridges extends pulumi.CustomResource {
     /**
      * The name of the IMS bridge
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Queue manager(s) that belong to the IMS bridge
      */
-    public readonly queueManagers!: pulumi.Output<outputs.ImsBridgesQueueManager[] | undefined>;
+    declare public readonly queueManagers: pulumi.Output<outputs.ImsBridgesQueueManager[] | undefined>;
 
     /**
      * Create a ImsBridges resource with the given unique name, arguments, and options.
@@ -56,12 +56,12 @@ export class ImsBridges extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ImsBridgesState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["queueManagers"] = state ? state.queueManagers : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["queueManagers"] = state?.queueManagers;
         } else {
             const args = argsOrState as ImsBridgesArgs | undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["queueManagers"] = args ? args.queueManagers : undefined;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["queueManagers"] = args?.queueManagers;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ImsBridges.__pulumiType, name, resourceInputs, opts);

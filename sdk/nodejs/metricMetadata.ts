@@ -37,39 +37,39 @@ export class MetricMetadata extends pulumi.CustomResource {
     /**
      * Description
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Define metadata per metric dimension.
      */
-    public readonly dimensions!: pulumi.Output<outputs.MetricMetadataDimensions | undefined>;
+    declare public readonly dimensions: pulumi.Output<outputs.MetricMetadataDimensions | undefined>;
     /**
      * Display name
      */
-    public readonly displayName!: pulumi.Output<string | undefined>;
+    declare public readonly displayName: pulumi.Output<string | undefined>;
     /**
      * The scope of this setting (metric)
      */
-    public readonly metricId!: pulumi.Output<string>;
+    declare public readonly metricId: pulumi.Output<string>;
     /**
      * Metric properties
      */
-    public readonly metricProperties!: pulumi.Output<outputs.MetricMetadataMetricProperties | undefined>;
+    declare public readonly metricProperties: pulumi.Output<outputs.MetricMetadataMetricProperties | undefined>;
     /**
      * Specifies which entity dimension should be used as the primary dimension. The property can only be configured for metrics ingested with the Metrics API.
      */
-    public readonly sourceEntityType!: pulumi.Output<string | undefined>;
+    declare public readonly sourceEntityType: pulumi.Output<string | undefined>;
     /**
      * Tags
      */
-    public readonly tags!: pulumi.Output<string[] | undefined>;
+    declare public readonly tags: pulumi.Output<string[] | undefined>;
     /**
      * Unit
      */
-    public readonly unit!: pulumi.Output<string>;
+    declare public readonly unit: pulumi.Output<string>;
     /**
      * The raw value is stored in bits or bytes. The user interface can display it in these numeral systems:
      */
-    public readonly unitDisplayFormat!: pulumi.Output<string | undefined>;
+    declare public readonly unitDisplayFormat: pulumi.Output<string | undefined>;
 
     /**
      * Create a MetricMetadata resource with the given unique name, arguments, and options.
@@ -84,32 +84,32 @@ export class MetricMetadata extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MetricMetadataState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["dimensions"] = state ? state.dimensions : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["metricId"] = state ? state.metricId : undefined;
-            resourceInputs["metricProperties"] = state ? state.metricProperties : undefined;
-            resourceInputs["sourceEntityType"] = state ? state.sourceEntityType : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["unit"] = state ? state.unit : undefined;
-            resourceInputs["unitDisplayFormat"] = state ? state.unitDisplayFormat : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["dimensions"] = state?.dimensions;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["metricId"] = state?.metricId;
+            resourceInputs["metricProperties"] = state?.metricProperties;
+            resourceInputs["sourceEntityType"] = state?.sourceEntityType;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["unit"] = state?.unit;
+            resourceInputs["unitDisplayFormat"] = state?.unitDisplayFormat;
         } else {
             const args = argsOrState as MetricMetadataArgs | undefined;
-            if ((!args || args.metricId === undefined) && !opts.urn) {
+            if (args?.metricId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricId'");
             }
-            if ((!args || args.unit === undefined) && !opts.urn) {
+            if (args?.unit === undefined && !opts.urn) {
                 throw new Error("Missing required property 'unit'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["dimensions"] = args ? args.dimensions : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["metricId"] = args ? args.metricId : undefined;
-            resourceInputs["metricProperties"] = args ? args.metricProperties : undefined;
-            resourceInputs["sourceEntityType"] = args ? args.sourceEntityType : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["unit"] = args ? args.unit : undefined;
-            resourceInputs["unitDisplayFormat"] = args ? args.unitDisplayFormat : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["dimensions"] = args?.dimensions;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["metricId"] = args?.metricId;
+            resourceInputs["metricProperties"] = args?.metricProperties;
+            resourceInputs["sourceEntityType"] = args?.sourceEntityType;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["unit"] = args?.unit;
+            resourceInputs["unitDisplayFormat"] = args?.unitDisplayFormat;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MetricMetadata.__pulumiType, name, resourceInputs, opts);

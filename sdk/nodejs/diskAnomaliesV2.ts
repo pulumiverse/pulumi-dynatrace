@@ -37,11 +37,11 @@ export class DiskAnomaliesV2 extends pulumi.CustomResource {
     /**
      * Disk
      */
-    public readonly disk!: pulumi.Output<outputs.DiskAnomaliesV2Disk>;
+    declare public readonly disk: pulumi.Output<outputs.DiskAnomaliesV2Disk>;
     /**
      * The scope for the disk anomaly detection
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
 
     /**
      * Create a DiskAnomaliesV2 resource with the given unique name, arguments, and options.
@@ -56,18 +56,18 @@ export class DiskAnomaliesV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DiskAnomaliesV2State | undefined;
-            resourceInputs["disk"] = state ? state.disk : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["disk"] = state?.disk;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as DiskAnomaliesV2Args | undefined;
-            if ((!args || args.disk === undefined) && !opts.urn) {
+            if (args?.disk === undefined && !opts.urn) {
                 throw new Error("Missing required property 'disk'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            resourceInputs["disk"] = args ? args.disk : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["disk"] = args?.disk;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DiskAnomaliesV2.__pulumiType, name, resourceInputs, opts);

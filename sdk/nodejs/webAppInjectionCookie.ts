@@ -35,19 +35,19 @@ export class WebAppInjectionCookie extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string>;
+    declare public readonly applicationId: pulumi.Output<string>;
     /**
      * Specify an alternative domain for cookies set by Dynatrace. Keep in mind that your browser may not allow placement of cookies on certain domains (for example, top-level domains). Before typing a domain name here, confirm that the domain will accept cookies from your browser. For details, see the list of [forbidden top-level domains](https://dt-url.net/9n6b0pfz).
      */
-    public readonly cookiePlacementDomain!: pulumi.Output<string | undefined>;
+    declare public readonly cookiePlacementDomain: pulumi.Output<string | undefined>;
     /**
      * Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
      */
-    public readonly sameSiteCookieAttribute!: pulumi.Output<string>;
+    declare public readonly sameSiteCookieAttribute: pulumi.Output<string>;
     /**
      * If your application is only accessible via SSL, you can add the Secure attribute to all cookies set by Dynatrace. This setting prevents the display of warnings from PCI-compliance security scanners. Be aware that with this setting enabled Dynatrace correlation of user actions with server-side web requests is only possible over SSL connections.
      */
-    public readonly useSecureCookieAttribute!: pulumi.Output<boolean>;
+    declare public readonly useSecureCookieAttribute: pulumi.Output<boolean>;
 
     /**
      * Create a WebAppInjectionCookie resource with the given unique name, arguments, and options.
@@ -62,25 +62,25 @@ export class WebAppInjectionCookie extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppInjectionCookieState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["cookiePlacementDomain"] = state ? state.cookiePlacementDomain : undefined;
-            resourceInputs["sameSiteCookieAttribute"] = state ? state.sameSiteCookieAttribute : undefined;
-            resourceInputs["useSecureCookieAttribute"] = state ? state.useSecureCookieAttribute : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["cookiePlacementDomain"] = state?.cookiePlacementDomain;
+            resourceInputs["sameSiteCookieAttribute"] = state?.sameSiteCookieAttribute;
+            resourceInputs["useSecureCookieAttribute"] = state?.useSecureCookieAttribute;
         } else {
             const args = argsOrState as WebAppInjectionCookieArgs | undefined;
-            if ((!args || args.applicationId === undefined) && !opts.urn) {
+            if (args?.applicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationId'");
             }
-            if ((!args || args.sameSiteCookieAttribute === undefined) && !opts.urn) {
+            if (args?.sameSiteCookieAttribute === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sameSiteCookieAttribute'");
             }
-            if ((!args || args.useSecureCookieAttribute === undefined) && !opts.urn) {
+            if (args?.useSecureCookieAttribute === undefined && !opts.urn) {
                 throw new Error("Missing required property 'useSecureCookieAttribute'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["cookiePlacementDomain"] = args ? args.cookiePlacementDomain : undefined;
-            resourceInputs["sameSiteCookieAttribute"] = args ? args.sameSiteCookieAttribute : undefined;
-            resourceInputs["useSecureCookieAttribute"] = args ? args.useSecureCookieAttribute : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["cookiePlacementDomain"] = args?.cookiePlacementDomain;
+            resourceInputs["sameSiteCookieAttribute"] = args?.sameSiteCookieAttribute;
+            resourceInputs["useSecureCookieAttribute"] = args?.useSecureCookieAttribute;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppInjectionCookie.__pulumiType, name, resourceInputs, opts);

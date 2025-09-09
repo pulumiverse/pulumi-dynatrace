@@ -35,23 +35,23 @@ export class EventDrivenAnsibleConnections extends pulumi.CustomResource {
     /**
      * Flag if Red Hat Event Stream is use for Event-Driven Ansible
      */
-    public readonly eventStreamEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly eventStreamEnabled: pulumi.Output<boolean | undefined>;
     /**
      * A unique and clearly identifiable connection name.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * API access token for the Event-Driven Ansible Controller. Please note that this token is not refreshed and can expire.
      */
-    public readonly token!: pulumi.Output<string | undefined>;
+    declare public readonly token: pulumi.Output<string | undefined>;
     /**
      * Possible Values: `Api_token`
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * URL of the Event-Driven Ansible source plugin webhook. For example, https://eda.yourdomain.com:5010
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
 
     /**
      * Create a EventDrivenAnsibleConnections resource with the given unique name, arguments, and options.
@@ -66,24 +66,24 @@ export class EventDrivenAnsibleConnections extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EventDrivenAnsibleConnectionsState | undefined;
-            resourceInputs["eventStreamEnabled"] = state ? state.eventStreamEnabled : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["token"] = state ? state.token : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
+            resourceInputs["eventStreamEnabled"] = state?.eventStreamEnabled;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["token"] = state?.token;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["url"] = state?.url;
         } else {
             const args = argsOrState as EventDrivenAnsibleConnectionsArgs | undefined;
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            if ((!args || args.url === undefined) && !opts.urn) {
+            if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            resourceInputs["eventStreamEnabled"] = args ? args.eventStreamEnabled : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["eventStreamEnabled"] = args?.eventStreamEnabled;
+            resourceInputs["name"] = args?.name;
             resourceInputs["token"] = args?.token ? pulumi.secret(args.token) : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["url"] = args?.url;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["token"] };

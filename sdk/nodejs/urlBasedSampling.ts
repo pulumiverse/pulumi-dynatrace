@@ -37,43 +37,43 @@ export class UrlBasedSampling extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Select the scaling factor for the current sampling rate of the system. Possible values: `IncreaseCapturing128Times`, `IncreaseCapturing64Times`, `IncreaseCapturing32Times`, `IncreaseCapturing16Times`, `IncreaseCapturing8Times`, `IncreaseCapturing4Times`, `IncreaseCapturing2Times`, `ReduceCapturingByFactor2`, `ReduceCapturingByFactor4`, `ReduceCapturingByFactor8`, `ReduceCapturingByFactor16`, `ReduceCapturingByFactor32`, `ReduceCapturingByFactor64`, `ReduceCapturingByFactor128`
      */
-    public readonly factor!: pulumi.Output<string | undefined>;
+    declare public readonly factor: pulumi.Output<string | undefined>;
     /**
      * The scaling factor for the defined URL will be applied to any HTTP method.
      */
-    public readonly httpMethodAny!: pulumi.Output<boolean>;
+    declare public readonly httpMethodAny: pulumi.Output<boolean>;
     /**
      * Possible values: `GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
      */
-    public readonly httpMethods!: pulumi.Output<string[] | undefined>;
+    declare public readonly httpMethods: pulumi.Output<string[] | undefined>;
     /**
      * The matching URLs will always be ignored, also if Adaptive Traffic Management is not active.
      */
-    public readonly ignore!: pulumi.Output<boolean>;
+    declare public readonly ignore: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Path of the URL.
      */
-    public readonly path!: pulumi.Output<string | undefined>;
+    declare public readonly path: pulumi.Output<string | undefined>;
     /**
      * Path comparison condition. Possible values: `EQUALS`, `DOES_NOT_EQUAL`, `CONTAINS`, `DOES_NOT_CONTAIN`, `STARTS_WITH`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `DOES_NOT_END_WITH`
      */
-    public readonly pathComparisonType!: pulumi.Output<string | undefined>;
+    declare public readonly pathComparisonType: pulumi.Output<string | undefined>;
     /**
      * Add URL parameters in any order. **All** specified parameters must be present in the query of an URL to get a match.
      */
-    public readonly queryParameters!: pulumi.Output<outputs.UrlBasedSamplingQueryParameters | undefined>;
+    declare public readonly queryParameters: pulumi.Output<outputs.UrlBasedSamplingQueryParameters | undefined>;
     /**
      * The scope of this setting (PROCESS*GROUP*INSTANCE, PROCESS_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a UrlBasedSampling resource with the given unique name, arguments, and options.
@@ -88,37 +88,37 @@ export class UrlBasedSampling extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UrlBasedSamplingState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["factor"] = state ? state.factor : undefined;
-            resourceInputs["httpMethodAny"] = state ? state.httpMethodAny : undefined;
-            resourceInputs["httpMethods"] = state ? state.httpMethods : undefined;
-            resourceInputs["ignore"] = state ? state.ignore : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["path"] = state ? state.path : undefined;
-            resourceInputs["pathComparisonType"] = state ? state.pathComparisonType : undefined;
-            resourceInputs["queryParameters"] = state ? state.queryParameters : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["factor"] = state?.factor;
+            resourceInputs["httpMethodAny"] = state?.httpMethodAny;
+            resourceInputs["httpMethods"] = state?.httpMethods;
+            resourceInputs["ignore"] = state?.ignore;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["path"] = state?.path;
+            resourceInputs["pathComparisonType"] = state?.pathComparisonType;
+            resourceInputs["queryParameters"] = state?.queryParameters;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as UrlBasedSamplingArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.httpMethodAny === undefined) && !opts.urn) {
+            if (args?.httpMethodAny === undefined && !opts.urn) {
                 throw new Error("Missing required property 'httpMethodAny'");
             }
-            if ((!args || args.ignore === undefined) && !opts.urn) {
+            if (args?.ignore === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ignore'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["factor"] = args ? args.factor : undefined;
-            resourceInputs["httpMethodAny"] = args ? args.httpMethodAny : undefined;
-            resourceInputs["httpMethods"] = args ? args.httpMethods : undefined;
-            resourceInputs["ignore"] = args ? args.ignore : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["path"] = args ? args.path : undefined;
-            resourceInputs["pathComparisonType"] = args ? args.pathComparisonType : undefined;
-            resourceInputs["queryParameters"] = args ? args.queryParameters : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["factor"] = args?.factor;
+            resourceInputs["httpMethodAny"] = args?.httpMethodAny;
+            resourceInputs["httpMethods"] = args?.httpMethods;
+            resourceInputs["ignore"] = args?.ignore;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["path"] = args?.path;
+            resourceInputs["pathComparisonType"] = args?.pathComparisonType;
+            resourceInputs["queryParameters"] = args?.queryParameters;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(UrlBasedSampling.__pulumiType, name, resourceInputs, opts);

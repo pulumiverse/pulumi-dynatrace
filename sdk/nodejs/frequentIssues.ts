@@ -35,19 +35,19 @@ export class FrequentIssues extends pulumi.CustomResource {
     /**
      * Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
      */
-    public readonly detectApps!: pulumi.Output<boolean>;
+    declare public readonly detectApps: pulumi.Output<boolean>;
     /**
      * Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
      */
-    public readonly detectEnv!: pulumi.Output<boolean | undefined>;
+    declare public readonly detectEnv: pulumi.Output<boolean | undefined>;
     /**
      * Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
      */
-    public readonly detectInfra!: pulumi.Output<boolean>;
+    declare public readonly detectInfra: pulumi.Output<boolean>;
     /**
      * Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
      */
-    public readonly detectTxn!: pulumi.Output<boolean>;
+    declare public readonly detectTxn: pulumi.Output<boolean>;
 
     /**
      * Create a FrequentIssues resource with the given unique name, arguments, and options.
@@ -62,25 +62,25 @@ export class FrequentIssues extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FrequentIssuesState | undefined;
-            resourceInputs["detectApps"] = state ? state.detectApps : undefined;
-            resourceInputs["detectEnv"] = state ? state.detectEnv : undefined;
-            resourceInputs["detectInfra"] = state ? state.detectInfra : undefined;
-            resourceInputs["detectTxn"] = state ? state.detectTxn : undefined;
+            resourceInputs["detectApps"] = state?.detectApps;
+            resourceInputs["detectEnv"] = state?.detectEnv;
+            resourceInputs["detectInfra"] = state?.detectInfra;
+            resourceInputs["detectTxn"] = state?.detectTxn;
         } else {
             const args = argsOrState as FrequentIssuesArgs | undefined;
-            if ((!args || args.detectApps === undefined) && !opts.urn) {
+            if (args?.detectApps === undefined && !opts.urn) {
                 throw new Error("Missing required property 'detectApps'");
             }
-            if ((!args || args.detectInfra === undefined) && !opts.urn) {
+            if (args?.detectInfra === undefined && !opts.urn) {
                 throw new Error("Missing required property 'detectInfra'");
             }
-            if ((!args || args.detectTxn === undefined) && !opts.urn) {
+            if (args?.detectTxn === undefined && !opts.urn) {
                 throw new Error("Missing required property 'detectTxn'");
             }
-            resourceInputs["detectApps"] = args ? args.detectApps : undefined;
-            resourceInputs["detectEnv"] = args ? args.detectEnv : undefined;
-            resourceInputs["detectInfra"] = args ? args.detectInfra : undefined;
-            resourceInputs["detectTxn"] = args ? args.detectTxn : undefined;
+            resourceInputs["detectApps"] = args?.detectApps;
+            resourceInputs["detectEnv"] = args?.detectEnv;
+            resourceInputs["detectInfra"] = args?.detectInfra;
+            resourceInputs["detectTxn"] = args?.detectTxn;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(FrequentIssues.__pulumiType, name, resourceInputs, opts);

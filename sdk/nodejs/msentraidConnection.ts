@@ -35,23 +35,23 @@ export class MsentraidConnection extends pulumi.CustomResource {
     /**
      * Application (client) ID of your app registered in Microsoft Azure App registrations
      */
-    public readonly applicationId!: pulumi.Output<string>;
+    declare public readonly applicationId: pulumi.Output<string>;
     /**
      * Client secret of your app registered in Microsoft Azure App registrations
      */
-    public readonly clientSecret!: pulumi.Output<string>;
+    declare public readonly clientSecret: pulumi.Output<string>;
     /**
      * Description
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Directory (tenant) ID of Microsoft Entra Identity Developer
      */
-    public readonly directoryId!: pulumi.Output<string>;
+    declare public readonly directoryId: pulumi.Output<string>;
     /**
      * The name of the Microsoft Entra Identity Developer connection
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a MsentraidConnection resource with the given unique name, arguments, and options.
@@ -66,27 +66,27 @@ export class MsentraidConnection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MsentraidConnectionState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["clientSecret"] = state ? state.clientSecret : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["directoryId"] = state ? state.directoryId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["clientSecret"] = state?.clientSecret;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["directoryId"] = state?.directoryId;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as MsentraidConnectionArgs | undefined;
-            if ((!args || args.applicationId === undefined) && !opts.urn) {
+            if (args?.applicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationId'");
             }
-            if ((!args || args.clientSecret === undefined) && !opts.urn) {
+            if (args?.clientSecret === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clientSecret'");
             }
-            if ((!args || args.directoryId === undefined) && !opts.urn) {
+            if (args?.directoryId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'directoryId'");
             }
             resourceInputs["applicationId"] = args?.applicationId ? pulumi.secret(args.applicationId) : undefined;
             resourceInputs["clientSecret"] = args?.clientSecret ? pulumi.secret(args.clientSecret) : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["description"] = args?.description;
             resourceInputs["directoryId"] = args?.directoryId ? pulumi.secret(args.directoryId) : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["name"] = args?.name;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["applicationId", "clientSecret", "directoryId"] };

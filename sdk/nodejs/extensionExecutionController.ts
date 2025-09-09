@@ -35,23 +35,23 @@ export class ExtensionExecutionController extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Enable local HTTP Metric, Log and Event Ingest API
      */
-    public readonly ingestActive!: pulumi.Output<boolean | undefined>;
+    declare public readonly ingestActive: pulumi.Output<boolean | undefined>;
     /**
      * Possible Values: `DEFAULT`, `HIGH`
      */
-    public readonly performanceProfile!: pulumi.Output<string | undefined>;
+    declare public readonly performanceProfile: pulumi.Output<string | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * Enable Dynatrace StatsD
      */
-    public readonly statsdActive!: pulumi.Output<boolean | undefined>;
+    declare public readonly statsdActive: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a ExtensionExecutionController resource with the given unique name, arguments, and options.
@@ -66,21 +66,21 @@ export class ExtensionExecutionController extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExtensionExecutionControllerState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["ingestActive"] = state ? state.ingestActive : undefined;
-            resourceInputs["performanceProfile"] = state ? state.performanceProfile : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["statsdActive"] = state ? state.statsdActive : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["ingestActive"] = state?.ingestActive;
+            resourceInputs["performanceProfile"] = state?.performanceProfile;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["statsdActive"] = state?.statsdActive;
         } else {
             const args = argsOrState as ExtensionExecutionControllerArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["ingestActive"] = args ? args.ingestActive : undefined;
-            resourceInputs["performanceProfile"] = args ? args.performanceProfile : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["statsdActive"] = args ? args.statsdActive : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["ingestActive"] = args?.ingestActive;
+            resourceInputs["performanceProfile"] = args?.performanceProfile;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["statsdActive"] = args?.statsdActive;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExtensionExecutionController.__pulumiType, name, resourceInputs, opts);

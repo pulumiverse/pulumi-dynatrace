@@ -35,19 +35,19 @@ export class WebAppResourceCleanup extends pulumi.CustomResource {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * For example: *Mask journeyId*
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * For example: `(.*)(journeyId=)-?\d+(.*)`
      */
-    public readonly regularExpression!: pulumi.Output<string>;
+    declare public readonly regularExpression: pulumi.Output<string>;
     /**
      * For example: `$1$2\*$3`
      */
-    public readonly replaceWith!: pulumi.Output<string>;
+    declare public readonly replaceWith: pulumi.Output<string>;
 
     /**
      * Create a WebAppResourceCleanup resource with the given unique name, arguments, and options.
@@ -62,22 +62,22 @@ export class WebAppResourceCleanup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppResourceCleanupState | undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["regularExpression"] = state ? state.regularExpression : undefined;
-            resourceInputs["replaceWith"] = state ? state.replaceWith : undefined;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["regularExpression"] = state?.regularExpression;
+            resourceInputs["replaceWith"] = state?.replaceWith;
         } else {
             const args = argsOrState as WebAppResourceCleanupArgs | undefined;
-            if ((!args || args.regularExpression === undefined) && !opts.urn) {
+            if (args?.regularExpression === undefined && !opts.urn) {
                 throw new Error("Missing required property 'regularExpression'");
             }
-            if ((!args || args.replaceWith === undefined) && !opts.urn) {
+            if (args?.replaceWith === undefined && !opts.urn) {
                 throw new Error("Missing required property 'replaceWith'");
             }
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["regularExpression"] = args ? args.regularExpression : undefined;
-            resourceInputs["replaceWith"] = args ? args.replaceWith : undefined;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["regularExpression"] = args?.regularExpression;
+            resourceInputs["replaceWith"] = args?.replaceWith;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppResourceCleanup.__pulumiType, name, resourceInputs, opts);

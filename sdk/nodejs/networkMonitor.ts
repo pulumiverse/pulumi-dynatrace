@@ -37,43 +37,43 @@ export class NetworkMonitor extends pulumi.CustomResource {
     /**
      * Description of the monitor
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * If true, the monitor is enabled
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabled: pulumi.Output<boolean | undefined>;
     /**
      * Frequency of the monitor, in minutes
      */
-    public readonly frequencyMin!: pulumi.Output<number | undefined>;
+    declare public readonly frequencyMin: pulumi.Output<number | undefined>;
     /**
      * The locations to which the monitor is assigned
      */
-    public readonly locations!: pulumi.Output<string[]>;
+    declare public readonly locations: pulumi.Output<string[]>;
     /**
      * Name of the monitor
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Outage handling configuration
      */
-    public readonly outageHandling!: pulumi.Output<outputs.NetworkMonitorOutageHandling | undefined>;
+    declare public readonly outageHandling: pulumi.Output<outputs.NetworkMonitorOutageHandling | undefined>;
     /**
      * Performance thresholds configuration
      */
-    public readonly performanceThresholds!: pulumi.Output<outputs.NetworkMonitorPerformanceThresholds | undefined>;
+    declare public readonly performanceThresholds: pulumi.Output<outputs.NetworkMonitorPerformanceThresholds | undefined>;
     /**
      * The steps of the monitor
      */
-    public readonly steps!: pulumi.Output<outputs.NetworkMonitorStep[]>;
+    declare public readonly steps: pulumi.Output<outputs.NetworkMonitorStep[]>;
     /**
      * A set of tags assigned to the monitor.
      */
-    public readonly tags!: pulumi.Output<outputs.NetworkMonitorTag[] | undefined>;
+    declare public readonly tags: pulumi.Output<outputs.NetworkMonitorTag[] | undefined>;
     /**
      * Type of the monitor, possible values: `MULTI_PROTOCOL`
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a NetworkMonitor resource with the given unique name, arguments, and options.
@@ -88,37 +88,37 @@ export class NetworkMonitor extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkMonitorState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["frequencyMin"] = state ? state.frequencyMin : undefined;
-            resourceInputs["locations"] = state ? state.locations : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["outageHandling"] = state ? state.outageHandling : undefined;
-            resourceInputs["performanceThresholds"] = state ? state.performanceThresholds : undefined;
-            resourceInputs["steps"] = state ? state.steps : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["frequencyMin"] = state?.frequencyMin;
+            resourceInputs["locations"] = state?.locations;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["outageHandling"] = state?.outageHandling;
+            resourceInputs["performanceThresholds"] = state?.performanceThresholds;
+            resourceInputs["steps"] = state?.steps;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as NetworkMonitorArgs | undefined;
-            if ((!args || args.locations === undefined) && !opts.urn) {
+            if (args?.locations === undefined && !opts.urn) {
                 throw new Error("Missing required property 'locations'");
             }
-            if ((!args || args.steps === undefined) && !opts.urn) {
+            if (args?.steps === undefined && !opts.urn) {
                 throw new Error("Missing required property 'steps'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["frequencyMin"] = args ? args.frequencyMin : undefined;
-            resourceInputs["locations"] = args ? args.locations : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["outageHandling"] = args ? args.outageHandling : undefined;
-            resourceInputs["performanceThresholds"] = args ? args.performanceThresholds : undefined;
-            resourceInputs["steps"] = args ? args.steps : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["frequencyMin"] = args?.frequencyMin;
+            resourceInputs["locations"] = args?.locations;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["outageHandling"] = args?.outageHandling;
+            resourceInputs["performanceThresholds"] = args?.performanceThresholds;
+            resourceInputs["steps"] = args?.steps;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["type"] = args?.type;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NetworkMonitor.__pulumiType, name, resourceInputs, opts);

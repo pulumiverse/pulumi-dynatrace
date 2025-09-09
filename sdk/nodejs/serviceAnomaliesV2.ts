@@ -37,23 +37,23 @@ export class ServiceAnomaliesV2 extends pulumi.CustomResource {
     /**
      * Failure rate
      */
-    public readonly failureRate!: pulumi.Output<outputs.ServiceAnomaliesV2FailureRate>;
+    declare public readonly failureRate: pulumi.Output<outputs.ServiceAnomaliesV2FailureRate>;
     /**
      * Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time:
      */
-    public readonly loadDrops!: pulumi.Output<outputs.ServiceAnomaliesV2LoadDrops>;
+    declare public readonly loadDrops: pulumi.Output<outputs.ServiceAnomaliesV2LoadDrops>;
     /**
      * Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time:
      */
-    public readonly loadSpikes!: pulumi.Output<outputs.ServiceAnomaliesV2LoadSpikes>;
+    declare public readonly loadSpikes: pulumi.Output<outputs.ServiceAnomaliesV2LoadSpikes>;
     /**
      * Response time
      */
-    public readonly responseTime!: pulumi.Output<outputs.ServiceAnomaliesV2ResponseTime>;
+    declare public readonly responseTime: pulumi.Output<outputs.ServiceAnomaliesV2ResponseTime>;
     /**
      * The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a ServiceAnomaliesV2 resource with the given unique name, arguments, and options.
@@ -68,30 +68,30 @@ export class ServiceAnomaliesV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ServiceAnomaliesV2State | undefined;
-            resourceInputs["failureRate"] = state ? state.failureRate : undefined;
-            resourceInputs["loadDrops"] = state ? state.loadDrops : undefined;
-            resourceInputs["loadSpikes"] = state ? state.loadSpikes : undefined;
-            resourceInputs["responseTime"] = state ? state.responseTime : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["failureRate"] = state?.failureRate;
+            resourceInputs["loadDrops"] = state?.loadDrops;
+            resourceInputs["loadSpikes"] = state?.loadSpikes;
+            resourceInputs["responseTime"] = state?.responseTime;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as ServiceAnomaliesV2Args | undefined;
-            if ((!args || args.failureRate === undefined) && !opts.urn) {
+            if (args?.failureRate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'failureRate'");
             }
-            if ((!args || args.loadDrops === undefined) && !opts.urn) {
+            if (args?.loadDrops === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadDrops'");
             }
-            if ((!args || args.loadSpikes === undefined) && !opts.urn) {
+            if (args?.loadSpikes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadSpikes'");
             }
-            if ((!args || args.responseTime === undefined) && !opts.urn) {
+            if (args?.responseTime === undefined && !opts.urn) {
                 throw new Error("Missing required property 'responseTime'");
             }
-            resourceInputs["failureRate"] = args ? args.failureRate : undefined;
-            resourceInputs["loadDrops"] = args ? args.loadDrops : undefined;
-            resourceInputs["loadSpikes"] = args ? args.loadSpikes : undefined;
-            resourceInputs["responseTime"] = args ? args.responseTime : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["failureRate"] = args?.failureRate;
+            resourceInputs["loadDrops"] = args?.loadDrops;
+            resourceInputs["loadSpikes"] = args?.loadSpikes;
+            resourceInputs["responseTime"] = args?.responseTime;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ServiceAnomaliesV2.__pulumiType, name, resourceInputs, opts);

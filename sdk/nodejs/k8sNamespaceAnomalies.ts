@@ -37,27 +37,27 @@ export class K8sNamespaceAnomalies extends pulumi.CustomResource {
     /**
      * Alerts if almost no CPU-limit quota left in namespace
      */
-    public readonly cpuLimitsQuotaSaturation!: pulumi.Output<outputs.K8sNamespaceAnomaliesCpuLimitsQuotaSaturation>;
+    declare public readonly cpuLimitsQuotaSaturation: pulumi.Output<outputs.K8sNamespaceAnomaliesCpuLimitsQuotaSaturation>;
     /**
      * Alerts if almost no CPU-request quota left in namespace
      */
-    public readonly cpuRequestsQuotaSaturation!: pulumi.Output<outputs.K8sNamespaceAnomaliesCpuRequestsQuotaSaturation>;
+    declare public readonly cpuRequestsQuotaSaturation: pulumi.Output<outputs.K8sNamespaceAnomaliesCpuRequestsQuotaSaturation>;
     /**
      * Alerts if almost no memory-limit quota left in namespace
      */
-    public readonly memoryLimitsQuotaSaturation!: pulumi.Output<outputs.K8sNamespaceAnomaliesMemoryLimitsQuotaSaturation>;
+    declare public readonly memoryLimitsQuotaSaturation: pulumi.Output<outputs.K8sNamespaceAnomaliesMemoryLimitsQuotaSaturation>;
     /**
      * Alerts if almost no memory-request quota left in namespace
      */
-    public readonly memoryRequestsQuotaSaturation!: pulumi.Output<outputs.K8sNamespaceAnomaliesMemoryRequestsQuotaSaturation>;
+    declare public readonly memoryRequestsQuotaSaturation: pulumi.Output<outputs.K8sNamespaceAnomaliesMemoryRequestsQuotaSaturation>;
     /**
      * Alerts if almost no pod quota left in namespace
      */
-    public readonly podsQuotaSaturation!: pulumi.Output<outputs.K8sNamespaceAnomaliesPodsQuotaSaturation>;
+    declare public readonly podsQuotaSaturation: pulumi.Output<outputs.K8sNamespaceAnomaliesPodsQuotaSaturation>;
     /**
      * The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a K8sNamespaceAnomalies resource with the given unique name, arguments, and options.
@@ -72,35 +72,35 @@ export class K8sNamespaceAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as K8sNamespaceAnomaliesState | undefined;
-            resourceInputs["cpuLimitsQuotaSaturation"] = state ? state.cpuLimitsQuotaSaturation : undefined;
-            resourceInputs["cpuRequestsQuotaSaturation"] = state ? state.cpuRequestsQuotaSaturation : undefined;
-            resourceInputs["memoryLimitsQuotaSaturation"] = state ? state.memoryLimitsQuotaSaturation : undefined;
-            resourceInputs["memoryRequestsQuotaSaturation"] = state ? state.memoryRequestsQuotaSaturation : undefined;
-            resourceInputs["podsQuotaSaturation"] = state ? state.podsQuotaSaturation : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["cpuLimitsQuotaSaturation"] = state?.cpuLimitsQuotaSaturation;
+            resourceInputs["cpuRequestsQuotaSaturation"] = state?.cpuRequestsQuotaSaturation;
+            resourceInputs["memoryLimitsQuotaSaturation"] = state?.memoryLimitsQuotaSaturation;
+            resourceInputs["memoryRequestsQuotaSaturation"] = state?.memoryRequestsQuotaSaturation;
+            resourceInputs["podsQuotaSaturation"] = state?.podsQuotaSaturation;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as K8sNamespaceAnomaliesArgs | undefined;
-            if ((!args || args.cpuLimitsQuotaSaturation === undefined) && !opts.urn) {
+            if (args?.cpuLimitsQuotaSaturation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cpuLimitsQuotaSaturation'");
             }
-            if ((!args || args.cpuRequestsQuotaSaturation === undefined) && !opts.urn) {
+            if (args?.cpuRequestsQuotaSaturation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cpuRequestsQuotaSaturation'");
             }
-            if ((!args || args.memoryLimitsQuotaSaturation === undefined) && !opts.urn) {
+            if (args?.memoryLimitsQuotaSaturation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'memoryLimitsQuotaSaturation'");
             }
-            if ((!args || args.memoryRequestsQuotaSaturation === undefined) && !opts.urn) {
+            if (args?.memoryRequestsQuotaSaturation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'memoryRequestsQuotaSaturation'");
             }
-            if ((!args || args.podsQuotaSaturation === undefined) && !opts.urn) {
+            if (args?.podsQuotaSaturation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'podsQuotaSaturation'");
             }
-            resourceInputs["cpuLimitsQuotaSaturation"] = args ? args.cpuLimitsQuotaSaturation : undefined;
-            resourceInputs["cpuRequestsQuotaSaturation"] = args ? args.cpuRequestsQuotaSaturation : undefined;
-            resourceInputs["memoryLimitsQuotaSaturation"] = args ? args.memoryLimitsQuotaSaturation : undefined;
-            resourceInputs["memoryRequestsQuotaSaturation"] = args ? args.memoryRequestsQuotaSaturation : undefined;
-            resourceInputs["podsQuotaSaturation"] = args ? args.podsQuotaSaturation : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["cpuLimitsQuotaSaturation"] = args?.cpuLimitsQuotaSaturation;
+            resourceInputs["cpuRequestsQuotaSaturation"] = args?.cpuRequestsQuotaSaturation;
+            resourceInputs["memoryLimitsQuotaSaturation"] = args?.memoryLimitsQuotaSaturation;
+            resourceInputs["memoryRequestsQuotaSaturation"] = args?.memoryRequestsQuotaSaturation;
+            resourceInputs["podsQuotaSaturation"] = args?.podsQuotaSaturation;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(K8sNamespaceAnomalies.__pulumiType, name, resourceInputs, opts);

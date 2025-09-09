@@ -35,19 +35,19 @@ export class TransactionStartFilters extends pulumi.CustomResource {
     /**
      * You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
      */
-    public readonly cicsTerminalTransactionIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly cicsTerminalTransactionIds: pulumi.Output<string[] | undefined>;
     /**
      * You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
      */
-    public readonly cicsTransactionIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly cicsTransactionIds: pulumi.Output<string[] | undefined>;
     /**
      * You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
      */
-    public readonly imsTerminalTransactionIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly imsTerminalTransactionIds: pulumi.Output<string[] | undefined>;
     /**
      * You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
      */
-    public readonly imsTransactionIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly imsTransactionIds: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a TransactionStartFilters resource with the given unique name, arguments, and options.
@@ -62,16 +62,16 @@ export class TransactionStartFilters extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TransactionStartFiltersState | undefined;
-            resourceInputs["cicsTerminalTransactionIds"] = state ? state.cicsTerminalTransactionIds : undefined;
-            resourceInputs["cicsTransactionIds"] = state ? state.cicsTransactionIds : undefined;
-            resourceInputs["imsTerminalTransactionIds"] = state ? state.imsTerminalTransactionIds : undefined;
-            resourceInputs["imsTransactionIds"] = state ? state.imsTransactionIds : undefined;
+            resourceInputs["cicsTerminalTransactionIds"] = state?.cicsTerminalTransactionIds;
+            resourceInputs["cicsTransactionIds"] = state?.cicsTransactionIds;
+            resourceInputs["imsTerminalTransactionIds"] = state?.imsTerminalTransactionIds;
+            resourceInputs["imsTransactionIds"] = state?.imsTransactionIds;
         } else {
             const args = argsOrState as TransactionStartFiltersArgs | undefined;
-            resourceInputs["cicsTerminalTransactionIds"] = args ? args.cicsTerminalTransactionIds : undefined;
-            resourceInputs["cicsTransactionIds"] = args ? args.cicsTransactionIds : undefined;
-            resourceInputs["imsTerminalTransactionIds"] = args ? args.imsTerminalTransactionIds : undefined;
-            resourceInputs["imsTransactionIds"] = args ? args.imsTransactionIds : undefined;
+            resourceInputs["cicsTerminalTransactionIds"] = args?.cicsTerminalTransactionIds;
+            resourceInputs["cicsTransactionIds"] = args?.cicsTransactionIds;
+            resourceInputs["imsTerminalTransactionIds"] = args?.imsTerminalTransactionIds;
+            resourceInputs["imsTransactionIds"] = args?.imsTransactionIds;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(TransactionStartFilters.__pulumiType, name, resourceInputs, opts);

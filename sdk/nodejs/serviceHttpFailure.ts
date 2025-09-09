@@ -37,19 +37,19 @@ export class ServiceHttpFailure extends pulumi.CustomResource {
     /**
      * HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
      */
-    public readonly brokenLinks!: pulumi.Output<outputs.ServiceHttpFailureBrokenLinks | undefined>;
+    declare public readonly brokenLinks: pulumi.Output<outputs.ServiceHttpFailureBrokenLinks | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * HTTP response codes
      */
-    public readonly httpResponseCodes!: pulumi.Output<outputs.ServiceHttpFailureHttpResponseCodes | undefined>;
+    declare public readonly httpResponseCodes: pulumi.Output<outputs.ServiceHttpFailureHttpResponseCodes | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly serviceId!: pulumi.Output<string>;
+    declare public readonly serviceId: pulumi.Output<string>;
 
     /**
      * Create a ServiceHttpFailure resource with the given unique name, arguments, and options.
@@ -64,22 +64,22 @@ export class ServiceHttpFailure extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ServiceHttpFailureState | undefined;
-            resourceInputs["brokenLinks"] = state ? state.brokenLinks : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["httpResponseCodes"] = state ? state.httpResponseCodes : undefined;
-            resourceInputs["serviceId"] = state ? state.serviceId : undefined;
+            resourceInputs["brokenLinks"] = state?.brokenLinks;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["httpResponseCodes"] = state?.httpResponseCodes;
+            resourceInputs["serviceId"] = state?.serviceId;
         } else {
             const args = argsOrState as ServiceHttpFailureArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.serviceId === undefined) && !opts.urn) {
+            if (args?.serviceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceId'");
             }
-            resourceInputs["brokenLinks"] = args ? args.brokenLinks : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["httpResponseCodes"] = args ? args.httpResponseCodes : undefined;
-            resourceInputs["serviceId"] = args ? args.serviceId : undefined;
+            resourceInputs["brokenLinks"] = args?.brokenLinks;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["httpResponseCodes"] = args?.httpResponseCodes;
+            resourceInputs["serviceId"] = args?.serviceId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ServiceHttpFailure.__pulumiType, name, resourceInputs, opts);

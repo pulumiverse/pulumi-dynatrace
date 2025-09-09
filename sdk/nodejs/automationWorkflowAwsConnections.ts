@@ -37,15 +37,15 @@ export class AutomationWorkflowAwsConnections extends pulumi.CustomResource {
     /**
      * Name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Possible Values: `WebIdentity`
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * no documentation available
      */
-    public readonly webIdentity!: pulumi.Output<outputs.AutomationWorkflowAwsConnectionsWebIdentity | undefined>;
+    declare public readonly webIdentity: pulumi.Output<outputs.AutomationWorkflowAwsConnectionsWebIdentity | undefined>;
 
     /**
      * Create a AutomationWorkflowAwsConnections resource with the given unique name, arguments, and options.
@@ -60,17 +60,17 @@ export class AutomationWorkflowAwsConnections extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutomationWorkflowAwsConnectionsState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["webIdentity"] = state ? state.webIdentity : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["webIdentity"] = state?.webIdentity;
         } else {
             const args = argsOrState as AutomationWorkflowAwsConnectionsArgs | undefined;
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["webIdentity"] = args ? args.webIdentity : undefined;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["webIdentity"] = args?.webIdentity;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutomationWorkflowAwsConnections.__pulumiType, name, resourceInputs, opts);

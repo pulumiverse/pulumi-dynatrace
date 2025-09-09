@@ -37,7 +37,7 @@ export class LimitOutboundConnections extends pulumi.CustomResource {
     /**
      * no documentation available
      */
-    public readonly allowedOutboundConnections!: pulumi.Output<outputs.LimitOutboundConnectionsAllowedOutboundConnections>;
+    declare public readonly allowedOutboundConnections: pulumi.Output<outputs.LimitOutboundConnectionsAllowedOutboundConnections>;
 
     /**
      * Create a LimitOutboundConnections resource with the given unique name, arguments, and options.
@@ -52,13 +52,13 @@ export class LimitOutboundConnections extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LimitOutboundConnectionsState | undefined;
-            resourceInputs["allowedOutboundConnections"] = state ? state.allowedOutboundConnections : undefined;
+            resourceInputs["allowedOutboundConnections"] = state?.allowedOutboundConnections;
         } else {
             const args = argsOrState as LimitOutboundConnectionsArgs | undefined;
-            if ((!args || args.allowedOutboundConnections === undefined) && !opts.urn) {
+            if (args?.allowedOutboundConnections === undefined && !opts.urn) {
                 throw new Error("Missing required property 'allowedOutboundConnections'");
             }
-            resourceInputs["allowedOutboundConnections"] = args ? args.allowedOutboundConnections : undefined;
+            resourceInputs["allowedOutboundConnections"] = args?.allowedOutboundConnections;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LimitOutboundConnections.__pulumiType, name, resourceInputs, opts);

@@ -2656,19 +2656,19 @@ export class AutomationSchedulingRule extends pulumi.CustomResource {
         return obj['__pulumiType'] === AutomationSchedulingRule.__pulumiType;
     }
 
-    public readonly businessCalendar!: pulumi.Output<string | undefined>;
+    declare public readonly businessCalendar: pulumi.Output<string | undefined>;
     /**
      * An optional description for the scheduling rule
      */
-    public readonly description!: pulumi.Output<string | undefined>;
-    public readonly fixedOffset!: pulumi.Output<outputs.AutomationSchedulingRuleFixedOffset | undefined>;
-    public readonly grouping!: pulumi.Output<outputs.AutomationSchedulingRuleGrouping | undefined>;
-    public readonly recurrence!: pulumi.Output<outputs.AutomationSchedulingRuleRecurrence | undefined>;
-    public readonly relativeOffset!: pulumi.Output<outputs.AutomationSchedulingRuleRelativeOffset | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
+    declare public readonly fixedOffset: pulumi.Output<outputs.AutomationSchedulingRuleFixedOffset | undefined>;
+    declare public readonly grouping: pulumi.Output<outputs.AutomationSchedulingRuleGrouping | undefined>;
+    declare public readonly recurrence: pulumi.Output<outputs.AutomationSchedulingRuleRecurrence | undefined>;
+    declare public readonly relativeOffset: pulumi.Output<outputs.AutomationSchedulingRuleRelativeOffset | undefined>;
     /**
      * The title / name of the scheduling rule
      */
-    public readonly title!: pulumi.Output<string>;
+    declare public readonly title: pulumi.Output<string>;
 
     /**
      * Create a AutomationSchedulingRule resource with the given unique name, arguments, and options.
@@ -2683,25 +2683,25 @@ export class AutomationSchedulingRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutomationSchedulingRuleState | undefined;
-            resourceInputs["businessCalendar"] = state ? state.businessCalendar : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["fixedOffset"] = state ? state.fixedOffset : undefined;
-            resourceInputs["grouping"] = state ? state.grouping : undefined;
-            resourceInputs["recurrence"] = state ? state.recurrence : undefined;
-            resourceInputs["relativeOffset"] = state ? state.relativeOffset : undefined;
-            resourceInputs["title"] = state ? state.title : undefined;
+            resourceInputs["businessCalendar"] = state?.businessCalendar;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["fixedOffset"] = state?.fixedOffset;
+            resourceInputs["grouping"] = state?.grouping;
+            resourceInputs["recurrence"] = state?.recurrence;
+            resourceInputs["relativeOffset"] = state?.relativeOffset;
+            resourceInputs["title"] = state?.title;
         } else {
             const args = argsOrState as AutomationSchedulingRuleArgs | undefined;
-            if ((!args || args.title === undefined) && !opts.urn) {
+            if (args?.title === undefined && !opts.urn) {
                 throw new Error("Missing required property 'title'");
             }
-            resourceInputs["businessCalendar"] = args ? args.businessCalendar : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["fixedOffset"] = args ? args.fixedOffset : undefined;
-            resourceInputs["grouping"] = args ? args.grouping : undefined;
-            resourceInputs["recurrence"] = args ? args.recurrence : undefined;
-            resourceInputs["relativeOffset"] = args ? args.relativeOffset : undefined;
-            resourceInputs["title"] = args ? args.title : undefined;
+            resourceInputs["businessCalendar"] = args?.businessCalendar;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["fixedOffset"] = args?.fixedOffset;
+            resourceInputs["grouping"] = args?.grouping;
+            resourceInputs["recurrence"] = args?.recurrence;
+            resourceInputs["relativeOffset"] = args?.relativeOffset;
+            resourceInputs["title"] = args?.title;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutomationSchedulingRule.__pulumiType, name, resourceInputs, opts);

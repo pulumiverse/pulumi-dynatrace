@@ -37,23 +37,23 @@ export class OneagentUpdates extends pulumi.CustomResource {
     /**
      * Maintenance windows
      */
-    public readonly maintenanceWindows!: pulumi.Output<outputs.OneagentUpdatesMaintenanceWindows | undefined>;
+    declare public readonly maintenanceWindows: pulumi.Output<outputs.OneagentUpdatesMaintenanceWindows | undefined>;
     /**
      * Revision
      */
-    public readonly revision!: pulumi.Output<string | undefined>;
+    declare public readonly revision: pulumi.Output<string | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * Target version
      */
-    public readonly targetVersion!: pulumi.Output<string | undefined>;
+    declare public readonly targetVersion: pulumi.Output<string | undefined>;
     /**
      * Possible Values: `AUTOMATIC`, `AUTOMATIC_DURING_MW`, `MANUAL`
      */
-    public readonly updateMode!: pulumi.Output<string>;
+    declare public readonly updateMode: pulumi.Output<string>;
 
     /**
      * Create a OneagentUpdates resource with the given unique name, arguments, and options.
@@ -68,21 +68,21 @@ export class OneagentUpdates extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OneagentUpdatesState | undefined;
-            resourceInputs["maintenanceWindows"] = state ? state.maintenanceWindows : undefined;
-            resourceInputs["revision"] = state ? state.revision : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["targetVersion"] = state ? state.targetVersion : undefined;
-            resourceInputs["updateMode"] = state ? state.updateMode : undefined;
+            resourceInputs["maintenanceWindows"] = state?.maintenanceWindows;
+            resourceInputs["revision"] = state?.revision;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["targetVersion"] = state?.targetVersion;
+            resourceInputs["updateMode"] = state?.updateMode;
         } else {
             const args = argsOrState as OneagentUpdatesArgs | undefined;
-            if ((!args || args.updateMode === undefined) && !opts.urn) {
+            if (args?.updateMode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'updateMode'");
             }
-            resourceInputs["maintenanceWindows"] = args ? args.maintenanceWindows : undefined;
-            resourceInputs["revision"] = args ? args.revision : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["targetVersion"] = args ? args.targetVersion : undefined;
-            resourceInputs["updateMode"] = args ? args.updateMode : undefined;
+            resourceInputs["maintenanceWindows"] = args?.maintenanceWindows;
+            resourceInputs["revision"] = args?.revision;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["targetVersion"] = args?.targetVersion;
+            resourceInputs["updateMode"] = args?.updateMode;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OneagentUpdates.__pulumiType, name, resourceInputs, opts);

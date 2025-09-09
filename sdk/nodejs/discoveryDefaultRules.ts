@@ -37,11 +37,11 @@ export class DiscoveryDefaultRules extends pulumi.CustomResource {
     /**
      * Rule:
      */
-    public readonly rule!: pulumi.Output<outputs.DiscoveryDefaultRulesRule>;
+    declare public readonly rule: pulumi.Output<outputs.DiscoveryDefaultRulesRule>;
     /**
      * Settings:
      */
-    public readonly settings!: pulumi.Output<outputs.DiscoveryDefaultRulesSettings>;
+    declare public readonly settings: pulumi.Output<outputs.DiscoveryDefaultRulesSettings>;
 
     /**
      * Create a DiscoveryDefaultRules resource with the given unique name, arguments, and options.
@@ -56,18 +56,18 @@ export class DiscoveryDefaultRules extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DiscoveryDefaultRulesState | undefined;
-            resourceInputs["rule"] = state ? state.rule : undefined;
-            resourceInputs["settings"] = state ? state.settings : undefined;
+            resourceInputs["rule"] = state?.rule;
+            resourceInputs["settings"] = state?.settings;
         } else {
             const args = argsOrState as DiscoveryDefaultRulesArgs | undefined;
-            if ((!args || args.rule === undefined) && !opts.urn) {
+            if (args?.rule === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rule'");
             }
-            if ((!args || args.settings === undefined) && !opts.urn) {
+            if (args?.settings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'settings'");
             }
-            resourceInputs["rule"] = args ? args.rule : undefined;
-            resourceInputs["settings"] = args ? args.settings : undefined;
+            resourceInputs["rule"] = args?.rule;
+            resourceInputs["settings"] = args?.settings;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DiscoveryDefaultRules.__pulumiType, name, resourceInputs, opts);

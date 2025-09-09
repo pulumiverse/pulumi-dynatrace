@@ -39,13 +39,13 @@ export class CloudappWorkloaddetection extends pulumi.CustomResource {
      * Foundry application. * Container resource metrics (Container group instance entities) and [related
      * screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
      */
-    public readonly cloudFoundry!: pulumi.Output<outputs.CloudappWorkloaddetectionCloudFoundry>;
+    declare public readonly cloudFoundry: pulumi.Output<outputs.CloudappWorkloaddetectionCloudFoundry>;
     /**
      * Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
      * instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
      * support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
      */
-    public readonly docker!: pulumi.Output<outputs.CloudappWorkloaddetectionDocker>;
+    declare public readonly docker: pulumi.Output<outputs.CloudappWorkloaddetectionDocker>;
     /**
      * Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
      * cloud application and cloud application instance and entities). * Container resource metrics (container group instance
@@ -53,13 +53,13 @@ export class CloudappWorkloaddetection extends pulumi.CustomResource {
      * merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
      * workloads.
      */
-    public readonly kubernetes!: pulumi.Output<outputs.CloudappWorkloaddetectionKubernetes>;
+    declare public readonly kubernetes: pulumi.Output<outputs.CloudappWorkloaddetectionKubernetes>;
     /**
      * Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
      * Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
      * entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
      */
-    public readonly serverless!: pulumi.Output<outputs.CloudappWorkloaddetectionServerless | undefined>;
+    declare public readonly serverless: pulumi.Output<outputs.CloudappWorkloaddetectionServerless | undefined>;
 
     /**
      * Create a CloudappWorkloaddetection resource with the given unique name, arguments, and options.
@@ -74,25 +74,25 @@ export class CloudappWorkloaddetection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudappWorkloaddetectionState | undefined;
-            resourceInputs["cloudFoundry"] = state ? state.cloudFoundry : undefined;
-            resourceInputs["docker"] = state ? state.docker : undefined;
-            resourceInputs["kubernetes"] = state ? state.kubernetes : undefined;
-            resourceInputs["serverless"] = state ? state.serverless : undefined;
+            resourceInputs["cloudFoundry"] = state?.cloudFoundry;
+            resourceInputs["docker"] = state?.docker;
+            resourceInputs["kubernetes"] = state?.kubernetes;
+            resourceInputs["serverless"] = state?.serverless;
         } else {
             const args = argsOrState as CloudappWorkloaddetectionArgs | undefined;
-            if ((!args || args.cloudFoundry === undefined) && !opts.urn) {
+            if (args?.cloudFoundry === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudFoundry'");
             }
-            if ((!args || args.docker === undefined) && !opts.urn) {
+            if (args?.docker === undefined && !opts.urn) {
                 throw new Error("Missing required property 'docker'");
             }
-            if ((!args || args.kubernetes === undefined) && !opts.urn) {
+            if (args?.kubernetes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'kubernetes'");
             }
-            resourceInputs["cloudFoundry"] = args ? args.cloudFoundry : undefined;
-            resourceInputs["docker"] = args ? args.docker : undefined;
-            resourceInputs["kubernetes"] = args ? args.kubernetes : undefined;
-            resourceInputs["serverless"] = args ? args.serverless : undefined;
+            resourceInputs["cloudFoundry"] = args?.cloudFoundry;
+            resourceInputs["docker"] = args?.docker;
+            resourceInputs["kubernetes"] = args?.kubernetes;
+            resourceInputs["serverless"] = args?.serverless;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CloudappWorkloaddetection.__pulumiType, name, resourceInputs, opts);

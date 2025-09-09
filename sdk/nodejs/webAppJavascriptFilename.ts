@@ -53,7 +53,7 @@ export class WebAppJavascriptFilename extends pulumi.CustomResource {
     /**
      * Custom filename prefix
      */
-    public readonly filename!: pulumi.Output<string>;
+    declare public readonly filename: pulumi.Output<string>;
 
     /**
      * Create a WebAppJavascriptFilename resource with the given unique name, arguments, and options.
@@ -68,13 +68,13 @@ export class WebAppJavascriptFilename extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppJavascriptFilenameState | undefined;
-            resourceInputs["filename"] = state ? state.filename : undefined;
+            resourceInputs["filename"] = state?.filename;
         } else {
             const args = argsOrState as WebAppJavascriptFilenameArgs | undefined;
-            if ((!args || args.filename === undefined) && !opts.urn) {
+            if (args?.filename === undefined && !opts.urn) {
                 throw new Error("Missing required property 'filename'");
             }
-            resourceInputs["filename"] = args ? args.filename : undefined;
+            resourceInputs["filename"] = args?.filename;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppJavascriptFilename.__pulumiType, name, resourceInputs, opts);

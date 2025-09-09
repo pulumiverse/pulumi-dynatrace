@@ -232,23 +232,23 @@ export class Segment extends pulumi.CustomResource {
     /**
      * Description of the filter-segment
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * List of includes of the filter-segment
      */
-    public readonly includes!: pulumi.Output<outputs.SegmentIncludes | undefined>;
+    declare public readonly includes: pulumi.Output<outputs.SegmentIncludes | undefined>;
     /**
      * Indicates if the filter-segment is publicly accessible within the tenant
      */
-    public readonly isPublic!: pulumi.Output<boolean>;
+    declare public readonly isPublic: pulumi.Output<boolean>;
     /**
      * Name of the filter-segment
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Variables of the filter-segment
      */
-    public readonly variables!: pulumi.Output<outputs.SegmentVariables | undefined>;
+    declare public readonly variables: pulumi.Output<outputs.SegmentVariables | undefined>;
 
     /**
      * Create a Segment resource with the given unique name, arguments, and options.
@@ -263,21 +263,21 @@ export class Segment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SegmentState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["includes"] = state ? state.includes : undefined;
-            resourceInputs["isPublic"] = state ? state.isPublic : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["variables"] = state ? state.variables : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["includes"] = state?.includes;
+            resourceInputs["isPublic"] = state?.isPublic;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["variables"] = state?.variables;
         } else {
             const args = argsOrState as SegmentArgs | undefined;
-            if ((!args || args.isPublic === undefined) && !opts.urn) {
+            if (args?.isPublic === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isPublic'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["includes"] = args ? args.includes : undefined;
-            resourceInputs["isPublic"] = args ? args.isPublic : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["variables"] = args ? args.variables : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["includes"] = args?.includes;
+            resourceInputs["isPublic"] = args?.isPublic;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["variables"] = args?.variables;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Segment.__pulumiType, name, resourceInputs, opts);

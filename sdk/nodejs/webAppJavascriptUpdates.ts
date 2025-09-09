@@ -35,11 +35,11 @@ export class WebAppJavascriptUpdates extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string | undefined>;
+    declare public readonly applicationId: pulumi.Output<string | undefined>;
     /**
      * Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
      */
-    public readonly javascriptVersion!: pulumi.Output<string>;
+    declare public readonly javascriptVersion: pulumi.Output<string>;
 
     /**
      * Create a WebAppJavascriptUpdates resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class WebAppJavascriptUpdates extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppJavascriptUpdatesState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["javascriptVersion"] = state ? state.javascriptVersion : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["javascriptVersion"] = state?.javascriptVersion;
         } else {
             const args = argsOrState as WebAppJavascriptUpdatesArgs | undefined;
-            if ((!args || args.javascriptVersion === undefined) && !opts.urn) {
+            if (args?.javascriptVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'javascriptVersion'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["javascriptVersion"] = args ? args.javascriptVersion : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["javascriptVersion"] = args?.javascriptVersion;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppJavascriptUpdates.__pulumiType, name, resourceInputs, opts);

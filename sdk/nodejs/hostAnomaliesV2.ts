@@ -37,15 +37,15 @@ export class HostAnomaliesV2 extends pulumi.CustomResource {
     /**
      * Hosts
      */
-    public readonly host!: pulumi.Output<outputs.HostAnomaliesV2Host>;
+    declare public readonly host: pulumi.Output<outputs.HostAnomaliesV2Host>;
     /**
      * Network
      */
-    public readonly network!: pulumi.Output<outputs.HostAnomaliesV2Network>;
+    declare public readonly network: pulumi.Output<outputs.HostAnomaliesV2Network>;
     /**
      * The scope of this setting (HOST HOST_GROUP environment)
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
 
     /**
      * Create a HostAnomaliesV2 resource with the given unique name, arguments, and options.
@@ -60,23 +60,23 @@ export class HostAnomaliesV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HostAnomaliesV2State | undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["network"] = state?.network;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as HostAnomaliesV2Args | undefined;
-            if ((!args || args.host === undefined) && !opts.urn) {
+            if (args?.host === undefined && !opts.urn) {
                 throw new Error("Missing required property 'host'");
             }
-            if ((!args || args.network === undefined) && !opts.urn) {
+            if (args?.network === undefined && !opts.urn) {
                 throw new Error("Missing required property 'network'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            resourceInputs["host"] = args ? args.host : undefined;
-            resourceInputs["network"] = args ? args.network : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["host"] = args?.host;
+            resourceInputs["network"] = args?.network;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HostAnomaliesV2.__pulumiType, name, resourceInputs, opts);

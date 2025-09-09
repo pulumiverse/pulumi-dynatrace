@@ -37,19 +37,19 @@ export class ServiceAnomalies extends pulumi.CustomResource {
     /**
      * Configuration of failure rate increase detection. Detecting failure rate increases will be disabled if this block is omitted.
      */
-    public readonly failureRates!: pulumi.Output<outputs.ServiceAnomaliesFailureRates | undefined>;
+    declare public readonly failureRates: pulumi.Output<outputs.ServiceAnomaliesFailureRates | undefined>;
     /**
      * The configuration of load spikes detection. Detecting load spikes will be disabled if this block is omitted.
      */
-    public readonly load!: pulumi.Output<outputs.ServiceAnomaliesLoad | undefined>;
+    declare public readonly load: pulumi.Output<outputs.ServiceAnomaliesLoad | undefined>;
     /**
      * The configuration of load drops detection. Detecting load drops will be disabled if this block is omitted.
      */
-    public readonly loadDrops!: pulumi.Output<outputs.ServiceAnomaliesLoadDrops | undefined>;
+    declare public readonly loadDrops: pulumi.Output<outputs.ServiceAnomaliesLoadDrops | undefined>;
     /**
      * Configuration of response time degradation detection. Detecting response time degradation will be disabled if this block is omitted.
      */
-    public readonly responseTimes!: pulumi.Output<outputs.ServiceAnomaliesResponseTimes | undefined>;
+    declare public readonly responseTimes: pulumi.Output<outputs.ServiceAnomaliesResponseTimes | undefined>;
 
     /**
      * Create a ServiceAnomalies resource with the given unique name, arguments, and options.
@@ -64,16 +64,16 @@ export class ServiceAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ServiceAnomaliesState | undefined;
-            resourceInputs["failureRates"] = state ? state.failureRates : undefined;
-            resourceInputs["load"] = state ? state.load : undefined;
-            resourceInputs["loadDrops"] = state ? state.loadDrops : undefined;
-            resourceInputs["responseTimes"] = state ? state.responseTimes : undefined;
+            resourceInputs["failureRates"] = state?.failureRates;
+            resourceInputs["load"] = state?.load;
+            resourceInputs["loadDrops"] = state?.loadDrops;
+            resourceInputs["responseTimes"] = state?.responseTimes;
         } else {
             const args = argsOrState as ServiceAnomaliesArgs | undefined;
-            resourceInputs["failureRates"] = args ? args.failureRates : undefined;
-            resourceInputs["load"] = args ? args.load : undefined;
-            resourceInputs["loadDrops"] = args ? args.loadDrops : undefined;
-            resourceInputs["responseTimes"] = args ? args.responseTimes : undefined;
+            resourceInputs["failureRates"] = args?.failureRates;
+            resourceInputs["load"] = args?.load;
+            resourceInputs["loadDrops"] = args?.loadDrops;
+            resourceInputs["responseTimes"] = args?.responseTimes;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ServiceAnomalies.__pulumiType, name, resourceInputs, opts);

@@ -36,7 +36,7 @@ export class LogAgentFeatureFlags extends pulumi.CustomResource {
      * Enable OneAgent to collect logs from Journald on Linux systems. This setting enables: * Detection and to have logs
      * ingested matching ingest rule is required.
      */
-    public readonly journaldLogDetector!: pulumi.Output<boolean | undefined>;
+    declare public readonly journaldLogDetector: pulumi.Output<boolean | undefined>;
     /**
      * Enable OneAgent to collect all container logs in Kubernetes environments. This setting enables: * Detection and
      * collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
@@ -45,16 +45,16 @@ export class LogAgentFeatureFlags extends pulumi.CustomResource {
      * configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
      * more details, check our [documentation](https://dt-url.net/jn02ey0).
      */
-    public readonly newContainerLogDetector!: pulumi.Output<boolean>;
+    declare public readonly newContainerLogDetector: pulumi.Output<boolean>;
     /**
      * The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole
      * environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
      */
-    public readonly userAndEventData!: pulumi.Output<boolean | undefined>;
+    declare public readonly userAndEventData: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a LogAgentFeatureFlags resource with the given unique name, arguments, and options.
@@ -69,19 +69,19 @@ export class LogAgentFeatureFlags extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogAgentFeatureFlagsState | undefined;
-            resourceInputs["journaldLogDetector"] = state ? state.journaldLogDetector : undefined;
-            resourceInputs["newContainerLogDetector"] = state ? state.newContainerLogDetector : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["userAndEventData"] = state ? state.userAndEventData : undefined;
+            resourceInputs["journaldLogDetector"] = state?.journaldLogDetector;
+            resourceInputs["newContainerLogDetector"] = state?.newContainerLogDetector;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["userAndEventData"] = state?.userAndEventData;
         } else {
             const args = argsOrState as LogAgentFeatureFlagsArgs | undefined;
-            if ((!args || args.newContainerLogDetector === undefined) && !opts.urn) {
+            if (args?.newContainerLogDetector === undefined && !opts.urn) {
                 throw new Error("Missing required property 'newContainerLogDetector'");
             }
-            resourceInputs["journaldLogDetector"] = args ? args.journaldLogDetector : undefined;
-            resourceInputs["newContainerLogDetector"] = args ? args.newContainerLogDetector : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["userAndEventData"] = args ? args.userAndEventData : undefined;
+            resourceInputs["journaldLogDetector"] = args?.journaldLogDetector;
+            resourceInputs["newContainerLogDetector"] = args?.newContainerLogDetector;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["userAndEventData"] = args?.userAndEventData;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogAgentFeatureFlags.__pulumiType, name, resourceInputs, opts);

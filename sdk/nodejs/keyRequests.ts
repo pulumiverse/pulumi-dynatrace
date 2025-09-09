@@ -35,15 +35,15 @@ export class KeyRequests extends pulumi.CustomResource {
     /**
      * The ids of the key requests
      */
-    public readonly keyRequestIds!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly keyRequestIds: pulumi.Output<{[key: string]: string}>;
     /**
      * The names of the key requests
      */
-    public readonly names!: pulumi.Output<string[] | undefined>;
+    declare public readonly names: pulumi.Output<string[] | undefined>;
     /**
      * ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
      */
-    public readonly service!: pulumi.Output<string>;
+    declare public readonly service: pulumi.Output<string>;
 
     /**
      * Create a KeyRequests resource with the given unique name, arguments, and options.
@@ -58,17 +58,17 @@ export class KeyRequests extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KeyRequestsState | undefined;
-            resourceInputs["keyRequestIds"] = state ? state.keyRequestIds : undefined;
-            resourceInputs["names"] = state ? state.names : undefined;
-            resourceInputs["service"] = state ? state.service : undefined;
+            resourceInputs["keyRequestIds"] = state?.keyRequestIds;
+            resourceInputs["names"] = state?.names;
+            resourceInputs["service"] = state?.service;
         } else {
             const args = argsOrState as KeyRequestsArgs | undefined;
-            if ((!args || args.service === undefined) && !opts.urn) {
+            if (args?.service === undefined && !opts.urn) {
                 throw new Error("Missing required property 'service'");
             }
-            resourceInputs["keyRequestIds"] = args ? args.keyRequestIds : undefined;
-            resourceInputs["names"] = args ? args.names : undefined;
-            resourceInputs["service"] = args ? args.service : undefined;
+            resourceInputs["keyRequestIds"] = args?.keyRequestIds;
+            resourceInputs["names"] = args?.names;
+            resourceInputs["service"] = args?.service;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(KeyRequests.__pulumiType, name, resourceInputs, opts);

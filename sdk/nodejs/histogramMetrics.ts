@@ -37,7 +37,7 @@ export class HistogramMetrics extends pulumi.CustomResource {
      * Enable this if you are using OpenTelemetry histograms or Prometheus histogram metrics.\
      * When disabled, only your histograms' sum and count metrics will be ingested.
      */
-    public readonly enableHistogramBucketIngest!: pulumi.Output<boolean>;
+    declare public readonly enableHistogramBucketIngest: pulumi.Output<boolean>;
 
     /**
      * Create a HistogramMetrics resource with the given unique name, arguments, and options.
@@ -52,13 +52,13 @@ export class HistogramMetrics extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HistogramMetricsState | undefined;
-            resourceInputs["enableHistogramBucketIngest"] = state ? state.enableHistogramBucketIngest : undefined;
+            resourceInputs["enableHistogramBucketIngest"] = state?.enableHistogramBucketIngest;
         } else {
             const args = argsOrState as HistogramMetricsArgs | undefined;
-            if ((!args || args.enableHistogramBucketIngest === undefined) && !opts.urn) {
+            if (args?.enableHistogramBucketIngest === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableHistogramBucketIngest'");
             }
-            resourceInputs["enableHistogramBucketIngest"] = args ? args.enableHistogramBucketIngest : undefined;
+            resourceInputs["enableHistogramBucketIngest"] = args?.enableHistogramBucketIngest;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HistogramMetrics.__pulumiType, name, resourceInputs, opts);

@@ -35,7 +35,7 @@ export class GrailMetricsAllowall extends pulumi.CustomResource {
     /**
      * When enabled every custom metric will be ingested to Grail. Warning: this setting can cause [unexpected billing!](https://docs.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/best-practices#avoid-high-cardinality-limits)
      */
-    public readonly allowAll!: pulumi.Output<boolean>;
+    declare public readonly allowAll: pulumi.Output<boolean>;
 
     /**
      * Create a GrailMetricsAllowall resource with the given unique name, arguments, and options.
@@ -50,13 +50,13 @@ export class GrailMetricsAllowall extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GrailMetricsAllowallState | undefined;
-            resourceInputs["allowAll"] = state ? state.allowAll : undefined;
+            resourceInputs["allowAll"] = state?.allowAll;
         } else {
             const args = argsOrState as GrailMetricsAllowallArgs | undefined;
-            if ((!args || args.allowAll === undefined) && !opts.urn) {
+            if (args?.allowAll === undefined && !opts.urn) {
                 throw new Error("Missing required property 'allowAll'");
             }
-            resourceInputs["allowAll"] = args ? args.allowAll : undefined;
+            resourceInputs["allowAll"] = args?.allowAll;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(GrailMetricsAllowall.__pulumiType, name, resourceInputs, opts);

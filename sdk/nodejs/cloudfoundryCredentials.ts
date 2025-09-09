@@ -35,31 +35,31 @@ export class CloudfoundryCredentials extends pulumi.CustomResource {
     /**
      * The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
      */
-    public readonly active!: pulumi.Output<boolean | undefined>;
+    declare public readonly active: pulumi.Output<boolean | undefined>;
     /**
      * The URL of the Cloud Foundry foundation credentials.  The URL must be valid according to RFC 2396.  Leading or trailing whitespaces are not allowed.
      */
-    public readonly apiUrl!: pulumi.Output<string>;
+    declare public readonly apiUrl: pulumi.Output<string>;
     /**
      * The login URL of the Cloud Foundry foundation credentials. The URL must be valid according to RFC 2396.  Leading or trailing whitespaces are not allowed.
      */
-    public readonly loginUrl!: pulumi.Output<string>;
+    declare public readonly loginUrl: pulumi.Output<string>;
     /**
      * The name of the Cloud Foundry foundation credentials.  Allowed characters are letters, numbers, whitespaces, and the following characters: `.+-_`. Leading or trailing whitespace is not allowed.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The password of the Cloud Foundry foundation credentials.
      */
-    public readonly password!: pulumi.Output<string | undefined>;
+    declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * Any attributes that aren't yet supported by this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
     /**
      * The username of the Cloud Foundry foundation credentials.  Leading and trailing whitespaces are not allowed.
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
 
     /**
      * Create a CloudfoundryCredentials resource with the given unique name, arguments, and options.
@@ -74,31 +74,31 @@ export class CloudfoundryCredentials extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudfoundryCredentialsState | undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["apiUrl"] = state ? state.apiUrl : undefined;
-            resourceInputs["loginUrl"] = state ? state.loginUrl : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["apiUrl"] = state?.apiUrl;
+            resourceInputs["loginUrl"] = state?.loginUrl;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["unknowns"] = state?.unknowns;
+            resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as CloudfoundryCredentialsArgs | undefined;
-            if ((!args || args.apiUrl === undefined) && !opts.urn) {
+            if (args?.apiUrl === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apiUrl'");
             }
-            if ((!args || args.loginUrl === undefined) && !opts.urn) {
+            if (args?.loginUrl === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loginUrl'");
             }
-            if ((!args || args.username === undefined) && !opts.urn) {
+            if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
-            resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["apiUrl"] = args ? args.apiUrl : undefined;
-            resourceInputs["loginUrl"] = args ? args.loginUrl : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["active"] = args?.active;
+            resourceInputs["apiUrl"] = args?.apiUrl;
+            resourceInputs["loginUrl"] = args?.loginUrl;
+            resourceInputs["name"] = args?.name;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["unknowns"] = args?.unknowns;
+            resourceInputs["username"] = args?.username;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["password"] };

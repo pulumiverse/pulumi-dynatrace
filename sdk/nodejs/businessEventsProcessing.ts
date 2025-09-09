@@ -37,33 +37,33 @@ export class BusinessEventsProcessing extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
      * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
      * specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
-    public readonly matcher!: pulumi.Output<string>;
+    declare public readonly matcher: pulumi.Output<string>;
     /**
      * Rule name
      */
-    public readonly ruleName!: pulumi.Output<string>;
+    declare public readonly ruleName: pulumi.Output<string>;
     /**
      * ## Rule testing ### 1. Paste an event sample
      */
-    public readonly ruleTesting!: pulumi.Output<outputs.BusinessEventsProcessingRuleTesting>;
+    declare public readonly ruleTesting: pulumi.Output<outputs.BusinessEventsProcessingRuleTesting>;
     /**
      * [See our documentation](https://dt-url.net/pz030w5)
      */
-    public readonly script!: pulumi.Output<string>;
+    declare public readonly script: pulumi.Output<string>;
     /**
      * Transformation fields
      */
-    public readonly transformationFields!: pulumi.Output<outputs.BusinessEventsProcessingTransformationFields | undefined>;
+    declare public readonly transformationFields: pulumi.Output<outputs.BusinessEventsProcessingTransformationFields | undefined>;
 
     /**
      * Create a BusinessEventsProcessing resource with the given unique name, arguments, and options.
@@ -78,37 +78,37 @@ export class BusinessEventsProcessing extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BusinessEventsProcessingState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["matcher"] = state ? state.matcher : undefined;
-            resourceInputs["ruleName"] = state ? state.ruleName : undefined;
-            resourceInputs["ruleTesting"] = state ? state.ruleTesting : undefined;
-            resourceInputs["script"] = state ? state.script : undefined;
-            resourceInputs["transformationFields"] = state ? state.transformationFields : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["matcher"] = state?.matcher;
+            resourceInputs["ruleName"] = state?.ruleName;
+            resourceInputs["ruleTesting"] = state?.ruleTesting;
+            resourceInputs["script"] = state?.script;
+            resourceInputs["transformationFields"] = state?.transformationFields;
         } else {
             const args = argsOrState as BusinessEventsProcessingArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.matcher === undefined) && !opts.urn) {
+            if (args?.matcher === undefined && !opts.urn) {
                 throw new Error("Missing required property 'matcher'");
             }
-            if ((!args || args.ruleName === undefined) && !opts.urn) {
+            if (args?.ruleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruleName'");
             }
-            if ((!args || args.ruleTesting === undefined) && !opts.urn) {
+            if (args?.ruleTesting === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruleTesting'");
             }
-            if ((!args || args.script === undefined) && !opts.urn) {
+            if (args?.script === undefined && !opts.urn) {
                 throw new Error("Missing required property 'script'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["matcher"] = args ? args.matcher : undefined;
-            resourceInputs["ruleName"] = args ? args.ruleName : undefined;
-            resourceInputs["ruleTesting"] = args ? args.ruleTesting : undefined;
-            resourceInputs["script"] = args ? args.script : undefined;
-            resourceInputs["transformationFields"] = args ? args.transformationFields : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["matcher"] = args?.matcher;
+            resourceInputs["ruleName"] = args?.ruleName;
+            resourceInputs["ruleTesting"] = args?.ruleTesting;
+            resourceInputs["script"] = args?.script;
+            resourceInputs["transformationFields"] = args?.transformationFields;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BusinessEventsProcessing.__pulumiType, name, resourceInputs, opts);

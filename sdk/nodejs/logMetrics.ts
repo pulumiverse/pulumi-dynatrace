@@ -35,27 +35,27 @@ export class LogMetrics extends pulumi.CustomResource {
     /**
      * To enable splitting on your metric, add desired dimensions.
      */
-    public readonly dimensions!: pulumi.Output<string[] | undefined>;
+    declare public readonly dimensions: pulumi.Output<string[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Metric key
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * Possible Values: `OCCURRENCE`, `ATTRIBUTE`
      */
-    public readonly measure!: pulumi.Output<string>;
+    declare public readonly measure: pulumi.Output<string>;
     /**
      * Attribute
      */
-    public readonly measureAttribute!: pulumi.Output<string | undefined>;
+    declare public readonly measureAttribute: pulumi.Output<string | undefined>;
     /**
      * Matcher
      */
-    public readonly query!: pulumi.Output<string>;
+    declare public readonly query: pulumi.Output<string>;
 
     /**
      * Create a LogMetrics resource with the given unique name, arguments, and options.
@@ -70,32 +70,32 @@ export class LogMetrics extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogMetricsState | undefined;
-            resourceInputs["dimensions"] = state ? state.dimensions : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["measure"] = state ? state.measure : undefined;
-            resourceInputs["measureAttribute"] = state ? state.measureAttribute : undefined;
-            resourceInputs["query"] = state ? state.query : undefined;
+            resourceInputs["dimensions"] = state?.dimensions;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["measure"] = state?.measure;
+            resourceInputs["measureAttribute"] = state?.measureAttribute;
+            resourceInputs["query"] = state?.query;
         } else {
             const args = argsOrState as LogMetricsArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.key === undefined) && !opts.urn) {
+            if (args?.key === undefined && !opts.urn) {
                 throw new Error("Missing required property 'key'");
             }
-            if ((!args || args.measure === undefined) && !opts.urn) {
+            if (args?.measure === undefined && !opts.urn) {
                 throw new Error("Missing required property 'measure'");
             }
-            if ((!args || args.query === undefined) && !opts.urn) {
+            if (args?.query === undefined && !opts.urn) {
                 throw new Error("Missing required property 'query'");
             }
-            resourceInputs["dimensions"] = args ? args.dimensions : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["measure"] = args ? args.measure : undefined;
-            resourceInputs["measureAttribute"] = args ? args.measureAttribute : undefined;
-            resourceInputs["query"] = args ? args.query : undefined;
+            resourceInputs["dimensions"] = args?.dimensions;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["measure"] = args?.measure;
+            resourceInputs["measureAttribute"] = args?.measureAttribute;
+            resourceInputs["query"] = args?.query;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogMetrics.__pulumiType, name, resourceInputs, opts);

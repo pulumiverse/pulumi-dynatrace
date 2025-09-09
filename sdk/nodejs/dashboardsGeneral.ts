@@ -37,11 +37,11 @@ export class DashboardsGeneral extends pulumi.CustomResource {
     /**
      * Configure home dashboard for selected user group. The selected preset dashboard will be loaded as default landing page for this environment.
      */
-    public readonly defaultDashboardList!: pulumi.Output<outputs.DashboardsGeneralDefaultDashboardList | undefined>;
+    declare public readonly defaultDashboardList: pulumi.Output<outputs.DashboardsGeneralDefaultDashboardList | undefined>;
     /**
      * Allow users to grant anonymous access to dashboards. No sign-in will be required to view those dashboards read-only.
      */
-    public readonly enablePublicSharing!: pulumi.Output<boolean>;
+    declare public readonly enablePublicSharing: pulumi.Output<boolean>;
 
     /**
      * Create a DashboardsGeneral resource with the given unique name, arguments, and options.
@@ -56,15 +56,15 @@ export class DashboardsGeneral extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DashboardsGeneralState | undefined;
-            resourceInputs["defaultDashboardList"] = state ? state.defaultDashboardList : undefined;
-            resourceInputs["enablePublicSharing"] = state ? state.enablePublicSharing : undefined;
+            resourceInputs["defaultDashboardList"] = state?.defaultDashboardList;
+            resourceInputs["enablePublicSharing"] = state?.enablePublicSharing;
         } else {
             const args = argsOrState as DashboardsGeneralArgs | undefined;
-            if ((!args || args.enablePublicSharing === undefined) && !opts.urn) {
+            if (args?.enablePublicSharing === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enablePublicSharing'");
             }
-            resourceInputs["defaultDashboardList"] = args ? args.defaultDashboardList : undefined;
-            resourceInputs["enablePublicSharing"] = args ? args.enablePublicSharing : undefined;
+            resourceInputs["defaultDashboardList"] = args?.defaultDashboardList;
+            resourceInputs["enablePublicSharing"] = args?.enablePublicSharing;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DashboardsGeneral.__pulumiType, name, resourceInputs, opts);

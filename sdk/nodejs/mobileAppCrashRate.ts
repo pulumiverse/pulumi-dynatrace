@@ -37,11 +37,11 @@ export class MobileAppCrashRate extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string | undefined>;
+    declare public readonly applicationId: pulumi.Output<string | undefined>;
     /**
      * Crash rate increase
      */
-    public readonly crashRateIncrease!: pulumi.Output<outputs.MobileAppCrashRateCrashRateIncrease>;
+    declare public readonly crashRateIncrease: pulumi.Output<outputs.MobileAppCrashRateCrashRateIncrease>;
 
     /**
      * Create a MobileAppCrashRate resource with the given unique name, arguments, and options.
@@ -56,15 +56,15 @@ export class MobileAppCrashRate extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MobileAppCrashRateState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["crashRateIncrease"] = state ? state.crashRateIncrease : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["crashRateIncrease"] = state?.crashRateIncrease;
         } else {
             const args = argsOrState as MobileAppCrashRateArgs | undefined;
-            if ((!args || args.crashRateIncrease === undefined) && !opts.urn) {
+            if (args?.crashRateIncrease === undefined && !opts.urn) {
                 throw new Error("Missing required property 'crashRateIncrease'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["crashRateIncrease"] = args ? args.crashRateIncrease : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["crashRateIncrease"] = args?.crashRateIncrease;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MobileAppCrashRate.__pulumiType, name, resourceInputs, opts);

@@ -35,39 +35,39 @@ export class ContainerTechnology extends pulumi.CustomResource {
     /**
      * Platform: Cloud Foundry
      */
-    public readonly boshProcessManager!: pulumi.Output<boolean>;
+    declare public readonly boshProcessManager: pulumi.Output<boolean>;
     /**
      * Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
      */
-    public readonly containerd!: pulumi.Output<boolean>;
+    declare public readonly containerd: pulumi.Output<boolean>;
     /**
      * Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
      */
-    public readonly crio!: pulumi.Output<boolean>;
+    declare public readonly crio: pulumi.Output<boolean>;
     /**
      * Platform: Docker and Kubernetes Status: Released Operating system: Linux
      */
-    public readonly docker!: pulumi.Output<boolean>;
+    declare public readonly docker: pulumi.Output<boolean>;
     /**
      * Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
      */
-    public readonly dockerWindows!: pulumi.Output<boolean>;
+    declare public readonly dockerWindows: pulumi.Output<boolean>;
     /**
      * Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
      */
-    public readonly garden!: pulumi.Output<boolean>;
+    declare public readonly garden: pulumi.Output<boolean>;
     /**
      * Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
      */
-    public readonly podman!: pulumi.Output<boolean>;
+    declare public readonly podman: pulumi.Output<boolean>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
      */
-    public readonly winc!: pulumi.Output<boolean>;
+    declare public readonly winc: pulumi.Output<boolean>;
 
     /**
      * Create a ContainerTechnology resource with the given unique name, arguments, and options.
@@ -82,50 +82,50 @@ export class ContainerTechnology extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ContainerTechnologyState | undefined;
-            resourceInputs["boshProcessManager"] = state ? state.boshProcessManager : undefined;
-            resourceInputs["containerd"] = state ? state.containerd : undefined;
-            resourceInputs["crio"] = state ? state.crio : undefined;
-            resourceInputs["docker"] = state ? state.docker : undefined;
-            resourceInputs["dockerWindows"] = state ? state.dockerWindows : undefined;
-            resourceInputs["garden"] = state ? state.garden : undefined;
-            resourceInputs["podman"] = state ? state.podman : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["winc"] = state ? state.winc : undefined;
+            resourceInputs["boshProcessManager"] = state?.boshProcessManager;
+            resourceInputs["containerd"] = state?.containerd;
+            resourceInputs["crio"] = state?.crio;
+            resourceInputs["docker"] = state?.docker;
+            resourceInputs["dockerWindows"] = state?.dockerWindows;
+            resourceInputs["garden"] = state?.garden;
+            resourceInputs["podman"] = state?.podman;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["winc"] = state?.winc;
         } else {
             const args = argsOrState as ContainerTechnologyArgs | undefined;
-            if ((!args || args.boshProcessManager === undefined) && !opts.urn) {
+            if (args?.boshProcessManager === undefined && !opts.urn) {
                 throw new Error("Missing required property 'boshProcessManager'");
             }
-            if ((!args || args.containerd === undefined) && !opts.urn) {
+            if (args?.containerd === undefined && !opts.urn) {
                 throw new Error("Missing required property 'containerd'");
             }
-            if ((!args || args.crio === undefined) && !opts.urn) {
+            if (args?.crio === undefined && !opts.urn) {
                 throw new Error("Missing required property 'crio'");
             }
-            if ((!args || args.docker === undefined) && !opts.urn) {
+            if (args?.docker === undefined && !opts.urn) {
                 throw new Error("Missing required property 'docker'");
             }
-            if ((!args || args.dockerWindows === undefined) && !opts.urn) {
+            if (args?.dockerWindows === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dockerWindows'");
             }
-            if ((!args || args.garden === undefined) && !opts.urn) {
+            if (args?.garden === undefined && !opts.urn) {
                 throw new Error("Missing required property 'garden'");
             }
-            if ((!args || args.podman === undefined) && !opts.urn) {
+            if (args?.podman === undefined && !opts.urn) {
                 throw new Error("Missing required property 'podman'");
             }
-            if ((!args || args.winc === undefined) && !opts.urn) {
+            if (args?.winc === undefined && !opts.urn) {
                 throw new Error("Missing required property 'winc'");
             }
-            resourceInputs["boshProcessManager"] = args ? args.boshProcessManager : undefined;
-            resourceInputs["containerd"] = args ? args.containerd : undefined;
-            resourceInputs["crio"] = args ? args.crio : undefined;
-            resourceInputs["docker"] = args ? args.docker : undefined;
-            resourceInputs["dockerWindows"] = args ? args.dockerWindows : undefined;
-            resourceInputs["garden"] = args ? args.garden : undefined;
-            resourceInputs["podman"] = args ? args.podman : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["winc"] = args ? args.winc : undefined;
+            resourceInputs["boshProcessManager"] = args?.boshProcessManager;
+            resourceInputs["containerd"] = args?.containerd;
+            resourceInputs["crio"] = args?.crio;
+            resourceInputs["docker"] = args?.docker;
+            resourceInputs["dockerWindows"] = args?.dockerWindows;
+            resourceInputs["garden"] = args?.garden;
+            resourceInputs["podman"] = args?.podman;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["winc"] = args?.winc;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ContainerTechnology.__pulumiType, name, resourceInputs, opts);

@@ -37,58 +37,58 @@ export class MobileApplication extends pulumi.CustomResource {
     /**
      * Apdex configuration of a mobile application. A duration less than the **tolerable** threshold is considered satisfied
      */
-    public readonly apdex!: pulumi.Output<outputs.MobileApplicationApdex>;
+    declare public readonly apdex: pulumi.Output<outputs.MobileApplicationApdex>;
     /**
      * The UUID of the application.
      */
-    public readonly applicationId!: pulumi.Output<string | undefined>;
+    declare public readonly applicationId: pulumi.Output<string | undefined>;
     /**
      * The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
      */
-    public readonly applicationType!: pulumi.Output<string | undefined>;
+    declare public readonly applicationType: pulumi.Output<string | undefined>;
     /**
      * The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
      */
-    public readonly beaconEndpointType!: pulumi.Output<string>;
+    declare public readonly beaconEndpointType: pulumi.Output<string>;
     /**
      * The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
      * `INSTRUMENTED_WEB_SERVER`
      */
-    public readonly beaconEndpointUrl!: pulumi.Output<string | undefined>;
+    declare public readonly beaconEndpointUrl: pulumi.Output<string | undefined>;
     /**
      * Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
      */
-    public readonly iconType!: pulumi.Output<string | undefined>;
+    declare public readonly iconType: pulumi.Output<string | undefined>;
     /**
      * User Action names to be flagged as Key User Actions
      */
-    public readonly keyUserActions!: pulumi.Output<string[] | undefined>;
+    declare public readonly keyUserActions: pulumi.Output<string[] | undefined>;
     /**
      * The name of the application
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The opt-in mode is enabled (`true`) or disabled (`false`)
      */
-    public readonly optInMode!: pulumi.Output<boolean | undefined>;
+    declare public readonly optInMode: pulumi.Output<boolean | undefined>;
     /**
      * User Action and Session Properties
      */
-    public readonly properties!: pulumi.Output<outputs.MobileApplicationProperties | undefined>;
+    declare public readonly properties: pulumi.Output<outputs.MobileApplicationProperties | undefined>;
     /**
      * (Field has overlap with `dynatrace.MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
      */
-    public readonly sessionReplay!: pulumi.Output<boolean | undefined>;
+    declare public readonly sessionReplay: pulumi.Output<boolean | undefined>;
     /**
      * The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
      * and **optInModeEnabled** values set to `true`.
      */
-    public readonly sessionReplayOnCrash!: pulumi.Output<boolean | undefined>;
+    declare public readonly sessionReplayOnCrash: pulumi.Output<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps)
      * The percentage of user sessions to be analyzed
      */
-    public readonly userSessionPercentage!: pulumi.Output<number | undefined>;
+    declare public readonly userSessionPercentage: pulumi.Output<number | undefined>;
 
     /**
      * Create a MobileApplication resource with the given unique name, arguments, and options.
@@ -103,40 +103,40 @@ export class MobileApplication extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MobileApplicationState | undefined;
-            resourceInputs["apdex"] = state ? state.apdex : undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["applicationType"] = state ? state.applicationType : undefined;
-            resourceInputs["beaconEndpointType"] = state ? state.beaconEndpointType : undefined;
-            resourceInputs["beaconEndpointUrl"] = state ? state.beaconEndpointUrl : undefined;
-            resourceInputs["iconType"] = state ? state.iconType : undefined;
-            resourceInputs["keyUserActions"] = state ? state.keyUserActions : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["optInMode"] = state ? state.optInMode : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["sessionReplay"] = state ? state.sessionReplay : undefined;
-            resourceInputs["sessionReplayOnCrash"] = state ? state.sessionReplayOnCrash : undefined;
-            resourceInputs["userSessionPercentage"] = state ? state.userSessionPercentage : undefined;
+            resourceInputs["apdex"] = state?.apdex;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["applicationType"] = state?.applicationType;
+            resourceInputs["beaconEndpointType"] = state?.beaconEndpointType;
+            resourceInputs["beaconEndpointUrl"] = state?.beaconEndpointUrl;
+            resourceInputs["iconType"] = state?.iconType;
+            resourceInputs["keyUserActions"] = state?.keyUserActions;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["optInMode"] = state?.optInMode;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["sessionReplay"] = state?.sessionReplay;
+            resourceInputs["sessionReplayOnCrash"] = state?.sessionReplayOnCrash;
+            resourceInputs["userSessionPercentage"] = state?.userSessionPercentage;
         } else {
             const args = argsOrState as MobileApplicationArgs | undefined;
-            if ((!args || args.apdex === undefined) && !opts.urn) {
+            if (args?.apdex === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apdex'");
             }
-            if ((!args || args.beaconEndpointType === undefined) && !opts.urn) {
+            if (args?.beaconEndpointType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'beaconEndpointType'");
             }
-            resourceInputs["apdex"] = args ? args.apdex : undefined;
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["applicationType"] = args ? args.applicationType : undefined;
-            resourceInputs["beaconEndpointType"] = args ? args.beaconEndpointType : undefined;
-            resourceInputs["beaconEndpointUrl"] = args ? args.beaconEndpointUrl : undefined;
-            resourceInputs["iconType"] = args ? args.iconType : undefined;
-            resourceInputs["keyUserActions"] = args ? args.keyUserActions : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["optInMode"] = args ? args.optInMode : undefined;
-            resourceInputs["properties"] = args ? args.properties : undefined;
-            resourceInputs["sessionReplay"] = args ? args.sessionReplay : undefined;
-            resourceInputs["sessionReplayOnCrash"] = args ? args.sessionReplayOnCrash : undefined;
-            resourceInputs["userSessionPercentage"] = args ? args.userSessionPercentage : undefined;
+            resourceInputs["apdex"] = args?.apdex;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["applicationType"] = args?.applicationType;
+            resourceInputs["beaconEndpointType"] = args?.beaconEndpointType;
+            resourceInputs["beaconEndpointUrl"] = args?.beaconEndpointUrl;
+            resourceInputs["iconType"] = args?.iconType;
+            resourceInputs["keyUserActions"] = args?.keyUserActions;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["optInMode"] = args?.optInMode;
+            resourceInputs["properties"] = args?.properties;
+            resourceInputs["sessionReplay"] = args?.sessionReplay;
+            resourceInputs["sessionReplayOnCrash"] = args?.sessionReplayOnCrash;
+            resourceInputs["userSessionPercentage"] = args?.userSessionPercentage;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MobileApplication.__pulumiType, name, resourceInputs, opts);

@@ -37,23 +37,23 @@ export class ProcessGroupDetection extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * You can define the properties that should be used to identify your process groups.
      */
-    public readonly groupExtraction!: pulumi.Output<outputs.ProcessGroupDetectionGroupExtraction>;
+    declare public readonly groupExtraction: pulumi.Output<outputs.ProcessGroupDetectionGroupExtraction>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * You can define the properties that should be used to identify your process instances.
      */
-    public readonly instanceExtraction!: pulumi.Output<outputs.ProcessGroupDetectionInstanceExtraction | undefined>;
+    declare public readonly instanceExtraction: pulumi.Output<outputs.ProcessGroupDetectionInstanceExtraction | undefined>;
     /**
      * Apply this rule to processes where the selected property contains the specified string.
      */
-    public readonly processDetection!: pulumi.Output<outputs.ProcessGroupDetectionProcessDetection>;
+    declare public readonly processDetection: pulumi.Output<outputs.ProcessGroupDetectionProcessDetection>;
 
     /**
      * Create a ProcessGroupDetection resource with the given unique name, arguments, and options.
@@ -68,27 +68,27 @@ export class ProcessGroupDetection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProcessGroupDetectionState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["groupExtraction"] = state ? state.groupExtraction : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["instanceExtraction"] = state ? state.instanceExtraction : undefined;
-            resourceInputs["processDetection"] = state ? state.processDetection : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["groupExtraction"] = state?.groupExtraction;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["instanceExtraction"] = state?.instanceExtraction;
+            resourceInputs["processDetection"] = state?.processDetection;
         } else {
             const args = argsOrState as ProcessGroupDetectionArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.groupExtraction === undefined) && !opts.urn) {
+            if (args?.groupExtraction === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupExtraction'");
             }
-            if ((!args || args.processDetection === undefined) && !opts.urn) {
+            if (args?.processDetection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'processDetection'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["groupExtraction"] = args ? args.groupExtraction : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["instanceExtraction"] = args ? args.instanceExtraction : undefined;
-            resourceInputs["processDetection"] = args ? args.processDetection : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["groupExtraction"] = args?.groupExtraction;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["instanceExtraction"] = args?.instanceExtraction;
+            resourceInputs["processDetection"] = args?.processDetection;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProcessGroupDetection.__pulumiType, name, resourceInputs, opts);

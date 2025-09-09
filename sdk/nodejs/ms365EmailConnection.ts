@@ -35,27 +35,27 @@ export class Ms365EmailConnection extends pulumi.CustomResource {
     /**
      * Application (client) ID of your app registered in Microsoft Azure App registrations
      */
-    public readonly clientId!: pulumi.Output<string>;
+    declare public readonly clientId: pulumi.Output<string>;
     /**
      * Client secret of your app registered in Microsoft Azure App registrations
      */
-    public readonly clientSecret!: pulumi.Output<string | undefined>;
+    declare public readonly clientSecret: pulumi.Output<string | undefined>;
     /**
      * The email address from which the messages will be sent
      */
-    public readonly fromAddress!: pulumi.Output<string>;
+    declare public readonly fromAddress: pulumi.Output<string>;
     /**
      * A unique name for the Microsoft 365 email connection
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Directory (tenant) ID of your Azure Active Directory
      */
-    public readonly tenantId!: pulumi.Output<string>;
+    declare public readonly tenantId: pulumi.Output<string>;
     /**
      * Possible Values: `clientSecret`
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a Ms365EmailConnection resource with the given unique name, arguments, and options.
@@ -70,32 +70,32 @@ export class Ms365EmailConnection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as Ms365EmailConnectionState | undefined;
-            resourceInputs["clientId"] = state ? state.clientId : undefined;
-            resourceInputs["clientSecret"] = state ? state.clientSecret : undefined;
-            resourceInputs["fromAddress"] = state ? state.fromAddress : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["clientId"] = state?.clientId;
+            resourceInputs["clientSecret"] = state?.clientSecret;
+            resourceInputs["fromAddress"] = state?.fromAddress;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as Ms365EmailConnectionArgs | undefined;
-            if ((!args || args.clientId === undefined) && !opts.urn) {
+            if (args?.clientId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clientId'");
             }
-            if ((!args || args.fromAddress === undefined) && !opts.urn) {
+            if (args?.fromAddress === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fromAddress'");
             }
-            if ((!args || args.tenantId === undefined) && !opts.urn) {
+            if (args?.tenantId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tenantId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["clientId"] = args ? args.clientId : undefined;
+            resourceInputs["clientId"] = args?.clientId;
             resourceInputs["clientSecret"] = args?.clientSecret ? pulumi.secret(args.clientSecret) : undefined;
-            resourceInputs["fromAddress"] = args ? args.fromAddress : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["tenantId"] = args ? args.tenantId : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["fromAddress"] = args?.fromAddress;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["tenantId"] = args?.tenantId;
+            resourceInputs["type"] = args?.type;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["clientSecret"] };

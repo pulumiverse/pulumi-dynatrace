@@ -37,40 +37,40 @@ export class HttpMonitor extends pulumi.CustomResource {
     /**
      * The anomaly detection configuration.
      */
-    public readonly anomalyDetections!: pulumi.Output<outputs.HttpMonitorAnomalyDetection[] | undefined>;
+    declare public readonly anomalyDetections: pulumi.Output<outputs.HttpMonitorAnomalyDetection[] | undefined>;
     /**
      * The monitor is enabled (`true`) or disabled (`false`).
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabled: pulumi.Output<boolean | undefined>;
     /**
      * The frequency of the monitor, in minutes.
      */
-    public readonly frequency!: pulumi.Output<number>;
+    declare public readonly frequency: pulumi.Output<number>;
     /**
      * A list of locations from which the monitor is executed. To specify a location, use its entity ID.
      */
-    public readonly locations!: pulumi.Output<string[] | undefined>;
+    declare public readonly locations: pulumi.Output<string[] | undefined>;
     /**
      * A set of manually assigned applications.
      */
-    public readonly manuallyAssignedApps!: pulumi.Output<string[] | undefined>;
+    declare public readonly manuallyAssignedApps: pulumi.Output<string[] | undefined>;
     /**
      * The name of the monitor.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * No script block - handle requests via `dynatrace.HttpMonitorScript` resource
      */
-    public readonly noScript!: pulumi.Output<boolean | undefined>;
+    declare public readonly noScript: pulumi.Output<boolean | undefined>;
     /**
      * The HTTP Script
      */
-    public readonly script!: pulumi.Output<outputs.HttpMonitorScript | undefined>;
+    declare public readonly script: pulumi.Output<outputs.HttpMonitorScript | undefined>;
     /**
      * A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
      * source 'USER' will be added automatically.
      */
-    public readonly tags!: pulumi.Output<outputs.HttpMonitorTag[] | undefined>;
+    declare public readonly tags: pulumi.Output<outputs.HttpMonitorTag[] | undefined>;
 
     /**
      * Create a HttpMonitor resource with the given unique name, arguments, and options.
@@ -85,29 +85,29 @@ export class HttpMonitor extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HttpMonitorState | undefined;
-            resourceInputs["anomalyDetections"] = state ? state.anomalyDetections : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["frequency"] = state ? state.frequency : undefined;
-            resourceInputs["locations"] = state ? state.locations : undefined;
-            resourceInputs["manuallyAssignedApps"] = state ? state.manuallyAssignedApps : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["noScript"] = state ? state.noScript : undefined;
-            resourceInputs["script"] = state ? state.script : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
+            resourceInputs["anomalyDetections"] = state?.anomalyDetections;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["frequency"] = state?.frequency;
+            resourceInputs["locations"] = state?.locations;
+            resourceInputs["manuallyAssignedApps"] = state?.manuallyAssignedApps;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["noScript"] = state?.noScript;
+            resourceInputs["script"] = state?.script;
+            resourceInputs["tags"] = state?.tags;
         } else {
             const args = argsOrState as HttpMonitorArgs | undefined;
-            if ((!args || args.frequency === undefined) && !opts.urn) {
+            if (args?.frequency === undefined && !opts.urn) {
                 throw new Error("Missing required property 'frequency'");
             }
-            resourceInputs["anomalyDetections"] = args ? args.anomalyDetections : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["frequency"] = args ? args.frequency : undefined;
-            resourceInputs["locations"] = args ? args.locations : undefined;
-            resourceInputs["manuallyAssignedApps"] = args ? args.manuallyAssignedApps : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["noScript"] = args ? args.noScript : undefined;
-            resourceInputs["script"] = args ? args.script : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["anomalyDetections"] = args?.anomalyDetections;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["frequency"] = args?.frequency;
+            resourceInputs["locations"] = args?.locations;
+            resourceInputs["manuallyAssignedApps"] = args?.manuallyAssignedApps;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["noScript"] = args?.noScript;
+            resourceInputs["script"] = args?.script;
+            resourceInputs["tags"] = args?.tags;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HttpMonitor.__pulumiType, name, resourceInputs, opts);

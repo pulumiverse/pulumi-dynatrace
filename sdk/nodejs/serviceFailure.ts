@@ -37,15 +37,15 @@ export class ServiceFailure extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Customize failure detection for specific exceptions and errors
      */
-    public readonly exceptionRules!: pulumi.Output<outputs.ServiceFailureExceptionRules | undefined>;
+    declare public readonly exceptionRules: pulumi.Output<outputs.ServiceFailureExceptionRules | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly serviceId!: pulumi.Output<string>;
+    declare public readonly serviceId: pulumi.Output<string>;
 
     /**
      * Create a ServiceFailure resource with the given unique name, arguments, and options.
@@ -60,20 +60,20 @@ export class ServiceFailure extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ServiceFailureState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["exceptionRules"] = state ? state.exceptionRules : undefined;
-            resourceInputs["serviceId"] = state ? state.serviceId : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["exceptionRules"] = state?.exceptionRules;
+            resourceInputs["serviceId"] = state?.serviceId;
         } else {
             const args = argsOrState as ServiceFailureArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.serviceId === undefined) && !opts.urn) {
+            if (args?.serviceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceId'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["exceptionRules"] = args ? args.exceptionRules : undefined;
-            resourceInputs["serviceId"] = args ? args.serviceId : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["exceptionRules"] = args?.exceptionRules;
+            resourceInputs["serviceId"] = args?.serviceId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ServiceFailure.__pulumiType, name, resourceInputs, opts);

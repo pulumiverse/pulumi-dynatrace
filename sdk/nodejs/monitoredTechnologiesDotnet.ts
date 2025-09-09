@@ -35,15 +35,15 @@ export class MonitoredTechnologiesDotnet extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Requires Dynatrace OneAgent version 1.117 or later on Windows and version 1.127 or later on Linux and .NET monitoring enabled
      */
-    public readonly enabledDotNetCore!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabledDotNetCore: pulumi.Output<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly hostId!: pulumi.Output<string | undefined>;
+    declare public readonly hostId: pulumi.Output<string | undefined>;
 
     /**
      * Create a MonitoredTechnologiesDotnet resource with the given unique name, arguments, and options.
@@ -58,17 +58,17 @@ export class MonitoredTechnologiesDotnet extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitoredTechnologiesDotnetState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["enabledDotNetCore"] = state ? state.enabledDotNetCore : undefined;
-            resourceInputs["hostId"] = state ? state.hostId : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["enabledDotNetCore"] = state?.enabledDotNetCore;
+            resourceInputs["hostId"] = state?.hostId;
         } else {
             const args = argsOrState as MonitoredTechnologiesDotnetArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["enabledDotNetCore"] = args ? args.enabledDotNetCore : undefined;
-            resourceInputs["hostId"] = args ? args.hostId : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["enabledDotNetCore"] = args?.enabledDotNetCore;
+            resourceInputs["hostId"] = args?.hostId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MonitoredTechnologiesDotnet.__pulumiType, name, resourceInputs, opts);

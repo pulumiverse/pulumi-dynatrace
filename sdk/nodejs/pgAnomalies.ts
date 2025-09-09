@@ -37,11 +37,11 @@ export class PgAnomalies extends pulumi.CustomResource {
     /**
      * Configuration of the availability monitoring for the process group.
      */
-    public readonly availability!: pulumi.Output<outputs.PgAnomaliesAvailability | undefined>;
+    declare public readonly availability: pulumi.Output<outputs.PgAnomaliesAvailability | undefined>;
     /**
      * The ID of the process group
      */
-    public readonly pgId!: pulumi.Output<string>;
+    declare public readonly pgId: pulumi.Output<string>;
 
     /**
      * Create a PgAnomalies resource with the given unique name, arguments, and options.
@@ -56,15 +56,15 @@ export class PgAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PgAnomaliesState | undefined;
-            resourceInputs["availability"] = state ? state.availability : undefined;
-            resourceInputs["pgId"] = state ? state.pgId : undefined;
+            resourceInputs["availability"] = state?.availability;
+            resourceInputs["pgId"] = state?.pgId;
         } else {
             const args = argsOrState as PgAnomaliesArgs | undefined;
-            if ((!args || args.pgId === undefined) && !opts.urn) {
+            if (args?.pgId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pgId'");
             }
-            resourceInputs["availability"] = args ? args.availability : undefined;
-            resourceInputs["pgId"] = args ? args.pgId : undefined;
+            resourceInputs["availability"] = args?.availability;
+            resourceInputs["pgId"] = args?.pgId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PgAnomalies.__pulumiType, name, resourceInputs, opts);

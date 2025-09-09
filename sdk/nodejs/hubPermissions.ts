@@ -35,11 +35,11 @@ export class HubPermissions extends pulumi.CustomResource {
     /**
      * Name
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Contact Email
      */
-    public readonly email!: pulumi.Output<string>;
+    declare public readonly email: pulumi.Output<string>;
 
     /**
      * Create a HubPermissions resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class HubPermissions extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HubPermissionsState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["email"] = state ? state.email : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["email"] = state?.email;
         } else {
             const args = argsOrState as HubPermissionsArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.email === undefined) && !opts.urn) {
+            if (args?.email === undefined && !opts.urn) {
                 throw new Error("Missing required property 'email'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["email"] = args ? args.email : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["email"] = args?.email;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(HubPermissions.__pulumiType, name, resourceInputs, opts);

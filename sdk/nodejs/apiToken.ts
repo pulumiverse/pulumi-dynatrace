@@ -35,47 +35,47 @@ export class ApiToken extends pulumi.CustomResource {
     /**
      * Token creation date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
      */
-    public readonly creationDate!: pulumi.Output<string>;
+    declare public readonly creationDate: pulumi.Output<string>;
     /**
      * The token is enabled (true) or disabled (false), default disabled (false).
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabled: pulumi.Output<boolean | undefined>;
     /**
      * The expiration date of the token.
      */
-    public readonly expirationDate!: pulumi.Output<string | undefined>;
+    declare public readonly expirationDate: pulumi.Output<string | undefined>;
     /**
      * Token last used date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
      */
-    public readonly lastUsedDate!: pulumi.Output<string>;
+    declare public readonly lastUsedDate: pulumi.Output<string>;
     /**
      * Token last used IP address.
      */
-    public readonly lastUsedIpAddress!: pulumi.Output<string>;
+    declare public readonly lastUsedIpAddress: pulumi.Output<string>;
     /**
      * Token last modified date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
      */
-    public readonly modifiedDate!: pulumi.Output<string>;
+    declare public readonly modifiedDate: pulumi.Output<string>;
     /**
      * The name of the token.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owner of the token
      */
-    public readonly owner!: pulumi.Output<string>;
+    declare public readonly owner: pulumi.Output<string>;
     /**
      * The token is a personal access token (true) or an API token (false).
      */
-    public readonly personalAccessToken!: pulumi.Output<boolean | undefined>;
+    declare public readonly personalAccessToken: pulumi.Output<boolean | undefined>;
     /**
      * A list of the scopes to be assigned to the token.
      */
-    public readonly scopes!: pulumi.Output<string[]>;
+    declare public readonly scopes: pulumi.Output<string[]>;
     /**
      * The secret of the token.
      */
-    public /*out*/ readonly token!: pulumi.Output<string>;
+    declare public /*out*/ readonly token: pulumi.Output<string>;
 
     /**
      * Create a ApiToken resource with the given unique name, arguments, and options.
@@ -90,32 +90,32 @@ export class ApiToken extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ApiTokenState | undefined;
-            resourceInputs["creationDate"] = state ? state.creationDate : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["expirationDate"] = state ? state.expirationDate : undefined;
-            resourceInputs["lastUsedDate"] = state ? state.lastUsedDate : undefined;
-            resourceInputs["lastUsedIpAddress"] = state ? state.lastUsedIpAddress : undefined;
-            resourceInputs["modifiedDate"] = state ? state.modifiedDate : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["owner"] = state ? state.owner : undefined;
-            resourceInputs["personalAccessToken"] = state ? state.personalAccessToken : undefined;
-            resourceInputs["scopes"] = state ? state.scopes : undefined;
-            resourceInputs["token"] = state ? state.token : undefined;
+            resourceInputs["creationDate"] = state?.creationDate;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["expirationDate"] = state?.expirationDate;
+            resourceInputs["lastUsedDate"] = state?.lastUsedDate;
+            resourceInputs["lastUsedIpAddress"] = state?.lastUsedIpAddress;
+            resourceInputs["modifiedDate"] = state?.modifiedDate;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["owner"] = state?.owner;
+            resourceInputs["personalAccessToken"] = state?.personalAccessToken;
+            resourceInputs["scopes"] = state?.scopes;
+            resourceInputs["token"] = state?.token;
         } else {
             const args = argsOrState as ApiTokenArgs | undefined;
-            if ((!args || args.scopes === undefined) && !opts.urn) {
+            if (args?.scopes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scopes'");
             }
-            resourceInputs["creationDate"] = args ? args.creationDate : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["expirationDate"] = args ? args.expirationDate : undefined;
-            resourceInputs["lastUsedDate"] = args ? args.lastUsedDate : undefined;
-            resourceInputs["lastUsedIpAddress"] = args ? args.lastUsedIpAddress : undefined;
-            resourceInputs["modifiedDate"] = args ? args.modifiedDate : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["owner"] = args ? args.owner : undefined;
-            resourceInputs["personalAccessToken"] = args ? args.personalAccessToken : undefined;
-            resourceInputs["scopes"] = args ? args.scopes : undefined;
+            resourceInputs["creationDate"] = args?.creationDate;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["expirationDate"] = args?.expirationDate;
+            resourceInputs["lastUsedDate"] = args?.lastUsedDate;
+            resourceInputs["lastUsedIpAddress"] = args?.lastUsedIpAddress;
+            resourceInputs["modifiedDate"] = args?.modifiedDate;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["owner"] = args?.owner;
+            resourceInputs["personalAccessToken"] = args?.personalAccessToken;
+            resourceInputs["scopes"] = args?.scopes;
             resourceInputs["token"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
