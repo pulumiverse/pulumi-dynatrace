@@ -37,43 +37,43 @@ export class CalculatedServiceMetric extends pulumi.CustomResource {
     /**
      * The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
      */
-    public readonly conditions!: pulumi.Output<outputs.CalculatedServiceMetricCondition[] | undefined>;
+    declare public readonly conditions: pulumi.Output<outputs.CalculatedServiceMetricCondition[] | undefined>;
     /**
      * The displayed description of the metric
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Parameters of a definition of a calculated service metric
      */
-    public readonly dimensionDefinition!: pulumi.Output<outputs.CalculatedServiceMetricDimensionDefinition | undefined>;
+    declare public readonly dimensionDefinition: pulumi.Output<outputs.CalculatedServiceMetricDimensionDefinition | undefined>;
     /**
      * The metric is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabled: pulumi.Output<boolean | undefined>;
     /**
      * Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
      */
-    public readonly entityId!: pulumi.Output<string | undefined>;
+    declare public readonly entityId: pulumi.Output<string | undefined>;
     /**
      * Metric should (true) or not (false) ignore muted requests.
      */
-    public readonly ignoreMutedRequests!: pulumi.Output<boolean | undefined>;
+    declare public readonly ignoreMutedRequests: pulumi.Output<boolean | undefined>;
     /**
      * Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
      */
-    public readonly managementZones!: pulumi.Output<string[] | undefined>;
+    declare public readonly managementZones: pulumi.Output<string[] | undefined>;
     /**
      * The definition of a calculated service metric
      */
-    public readonly metricDefinition!: pulumi.Output<outputs.CalculatedServiceMetricMetricDefinition | undefined>;
+    declare public readonly metricDefinition: pulumi.Output<outputs.CalculatedServiceMetricMetricDefinition | undefined>;
     /**
      * The key of the calculated service metric
      */
-    public readonly metricKey!: pulumi.Output<string>;
+    declare public readonly metricKey: pulumi.Output<string>;
     /**
      * The displayed name of the metric
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The unit of the metric. Possible values are `BIT`, `BIT_PER_HOUR`, `BIT_PER_MINUTE`, `BIT_PER_SECOND`, `BYTE`,
      * `BYTE_PER_HOUR`, `BYTE_PER_MINUTE`, `BYTE_PER_SECOND`, `CORES`, `COUNT`, `DAY`, `DECIBEL_MILLI_WATT`, `GIBI_BYTE`,
@@ -84,15 +84,15 @@ export class CalculatedServiceMetric extends pulumi.CustomResource {
      * `MSU`, `NANO_SECOND`, `NANO_SECOND_PER_MINUTE`, `NOT_APPLICABLE`, `PERCENT`, `PER_HOUR`, `PER_MINUTE`, `PER_SECOND`,
      * `PIXEL`, `PROMILLE`, `RATIO`, `SECOND`, `STATE`, `UNSPECIFIED`, `WEEK` and `YEAR`
      */
-    public readonly unit!: pulumi.Output<string>;
+    declare public readonly unit: pulumi.Output<string>;
     /**
      * The display name of the metric's unit. Only applicable when the **unit** parameter is set to `UNSPECIFIED`
      */
-    public readonly unitDisplayName!: pulumi.Output<string | undefined>;
+    declare public readonly unitDisplayName: pulumi.Output<string | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
 
     /**
      * Create a CalculatedServiceMetric resource with the given unique name, arguments, and options.
@@ -107,40 +107,40 @@ export class CalculatedServiceMetric extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CalculatedServiceMetricState | undefined;
-            resourceInputs["conditions"] = state ? state.conditions : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["dimensionDefinition"] = state ? state.dimensionDefinition : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["entityId"] = state ? state.entityId : undefined;
-            resourceInputs["ignoreMutedRequests"] = state ? state.ignoreMutedRequests : undefined;
-            resourceInputs["managementZones"] = state ? state.managementZones : undefined;
-            resourceInputs["metricDefinition"] = state ? state.metricDefinition : undefined;
-            resourceInputs["metricKey"] = state ? state.metricKey : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["unit"] = state ? state.unit : undefined;
-            resourceInputs["unitDisplayName"] = state ? state.unitDisplayName : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
+            resourceInputs["conditions"] = state?.conditions;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["dimensionDefinition"] = state?.dimensionDefinition;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["entityId"] = state?.entityId;
+            resourceInputs["ignoreMutedRequests"] = state?.ignoreMutedRequests;
+            resourceInputs["managementZones"] = state?.managementZones;
+            resourceInputs["metricDefinition"] = state?.metricDefinition;
+            resourceInputs["metricKey"] = state?.metricKey;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["unit"] = state?.unit;
+            resourceInputs["unitDisplayName"] = state?.unitDisplayName;
+            resourceInputs["unknowns"] = state?.unknowns;
         } else {
             const args = argsOrState as CalculatedServiceMetricArgs | undefined;
-            if ((!args || args.metricKey === undefined) && !opts.urn) {
+            if (args?.metricKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricKey'");
             }
-            if ((!args || args.unit === undefined) && !opts.urn) {
+            if (args?.unit === undefined && !opts.urn) {
                 throw new Error("Missing required property 'unit'");
             }
-            resourceInputs["conditions"] = args ? args.conditions : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["dimensionDefinition"] = args ? args.dimensionDefinition : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["entityId"] = args ? args.entityId : undefined;
-            resourceInputs["ignoreMutedRequests"] = args ? args.ignoreMutedRequests : undefined;
-            resourceInputs["managementZones"] = args ? args.managementZones : undefined;
-            resourceInputs["metricDefinition"] = args ? args.metricDefinition : undefined;
-            resourceInputs["metricKey"] = args ? args.metricKey : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["unit"] = args ? args.unit : undefined;
-            resourceInputs["unitDisplayName"] = args ? args.unitDisplayName : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
+            resourceInputs["conditions"] = args?.conditions;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["dimensionDefinition"] = args?.dimensionDefinition;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["entityId"] = args?.entityId;
+            resourceInputs["ignoreMutedRequests"] = args?.ignoreMutedRequests;
+            resourceInputs["managementZones"] = args?.managementZones;
+            resourceInputs["metricDefinition"] = args?.metricDefinition;
+            resourceInputs["metricKey"] = args?.metricKey;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["unit"] = args?.unit;
+            resourceInputs["unitDisplayName"] = args?.unitDisplayName;
+            resourceInputs["unknowns"] = args?.unknowns;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CalculatedServiceMetric.__pulumiType, name, resourceInputs, opts);

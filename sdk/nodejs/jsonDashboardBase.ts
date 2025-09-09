@@ -35,7 +35,7 @@ export class JsonDashboardBase extends pulumi.CustomResource {
     /**
      * This attribute exists for backwards compatibility. You do not have to define it.
      */
-    public readonly contents!: pulumi.Output<string | undefined>;
+    declare public readonly contents: pulumi.Output<string | undefined>;
 
     /**
      * Create a JsonDashboardBase resource with the given unique name, arguments, and options.
@@ -50,10 +50,10 @@ export class JsonDashboardBase extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as JsonDashboardBaseState | undefined;
-            resourceInputs["contents"] = state ? state.contents : undefined;
+            resourceInputs["contents"] = state?.contents;
         } else {
             const args = argsOrState as JsonDashboardBaseArgs | undefined;
-            resourceInputs["contents"] = args ? args.contents : undefined;
+            resourceInputs["contents"] = args?.contents;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(JsonDashboardBase.__pulumiType, name, resourceInputs, opts);

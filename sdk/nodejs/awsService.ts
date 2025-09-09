@@ -82,18 +82,18 @@ export class AwsService extends pulumi.CustomResource {
     /**
      * This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
      */
-    public /*out*/ readonly builtIn!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly builtIn: pulumi.Output<boolean>;
     /**
      * the ID of the azure credentials this supported service belongs to
      */
-    public readonly credentialsId!: pulumi.Output<string>;
-    public readonly metrics!: pulumi.Output<outputs.AwsServiceMetric[] | undefined>;
+    declare public readonly credentialsId: pulumi.Output<string>;
+    declare public readonly metrics: pulumi.Output<outputs.AwsServiceMetric[] | undefined>;
     /**
      * The name of the supporting service.
      */
-    public readonly name!: pulumi.Output<string>;
-    public /*out*/ readonly requiredMetrics!: pulumi.Output<string>;
-    public readonly useRecommendedMetrics!: pulumi.Output<boolean | undefined>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public /*out*/ readonly requiredMetrics: pulumi.Output<string>;
+    declare public readonly useRecommendedMetrics: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a AwsService resource with the given unique name, arguments, and options.
@@ -108,21 +108,21 @@ export class AwsService extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AwsServiceState | undefined;
-            resourceInputs["builtIn"] = state ? state.builtIn : undefined;
-            resourceInputs["credentialsId"] = state ? state.credentialsId : undefined;
-            resourceInputs["metrics"] = state ? state.metrics : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["requiredMetrics"] = state ? state.requiredMetrics : undefined;
-            resourceInputs["useRecommendedMetrics"] = state ? state.useRecommendedMetrics : undefined;
+            resourceInputs["builtIn"] = state?.builtIn;
+            resourceInputs["credentialsId"] = state?.credentialsId;
+            resourceInputs["metrics"] = state?.metrics;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["requiredMetrics"] = state?.requiredMetrics;
+            resourceInputs["useRecommendedMetrics"] = state?.useRecommendedMetrics;
         } else {
             const args = argsOrState as AwsServiceArgs | undefined;
-            if ((!args || args.credentialsId === undefined) && !opts.urn) {
+            if (args?.credentialsId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'credentialsId'");
             }
-            resourceInputs["credentialsId"] = args ? args.credentialsId : undefined;
-            resourceInputs["metrics"] = args ? args.metrics : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["useRecommendedMetrics"] = args ? args.useRecommendedMetrics : undefined;
+            resourceInputs["credentialsId"] = args?.credentialsId;
+            resourceInputs["metrics"] = args?.metrics;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["useRecommendedMetrics"] = args?.useRecommendedMetrics;
             resourceInputs["builtIn"] = undefined /*out*/;
             resourceInputs["requiredMetrics"] = undefined /*out*/;
         }

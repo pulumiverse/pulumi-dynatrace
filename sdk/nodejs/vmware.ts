@@ -35,29 +35,29 @@ export class Vmware extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * This string should have one of the following formats: - $prefix(parameter) - property value starting with 'parameter' -
      * $eq(parameter) - property value exactly matching 'parameter' - $suffix(parameter) - property value ends with 'parameter'
      * - $contains(parameter) - property value contains 'parameter'
      */
-    public readonly filter!: pulumi.Output<string | undefined>;
+    declare public readonly filter: pulumi.Output<string | undefined>;
     /**
      * Specify the IP address or name of the vCenter or standalone ESXi host:
      */
-    public readonly ipaddress!: pulumi.Output<string>;
+    declare public readonly ipaddress: pulumi.Output<string>;
     /**
      * Name this connection
      */
-    public readonly label!: pulumi.Output<string>;
+    declare public readonly label: pulumi.Output<string>;
     /**
      * no documentation available
      */
-    public readonly password!: pulumi.Output<string>;
+    declare public readonly password: pulumi.Output<string>;
     /**
      * Provide user credentials for the vCenter or standalone ESXi host:
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
 
     /**
      * Create a Vmware resource with the given unique name, arguments, and options.
@@ -72,35 +72,35 @@ export class Vmware extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmwareState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["filter"] = state ? state.filter : undefined;
-            resourceInputs["ipaddress"] = state ? state.ipaddress : undefined;
-            resourceInputs["label"] = state ? state.label : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["filter"] = state?.filter;
+            resourceInputs["ipaddress"] = state?.ipaddress;
+            resourceInputs["label"] = state?.label;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as VmwareArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.ipaddress === undefined) && !opts.urn) {
+            if (args?.ipaddress === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ipaddress'");
             }
-            if ((!args || args.label === undefined) && !opts.urn) {
+            if (args?.label === undefined && !opts.urn) {
                 throw new Error("Missing required property 'label'");
             }
-            if ((!args || args.password === undefined) && !opts.urn) {
+            if (args?.password === undefined && !opts.urn) {
                 throw new Error("Missing required property 'password'");
             }
-            if ((!args || args.username === undefined) && !opts.urn) {
+            if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["filter"] = args ? args.filter : undefined;
-            resourceInputs["ipaddress"] = args ? args.ipaddress : undefined;
-            resourceInputs["label"] = args ? args.label : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["filter"] = args?.filter;
+            resourceInputs["ipaddress"] = args?.ipaddress;
+            resourceInputs["label"] = args?.label;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["username"] = args?.username;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["password"] };

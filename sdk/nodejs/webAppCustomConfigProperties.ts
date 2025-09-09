@@ -35,11 +35,11 @@ export class WebAppCustomConfigProperties extends pulumi.CustomResource {
     /**
      * The scope of this setting
      */
-    public readonly applicationId!: pulumi.Output<string>;
+    declare public readonly applicationId: pulumi.Output<string>;
     /**
      * Custom configuration property
      */
-    public readonly customProperty!: pulumi.Output<string>;
+    declare public readonly customProperty: pulumi.Output<string>;
 
     /**
      * Create a WebAppCustomConfigProperties resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class WebAppCustomConfigProperties extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppCustomConfigPropertiesState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["customProperty"] = state ? state.customProperty : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["customProperty"] = state?.customProperty;
         } else {
             const args = argsOrState as WebAppCustomConfigPropertiesArgs | undefined;
-            if ((!args || args.applicationId === undefined) && !opts.urn) {
+            if (args?.applicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationId'");
             }
-            if ((!args || args.customProperty === undefined) && !opts.urn) {
+            if (args?.customProperty === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customProperty'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["customProperty"] = args ? args.customProperty : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["customProperty"] = args?.customProperty;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppCustomConfigProperties.__pulumiType, name, resourceInputs, opts);

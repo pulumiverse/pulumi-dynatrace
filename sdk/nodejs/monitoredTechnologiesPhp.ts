@@ -35,19 +35,19 @@ export class MonitoredTechnologiesPhp extends pulumi.CustomResource {
     /**
      * Requires enabled PHP monitoring and Dynatrace OneAgent version 1.261 or later
      */
-    public readonly enablePhpCliServer!: pulumi.Output<boolean | undefined>;
+    declare public readonly enablePhpCliServer: pulumi.Output<boolean | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Requires PHP monitoring enabled and from Dynatrace OneAgent version 1.191 it's ignored and permanently enabled
      */
-    public readonly enabledFastCgi!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabledFastCgi: pulumi.Output<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly hostId!: pulumi.Output<string | undefined>;
+    declare public readonly hostId: pulumi.Output<string | undefined>;
 
     /**
      * Create a MonitoredTechnologiesPhp resource with the given unique name, arguments, and options.
@@ -62,19 +62,19 @@ export class MonitoredTechnologiesPhp extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitoredTechnologiesPhpState | undefined;
-            resourceInputs["enablePhpCliServer"] = state ? state.enablePhpCliServer : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["enabledFastCgi"] = state ? state.enabledFastCgi : undefined;
-            resourceInputs["hostId"] = state ? state.hostId : undefined;
+            resourceInputs["enablePhpCliServer"] = state?.enablePhpCliServer;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["enabledFastCgi"] = state?.enabledFastCgi;
+            resourceInputs["hostId"] = state?.hostId;
         } else {
             const args = argsOrState as MonitoredTechnologiesPhpArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            resourceInputs["enablePhpCliServer"] = args ? args.enablePhpCliServer : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["enabledFastCgi"] = args ? args.enabledFastCgi : undefined;
-            resourceInputs["hostId"] = args ? args.hostId : undefined;
+            resourceInputs["enablePhpCliServer"] = args?.enablePhpCliServer;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["enabledFastCgi"] = args?.enabledFastCgi;
+            resourceInputs["hostId"] = args?.hostId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MonitoredTechnologiesPhp.__pulumiType, name, resourceInputs, opts);

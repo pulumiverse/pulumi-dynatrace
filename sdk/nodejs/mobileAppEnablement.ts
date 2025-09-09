@@ -37,15 +37,15 @@ export class MobileAppEnablement extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string | undefined>;
+    declare public readonly applicationId: pulumi.Output<string | undefined>;
     /**
      * (Field has overlap with `dynatrace.MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
      */
-    public readonly rum!: pulumi.Output<outputs.MobileAppEnablementRum>;
+    declare public readonly rum: pulumi.Output<outputs.MobileAppEnablementRum>;
     /**
      * (Field has overlap with `dynatrace.MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
      */
-    public readonly sessionReplay!: pulumi.Output<outputs.MobileAppEnablementSessionReplay>;
+    declare public readonly sessionReplay: pulumi.Output<outputs.MobileAppEnablementSessionReplay>;
 
     /**
      * Create a MobileAppEnablement resource with the given unique name, arguments, and options.
@@ -60,20 +60,20 @@ export class MobileAppEnablement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MobileAppEnablementState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["rum"] = state ? state.rum : undefined;
-            resourceInputs["sessionReplay"] = state ? state.sessionReplay : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["rum"] = state?.rum;
+            resourceInputs["sessionReplay"] = state?.sessionReplay;
         } else {
             const args = argsOrState as MobileAppEnablementArgs | undefined;
-            if ((!args || args.rum === undefined) && !opts.urn) {
+            if (args?.rum === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rum'");
             }
-            if ((!args || args.sessionReplay === undefined) && !opts.urn) {
+            if (args?.sessionReplay === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sessionReplay'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["rum"] = args ? args.rum : undefined;
-            resourceInputs["sessionReplay"] = args ? args.sessionReplay : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["rum"] = args?.rum;
+            resourceInputs["sessionReplay"] = args?.sessionReplay;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MobileAppEnablement.__pulumiType, name, resourceInputs, opts);

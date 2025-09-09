@@ -37,50 +37,50 @@ export class AwsCredentials extends pulumi.CustomResource {
     /**
      * credentials for the AWS authentication
      */
-    public readonly authenticationData!: pulumi.Output<outputs.AwsCredentialsAuthenticationData>;
+    declare public readonly authenticationData: pulumi.Output<outputs.AwsCredentialsAuthenticationData>;
     /**
      * Enable monitoring of specified AWS credentials
      */
-    public readonly credentialsEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly credentialsEnabled: pulumi.Output<boolean | undefined>;
     /**
      * The name of the credentials
      */
-    public readonly label!: pulumi.Output<string | undefined>;
+    declare public readonly label: pulumi.Output<string | undefined>;
     /**
      * The type of the AWS partition
      */
-    public readonly partitionType!: pulumi.Output<string>;
+    declare public readonly partitionType: pulumi.Output<string>;
     /**
      * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
      * Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
      */
-    public readonly removeDefaults!: pulumi.Output<boolean | undefined>;
+    declare public readonly removeDefaults: pulumi.Output<boolean | undefined>;
     /**
      * Run credentials on Dynatrace infrastructure
      */
-    public readonly runningOnDynatraceInfrastructure!: pulumi.Output<boolean | undefined>;
+    declare public readonly runningOnDynatraceInfrastructure: pulumi.Output<boolean | undefined>;
     /**
      * @deprecated Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
      */
-    public readonly supportingServicesManagedInDynatrace!: pulumi.Output<boolean | undefined>;
+    declare public readonly supportingServicesManagedInDynatrace: pulumi.Output<boolean | undefined>;
     /**
      * supporting services to be monitored
      *
      * @deprecated Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `dynatrace.AwsService`
      */
-    public readonly supportingServicesToMonitors!: pulumi.Output<outputs.AwsCredentialsSupportingServicesToMonitor[] | undefined>;
+    declare public readonly supportingServicesToMonitors: pulumi.Output<outputs.AwsCredentialsSupportingServicesToMonitor[] | undefined>;
     /**
      * Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
      */
-    public readonly taggedOnly!: pulumi.Output<boolean>;
+    declare public readonly taggedOnly: pulumi.Output<boolean>;
     /**
      * AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
      */
-    public readonly tagsToMonitors!: pulumi.Output<outputs.AwsCredentialsTagsToMonitor[] | undefined>;
+    declare public readonly tagsToMonitors: pulumi.Output<outputs.AwsCredentialsTagsToMonitor[] | undefined>;
     /**
      * Any attributes that aren't yet supported by this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
 
     /**
      * Create a AwsCredentials resource with the given unique name, arguments, and options.
@@ -95,39 +95,39 @@ export class AwsCredentials extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AwsCredentialsState | undefined;
-            resourceInputs["authenticationData"] = state ? state.authenticationData : undefined;
-            resourceInputs["credentialsEnabled"] = state ? state.credentialsEnabled : undefined;
-            resourceInputs["label"] = state ? state.label : undefined;
-            resourceInputs["partitionType"] = state ? state.partitionType : undefined;
-            resourceInputs["removeDefaults"] = state ? state.removeDefaults : undefined;
-            resourceInputs["runningOnDynatraceInfrastructure"] = state ? state.runningOnDynatraceInfrastructure : undefined;
-            resourceInputs["supportingServicesManagedInDynatrace"] = state ? state.supportingServicesManagedInDynatrace : undefined;
-            resourceInputs["supportingServicesToMonitors"] = state ? state.supportingServicesToMonitors : undefined;
-            resourceInputs["taggedOnly"] = state ? state.taggedOnly : undefined;
-            resourceInputs["tagsToMonitors"] = state ? state.tagsToMonitors : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
+            resourceInputs["authenticationData"] = state?.authenticationData;
+            resourceInputs["credentialsEnabled"] = state?.credentialsEnabled;
+            resourceInputs["label"] = state?.label;
+            resourceInputs["partitionType"] = state?.partitionType;
+            resourceInputs["removeDefaults"] = state?.removeDefaults;
+            resourceInputs["runningOnDynatraceInfrastructure"] = state?.runningOnDynatraceInfrastructure;
+            resourceInputs["supportingServicesManagedInDynatrace"] = state?.supportingServicesManagedInDynatrace;
+            resourceInputs["supportingServicesToMonitors"] = state?.supportingServicesToMonitors;
+            resourceInputs["taggedOnly"] = state?.taggedOnly;
+            resourceInputs["tagsToMonitors"] = state?.tagsToMonitors;
+            resourceInputs["unknowns"] = state?.unknowns;
         } else {
             const args = argsOrState as AwsCredentialsArgs | undefined;
-            if ((!args || args.authenticationData === undefined) && !opts.urn) {
+            if (args?.authenticationData === undefined && !opts.urn) {
                 throw new Error("Missing required property 'authenticationData'");
             }
-            if ((!args || args.partitionType === undefined) && !opts.urn) {
+            if (args?.partitionType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'partitionType'");
             }
-            if ((!args || args.taggedOnly === undefined) && !opts.urn) {
+            if (args?.taggedOnly === undefined && !opts.urn) {
                 throw new Error("Missing required property 'taggedOnly'");
             }
-            resourceInputs["authenticationData"] = args ? args.authenticationData : undefined;
-            resourceInputs["credentialsEnabled"] = args ? args.credentialsEnabled : undefined;
-            resourceInputs["label"] = args ? args.label : undefined;
-            resourceInputs["partitionType"] = args ? args.partitionType : undefined;
-            resourceInputs["removeDefaults"] = args ? args.removeDefaults : undefined;
-            resourceInputs["runningOnDynatraceInfrastructure"] = args ? args.runningOnDynatraceInfrastructure : undefined;
-            resourceInputs["supportingServicesManagedInDynatrace"] = args ? args.supportingServicesManagedInDynatrace : undefined;
-            resourceInputs["supportingServicesToMonitors"] = args ? args.supportingServicesToMonitors : undefined;
-            resourceInputs["taggedOnly"] = args ? args.taggedOnly : undefined;
-            resourceInputs["tagsToMonitors"] = args ? args.tagsToMonitors : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
+            resourceInputs["authenticationData"] = args?.authenticationData;
+            resourceInputs["credentialsEnabled"] = args?.credentialsEnabled;
+            resourceInputs["label"] = args?.label;
+            resourceInputs["partitionType"] = args?.partitionType;
+            resourceInputs["removeDefaults"] = args?.removeDefaults;
+            resourceInputs["runningOnDynatraceInfrastructure"] = args?.runningOnDynatraceInfrastructure;
+            resourceInputs["supportingServicesManagedInDynatrace"] = args?.supportingServicesManagedInDynatrace;
+            resourceInputs["supportingServicesToMonitors"] = args?.supportingServicesToMonitors;
+            resourceInputs["taggedOnly"] = args?.taggedOnly;
+            resourceInputs["tagsToMonitors"] = args?.tagsToMonitors;
+            resourceInputs["unknowns"] = args?.unknowns;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AwsCredentials.__pulumiType, name, resourceInputs, opts);

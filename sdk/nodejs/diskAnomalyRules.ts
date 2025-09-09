@@ -37,39 +37,39 @@ export class DiskAnomalyRules extends pulumi.CustomResource {
     /**
      * Only apply to disks whose name matches
      */
-    public readonly diskNameFilter!: pulumi.Output<outputs.DiskAnomalyRulesDiskNameFilter>;
+    declare public readonly diskNameFilter: pulumi.Output<outputs.DiskAnomalyRulesDiskNameFilter>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly hostGroupId!: pulumi.Output<string | undefined>;
+    declare public readonly hostGroupId: pulumi.Output<string | undefined>;
     /**
      * Possible Values: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING`, `WRITE_TIME_EXCEEDING`
      */
-    public readonly metric!: pulumi.Output<string>;
+    declare public readonly metric: pulumi.Output<string>;
     /**
      * Name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Only alert if the threshold was violated in at least *n* of the last *m* samples
      */
-    public readonly sampleLimit!: pulumi.Output<outputs.DiskAnomalyRulesSampleLimit>;
+    declare public readonly sampleLimit: pulumi.Output<outputs.DiskAnomalyRulesSampleLimit>;
     /**
      * Only apply to hosts that have the following tags
      */
-    public readonly tagFilters!: pulumi.Output<string[] | undefined>;
+    declare public readonly tagFilters: pulumi.Output<string[] | undefined>;
     /**
      * Alert if higher than
      */
-    public readonly thresholdMilliseconds!: pulumi.Output<number | undefined>;
+    declare public readonly thresholdMilliseconds: pulumi.Output<number | undefined>;
     /**
      * Alert if lower than
      */
-    public readonly thresholdPercent!: pulumi.Output<number | undefined>;
+    declare public readonly thresholdPercent: pulumi.Output<number | undefined>;
 
     /**
      * Create a DiskAnomalyRules resource with the given unique name, arguments, and options.
@@ -84,38 +84,38 @@ export class DiskAnomalyRules extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DiskAnomalyRulesState | undefined;
-            resourceInputs["diskNameFilter"] = state ? state.diskNameFilter : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["hostGroupId"] = state ? state.hostGroupId : undefined;
-            resourceInputs["metric"] = state ? state.metric : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["sampleLimit"] = state ? state.sampleLimit : undefined;
-            resourceInputs["tagFilters"] = state ? state.tagFilters : undefined;
-            resourceInputs["thresholdMilliseconds"] = state ? state.thresholdMilliseconds : undefined;
-            resourceInputs["thresholdPercent"] = state ? state.thresholdPercent : undefined;
+            resourceInputs["diskNameFilter"] = state?.diskNameFilter;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["hostGroupId"] = state?.hostGroupId;
+            resourceInputs["metric"] = state?.metric;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["sampleLimit"] = state?.sampleLimit;
+            resourceInputs["tagFilters"] = state?.tagFilters;
+            resourceInputs["thresholdMilliseconds"] = state?.thresholdMilliseconds;
+            resourceInputs["thresholdPercent"] = state?.thresholdPercent;
         } else {
             const args = argsOrState as DiskAnomalyRulesArgs | undefined;
-            if ((!args || args.diskNameFilter === undefined) && !opts.urn) {
+            if (args?.diskNameFilter === undefined && !opts.urn) {
                 throw new Error("Missing required property 'diskNameFilter'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.metric === undefined) && !opts.urn) {
+            if (args?.metric === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metric'");
             }
-            if ((!args || args.sampleLimit === undefined) && !opts.urn) {
+            if (args?.sampleLimit === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sampleLimit'");
             }
-            resourceInputs["diskNameFilter"] = args ? args.diskNameFilter : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["hostGroupId"] = args ? args.hostGroupId : undefined;
-            resourceInputs["metric"] = args ? args.metric : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["sampleLimit"] = args ? args.sampleLimit : undefined;
-            resourceInputs["tagFilters"] = args ? args.tagFilters : undefined;
-            resourceInputs["thresholdMilliseconds"] = args ? args.thresholdMilliseconds : undefined;
-            resourceInputs["thresholdPercent"] = args ? args.thresholdPercent : undefined;
+            resourceInputs["diskNameFilter"] = args?.diskNameFilter;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["hostGroupId"] = args?.hostGroupId;
+            resourceInputs["metric"] = args?.metric;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["sampleLimit"] = args?.sampleLimit;
+            resourceInputs["tagFilters"] = args?.tagFilters;
+            resourceInputs["thresholdMilliseconds"] = args?.thresholdMilliseconds;
+            resourceInputs["thresholdPercent"] = args?.thresholdPercent;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DiskAnomalyRules.__pulumiType, name, resourceInputs, opts);

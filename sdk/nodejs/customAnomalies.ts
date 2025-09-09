@@ -37,63 +37,63 @@ export class CustomAnomalies extends pulumi.CustomResource {
     /**
      * How the metric data points are aggregated for the evaluation. The timeseries must support this aggregation
      */
-    public readonly aggregationType!: pulumi.Output<string | undefined>;
+    declare public readonly aggregationType: pulumi.Output<string | undefined>;
     /**
      * The description of the metric event
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Defines the dimensions of the metric to alert on. The filters are combined by conjunction
      */
-    public readonly dimensions!: pulumi.Output<outputs.CustomAnomaliesDimension[] | undefined>;
+    declare public readonly dimensions: pulumi.Output<outputs.CustomAnomaliesDimension[] | undefined>;
     /**
      * The reason of automatic disabling.  The `NONE` means config was not disabled automatically. Possible values are `METRIC_DEFINITION_INCONSISTENCY`, `NONE`, `TOO_MANY_DIMS` and `TOPX_FORCIBLY_DEACTIVATED`
      *
      * @deprecated This property is not meant to be configured from the outside. It will get removed completely in future versions
      */
-    public readonly disabledReason!: pulumi.Output<string | undefined>;
+    declare public readonly disabledReason: pulumi.Output<string | undefined>;
     /**
      * The metric event is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * The ID of the metric evaluated by the metric event
      */
-    public readonly metricId!: pulumi.Output<string | undefined>;
+    declare public readonly metricId: pulumi.Output<string | undefined>;
     /**
      * The metric selector that should be executed
      */
-    public readonly metricSelector!: pulumi.Output<string | undefined>;
+    declare public readonly metricSelector: pulumi.Output<string | undefined>;
     /**
      * The name of the metric event displayed in the UI
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Defines which dimension key should be used for the **alertingScope**
      */
-    public readonly primaryDimensionKey!: pulumi.Output<string | undefined>;
+    declare public readonly primaryDimensionKey: pulumi.Output<string | undefined>;
     /**
      * Defines the scope of the metric event. Only one filter is allowed per filter type, except for tags, where up to 3 are allowed. The filters are combined by conjunction
      */
-    public readonly scopes!: pulumi.Output<outputs.CustomAnomaliesScope[] | undefined>;
+    declare public readonly scopes: pulumi.Output<outputs.CustomAnomaliesScope[] | undefined>;
     /**
      * The type of the event to trigger on the threshold violation.  The `CUSTOM_ALERT` type is not correlated with other alerts. The `INFO` type does not open a problem
      */
-    public readonly severity!: pulumi.Output<string | undefined>;
+    declare public readonly severity: pulumi.Output<string | undefined>;
     /**
      * A monitoring strategy for a metric event config. This is the base version of the monitoring strategy, depending on the type,  the actual JSON may contain additional fields
      */
-    public readonly strategy!: pulumi.Output<outputs.CustomAnomaliesStrategy>;
+    declare public readonly strategy: pulumi.Output<outputs.CustomAnomaliesStrategy>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
     /**
      * The reason of a warning set on the config. The `NONE` means config has no warnings. The other supported value is `TOO_MANY_DIMS`
      *
      * @deprecated This property is not meant to be configured from the outside. It will get removed completely in future versions
      */
-    public readonly warningReason!: pulumi.Output<string | undefined>;
+    declare public readonly warningReason: pulumi.Output<string | undefined>;
 
     /**
      * Create a CustomAnomalies resource with the given unique name, arguments, and options.
@@ -108,45 +108,45 @@ export class CustomAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CustomAnomaliesState | undefined;
-            resourceInputs["aggregationType"] = state ? state.aggregationType : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["dimensions"] = state ? state.dimensions : undefined;
-            resourceInputs["disabledReason"] = state ? state.disabledReason : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["metricId"] = state ? state.metricId : undefined;
-            resourceInputs["metricSelector"] = state ? state.metricSelector : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["primaryDimensionKey"] = state ? state.primaryDimensionKey : undefined;
-            resourceInputs["scopes"] = state ? state.scopes : undefined;
-            resourceInputs["severity"] = state ? state.severity : undefined;
-            resourceInputs["strategy"] = state ? state.strategy : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
-            resourceInputs["warningReason"] = state ? state.warningReason : undefined;
+            resourceInputs["aggregationType"] = state?.aggregationType;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["dimensions"] = state?.dimensions;
+            resourceInputs["disabledReason"] = state?.disabledReason;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["metricId"] = state?.metricId;
+            resourceInputs["metricSelector"] = state?.metricSelector;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["primaryDimensionKey"] = state?.primaryDimensionKey;
+            resourceInputs["scopes"] = state?.scopes;
+            resourceInputs["severity"] = state?.severity;
+            resourceInputs["strategy"] = state?.strategy;
+            resourceInputs["unknowns"] = state?.unknowns;
+            resourceInputs["warningReason"] = state?.warningReason;
         } else {
             const args = argsOrState as CustomAnomaliesArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.strategy === undefined) && !opts.urn) {
+            if (args?.strategy === undefined && !opts.urn) {
                 throw new Error("Missing required property 'strategy'");
             }
-            resourceInputs["aggregationType"] = args ? args.aggregationType : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["dimensions"] = args ? args.dimensions : undefined;
-            resourceInputs["disabledReason"] = args ? args.disabledReason : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["metricId"] = args ? args.metricId : undefined;
-            resourceInputs["metricSelector"] = args ? args.metricSelector : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["primaryDimensionKey"] = args ? args.primaryDimensionKey : undefined;
-            resourceInputs["scopes"] = args ? args.scopes : undefined;
-            resourceInputs["severity"] = args ? args.severity : undefined;
-            resourceInputs["strategy"] = args ? args.strategy : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
-            resourceInputs["warningReason"] = args ? args.warningReason : undefined;
+            resourceInputs["aggregationType"] = args?.aggregationType;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["dimensions"] = args?.dimensions;
+            resourceInputs["disabledReason"] = args?.disabledReason;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["metricId"] = args?.metricId;
+            resourceInputs["metricSelector"] = args?.metricSelector;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["primaryDimensionKey"] = args?.primaryDimensionKey;
+            resourceInputs["scopes"] = args?.scopes;
+            resourceInputs["severity"] = args?.severity;
+            resourceInputs["strategy"] = args?.strategy;
+            resourceInputs["unknowns"] = args?.unknowns;
+            resourceInputs["warningReason"] = args?.warningReason;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CustomAnomalies.__pulumiType, name, resourceInputs, opts);

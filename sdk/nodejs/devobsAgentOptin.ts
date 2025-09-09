@@ -35,11 +35,11 @@ export class DevobsAgentOptin extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a DevobsAgentOptin resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class DevobsAgentOptin extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DevobsAgentOptinState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as DevobsAgentOptinArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DevobsAgentOptin.__pulumiType, name, resourceInputs, opts);

@@ -71,15 +71,15 @@ export class WebAppIpAddressExclusion extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string>;
+    declare public readonly applicationId: pulumi.Output<string>;
     /**
      * These are the only IP addresses that should be monitored
      */
-    public readonly ipAddressExclusionInclude!: pulumi.Output<boolean>;
+    declare public readonly ipAddressExclusionInclude: pulumi.Output<boolean>;
     /**
      * **Examples:** - 84.112.10.5 - fe80::10a1:c6b2:5f68:785d
      */
-    public readonly ipExclusionList!: pulumi.Output<outputs.WebAppIpAddressExclusionIpExclusionList | undefined>;
+    declare public readonly ipExclusionList: pulumi.Output<outputs.WebAppIpAddressExclusionIpExclusionList | undefined>;
 
     /**
      * Create a WebAppIpAddressExclusion resource with the given unique name, arguments, and options.
@@ -94,20 +94,20 @@ export class WebAppIpAddressExclusion extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppIpAddressExclusionState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["ipAddressExclusionInclude"] = state ? state.ipAddressExclusionInclude : undefined;
-            resourceInputs["ipExclusionList"] = state ? state.ipExclusionList : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["ipAddressExclusionInclude"] = state?.ipAddressExclusionInclude;
+            resourceInputs["ipExclusionList"] = state?.ipExclusionList;
         } else {
             const args = argsOrState as WebAppIpAddressExclusionArgs | undefined;
-            if ((!args || args.applicationId === undefined) && !opts.urn) {
+            if (args?.applicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationId'");
             }
-            if ((!args || args.ipAddressExclusionInclude === undefined) && !opts.urn) {
+            if (args?.ipAddressExclusionInclude === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ipAddressExclusionInclude'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["ipAddressExclusionInclude"] = args ? args.ipAddressExclusionInclude : undefined;
-            resourceInputs["ipExclusionList"] = args ? args.ipExclusionList : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["ipAddressExclusionInclude"] = args?.ipAddressExclusionInclude;
+            resourceInputs["ipExclusionList"] = args?.ipExclusionList;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppIpAddressExclusion.__pulumiType, name, resourceInputs, opts);

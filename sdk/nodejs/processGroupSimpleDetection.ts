@@ -35,29 +35,29 @@ export class ProcessGroupSimpleDetection extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
      */
-    public readonly groupIdentifier!: pulumi.Output<string>;
+    declare public readonly groupIdentifier: pulumi.Output<string>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
      * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
      * specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Use a variable to identify instances within a process group.
      */
-    public readonly instanceIdentifier!: pulumi.Output<string>;
+    declare public readonly instanceIdentifier: pulumi.Output<string>;
     /**
      * Note: Not all types can be detected at startup.
      */
-    public readonly processType!: pulumi.Output<string | undefined>;
+    declare public readonly processType: pulumi.Output<string | undefined>;
     /**
      * Possible Values: `Prop`, `Env`
      */
-    public readonly ruleType!: pulumi.Output<string>;
+    declare public readonly ruleType: pulumi.Output<string>;
 
     /**
      * Create a ProcessGroupSimpleDetection resource with the given unique name, arguments, and options.
@@ -72,32 +72,32 @@ export class ProcessGroupSimpleDetection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProcessGroupSimpleDetectionState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["groupIdentifier"] = state ? state.groupIdentifier : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["instanceIdentifier"] = state ? state.instanceIdentifier : undefined;
-            resourceInputs["processType"] = state ? state.processType : undefined;
-            resourceInputs["ruleType"] = state ? state.ruleType : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["groupIdentifier"] = state?.groupIdentifier;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["instanceIdentifier"] = state?.instanceIdentifier;
+            resourceInputs["processType"] = state?.processType;
+            resourceInputs["ruleType"] = state?.ruleType;
         } else {
             const args = argsOrState as ProcessGroupSimpleDetectionArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.groupIdentifier === undefined) && !opts.urn) {
+            if (args?.groupIdentifier === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupIdentifier'");
             }
-            if ((!args || args.instanceIdentifier === undefined) && !opts.urn) {
+            if (args?.instanceIdentifier === undefined && !opts.urn) {
                 throw new Error("Missing required property 'instanceIdentifier'");
             }
-            if ((!args || args.ruleType === undefined) && !opts.urn) {
+            if (args?.ruleType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruleType'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["groupIdentifier"] = args ? args.groupIdentifier : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["instanceIdentifier"] = args ? args.instanceIdentifier : undefined;
-            resourceInputs["processType"] = args ? args.processType : undefined;
-            resourceInputs["ruleType"] = args ? args.ruleType : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["groupIdentifier"] = args?.groupIdentifier;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["instanceIdentifier"] = args?.instanceIdentifier;
+            resourceInputs["processType"] = args?.processType;
+            resourceInputs["ruleType"] = args?.ruleType;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProcessGroupSimpleDetection.__pulumiType, name, resourceInputs, opts);

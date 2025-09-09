@@ -37,15 +37,15 @@ export class NetworkTraffic extends pulumi.CustomResource {
     /**
      * Providing a host IP address, you will exclude network traffic only in calculating connectivity (other metrics will still be calculated).
      */
-    public readonly excludeIp!: pulumi.Output<outputs.NetworkTrafficExcludeIp | undefined>;
+    declare public readonly excludeIp: pulumi.Output<outputs.NetworkTrafficExcludeIp | undefined>;
     /**
      * Selecting a network interface, you will exclude all network traffic on that interface from being monitored. You can select from the list below what to not monitor, or input it manually using the "other one" option.
      */
-    public readonly excludeNic!: pulumi.Output<outputs.NetworkTrafficExcludeNic | undefined>;
+    declare public readonly excludeNic: pulumi.Output<outputs.NetworkTrafficExcludeNic | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly hostId!: pulumi.Output<string>;
+    declare public readonly hostId: pulumi.Output<string>;
 
     /**
      * Create a NetworkTraffic resource with the given unique name, arguments, and options.
@@ -60,17 +60,17 @@ export class NetworkTraffic extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkTrafficState | undefined;
-            resourceInputs["excludeIp"] = state ? state.excludeIp : undefined;
-            resourceInputs["excludeNic"] = state ? state.excludeNic : undefined;
-            resourceInputs["hostId"] = state ? state.hostId : undefined;
+            resourceInputs["excludeIp"] = state?.excludeIp;
+            resourceInputs["excludeNic"] = state?.excludeNic;
+            resourceInputs["hostId"] = state?.hostId;
         } else {
             const args = argsOrState as NetworkTrafficArgs | undefined;
-            if ((!args || args.hostId === undefined) && !opts.urn) {
+            if (args?.hostId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostId'");
             }
-            resourceInputs["excludeIp"] = args ? args.excludeIp : undefined;
-            resourceInputs["excludeNic"] = args ? args.excludeNic : undefined;
-            resourceInputs["hostId"] = args ? args.hostId : undefined;
+            resourceInputs["excludeIp"] = args?.excludeIp;
+            resourceInputs["excludeNic"] = args?.excludeNic;
+            resourceInputs["hostId"] = args?.hostId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NetworkTraffic.__pulumiType, name, resourceInputs, opts);

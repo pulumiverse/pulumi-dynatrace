@@ -35,7 +35,7 @@ export class AttributesPreferences extends pulumi.CustomResource {
     /**
      * Possible Values: `ALLOW_ALL_ATTRIBUTES`, `BLOCK_ALL_ATTRIBUTES`
      */
-    public readonly persistenceMode!: pulumi.Output<string>;
+    declare public readonly persistenceMode: pulumi.Output<string>;
 
     /**
      * Create a AttributesPreferences resource with the given unique name, arguments, and options.
@@ -50,13 +50,13 @@ export class AttributesPreferences extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AttributesPreferencesState | undefined;
-            resourceInputs["persistenceMode"] = state ? state.persistenceMode : undefined;
+            resourceInputs["persistenceMode"] = state?.persistenceMode;
         } else {
             const args = argsOrState as AttributesPreferencesArgs | undefined;
-            if ((!args || args.persistenceMode === undefined) && !opts.urn) {
+            if (args?.persistenceMode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'persistenceMode'");
             }
-            resourceInputs["persistenceMode"] = args ? args.persistenceMode : undefined;
+            resourceInputs["persistenceMode"] = args?.persistenceMode;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AttributesPreferences.__pulumiType, name, resourceInputs, opts);

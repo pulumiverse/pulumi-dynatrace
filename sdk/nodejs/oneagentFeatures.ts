@@ -32,27 +32,27 @@ export class OneagentFeatures extends pulumi.CustomResource {
         return obj['__pulumiType'] === OneagentFeatures.__pulumiType;
     }
 
-    public /*out*/ readonly _restore_!: pulumi.Output<string>;
+    declare public /*out*/ readonly _restore_: pulumi.Output<string>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
      */
-    public readonly forcible!: pulumi.Output<boolean | undefined>;
+    declare public readonly forcible: pulumi.Output<boolean | undefined>;
     /**
      * Instrumentation enabled (change needs a process restart)
      */
-    public readonly instrumentation!: pulumi.Output<boolean | undefined>;
+    declare public readonly instrumentation: pulumi.Output<boolean | undefined>;
     /**
      * Feature
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * The scope of this setting (PROCESS*GROUP*INSTANCE, PROCESS_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a OneagentFeatures resource with the given unique name, arguments, and options.
@@ -67,25 +67,25 @@ export class OneagentFeatures extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OneagentFeaturesState | undefined;
-            resourceInputs["_restore_"] = state ? state._restore_ : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["forcible"] = state ? state.forcible : undefined;
-            resourceInputs["instrumentation"] = state ? state.instrumentation : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["_restore_"] = state?._restore_;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["forcible"] = state?.forcible;
+            resourceInputs["instrumentation"] = state?.instrumentation;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as OneagentFeaturesArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.key === undefined) && !opts.urn) {
+            if (args?.key === undefined && !opts.urn) {
                 throw new Error("Missing required property 'key'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["forcible"] = args ? args.forcible : undefined;
-            resourceInputs["instrumentation"] = args ? args.instrumentation : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["forcible"] = args?.forcible;
+            resourceInputs["instrumentation"] = args?.instrumentation;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["scope"] = args?.scope;
             resourceInputs["_restore_"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

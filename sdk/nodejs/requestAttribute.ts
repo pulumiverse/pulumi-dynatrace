@@ -37,39 +37,39 @@ export class RequestAttribute extends pulumi.CustomResource {
     /**
      * Aggregation type for the request values
      */
-    public readonly aggregation!: pulumi.Output<string>;
+    declare public readonly aggregation: pulumi.Output<string>;
     /**
      * Confidential data flag. Set `true` to treat the captured data as confidential
      */
-    public readonly confidential!: pulumi.Output<boolean | undefined>;
+    declare public readonly confidential: pulumi.Output<boolean | undefined>;
     /**
      * The list of data sources
      */
-    public readonly dataSources!: pulumi.Output<outputs.RequestAttributeDataSource[] | undefined>;
+    declare public readonly dataSources: pulumi.Output<outputs.RequestAttributeDataSource[] | undefined>;
     /**
      * The data type of the request attribute
      */
-    public readonly dataType!: pulumi.Output<string>;
+    declare public readonly dataType: pulumi.Output<string>;
     /**
      * The request attribute is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly enabled: pulumi.Output<boolean | undefined>;
     /**
      * The name of the request attribute
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * String values transformation.   If the **dataType** is not `string`, set the `Original` here
      */
-    public readonly normalization!: pulumi.Output<string>;
+    declare public readonly normalization: pulumi.Output<string>;
     /**
      * Personal data masking flag. Set `true` to skip masking.   Warning: This will potentially access personalized data
      */
-    public readonly skipPersonalDataMasking!: pulumi.Output<boolean | undefined>;
+    declare public readonly skipPersonalDataMasking: pulumi.Output<boolean | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    public readonly unknowns!: pulumi.Output<string | undefined>;
+    declare public readonly unknowns: pulumi.Output<string | undefined>;
 
     /**
      * Create a RequestAttribute resource with the given unique name, arguments, and options.
@@ -84,35 +84,35 @@ export class RequestAttribute extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RequestAttributeState | undefined;
-            resourceInputs["aggregation"] = state ? state.aggregation : undefined;
-            resourceInputs["confidential"] = state ? state.confidential : undefined;
-            resourceInputs["dataSources"] = state ? state.dataSources : undefined;
-            resourceInputs["dataType"] = state ? state.dataType : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["normalization"] = state ? state.normalization : undefined;
-            resourceInputs["skipPersonalDataMasking"] = state ? state.skipPersonalDataMasking : undefined;
-            resourceInputs["unknowns"] = state ? state.unknowns : undefined;
+            resourceInputs["aggregation"] = state?.aggregation;
+            resourceInputs["confidential"] = state?.confidential;
+            resourceInputs["dataSources"] = state?.dataSources;
+            resourceInputs["dataType"] = state?.dataType;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["normalization"] = state?.normalization;
+            resourceInputs["skipPersonalDataMasking"] = state?.skipPersonalDataMasking;
+            resourceInputs["unknowns"] = state?.unknowns;
         } else {
             const args = argsOrState as RequestAttributeArgs | undefined;
-            if ((!args || args.aggregation === undefined) && !opts.urn) {
+            if (args?.aggregation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'aggregation'");
             }
-            if ((!args || args.dataType === undefined) && !opts.urn) {
+            if (args?.dataType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dataType'");
             }
-            if ((!args || args.normalization === undefined) && !opts.urn) {
+            if (args?.normalization === undefined && !opts.urn) {
                 throw new Error("Missing required property 'normalization'");
             }
-            resourceInputs["aggregation"] = args ? args.aggregation : undefined;
-            resourceInputs["confidential"] = args ? args.confidential : undefined;
-            resourceInputs["dataSources"] = args ? args.dataSources : undefined;
-            resourceInputs["dataType"] = args ? args.dataType : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["normalization"] = args ? args.normalization : undefined;
-            resourceInputs["skipPersonalDataMasking"] = args ? args.skipPersonalDataMasking : undefined;
-            resourceInputs["unknowns"] = args ? args.unknowns : undefined;
+            resourceInputs["aggregation"] = args?.aggregation;
+            resourceInputs["confidential"] = args?.confidential;
+            resourceInputs["dataSources"] = args?.dataSources;
+            resourceInputs["dataType"] = args?.dataType;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["normalization"] = args?.normalization;
+            resourceInputs["skipPersonalDataMasking"] = args?.skipPersonalDataMasking;
+            resourceInputs["unknowns"] = args?.unknowns;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RequestAttribute.__pulumiType, name, resourceInputs, opts);

@@ -37,19 +37,19 @@ export class WebAppAutoInjection extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string>;
+    declare public readonly applicationId: pulumi.Output<string>;
     /**
      * Cache control headers
      */
-    public readonly cacheControlHeaders!: pulumi.Output<outputs.WebAppAutoInjectionCacheControlHeaders>;
+    declare public readonly cacheControlHeaders: pulumi.Output<outputs.WebAppAutoInjectionCacheControlHeaders>;
     /**
      * Real User Monitoring code source
      */
-    public readonly monitoringCodeSourceSection!: pulumi.Output<outputs.WebAppAutoInjectionMonitoringCodeSourceSection>;
+    declare public readonly monitoringCodeSourceSection: pulumi.Output<outputs.WebAppAutoInjectionMonitoringCodeSourceSection>;
     /**
      * *Code Snippet:* OneAgent injects an inline script that initializes Dynatrace and dynamically downloads the monitoring code into your application. Use when you want to inject the monitoring code in deferred mode.
      */
-    public readonly snippetFormat!: pulumi.Output<outputs.WebAppAutoInjectionSnippetFormat>;
+    declare public readonly snippetFormat: pulumi.Output<outputs.WebAppAutoInjectionSnippetFormat>;
 
     /**
      * Create a WebAppAutoInjection resource with the given unique name, arguments, and options.
@@ -64,28 +64,28 @@ export class WebAppAutoInjection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppAutoInjectionState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["cacheControlHeaders"] = state ? state.cacheControlHeaders : undefined;
-            resourceInputs["monitoringCodeSourceSection"] = state ? state.monitoringCodeSourceSection : undefined;
-            resourceInputs["snippetFormat"] = state ? state.snippetFormat : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["cacheControlHeaders"] = state?.cacheControlHeaders;
+            resourceInputs["monitoringCodeSourceSection"] = state?.monitoringCodeSourceSection;
+            resourceInputs["snippetFormat"] = state?.snippetFormat;
         } else {
             const args = argsOrState as WebAppAutoInjectionArgs | undefined;
-            if ((!args || args.applicationId === undefined) && !opts.urn) {
+            if (args?.applicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationId'");
             }
-            if ((!args || args.cacheControlHeaders === undefined) && !opts.urn) {
+            if (args?.cacheControlHeaders === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cacheControlHeaders'");
             }
-            if ((!args || args.monitoringCodeSourceSection === undefined) && !opts.urn) {
+            if (args?.monitoringCodeSourceSection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitoringCodeSourceSection'");
             }
-            if ((!args || args.snippetFormat === undefined) && !opts.urn) {
+            if (args?.snippetFormat === undefined && !opts.urn) {
                 throw new Error("Missing required property 'snippetFormat'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["cacheControlHeaders"] = args ? args.cacheControlHeaders : undefined;
-            resourceInputs["monitoringCodeSourceSection"] = args ? args.monitoringCodeSourceSection : undefined;
-            resourceInputs["snippetFormat"] = args ? args.snippetFormat : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["cacheControlHeaders"] = args?.cacheControlHeaders;
+            resourceInputs["monitoringCodeSourceSection"] = args?.monitoringCodeSourceSection;
+            resourceInputs["snippetFormat"] = args?.snippetFormat;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WebAppAutoInjection.__pulumiType, name, resourceInputs, opts);

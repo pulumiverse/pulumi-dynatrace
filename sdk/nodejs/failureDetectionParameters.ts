@@ -37,23 +37,23 @@ export class FailureDetectionParameters extends pulumi.CustomResource {
     /**
      * HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
      */
-    public readonly brokenLinks!: pulumi.Output<outputs.FailureDetectionParametersBrokenLinks>;
+    declare public readonly brokenLinks: pulumi.Output<outputs.FailureDetectionParametersBrokenLinks>;
     /**
      * Description
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Customize failure detection for specific exceptions and errors
      */
-    public readonly exceptionRules!: pulumi.Output<outputs.FailureDetectionParametersExceptionRules>;
+    declare public readonly exceptionRules: pulumi.Output<outputs.FailureDetectionParametersExceptionRules>;
     /**
      * HTTP response codes
      */
-    public readonly httpResponseCodes!: pulumi.Output<outputs.FailureDetectionParametersHttpResponseCodes>;
+    declare public readonly httpResponseCodes: pulumi.Output<outputs.FailureDetectionParametersHttpResponseCodes>;
     /**
      * Name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a FailureDetectionParameters resource with the given unique name, arguments, and options.
@@ -68,27 +68,27 @@ export class FailureDetectionParameters extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FailureDetectionParametersState | undefined;
-            resourceInputs["brokenLinks"] = state ? state.brokenLinks : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["exceptionRules"] = state ? state.exceptionRules : undefined;
-            resourceInputs["httpResponseCodes"] = state ? state.httpResponseCodes : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["brokenLinks"] = state?.brokenLinks;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["exceptionRules"] = state?.exceptionRules;
+            resourceInputs["httpResponseCodes"] = state?.httpResponseCodes;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as FailureDetectionParametersArgs | undefined;
-            if ((!args || args.brokenLinks === undefined) && !opts.urn) {
+            if (args?.brokenLinks === undefined && !opts.urn) {
                 throw new Error("Missing required property 'brokenLinks'");
             }
-            if ((!args || args.exceptionRules === undefined) && !opts.urn) {
+            if (args?.exceptionRules === undefined && !opts.urn) {
                 throw new Error("Missing required property 'exceptionRules'");
             }
-            if ((!args || args.httpResponseCodes === undefined) && !opts.urn) {
+            if (args?.httpResponseCodes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'httpResponseCodes'");
             }
-            resourceInputs["brokenLinks"] = args ? args.brokenLinks : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["exceptionRules"] = args ? args.exceptionRules : undefined;
-            resourceInputs["httpResponseCodes"] = args ? args.httpResponseCodes : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["brokenLinks"] = args?.brokenLinks;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["exceptionRules"] = args?.exceptionRules;
+            resourceInputs["httpResponseCodes"] = args?.httpResponseCodes;
+            resourceInputs["name"] = args?.name;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(FailureDetectionParameters.__pulumiType, name, resourceInputs, opts);

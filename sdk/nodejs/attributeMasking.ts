@@ -35,15 +35,15 @@ export class AttributeMasking extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Key of the attribute
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`
      */
-    public readonly masking!: pulumi.Output<string>;
+    declare public readonly masking: pulumi.Output<string>;
 
     /**
      * Create a AttributeMasking resource with the given unique name, arguments, and options.
@@ -58,23 +58,23 @@ export class AttributeMasking extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AttributeMaskingState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["masking"] = state ? state.masking : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["masking"] = state?.masking;
         } else {
             const args = argsOrState as AttributeMaskingArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.key === undefined) && !opts.urn) {
+            if (args?.key === undefined && !opts.urn) {
                 throw new Error("Missing required property 'key'");
             }
-            if ((!args || args.masking === undefined) && !opts.urn) {
+            if (args?.masking === undefined && !opts.urn) {
                 throw new Error("Missing required property 'masking'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["masking"] = args ? args.masking : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["masking"] = args?.masking;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AttributeMasking.__pulumiType, name, resourceInputs, opts);

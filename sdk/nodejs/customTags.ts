@@ -37,19 +37,19 @@ export class CustomTags extends pulumi.CustomResource {
     /**
      * For internal use: current state of tags in JSON format
      */
-    public readonly currentState!: pulumi.Output<string>;
+    declare public readonly currentState: pulumi.Output<string>;
     /**
      * Specifies the entities where you want to update tags
      */
-    public readonly entitySelector!: pulumi.Output<string>;
+    declare public readonly entitySelector: pulumi.Output<string>;
     /**
      * The number of monitored entities where the tags have been added.
      */
-    public readonly matchedEntities!: pulumi.Output<number>;
+    declare public readonly matchedEntities: pulumi.Output<number>;
     /**
      * Specifies the entities where you want to update tags
      */
-    public readonly tags!: pulumi.Output<outputs.CustomTagsTags>;
+    declare public readonly tags: pulumi.Output<outputs.CustomTagsTags>;
 
     /**
      * Create a CustomTags resource with the given unique name, arguments, and options.
@@ -64,22 +64,22 @@ export class CustomTags extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CustomTagsState | undefined;
-            resourceInputs["currentState"] = state ? state.currentState : undefined;
-            resourceInputs["entitySelector"] = state ? state.entitySelector : undefined;
-            resourceInputs["matchedEntities"] = state ? state.matchedEntities : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
+            resourceInputs["currentState"] = state?.currentState;
+            resourceInputs["entitySelector"] = state?.entitySelector;
+            resourceInputs["matchedEntities"] = state?.matchedEntities;
+            resourceInputs["tags"] = state?.tags;
         } else {
             const args = argsOrState as CustomTagsArgs | undefined;
-            if ((!args || args.entitySelector === undefined) && !opts.urn) {
+            if (args?.entitySelector === undefined && !opts.urn) {
                 throw new Error("Missing required property 'entitySelector'");
             }
-            if ((!args || args.tags === undefined) && !opts.urn) {
+            if (args?.tags === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tags'");
             }
-            resourceInputs["currentState"] = args ? args.currentState : undefined;
-            resourceInputs["entitySelector"] = args ? args.entitySelector : undefined;
-            resourceInputs["matchedEntities"] = args ? args.matchedEntities : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["currentState"] = args?.currentState;
+            resourceInputs["entitySelector"] = args?.entitySelector;
+            resourceInputs["matchedEntities"] = args?.matchedEntities;
+            resourceInputs["tags"] = args?.tags;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CustomTags.__pulumiType, name, resourceInputs, opts);

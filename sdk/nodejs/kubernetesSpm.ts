@@ -35,11 +35,11 @@ export class KubernetesSpm extends pulumi.CustomResource {
     /**
      * Follow the [installation instructions](https://dt-url.net/4x23ut5) to deploy the Security Posture Management components.
      */
-    public readonly configurationDatasetPipelineEnabled!: pulumi.Output<boolean>;
+    declare public readonly configurationDatasetPipelineEnabled: pulumi.Output<boolean>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a KubernetesSpm resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class KubernetesSpm extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KubernetesSpmState | undefined;
-            resourceInputs["configurationDatasetPipelineEnabled"] = state ? state.configurationDatasetPipelineEnabled : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["configurationDatasetPipelineEnabled"] = state?.configurationDatasetPipelineEnabled;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as KubernetesSpmArgs | undefined;
-            if ((!args || args.configurationDatasetPipelineEnabled === undefined) && !opts.urn) {
+            if (args?.configurationDatasetPipelineEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configurationDatasetPipelineEnabled'");
             }
-            resourceInputs["configurationDatasetPipelineEnabled"] = args ? args.configurationDatasetPipelineEnabled : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["configurationDatasetPipelineEnabled"] = args?.configurationDatasetPipelineEnabled;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(KubernetesSpm.__pulumiType, name, resourceInputs, opts);

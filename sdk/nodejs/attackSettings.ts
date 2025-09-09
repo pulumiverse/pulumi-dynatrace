@@ -37,11 +37,11 @@ export class AttackSettings extends pulumi.CustomResource {
     /**
      * Define global incoming attack control
      */
-    public readonly defaultAttackHandling!: pulumi.Output<outputs.AttackSettingsDefaultAttackHandling>;
+    declare public readonly defaultAttackHandling: pulumi.Output<outputs.AttackSettingsDefaultAttackHandling>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
 
     /**
      * Create a AttackSettings resource with the given unique name, arguments, and options.
@@ -56,18 +56,18 @@ export class AttackSettings extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AttackSettingsState | undefined;
-            resourceInputs["defaultAttackHandling"] = state ? state.defaultAttackHandling : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
+            resourceInputs["defaultAttackHandling"] = state?.defaultAttackHandling;
+            resourceInputs["enabled"] = state?.enabled;
         } else {
             const args = argsOrState as AttackSettingsArgs | undefined;
-            if ((!args || args.defaultAttackHandling === undefined) && !opts.urn) {
+            if (args?.defaultAttackHandling === undefined && !opts.urn) {
                 throw new Error("Missing required property 'defaultAttackHandling'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            resourceInputs["defaultAttackHandling"] = args ? args.defaultAttackHandling : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
+            resourceInputs["defaultAttackHandling"] = args?.defaultAttackHandling;
+            resourceInputs["enabled"] = args?.enabled;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AttackSettings.__pulumiType, name, resourceInputs, opts);

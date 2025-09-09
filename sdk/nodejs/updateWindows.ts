@@ -37,31 +37,31 @@ export class UpdateWindows extends pulumi.CustomResource {
     /**
      * no documentation available
      */
-    public readonly dailyRecurrence!: pulumi.Output<outputs.UpdateWindowsDailyRecurrence | undefined>;
+    declare public readonly dailyRecurrence: pulumi.Output<outputs.UpdateWindowsDailyRecurrence | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * no documentation available
      */
-    public readonly monthlyRecurrence!: pulumi.Output<outputs.UpdateWindowsMonthlyRecurrence | undefined>;
+    declare public readonly monthlyRecurrence: pulumi.Output<outputs.UpdateWindowsMonthlyRecurrence | undefined>;
     /**
      * Name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * no documentation available
      */
-    public readonly onceRecurrence!: pulumi.Output<outputs.UpdateWindowsOnceRecurrence | undefined>;
+    declare public readonly onceRecurrence: pulumi.Output<outputs.UpdateWindowsOnceRecurrence | undefined>;
     /**
      * Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
      */
-    public readonly recurrence!: pulumi.Output<string>;
+    declare public readonly recurrence: pulumi.Output<string>;
     /**
      * no documentation available
      */
-    public readonly weeklyRecurrence!: pulumi.Output<outputs.UpdateWindowsWeeklyRecurrence | undefined>;
+    declare public readonly weeklyRecurrence: pulumi.Output<outputs.UpdateWindowsWeeklyRecurrence | undefined>;
 
     /**
      * Create a UpdateWindows resource with the given unique name, arguments, and options.
@@ -76,28 +76,28 @@ export class UpdateWindows extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UpdateWindowsState | undefined;
-            resourceInputs["dailyRecurrence"] = state ? state.dailyRecurrence : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["monthlyRecurrence"] = state ? state.monthlyRecurrence : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["onceRecurrence"] = state ? state.onceRecurrence : undefined;
-            resourceInputs["recurrence"] = state ? state.recurrence : undefined;
-            resourceInputs["weeklyRecurrence"] = state ? state.weeklyRecurrence : undefined;
+            resourceInputs["dailyRecurrence"] = state?.dailyRecurrence;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["monthlyRecurrence"] = state?.monthlyRecurrence;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["onceRecurrence"] = state?.onceRecurrence;
+            resourceInputs["recurrence"] = state?.recurrence;
+            resourceInputs["weeklyRecurrence"] = state?.weeklyRecurrence;
         } else {
             const args = argsOrState as UpdateWindowsArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.recurrence === undefined) && !opts.urn) {
+            if (args?.recurrence === undefined && !opts.urn) {
                 throw new Error("Missing required property 'recurrence'");
             }
-            resourceInputs["dailyRecurrence"] = args ? args.dailyRecurrence : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["monthlyRecurrence"] = args ? args.monthlyRecurrence : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["onceRecurrence"] = args ? args.onceRecurrence : undefined;
-            resourceInputs["recurrence"] = args ? args.recurrence : undefined;
-            resourceInputs["weeklyRecurrence"] = args ? args.weeklyRecurrence : undefined;
+            resourceInputs["dailyRecurrence"] = args?.dailyRecurrence;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["monthlyRecurrence"] = args?.monthlyRecurrence;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["onceRecurrence"] = args?.onceRecurrence;
+            resourceInputs["recurrence"] = args?.recurrence;
+            resourceInputs["weeklyRecurrence"] = args?.weeklyRecurrence;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(UpdateWindows.__pulumiType, name, resourceInputs, opts);

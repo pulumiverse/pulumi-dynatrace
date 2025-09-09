@@ -35,11 +35,11 @@ export class ExtensionExecutionRemote extends pulumi.CustomResource {
     /**
      * Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
      */
-    public readonly performanceProfile!: pulumi.Output<string>;
+    declare public readonly performanceProfile: pulumi.Output<string>;
     /**
      * The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
 
     /**
      * Create a ExtensionExecutionRemote resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class ExtensionExecutionRemote extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExtensionExecutionRemoteState | undefined;
-            resourceInputs["performanceProfile"] = state ? state.performanceProfile : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["performanceProfile"] = state?.performanceProfile;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as ExtensionExecutionRemoteArgs | undefined;
-            if ((!args || args.performanceProfile === undefined) && !opts.urn) {
+            if (args?.performanceProfile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'performanceProfile'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            resourceInputs["performanceProfile"] = args ? args.performanceProfile : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["performanceProfile"] = args?.performanceProfile;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExtensionExecutionRemote.__pulumiType, name, resourceInputs, opts);

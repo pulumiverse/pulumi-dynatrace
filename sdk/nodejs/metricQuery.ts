@@ -35,11 +35,11 @@ export class MetricQuery extends pulumi.CustomResource {
     /**
      * The scope of this setting (metric)
      */
-    public readonly metricId!: pulumi.Output<string>;
+    declare public readonly metricId: pulumi.Output<string>;
     /**
      * Query
      */
-    public readonly metricSelector!: pulumi.Output<string>;
+    declare public readonly metricSelector: pulumi.Output<string>;
 
     /**
      * Create a MetricQuery resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class MetricQuery extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MetricQueryState | undefined;
-            resourceInputs["metricId"] = state ? state.metricId : undefined;
-            resourceInputs["metricSelector"] = state ? state.metricSelector : undefined;
+            resourceInputs["metricId"] = state?.metricId;
+            resourceInputs["metricSelector"] = state?.metricSelector;
         } else {
             const args = argsOrState as MetricQueryArgs | undefined;
-            if ((!args || args.metricId === undefined) && !opts.urn) {
+            if (args?.metricId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricId'");
             }
-            if ((!args || args.metricSelector === undefined) && !opts.urn) {
+            if (args?.metricSelector === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricSelector'");
             }
-            resourceInputs["metricId"] = args ? args.metricId : undefined;
-            resourceInputs["metricSelector"] = args ? args.metricSelector : undefined;
+            resourceInputs["metricId"] = args?.metricId;
+            resourceInputs["metricSelector"] = args?.metricSelector;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MetricQuery.__pulumiType, name, resourceInputs, opts);

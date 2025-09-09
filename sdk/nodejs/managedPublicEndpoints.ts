@@ -35,19 +35,19 @@ export class ManagedPublicEndpoints extends pulumi.CustomResource {
     /**
      * Additional web UI addresses
      */
-    public readonly additionalWebUiAddresses!: pulumi.Output<string[] | undefined>;
+    declare public readonly additionalWebUiAddresses: pulumi.Output<string[] | undefined>;
     /**
      * Beacon forwarder address
      */
-    public readonly beaconForwarderAddress!: pulumi.Output<string | undefined>;
+    declare public readonly beaconForwarderAddress: pulumi.Output<string | undefined>;
     /**
      * CDN address
      */
-    public readonly cdnAddress!: pulumi.Output<string | undefined>;
+    declare public readonly cdnAddress: pulumi.Output<string | undefined>;
     /**
      * Web UI address
      */
-    public readonly webUiAddress!: pulumi.Output<string | undefined>;
+    declare public readonly webUiAddress: pulumi.Output<string | undefined>;
 
     /**
      * Create a ManagedPublicEndpoints resource with the given unique name, arguments, and options.
@@ -62,16 +62,16 @@ export class ManagedPublicEndpoints extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedPublicEndpointsState | undefined;
-            resourceInputs["additionalWebUiAddresses"] = state ? state.additionalWebUiAddresses : undefined;
-            resourceInputs["beaconForwarderAddress"] = state ? state.beaconForwarderAddress : undefined;
-            resourceInputs["cdnAddress"] = state ? state.cdnAddress : undefined;
-            resourceInputs["webUiAddress"] = state ? state.webUiAddress : undefined;
+            resourceInputs["additionalWebUiAddresses"] = state?.additionalWebUiAddresses;
+            resourceInputs["beaconForwarderAddress"] = state?.beaconForwarderAddress;
+            resourceInputs["cdnAddress"] = state?.cdnAddress;
+            resourceInputs["webUiAddress"] = state?.webUiAddress;
         } else {
             const args = argsOrState as ManagedPublicEndpointsArgs | undefined;
-            resourceInputs["additionalWebUiAddresses"] = args ? args.additionalWebUiAddresses : undefined;
-            resourceInputs["beaconForwarderAddress"] = args ? args.beaconForwarderAddress : undefined;
-            resourceInputs["cdnAddress"] = args ? args.cdnAddress : undefined;
-            resourceInputs["webUiAddress"] = args ? args.webUiAddress : undefined;
+            resourceInputs["additionalWebUiAddresses"] = args?.additionalWebUiAddresses;
+            resourceInputs["beaconForwarderAddress"] = args?.beaconForwarderAddress;
+            resourceInputs["cdnAddress"] = args?.cdnAddress;
+            resourceInputs["webUiAddress"] = args?.webUiAddress;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedPublicEndpoints.__pulumiType, name, resourceInputs, opts);

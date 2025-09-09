@@ -35,15 +35,15 @@ export class ProblemFields extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Field from the event that will be extracted.
      */
-    public readonly eventField!: pulumi.Output<string>;
+    declare public readonly eventField: pulumi.Output<string>;
     /**
      * Field under which the extracted event data will be stored on the problem.
      */
-    public readonly problemField!: pulumi.Output<string>;
+    declare public readonly problemField: pulumi.Output<string>;
 
     /**
      * Create a ProblemFields resource with the given unique name, arguments, and options.
@@ -58,23 +58,23 @@ export class ProblemFields extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProblemFieldsState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["eventField"] = state ? state.eventField : undefined;
-            resourceInputs["problemField"] = state ? state.problemField : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["eventField"] = state?.eventField;
+            resourceInputs["problemField"] = state?.problemField;
         } else {
             const args = argsOrState as ProblemFieldsArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.eventField === undefined) && !opts.urn) {
+            if (args?.eventField === undefined && !opts.urn) {
                 throw new Error("Missing required property 'eventField'");
             }
-            if ((!args || args.problemField === undefined) && !opts.urn) {
+            if (args?.problemField === undefined && !opts.urn) {
                 throw new Error("Missing required property 'problemField'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["eventField"] = args ? args.eventField : undefined;
-            resourceInputs["problemField"] = args ? args.problemField : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["eventField"] = args?.eventField;
+            resourceInputs["problemField"] = args?.problemField;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProblemFields.__pulumiType, name, resourceInputs, opts);

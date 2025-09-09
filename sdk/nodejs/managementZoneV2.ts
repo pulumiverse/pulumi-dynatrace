@@ -37,19 +37,19 @@ export class ManagementZoneV2 extends pulumi.CustomResource {
     /**
      * Description
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * The ID of this setting when referred to by the Config REST API V1
      */
-    public readonly legacyId!: pulumi.Output<string>;
+    declare public readonly legacyId: pulumi.Output<string>;
     /**
      * **Be careful when renaming** - if there are policies that are referencing this Management zone, they will need to be adapted to the new name!
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Rules
      */
-    public readonly rules!: pulumi.Output<outputs.ManagementZoneV2Rules | undefined>;
+    declare public readonly rules: pulumi.Output<outputs.ManagementZoneV2Rules | undefined>;
 
     /**
      * Create a ManagementZoneV2 resource with the given unique name, arguments, and options.
@@ -64,16 +64,16 @@ export class ManagementZoneV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagementZoneV2State | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["legacyId"] = state?.legacyId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["rules"] = state?.rules;
         } else {
             const args = argsOrState as ManagementZoneV2Args | undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["legacyId"] = args?.legacyId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["rules"] = args?.rules;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagementZoneV2.__pulumiType, name, resourceInputs, opts);

@@ -37,27 +37,27 @@ export class K8sNodeAnomalies extends pulumi.CustomResource {
     /**
      * no documentation available
      */
-    public readonly cpuRequestsSaturation!: pulumi.Output<outputs.K8sNodeAnomaliesCpuRequestsSaturation>;
+    declare public readonly cpuRequestsSaturation: pulumi.Output<outputs.K8sNodeAnomaliesCpuRequestsSaturation>;
     /**
      * no documentation available
      */
-    public readonly memoryRequestsSaturation!: pulumi.Output<outputs.K8sNodeAnomaliesMemoryRequestsSaturation>;
+    declare public readonly memoryRequestsSaturation: pulumi.Output<outputs.K8sNodeAnomaliesMemoryRequestsSaturation>;
     /**
      * no documentation available
      */
-    public readonly nodeProblematicCondition!: pulumi.Output<outputs.K8sNodeAnomaliesNodeProblematicCondition>;
+    declare public readonly nodeProblematicCondition: pulumi.Output<outputs.K8sNodeAnomaliesNodeProblematicCondition>;
     /**
      * no documentation available
      */
-    public readonly podsSaturation!: pulumi.Output<outputs.K8sNodeAnomaliesPodsSaturation>;
+    declare public readonly podsSaturation: pulumi.Output<outputs.K8sNodeAnomaliesPodsSaturation>;
     /**
      * Alerts if node has not been available for a given amount of time
      */
-    public readonly readinessIssues!: pulumi.Output<outputs.K8sNodeAnomaliesReadinessIssues>;
+    declare public readonly readinessIssues: pulumi.Output<outputs.K8sNodeAnomaliesReadinessIssues>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
 
     /**
      * Create a K8sNodeAnomalies resource with the given unique name, arguments, and options.
@@ -72,35 +72,35 @@ export class K8sNodeAnomalies extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as K8sNodeAnomaliesState | undefined;
-            resourceInputs["cpuRequestsSaturation"] = state ? state.cpuRequestsSaturation : undefined;
-            resourceInputs["memoryRequestsSaturation"] = state ? state.memoryRequestsSaturation : undefined;
-            resourceInputs["nodeProblematicCondition"] = state ? state.nodeProblematicCondition : undefined;
-            resourceInputs["podsSaturation"] = state ? state.podsSaturation : undefined;
-            resourceInputs["readinessIssues"] = state ? state.readinessIssues : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["cpuRequestsSaturation"] = state?.cpuRequestsSaturation;
+            resourceInputs["memoryRequestsSaturation"] = state?.memoryRequestsSaturation;
+            resourceInputs["nodeProblematicCondition"] = state?.nodeProblematicCondition;
+            resourceInputs["podsSaturation"] = state?.podsSaturation;
+            resourceInputs["readinessIssues"] = state?.readinessIssues;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as K8sNodeAnomaliesArgs | undefined;
-            if ((!args || args.cpuRequestsSaturation === undefined) && !opts.urn) {
+            if (args?.cpuRequestsSaturation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cpuRequestsSaturation'");
             }
-            if ((!args || args.memoryRequestsSaturation === undefined) && !opts.urn) {
+            if (args?.memoryRequestsSaturation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'memoryRequestsSaturation'");
             }
-            if ((!args || args.nodeProblematicCondition === undefined) && !opts.urn) {
+            if (args?.nodeProblematicCondition === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nodeProblematicCondition'");
             }
-            if ((!args || args.podsSaturation === undefined) && !opts.urn) {
+            if (args?.podsSaturation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'podsSaturation'");
             }
-            if ((!args || args.readinessIssues === undefined) && !opts.urn) {
+            if (args?.readinessIssues === undefined && !opts.urn) {
                 throw new Error("Missing required property 'readinessIssues'");
             }
-            resourceInputs["cpuRequestsSaturation"] = args ? args.cpuRequestsSaturation : undefined;
-            resourceInputs["memoryRequestsSaturation"] = args ? args.memoryRequestsSaturation : undefined;
-            resourceInputs["nodeProblematicCondition"] = args ? args.nodeProblematicCondition : undefined;
-            resourceInputs["podsSaturation"] = args ? args.podsSaturation : undefined;
-            resourceInputs["readinessIssues"] = args ? args.readinessIssues : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["cpuRequestsSaturation"] = args?.cpuRequestsSaturation;
+            resourceInputs["memoryRequestsSaturation"] = args?.memoryRequestsSaturation;
+            resourceInputs["nodeProblematicCondition"] = args?.nodeProblematicCondition;
+            resourceInputs["podsSaturation"] = args?.podsSaturation;
+            resourceInputs["readinessIssues"] = args?.readinessIssues;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(K8sNodeAnomalies.__pulumiType, name, resourceInputs, opts);

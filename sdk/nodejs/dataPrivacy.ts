@@ -37,25 +37,25 @@ export class DataPrivacy extends pulumi.CustomResource {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    public readonly applicationId!: pulumi.Output<string | undefined>;
+    declare public readonly applicationId: pulumi.Output<string | undefined>;
     /**
      * To provide your end users with the ability to decide for themselves if their activities should be tracked to measure
      * application performance and usage, enable opt-in mode.
      */
-    public readonly dataCollection!: pulumi.Output<outputs.DataPrivacyDataCollection>;
+    declare public readonly dataCollection: pulumi.Output<outputs.DataPrivacyDataCollection>;
     /**
      * Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual
      * users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
      */
-    public readonly doNotTrack!: pulumi.Output<outputs.DataPrivacyDoNotTrack>;
+    declare public readonly doNotTrack: pulumi.Output<outputs.DataPrivacyDoNotTrack>;
     /**
      * no documentation available
      */
-    public readonly masking!: pulumi.Output<outputs.DataPrivacyMasking>;
+    declare public readonly masking: pulumi.Output<outputs.DataPrivacyMasking>;
     /**
      * User tracking
      */
-    public readonly userTracking!: pulumi.Output<outputs.DataPrivacyUserTracking>;
+    declare public readonly userTracking: pulumi.Output<outputs.DataPrivacyUserTracking>;
 
     /**
      * Create a DataPrivacy resource with the given unique name, arguments, and options.
@@ -70,30 +70,30 @@ export class DataPrivacy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DataPrivacyState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["dataCollection"] = state ? state.dataCollection : undefined;
-            resourceInputs["doNotTrack"] = state ? state.doNotTrack : undefined;
-            resourceInputs["masking"] = state ? state.masking : undefined;
-            resourceInputs["userTracking"] = state ? state.userTracking : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["dataCollection"] = state?.dataCollection;
+            resourceInputs["doNotTrack"] = state?.doNotTrack;
+            resourceInputs["masking"] = state?.masking;
+            resourceInputs["userTracking"] = state?.userTracking;
         } else {
             const args = argsOrState as DataPrivacyArgs | undefined;
-            if ((!args || args.dataCollection === undefined) && !opts.urn) {
+            if (args?.dataCollection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dataCollection'");
             }
-            if ((!args || args.doNotTrack === undefined) && !opts.urn) {
+            if (args?.doNotTrack === undefined && !opts.urn) {
                 throw new Error("Missing required property 'doNotTrack'");
             }
-            if ((!args || args.masking === undefined) && !opts.urn) {
+            if (args?.masking === undefined && !opts.urn) {
                 throw new Error("Missing required property 'masking'");
             }
-            if ((!args || args.userTracking === undefined) && !opts.urn) {
+            if (args?.userTracking === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userTracking'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["dataCollection"] = args ? args.dataCollection : undefined;
-            resourceInputs["doNotTrack"] = args ? args.doNotTrack : undefined;
-            resourceInputs["masking"] = args ? args.masking : undefined;
-            resourceInputs["userTracking"] = args ? args.userTracking : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["dataCollection"] = args?.dataCollection;
+            resourceInputs["doNotTrack"] = args?.doNotTrack;
+            resourceInputs["masking"] = args?.masking;
+            resourceInputs["userTracking"] = args?.userTracking;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DataPrivacy.__pulumiType, name, resourceInputs, opts);

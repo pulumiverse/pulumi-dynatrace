@@ -37,19 +37,19 @@ export class AutotagV2 extends pulumi.CustomResource {
     /**
      * Description
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Tag name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Rules
      */
-    public readonly rules!: pulumi.Output<outputs.AutotagV2Rules | undefined>;
+    declare public readonly rules: pulumi.Output<outputs.AutotagV2Rules | undefined>;
     /**
      * If `true` this resource will not
      */
-    public readonly rulesMaintainedExternally!: pulumi.Output<boolean | undefined>;
+    declare public readonly rulesMaintainedExternally: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a AutotagV2 resource with the given unique name, arguments, and options.
@@ -64,16 +64,16 @@ export class AutotagV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutotagV2State | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["rulesMaintainedExternally"] = state ? state.rulesMaintainedExternally : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["rulesMaintainedExternally"] = state?.rulesMaintainedExternally;
         } else {
             const args = argsOrState as AutotagV2Args | undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
-            resourceInputs["rulesMaintainedExternally"] = args ? args.rulesMaintainedExternally : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["rules"] = args?.rules;
+            resourceInputs["rulesMaintainedExternally"] = args?.rulesMaintainedExternally;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutotagV2.__pulumiType, name, resourceInputs, opts);

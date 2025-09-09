@@ -35,19 +35,19 @@ export class JenkinsConnection extends pulumi.CustomResource {
     /**
      * The name of the Jenkins connection
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The password of the user or API token obtained from the Jenkins UI (Dashboard > User > Configure > API Token)
      */
-    public readonly password!: pulumi.Output<string>;
+    declare public readonly password: pulumi.Output<string>;
     /**
      * Base URL of your Jenkins instance (e.g. https://[YOUR*JENKINS*DOMAIN]/)
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
     /**
      * The name of your Jenkins user (e.g. jenkins)
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
 
     /**
      * Create a JenkinsConnection resource with the given unique name, arguments, and options.
@@ -62,25 +62,25 @@ export class JenkinsConnection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as JenkinsConnectionState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as JenkinsConnectionArgs | undefined;
-            if ((!args || args.password === undefined) && !opts.urn) {
+            if (args?.password === undefined && !opts.urn) {
                 throw new Error("Missing required property 'password'");
             }
-            if ((!args || args.url === undefined) && !opts.urn) {
+            if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            if ((!args || args.username === undefined) && !opts.urn) {
+            if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["name"] = args?.name;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["username"] = args?.username;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["password"] };

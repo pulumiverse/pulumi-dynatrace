@@ -70,11 +70,11 @@ export class IamPolicyBoundary extends pulumi.CustomResource {
     /**
      * The name of the policy
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The boundary query
      */
-    public readonly query!: pulumi.Output<string>;
+    declare public readonly query: pulumi.Output<string>;
 
     /**
      * Create a IamPolicyBoundary resource with the given unique name, arguments, and options.
@@ -89,15 +89,15 @@ export class IamPolicyBoundary extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamPolicyBoundaryState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["query"] = state ? state.query : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["query"] = state?.query;
         } else {
             const args = argsOrState as IamPolicyBoundaryArgs | undefined;
-            if ((!args || args.query === undefined) && !opts.urn) {
+            if (args?.query === undefined && !opts.urn) {
                 throw new Error("Missing required property 'query'");
             }
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["query"] = args ? args.query : undefined;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["query"] = args?.query;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IamPolicyBoundary.__pulumiType, name, resourceInputs, opts);

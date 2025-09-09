@@ -35,47 +35,47 @@ export class JiraNotification extends pulumi.CustomResource {
     /**
      * The configuration is enabled (`true`) or disabled (`false`)
      */
-    public readonly active!: pulumi.Output<boolean>;
+    declare public readonly active: pulumi.Output<boolean>;
     /**
      * The API token for the Jira profile. Using password authentication [was deprecated by Jira](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-basic-auth-and-cookie-based-auth/)
      */
-    public readonly apiToken!: pulumi.Output<string | undefined>;
+    declare public readonly apiToken: pulumi.Output<string | undefined>;
     /**
      * The description of the Jira issue to be created by this notification.   You can use same placeholders as in issue summary
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * The type of the Jira issue to be created by this notification
      */
-    public readonly issueType!: pulumi.Output<string>;
+    declare public readonly issueType: pulumi.Output<string>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    public readonly legacyId!: pulumi.Output<string>;
+    declare public readonly legacyId: pulumi.Output<string>;
     /**
      * The name of the notification configuration
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The ID of the associated alerting profile
      */
-    public readonly profile!: pulumi.Output<string>;
+    declare public readonly profile: pulumi.Output<string>;
     /**
      * The project key of the Jira issue to be created by this notification
      */
-    public readonly projectKey!: pulumi.Output<string>;
+    declare public readonly projectKey: pulumi.Output<string>;
     /**
      * The summary of the Jira issue to be created by this notification.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      */
-    public readonly summary!: pulumi.Output<string>;
+    declare public readonly summary: pulumi.Output<string>;
     /**
      * The URL of the Jira API endpoint
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
     /**
      * The username of the Jira profile
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
 
     /**
      * Create a JiraNotification resource with the given unique name, arguments, and options.
@@ -90,54 +90,54 @@ export class JiraNotification extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as JiraNotificationState | undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["apiToken"] = state ? state.apiToken : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["issueType"] = state ? state.issueType : undefined;
-            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["profile"] = state ? state.profile : undefined;
-            resourceInputs["projectKey"] = state ? state.projectKey : undefined;
-            resourceInputs["summary"] = state ? state.summary : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["apiToken"] = state?.apiToken;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["issueType"] = state?.issueType;
+            resourceInputs["legacyId"] = state?.legacyId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["profile"] = state?.profile;
+            resourceInputs["projectKey"] = state?.projectKey;
+            resourceInputs["summary"] = state?.summary;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as JiraNotificationArgs | undefined;
-            if ((!args || args.active === undefined) && !opts.urn) {
+            if (args?.active === undefined && !opts.urn) {
                 throw new Error("Missing required property 'active'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.issueType === undefined) && !opts.urn) {
+            if (args?.issueType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'issueType'");
             }
-            if ((!args || args.profile === undefined) && !opts.urn) {
+            if (args?.profile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profile'");
             }
-            if ((!args || args.projectKey === undefined) && !opts.urn) {
+            if (args?.projectKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'projectKey'");
             }
-            if ((!args || args.summary === undefined) && !opts.urn) {
+            if (args?.summary === undefined && !opts.urn) {
                 throw new Error("Missing required property 'summary'");
             }
-            if ((!args || args.url === undefined) && !opts.urn) {
+            if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            if ((!args || args.username === undefined) && !opts.urn) {
+            if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
-            resourceInputs["active"] = args ? args.active : undefined;
+            resourceInputs["active"] = args?.active;
             resourceInputs["apiToken"] = args?.apiToken ? pulumi.secret(args.apiToken) : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["issueType"] = args ? args.issueType : undefined;
-            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["profile"] = args ? args.profile : undefined;
-            resourceInputs["projectKey"] = args ? args.projectKey : undefined;
-            resourceInputs["summary"] = args ? args.summary : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["issueType"] = args?.issueType;
+            resourceInputs["legacyId"] = args?.legacyId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["profile"] = args?.profile;
+            resourceInputs["projectKey"] = args?.projectKey;
+            resourceInputs["summary"] = args?.summary;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["username"] = args?.username;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["apiToken"] };

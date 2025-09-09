@@ -46,19 +46,19 @@ export class Report extends pulumi.CustomResource {
     /**
      * The ID of the associated dashboard
      */
-    public readonly dashboardId!: pulumi.Output<string>;
+    declare public readonly dashboardId: pulumi.Output<string>;
     /**
      * The email notifications for the dashboard report are enabled (true) or disabled (false).
      */
-    public readonly emailNotifications!: pulumi.Output<boolean | undefined>;
+    declare public readonly emailNotifications: pulumi.Output<boolean | undefined>;
     /**
      * A list of the report subscribers
      */
-    public readonly subscriptions!: pulumi.Output<outputs.ReportSubscriptions | undefined>;
+    declare public readonly subscriptions: pulumi.Output<outputs.ReportSubscriptions | undefined>;
     /**
      * The type of report
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a Report resource with the given unique name, arguments, and options.
@@ -73,22 +73,22 @@ export class Report extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ReportState | undefined;
-            resourceInputs["dashboardId"] = state ? state.dashboardId : undefined;
-            resourceInputs["emailNotifications"] = state ? state.emailNotifications : undefined;
-            resourceInputs["subscriptions"] = state ? state.subscriptions : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["dashboardId"] = state?.dashboardId;
+            resourceInputs["emailNotifications"] = state?.emailNotifications;
+            resourceInputs["subscriptions"] = state?.subscriptions;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as ReportArgs | undefined;
-            if ((!args || args.dashboardId === undefined) && !opts.urn) {
+            if (args?.dashboardId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dashboardId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["dashboardId"] = args ? args.dashboardId : undefined;
-            resourceInputs["emailNotifications"] = args ? args.emailNotifications : undefined;
-            resourceInputs["subscriptions"] = args ? args.subscriptions : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["dashboardId"] = args?.dashboardId;
+            resourceInputs["emailNotifications"] = args?.emailNotifications;
+            resourceInputs["subscriptions"] = args?.subscriptions;
+            resourceInputs["type"] = args?.type;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Report.__pulumiType, name, resourceInputs, opts);

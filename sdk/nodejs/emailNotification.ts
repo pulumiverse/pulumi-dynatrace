@@ -35,43 +35,43 @@ export class EmailNotification extends pulumi.CustomResource {
     /**
      * The configuration is enabled (`true`) or disabled (`false`)
      */
-    public readonly active!: pulumi.Output<boolean | undefined>;
+    declare public readonly active: pulumi.Output<boolean | undefined>;
     /**
      * The list of the email BCC-recipients
      */
-    public readonly bccs!: pulumi.Output<string[] | undefined>;
+    declare public readonly bccs: pulumi.Output<string[] | undefined>;
     /**
      * The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      */
-    public readonly body!: pulumi.Output<string>;
+    declare public readonly body: pulumi.Output<string>;
     /**
      * The list of the email CC-recipients
      */
-    public readonly ccs!: pulumi.Output<string[] | undefined>;
+    declare public readonly ccs: pulumi.Output<string[] | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    public readonly legacyId!: pulumi.Output<string>;
+    declare public readonly legacyId: pulumi.Output<string>;
     /**
      * The name of the notification configuration
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Send email if problem is closed
      */
-    public readonly notifyClosedProblems!: pulumi.Output<boolean | undefined>;
+    declare public readonly notifyClosedProblems: pulumi.Output<boolean | undefined>;
     /**
      * The ID of the associated alerting profile
      */
-    public readonly profile!: pulumi.Output<string>;
+    declare public readonly profile: pulumi.Output<string>;
     /**
      * The subject of the email notifications
      */
-    public readonly subject!: pulumi.Output<string>;
+    declare public readonly subject: pulumi.Output<string>;
     /**
      * The list of the email recipients
      */
-    public readonly tos!: pulumi.Output<string[]>;
+    declare public readonly tos: pulumi.Output<string[]>;
 
     /**
      * Create a EmailNotification resource with the given unique name, arguments, and options.
@@ -86,40 +86,40 @@ export class EmailNotification extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EmailNotificationState | undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["bccs"] = state ? state.bccs : undefined;
-            resourceInputs["body"] = state ? state.body : undefined;
-            resourceInputs["ccs"] = state ? state.ccs : undefined;
-            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["notifyClosedProblems"] = state ? state.notifyClosedProblems : undefined;
-            resourceInputs["profile"] = state ? state.profile : undefined;
-            resourceInputs["subject"] = state ? state.subject : undefined;
-            resourceInputs["tos"] = state ? state.tos : undefined;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["bccs"] = state?.bccs;
+            resourceInputs["body"] = state?.body;
+            resourceInputs["ccs"] = state?.ccs;
+            resourceInputs["legacyId"] = state?.legacyId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["notifyClosedProblems"] = state?.notifyClosedProblems;
+            resourceInputs["profile"] = state?.profile;
+            resourceInputs["subject"] = state?.subject;
+            resourceInputs["tos"] = state?.tos;
         } else {
             const args = argsOrState as EmailNotificationArgs | undefined;
-            if ((!args || args.body === undefined) && !opts.urn) {
+            if (args?.body === undefined && !opts.urn) {
                 throw new Error("Missing required property 'body'");
             }
-            if ((!args || args.profile === undefined) && !opts.urn) {
+            if (args?.profile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profile'");
             }
-            if ((!args || args.subject === undefined) && !opts.urn) {
+            if (args?.subject === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subject'");
             }
-            if ((!args || args.tos === undefined) && !opts.urn) {
+            if (args?.tos === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tos'");
             }
-            resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["bccs"] = args ? args.bccs : undefined;
-            resourceInputs["body"] = args ? args.body : undefined;
-            resourceInputs["ccs"] = args ? args.ccs : undefined;
-            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["notifyClosedProblems"] = args ? args.notifyClosedProblems : undefined;
-            resourceInputs["profile"] = args ? args.profile : undefined;
-            resourceInputs["subject"] = args ? args.subject : undefined;
-            resourceInputs["tos"] = args ? args.tos : undefined;
+            resourceInputs["active"] = args?.active;
+            resourceInputs["bccs"] = args?.bccs;
+            resourceInputs["body"] = args?.body;
+            resourceInputs["ccs"] = args?.ccs;
+            resourceInputs["legacyId"] = args?.legacyId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["notifyClosedProblems"] = args?.notifyClosedProblems;
+            resourceInputs["profile"] = args?.profile;
+            resourceInputs["subject"] = args?.subject;
+            resourceInputs["tos"] = args?.tos;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(EmailNotification.__pulumiType, name, resourceInputs, opts);

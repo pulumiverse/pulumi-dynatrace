@@ -37,31 +37,31 @@ export class UserGroup extends pulumi.CustomResource {
     /**
      * If `true`, then the group has the access account rights
      */
-    public readonly accessAccount!: pulumi.Output<boolean | undefined>;
+    declare public readonly accessAccount: pulumi.Output<boolean | undefined>;
     /**
      * If `true`, then the group has the cluster administrator rights
      */
-    public readonly clusterAdmin!: pulumi.Output<boolean | undefined>;
+    declare public readonly clusterAdmin: pulumi.Output<boolean | undefined>;
     /**
      * LDAP group names
      */
-    public readonly ldapGroups!: pulumi.Output<string[] | undefined>;
+    declare public readonly ldapGroups: pulumi.Output<string[] | undefined>;
     /**
      * If `true`, then the group has the manage account rights
      */
-    public readonly manageAccount!: pulumi.Output<boolean | undefined>;
+    declare public readonly manageAccount: pulumi.Output<boolean | undefined>;
     /**
      * The name of the user group
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Permissions for environments
      */
-    public readonly permissions!: pulumi.Output<outputs.UserGroupPermissions | undefined>;
+    declare public readonly permissions: pulumi.Output<outputs.UserGroupPermissions | undefined>;
     /**
      * SSO group names. If defined it's used to map SSO group name to Dynatrace group name, otherwise mapping is done by group name
      */
-    public readonly ssoGroups!: pulumi.Output<string[] | undefined>;
+    declare public readonly ssoGroups: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a UserGroup resource with the given unique name, arguments, and options.
@@ -76,22 +76,22 @@ export class UserGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserGroupState | undefined;
-            resourceInputs["accessAccount"] = state ? state.accessAccount : undefined;
-            resourceInputs["clusterAdmin"] = state ? state.clusterAdmin : undefined;
-            resourceInputs["ldapGroups"] = state ? state.ldapGroups : undefined;
-            resourceInputs["manageAccount"] = state ? state.manageAccount : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["permissions"] = state ? state.permissions : undefined;
-            resourceInputs["ssoGroups"] = state ? state.ssoGroups : undefined;
+            resourceInputs["accessAccount"] = state?.accessAccount;
+            resourceInputs["clusterAdmin"] = state?.clusterAdmin;
+            resourceInputs["ldapGroups"] = state?.ldapGroups;
+            resourceInputs["manageAccount"] = state?.manageAccount;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["permissions"] = state?.permissions;
+            resourceInputs["ssoGroups"] = state?.ssoGroups;
         } else {
             const args = argsOrState as UserGroupArgs | undefined;
-            resourceInputs["accessAccount"] = args ? args.accessAccount : undefined;
-            resourceInputs["clusterAdmin"] = args ? args.clusterAdmin : undefined;
-            resourceInputs["ldapGroups"] = args ? args.ldapGroups : undefined;
-            resourceInputs["manageAccount"] = args ? args.manageAccount : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["permissions"] = args ? args.permissions : undefined;
-            resourceInputs["ssoGroups"] = args ? args.ssoGroups : undefined;
+            resourceInputs["accessAccount"] = args?.accessAccount;
+            resourceInputs["clusterAdmin"] = args?.clusterAdmin;
+            resourceInputs["ldapGroups"] = args?.ldapGroups;
+            resourceInputs["manageAccount"] = args?.manageAccount;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["permissions"] = args?.permissions;
+            resourceInputs["ssoGroups"] = args?.ssoGroups;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(UserGroup.__pulumiType, name, resourceInputs, opts);

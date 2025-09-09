@@ -62,10 +62,10 @@ export class IamGroup extends pulumi.CustomResource {
         return obj['__pulumiType'] === IamGroup.__pulumiType;
     }
 
-    public readonly description!: pulumi.Output<string | undefined>;
-    public readonly federatedAttributeValues!: pulumi.Output<string[] | undefined>;
-    public readonly name!: pulumi.Output<string>;
-    public readonly permissions!: pulumi.Output<outputs.IamGroupPermissions | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
+    declare public readonly federatedAttributeValues: pulumi.Output<string[] | undefined>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly permissions: pulumi.Output<outputs.IamGroupPermissions | undefined>;
 
     /**
      * Create a IamGroup resource with the given unique name, arguments, and options.
@@ -80,16 +80,16 @@ export class IamGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamGroupState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["federatedAttributeValues"] = state ? state.federatedAttributeValues : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["permissions"] = state ? state.permissions : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["federatedAttributeValues"] = state?.federatedAttributeValues;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["permissions"] = state?.permissions;
         } else {
             const args = argsOrState as IamGroupArgs | undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["federatedAttributeValues"] = args ? args.federatedAttributeValues : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["permissions"] = args ? args.permissions : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["federatedAttributeValues"] = args?.federatedAttributeValues;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["permissions"] = args?.permissions;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IamGroup.__pulumiType, name, resourceInputs, opts);

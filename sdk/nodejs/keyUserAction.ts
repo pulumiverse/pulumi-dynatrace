@@ -35,19 +35,19 @@ export class KeyUserAction extends pulumi.CustomResource {
     /**
      * The ID of the WebApplication
      */
-    public readonly applicationId!: pulumi.Output<string>;
+    declare public readonly applicationId: pulumi.Output<string>;
     /**
      * The domain where the action is performed
      */
-    public readonly domain!: pulumi.Output<string | undefined>;
+    declare public readonly domain: pulumi.Output<string | undefined>;
     /**
      * The name of the action
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The type of the action. Possible values are `Custom`, `Load` and `Xhr`
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a KeyUserAction resource with the given unique name, arguments, and options.
@@ -62,22 +62,22 @@ export class KeyUserAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KeyUserActionState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["domain"] = state ? state.domain : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["domain"] = state?.domain;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as KeyUserActionArgs | undefined;
-            if ((!args || args.applicationId === undefined) && !opts.urn) {
+            if (args?.applicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["domain"] = args ? args.domain : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["domain"] = args?.domain;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["type"] = args?.type;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(KeyUserAction.__pulumiType, name, resourceInputs, opts);

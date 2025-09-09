@@ -37,51 +37,51 @@ export class Notification extends pulumi.CustomResource {
     /**
      * Configuration for Ansible Tower Notification
      */
-    public readonly ansibleTower!: pulumi.Output<outputs.NotificationAnsibleTower | undefined>;
+    declare public readonly ansibleTower: pulumi.Output<outputs.NotificationAnsibleTower | undefined>;
     /**
      * Configuration for Generic Notification
      */
-    public readonly config!: pulumi.Output<outputs.NotificationConfig | undefined>;
+    declare public readonly config: pulumi.Output<outputs.NotificationConfig | undefined>;
     /**
      * Configuration for Email Notification
      */
-    public readonly email!: pulumi.Output<outputs.NotificationEmail | undefined>;
+    declare public readonly email: pulumi.Output<outputs.NotificationEmail | undefined>;
     /**
      * Configuration for Jira Notification
      */
-    public readonly jira!: pulumi.Output<outputs.NotificationJira | undefined>;
+    declare public readonly jira: pulumi.Output<outputs.NotificationJira | undefined>;
     /**
      * Configuration for OpsGenie Notification
      */
-    public readonly opsGenie!: pulumi.Output<outputs.NotificationOpsGenie | undefined>;
+    declare public readonly opsGenie: pulumi.Output<outputs.NotificationOpsGenie | undefined>;
     /**
      * Configuration for PagerDuty Notification
      */
-    public readonly pagerDuty!: pulumi.Output<outputs.NotificationPagerDuty | undefined>;
+    declare public readonly pagerDuty: pulumi.Output<outputs.NotificationPagerDuty | undefined>;
     /**
      * Configuration for ServiceNow Notification
      */
-    public readonly serviceNow!: pulumi.Output<outputs.NotificationServiceNow | undefined>;
+    declare public readonly serviceNow: pulumi.Output<outputs.NotificationServiceNow | undefined>;
     /**
      * Configuration for Slack Notification
      */
-    public readonly slack!: pulumi.Output<outputs.NotificationSlack | undefined>;
+    declare public readonly slack: pulumi.Output<outputs.NotificationSlack | undefined>;
     /**
      * Configuration for Trello Notification
      */
-    public readonly trello!: pulumi.Output<outputs.NotificationTrello | undefined>;
+    declare public readonly trello: pulumi.Output<outputs.NotificationTrello | undefined>;
     /**
      * Configuration for VictorOps Notification
      */
-    public readonly victorOps!: pulumi.Output<outputs.NotificationVictorOps | undefined>;
+    declare public readonly victorOps: pulumi.Output<outputs.NotificationVictorOps | undefined>;
     /**
      * Configuration for WebHook Notification
      */
-    public readonly webHook!: pulumi.Output<outputs.NotificationWebHook | undefined>;
+    declare public readonly webHook: pulumi.Output<outputs.NotificationWebHook | undefined>;
     /**
      * Configuration for XMatters Notification
      */
-    public readonly xmatters!: pulumi.Output<outputs.NotificationXmatters | undefined>;
+    declare public readonly xmatters: pulumi.Output<outputs.NotificationXmatters | undefined>;
 
     /**
      * Create a Notification resource with the given unique name, arguments, and options.
@@ -96,32 +96,32 @@ export class Notification extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NotificationState | undefined;
-            resourceInputs["ansibleTower"] = state ? state.ansibleTower : undefined;
-            resourceInputs["config"] = state ? state.config : undefined;
-            resourceInputs["email"] = state ? state.email : undefined;
-            resourceInputs["jira"] = state ? state.jira : undefined;
-            resourceInputs["opsGenie"] = state ? state.opsGenie : undefined;
-            resourceInputs["pagerDuty"] = state ? state.pagerDuty : undefined;
-            resourceInputs["serviceNow"] = state ? state.serviceNow : undefined;
-            resourceInputs["slack"] = state ? state.slack : undefined;
-            resourceInputs["trello"] = state ? state.trello : undefined;
-            resourceInputs["victorOps"] = state ? state.victorOps : undefined;
-            resourceInputs["webHook"] = state ? state.webHook : undefined;
-            resourceInputs["xmatters"] = state ? state.xmatters : undefined;
+            resourceInputs["ansibleTower"] = state?.ansibleTower;
+            resourceInputs["config"] = state?.config;
+            resourceInputs["email"] = state?.email;
+            resourceInputs["jira"] = state?.jira;
+            resourceInputs["opsGenie"] = state?.opsGenie;
+            resourceInputs["pagerDuty"] = state?.pagerDuty;
+            resourceInputs["serviceNow"] = state?.serviceNow;
+            resourceInputs["slack"] = state?.slack;
+            resourceInputs["trello"] = state?.trello;
+            resourceInputs["victorOps"] = state?.victorOps;
+            resourceInputs["webHook"] = state?.webHook;
+            resourceInputs["xmatters"] = state?.xmatters;
         } else {
             const args = argsOrState as NotificationArgs | undefined;
-            resourceInputs["ansibleTower"] = args ? args.ansibleTower : undefined;
-            resourceInputs["config"] = args ? args.config : undefined;
-            resourceInputs["email"] = args ? args.email : undefined;
-            resourceInputs["jira"] = args ? args.jira : undefined;
-            resourceInputs["opsGenie"] = args ? args.opsGenie : undefined;
-            resourceInputs["pagerDuty"] = args ? args.pagerDuty : undefined;
-            resourceInputs["serviceNow"] = args ? args.serviceNow : undefined;
-            resourceInputs["slack"] = args ? args.slack : undefined;
-            resourceInputs["trello"] = args ? args.trello : undefined;
-            resourceInputs["victorOps"] = args ? args.victorOps : undefined;
-            resourceInputs["webHook"] = args ? args.webHook : undefined;
-            resourceInputs["xmatters"] = args ? args.xmatters : undefined;
+            resourceInputs["ansibleTower"] = args?.ansibleTower;
+            resourceInputs["config"] = args?.config;
+            resourceInputs["email"] = args?.email;
+            resourceInputs["jira"] = args?.jira;
+            resourceInputs["opsGenie"] = args?.opsGenie;
+            resourceInputs["pagerDuty"] = args?.pagerDuty;
+            resourceInputs["serviceNow"] = args?.serviceNow;
+            resourceInputs["slack"] = args?.slack;
+            resourceInputs["trello"] = args?.trello;
+            resourceInputs["victorOps"] = args?.victorOps;
+            resourceInputs["webHook"] = args?.webHook;
+            resourceInputs["xmatters"] = args?.xmatters;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Notification.__pulumiType, name, resourceInputs, opts);

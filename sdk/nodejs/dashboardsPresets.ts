@@ -37,11 +37,11 @@ export class DashboardsPresets extends pulumi.CustomResource {
     /**
      * Show selected preset to respective user group only.
      */
-    public readonly dashboardPresetsList!: pulumi.Output<outputs.DashboardsPresetsDashboardPresetsList | undefined>;
+    declare public readonly dashboardPresetsList: pulumi.Output<outputs.DashboardsPresetsDashboardPresetsList | undefined>;
     /**
      * Dashboard presets are visible to all users by default. For a pristine environment you may disable them entirely or opt to manually limit visibility to selected user groups.
      */
-    public readonly enableDashboardPresets!: pulumi.Output<boolean>;
+    declare public readonly enableDashboardPresets: pulumi.Output<boolean>;
 
     /**
      * Create a DashboardsPresets resource with the given unique name, arguments, and options.
@@ -56,15 +56,15 @@ export class DashboardsPresets extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DashboardsPresetsState | undefined;
-            resourceInputs["dashboardPresetsList"] = state ? state.dashboardPresetsList : undefined;
-            resourceInputs["enableDashboardPresets"] = state ? state.enableDashboardPresets : undefined;
+            resourceInputs["dashboardPresetsList"] = state?.dashboardPresetsList;
+            resourceInputs["enableDashboardPresets"] = state?.enableDashboardPresets;
         } else {
             const args = argsOrState as DashboardsPresetsArgs | undefined;
-            if ((!args || args.enableDashboardPresets === undefined) && !opts.urn) {
+            if (args?.enableDashboardPresets === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableDashboardPresets'");
             }
-            resourceInputs["dashboardPresetsList"] = args ? args.dashboardPresetsList : undefined;
-            resourceInputs["enableDashboardPresets"] = args ? args.enableDashboardPresets : undefined;
+            resourceInputs["dashboardPresetsList"] = args?.dashboardPresetsList;
+            resourceInputs["enableDashboardPresets"] = args?.enableDashboardPresets;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DashboardsPresets.__pulumiType, name, resourceInputs, opts);

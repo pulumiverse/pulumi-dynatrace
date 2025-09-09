@@ -37,19 +37,19 @@ export class SpanCaptureRule extends pulumi.CustomResource {
     /**
      * Whether to create an entry point or not
      */
-    public readonly action!: pulumi.Output<string>;
+    declare public readonly action: pulumi.Output<string>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Matching strategies for the Span
      */
-    public readonly matches!: pulumi.Output<outputs.SpanCaptureRuleMatches>;
+    declare public readonly matches: pulumi.Output<outputs.SpanCaptureRuleMatches>;
     /**
      * The name of the rule
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a SpanCaptureRule resource with the given unique name, arguments, and options.
@@ -64,22 +64,22 @@ export class SpanCaptureRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SpanCaptureRuleState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["matches"] = state ? state.matches : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["matches"] = state?.matches;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as SpanCaptureRuleArgs | undefined;
-            if ((!args || args.action === undefined) && !opts.urn) {
+            if (args?.action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'action'");
             }
-            if ((!args || args.matches === undefined) && !opts.urn) {
+            if (args?.matches === undefined && !opts.urn) {
                 throw new Error("Missing required property 'matches'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["matches"] = args ? args.matches : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["matches"] = args?.matches;
+            resourceInputs["name"] = args?.name;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SpanCaptureRule.__pulumiType, name, resourceInputs, opts);

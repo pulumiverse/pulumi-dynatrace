@@ -37,31 +37,31 @@ export class MetricEvents extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Controls the preferred entity type used for triggered events.
      */
-    public readonly eventEntityDimensionKey!: pulumi.Output<string | undefined>;
+    declare public readonly eventEntityDimensionKey: pulumi.Output<string | undefined>;
     /**
      * Event template
      */
-    public readonly eventTemplate!: pulumi.Output<outputs.MetricEventsEventTemplate>;
+    declare public readonly eventTemplate: pulumi.Output<outputs.MetricEventsEventTemplate>;
     /**
      * Config id
      */
-    public readonly legacyId!: pulumi.Output<string>;
+    declare public readonly legacyId: pulumi.Output<string>;
     /**
      * Monitoring strategy
      */
-    public readonly modelProperties!: pulumi.Output<outputs.MetricEventsModelProperties>;
+    declare public readonly modelProperties: pulumi.Output<outputs.MetricEventsModelProperties>;
     /**
      * Query definition
      */
-    public readonly queryDefinition!: pulumi.Output<outputs.MetricEventsQueryDefinition>;
+    declare public readonly queryDefinition: pulumi.Output<outputs.MetricEventsQueryDefinition>;
     /**
      * The textual summary of the metric event entry
      */
-    public readonly summary!: pulumi.Output<string>;
+    declare public readonly summary: pulumi.Output<string>;
 
     /**
      * Create a MetricEvents resource with the given unique name, arguments, and options.
@@ -76,37 +76,37 @@ export class MetricEvents extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MetricEventsState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["eventEntityDimensionKey"] = state ? state.eventEntityDimensionKey : undefined;
-            resourceInputs["eventTemplate"] = state ? state.eventTemplate : undefined;
-            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
-            resourceInputs["modelProperties"] = state ? state.modelProperties : undefined;
-            resourceInputs["queryDefinition"] = state ? state.queryDefinition : undefined;
-            resourceInputs["summary"] = state ? state.summary : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["eventEntityDimensionKey"] = state?.eventEntityDimensionKey;
+            resourceInputs["eventTemplate"] = state?.eventTemplate;
+            resourceInputs["legacyId"] = state?.legacyId;
+            resourceInputs["modelProperties"] = state?.modelProperties;
+            resourceInputs["queryDefinition"] = state?.queryDefinition;
+            resourceInputs["summary"] = state?.summary;
         } else {
             const args = argsOrState as MetricEventsArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.eventTemplate === undefined) && !opts.urn) {
+            if (args?.eventTemplate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'eventTemplate'");
             }
-            if ((!args || args.modelProperties === undefined) && !opts.urn) {
+            if (args?.modelProperties === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelProperties'");
             }
-            if ((!args || args.queryDefinition === undefined) && !opts.urn) {
+            if (args?.queryDefinition === undefined && !opts.urn) {
                 throw new Error("Missing required property 'queryDefinition'");
             }
-            if ((!args || args.summary === undefined) && !opts.urn) {
+            if (args?.summary === undefined && !opts.urn) {
                 throw new Error("Missing required property 'summary'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["eventEntityDimensionKey"] = args ? args.eventEntityDimensionKey : undefined;
-            resourceInputs["eventTemplate"] = args ? args.eventTemplate : undefined;
-            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
-            resourceInputs["modelProperties"] = args ? args.modelProperties : undefined;
-            resourceInputs["queryDefinition"] = args ? args.queryDefinition : undefined;
-            resourceInputs["summary"] = args ? args.summary : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["eventEntityDimensionKey"] = args?.eventEntityDimensionKey;
+            resourceInputs["eventTemplate"] = args?.eventTemplate;
+            resourceInputs["legacyId"] = args?.legacyId;
+            resourceInputs["modelProperties"] = args?.modelProperties;
+            resourceInputs["queryDefinition"] = args?.queryDefinition;
+            resourceInputs["summary"] = args?.summary;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MetricEvents.__pulumiType, name, resourceInputs, opts);

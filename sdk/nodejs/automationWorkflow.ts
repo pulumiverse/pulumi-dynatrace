@@ -161,35 +161,35 @@ export class AutomationWorkflow extends pulumi.CustomResource {
     /**
      * The user context the executions of the workflow will happen with
      */
-    public readonly actor!: pulumi.Output<string | undefined>;
+    declare public readonly actor: pulumi.Output<string | undefined>;
     /**
      * An optional description for the workflow
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * The ID of the owner of this workflow
      */
-    public readonly owner!: pulumi.Output<string | undefined>;
+    declare public readonly owner: pulumi.Output<string | undefined>;
     /**
      * Defines whether this workflow is private to the owner or not. Default is `true`
      */
-    public readonly private!: pulumi.Output<boolean | undefined>;
+    declare public readonly private: pulumi.Output<boolean | undefined>;
     /**
      * The tasks to run for every execution of this workflow
      */
-    public readonly tasks!: pulumi.Output<outputs.AutomationWorkflowTasks>;
+    declare public readonly tasks: pulumi.Output<outputs.AutomationWorkflowTasks>;
     /**
      * The title / name of the workflow
      */
-    public readonly title!: pulumi.Output<string>;
+    declare public readonly title: pulumi.Output<string>;
     /**
      * Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
      */
-    public readonly trigger!: pulumi.Output<outputs.AutomationWorkflowTrigger | undefined>;
+    declare public readonly trigger: pulumi.Output<outputs.AutomationWorkflowTrigger | undefined>;
     /**
      * The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
      */
-    public readonly type!: pulumi.Output<string | undefined>;
+    declare public readonly type: pulumi.Output<string | undefined>;
 
     /**
      * Create a AutomationWorkflow resource with the given unique name, arguments, and options.
@@ -204,30 +204,30 @@ export class AutomationWorkflow extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutomationWorkflowState | undefined;
-            resourceInputs["actor"] = state ? state.actor : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["owner"] = state ? state.owner : undefined;
-            resourceInputs["private"] = state ? state.private : undefined;
-            resourceInputs["tasks"] = state ? state.tasks : undefined;
-            resourceInputs["title"] = state ? state.title : undefined;
-            resourceInputs["trigger"] = state ? state.trigger : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["actor"] = state?.actor;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["owner"] = state?.owner;
+            resourceInputs["private"] = state?.private;
+            resourceInputs["tasks"] = state?.tasks;
+            resourceInputs["title"] = state?.title;
+            resourceInputs["trigger"] = state?.trigger;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as AutomationWorkflowArgs | undefined;
-            if ((!args || args.tasks === undefined) && !opts.urn) {
+            if (args?.tasks === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tasks'");
             }
-            if ((!args || args.title === undefined) && !opts.urn) {
+            if (args?.title === undefined && !opts.urn) {
                 throw new Error("Missing required property 'title'");
             }
-            resourceInputs["actor"] = args ? args.actor : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["owner"] = args ? args.owner : undefined;
-            resourceInputs["private"] = args ? args.private : undefined;
-            resourceInputs["tasks"] = args ? args.tasks : undefined;
-            resourceInputs["title"] = args ? args.title : undefined;
-            resourceInputs["trigger"] = args ? args.trigger : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["actor"] = args?.actor;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["owner"] = args?.owner;
+            resourceInputs["private"] = args?.private;
+            resourceInputs["tasks"] = args?.tasks;
+            resourceInputs["title"] = args?.title;
+            resourceInputs["trigger"] = args?.trigger;
+            resourceInputs["type"] = args?.type;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutomationWorkflow.__pulumiType, name, resourceInputs, opts);

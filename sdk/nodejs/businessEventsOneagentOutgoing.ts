@@ -37,27 +37,27 @@ export class BusinessEventsOneagentOutgoing extends pulumi.CustomResource {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * Event meta data
      */
-    public readonly event!: pulumi.Output<outputs.BusinessEventsOneagentOutgoingEvent>;
+    declare public readonly event: pulumi.Output<outputs.BusinessEventsOneagentOutgoingEvent>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    public readonly insertAfter!: pulumi.Output<string>;
+    declare public readonly insertAfter: pulumi.Output<string>;
     /**
      * Rule name
      */
-    public readonly ruleName!: pulumi.Output<string>;
+    declare public readonly ruleName: pulumi.Output<string>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
      */
-    public readonly triggers!: pulumi.Output<outputs.BusinessEventsOneagentOutgoingTriggers>;
+    declare public readonly triggers: pulumi.Output<outputs.BusinessEventsOneagentOutgoingTriggers>;
 
     /**
      * Create a BusinessEventsOneagentOutgoing resource with the given unique name, arguments, and options.
@@ -72,32 +72,32 @@ export class BusinessEventsOneagentOutgoing extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BusinessEventsOneagentOutgoingState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["event"] = state ? state.event : undefined;
-            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
-            resourceInputs["ruleName"] = state ? state.ruleName : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["triggers"] = state ? state.triggers : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["event"] = state?.event;
+            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["ruleName"] = state?.ruleName;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["triggers"] = state?.triggers;
         } else {
             const args = argsOrState as BusinessEventsOneagentOutgoingArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.event === undefined) && !opts.urn) {
+            if (args?.event === undefined && !opts.urn) {
                 throw new Error("Missing required property 'event'");
             }
-            if ((!args || args.ruleName === undefined) && !opts.urn) {
+            if (args?.ruleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruleName'");
             }
-            if ((!args || args.triggers === undefined) && !opts.urn) {
+            if (args?.triggers === undefined && !opts.urn) {
                 throw new Error("Missing required property 'triggers'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["event"] = args ? args.event : undefined;
-            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
-            resourceInputs["ruleName"] = args ? args.ruleName : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["triggers"] = args ? args.triggers : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["event"] = args?.event;
+            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["ruleName"] = args?.ruleName;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["triggers"] = args?.triggers;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BusinessEventsOneagentOutgoing.__pulumiType, name, resourceInputs, opts);

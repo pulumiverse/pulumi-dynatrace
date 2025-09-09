@@ -37,15 +37,15 @@ export class AppMonitoring extends pulumi.CustomResource {
     /**
      * You can override the default monitoring setting for each app separately
      */
-    public readonly appMonitoring!: pulumi.Output<outputs.AppMonitoringAppMonitoring | undefined>;
+    declare public readonly appMonitoring: pulumi.Output<outputs.AppMonitoringAppMonitoring | undefined>;
     /**
      * Possible Values: `debug`, `error`, `info`, `off`, `warn`
      */
-    public readonly defaultLogLevel!: pulumi.Output<string>;
+    declare public readonly defaultLogLevel: pulumi.Output<string>;
     /**
      * Possible Values: `off`, `on`
      */
-    public readonly defaultTraceLevel!: pulumi.Output<string | undefined>;
+    declare public readonly defaultTraceLevel: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppMonitoring resource with the given unique name, arguments, and options.
@@ -60,17 +60,17 @@ export class AppMonitoring extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppMonitoringState | undefined;
-            resourceInputs["appMonitoring"] = state ? state.appMonitoring : undefined;
-            resourceInputs["defaultLogLevel"] = state ? state.defaultLogLevel : undefined;
-            resourceInputs["defaultTraceLevel"] = state ? state.defaultTraceLevel : undefined;
+            resourceInputs["appMonitoring"] = state?.appMonitoring;
+            resourceInputs["defaultLogLevel"] = state?.defaultLogLevel;
+            resourceInputs["defaultTraceLevel"] = state?.defaultTraceLevel;
         } else {
             const args = argsOrState as AppMonitoringArgs | undefined;
-            if ((!args || args.defaultLogLevel === undefined) && !opts.urn) {
+            if (args?.defaultLogLevel === undefined && !opts.urn) {
                 throw new Error("Missing required property 'defaultLogLevel'");
             }
-            resourceInputs["appMonitoring"] = args ? args.appMonitoring : undefined;
-            resourceInputs["defaultLogLevel"] = args ? args.defaultLogLevel : undefined;
-            resourceInputs["defaultTraceLevel"] = args ? args.defaultTraceLevel : undefined;
+            resourceInputs["appMonitoring"] = args?.appMonitoring;
+            resourceInputs["defaultLogLevel"] = args?.defaultLogLevel;
+            resourceInputs["defaultTraceLevel"] = args?.defaultTraceLevel;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppMonitoring.__pulumiType, name, resourceInputs, opts);
