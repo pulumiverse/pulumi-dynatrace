@@ -52,7 +52,7 @@ jobs:
       with:
         dotnet-version: ${{matrix.dotnetversion}}
     - name: Setup Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{matrix.pythonversion}}
     - name: Download provider + tfgen binaries
@@ -242,7 +242,7 @@ jobs:
       with:
         dotnet-version: ${{matrix.dotnetversion}}
     - name: Setup Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{matrix.pythonversion}}
     - name: Download python SDK
@@ -319,7 +319,7 @@ jobs:
       with:
         dotnet-version: ${{matrix.dotnetversion}}
     - name: Setup Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{matrix.pythonversion}}
     - name: Download provider + tfgen binaries
