@@ -50,11 +50,23 @@ class OsServicesArgs:
         :param pulumi.Input[_builtins.bool] not_installed_alerting: By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.str] status_condition_linux: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
-        :param pulumi.Input[_builtins.str] status_condition_windows: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-               – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-               that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-               paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-               `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+        :param pulumi.Input[_builtins.str] status_condition_windows: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+               
+               - `$eq(paused)` – Matches services that are in paused state.
+               
+               Available logic operations:
+               - `$not($eq(paused))` – Matches services that are in state different from paused.
+               - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+               
+               Use one of the following values as a parameter for this condition:
+               
+               - `running`
+               - `stopped`
+               - `start_pending`
+               - `stop_pending`
+               - `continue_pending`
+               - `pause_pending`
+               - `paused`
         """
         pulumi.set(__self__, "alerting", alerting)
         pulumi.set(__self__, "enabled", enabled)
@@ -241,11 +253,23 @@ class OsServicesArgs:
     @pulumi.getter(name="statusConditionWindows")
     def status_condition_windows(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-        – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-        that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-        paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-        `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+        This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+
+        - `$eq(paused)` – Matches services that are in paused state.
+
+        Available logic operations:
+        - `$not($eq(paused))` – Matches services that are in state different from paused.
+        - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+
+        Use one of the following values as a parameter for this condition:
+
+        - `running`
+        - `stopped`
+        - `start_pending`
+        - `stop_pending`
+        - `continue_pending`
+        - `pause_pending`
+        - `paused`
         """
         return pulumi.get(self, "status_condition_windows")
 
@@ -285,11 +309,23 @@ class _OsServicesState:
         :param pulumi.Input[_builtins.bool] not_installed_alerting: By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.str] status_condition_linux: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
-        :param pulumi.Input[_builtins.str] status_condition_windows: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-               – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-               that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-               paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-               `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+        :param pulumi.Input[_builtins.str] status_condition_windows: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+               
+               - `$eq(paused)` – Matches services that are in paused state.
+               
+               Available logic operations:
+               - `$not($eq(paused))` – Matches services that are in state different from paused.
+               - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+               
+               Use one of the following values as a parameter for this condition:
+               
+               - `running`
+               - `stopped`
+               - `start_pending`
+               - `stop_pending`
+               - `continue_pending`
+               - `pause_pending`
+               - `paused`
         :param pulumi.Input[_builtins.str] system: Possible Values: `LINUX`, `WINDOWS`
         """
         if alert_activation_duration is not None:
@@ -469,11 +505,23 @@ class _OsServicesState:
     @pulumi.getter(name="statusConditionWindows")
     def status_condition_windows(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-        – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-        that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-        paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-        `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+        This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+
+        - `$eq(paused)` – Matches services that are in paused state.
+
+        Available logic operations:
+        - `$not($eq(paused))` – Matches services that are in state different from paused.
+        - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+
+        Use one of the following values as a parameter for this condition:
+
+        - `running`
+        - `stopped`
+        - `start_pending`
+        - `stop_pending`
+        - `continue_pending`
+        - `pause_pending`
+        - `paused`
         """
         return pulumi.get(self, "status_condition_windows")
 
@@ -531,11 +579,23 @@ class OsServices(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] not_installed_alerting: By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.str] status_condition_linux: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
-        :param pulumi.Input[_builtins.str] status_condition_windows: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-               – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-               that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-               paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-               `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+        :param pulumi.Input[_builtins.str] status_condition_windows: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+               
+               - `$eq(paused)` – Matches services that are in paused state.
+               
+               Available logic operations:
+               - `$not($eq(paused))` – Matches services that are in state different from paused.
+               - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+               
+               Use one of the following values as a parameter for this condition:
+               
+               - `running`
+               - `stopped`
+               - `start_pending`
+               - `stop_pending`
+               - `continue_pending`
+               - `pause_pending`
+               - `paused`
         :param pulumi.Input[_builtins.str] system: Possible Values: `LINUX`, `WINDOWS`
         """
         ...
@@ -649,11 +709,23 @@ class OsServices(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] not_installed_alerting: By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.str] status_condition_linux: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
-        :param pulumi.Input[_builtins.str] status_condition_windows: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-               – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-               that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-               paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-               `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+        :param pulumi.Input[_builtins.str] status_condition_windows: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+               
+               - `$eq(paused)` – Matches services that are in paused state.
+               
+               Available logic operations:
+               - `$not($eq(paused))` – Matches services that are in state different from paused.
+               - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+               
+               Use one of the following values as a parameter for this condition:
+               
+               - `running`
+               - `stopped`
+               - `start_pending`
+               - `stop_pending`
+               - `continue_pending`
+               - `pause_pending`
+               - `paused`
         :param pulumi.Input[_builtins.str] system: Possible Values: `LINUX`, `WINDOWS`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -776,11 +848,23 @@ class OsServices(pulumi.CustomResource):
     @pulumi.getter(name="statusConditionWindows")
     def status_condition_windows(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-        – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-        that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-        paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-        `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+        This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+
+        - `$eq(paused)` – Matches services that are in paused state.
+
+        Available logic operations:
+        - `$not($eq(paused))` – Matches services that are in state different from paused.
+        - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+
+        Use one of the following values as a parameter for this condition:
+
+        - `running`
+        - `stopped`
+        - `start_pending`
+        - `stop_pending`
+        - `continue_pending`
+        - `pause_pending`
+        - `paused`
         """
         return pulumi.get(self, "status_condition_windows")
 

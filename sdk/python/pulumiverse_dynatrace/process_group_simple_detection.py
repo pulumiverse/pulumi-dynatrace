@@ -31,9 +31,7 @@ class ProcessGroupSimpleDetectionArgs:
         :param pulumi.Input[_builtins.str] group_identifier: If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
         :param pulumi.Input[_builtins.str] instance_identifier: Use a variable to identify instances within a process group.
         :param pulumi.Input[_builtins.str] rule_type: Possible Values: `Prop`, `Env`
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] process_type: Note: Not all types can be detected at startup.
         """
         pulumi.set(__self__, "enabled", enabled)
@@ -97,9 +95,7 @@ class ProcessGroupSimpleDetectionArgs:
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -133,9 +129,7 @@ class _ProcessGroupSimpleDetectionState:
         Input properties used for looking up and filtering ProcessGroupSimpleDetection resources.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] group_identifier: If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] instance_identifier: Use a variable to identify instances within a process group.
         :param pulumi.Input[_builtins.str] process_type: Note: Not all types can be detected at startup.
         :param pulumi.Input[_builtins.str] rule_type: Possible Values: `Prop`, `Env`
@@ -181,9 +175,7 @@ class _ProcessGroupSimpleDetectionState:
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -247,9 +239,7 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] group_identifier: If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] instance_identifier: Use a variable to identify instances within a process group.
         :param pulumi.Input[_builtins.str] process_type: Note: Not all types can be detected at startup.
         :param pulumi.Input[_builtins.str] rule_type: Possible Values: `Prop`, `Env`
@@ -331,9 +321,7 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] group_identifier: If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] instance_identifier: Use a variable to identify instances within a process group.
         :param pulumi.Input[_builtins.str] process_type: Note: Not all types can be detected at startup.
         :param pulumi.Input[_builtins.str] rule_type: Possible Values: `Prop`, `Env`
@@ -370,9 +358,7 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> pulumi.Output[_builtins.str]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 

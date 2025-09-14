@@ -42,17 +42,13 @@ class AppsecNotificationArgs:
         :param pulumi.Input[_builtins.bool] enabled: Enable/Disable the security notification, enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] trigger: Security alert type, possible Values: `ATTACK_CANDIDATE`, `SECURITY_PROBLEM`
         :param pulumi.Input[_builtins.str] type: Notification type, possible Values: `EMAIL`, `JIRA`, `WEBHOOK`
-        :param pulumi.Input[_builtins.str] attack_candidate_based_alerting_profile: For attack candidate alerts, select an [alerting
-               profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-               delivery of security notifications related to this integration.
+        :param pulumi.Input[_builtins.str] attack_candidate_based_alerting_profile: For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
         :param pulumi.Input['AppsecNotificationAttackCandidateBasedEmailPayloadArgs'] attack_candidate_based_email_payload: Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
         :param pulumi.Input['AppsecNotificationAttackCandidateBasedJiraPayloadArgs'] attack_candidate_based_jira_payload: Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
         :param pulumi.Input['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs'] attack_candidate_based_webhook_payload: Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
         :param pulumi.Input['AppsecNotificationEmailConfigurationArgs'] email_configuration: Email configuration, required when `type` equals `EMAIL`
         :param pulumi.Input['AppsecNotificationJiraConfigurationArgs'] jira_configuration: Jira configuration, required when `type` equals `JIRA`
-        :param pulumi.Input[_builtins.str] security_problem_based_alerting_profile: For security problem alerts, select an [alerting
-               profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-               security notifications related to this integration.
+        :param pulumi.Input[_builtins.str] security_problem_based_alerting_profile: For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
         :param pulumi.Input['AppsecNotificationSecurityProblemBasedEmailPayloadArgs'] security_problem_based_email_payload: Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
         :param pulumi.Input['AppsecNotificationSecurityProblemBasedJiraPayloadArgs'] security_problem_based_jira_payload: Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
         :param pulumi.Input['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs'] security_problem_based_webhook_payload: Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
@@ -137,9 +133,7 @@ class AppsecNotificationArgs:
     @pulumi.getter(name="attackCandidateBasedAlertingProfile")
     def attack_candidate_based_alerting_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        For attack candidate alerts, select an [alerting
-        profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-        delivery of security notifications related to this integration.
+        For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
         """
         return pulumi.get(self, "attack_candidate_based_alerting_profile")
 
@@ -211,9 +205,7 @@ class AppsecNotificationArgs:
     @pulumi.getter(name="securityProblemBasedAlertingProfile")
     def security_problem_based_alerting_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        For security problem alerts, select an [alerting
-        profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-        security notifications related to this integration.
+        For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
         """
         return pulumi.get(self, "security_problem_based_alerting_profile")
 
@@ -290,9 +282,7 @@ class _AppsecNotificationState:
                  webhook_configuration: Optional[pulumi.Input['AppsecNotificationWebhookConfigurationArgs']] = None):
         """
         Input properties used for looking up and filtering AppsecNotification resources.
-        :param pulumi.Input[_builtins.str] attack_candidate_based_alerting_profile: For attack candidate alerts, select an [alerting
-               profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-               delivery of security notifications related to this integration.
+        :param pulumi.Input[_builtins.str] attack_candidate_based_alerting_profile: For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
         :param pulumi.Input['AppsecNotificationAttackCandidateBasedEmailPayloadArgs'] attack_candidate_based_email_payload: Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
         :param pulumi.Input['AppsecNotificationAttackCandidateBasedJiraPayloadArgs'] attack_candidate_based_jira_payload: Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
         :param pulumi.Input['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs'] attack_candidate_based_webhook_payload: Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
@@ -300,9 +290,7 @@ class _AppsecNotificationState:
         :param pulumi.Input['AppsecNotificationEmailConfigurationArgs'] email_configuration: Email configuration, required when `type` equals `EMAIL`
         :param pulumi.Input[_builtins.bool] enabled: Enable/Disable the security notification, enabled (`true`) or disabled (`false`)
         :param pulumi.Input['AppsecNotificationJiraConfigurationArgs'] jira_configuration: Jira configuration, required when `type` equals `JIRA`
-        :param pulumi.Input[_builtins.str] security_problem_based_alerting_profile: For security problem alerts, select an [alerting
-               profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-               security notifications related to this integration.
+        :param pulumi.Input[_builtins.str] security_problem_based_alerting_profile: For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
         :param pulumi.Input['AppsecNotificationSecurityProblemBasedEmailPayloadArgs'] security_problem_based_email_payload: Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
         :param pulumi.Input['AppsecNotificationSecurityProblemBasedJiraPayloadArgs'] security_problem_based_jira_payload: Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
         :param pulumi.Input['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs'] security_problem_based_webhook_payload: Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
@@ -345,9 +333,7 @@ class _AppsecNotificationState:
     @pulumi.getter(name="attackCandidateBasedAlertingProfile")
     def attack_candidate_based_alerting_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        For attack candidate alerts, select an [alerting
-        profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-        delivery of security notifications related to this integration.
+        For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
         """
         return pulumi.get(self, "attack_candidate_based_alerting_profile")
 
@@ -443,9 +429,7 @@ class _AppsecNotificationState:
     @pulumi.getter(name="securityProblemBasedAlertingProfile")
     def security_problem_based_alerting_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        For security problem alerts, select an [alerting
-        profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-        security notifications related to this integration.
+        For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
         """
         return pulumi.get(self, "security_problem_based_alerting_profile")
 
@@ -552,9 +536,7 @@ class AppsecNotification(pulumi.CustomResource):
         Create a AppsecNotification resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] attack_candidate_based_alerting_profile: For attack candidate alerts, select an [alerting
-               profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-               delivery of security notifications related to this integration.
+        :param pulumi.Input[_builtins.str] attack_candidate_based_alerting_profile: For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
         :param pulumi.Input[Union['AppsecNotificationAttackCandidateBasedEmailPayloadArgs', 'AppsecNotificationAttackCandidateBasedEmailPayloadArgsDict']] attack_candidate_based_email_payload: Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
         :param pulumi.Input[Union['AppsecNotificationAttackCandidateBasedJiraPayloadArgs', 'AppsecNotificationAttackCandidateBasedJiraPayloadArgsDict']] attack_candidate_based_jira_payload: Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
         :param pulumi.Input[Union['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs', 'AppsecNotificationAttackCandidateBasedWebhookPayloadArgsDict']] attack_candidate_based_webhook_payload: Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
@@ -562,9 +544,7 @@ class AppsecNotification(pulumi.CustomResource):
         :param pulumi.Input[Union['AppsecNotificationEmailConfigurationArgs', 'AppsecNotificationEmailConfigurationArgsDict']] email_configuration: Email configuration, required when `type` equals `EMAIL`
         :param pulumi.Input[_builtins.bool] enabled: Enable/Disable the security notification, enabled (`true`) or disabled (`false`)
         :param pulumi.Input[Union['AppsecNotificationJiraConfigurationArgs', 'AppsecNotificationJiraConfigurationArgsDict']] jira_configuration: Jira configuration, required when `type` equals `JIRA`
-        :param pulumi.Input[_builtins.str] security_problem_based_alerting_profile: For security problem alerts, select an [alerting
-               profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-               security notifications related to this integration.
+        :param pulumi.Input[_builtins.str] security_problem_based_alerting_profile: For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
         :param pulumi.Input[Union['AppsecNotificationSecurityProblemBasedEmailPayloadArgs', 'AppsecNotificationSecurityProblemBasedEmailPayloadArgsDict']] security_problem_based_email_payload: Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
         :param pulumi.Input[Union['AppsecNotificationSecurityProblemBasedJiraPayloadArgs', 'AppsecNotificationSecurityProblemBasedJiraPayloadArgsDict']] security_problem_based_jira_payload: Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
         :param pulumi.Input[Union['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs', 'AppsecNotificationSecurityProblemBasedWebhookPayloadArgsDict']] security_problem_based_webhook_payload: Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
@@ -674,9 +654,7 @@ class AppsecNotification(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] attack_candidate_based_alerting_profile: For attack candidate alerts, select an [alerting
-               profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-               delivery of security notifications related to this integration.
+        :param pulumi.Input[_builtins.str] attack_candidate_based_alerting_profile: For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
         :param pulumi.Input[Union['AppsecNotificationAttackCandidateBasedEmailPayloadArgs', 'AppsecNotificationAttackCandidateBasedEmailPayloadArgsDict']] attack_candidate_based_email_payload: Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
         :param pulumi.Input[Union['AppsecNotificationAttackCandidateBasedJiraPayloadArgs', 'AppsecNotificationAttackCandidateBasedJiraPayloadArgsDict']] attack_candidate_based_jira_payload: Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
         :param pulumi.Input[Union['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs', 'AppsecNotificationAttackCandidateBasedWebhookPayloadArgsDict']] attack_candidate_based_webhook_payload: Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
@@ -684,9 +662,7 @@ class AppsecNotification(pulumi.CustomResource):
         :param pulumi.Input[Union['AppsecNotificationEmailConfigurationArgs', 'AppsecNotificationEmailConfigurationArgsDict']] email_configuration: Email configuration, required when `type` equals `EMAIL`
         :param pulumi.Input[_builtins.bool] enabled: Enable/Disable the security notification, enabled (`true`) or disabled (`false`)
         :param pulumi.Input[Union['AppsecNotificationJiraConfigurationArgs', 'AppsecNotificationJiraConfigurationArgsDict']] jira_configuration: Jira configuration, required when `type` equals `JIRA`
-        :param pulumi.Input[_builtins.str] security_problem_based_alerting_profile: For security problem alerts, select an [alerting
-               profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-               security notifications related to this integration.
+        :param pulumi.Input[_builtins.str] security_problem_based_alerting_profile: For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
         :param pulumi.Input[Union['AppsecNotificationSecurityProblemBasedEmailPayloadArgs', 'AppsecNotificationSecurityProblemBasedEmailPayloadArgsDict']] security_problem_based_email_payload: Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
         :param pulumi.Input[Union['AppsecNotificationSecurityProblemBasedJiraPayloadArgs', 'AppsecNotificationSecurityProblemBasedJiraPayloadArgsDict']] security_problem_based_jira_payload: Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
         :param pulumi.Input[Union['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs', 'AppsecNotificationSecurityProblemBasedWebhookPayloadArgsDict']] security_problem_based_webhook_payload: Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
@@ -719,9 +695,7 @@ class AppsecNotification(pulumi.CustomResource):
     @pulumi.getter(name="attackCandidateBasedAlertingProfile")
     def attack_candidate_based_alerting_profile(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        For attack candidate alerts, select an [alerting
-        profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-        delivery of security notifications related to this integration.
+        For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
         """
         return pulumi.get(self, "attack_candidate_based_alerting_profile")
 
@@ -785,9 +759,7 @@ class AppsecNotification(pulumi.CustomResource):
     @pulumi.getter(name="securityProblemBasedAlertingProfile")
     def security_problem_based_alerting_profile(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        For security problem alerts, select an [alerting
-        profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-        security notifications related to this integration.
+        For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
         """
         return pulumi.get(self, "security_problem_based_alerting_profile")
 

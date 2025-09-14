@@ -25,16 +25,20 @@ type SyntheticLocation struct {
 	AvailabilityNotificationsEnabled pulumi.BoolPtrOutput `pulumi:"availabilityNotificationsEnabled"`
 	// The city of the location
 	City pulumi.StringPtrOutput `pulumi:"city"`
-	// The country code of the location. To fetch the list of available country codes, use the [GET all
-	// countries](https://dt-url.net/37030go) request
+	// The country code of the location.
+	//
+	//  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
 	CountryCode pulumi.StringPtrOutput `pulumi:"countryCode"`
-	// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
-	// location is deployed on Kubernetes
+	// The deployment type of the location:
+	//
+	// * `STANDARD`: The location is deployed on Windows or Linux.
+	// * `KUBERNETES`: The location is deployed on Kubernetes
 	DeploymentType pulumi.StringPtrOutput `pulumi:"deploymentType"`
 	// The latitude of the location in `DDD.dddd` format
 	Latitude pulumi.Float64Output `pulumi:"latitude"`
-	// Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
-	// **availability_location_outage** or **availability_node_outage** is set to `true`
+	// Alert if the location or node outage lasts longer than *X* minutes.
+	//
+	//  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
 	LocationNodeOutageDelayInMinutes pulumi.IntPtrOutput `pulumi:"locationNodeOutageDelayInMinutes"`
 	// The longitude of the location in `DDD.dddd` format
 	Longitude pulumi.Float64Output `pulumi:"longitude"`
@@ -48,11 +52,13 @@ type SyntheticLocation struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
 	NodeSize pulumi.StringPtrOutput `pulumi:"nodeSize"`
-	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
-	// nodes](https://dt-url.net/miy3rpl) call
+	// A list of synthetic nodes belonging to the location.
+	//
+	//  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
 	Nodes pulumi.StringArrayOutput `pulumi:"nodes"`
-	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
-	// country](https://dt-url.net/az230x0) request
+	// The region code of the location.
+	//
+	//  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
 	RegionCode pulumi.StringPtrOutput `pulumi:"regionCode"`
 	// Boolean value describes which kubernetes version will be used
 	UseNewKubernetesVersion pulumi.BoolPtrOutput `pulumi:"useNewKubernetesVersion"`
@@ -104,16 +110,20 @@ type syntheticLocationState struct {
 	AvailabilityNotificationsEnabled *bool `pulumi:"availabilityNotificationsEnabled"`
 	// The city of the location
 	City *string `pulumi:"city"`
-	// The country code of the location. To fetch the list of available country codes, use the [GET all
-	// countries](https://dt-url.net/37030go) request
+	// The country code of the location.
+	//
+	//  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
 	CountryCode *string `pulumi:"countryCode"`
-	// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
-	// location is deployed on Kubernetes
+	// The deployment type of the location:
+	//
+	// * `STANDARD`: The location is deployed on Windows or Linux.
+	// * `KUBERNETES`: The location is deployed on Kubernetes
 	DeploymentType *string `pulumi:"deploymentType"`
 	// The latitude of the location in `DDD.dddd` format
 	Latitude *float64 `pulumi:"latitude"`
-	// Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
-	// **availability_location_outage** or **availability_node_outage** is set to `true`
+	// Alert if the location or node outage lasts longer than *X* minutes.
+	//
+	//  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
 	LocationNodeOutageDelayInMinutes *int `pulumi:"locationNodeOutageDelayInMinutes"`
 	// The longitude of the location in `DDD.dddd` format
 	Longitude *float64 `pulumi:"longitude"`
@@ -127,11 +137,13 @@ type syntheticLocationState struct {
 	Name *string `pulumi:"name"`
 	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
 	NodeSize *string `pulumi:"nodeSize"`
-	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
-	// nodes](https://dt-url.net/miy3rpl) call
+	// A list of synthetic nodes belonging to the location.
+	//
+	//  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
 	Nodes []string `pulumi:"nodes"`
-	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
-	// country](https://dt-url.net/az230x0) request
+	// The region code of the location.
+	//
+	//  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
 	RegionCode *string `pulumi:"regionCode"`
 	// Boolean value describes which kubernetes version will be used
 	UseNewKubernetesVersion *bool `pulumi:"useNewKubernetesVersion"`
@@ -148,16 +160,20 @@ type SyntheticLocationState struct {
 	AvailabilityNotificationsEnabled pulumi.BoolPtrInput
 	// The city of the location
 	City pulumi.StringPtrInput
-	// The country code of the location. To fetch the list of available country codes, use the [GET all
-	// countries](https://dt-url.net/37030go) request
+	// The country code of the location.
+	//
+	//  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
 	CountryCode pulumi.StringPtrInput
-	// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
-	// location is deployed on Kubernetes
+	// The deployment type of the location:
+	//
+	// * `STANDARD`: The location is deployed on Windows or Linux.
+	// * `KUBERNETES`: The location is deployed on Kubernetes
 	DeploymentType pulumi.StringPtrInput
 	// The latitude of the location in `DDD.dddd` format
 	Latitude pulumi.Float64PtrInput
-	// Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
-	// **availability_location_outage** or **availability_node_outage** is set to `true`
+	// Alert if the location or node outage lasts longer than *X* minutes.
+	//
+	//  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
 	LocationNodeOutageDelayInMinutes pulumi.IntPtrInput
 	// The longitude of the location in `DDD.dddd` format
 	Longitude pulumi.Float64PtrInput
@@ -171,11 +187,13 @@ type SyntheticLocationState struct {
 	Name pulumi.StringPtrInput
 	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
 	NodeSize pulumi.StringPtrInput
-	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
-	// nodes](https://dt-url.net/miy3rpl) call
+	// A list of synthetic nodes belonging to the location.
+	//
+	//  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
 	Nodes pulumi.StringArrayInput
-	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
-	// country](https://dt-url.net/az230x0) request
+	// The region code of the location.
+	//
+	//  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
 	RegionCode pulumi.StringPtrInput
 	// Boolean value describes which kubernetes version will be used
 	UseNewKubernetesVersion pulumi.BoolPtrInput
@@ -196,16 +214,20 @@ type syntheticLocationArgs struct {
 	AvailabilityNotificationsEnabled *bool `pulumi:"availabilityNotificationsEnabled"`
 	// The city of the location
 	City *string `pulumi:"city"`
-	// The country code of the location. To fetch the list of available country codes, use the [GET all
-	// countries](https://dt-url.net/37030go) request
+	// The country code of the location.
+	//
+	//  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
 	CountryCode *string `pulumi:"countryCode"`
-	// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
-	// location is deployed on Kubernetes
+	// The deployment type of the location:
+	//
+	// * `STANDARD`: The location is deployed on Windows or Linux.
+	// * `KUBERNETES`: The location is deployed on Kubernetes
 	DeploymentType *string `pulumi:"deploymentType"`
 	// The latitude of the location in `DDD.dddd` format
 	Latitude float64 `pulumi:"latitude"`
-	// Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
-	// **availability_location_outage** or **availability_node_outage** is set to `true`
+	// Alert if the location or node outage lasts longer than *X* minutes.
+	//
+	//  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
 	LocationNodeOutageDelayInMinutes *int `pulumi:"locationNodeOutageDelayInMinutes"`
 	// The longitude of the location in `DDD.dddd` format
 	Longitude float64 `pulumi:"longitude"`
@@ -219,11 +241,13 @@ type syntheticLocationArgs struct {
 	Name *string `pulumi:"name"`
 	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
 	NodeSize *string `pulumi:"nodeSize"`
-	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
-	// nodes](https://dt-url.net/miy3rpl) call
+	// A list of synthetic nodes belonging to the location.
+	//
+	//  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
 	Nodes []string `pulumi:"nodes"`
-	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
-	// country](https://dt-url.net/az230x0) request
+	// The region code of the location.
+	//
+	//  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
 	RegionCode *string `pulumi:"regionCode"`
 	// Boolean value describes which kubernetes version will be used
 	UseNewKubernetesVersion *bool `pulumi:"useNewKubernetesVersion"`
@@ -241,16 +265,20 @@ type SyntheticLocationArgs struct {
 	AvailabilityNotificationsEnabled pulumi.BoolPtrInput
 	// The city of the location
 	City pulumi.StringPtrInput
-	// The country code of the location. To fetch the list of available country codes, use the [GET all
-	// countries](https://dt-url.net/37030go) request
+	// The country code of the location.
+	//
+	//  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
 	CountryCode pulumi.StringPtrInput
-	// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
-	// location is deployed on Kubernetes
+	// The deployment type of the location:
+	//
+	// * `STANDARD`: The location is deployed on Windows or Linux.
+	// * `KUBERNETES`: The location is deployed on Kubernetes
 	DeploymentType pulumi.StringPtrInput
 	// The latitude of the location in `DDD.dddd` format
 	Latitude pulumi.Float64Input
-	// Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
-	// **availability_location_outage** or **availability_node_outage** is set to `true`
+	// Alert if the location or node outage lasts longer than *X* minutes.
+	//
+	//  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
 	LocationNodeOutageDelayInMinutes pulumi.IntPtrInput
 	// The longitude of the location in `DDD.dddd` format
 	Longitude pulumi.Float64Input
@@ -264,11 +292,13 @@ type SyntheticLocationArgs struct {
 	Name pulumi.StringPtrInput
 	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
 	NodeSize pulumi.StringPtrInput
-	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
-	// nodes](https://dt-url.net/miy3rpl) call
+	// A list of synthetic nodes belonging to the location.
+	//
+	//  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
 	Nodes pulumi.StringArrayInput
-	// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
-	// country](https://dt-url.net/az230x0) request
+	// The region code of the location.
+	//
+	//  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
 	RegionCode pulumi.StringPtrInput
 	// Boolean value describes which kubernetes version will be used
 	UseNewKubernetesVersion pulumi.BoolPtrInput
@@ -386,14 +416,17 @@ func (o SyntheticLocationOutput) City() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringPtrOutput { return v.City }).(pulumi.StringPtrOutput)
 }
 
-// The country code of the location. To fetch the list of available country codes, use the [GET all
-// countries](https://dt-url.net/37030go) request
+// The country code of the location.
+//
+//	To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
 func (o SyntheticLocationOutput) CountryCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringPtrOutput { return v.CountryCode }).(pulumi.StringPtrOutput)
 }
 
-// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
-// location is deployed on Kubernetes
+// The deployment type of the location:
+//
+// * `STANDARD`: The location is deployed on Windows or Linux.
+// * `KUBERNETES`: The location is deployed on Kubernetes
 func (o SyntheticLocationOutput) DeploymentType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringPtrOutput { return v.DeploymentType }).(pulumi.StringPtrOutput)
 }
@@ -403,8 +436,9 @@ func (o SyntheticLocationOutput) Latitude() pulumi.Float64Output {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.Float64Output { return v.Latitude }).(pulumi.Float64Output)
 }
 
-// Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
-// **availability_location_outage** or **availability_node_outage** is set to `true`
+// Alert if the location or node outage lasts longer than *X* minutes.
+//
+//	Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
 func (o SyntheticLocationOutput) LocationNodeOutageDelayInMinutes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.IntPtrOutput { return v.LocationNodeOutageDelayInMinutes }).(pulumi.IntPtrOutput)
 }
@@ -439,14 +473,16 @@ func (o SyntheticLocationOutput) NodeSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringPtrOutput { return v.NodeSize }).(pulumi.StringPtrOutput)
 }
 
-// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
-// nodes](https://dt-url.net/miy3rpl) call
+// A list of synthetic nodes belonging to the location.
+//
+//	You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
 func (o SyntheticLocationOutput) Nodes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringArrayOutput { return v.Nodes }).(pulumi.StringArrayOutput)
 }
 
-// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
-// country](https://dt-url.net/az230x0) request
+// The region code of the location.
+//
+//	To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
 func (o SyntheticLocationOutput) RegionCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringPtrOutput { return v.RegionCode }).(pulumi.StringPtrOutput)
 }

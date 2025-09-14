@@ -101,8 +101,7 @@ export class Kubernetes extends pulumi.CustomResource {
      */
     declare public readonly label: pulumi.Output<string>;
     /**
-     * The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-     * may increase the CPU/memory resource consumption of your ActiveGate.
+     * The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
@@ -263,8 +262,7 @@ export interface KubernetesState {
      */
     label?: pulumi.Input<string>;
     /**
-     * The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-     * may increase the CPU/memory resource consumption of your ActiveGate.
+     * The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
@@ -358,8 +356,7 @@ export interface KubernetesArgs {
      */
     label: pulumi.Input<string>;
     /**
-     * The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-     * may increase the CPU/memory resource consumption of your ActiveGate.
+     * The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */

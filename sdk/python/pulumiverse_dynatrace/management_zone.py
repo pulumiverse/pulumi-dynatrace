@@ -33,7 +33,7 @@ class ManagementZoneArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[_builtins.str] name: The name of the management zone
-        :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         if description is not None:
@@ -101,7 +101,7 @@ class ManagementZoneArgs:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]]:
         """
-        A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         return pulumi.get(self, "rules")
 
@@ -137,7 +137,7 @@ class _ManagementZoneState:
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[_builtins.str] name: The name of the management zone
-        :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         if description is not None:
@@ -205,7 +205,7 @@ class _ManagementZoneState:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]]:
         """
-        A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         return pulumi.get(self, "rules")
 
@@ -247,7 +247,7 @@ class ManagementZone(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict']]]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[_builtins.str] name: The name of the management zone
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         ...
@@ -321,7 +321,7 @@ class ManagementZone(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict']]]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[_builtins.str] name: The name of the management zone
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -372,7 +372,7 @@ class ManagementZone(pulumi.CustomResource):
     @pulumi.getter
     def rules(self) -> pulumi.Output[Optional[Sequence['outputs.ManagementZoneRule']]]:
         """
-        A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         return pulumi.get(self, "rules")
 

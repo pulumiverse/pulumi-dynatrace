@@ -15,9 +15,11 @@ import (
 type ProcessGroupRum struct {
 	pulumi.CustomResourceState
 
-	// Allows OneAgent to: * automatically inject the RUM JavaScript tag into each page delivered by this process group *
-	// provide the necessary info to correlate RUM data with server-side PurePaths * forward beacons to the cluster * deliver
-	// the monitoring code
+	// Allows OneAgent to:
+	// * automatically inject the RUM JavaScript tag into each page delivered by this process group
+	// * provide the necessary info to correlate RUM data with server-side PurePaths
+	// * forward beacons to the cluster
+	// * deliver the monitoring code
 	Enable pulumi.BoolOutput `pulumi:"enable"`
 	// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
 	ProcessGroupId pulumi.StringOutput `pulumi:"processGroupId"`
@@ -59,18 +61,22 @@ func GetProcessGroupRum(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ProcessGroupRum resources.
 type processGroupRumState struct {
-	// Allows OneAgent to: * automatically inject the RUM JavaScript tag into each page delivered by this process group *
-	// provide the necessary info to correlate RUM data with server-side PurePaths * forward beacons to the cluster * deliver
-	// the monitoring code
+	// Allows OneAgent to:
+	// * automatically inject the RUM JavaScript tag into each page delivered by this process group
+	// * provide the necessary info to correlate RUM data with server-side PurePaths
+	// * forward beacons to the cluster
+	// * deliver the monitoring code
 	Enable *bool `pulumi:"enable"`
 	// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
 	ProcessGroupId *string `pulumi:"processGroupId"`
 }
 
 type ProcessGroupRumState struct {
-	// Allows OneAgent to: * automatically inject the RUM JavaScript tag into each page delivered by this process group *
-	// provide the necessary info to correlate RUM data with server-side PurePaths * forward beacons to the cluster * deliver
-	// the monitoring code
+	// Allows OneAgent to:
+	// * automatically inject the RUM JavaScript tag into each page delivered by this process group
+	// * provide the necessary info to correlate RUM data with server-side PurePaths
+	// * forward beacons to the cluster
+	// * deliver the monitoring code
 	Enable pulumi.BoolPtrInput
 	// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
 	ProcessGroupId pulumi.StringPtrInput
@@ -81,9 +87,11 @@ func (ProcessGroupRumState) ElementType() reflect.Type {
 }
 
 type processGroupRumArgs struct {
-	// Allows OneAgent to: * automatically inject the RUM JavaScript tag into each page delivered by this process group *
-	// provide the necessary info to correlate RUM data with server-side PurePaths * forward beacons to the cluster * deliver
-	// the monitoring code
+	// Allows OneAgent to:
+	// * automatically inject the RUM JavaScript tag into each page delivered by this process group
+	// * provide the necessary info to correlate RUM data with server-side PurePaths
+	// * forward beacons to the cluster
+	// * deliver the monitoring code
 	Enable bool `pulumi:"enable"`
 	// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
 	ProcessGroupId string `pulumi:"processGroupId"`
@@ -91,9 +99,11 @@ type processGroupRumArgs struct {
 
 // The set of arguments for constructing a ProcessGroupRum resource.
 type ProcessGroupRumArgs struct {
-	// Allows OneAgent to: * automatically inject the RUM JavaScript tag into each page delivered by this process group *
-	// provide the necessary info to correlate RUM data with server-side PurePaths * forward beacons to the cluster * deliver
-	// the monitoring code
+	// Allows OneAgent to:
+	// * automatically inject the RUM JavaScript tag into each page delivered by this process group
+	// * provide the necessary info to correlate RUM data with server-side PurePaths
+	// * forward beacons to the cluster
+	// * deliver the monitoring code
 	Enable pulumi.BoolInput
 	// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
 	ProcessGroupId pulumi.StringInput
@@ -186,9 +196,11 @@ func (o ProcessGroupRumOutput) ToProcessGroupRumOutputWithContext(ctx context.Co
 	return o
 }
 
-// Allows OneAgent to: * automatically inject the RUM JavaScript tag into each page delivered by this process group *
-// provide the necessary info to correlate RUM data with server-side PurePaths * forward beacons to the cluster * deliver
-// the monitoring code
+// Allows OneAgent to:
+// * automatically inject the RUM JavaScript tag into each page delivered by this process group
+// * provide the necessary info to correlate RUM data with server-side PurePaths
+// * forward beacons to the cluster
+// * deliver the monitoring code
 func (o ProcessGroupRumOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ProcessGroupRum) pulumi.BoolOutput { return v.Enable }).(pulumi.BoolOutput)
 }

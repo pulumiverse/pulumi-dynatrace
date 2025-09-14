@@ -24,6 +24,8 @@ type BuiltinProcessMonitoring struct {
 	Cf pulumi.BoolPtrOutput `pulumi:"cf"`
 	// Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
 	CfAppsmanagerjs pulumi.BoolPtrOutput `pulumi:"cfAppsmanagerjs"`
+	// Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+	CmdForeverbinmonitor pulumi.BoolPtrOutput `pulumi:"cmdForeverbinmonitor"`
 	// Rule id: 41 - Do monitor processes if container name exists
 	Container pulumi.BoolPtrOutput `pulumi:"container"`
 	// Rule id: 39 - Do not monitor processes if Docker stripped image contains 'pause-amd64'
@@ -216,6 +218,8 @@ type builtinProcessMonitoringState struct {
 	Cf *bool `pulumi:"cf"`
 	// Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
 	CfAppsmanagerjs *bool `pulumi:"cfAppsmanagerjs"`
+	// Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+	CmdForeverbinmonitor *bool `pulumi:"cmdForeverbinmonitor"`
 	// Rule id: 41 - Do monitor processes if container name exists
 	Container *bool `pulumi:"container"`
 	// Rule id: 39 - Do not monitor processes if Docker stripped image contains 'pause-amd64'
@@ -379,6 +383,8 @@ type BuiltinProcessMonitoringState struct {
 	Cf pulumi.BoolPtrInput
 	// Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
 	CfAppsmanagerjs pulumi.BoolPtrInput
+	// Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+	CmdForeverbinmonitor pulumi.BoolPtrInput
 	// Rule id: 41 - Do monitor processes if container name exists
 	Container pulumi.BoolPtrInput
 	// Rule id: 39 - Do not monitor processes if Docker stripped image contains 'pause-amd64'
@@ -546,6 +552,8 @@ type builtinProcessMonitoringArgs struct {
 	Cf *bool `pulumi:"cf"`
 	// Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
 	CfAppsmanagerjs *bool `pulumi:"cfAppsmanagerjs"`
+	// Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+	CmdForeverbinmonitor *bool `pulumi:"cmdForeverbinmonitor"`
 	// Rule id: 41 - Do monitor processes if container name exists
 	Container *bool `pulumi:"container"`
 	// Rule id: 39 - Do not monitor processes if Docker stripped image contains 'pause-amd64'
@@ -710,6 +718,8 @@ type BuiltinProcessMonitoringArgs struct {
 	Cf pulumi.BoolPtrInput
 	// Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
 	CfAppsmanagerjs pulumi.BoolPtrInput
+	// Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+	CmdForeverbinmonitor pulumi.BoolPtrInput
 	// Rule id: 41 - Do monitor processes if container name exists
 	Container pulumi.BoolPtrInput
 	// Rule id: 39 - Do not monitor processes if Docker stripped image contains 'pause-amd64'
@@ -972,6 +982,11 @@ func (o BuiltinProcessMonitoringOutput) Cf() pulumi.BoolPtrOutput {
 // Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
 func (o BuiltinProcessMonitoringOutput) CfAppsmanagerjs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.CfAppsmanagerjs }).(pulumi.BoolPtrOutput)
+}
+
+// Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+func (o BuiltinProcessMonitoringOutput) CmdForeverbinmonitor() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.CmdForeverbinmonitor }).(pulumi.BoolPtrOutput)
 }
 
 // Rule id: 41 - Do monitor processes if container name exists

@@ -20,8 +20,10 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// This string should have one of the following formats: - $prefix(parameter) - property value starting with 'parameter' -
-        /// $eq(parameter) - property value exactly matching 'parameter' - $suffix(parameter) - property value ends with 'parameter'
+        /// This string should have one of the following formats:
+        /// - $prefix(parameter) - property value starting with 'parameter'
+        /// - $eq(parameter) - property value exactly matching 'parameter'
+        /// - $suffix(parameter) - property value ends with 'parameter'
         /// - $contains(parameter) - property value contains 'parameter'
         /// </summary>
         [Output("filter")]
@@ -109,8 +111,10 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// This string should have one of the following formats: - $prefix(parameter) - property value starting with 'parameter' -
-        /// $eq(parameter) - property value exactly matching 'parameter' - $suffix(parameter) - property value ends with 'parameter'
+        /// This string should have one of the following formats:
+        /// - $prefix(parameter) - property value starting with 'parameter'
+        /// - $eq(parameter) - property value exactly matching 'parameter'
+        /// - $suffix(parameter) - property value ends with 'parameter'
         /// - $contains(parameter) - property value contains 'parameter'
         /// </summary>
         [Input("filter")]
@@ -165,8 +169,10 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// This string should have one of the following formats: - $prefix(parameter) - property value starting with 'parameter' -
-        /// $eq(parameter) - property value exactly matching 'parameter' - $suffix(parameter) - property value ends with 'parameter'
+        /// This string should have one of the following formats:
+        /// - $prefix(parameter) - property value starting with 'parameter'
+        /// - $eq(parameter) - property value exactly matching 'parameter'
+        /// - $suffix(parameter) - property value ends with 'parameter'
         /// - $contains(parameter) - property value contains 'parameter'
         /// </summary>
         [Input("filter")]

@@ -17,15 +17,14 @@ type BusinessEventsProcessing struct {
 
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringOutput `pulumi:"matcher"`
 	// Rule name
 	RuleName pulumi.StringOutput `pulumi:"ruleName"`
-	// ## Rule testing ### 1. Paste an event sample
+	// ## Rule testing
+	// ### 1. Paste an event sample
 	RuleTesting BusinessEventsProcessingRuleTestingOutput `pulumi:"ruleTesting"`
 	// [See our documentation](https://dt-url.net/pz030w5)
 	Script pulumi.StringOutput `pulumi:"script"`
@@ -80,15 +79,14 @@ func GetBusinessEventsProcessing(ctx *pulumi.Context,
 type businessEventsProcessingState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher *string `pulumi:"matcher"`
 	// Rule name
 	RuleName *string `pulumi:"ruleName"`
-	// ## Rule testing ### 1. Paste an event sample
+	// ## Rule testing
+	// ### 1. Paste an event sample
 	RuleTesting *BusinessEventsProcessingRuleTesting `pulumi:"ruleTesting"`
 	// [See our documentation](https://dt-url.net/pz030w5)
 	Script *string `pulumi:"script"`
@@ -99,15 +97,14 @@ type businessEventsProcessingState struct {
 type BusinessEventsProcessingState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringPtrInput
 	// Rule name
 	RuleName pulumi.StringPtrInput
-	// ## Rule testing ### 1. Paste an event sample
+	// ## Rule testing
+	// ### 1. Paste an event sample
 	RuleTesting BusinessEventsProcessingRuleTestingPtrInput
 	// [See our documentation](https://dt-url.net/pz030w5)
 	Script pulumi.StringPtrInput
@@ -122,15 +119,14 @@ func (BusinessEventsProcessingState) ElementType() reflect.Type {
 type businessEventsProcessingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher string `pulumi:"matcher"`
 	// Rule name
 	RuleName string `pulumi:"ruleName"`
-	// ## Rule testing ### 1. Paste an event sample
+	// ## Rule testing
+	// ### 1. Paste an event sample
 	RuleTesting BusinessEventsProcessingRuleTesting `pulumi:"ruleTesting"`
 	// [See our documentation](https://dt-url.net/pz030w5)
 	Script string `pulumi:"script"`
@@ -142,15 +138,14 @@ type businessEventsProcessingArgs struct {
 type BusinessEventsProcessingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringInput
 	// Rule name
 	RuleName pulumi.StringInput
-	// ## Rule testing ### 1. Paste an event sample
+	// ## Rule testing
+	// ### 1. Paste an event sample
 	RuleTesting BusinessEventsProcessingRuleTestingInput
 	// [See our documentation](https://dt-url.net/pz030w5)
 	Script pulumi.StringInput
@@ -250,9 +245,7 @@ func (o BusinessEventsProcessingOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *BusinessEventsProcessing) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-// specified during update the order will remain untouched
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 func (o BusinessEventsProcessingOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *BusinessEventsProcessing) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
@@ -267,7 +260,8 @@ func (o BusinessEventsProcessingOutput) RuleName() pulumi.StringOutput {
 	return o.ApplyT(func(v *BusinessEventsProcessing) pulumi.StringOutput { return v.RuleName }).(pulumi.StringOutput)
 }
 
-// ## Rule testing ### 1. Paste an event sample
+// ## Rule testing
+// ### 1. Paste an event sample
 func (o BusinessEventsProcessingOutput) RuleTesting() BusinessEventsProcessingRuleTestingOutput {
 	return o.ApplyT(func(v *BusinessEventsProcessing) BusinessEventsProcessingRuleTestingOutput { return v.RuleTesting }).(BusinessEventsProcessingRuleTestingOutput)
 }

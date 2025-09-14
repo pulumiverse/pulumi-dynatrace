@@ -17,13 +17,11 @@ type PolicyBindings struct {
 
 	// The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
 	Cluster pulumi.StringPtrOutput `pulumi:"cluster"`
-	// The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
-	// policies defined for that environment.
+	// The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment pulumi.StringPtrOutput `pulumi:"environment"`
 	// The name of the policy
 	Group pulumi.StringOutput `pulumi:"group"`
-	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
-	// different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
 	Policies pulumi.StringArrayOutput `pulumi:"policies"`
 }
 
@@ -65,26 +63,22 @@ func GetPolicyBindings(ctx *pulumi.Context,
 type policyBindingsState struct {
 	// The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
 	Cluster *string `pulumi:"cluster"`
-	// The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
-	// policies defined for that environment.
+	// The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment *string `pulumi:"environment"`
 	// The name of the policy
 	Group *string `pulumi:"group"`
-	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
-	// different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
 	Policies []string `pulumi:"policies"`
 }
 
 type PolicyBindingsState struct {
 	// The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
 	Cluster pulumi.StringPtrInput
-	// The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
-	// policies defined for that environment.
+	// The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment pulumi.StringPtrInput
 	// The name of the policy
 	Group pulumi.StringPtrInput
-	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
-	// different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
 	Policies pulumi.StringArrayInput
 }
 
@@ -95,13 +89,11 @@ func (PolicyBindingsState) ElementType() reflect.Type {
 type policyBindingsArgs struct {
 	// The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
 	Cluster *string `pulumi:"cluster"`
-	// The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
-	// policies defined for that environment.
+	// The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment *string `pulumi:"environment"`
 	// The name of the policy
 	Group string `pulumi:"group"`
-	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
-	// different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
 	Policies []string `pulumi:"policies"`
 }
 
@@ -109,13 +101,11 @@ type policyBindingsArgs struct {
 type PolicyBindingsArgs struct {
 	// The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
 	Cluster pulumi.StringPtrInput
-	// The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
-	// policies defined for that environment.
+	// The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment pulumi.StringPtrInput
 	// The name of the policy
 	Group pulumi.StringInput
-	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
-	// different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
 	Policies pulumi.StringArrayInput
 }
 
@@ -211,8 +201,7 @@ func (o PolicyBindingsOutput) Cluster() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyBindings) pulumi.StringPtrOutput { return v.Cluster }).(pulumi.StringPtrOutput)
 }
 
-// The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
-// policies defined for that environment.
+// The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 func (o PolicyBindingsOutput) Environment() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyBindings) pulumi.StringPtrOutput { return v.Environment }).(pulumi.StringPtrOutput)
 }
@@ -222,8 +211,7 @@ func (o PolicyBindingsOutput) Group() pulumi.StringOutput {
 	return o.ApplyT(func(v *PolicyBindings) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
 }
 
-// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
-// different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
 func (o PolicyBindingsOutput) Policies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *PolicyBindings) pulumi.StringArrayOutput { return v.Policies }).(pulumi.StringArrayOutput)
 }

@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AutomationWorkflowTasksTask
     {
         /// <summary>
-        /// Currently known and supported values are `dynatrace.automations:http-function`, `dynatrace.automations:run-javascript` and `dynatrace.automations:execute-dql-query`
+        /// Specifies the action type for the task. Examples include `dynatrace.automations:http-function`, `dynatrace.automations:run-javascript`, and `dynatrace.automations:execute-dql-query`. Additional action types are also supported.
         /// </summary>
         public readonly string Action;
         /// <summary>

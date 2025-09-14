@@ -20,16 +20,22 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
+        /// Uses the key of the annotation or label as field name
+        /// </summary>
+        [Input("primaryGrailTag")]
+        public Input<bool>? PrimaryGrailTag { get; set; }
+
+        /// <summary>
         /// The source must follow the syntax of Kubernetes annotation/label keys as defined in the [Kubernetes documentation](https://dt-url.net/2c02sbn).
         /// </summary>
         [Input("source", required: true)]
         public Input<string> Source { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Dt_cost_costcenter`, `Dt_cost_product`, `Dt_security_context`
+        /// Required when `primary_grail_tag` is omitted or `false`. Possible Values: `dt.cost.costcenter``, `dt.cost.product``, `dt.security_context
         /// </summary>
-        [Input("target", required: true)]
-        public Input<string> Target { get; set; } = null!;
+        [Input("target")]
+        public Input<string>? Target { get; set; }
 
         /// <summary>
         /// Possible Values: `ANNOTATION`, `LABEL`

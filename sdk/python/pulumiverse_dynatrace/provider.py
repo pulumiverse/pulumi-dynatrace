@@ -38,14 +38,9 @@ class ProviderArgs:
                  platform_token: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Provider resource.
-        :param pulumi.Input[_builtins.str] automation_env_url: The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
-               optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-               `https://#####.apps.dynatrace.com`
-        :param pulumi.Input[_builtins.str] automation_token_url: The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
-               `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-               `https://#####.apps.dynatrace.com`
-        :param pulumi.Input[_builtins.str] platform_token: A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
-               case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
+        :param pulumi.Input[_builtins.str] automation_env_url: The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        :param pulumi.Input[_builtins.str] automation_token_url: The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        :param pulumi.Input[_builtins.str] platform_token: A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -121,9 +116,7 @@ class ProviderArgs:
     @pulumi.getter(name="automationEnvUrl")
     def automation_env_url(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
-        optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-        `https://#####.apps.dynatrace.com`
+        The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
         """
         return pulumi.get(self, "automation_env_url")
 
@@ -135,9 +128,7 @@ class ProviderArgs:
     @pulumi.getter(name="automationTokenUrl")
     def automation_token_url(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
-        `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-        `https://#####.apps.dynatrace.com`
+        The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
         """
         return pulumi.get(self, "automation_token_url")
 
@@ -248,8 +239,7 @@ class ProviderArgs:
     @pulumi.getter(name="platformToken")
     def platform_token(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
-        case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
+        A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
         """
         return pulumi.get(self, "platform_token")
 
@@ -290,14 +280,9 @@ class Provider(pulumi.ProviderResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] automation_env_url: The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
-               optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-               `https://#####.apps.dynatrace.com`
-        :param pulumi.Input[_builtins.str] automation_token_url: The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
-               `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-               `https://#####.apps.dynatrace.com`
-        :param pulumi.Input[_builtins.str] platform_token: A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
-               case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
+        :param pulumi.Input[_builtins.str] automation_env_url: The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        :param pulumi.Input[_builtins.str] automation_token_url: The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        :param pulumi.Input[_builtins.str] platform_token: A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
         """
         ...
     @overload
@@ -404,9 +389,7 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="automationEnvUrl")
     def automation_env_url(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
-        optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-        `https://#####.apps.dynatrace.com`
+        The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
         """
         return pulumi.get(self, "automation_env_url")
 
@@ -414,9 +397,7 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="automationTokenUrl")
     def automation_token_url(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
-        `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-        `https://#####.apps.dynatrace.com`
+        The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
         """
         return pulumi.get(self, "automation_token_url")
 
@@ -479,8 +460,7 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="platformToken")
     def platform_token(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
-        case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
+        A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
         """
         return pulumi.get(self, "platform_token")
 

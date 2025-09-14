@@ -14,8 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class DeclarativeGrouping : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-        /// group.
+        /// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         /// </summary>
         [Output("detection")]
         public Output<Outputs.DeclarativeGroupingDetection> Detection { get; private set; } = null!;
@@ -27,9 +26,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        /// specified during update the order will remain untouched
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Output("insertAfter")]
         public Output<string> InsertAfter { get; private set; } = null!;
@@ -94,8 +91,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class DeclarativeGroupingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-        /// group.
+        /// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         /// </summary>
         [Input("detection", required: true)]
         public Input<Inputs.DeclarativeGroupingDetectionArgs> Detection { get; set; } = null!;
@@ -107,9 +103,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        /// specified during update the order will remain untouched
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Input("insertAfter")]
         public Input<string>? InsertAfter { get; set; }
@@ -135,8 +129,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class DeclarativeGroupingState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-        /// group.
+        /// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         /// </summary>
         [Input("detection")]
         public Input<Inputs.DeclarativeGroupingDetectionGetArgs>? Detection { get; set; }
@@ -148,9 +141,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        /// specified during update the order will remain untouched
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Input("insertAfter")]
         public Input<string>? InsertAfter { get; set; }

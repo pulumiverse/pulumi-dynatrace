@@ -121,304 +121,105 @@ class GoldenStateArgs:
                  mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a GoldenState resource.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aix_extensions: The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_alertings: The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ansible_tower_notifications: The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_detection_rules: The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_error_rules: The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_autotag_v2s: The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aws_credentials: The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_azure_credentials: The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_browser_monitors: The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_mobile_metrics: The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_service_metrics: The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_synthetic_metrics: The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_web_metrics: The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_credentials: The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_anomalies: The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_crash_rates: The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_enablements: The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_services: The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_data_privacies: The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_database_anomalies_v2s: The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_declarative_groupings: The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_anomalies_v2s: The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_options: The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_specific_anomalies_v2s: The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_email_notifications: The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_extension_execution_controllers: The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_generic_types: The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_anomalies_v2s: The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_namings: The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_process_group_monitorings: The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_http_monitors: The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ims_bridges: The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_jira_notifications: The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_k8s_namespace_anomalies: The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_key_requests: The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_log_metrics: The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_maintenances: The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_management_zone_v2s: The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_metric_events: The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_anomalies: The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_crash_rates: The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_enablements: The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_applications: The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_apaches: The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_dotnets: The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_gos: The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_iis: The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_javas: The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nginxes: The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nodejs: The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_opentracings: The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither
-               warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-               Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-               environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_phps: The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_varnishes: The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_wsmbs: The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_muted_requests: The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_nettracers: The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_oneagent_features: The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ops_genie_notifications: The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pager_duty_notifications: The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pg_alertings: The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_availabilities: The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detection_flags: The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detections: The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_monitorings: The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_rums: The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_simple_detections: The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitoring_rules: The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitorings: The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_visibilities: The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_processgroup_namings: The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_managers: The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_sharing_groups: The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_attributes: The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_namings: The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_advanced_correlations: The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_ip_locations: The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_provider_breakdowns: The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_failures: The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_http_failures: The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_namings: The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_now_notifications: The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_session_replay_web_privacies: The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slack_notifications: The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slo_v2s: The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence
-               nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if
-               you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_capture_rules: The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_context_propagations: The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_synthetic_locations: The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_trello_notifications: The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_update_windows: The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_usability_analytics: The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_victor_ops_notifications: The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_anomalies: The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_beacon_origins: The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_enablements: The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_cleanups: The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_types: The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_applications: The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_webhook_notifications: The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_xmatters_notifications: The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aix_extensions: The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_alertings: The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ansible_tower_notifications: The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_detection_rules: The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_error_rules: The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_autotag_v2s: The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aws_credentials: The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_azure_credentials: The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_browser_monitors: The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_mobile_metrics: The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_service_metrics: The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_synthetic_metrics: The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_web_metrics: The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_credentials: The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_anomalies: The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_crash_rates: The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_enablements: The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_services: The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_data_privacies: The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_database_anomalies_v2s: The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_declarative_groupings: The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_anomalies_v2s: The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_options: The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_specific_anomalies_v2s: The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_email_notifications: The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_extension_execution_controllers: The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_generic_types: The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_anomalies_v2s: The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_namings: The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_process_group_monitorings: The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_http_monitors: The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ims_bridges: The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_jira_notifications: The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_k8s_namespace_anomalies: The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_key_requests: The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_log_metrics: The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_maintenances: The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_management_zone_v2s: The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_metric_events: The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_anomalies: The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_crash_rates: The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_enablements: The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_applications: The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_apaches: The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_dotnets: The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_gos: The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_iis: The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_javas: The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nginxes: The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nodejs: The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_opentracings: The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_phps: The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_varnishes: The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_wsmbs: The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_muted_requests: The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_nettracers: The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_oneagent_features: The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ops_genie_notifications: The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pager_duty_notifications: The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pg_alertings: The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_availabilities: The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detection_flags: The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detections: The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_monitorings: The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_rums: The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_simple_detections: The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitoring_rules: The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitorings: The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_visibilities: The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_processgroup_namings: The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_managers: The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_sharing_groups: The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_attributes: The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_namings: The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_advanced_correlations: The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_ip_locations: The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_provider_breakdowns: The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_failures: The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_http_failures: The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_namings: The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_now_notifications: The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_session_replay_web_privacies: The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slack_notifications: The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slo_v2s: The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_capture_rules: The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_context_propagations: The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_synthetic_locations: The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_trello_notifications: The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_update_windows: The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_usability_analytics: The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_victor_ops_notifications: The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_anomalies: The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_beacon_origins: The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_enablements: The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_cleanups: The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_types: The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_applications: The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_webhook_notifications: The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_xmatters_notifications: The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         if dynatrace_aix_extensions is not None:
             pulumi.set(__self__, "dynatrace_aix_extensions", dynatrace_aix_extensions)
@@ -625,9 +426,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceAixExtensions")
     def dynatrace_aix_extensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_aix_extensions")
 
@@ -639,9 +438,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceAlertings")
     def dynatrace_alertings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_alertings")
 
@@ -653,9 +450,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceAnsibleTowerNotifications")
     def dynatrace_ansible_tower_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ansible_tower_notifications")
 
@@ -667,9 +462,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceApplicationDetectionRules")
     def dynatrace_application_detection_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_application_detection_rules")
 
@@ -681,9 +474,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceApplicationErrorRules")
     def dynatrace_application_error_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_application_error_rules")
 
@@ -695,9 +486,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceAutotagV2s")
     def dynatrace_autotag_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_autotag_v2s")
 
@@ -709,9 +498,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceAwsCredentials")
     def dynatrace_aws_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_aws_credentials")
 
@@ -723,9 +510,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceAzureCredentials")
     def dynatrace_azure_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_azure_credentials")
 
@@ -737,9 +522,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceBrowserMonitors")
     def dynatrace_browser_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_browser_monitors")
 
@@ -751,9 +534,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceCalculatedMobileMetrics")
     def dynatrace_calculated_mobile_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_mobile_metrics")
 
@@ -765,9 +546,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceCalculatedServiceMetrics")
     def dynatrace_calculated_service_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_service_metrics")
 
@@ -779,9 +558,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceCalculatedSyntheticMetrics")
     def dynatrace_calculated_synthetic_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_synthetic_metrics")
 
@@ -793,9 +570,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceCalculatedWebMetrics")
     def dynatrace_calculated_web_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_web_metrics")
 
@@ -807,9 +582,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceCredentials")
     def dynatrace_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_credentials")
 
@@ -821,9 +594,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceCustomAppAnomalies")
     def dynatrace_custom_app_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_anomalies")
 
@@ -835,9 +606,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceCustomAppCrashRates")
     def dynatrace_custom_app_crash_rates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_crash_rates")
 
@@ -849,9 +618,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceCustomAppEnablements")
     def dynatrace_custom_app_enablements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_enablements")
 
@@ -863,9 +630,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceCustomServices")
     def dynatrace_custom_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_services")
 
@@ -877,9 +642,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceDataPrivacies")
     def dynatrace_data_privacies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_data_privacies")
 
@@ -891,9 +654,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceDatabaseAnomaliesV2s")
     def dynatrace_database_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_database_anomalies_v2s")
 
@@ -905,9 +666,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceDeclarativeGroupings")
     def dynatrace_declarative_groupings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_declarative_groupings")
 
@@ -919,9 +678,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceDiskAnomaliesV2s")
     def dynatrace_disk_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_anomalies_v2s")
 
@@ -933,9 +690,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceDiskOptions")
     def dynatrace_disk_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_options")
 
@@ -947,9 +702,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceDiskSpecificAnomaliesV2s")
     def dynatrace_disk_specific_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_specific_anomalies_v2s")
 
@@ -961,9 +714,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceEmailNotifications")
     def dynatrace_email_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_email_notifications")
 
@@ -975,9 +726,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceExtensionExecutionControllers")
     def dynatrace_extension_execution_controllers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_extension_execution_controllers")
 
@@ -989,9 +738,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceGenericTypes")
     def dynatrace_generic_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_generic_types")
 
@@ -1003,9 +750,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceHostAnomaliesV2s")
     def dynatrace_host_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_anomalies_v2s")
 
@@ -1017,9 +762,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceHostNamings")
     def dynatrace_host_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_namings")
 
@@ -1031,9 +774,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceHostProcessGroupMonitorings")
     def dynatrace_host_process_group_monitorings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_process_group_monitorings")
 
@@ -1045,9 +786,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceHttpMonitors")
     def dynatrace_http_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_http_monitors")
 
@@ -1059,9 +798,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceImsBridges")
     def dynatrace_ims_bridges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ims_bridges")
 
@@ -1073,9 +810,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceJiraNotifications")
     def dynatrace_jira_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_jira_notifications")
 
@@ -1087,9 +822,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceK8sNamespaceAnomalies")
     def dynatrace_k8s_namespace_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_k8s_namespace_anomalies")
 
@@ -1101,9 +834,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceKeyRequests")
     def dynatrace_key_requests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_key_requests")
 
@@ -1115,9 +846,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceLogMetrics")
     def dynatrace_log_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_log_metrics")
 
@@ -1129,9 +858,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMaintenances")
     def dynatrace_maintenances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_maintenances")
 
@@ -1143,9 +870,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceManagementZoneV2s")
     def dynatrace_management_zone_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_management_zone_v2s")
 
@@ -1157,9 +882,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMetricEvents")
     def dynatrace_metric_events(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_metric_events")
 
@@ -1171,9 +894,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMobileAppAnomalies")
     def dynatrace_mobile_app_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_anomalies")
 
@@ -1185,9 +906,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMobileAppCrashRates")
     def dynatrace_mobile_app_crash_rates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_crash_rates")
 
@@ -1199,9 +918,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMobileAppEnablements")
     def dynatrace_mobile_app_enablements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_enablements")
 
@@ -1213,9 +930,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMobileApplications")
     def dynatrace_mobile_applications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_applications")
 
@@ -1227,9 +942,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesApaches")
     def dynatrace_monitored_technologies_apaches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_apaches")
 
@@ -1241,9 +954,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesDotnets")
     def dynatrace_monitored_technologies_dotnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_dotnets")
 
@@ -1255,9 +966,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesGos")
     def dynatrace_monitored_technologies_gos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_gos")
 
@@ -1269,9 +978,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesIis")
     def dynatrace_monitored_technologies_iis(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_iis")
 
@@ -1283,9 +990,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesJavas")
     def dynatrace_monitored_technologies_javas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_javas")
 
@@ -1297,9 +1002,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesNginxes")
     def dynatrace_monitored_technologies_nginxes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_nginxes")
 
@@ -1311,9 +1014,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesNodejs")
     def dynatrace_monitored_technologies_nodejs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_nodejs")
 
@@ -1325,10 +1026,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesOpentracings")
     def dynatrace_monitored_technologies_opentracings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither
-        warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-        Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-        environment.
+        The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_opentracings")
 
@@ -1340,9 +1038,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesPhps")
     def dynatrace_monitored_technologies_phps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_phps")
 
@@ -1354,9 +1050,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesVarnishes")
     def dynatrace_monitored_technologies_varnishes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_varnishes")
 
@@ -1368,9 +1062,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesWsmbs")
     def dynatrace_monitored_technologies_wsmbs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_wsmbs")
 
@@ -1382,9 +1074,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceMutedRequests")
     def dynatrace_muted_requests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_muted_requests")
 
@@ -1396,9 +1086,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceNettracers")
     def dynatrace_nettracers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_nettracers")
 
@@ -1410,9 +1098,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceOneagentFeatures")
     def dynatrace_oneagent_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_oneagent_features")
 
@@ -1424,9 +1110,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceOpsGenieNotifications")
     def dynatrace_ops_genie_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ops_genie_notifications")
 
@@ -1438,9 +1122,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatracePagerDutyNotifications")
     def dynatrace_pager_duty_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_pager_duty_notifications")
 
@@ -1452,9 +1134,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatracePgAlertings")
     def dynatrace_pg_alertings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_pg_alertings")
 
@@ -1466,9 +1146,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceProcessAvailabilities")
     def dynatrace_process_availabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_availabilities")
 
@@ -1480,9 +1158,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceProcessGroupDetectionFlags")
     def dynatrace_process_group_detection_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_detection_flags")
 
@@ -1494,9 +1170,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceProcessGroupDetections")
     def dynatrace_process_group_detections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_detections")
 
@@ -1508,9 +1182,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceProcessGroupMonitorings")
     def dynatrace_process_group_monitorings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_monitorings")
 
@@ -1522,9 +1194,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceProcessGroupRums")
     def dynatrace_process_group_rums(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_rums")
 
@@ -1536,9 +1206,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceProcessGroupSimpleDetections")
     def dynatrace_process_group_simple_detections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_simple_detections")
 
@@ -1550,9 +1218,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceProcessMonitoringRules")
     def dynatrace_process_monitoring_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_monitoring_rules")
 
@@ -1564,9 +1230,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceProcessMonitorings")
     def dynatrace_process_monitorings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_monitorings")
 
@@ -1578,9 +1242,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceProcessVisibilities")
     def dynatrace_process_visibilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_visibilities")
 
@@ -1592,9 +1254,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceProcessgroupNamings")
     def dynatrace_processgroup_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_processgroup_namings")
 
@@ -1606,9 +1266,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceQueueManagers")
     def dynatrace_queue_managers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_queue_managers")
 
@@ -1620,9 +1278,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceQueueSharingGroups")
     def dynatrace_queue_sharing_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_queue_sharing_groups")
 
@@ -1634,9 +1290,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceRequestAttributes")
     def dynatrace_request_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_request_attributes")
 
@@ -1648,9 +1302,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceRequestNamings")
     def dynatrace_request_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_request_namings")
 
@@ -1662,9 +1314,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceRumAdvancedCorrelations")
     def dynatrace_rum_advanced_correlations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_advanced_correlations")
 
@@ -1676,9 +1326,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceRumIpLocations")
     def dynatrace_rum_ip_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_ip_locations")
 
@@ -1690,9 +1338,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceRumProviderBreakdowns")
     def dynatrace_rum_provider_breakdowns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_provider_breakdowns")
 
@@ -1704,9 +1350,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceServiceFailures")
     def dynatrace_service_failures(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_failures")
 
@@ -1718,9 +1362,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceServiceHttpFailures")
     def dynatrace_service_http_failures(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_http_failures")
 
@@ -1732,9 +1374,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceServiceNamings")
     def dynatrace_service_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_namings")
 
@@ -1746,9 +1386,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceServiceNowNotifications")
     def dynatrace_service_now_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_now_notifications")
 
@@ -1760,9 +1398,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceSessionReplayWebPrivacies")
     def dynatrace_session_replay_web_privacies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_session_replay_web_privacies")
 
@@ -1774,9 +1410,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceSlackNotifications")
     def dynatrace_slack_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_slack_notifications")
 
@@ -1788,9 +1422,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceSloV2s")
     def dynatrace_slo_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence
-        nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if
-        you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_slo_v2s")
 
@@ -1802,9 +1434,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceSpanCaptureRules")
     def dynatrace_span_capture_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_span_capture_rules")
 
@@ -1816,9 +1446,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceSpanContextPropagations")
     def dynatrace_span_context_propagations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_span_context_propagations")
 
@@ -1830,9 +1458,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceSyntheticLocations")
     def dynatrace_synthetic_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_synthetic_locations")
 
@@ -1844,9 +1470,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceTrelloNotifications")
     def dynatrace_trello_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_trello_notifications")
 
@@ -1858,9 +1482,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceUpdateWindows")
     def dynatrace_update_windows(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_update_windows")
 
@@ -1872,9 +1494,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceUsabilityAnalytics")
     def dynatrace_usability_analytics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_usability_analytics")
 
@@ -1886,9 +1506,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceVictorOpsNotifications")
     def dynatrace_victor_ops_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_victor_ops_notifications")
 
@@ -1900,9 +1518,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceWebAppAnomalies")
     def dynatrace_web_app_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_anomalies")
 
@@ -1914,9 +1530,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceWebAppBeaconOrigins")
     def dynatrace_web_app_beacon_origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_beacon_origins")
 
@@ -1928,9 +1542,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceWebAppEnablements")
     def dynatrace_web_app_enablements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_enablements")
 
@@ -1942,9 +1554,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceWebAppResourceCleanups")
     def dynatrace_web_app_resource_cleanups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_resource_cleanups")
 
@@ -1956,9 +1566,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceWebAppResourceTypes")
     def dynatrace_web_app_resource_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_resource_types")
 
@@ -1970,9 +1578,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceWebApplications")
     def dynatrace_web_applications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_applications")
 
@@ -1984,9 +1590,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceWebhookNotifications")
     def dynatrace_webhook_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_webhook_notifications")
 
@@ -1998,9 +1602,7 @@ class GoldenStateArgs:
     @pulumi.getter(name="dynatraceXmattersNotifications")
     def dynatrace_xmatters_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_xmatters_notifications")
 
@@ -2123,304 +1725,105 @@ class _GoldenStateState:
                  mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GoldenState resources.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aix_extensions: The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_alertings: The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ansible_tower_notifications: The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_detection_rules: The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_error_rules: The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_autotag_v2s: The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aws_credentials: The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_azure_credentials: The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_browser_monitors: The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_mobile_metrics: The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_service_metrics: The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_synthetic_metrics: The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_web_metrics: The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_credentials: The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_anomalies: The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_crash_rates: The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_enablements: The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_services: The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_data_privacies: The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_database_anomalies_v2s: The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_declarative_groupings: The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_anomalies_v2s: The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_options: The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_specific_anomalies_v2s: The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_email_notifications: The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_extension_execution_controllers: The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_generic_types: The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_anomalies_v2s: The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_namings: The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_process_group_monitorings: The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_http_monitors: The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ims_bridges: The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_jira_notifications: The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_k8s_namespace_anomalies: The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_key_requests: The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_log_metrics: The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_maintenances: The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_management_zone_v2s: The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_metric_events: The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_anomalies: The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_crash_rates: The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_enablements: The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_applications: The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_apaches: The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_dotnets: The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_gos: The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_iis: The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_javas: The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nginxes: The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nodejs: The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_opentracings: The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither
-               warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-               Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-               environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_phps: The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_varnishes: The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_wsmbs: The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_muted_requests: The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_nettracers: The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_oneagent_features: The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ops_genie_notifications: The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pager_duty_notifications: The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pg_alertings: The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_availabilities: The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detection_flags: The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detections: The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_monitorings: The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_rums: The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_simple_detections: The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitoring_rules: The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitorings: The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_visibilities: The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_processgroup_namings: The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_managers: The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_sharing_groups: The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_attributes: The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_namings: The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_advanced_correlations: The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_ip_locations: The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_provider_breakdowns: The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_failures: The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_http_failures: The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_namings: The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_now_notifications: The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_session_replay_web_privacies: The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slack_notifications: The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slo_v2s: The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence
-               nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if
-               you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_capture_rules: The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_context_propagations: The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_synthetic_locations: The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_trello_notifications: The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_update_windows: The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_usability_analytics: The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_victor_ops_notifications: The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_anomalies: The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_beacon_origins: The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_enablements: The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_cleanups: The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_types: The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_applications: The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_webhook_notifications: The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_xmatters_notifications: The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aix_extensions: The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_alertings: The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ansible_tower_notifications: The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_detection_rules: The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_error_rules: The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_autotag_v2s: The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aws_credentials: The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_azure_credentials: The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_browser_monitors: The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_mobile_metrics: The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_service_metrics: The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_synthetic_metrics: The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_web_metrics: The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_credentials: The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_anomalies: The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_crash_rates: The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_enablements: The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_services: The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_data_privacies: The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_database_anomalies_v2s: The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_declarative_groupings: The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_anomalies_v2s: The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_options: The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_specific_anomalies_v2s: The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_email_notifications: The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_extension_execution_controllers: The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_generic_types: The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_anomalies_v2s: The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_namings: The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_process_group_monitorings: The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_http_monitors: The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ims_bridges: The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_jira_notifications: The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_k8s_namespace_anomalies: The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_key_requests: The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_log_metrics: The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_maintenances: The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_management_zone_v2s: The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_metric_events: The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_anomalies: The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_crash_rates: The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_enablements: The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_applications: The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_apaches: The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_dotnets: The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_gos: The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_iis: The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_javas: The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nginxes: The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nodejs: The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_opentracings: The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_phps: The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_varnishes: The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_wsmbs: The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_muted_requests: The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_nettracers: The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_oneagent_features: The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ops_genie_notifications: The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pager_duty_notifications: The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pg_alertings: The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_availabilities: The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detection_flags: The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detections: The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_monitorings: The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_rums: The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_simple_detections: The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitoring_rules: The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitorings: The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_visibilities: The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_processgroup_namings: The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_managers: The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_sharing_groups: The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_attributes: The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_namings: The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_advanced_correlations: The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_ip_locations: The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_provider_breakdowns: The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_failures: The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_http_failures: The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_namings: The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_now_notifications: The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_session_replay_web_privacies: The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slack_notifications: The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slo_v2s: The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_capture_rules: The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_context_propagations: The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_synthetic_locations: The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_trello_notifications: The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_update_windows: The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_usability_analytics: The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_victor_ops_notifications: The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_anomalies: The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_beacon_origins: The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_enablements: The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_cleanups: The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_types: The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_applications: The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_webhook_notifications: The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_xmatters_notifications: The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         if dynatrace_aix_extensions is not None:
             pulumi.set(__self__, "dynatrace_aix_extensions", dynatrace_aix_extensions)
@@ -2627,9 +2030,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceAixExtensions")
     def dynatrace_aix_extensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_aix_extensions")
 
@@ -2641,9 +2042,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceAlertings")
     def dynatrace_alertings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_alertings")
 
@@ -2655,9 +2054,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceAnsibleTowerNotifications")
     def dynatrace_ansible_tower_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ansible_tower_notifications")
 
@@ -2669,9 +2066,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceApplicationDetectionRules")
     def dynatrace_application_detection_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_application_detection_rules")
 
@@ -2683,9 +2078,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceApplicationErrorRules")
     def dynatrace_application_error_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_application_error_rules")
 
@@ -2697,9 +2090,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceAutotagV2s")
     def dynatrace_autotag_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_autotag_v2s")
 
@@ -2711,9 +2102,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceAwsCredentials")
     def dynatrace_aws_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_aws_credentials")
 
@@ -2725,9 +2114,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceAzureCredentials")
     def dynatrace_azure_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_azure_credentials")
 
@@ -2739,9 +2126,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceBrowserMonitors")
     def dynatrace_browser_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_browser_monitors")
 
@@ -2753,9 +2138,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceCalculatedMobileMetrics")
     def dynatrace_calculated_mobile_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_mobile_metrics")
 
@@ -2767,9 +2150,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceCalculatedServiceMetrics")
     def dynatrace_calculated_service_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_service_metrics")
 
@@ -2781,9 +2162,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceCalculatedSyntheticMetrics")
     def dynatrace_calculated_synthetic_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_synthetic_metrics")
 
@@ -2795,9 +2174,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceCalculatedWebMetrics")
     def dynatrace_calculated_web_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_web_metrics")
 
@@ -2809,9 +2186,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceCredentials")
     def dynatrace_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_credentials")
 
@@ -2823,9 +2198,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceCustomAppAnomalies")
     def dynatrace_custom_app_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_anomalies")
 
@@ -2837,9 +2210,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceCustomAppCrashRates")
     def dynatrace_custom_app_crash_rates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_crash_rates")
 
@@ -2851,9 +2222,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceCustomAppEnablements")
     def dynatrace_custom_app_enablements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_enablements")
 
@@ -2865,9 +2234,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceCustomServices")
     def dynatrace_custom_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_services")
 
@@ -2879,9 +2246,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceDataPrivacies")
     def dynatrace_data_privacies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_data_privacies")
 
@@ -2893,9 +2258,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceDatabaseAnomaliesV2s")
     def dynatrace_database_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_database_anomalies_v2s")
 
@@ -2907,9 +2270,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceDeclarativeGroupings")
     def dynatrace_declarative_groupings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_declarative_groupings")
 
@@ -2921,9 +2282,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceDiskAnomaliesV2s")
     def dynatrace_disk_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_anomalies_v2s")
 
@@ -2935,9 +2294,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceDiskOptions")
     def dynatrace_disk_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_options")
 
@@ -2949,9 +2306,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceDiskSpecificAnomaliesV2s")
     def dynatrace_disk_specific_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_specific_anomalies_v2s")
 
@@ -2963,9 +2318,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceEmailNotifications")
     def dynatrace_email_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_email_notifications")
 
@@ -2977,9 +2330,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceExtensionExecutionControllers")
     def dynatrace_extension_execution_controllers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_extension_execution_controllers")
 
@@ -2991,9 +2342,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceGenericTypes")
     def dynatrace_generic_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_generic_types")
 
@@ -3005,9 +2354,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceHostAnomaliesV2s")
     def dynatrace_host_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_anomalies_v2s")
 
@@ -3019,9 +2366,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceHostNamings")
     def dynatrace_host_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_namings")
 
@@ -3033,9 +2378,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceHostProcessGroupMonitorings")
     def dynatrace_host_process_group_monitorings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_process_group_monitorings")
 
@@ -3047,9 +2390,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceHttpMonitors")
     def dynatrace_http_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_http_monitors")
 
@@ -3061,9 +2402,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceImsBridges")
     def dynatrace_ims_bridges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ims_bridges")
 
@@ -3075,9 +2414,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceJiraNotifications")
     def dynatrace_jira_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_jira_notifications")
 
@@ -3089,9 +2426,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceK8sNamespaceAnomalies")
     def dynatrace_k8s_namespace_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_k8s_namespace_anomalies")
 
@@ -3103,9 +2438,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceKeyRequests")
     def dynatrace_key_requests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_key_requests")
 
@@ -3117,9 +2450,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceLogMetrics")
     def dynatrace_log_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_log_metrics")
 
@@ -3131,9 +2462,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMaintenances")
     def dynatrace_maintenances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_maintenances")
 
@@ -3145,9 +2474,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceManagementZoneV2s")
     def dynatrace_management_zone_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_management_zone_v2s")
 
@@ -3159,9 +2486,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMetricEvents")
     def dynatrace_metric_events(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_metric_events")
 
@@ -3173,9 +2498,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMobileAppAnomalies")
     def dynatrace_mobile_app_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_anomalies")
 
@@ -3187,9 +2510,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMobileAppCrashRates")
     def dynatrace_mobile_app_crash_rates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_crash_rates")
 
@@ -3201,9 +2522,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMobileAppEnablements")
     def dynatrace_mobile_app_enablements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_enablements")
 
@@ -3215,9 +2534,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMobileApplications")
     def dynatrace_mobile_applications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_applications")
 
@@ -3229,9 +2546,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesApaches")
     def dynatrace_monitored_technologies_apaches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_apaches")
 
@@ -3243,9 +2558,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesDotnets")
     def dynatrace_monitored_technologies_dotnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_dotnets")
 
@@ -3257,9 +2570,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesGos")
     def dynatrace_monitored_technologies_gos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_gos")
 
@@ -3271,9 +2582,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesIis")
     def dynatrace_monitored_technologies_iis(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_iis")
 
@@ -3285,9 +2594,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesJavas")
     def dynatrace_monitored_technologies_javas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_javas")
 
@@ -3299,9 +2606,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesNginxes")
     def dynatrace_monitored_technologies_nginxes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_nginxes")
 
@@ -3313,9 +2618,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesNodejs")
     def dynatrace_monitored_technologies_nodejs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_nodejs")
 
@@ -3327,10 +2630,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesOpentracings")
     def dynatrace_monitored_technologies_opentracings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither
-        warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-        Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-        environment.
+        The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_opentracings")
 
@@ -3342,9 +2642,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesPhps")
     def dynatrace_monitored_technologies_phps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_phps")
 
@@ -3356,9 +2654,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesVarnishes")
     def dynatrace_monitored_technologies_varnishes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_varnishes")
 
@@ -3370,9 +2666,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMonitoredTechnologiesWsmbs")
     def dynatrace_monitored_technologies_wsmbs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_wsmbs")
 
@@ -3384,9 +2678,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceMutedRequests")
     def dynatrace_muted_requests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_muted_requests")
 
@@ -3398,9 +2690,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceNettracers")
     def dynatrace_nettracers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_nettracers")
 
@@ -3412,9 +2702,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceOneagentFeatures")
     def dynatrace_oneagent_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_oneagent_features")
 
@@ -3426,9 +2714,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceOpsGenieNotifications")
     def dynatrace_ops_genie_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ops_genie_notifications")
 
@@ -3440,9 +2726,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatracePagerDutyNotifications")
     def dynatrace_pager_duty_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_pager_duty_notifications")
 
@@ -3454,9 +2738,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatracePgAlertings")
     def dynatrace_pg_alertings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_pg_alertings")
 
@@ -3468,9 +2750,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceProcessAvailabilities")
     def dynatrace_process_availabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_availabilities")
 
@@ -3482,9 +2762,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceProcessGroupDetectionFlags")
     def dynatrace_process_group_detection_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_detection_flags")
 
@@ -3496,9 +2774,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceProcessGroupDetections")
     def dynatrace_process_group_detections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_detections")
 
@@ -3510,9 +2786,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceProcessGroupMonitorings")
     def dynatrace_process_group_monitorings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_monitorings")
 
@@ -3524,9 +2798,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceProcessGroupRums")
     def dynatrace_process_group_rums(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_rums")
 
@@ -3538,9 +2810,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceProcessGroupSimpleDetections")
     def dynatrace_process_group_simple_detections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_simple_detections")
 
@@ -3552,9 +2822,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceProcessMonitoringRules")
     def dynatrace_process_monitoring_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_monitoring_rules")
 
@@ -3566,9 +2834,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceProcessMonitorings")
     def dynatrace_process_monitorings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_monitorings")
 
@@ -3580,9 +2846,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceProcessVisibilities")
     def dynatrace_process_visibilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_visibilities")
 
@@ -3594,9 +2858,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceProcessgroupNamings")
     def dynatrace_processgroup_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_processgroup_namings")
 
@@ -3608,9 +2870,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceQueueManagers")
     def dynatrace_queue_managers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_queue_managers")
 
@@ -3622,9 +2882,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceQueueSharingGroups")
     def dynatrace_queue_sharing_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_queue_sharing_groups")
 
@@ -3636,9 +2894,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceRequestAttributes")
     def dynatrace_request_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_request_attributes")
 
@@ -3650,9 +2906,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceRequestNamings")
     def dynatrace_request_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_request_namings")
 
@@ -3664,9 +2918,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceRumAdvancedCorrelations")
     def dynatrace_rum_advanced_correlations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_advanced_correlations")
 
@@ -3678,9 +2930,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceRumIpLocations")
     def dynatrace_rum_ip_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_ip_locations")
 
@@ -3692,9 +2942,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceRumProviderBreakdowns")
     def dynatrace_rum_provider_breakdowns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_provider_breakdowns")
 
@@ -3706,9 +2954,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceServiceFailures")
     def dynatrace_service_failures(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_failures")
 
@@ -3720,9 +2966,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceServiceHttpFailures")
     def dynatrace_service_http_failures(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_http_failures")
 
@@ -3734,9 +2978,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceServiceNamings")
     def dynatrace_service_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_namings")
 
@@ -3748,9 +2990,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceServiceNowNotifications")
     def dynatrace_service_now_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_now_notifications")
 
@@ -3762,9 +3002,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceSessionReplayWebPrivacies")
     def dynatrace_session_replay_web_privacies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_session_replay_web_privacies")
 
@@ -3776,9 +3014,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceSlackNotifications")
     def dynatrace_slack_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_slack_notifications")
 
@@ -3790,9 +3026,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceSloV2s")
     def dynatrace_slo_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence
-        nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if
-        you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_slo_v2s")
 
@@ -3804,9 +3038,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceSpanCaptureRules")
     def dynatrace_span_capture_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_span_capture_rules")
 
@@ -3818,9 +3050,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceSpanContextPropagations")
     def dynatrace_span_context_propagations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_span_context_propagations")
 
@@ -3832,9 +3062,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceSyntheticLocations")
     def dynatrace_synthetic_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_synthetic_locations")
 
@@ -3846,9 +3074,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceTrelloNotifications")
     def dynatrace_trello_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_trello_notifications")
 
@@ -3860,9 +3086,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceUpdateWindows")
     def dynatrace_update_windows(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_update_windows")
 
@@ -3874,9 +3098,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceUsabilityAnalytics")
     def dynatrace_usability_analytics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_usability_analytics")
 
@@ -3888,9 +3110,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceVictorOpsNotifications")
     def dynatrace_victor_ops_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_victor_ops_notifications")
 
@@ -3902,9 +3122,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceWebAppAnomalies")
     def dynatrace_web_app_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_anomalies")
 
@@ -3916,9 +3134,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceWebAppBeaconOrigins")
     def dynatrace_web_app_beacon_origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_beacon_origins")
 
@@ -3930,9 +3146,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceWebAppEnablements")
     def dynatrace_web_app_enablements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_enablements")
 
@@ -3944,9 +3158,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceWebAppResourceCleanups")
     def dynatrace_web_app_resource_cleanups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_resource_cleanups")
 
@@ -3958,9 +3170,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceWebAppResourceTypes")
     def dynatrace_web_app_resource_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_resource_types")
 
@@ -3972,9 +3182,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceWebApplications")
     def dynatrace_web_applications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_applications")
 
@@ -3986,9 +3194,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceWebhookNotifications")
     def dynatrace_webhook_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_webhook_notifications")
 
@@ -4000,9 +3206,7 @@ class _GoldenStateState:
     @pulumi.getter(name="dynatraceXmattersNotifications")
     def dynatrace_xmatters_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_xmatters_notifications")
 
@@ -4131,304 +3335,105 @@ class GoldenState(pulumi.CustomResource):
         Create a GoldenState resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aix_extensions: The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_alertings: The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ansible_tower_notifications: The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_detection_rules: The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_error_rules: The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_autotag_v2s: The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aws_credentials: The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_azure_credentials: The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_browser_monitors: The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_mobile_metrics: The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_service_metrics: The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_synthetic_metrics: The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_web_metrics: The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_credentials: The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_anomalies: The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_crash_rates: The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_enablements: The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_services: The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_data_privacies: The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_database_anomalies_v2s: The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_declarative_groupings: The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_anomalies_v2s: The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_options: The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_specific_anomalies_v2s: The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_email_notifications: The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_extension_execution_controllers: The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_generic_types: The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_anomalies_v2s: The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_namings: The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_process_group_monitorings: The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_http_monitors: The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ims_bridges: The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_jira_notifications: The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_k8s_namespace_anomalies: The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_key_requests: The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_log_metrics: The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_maintenances: The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_management_zone_v2s: The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_metric_events: The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_anomalies: The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_crash_rates: The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_enablements: The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_applications: The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_apaches: The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_dotnets: The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_gos: The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_iis: The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_javas: The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nginxes: The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nodejs: The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_opentracings: The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither
-               warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-               Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-               environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_phps: The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_varnishes: The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_wsmbs: The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_muted_requests: The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_nettracers: The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_oneagent_features: The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ops_genie_notifications: The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pager_duty_notifications: The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pg_alertings: The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_availabilities: The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detection_flags: The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detections: The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_monitorings: The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_rums: The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_simple_detections: The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitoring_rules: The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitorings: The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_visibilities: The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_processgroup_namings: The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_managers: The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_sharing_groups: The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_attributes: The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_namings: The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_advanced_correlations: The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_ip_locations: The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_provider_breakdowns: The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_failures: The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_http_failures: The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_namings: The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_now_notifications: The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_session_replay_web_privacies: The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slack_notifications: The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slo_v2s: The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence
-               nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if
-               you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_capture_rules: The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_context_propagations: The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_synthetic_locations: The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_trello_notifications: The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_update_windows: The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_usability_analytics: The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_victor_ops_notifications: The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_anomalies: The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_beacon_origins: The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_enablements: The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_cleanups: The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_types: The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_applications: The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_webhook_notifications: The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_xmatters_notifications: The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aix_extensions: The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_alertings: The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ansible_tower_notifications: The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_detection_rules: The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_error_rules: The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_autotag_v2s: The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aws_credentials: The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_azure_credentials: The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_browser_monitors: The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_mobile_metrics: The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_service_metrics: The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_synthetic_metrics: The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_web_metrics: The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_credentials: The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_anomalies: The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_crash_rates: The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_enablements: The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_services: The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_data_privacies: The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_database_anomalies_v2s: The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_declarative_groupings: The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_anomalies_v2s: The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_options: The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_specific_anomalies_v2s: The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_email_notifications: The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_extension_execution_controllers: The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_generic_types: The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_anomalies_v2s: The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_namings: The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_process_group_monitorings: The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_http_monitors: The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ims_bridges: The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_jira_notifications: The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_k8s_namespace_anomalies: The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_key_requests: The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_log_metrics: The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_maintenances: The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_management_zone_v2s: The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_metric_events: The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_anomalies: The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_crash_rates: The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_enablements: The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_applications: The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_apaches: The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_dotnets: The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_gos: The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_iis: The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_javas: The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nginxes: The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nodejs: The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_opentracings: The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_phps: The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_varnishes: The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_wsmbs: The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_muted_requests: The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_nettracers: The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_oneagent_features: The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ops_genie_notifications: The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pager_duty_notifications: The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pg_alertings: The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_availabilities: The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detection_flags: The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detections: The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_monitorings: The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_rums: The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_simple_detections: The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitoring_rules: The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitorings: The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_visibilities: The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_processgroup_namings: The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_managers: The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_sharing_groups: The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_attributes: The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_namings: The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_advanced_correlations: The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_ip_locations: The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_provider_breakdowns: The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_failures: The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_http_failures: The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_namings: The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_now_notifications: The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_session_replay_web_privacies: The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slack_notifications: The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slo_v2s: The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_capture_rules: The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_context_propagations: The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_synthetic_locations: The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_trello_notifications: The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_update_windows: The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_usability_analytics: The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_victor_ops_notifications: The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_anomalies: The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_beacon_origins: The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_enablements: The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_cleanups: The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_types: The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_applications: The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_webhook_notifications: The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_xmatters_notifications: The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         ...
     @overload
@@ -4779,304 +3784,105 @@ class GoldenState(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aix_extensions: The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_alertings: The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ansible_tower_notifications: The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_detection_rules: The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_error_rules: The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_autotag_v2s: The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aws_credentials: The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_azure_credentials: The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_browser_monitors: The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_mobile_metrics: The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_service_metrics: The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_synthetic_metrics: The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_web_metrics: The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_credentials: The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_anomalies: The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_crash_rates: The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_enablements: The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_services: The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_data_privacies: The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_database_anomalies_v2s: The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_declarative_groupings: The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_anomalies_v2s: The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_options: The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_specific_anomalies_v2s: The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_email_notifications: The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_extension_execution_controllers: The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_generic_types: The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_anomalies_v2s: The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_namings: The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_process_group_monitorings: The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_http_monitors: The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ims_bridges: The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_jira_notifications: The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_k8s_namespace_anomalies: The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_key_requests: The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_log_metrics: The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_maintenances: The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_management_zone_v2s: The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_metric_events: The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_anomalies: The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_crash_rates: The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_enablements: The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_applications: The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_apaches: The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_dotnets: The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_gos: The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_iis: The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_javas: The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nginxes: The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nodejs: The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_opentracings: The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither
-               warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-               Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-               environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_phps: The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_varnishes: The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_wsmbs: The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_muted_requests: The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_nettracers: The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_oneagent_features: The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ops_genie_notifications: The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pager_duty_notifications: The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pg_alertings: The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_availabilities: The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detection_flags: The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detections: The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_monitorings: The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_rums: The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_simple_detections: The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitoring_rules: The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitorings: The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_visibilities: The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_processgroup_namings: The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_managers: The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_sharing_groups: The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_attributes: The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_namings: The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_advanced_correlations: The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_ip_locations: The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_provider_breakdowns: The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_failures: The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_http_failures: The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_namings: The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_now_notifications: The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_session_replay_web_privacies: The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn
-               about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-               Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slack_notifications: The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slo_v2s: The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence
-               nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if
-               you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_capture_rules: The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_context_propagations: The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_synthetic_locations: The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_trello_notifications: The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_update_windows: The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_usability_analytics: The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_victor_ops_notifications: The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_anomalies: The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_beacon_origins: The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_enablements: The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_cleanups: The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_types: The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_applications: The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their
-               existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-               attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_webhook_notifications: The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_xmatters_notifications: The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about
-               their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-               this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aix_extensions: The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_alertings: The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ansible_tower_notifications: The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_detection_rules: The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_application_error_rules: The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_autotag_v2s: The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_aws_credentials: The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_azure_credentials: The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_browser_monitors: The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_mobile_metrics: The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_service_metrics: The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_synthetic_metrics: The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_calculated_web_metrics: The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_credentials: The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_anomalies: The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_crash_rates: The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_app_enablements: The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_custom_services: The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_data_privacies: The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_database_anomalies_v2s: The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_declarative_groupings: The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_anomalies_v2s: The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_options: The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_disk_specific_anomalies_v2s: The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_email_notifications: The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_extension_execution_controllers: The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_generic_types: The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_anomalies_v2s: The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_namings: The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_host_process_group_monitorings: The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_http_monitors: The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ims_bridges: The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_jira_notifications: The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_k8s_namespace_anomalies: The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_key_requests: The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_log_metrics: The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_maintenances: The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_management_zone_v2s: The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_metric_events: The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_anomalies: The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_crash_rates: The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_app_enablements: The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_mobile_applications: The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_apaches: The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_dotnets: The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_gos: The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_iis: The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_javas: The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nginxes: The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_nodejs: The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_opentracings: The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_phps: The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_varnishes: The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_monitored_technologies_wsmbs: The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_muted_requests: The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_nettracers: The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_oneagent_features: The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_ops_genie_notifications: The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pager_duty_notifications: The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_pg_alertings: The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_availabilities: The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detection_flags: The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_detections: The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_monitorings: The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_rums: The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_group_simple_detections: The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitoring_rules: The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_monitorings: The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_process_visibilities: The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_processgroup_namings: The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_managers: The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_queue_sharing_groups: The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_attributes: The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_request_namings: The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_advanced_correlations: The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_ip_locations: The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_rum_provider_breakdowns: The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_failures: The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_http_failures: The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_namings: The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_service_now_notifications: The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_session_replay_web_privacies: The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slack_notifications: The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_slo_v2s: The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_capture_rules: The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_span_context_propagations: The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_synthetic_locations: The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_trello_notifications: The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_update_windows: The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_usability_analytics: The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_victor_ops_notifications: The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_anomalies: The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_beacon_origins: The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_enablements: The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_cleanups: The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_app_resource_types: The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_web_applications: The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_webhook_notifications: The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_xmatters_notifications: The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -5188,9 +3994,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceAixExtensions")
     def dynatrace_aix_extensions(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_aix_extensions")
 
@@ -5198,9 +4002,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceAlertings")
     def dynatrace_alertings(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_alertings")
 
@@ -5208,9 +4010,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceAnsibleTowerNotifications")
     def dynatrace_ansible_tower_notifications(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ansible_tower_notifications")
 
@@ -5218,9 +4018,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceApplicationDetectionRules")
     def dynatrace_application_detection_rules(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_application_detection_rules")
 
@@ -5228,9 +4026,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceApplicationErrorRules")
     def dynatrace_application_error_rules(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_application_error_rules")
 
@@ -5238,9 +4034,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceAutotagV2s")
     def dynatrace_autotag_v2s(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_autotag_v2s")
 
@@ -5248,9 +4042,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceAwsCredentials")
     def dynatrace_aws_credentials(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_aws_credentials")
 
@@ -5258,9 +4050,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceAzureCredentials")
     def dynatrace_azure_credentials(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_azure_credentials")
 
@@ -5268,9 +4058,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceBrowserMonitors")
     def dynatrace_browser_monitors(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_browser_monitors")
 
@@ -5278,9 +4066,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceCalculatedMobileMetrics")
     def dynatrace_calculated_mobile_metrics(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_mobile_metrics")
 
@@ -5288,9 +4074,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceCalculatedServiceMetrics")
     def dynatrace_calculated_service_metrics(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_service_metrics")
 
@@ -5298,9 +4082,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceCalculatedSyntheticMetrics")
     def dynatrace_calculated_synthetic_metrics(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_synthetic_metrics")
 
@@ -5308,9 +4090,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceCalculatedWebMetrics")
     def dynatrace_calculated_web_metrics(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_web_metrics")
 
@@ -5318,9 +4098,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceCredentials")
     def dynatrace_credentials(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_credentials")
 
@@ -5328,9 +4106,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceCustomAppAnomalies")
     def dynatrace_custom_app_anomalies(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_anomalies")
 
@@ -5338,9 +4114,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceCustomAppCrashRates")
     def dynatrace_custom_app_crash_rates(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_crash_rates")
 
@@ -5348,9 +4122,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceCustomAppEnablements")
     def dynatrace_custom_app_enablements(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_enablements")
 
@@ -5358,9 +4130,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceCustomServices")
     def dynatrace_custom_services(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_services")
 
@@ -5368,9 +4138,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceDataPrivacies")
     def dynatrace_data_privacies(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_data_privacies")
 
@@ -5378,9 +4146,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceDatabaseAnomaliesV2s")
     def dynatrace_database_anomalies_v2s(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_database_anomalies_v2s")
 
@@ -5388,9 +4154,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceDeclarativeGroupings")
     def dynatrace_declarative_groupings(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_declarative_groupings")
 
@@ -5398,9 +4162,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceDiskAnomaliesV2s")
     def dynatrace_disk_anomalies_v2s(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_anomalies_v2s")
 
@@ -5408,9 +4170,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceDiskOptions")
     def dynatrace_disk_options(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_options")
 
@@ -5418,9 +4178,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceDiskSpecificAnomaliesV2s")
     def dynatrace_disk_specific_anomalies_v2s(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_specific_anomalies_v2s")
 
@@ -5428,9 +4186,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceEmailNotifications")
     def dynatrace_email_notifications(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_email_notifications")
 
@@ -5438,9 +4194,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceExtensionExecutionControllers")
     def dynatrace_extension_execution_controllers(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_extension_execution_controllers")
 
@@ -5448,9 +4202,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceGenericTypes")
     def dynatrace_generic_types(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_generic_types")
 
@@ -5458,9 +4210,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceHostAnomaliesV2s")
     def dynatrace_host_anomalies_v2s(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_anomalies_v2s")
 
@@ -5468,9 +4218,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceHostNamings")
     def dynatrace_host_namings(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_namings")
 
@@ -5478,9 +4226,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceHostProcessGroupMonitorings")
     def dynatrace_host_process_group_monitorings(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_process_group_monitorings")
 
@@ -5488,9 +4234,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceHttpMonitors")
     def dynatrace_http_monitors(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_http_monitors")
 
@@ -5498,9 +4242,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceImsBridges")
     def dynatrace_ims_bridges(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ims_bridges")
 
@@ -5508,9 +4250,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceJiraNotifications")
     def dynatrace_jira_notifications(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_jira_notifications")
 
@@ -5518,9 +4258,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceK8sNamespaceAnomalies")
     def dynatrace_k8s_namespace_anomalies(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_k8s_namespace_anomalies")
 
@@ -5528,9 +4266,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceKeyRequests")
     def dynatrace_key_requests(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_key_requests")
 
@@ -5538,9 +4274,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceLogMetrics")
     def dynatrace_log_metrics(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_log_metrics")
 
@@ -5548,9 +4282,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMaintenances")
     def dynatrace_maintenances(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_maintenances")
 
@@ -5558,9 +4290,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceManagementZoneV2s")
     def dynatrace_management_zone_v2s(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_management_zone_v2s")
 
@@ -5568,9 +4298,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMetricEvents")
     def dynatrace_metric_events(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_metric_events")
 
@@ -5578,9 +4306,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMobileAppAnomalies")
     def dynatrace_mobile_app_anomalies(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_anomalies")
 
@@ -5588,9 +4314,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMobileAppCrashRates")
     def dynatrace_mobile_app_crash_rates(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_crash_rates")
 
@@ -5598,9 +4322,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMobileAppEnablements")
     def dynatrace_mobile_app_enablements(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_enablements")
 
@@ -5608,9 +4330,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMobileApplications")
     def dynatrace_mobile_applications(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_applications")
 
@@ -5618,9 +4338,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMonitoredTechnologiesApaches")
     def dynatrace_monitored_technologies_apaches(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_apaches")
 
@@ -5628,9 +4346,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMonitoredTechnologiesDotnets")
     def dynatrace_monitored_technologies_dotnets(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_dotnets")
 
@@ -5638,9 +4354,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMonitoredTechnologiesGos")
     def dynatrace_monitored_technologies_gos(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_gos")
 
@@ -5648,9 +4362,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMonitoredTechnologiesIis")
     def dynatrace_monitored_technologies_iis(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_iis")
 
@@ -5658,9 +4370,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMonitoredTechnologiesJavas")
     def dynatrace_monitored_technologies_javas(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_javas")
 
@@ -5668,9 +4378,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMonitoredTechnologiesNginxes")
     def dynatrace_monitored_technologies_nginxes(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_nginxes")
 
@@ -5678,9 +4386,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMonitoredTechnologiesNodejs")
     def dynatrace_monitored_technologies_nodejs(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_nodejs")
 
@@ -5688,10 +4394,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMonitoredTechnologiesOpentracings")
     def dynatrace_monitored_technologies_opentracings(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither
-        warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-        Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-        environment.
+        The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_opentracings")
 
@@ -5699,9 +4402,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMonitoredTechnologiesPhps")
     def dynatrace_monitored_technologies_phps(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_phps")
 
@@ -5709,9 +4410,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMonitoredTechnologiesVarnishes")
     def dynatrace_monitored_technologies_varnishes(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_varnishes")
 
@@ -5719,9 +4418,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMonitoredTechnologiesWsmbs")
     def dynatrace_monitored_technologies_wsmbs(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_wsmbs")
 
@@ -5729,9 +4426,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceMutedRequests")
     def dynatrace_muted_requests(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_muted_requests")
 
@@ -5739,9 +4434,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceNettracers")
     def dynatrace_nettracers(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_nettracers")
 
@@ -5749,9 +4442,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceOneagentFeatures")
     def dynatrace_oneagent_features(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_oneagent_features")
 
@@ -5759,9 +4450,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceOpsGenieNotifications")
     def dynatrace_ops_genie_notifications(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ops_genie_notifications")
 
@@ -5769,9 +4458,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatracePagerDutyNotifications")
     def dynatrace_pager_duty_notifications(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_pager_duty_notifications")
 
@@ -5779,9 +4466,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatracePgAlertings")
     def dynatrace_pg_alertings(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_pg_alertings")
 
@@ -5789,9 +4474,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceProcessAvailabilities")
     def dynatrace_process_availabilities(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_availabilities")
 
@@ -5799,9 +4482,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceProcessGroupDetectionFlags")
     def dynatrace_process_group_detection_flags(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_detection_flags")
 
@@ -5809,9 +4490,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceProcessGroupDetections")
     def dynatrace_process_group_detections(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_detections")
 
@@ -5819,9 +4498,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceProcessGroupMonitorings")
     def dynatrace_process_group_monitorings(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_monitorings")
 
@@ -5829,9 +4506,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceProcessGroupRums")
     def dynatrace_process_group_rums(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_rums")
 
@@ -5839,9 +4514,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceProcessGroupSimpleDetections")
     def dynatrace_process_group_simple_detections(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_simple_detections")
 
@@ -5849,9 +4522,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceProcessMonitoringRules")
     def dynatrace_process_monitoring_rules(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_monitoring_rules")
 
@@ -5859,9 +4530,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceProcessMonitorings")
     def dynatrace_process_monitorings(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_monitorings")
 
@@ -5869,9 +4538,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceProcessVisibilities")
     def dynatrace_process_visibilities(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_visibilities")
 
@@ -5879,9 +4546,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceProcessgroupNamings")
     def dynatrace_processgroup_namings(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_processgroup_namings")
 
@@ -5889,9 +4554,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceQueueManagers")
     def dynatrace_queue_managers(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_queue_managers")
 
@@ -5899,9 +4562,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceQueueSharingGroups")
     def dynatrace_queue_sharing_groups(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_queue_sharing_groups")
 
@@ -5909,9 +4570,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceRequestAttributes")
     def dynatrace_request_attributes(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_request_attributes")
 
@@ -5919,9 +4578,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceRequestNamings")
     def dynatrace_request_namings(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_request_namings")
 
@@ -5929,9 +4586,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceRumAdvancedCorrelations")
     def dynatrace_rum_advanced_correlations(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_advanced_correlations")
 
@@ -5939,9 +4594,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceRumIpLocations")
     def dynatrace_rum_ip_locations(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_ip_locations")
 
@@ -5949,9 +4602,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceRumProviderBreakdowns")
     def dynatrace_rum_provider_breakdowns(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_provider_breakdowns")
 
@@ -5959,9 +4610,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceServiceFailures")
     def dynatrace_service_failures(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_failures")
 
@@ -5969,9 +4618,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceServiceHttpFailures")
     def dynatrace_service_http_failures(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_http_failures")
 
@@ -5979,9 +4626,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceServiceNamings")
     def dynatrace_service_namings(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_namings")
 
@@ -5989,9 +4634,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceServiceNowNotifications")
     def dynatrace_service_now_notifications(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_now_notifications")
 
@@ -5999,9 +4642,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceSessionReplayWebPrivacies")
     def dynatrace_session_replay_web_privacies(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn
-        about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-        Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_session_replay_web_privacies")
 
@@ -6009,9 +4650,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceSlackNotifications")
     def dynatrace_slack_notifications(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_slack_notifications")
 
@@ -6019,9 +4658,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceSloV2s")
     def dynatrace_slo_v2s(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence
-        nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if
-        you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_slo_v2s")
 
@@ -6029,9 +4666,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceSpanCaptureRules")
     def dynatrace_span_capture_rules(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_span_capture_rules")
 
@@ -6039,9 +4674,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceSpanContextPropagations")
     def dynatrace_span_context_propagations(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_span_context_propagations")
 
@@ -6049,9 +4682,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceSyntheticLocations")
     def dynatrace_synthetic_locations(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_synthetic_locations")
 
@@ -6059,9 +4690,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceTrelloNotifications")
     def dynatrace_trello_notifications(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_trello_notifications")
 
@@ -6069,9 +4698,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceUpdateWindows")
     def dynatrace_update_windows(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_update_windows")
 
@@ -6079,9 +4706,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceUsabilityAnalytics")
     def dynatrace_usability_analytics(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_usability_analytics")
 
@@ -6089,9 +4714,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceVictorOpsNotifications")
     def dynatrace_victor_ops_notifications(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_victor_ops_notifications")
 
@@ -6099,9 +4722,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceWebAppAnomalies")
     def dynatrace_web_app_anomalies(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_anomalies")
 
@@ -6109,9 +4730,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceWebAppBeaconOrigins")
     def dynatrace_web_app_beacon_origins(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_beacon_origins")
 
@@ -6119,9 +4738,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceWebAppEnablements")
     def dynatrace_web_app_enablements(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_enablements")
 
@@ -6129,9 +4746,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceWebAppResourceCleanups")
     def dynatrace_web_app_resource_cleanups(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_resource_cleanups")
 
@@ -6139,9 +4754,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceWebAppResourceTypes")
     def dynatrace_web_app_resource_types(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_resource_types")
 
@@ -6149,9 +4762,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceWebApplications")
     def dynatrace_web_applications(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their
-        existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this
-        attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_applications")
 
@@ -6159,9 +4770,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceWebhookNotifications")
     def dynatrace_webhook_notifications(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_webhook_notifications")
 
@@ -6169,9 +4778,7 @@ class GoldenState(pulumi.CustomResource):
     @pulumi.getter(name="dynatraceXmattersNotifications")
     def dynatrace_xmatters_notifications(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about
-        their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit
-        this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+        The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_xmatters_notifications")
 

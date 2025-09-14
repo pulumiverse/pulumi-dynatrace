@@ -39,11 +39,23 @@ type OsServices struct {
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	StatusConditionLinux pulumi.StringPtrOutput `pulumi:"statusConditionLinux"`
-	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-	// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-	// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-	// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-	// `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
+	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	// - `$eq(paused)` – Matches services that are in paused state.
+	//
+	// Available logic operations:
+	// - `$not($eq(paused))` – Matches services that are in state different from paused.
+	// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+	//
+	// Use one of the following values as a parameter for this condition:
+	//
+	// - `running`
+	// - `stopped`
+	// - `startPending`
+	// - `stopPending`
+	// - `continuePending`
+	// - `pausePending`
+	// - `paused`
 	StatusConditionWindows pulumi.StringPtrOutput `pulumi:"statusConditionWindows"`
 	// Possible Values: `LINUX`, `WINDOWS`
 	System pulumi.StringOutput `pulumi:"system"`
@@ -115,11 +127,23 @@ type osServicesState struct {
 	Scope *string `pulumi:"scope"`
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	StatusConditionLinux *string `pulumi:"statusConditionLinux"`
-	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-	// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-	// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-	// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-	// `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
+	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	// - `$eq(paused)` – Matches services that are in paused state.
+	//
+	// Available logic operations:
+	// - `$not($eq(paused))` – Matches services that are in state different from paused.
+	// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+	//
+	// Use one of the following values as a parameter for this condition:
+	//
+	// - `running`
+	// - `stopped`
+	// - `startPending`
+	// - `stopPending`
+	// - `continuePending`
+	// - `pausePending`
+	// - `paused`
 	StatusConditionWindows *string `pulumi:"statusConditionWindows"`
 	// Possible Values: `LINUX`, `WINDOWS`
 	System *string `pulumi:"system"`
@@ -150,11 +174,23 @@ type OsServicesState struct {
 	Scope pulumi.StringPtrInput
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	StatusConditionLinux pulumi.StringPtrInput
-	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-	// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-	// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-	// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-	// `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
+	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	// - `$eq(paused)` – Matches services that are in paused state.
+	//
+	// Available logic operations:
+	// - `$not($eq(paused))` – Matches services that are in state different from paused.
+	// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+	//
+	// Use one of the following values as a parameter for this condition:
+	//
+	// - `running`
+	// - `stopped`
+	// - `startPending`
+	// - `stopPending`
+	// - `continuePending`
+	// - `pausePending`
+	// - `paused`
 	StatusConditionWindows pulumi.StringPtrInput
 	// Possible Values: `LINUX`, `WINDOWS`
 	System pulumi.StringPtrInput
@@ -189,11 +225,23 @@ type osServicesArgs struct {
 	Scope *string `pulumi:"scope"`
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	StatusConditionLinux *string `pulumi:"statusConditionLinux"`
-	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-	// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-	// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-	// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-	// `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
+	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	// - `$eq(paused)` – Matches services that are in paused state.
+	//
+	// Available logic operations:
+	// - `$not($eq(paused))` – Matches services that are in state different from paused.
+	// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+	//
+	// Use one of the following values as a parameter for this condition:
+	//
+	// - `running`
+	// - `stopped`
+	// - `startPending`
+	// - `stopPending`
+	// - `continuePending`
+	// - `pausePending`
+	// - `paused`
 	StatusConditionWindows *string `pulumi:"statusConditionWindows"`
 	// Possible Values: `LINUX`, `WINDOWS`
 	System string `pulumi:"system"`
@@ -225,11 +273,23 @@ type OsServicesArgs struct {
 	Scope pulumi.StringPtrInput
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	StatusConditionLinux pulumi.StringPtrInput
-	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-	// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-	// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-	// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-	// `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
+	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	// - `$eq(paused)` – Matches services that are in paused state.
+	//
+	// Available logic operations:
+	// - `$not($eq(paused))` – Matches services that are in state different from paused.
+	// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+	//
+	// Use one of the following values as a parameter for this condition:
+	//
+	// - `running`
+	// - `stopped`
+	// - `startPending`
+	// - `stopPending`
+	// - `continuePending`
+	// - `pausePending`
+	// - `paused`
 	StatusConditionWindows pulumi.StringPtrInput
 	// Possible Values: `LINUX`, `WINDOWS`
 	System pulumi.StringInput
@@ -382,11 +442,23 @@ func (o OsServicesOutput) StatusConditionLinux() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OsServices) pulumi.StringPtrOutput { return v.StatusConditionLinux }).(pulumi.StringPtrOutput)
 }
 
-// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-// `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
+// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+//
+// - `$eq(paused)` – Matches services that are in paused state.
+//
+// Available logic operations:
+// - `$not($eq(paused))` – Matches services that are in state different from paused.
+// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+//
+// Use one of the following values as a parameter for this condition:
+//
+// - `running`
+// - `stopped`
+// - `startPending`
+// - `stopPending`
+// - `continuePending`
+// - `pausePending`
+// - `paused`
 func (o OsServicesOutput) StatusConditionWindows() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OsServices) pulumi.StringPtrOutput { return v.StatusConditionWindows }).(pulumi.StringPtrOutput)
 }

@@ -33,11 +33,10 @@ class BusinessEventsProcessingArgs:
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] matcher: [See our documentation](https://dt-url.net/bp234rv)
         :param pulumi.Input[_builtins.str] rule_name: Rule name
-        :param pulumi.Input['BusinessEventsProcessingRuleTestingArgs'] rule_testing: ## Rule testing ### 1. Paste an event sample
+        :param pulumi.Input['BusinessEventsProcessingRuleTestingArgs'] rule_testing: ## Rule testing
+               ### 1. Paste an event sample
         :param pulumi.Input[_builtins.str] script: [See our documentation](https://dt-url.net/pz030w5)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['BusinessEventsProcessingTransformationFieldsArgs'] transformation_fields: Transformation fields
         """
         pulumi.set(__self__, "enabled", enabled)
@@ -90,7 +89,8 @@ class BusinessEventsProcessingArgs:
     @pulumi.getter(name="ruleTesting")
     def rule_testing(self) -> pulumi.Input['BusinessEventsProcessingRuleTestingArgs']:
         """
-        ## Rule testing ### 1. Paste an event sample
+        ## Rule testing
+        ### 1. Paste an event sample
         """
         return pulumi.get(self, "rule_testing")
 
@@ -114,9 +114,7 @@ class BusinessEventsProcessingArgs:
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -150,12 +148,11 @@ class _BusinessEventsProcessingState:
         """
         Input properties used for looking up and filtering BusinessEventsProcessing resources.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] matcher: [See our documentation](https://dt-url.net/bp234rv)
         :param pulumi.Input[_builtins.str] rule_name: Rule name
-        :param pulumi.Input['BusinessEventsProcessingRuleTestingArgs'] rule_testing: ## Rule testing ### 1. Paste an event sample
+        :param pulumi.Input['BusinessEventsProcessingRuleTestingArgs'] rule_testing: ## Rule testing
+               ### 1. Paste an event sample
         :param pulumi.Input[_builtins.str] script: [See our documentation](https://dt-url.net/pz030w5)
         :param pulumi.Input['BusinessEventsProcessingTransformationFieldsArgs'] transformation_fields: Transformation fields
         """
@@ -190,9 +187,7 @@ class _BusinessEventsProcessingState:
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -228,7 +223,8 @@ class _BusinessEventsProcessingState:
     @pulumi.getter(name="ruleTesting")
     def rule_testing(self) -> Optional[pulumi.Input['BusinessEventsProcessingRuleTestingArgs']]:
         """
-        ## Rule testing ### 1. Paste an event sample
+        ## Rule testing
+        ### 1. Paste an event sample
         """
         return pulumi.get(self, "rule_testing")
 
@@ -280,12 +276,11 @@ class BusinessEventsProcessing(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] matcher: [See our documentation](https://dt-url.net/bp234rv)
         :param pulumi.Input[_builtins.str] rule_name: Rule name
-        :param pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing ### 1. Paste an event sample
+        :param pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing
+               ### 1. Paste an event sample
         :param pulumi.Input[_builtins.str] script: [See our documentation](https://dt-url.net/pz030w5)
         :param pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']] transformation_fields: Transformation fields
         """
@@ -370,12 +365,11 @@ class BusinessEventsProcessing(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] matcher: [See our documentation](https://dt-url.net/bp234rv)
         :param pulumi.Input[_builtins.str] rule_name: Rule name
-        :param pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing ### 1. Paste an event sample
+        :param pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing
+               ### 1. Paste an event sample
         :param pulumi.Input[_builtins.str] script: [See our documentation](https://dt-url.net/pz030w5)
         :param pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']] transformation_fields: Transformation fields
         """
@@ -404,9 +398,7 @@ class BusinessEventsProcessing(pulumi.CustomResource):
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> pulumi.Output[_builtins.str]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -430,7 +422,8 @@ class BusinessEventsProcessing(pulumi.CustomResource):
     @pulumi.getter(name="ruleTesting")
     def rule_testing(self) -> pulumi.Output['outputs.BusinessEventsProcessingRuleTesting']:
         """
-        ## Rule testing ### 1. Paste an event sample
+        ## Rule testing
+        ### 1. Paste an event sample
         """
         return pulumi.get(self, "rule_testing")
 

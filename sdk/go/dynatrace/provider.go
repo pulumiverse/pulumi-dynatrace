@@ -21,13 +21,9 @@ type Provider struct {
 	AccountId              pulumi.StringPtrOutput `pulumi:"accountId"`
 	AutomationClientId     pulumi.StringPtrOutput `pulumi:"automationClientId"`
 	AutomationClientSecret pulumi.StringPtrOutput `pulumi:"automationClientSecret"`
-	// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
-	// optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-	// `https://#####.apps.dynatrace.com`
+	// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
 	AutomationEnvUrl pulumi.StringPtrOutput `pulumi:"automationEnvUrl"`
-	// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
-	// `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-	// `https://#####.apps.dynatrace.com`
+	// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
 	AutomationTokenUrl pulumi.StringPtrOutput `pulumi:"automationTokenUrl"`
 	ClientId           pulumi.StringPtrOutput `pulumi:"clientId"`
 	ClientSecret       pulumi.StringPtrOutput `pulumi:"clientSecret"`
@@ -40,8 +36,7 @@ type Provider struct {
 	IamClientSecret    pulumi.StringPtrOutput `pulumi:"iamClientSecret"`
 	IamEndpointUrl     pulumi.StringPtrOutput `pulumi:"iamEndpointUrl"`
 	IamTokenUrl        pulumi.StringPtrOutput `pulumi:"iamTokenUrl"`
-	// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
-	// case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+	// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
 	PlatformToken pulumi.StringPtrOutput `pulumi:"platformToken"`
 }
 
@@ -140,13 +135,9 @@ type providerArgs struct {
 	AccountId              *string `pulumi:"accountId"`
 	AutomationClientId     *string `pulumi:"automationClientId"`
 	AutomationClientSecret *string `pulumi:"automationClientSecret"`
-	// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
-	// optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-	// `https://#####.apps.dynatrace.com`
+	// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
 	AutomationEnvUrl *string `pulumi:"automationEnvUrl"`
-	// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
-	// `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-	// `https://#####.apps.dynatrace.com`
+	// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
 	AutomationTokenUrl *string `pulumi:"automationTokenUrl"`
 	ClientId           *string `pulumi:"clientId"`
 	ClientSecret       *string `pulumi:"clientSecret"`
@@ -159,8 +150,7 @@ type providerArgs struct {
 	IamClientSecret    *string `pulumi:"iamClientSecret"`
 	IamEndpointUrl     *string `pulumi:"iamEndpointUrl"`
 	IamTokenUrl        *string `pulumi:"iamTokenUrl"`
-	// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
-	// case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+	// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
 	PlatformToken *string `pulumi:"platformToken"`
 }
 
@@ -169,13 +159,9 @@ type ProviderArgs struct {
 	AccountId              pulumi.StringPtrInput
 	AutomationClientId     pulumi.StringPtrInput
 	AutomationClientSecret pulumi.StringPtrInput
-	// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
-	// optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-	// `https://#####.apps.dynatrace.com`
+	// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
 	AutomationEnvUrl pulumi.StringPtrInput
-	// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
-	// `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-	// `https://#####.apps.dynatrace.com`
+	// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
 	AutomationTokenUrl pulumi.StringPtrInput
 	ClientId           pulumi.StringPtrInput
 	ClientSecret       pulumi.StringPtrInput
@@ -188,8 +174,7 @@ type ProviderArgs struct {
 	IamClientSecret    pulumi.StringPtrInput
 	IamEndpointUrl     pulumi.StringPtrInput
 	IamTokenUrl        pulumi.StringPtrInput
-	// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
-	// case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+	// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
 	PlatformToken pulumi.StringPtrInput
 }
 
@@ -265,16 +250,12 @@ func (o ProviderOutput) AutomationClientSecret() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AutomationClientSecret }).(pulumi.StringPtrOutput)
 }
 
-// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
-// optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-// `https://#####.apps.dynatrace.com`
+// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
 func (o ProviderOutput) AutomationEnvUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AutomationEnvUrl }).(pulumi.StringPtrOutput)
 }
 
-// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
-// `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-// `https://#####.apps.dynatrace.com`
+// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
 func (o ProviderOutput) AutomationTokenUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AutomationTokenUrl }).(pulumi.StringPtrOutput)
 }
@@ -323,8 +304,7 @@ func (o ProviderOutput) IamTokenUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.IamTokenUrl }).(pulumi.StringPtrOutput)
 }
 
-// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
-// case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
 func (o ProviderOutput) PlatformToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.PlatformToken }).(pulumi.StringPtrOutput)
 }

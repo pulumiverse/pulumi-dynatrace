@@ -14,9 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class AppsecNotification : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// For attack candidate alerts, select an [alerting
-        /// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-        /// delivery of security notifications related to this integration.
+        /// For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
         /// </summary>
         [Output("attackCandidateBasedAlertingProfile")]
         public Output<string?> AttackCandidateBasedAlertingProfile { get; private set; } = null!;
@@ -64,9 +62,7 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.AppsecNotificationJiraConfiguration?> JiraConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// For security problem alerts, select an [alerting
-        /// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-        /// security notifications related to this integration.
+        /// For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
         /// </summary>
         [Output("securityProblemBasedAlertingProfile")]
         public Output<string?> SecurityProblemBasedAlertingProfile { get; private set; } = null!;
@@ -155,9 +151,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class AppsecNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// For attack candidate alerts, select an [alerting
-        /// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-        /// delivery of security notifications related to this integration.
+        /// For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
         /// </summary>
         [Input("attackCandidateBasedAlertingProfile")]
         public Input<string>? AttackCandidateBasedAlertingProfile { get; set; }
@@ -205,9 +199,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AppsecNotificationJiraConfigurationArgs>? JiraConfiguration { get; set; }
 
         /// <summary>
-        /// For security problem alerts, select an [alerting
-        /// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-        /// security notifications related to this integration.
+        /// For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
         /// </summary>
         [Input("securityProblemBasedAlertingProfile")]
         public Input<string>? SecurityProblemBasedAlertingProfile { get; set; }
@@ -257,9 +249,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class AppsecNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// For attack candidate alerts, select an [alerting
-        /// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-        /// delivery of security notifications related to this integration.
+        /// For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
         /// </summary>
         [Input("attackCandidateBasedAlertingProfile")]
         public Input<string>? AttackCandidateBasedAlertingProfile { get; set; }
@@ -307,9 +297,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AppsecNotificationJiraConfigurationGetArgs>? JiraConfiguration { get; set; }
 
         /// <summary>
-        /// For security problem alerts, select an [alerting
-        /// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-        /// security notifications related to this integration.
+        /// For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
         /// </summary>
         [Input("securityProblemBasedAlertingProfile")]
         public Input<string>? SecurityProblemBasedAlertingProfile { get; set; }

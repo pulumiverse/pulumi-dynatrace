@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			userA, err := dynatrace.LookupIamUser(ctx, &dynatrace.LookupIamUserArgs{
-//				Email: "me@home.com",
+//				Email: "me@example.com",
 //			}, nil)
 //			if err != nil {
 //				return err

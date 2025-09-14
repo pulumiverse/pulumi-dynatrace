@@ -53,13 +53,16 @@ export class SyntheticLocation extends pulumi.CustomResource {
      */
     declare public readonly city: pulumi.Output<string | undefined>;
     /**
-     * The country code of the location. To fetch the list of available country codes, use the [GET all
-     * countries](https://dt-url.net/37030go) request
+     * The country code of the location. 
+     *
+     *  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
      */
     declare public readonly countryCode: pulumi.Output<string | undefined>;
     /**
-     * The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
-     * location is deployed on Kubernetes
+     * The deployment type of the location: 
+     *
+     * * `STANDARD`: The location is deployed on Windows or Linux.
+     * * `KUBERNETES`: The location is deployed on Kubernetes
      */
     declare public readonly deploymentType: pulumi.Output<string | undefined>;
     /**
@@ -67,8 +70,9 @@ export class SyntheticLocation extends pulumi.CustomResource {
      */
     declare public readonly latitude: pulumi.Output<number>;
     /**
-     * Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
-     * **availability_location_outage** or **availability_node_outage** is set to `true`
+     * Alert if the location or node outage lasts longer than *X* minutes. 
+     *
+     *  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
      */
     declare public readonly locationNodeOutageDelayInMinutes: pulumi.Output<number | undefined>;
     /**
@@ -96,13 +100,15 @@ export class SyntheticLocation extends pulumi.CustomResource {
      */
     declare public readonly nodeSize: pulumi.Output<string | undefined>;
     /**
-     * A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
-     * nodes](https://dt-url.net/miy3rpl) call
+     * A list of synthetic nodes belonging to the location. 
+     *
+     *  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
      */
     declare public readonly nodes: pulumi.Output<string[] | undefined>;
     /**
-     * The region code of the location. To fetch the list of available region codes, use the [GET regions of the
-     * country](https://dt-url.net/az230x0) request
+     * The region code of the location. 
+     *
+     *  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
      */
     declare public readonly regionCode: pulumi.Output<string | undefined>;
     /**
@@ -198,13 +204,16 @@ export interface SyntheticLocationState {
      */
     city?: pulumi.Input<string>;
     /**
-     * The country code of the location. To fetch the list of available country codes, use the [GET all
-     * countries](https://dt-url.net/37030go) request
+     * The country code of the location. 
+     *
+     *  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
      */
     countryCode?: pulumi.Input<string>;
     /**
-     * The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
-     * location is deployed on Kubernetes
+     * The deployment type of the location: 
+     *
+     * * `STANDARD`: The location is deployed on Windows or Linux.
+     * * `KUBERNETES`: The location is deployed on Kubernetes
      */
     deploymentType?: pulumi.Input<string>;
     /**
@@ -212,8 +221,9 @@ export interface SyntheticLocationState {
      */
     latitude?: pulumi.Input<number>;
     /**
-     * Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
-     * **availability_location_outage** or **availability_node_outage** is set to `true`
+     * Alert if the location or node outage lasts longer than *X* minutes. 
+     *
+     *  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
      */
     locationNodeOutageDelayInMinutes?: pulumi.Input<number>;
     /**
@@ -241,13 +251,15 @@ export interface SyntheticLocationState {
      */
     nodeSize?: pulumi.Input<string>;
     /**
-     * A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
-     * nodes](https://dt-url.net/miy3rpl) call
+     * A list of synthetic nodes belonging to the location. 
+     *
+     *  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
      */
     nodes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The region code of the location. To fetch the list of available region codes, use the [GET regions of the
-     * country](https://dt-url.net/az230x0) request
+     * The region code of the location. 
+     *
+     *  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
      */
     regionCode?: pulumi.Input<string>;
     /**
@@ -281,13 +293,16 @@ export interface SyntheticLocationArgs {
      */
     city?: pulumi.Input<string>;
     /**
-     * The country code of the location. To fetch the list of available country codes, use the [GET all
-     * countries](https://dt-url.net/37030go) request
+     * The country code of the location. 
+     *
+     *  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
      */
     countryCode?: pulumi.Input<string>;
     /**
-     * The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
-     * location is deployed on Kubernetes
+     * The deployment type of the location: 
+     *
+     * * `STANDARD`: The location is deployed on Windows or Linux.
+     * * `KUBERNETES`: The location is deployed on Kubernetes
      */
     deploymentType?: pulumi.Input<string>;
     /**
@@ -295,8 +310,9 @@ export interface SyntheticLocationArgs {
      */
     latitude: pulumi.Input<number>;
     /**
-     * Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
-     * **availability_location_outage** or **availability_node_outage** is set to `true`
+     * Alert if the location or node outage lasts longer than *X* minutes. 
+     *
+     *  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
      */
     locationNodeOutageDelayInMinutes?: pulumi.Input<number>;
     /**
@@ -324,13 +340,15 @@ export interface SyntheticLocationArgs {
      */
     nodeSize?: pulumi.Input<string>;
     /**
-     * A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
-     * nodes](https://dt-url.net/miy3rpl) call
+     * A list of synthetic nodes belonging to the location. 
+     *
+     *  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
      */
     nodes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The region code of the location. To fetch the list of available region codes, use the [GET regions of the
-     * country](https://dt-url.net/az230x0) request
+     * The region code of the location. 
+     *
+     *  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
      */
     regionCode?: pulumi.Input<string>;
     /**

@@ -28,12 +28,9 @@ class DeclarativeGroupingArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DeclarativeGrouping resource.
-        :param pulumi.Input['DeclarativeGroupingDetectionArgs'] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-               group.
+        :param pulumi.Input['DeclarativeGroupingDetectionArgs'] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] name: Monitored technology name
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -50,8 +47,7 @@ class DeclarativeGroupingArgs:
     @pulumi.getter
     def detection(self) -> pulumi.Input['DeclarativeGroupingDetectionArgs']:
         """
-        Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-        group.
+        Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         """
         return pulumi.get(self, "detection")
 
@@ -75,9 +71,7 @@ class DeclarativeGroupingArgs:
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -120,12 +114,9 @@ class _DeclarativeGroupingState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DeclarativeGrouping resources.
-        :param pulumi.Input['DeclarativeGroupingDetectionArgs'] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-               group.
+        :param pulumi.Input['DeclarativeGroupingDetectionArgs'] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] name: Monitored technology name
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -144,8 +135,7 @@ class _DeclarativeGroupingState:
     @pulumi.getter
     def detection(self) -> Optional[pulumi.Input['DeclarativeGroupingDetectionArgs']]:
         """
-        Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-        group.
+        Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         """
         return pulumi.get(self, "detection")
 
@@ -169,9 +159,7 @@ class _DeclarativeGroupingState:
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -220,12 +208,9 @@ class DeclarativeGrouping(pulumi.CustomResource):
         Create a DeclarativeGrouping resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DeclarativeGroupingDetectionArgs', 'DeclarativeGroupingDetectionArgsDict']] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-               group.
+        :param pulumi.Input[Union['DeclarativeGroupingDetectionArgs', 'DeclarativeGroupingDetectionArgsDict']] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] name: Monitored technology name
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -297,12 +282,9 @@ class DeclarativeGrouping(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DeclarativeGroupingDetectionArgs', 'DeclarativeGroupingDetectionArgsDict']] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-               group.
+        :param pulumi.Input[Union['DeclarativeGroupingDetectionArgs', 'DeclarativeGroupingDetectionArgsDict']] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] name: Monitored technology name
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -321,8 +303,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
     @pulumi.getter
     def detection(self) -> pulumi.Output['outputs.DeclarativeGroupingDetection']:
         """
-        Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-        group.
+        Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         """
         return pulumi.get(self, "detection")
 
@@ -338,9 +319,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> pulumi.Output[_builtins.str]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 

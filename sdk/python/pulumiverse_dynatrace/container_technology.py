@@ -31,13 +31,53 @@ class ContainerTechnologyArgs:
         """
         The set of arguments for constructing a ContainerTechnology resource.
         :param pulumi.Input[_builtins.bool] bosh_process_manager: Platform: Cloud Foundry
-        :param pulumi.Input[_builtins.bool] containerd: Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
-        :param pulumi.Input[_builtins.bool] crio: Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
-        :param pulumi.Input[_builtins.bool] docker: Platform: Docker and Kubernetes Status: Released Operating system: Linux
-        :param pulumi.Input[_builtins.bool] docker_windows: Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
-        :param pulumi.Input[_builtins.bool] garden: Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
-        :param pulumi.Input[_builtins.bool] podman: Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
-        :param pulumi.Input[_builtins.bool] winc: Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+        :param pulumi.Input[_builtins.bool] containerd: Platform: Kubernetes
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.169
+        :param pulumi.Input[_builtins.bool] crio: Platform: Kubernetes
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.163
+        :param pulumi.Input[_builtins.bool] docker: Platform: Docker and Kubernetes
+               
+               Status: Released
+               
+               Operating system: Linux
+        :param pulumi.Input[_builtins.bool] docker_windows: Platform: Docker
+               
+               Status: Early adopter
+               
+               Operating system: Windows
+               
+               Min agent version: 1.149
+        :param pulumi.Input[_builtins.bool] garden: Platform: Cloud Foundry
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.133
+        :param pulumi.Input[_builtins.bool] podman: Platform: Podman
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.267
+        :param pulumi.Input[_builtins.bool] winc: Platform: Cloud Foundry
+               
+               Status: Early adopter
+               
+               Operating system: Windows
+               
+               Min agent version: 1.175
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "bosh_process_manager", bosh_process_manager)
@@ -67,7 +107,13 @@ class ContainerTechnologyArgs:
     @pulumi.getter
     def containerd(self) -> pulumi.Input[_builtins.bool]:
         """
-        Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+        Platform: Kubernetes
+
+        Status: Released
+
+        Operating system: Linux
+
+        Min agent version: 1.169
         """
         return pulumi.get(self, "containerd")
 
@@ -79,7 +125,13 @@ class ContainerTechnologyArgs:
     @pulumi.getter
     def crio(self) -> pulumi.Input[_builtins.bool]:
         """
-        Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+        Platform: Kubernetes
+
+        Status: Released
+
+        Operating system: Linux
+
+        Min agent version: 1.163
         """
         return pulumi.get(self, "crio")
 
@@ -91,7 +143,11 @@ class ContainerTechnologyArgs:
     @pulumi.getter
     def docker(self) -> pulumi.Input[_builtins.bool]:
         """
-        Platform: Docker and Kubernetes Status: Released Operating system: Linux
+        Platform: Docker and Kubernetes
+
+        Status: Released
+
+        Operating system: Linux
         """
         return pulumi.get(self, "docker")
 
@@ -103,7 +159,13 @@ class ContainerTechnologyArgs:
     @pulumi.getter(name="dockerWindows")
     def docker_windows(self) -> pulumi.Input[_builtins.bool]:
         """
-        Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+        Platform: Docker
+
+        Status: Early adopter
+
+        Operating system: Windows
+
+        Min agent version: 1.149
         """
         return pulumi.get(self, "docker_windows")
 
@@ -115,7 +177,13 @@ class ContainerTechnologyArgs:
     @pulumi.getter
     def garden(self) -> pulumi.Input[_builtins.bool]:
         """
-        Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+        Platform: Cloud Foundry
+
+        Status: Released
+
+        Operating system: Linux
+
+        Min agent version: 1.133
         """
         return pulumi.get(self, "garden")
 
@@ -127,7 +195,13 @@ class ContainerTechnologyArgs:
     @pulumi.getter
     def podman(self) -> pulumi.Input[_builtins.bool]:
         """
-        Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        Platform: Podman
+
+        Status: Released
+
+        Operating system: Linux
+
+        Min agent version: 1.267
         """
         return pulumi.get(self, "podman")
 
@@ -139,7 +213,13 @@ class ContainerTechnologyArgs:
     @pulumi.getter
     def winc(self) -> pulumi.Input[_builtins.bool]:
         """
-        Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+        Platform: Cloud Foundry
+
+        Status: Early adopter
+
+        Operating system: Windows
+
+        Min agent version: 1.175
         """
         return pulumi.get(self, "winc")
 
@@ -175,14 +255,54 @@ class _ContainerTechnologyState:
         """
         Input properties used for looking up and filtering ContainerTechnology resources.
         :param pulumi.Input[_builtins.bool] bosh_process_manager: Platform: Cloud Foundry
-        :param pulumi.Input[_builtins.bool] containerd: Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
-        :param pulumi.Input[_builtins.bool] crio: Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
-        :param pulumi.Input[_builtins.bool] docker: Platform: Docker and Kubernetes Status: Released Operating system: Linux
-        :param pulumi.Input[_builtins.bool] docker_windows: Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
-        :param pulumi.Input[_builtins.bool] garden: Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
-        :param pulumi.Input[_builtins.bool] podman: Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        :param pulumi.Input[_builtins.bool] containerd: Platform: Kubernetes
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.169
+        :param pulumi.Input[_builtins.bool] crio: Platform: Kubernetes
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.163
+        :param pulumi.Input[_builtins.bool] docker: Platform: Docker and Kubernetes
+               
+               Status: Released
+               
+               Operating system: Linux
+        :param pulumi.Input[_builtins.bool] docker_windows: Platform: Docker
+               
+               Status: Early adopter
+               
+               Operating system: Windows
+               
+               Min agent version: 1.149
+        :param pulumi.Input[_builtins.bool] garden: Platform: Cloud Foundry
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.133
+        :param pulumi.Input[_builtins.bool] podman: Platform: Podman
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.267
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[_builtins.bool] winc: Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+        :param pulumi.Input[_builtins.bool] winc: Platform: Cloud Foundry
+               
+               Status: Early adopter
+               
+               Operating system: Windows
+               
+               Min agent version: 1.175
         """
         if bosh_process_manager is not None:
             pulumi.set(__self__, "bosh_process_manager", bosh_process_manager)
@@ -219,7 +339,13 @@ class _ContainerTechnologyState:
     @pulumi.getter
     def containerd(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+        Platform: Kubernetes
+
+        Status: Released
+
+        Operating system: Linux
+
+        Min agent version: 1.169
         """
         return pulumi.get(self, "containerd")
 
@@ -231,7 +357,13 @@ class _ContainerTechnologyState:
     @pulumi.getter
     def crio(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+        Platform: Kubernetes
+
+        Status: Released
+
+        Operating system: Linux
+
+        Min agent version: 1.163
         """
         return pulumi.get(self, "crio")
 
@@ -243,7 +375,11 @@ class _ContainerTechnologyState:
     @pulumi.getter
     def docker(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Platform: Docker and Kubernetes Status: Released Operating system: Linux
+        Platform: Docker and Kubernetes
+
+        Status: Released
+
+        Operating system: Linux
         """
         return pulumi.get(self, "docker")
 
@@ -255,7 +391,13 @@ class _ContainerTechnologyState:
     @pulumi.getter(name="dockerWindows")
     def docker_windows(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+        Platform: Docker
+
+        Status: Early adopter
+
+        Operating system: Windows
+
+        Min agent version: 1.149
         """
         return pulumi.get(self, "docker_windows")
 
@@ -267,7 +409,13 @@ class _ContainerTechnologyState:
     @pulumi.getter
     def garden(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+        Platform: Cloud Foundry
+
+        Status: Released
+
+        Operating system: Linux
+
+        Min agent version: 1.133
         """
         return pulumi.get(self, "garden")
 
@@ -279,7 +427,13 @@ class _ContainerTechnologyState:
     @pulumi.getter
     def podman(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        Platform: Podman
+
+        Status: Released
+
+        Operating system: Linux
+
+        Min agent version: 1.267
         """
         return pulumi.get(self, "podman")
 
@@ -303,7 +457,13 @@ class _ContainerTechnologyState:
     @pulumi.getter
     def winc(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+        Platform: Cloud Foundry
+
+        Status: Early adopter
+
+        Operating system: Windows
+
+        Min agent version: 1.175
         """
         return pulumi.get(self, "winc")
 
@@ -333,14 +493,54 @@ class ContainerTechnology(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] bosh_process_manager: Platform: Cloud Foundry
-        :param pulumi.Input[_builtins.bool] containerd: Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
-        :param pulumi.Input[_builtins.bool] crio: Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
-        :param pulumi.Input[_builtins.bool] docker: Platform: Docker and Kubernetes Status: Released Operating system: Linux
-        :param pulumi.Input[_builtins.bool] docker_windows: Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
-        :param pulumi.Input[_builtins.bool] garden: Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
-        :param pulumi.Input[_builtins.bool] podman: Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        :param pulumi.Input[_builtins.bool] containerd: Platform: Kubernetes
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.169
+        :param pulumi.Input[_builtins.bool] crio: Platform: Kubernetes
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.163
+        :param pulumi.Input[_builtins.bool] docker: Platform: Docker and Kubernetes
+               
+               Status: Released
+               
+               Operating system: Linux
+        :param pulumi.Input[_builtins.bool] docker_windows: Platform: Docker
+               
+               Status: Early adopter
+               
+               Operating system: Windows
+               
+               Min agent version: 1.149
+        :param pulumi.Input[_builtins.bool] garden: Platform: Cloud Foundry
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.133
+        :param pulumi.Input[_builtins.bool] podman: Platform: Podman
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.267
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[_builtins.bool] winc: Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+        :param pulumi.Input[_builtins.bool] winc: Platform: Cloud Foundry
+               
+               Status: Early adopter
+               
+               Operating system: Windows
+               
+               Min agent version: 1.175
         """
         ...
     @overload
@@ -435,14 +635,54 @@ class ContainerTechnology(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] bosh_process_manager: Platform: Cloud Foundry
-        :param pulumi.Input[_builtins.bool] containerd: Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
-        :param pulumi.Input[_builtins.bool] crio: Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
-        :param pulumi.Input[_builtins.bool] docker: Platform: Docker and Kubernetes Status: Released Operating system: Linux
-        :param pulumi.Input[_builtins.bool] docker_windows: Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
-        :param pulumi.Input[_builtins.bool] garden: Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
-        :param pulumi.Input[_builtins.bool] podman: Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        :param pulumi.Input[_builtins.bool] containerd: Platform: Kubernetes
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.169
+        :param pulumi.Input[_builtins.bool] crio: Platform: Kubernetes
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.163
+        :param pulumi.Input[_builtins.bool] docker: Platform: Docker and Kubernetes
+               
+               Status: Released
+               
+               Operating system: Linux
+        :param pulumi.Input[_builtins.bool] docker_windows: Platform: Docker
+               
+               Status: Early adopter
+               
+               Operating system: Windows
+               
+               Min agent version: 1.149
+        :param pulumi.Input[_builtins.bool] garden: Platform: Cloud Foundry
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.133
+        :param pulumi.Input[_builtins.bool] podman: Platform: Podman
+               
+               Status: Released
+               
+               Operating system: Linux
+               
+               Min agent version: 1.267
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[_builtins.bool] winc: Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+        :param pulumi.Input[_builtins.bool] winc: Platform: Cloud Foundry
+               
+               Status: Early adopter
+               
+               Operating system: Windows
+               
+               Min agent version: 1.175
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -471,7 +711,13 @@ class ContainerTechnology(pulumi.CustomResource):
     @pulumi.getter
     def containerd(self) -> pulumi.Output[_builtins.bool]:
         """
-        Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+        Platform: Kubernetes
+
+        Status: Released
+
+        Operating system: Linux
+
+        Min agent version: 1.169
         """
         return pulumi.get(self, "containerd")
 
@@ -479,7 +725,13 @@ class ContainerTechnology(pulumi.CustomResource):
     @pulumi.getter
     def crio(self) -> pulumi.Output[_builtins.bool]:
         """
-        Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+        Platform: Kubernetes
+
+        Status: Released
+
+        Operating system: Linux
+
+        Min agent version: 1.163
         """
         return pulumi.get(self, "crio")
 
@@ -487,7 +739,11 @@ class ContainerTechnology(pulumi.CustomResource):
     @pulumi.getter
     def docker(self) -> pulumi.Output[_builtins.bool]:
         """
-        Platform: Docker and Kubernetes Status: Released Operating system: Linux
+        Platform: Docker and Kubernetes
+
+        Status: Released
+
+        Operating system: Linux
         """
         return pulumi.get(self, "docker")
 
@@ -495,7 +751,13 @@ class ContainerTechnology(pulumi.CustomResource):
     @pulumi.getter(name="dockerWindows")
     def docker_windows(self) -> pulumi.Output[_builtins.bool]:
         """
-        Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+        Platform: Docker
+
+        Status: Early adopter
+
+        Operating system: Windows
+
+        Min agent version: 1.149
         """
         return pulumi.get(self, "docker_windows")
 
@@ -503,7 +765,13 @@ class ContainerTechnology(pulumi.CustomResource):
     @pulumi.getter
     def garden(self) -> pulumi.Output[_builtins.bool]:
         """
-        Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+        Platform: Cloud Foundry
+
+        Status: Released
+
+        Operating system: Linux
+
+        Min agent version: 1.133
         """
         return pulumi.get(self, "garden")
 
@@ -511,7 +779,13 @@ class ContainerTechnology(pulumi.CustomResource):
     @pulumi.getter
     def podman(self) -> pulumi.Output[_builtins.bool]:
         """
-        Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        Platform: Podman
+
+        Status: Released
+
+        Operating system: Linux
+
+        Min agent version: 1.267
         """
         return pulumi.get(self, "podman")
 
@@ -527,7 +801,13 @@ class ContainerTechnology(pulumi.CustomResource):
     @pulumi.getter
     def winc(self) -> pulumi.Output[_builtins.bool]:
         """
-        Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+        Platform: Cloud Foundry
+
+        Status: Early adopter
+
+        Operating system: Windows
+
+        Min agent version: 1.175
         """
         return pulumi.get(self, "winc")
 

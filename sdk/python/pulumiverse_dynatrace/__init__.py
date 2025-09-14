@@ -112,12 +112,15 @@ from .disk_specific_anomalies_v2 import *
 from .document import *
 from .ebpf_service_discovery import *
 from .email_notification import *
+from .endpoint_detection_rules import *
+from .endpoint_detection_rules_optin import *
 from .environment import *
 from .eula_settings import *
 from .event_driven_ansible_connections import *
 from .extension_execution_controller import *
 from .extension_execution_remote import *
 from .failure_detection_parameters import *
+from .failure_detection_rule_sets import *
 from .failure_detection_rules import *
 from .frequent_issues import *
 from .generic_relationships import *
@@ -369,6 +372,7 @@ from .service_splitting import *
 from .servicenow_connection import *
 from .session_replay_resource_capture import *
 from .session_replay_web_privacy import *
+from .settings_permissions import *
 from .site_reliability_guardian import *
 from .slack_notification import *
 from .slo import *
@@ -1291,6 +1295,22 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/endpointDetectionRules",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/endpointDetectionRules:EndpointDetectionRules": "EndpointDetectionRules"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/endpointDetectionRulesOptin",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/endpointDetectionRulesOptin:EndpointDetectionRulesOptin": "EndpointDetectionRulesOptin"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/environment",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -1335,6 +1355,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/failureDetectionParameters:FailureDetectionParameters": "FailureDetectionParameters"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/failureDetectionRuleSets",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/failureDetectionRuleSets:FailureDetectionRuleSets": "FailureDetectionRuleSets"
   }
  },
  {
@@ -2911,6 +2939,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/sessionReplayWebPrivacy:SessionReplayWebPrivacy": "SessionReplayWebPrivacy"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/settingsPermissions",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/settingsPermissions:SettingsPermissions": "SettingsPermissions"
   }
  },
  {

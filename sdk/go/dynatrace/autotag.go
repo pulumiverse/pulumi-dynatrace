@@ -18,11 +18,9 @@ type Autotag struct {
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules AutotagEntitySelectorBasedRuleArrayOutput `pulumi:"entitySelectorBasedRules"`
-	// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-	// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-	// `Infrastructure:Windows` and `Infrastructure:Linux`.
+	// The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+	// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
 	Rules AutotagRuleArrayOutput `pulumi:"rules"`
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns pulumi.StringPtrOutput `pulumi:"unknowns"`
@@ -62,11 +60,9 @@ type autotagState struct {
 	Description *string `pulumi:"description"`
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules []AutotagEntitySelectorBasedRule `pulumi:"entitySelectorBasedRules"`
-	// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-	// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-	// `Infrastructure:Windows` and `Infrastructure:Linux`.
+	// The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
 	Name *string `pulumi:"name"`
-	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+	// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
 	Rules []AutotagRule `pulumi:"rules"`
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns *string `pulumi:"unknowns"`
@@ -77,11 +73,9 @@ type AutotagState struct {
 	Description pulumi.StringPtrInput
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules AutotagEntitySelectorBasedRuleArrayInput
-	// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-	// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-	// `Infrastructure:Windows` and `Infrastructure:Linux`.
+	// The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
 	Name pulumi.StringPtrInput
-	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+	// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
 	Rules AutotagRuleArrayInput
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns pulumi.StringPtrInput
@@ -96,11 +90,9 @@ type autotagArgs struct {
 	Description *string `pulumi:"description"`
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules []AutotagEntitySelectorBasedRule `pulumi:"entitySelectorBasedRules"`
-	// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-	// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-	// `Infrastructure:Windows` and `Infrastructure:Linux`.
+	// The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
 	Name *string `pulumi:"name"`
-	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+	// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
 	Rules []AutotagRule `pulumi:"rules"`
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns *string `pulumi:"unknowns"`
@@ -112,11 +104,9 @@ type AutotagArgs struct {
 	Description pulumi.StringPtrInput
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules AutotagEntitySelectorBasedRuleArrayInput
-	// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-	// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-	// `Infrastructure:Windows` and `Infrastructure:Linux`.
+	// The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
 	Name pulumi.StringPtrInput
-	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+	// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
 	Rules AutotagRuleArrayInput
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns pulumi.StringPtrInput
@@ -219,14 +209,12 @@ func (o AutotagOutput) EntitySelectorBasedRules() AutotagEntitySelectorBasedRule
 	return o.ApplyT(func(v *Autotag) AutotagEntitySelectorBasedRuleArrayOutput { return v.EntitySelectorBasedRules }).(AutotagEntitySelectorBasedRuleArrayOutput)
 }
 
-// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-// `Infrastructure:Windows` and `Infrastructure:Linux`.
+// The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
 func (o AutotagOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Autotag) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
 func (o AutotagOutput) Rules() AutotagRuleArrayOutput {
 	return o.ApplyT(func(v *Autotag) AutotagRuleArrayOutput { return v.Rules }).(AutotagRuleArrayOutput)
 }

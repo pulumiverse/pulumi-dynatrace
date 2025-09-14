@@ -16,11 +16,9 @@ type DiskOptions struct {
 
 	// Deactivate NFS monitoring on all supported systems
 	DisableNfsDiskMonitoring pulumi.BoolPtrOutput `pulumi:"disableNfsDiskMonitoring"`
-	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
-	// disks from the monitoring list.
+	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
 	Exclusions DiskOptionsExclusionsPtrOutput `pulumi:"exclusions"`
-	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
-	// Requires OneAgent 1.209 or later
+	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
 	NfsShowAll pulumi.BoolPtrOutput `pulumi:"nfsShowAll"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
@@ -58,11 +56,9 @@ func GetDiskOptions(ctx *pulumi.Context,
 type diskOptionsState struct {
 	// Deactivate NFS monitoring on all supported systems
 	DisableNfsDiskMonitoring *bool `pulumi:"disableNfsDiskMonitoring"`
-	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
-	// disks from the monitoring list.
+	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
 	Exclusions *DiskOptionsExclusions `pulumi:"exclusions"`
-	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
-	// Requires OneAgent 1.209 or later
+	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
 	NfsShowAll *bool `pulumi:"nfsShowAll"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
@@ -71,11 +67,9 @@ type diskOptionsState struct {
 type DiskOptionsState struct {
 	// Deactivate NFS monitoring on all supported systems
 	DisableNfsDiskMonitoring pulumi.BoolPtrInput
-	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
-	// disks from the monitoring list.
+	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
 	Exclusions DiskOptionsExclusionsPtrInput
-	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
-	// Requires OneAgent 1.209 or later
+	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
 	NfsShowAll pulumi.BoolPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
@@ -88,11 +82,9 @@ func (DiskOptionsState) ElementType() reflect.Type {
 type diskOptionsArgs struct {
 	// Deactivate NFS monitoring on all supported systems
 	DisableNfsDiskMonitoring *bool `pulumi:"disableNfsDiskMonitoring"`
-	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
-	// disks from the monitoring list.
+	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
 	Exclusions *DiskOptionsExclusions `pulumi:"exclusions"`
-	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
-	// Requires OneAgent 1.209 or later
+	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
 	NfsShowAll *bool `pulumi:"nfsShowAll"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
@@ -102,11 +94,9 @@ type diskOptionsArgs struct {
 type DiskOptionsArgs struct {
 	// Deactivate NFS monitoring on all supported systems
 	DisableNfsDiskMonitoring pulumi.BoolPtrInput
-	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
-	// disks from the monitoring list.
+	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
 	Exclusions DiskOptionsExclusionsPtrInput
-	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
-	// Requires OneAgent 1.209 or later
+	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
 	NfsShowAll pulumi.BoolPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
@@ -204,14 +194,12 @@ func (o DiskOptionsOutput) DisableNfsDiskMonitoring() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DiskOptions) pulumi.BoolPtrOutput { return v.DisableNfsDiskMonitoring }).(pulumi.BoolPtrOutput)
 }
 
-// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
-// disks from the monitoring list.
+// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
 func (o DiskOptionsOutput) Exclusions() DiskOptionsExclusionsPtrOutput {
 	return o.ApplyT(func(v *DiskOptions) DiskOptionsExclusionsPtrOutput { return v.Exclusions }).(DiskOptionsExclusionsPtrOutput)
 }
 
-// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
-// Requires OneAgent 1.209 or later
+// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
 func (o DiskOptionsOutput) NfsShowAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DiskOptions) pulumi.BoolPtrOutput { return v.NfsShowAll }).(pulumi.BoolPtrOutput)
 }

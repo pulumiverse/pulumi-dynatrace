@@ -31,19 +31,19 @@ class OpentelemetryMetricsArgs:
         The set of arguments for constructing a OpentelemetryMetrics resource.
         :param pulumi.Input['OpentelemetryMetricsAdditionalAttributesArgs'] additional_attributes: When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
         :param pulumi.Input[_builtins.bool] additional_attributes_to_dimension_enabled: Add the resource and scope attributes configured below as dimensions
-        :param pulumi.Input[_builtins.bool] meter_name_to_dimension_enabled: When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs)
-               and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics. **Note:**
-               Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and
-               alerts that make use of these dimensions. In this case, they will need to be updated manually
+        :param pulumi.Input[_builtins.bool] meter_name_to_dimension_enabled: When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
+               
+               **Note:** Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input['OpentelemetryMetricsToDropAttributesArgs'] to_drop_attributes: The attributes defined in the list below will be dropped from all ingested OTLP metrics. Upon ingest, the *Allow list:
-               resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny
-               list therefore applies to all attributes from all sources (data points, scope and resource). **Notes:** * Modifying this
-               setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on
-               existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated
-               manually. * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages
-               these attributes to [Enrich
-               metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+        :param pulumi.Input['OpentelemetryMetricsToDropAttributesArgs'] to_drop_attributes: The attributes defined in the list below will be dropped from all ingested OTLP metrics.
+               
+               Upon ingest, the *Allow list: resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny list therefore applies to all attributes from all sources (data points, scope and resource).
+               
+               **Notes:**
+               
+               * Modifying this setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually.
+               
+               * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
         """
         if additional_attributes is not None:
             pulumi.set(__self__, "additional_attributes", additional_attributes)
@@ -86,10 +86,9 @@ class OpentelemetryMetricsArgs:
     @pulumi.getter(name="meterNameToDimensionEnabled")
     def meter_name_to_dimension_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs)
-        and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics. **Note:**
-        Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and
-        alerts that make use of these dimensions. In this case, they will need to be updated manually
+        When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
+
+        **Note:** Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually
         """
         return pulumi.get(self, "meter_name_to_dimension_enabled")
 
@@ -122,14 +121,15 @@ class OpentelemetryMetricsArgs:
     @pulumi.getter(name="toDropAttributes")
     def to_drop_attributes(self) -> Optional[pulumi.Input['OpentelemetryMetricsToDropAttributesArgs']]:
         """
-        The attributes defined in the list below will be dropped from all ingested OTLP metrics. Upon ingest, the *Allow list:
-        resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny
-        list therefore applies to all attributes from all sources (data points, scope and resource). **Notes:** * Modifying this
-        setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on
-        existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated
-        manually. * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages
-        these attributes to [Enrich
-        metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+        The attributes defined in the list below will be dropped from all ingested OTLP metrics.
+
+        Upon ingest, the *Allow list: resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny list therefore applies to all attributes from all sources (data points, scope and resource).
+
+        **Notes:**
+
+        * Modifying this setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually.
+
+        * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
         """
         return pulumi.get(self, "to_drop_attributes")
 
@@ -151,19 +151,19 @@ class _OpentelemetryMetricsState:
         Input properties used for looking up and filtering OpentelemetryMetrics resources.
         :param pulumi.Input['OpentelemetryMetricsAdditionalAttributesArgs'] additional_attributes: When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
         :param pulumi.Input[_builtins.bool] additional_attributes_to_dimension_enabled: Add the resource and scope attributes configured below as dimensions
-        :param pulumi.Input[_builtins.bool] meter_name_to_dimension_enabled: When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs)
-               and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics. **Note:**
-               Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and
-               alerts that make use of these dimensions. In this case, they will need to be updated manually
+        :param pulumi.Input[_builtins.bool] meter_name_to_dimension_enabled: When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
+               
+               **Note:** Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input['OpentelemetryMetricsToDropAttributesArgs'] to_drop_attributes: The attributes defined in the list below will be dropped from all ingested OTLP metrics. Upon ingest, the *Allow list:
-               resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny
-               list therefore applies to all attributes from all sources (data points, scope and resource). **Notes:** * Modifying this
-               setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on
-               existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated
-               manually. * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages
-               these attributes to [Enrich
-               metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+        :param pulumi.Input['OpentelemetryMetricsToDropAttributesArgs'] to_drop_attributes: The attributes defined in the list below will be dropped from all ingested OTLP metrics.
+               
+               Upon ingest, the *Allow list: resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny list therefore applies to all attributes from all sources (data points, scope and resource).
+               
+               **Notes:**
+               
+               * Modifying this setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually.
+               
+               * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
         """
         if additional_attributes is not None:
             pulumi.set(__self__, "additional_attributes", additional_attributes)
@@ -206,10 +206,9 @@ class _OpentelemetryMetricsState:
     @pulumi.getter(name="meterNameToDimensionEnabled")
     def meter_name_to_dimension_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs)
-        and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics. **Note:**
-        Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and
-        alerts that make use of these dimensions. In this case, they will need to be updated manually
+        When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
+
+        **Note:** Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually
         """
         return pulumi.get(self, "meter_name_to_dimension_enabled")
 
@@ -242,14 +241,15 @@ class _OpentelemetryMetricsState:
     @pulumi.getter(name="toDropAttributes")
     def to_drop_attributes(self) -> Optional[pulumi.Input['OpentelemetryMetricsToDropAttributesArgs']]:
         """
-        The attributes defined in the list below will be dropped from all ingested OTLP metrics. Upon ingest, the *Allow list:
-        resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny
-        list therefore applies to all attributes from all sources (data points, scope and resource). **Notes:** * Modifying this
-        setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on
-        existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated
-        manually. * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages
-        these attributes to [Enrich
-        metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+        The attributes defined in the list below will be dropped from all ingested OTLP metrics.
+
+        Upon ingest, the *Allow list: resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny list therefore applies to all attributes from all sources (data points, scope and resource).
+
+        **Notes:**
+
+        * Modifying this setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually.
+
+        * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
         """
         return pulumi.get(self, "to_drop_attributes")
 
@@ -277,19 +277,19 @@ class OpentelemetryMetrics(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict']] additional_attributes: When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
         :param pulumi.Input[_builtins.bool] additional_attributes_to_dimension_enabled: Add the resource and scope attributes configured below as dimensions
-        :param pulumi.Input[_builtins.bool] meter_name_to_dimension_enabled: When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs)
-               and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics. **Note:**
-               Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and
-               alerts that make use of these dimensions. In this case, they will need to be updated manually
+        :param pulumi.Input[_builtins.bool] meter_name_to_dimension_enabled: When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
+               
+               **Note:** Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']] to_drop_attributes: The attributes defined in the list below will be dropped from all ingested OTLP metrics. Upon ingest, the *Allow list:
-               resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny
-               list therefore applies to all attributes from all sources (data points, scope and resource). **Notes:** * Modifying this
-               setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on
-               existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated
-               manually. * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages
-               these attributes to [Enrich
-               metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+        :param pulumi.Input[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']] to_drop_attributes: The attributes defined in the list below will be dropped from all ingested OTLP metrics.
+               
+               Upon ingest, the *Allow list: resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny list therefore applies to all attributes from all sources (data points, scope and resource).
+               
+               **Notes:**
+               
+               * Modifying this setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually.
+               
+               * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
         """
         ...
     @overload
@@ -360,19 +360,19 @@ class OpentelemetryMetrics(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict']] additional_attributes: When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
         :param pulumi.Input[_builtins.bool] additional_attributes_to_dimension_enabled: Add the resource and scope attributes configured below as dimensions
-        :param pulumi.Input[_builtins.bool] meter_name_to_dimension_enabled: When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs)
-               and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics. **Note:**
-               Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and
-               alerts that make use of these dimensions. In this case, they will need to be updated manually
+        :param pulumi.Input[_builtins.bool] meter_name_to_dimension_enabled: When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
+               
+               **Note:** Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']] to_drop_attributes: The attributes defined in the list below will be dropped from all ingested OTLP metrics. Upon ingest, the *Allow list:
-               resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny
-               list therefore applies to all attributes from all sources (data points, scope and resource). **Notes:** * Modifying this
-               setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on
-               existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated
-               manually. * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages
-               these attributes to [Enrich
-               metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+        :param pulumi.Input[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']] to_drop_attributes: The attributes defined in the list below will be dropped from all ingested OTLP metrics.
+               
+               Upon ingest, the *Allow list: resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny list therefore applies to all attributes from all sources (data points, scope and resource).
+               
+               **Notes:**
+               
+               * Modifying this setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually.
+               
+               * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -406,10 +406,9 @@ class OpentelemetryMetrics(pulumi.CustomResource):
     @pulumi.getter(name="meterNameToDimensionEnabled")
     def meter_name_to_dimension_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
-        When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs)
-        and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics. **Note:**
-        Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and
-        alerts that make use of these dimensions. In this case, they will need to be updated manually
+        When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
+
+        **Note:** Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually
         """
         return pulumi.get(self, "meter_name_to_dimension_enabled")
 
@@ -430,14 +429,15 @@ class OpentelemetryMetrics(pulumi.CustomResource):
     @pulumi.getter(name="toDropAttributes")
     def to_drop_attributes(self) -> pulumi.Output[Optional['outputs.OpentelemetryMetricsToDropAttributes']]:
         """
-        The attributes defined in the list below will be dropped from all ingested OTLP metrics. Upon ingest, the *Allow list:
-        resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny
-        list therefore applies to all attributes from all sources (data points, scope and resource). **Notes:** * Modifying this
-        setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on
-        existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated
-        manually. * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages
-        these attributes to [Enrich
-        metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+        The attributes defined in the list below will be dropped from all ingested OTLP metrics.
+
+        Upon ingest, the *Allow list: resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny list therefore applies to all attributes from all sources (data points, scope and resource).
+
+        **Notes:**
+
+        * Modifying this setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually.
+
+        * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
         """
         return pulumi.get(self, "to_drop_attributes")
 

@@ -32,7 +32,9 @@ namespace Pulumiverse.Dynatrace
         public Output<int> Frequency { get; private set; } = null!;
 
         /// <summary>
-        /// A list of locations from which the monitor is executed. To specify a location, use its entity ID.
+        /// A list of locations from which the monitor is executed.
+        /// 
+        /// To specify a location, use its entity ID.
         /// </summary>
         [Output("locations")]
         public Output<ImmutableArray<string>> Locations { get; private set; } = null!;
@@ -62,8 +64,9 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.HttpMonitorScript?> Script { get; private set; } = null!;
 
         /// <summary>
-        /// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
-        /// source 'USER' will be added automatically.
+        /// A set of tags assigned to the monitor.
+        /// 
+        /// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
         /// </summary>
         [Output("tags")]
         public Output<ImmutableArray<Outputs.HttpMonitorTag>> Tags { get; private set; } = null!;
@@ -143,7 +146,9 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _locations;
 
         /// <summary>
-        /// A list of locations from which the monitor is executed. To specify a location, use its entity ID.
+        /// A list of locations from which the monitor is executed.
+        /// 
+        /// To specify a location, use its entity ID.
         /// </summary>
         public InputList<string> Locations
         {
@@ -185,8 +190,9 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.HttpMonitorTagArgs>? _tags;
 
         /// <summary>
-        /// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
-        /// source 'USER' will be added automatically.
+        /// A set of tags assigned to the monitor.
+        /// 
+        /// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
         /// </summary>
         public InputList<Inputs.HttpMonitorTagArgs> Tags
         {
@@ -230,7 +236,9 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _locations;
 
         /// <summary>
-        /// A list of locations from which the monitor is executed. To specify a location, use its entity ID.
+        /// A list of locations from which the monitor is executed.
+        /// 
+        /// To specify a location, use its entity ID.
         /// </summary>
         public InputList<string> Locations
         {
@@ -272,8 +280,9 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.HttpMonitorTagGetArgs>? _tags;
 
         /// <summary>
-        /// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
-        /// source 'USER' will be added automatically.
+        /// A set of tags assigned to the monitor.
+        /// 
+        /// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
         /// </summary>
         public InputList<Inputs.HttpMonitorTagGetArgs> Tags
         {

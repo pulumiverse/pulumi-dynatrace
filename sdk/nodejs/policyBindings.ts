@@ -37,8 +37,7 @@ export class PolicyBindings extends pulumi.CustomResource {
      */
     declare public readonly cluster: pulumi.Output<string | undefined>;
     /**
-     * The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
-     * policies defined for that environment.
+     * The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
      */
     declare public readonly environment: pulumi.Output<string | undefined>;
     /**
@@ -46,8 +45,7 @@ export class PolicyBindings extends pulumi.CustomResource {
      */
     declare public readonly group: pulumi.Output<string>;
     /**
-     * A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
-     * different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+     * A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
      */
     declare public readonly policies: pulumi.Output<string[]>;
 
@@ -95,8 +93,7 @@ export interface PolicyBindingsState {
      */
     cluster?: pulumi.Input<string>;
     /**
-     * The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
-     * policies defined for that environment.
+     * The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
      */
     environment?: pulumi.Input<string>;
     /**
@@ -104,8 +101,7 @@ export interface PolicyBindingsState {
      */
     group?: pulumi.Input<string>;
     /**
-     * A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
-     * different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+     * A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
      */
     policies?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -119,8 +115,7 @@ export interface PolicyBindingsArgs {
      */
     cluster?: pulumi.Input<string>;
     /**
-     * The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY
-     * policies defined for that environment.
+     * The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
      */
     environment?: pulumi.Input<string>;
     /**
@@ -128,8 +123,7 @@ export interface PolicyBindingsArgs {
      */
     group: pulumi.Input<string>;
     /**
-     * A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for
-     * different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+     * A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
      */
     policies: pulumi.Input<pulumi.Input<string>[]>;
 }

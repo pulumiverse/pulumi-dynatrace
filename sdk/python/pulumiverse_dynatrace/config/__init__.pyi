@@ -22,16 +22,12 @@ automationClientSecret: Optional[str]
 
 automationEnvUrl: Optional[str]
 """
-The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
-optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-`https://#####.apps.dynatrace.com`
+The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
 """
 
 automationTokenUrl: Optional[str]
 """
-The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
-`dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-`https://#####.apps.dynatrace.com`
+The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
 """
 
 clientId: Optional[str]
@@ -58,7 +54,6 @@ iamTokenUrl: Optional[str]
 
 platformToken: Optional[str]
 """
-A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
-case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
+A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
 """
 

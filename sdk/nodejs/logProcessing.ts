@@ -39,14 +39,12 @@ export class LogProcessing extends pulumi.CustomResource {
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
-     * ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-     * will find instructions and application [examples](https://dt-url.net/m24305t).
+     * ## Processor definition
+     * Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
      */
     declare public readonly processorDefinition: pulumi.Output<outputs.LogProcessingProcessorDefinition>;
     /**
@@ -58,7 +56,8 @@ export class LogProcessing extends pulumi.CustomResource {
      */
     declare public readonly ruleName: pulumi.Output<string>;
     /**
-     * ## Rule testing ### 1. Paste a log / JSON sample
+     * ## Rule testing
+     * ### 1. Paste a log / JSON sample
      */
     declare public readonly ruleTesting: pulumi.Output<outputs.LogProcessingRuleTesting>;
 
@@ -119,14 +118,12 @@ export interface LogProcessingState {
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     insertAfter?: pulumi.Input<string>;
     /**
-     * ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-     * will find instructions and application [examples](https://dt-url.net/m24305t).
+     * ## Processor definition
+     * Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
      */
     processorDefinition?: pulumi.Input<inputs.LogProcessingProcessorDefinition>;
     /**
@@ -138,7 +135,8 @@ export interface LogProcessingState {
      */
     ruleName?: pulumi.Input<string>;
     /**
-     * ## Rule testing ### 1. Paste a log / JSON sample
+     * ## Rule testing
+     * ### 1. Paste a log / JSON sample
      */
     ruleTesting?: pulumi.Input<inputs.LogProcessingRuleTesting>;
 }
@@ -152,14 +150,12 @@ export interface LogProcessingArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     insertAfter?: pulumi.Input<string>;
     /**
-     * ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-     * will find instructions and application [examples](https://dt-url.net/m24305t).
+     * ## Processor definition
+     * Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
      */
     processorDefinition: pulumi.Input<inputs.LogProcessingProcessorDefinition>;
     /**
@@ -171,7 +167,8 @@ export interface LogProcessingArgs {
      */
     ruleName: pulumi.Input<string>;
     /**
-     * ## Rule testing ### 1. Paste a log / JSON sample
+     * ## Rule testing
+     * ### 1. Paste a log / JSON sample
      */
     ruleTesting: pulumi.Input<inputs.LogProcessingRuleTesting>;
 }

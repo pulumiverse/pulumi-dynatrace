@@ -29,15 +29,11 @@ export class Provider extends pulumi.ProviderResource {
     declare public readonly automationClientId: pulumi.Output<string | undefined>;
     declare public readonly automationClientSecret: pulumi.Output<string | undefined>;
     /**
-     * The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
-     * optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-     * `https://#####.apps.dynatrace.com`
+     * The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
      */
     declare public readonly automationEnvUrl: pulumi.Output<string | undefined>;
     /**
-     * The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
-     * `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-     * `https://#####.apps.dynatrace.com`
+     * The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
      */
     declare public readonly automationTokenUrl: pulumi.Output<string | undefined>;
     declare public readonly clientId: pulumi.Output<string | undefined>;
@@ -52,8 +48,7 @@ export class Provider extends pulumi.ProviderResource {
     declare public readonly iamEndpointUrl: pulumi.Output<string | undefined>;
     declare public readonly iamTokenUrl: pulumi.Output<string | undefined>;
     /**
-     * A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
-     * case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+     * A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
      */
     declare public readonly platformToken: pulumi.Output<string | undefined>;
 
@@ -110,15 +105,11 @@ export interface ProviderArgs {
     automationClientId?: pulumi.Input<string>;
     automationClientSecret?: pulumi.Input<string>;
     /**
-     * The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
-     * optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-     * `https://#####.apps.dynatrace.com`
+     * The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
      */
     automationEnvUrl?: pulumi.Input<string>;
     /**
-     * The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
-     * `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-     * `https://#####.apps.dynatrace.com`
+     * The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
      */
     automationTokenUrl?: pulumi.Input<string>;
     clientId?: pulumi.Input<string>;
@@ -133,8 +124,7 @@ export interface ProviderArgs {
     iamEndpointUrl?: pulumi.Input<string>;
     iamTokenUrl?: pulumi.Input<string>;
     /**
-     * A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
-     * case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+     * A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
      */
     platformToken?: pulumi.Input<string>;
 }

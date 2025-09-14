@@ -15,11 +15,15 @@ import (
 type ServicenowConnection struct {
 	pulumi.CustomResourceState
 
+	// Client ID of the ServiceNow OAuth server
+	ClientId pulumi.StringPtrOutput `pulumi:"clientId"`
+	// Client secret of the ServiceNow OAuth server
+	ClientSecret pulumi.StringPtrOutput `pulumi:"clientSecret"`
 	// A unique and clearly identifiable connection name to your ServiceNow instance.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Password of the ServiceNow user.
 	Password pulumi.StringPtrOutput `pulumi:"password"`
-	// Possible Values: `basic`
+	// Possible Values: `basic`, `client-credentials`
 	Type pulumi.StringOutput `pulumi:"type"`
 	// URL of the ServiceNow instance.
 	Url pulumi.StringOutput `pulumi:"url"`
@@ -40,10 +44,14 @@ func NewServicenowConnection(ctx *pulumi.Context,
 	if args.Url == nil {
 		return nil, errors.New("invalid value for required argument 'Url'")
 	}
+	if args.ClientSecret != nil {
+		args.ClientSecret = pulumi.ToSecret(args.ClientSecret).(pulumi.StringPtrInput)
+	}
 	if args.Password != nil {
 		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"clientSecret",
 		"password",
 	})
 	opts = append(opts, secrets)
@@ -70,11 +78,15 @@ func GetServicenowConnection(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ServicenowConnection resources.
 type servicenowConnectionState struct {
+	// Client ID of the ServiceNow OAuth server
+	ClientId *string `pulumi:"clientId"`
+	// Client secret of the ServiceNow OAuth server
+	ClientSecret *string `pulumi:"clientSecret"`
 	// A unique and clearly identifiable connection name to your ServiceNow instance.
 	Name *string `pulumi:"name"`
 	// Password of the ServiceNow user.
 	Password *string `pulumi:"password"`
-	// Possible Values: `basic`
+	// Possible Values: `basic`, `client-credentials`
 	Type *string `pulumi:"type"`
 	// URL of the ServiceNow instance.
 	Url *string `pulumi:"url"`
@@ -83,11 +95,15 @@ type servicenowConnectionState struct {
 }
 
 type ServicenowConnectionState struct {
+	// Client ID of the ServiceNow OAuth server
+	ClientId pulumi.StringPtrInput
+	// Client secret of the ServiceNow OAuth server
+	ClientSecret pulumi.StringPtrInput
 	// A unique and clearly identifiable connection name to your ServiceNow instance.
 	Name pulumi.StringPtrInput
 	// Password of the ServiceNow user.
 	Password pulumi.StringPtrInput
-	// Possible Values: `basic`
+	// Possible Values: `basic`, `client-credentials`
 	Type pulumi.StringPtrInput
 	// URL of the ServiceNow instance.
 	Url pulumi.StringPtrInput
@@ -100,11 +116,15 @@ func (ServicenowConnectionState) ElementType() reflect.Type {
 }
 
 type servicenowConnectionArgs struct {
+	// Client ID of the ServiceNow OAuth server
+	ClientId *string `pulumi:"clientId"`
+	// Client secret of the ServiceNow OAuth server
+	ClientSecret *string `pulumi:"clientSecret"`
 	// A unique and clearly identifiable connection name to your ServiceNow instance.
 	Name *string `pulumi:"name"`
 	// Password of the ServiceNow user.
 	Password *string `pulumi:"password"`
-	// Possible Values: `basic`
+	// Possible Values: `basic`, `client-credentials`
 	Type string `pulumi:"type"`
 	// URL of the ServiceNow instance.
 	Url string `pulumi:"url"`
@@ -114,11 +134,15 @@ type servicenowConnectionArgs struct {
 
 // The set of arguments for constructing a ServicenowConnection resource.
 type ServicenowConnectionArgs struct {
+	// Client ID of the ServiceNow OAuth server
+	ClientId pulumi.StringPtrInput
+	// Client secret of the ServiceNow OAuth server
+	ClientSecret pulumi.StringPtrInput
 	// A unique and clearly identifiable connection name to your ServiceNow instance.
 	Name pulumi.StringPtrInput
 	// Password of the ServiceNow user.
 	Password pulumi.StringPtrInput
-	// Possible Values: `basic`
+	// Possible Values: `basic`, `client-credentials`
 	Type pulumi.StringInput
 	// URL of the ServiceNow instance.
 	Url pulumi.StringInput
@@ -213,6 +237,16 @@ func (o ServicenowConnectionOutput) ToServicenowConnectionOutputWithContext(ctx 
 	return o
 }
 
+// Client ID of the ServiceNow OAuth server
+func (o ServicenowConnectionOutput) ClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServicenowConnection) pulumi.StringPtrOutput { return v.ClientId }).(pulumi.StringPtrOutput)
+}
+
+// Client secret of the ServiceNow OAuth server
+func (o ServicenowConnectionOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServicenowConnection) pulumi.StringPtrOutput { return v.ClientSecret }).(pulumi.StringPtrOutput)
+}
+
 // A unique and clearly identifiable connection name to your ServiceNow instance.
 func (o ServicenowConnectionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServicenowConnection) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
@@ -223,7 +257,7 @@ func (o ServicenowConnectionOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServicenowConnection) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
 }
 
-// Possible Values: `basic`
+// Possible Values: `basic`, `client-credentials`
 func (o ServicenowConnectionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServicenowConnection) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

@@ -33,694 +33,399 @@ export class GoldenState extends pulumi.CustomResource {
     }
 
     /**
-     * The IDs for resource of type `dynatrace.AixExtension` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.AixExtension` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceAixExtensions: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.Alerting` this `dynatrace.GoldenState` should ignore (and therefore neither warn
-     * about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-     * Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+     * The IDs for resource of type `dynatrace.Alerting` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceAlertings: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.AnsibleTowerNotification` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.AnsibleTowerNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceAnsibleTowerNotifications: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ApplicationDetectionRule` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ApplicationDetectionRule` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceApplicationDetectionRules: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ApplicationErrorRules` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ApplicationErrorRules` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceApplicationErrorRules: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.AutotagV2` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.AutotagV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceAutotagV2s: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.AwsCredentials` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.AwsCredentials` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceAwsCredentials: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.AzureCredentials` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.AzureCredentials` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceAzureCredentials: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.BrowserMonitor` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.BrowserMonitor` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceBrowserMonitors: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.CalculatedMobileMetric` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.CalculatedMobileMetric` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceCalculatedMobileMetrics: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.CalculatedServiceMetric` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.CalculatedServiceMetric` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceCalculatedServiceMetrics: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.CalculatedSyntheticMetric` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.CalculatedSyntheticMetric` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceCalculatedSyntheticMetrics: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.CalculatedWebMetric` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CalculatedWebMetric` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceCalculatedWebMetrics: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.Credentials` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.Credentials` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceCredentials: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.CustomAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CustomAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceCustomAppAnomalies: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.CustomAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CustomAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceCustomAppCrashRates: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.CustomAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CustomAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceCustomAppEnablements: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.CustomService` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CustomService` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceCustomServices: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.DataPrivacy` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DataPrivacy` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceDataPrivacies: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.DatabaseAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DatabaseAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceDatabaseAnomaliesV2s: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.DeclarativeGrouping` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DeclarativeGrouping` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceDeclarativeGroupings: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.DiskAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DiskAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceDiskAnomaliesV2s: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.DiskOptions` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DiskOptions` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceDiskOptions: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.DiskSpecificAnomaliesV2` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.DiskSpecificAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceDiskSpecificAnomaliesV2s: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.EmailNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.EmailNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceEmailNotifications: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ExtensionExecutionController` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ExtensionExecutionController` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceExtensionExecutionControllers: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.GenericTypes` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.GenericTypes` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceGenericTypes: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.HostAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.HostAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceHostAnomaliesV2s: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.HostNaming` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.HostNaming` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceHostNamings: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.HostProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.HostProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceHostProcessGroupMonitorings: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.HttpMonitor` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.HttpMonitor` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceHttpMonitors: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ImsBridges` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ImsBridges` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceImsBridges: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.JiraNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.JiraNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceJiraNotifications: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.K8sNamespaceAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.K8sNamespaceAnomalies` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceK8sNamespaceAnomalies: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.KeyRequests` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.KeyRequests` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceKeyRequests: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.LogMetrics` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.LogMetrics` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceLogMetrics: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.Maintenance` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.Maintenance` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMaintenances: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ManagementZoneV2` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ManagementZoneV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceManagementZoneV2s: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MetricEvents` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MetricEvents` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMetricEvents: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MobileAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MobileAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMobileAppAnomalies: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MobileAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MobileAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMobileAppCrashRates: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MobileAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MobileAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMobileAppEnablements: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MobileApplication` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MobileApplication` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMobileApplications: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesApache` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesApache` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMonitoredTechnologiesApaches: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesDotnet` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesDotnet` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMonitoredTechnologiesDotnets: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesGo` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesGo` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMonitoredTechnologiesGos: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesIis` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesIis` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMonitoredTechnologiesIis: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesJava` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesJava` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMonitoredTechnologiesJavas: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesNginx` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesNginx` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMonitoredTechnologiesNginxes: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesNodejs` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesNodejs` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMonitoredTechnologiesNodejs: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesOpentracing` this `dynatrace.GoldenState` should ignore
-     * (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such
-     * resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the
-     * golden state of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesOpentracing` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMonitoredTechnologiesOpentracings: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesPhp` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesPhp` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMonitoredTechnologiesPhps: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesVarnish` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesVarnish` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMonitoredTechnologiesVarnishes: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesWsmb` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesWsmb` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMonitoredTechnologiesWsmbs: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.MutedRequests` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MutedRequests` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceMutedRequests: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.Nettracer` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.Nettracer` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceNettracers: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.OneagentFeatures` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.OneagentFeatures` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceOneagentFeatures: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.OpsGenieNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.OpsGenieNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceOpsGenieNotifications: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.PagerDutyNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.PagerDutyNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatracePagerDutyNotifications: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.PgAlerting` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.PgAlerting` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatracePgAlertings: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessAvailability` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessAvailability` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceProcessAvailabilities: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupDetectionFlags` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupDetectionFlags` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceProcessGroupDetectionFlags: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupDetection` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupDetection` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceProcessGroupDetections: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceProcessGroupMonitorings: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupRum` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupRum` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceProcessGroupRums: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupSimpleDetection` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupSimpleDetection` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceProcessGroupSimpleDetections: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessMonitoringRule` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessMonitoringRule` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceProcessMonitoringRules: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessMonitoring` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessMonitoring` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceProcessMonitorings: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessVisibility` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessVisibility` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceProcessVisibilities: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessgroupNaming` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessgroupNaming` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceProcessgroupNamings: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.QueueManager` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.QueueManager` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceQueueManagers: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.QueueSharingGroups` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.QueueSharingGroups` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceQueueSharingGroups: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.RequestAttribute` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.RequestAttribute` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceRequestAttributes: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.RequestNaming` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.RequestNaming` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceRequestNamings: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.RumAdvancedCorrelation` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.RumAdvancedCorrelation` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceRumAdvancedCorrelations: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.RumIpLocations` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.RumIpLocations` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceRumIpLocations: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.RumProviderBreakdown` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.RumProviderBreakdown` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceRumProviderBreakdowns: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ServiceFailure` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ServiceFailure` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceServiceFailures: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ServiceHttpFailure` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ServiceHttpFailure` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceServiceHttpFailures: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ServiceNaming` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ServiceNaming` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceServiceNamings: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.ServiceNowNotification` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ServiceNowNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceServiceNowNotifications: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.SessionReplayWebPrivacy` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.SessionReplayWebPrivacy` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceSessionReplayWebPrivacies: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.SlackNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.SlackNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceSlackNotifications: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.SloV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn
-     * about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-     * Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+     * The IDs for resource of type `dynatrace.SloV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceSloV2s: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.SpanCaptureRule` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.SpanCaptureRule` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceSpanCaptureRules: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.SpanContextPropagation` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.SpanContextPropagation` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceSpanContextPropagations: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.SyntheticLocation` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.SyntheticLocation` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceSyntheticLocations: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.TrelloNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.TrelloNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceTrelloNotifications: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.UpdateWindows` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.UpdateWindows` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceUpdateWindows: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.UsabilityAnalytics` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.UsabilityAnalytics` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceUsabilityAnalytics: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.VictorOpsNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.VictorOpsNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceVictorOpsNotifications: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceWebAppAnomalies: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppBeaconOrigins` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppBeaconOrigins` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceWebAppBeaconOrigins: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceWebAppEnablements: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppResourceCleanup` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppResourceCleanup` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceWebAppResourceCleanups: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppResourceTypes` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppResourceTypes` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceWebAppResourceTypes: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebApplication` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebApplication` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceWebApplications: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebhookNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebhookNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceWebhookNotifications: pulumi.Output<string[]>;
     /**
-     * The IDs for resource of type `dynatrace.XmattersNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.XmattersNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     declare public readonly dynatraceXmattersNotifications: pulumi.Output<string[]>;
     declare public readonly mode: pulumi.Output<string | undefined>;
@@ -951,694 +656,399 @@ export class GoldenState extends pulumi.CustomResource {
  */
 export interface GoldenStateState {
     /**
-     * The IDs for resource of type `dynatrace.AixExtension` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.AixExtension` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceAixExtensions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.Alerting` this `dynatrace.GoldenState` should ignore (and therefore neither warn
-     * about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-     * Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+     * The IDs for resource of type `dynatrace.Alerting` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceAlertings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.AnsibleTowerNotification` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.AnsibleTowerNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceAnsibleTowerNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ApplicationDetectionRule` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ApplicationDetectionRule` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceApplicationDetectionRules?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ApplicationErrorRules` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ApplicationErrorRules` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceApplicationErrorRules?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.AutotagV2` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.AutotagV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceAutotagV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.AwsCredentials` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.AwsCredentials` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceAwsCredentials?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.AzureCredentials` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.AzureCredentials` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceAzureCredentials?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.BrowserMonitor` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.BrowserMonitor` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceBrowserMonitors?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CalculatedMobileMetric` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.CalculatedMobileMetric` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCalculatedMobileMetrics?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CalculatedServiceMetric` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.CalculatedServiceMetric` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCalculatedServiceMetrics?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CalculatedSyntheticMetric` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.CalculatedSyntheticMetric` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCalculatedSyntheticMetrics?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CalculatedWebMetric` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CalculatedWebMetric` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCalculatedWebMetrics?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.Credentials` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.Credentials` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCredentials?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CustomAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CustomAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCustomAppAnomalies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CustomAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CustomAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCustomAppCrashRates?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CustomAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CustomAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCustomAppEnablements?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CustomService` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CustomService` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCustomServices?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.DataPrivacy` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DataPrivacy` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceDataPrivacies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.DatabaseAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DatabaseAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceDatabaseAnomaliesV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.DeclarativeGrouping` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DeclarativeGrouping` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceDeclarativeGroupings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.DiskAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DiskAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceDiskAnomaliesV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.DiskOptions` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DiskOptions` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceDiskOptions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.DiskSpecificAnomaliesV2` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.DiskSpecificAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceDiskSpecificAnomaliesV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.EmailNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.EmailNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceEmailNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ExtensionExecutionController` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ExtensionExecutionController` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceExtensionExecutionControllers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.GenericTypes` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.GenericTypes` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceGenericTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.HostAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.HostAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceHostAnomaliesV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.HostNaming` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.HostNaming` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceHostNamings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.HostProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.HostProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceHostProcessGroupMonitorings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.HttpMonitor` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.HttpMonitor` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceHttpMonitors?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ImsBridges` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ImsBridges` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceImsBridges?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.JiraNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.JiraNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceJiraNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.K8sNamespaceAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.K8sNamespaceAnomalies` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceK8sNamespaceAnomalies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.KeyRequests` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.KeyRequests` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceKeyRequests?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.LogMetrics` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.LogMetrics` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceLogMetrics?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.Maintenance` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.Maintenance` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMaintenances?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ManagementZoneV2` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ManagementZoneV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceManagementZoneV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MetricEvents` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MetricEvents` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMetricEvents?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MobileAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MobileAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMobileAppAnomalies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MobileAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MobileAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMobileAppCrashRates?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MobileAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MobileAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMobileAppEnablements?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MobileApplication` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MobileApplication` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMobileApplications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesApache` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesApache` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesApaches?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesDotnet` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesDotnet` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesDotnets?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesGo` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesGo` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesGos?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesIis` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesIis` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesIis?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesJava` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesJava` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesJavas?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesNginx` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesNginx` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesNginxes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesNodejs` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesNodejs` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesNodejs?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesOpentracing` this `dynatrace.GoldenState` should ignore
-     * (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such
-     * resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the
-     * golden state of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesOpentracing` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesOpentracings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesPhp` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesPhp` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesPhps?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesVarnish` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesVarnish` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesVarnishes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesWsmb` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesWsmb` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesWsmbs?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MutedRequests` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MutedRequests` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMutedRequests?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.Nettracer` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.Nettracer` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceNettracers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.OneagentFeatures` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.OneagentFeatures` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceOneagentFeatures?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.OpsGenieNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.OpsGenieNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceOpsGenieNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.PagerDutyNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.PagerDutyNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatracePagerDutyNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.PgAlerting` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.PgAlerting` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatracePgAlertings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessAvailability` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessAvailability` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessAvailabilities?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupDetectionFlags` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupDetectionFlags` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessGroupDetectionFlags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupDetection` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupDetection` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessGroupDetections?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessGroupMonitorings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupRum` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupRum` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessGroupRums?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupSimpleDetection` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupSimpleDetection` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessGroupSimpleDetections?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessMonitoringRule` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessMonitoringRule` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessMonitoringRules?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessMonitoring` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessMonitoring` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessMonitorings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessVisibility` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessVisibility` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessVisibilities?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessgroupNaming` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessgroupNaming` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessgroupNamings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.QueueManager` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.QueueManager` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceQueueManagers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.QueueSharingGroups` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.QueueSharingGroups` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceQueueSharingGroups?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.RequestAttribute` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.RequestAttribute` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceRequestAttributes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.RequestNaming` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.RequestNaming` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceRequestNamings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.RumAdvancedCorrelation` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.RumAdvancedCorrelation` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceRumAdvancedCorrelations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.RumIpLocations` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.RumIpLocations` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceRumIpLocations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.RumProviderBreakdown` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.RumProviderBreakdown` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceRumProviderBreakdowns?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ServiceFailure` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ServiceFailure` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceServiceFailures?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ServiceHttpFailure` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ServiceHttpFailure` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceServiceHttpFailures?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ServiceNaming` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ServiceNaming` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceServiceNamings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ServiceNowNotification` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ServiceNowNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceServiceNowNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.SessionReplayWebPrivacy` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.SessionReplayWebPrivacy` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceSessionReplayWebPrivacies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.SlackNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.SlackNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceSlackNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.SloV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn
-     * about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-     * Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+     * The IDs for resource of type `dynatrace.SloV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceSloV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.SpanCaptureRule` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.SpanCaptureRule` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceSpanCaptureRules?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.SpanContextPropagation` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.SpanContextPropagation` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceSpanContextPropagations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.SyntheticLocation` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.SyntheticLocation` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceSyntheticLocations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.TrelloNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.TrelloNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceTrelloNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.UpdateWindows` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.UpdateWindows` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceUpdateWindows?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.UsabilityAnalytics` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.UsabilityAnalytics` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceUsabilityAnalytics?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.VictorOpsNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.VictorOpsNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceVictorOpsNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebAppAnomalies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppBeaconOrigins` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppBeaconOrigins` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebAppBeaconOrigins?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebAppEnablements?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppResourceCleanup` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppResourceCleanup` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebAppResourceCleanups?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppResourceTypes` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppResourceTypes` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebAppResourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebApplication` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebApplication` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebApplications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebhookNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebhookNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebhookNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.XmattersNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.XmattersNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceXmattersNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     mode?: pulumi.Input<string>;
@@ -1649,694 +1059,399 @@ export interface GoldenStateState {
  */
 export interface GoldenStateArgs {
     /**
-     * The IDs for resource of type `dynatrace.AixExtension` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.AixExtension` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceAixExtensions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.Alerting` this `dynatrace.GoldenState` should ignore (and therefore neither warn
-     * about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-     * Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+     * The IDs for resource of type `dynatrace.Alerting` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceAlertings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.AnsibleTowerNotification` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.AnsibleTowerNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceAnsibleTowerNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ApplicationDetectionRule` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ApplicationDetectionRule` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceApplicationDetectionRules?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ApplicationErrorRules` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ApplicationErrorRules` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceApplicationErrorRules?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.AutotagV2` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.AutotagV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceAutotagV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.AwsCredentials` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.AwsCredentials` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceAwsCredentials?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.AzureCredentials` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.AzureCredentials` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceAzureCredentials?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.BrowserMonitor` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.BrowserMonitor` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceBrowserMonitors?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CalculatedMobileMetric` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.CalculatedMobileMetric` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCalculatedMobileMetrics?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CalculatedServiceMetric` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.CalculatedServiceMetric` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCalculatedServiceMetrics?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CalculatedSyntheticMetric` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.CalculatedSyntheticMetric` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCalculatedSyntheticMetrics?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CalculatedWebMetric` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CalculatedWebMetric` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCalculatedWebMetrics?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.Credentials` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.Credentials` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCredentials?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CustomAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CustomAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCustomAppAnomalies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CustomAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CustomAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCustomAppCrashRates?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CustomAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CustomAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCustomAppEnablements?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.CustomService` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.CustomService` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceCustomServices?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.DataPrivacy` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DataPrivacy` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceDataPrivacies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.DatabaseAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DatabaseAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceDatabaseAnomaliesV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.DeclarativeGrouping` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DeclarativeGrouping` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceDeclarativeGroupings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.DiskAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DiskAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceDiskAnomaliesV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.DiskOptions` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.DiskOptions` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceDiskOptions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.DiskSpecificAnomaliesV2` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.DiskSpecificAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceDiskSpecificAnomaliesV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.EmailNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.EmailNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceEmailNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ExtensionExecutionController` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ExtensionExecutionController` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceExtensionExecutionControllers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.GenericTypes` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.GenericTypes` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceGenericTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.HostAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.HostAnomaliesV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceHostAnomaliesV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.HostNaming` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.HostNaming` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceHostNamings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.HostProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.HostProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceHostProcessGroupMonitorings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.HttpMonitor` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.HttpMonitor` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceHttpMonitors?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ImsBridges` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ImsBridges` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceImsBridges?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.JiraNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.JiraNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceJiraNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.K8sNamespaceAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.K8sNamespaceAnomalies` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceK8sNamespaceAnomalies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.KeyRequests` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.KeyRequests` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceKeyRequests?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.LogMetrics` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.LogMetrics` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceLogMetrics?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.Maintenance` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.Maintenance` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMaintenances?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ManagementZoneV2` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ManagementZoneV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceManagementZoneV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MetricEvents` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MetricEvents` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMetricEvents?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MobileAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MobileAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMobileAppAnomalies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MobileAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MobileAppCrashRate` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMobileAppCrashRates?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MobileAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MobileAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMobileAppEnablements?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MobileApplication` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MobileApplication` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMobileApplications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesApache` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesApache` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesApaches?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesDotnet` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesDotnet` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesDotnets?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesGo` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesGo` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesGos?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesIis` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesIis` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesIis?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesJava` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesJava` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesJavas?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesNginx` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesNginx` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesNginxes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesNodejs` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesNodejs` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesNodejs?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesOpentracing` this `dynatrace.GoldenState` should ignore
-     * (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such
-     * resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the
-     * golden state of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesOpentracing` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesOpentracings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesPhp` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesPhp` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesPhps?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesVarnish` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesVarnish` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesVarnishes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MonitoredTechnologiesWsmb` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.MonitoredTechnologiesWsmb` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMonitoredTechnologiesWsmbs?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.MutedRequests` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.MutedRequests` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceMutedRequests?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.Nettracer` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.Nettracer` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceNettracers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.OneagentFeatures` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.OneagentFeatures` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceOneagentFeatures?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.OpsGenieNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.OpsGenieNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceOpsGenieNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.PagerDutyNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.PagerDutyNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatracePagerDutyNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.PgAlerting` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.PgAlerting` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatracePgAlertings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessAvailability` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessAvailability` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessAvailabilities?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupDetectionFlags` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupDetectionFlags` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessGroupDetectionFlags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupDetection` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupDetection` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessGroupDetections?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupMonitoring` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessGroupMonitorings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupRum` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupRum` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessGroupRums?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessGroupSimpleDetection` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ProcessGroupSimpleDetection` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessGroupSimpleDetections?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessMonitoringRule` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessMonitoringRule` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessMonitoringRules?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessMonitoring` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessMonitoring` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessMonitorings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessVisibility` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessVisibility` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessVisibilities?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ProcessgroupNaming` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ProcessgroupNaming` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceProcessgroupNamings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.QueueManager` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.QueueManager` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceQueueManagers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.QueueSharingGroups` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.QueueSharingGroups` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceQueueSharingGroups?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.RequestAttribute` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.RequestAttribute` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceRequestAttributes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.RequestNaming` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.RequestNaming` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceRequestNamings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.RumAdvancedCorrelation` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.RumAdvancedCorrelation` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceRumAdvancedCorrelations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.RumIpLocations` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.RumIpLocations` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceRumIpLocations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.RumProviderBreakdown` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.RumProviderBreakdown` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceRumProviderBreakdowns?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ServiceFailure` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ServiceFailure` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceServiceFailures?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ServiceHttpFailure` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ServiceHttpFailure` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceServiceHttpFailures?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ServiceNaming` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.ServiceNaming` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceServiceNamings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.ServiceNowNotification` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.ServiceNowNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceServiceNowNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.SessionReplayWebPrivacy` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.SessionReplayWebPrivacy` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceSessionReplayWebPrivacies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.SlackNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.SlackNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceSlackNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.SloV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn
-     * about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace.
-     * Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
+     * The IDs for resource of type `dynatrace.SloV2` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceSloV2s?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.SpanCaptureRule` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.SpanCaptureRule` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceSpanCaptureRules?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.SpanContextPropagation` this `dynatrace.GoldenState` should ignore (and
-     * therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources
-     * to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state
-     * of the environment.
+     * The IDs for resource of type `dynatrace.SpanContextPropagation` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceSpanContextPropagations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.SyntheticLocation` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.SyntheticLocation` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceSyntheticLocations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.TrelloNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.TrelloNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceTrelloNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.UpdateWindows` this `dynatrace.GoldenState` should ignore (and therefore neither
-     * warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.UpdateWindows` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceUpdateWindows?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.UsabilityAnalytics` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.UsabilityAnalytics` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceUsabilityAnalytics?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.VictorOpsNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.VictorOpsNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceVictorOpsNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppAnomalies` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebAppAnomalies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppBeaconOrigins` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppBeaconOrigins` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebAppBeaconOrigins?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppEnablement` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebAppEnablements?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppResourceCleanup` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppResourceCleanup` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebAppResourceCleanups?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebAppResourceTypes` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebAppResourceTypes` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebAppResourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebApplication` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebApplication` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebApplications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.WebhookNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.WebhookNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceWebhookNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The IDs for resource of type `dynatrace.XmattersNotification` this `dynatrace.GoldenState` should ignore (and therefore
-     * neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in
-     * Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the
-     * environment.
+     * The IDs for resource of type `dynatrace.XmattersNotification` this `dynatrace.GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
      */
     dynatraceXmattersNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     mode?: pulumi.Input<string>;

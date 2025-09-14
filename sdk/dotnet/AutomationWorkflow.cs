@@ -13,7 +13,7 @@ namespace Pulumiverse.Dynatrace
     /// <summary>
     /// &gt; **Dynatrace SaaS only**
     /// 
-    /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View workflows** (`automation:workflows:read`) and **Create and edit workflows** (`automation:workflows:write`).
+    /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View workflows** (`automation:workflows:read`) and **Create and edit workflows** (`automation:workflows:write`) To manage all workflows, please also include **Access all Automation Workflows** (`automation:workflows:admin`).
     /// 
     /// &gt; This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
     /// 

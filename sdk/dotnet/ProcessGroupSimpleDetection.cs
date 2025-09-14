@@ -26,9 +26,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> GroupIdentifier { get; private set; } = null!;
 
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        /// specified during update the order will remain untouched
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Output("insertAfter")]
         public Output<string> InsertAfter { get; private set; } = null!;
@@ -111,9 +109,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> GroupIdentifier { get; set; } = null!;
 
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        /// specified during update the order will remain untouched
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Input("insertAfter")]
         public Input<string>? InsertAfter { get; set; }
@@ -157,9 +153,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? GroupIdentifier { get; set; }
 
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        /// specified during update the order will remain untouched
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Input("insertAfter")]
         public Input<string>? InsertAfter { get; set; }

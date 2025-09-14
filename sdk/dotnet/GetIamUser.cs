@@ -31,7 +31,7 @@ namespace Pulumiverse.Dynatrace
         /// {
         ///     var userA = Dynatrace.GetIamUser.Invoke(new()
         ///     {
-        ///         Email = "me@home.com",
+        ///         Email = "me@example.com",
         ///     });
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
@@ -63,7 +63,7 @@ namespace Pulumiverse.Dynatrace
         /// {
         ///     var userA = Dynatrace.GetIamUser.Invoke(new()
         ///     {
-        ///         Email = "me@home.com",
+        ///         Email = "me@example.com",
         ///     });
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
@@ -95,7 +95,7 @@ namespace Pulumiverse.Dynatrace
         /// {
         ///     var userA = Dynatrace.GetIamUser.Invoke(new()
         ///     {
-        ///         Email = "me@home.com",
+        ///         Email = "me@example.com",
         ///     });
         /// 
         ///     return new Dictionary&lt;string, object?&gt;

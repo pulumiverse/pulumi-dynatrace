@@ -32,9 +32,7 @@ Object.defineProperty(exports, "automationClientSecret", {
 });
 
 /**
- * The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
- * optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
- * `https://#####.apps.dynatrace.com`
+ * The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
  */
 export declare const automationEnvUrl: string | undefined;
 Object.defineProperty(exports, "automationEnvUrl", {
@@ -45,9 +43,7 @@ Object.defineProperty(exports, "automationEnvUrl", {
 });
 
 /**
- * The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
- * `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
- * `https://#####.apps.dynatrace.com`
+ * The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
  */
 export declare const automationTokenUrl: string | undefined;
 Object.defineProperty(exports, "automationTokenUrl", {
@@ -146,8 +142,7 @@ Object.defineProperty(exports, "iamTokenUrl", {
 });
 
 /**
- * A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
- * case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+ * A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
  */
 export declare const platformToken: string | undefined;
 Object.defineProperty(exports, "platformToken", {

@@ -13,6 +13,3219 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ServiceNamingConditionConditionTagComparisonValue struct {
+	// The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+	Context string `pulumi:"context"`
+	// The key of the tag. Custom tags have the tag value here
+	Key string `pulumi:"key"`
+	// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+	Unknowns *string `pulumi:"unknowns"`
+	// The value of the tag. Not applicable to custom tags
+	Value *string `pulumi:"value"`
+}
+
+// ServiceNamingConditionConditionTagComparisonValueInput is an input type that accepts ServiceNamingConditionConditionTagComparisonValueArgs and ServiceNamingConditionConditionTagComparisonValueOutput values.
+// You can construct a concrete instance of `ServiceNamingConditionConditionTagComparisonValueInput` via:
+//
+//	ServiceNamingConditionConditionTagComparisonValueArgs{...}
+type ServiceNamingConditionConditionTagComparisonValueInput interface {
+	pulumi.Input
+
+	ToServiceNamingConditionConditionTagComparisonValueOutput() ServiceNamingConditionConditionTagComparisonValueOutput
+	ToServiceNamingConditionConditionTagComparisonValueOutputWithContext(context.Context) ServiceNamingConditionConditionTagComparisonValueOutput
+}
+
+type ServiceNamingConditionConditionTagComparisonValueArgs struct {
+	// The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+	Context pulumi.StringInput `pulumi:"context"`
+	// The key of the tag. Custom tags have the tag value here
+	Key pulumi.StringInput `pulumi:"key"`
+	// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	// The value of the tag. Not applicable to custom tags
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ServiceNamingConditionConditionTagComparisonValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceNamingConditionConditionTagComparisonValue)(nil)).Elem()
+}
+
+func (i ServiceNamingConditionConditionTagComparisonValueArgs) ToServiceNamingConditionConditionTagComparisonValueOutput() ServiceNamingConditionConditionTagComparisonValueOutput {
+	return i.ToServiceNamingConditionConditionTagComparisonValueOutputWithContext(context.Background())
+}
+
+func (i ServiceNamingConditionConditionTagComparisonValueArgs) ToServiceNamingConditionConditionTagComparisonValueOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTagComparisonValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceNamingConditionConditionTagComparisonValueOutput)
+}
+
+func (i ServiceNamingConditionConditionTagComparisonValueArgs) ToServiceNamingConditionConditionTagComparisonValuePtrOutput() ServiceNamingConditionConditionTagComparisonValuePtrOutput {
+	return i.ToServiceNamingConditionConditionTagComparisonValuePtrOutputWithContext(context.Background())
+}
+
+func (i ServiceNamingConditionConditionTagComparisonValueArgs) ToServiceNamingConditionConditionTagComparisonValuePtrOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTagComparisonValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceNamingConditionConditionTagComparisonValueOutput).ToServiceNamingConditionConditionTagComparisonValuePtrOutputWithContext(ctx)
+}
+
+// ServiceNamingConditionConditionTagComparisonValuePtrInput is an input type that accepts ServiceNamingConditionConditionTagComparisonValueArgs, ServiceNamingConditionConditionTagComparisonValuePtr and ServiceNamingConditionConditionTagComparisonValuePtrOutput values.
+// You can construct a concrete instance of `ServiceNamingConditionConditionTagComparisonValuePtrInput` via:
+//
+//	        ServiceNamingConditionConditionTagComparisonValueArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceNamingConditionConditionTagComparisonValuePtrInput interface {
+	pulumi.Input
+
+	ToServiceNamingConditionConditionTagComparisonValuePtrOutput() ServiceNamingConditionConditionTagComparisonValuePtrOutput
+	ToServiceNamingConditionConditionTagComparisonValuePtrOutputWithContext(context.Context) ServiceNamingConditionConditionTagComparisonValuePtrOutput
+}
+
+type serviceNamingConditionConditionTagComparisonValuePtrType ServiceNamingConditionConditionTagComparisonValueArgs
+
+func ServiceNamingConditionConditionTagComparisonValuePtr(v *ServiceNamingConditionConditionTagComparisonValueArgs) ServiceNamingConditionConditionTagComparisonValuePtrInput {
+	return (*serviceNamingConditionConditionTagComparisonValuePtrType)(v)
+}
+
+func (*serviceNamingConditionConditionTagComparisonValuePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceNamingConditionConditionTagComparisonValue)(nil)).Elem()
+}
+
+func (i *serviceNamingConditionConditionTagComparisonValuePtrType) ToServiceNamingConditionConditionTagComparisonValuePtrOutput() ServiceNamingConditionConditionTagComparisonValuePtrOutput {
+	return i.ToServiceNamingConditionConditionTagComparisonValuePtrOutputWithContext(context.Background())
+}
+
+func (i *serviceNamingConditionConditionTagComparisonValuePtrType) ToServiceNamingConditionConditionTagComparisonValuePtrOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTagComparisonValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceNamingConditionConditionTagComparisonValuePtrOutput)
+}
+
+type ServiceNamingConditionConditionTagComparisonValueOutput struct{ *pulumi.OutputState }
+
+func (ServiceNamingConditionConditionTagComparisonValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceNamingConditionConditionTagComparisonValue)(nil)).Elem()
+}
+
+func (o ServiceNamingConditionConditionTagComparisonValueOutput) ToServiceNamingConditionConditionTagComparisonValueOutput() ServiceNamingConditionConditionTagComparisonValueOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTagComparisonValueOutput) ToServiceNamingConditionConditionTagComparisonValueOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTagComparisonValueOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTagComparisonValueOutput) ToServiceNamingConditionConditionTagComparisonValuePtrOutput() ServiceNamingConditionConditionTagComparisonValuePtrOutput {
+	return o.ToServiceNamingConditionConditionTagComparisonValuePtrOutputWithContext(context.Background())
+}
+
+func (o ServiceNamingConditionConditionTagComparisonValueOutput) ToServiceNamingConditionConditionTagComparisonValuePtrOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTagComparisonValuePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceNamingConditionConditionTagComparisonValue) *ServiceNamingConditionConditionTagComparisonValue {
+		return &v
+	}).(ServiceNamingConditionConditionTagComparisonValuePtrOutput)
+}
+
+// The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+func (o ServiceNamingConditionConditionTagComparisonValueOutput) Context() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTagComparisonValue) string { return v.Context }).(pulumi.StringOutput)
+}
+
+// The key of the tag. Custom tags have the tag value here
+func (o ServiceNamingConditionConditionTagComparisonValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTagComparisonValue) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+func (o ServiceNamingConditionConditionTagComparisonValueOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTagComparisonValue) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+// The value of the tag. Not applicable to custom tags
+func (o ServiceNamingConditionConditionTagComparisonValueOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTagComparisonValue) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ServiceNamingConditionConditionTagComparisonValuePtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceNamingConditionConditionTagComparisonValuePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceNamingConditionConditionTagComparisonValue)(nil)).Elem()
+}
+
+func (o ServiceNamingConditionConditionTagComparisonValuePtrOutput) ToServiceNamingConditionConditionTagComparisonValuePtrOutput() ServiceNamingConditionConditionTagComparisonValuePtrOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTagComparisonValuePtrOutput) ToServiceNamingConditionConditionTagComparisonValuePtrOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTagComparisonValuePtrOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTagComparisonValuePtrOutput) Elem() ServiceNamingConditionConditionTagComparisonValueOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTagComparisonValue) ServiceNamingConditionConditionTagComparisonValue {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceNamingConditionConditionTagComparisonValue
+		return ret
+	}).(ServiceNamingConditionConditionTagComparisonValueOutput)
+}
+
+// The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+func (o ServiceNamingConditionConditionTagComparisonValuePtrOutput) Context() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTagComparisonValue) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Context
+	}).(pulumi.StringPtrOutput)
+}
+
+// The key of the tag. Custom tags have the tag value here
+func (o ServiceNamingConditionConditionTagComparisonValuePtrOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTagComparisonValue) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+func (o ServiceNamingConditionConditionTagComparisonValuePtrOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTagComparisonValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Unknowns
+	}).(pulumi.StringPtrOutput)
+}
+
+// The value of the tag. Not applicable to custom tags
+func (o ServiceNamingConditionConditionTagComparisonValuePtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTagComparisonValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type ServiceNamingConditionConditionTagValue struct {
+	// The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+	Context string `pulumi:"context"`
+	// The key of the tag. Custom tags have the tag value here
+	Key string `pulumi:"key"`
+	// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+	Unknowns *string `pulumi:"unknowns"`
+	// The value of the tag. Not applicable to custom tags
+	Value *string `pulumi:"value"`
+}
+
+// ServiceNamingConditionConditionTagValueInput is an input type that accepts ServiceNamingConditionConditionTagValueArgs and ServiceNamingConditionConditionTagValueOutput values.
+// You can construct a concrete instance of `ServiceNamingConditionConditionTagValueInput` via:
+//
+//	ServiceNamingConditionConditionTagValueArgs{...}
+type ServiceNamingConditionConditionTagValueInput interface {
+	pulumi.Input
+
+	ToServiceNamingConditionConditionTagValueOutput() ServiceNamingConditionConditionTagValueOutput
+	ToServiceNamingConditionConditionTagValueOutputWithContext(context.Context) ServiceNamingConditionConditionTagValueOutput
+}
+
+type ServiceNamingConditionConditionTagValueArgs struct {
+	// The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+	Context pulumi.StringInput `pulumi:"context"`
+	// The key of the tag. Custom tags have the tag value here
+	Key pulumi.StringInput `pulumi:"key"`
+	// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	// The value of the tag. Not applicable to custom tags
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ServiceNamingConditionConditionTagValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceNamingConditionConditionTagValue)(nil)).Elem()
+}
+
+func (i ServiceNamingConditionConditionTagValueArgs) ToServiceNamingConditionConditionTagValueOutput() ServiceNamingConditionConditionTagValueOutput {
+	return i.ToServiceNamingConditionConditionTagValueOutputWithContext(context.Background())
+}
+
+func (i ServiceNamingConditionConditionTagValueArgs) ToServiceNamingConditionConditionTagValueOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTagValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceNamingConditionConditionTagValueOutput)
+}
+
+func (i ServiceNamingConditionConditionTagValueArgs) ToServiceNamingConditionConditionTagValuePtrOutput() ServiceNamingConditionConditionTagValuePtrOutput {
+	return i.ToServiceNamingConditionConditionTagValuePtrOutputWithContext(context.Background())
+}
+
+func (i ServiceNamingConditionConditionTagValueArgs) ToServiceNamingConditionConditionTagValuePtrOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTagValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceNamingConditionConditionTagValueOutput).ToServiceNamingConditionConditionTagValuePtrOutputWithContext(ctx)
+}
+
+// ServiceNamingConditionConditionTagValuePtrInput is an input type that accepts ServiceNamingConditionConditionTagValueArgs, ServiceNamingConditionConditionTagValuePtr and ServiceNamingConditionConditionTagValuePtrOutput values.
+// You can construct a concrete instance of `ServiceNamingConditionConditionTagValuePtrInput` via:
+//
+//	        ServiceNamingConditionConditionTagValueArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceNamingConditionConditionTagValuePtrInput interface {
+	pulumi.Input
+
+	ToServiceNamingConditionConditionTagValuePtrOutput() ServiceNamingConditionConditionTagValuePtrOutput
+	ToServiceNamingConditionConditionTagValuePtrOutputWithContext(context.Context) ServiceNamingConditionConditionTagValuePtrOutput
+}
+
+type serviceNamingConditionConditionTagValuePtrType ServiceNamingConditionConditionTagValueArgs
+
+func ServiceNamingConditionConditionTagValuePtr(v *ServiceNamingConditionConditionTagValueArgs) ServiceNamingConditionConditionTagValuePtrInput {
+	return (*serviceNamingConditionConditionTagValuePtrType)(v)
+}
+
+func (*serviceNamingConditionConditionTagValuePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceNamingConditionConditionTagValue)(nil)).Elem()
+}
+
+func (i *serviceNamingConditionConditionTagValuePtrType) ToServiceNamingConditionConditionTagValuePtrOutput() ServiceNamingConditionConditionTagValuePtrOutput {
+	return i.ToServiceNamingConditionConditionTagValuePtrOutputWithContext(context.Background())
+}
+
+func (i *serviceNamingConditionConditionTagValuePtrType) ToServiceNamingConditionConditionTagValuePtrOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTagValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceNamingConditionConditionTagValuePtrOutput)
+}
+
+type ServiceNamingConditionConditionTagValueOutput struct{ *pulumi.OutputState }
+
+func (ServiceNamingConditionConditionTagValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceNamingConditionConditionTagValue)(nil)).Elem()
+}
+
+func (o ServiceNamingConditionConditionTagValueOutput) ToServiceNamingConditionConditionTagValueOutput() ServiceNamingConditionConditionTagValueOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTagValueOutput) ToServiceNamingConditionConditionTagValueOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTagValueOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTagValueOutput) ToServiceNamingConditionConditionTagValuePtrOutput() ServiceNamingConditionConditionTagValuePtrOutput {
+	return o.ToServiceNamingConditionConditionTagValuePtrOutputWithContext(context.Background())
+}
+
+func (o ServiceNamingConditionConditionTagValueOutput) ToServiceNamingConditionConditionTagValuePtrOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTagValuePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceNamingConditionConditionTagValue) *ServiceNamingConditionConditionTagValue {
+		return &v
+	}).(ServiceNamingConditionConditionTagValuePtrOutput)
+}
+
+// The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+func (o ServiceNamingConditionConditionTagValueOutput) Context() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTagValue) string { return v.Context }).(pulumi.StringOutput)
+}
+
+// The key of the tag. Custom tags have the tag value here
+func (o ServiceNamingConditionConditionTagValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTagValue) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+func (o ServiceNamingConditionConditionTagValueOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTagValue) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+// The value of the tag. Not applicable to custom tags
+func (o ServiceNamingConditionConditionTagValueOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTagValue) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ServiceNamingConditionConditionTagValuePtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceNamingConditionConditionTagValuePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceNamingConditionConditionTagValue)(nil)).Elem()
+}
+
+func (o ServiceNamingConditionConditionTagValuePtrOutput) ToServiceNamingConditionConditionTagValuePtrOutput() ServiceNamingConditionConditionTagValuePtrOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTagValuePtrOutput) ToServiceNamingConditionConditionTagValuePtrOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTagValuePtrOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTagValuePtrOutput) Elem() ServiceNamingConditionConditionTagValueOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTagValue) ServiceNamingConditionConditionTagValue {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceNamingConditionConditionTagValue
+		return ret
+	}).(ServiceNamingConditionConditionTagValueOutput)
+}
+
+// The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+func (o ServiceNamingConditionConditionTagValuePtrOutput) Context() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTagValue) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Context
+	}).(pulumi.StringPtrOutput)
+}
+
+// The key of the tag. Custom tags have the tag value here
+func (o ServiceNamingConditionConditionTagValuePtrOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTagValue) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+func (o ServiceNamingConditionConditionTagValuePtrOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTagValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Unknowns
+	}).(pulumi.StringPtrOutput)
+}
+
+// The value of the tag. Not applicable to custom tags
+func (o ServiceNamingConditionConditionTagValuePtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTagValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type ServiceNamingConditionConditionTech struct {
+	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+	Negate *bool `pulumi:"negate"`
+	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+	Operator string `pulumi:"operator"`
+	// Any attributes that aren't yet supported by this provider
+	Unknowns *string `pulumi:"unknowns"`
+	// The value to compare to
+	Value *ServiceNamingConditionConditionTechValue `pulumi:"value"`
+}
+
+// ServiceNamingConditionConditionTechInput is an input type that accepts ServiceNamingConditionConditionTechArgs and ServiceNamingConditionConditionTechOutput values.
+// You can construct a concrete instance of `ServiceNamingConditionConditionTechInput` via:
+//
+//	ServiceNamingConditionConditionTechArgs{...}
+type ServiceNamingConditionConditionTechInput interface {
+	pulumi.Input
+
+	ToServiceNamingConditionConditionTechOutput() ServiceNamingConditionConditionTechOutput
+	ToServiceNamingConditionConditionTechOutputWithContext(context.Context) ServiceNamingConditionConditionTechOutput
+}
+
+type ServiceNamingConditionConditionTechArgs struct {
+	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+	Negate pulumi.BoolPtrInput `pulumi:"negate"`
+	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// Any attributes that aren't yet supported by this provider
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	// The value to compare to
+	Value ServiceNamingConditionConditionTechValuePtrInput `pulumi:"value"`
+}
+
+func (ServiceNamingConditionConditionTechArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceNamingConditionConditionTech)(nil)).Elem()
+}
+
+func (i ServiceNamingConditionConditionTechArgs) ToServiceNamingConditionConditionTechOutput() ServiceNamingConditionConditionTechOutput {
+	return i.ToServiceNamingConditionConditionTechOutputWithContext(context.Background())
+}
+
+func (i ServiceNamingConditionConditionTechArgs) ToServiceNamingConditionConditionTechOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTechOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceNamingConditionConditionTechOutput)
+}
+
+// ServiceNamingConditionConditionTechArrayInput is an input type that accepts ServiceNamingConditionConditionTechArray and ServiceNamingConditionConditionTechArrayOutput values.
+// You can construct a concrete instance of `ServiceNamingConditionConditionTechArrayInput` via:
+//
+//	ServiceNamingConditionConditionTechArray{ ServiceNamingConditionConditionTechArgs{...} }
+type ServiceNamingConditionConditionTechArrayInput interface {
+	pulumi.Input
+
+	ToServiceNamingConditionConditionTechArrayOutput() ServiceNamingConditionConditionTechArrayOutput
+	ToServiceNamingConditionConditionTechArrayOutputWithContext(context.Context) ServiceNamingConditionConditionTechArrayOutput
+}
+
+type ServiceNamingConditionConditionTechArray []ServiceNamingConditionConditionTechInput
+
+func (ServiceNamingConditionConditionTechArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceNamingConditionConditionTech)(nil)).Elem()
+}
+
+func (i ServiceNamingConditionConditionTechArray) ToServiceNamingConditionConditionTechArrayOutput() ServiceNamingConditionConditionTechArrayOutput {
+	return i.ToServiceNamingConditionConditionTechArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceNamingConditionConditionTechArray) ToServiceNamingConditionConditionTechArrayOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTechArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceNamingConditionConditionTechArrayOutput)
+}
+
+type ServiceNamingConditionConditionTechOutput struct{ *pulumi.OutputState }
+
+func (ServiceNamingConditionConditionTechOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceNamingConditionConditionTech)(nil)).Elem()
+}
+
+func (o ServiceNamingConditionConditionTechOutput) ToServiceNamingConditionConditionTechOutput() ServiceNamingConditionConditionTechOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTechOutput) ToServiceNamingConditionConditionTechOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTechOutput {
+	return o
+}
+
+// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+func (o ServiceNamingConditionConditionTechOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTech) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+func (o ServiceNamingConditionConditionTechOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTech) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// Any attributes that aren't yet supported by this provider
+func (o ServiceNamingConditionConditionTechOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTech) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+// The value to compare to
+func (o ServiceNamingConditionConditionTechOutput) Value() ServiceNamingConditionConditionTechValuePtrOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTech) *ServiceNamingConditionConditionTechValue { return v.Value }).(ServiceNamingConditionConditionTechValuePtrOutput)
+}
+
+type ServiceNamingConditionConditionTechArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceNamingConditionConditionTechArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceNamingConditionConditionTech)(nil)).Elem()
+}
+
+func (o ServiceNamingConditionConditionTechArrayOutput) ToServiceNamingConditionConditionTechArrayOutput() ServiceNamingConditionConditionTechArrayOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTechArrayOutput) ToServiceNamingConditionConditionTechArrayOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTechArrayOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTechArrayOutput) Index(i pulumi.IntInput) ServiceNamingConditionConditionTechOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceNamingConditionConditionTech {
+		return vs[0].([]ServiceNamingConditionConditionTech)[vs[1].(int)]
+	}).(ServiceNamingConditionConditionTechOutput)
+}
+
+type ServiceNamingConditionConditionTechValue struct {
+	// Predefined technology, if technology is not predefined, then the verbatim type must be set.
+	Type *string `pulumi:"type"`
+	// Any attributes that aren't yet supported by this provider
+	Unknowns *string `pulumi:"unknowns"`
+	// Non-predefined technology, use for custom technologies
+	VerbatimType *string `pulumi:"verbatimType"`
+}
+
+// ServiceNamingConditionConditionTechValueInput is an input type that accepts ServiceNamingConditionConditionTechValueArgs and ServiceNamingConditionConditionTechValueOutput values.
+// You can construct a concrete instance of `ServiceNamingConditionConditionTechValueInput` via:
+//
+//	ServiceNamingConditionConditionTechValueArgs{...}
+type ServiceNamingConditionConditionTechValueInput interface {
+	pulumi.Input
+
+	ToServiceNamingConditionConditionTechValueOutput() ServiceNamingConditionConditionTechValueOutput
+	ToServiceNamingConditionConditionTechValueOutputWithContext(context.Context) ServiceNamingConditionConditionTechValueOutput
+}
+
+type ServiceNamingConditionConditionTechValueArgs struct {
+	// Predefined technology, if technology is not predefined, then the verbatim type must be set.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// Any attributes that aren't yet supported by this provider
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	// Non-predefined technology, use for custom technologies
+	VerbatimType pulumi.StringPtrInput `pulumi:"verbatimType"`
+}
+
+func (ServiceNamingConditionConditionTechValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceNamingConditionConditionTechValue)(nil)).Elem()
+}
+
+func (i ServiceNamingConditionConditionTechValueArgs) ToServiceNamingConditionConditionTechValueOutput() ServiceNamingConditionConditionTechValueOutput {
+	return i.ToServiceNamingConditionConditionTechValueOutputWithContext(context.Background())
+}
+
+func (i ServiceNamingConditionConditionTechValueArgs) ToServiceNamingConditionConditionTechValueOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTechValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceNamingConditionConditionTechValueOutput)
+}
+
+func (i ServiceNamingConditionConditionTechValueArgs) ToServiceNamingConditionConditionTechValuePtrOutput() ServiceNamingConditionConditionTechValuePtrOutput {
+	return i.ToServiceNamingConditionConditionTechValuePtrOutputWithContext(context.Background())
+}
+
+func (i ServiceNamingConditionConditionTechValueArgs) ToServiceNamingConditionConditionTechValuePtrOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTechValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceNamingConditionConditionTechValueOutput).ToServiceNamingConditionConditionTechValuePtrOutputWithContext(ctx)
+}
+
+// ServiceNamingConditionConditionTechValuePtrInput is an input type that accepts ServiceNamingConditionConditionTechValueArgs, ServiceNamingConditionConditionTechValuePtr and ServiceNamingConditionConditionTechValuePtrOutput values.
+// You can construct a concrete instance of `ServiceNamingConditionConditionTechValuePtrInput` via:
+//
+//	        ServiceNamingConditionConditionTechValueArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceNamingConditionConditionTechValuePtrInput interface {
+	pulumi.Input
+
+	ToServiceNamingConditionConditionTechValuePtrOutput() ServiceNamingConditionConditionTechValuePtrOutput
+	ToServiceNamingConditionConditionTechValuePtrOutputWithContext(context.Context) ServiceNamingConditionConditionTechValuePtrOutput
+}
+
+type serviceNamingConditionConditionTechValuePtrType ServiceNamingConditionConditionTechValueArgs
+
+func ServiceNamingConditionConditionTechValuePtr(v *ServiceNamingConditionConditionTechValueArgs) ServiceNamingConditionConditionTechValuePtrInput {
+	return (*serviceNamingConditionConditionTechValuePtrType)(v)
+}
+
+func (*serviceNamingConditionConditionTechValuePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceNamingConditionConditionTechValue)(nil)).Elem()
+}
+
+func (i *serviceNamingConditionConditionTechValuePtrType) ToServiceNamingConditionConditionTechValuePtrOutput() ServiceNamingConditionConditionTechValuePtrOutput {
+	return i.ToServiceNamingConditionConditionTechValuePtrOutputWithContext(context.Background())
+}
+
+func (i *serviceNamingConditionConditionTechValuePtrType) ToServiceNamingConditionConditionTechValuePtrOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTechValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceNamingConditionConditionTechValuePtrOutput)
+}
+
+type ServiceNamingConditionConditionTechValueOutput struct{ *pulumi.OutputState }
+
+func (ServiceNamingConditionConditionTechValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceNamingConditionConditionTechValue)(nil)).Elem()
+}
+
+func (o ServiceNamingConditionConditionTechValueOutput) ToServiceNamingConditionConditionTechValueOutput() ServiceNamingConditionConditionTechValueOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTechValueOutput) ToServiceNamingConditionConditionTechValueOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTechValueOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTechValueOutput) ToServiceNamingConditionConditionTechValuePtrOutput() ServiceNamingConditionConditionTechValuePtrOutput {
+	return o.ToServiceNamingConditionConditionTechValuePtrOutputWithContext(context.Background())
+}
+
+func (o ServiceNamingConditionConditionTechValueOutput) ToServiceNamingConditionConditionTechValuePtrOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTechValuePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceNamingConditionConditionTechValue) *ServiceNamingConditionConditionTechValue {
+		return &v
+	}).(ServiceNamingConditionConditionTechValuePtrOutput)
+}
+
+// Predefined technology, if technology is not predefined, then the verbatim type must be set.
+func (o ServiceNamingConditionConditionTechValueOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTechValue) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// Any attributes that aren't yet supported by this provider
+func (o ServiceNamingConditionConditionTechValueOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTechValue) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+// Non-predefined technology, use for custom technologies
+func (o ServiceNamingConditionConditionTechValueOutput) VerbatimType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceNamingConditionConditionTechValue) *string { return v.VerbatimType }).(pulumi.StringPtrOutput)
+}
+
+type ServiceNamingConditionConditionTechValuePtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceNamingConditionConditionTechValuePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceNamingConditionConditionTechValue)(nil)).Elem()
+}
+
+func (o ServiceNamingConditionConditionTechValuePtrOutput) ToServiceNamingConditionConditionTechValuePtrOutput() ServiceNamingConditionConditionTechValuePtrOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTechValuePtrOutput) ToServiceNamingConditionConditionTechValuePtrOutputWithContext(ctx context.Context) ServiceNamingConditionConditionTechValuePtrOutput {
+	return o
+}
+
+func (o ServiceNamingConditionConditionTechValuePtrOutput) Elem() ServiceNamingConditionConditionTechValueOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTechValue) ServiceNamingConditionConditionTechValue {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceNamingConditionConditionTechValue
+		return ret
+	}).(ServiceNamingConditionConditionTechValueOutput)
+}
+
+// Predefined technology, if technology is not predefined, then the verbatim type must be set.
+func (o ServiceNamingConditionConditionTechValuePtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTechValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+// Any attributes that aren't yet supported by this provider
+func (o ServiceNamingConditionConditionTechValuePtrOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTechValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Unknowns
+	}).(pulumi.StringPtrOutput)
+}
+
+// Non-predefined technology, use for custom technologies
+func (o ServiceNamingConditionConditionTechValuePtrOutput) VerbatimType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceNamingConditionConditionTechValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VerbatimType
+	}).(pulumi.StringPtrOutput)
+}
+
+type ServiceSplittingRule struct {
+	// Limits the scope of the service splitting rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes..  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+	Condition *string `pulumi:"condition"`
+	// no documentation available
+	Description *string `pulumi:"description"`
+	// Rule name
+	RuleName string `pulumi:"ruleName"`
+	// Define the entire set of resource attributes that should split your services in the matching scope.. Each attribute that exists will contribute to the final service ID.
+	ServiceSplittingAttributes *ServiceSplittingRuleServiceSplittingAttributes `pulumi:"serviceSplittingAttributes"`
+}
+
+// ServiceSplittingRuleInput is an input type that accepts ServiceSplittingRuleArgs and ServiceSplittingRuleOutput values.
+// You can construct a concrete instance of `ServiceSplittingRuleInput` via:
+//
+//	ServiceSplittingRuleArgs{...}
+type ServiceSplittingRuleInput interface {
+	pulumi.Input
+
+	ToServiceSplittingRuleOutput() ServiceSplittingRuleOutput
+	ToServiceSplittingRuleOutputWithContext(context.Context) ServiceSplittingRuleOutput
+}
+
+type ServiceSplittingRuleArgs struct {
+	// Limits the scope of the service splitting rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes..  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+	Condition pulumi.StringPtrInput `pulumi:"condition"`
+	// no documentation available
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Rule name
+	RuleName pulumi.StringInput `pulumi:"ruleName"`
+	// Define the entire set of resource attributes that should split your services in the matching scope.. Each attribute that exists will contribute to the final service ID.
+	ServiceSplittingAttributes ServiceSplittingRuleServiceSplittingAttributesPtrInput `pulumi:"serviceSplittingAttributes"`
+}
+
+func (ServiceSplittingRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceSplittingRule)(nil)).Elem()
+}
+
+func (i ServiceSplittingRuleArgs) ToServiceSplittingRuleOutput() ServiceSplittingRuleOutput {
+	return i.ToServiceSplittingRuleOutputWithContext(context.Background())
+}
+
+func (i ServiceSplittingRuleArgs) ToServiceSplittingRuleOutputWithContext(ctx context.Context) ServiceSplittingRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleOutput)
+}
+
+func (i ServiceSplittingRuleArgs) ToServiceSplittingRulePtrOutput() ServiceSplittingRulePtrOutput {
+	return i.ToServiceSplittingRulePtrOutputWithContext(context.Background())
+}
+
+func (i ServiceSplittingRuleArgs) ToServiceSplittingRulePtrOutputWithContext(ctx context.Context) ServiceSplittingRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleOutput).ToServiceSplittingRulePtrOutputWithContext(ctx)
+}
+
+// ServiceSplittingRulePtrInput is an input type that accepts ServiceSplittingRuleArgs, ServiceSplittingRulePtr and ServiceSplittingRulePtrOutput values.
+// You can construct a concrete instance of `ServiceSplittingRulePtrInput` via:
+//
+//	        ServiceSplittingRuleArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceSplittingRulePtrInput interface {
+	pulumi.Input
+
+	ToServiceSplittingRulePtrOutput() ServiceSplittingRulePtrOutput
+	ToServiceSplittingRulePtrOutputWithContext(context.Context) ServiceSplittingRulePtrOutput
+}
+
+type serviceSplittingRulePtrType ServiceSplittingRuleArgs
+
+func ServiceSplittingRulePtr(v *ServiceSplittingRuleArgs) ServiceSplittingRulePtrInput {
+	return (*serviceSplittingRulePtrType)(v)
+}
+
+func (*serviceSplittingRulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceSplittingRule)(nil)).Elem()
+}
+
+func (i *serviceSplittingRulePtrType) ToServiceSplittingRulePtrOutput() ServiceSplittingRulePtrOutput {
+	return i.ToServiceSplittingRulePtrOutputWithContext(context.Background())
+}
+
+func (i *serviceSplittingRulePtrType) ToServiceSplittingRulePtrOutputWithContext(ctx context.Context) ServiceSplittingRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRulePtrOutput)
+}
+
+type ServiceSplittingRuleOutput struct{ *pulumi.OutputState }
+
+func (ServiceSplittingRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceSplittingRule)(nil)).Elem()
+}
+
+func (o ServiceSplittingRuleOutput) ToServiceSplittingRuleOutput() ServiceSplittingRuleOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleOutput) ToServiceSplittingRuleOutputWithContext(ctx context.Context) ServiceSplittingRuleOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleOutput) ToServiceSplittingRulePtrOutput() ServiceSplittingRulePtrOutput {
+	return o.ToServiceSplittingRulePtrOutputWithContext(context.Background())
+}
+
+func (o ServiceSplittingRuleOutput) ToServiceSplittingRulePtrOutputWithContext(ctx context.Context) ServiceSplittingRulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceSplittingRule) *ServiceSplittingRule {
+		return &v
+	}).(ServiceSplittingRulePtrOutput)
+}
+
+// Limits the scope of the service splitting rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes..  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+func (o ServiceSplittingRuleOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceSplittingRule) *string { return v.Condition }).(pulumi.StringPtrOutput)
+}
+
+// no documentation available
+func (o ServiceSplittingRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceSplittingRule) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Rule name
+func (o ServiceSplittingRuleOutput) RuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceSplittingRule) string { return v.RuleName }).(pulumi.StringOutput)
+}
+
+// Define the entire set of resource attributes that should split your services in the matching scope.. Each attribute that exists will contribute to the final service ID.
+func (o ServiceSplittingRuleOutput) ServiceSplittingAttributes() ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return o.ApplyT(func(v ServiceSplittingRule) *ServiceSplittingRuleServiceSplittingAttributes {
+		return v.ServiceSplittingAttributes
+	}).(ServiceSplittingRuleServiceSplittingAttributesPtrOutput)
+}
+
+type ServiceSplittingRulePtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceSplittingRulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceSplittingRule)(nil)).Elem()
+}
+
+func (o ServiceSplittingRulePtrOutput) ToServiceSplittingRulePtrOutput() ServiceSplittingRulePtrOutput {
+	return o
+}
+
+func (o ServiceSplittingRulePtrOutput) ToServiceSplittingRulePtrOutputWithContext(ctx context.Context) ServiceSplittingRulePtrOutput {
+	return o
+}
+
+func (o ServiceSplittingRulePtrOutput) Elem() ServiceSplittingRuleOutput {
+	return o.ApplyT(func(v *ServiceSplittingRule) ServiceSplittingRule {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceSplittingRule
+		return ret
+	}).(ServiceSplittingRuleOutput)
+}
+
+// Limits the scope of the service splitting rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes..  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+func (o ServiceSplittingRulePtrOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceSplittingRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Condition
+	}).(pulumi.StringPtrOutput)
+}
+
+// no documentation available
+func (o ServiceSplittingRulePtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceSplittingRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// Rule name
+func (o ServiceSplittingRulePtrOutput) RuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceSplittingRule) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.RuleName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Define the entire set of resource attributes that should split your services in the matching scope.. Each attribute that exists will contribute to the final service ID.
+func (o ServiceSplittingRulePtrOutput) ServiceSplittingAttributes() ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return o.ApplyT(func(v *ServiceSplittingRule) *ServiceSplittingRuleServiceSplittingAttributes {
+		if v == nil {
+			return nil
+		}
+		return v.ServiceSplittingAttributes
+	}).(ServiceSplittingRuleServiceSplittingAttributesPtrOutput)
+}
+
+type ServiceSplittingRuleServiceSplittingAttributes struct {
+	ServiceSplittingAttributes []ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute `pulumi:"serviceSplittingAttributes"`
+}
+
+// ServiceSplittingRuleServiceSplittingAttributesInput is an input type that accepts ServiceSplittingRuleServiceSplittingAttributesArgs and ServiceSplittingRuleServiceSplittingAttributesOutput values.
+// You can construct a concrete instance of `ServiceSplittingRuleServiceSplittingAttributesInput` via:
+//
+//	ServiceSplittingRuleServiceSplittingAttributesArgs{...}
+type ServiceSplittingRuleServiceSplittingAttributesInput interface {
+	pulumi.Input
+
+	ToServiceSplittingRuleServiceSplittingAttributesOutput() ServiceSplittingRuleServiceSplittingAttributesOutput
+	ToServiceSplittingRuleServiceSplittingAttributesOutputWithContext(context.Context) ServiceSplittingRuleServiceSplittingAttributesOutput
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesArgs struct {
+	ServiceSplittingAttributes ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayInput `pulumi:"serviceSplittingAttributes"`
+}
+
+func (ServiceSplittingRuleServiceSplittingAttributesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributes)(nil)).Elem()
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesArgs) ToServiceSplittingRuleServiceSplittingAttributesOutput() ServiceSplittingRuleServiceSplittingAttributesOutput {
+	return i.ToServiceSplittingRuleServiceSplittingAttributesOutputWithContext(context.Background())
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesArgs) ToServiceSplittingRuleServiceSplittingAttributesOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleServiceSplittingAttributesOutput)
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesArgs) ToServiceSplittingRuleServiceSplittingAttributesPtrOutput() ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return i.ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesArgs) ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleServiceSplittingAttributesOutput).ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(ctx)
+}
+
+// ServiceSplittingRuleServiceSplittingAttributesPtrInput is an input type that accepts ServiceSplittingRuleServiceSplittingAttributesArgs, ServiceSplittingRuleServiceSplittingAttributesPtr and ServiceSplittingRuleServiceSplittingAttributesPtrOutput values.
+// You can construct a concrete instance of `ServiceSplittingRuleServiceSplittingAttributesPtrInput` via:
+//
+//	        ServiceSplittingRuleServiceSplittingAttributesArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceSplittingRuleServiceSplittingAttributesPtrInput interface {
+	pulumi.Input
+
+	ToServiceSplittingRuleServiceSplittingAttributesPtrOutput() ServiceSplittingRuleServiceSplittingAttributesPtrOutput
+	ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(context.Context) ServiceSplittingRuleServiceSplittingAttributesPtrOutput
+}
+
+type serviceSplittingRuleServiceSplittingAttributesPtrType ServiceSplittingRuleServiceSplittingAttributesArgs
+
+func ServiceSplittingRuleServiceSplittingAttributesPtr(v *ServiceSplittingRuleServiceSplittingAttributesArgs) ServiceSplittingRuleServiceSplittingAttributesPtrInput {
+	return (*serviceSplittingRuleServiceSplittingAttributesPtrType)(v)
+}
+
+func (*serviceSplittingRuleServiceSplittingAttributesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceSplittingRuleServiceSplittingAttributes)(nil)).Elem()
+}
+
+func (i *serviceSplittingRuleServiceSplittingAttributesPtrType) ToServiceSplittingRuleServiceSplittingAttributesPtrOutput() ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return i.ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceSplittingRuleServiceSplittingAttributesPtrType) ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleServiceSplittingAttributesPtrOutput)
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesOutput struct{ *pulumi.OutputState }
+
+func (ServiceSplittingRuleServiceSplittingAttributesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributes)(nil)).Elem()
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesOutput) ToServiceSplittingRuleServiceSplittingAttributesOutput() ServiceSplittingRuleServiceSplittingAttributesOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesOutput) ToServiceSplittingRuleServiceSplittingAttributesOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesOutput) ToServiceSplittingRuleServiceSplittingAttributesPtrOutput() ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return o.ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesOutput) ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceSplittingRuleServiceSplittingAttributes) *ServiceSplittingRuleServiceSplittingAttributes {
+		return &v
+	}).(ServiceSplittingRuleServiceSplittingAttributesPtrOutput)
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesOutput) ServiceSplittingAttributes() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput {
+	return o.ApplyT(func(v ServiceSplittingRuleServiceSplittingAttributes) []ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute {
+		return v.ServiceSplittingAttributes
+	}).(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput)
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceSplittingRuleServiceSplittingAttributesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceSplittingRuleServiceSplittingAttributes)(nil)).Elem()
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesPtrOutput) ToServiceSplittingRuleServiceSplittingAttributesPtrOutput() ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesPtrOutput) ToServiceSplittingRuleServiceSplittingAttributesPtrOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesPtrOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesPtrOutput) Elem() ServiceSplittingRuleServiceSplittingAttributesOutput {
+	return o.ApplyT(func(v *ServiceSplittingRuleServiceSplittingAttributes) ServiceSplittingRuleServiceSplittingAttributes {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceSplittingRuleServiceSplittingAttributes
+		return ret
+	}).(ServiceSplittingRuleServiceSplittingAttributesOutput)
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesPtrOutput) ServiceSplittingAttributes() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput {
+	return o.ApplyT(func(v *ServiceSplittingRuleServiceSplittingAttributes) []ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute {
+		if v == nil {
+			return nil
+		}
+		return v.ServiceSplittingAttributes
+	}).(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput)
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute struct {
+	// Attribute key
+	Key string `pulumi:"key"`
+}
+
+// ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeInput is an input type that accepts ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs and ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput values.
+// You can construct a concrete instance of `ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeInput` via:
+//
+//	ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs{...}
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeInput interface {
+	pulumi.Input
+
+	ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput
+	ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutputWithContext(context.Context) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs struct {
+	// Attribute key
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute)(nil)).Elem()
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput {
+	return i.ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutputWithContext(context.Background())
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput)
+}
+
+// ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayInput is an input type that accepts ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray and ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput values.
+// You can construct a concrete instance of `ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayInput` via:
+//
+//	ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray{ ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs{...} }
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayInput interface {
+	pulumi.Input
+
+	ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput
+	ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutputWithContext(context.Context) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray []ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeInput
+
+func (ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute)(nil)).Elem()
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput {
+	return i.ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput)
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput struct{ *pulumi.OutputState }
+
+func (ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute)(nil)).Elem()
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput {
+	return o
+}
+
+// Attribute key
+func (o ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute) string { return v.Key }).(pulumi.StringOutput)
+}
+
+type ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute)(nil)).Elem()
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput() ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput) ToServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutputWithContext(ctx context.Context) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput {
+	return o
+}
+
+func (o ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput) Index(i pulumi.IntInput) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute {
+		return vs[0].([]ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttribute)[vs[1].(int)]
+	}).(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresets struct {
+	// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+	PlaybackMaskingAllowListRules *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules `pulumi:"playbackMaskingAllowListRules"`
+	// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+	PlaybackMaskingBlockListRules *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules `pulumi:"playbackMaskingBlockListRules"`
+	// (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_ALL`, `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`
+	PlaybackMaskingPreset string `pulumi:"playbackMaskingPreset"`
+	// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+	RecordingMaskingAllowListRules *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules `pulumi:"recordingMaskingAllowListRules"`
+	// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+	RecordingMaskingBlockListRules *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules `pulumi:"recordingMaskingBlockListRules"`
+	// (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`, `MASK_ALL`
+	RecordingMaskingPreset string `pulumi:"recordingMaskingPreset"`
+}
+
+// SessionReplayWebPrivacyMaskingPresetsInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsArgs and SessionReplayWebPrivacyMaskingPresetsOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsInput` via:
+//
+//	SessionReplayWebPrivacyMaskingPresetsArgs{...}
+type SessionReplayWebPrivacyMaskingPresetsInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsOutput() SessionReplayWebPrivacyMaskingPresetsOutput
+	ToSessionReplayWebPrivacyMaskingPresetsOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsOutput
+}
+
+type SessionReplayWebPrivacyMaskingPresetsArgs struct {
+	// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+	PlaybackMaskingAllowListRules SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrInput `pulumi:"playbackMaskingAllowListRules"`
+	// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+	PlaybackMaskingBlockListRules SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrInput `pulumi:"playbackMaskingBlockListRules"`
+	// (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_ALL`, `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`
+	PlaybackMaskingPreset pulumi.StringInput `pulumi:"playbackMaskingPreset"`
+	// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+	RecordingMaskingAllowListRules SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrInput `pulumi:"recordingMaskingAllowListRules"`
+	// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+	RecordingMaskingBlockListRules SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrInput `pulumi:"recordingMaskingBlockListRules"`
+	// (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`, `MASK_ALL`
+	RecordingMaskingPreset pulumi.StringInput `pulumi:"recordingMaskingPreset"`
+}
+
+func (SessionReplayWebPrivacyMaskingPresetsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresets)(nil)).Elem()
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsArgs) ToSessionReplayWebPrivacyMaskingPresetsOutput() SessionReplayWebPrivacyMaskingPresetsOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsArgs) ToSessionReplayWebPrivacyMaskingPresetsOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsOutput)
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsArgs) ToSessionReplayWebPrivacyMaskingPresetsPtrOutput() SessionReplayWebPrivacyMaskingPresetsPtrOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsPtrOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsArgs) ToSessionReplayWebPrivacyMaskingPresetsPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsOutput).ToSessionReplayWebPrivacyMaskingPresetsPtrOutputWithContext(ctx)
+}
+
+// SessionReplayWebPrivacyMaskingPresetsPtrInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsArgs, SessionReplayWebPrivacyMaskingPresetsPtr and SessionReplayWebPrivacyMaskingPresetsPtrOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsPtrInput` via:
+//
+//	        SessionReplayWebPrivacyMaskingPresetsArgs{...}
+//
+//	or:
+//
+//	        nil
+type SessionReplayWebPrivacyMaskingPresetsPtrInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsPtrOutput() SessionReplayWebPrivacyMaskingPresetsPtrOutput
+	ToSessionReplayWebPrivacyMaskingPresetsPtrOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsPtrOutput
+}
+
+type sessionReplayWebPrivacyMaskingPresetsPtrType SessionReplayWebPrivacyMaskingPresetsArgs
+
+func SessionReplayWebPrivacyMaskingPresetsPtr(v *SessionReplayWebPrivacyMaskingPresetsArgs) SessionReplayWebPrivacyMaskingPresetsPtrInput {
+	return (*sessionReplayWebPrivacyMaskingPresetsPtrType)(v)
+}
+
+func (*sessionReplayWebPrivacyMaskingPresetsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SessionReplayWebPrivacyMaskingPresets)(nil)).Elem()
+}
+
+func (i *sessionReplayWebPrivacyMaskingPresetsPtrType) ToSessionReplayWebPrivacyMaskingPresetsPtrOutput() SessionReplayWebPrivacyMaskingPresetsPtrOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsPtrOutputWithContext(context.Background())
+}
+
+func (i *sessionReplayWebPrivacyMaskingPresetsPtrType) ToSessionReplayWebPrivacyMaskingPresetsPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsPtrOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresets)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsOutput) ToSessionReplayWebPrivacyMaskingPresetsOutput() SessionReplayWebPrivacyMaskingPresetsOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsOutput) ToSessionReplayWebPrivacyMaskingPresetsOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsOutput) ToSessionReplayWebPrivacyMaskingPresetsPtrOutput() SessionReplayWebPrivacyMaskingPresetsPtrOutput {
+	return o.ToSessionReplayWebPrivacyMaskingPresetsPtrOutputWithContext(context.Background())
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsOutput) ToSessionReplayWebPrivacyMaskingPresetsPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SessionReplayWebPrivacyMaskingPresets) *SessionReplayWebPrivacyMaskingPresets {
+		return &v
+	}).(SessionReplayWebPrivacyMaskingPresetsPtrOutput)
+}
+
+// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+func (o SessionReplayWebPrivacyMaskingPresetsOutput) PlaybackMaskingAllowListRules() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresets) *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules {
+		return v.PlaybackMaskingAllowListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput)
+}
+
+// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+func (o SessionReplayWebPrivacyMaskingPresetsOutput) PlaybackMaskingBlockListRules() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresets) *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules {
+		return v.PlaybackMaskingBlockListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput)
+}
+
+// (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_ALL`, `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`
+func (o SessionReplayWebPrivacyMaskingPresetsOutput) PlaybackMaskingPreset() pulumi.StringOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresets) string { return v.PlaybackMaskingPreset }).(pulumi.StringOutput)
+}
+
+// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+func (o SessionReplayWebPrivacyMaskingPresetsOutput) RecordingMaskingAllowListRules() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresets) *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules {
+		return v.RecordingMaskingAllowListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput)
+}
+
+// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+func (o SessionReplayWebPrivacyMaskingPresetsOutput) RecordingMaskingBlockListRules() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresets) *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules {
+		return v.RecordingMaskingBlockListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput)
+}
+
+// (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`, `MASK_ALL`
+func (o SessionReplayWebPrivacyMaskingPresetsOutput) RecordingMaskingPreset() pulumi.StringOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresets) string { return v.RecordingMaskingPreset }).(pulumi.StringOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPtrOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SessionReplayWebPrivacyMaskingPresets)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPtrOutput) ToSessionReplayWebPrivacyMaskingPresetsPtrOutput() SessionReplayWebPrivacyMaskingPresetsPtrOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPtrOutput) ToSessionReplayWebPrivacyMaskingPresetsPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPtrOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPtrOutput) Elem() SessionReplayWebPrivacyMaskingPresetsOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresets) SessionReplayWebPrivacyMaskingPresets {
+		if v != nil {
+			return *v
+		}
+		var ret SessionReplayWebPrivacyMaskingPresets
+		return ret
+	}).(SessionReplayWebPrivacyMaskingPresetsOutput)
+}
+
+// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+func (o SessionReplayWebPrivacyMaskingPresetsPtrOutput) PlaybackMaskingAllowListRules() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresets) *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules {
+		if v == nil {
+			return nil
+		}
+		return v.PlaybackMaskingAllowListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput)
+}
+
+// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+func (o SessionReplayWebPrivacyMaskingPresetsPtrOutput) PlaybackMaskingBlockListRules() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresets) *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules {
+		if v == nil {
+			return nil
+		}
+		return v.PlaybackMaskingBlockListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput)
+}
+
+// (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_ALL`, `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`
+func (o SessionReplayWebPrivacyMaskingPresetsPtrOutput) PlaybackMaskingPreset() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresets) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PlaybackMaskingPreset
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+func (o SessionReplayWebPrivacyMaskingPresetsPtrOutput) RecordingMaskingAllowListRules() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresets) *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules {
+		if v == nil {
+			return nil
+		}
+		return v.RecordingMaskingAllowListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput)
+}
+
+// (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+func (o SessionReplayWebPrivacyMaskingPresetsPtrOutput) RecordingMaskingBlockListRules() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresets) *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules {
+		if v == nil {
+			return nil
+		}
+		return v.RecordingMaskingBlockListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput)
+}
+
+// (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`, `MASK_ALL`
+func (o SessionReplayWebPrivacyMaskingPresetsPtrOutput) RecordingMaskingPreset() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresets) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.RecordingMaskingPreset
+	}).(pulumi.StringPtrOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules struct {
+	AllowListRules []SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule `pulumi:"allowListRules"`
+}
+
+// SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs and SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesInput` via:
+//
+//	SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs{...}
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs struct {
+	AllowListRules SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayInput `pulumi:"allowListRules"`
+}
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules)(nil)).Elem()
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput)
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput).ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutputWithContext(ctx)
+}
+
+// SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs, SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtr and SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrInput` via:
+//
+//	        SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput
+}
+
+type sessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrType SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs
+
+func SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtr(v *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrInput {
+	return (*sessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrType)(v)
+}
+
+func (*sessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules)(nil)).Elem()
+}
+
+func (i *sessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrType) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *sessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrType) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput {
+	return o.ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutputWithContext(context.Background())
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules) *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules {
+		return &v
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput)
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput) AllowListRules() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules) []SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule {
+		return v.AllowListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput) Elem() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules {
+		if v != nil {
+			return *v
+		}
+		var ret SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules
+		return ret
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput)
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput) AllowListRules() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules) []SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule {
+		if v == nil {
+			return nil
+		}
+		return v.AllowListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule struct {
+	// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+	AttributeExpression *string `pulumi:"attributeExpression"`
+	// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+	CssExpression *string `pulumi:"cssExpression"`
+	// Possible Values: `ATTRIBUTE`, `ELEMENT`
+	Target string `pulumi:"target"`
+}
+
+// SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArgs and SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleInput` via:
+//
+//	SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArgs{...}
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArgs struct {
+	// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+	AttributeExpression pulumi.StringPtrInput `pulumi:"attributeExpression"`
+	// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+	CssExpression pulumi.StringPtrInput `pulumi:"cssExpression"`
+	// Possible Values: `ATTRIBUTE`, `ELEMENT`
+	Target pulumi.StringInput `pulumi:"target"`
+}
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule)(nil)).Elem()
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArgs) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArgs) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput)
+}
+
+// SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArray and SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayInput` via:
+//
+//	SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArray{ SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArgs{...} }
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArray []SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleInput
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule)(nil)).Elem()
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArray) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArray) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput {
+	return o
+}
+
+// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput) AttributeExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule) *string {
+		return v.AttributeExpression
+	}).(pulumi.StringPtrOutput)
+}
+
+// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput) CssExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule) *string {
+		return v.CssExpression
+	}).(pulumi.StringPtrOutput)
+}
+
+// Possible Values: `ATTRIBUTE`, `ELEMENT`
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule) string {
+		return v.Target
+	}).(pulumi.StringOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput) Index(i pulumi.IntInput) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule {
+		return vs[0].([]SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule)[vs[1].(int)]
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules struct {
+	BlockListRules []SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule `pulumi:"blockListRules"`
+}
+
+// SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs and SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesInput` via:
+//
+//	SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs{...}
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs struct {
+	BlockListRules SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayInput `pulumi:"blockListRules"`
+}
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules)(nil)).Elem()
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput)
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput).ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutputWithContext(ctx)
+}
+
+// SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs, SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtr and SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrInput` via:
+//
+//	        SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput
+}
+
+type sessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrType SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs
+
+func SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtr(v *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrInput {
+	return (*sessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrType)(v)
+}
+
+func (*sessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules)(nil)).Elem()
+}
+
+func (i *sessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrType) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *sessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrType) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput {
+	return o.ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutputWithContext(context.Background())
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules) *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules {
+		return &v
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput)
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput) BlockListRules() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules) []SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule {
+		return v.BlockListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput) Elem() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules {
+		if v != nil {
+			return *v
+		}
+		var ret SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules
+		return ret
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput)
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput) BlockListRules() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules) []SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule {
+		if v == nil {
+			return nil
+		}
+		return v.BlockListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule struct {
+	// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+	AttributeExpression *string `pulumi:"attributeExpression"`
+	// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+	CssExpression *string `pulumi:"cssExpression"`
+	// Hide user interactions with these elements, including clicks that expand elements, highlighting that results from hovering a cursor over an option, and selection of specific form options.
+	HideUserInteraction *bool `pulumi:"hideUserInteraction"`
+	// Possible Values: `ELEMENT`, `ATTRIBUTE`
+	Target string `pulumi:"target"`
+}
+
+// SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArgs and SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleInput` via:
+//
+//	SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArgs{...}
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArgs struct {
+	// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+	AttributeExpression pulumi.StringPtrInput `pulumi:"attributeExpression"`
+	// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+	CssExpression pulumi.StringPtrInput `pulumi:"cssExpression"`
+	// Hide user interactions with these elements, including clicks that expand elements, highlighting that results from hovering a cursor over an option, and selection of specific form options.
+	HideUserInteraction pulumi.BoolPtrInput `pulumi:"hideUserInteraction"`
+	// Possible Values: `ELEMENT`, `ATTRIBUTE`
+	Target pulumi.StringInput `pulumi:"target"`
+}
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule)(nil)).Elem()
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArgs) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArgs) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput)
+}
+
+// SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArray and SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayInput` via:
+//
+//	SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArray{ SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArgs{...} }
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput
+	ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArray []SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleInput
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule)(nil)).Elem()
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArray) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArray) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput {
+	return o
+}
+
+// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput) AttributeExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule) *string {
+		return v.AttributeExpression
+	}).(pulumi.StringPtrOutput)
+}
+
+// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput) CssExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule) *string {
+		return v.CssExpression
+	}).(pulumi.StringPtrOutput)
+}
+
+// Hide user interactions with these elements, including clicks that expand elements, highlighting that results from hovering a cursor over an option, and selection of specific form options.
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput) HideUserInteraction() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule) *bool {
+		return v.HideUserInteraction
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Possible Values: `ELEMENT`, `ATTRIBUTE`
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule) string {
+		return v.Target
+	}).(pulumi.StringOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput() SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput) ToSessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput) Index(i pulumi.IntInput) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule {
+		return vs[0].([]SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule)[vs[1].(int)]
+	}).(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules struct {
+	AllowListRules []SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule `pulumi:"allowListRules"`
+}
+
+// SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs and SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesInput` via:
+//
+//	SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs{...}
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs struct {
+	AllowListRules SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayInput `pulumi:"allowListRules"`
+}
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules)(nil)).Elem()
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput)
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput).ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutputWithContext(ctx)
+}
+
+// SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs, SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtr and SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrInput` via:
+//
+//	        SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput
+}
+
+type sessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrType SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs
+
+func SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtr(v *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrInput {
+	return (*sessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrType)(v)
+}
+
+func (*sessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules)(nil)).Elem()
+}
+
+func (i *sessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrType) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *sessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrType) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput {
+	return o.ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutputWithContext(context.Background())
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules) *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules {
+		return &v
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput)
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput) AllowListRules() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules) []SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule {
+		return v.AllowListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput) Elem() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules {
+		if v != nil {
+			return *v
+		}
+		var ret SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules
+		return ret
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput)
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput) AllowListRules() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules) []SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule {
+		if v == nil {
+			return nil
+		}
+		return v.AllowListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule struct {
+	// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+	AttributeExpression *string `pulumi:"attributeExpression"`
+	// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+	CssExpression *string `pulumi:"cssExpression"`
+	// Possible Values: `ATTRIBUTE`, `ELEMENT`
+	Target string `pulumi:"target"`
+}
+
+// SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArgs and SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleInput` via:
+//
+//	SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArgs{...}
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArgs struct {
+	// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+	AttributeExpression pulumi.StringPtrInput `pulumi:"attributeExpression"`
+	// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+	CssExpression pulumi.StringPtrInput `pulumi:"cssExpression"`
+	// Possible Values: `ATTRIBUTE`, `ELEMENT`
+	Target pulumi.StringInput `pulumi:"target"`
+}
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule)(nil)).Elem()
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArgs) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArgs) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput)
+}
+
+// SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArray and SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayInput` via:
+//
+//	SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArray{ SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArgs{...} }
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArray []SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleInput
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule)(nil)).Elem()
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArray) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArray) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput {
+	return o
+}
+
+// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput) AttributeExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule) *string {
+		return v.AttributeExpression
+	}).(pulumi.StringPtrOutput)
+}
+
+// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput) CssExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule) *string {
+		return v.CssExpression
+	}).(pulumi.StringPtrOutput)
+}
+
+// Possible Values: `ATTRIBUTE`, `ELEMENT`
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule) string {
+		return v.Target
+	}).(pulumi.StringOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput) Index(i pulumi.IntInput) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule {
+		return vs[0].([]SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule)[vs[1].(int)]
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules struct {
+	BlockListRules []SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule `pulumi:"blockListRules"`
+}
+
+// SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs and SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesInput` via:
+//
+//	SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs{...}
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs struct {
+	BlockListRules SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayInput `pulumi:"blockListRules"`
+}
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules)(nil)).Elem()
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput)
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput).ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutputWithContext(ctx)
+}
+
+// SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs, SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtr and SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrInput` via:
+//
+//	        SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput
+}
+
+type sessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrType SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs
+
+func SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtr(v *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrInput {
+	return (*sessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrType)(v)
+}
+
+func (*sessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules)(nil)).Elem()
+}
+
+func (i *sessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrType) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *sessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrType) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput {
+	return o.ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutputWithContext(context.Background())
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules) *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules {
+		return &v
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput)
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput) BlockListRules() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules) []SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule {
+		return v.BlockListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput) Elem() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules {
+		if v != nil {
+			return *v
+		}
+		var ret SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules
+		return ret
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput)
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput) BlockListRules() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput {
+	return o.ApplyT(func(v *SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules) []SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule {
+		if v == nil {
+			return nil
+		}
+		return v.BlockListRules
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule struct {
+	// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+	AttributeExpression *string `pulumi:"attributeExpression"`
+	// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+	CssExpression *string `pulumi:"cssExpression"`
+	// Hide user interactions with these elements, including clicks that expand elements, highlighting that results from hovering a cursor over an option, and selection of specific form options.
+	HideUserInteraction *bool `pulumi:"hideUserInteraction"`
+	// Possible Values: `ELEMENT`, `ATTRIBUTE`
+	Target string `pulumi:"target"`
+}
+
+// SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArgs and SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleInput` via:
+//
+//	SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArgs{...}
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArgs struct {
+	// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+	AttributeExpression pulumi.StringPtrInput `pulumi:"attributeExpression"`
+	// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+	CssExpression pulumi.StringPtrInput `pulumi:"cssExpression"`
+	// Hide user interactions with these elements, including clicks that expand elements, highlighting that results from hovering a cursor over an option, and selection of specific form options.
+	HideUserInteraction pulumi.BoolPtrInput `pulumi:"hideUserInteraction"`
+	// Possible Values: `ELEMENT`, `ATTRIBUTE`
+	Target pulumi.StringInput `pulumi:"target"`
+}
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule)(nil)).Elem()
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArgs) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArgs) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput)
+}
+
+// SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayInput is an input type that accepts SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArray and SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput values.
+// You can construct a concrete instance of `SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayInput` via:
+//
+//	SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArray{ SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArgs{...} }
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayInput interface {
+	pulumi.Input
+
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput
+	ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutputWithContext(context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArray []SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleInput
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule)(nil)).Elem()
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArray) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput {
+	return i.ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutputWithContext(context.Background())
+}
+
+func (i SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArray) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput {
+	return o
+}
+
+// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput) AttributeExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule) *string {
+		return v.AttributeExpression
+	}).(pulumi.StringPtrOutput)
+}
+
+// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput) CssExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule) *string {
+		return v.CssExpression
+	}).(pulumi.StringPtrOutput)
+}
+
+// Hide user interactions with these elements, including clicks that expand elements, highlighting that results from hovering a cursor over an option, and selection of specific form options.
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput) HideUserInteraction() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule) *bool {
+		return v.HideUserInteraction
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Possible Values: `ELEMENT`, `ATTRIBUTE`
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule) string {
+		return v.Target
+	}).(pulumi.StringOutput)
+}
+
+type SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule)(nil)).Elem()
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput() SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput) ToSessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutputWithContext(ctx context.Context) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput {
+	return o
+}
+
+func (o SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput) Index(i pulumi.IntInput) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule {
+		return vs[0].([]SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule)[vs[1].(int)]
+	}).(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput)
+}
+
+type SettingsPermissionsGroups struct {
+	// Group that is to be granted read or write permissions
+	Groups []SettingsPermissionsGroupsGroup `pulumi:"groups"`
+}
+
+// SettingsPermissionsGroupsInput is an input type that accepts SettingsPermissionsGroupsArgs and SettingsPermissionsGroupsOutput values.
+// You can construct a concrete instance of `SettingsPermissionsGroupsInput` via:
+//
+//	SettingsPermissionsGroupsArgs{...}
+type SettingsPermissionsGroupsInput interface {
+	pulumi.Input
+
+	ToSettingsPermissionsGroupsOutput() SettingsPermissionsGroupsOutput
+	ToSettingsPermissionsGroupsOutputWithContext(context.Context) SettingsPermissionsGroupsOutput
+}
+
+type SettingsPermissionsGroupsArgs struct {
+	// Group that is to be granted read or write permissions
+	Groups SettingsPermissionsGroupsGroupArrayInput `pulumi:"groups"`
+}
+
+func (SettingsPermissionsGroupsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SettingsPermissionsGroups)(nil)).Elem()
+}
+
+func (i SettingsPermissionsGroupsArgs) ToSettingsPermissionsGroupsOutput() SettingsPermissionsGroupsOutput {
+	return i.ToSettingsPermissionsGroupsOutputWithContext(context.Background())
+}
+
+func (i SettingsPermissionsGroupsArgs) ToSettingsPermissionsGroupsOutputWithContext(ctx context.Context) SettingsPermissionsGroupsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SettingsPermissionsGroupsOutput)
+}
+
+func (i SettingsPermissionsGroupsArgs) ToSettingsPermissionsGroupsPtrOutput() SettingsPermissionsGroupsPtrOutput {
+	return i.ToSettingsPermissionsGroupsPtrOutputWithContext(context.Background())
+}
+
+func (i SettingsPermissionsGroupsArgs) ToSettingsPermissionsGroupsPtrOutputWithContext(ctx context.Context) SettingsPermissionsGroupsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SettingsPermissionsGroupsOutput).ToSettingsPermissionsGroupsPtrOutputWithContext(ctx)
+}
+
+// SettingsPermissionsGroupsPtrInput is an input type that accepts SettingsPermissionsGroupsArgs, SettingsPermissionsGroupsPtr and SettingsPermissionsGroupsPtrOutput values.
+// You can construct a concrete instance of `SettingsPermissionsGroupsPtrInput` via:
+//
+//	        SettingsPermissionsGroupsArgs{...}
+//
+//	or:
+//
+//	        nil
+type SettingsPermissionsGroupsPtrInput interface {
+	pulumi.Input
+
+	ToSettingsPermissionsGroupsPtrOutput() SettingsPermissionsGroupsPtrOutput
+	ToSettingsPermissionsGroupsPtrOutputWithContext(context.Context) SettingsPermissionsGroupsPtrOutput
+}
+
+type settingsPermissionsGroupsPtrType SettingsPermissionsGroupsArgs
+
+func SettingsPermissionsGroupsPtr(v *SettingsPermissionsGroupsArgs) SettingsPermissionsGroupsPtrInput {
+	return (*settingsPermissionsGroupsPtrType)(v)
+}
+
+func (*settingsPermissionsGroupsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SettingsPermissionsGroups)(nil)).Elem()
+}
+
+func (i *settingsPermissionsGroupsPtrType) ToSettingsPermissionsGroupsPtrOutput() SettingsPermissionsGroupsPtrOutput {
+	return i.ToSettingsPermissionsGroupsPtrOutputWithContext(context.Background())
+}
+
+func (i *settingsPermissionsGroupsPtrType) ToSettingsPermissionsGroupsPtrOutputWithContext(ctx context.Context) SettingsPermissionsGroupsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SettingsPermissionsGroupsPtrOutput)
+}
+
+type SettingsPermissionsGroupsOutput struct{ *pulumi.OutputState }
+
+func (SettingsPermissionsGroupsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SettingsPermissionsGroups)(nil)).Elem()
+}
+
+func (o SettingsPermissionsGroupsOutput) ToSettingsPermissionsGroupsOutput() SettingsPermissionsGroupsOutput {
+	return o
+}
+
+func (o SettingsPermissionsGroupsOutput) ToSettingsPermissionsGroupsOutputWithContext(ctx context.Context) SettingsPermissionsGroupsOutput {
+	return o
+}
+
+func (o SettingsPermissionsGroupsOutput) ToSettingsPermissionsGroupsPtrOutput() SettingsPermissionsGroupsPtrOutput {
+	return o.ToSettingsPermissionsGroupsPtrOutputWithContext(context.Background())
+}
+
+func (o SettingsPermissionsGroupsOutput) ToSettingsPermissionsGroupsPtrOutputWithContext(ctx context.Context) SettingsPermissionsGroupsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SettingsPermissionsGroups) *SettingsPermissionsGroups {
+		return &v
+	}).(SettingsPermissionsGroupsPtrOutput)
+}
+
+// Group that is to be granted read or write permissions
+func (o SettingsPermissionsGroupsOutput) Groups() SettingsPermissionsGroupsGroupArrayOutput {
+	return o.ApplyT(func(v SettingsPermissionsGroups) []SettingsPermissionsGroupsGroup { return v.Groups }).(SettingsPermissionsGroupsGroupArrayOutput)
+}
+
+type SettingsPermissionsGroupsPtrOutput struct{ *pulumi.OutputState }
+
+func (SettingsPermissionsGroupsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SettingsPermissionsGroups)(nil)).Elem()
+}
+
+func (o SettingsPermissionsGroupsPtrOutput) ToSettingsPermissionsGroupsPtrOutput() SettingsPermissionsGroupsPtrOutput {
+	return o
+}
+
+func (o SettingsPermissionsGroupsPtrOutput) ToSettingsPermissionsGroupsPtrOutputWithContext(ctx context.Context) SettingsPermissionsGroupsPtrOutput {
+	return o
+}
+
+func (o SettingsPermissionsGroupsPtrOutput) Elem() SettingsPermissionsGroupsOutput {
+	return o.ApplyT(func(v *SettingsPermissionsGroups) SettingsPermissionsGroups {
+		if v != nil {
+			return *v
+		}
+		var ret SettingsPermissionsGroups
+		return ret
+	}).(SettingsPermissionsGroupsOutput)
+}
+
+// Group that is to be granted read or write permissions
+func (o SettingsPermissionsGroupsPtrOutput) Groups() SettingsPermissionsGroupsGroupArrayOutput {
+	return o.ApplyT(func(v *SettingsPermissionsGroups) []SettingsPermissionsGroupsGroup {
+		if v == nil {
+			return nil
+		}
+		return v.Groups
+	}).(SettingsPermissionsGroupsGroupArrayOutput)
+}
+
+type SettingsPermissionsGroupsGroup struct {
+	// Valid values: `read`, `write`
+	Access string `pulumi:"access"`
+	// The UUID of the group, conveniently retrieved via the `id` attribute provided by the data source `dynatrace*iam*group
+	Id string `pulumi:"id"`
+}
+
+// SettingsPermissionsGroupsGroupInput is an input type that accepts SettingsPermissionsGroupsGroupArgs and SettingsPermissionsGroupsGroupOutput values.
+// You can construct a concrete instance of `SettingsPermissionsGroupsGroupInput` via:
+//
+//	SettingsPermissionsGroupsGroupArgs{...}
+type SettingsPermissionsGroupsGroupInput interface {
+	pulumi.Input
+
+	ToSettingsPermissionsGroupsGroupOutput() SettingsPermissionsGroupsGroupOutput
+	ToSettingsPermissionsGroupsGroupOutputWithContext(context.Context) SettingsPermissionsGroupsGroupOutput
+}
+
+type SettingsPermissionsGroupsGroupArgs struct {
+	// Valid values: `read`, `write`
+	Access pulumi.StringInput `pulumi:"access"`
+	// The UUID of the group, conveniently retrieved via the `id` attribute provided by the data source `dynatrace*iam*group
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (SettingsPermissionsGroupsGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SettingsPermissionsGroupsGroup)(nil)).Elem()
+}
+
+func (i SettingsPermissionsGroupsGroupArgs) ToSettingsPermissionsGroupsGroupOutput() SettingsPermissionsGroupsGroupOutput {
+	return i.ToSettingsPermissionsGroupsGroupOutputWithContext(context.Background())
+}
+
+func (i SettingsPermissionsGroupsGroupArgs) ToSettingsPermissionsGroupsGroupOutputWithContext(ctx context.Context) SettingsPermissionsGroupsGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SettingsPermissionsGroupsGroupOutput)
+}
+
+// SettingsPermissionsGroupsGroupArrayInput is an input type that accepts SettingsPermissionsGroupsGroupArray and SettingsPermissionsGroupsGroupArrayOutput values.
+// You can construct a concrete instance of `SettingsPermissionsGroupsGroupArrayInput` via:
+//
+//	SettingsPermissionsGroupsGroupArray{ SettingsPermissionsGroupsGroupArgs{...} }
+type SettingsPermissionsGroupsGroupArrayInput interface {
+	pulumi.Input
+
+	ToSettingsPermissionsGroupsGroupArrayOutput() SettingsPermissionsGroupsGroupArrayOutput
+	ToSettingsPermissionsGroupsGroupArrayOutputWithContext(context.Context) SettingsPermissionsGroupsGroupArrayOutput
+}
+
+type SettingsPermissionsGroupsGroupArray []SettingsPermissionsGroupsGroupInput
+
+func (SettingsPermissionsGroupsGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SettingsPermissionsGroupsGroup)(nil)).Elem()
+}
+
+func (i SettingsPermissionsGroupsGroupArray) ToSettingsPermissionsGroupsGroupArrayOutput() SettingsPermissionsGroupsGroupArrayOutput {
+	return i.ToSettingsPermissionsGroupsGroupArrayOutputWithContext(context.Background())
+}
+
+func (i SettingsPermissionsGroupsGroupArray) ToSettingsPermissionsGroupsGroupArrayOutputWithContext(ctx context.Context) SettingsPermissionsGroupsGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SettingsPermissionsGroupsGroupArrayOutput)
+}
+
+type SettingsPermissionsGroupsGroupOutput struct{ *pulumi.OutputState }
+
+func (SettingsPermissionsGroupsGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SettingsPermissionsGroupsGroup)(nil)).Elem()
+}
+
+func (o SettingsPermissionsGroupsGroupOutput) ToSettingsPermissionsGroupsGroupOutput() SettingsPermissionsGroupsGroupOutput {
+	return o
+}
+
+func (o SettingsPermissionsGroupsGroupOutput) ToSettingsPermissionsGroupsGroupOutputWithContext(ctx context.Context) SettingsPermissionsGroupsGroupOutput {
+	return o
+}
+
+// Valid values: `read`, `write`
+func (o SettingsPermissionsGroupsGroupOutput) Access() pulumi.StringOutput {
+	return o.ApplyT(func(v SettingsPermissionsGroupsGroup) string { return v.Access }).(pulumi.StringOutput)
+}
+
+// The UUID of the group, conveniently retrieved via the `id` attribute provided by the data source `dynatrace*iam*group
+func (o SettingsPermissionsGroupsGroupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v SettingsPermissionsGroupsGroup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type SettingsPermissionsGroupsGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (SettingsPermissionsGroupsGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SettingsPermissionsGroupsGroup)(nil)).Elem()
+}
+
+func (o SettingsPermissionsGroupsGroupArrayOutput) ToSettingsPermissionsGroupsGroupArrayOutput() SettingsPermissionsGroupsGroupArrayOutput {
+	return o
+}
+
+func (o SettingsPermissionsGroupsGroupArrayOutput) ToSettingsPermissionsGroupsGroupArrayOutputWithContext(ctx context.Context) SettingsPermissionsGroupsGroupArrayOutput {
+	return o
+}
+
+func (o SettingsPermissionsGroupsGroupArrayOutput) Index(i pulumi.IntInput) SettingsPermissionsGroupsGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SettingsPermissionsGroupsGroup {
+		return vs[0].([]SettingsPermissionsGroupsGroup)[vs[1].(int)]
+	}).(SettingsPermissionsGroupsGroupOutput)
+}
+
+type SettingsPermissionsUsers struct {
+	// User that is to be granted read or write permissions
+	Users []SettingsPermissionsUsersUser `pulumi:"users"`
+}
+
+// SettingsPermissionsUsersInput is an input type that accepts SettingsPermissionsUsersArgs and SettingsPermissionsUsersOutput values.
+// You can construct a concrete instance of `SettingsPermissionsUsersInput` via:
+//
+//	SettingsPermissionsUsersArgs{...}
+type SettingsPermissionsUsersInput interface {
+	pulumi.Input
+
+	ToSettingsPermissionsUsersOutput() SettingsPermissionsUsersOutput
+	ToSettingsPermissionsUsersOutputWithContext(context.Context) SettingsPermissionsUsersOutput
+}
+
+type SettingsPermissionsUsersArgs struct {
+	// User that is to be granted read or write permissions
+	Users SettingsPermissionsUsersUserArrayInput `pulumi:"users"`
+}
+
+func (SettingsPermissionsUsersArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SettingsPermissionsUsers)(nil)).Elem()
+}
+
+func (i SettingsPermissionsUsersArgs) ToSettingsPermissionsUsersOutput() SettingsPermissionsUsersOutput {
+	return i.ToSettingsPermissionsUsersOutputWithContext(context.Background())
+}
+
+func (i SettingsPermissionsUsersArgs) ToSettingsPermissionsUsersOutputWithContext(ctx context.Context) SettingsPermissionsUsersOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SettingsPermissionsUsersOutput)
+}
+
+func (i SettingsPermissionsUsersArgs) ToSettingsPermissionsUsersPtrOutput() SettingsPermissionsUsersPtrOutput {
+	return i.ToSettingsPermissionsUsersPtrOutputWithContext(context.Background())
+}
+
+func (i SettingsPermissionsUsersArgs) ToSettingsPermissionsUsersPtrOutputWithContext(ctx context.Context) SettingsPermissionsUsersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SettingsPermissionsUsersOutput).ToSettingsPermissionsUsersPtrOutputWithContext(ctx)
+}
+
+// SettingsPermissionsUsersPtrInput is an input type that accepts SettingsPermissionsUsersArgs, SettingsPermissionsUsersPtr and SettingsPermissionsUsersPtrOutput values.
+// You can construct a concrete instance of `SettingsPermissionsUsersPtrInput` via:
+//
+//	        SettingsPermissionsUsersArgs{...}
+//
+//	or:
+//
+//	        nil
+type SettingsPermissionsUsersPtrInput interface {
+	pulumi.Input
+
+	ToSettingsPermissionsUsersPtrOutput() SettingsPermissionsUsersPtrOutput
+	ToSettingsPermissionsUsersPtrOutputWithContext(context.Context) SettingsPermissionsUsersPtrOutput
+}
+
+type settingsPermissionsUsersPtrType SettingsPermissionsUsersArgs
+
+func SettingsPermissionsUsersPtr(v *SettingsPermissionsUsersArgs) SettingsPermissionsUsersPtrInput {
+	return (*settingsPermissionsUsersPtrType)(v)
+}
+
+func (*settingsPermissionsUsersPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SettingsPermissionsUsers)(nil)).Elem()
+}
+
+func (i *settingsPermissionsUsersPtrType) ToSettingsPermissionsUsersPtrOutput() SettingsPermissionsUsersPtrOutput {
+	return i.ToSettingsPermissionsUsersPtrOutputWithContext(context.Background())
+}
+
+func (i *settingsPermissionsUsersPtrType) ToSettingsPermissionsUsersPtrOutputWithContext(ctx context.Context) SettingsPermissionsUsersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SettingsPermissionsUsersPtrOutput)
+}
+
+type SettingsPermissionsUsersOutput struct{ *pulumi.OutputState }
+
+func (SettingsPermissionsUsersOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SettingsPermissionsUsers)(nil)).Elem()
+}
+
+func (o SettingsPermissionsUsersOutput) ToSettingsPermissionsUsersOutput() SettingsPermissionsUsersOutput {
+	return o
+}
+
+func (o SettingsPermissionsUsersOutput) ToSettingsPermissionsUsersOutputWithContext(ctx context.Context) SettingsPermissionsUsersOutput {
+	return o
+}
+
+func (o SettingsPermissionsUsersOutput) ToSettingsPermissionsUsersPtrOutput() SettingsPermissionsUsersPtrOutput {
+	return o.ToSettingsPermissionsUsersPtrOutputWithContext(context.Background())
+}
+
+func (o SettingsPermissionsUsersOutput) ToSettingsPermissionsUsersPtrOutputWithContext(ctx context.Context) SettingsPermissionsUsersPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SettingsPermissionsUsers) *SettingsPermissionsUsers {
+		return &v
+	}).(SettingsPermissionsUsersPtrOutput)
+}
+
+// User that is to be granted read or write permissions
+func (o SettingsPermissionsUsersOutput) Users() SettingsPermissionsUsersUserArrayOutput {
+	return o.ApplyT(func(v SettingsPermissionsUsers) []SettingsPermissionsUsersUser { return v.Users }).(SettingsPermissionsUsersUserArrayOutput)
+}
+
+type SettingsPermissionsUsersPtrOutput struct{ *pulumi.OutputState }
+
+func (SettingsPermissionsUsersPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SettingsPermissionsUsers)(nil)).Elem()
+}
+
+func (o SettingsPermissionsUsersPtrOutput) ToSettingsPermissionsUsersPtrOutput() SettingsPermissionsUsersPtrOutput {
+	return o
+}
+
+func (o SettingsPermissionsUsersPtrOutput) ToSettingsPermissionsUsersPtrOutputWithContext(ctx context.Context) SettingsPermissionsUsersPtrOutput {
+	return o
+}
+
+func (o SettingsPermissionsUsersPtrOutput) Elem() SettingsPermissionsUsersOutput {
+	return o.ApplyT(func(v *SettingsPermissionsUsers) SettingsPermissionsUsers {
+		if v != nil {
+			return *v
+		}
+		var ret SettingsPermissionsUsers
+		return ret
+	}).(SettingsPermissionsUsersOutput)
+}
+
+// User that is to be granted read or write permissions
+func (o SettingsPermissionsUsersPtrOutput) Users() SettingsPermissionsUsersUserArrayOutput {
+	return o.ApplyT(func(v *SettingsPermissionsUsers) []SettingsPermissionsUsersUser {
+		if v == nil {
+			return nil
+		}
+		return v.Users
+	}).(SettingsPermissionsUsersUserArrayOutput)
+}
+
+type SettingsPermissionsUsersUser struct {
+	// Valid values: `read`, `write`
+	Access string `pulumi:"access"`
+	// The UUID of the user, conveniently retrieved via the `uid` attribute provided by the data source `IamUser`
+	Uid string `pulumi:"uid"`
+}
+
+// SettingsPermissionsUsersUserInput is an input type that accepts SettingsPermissionsUsersUserArgs and SettingsPermissionsUsersUserOutput values.
+// You can construct a concrete instance of `SettingsPermissionsUsersUserInput` via:
+//
+//	SettingsPermissionsUsersUserArgs{...}
+type SettingsPermissionsUsersUserInput interface {
+	pulumi.Input
+
+	ToSettingsPermissionsUsersUserOutput() SettingsPermissionsUsersUserOutput
+	ToSettingsPermissionsUsersUserOutputWithContext(context.Context) SettingsPermissionsUsersUserOutput
+}
+
+type SettingsPermissionsUsersUserArgs struct {
+	// Valid values: `read`, `write`
+	Access pulumi.StringInput `pulumi:"access"`
+	// The UUID of the user, conveniently retrieved via the `uid` attribute provided by the data source `IamUser`
+	Uid pulumi.StringInput `pulumi:"uid"`
+}
+
+func (SettingsPermissionsUsersUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SettingsPermissionsUsersUser)(nil)).Elem()
+}
+
+func (i SettingsPermissionsUsersUserArgs) ToSettingsPermissionsUsersUserOutput() SettingsPermissionsUsersUserOutput {
+	return i.ToSettingsPermissionsUsersUserOutputWithContext(context.Background())
+}
+
+func (i SettingsPermissionsUsersUserArgs) ToSettingsPermissionsUsersUserOutputWithContext(ctx context.Context) SettingsPermissionsUsersUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SettingsPermissionsUsersUserOutput)
+}
+
+// SettingsPermissionsUsersUserArrayInput is an input type that accepts SettingsPermissionsUsersUserArray and SettingsPermissionsUsersUserArrayOutput values.
+// You can construct a concrete instance of `SettingsPermissionsUsersUserArrayInput` via:
+//
+//	SettingsPermissionsUsersUserArray{ SettingsPermissionsUsersUserArgs{...} }
+type SettingsPermissionsUsersUserArrayInput interface {
+	pulumi.Input
+
+	ToSettingsPermissionsUsersUserArrayOutput() SettingsPermissionsUsersUserArrayOutput
+	ToSettingsPermissionsUsersUserArrayOutputWithContext(context.Context) SettingsPermissionsUsersUserArrayOutput
+}
+
+type SettingsPermissionsUsersUserArray []SettingsPermissionsUsersUserInput
+
+func (SettingsPermissionsUsersUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SettingsPermissionsUsersUser)(nil)).Elem()
+}
+
+func (i SettingsPermissionsUsersUserArray) ToSettingsPermissionsUsersUserArrayOutput() SettingsPermissionsUsersUserArrayOutput {
+	return i.ToSettingsPermissionsUsersUserArrayOutputWithContext(context.Background())
+}
+
+func (i SettingsPermissionsUsersUserArray) ToSettingsPermissionsUsersUserArrayOutputWithContext(ctx context.Context) SettingsPermissionsUsersUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SettingsPermissionsUsersUserArrayOutput)
+}
+
+type SettingsPermissionsUsersUserOutput struct{ *pulumi.OutputState }
+
+func (SettingsPermissionsUsersUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SettingsPermissionsUsersUser)(nil)).Elem()
+}
+
+func (o SettingsPermissionsUsersUserOutput) ToSettingsPermissionsUsersUserOutput() SettingsPermissionsUsersUserOutput {
+	return o
+}
+
+func (o SettingsPermissionsUsersUserOutput) ToSettingsPermissionsUsersUserOutputWithContext(ctx context.Context) SettingsPermissionsUsersUserOutput {
+	return o
+}
+
+// Valid values: `read`, `write`
+func (o SettingsPermissionsUsersUserOutput) Access() pulumi.StringOutput {
+	return o.ApplyT(func(v SettingsPermissionsUsersUser) string { return v.Access }).(pulumi.StringOutput)
+}
+
+// The UUID of the user, conveniently retrieved via the `uid` attribute provided by the data source `IamUser`
+func (o SettingsPermissionsUsersUserOutput) Uid() pulumi.StringOutput {
+	return o.ApplyT(func(v SettingsPermissionsUsersUser) string { return v.Uid }).(pulumi.StringOutput)
+}
+
+type SettingsPermissionsUsersUserArrayOutput struct{ *pulumi.OutputState }
+
+func (SettingsPermissionsUsersUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SettingsPermissionsUsersUser)(nil)).Elem()
+}
+
+func (o SettingsPermissionsUsersUserArrayOutput) ToSettingsPermissionsUsersUserArrayOutput() SettingsPermissionsUsersUserArrayOutput {
+	return o
+}
+
+func (o SettingsPermissionsUsersUserArrayOutput) ToSettingsPermissionsUsersUserArrayOutputWithContext(ctx context.Context) SettingsPermissionsUsersUserArrayOutput {
+	return o
+}
+
+func (o SettingsPermissionsUsersUserArrayOutput) Index(i pulumi.IntInput) SettingsPermissionsUsersUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SettingsPermissionsUsersUser {
+		return vs[0].([]SettingsPermissionsUsersUser)[vs[1].(int)]
+	}).(SettingsPermissionsUsersUserOutput)
+}
+
+type SiteReliabilityGuardianObjectives struct {
+	Objectives []SiteReliabilityGuardianObjectivesObjective `pulumi:"objectives"`
+}
+
+// SiteReliabilityGuardianObjectivesInput is an input type that accepts SiteReliabilityGuardianObjectivesArgs and SiteReliabilityGuardianObjectivesOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesInput` via:
+//
+//	SiteReliabilityGuardianObjectivesArgs{...}
+type SiteReliabilityGuardianObjectivesInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesOutput() SiteReliabilityGuardianObjectivesOutput
+	ToSiteReliabilityGuardianObjectivesOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesOutput
+}
+
+type SiteReliabilityGuardianObjectivesArgs struct {
+	Objectives SiteReliabilityGuardianObjectivesObjectiveArrayInput `pulumi:"objectives"`
+}
+
+func (SiteReliabilityGuardianObjectivesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectives)(nil)).Elem()
+}
+
+func (i SiteReliabilityGuardianObjectivesArgs) ToSiteReliabilityGuardianObjectivesOutput() SiteReliabilityGuardianObjectivesOutput {
+	return i.ToSiteReliabilityGuardianObjectivesOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesArgs) ToSiteReliabilityGuardianObjectivesOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesOutput)
+}
+
+func (i SiteReliabilityGuardianObjectivesArgs) ToSiteReliabilityGuardianObjectivesPtrOutput() SiteReliabilityGuardianObjectivesPtrOutput {
+	return i.ToSiteReliabilityGuardianObjectivesPtrOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesArgs) ToSiteReliabilityGuardianObjectivesPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesOutput).ToSiteReliabilityGuardianObjectivesPtrOutputWithContext(ctx)
+}
+
+// SiteReliabilityGuardianObjectivesPtrInput is an input type that accepts SiteReliabilityGuardianObjectivesArgs, SiteReliabilityGuardianObjectivesPtr and SiteReliabilityGuardianObjectivesPtrOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesPtrInput` via:
+//
+//	        SiteReliabilityGuardianObjectivesArgs{...}
+//
+//	or:
+//
+//	        nil
+type SiteReliabilityGuardianObjectivesPtrInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesPtrOutput() SiteReliabilityGuardianObjectivesPtrOutput
+	ToSiteReliabilityGuardianObjectivesPtrOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesPtrOutput
+}
+
+type siteReliabilityGuardianObjectivesPtrType SiteReliabilityGuardianObjectivesArgs
+
+func SiteReliabilityGuardianObjectivesPtr(v *SiteReliabilityGuardianObjectivesArgs) SiteReliabilityGuardianObjectivesPtrInput {
+	return (*siteReliabilityGuardianObjectivesPtrType)(v)
+}
+
+func (*siteReliabilityGuardianObjectivesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SiteReliabilityGuardianObjectives)(nil)).Elem()
+}
+
+func (i *siteReliabilityGuardianObjectivesPtrType) ToSiteReliabilityGuardianObjectivesPtrOutput() SiteReliabilityGuardianObjectivesPtrOutput {
+	return i.ToSiteReliabilityGuardianObjectivesPtrOutputWithContext(context.Background())
+}
+
+func (i *siteReliabilityGuardianObjectivesPtrType) ToSiteReliabilityGuardianObjectivesPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesPtrOutput)
+}
+
+type SiteReliabilityGuardianObjectivesOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectives)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesOutput) ToSiteReliabilityGuardianObjectivesOutput() SiteReliabilityGuardianObjectivesOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesOutput) ToSiteReliabilityGuardianObjectivesOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesOutput) ToSiteReliabilityGuardianObjectivesPtrOutput() SiteReliabilityGuardianObjectivesPtrOutput {
+	return o.ToSiteReliabilityGuardianObjectivesPtrOutputWithContext(context.Background())
+}
+
+func (o SiteReliabilityGuardianObjectivesOutput) ToSiteReliabilityGuardianObjectivesPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SiteReliabilityGuardianObjectives) *SiteReliabilityGuardianObjectives {
+		return &v
+	}).(SiteReliabilityGuardianObjectivesPtrOutput)
+}
+
+func (o SiteReliabilityGuardianObjectivesOutput) Objectives() SiteReliabilityGuardianObjectivesObjectiveArrayOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectives) []SiteReliabilityGuardianObjectivesObjective {
+		return v.Objectives
+	}).(SiteReliabilityGuardianObjectivesObjectiveArrayOutput)
+}
+
+type SiteReliabilityGuardianObjectivesPtrOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SiteReliabilityGuardianObjectives)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesPtrOutput) ToSiteReliabilityGuardianObjectivesPtrOutput() SiteReliabilityGuardianObjectivesPtrOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesPtrOutput) ToSiteReliabilityGuardianObjectivesPtrOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesPtrOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesPtrOutput) Elem() SiteReliabilityGuardianObjectivesOutput {
+	return o.ApplyT(func(v *SiteReliabilityGuardianObjectives) SiteReliabilityGuardianObjectives {
+		if v != nil {
+			return *v
+		}
+		var ret SiteReliabilityGuardianObjectives
+		return ret
+	}).(SiteReliabilityGuardianObjectivesOutput)
+}
+
+func (o SiteReliabilityGuardianObjectivesPtrOutput) Objectives() SiteReliabilityGuardianObjectivesObjectiveArrayOutput {
+	return o.ApplyT(func(v *SiteReliabilityGuardianObjectives) []SiteReliabilityGuardianObjectivesObjective {
+		if v == nil {
+			return nil
+		}
+		return v.Objectives
+	}).(SiteReliabilityGuardianObjectivesObjectiveArrayOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjective struct {
+	// Enable auto adaptive threshold
+	AutoAdaptiveThresholdEnabled *bool `pulumi:"autoAdaptiveThresholdEnabled"`
+	// Possible Values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
+	ComparisonOperator string `pulumi:"comparisonOperator"`
+	// no documentation available
+	Description *string `pulumi:"description"`
+	// Display Unit
+	DisplayUnit *SiteReliabilityGuardianObjectivesObjectiveDisplayUnit `pulumi:"displayUnit"`
+	// DQL query
+	DqlQuery *string `pulumi:"dqlQuery"`
+	// Objective name
+	Name string `pulumi:"name"`
+	// Possible Values: `DQL`, `REFERENCE_SLO`
+	ObjectiveType string `pulumi:"objectiveType"`
+	// Please enter the metric key of your desired SLO. SLO metric keys have to start with 'func:slo.'
+	ReferenceSlo *string `pulumi:"referenceSlo"`
+	// no documentation available
+	Segments *SiteReliabilityGuardianObjectivesObjectiveSegments `pulumi:"segments"`
+	// no documentation available
+	Target *float64 `pulumi:"target"`
+	// no documentation available
+	Warning *float64 `pulumi:"warning"`
+}
+
+// SiteReliabilityGuardianObjectivesObjectiveInput is an input type that accepts SiteReliabilityGuardianObjectivesObjectiveArgs and SiteReliabilityGuardianObjectivesObjectiveOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesObjectiveInput` via:
+//
+//	SiteReliabilityGuardianObjectivesObjectiveArgs{...}
+type SiteReliabilityGuardianObjectivesObjectiveInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesObjectiveOutput() SiteReliabilityGuardianObjectivesObjectiveOutput
+	ToSiteReliabilityGuardianObjectivesObjectiveOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesObjectiveOutput
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveArgs struct {
+	// Enable auto adaptive threshold
+	AutoAdaptiveThresholdEnabled pulumi.BoolPtrInput `pulumi:"autoAdaptiveThresholdEnabled"`
+	// Possible Values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
+	ComparisonOperator pulumi.StringInput `pulumi:"comparisonOperator"`
+	// no documentation available
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Display Unit
+	DisplayUnit SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrInput `pulumi:"displayUnit"`
+	// DQL query
+	DqlQuery pulumi.StringPtrInput `pulumi:"dqlQuery"`
+	// Objective name
+	Name pulumi.StringInput `pulumi:"name"`
+	// Possible Values: `DQL`, `REFERENCE_SLO`
+	ObjectiveType pulumi.StringInput `pulumi:"objectiveType"`
+	// Please enter the metric key of your desired SLO. SLO metric keys have to start with 'func:slo.'
+	ReferenceSlo pulumi.StringPtrInput `pulumi:"referenceSlo"`
+	// no documentation available
+	Segments SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrInput `pulumi:"segments"`
+	// no documentation available
+	Target pulumi.Float64PtrInput `pulumi:"target"`
+	// no documentation available
+	Warning pulumi.Float64PtrInput `pulumi:"warning"`
+}
+
+func (SiteReliabilityGuardianObjectivesObjectiveArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjective)(nil)).Elem()
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveArgs) ToSiteReliabilityGuardianObjectivesObjectiveOutput() SiteReliabilityGuardianObjectivesObjectiveOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveArgs) ToSiteReliabilityGuardianObjectivesObjectiveOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveOutput)
+}
+
+// SiteReliabilityGuardianObjectivesObjectiveArrayInput is an input type that accepts SiteReliabilityGuardianObjectivesObjectiveArray and SiteReliabilityGuardianObjectivesObjectiveArrayOutput values.
+// You can construct a concrete instance of `SiteReliabilityGuardianObjectivesObjectiveArrayInput` via:
+//
+//	SiteReliabilityGuardianObjectivesObjectiveArray{ SiteReliabilityGuardianObjectivesObjectiveArgs{...} }
+type SiteReliabilityGuardianObjectivesObjectiveArrayInput interface {
+	pulumi.Input
+
+	ToSiteReliabilityGuardianObjectivesObjectiveArrayOutput() SiteReliabilityGuardianObjectivesObjectiveArrayOutput
+	ToSiteReliabilityGuardianObjectivesObjectiveArrayOutputWithContext(context.Context) SiteReliabilityGuardianObjectivesObjectiveArrayOutput
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveArray []SiteReliabilityGuardianObjectivesObjectiveInput
+
+func (SiteReliabilityGuardianObjectivesObjectiveArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SiteReliabilityGuardianObjectivesObjective)(nil)).Elem()
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveArray) ToSiteReliabilityGuardianObjectivesObjectiveArrayOutput() SiteReliabilityGuardianObjectivesObjectiveArrayOutput {
+	return i.ToSiteReliabilityGuardianObjectivesObjectiveArrayOutputWithContext(context.Background())
+}
+
+func (i SiteReliabilityGuardianObjectivesObjectiveArray) ToSiteReliabilityGuardianObjectivesObjectiveArrayOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SiteReliabilityGuardianObjectivesObjectiveArrayOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesObjectiveOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjective)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) ToSiteReliabilityGuardianObjectivesObjectiveOutput() SiteReliabilityGuardianObjectivesObjectiveOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) ToSiteReliabilityGuardianObjectivesObjectiveOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveOutput {
+	return o
+}
+
+// Enable auto adaptive threshold
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) AutoAdaptiveThresholdEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) *bool { return v.AutoAdaptiveThresholdEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// Possible Values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) ComparisonOperator() pulumi.StringOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) string { return v.ComparisonOperator }).(pulumi.StringOutput)
+}
+
+// no documentation available
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Display Unit
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) DisplayUnit() SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) *SiteReliabilityGuardianObjectivesObjectiveDisplayUnit {
+		return v.DisplayUnit
+	}).(SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput)
+}
+
+// DQL query
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) DqlQuery() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) *string { return v.DqlQuery }).(pulumi.StringPtrOutput)
+}
+
+// Objective name
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Possible Values: `DQL`, `REFERENCE_SLO`
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) ObjectiveType() pulumi.StringOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) string { return v.ObjectiveType }).(pulumi.StringOutput)
+}
+
+// Please enter the metric key of your desired SLO. SLO metric keys have to start with 'func:slo.'
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) ReferenceSlo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) *string { return v.ReferenceSlo }).(pulumi.StringPtrOutput)
+}
+
+// no documentation available
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) Segments() SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) *SiteReliabilityGuardianObjectivesObjectiveSegments {
+		return v.Segments
+	}).(SiteReliabilityGuardianObjectivesObjectiveSegmentsPtrOutput)
+}
+
+// no documentation available
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) Target() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) *float64 { return v.Target }).(pulumi.Float64PtrOutput)
+}
+
+// no documentation available
+func (o SiteReliabilityGuardianObjectivesObjectiveOutput) Warning() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v SiteReliabilityGuardianObjectivesObjective) *float64 { return v.Warning }).(pulumi.Float64PtrOutput)
+}
+
+type SiteReliabilityGuardianObjectivesObjectiveArrayOutput struct{ *pulumi.OutputState }
+
+func (SiteReliabilityGuardianObjectivesObjectiveArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SiteReliabilityGuardianObjectivesObjective)(nil)).Elem()
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveArrayOutput) ToSiteReliabilityGuardianObjectivesObjectiveArrayOutput() SiteReliabilityGuardianObjectivesObjectiveArrayOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveArrayOutput) ToSiteReliabilityGuardianObjectivesObjectiveArrayOutputWithContext(ctx context.Context) SiteReliabilityGuardianObjectivesObjectiveArrayOutput {
+	return o
+}
+
+func (o SiteReliabilityGuardianObjectivesObjectiveArrayOutput) Index(i pulumi.IntInput) SiteReliabilityGuardianObjectivesObjectiveOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SiteReliabilityGuardianObjectivesObjective {
+		return vs[0].([]SiteReliabilityGuardianObjectivesObjective)[vs[1].(int)]
+	}).(SiteReliabilityGuardianObjectivesObjectiveOutput)
+}
+
 type SiteReliabilityGuardianObjectivesObjectiveDisplayUnit struct {
 	// Base Unit
 	Base string `pulumi:"base"`
@@ -29921,6 +33134,50 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceNamingConditionConditionTagComparisonValueInput)(nil)).Elem(), ServiceNamingConditionConditionTagComparisonValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceNamingConditionConditionTagComparisonValuePtrInput)(nil)).Elem(), ServiceNamingConditionConditionTagComparisonValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceNamingConditionConditionTagValueInput)(nil)).Elem(), ServiceNamingConditionConditionTagValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceNamingConditionConditionTagValuePtrInput)(nil)).Elem(), ServiceNamingConditionConditionTagValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceNamingConditionConditionTechInput)(nil)).Elem(), ServiceNamingConditionConditionTechArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceNamingConditionConditionTechArrayInput)(nil)).Elem(), ServiceNamingConditionConditionTechArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceNamingConditionConditionTechValueInput)(nil)).Elem(), ServiceNamingConditionConditionTechValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceNamingConditionConditionTechValuePtrInput)(nil)).Elem(), ServiceNamingConditionConditionTechValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceSplittingRuleInput)(nil)).Elem(), ServiceSplittingRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceSplittingRulePtrInput)(nil)).Elem(), ServiceSplittingRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributesInput)(nil)).Elem(), ServiceSplittingRuleServiceSplittingAttributesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributesPtrInput)(nil)).Elem(), ServiceSplittingRuleServiceSplittingAttributesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeInput)(nil)).Elem(), ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayInput)(nil)).Elem(), ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPtrInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayInput)(nil)).Elem(), SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SettingsPermissionsGroupsInput)(nil)).Elem(), SettingsPermissionsGroupsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SettingsPermissionsGroupsPtrInput)(nil)).Elem(), SettingsPermissionsGroupsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SettingsPermissionsGroupsGroupInput)(nil)).Elem(), SettingsPermissionsGroupsGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SettingsPermissionsGroupsGroupArrayInput)(nil)).Elem(), SettingsPermissionsGroupsGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SettingsPermissionsUsersInput)(nil)).Elem(), SettingsPermissionsUsersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SettingsPermissionsUsersPtrInput)(nil)).Elem(), SettingsPermissionsUsersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SettingsPermissionsUsersUserInput)(nil)).Elem(), SettingsPermissionsUsersUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SettingsPermissionsUsersUserArrayInput)(nil)).Elem(), SettingsPermissionsUsersUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesPtrInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveArrayInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveDisplayUnitInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveDisplayUnitArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SiteReliabilityGuardianObjectivesObjectiveSegmentsInput)(nil)).Elem(), SiteReliabilityGuardianObjectivesObjectiveSegmentsArgs{})
@@ -30296,6 +33553,50 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(ServiceNamingConditionConditionTagComparisonValueOutput{})
+	pulumi.RegisterOutputType(ServiceNamingConditionConditionTagComparisonValuePtrOutput{})
+	pulumi.RegisterOutputType(ServiceNamingConditionConditionTagValueOutput{})
+	pulumi.RegisterOutputType(ServiceNamingConditionConditionTagValuePtrOutput{})
+	pulumi.RegisterOutputType(ServiceNamingConditionConditionTechOutput{})
+	pulumi.RegisterOutputType(ServiceNamingConditionConditionTechArrayOutput{})
+	pulumi.RegisterOutputType(ServiceNamingConditionConditionTechValueOutput{})
+	pulumi.RegisterOutputType(ServiceNamingConditionConditionTechValuePtrOutput{})
+	pulumi.RegisterOutputType(ServiceSplittingRuleOutput{})
+	pulumi.RegisterOutputType(ServiceSplittingRulePtrOutput{})
+	pulumi.RegisterOutputType(ServiceSplittingRuleServiceSplittingAttributesOutput{})
+	pulumi.RegisterOutputType(ServiceSplittingRuleServiceSplittingAttributesPtrOutput{})
+	pulumi.RegisterOutputType(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeOutput{})
+	pulumi.RegisterOutputType(ServiceSplittingRuleServiceSplittingAttributesServiceSplittingAttributeArrayOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsPtrOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesPtrOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArrayOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesPtrOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArrayOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesPtrOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArrayOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesPtrOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleOutput{})
+	pulumi.RegisterOutputType(SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArrayOutput{})
+	pulumi.RegisterOutputType(SettingsPermissionsGroupsOutput{})
+	pulumi.RegisterOutputType(SettingsPermissionsGroupsPtrOutput{})
+	pulumi.RegisterOutputType(SettingsPermissionsGroupsGroupOutput{})
+	pulumi.RegisterOutputType(SettingsPermissionsGroupsGroupArrayOutput{})
+	pulumi.RegisterOutputType(SettingsPermissionsUsersOutput{})
+	pulumi.RegisterOutputType(SettingsPermissionsUsersPtrOutput{})
+	pulumi.RegisterOutputType(SettingsPermissionsUsersUserOutput{})
+	pulumi.RegisterOutputType(SettingsPermissionsUsersUserArrayOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesPtrOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveOutput{})
+	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveArrayOutput{})
 	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveDisplayUnitOutput{})
 	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveDisplayUnitPtrOutput{})
 	pulumi.RegisterOutputType(SiteReliabilityGuardianObjectivesObjectiveSegmentsOutput{})

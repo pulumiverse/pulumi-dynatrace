@@ -17,9 +17,7 @@ type ProcessAvailability struct {
 
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata ProcessAvailabilityMetadataPtrOutput `pulumi:"metadata"`
@@ -29,8 +27,7 @@ type ProcessAvailability struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Select the operating systems on which the monitoring rule should be applied.
 	OperatingSystems pulumi.StringArrayOutput `pulumi:"operatingSystems"`
-	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-	// detection rules associated with it.
+	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules ProcessAvailabilityRulesPtrOutput `pulumi:"rules"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
@@ -71,9 +68,7 @@ func GetProcessAvailability(ctx *pulumi.Context,
 type processAvailabilityState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata *ProcessAvailabilityMetadata `pulumi:"metadata"`
@@ -83,8 +78,7 @@ type processAvailabilityState struct {
 	Name *string `pulumi:"name"`
 	// Select the operating systems on which the monitoring rule should be applied.
 	OperatingSystems []string `pulumi:"operatingSystems"`
-	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-	// detection rules associated with it.
+	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules *ProcessAvailabilityRules `pulumi:"rules"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
@@ -93,9 +87,7 @@ type processAvailabilityState struct {
 type ProcessAvailabilityState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata ProcessAvailabilityMetadataPtrInput
@@ -105,8 +97,7 @@ type ProcessAvailabilityState struct {
 	Name pulumi.StringPtrInput
 	// Select the operating systems on which the monitoring rule should be applied.
 	OperatingSystems pulumi.StringArrayInput
-	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-	// detection rules associated with it.
+	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules ProcessAvailabilityRulesPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
@@ -119,9 +110,7 @@ func (ProcessAvailabilityState) ElementType() reflect.Type {
 type processAvailabilityArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata *ProcessAvailabilityMetadata `pulumi:"metadata"`
@@ -131,8 +120,7 @@ type processAvailabilityArgs struct {
 	Name *string `pulumi:"name"`
 	// Select the operating systems on which the monitoring rule should be applied.
 	OperatingSystems []string `pulumi:"operatingSystems"`
-	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-	// detection rules associated with it.
+	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules *ProcessAvailabilityRules `pulumi:"rules"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
@@ -142,9 +130,7 @@ type processAvailabilityArgs struct {
 type ProcessAvailabilityArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata ProcessAvailabilityMetadataPtrInput
@@ -154,8 +140,7 @@ type ProcessAvailabilityArgs struct {
 	Name pulumi.StringPtrInput
 	// Select the operating systems on which the monitoring rule should be applied.
 	OperatingSystems pulumi.StringArrayInput
-	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-	// detection rules associated with it.
+	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules ProcessAvailabilityRulesPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
@@ -253,9 +238,7 @@ func (o ProcessAvailabilityOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ProcessAvailability) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-// specified during update the order will remain untouched
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 func (o ProcessAvailabilityOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProcessAvailability) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
@@ -280,8 +263,7 @@ func (o ProcessAvailabilityOutput) OperatingSystems() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ProcessAvailability) pulumi.StringArrayOutput { return v.OperatingSystems }).(pulumi.StringArrayOutput)
 }
 
-// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-// detection rules associated with it.
+// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 func (o ProcessAvailabilityOutput) Rules() ProcessAvailabilityRulesPtrOutput {
 	return o.ApplyT(func(v *ProcessAvailability) ProcessAvailabilityRulesPtrOutput { return v.Rules }).(ProcessAvailabilityRulesPtrOutput)
 }

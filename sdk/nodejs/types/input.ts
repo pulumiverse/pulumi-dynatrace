@@ -1177,7 +1177,7 @@ export interface AutomationWorkflowTasks {
 
 export interface AutomationWorkflowTasksTask {
     /**
-     * Currently known and supported values are `dynatrace.automations:http-function`, `dynatrace.automations:run-javascript` and `dynatrace.automations:execute-dql-query`
+     * Specifies the action type for the task. Examples include `dynatrace.automations:http-function`, `dynatrace.automations:run-javascript`, and `dynatrace.automations:execute-dql-query`. Additional action types are also supported.
      */
     action: pulumi.Input<string>;
     /**
@@ -9708,6 +9708,31 @@ export interface DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThr
     writeAndReadTime: pulumi.Input<number>;
 }
 
+export interface EndpointDetectionRulesRule {
+    /**
+     * Limits the scope of the endpoint detection rule using [DQL matcher](https://dt-url.net/l603wby) conditions on span and resource attributes.. A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
+     */
+    condition?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Specify attribute placeholders in curly braces, e.g. {http.route} or {rpc.method}.. Attribute value placeholders should be specified in curly braces, e.g. {http.route}, {rpc.method}. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
+     *
+     * If the resolved endpoint name on a given span is empty, the request will be ignored.
+     */
+    endpointNameTemplate?: pulumi.Input<string>;
+    /**
+     * Possible Values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
+     */
+    ifConditionMatches: pulumi.Input<string>;
+    /**
+     * Rule name
+     */
+    ruleName: pulumi.Input<string>;
+}
+
 export interface EnvironmentQuotas {
     /**
      * Davis Data Units consumption and quota information on environment level. Not set (and not editable) if Davis data units is not enabled
@@ -9987,6 +10012,211 @@ export interface FailureDetectionParametersHttpResponseCodes {
      * HTTP response codes which indicate an error on the server side
      */
     serverSideErrors: pulumi.Input<string>;
+}
+
+export interface FailureDetectionRuleSetsRuleset {
+    /**
+     * Limits the scope of the failure detection ruleset using [DQL matcher](https://dt-url.net/l603wby) conditions on span and resource attributes.. A ruleset is applied only if the condition matches, otherwise the evaluation continues.
+     *
+     * If empty, the condition will always match.
+     */
+    condition?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Define failure reasons based on span and request attributes.. Failure detection result: `reason="customRule"`, `verdict="failure"`, `customRuleName`
+     */
+    failOnCustomRules?: pulumi.Input<inputs.FailureDetectionRuleSetsRulesetFailOnCustomRules>;
+    /**
+     * Evaluated expression: `iAny(`span.events`[][`span_event.name`] == "exception" and`span.events`[][`exception.escaped`] != false)`
+     */
+    failOnExceptions: pulumi.Input<inputs.FailureDetectionRuleSetsRulesetFailOnExceptions>;
+    /**
+     * Evaluated attribute: `rpc.grpc.status_code`
+     *
+     * Failure detection result: `reason="grpcCode"`, `verdict="failure"`
+     */
+    failOnGrpcStatusCodes: pulumi.Input<inputs.FailureDetectionRuleSetsRulesetFailOnGrpcStatusCodes>;
+    /**
+     * Evaluated attribute: `http.response.status_code`
+     *
+     * Failure detection result: `reason="httpCode"`, `verdict="failure"`
+     */
+    failOnHttpResponseStatusCodes: pulumi.Input<inputs.FailureDetectionRuleSetsRulesetFailOnHttpResponseStatusCodes>;
+    /**
+     * Evaluated attribute: `span.status_code`
+     *
+     * Failure detection result: `reason="spanStatus"`, `verdict="failure"`
+     */
+    failOnSpanStatusError: pulumi.Input<inputs.FailureDetectionRuleSetsRulesetFailOnSpanStatusError>;
+    /**
+     * no documentation available
+     */
+    overrides: pulumi.Input<inputs.FailureDetectionRuleSetsRulesetOverrides>;
+    /**
+     * Ruleset name
+     */
+    rulesetName: pulumi.Input<string>;
+}
+
+export interface FailureDetectionRuleSetsRulesetFailOnCustomRules {
+    failOnCustomRules: pulumi.Input<pulumi.Input<inputs.FailureDetectionRuleSetsRulesetFailOnCustomRulesFailOnCustomRule>[]>;
+}
+
+export interface FailureDetectionRuleSetsRulesetFailOnCustomRulesFailOnCustomRule {
+    /**
+     * Custom rule based on span attributes using [DQL matcher](https://dt-url.net/l603wby).
+     */
+    dqlCondition: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Rule name
+     */
+    ruleName: pulumi.Input<string>;
+}
+
+export interface FailureDetectionRuleSetsRulesetFailOnExceptions {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
+    ignoredExceptions?: pulumi.Input<inputs.FailureDetectionRuleSetsRulesetFailOnExceptionsIgnoredExceptions>;
+}
+
+export interface FailureDetectionRuleSetsRulesetFailOnExceptionsIgnoredExceptions {
+    ignoredExceptions: pulumi.Input<pulumi.Input<inputs.FailureDetectionRuleSetsRulesetFailOnExceptionsIgnoredExceptionsIgnoredException>[]>;
+}
+
+export interface FailureDetectionRuleSetsRulesetFailOnExceptionsIgnoredExceptionsIgnoredException {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Evaluated attribute: `span.events[][exception.message]`
+     */
+    message?: pulumi.Input<string>;
+    /**
+     * Evaluated attribute: `span.events[][exception.type]`
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface FailureDetectionRuleSetsRulesetFailOnGrpcStatusCodes {
+    /**
+     * Status codes which indicate a failure on the server side
+     */
+    statusCodes: pulumi.Input<string>;
+}
+
+export interface FailureDetectionRuleSetsRulesetFailOnHttpResponseStatusCodes {
+    /**
+     * Status codes which indicate a failure on the server side
+     */
+    statusCodes: pulumi.Input<string>;
+}
+
+export interface FailureDetectionRuleSetsRulesetFailOnSpanStatusError {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface FailureDetectionRuleSetsRulesetOverrides {
+    /**
+     * Define escaped exceptions that should force success.. Evaluated expression: `iAny(`span.events`[][`span_event.name`] == "exception" and `span.events`[][`exception.escaped`] != false)`
+     *
+     * Failure detection result: `reason="exception"`, `verdict="success"`, `exceptionIds`
+     */
+    forceSuccessOnExceptions?: pulumi.Input<inputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnExceptions>;
+    /**
+     * Evaluated attribute: `rpc.grpc.status_code`
+     *
+     * Failure detection result: `reason="grpcCode"`, `verdict="success"`
+     */
+    forceSuccessOnGrpcResponseStatusCodes?: pulumi.Input<inputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnGrpcResponseStatusCodes>;
+    /**
+     * Evaluated attribute: `http.response.status_code`
+     *
+     * Failure detection result: `reason="httpCode"`, `verdict="success"`
+     */
+    forceSuccessOnHttpResponseStatusCodes?: pulumi.Input<inputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnHttpResponseStatusCodes>;
+    /**
+     * Evaluated attribute: `span.status_code`
+     */
+    forceSuccessOnSpanStatusOk: pulumi.Input<inputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnSpanStatusOk>;
+    /**
+     * Override failures based on span and request attribute conditions.. Failure detection result: `reason="customRule"`, `verdict="success"`, `customRuleName`
+     */
+    forceSuccessWithCustomRules?: pulumi.Input<inputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessWithCustomRules>;
+}
+
+export interface FailureDetectionRuleSetsRulesetOverridesForceSuccessOnExceptions {
+    ignoredExceptions: pulumi.Input<pulumi.Input<inputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnExceptionsIgnoredException>[]>;
+}
+
+export interface FailureDetectionRuleSetsRulesetOverridesForceSuccessOnExceptionsIgnoredException {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Evaluated attribute: `span.events[][exception.message]`
+     */
+    message?: pulumi.Input<string>;
+    /**
+     * Evaluated attribute: `span.events[][exception.type]`
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface FailureDetectionRuleSetsRulesetOverridesForceSuccessOnGrpcResponseStatusCodes {
+    /**
+     * Status codes which force success on the server side
+     */
+    statusCodes?: pulumi.Input<string>;
+}
+
+export interface FailureDetectionRuleSetsRulesetOverridesForceSuccessOnHttpResponseStatusCodes {
+    /**
+     * Status codes which force success on the server side
+     */
+    statusCodes?: pulumi.Input<string>;
+}
+
+export interface FailureDetectionRuleSetsRulesetOverridesForceSuccessOnSpanStatusOk {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface FailureDetectionRuleSetsRulesetOverridesForceSuccessWithCustomRules {
+    failOnCustomRules: pulumi.Input<pulumi.Input<inputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessWithCustomRulesFailOnCustomRule>[]>;
+}
+
+export interface FailureDetectionRuleSetsRulesetOverridesForceSuccessWithCustomRulesFailOnCustomRule {
+    /**
+     * Custom rule based on span attributes using [DQL matcher](https://dt-url.net/l603wby).
+     */
+    dqlCondition: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Rule name
+     */
+    ruleName: pulumi.Input<string>;
 }
 
 export interface FailureDetectionRulesConditions {
@@ -14514,13 +14744,17 @@ export interface KubernetesEnrichmentRulesRule {
      */
     enabled?: pulumi.Input<boolean>;
     /**
+     * Uses the key of the annotation or label as field name
+     */
+    primaryGrailTag?: pulumi.Input<boolean>;
+    /**
      * The source must follow the syntax of Kubernetes annotation/label keys as defined in the [Kubernetes documentation](https://dt-url.net/2c02sbn).
      */
     source: pulumi.Input<string>;
     /**
-     * Possible Values: `Dt_cost_costcenter`, `Dt_cost_product`, `Dt_security_context`
+     * Required when `primaryGrailTag` is omitted or `false`. Possible Values: `dt.cost.costcenter``, `dt.cost.product``, `dt.security_context
      */
-    target: pulumi.Input<string>;
+    target?: pulumi.Input<string>;
     /**
      * Possible Values: `ANNOTATION`, `LABEL`
      */
@@ -29466,11 +29700,11 @@ export interface ProcessMonitoringRuleCondition {
      */
     envVar?: pulumi.Input<string>;
     /**
-     * Condition target
+     * Possible Values: `APACHE_CONFIG_PATH`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `AZURE_CONTAINER_APP_ENV_DNS_SUFFIX`, `AZURE_CONTAINER_APP_NAME`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_ID`, `CLOUD_FOUNDRY_SPACE_NAME`, `COLDFUSION_JVM_CONFIG_FILE`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_NAME`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DATASOURCE_MONITORING_CONFIG_ID`, `DECLARATIVE_ID`, `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `EXE_NAME`, `EXE_PATH`, `GAE_INSTANCE`, `GAE_SERVICE`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_APPLID`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CICS_REGION`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IBM_JOBNAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_APP_NAME`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `PYTHON_MODULE`, `PYTHON_SCRIPT`, `PYTHON_SCRIPT_PATH`, `RKE2_TYPE`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `SERVICE_NAME`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIBCO_BUSINESSWORKS_HOME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `UNKNOWN`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBLOGIC_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`, `Z_CM_VERSION`
      */
     item: pulumi.Input<string>;
     /**
-     * Condition operator
+     * Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
      */
     operator: pulumi.Input<string>;
     /**
@@ -36639,6 +36873,42 @@ export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListR
      * Possible Values: `ELEMENT`, `ATTRIBUTE`
      */
     target: pulumi.Input<string>;
+}
+
+export interface SettingsPermissionsGroups {
+    /**
+     * Group that is to be granted read or write permissions
+     */
+    groups: pulumi.Input<pulumi.Input<inputs.SettingsPermissionsGroupsGroup>[]>;
+}
+
+export interface SettingsPermissionsGroupsGroup {
+    /**
+     * Valid values: `read`, `write`
+     */
+    access: pulumi.Input<string>;
+    /**
+     * The UUID of the group, conveniently retrieved via the `id` attribute provided by the data source `dynatrace*iam*group
+     */
+    id: pulumi.Input<string>;
+}
+
+export interface SettingsPermissionsUsers {
+    /**
+     * User that is to be granted read or write permissions
+     */
+    users: pulumi.Input<pulumi.Input<inputs.SettingsPermissionsUsersUser>[]>;
+}
+
+export interface SettingsPermissionsUsersUser {
+    /**
+     * Valid values: `read`, `write`
+     */
+    access: pulumi.Input<string>;
+    /**
+     * The UUID of the user, conveniently retrieved via the `uid` attribute provided by the data source `dynatrace.IamUser`
+     */
+    uid: pulumi.Input<string>;
 }
 
 export interface SiteReliabilityGuardianObjectives {

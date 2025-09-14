@@ -41,9 +41,7 @@ export class ProcessGroupSimpleDetection extends pulumi.CustomResource {
      */
     declare public readonly groupIdentifier: pulumi.Output<string>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
@@ -117,9 +115,7 @@ export interface ProcessGroupSimpleDetectionState {
      */
     groupIdentifier?: pulumi.Input<string>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     insertAfter?: pulumi.Input<string>;
     /**
@@ -149,9 +145,7 @@ export interface ProcessGroupSimpleDetectionArgs {
      */
     groupIdentifier: pulumi.Input<string>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     insertAfter?: pulumi.Input<string>;
     /**

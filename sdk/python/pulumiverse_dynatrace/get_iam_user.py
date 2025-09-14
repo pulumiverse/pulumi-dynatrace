@@ -91,7 +91,7 @@ def get_iam_user(email: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_dynatrace as dynatrace
 
-    user_a = dynatrace.get_iam_user(email="me@home.com")
+    user_a = dynatrace.get_iam_user(email="me@example.com")
     pulumi.export("groups", user_a.groups)
     ```
     """
@@ -120,7 +120,7 @@ def get_iam_user_output(email: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_dynatrace as dynatrace
 
-    user_a = dynatrace.get_iam_user(email="me@home.com")
+    user_a = dynatrace.get_iam_user(email="me@example.com")
     pulumi.export("groups", user_a.groups)
     ```
     """

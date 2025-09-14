@@ -35,8 +35,9 @@ export class RequestNaming extends pulumi.CustomResource {
     }
 
     /**
-     * The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
-     * **all** the specified conditions for the rule to trigger
+     * The set of conditions for the request naming rule usage. 
+     *
+     *  You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
      */
     declare public readonly conditions: pulumi.Output<outputs.RequestNamingConditions>;
     /**
@@ -52,8 +53,9 @@ export class RequestNaming extends pulumi.CustomResource {
      */
     declare public readonly namingPattern: pulumi.Output<string>;
     /**
-     * The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
-     * other request attribute and use it in the request naming pattern.
+     * The list of custom placeholders to be used in the naming pattern. 
+     *
+     *  It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
      */
     declare public readonly placeholders: pulumi.Output<outputs.RequestNamingPlaceholders | undefined>;
     /**
@@ -105,8 +107,9 @@ export class RequestNaming extends pulumi.CustomResource {
  */
 export interface RequestNamingState {
     /**
-     * The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
-     * **all** the specified conditions for the rule to trigger
+     * The set of conditions for the request naming rule usage. 
+     *
+     *  You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
      */
     conditions?: pulumi.Input<inputs.RequestNamingConditions>;
     /**
@@ -122,8 +125,9 @@ export interface RequestNamingState {
      */
     namingPattern?: pulumi.Input<string>;
     /**
-     * The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
-     * other request attribute and use it in the request naming pattern.
+     * The list of custom placeholders to be used in the naming pattern. 
+     *
+     *  It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
      */
     placeholders?: pulumi.Input<inputs.RequestNamingPlaceholders>;
     /**
@@ -137,8 +141,9 @@ export interface RequestNamingState {
  */
 export interface RequestNamingArgs {
     /**
-     * The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
-     * **all** the specified conditions for the rule to trigger
+     * The set of conditions for the request naming rule usage. 
+     *
+     *  You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
      */
     conditions: pulumi.Input<inputs.RequestNamingConditions>;
     /**
@@ -154,8 +159,9 @@ export interface RequestNamingArgs {
      */
     namingPattern: pulumi.Input<string>;
     /**
-     * The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
-     * other request attribute and use it in the request naming pattern.
+     * The list of custom placeholders to be used in the naming pattern. 
+     *
+     *  It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
      */
     placeholders?: pulumi.Input<inputs.RequestNamingPlaceholders>;
     /**

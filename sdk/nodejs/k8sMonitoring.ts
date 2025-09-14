@@ -39,8 +39,7 @@ export class K8sMonitoring extends pulumi.CustomResource {
      */
     declare public readonly cloudApplicationPipelineEnabled: pulumi.Output<boolean>;
     /**
-     * Define Kubernetes event filters to ingest events into your environment. For more details, see the
-     * [documentation](https://dt-url.net/2201p0u).
+     * Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
      */
     declare public readonly eventPatterns: pulumi.Output<outputs.K8sMonitoringEventPatterns | undefined>;
     /**
@@ -56,8 +55,7 @@ export class K8sMonitoring extends pulumi.CustomResource {
      */
     declare public readonly includeAllFdiEvents: pulumi.Output<boolean | undefined>;
     /**
-     * Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-     * this may increase the CPU/memory resource consumption of your ActiveGate.
+     * Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
      */
     declare public readonly openMetricsBuiltinEnabled: pulumi.Output<boolean>;
     /**
@@ -135,8 +133,7 @@ export interface K8sMonitoringState {
      */
     cloudApplicationPipelineEnabled?: pulumi.Input<boolean>;
     /**
-     * Define Kubernetes event filters to ingest events into your environment. For more details, see the
-     * [documentation](https://dt-url.net/2201p0u).
+     * Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
      */
     eventPatterns?: pulumi.Input<inputs.K8sMonitoringEventPatterns>;
     /**
@@ -152,8 +149,7 @@ export interface K8sMonitoringState {
      */
     includeAllFdiEvents?: pulumi.Input<boolean>;
     /**
-     * Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-     * this may increase the CPU/memory resource consumption of your ActiveGate.
+     * Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
      */
     openMetricsBuiltinEnabled?: pulumi.Input<boolean>;
     /**
@@ -181,8 +177,7 @@ export interface K8sMonitoringArgs {
      */
     cloudApplicationPipelineEnabled: pulumi.Input<boolean>;
     /**
-     * Define Kubernetes event filters to ingest events into your environment. For more details, see the
-     * [documentation](https://dt-url.net/2201p0u).
+     * Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
      */
     eventPatterns?: pulumi.Input<inputs.K8sMonitoringEventPatterns>;
     /**
@@ -198,8 +193,7 @@ export interface K8sMonitoringArgs {
      */
     includeAllFdiEvents?: pulumi.Input<boolean>;
     /**
-     * Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-     * this may increase the CPU/memory resource consumption of your ActiveGate.
+     * Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
      */
     openMetricsBuiltinEnabled: pulumi.Input<boolean>;
     /**

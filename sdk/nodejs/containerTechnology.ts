@@ -37,27 +37,61 @@ export class ContainerTechnology extends pulumi.CustomResource {
      */
     declare public readonly boshProcessManager: pulumi.Output<boolean>;
     /**
-     * Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+     * Platform: Kubernetes
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
+     *
+     * Min agent version: 1.169
      */
     declare public readonly containerd: pulumi.Output<boolean>;
     /**
-     * Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+     * Platform: Kubernetes
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
+     *
+     * Min agent version: 1.163
      */
     declare public readonly crio: pulumi.Output<boolean>;
     /**
-     * Platform: Docker and Kubernetes Status: Released Operating system: Linux
+     * Platform: Docker and Kubernetes
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
      */
     declare public readonly docker: pulumi.Output<boolean>;
     /**
-     * Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+     * Platform: Docker
+     *
+     * Status: Early adopter
+     *
+     * Operating system: Windows
+     *
+     * Min agent version: 1.149
      */
     declare public readonly dockerWindows: pulumi.Output<boolean>;
     /**
-     * Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+     * Platform: Cloud Foundry
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
+     *
+     * Min agent version: 1.133
      */
     declare public readonly garden: pulumi.Output<boolean>;
     /**
-     * Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+     * Platform: Podman
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
+     *
+     * Min agent version: 1.267
      */
     declare public readonly podman: pulumi.Output<boolean>;
     /**
@@ -65,7 +99,13 @@ export class ContainerTechnology extends pulumi.CustomResource {
      */
     declare public readonly scope: pulumi.Output<string | undefined>;
     /**
-     * Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+     * Platform: Cloud Foundry
+     *
+     * Status: Early adopter
+     *
+     * Operating system: Windows
+     *
+     * Min agent version: 1.175
      */
     declare public readonly winc: pulumi.Output<boolean>;
 
@@ -141,27 +181,61 @@ export interface ContainerTechnologyState {
      */
     boshProcessManager?: pulumi.Input<boolean>;
     /**
-     * Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+     * Platform: Kubernetes
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
+     *
+     * Min agent version: 1.169
      */
     containerd?: pulumi.Input<boolean>;
     /**
-     * Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+     * Platform: Kubernetes
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
+     *
+     * Min agent version: 1.163
      */
     crio?: pulumi.Input<boolean>;
     /**
-     * Platform: Docker and Kubernetes Status: Released Operating system: Linux
+     * Platform: Docker and Kubernetes
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
      */
     docker?: pulumi.Input<boolean>;
     /**
-     * Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+     * Platform: Docker
+     *
+     * Status: Early adopter
+     *
+     * Operating system: Windows
+     *
+     * Min agent version: 1.149
      */
     dockerWindows?: pulumi.Input<boolean>;
     /**
-     * Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+     * Platform: Cloud Foundry
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
+     *
+     * Min agent version: 1.133
      */
     garden?: pulumi.Input<boolean>;
     /**
-     * Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+     * Platform: Podman
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
+     *
+     * Min agent version: 1.267
      */
     podman?: pulumi.Input<boolean>;
     /**
@@ -169,7 +243,13 @@ export interface ContainerTechnologyState {
      */
     scope?: pulumi.Input<string>;
     /**
-     * Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+     * Platform: Cloud Foundry
+     *
+     * Status: Early adopter
+     *
+     * Operating system: Windows
+     *
+     * Min agent version: 1.175
      */
     winc?: pulumi.Input<boolean>;
 }
@@ -183,27 +263,61 @@ export interface ContainerTechnologyArgs {
      */
     boshProcessManager: pulumi.Input<boolean>;
     /**
-     * Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+     * Platform: Kubernetes
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
+     *
+     * Min agent version: 1.169
      */
     containerd: pulumi.Input<boolean>;
     /**
-     * Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+     * Platform: Kubernetes
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
+     *
+     * Min agent version: 1.163
      */
     crio: pulumi.Input<boolean>;
     /**
-     * Platform: Docker and Kubernetes Status: Released Operating system: Linux
+     * Platform: Docker and Kubernetes
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
      */
     docker: pulumi.Input<boolean>;
     /**
-     * Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+     * Platform: Docker
+     *
+     * Status: Early adopter
+     *
+     * Operating system: Windows
+     *
+     * Min agent version: 1.149
      */
     dockerWindows: pulumi.Input<boolean>;
     /**
-     * Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+     * Platform: Cloud Foundry
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
+     *
+     * Min agent version: 1.133
      */
     garden: pulumi.Input<boolean>;
     /**
-     * Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+     * Platform: Podman
+     *
+     * Status: Released
+     *
+     * Operating system: Linux
+     *
+     * Min agent version: 1.267
      */
     podman: pulumi.Input<boolean>;
     /**
@@ -211,7 +325,13 @@ export interface ContainerTechnologyArgs {
      */
     scope?: pulumi.Input<string>;
     /**
-     * Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+     * Platform: Cloud Foundry
+     *
+     * Status: Early adopter
+     *
+     * Operating system: Windows
+     *
+     * Min agent version: 1.175
      */
     winc: pulumi.Input<boolean>;
 }

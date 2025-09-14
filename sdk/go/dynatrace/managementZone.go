@@ -22,7 +22,7 @@ type ManagementZone struct {
 	EntitySelectorBasedRules ManagementZoneEntitySelectorBasedRuleArrayOutput `pulumi:"entitySelectorBasedRules"`
 	// The name of the management zone
 	Name pulumi.StringOutput `pulumi:"name"`
-	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+	// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
 	Rules ManagementZoneRuleArrayOutput `pulumi:"rules"`
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns pulumi.StringPtrOutput `pulumi:"unknowns"`
@@ -66,7 +66,7 @@ type managementZoneState struct {
 	EntitySelectorBasedRules []ManagementZoneEntitySelectorBasedRule `pulumi:"entitySelectorBasedRules"`
 	// The name of the management zone
 	Name *string `pulumi:"name"`
-	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+	// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
 	Rules []ManagementZoneRule `pulumi:"rules"`
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns *string `pulumi:"unknowns"`
@@ -81,7 +81,7 @@ type ManagementZoneState struct {
 	EntitySelectorBasedRules ManagementZoneEntitySelectorBasedRuleArrayInput
 	// The name of the management zone
 	Name pulumi.StringPtrInput
-	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+	// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
 	Rules ManagementZoneRuleArrayInput
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns pulumi.StringPtrInput
@@ -100,7 +100,7 @@ type managementZoneArgs struct {
 	EntitySelectorBasedRules []ManagementZoneEntitySelectorBasedRule `pulumi:"entitySelectorBasedRules"`
 	// The name of the management zone
 	Name *string `pulumi:"name"`
-	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+	// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
 	Rules []ManagementZoneRule `pulumi:"rules"`
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns *string `pulumi:"unknowns"`
@@ -116,7 +116,7 @@ type ManagementZoneArgs struct {
 	EntitySelectorBasedRules ManagementZoneEntitySelectorBasedRuleArrayInput
 	// The name of the management zone
 	Name pulumi.StringPtrInput
-	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+	// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
 	Rules ManagementZoneRuleArrayInput
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns pulumi.StringPtrInput
@@ -231,7 +231,7 @@ func (o ManagementZoneOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementZone) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
 func (o ManagementZoneOutput) Rules() ManagementZoneRuleArrayOutput {
 	return o.ApplyT(func(v *ManagementZone) ManagementZoneRuleArrayOutput { return v.Rules }).(ManagementZoneRuleArrayOutput)
 }

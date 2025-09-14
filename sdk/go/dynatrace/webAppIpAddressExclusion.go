@@ -66,7 +66,10 @@ type WebAppIpAddressExclusion struct {
 	ApplicationId pulumi.StringOutput `pulumi:"applicationId"`
 	// These are the only IP addresses that should be monitored
 	IpAddressExclusionInclude pulumi.BoolOutput `pulumi:"ipAddressExclusionInclude"`
-	// **Examples:** - 84.112.10.5 - fe80::10a1:c6b2:5f68:785d
+	// **Examples:**
+	//
+	//    - 84.112.10.5
+	//    - fe80::10a1:c6b2:5f68:785d
 	IpExclusionList WebAppIpAddressExclusionIpExclusionListPtrOutput `pulumi:"ipExclusionList"`
 }
 
@@ -110,7 +113,10 @@ type webAppIpAddressExclusionState struct {
 	ApplicationId *string `pulumi:"applicationId"`
 	// These are the only IP addresses that should be monitored
 	IpAddressExclusionInclude *bool `pulumi:"ipAddressExclusionInclude"`
-	// **Examples:** - 84.112.10.5 - fe80::10a1:c6b2:5f68:785d
+	// **Examples:**
+	//
+	//    - 84.112.10.5
+	//    - fe80::10a1:c6b2:5f68:785d
 	IpExclusionList *WebAppIpAddressExclusionIpExclusionList `pulumi:"ipExclusionList"`
 }
 
@@ -119,7 +125,10 @@ type WebAppIpAddressExclusionState struct {
 	ApplicationId pulumi.StringPtrInput
 	// These are the only IP addresses that should be monitored
 	IpAddressExclusionInclude pulumi.BoolPtrInput
-	// **Examples:** - 84.112.10.5 - fe80::10a1:c6b2:5f68:785d
+	// **Examples:**
+	//
+	//    - 84.112.10.5
+	//    - fe80::10a1:c6b2:5f68:785d
 	IpExclusionList WebAppIpAddressExclusionIpExclusionListPtrInput
 }
 
@@ -132,7 +141,10 @@ type webAppIpAddressExclusionArgs struct {
 	ApplicationId string `pulumi:"applicationId"`
 	// These are the only IP addresses that should be monitored
 	IpAddressExclusionInclude bool `pulumi:"ipAddressExclusionInclude"`
-	// **Examples:** - 84.112.10.5 - fe80::10a1:c6b2:5f68:785d
+	// **Examples:**
+	//
+	//    - 84.112.10.5
+	//    - fe80::10a1:c6b2:5f68:785d
 	IpExclusionList *WebAppIpAddressExclusionIpExclusionList `pulumi:"ipExclusionList"`
 }
 
@@ -142,7 +154,10 @@ type WebAppIpAddressExclusionArgs struct {
 	ApplicationId pulumi.StringInput
 	// These are the only IP addresses that should be monitored
 	IpAddressExclusionInclude pulumi.BoolInput
-	// **Examples:** - 84.112.10.5 - fe80::10a1:c6b2:5f68:785d
+	// **Examples:**
+	//
+	//    - 84.112.10.5
+	//    - fe80::10a1:c6b2:5f68:785d
 	IpExclusionList WebAppIpAddressExclusionIpExclusionListPtrInput
 }
 
@@ -243,7 +258,10 @@ func (o WebAppIpAddressExclusionOutput) IpAddressExclusionInclude() pulumi.BoolO
 	return o.ApplyT(func(v *WebAppIpAddressExclusion) pulumi.BoolOutput { return v.IpAddressExclusionInclude }).(pulumi.BoolOutput)
 }
 
-// **Examples:** - 84.112.10.5 - fe80::10a1:c6b2:5f68:785d
+// **Examples:**
+//
+//   - 84.112.10.5
+//   - fe80::10a1:c6b2:5f68:785d
 func (o WebAppIpAddressExclusionOutput) IpExclusionList() WebAppIpAddressExclusionIpExclusionListPtrOutput {
 	return o.ApplyT(func(v *WebAppIpAddressExclusion) WebAppIpAddressExclusionIpExclusionListPtrOutput {
 		return v.IpExclusionList

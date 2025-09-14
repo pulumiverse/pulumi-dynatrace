@@ -53,8 +53,7 @@ type Kubernetes struct {
 	IncludeAllFdiEvents pulumi.BoolPtrOutput `pulumi:"includeAllFdiEvents"`
 	// Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
 	Label pulumi.StringOutput `pulumi:"label"`
-	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-	// may increase the CPU/memory resource consumption of your ActiveGate.
+	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
 	//
 	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	OpenMetricsBuiltinEnabled pulumi.BoolPtrOutput `pulumi:"openMetricsBuiltinEnabled"`
@@ -154,8 +153,7 @@ type kubernetesState struct {
 	IncludeAllFdiEvents *bool `pulumi:"includeAllFdiEvents"`
 	// Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
 	Label *string `pulumi:"label"`
-	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-	// may increase the CPU/memory resource consumption of your ActiveGate.
+	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
 	//
 	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	OpenMetricsBuiltinEnabled *bool `pulumi:"openMetricsBuiltinEnabled"`
@@ -210,8 +208,7 @@ type KubernetesState struct {
 	IncludeAllFdiEvents pulumi.BoolPtrInput
 	// Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
 	Label pulumi.StringPtrInput
-	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-	// may increase the CPU/memory resource consumption of your ActiveGate.
+	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
 	//
 	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	OpenMetricsBuiltinEnabled pulumi.BoolPtrInput
@@ -270,8 +267,7 @@ type kubernetesArgs struct {
 	IncludeAllFdiEvents *bool `pulumi:"includeAllFdiEvents"`
 	// Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
 	Label string `pulumi:"label"`
-	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-	// may increase the CPU/memory resource consumption of your ActiveGate.
+	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
 	//
 	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	OpenMetricsBuiltinEnabled *bool `pulumi:"openMetricsBuiltinEnabled"`
@@ -327,8 +323,7 @@ type KubernetesArgs struct {
 	IncludeAllFdiEvents pulumi.BoolPtrInput
 	// Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
 	Label pulumi.StringInput
-	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-	// may increase the CPU/memory resource consumption of your ActiveGate.
+	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
 	//
 	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	OpenMetricsBuiltinEnabled pulumi.BoolPtrInput
@@ -511,8 +506,7 @@ func (o KubernetesOutput) Label() pulumi.StringOutput {
 	return o.ApplyT(func(v *Kubernetes) pulumi.StringOutput { return v.Label }).(pulumi.StringOutput)
 }
 
-// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-// may increase the CPU/memory resource consumption of your ActiveGate.
+// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
 //
 // Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 func (o KubernetesOutput) OpenMetricsBuiltinEnabled() pulumi.BoolPtrOutput {

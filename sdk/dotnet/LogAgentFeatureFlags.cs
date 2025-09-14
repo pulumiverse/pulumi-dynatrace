@@ -14,26 +14,28 @@ namespace Pulumiverse.Dynatrace
     public partial class LogAgentFeatureFlags : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Enable OneAgent to collect logs from Journald on Linux systems. This setting enables: * Detection and to have logs
-        /// ingested matching ingest rule is required.
+        /// Enable OneAgent to collect logs from Journald on Linux systems. 
+        /// This setting enables:
+        /// * Detection and to have logs ingested matching ingest rule is required.
         /// </summary>
         [Output("journaldLogDetector")]
         public Output<bool?> JournaldLogDetector { get; private set; } = null!;
 
         /// <summary>
-        /// Enable OneAgent to collect all container logs in Kubernetes environments. This setting enables: * Detection and
-        /// collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
-        /// processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
-        /// * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-        /// configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
-        /// more details, check our [documentation](https://dt-url.net/jn02ey0).
+        /// Enable OneAgent to collect all container logs in Kubernetes environments. 
+        /// This setting enables:
+        /// * Detection and collection of logs from short-lived containers and processes in Kubernetes.
+        /// * Detection and collection of logs from any processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
+        /// * Log events decoration according to semantic dictionary.
+        ///  **Note:** The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**.
+        /// 
+        ///  For more details, check our [documentation](https://dt-url.net/jn02ey0).
         /// </summary>
         [Output("newContainerLogDetector")]
         public Output<bool> NewContainerLogDetector { get; private set; } = null!;
 
         /// <summary>
-        /// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole
-        /// environment.
+        /// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Output("scope")]
         public Output<string?> Scope { get; private set; } = null!;
@@ -92,26 +94,28 @@ namespace Pulumiverse.Dynatrace
     public sealed class LogAgentFeatureFlagsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Enable OneAgent to collect logs from Journald on Linux systems. This setting enables: * Detection and to have logs
-        /// ingested matching ingest rule is required.
+        /// Enable OneAgent to collect logs from Journald on Linux systems. 
+        /// This setting enables:
+        /// * Detection and to have logs ingested matching ingest rule is required.
         /// </summary>
         [Input("journaldLogDetector")]
         public Input<bool>? JournaldLogDetector { get; set; }
 
         /// <summary>
-        /// Enable OneAgent to collect all container logs in Kubernetes environments. This setting enables: * Detection and
-        /// collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
-        /// processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
-        /// * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-        /// configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
-        /// more details, check our [documentation](https://dt-url.net/jn02ey0).
+        /// Enable OneAgent to collect all container logs in Kubernetes environments. 
+        /// This setting enables:
+        /// * Detection and collection of logs from short-lived containers and processes in Kubernetes.
+        /// * Detection and collection of logs from any processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
+        /// * Log events decoration according to semantic dictionary.
+        ///  **Note:** The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**.
+        /// 
+        ///  For more details, check our [documentation](https://dt-url.net/jn02ey0).
         /// </summary>
         [Input("newContainerLogDetector", required: true)]
         public Input<bool> NewContainerLogDetector { get; set; } = null!;
 
         /// <summary>
-        /// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole
-        /// environment.
+        /// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -131,26 +135,28 @@ namespace Pulumiverse.Dynatrace
     public sealed class LogAgentFeatureFlagsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Enable OneAgent to collect logs from Journald on Linux systems. This setting enables: * Detection and to have logs
-        /// ingested matching ingest rule is required.
+        /// Enable OneAgent to collect logs from Journald on Linux systems. 
+        /// This setting enables:
+        /// * Detection and to have logs ingested matching ingest rule is required.
         /// </summary>
         [Input("journaldLogDetector")]
         public Input<bool>? JournaldLogDetector { get; set; }
 
         /// <summary>
-        /// Enable OneAgent to collect all container logs in Kubernetes environments. This setting enables: * Detection and
-        /// collection of logs from short-lived containers and processes in Kubernetes. * Detection and collection of logs from any
-        /// processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
-        /// * Log events decoration according to semantic dictionary. **Note:** The matcher "Deployment name" in the log sources
-        /// configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**. For
-        /// more details, check our [documentation](https://dt-url.net/jn02ey0).
+        /// Enable OneAgent to collect all container logs in Kubernetes environments. 
+        /// This setting enables:
+        /// * Detection and collection of logs from short-lived containers and processes in Kubernetes.
+        /// * Detection and collection of logs from any processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
+        /// * Log events decoration according to semantic dictionary.
+        ///  **Note:** The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**.
+        /// 
+        ///  For more details, check our [documentation](https://dt-url.net/jn02ey0).
         /// </summary>
         [Input("newContainerLogDetector")]
         public Input<bool>? NewContainerLogDetector { get; set; }
 
         /// <summary>
-        /// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole
-        /// environment.
+        /// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }

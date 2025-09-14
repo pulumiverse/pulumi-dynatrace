@@ -34,11 +34,9 @@ class K8sMonitoringArgs:
         The set of arguments for constructing a K8sMonitoring resource.
         :param pulumi.Input[_builtins.bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
         :param pulumi.Input[_builtins.bool] event_processing_active: All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
-        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-               this may increase the CPU/memory resource consumption of your ActiveGate.
+        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[_builtins.bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
-        :param pulumi.Input['K8sMonitoringEventPatternsArgs'] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the
-               [documentation](https://dt-url.net/2201p0u).
+        :param pulumi.Input['K8sMonitoringEventPatternsArgs'] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         :param pulumi.Input[_builtins.bool] filter_events: Include only events specified by Events Field Selectors
         :param pulumi.Input[_builtins.bool] include_all_fdi_events: For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         :param pulumi.Input[_builtins.bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
@@ -90,8 +88,7 @@ class K8sMonitoringArgs:
     @pulumi.getter(name="openMetricsBuiltinEnabled")
     def open_metrics_builtin_enabled(self) -> pulumi.Input[_builtins.bool]:
         """
-        Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-        this may increase the CPU/memory resource consumption of your ActiveGate.
+        Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         """
         return pulumi.get(self, "open_metrics_builtin_enabled")
 
@@ -115,8 +112,7 @@ class K8sMonitoringArgs:
     @pulumi.getter(name="eventPatterns")
     def event_patterns(self) -> Optional[pulumi.Input['K8sMonitoringEventPatternsArgs']]:
         """
-        Define Kubernetes event filters to ingest events into your environment. For more details, see the
-        [documentation](https://dt-url.net/2201p0u).
+        Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         """
         return pulumi.get(self, "event_patterns")
 
@@ -189,13 +185,11 @@ class _K8sMonitoringState:
         """
         Input properties used for looking up and filtering K8sMonitoring resources.
         :param pulumi.Input[_builtins.bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
-        :param pulumi.Input['K8sMonitoringEventPatternsArgs'] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the
-               [documentation](https://dt-url.net/2201p0u).
+        :param pulumi.Input['K8sMonitoringEventPatternsArgs'] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         :param pulumi.Input[_builtins.bool] event_processing_active: All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
         :param pulumi.Input[_builtins.bool] filter_events: Include only events specified by Events Field Selectors
         :param pulumi.Input[_builtins.bool] include_all_fdi_events: For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
-        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-               this may increase the CPU/memory resource consumption of your ActiveGate.
+        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[_builtins.bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         :param pulumi.Input[_builtins.bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
@@ -238,8 +232,7 @@ class _K8sMonitoringState:
     @pulumi.getter(name="eventPatterns")
     def event_patterns(self) -> Optional[pulumi.Input['K8sMonitoringEventPatternsArgs']]:
         """
-        Define Kubernetes event filters to ingest events into your environment. For more details, see the
-        [documentation](https://dt-url.net/2201p0u).
+        Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         """
         return pulumi.get(self, "event_patterns")
 
@@ -287,8 +280,7 @@ class _K8sMonitoringState:
     @pulumi.getter(name="openMetricsBuiltinEnabled")
     def open_metrics_builtin_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-        this may increase the CPU/memory resource consumption of your ActiveGate.
+        Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         """
         return pulumi.get(self, "open_metrics_builtin_enabled")
 
@@ -355,13 +347,11 @@ class K8sMonitoring(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
-        :param pulumi.Input[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the
-               [documentation](https://dt-url.net/2201p0u).
+        :param pulumi.Input[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         :param pulumi.Input[_builtins.bool] event_processing_active: All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
         :param pulumi.Input[_builtins.bool] filter_events: Include only events specified by Events Field Selectors
         :param pulumi.Input[_builtins.bool] include_all_fdi_events: For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
-        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-               this may increase the CPU/memory resource consumption of your ActiveGate.
+        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[_builtins.bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         :param pulumi.Input[_builtins.bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
@@ -451,13 +441,11 @@ class K8sMonitoring(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
-        :param pulumi.Input[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the
-               [documentation](https://dt-url.net/2201p0u).
+        :param pulumi.Input[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         :param pulumi.Input[_builtins.bool] event_processing_active: All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
         :param pulumi.Input[_builtins.bool] filter_events: Include only events specified by Events Field Selectors
         :param pulumi.Input[_builtins.bool] include_all_fdi_events: For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
-        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-               this may increase the CPU/memory resource consumption of your ActiveGate.
+        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[_builtins.bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         :param pulumi.Input[_builtins.bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
@@ -489,8 +477,7 @@ class K8sMonitoring(pulumi.CustomResource):
     @pulumi.getter(name="eventPatterns")
     def event_patterns(self) -> pulumi.Output[Optional['outputs.K8sMonitoringEventPatterns']]:
         """
-        Define Kubernetes event filters to ingest events into your environment. For more details, see the
-        [documentation](https://dt-url.net/2201p0u).
+        Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         """
         return pulumi.get(self, "event_patterns")
 
@@ -522,8 +509,7 @@ class K8sMonitoring(pulumi.CustomResource):
     @pulumi.getter(name="openMetricsBuiltinEnabled")
     def open_metrics_builtin_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
-        Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-        this may increase the CPU/memory resource consumption of your ActiveGate.
+        Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         """
         return pulumi.get(self, "open_metrics_builtin_enabled")
 

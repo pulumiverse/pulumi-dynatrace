@@ -83,11 +83,23 @@ export class OsServices extends pulumi.CustomResource {
      */
     declare public readonly statusConditionLinux: pulumi.Output<string | undefined>;
     /**
-     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-     * – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-     * that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-     * paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-     * `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
+     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     *
+     * - `$eq(paused)` – Matches services that are in paused state.
+     *
+     * Available logic operations:
+     * - `$not($eq(paused))` – Matches services that are in state different from paused.
+     * - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+     *
+     * Use one of the following values as a parameter for this condition:
+     *
+     * - `running`
+     * - `stopped`
+     * - `startPending`
+     * - `stopPending`
+     * - `continuePending`
+     * - `pausePending`
+     * - `paused`
      */
     declare public readonly statusConditionWindows: pulumi.Output<string | undefined>;
     /**
@@ -209,11 +221,23 @@ export interface OsServicesState {
      */
     statusConditionLinux?: pulumi.Input<string>;
     /**
-     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-     * – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-     * that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-     * paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-     * `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
+     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     *
+     * - `$eq(paused)` – Matches services that are in paused state.
+     *
+     * Available logic operations:
+     * - `$not($eq(paused))` – Matches services that are in state different from paused.
+     * - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+     *
+     * Use one of the following values as a parameter for this condition:
+     *
+     * - `running`
+     * - `stopped`
+     * - `startPending`
+     * - `stopPending`
+     * - `continuePending`
+     * - `pausePending`
+     * - `paused`
      */
     statusConditionWindows?: pulumi.Input<string>;
     /**
@@ -275,11 +299,23 @@ export interface OsServicesArgs {
      */
     statusConditionLinux?: pulumi.Input<string>;
     /**
-     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-     * – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-     * that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-     * paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-     * `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
+     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     *
+     * - `$eq(paused)` – Matches services that are in paused state.
+     *
+     * Available logic operations:
+     * - `$not($eq(paused))` – Matches services that are in state different from paused.
+     * - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+     *
+     * Use one of the following values as a parameter for this condition:
+     *
+     * - `running`
+     * - `stopped`
+     * - `startPending`
+     * - `stopPending`
+     * - `continuePending`
+     * - `pausePending`
+     * - `paused`
      */
     statusConditionWindows?: pulumi.Input<string>;
     /**
