@@ -17,8 +17,10 @@ type Vmware struct {
 
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// This string should have one of the following formats: - $prefix(parameter) - property value starting with 'parameter' -
-	// $eq(parameter) - property value exactly matching 'parameter' - $suffix(parameter) - property value ends with 'parameter'
+	// This string should have one of the following formats:
+	// - $prefix(parameter) - property value starting with 'parameter'
+	// - $eq(parameter) - property value exactly matching 'parameter'
+	// - $suffix(parameter) - property value ends with 'parameter'
 	// - $contains(parameter) - property value contains 'parameter'
 	Filter pulumi.StringPtrOutput `pulumi:"filter"`
 	// Specify the IP address or name of the vCenter or standalone ESXi host:
@@ -85,8 +87,10 @@ func GetVmware(ctx *pulumi.Context,
 type vmwareState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// This string should have one of the following formats: - $prefix(parameter) - property value starting with 'parameter' -
-	// $eq(parameter) - property value exactly matching 'parameter' - $suffix(parameter) - property value ends with 'parameter'
+	// This string should have one of the following formats:
+	// - $prefix(parameter) - property value starting with 'parameter'
+	// - $eq(parameter) - property value exactly matching 'parameter'
+	// - $suffix(parameter) - property value ends with 'parameter'
 	// - $contains(parameter) - property value contains 'parameter'
 	Filter *string `pulumi:"filter"`
 	// Specify the IP address or name of the vCenter or standalone ESXi host:
@@ -102,8 +106,10 @@ type vmwareState struct {
 type VmwareState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// This string should have one of the following formats: - $prefix(parameter) - property value starting with 'parameter' -
-	// $eq(parameter) - property value exactly matching 'parameter' - $suffix(parameter) - property value ends with 'parameter'
+	// This string should have one of the following formats:
+	// - $prefix(parameter) - property value starting with 'parameter'
+	// - $eq(parameter) - property value exactly matching 'parameter'
+	// - $suffix(parameter) - property value ends with 'parameter'
 	// - $contains(parameter) - property value contains 'parameter'
 	Filter pulumi.StringPtrInput
 	// Specify the IP address or name of the vCenter or standalone ESXi host:
@@ -123,8 +129,10 @@ func (VmwareState) ElementType() reflect.Type {
 type vmwareArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// This string should have one of the following formats: - $prefix(parameter) - property value starting with 'parameter' -
-	// $eq(parameter) - property value exactly matching 'parameter' - $suffix(parameter) - property value ends with 'parameter'
+	// This string should have one of the following formats:
+	// - $prefix(parameter) - property value starting with 'parameter'
+	// - $eq(parameter) - property value exactly matching 'parameter'
+	// - $suffix(parameter) - property value ends with 'parameter'
 	// - $contains(parameter) - property value contains 'parameter'
 	Filter *string `pulumi:"filter"`
 	// Specify the IP address or name of the vCenter or standalone ESXi host:
@@ -141,8 +149,10 @@ type vmwareArgs struct {
 type VmwareArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// This string should have one of the following formats: - $prefix(parameter) - property value starting with 'parameter' -
-	// $eq(parameter) - property value exactly matching 'parameter' - $suffix(parameter) - property value ends with 'parameter'
+	// This string should have one of the following formats:
+	// - $prefix(parameter) - property value starting with 'parameter'
+	// - $eq(parameter) - property value exactly matching 'parameter'
+	// - $suffix(parameter) - property value ends with 'parameter'
 	// - $contains(parameter) - property value contains 'parameter'
 	Filter pulumi.StringPtrInput
 	// Specify the IP address or name of the vCenter or standalone ESXi host:
@@ -247,8 +257,10 @@ func (o VmwareOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Vmware) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// This string should have one of the following formats: - $prefix(parameter) - property value starting with 'parameter' -
-// $eq(parameter) - property value exactly matching 'parameter' - $suffix(parameter) - property value ends with 'parameter'
+// This string should have one of the following formats:
+// - $prefix(parameter) - property value starting with 'parameter'
+// - $eq(parameter) - property value exactly matching 'parameter'
+// - $suffix(parameter) - property value ends with 'parameter'
 // - $contains(parameter) - property value contains 'parameter'
 func (o VmwareOutput) Filter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Vmware) pulumi.StringPtrOutput { return v.Filter }).(pulumi.StringPtrOutput)

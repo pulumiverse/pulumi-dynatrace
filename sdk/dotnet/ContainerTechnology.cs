@@ -20,37 +20,71 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> BoshProcessManager { get; private set; } = null!;
 
         /// <summary>
-        /// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+        /// Platform: Kubernetes
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
+        /// 
+        /// Min agent version: 1.169
         /// </summary>
         [Output("containerd")]
         public Output<bool> Containerd { get; private set; } = null!;
 
         /// <summary>
-        /// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+        /// Platform: Kubernetes
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
+        /// 
+        /// Min agent version: 1.163
         /// </summary>
         [Output("crio")]
         public Output<bool> Crio { get; private set; } = null!;
 
         /// <summary>
-        /// Platform: Docker and Kubernetes Status: Released Operating system: Linux
+        /// Platform: Docker and Kubernetes
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
         /// </summary>
         [Output("docker")]
         public Output<bool> Docker { get; private set; } = null!;
 
         /// <summary>
-        /// Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+        /// Platform: Docker
+        /// 
+        /// Status: Early adopter
+        /// 
+        /// Operating system: Windows
+        /// 
+        /// Min agent version: 1.149
         /// </summary>
         [Output("dockerWindows")]
         public Output<bool> DockerWindows { get; private set; } = null!;
 
         /// <summary>
-        /// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+        /// Platform: Cloud Foundry
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
+        /// 
+        /// Min agent version: 1.133
         /// </summary>
         [Output("garden")]
         public Output<bool> Garden { get; private set; } = null!;
 
         /// <summary>
-        /// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        /// Platform: Podman
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
+        /// 
+        /// Min agent version: 1.267
         /// </summary>
         [Output("podman")]
         public Output<bool> Podman { get; private set; } = null!;
@@ -62,7 +96,13 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
-        /// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+        /// Platform: Cloud Foundry
+        /// 
+        /// Status: Early adopter
+        /// 
+        /// Operating system: Windows
+        /// 
+        /// Min agent version: 1.175
         /// </summary>
         [Output("winc")]
         public Output<bool> Winc { get; private set; } = null!;
@@ -121,37 +161,71 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> BoshProcessManager { get; set; } = null!;
 
         /// <summary>
-        /// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+        /// Platform: Kubernetes
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
+        /// 
+        /// Min agent version: 1.169
         /// </summary>
         [Input("containerd", required: true)]
         public Input<bool> Containerd { get; set; } = null!;
 
         /// <summary>
-        /// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+        /// Platform: Kubernetes
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
+        /// 
+        /// Min agent version: 1.163
         /// </summary>
         [Input("crio", required: true)]
         public Input<bool> Crio { get; set; } = null!;
 
         /// <summary>
-        /// Platform: Docker and Kubernetes Status: Released Operating system: Linux
+        /// Platform: Docker and Kubernetes
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
         /// </summary>
         [Input("docker", required: true)]
         public Input<bool> Docker { get; set; } = null!;
 
         /// <summary>
-        /// Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+        /// Platform: Docker
+        /// 
+        /// Status: Early adopter
+        /// 
+        /// Operating system: Windows
+        /// 
+        /// Min agent version: 1.149
         /// </summary>
         [Input("dockerWindows", required: true)]
         public Input<bool> DockerWindows { get; set; } = null!;
 
         /// <summary>
-        /// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+        /// Platform: Cloud Foundry
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
+        /// 
+        /// Min agent version: 1.133
         /// </summary>
         [Input("garden", required: true)]
         public Input<bool> Garden { get; set; } = null!;
 
         /// <summary>
-        /// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        /// Platform: Podman
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
+        /// 
+        /// Min agent version: 1.267
         /// </summary>
         [Input("podman", required: true)]
         public Input<bool> Podman { get; set; } = null!;
@@ -163,7 +237,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+        /// Platform: Cloud Foundry
+        /// 
+        /// Status: Early adopter
+        /// 
+        /// Operating system: Windows
+        /// 
+        /// Min agent version: 1.175
         /// </summary>
         [Input("winc", required: true)]
         public Input<bool> Winc { get; set; } = null!;
@@ -183,37 +263,71 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? BoshProcessManager { get; set; }
 
         /// <summary>
-        /// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+        /// Platform: Kubernetes
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
+        /// 
+        /// Min agent version: 1.169
         /// </summary>
         [Input("containerd")]
         public Input<bool>? Containerd { get; set; }
 
         /// <summary>
-        /// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+        /// Platform: Kubernetes
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
+        /// 
+        /// Min agent version: 1.163
         /// </summary>
         [Input("crio")]
         public Input<bool>? Crio { get; set; }
 
         /// <summary>
-        /// Platform: Docker and Kubernetes Status: Released Operating system: Linux
+        /// Platform: Docker and Kubernetes
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
         /// </summary>
         [Input("docker")]
         public Input<bool>? Docker { get; set; }
 
         /// <summary>
-        /// Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+        /// Platform: Docker
+        /// 
+        /// Status: Early adopter
+        /// 
+        /// Operating system: Windows
+        /// 
+        /// Min agent version: 1.149
         /// </summary>
         [Input("dockerWindows")]
         public Input<bool>? DockerWindows { get; set; }
 
         /// <summary>
-        /// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+        /// Platform: Cloud Foundry
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
+        /// 
+        /// Min agent version: 1.133
         /// </summary>
         [Input("garden")]
         public Input<bool>? Garden { get; set; }
 
         /// <summary>
-        /// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        /// Platform: Podman
+        /// 
+        /// Status: Released
+        /// 
+        /// Operating system: Linux
+        /// 
+        /// Min agent version: 1.267
         /// </summary>
         [Input("podman")]
         public Input<bool>? Podman { get; set; }
@@ -225,7 +339,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+        /// Platform: Cloud Foundry
+        /// 
+        /// Status: Early adopter
+        /// 
+        /// Operating system: Windows
+        /// 
+        /// Min agent version: 1.175
         /// </summary>
         [Input("winc")]
         public Input<bool>? Winc { get; set; }

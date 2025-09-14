@@ -86,11 +86,23 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> StatusConditionLinux { get; private set; } = null!;
 
         /// <summary>
-        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-        /// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-        /// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-        /// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-        /// `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// 
+        /// - `$eq(paused)` – Matches services that are in paused state.
+        /// 
+        /// Available logic operations:
+        /// - `$not($eq(paused))` – Matches services that are in state different from paused.
+        /// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+        /// 
+        /// Use one of the following values as a parameter for this condition:
+        /// 
+        /// - `running`
+        /// - `stopped`
+        /// - `start_pending`
+        /// - `stop_pending`
+        /// - `continue_pending`
+        /// - `pause_pending`
+        /// - `paused`
         /// </summary>
         [Output("statusConditionWindows")]
         public Output<string?> StatusConditionWindows { get; private set; } = null!;
@@ -221,11 +233,23 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? StatusConditionLinux { get; set; }
 
         /// <summary>
-        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-        /// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-        /// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-        /// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-        /// `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// 
+        /// - `$eq(paused)` – Matches services that are in paused state.
+        /// 
+        /// Available logic operations:
+        /// - `$not($eq(paused))` – Matches services that are in state different from paused.
+        /// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+        /// 
+        /// Use one of the following values as a parameter for this condition:
+        /// 
+        /// - `running`
+        /// - `stopped`
+        /// - `start_pending`
+        /// - `stop_pending`
+        /// - `continue_pending`
+        /// - `pause_pending`
+        /// - `paused`
         /// </summary>
         [Input("statusConditionWindows")]
         public Input<string>? StatusConditionWindows { get; set; }
@@ -317,11 +341,23 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? StatusConditionLinux { get; set; }
 
         /// <summary>
-        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk). - `$eq(paused)`
-        /// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
-        /// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
-        /// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-        /// `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// 
+        /// - `$eq(paused)` – Matches services that are in paused state.
+        /// 
+        /// Available logic operations:
+        /// - `$not($eq(paused))` – Matches services that are in state different from paused.
+        /// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+        /// 
+        /// Use one of the following values as a parameter for this condition:
+        /// 
+        /// - `running`
+        /// - `stopped`
+        /// - `start_pending`
+        /// - `stop_pending`
+        /// - `continue_pending`
+        /// - `pause_pending`
+        /// - `paused`
         /// </summary>
         [Input("statusConditionWindows")]
         public Input<string>? StatusConditionWindows { get; set; }

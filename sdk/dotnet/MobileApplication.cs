@@ -38,8 +38,9 @@ namespace Pulumiverse.Dynatrace
         public Output<string> BeaconEndpointType { get; private set; } = null!;
 
         /// <summary>
-        /// The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
-        /// `INSTRUMENTED_WEB_SERVER`
+        /// The URL of the beacon endpoint.
+        /// 
+        /// Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or `INSTRUMENTED_WEB_SERVER`
         /// </summary>
         [Output("beaconEndpointUrl")]
         public Output<string?> BeaconEndpointUrl { get; private set; } = null!;
@@ -81,15 +82,15 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> SessionReplay { get; private set; } = null!;
 
         /// <summary>
-        /// The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
-        /// and **optInModeEnabled** values set to `true`.
+        /// The session replay on crash is enabled (`true`) or disabled (`false`). 
+        /// 
+        /// Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
         /// </summary>
         [Output("sessionReplayOnCrash")]
         public Output<bool?> SessionReplayOnCrash { get; private set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps)
-        /// The percentage of user sessions to be analyzed
+        /// (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
         /// </summary>
         [Output("userSessionPercentage")]
         public Output<int?> UserSessionPercentage { get; private set; } = null!;
@@ -166,8 +167,9 @@ namespace Pulumiverse.Dynatrace
         public Input<string> BeaconEndpointType { get; set; } = null!;
 
         /// <summary>
-        /// The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
-        /// `INSTRUMENTED_WEB_SERVER`
+        /// The URL of the beacon endpoint.
+        /// 
+        /// Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or `INSTRUMENTED_WEB_SERVER`
         /// </summary>
         [Input("beaconEndpointUrl")]
         public Input<string>? BeaconEndpointUrl { get; set; }
@@ -215,15 +217,15 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? SessionReplay { get; set; }
 
         /// <summary>
-        /// The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
-        /// and **optInModeEnabled** values set to `true`.
+        /// The session replay on crash is enabled (`true`) or disabled (`false`). 
+        /// 
+        /// Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
         /// </summary>
         [Input("sessionReplayOnCrash")]
         public Input<bool>? SessionReplayOnCrash { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps)
-        /// The percentage of user sessions to be analyzed
+        /// (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
         /// </summary>
         [Input("userSessionPercentage")]
         public Input<int>? UserSessionPercentage { get; set; }
@@ -261,8 +263,9 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? BeaconEndpointType { get; set; }
 
         /// <summary>
-        /// The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
-        /// `INSTRUMENTED_WEB_SERVER`
+        /// The URL of the beacon endpoint.
+        /// 
+        /// Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or `INSTRUMENTED_WEB_SERVER`
         /// </summary>
         [Input("beaconEndpointUrl")]
         public Input<string>? BeaconEndpointUrl { get; set; }
@@ -310,15 +313,15 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? SessionReplay { get; set; }
 
         /// <summary>
-        /// The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
-        /// and **optInModeEnabled** values set to `true`.
+        /// The session replay on crash is enabled (`true`) or disabled (`false`). 
+        /// 
+        /// Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
         /// </summary>
         [Input("sessionReplayOnCrash")]
         public Input<bool>? SessionReplayOnCrash { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps)
-        /// The percentage of user sessions to be analyzed
+        /// (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
         /// </summary>
         [Input("userSessionPercentage")]
         public Input<int>? UserSessionPercentage { get; set; }

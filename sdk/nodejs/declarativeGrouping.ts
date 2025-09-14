@@ -35,8 +35,7 @@ export class DeclarativeGrouping extends pulumi.CustomResource {
     }
 
     /**
-     * Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-     * group.
+     * Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
      */
     declare public readonly detection: pulumi.Output<outputs.DeclarativeGroupingDetection>;
     /**
@@ -44,9 +43,7 @@ export class DeclarativeGrouping extends pulumi.CustomResource {
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
@@ -100,8 +97,7 @@ export class DeclarativeGrouping extends pulumi.CustomResource {
  */
 export interface DeclarativeGroupingState {
     /**
-     * Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-     * group.
+     * Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
      */
     detection?: pulumi.Input<inputs.DeclarativeGroupingDetection>;
     /**
@@ -109,9 +105,7 @@ export interface DeclarativeGroupingState {
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     insertAfter?: pulumi.Input<string>;
     /**
@@ -129,8 +123,7 @@ export interface DeclarativeGroupingState {
  */
 export interface DeclarativeGroupingArgs {
     /**
-     * Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-     * group.
+     * Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
      */
     detection: pulumi.Input<inputs.DeclarativeGroupingDetection>;
     /**
@@ -138,9 +131,7 @@ export interface DeclarativeGroupingArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     insertAfter?: pulumi.Input<string>;
     /**

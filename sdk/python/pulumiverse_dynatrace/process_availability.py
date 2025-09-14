@@ -32,15 +32,12 @@ class ProcessAvailabilityArgs:
         """
         The set of arguments for constructing a ProcessAvailability resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['ProcessAvailabilityMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event.
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
-        :param pulumi.Input['ProcessAvailabilityRulesArgs'] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-               detection rules associated with it.
+        :param pulumi.Input['ProcessAvailabilityRulesArgs'] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "enabled", enabled)
@@ -75,9 +72,7 @@ class ProcessAvailabilityArgs:
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -137,8 +132,7 @@ class ProcessAvailabilityArgs:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input['ProcessAvailabilityRulesArgs']]:
         """
-        Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-        detection rules associated with it.
+        Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         """
         return pulumi.get(self, "rules")
 
@@ -173,15 +167,12 @@ class _ProcessAvailabilityState:
         """
         Input properties used for looking up and filtering ProcessAvailability resources.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['ProcessAvailabilityMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event.
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
-        :param pulumi.Input['ProcessAvailabilityRulesArgs'] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-               detection rules associated with it.
+        :param pulumi.Input['ProcessAvailabilityRulesArgs'] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         if enabled is not None:
@@ -217,9 +208,7 @@ class _ProcessAvailabilityState:
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -279,8 +268,7 @@ class _ProcessAvailabilityState:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input['ProcessAvailabilityRulesArgs']]:
         """
-        Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-        detection rules associated with it.
+        Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         """
         return pulumi.get(self, "rules")
 
@@ -321,15 +309,12 @@ class ProcessAvailability(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event.
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
-        :param pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-               detection rules associated with it.
+        :param pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         ...
@@ -408,15 +393,12 @@ class ProcessAvailability(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event.
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
-        :param pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-               detection rules associated with it.
+        :param pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -445,9 +427,7 @@ class ProcessAvailability(pulumi.CustomResource):
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> pulumi.Output[_builtins.str]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -487,8 +467,7 @@ class ProcessAvailability(pulumi.CustomResource):
     @pulumi.getter
     def rules(self) -> pulumi.Output[Optional['outputs.ProcessAvailabilityRules']]:
         """
-        Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-        detection rules associated with it.
+        Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         """
         return pulumi.get(self, "rules")
 

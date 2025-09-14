@@ -233,6 +233,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &EbpfServiceDiscovery{}
 	case "dynatrace:index/emailNotification:EmailNotification":
 		r = &EmailNotification{}
+	case "dynatrace:index/endpointDetectionRules:EndpointDetectionRules":
+		r = &EndpointDetectionRules{}
+	case "dynatrace:index/endpointDetectionRulesOptin:EndpointDetectionRulesOptin":
+		r = &EndpointDetectionRulesOptin{}
 	case "dynatrace:index/environment:Environment":
 		r = &Environment{}
 	case "dynatrace:index/eulaSettings:EulaSettings":
@@ -245,6 +249,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ExtensionExecutionRemote{}
 	case "dynatrace:index/failureDetectionParameters:FailureDetectionParameters":
 		r = &FailureDetectionParameters{}
+	case "dynatrace:index/failureDetectionRuleSets:FailureDetectionRuleSets":
+		r = &FailureDetectionRuleSets{}
 	case "dynatrace:index/failureDetectionRules:FailureDetectionRules":
 		r = &FailureDetectionRules{}
 	case "dynatrace:index/frequentIssues:FrequentIssues":
@@ -639,6 +645,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SessionReplayResourceCapture{}
 	case "dynatrace:index/sessionReplayWebPrivacy:SessionReplayWebPrivacy":
 		r = &SessionReplayWebPrivacy{}
+	case "dynatrace:index/settingsPermissions:SettingsPermissions":
+		r = &SettingsPermissions{}
 	case "dynatrace:index/siteReliabilityGuardian:SiteReliabilityGuardian":
 		r = &SiteReliabilityGuardian{}
 	case "dynatrace:index/slackNotification:SlackNotification":
@@ -1320,6 +1328,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/endpointDetectionRules",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/endpointDetectionRulesOptin",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/environment",
 		&module{version},
 	)
@@ -1346,6 +1364,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/failureDetectionParameters",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/failureDetectionRuleSets",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2331,6 +2354,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/sessionReplayWebPrivacy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/settingsPermissions",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

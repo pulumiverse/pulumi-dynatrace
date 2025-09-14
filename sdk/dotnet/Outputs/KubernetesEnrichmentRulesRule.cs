@@ -19,13 +19,17 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? Enabled;
         /// <summary>
+        /// Uses the key of the annotation or label as field name
+        /// </summary>
+        public readonly bool? PrimaryGrailTag;
+        /// <summary>
         /// The source must follow the syntax of Kubernetes annotation/label keys as defined in the [Kubernetes documentation](https://dt-url.net/2c02sbn).
         /// </summary>
         public readonly string Source;
         /// <summary>
-        /// Possible Values: `Dt_cost_costcenter`, `Dt_cost_product`, `Dt_security_context`
+        /// Required when `primary_grail_tag` is omitted or `false`. Possible Values: `dt.cost.costcenter``, `dt.cost.product``, `dt.security_context
         /// </summary>
-        public readonly string Target;
+        public readonly string? Target;
         /// <summary>
         /// Possible Values: `ANNOTATION`, `LABEL`
         /// </summary>
@@ -35,13 +39,16 @@ namespace Pulumiverse.Dynatrace.Outputs
         private KubernetesEnrichmentRulesRule(
             bool? enabled,
 
+            bool? primaryGrailTag,
+
             string source,
 
-            string target,
+            string? target,
 
             string type)
         {
             Enabled = enabled;
+            PrimaryGrailTag = primaryGrailTag;
             Source = source;
             Target = target;
             Type = type;

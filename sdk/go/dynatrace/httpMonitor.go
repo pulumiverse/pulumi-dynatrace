@@ -21,7 +21,9 @@ type HttpMonitor struct {
 	Enabled pulumi.BoolPtrOutput `pulumi:"enabled"`
 	// The frequency of the monitor, in minutes.
 	Frequency pulumi.IntOutput `pulumi:"frequency"`
-	// A list of locations from which the monitor is executed. To specify a location, use its entity ID.
+	// A list of locations from which the monitor is executed.
+	//
+	// To specify a location, use its entity ID.
 	Locations pulumi.StringArrayOutput `pulumi:"locations"`
 	// A set of manually assigned applications.
 	ManuallyAssignedApps pulumi.StringArrayOutput `pulumi:"manuallyAssignedApps"`
@@ -31,8 +33,9 @@ type HttpMonitor struct {
 	NoScript pulumi.BoolPtrOutput `pulumi:"noScript"`
 	// The HTTP Script
 	Script HttpMonitorScriptTypePtrOutput `pulumi:"script"`
-	// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
-	// source 'USER' will be added automatically.
+	// A set of tags assigned to the monitor.
+	//
+	// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
 	Tags HttpMonitorTagArrayOutput `pulumi:"tags"`
 }
 
@@ -75,7 +78,9 @@ type httpMonitorState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// The frequency of the monitor, in minutes.
 	Frequency *int `pulumi:"frequency"`
-	// A list of locations from which the monitor is executed. To specify a location, use its entity ID.
+	// A list of locations from which the monitor is executed.
+	//
+	// To specify a location, use its entity ID.
 	Locations []string `pulumi:"locations"`
 	// A set of manually assigned applications.
 	ManuallyAssignedApps []string `pulumi:"manuallyAssignedApps"`
@@ -85,8 +90,9 @@ type httpMonitorState struct {
 	NoScript *bool `pulumi:"noScript"`
 	// The HTTP Script
 	Script *HttpMonitorScriptType `pulumi:"script"`
-	// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
-	// source 'USER' will be added automatically.
+	// A set of tags assigned to the monitor.
+	//
+	// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
 	Tags []HttpMonitorTag `pulumi:"tags"`
 }
 
@@ -97,7 +103,9 @@ type HttpMonitorState struct {
 	Enabled pulumi.BoolPtrInput
 	// The frequency of the monitor, in minutes.
 	Frequency pulumi.IntPtrInput
-	// A list of locations from which the monitor is executed. To specify a location, use its entity ID.
+	// A list of locations from which the monitor is executed.
+	//
+	// To specify a location, use its entity ID.
 	Locations pulumi.StringArrayInput
 	// A set of manually assigned applications.
 	ManuallyAssignedApps pulumi.StringArrayInput
@@ -107,8 +115,9 @@ type HttpMonitorState struct {
 	NoScript pulumi.BoolPtrInput
 	// The HTTP Script
 	Script HttpMonitorScriptTypePtrInput
-	// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
-	// source 'USER' will be added automatically.
+	// A set of tags assigned to the monitor.
+	//
+	// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
 	Tags HttpMonitorTagArrayInput
 }
 
@@ -123,7 +132,9 @@ type httpMonitorArgs struct {
 	Enabled *bool `pulumi:"enabled"`
 	// The frequency of the monitor, in minutes.
 	Frequency int `pulumi:"frequency"`
-	// A list of locations from which the monitor is executed. To specify a location, use its entity ID.
+	// A list of locations from which the monitor is executed.
+	//
+	// To specify a location, use its entity ID.
 	Locations []string `pulumi:"locations"`
 	// A set of manually assigned applications.
 	ManuallyAssignedApps []string `pulumi:"manuallyAssignedApps"`
@@ -133,8 +144,9 @@ type httpMonitorArgs struct {
 	NoScript *bool `pulumi:"noScript"`
 	// The HTTP Script
 	Script *HttpMonitorScriptType `pulumi:"script"`
-	// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
-	// source 'USER' will be added automatically.
+	// A set of tags assigned to the monitor.
+	//
+	// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
 	Tags []HttpMonitorTag `pulumi:"tags"`
 }
 
@@ -146,7 +158,9 @@ type HttpMonitorArgs struct {
 	Enabled pulumi.BoolPtrInput
 	// The frequency of the monitor, in minutes.
 	Frequency pulumi.IntInput
-	// A list of locations from which the monitor is executed. To specify a location, use its entity ID.
+	// A list of locations from which the monitor is executed.
+	//
+	// To specify a location, use its entity ID.
 	Locations pulumi.StringArrayInput
 	// A set of manually assigned applications.
 	ManuallyAssignedApps pulumi.StringArrayInput
@@ -156,8 +170,9 @@ type HttpMonitorArgs struct {
 	NoScript pulumi.BoolPtrInput
 	// The HTTP Script
 	Script HttpMonitorScriptTypePtrInput
-	// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
-	// source 'USER' will be added automatically.
+	// A set of tags assigned to the monitor.
+	//
+	// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
 	Tags HttpMonitorTagArrayInput
 }
 
@@ -263,7 +278,9 @@ func (o HttpMonitorOutput) Frequency() pulumi.IntOutput {
 	return o.ApplyT(func(v *HttpMonitor) pulumi.IntOutput { return v.Frequency }).(pulumi.IntOutput)
 }
 
-// A list of locations from which the monitor is executed. To specify a location, use its entity ID.
+// A list of locations from which the monitor is executed.
+//
+// To specify a location, use its entity ID.
 func (o HttpMonitorOutput) Locations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *HttpMonitor) pulumi.StringArrayOutput { return v.Locations }).(pulumi.StringArrayOutput)
 }
@@ -288,8 +305,9 @@ func (o HttpMonitorOutput) Script() HttpMonitorScriptTypePtrOutput {
 	return o.ApplyT(func(v *HttpMonitor) HttpMonitorScriptTypePtrOutput { return v.Script }).(HttpMonitorScriptTypePtrOutput)
 }
 
-// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
-// source 'USER' will be added automatically.
+// A set of tags assigned to the monitor.
+//
+// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
 func (o HttpMonitorOutput) Tags() HttpMonitorTagArrayOutput {
 	return o.ApplyT(func(v *HttpMonitor) HttpMonitorTagArrayOutput { return v.Tags }).(HttpMonitorTagArrayOutput)
 }

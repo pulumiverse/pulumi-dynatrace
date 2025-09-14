@@ -21,19 +21,27 @@ class ServicenowConnectionArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
                  url: pulumi.Input[_builtins.str],
+                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  password: Optional[pulumi.Input[_builtins.str]] = None,
                  user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ServicenowConnection resource.
-        :param pulumi.Input[_builtins.str] type: Possible Values: `basic`
+        :param pulumi.Input[_builtins.str] type: Possible Values: `basic`, `client-credentials`
         :param pulumi.Input[_builtins.str] url: URL of the ServiceNow instance.
+        :param pulumi.Input[_builtins.str] client_id: Client ID of the ServiceNow OAuth server
+        :param pulumi.Input[_builtins.str] client_secret: Client secret of the ServiceNow OAuth server
         :param pulumi.Input[_builtins.str] name: A unique and clearly identifiable connection name to your ServiceNow instance.
         :param pulumi.Input[_builtins.str] password: Password of the ServiceNow user.
         :param pulumi.Input[_builtins.str] user: Username or Email address.
         """
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "url", url)
+        if client_id is not None:
+            pulumi.set(__self__, "client_id", client_id)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if password is not None:
@@ -45,7 +53,7 @@ class ServicenowConnectionArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `basic`
+        Possible Values: `basic`, `client-credentials`
         """
         return pulumi.get(self, "type")
 
@@ -64,6 +72,30 @@ class ServicenowConnectionArgs:
     @url.setter
     def url(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Client ID of the ServiceNow OAuth server
+        """
+        return pulumi.get(self, "client_id")
+
+    @client_id.setter
+    def client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "client_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Client secret of the ServiceNow OAuth server
+        """
+        return pulumi.get(self, "client_secret")
+
+    @client_secret.setter
+    def client_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "client_secret", value)
 
     @_builtins.property
     @pulumi.getter
@@ -105,6 +137,8 @@ class ServicenowConnectionArgs:
 @pulumi.input_type
 class _ServicenowConnectionState:
     def __init__(__self__, *,
+                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  password: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -112,12 +146,18 @@ class _ServicenowConnectionState:
                  user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServicenowConnection resources.
+        :param pulumi.Input[_builtins.str] client_id: Client ID of the ServiceNow OAuth server
+        :param pulumi.Input[_builtins.str] client_secret: Client secret of the ServiceNow OAuth server
         :param pulumi.Input[_builtins.str] name: A unique and clearly identifiable connection name to your ServiceNow instance.
         :param pulumi.Input[_builtins.str] password: Password of the ServiceNow user.
-        :param pulumi.Input[_builtins.str] type: Possible Values: `basic`
+        :param pulumi.Input[_builtins.str] type: Possible Values: `basic`, `client-credentials`
         :param pulumi.Input[_builtins.str] url: URL of the ServiceNow instance.
         :param pulumi.Input[_builtins.str] user: Username or Email address.
         """
+        if client_id is not None:
+            pulumi.set(__self__, "client_id", client_id)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if password is not None:
@@ -128,6 +168,30 @@ class _ServicenowConnectionState:
             pulumi.set(__self__, "url", url)
         if user is not None:
             pulumi.set(__self__, "user", user)
+
+    @_builtins.property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Client ID of the ServiceNow OAuth server
+        """
+        return pulumi.get(self, "client_id")
+
+    @client_id.setter
+    def client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "client_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Client secret of the ServiceNow OAuth server
+        """
+        return pulumi.get(self, "client_secret")
+
+    @client_secret.setter
+    def client_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "client_secret", value)
 
     @_builtins.property
     @pulumi.getter
@@ -157,7 +221,7 @@ class _ServicenowConnectionState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Possible Values: `basic`
+        Possible Values: `basic`, `client-credentials`
         """
         return pulumi.get(self, "type")
 
@@ -196,6 +260,8 @@ class ServicenowConnection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  password: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -206,9 +272,11 @@ class ServicenowConnection(pulumi.CustomResource):
         Create a ServicenowConnection resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] client_id: Client ID of the ServiceNow OAuth server
+        :param pulumi.Input[_builtins.str] client_secret: Client secret of the ServiceNow OAuth server
         :param pulumi.Input[_builtins.str] name: A unique and clearly identifiable connection name to your ServiceNow instance.
         :param pulumi.Input[_builtins.str] password: Password of the ServiceNow user.
-        :param pulumi.Input[_builtins.str] type: Possible Values: `basic`
+        :param pulumi.Input[_builtins.str] type: Possible Values: `basic`, `client-credentials`
         :param pulumi.Input[_builtins.str] url: URL of the ServiceNow instance.
         :param pulumi.Input[_builtins.str] user: Username or Email address.
         """
@@ -235,6 +303,8 @@ class ServicenowConnection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  password: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -249,6 +319,8 @@ class ServicenowConnection(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ServicenowConnectionArgs.__new__(ServicenowConnectionArgs)
 
+            __props__.__dict__["client_id"] = client_id
+            __props__.__dict__["client_secret"] = None if client_secret is None else pulumi.Output.secret(client_secret)
             __props__.__dict__["name"] = name
             __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             if type is None and not opts.urn:
@@ -258,7 +330,7 @@ class ServicenowConnection(pulumi.CustomResource):
                 raise TypeError("Missing required property 'url'")
             __props__.__dict__["url"] = url
             __props__.__dict__["user"] = user
-        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["password"])
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["clientSecret", "password"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(ServicenowConnection, __self__).__init__(
             'dynatrace:index/servicenowConnection:ServicenowConnection',
@@ -270,6 +342,8 @@ class ServicenowConnection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            client_id: Optional[pulumi.Input[_builtins.str]] = None,
+            client_secret: Optional[pulumi.Input[_builtins.str]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             password: Optional[pulumi.Input[_builtins.str]] = None,
             type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -282,9 +356,11 @@ class ServicenowConnection(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] client_id: Client ID of the ServiceNow OAuth server
+        :param pulumi.Input[_builtins.str] client_secret: Client secret of the ServiceNow OAuth server
         :param pulumi.Input[_builtins.str] name: A unique and clearly identifiable connection name to your ServiceNow instance.
         :param pulumi.Input[_builtins.str] password: Password of the ServiceNow user.
-        :param pulumi.Input[_builtins.str] type: Possible Values: `basic`
+        :param pulumi.Input[_builtins.str] type: Possible Values: `basic`, `client-credentials`
         :param pulumi.Input[_builtins.str] url: URL of the ServiceNow instance.
         :param pulumi.Input[_builtins.str] user: Username or Email address.
         """
@@ -292,12 +368,30 @@ class ServicenowConnection(pulumi.CustomResource):
 
         __props__ = _ServicenowConnectionState.__new__(_ServicenowConnectionState)
 
+        __props__.__dict__["client_id"] = client_id
+        __props__.__dict__["client_secret"] = client_secret
         __props__.__dict__["name"] = name
         __props__.__dict__["password"] = password
         __props__.__dict__["type"] = type
         __props__.__dict__["url"] = url
         __props__.__dict__["user"] = user
         return ServicenowConnection(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Client ID of the ServiceNow OAuth server
+        """
+        return pulumi.get(self, "client_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Client secret of the ServiceNow OAuth server
+        """
+        return pulumi.get(self, "client_secret")
 
     @_builtins.property
     @pulumi.getter
@@ -319,7 +413,7 @@ class ServicenowConnection(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `basic`
+        Possible Values: `basic`, `client-credentials`
         """
         return pulumi.get(self, "type")
 

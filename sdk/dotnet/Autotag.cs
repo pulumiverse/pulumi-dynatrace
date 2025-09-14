@@ -26,15 +26,13 @@ namespace Pulumiverse.Dynatrace
         public Output<ImmutableArray<Outputs.AutotagEntitySelectorBasedRule>> EntitySelectorBasedRules { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-        /// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-        /// `Infrastructure:Windows` and `Infrastructure:Linux`.
+        /// The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        /// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         /// </summary>
         [Output("rules")]
         public Output<ImmutableArray<Outputs.AutotagRule>> Rules { get; private set; } = null!;
@@ -111,9 +109,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-        /// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-        /// `Infrastructure:Windows` and `Infrastructure:Linux`.
+        /// The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -122,7 +118,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.AutotagRuleArgs>? _rules;
 
         /// <summary>
-        /// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        /// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         /// </summary>
         public InputList<Inputs.AutotagRuleArgs> Rules
         {
@@ -163,9 +159,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-        /// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-        /// `Infrastructure:Windows` and `Infrastructure:Linux`.
+        /// The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -174,7 +168,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.AutotagRuleGetArgs>? _rules;
 
         /// <summary>
-        /// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        /// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         /// </summary>
         public InputList<Inputs.AutotagRuleGetArgs> Rules
         {

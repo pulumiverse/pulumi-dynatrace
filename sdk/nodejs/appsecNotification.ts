@@ -35,9 +35,7 @@ export class AppsecNotification extends pulumi.CustomResource {
     }
 
     /**
-     * For attack candidate alerts, select an [alerting
-     * profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-     * delivery of security notifications related to this integration.
+     * For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
      */
     declare public readonly attackCandidateBasedAlertingProfile: pulumi.Output<string | undefined>;
     /**
@@ -69,9 +67,7 @@ export class AppsecNotification extends pulumi.CustomResource {
      */
     declare public readonly jiraConfiguration: pulumi.Output<outputs.AppsecNotificationJiraConfiguration | undefined>;
     /**
-     * For security problem alerts, select an [alerting
-     * profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-     * security notifications related to this integration.
+     * For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
      */
     declare public readonly securityProblemBasedAlertingProfile: pulumi.Output<string | undefined>;
     /**
@@ -167,9 +163,7 @@ export class AppsecNotification extends pulumi.CustomResource {
  */
 export interface AppsecNotificationState {
     /**
-     * For attack candidate alerts, select an [alerting
-     * profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-     * delivery of security notifications related to this integration.
+     * For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
      */
     attackCandidateBasedAlertingProfile?: pulumi.Input<string>;
     /**
@@ -201,9 +195,7 @@ export interface AppsecNotificationState {
      */
     jiraConfiguration?: pulumi.Input<inputs.AppsecNotificationJiraConfiguration>;
     /**
-     * For security problem alerts, select an [alerting
-     * profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-     * security notifications related to this integration.
+     * For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
      */
     securityProblemBasedAlertingProfile?: pulumi.Input<string>;
     /**
@@ -237,9 +229,7 @@ export interface AppsecNotificationState {
  */
 export interface AppsecNotificationArgs {
     /**
-     * For attack candidate alerts, select an [alerting
-     * profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-     * delivery of security notifications related to this integration.
+     * For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
      */
     attackCandidateBasedAlertingProfile?: pulumi.Input<string>;
     /**
@@ -271,9 +261,7 @@ export interface AppsecNotificationArgs {
      */
     jiraConfiguration?: pulumi.Input<inputs.AppsecNotificationJiraConfiguration>;
     /**
-     * For security problem alerts, select an [alerting
-     * profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-     * security notifications related to this integration.
+     * For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
      */
     securityProblemBasedAlertingProfile?: pulumi.Input<string>;
     /**

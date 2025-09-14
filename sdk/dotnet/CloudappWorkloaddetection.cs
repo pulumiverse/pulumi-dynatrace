@@ -14,35 +14,36 @@ namespace Pulumiverse.Dynatrace
     public partial class CloudappWorkloaddetection : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Enable this setting to get * Processes of Cloud Foundry application instances merged into process groups by Cloud
-        /// Foundry application. * Container resource metrics (Container group instance entities) and [related
-        /// screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        /// Enable this setting to get 
+        ///  * Processes of Cloud Foundry application instances merged into process groups by Cloud Foundry application. 
+        ///  *  Container resource metrics (Container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
         /// </summary>
         [Output("cloudFoundry")]
         public Output<Outputs.CloudappWorkloaddetectionCloudFoundry> CloudFoundry { get; private set; } = null!;
 
         /// <summary>
-        /// Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
-        /// instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
-        /// support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
+        /// Enable this setting for plain Docker and Podman environments to get 
+        ///  * Container resource metrics (Container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). 
+        ///  * Docker support requires OneAgent 1.257+. 
+        ///  * Podman support requires OneAgent 1.267+.
         /// </summary>
         [Output("docker")]
         public Output<Outputs.CloudappWorkloaddetectionDocker> Docker { get; private set; } = null!;
 
         /// <summary>
-        /// Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
-        /// cloud application and cloud application instance and entities). * Container resource metrics (container group instance
-        /// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Similar workloads
-        /// merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
-        /// workloads.
+        /// Enable this setting to get 
+        ///  * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace, cloud application and cloud application instance and entities). 
+        ///  * Container resource metrics (container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). 
+        ///  * Similar workloads merged into process groups based on defined rules (see below). 
+        ///  * Version detection for services that run in Kubernetes workloads.
         /// </summary>
         [Output("kubernetes")]
         public Output<Outputs.CloudappWorkloaddetectionKubernetes> Kubernetes { get; private set; } = null!;
 
         /// <summary>
-        /// Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
-        /// Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
-        /// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        /// Enable this setting to 
+        ///  * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure Container Apps, [and many more](https://dt-url.net/2m02q7b).
+        ///  * Container resource metrics (Container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
         /// </summary>
         [Output("serverless")]
         public Output<Outputs.CloudappWorkloaddetectionServerless?> Serverless { get; private set; } = null!;
@@ -95,35 +96,36 @@ namespace Pulumiverse.Dynatrace
     public sealed class CloudappWorkloaddetectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Enable this setting to get * Processes of Cloud Foundry application instances merged into process groups by Cloud
-        /// Foundry application. * Container resource metrics (Container group instance entities) and [related
-        /// screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        /// Enable this setting to get 
+        ///  * Processes of Cloud Foundry application instances merged into process groups by Cloud Foundry application. 
+        ///  *  Container resource metrics (Container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
         /// </summary>
         [Input("cloudFoundry", required: true)]
         public Input<Inputs.CloudappWorkloaddetectionCloudFoundryArgs> CloudFoundry { get; set; } = null!;
 
         /// <summary>
-        /// Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
-        /// instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
-        /// support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
+        /// Enable this setting for plain Docker and Podman environments to get 
+        ///  * Container resource metrics (Container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). 
+        ///  * Docker support requires OneAgent 1.257+. 
+        ///  * Podman support requires OneAgent 1.267+.
         /// </summary>
         [Input("docker", required: true)]
         public Input<Inputs.CloudappWorkloaddetectionDockerArgs> Docker { get; set; } = null!;
 
         /// <summary>
-        /// Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
-        /// cloud application and cloud application instance and entities). * Container resource metrics (container group instance
-        /// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Similar workloads
-        /// merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
-        /// workloads.
+        /// Enable this setting to get 
+        ///  * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace, cloud application and cloud application instance and entities). 
+        ///  * Container resource metrics (container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). 
+        ///  * Similar workloads merged into process groups based on defined rules (see below). 
+        ///  * Version detection for services that run in Kubernetes workloads.
         /// </summary>
         [Input("kubernetes", required: true)]
         public Input<Inputs.CloudappWorkloaddetectionKubernetesArgs> Kubernetes { get; set; } = null!;
 
         /// <summary>
-        /// Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
-        /// Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
-        /// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        /// Enable this setting to 
+        ///  * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure Container Apps, [and many more](https://dt-url.net/2m02q7b).
+        ///  * Container resource metrics (Container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
         /// </summary>
         [Input("serverless")]
         public Input<Inputs.CloudappWorkloaddetectionServerlessArgs>? Serverless { get; set; }
@@ -137,35 +139,36 @@ namespace Pulumiverse.Dynatrace
     public sealed class CloudappWorkloaddetectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Enable this setting to get * Processes of Cloud Foundry application instances merged into process groups by Cloud
-        /// Foundry application. * Container resource metrics (Container group instance entities) and [related
-        /// screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        /// Enable this setting to get 
+        ///  * Processes of Cloud Foundry application instances merged into process groups by Cloud Foundry application. 
+        ///  *  Container resource metrics (Container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
         /// </summary>
         [Input("cloudFoundry")]
         public Input<Inputs.CloudappWorkloaddetectionCloudFoundryGetArgs>? CloudFoundry { get; set; }
 
         /// <summary>
-        /// Enable this setting for plain Docker and Podman environments to get * Container resource metrics (Container group
-        /// instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Docker
-        /// support requires OneAgent 1.257+. * Podman support requires OneAgent 1.267+.
+        /// Enable this setting for plain Docker and Podman environments to get 
+        ///  * Container resource metrics (Container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). 
+        ///  * Docker support requires OneAgent 1.257+. 
+        ///  * Podman support requires OneAgent 1.267+.
         /// </summary>
         [Input("docker")]
         public Input<Inputs.CloudappWorkloaddetectionDockerGetArgs>? Docker { get; set; }
 
         /// <summary>
-        /// Enable this setting to get * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace,
-        /// cloud application and cloud application instance and entities). * Container resource metrics (container group instance
-        /// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). * Similar workloads
-        /// merged into process groups based on defined rules (see below). * Version detection for services that run in Kubernetes
-        /// workloads.
+        /// Enable this setting to get 
+        ///  * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace, cloud application and cloud application instance and entities). 
+        ///  * Container resource metrics (container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). 
+        ///  * Similar workloads merged into process groups based on defined rules (see below). 
+        ///  * Version detection for services that run in Kubernetes workloads.
         /// </summary>
         [Input("kubernetes")]
         public Input<Inputs.CloudappWorkloaddetectionKubernetesGetArgs>? Kubernetes { get; set; }
 
         /// <summary>
-        /// Enable this setting to * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure
-        /// Container Apps, [and many more](https://dt-url.net/2m02q7b). * Container resource metrics (Container group instance
-        /// entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
+        /// Enable this setting to 
+        ///  * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure Container Apps, [and many more](https://dt-url.net/2m02q7b).
+        ///  * Container resource metrics (Container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
         /// </summary>
         [Input("serverless")]
         public Input<Inputs.CloudappWorkloaddetectionServerlessGetArgs>? Serverless { get; set; }

@@ -17,8 +17,7 @@ type K8sMonitoring struct {
 
 	// Monitor Kubernetes namespaces, services, workloads, and pods
 	CloudApplicationPipelineEnabled pulumi.BoolOutput `pulumi:"cloudApplicationPipelineEnabled"`
-	// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-	// [documentation](https://dt-url.net/2201p0u).
+	// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
 	EventPatterns K8sMonitoringEventPatternsPtrOutput `pulumi:"eventPatterns"`
 	// All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
 	EventProcessingActive pulumi.BoolOutput `pulumi:"eventProcessingActive"`
@@ -26,8 +25,7 @@ type K8sMonitoring struct {
 	FilterEvents pulumi.BoolPtrOutput `pulumi:"filterEvents"`
 	// For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
 	IncludeAllFdiEvents pulumi.BoolPtrOutput `pulumi:"includeAllFdiEvents"`
-	// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-	// this may increase the CPU/memory resource consumption of your ActiveGate.
+	// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
 	OpenMetricsBuiltinEnabled pulumi.BoolOutput `pulumi:"openMetricsBuiltinEnabled"`
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled pulumi.BoolOutput `pulumi:"openMetricsPipelineEnabled"`
@@ -83,8 +81,7 @@ func GetK8sMonitoring(ctx *pulumi.Context,
 type k8sMonitoringState struct {
 	// Monitor Kubernetes namespaces, services, workloads, and pods
 	CloudApplicationPipelineEnabled *bool `pulumi:"cloudApplicationPipelineEnabled"`
-	// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-	// [documentation](https://dt-url.net/2201p0u).
+	// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
 	EventPatterns *K8sMonitoringEventPatterns `pulumi:"eventPatterns"`
 	// All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
 	EventProcessingActive *bool `pulumi:"eventProcessingActive"`
@@ -92,8 +89,7 @@ type k8sMonitoringState struct {
 	FilterEvents *bool `pulumi:"filterEvents"`
 	// For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
 	IncludeAllFdiEvents *bool `pulumi:"includeAllFdiEvents"`
-	// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-	// this may increase the CPU/memory resource consumption of your ActiveGate.
+	// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
 	OpenMetricsBuiltinEnabled *bool `pulumi:"openMetricsBuiltinEnabled"`
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled *bool `pulumi:"openMetricsPipelineEnabled"`
@@ -108,8 +104,7 @@ type k8sMonitoringState struct {
 type K8sMonitoringState struct {
 	// Monitor Kubernetes namespaces, services, workloads, and pods
 	CloudApplicationPipelineEnabled pulumi.BoolPtrInput
-	// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-	// [documentation](https://dt-url.net/2201p0u).
+	// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
 	EventPatterns K8sMonitoringEventPatternsPtrInput
 	// All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
 	EventProcessingActive pulumi.BoolPtrInput
@@ -117,8 +112,7 @@ type K8sMonitoringState struct {
 	FilterEvents pulumi.BoolPtrInput
 	// For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
 	IncludeAllFdiEvents pulumi.BoolPtrInput
-	// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-	// this may increase the CPU/memory resource consumption of your ActiveGate.
+	// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
 	OpenMetricsBuiltinEnabled pulumi.BoolPtrInput
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled pulumi.BoolPtrInput
@@ -137,8 +131,7 @@ func (K8sMonitoringState) ElementType() reflect.Type {
 type k8sMonitoringArgs struct {
 	// Monitor Kubernetes namespaces, services, workloads, and pods
 	CloudApplicationPipelineEnabled bool `pulumi:"cloudApplicationPipelineEnabled"`
-	// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-	// [documentation](https://dt-url.net/2201p0u).
+	// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
 	EventPatterns *K8sMonitoringEventPatterns `pulumi:"eventPatterns"`
 	// All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
 	EventProcessingActive bool `pulumi:"eventProcessingActive"`
@@ -146,8 +139,7 @@ type k8sMonitoringArgs struct {
 	FilterEvents *bool `pulumi:"filterEvents"`
 	// For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
 	IncludeAllFdiEvents *bool `pulumi:"includeAllFdiEvents"`
-	// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-	// this may increase the CPU/memory resource consumption of your ActiveGate.
+	// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
 	OpenMetricsBuiltinEnabled bool `pulumi:"openMetricsBuiltinEnabled"`
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled bool `pulumi:"openMetricsPipelineEnabled"`
@@ -163,8 +155,7 @@ type k8sMonitoringArgs struct {
 type K8sMonitoringArgs struct {
 	// Monitor Kubernetes namespaces, services, workloads, and pods
 	CloudApplicationPipelineEnabled pulumi.BoolInput
-	// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-	// [documentation](https://dt-url.net/2201p0u).
+	// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
 	EventPatterns K8sMonitoringEventPatternsPtrInput
 	// All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
 	EventProcessingActive pulumi.BoolInput
@@ -172,8 +163,7 @@ type K8sMonitoringArgs struct {
 	FilterEvents pulumi.BoolPtrInput
 	// For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
 	IncludeAllFdiEvents pulumi.BoolPtrInput
-	// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-	// this may increase the CPU/memory resource consumption of your ActiveGate.
+	// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
 	OpenMetricsBuiltinEnabled pulumi.BoolInput
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled pulumi.BoolInput
@@ -277,8 +267,7 @@ func (o K8sMonitoringOutput) CloudApplicationPipelineEnabled() pulumi.BoolOutput
 	return o.ApplyT(func(v *K8sMonitoring) pulumi.BoolOutput { return v.CloudApplicationPipelineEnabled }).(pulumi.BoolOutput)
 }
 
-// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-// [documentation](https://dt-url.net/2201p0u).
+// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
 func (o K8sMonitoringOutput) EventPatterns() K8sMonitoringEventPatternsPtrOutput {
 	return o.ApplyT(func(v *K8sMonitoring) K8sMonitoringEventPatternsPtrOutput { return v.EventPatterns }).(K8sMonitoringEventPatternsPtrOutput)
 }
@@ -298,8 +287,7 @@ func (o K8sMonitoringOutput) IncludeAllFdiEvents() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *K8sMonitoring) pulumi.BoolPtrOutput { return v.IncludeAllFdiEvents }).(pulumi.BoolPtrOutput)
 }
 
-// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-// this may increase the CPU/memory resource consumption of your ActiveGate.
+// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
 func (o K8sMonitoringOutput) OpenMetricsBuiltinEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *K8sMonitoring) pulumi.BoolOutput { return v.OpenMetricsBuiltinEnabled }).(pulumi.BoolOutput)
 }

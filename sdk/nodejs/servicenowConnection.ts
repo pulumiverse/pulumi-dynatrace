@@ -33,6 +33,14 @@ export class ServicenowConnection extends pulumi.CustomResource {
     }
 
     /**
+     * Client ID of the ServiceNow OAuth server
+     */
+    declare public readonly clientId: pulumi.Output<string | undefined>;
+    /**
+     * Client secret of the ServiceNow OAuth server
+     */
+    declare public readonly clientSecret: pulumi.Output<string | undefined>;
+    /**
      * A unique and clearly identifiable connection name to your ServiceNow instance.
      */
     declare public readonly name: pulumi.Output<string>;
@@ -41,7 +49,7 @@ export class ServicenowConnection extends pulumi.CustomResource {
      */
     declare public readonly password: pulumi.Output<string | undefined>;
     /**
-     * Possible Values: `basic`
+     * Possible Values: `basic`, `client-credentials`
      */
     declare public readonly type: pulumi.Output<string>;
     /**
@@ -66,6 +74,8 @@ export class ServicenowConnection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ServicenowConnectionState | undefined;
+            resourceInputs["clientId"] = state?.clientId;
+            resourceInputs["clientSecret"] = state?.clientSecret;
             resourceInputs["name"] = state?.name;
             resourceInputs["password"] = state?.password;
             resourceInputs["type"] = state?.type;
@@ -79,6 +89,8 @@ export class ServicenowConnection extends pulumi.CustomResource {
             if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
+            resourceInputs["clientId"] = args?.clientId;
+            resourceInputs["clientSecret"] = args?.clientSecret ? pulumi.secret(args.clientSecret) : undefined;
             resourceInputs["name"] = args?.name;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["type"] = args?.type;
@@ -86,7 +98,7 @@ export class ServicenowConnection extends pulumi.CustomResource {
             resourceInputs["user"] = args?.user;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["password"] };
+        const secretOpts = { additionalSecretOutputs: ["clientSecret", "password"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(ServicenowConnection.__pulumiType, name, resourceInputs, opts);
     }
@@ -97,6 +109,14 @@ export class ServicenowConnection extends pulumi.CustomResource {
  */
 export interface ServicenowConnectionState {
     /**
+     * Client ID of the ServiceNow OAuth server
+     */
+    clientId?: pulumi.Input<string>;
+    /**
+     * Client secret of the ServiceNow OAuth server
+     */
+    clientSecret?: pulumi.Input<string>;
+    /**
      * A unique and clearly identifiable connection name to your ServiceNow instance.
      */
     name?: pulumi.Input<string>;
@@ -105,7 +125,7 @@ export interface ServicenowConnectionState {
      */
     password?: pulumi.Input<string>;
     /**
-     * Possible Values: `basic`
+     * Possible Values: `basic`, `client-credentials`
      */
     type?: pulumi.Input<string>;
     /**
@@ -123,6 +143,14 @@ export interface ServicenowConnectionState {
  */
 export interface ServicenowConnectionArgs {
     /**
+     * Client ID of the ServiceNow OAuth server
+     */
+    clientId?: pulumi.Input<string>;
+    /**
+     * Client secret of the ServiceNow OAuth server
+     */
+    clientSecret?: pulumi.Input<string>;
+    /**
      * A unique and clearly identifiable connection name to your ServiceNow instance.
      */
     name?: pulumi.Input<string>;
@@ -131,7 +159,7 @@ export interface ServicenowConnectionArgs {
      */
     password?: pulumi.Input<string>;
     /**
-     * Possible Values: `basic`
+     * Possible Values: `basic`, `client-credentials`
      */
     type: pulumi.Input<string>;
     /**

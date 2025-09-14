@@ -17,21 +17,61 @@ type ContainerTechnology struct {
 
 	// Platform: Cloud Foundry
 	BoshProcessManager pulumi.BoolOutput `pulumi:"boshProcessManager"`
-	// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+	// Platform: Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.169
 	Containerd pulumi.BoolOutput `pulumi:"containerd"`
-	// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+	// Platform: Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.163
 	Crio pulumi.BoolOutput `pulumi:"crio"`
-	// Platform: Docker and Kubernetes Status: Released Operating system: Linux
+	// Platform: Docker and Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
 	Docker pulumi.BoolOutput `pulumi:"docker"`
-	// Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+	// Platform: Docker
+	//
+	// Status: Early adopter
+	//
+	// Operating system: Windows
+	//
+	// Min agent version: 1.149
 	DockerWindows pulumi.BoolOutput `pulumi:"dockerWindows"`
-	// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+	// Platform: Cloud Foundry
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.133
 	Garden pulumi.BoolOutput `pulumi:"garden"`
-	// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+	// Platform: Podman
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.267
 	Podman pulumi.BoolOutput `pulumi:"podman"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
-	// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+	// Platform: Cloud Foundry
+	//
+	// Status: Early adopter
+	//
+	// Operating system: Windows
+	//
+	// Min agent version: 1.175
 	Winc pulumi.BoolOutput `pulumi:"winc"`
 }
 
@@ -91,42 +131,122 @@ func GetContainerTechnology(ctx *pulumi.Context,
 type containerTechnologyState struct {
 	// Platform: Cloud Foundry
 	BoshProcessManager *bool `pulumi:"boshProcessManager"`
-	// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+	// Platform: Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.169
 	Containerd *bool `pulumi:"containerd"`
-	// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+	// Platform: Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.163
 	Crio *bool `pulumi:"crio"`
-	// Platform: Docker and Kubernetes Status: Released Operating system: Linux
+	// Platform: Docker and Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
 	Docker *bool `pulumi:"docker"`
-	// Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+	// Platform: Docker
+	//
+	// Status: Early adopter
+	//
+	// Operating system: Windows
+	//
+	// Min agent version: 1.149
 	DockerWindows *bool `pulumi:"dockerWindows"`
-	// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+	// Platform: Cloud Foundry
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.133
 	Garden *bool `pulumi:"garden"`
-	// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+	// Platform: Podman
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.267
 	Podman *bool `pulumi:"podman"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
-	// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+	// Platform: Cloud Foundry
+	//
+	// Status: Early adopter
+	//
+	// Operating system: Windows
+	//
+	// Min agent version: 1.175
 	Winc *bool `pulumi:"winc"`
 }
 
 type ContainerTechnologyState struct {
 	// Platform: Cloud Foundry
 	BoshProcessManager pulumi.BoolPtrInput
-	// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+	// Platform: Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.169
 	Containerd pulumi.BoolPtrInput
-	// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+	// Platform: Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.163
 	Crio pulumi.BoolPtrInput
-	// Platform: Docker and Kubernetes Status: Released Operating system: Linux
+	// Platform: Docker and Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
 	Docker pulumi.BoolPtrInput
-	// Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+	// Platform: Docker
+	//
+	// Status: Early adopter
+	//
+	// Operating system: Windows
+	//
+	// Min agent version: 1.149
 	DockerWindows pulumi.BoolPtrInput
-	// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+	// Platform: Cloud Foundry
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.133
 	Garden pulumi.BoolPtrInput
-	// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+	// Platform: Podman
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.267
 	Podman pulumi.BoolPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
-	// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+	// Platform: Cloud Foundry
+	//
+	// Status: Early adopter
+	//
+	// Operating system: Windows
+	//
+	// Min agent version: 1.175
 	Winc pulumi.BoolPtrInput
 }
 
@@ -137,21 +257,61 @@ func (ContainerTechnologyState) ElementType() reflect.Type {
 type containerTechnologyArgs struct {
 	// Platform: Cloud Foundry
 	BoshProcessManager bool `pulumi:"boshProcessManager"`
-	// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+	// Platform: Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.169
 	Containerd bool `pulumi:"containerd"`
-	// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+	// Platform: Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.163
 	Crio bool `pulumi:"crio"`
-	// Platform: Docker and Kubernetes Status: Released Operating system: Linux
+	// Platform: Docker and Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
 	Docker bool `pulumi:"docker"`
-	// Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+	// Platform: Docker
+	//
+	// Status: Early adopter
+	//
+	// Operating system: Windows
+	//
+	// Min agent version: 1.149
 	DockerWindows bool `pulumi:"dockerWindows"`
-	// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+	// Platform: Cloud Foundry
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.133
 	Garden bool `pulumi:"garden"`
-	// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+	// Platform: Podman
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.267
 	Podman bool `pulumi:"podman"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
-	// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+	// Platform: Cloud Foundry
+	//
+	// Status: Early adopter
+	//
+	// Operating system: Windows
+	//
+	// Min agent version: 1.175
 	Winc bool `pulumi:"winc"`
 }
 
@@ -159,21 +319,61 @@ type containerTechnologyArgs struct {
 type ContainerTechnologyArgs struct {
 	// Platform: Cloud Foundry
 	BoshProcessManager pulumi.BoolInput
-	// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+	// Platform: Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.169
 	Containerd pulumi.BoolInput
-	// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+	// Platform: Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.163
 	Crio pulumi.BoolInput
-	// Platform: Docker and Kubernetes Status: Released Operating system: Linux
+	// Platform: Docker and Kubernetes
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
 	Docker pulumi.BoolInput
-	// Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+	// Platform: Docker
+	//
+	// Status: Early adopter
+	//
+	// Operating system: Windows
+	//
+	// Min agent version: 1.149
 	DockerWindows pulumi.BoolInput
-	// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+	// Platform: Cloud Foundry
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.133
 	Garden pulumi.BoolInput
-	// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+	// Platform: Podman
+	//
+	// Status: Released
+	//
+	// Operating system: Linux
+	//
+	// Min agent version: 1.267
 	Podman pulumi.BoolInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
-	// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+	// Platform: Cloud Foundry
+	//
+	// Status: Early adopter
+	//
+	// Operating system: Windows
+	//
+	// Min agent version: 1.175
 	Winc pulumi.BoolInput
 }
 
@@ -269,32 +469,66 @@ func (o ContainerTechnologyOutput) BoshProcessManager() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerTechnology) pulumi.BoolOutput { return v.BoshProcessManager }).(pulumi.BoolOutput)
 }
 
-// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.169
+// Platform: Kubernetes
+//
+// Status: Released
+//
+// Operating system: Linux
+//
+// Min agent version: 1.169
 func (o ContainerTechnologyOutput) Containerd() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerTechnology) pulumi.BoolOutput { return v.Containerd }).(pulumi.BoolOutput)
 }
 
-// Platform: Kubernetes Status: Released Operating system: Linux Min agent version: 1.163
+// Platform: Kubernetes
+//
+// Status: Released
+//
+// Operating system: Linux
+//
+// Min agent version: 1.163
 func (o ContainerTechnologyOutput) Crio() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerTechnology) pulumi.BoolOutput { return v.Crio }).(pulumi.BoolOutput)
 }
 
-// Platform: Docker and Kubernetes Status: Released Operating system: Linux
+// Platform: Docker and Kubernetes
+//
+// Status: Released
+//
+// Operating system: Linux
 func (o ContainerTechnologyOutput) Docker() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerTechnology) pulumi.BoolOutput { return v.Docker }).(pulumi.BoolOutput)
 }
 
-// Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
+// Platform: Docker
+//
+// Status: Early adopter
+//
+// Operating system: Windows
+//
+// Min agent version: 1.149
 func (o ContainerTechnologyOutput) DockerWindows() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerTechnology) pulumi.BoolOutput { return v.DockerWindows }).(pulumi.BoolOutput)
 }
 
-// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+// Platform: Cloud Foundry
+//
+// Status: Released
+//
+// Operating system: Linux
+//
+// Min agent version: 1.133
 func (o ContainerTechnologyOutput) Garden() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerTechnology) pulumi.BoolOutput { return v.Garden }).(pulumi.BoolOutput)
 }
 
-// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+// Platform: Podman
+//
+// Status: Released
+//
+// Operating system: Linux
+//
+// Min agent version: 1.267
 func (o ContainerTechnologyOutput) Podman() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerTechnology) pulumi.BoolOutput { return v.Podman }).(pulumi.BoolOutput)
 }
@@ -304,7 +538,13 @@ func (o ContainerTechnologyOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ContainerTechnology) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
-// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
+// Platform: Cloud Foundry
+//
+// Status: Early adopter
+//
+// Operating system: Windows
+//
+// Min agent version: 1.175
 func (o ContainerTechnologyOutput) Winc() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerTechnology) pulumi.BoolOutput { return v.Winc }).(pulumi.BoolOutput)
 }

@@ -39,9 +39,7 @@ export class ProcessAvailability extends pulumi.CustomResource {
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
@@ -61,8 +59,7 @@ export class ProcessAvailability extends pulumi.CustomResource {
      */
     declare public readonly operatingSystems: pulumi.Output<string[] | undefined>;
     /**
-     * Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-     * detection rules associated with it.
+     * Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
      */
     declare public readonly rules: pulumi.Output<outputs.ProcessAvailabilityRules | undefined>;
     /**
@@ -119,9 +116,7 @@ export interface ProcessAvailabilityState {
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     insertAfter?: pulumi.Input<string>;
     /**
@@ -141,8 +136,7 @@ export interface ProcessAvailabilityState {
      */
     operatingSystems?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-     * detection rules associated with it.
+     * Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
      */
     rules?: pulumi.Input<inputs.ProcessAvailabilityRules>;
     /**
@@ -160,9 +154,7 @@ export interface ProcessAvailabilityArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     insertAfter?: pulumi.Input<string>;
     /**
@@ -182,8 +174,7 @@ export interface ProcessAvailabilityArgs {
      */
     operatingSystems?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
-     * detection rules associated with it.
+     * Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
      */
     rules?: pulumi.Input<inputs.ProcessAvailabilityRules>;
     /**

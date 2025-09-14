@@ -14,6 +14,18 @@ namespace Pulumiverse.Dynatrace
     public partial class ServicenowConnection : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Client ID of the ServiceNow OAuth server
+        /// </summary>
+        [Output("clientId")]
+        public Output<string?> ClientId { get; private set; } = null!;
+
+        /// <summary>
+        /// Client secret of the ServiceNow OAuth server
+        /// </summary>
+        [Output("clientSecret")]
+        public Output<string?> ClientSecret { get; private set; } = null!;
+
+        /// <summary>
         /// A unique and clearly identifiable connection name to your ServiceNow instance.
         /// </summary>
         [Output("name")]
@@ -26,7 +38,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Password { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `basic`
+        /// Possible Values: `basic`, `client-credentials`
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -69,6 +81,7 @@ namespace Pulumiverse.Dynatrace
                 PluginDownloadURL = "github://api.github.com/pulumiverse",
                 AdditionalSecretOutputs =
                 {
+                    "clientSecret",
                     "password",
                 },
             };
@@ -95,6 +108,28 @@ namespace Pulumiverse.Dynatrace
     public sealed class ServicenowConnectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Client ID of the ServiceNow OAuth server
+        /// </summary>
+        [Input("clientId")]
+        public Input<string>? ClientId { get; set; }
+
+        [Input("clientSecret")]
+        private Input<string>? _clientSecret;
+
+        /// <summary>
+        /// Client secret of the ServiceNow OAuth server
+        /// </summary>
+        public Input<string>? ClientSecret
+        {
+            get => _clientSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clientSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
         /// A unique and clearly identifiable connection name to your ServiceNow instance.
         /// </summary>
         [Input("name")]
@@ -117,7 +152,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Possible Values: `basic`
+        /// Possible Values: `basic`, `client-credentials`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -143,6 +178,28 @@ namespace Pulumiverse.Dynatrace
     public sealed class ServicenowConnectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Client ID of the ServiceNow OAuth server
+        /// </summary>
+        [Input("clientId")]
+        public Input<string>? ClientId { get; set; }
+
+        [Input("clientSecret")]
+        private Input<string>? _clientSecret;
+
+        /// <summary>
+        /// Client secret of the ServiceNow OAuth server
+        /// </summary>
+        public Input<string>? ClientSecret
+        {
+            get => _clientSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clientSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
         /// A unique and clearly identifiable connection name to your ServiceNow instance.
         /// </summary>
         [Input("name")]
@@ -165,7 +222,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Possible Values: `basic`
+        /// Possible Values: `basic`, `client-credentials`
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

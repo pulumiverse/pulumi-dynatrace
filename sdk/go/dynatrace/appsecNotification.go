@@ -15,9 +15,7 @@ import (
 type AppsecNotification struct {
 	pulumi.CustomResourceState
 
-	// For attack candidate alerts, select an [alerting
-	// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-	// delivery of security notifications related to this integration.
+	// For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
 	AttackCandidateBasedAlertingProfile pulumi.StringPtrOutput `pulumi:"attackCandidateBasedAlertingProfile"`
 	// Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
 	AttackCandidateBasedEmailPayload AppsecNotificationAttackCandidateBasedEmailPayloadPtrOutput `pulumi:"attackCandidateBasedEmailPayload"`
@@ -33,9 +31,7 @@ type AppsecNotification struct {
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Jira configuration, required when `type` equals `JIRA`
 	JiraConfiguration AppsecNotificationJiraConfigurationPtrOutput `pulumi:"jiraConfiguration"`
-	// For security problem alerts, select an [alerting
-	// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-	// security notifications related to this integration.
+	// For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
 	SecurityProblemBasedAlertingProfile pulumi.StringPtrOutput `pulumi:"securityProblemBasedAlertingProfile"`
 	// Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
 	SecurityProblemBasedEmailPayload AppsecNotificationSecurityProblemBasedEmailPayloadPtrOutput `pulumi:"securityProblemBasedEmailPayload"`
@@ -93,9 +89,7 @@ func GetAppsecNotification(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppsecNotification resources.
 type appsecNotificationState struct {
-	// For attack candidate alerts, select an [alerting
-	// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-	// delivery of security notifications related to this integration.
+	// For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
 	AttackCandidateBasedAlertingProfile *string `pulumi:"attackCandidateBasedAlertingProfile"`
 	// Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
 	AttackCandidateBasedEmailPayload *AppsecNotificationAttackCandidateBasedEmailPayload `pulumi:"attackCandidateBasedEmailPayload"`
@@ -111,9 +105,7 @@ type appsecNotificationState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// Jira configuration, required when `type` equals `JIRA`
 	JiraConfiguration *AppsecNotificationJiraConfiguration `pulumi:"jiraConfiguration"`
-	// For security problem alerts, select an [alerting
-	// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-	// security notifications related to this integration.
+	// For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
 	SecurityProblemBasedAlertingProfile *string `pulumi:"securityProblemBasedAlertingProfile"`
 	// Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
 	SecurityProblemBasedEmailPayload *AppsecNotificationSecurityProblemBasedEmailPayload `pulumi:"securityProblemBasedEmailPayload"`
@@ -130,9 +122,7 @@ type appsecNotificationState struct {
 }
 
 type AppsecNotificationState struct {
-	// For attack candidate alerts, select an [alerting
-	// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-	// delivery of security notifications related to this integration.
+	// For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
 	AttackCandidateBasedAlertingProfile pulumi.StringPtrInput
 	// Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
 	AttackCandidateBasedEmailPayload AppsecNotificationAttackCandidateBasedEmailPayloadPtrInput
@@ -148,9 +138,7 @@ type AppsecNotificationState struct {
 	Enabled pulumi.BoolPtrInput
 	// Jira configuration, required when `type` equals `JIRA`
 	JiraConfiguration AppsecNotificationJiraConfigurationPtrInput
-	// For security problem alerts, select an [alerting
-	// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-	// security notifications related to this integration.
+	// For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
 	SecurityProblemBasedAlertingProfile pulumi.StringPtrInput
 	// Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
 	SecurityProblemBasedEmailPayload AppsecNotificationSecurityProblemBasedEmailPayloadPtrInput
@@ -171,9 +159,7 @@ func (AppsecNotificationState) ElementType() reflect.Type {
 }
 
 type appsecNotificationArgs struct {
-	// For attack candidate alerts, select an [alerting
-	// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-	// delivery of security notifications related to this integration.
+	// For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
 	AttackCandidateBasedAlertingProfile *string `pulumi:"attackCandidateBasedAlertingProfile"`
 	// Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
 	AttackCandidateBasedEmailPayload *AppsecNotificationAttackCandidateBasedEmailPayload `pulumi:"attackCandidateBasedEmailPayload"`
@@ -189,9 +175,7 @@ type appsecNotificationArgs struct {
 	Enabled bool `pulumi:"enabled"`
 	// Jira configuration, required when `type` equals `JIRA`
 	JiraConfiguration *AppsecNotificationJiraConfiguration `pulumi:"jiraConfiguration"`
-	// For security problem alerts, select an [alerting
-	// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-	// security notifications related to this integration.
+	// For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
 	SecurityProblemBasedAlertingProfile *string `pulumi:"securityProblemBasedAlertingProfile"`
 	// Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
 	SecurityProblemBasedEmailPayload *AppsecNotificationSecurityProblemBasedEmailPayload `pulumi:"securityProblemBasedEmailPayload"`
@@ -209,9 +193,7 @@ type appsecNotificationArgs struct {
 
 // The set of arguments for constructing a AppsecNotification resource.
 type AppsecNotificationArgs struct {
-	// For attack candidate alerts, select an [alerting
-	// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-	// delivery of security notifications related to this integration.
+	// For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
 	AttackCandidateBasedAlertingProfile pulumi.StringPtrInput
 	// Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
 	AttackCandidateBasedEmailPayload AppsecNotificationAttackCandidateBasedEmailPayloadPtrInput
@@ -227,9 +209,7 @@ type AppsecNotificationArgs struct {
 	Enabled pulumi.BoolInput
 	// Jira configuration, required when `type` equals `JIRA`
 	JiraConfiguration AppsecNotificationJiraConfigurationPtrInput
-	// For security problem alerts, select an [alerting
-	// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-	// security notifications related to this integration.
+	// For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
 	SecurityProblemBasedAlertingProfile pulumi.StringPtrInput
 	// Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
 	SecurityProblemBasedEmailPayload AppsecNotificationSecurityProblemBasedEmailPayloadPtrInput
@@ -332,9 +312,7 @@ func (o AppsecNotificationOutput) ToAppsecNotificationOutputWithContext(ctx cont
 	return o
 }
 
-// For attack candidate alerts, select an [alerting
-// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the
-// delivery of security notifications related to this integration.
+// For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
 func (o AppsecNotificationOutput) AttackCandidateBasedAlertingProfile() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppsecNotification) pulumi.StringPtrOutput { return v.AttackCandidateBasedAlertingProfile }).(pulumi.StringPtrOutput)
 }
@@ -380,9 +358,7 @@ func (o AppsecNotificationOutput) JiraConfiguration() AppsecNotificationJiraConf
 	return o.ApplyT(func(v *AppsecNotification) AppsecNotificationJiraConfigurationPtrOutput { return v.JiraConfiguration }).(AppsecNotificationJiraConfigurationPtrOutput)
 }
 
-// For security problem alerts, select an [alerting
-// profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of
-// security notifications related to this integration.
+// For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
 func (o AppsecNotificationOutput) SecurityProblemBasedAlertingProfile() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppsecNotification) pulumi.StringPtrOutput { return v.SecurityProblemBasedAlertingProfile }).(pulumi.StringPtrOutput)
 }

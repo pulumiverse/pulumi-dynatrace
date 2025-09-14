@@ -14,9 +14,11 @@ namespace Pulumiverse.Dynatrace
     public partial class ProcessGroupRum : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Allows OneAgent to: * automatically inject the RUM JavaScript tag into each page delivered by this process group *
-        /// provide the necessary info to correlate RUM data with server-side PurePaths * forward beacons to the cluster * deliver
-        /// the monitoring code
+        /// Allows OneAgent to:
+        /// * automatically inject the RUM JavaScript tag into each page delivered by this process group
+        /// * provide the necessary info to correlate RUM data with server-side PurePaths
+        /// * forward beacons to the cluster
+        /// * deliver the monitoring code
         /// </summary>
         [Output("enable")]
         public Output<bool> Enable { get; private set; } = null!;
@@ -75,9 +77,11 @@ namespace Pulumiverse.Dynatrace
     public sealed class ProcessGroupRumArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Allows OneAgent to: * automatically inject the RUM JavaScript tag into each page delivered by this process group *
-        /// provide the necessary info to correlate RUM data with server-side PurePaths * forward beacons to the cluster * deliver
-        /// the monitoring code
+        /// Allows OneAgent to:
+        /// * automatically inject the RUM JavaScript tag into each page delivered by this process group
+        /// * provide the necessary info to correlate RUM data with server-side PurePaths
+        /// * forward beacons to the cluster
+        /// * deliver the monitoring code
         /// </summary>
         [Input("enable", required: true)]
         public Input<bool> Enable { get; set; } = null!;
@@ -97,9 +101,11 @@ namespace Pulumiverse.Dynatrace
     public sealed class ProcessGroupRumState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Allows OneAgent to: * automatically inject the RUM JavaScript tag into each page delivered by this process group *
-        /// provide the necessary info to correlate RUM data with server-side PurePaths * forward beacons to the cluster * deliver
-        /// the monitoring code
+        /// Allows OneAgent to:
+        /// * automatically inject the RUM JavaScript tag into each page delivered by this process group
+        /// * provide the necessary info to correlate RUM data with server-side PurePaths
+        /// * forward beacons to the cluster
+        /// * deliver the monitoring code
         /// </summary>
         [Input("enable")]
         public Input<bool>? Enable { get; set; }

@@ -26,13 +26,19 @@ class AgTokenArgs:
         """
         The set of arguments for constructing a AgToken resource.
         :param pulumi.Input[_builtins.str] type: The type of the ActiveGate for which the token is valid. Possible values are `ENVIRONMENT` or `CLUSTER`
-        :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token. You can use one of the following formats: * Timestamp in UTC milliseconds. *
-               Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space
-               character instead of the T. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The
-               format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds
-               all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You
-               can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are: -
-               m: minutes - h: hours - d: days - w: weeks - M: months - y: years
+        :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token.
+               
+                   You can use one of the following formats:
+               
+                   * Timestamp in UTC milliseconds.
+                   * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
+                   * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
+                     - m: minutes
+                     - h: hours
+                     - d: days
+                     - w: weeks
+                     - M: months
+                     - y: years
         :param pulumi.Input[_builtins.str] name: The name of the token.
         :param pulumi.Input[_builtins.bool] seed: The token is a seed token (true) or an individual token (false). We recommend the individual token option (false)
         """
@@ -60,13 +66,19 @@ class AgTokenArgs:
     @pulumi.getter(name="expirationDate")
     def expiration_date(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The expiration date of the token. You can use one of the following formats: * Timestamp in UTC milliseconds. *
-        Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space
-        character instead of the T. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The
-        format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds
-        all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You
-        can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are: -
-        m: minutes - h: hours - d: days - w: weeks - M: months - y: years
+        The expiration date of the token.
+
+            You can use one of the following formats:
+
+            * Timestamp in UTC milliseconds.
+            * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
+            * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
+              - m: minutes
+              - h: hours
+              - d: days
+              - w: weeks
+              - M: months
+              - y: years
         """
         return pulumi.get(self, "expiration_date")
 
@@ -110,17 +122,22 @@ class _AgTokenState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AgToken resources.
-        :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token. You can use one of the following formats: * Timestamp in UTC milliseconds. *
-               Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space
-               character instead of the T. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The
-               format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds
-               all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You
-               can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are: -
-               m: minutes - h: hours - d: days - w: weeks - M: months - y: years
+        :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token.
+               
+                   You can use one of the following formats:
+               
+                   * Timestamp in UTC milliseconds.
+                   * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
+                   * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
+                     - m: minutes
+                     - h: hours
+                     - d: days
+                     - w: weeks
+                     - M: months
+                     - y: years
         :param pulumi.Input[_builtins.str] name: The name of the token.
         :param pulumi.Input[_builtins.bool] seed: The token is a seed token (true) or an individual token (false). We recommend the individual token option (false)
-        :param pulumi.Input[_builtins.str] tenant_token: The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You
-               require the permission `InstallerDownload` for that attribute to get populated
+        :param pulumi.Input[_builtins.str] tenant_token: The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You require the permission `InstallerDownload` for that attribute to get populated
         :param pulumi.Input[_builtins.str] token: The secret of the token.
         :param pulumi.Input[_builtins.str] type: The type of the ActiveGate for which the token is valid. Possible values are `ENVIRONMENT` or `CLUSTER`
         """
@@ -141,13 +158,19 @@ class _AgTokenState:
     @pulumi.getter(name="expirationDate")
     def expiration_date(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The expiration date of the token. You can use one of the following formats: * Timestamp in UTC milliseconds. *
-        Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space
-        character instead of the T. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The
-        format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds
-        all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You
-        can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are: -
-        m: minutes - h: hours - d: days - w: weeks - M: months - y: years
+        The expiration date of the token.
+
+            You can use one of the following formats:
+
+            * Timestamp in UTC milliseconds.
+            * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
+            * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
+              - m: minutes
+              - h: hours
+              - d: days
+              - w: weeks
+              - M: months
+              - y: years
         """
         return pulumi.get(self, "expiration_date")
 
@@ -183,8 +206,7 @@ class _AgTokenState:
     @pulumi.getter(name="tenantToken")
     def tenant_token(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You
-        require the permission `InstallerDownload` for that attribute to get populated
+        The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You require the permission `InstallerDownload` for that attribute to get populated
         """
         return pulumi.get(self, "tenant_token")
 
@@ -232,13 +254,19 @@ class AgToken(pulumi.CustomResource):
         Create a AgToken resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token. You can use one of the following formats: * Timestamp in UTC milliseconds. *
-               Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space
-               character instead of the T. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The
-               format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds
-               all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You
-               can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are: -
-               m: minutes - h: hours - d: days - w: weeks - M: months - y: years
+        :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token.
+               
+                   You can use one of the following formats:
+               
+                   * Timestamp in UTC milliseconds.
+                   * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
+                   * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
+                     - m: minutes
+                     - h: hours
+                     - d: days
+                     - w: weeks
+                     - M: months
+                     - y: years
         :param pulumi.Input[_builtins.str] name: The name of the token.
         :param pulumi.Input[_builtins.bool] seed: The token is a seed token (true) or an individual token (false). We recommend the individual token option (false)
         :param pulumi.Input[_builtins.str] type: The type of the ActiveGate for which the token is valid. Possible values are `ENVIRONMENT` or `CLUSTER`
@@ -312,17 +340,22 @@ class AgToken(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token. You can use one of the following formats: * Timestamp in UTC milliseconds. *
-               Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space
-               character instead of the T. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The
-               format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds
-               all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You
-               can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are: -
-               m: minutes - h: hours - d: days - w: weeks - M: months - y: years
+        :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token.
+               
+                   You can use one of the following formats:
+               
+                   * Timestamp in UTC milliseconds.
+                   * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
+                   * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
+                     - m: minutes
+                     - h: hours
+                     - d: days
+                     - w: weeks
+                     - M: months
+                     - y: years
         :param pulumi.Input[_builtins.str] name: The name of the token.
         :param pulumi.Input[_builtins.bool] seed: The token is a seed token (true) or an individual token (false). We recommend the individual token option (false)
-        :param pulumi.Input[_builtins.str] tenant_token: The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You
-               require the permission `InstallerDownload` for that attribute to get populated
+        :param pulumi.Input[_builtins.str] tenant_token: The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You require the permission `InstallerDownload` for that attribute to get populated
         :param pulumi.Input[_builtins.str] token: The secret of the token.
         :param pulumi.Input[_builtins.str] type: The type of the ActiveGate for which the token is valid. Possible values are `ENVIRONMENT` or `CLUSTER`
         """
@@ -342,13 +375,19 @@ class AgToken(pulumi.CustomResource):
     @pulumi.getter(name="expirationDate")
     def expiration_date(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The expiration date of the token. You can use one of the following formats: * Timestamp in UTC milliseconds. *
-        Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space
-        character instead of the T. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The
-        format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds
-        all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You
-        can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are: -
-        m: minutes - h: hours - d: days - w: weeks - M: months - y: years
+        The expiration date of the token.
+
+            You can use one of the following formats:
+
+            * Timestamp in UTC milliseconds.
+            * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
+            * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
+              - m: minutes
+              - h: hours
+              - d: days
+              - w: weeks
+              - M: months
+              - y: years
         """
         return pulumi.get(self, "expiration_date")
 
@@ -372,8 +411,7 @@ class AgToken(pulumi.CustomResource):
     @pulumi.getter(name="tenantToken")
     def tenant_token(self) -> pulumi.Output[_builtins.str]:
         """
-        The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You
-        require the permission `InstallerDownload` for that attribute to get populated
+        The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You require the permission `InstallerDownload` for that attribute to get populated
         """
         return pulumi.get(self, "tenant_token")
 

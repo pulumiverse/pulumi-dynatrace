@@ -18,7 +18,7 @@ import * as utilities from "./utilities";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * const userA = dynatrace.getIamUser({
- *     email: "me@home.com",
+ *     email: "me@example.com",
  * });
  * export const groups = userA.then(userA => userA.groups);
  * ```
@@ -63,7 +63,7 @@ export interface GetIamUserResult {
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * const userA = dynatrace.getIamUser({
- *     email: "me@home.com",
+ *     email: "me@example.com",
  * });
  * export const groups = userA.then(userA => userA.groups);
  * ```

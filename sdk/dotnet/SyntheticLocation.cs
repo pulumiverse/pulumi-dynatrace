@@ -44,15 +44,18 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> City { get; private set; } = null!;
 
         /// <summary>
-        /// The country code of the location. To fetch the list of available country codes, use the [GET all
-        /// countries](https://dt-url.net/37030go) request
+        /// The country code of the location. 
+        /// 
+        ///  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
         /// </summary>
         [Output("countryCode")]
         public Output<string?> CountryCode { get; private set; } = null!;
 
         /// <summary>
-        /// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
-        /// location is deployed on Kubernetes
+        /// The deployment type of the location: 
+        /// 
+        /// * `STANDARD`: The location is deployed on Windows or Linux.
+        /// * `KUBERNETES`: The location is deployed on Kubernetes
         /// </summary>
         [Output("deploymentType")]
         public Output<string?> DeploymentType { get; private set; } = null!;
@@ -64,8 +67,9 @@ namespace Pulumiverse.Dynatrace
         public Output<double> Latitude { get; private set; } = null!;
 
         /// <summary>
-        /// Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
-        /// **availability_location_outage** or **availability_node_outage** is set to `true`
+        /// Alert if the location or node outage lasts longer than *X* minutes. 
+        /// 
+        ///  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
         /// </summary>
         [Output("locationNodeOutageDelayInMinutes")]
         public Output<int?> LocationNodeOutageDelayInMinutes { get; private set; } = null!;
@@ -107,15 +111,17 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> NodeSize { get; private set; } = null!;
 
         /// <summary>
-        /// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
-        /// nodes](https://dt-url.net/miy3rpl) call
+        /// A list of synthetic nodes belonging to the location. 
+        /// 
+        ///  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
         /// </summary>
         [Output("nodes")]
         public Output<ImmutableArray<string>> Nodes { get; private set; } = null!;
 
         /// <summary>
-        /// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
-        /// country](https://dt-url.net/az230x0) request
+        /// The region code of the location. 
+        /// 
+        ///  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
         /// </summary>
         [Output("regionCode")]
         public Output<string?> RegionCode { get; private set; } = null!;
@@ -204,15 +210,18 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? City { get; set; }
 
         /// <summary>
-        /// The country code of the location. To fetch the list of available country codes, use the [GET all
-        /// countries](https://dt-url.net/37030go) request
+        /// The country code of the location. 
+        /// 
+        ///  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
         /// </summary>
         [Input("countryCode")]
         public Input<string>? CountryCode { get; set; }
 
         /// <summary>
-        /// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
-        /// location is deployed on Kubernetes
+        /// The deployment type of the location: 
+        /// 
+        /// * `STANDARD`: The location is deployed on Windows or Linux.
+        /// * `KUBERNETES`: The location is deployed on Kubernetes
         /// </summary>
         [Input("deploymentType")]
         public Input<string>? DeploymentType { get; set; }
@@ -224,8 +233,9 @@ namespace Pulumiverse.Dynatrace
         public Input<double> Latitude { get; set; } = null!;
 
         /// <summary>
-        /// Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
-        /// **availability_location_outage** or **availability_node_outage** is set to `true`
+        /// Alert if the location or node outage lasts longer than *X* minutes. 
+        /// 
+        ///  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
         /// </summary>
         [Input("locationNodeOutageDelayInMinutes")]
         public Input<int>? LocationNodeOutageDelayInMinutes { get; set; }
@@ -270,8 +280,9 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _nodes;
 
         /// <summary>
-        /// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
-        /// nodes](https://dt-url.net/miy3rpl) call
+        /// A list of synthetic nodes belonging to the location. 
+        /// 
+        ///  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
         /// </summary>
         public InputList<string> Nodes
         {
@@ -280,8 +291,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
-        /// country](https://dt-url.net/az230x0) request
+        /// The region code of the location. 
+        /// 
+        ///  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
         /// </summary>
         [Input("regionCode")]
         public Input<string>? RegionCode { get; set; }
@@ -331,15 +343,18 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? City { get; set; }
 
         /// <summary>
-        /// The country code of the location. To fetch the list of available country codes, use the [GET all
-        /// countries](https://dt-url.net/37030go) request
+        /// The country code of the location. 
+        /// 
+        ///  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
         /// </summary>
         [Input("countryCode")]
         public Input<string>? CountryCode { get; set; }
 
         /// <summary>
-        /// The deployment type of the location: * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The
-        /// location is deployed on Kubernetes
+        /// The deployment type of the location: 
+        /// 
+        /// * `STANDARD`: The location is deployed on Windows or Linux.
+        /// * `KUBERNETES`: The location is deployed on Kubernetes
         /// </summary>
         [Input("deploymentType")]
         public Input<string>? DeploymentType { get; set; }
@@ -351,8 +366,9 @@ namespace Pulumiverse.Dynatrace
         public Input<double>? Latitude { get; set; }
 
         /// <summary>
-        /// Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
-        /// **availability_location_outage** or **availability_node_outage** is set to `true`
+        /// Alert if the location or node outage lasts longer than *X* minutes. 
+        /// 
+        ///  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
         /// </summary>
         [Input("locationNodeOutageDelayInMinutes")]
         public Input<int>? LocationNodeOutageDelayInMinutes { get; set; }
@@ -397,8 +413,9 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _nodes;
 
         /// <summary>
-        /// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
-        /// nodes](https://dt-url.net/miy3rpl) call
+        /// A list of synthetic nodes belonging to the location. 
+        /// 
+        ///  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
         /// </summary>
         public InputList<string> Nodes
         {
@@ -407,8 +424,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The region code of the location. To fetch the list of available region codes, use the [GET regions of the
-        /// country](https://dt-url.net/az230x0) request
+        /// The region code of the location. 
+        /// 
+        ///  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
         /// </summary>
         [Input("regionCode")]
         public Input<string>? RegionCode { get; set; }

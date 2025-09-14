@@ -39,9 +39,7 @@ export class BusinessEventsProcessing extends pulumi.CustomResource {
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
@@ -53,7 +51,8 @@ export class BusinessEventsProcessing extends pulumi.CustomResource {
      */
     declare public readonly ruleName: pulumi.Output<string>;
     /**
-     * ## Rule testing ### 1. Paste an event sample
+     * ## Rule testing
+     * ### 1. Paste an event sample
      */
     declare public readonly ruleTesting: pulumi.Output<outputs.BusinessEventsProcessingRuleTesting>;
     /**
@@ -124,9 +123,7 @@ export interface BusinessEventsProcessingState {
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     insertAfter?: pulumi.Input<string>;
     /**
@@ -138,7 +135,8 @@ export interface BusinessEventsProcessingState {
      */
     ruleName?: pulumi.Input<string>;
     /**
-     * ## Rule testing ### 1. Paste an event sample
+     * ## Rule testing
+     * ### 1. Paste an event sample
      */
     ruleTesting?: pulumi.Input<inputs.BusinessEventsProcessingRuleTesting>;
     /**
@@ -160,9 +158,7 @@ export interface BusinessEventsProcessingArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-     * specified during update the order will remain untouched
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     insertAfter?: pulumi.Input<string>;
     /**
@@ -174,7 +170,8 @@ export interface BusinessEventsProcessingArgs {
      */
     ruleName: pulumi.Input<string>;
     /**
-     * ## Rule testing ### 1. Paste an event sample
+     * ## Rule testing
+     * ### 1. Paste an event sample
      */
     ruleTesting: pulumi.Input<inputs.BusinessEventsProcessingRuleTesting>;
     /**

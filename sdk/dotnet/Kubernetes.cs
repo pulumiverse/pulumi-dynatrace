@@ -98,8 +98,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Label { get; private set; } = null!;
 
         /// <summary>
-        /// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-        /// may increase the CPU/memory resource consumption of your ActiveGate.
+        /// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         /// </summary>
         [Output("openMetricsBuiltinEnabled")]
         public Output<bool?> OpenMetricsBuiltinEnabled { get; private set; } = null!;
@@ -268,8 +267,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Label { get; set; } = null!;
 
         /// <summary>
-        /// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-        /// may increase the CPU/memory resource consumption of your ActiveGate.
+        /// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         /// </summary>
         [Input("openMetricsBuiltinEnabled")]
         public Input<bool>? OpenMetricsBuiltinEnabled { get; set; }
@@ -395,8 +393,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Label { get; set; }
 
         /// <summary>
-        /// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-        /// may increase the CPU/memory resource consumption of your ActiveGate.
+        /// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         /// </summary>
         [Input("openMetricsBuiltinEnabled")]
         public Input<bool>? OpenMetricsBuiltinEnabled { get; set; }

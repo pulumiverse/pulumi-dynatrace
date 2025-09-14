@@ -34,33 +34,65 @@ class RpcBasedSamplingArgs:
         """
         The set of arguments for constructing a RpcBasedSampling resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] endpoint_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-               `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.bool] ignore: No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is
-               inactive.
-        :param pulumi.Input[_builtins.str] remote_operation_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-               `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] remote_service_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-               `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` - `1`: ADK - `2`: DOTNET_REMOTING - `3`:
-               DOTNET_REMOTING_TCP - `4`: DOTNET_REMOTING_HTTP - `5`: DOTNET_REMOTING_XMLRPC - `6`: GRPC - `7`: GRPC_BIDI - `8`:
-               GRPC_UNARY - `9`: GRPC_SERVERSTREAM - `10`: GRPC_CLIENTSTREAM
-        :param pulumi.Input[_builtins.str] endpoint_name: Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must
-               be specified that can be used for RPC matching.
-        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` - `0`: Increase capturing 128
-               times - `1`: Increase capturing 64 times - `2`: Increase capturing 32 times - `3`: Increase capturing 16 times - `4`:
-               Increase capturing 8 times - `5`: Increase capturing 4 times - `6`: Increase capturing 2 times - `8`: Reduce capturing
-               by factor 2 - `9`: Reduce capturing by factor 4 - `10`: Reduce capturing by factor 8 - `11`: Reduce capturing by factor
-               16 - `12`: Reduce capturing by factor 32 - `13`: Reduce capturing by factor 64 - `14`: Reduce capturing by factor 128
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] remote_operation_name: Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must
-               be specified that can be used for RPC matching.
-        :param pulumi.Input[_builtins.str] remote_service_name: Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name
-               must be specified that can be used for RPC matching.
-        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE,
-               KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] endpoint_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.bool] ignore: No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is inactive.
+        :param pulumi.Input[_builtins.str] remote_operation_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] remote_service_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+               
+                 - `1`: ADK
+               
+                 - `2`: DOTNET_REMOTING
+               
+                 - `3`: DOTNET_REMOTING_TCP
+               
+                 - `4`: DOTNET_REMOTING_HTTP
+               
+                 - `5`: DOTNET_REMOTING_XMLRPC
+               
+                 - `6`: GRPC
+               
+                 - `7`: GRPC_BIDI
+               
+                 - `8`: GRPC_UNARY
+               
+                 - `9`: GRPC_SERVERSTREAM
+               
+                 - `10`: GRPC_CLIENTSTREAM
+        :param pulumi.Input[_builtins.str] endpoint_name: Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
+        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+               
+                 - `0`: Increase capturing 128 times
+               
+                 - `1`: Increase capturing 64 times
+               
+                 - `2`: Increase capturing 32 times
+               
+                 - `3`: Increase capturing 16 times
+               
+                 - `4`: Increase capturing 8 times
+               
+                 - `5`: Increase capturing 4 times
+               
+                 - `6`: Increase capturing 2 times
+               
+                 - `8`: Reduce capturing by factor 2
+               
+                 - `9`: Reduce capturing by factor 4
+               
+                 - `10`: Reduce capturing by factor 8
+               
+                 - `11`: Reduce capturing by factor 16
+               
+                 - `12`: Reduce capturing by factor 32
+               
+                 - `13`: Reduce capturing by factor 64
+               
+                 - `14`: Reduce capturing by factor 128
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] remote_operation_name: Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must be specified that can be used for RPC matching.
+        :param pulumi.Input[_builtins.str] remote_service_name: Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
+        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "endpoint_name_comparison_type", endpoint_name_comparison_type)
@@ -97,8 +129,7 @@ class RpcBasedSamplingArgs:
     @pulumi.getter(name="endpointNameComparisonType")
     def endpoint_name_comparison_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-        `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "endpoint_name_comparison_type")
 
@@ -110,8 +141,7 @@ class RpcBasedSamplingArgs:
     @pulumi.getter
     def ignore(self) -> pulumi.Input[_builtins.bool]:
         """
-        No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is
-        inactive.
+        No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is inactive.
         """
         return pulumi.get(self, "ignore")
 
@@ -123,8 +153,7 @@ class RpcBasedSamplingArgs:
     @pulumi.getter(name="remoteOperationNameComparisonType")
     def remote_operation_name_comparison_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-        `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "remote_operation_name_comparison_type")
 
@@ -136,8 +165,7 @@ class RpcBasedSamplingArgs:
     @pulumi.getter(name="remoteServiceNameComparisonType")
     def remote_service_name_comparison_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-        `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "remote_service_name_comparison_type")
 
@@ -149,9 +177,27 @@ class RpcBasedSamplingArgs:
     @pulumi.getter(name="wireProtocolType")
     def wire_protocol_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` - `1`: ADK - `2`: DOTNET_REMOTING - `3`:
-        DOTNET_REMOTING_TCP - `4`: DOTNET_REMOTING_HTTP - `5`: DOTNET_REMOTING_XMLRPC - `6`: GRPC - `7`: GRPC_BIDI - `8`:
-        GRPC_UNARY - `9`: GRPC_SERVERSTREAM - `10`: GRPC_CLIENTSTREAM
+        Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+
+          - `1`: ADK
+
+          - `2`: DOTNET_REMOTING
+
+          - `3`: DOTNET_REMOTING_TCP
+
+          - `4`: DOTNET_REMOTING_HTTP
+
+          - `5`: DOTNET_REMOTING_XMLRPC
+
+          - `6`: GRPC
+
+          - `7`: GRPC_BIDI
+
+          - `8`: GRPC_UNARY
+
+          - `9`: GRPC_SERVERSTREAM
+
+          - `10`: GRPC_CLIENTSTREAM
         """
         return pulumi.get(self, "wire_protocol_type")
 
@@ -163,8 +209,7 @@ class RpcBasedSamplingArgs:
     @pulumi.getter(name="endpointName")
     def endpoint_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must
-        be specified that can be used for RPC matching.
+        Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "endpoint_name")
 
@@ -176,11 +221,35 @@ class RpcBasedSamplingArgs:
     @pulumi.getter
     def factor(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` - `0`: Increase capturing 128
-        times - `1`: Increase capturing 64 times - `2`: Increase capturing 32 times - `3`: Increase capturing 16 times - `4`:
-        Increase capturing 8 times - `5`: Increase capturing 4 times - `6`: Increase capturing 2 times - `8`: Reduce capturing
-        by factor 2 - `9`: Reduce capturing by factor 4 - `10`: Reduce capturing by factor 8 - `11`: Reduce capturing by factor
-        16 - `12`: Reduce capturing by factor 32 - `13`: Reduce capturing by factor 64 - `14`: Reduce capturing by factor 128
+        Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+
+          - `0`: Increase capturing 128 times
+
+          - `1`: Increase capturing 64 times
+
+          - `2`: Increase capturing 32 times
+
+          - `3`: Increase capturing 16 times
+
+          - `4`: Increase capturing 8 times
+
+          - `5`: Increase capturing 4 times
+
+          - `6`: Increase capturing 2 times
+
+          - `8`: Reduce capturing by factor 2
+
+          - `9`: Reduce capturing by factor 4
+
+          - `10`: Reduce capturing by factor 8
+
+          - `11`: Reduce capturing by factor 16
+
+          - `12`: Reduce capturing by factor 32
+
+          - `13`: Reduce capturing by factor 64
+
+          - `14`: Reduce capturing by factor 128
         """
         return pulumi.get(self, "factor")
 
@@ -192,9 +261,7 @@ class RpcBasedSamplingArgs:
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -206,8 +273,7 @@ class RpcBasedSamplingArgs:
     @pulumi.getter(name="remoteOperationName")
     def remote_operation_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must
-        be specified that can be used for RPC matching.
+        Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "remote_operation_name")
 
@@ -219,8 +285,7 @@ class RpcBasedSamplingArgs:
     @pulumi.getter(name="remoteServiceName")
     def remote_service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name
-        must be specified that can be used for RPC matching.
+        Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "remote_service_name")
 
@@ -232,8 +297,7 @@ class RpcBasedSamplingArgs:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE,
-        KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -260,33 +324,65 @@ class _RpcBasedSamplingState:
         """
         Input properties used for looking up and filtering RpcBasedSampling resources.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] endpoint_name: Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must
-               be specified that can be used for RPC matching.
-        :param pulumi.Input[_builtins.str] endpoint_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-               `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` - `0`: Increase capturing 128
-               times - `1`: Increase capturing 64 times - `2`: Increase capturing 32 times - `3`: Increase capturing 16 times - `4`:
-               Increase capturing 8 times - `5`: Increase capturing 4 times - `6`: Increase capturing 2 times - `8`: Reduce capturing
-               by factor 2 - `9`: Reduce capturing by factor 4 - `10`: Reduce capturing by factor 8 - `11`: Reduce capturing by factor
-               16 - `12`: Reduce capturing by factor 32 - `13`: Reduce capturing by factor 64 - `14`: Reduce capturing by factor 128
-        :param pulumi.Input[_builtins.bool] ignore: No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is
-               inactive.
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] remote_operation_name: Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must
-               be specified that can be used for RPC matching.
-        :param pulumi.Input[_builtins.str] remote_operation_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-               `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] remote_service_name: Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name
-               must be specified that can be used for RPC matching.
-        :param pulumi.Input[_builtins.str] remote_service_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-               `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE,
-               KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` - `1`: ADK - `2`: DOTNET_REMOTING - `3`:
-               DOTNET_REMOTING_TCP - `4`: DOTNET_REMOTING_HTTP - `5`: DOTNET_REMOTING_XMLRPC - `6`: GRPC - `7`: GRPC_BIDI - `8`:
-               GRPC_UNARY - `9`: GRPC_SERVERSTREAM - `10`: GRPC_CLIENTSTREAM
+        :param pulumi.Input[_builtins.str] endpoint_name: Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
+        :param pulumi.Input[_builtins.str] endpoint_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+               
+                 - `0`: Increase capturing 128 times
+               
+                 - `1`: Increase capturing 64 times
+               
+                 - `2`: Increase capturing 32 times
+               
+                 - `3`: Increase capturing 16 times
+               
+                 - `4`: Increase capturing 8 times
+               
+                 - `5`: Increase capturing 4 times
+               
+                 - `6`: Increase capturing 2 times
+               
+                 - `8`: Reduce capturing by factor 2
+               
+                 - `9`: Reduce capturing by factor 4
+               
+                 - `10`: Reduce capturing by factor 8
+               
+                 - `11`: Reduce capturing by factor 16
+               
+                 - `12`: Reduce capturing by factor 32
+               
+                 - `13`: Reduce capturing by factor 64
+               
+                 - `14`: Reduce capturing by factor 128
+        :param pulumi.Input[_builtins.bool] ignore: No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is inactive.
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] remote_operation_name: Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must be specified that can be used for RPC matching.
+        :param pulumi.Input[_builtins.str] remote_operation_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] remote_service_name: Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
+        :param pulumi.Input[_builtins.str] remote_service_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+               
+                 - `1`: ADK
+               
+                 - `2`: DOTNET_REMOTING
+               
+                 - `3`: DOTNET_REMOTING_TCP
+               
+                 - `4`: DOTNET_REMOTING_HTTP
+               
+                 - `5`: DOTNET_REMOTING_XMLRPC
+               
+                 - `6`: GRPC
+               
+                 - `7`: GRPC_BIDI
+               
+                 - `8`: GRPC_UNARY
+               
+                 - `9`: GRPC_SERVERSTREAM
+               
+                 - `10`: GRPC_CLIENTSTREAM
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -329,8 +425,7 @@ class _RpcBasedSamplingState:
     @pulumi.getter(name="endpointName")
     def endpoint_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must
-        be specified that can be used for RPC matching.
+        Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "endpoint_name")
 
@@ -342,8 +437,7 @@ class _RpcBasedSamplingState:
     @pulumi.getter(name="endpointNameComparisonType")
     def endpoint_name_comparison_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-        `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "endpoint_name_comparison_type")
 
@@ -355,11 +449,35 @@ class _RpcBasedSamplingState:
     @pulumi.getter
     def factor(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` - `0`: Increase capturing 128
-        times - `1`: Increase capturing 64 times - `2`: Increase capturing 32 times - `3`: Increase capturing 16 times - `4`:
-        Increase capturing 8 times - `5`: Increase capturing 4 times - `6`: Increase capturing 2 times - `8`: Reduce capturing
-        by factor 2 - `9`: Reduce capturing by factor 4 - `10`: Reduce capturing by factor 8 - `11`: Reduce capturing by factor
-        16 - `12`: Reduce capturing by factor 32 - `13`: Reduce capturing by factor 64 - `14`: Reduce capturing by factor 128
+        Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+
+          - `0`: Increase capturing 128 times
+
+          - `1`: Increase capturing 64 times
+
+          - `2`: Increase capturing 32 times
+
+          - `3`: Increase capturing 16 times
+
+          - `4`: Increase capturing 8 times
+
+          - `5`: Increase capturing 4 times
+
+          - `6`: Increase capturing 2 times
+
+          - `8`: Reduce capturing by factor 2
+
+          - `9`: Reduce capturing by factor 4
+
+          - `10`: Reduce capturing by factor 8
+
+          - `11`: Reduce capturing by factor 16
+
+          - `12`: Reduce capturing by factor 32
+
+          - `13`: Reduce capturing by factor 64
+
+          - `14`: Reduce capturing by factor 128
         """
         return pulumi.get(self, "factor")
 
@@ -371,8 +489,7 @@ class _RpcBasedSamplingState:
     @pulumi.getter
     def ignore(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is
-        inactive.
+        No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is inactive.
         """
         return pulumi.get(self, "ignore")
 
@@ -384,9 +501,7 @@ class _RpcBasedSamplingState:
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -398,8 +513,7 @@ class _RpcBasedSamplingState:
     @pulumi.getter(name="remoteOperationName")
     def remote_operation_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must
-        be specified that can be used for RPC matching.
+        Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "remote_operation_name")
 
@@ -411,8 +525,7 @@ class _RpcBasedSamplingState:
     @pulumi.getter(name="remoteOperationNameComparisonType")
     def remote_operation_name_comparison_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-        `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "remote_operation_name_comparison_type")
 
@@ -424,8 +537,7 @@ class _RpcBasedSamplingState:
     @pulumi.getter(name="remoteServiceName")
     def remote_service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name
-        must be specified that can be used for RPC matching.
+        Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "remote_service_name")
 
@@ -437,8 +549,7 @@ class _RpcBasedSamplingState:
     @pulumi.getter(name="remoteServiceNameComparisonType")
     def remote_service_name_comparison_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-        `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "remote_service_name_comparison_type")
 
@@ -450,8 +561,7 @@ class _RpcBasedSamplingState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE,
-        KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -463,9 +573,27 @@ class _RpcBasedSamplingState:
     @pulumi.getter(name="wireProtocolType")
     def wire_protocol_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` - `1`: ADK - `2`: DOTNET_REMOTING - `3`:
-        DOTNET_REMOTING_TCP - `4`: DOTNET_REMOTING_HTTP - `5`: DOTNET_REMOTING_XMLRPC - `6`: GRPC - `7`: GRPC_BIDI - `8`:
-        GRPC_UNARY - `9`: GRPC_SERVERSTREAM - `10`: GRPC_CLIENTSTREAM
+        Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+
+          - `1`: ADK
+
+          - `2`: DOTNET_REMOTING
+
+          - `3`: DOTNET_REMOTING_TCP
+
+          - `4`: DOTNET_REMOTING_HTTP
+
+          - `5`: DOTNET_REMOTING_XMLRPC
+
+          - `6`: GRPC
+
+          - `7`: GRPC_BIDI
+
+          - `8`: GRPC_UNARY
+
+          - `9`: GRPC_SERVERSTREAM
+
+          - `10`: GRPC_CLIENTSTREAM
         """
         return pulumi.get(self, "wire_protocol_type")
 
@@ -524,33 +652,65 @@ class RpcBasedSampling(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] endpoint_name: Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must
-               be specified that can be used for RPC matching.
-        :param pulumi.Input[_builtins.str] endpoint_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-               `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` - `0`: Increase capturing 128
-               times - `1`: Increase capturing 64 times - `2`: Increase capturing 32 times - `3`: Increase capturing 16 times - `4`:
-               Increase capturing 8 times - `5`: Increase capturing 4 times - `6`: Increase capturing 2 times - `8`: Reduce capturing
-               by factor 2 - `9`: Reduce capturing by factor 4 - `10`: Reduce capturing by factor 8 - `11`: Reduce capturing by factor
-               16 - `12`: Reduce capturing by factor 32 - `13`: Reduce capturing by factor 64 - `14`: Reduce capturing by factor 128
-        :param pulumi.Input[_builtins.bool] ignore: No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is
-               inactive.
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] remote_operation_name: Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must
-               be specified that can be used for RPC matching.
-        :param pulumi.Input[_builtins.str] remote_operation_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-               `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] remote_service_name: Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name
-               must be specified that can be used for RPC matching.
-        :param pulumi.Input[_builtins.str] remote_service_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-               `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE,
-               KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` - `1`: ADK - `2`: DOTNET_REMOTING - `3`:
-               DOTNET_REMOTING_TCP - `4`: DOTNET_REMOTING_HTTP - `5`: DOTNET_REMOTING_XMLRPC - `6`: GRPC - `7`: GRPC_BIDI - `8`:
-               GRPC_UNARY - `9`: GRPC_SERVERSTREAM - `10`: GRPC_CLIENTSTREAM
+        :param pulumi.Input[_builtins.str] endpoint_name: Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
+        :param pulumi.Input[_builtins.str] endpoint_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+               
+                 - `0`: Increase capturing 128 times
+               
+                 - `1`: Increase capturing 64 times
+               
+                 - `2`: Increase capturing 32 times
+               
+                 - `3`: Increase capturing 16 times
+               
+                 - `4`: Increase capturing 8 times
+               
+                 - `5`: Increase capturing 4 times
+               
+                 - `6`: Increase capturing 2 times
+               
+                 - `8`: Reduce capturing by factor 2
+               
+                 - `9`: Reduce capturing by factor 4
+               
+                 - `10`: Reduce capturing by factor 8
+               
+                 - `11`: Reduce capturing by factor 16
+               
+                 - `12`: Reduce capturing by factor 32
+               
+                 - `13`: Reduce capturing by factor 64
+               
+                 - `14`: Reduce capturing by factor 128
+        :param pulumi.Input[_builtins.bool] ignore: No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is inactive.
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] remote_operation_name: Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must be specified that can be used for RPC matching.
+        :param pulumi.Input[_builtins.str] remote_operation_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] remote_service_name: Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
+        :param pulumi.Input[_builtins.str] remote_service_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+               
+                 - `1`: ADK
+               
+                 - `2`: DOTNET_REMOTING
+               
+                 - `3`: DOTNET_REMOTING_TCP
+               
+                 - `4`: DOTNET_REMOTING_HTTP
+               
+                 - `5`: DOTNET_REMOTING_XMLRPC
+               
+                 - `6`: GRPC
+               
+                 - `7`: GRPC_BIDI
+               
+                 - `8`: GRPC_UNARY
+               
+                 - `9`: GRPC_SERVERSTREAM
+               
+                 - `10`: GRPC_CLIENTSTREAM
         """
         ...
     @overload
@@ -676,33 +836,65 @@ class RpcBasedSampling(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] endpoint_name: Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must
-               be specified that can be used for RPC matching.
-        :param pulumi.Input[_builtins.str] endpoint_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-               `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` - `0`: Increase capturing 128
-               times - `1`: Increase capturing 64 times - `2`: Increase capturing 32 times - `3`: Increase capturing 16 times - `4`:
-               Increase capturing 8 times - `5`: Increase capturing 4 times - `6`: Increase capturing 2 times - `8`: Reduce capturing
-               by factor 2 - `9`: Reduce capturing by factor 4 - `10`: Reduce capturing by factor 8 - `11`: Reduce capturing by factor
-               16 - `12`: Reduce capturing by factor 32 - `13`: Reduce capturing by factor 64 - `14`: Reduce capturing by factor 128
-        :param pulumi.Input[_builtins.bool] ignore: No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is
-               inactive.
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] remote_operation_name: Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must
-               be specified that can be used for RPC matching.
-        :param pulumi.Input[_builtins.str] remote_operation_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-               `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] remote_service_name: Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name
-               must be specified that can be used for RPC matching.
-        :param pulumi.Input[_builtins.str] remote_service_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-               `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE,
-               KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` - `1`: ADK - `2`: DOTNET_REMOTING - `3`:
-               DOTNET_REMOTING_TCP - `4`: DOTNET_REMOTING_HTTP - `5`: DOTNET_REMOTING_XMLRPC - `6`: GRPC - `7`: GRPC_BIDI - `8`:
-               GRPC_UNARY - `9`: GRPC_SERVERSTREAM - `10`: GRPC_CLIENTSTREAM
+        :param pulumi.Input[_builtins.str] endpoint_name: Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
+        :param pulumi.Input[_builtins.str] endpoint_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+               
+                 - `0`: Increase capturing 128 times
+               
+                 - `1`: Increase capturing 64 times
+               
+                 - `2`: Increase capturing 32 times
+               
+                 - `3`: Increase capturing 16 times
+               
+                 - `4`: Increase capturing 8 times
+               
+                 - `5`: Increase capturing 4 times
+               
+                 - `6`: Increase capturing 2 times
+               
+                 - `8`: Reduce capturing by factor 2
+               
+                 - `9`: Reduce capturing by factor 4
+               
+                 - `10`: Reduce capturing by factor 8
+               
+                 - `11`: Reduce capturing by factor 16
+               
+                 - `12`: Reduce capturing by factor 32
+               
+                 - `13`: Reduce capturing by factor 64
+               
+                 - `14`: Reduce capturing by factor 128
+        :param pulumi.Input[_builtins.bool] ignore: No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is inactive.
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        :param pulumi.Input[_builtins.str] remote_operation_name: Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must be specified that can be used for RPC matching.
+        :param pulumi.Input[_builtins.str] remote_operation_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] remote_service_name: Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
+        :param pulumi.Input[_builtins.str] remote_service_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+               
+                 - `1`: ADK
+               
+                 - `2`: DOTNET_REMOTING
+               
+                 - `3`: DOTNET_REMOTING_TCP
+               
+                 - `4`: DOTNET_REMOTING_HTTP
+               
+                 - `5`: DOTNET_REMOTING_XMLRPC
+               
+                 - `6`: GRPC
+               
+                 - `7`: GRPC_BIDI
+               
+                 - `8`: GRPC_UNARY
+               
+                 - `9`: GRPC_SERVERSTREAM
+               
+                 - `10`: GRPC_CLIENTSTREAM
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -734,8 +926,7 @@ class RpcBasedSampling(pulumi.CustomResource):
     @pulumi.getter(name="endpointName")
     def endpoint_name(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must
-        be specified that can be used for RPC matching.
+        Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "endpoint_name")
 
@@ -743,8 +934,7 @@ class RpcBasedSampling(pulumi.CustomResource):
     @pulumi.getter(name="endpointNameComparisonType")
     def endpoint_name_comparison_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-        `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "endpoint_name_comparison_type")
 
@@ -752,11 +942,35 @@ class RpcBasedSampling(pulumi.CustomResource):
     @pulumi.getter
     def factor(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` - `0`: Increase capturing 128
-        times - `1`: Increase capturing 64 times - `2`: Increase capturing 32 times - `3`: Increase capturing 16 times - `4`:
-        Increase capturing 8 times - `5`: Increase capturing 4 times - `6`: Increase capturing 2 times - `8`: Reduce capturing
-        by factor 2 - `9`: Reduce capturing by factor 4 - `10`: Reduce capturing by factor 8 - `11`: Reduce capturing by factor
-        16 - `12`: Reduce capturing by factor 32 - `13`: Reduce capturing by factor 64 - `14`: Reduce capturing by factor 128
+        Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+
+          - `0`: Increase capturing 128 times
+
+          - `1`: Increase capturing 64 times
+
+          - `2`: Increase capturing 32 times
+
+          - `3`: Increase capturing 16 times
+
+          - `4`: Increase capturing 8 times
+
+          - `5`: Increase capturing 4 times
+
+          - `6`: Increase capturing 2 times
+
+          - `8`: Reduce capturing by factor 2
+
+          - `9`: Reduce capturing by factor 4
+
+          - `10`: Reduce capturing by factor 8
+
+          - `11`: Reduce capturing by factor 16
+
+          - `12`: Reduce capturing by factor 32
+
+          - `13`: Reduce capturing by factor 64
+
+          - `14`: Reduce capturing by factor 128
         """
         return pulumi.get(self, "factor")
 
@@ -764,8 +978,7 @@ class RpcBasedSampling(pulumi.CustomResource):
     @pulumi.getter
     def ignore(self) -> pulumi.Output[_builtins.bool]:
         """
-        No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is
-        inactive.
+        No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is inactive.
         """
         return pulumi.get(self, "ignore")
 
@@ -773,9 +986,7 @@ class RpcBasedSampling(pulumi.CustomResource):
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> pulumi.Output[_builtins.str]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -783,8 +994,7 @@ class RpcBasedSampling(pulumi.CustomResource):
     @pulumi.getter(name="remoteOperationName")
     def remote_operation_name(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must
-        be specified that can be used for RPC matching.
+        Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "remote_operation_name")
 
@@ -792,8 +1002,7 @@ class RpcBasedSampling(pulumi.CustomResource):
     @pulumi.getter(name="remoteOperationNameComparisonType")
     def remote_operation_name_comparison_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-        `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "remote_operation_name_comparison_type")
 
@@ -801,8 +1010,7 @@ class RpcBasedSampling(pulumi.CustomResource):
     @pulumi.getter(name="remoteServiceName")
     def remote_service_name(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name
-        must be specified that can be used for RPC matching.
+        Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "remote_service_name")
 
@@ -810,8 +1018,7 @@ class RpcBasedSampling(pulumi.CustomResource):
     @pulumi.getter(name="remoteServiceNameComparisonType")
     def remote_service_name_comparison_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`,
-        `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "remote_service_name_comparison_type")
 
@@ -819,8 +1026,7 @@ class RpcBasedSampling(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE,
-        KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -828,9 +1034,27 @@ class RpcBasedSampling(pulumi.CustomResource):
     @pulumi.getter(name="wireProtocolType")
     def wire_protocol_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` - `1`: ADK - `2`: DOTNET_REMOTING - `3`:
-        DOTNET_REMOTING_TCP - `4`: DOTNET_REMOTING_HTTP - `5`: DOTNET_REMOTING_XMLRPC - `6`: GRPC - `7`: GRPC_BIDI - `8`:
-        GRPC_UNARY - `9`: GRPC_SERVERSTREAM - `10`: GRPC_CLIENTSTREAM
+        Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+
+          - `1`: ADK
+
+          - `2`: DOTNET_REMOTING
+
+          - `3`: DOTNET_REMOTING_TCP
+
+          - `4`: DOTNET_REMOTING_HTTP
+
+          - `5`: DOTNET_REMOTING_XMLRPC
+
+          - `6`: GRPC
+
+          - `7`: GRPC_BIDI
+
+          - `8`: GRPC_UNARY
+
+          - `9`: GRPC_SERVERSTREAM
+
+          - `10`: GRPC_CLIENTSTREAM
         """
         return pulumi.get(self, "wire_protocol_type")
 

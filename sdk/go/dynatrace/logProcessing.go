@@ -17,18 +17,17 @@ type LogProcessing struct {
 
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-	// will find instructions and application [examples](https://dt-url.net/m24305t).
+	// ## Processor definition
+	// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
 	ProcessorDefinition LogProcessingProcessorDefinitionOutput `pulumi:"processorDefinition"`
 	// Matcher
 	Query pulumi.StringOutput `pulumi:"query"`
 	// Rule name
 	RuleName pulumi.StringOutput `pulumi:"ruleName"`
-	// ## Rule testing ### 1. Paste a log / JSON sample
+	// ## Rule testing
+	// ### 1. Paste a log / JSON sample
 	RuleTesting LogProcessingRuleTestingOutput `pulumi:"ruleTesting"`
 }
 
@@ -79,36 +78,34 @@ func GetLogProcessing(ctx *pulumi.Context,
 type logProcessingState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-	// will find instructions and application [examples](https://dt-url.net/m24305t).
+	// ## Processor definition
+	// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
 	ProcessorDefinition *LogProcessingProcessorDefinition `pulumi:"processorDefinition"`
 	// Matcher
 	Query *string `pulumi:"query"`
 	// Rule name
 	RuleName *string `pulumi:"ruleName"`
-	// ## Rule testing ### 1. Paste a log / JSON sample
+	// ## Rule testing
+	// ### 1. Paste a log / JSON sample
 	RuleTesting *LogProcessingRuleTesting `pulumi:"ruleTesting"`
 }
 
 type LogProcessingState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-	// will find instructions and application [examples](https://dt-url.net/m24305t).
+	// ## Processor definition
+	// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
 	ProcessorDefinition LogProcessingProcessorDefinitionPtrInput
 	// Matcher
 	Query pulumi.StringPtrInput
 	// Rule name
 	RuleName pulumi.StringPtrInput
-	// ## Rule testing ### 1. Paste a log / JSON sample
+	// ## Rule testing
+	// ### 1. Paste a log / JSON sample
 	RuleTesting LogProcessingRuleTestingPtrInput
 }
 
@@ -119,18 +116,17 @@ func (LogProcessingState) ElementType() reflect.Type {
 type logProcessingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-	// will find instructions and application [examples](https://dt-url.net/m24305t).
+	// ## Processor definition
+	// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
 	ProcessorDefinition LogProcessingProcessorDefinition `pulumi:"processorDefinition"`
 	// Matcher
 	Query string `pulumi:"query"`
 	// Rule name
 	RuleName string `pulumi:"ruleName"`
-	// ## Rule testing ### 1. Paste a log / JSON sample
+	// ## Rule testing
+	// ### 1. Paste a log / JSON sample
 	RuleTesting LogProcessingRuleTesting `pulumi:"ruleTesting"`
 }
 
@@ -138,18 +134,17 @@ type logProcessingArgs struct {
 type LogProcessingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-	// will find instructions and application [examples](https://dt-url.net/m24305t).
+	// ## Processor definition
+	// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
 	ProcessorDefinition LogProcessingProcessorDefinitionInput
 	// Matcher
 	Query pulumi.StringInput
 	// Rule name
 	RuleName pulumi.StringInput
-	// ## Rule testing ### 1. Paste a log / JSON sample
+	// ## Rule testing
+	// ### 1. Paste a log / JSON sample
 	RuleTesting LogProcessingRuleTestingInput
 }
 
@@ -245,15 +240,13 @@ func (o LogProcessingOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogProcessing) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-// specified during update the order will remain untouched
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 func (o LogProcessingOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogProcessing) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-// will find instructions and application [examples](https://dt-url.net/m24305t).
+// ## Processor definition
+// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
 func (o LogProcessingOutput) ProcessorDefinition() LogProcessingProcessorDefinitionOutput {
 	return o.ApplyT(func(v *LogProcessing) LogProcessingProcessorDefinitionOutput { return v.ProcessorDefinition }).(LogProcessingProcessorDefinitionOutput)
 }
@@ -268,7 +261,8 @@ func (o LogProcessingOutput) RuleName() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogProcessing) pulumi.StringOutput { return v.RuleName }).(pulumi.StringOutput)
 }
 
-// ## Rule testing ### 1. Paste a log / JSON sample
+// ## Rule testing
+// ### 1. Paste a log / JSON sample
 func (o LogProcessingOutput) RuleTesting() LogProcessingRuleTestingOutput {
 	return o.ApplyT(func(v *LogProcessing) LogProcessingRuleTestingOutput { return v.RuleTesting }).(LogProcessingRuleTestingOutput)
 }

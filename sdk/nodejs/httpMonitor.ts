@@ -47,7 +47,9 @@ export class HttpMonitor extends pulumi.CustomResource {
      */
     declare public readonly frequency: pulumi.Output<number>;
     /**
-     * A list of locations from which the monitor is executed. To specify a location, use its entity ID.
+     * A list of locations from which the monitor is executed.
+     *
+     * To specify a location, use its entity ID.
      */
     declare public readonly locations: pulumi.Output<string[] | undefined>;
     /**
@@ -67,8 +69,9 @@ export class HttpMonitor extends pulumi.CustomResource {
      */
     declare public readonly script: pulumi.Output<outputs.HttpMonitorScript | undefined>;
     /**
-     * A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
-     * source 'USER' will be added automatically.
+     * A set of tags assigned to the monitor.
+     *
+     * You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
      */
     declare public readonly tags: pulumi.Output<outputs.HttpMonitorTag[] | undefined>;
 
@@ -131,7 +134,9 @@ export interface HttpMonitorState {
      */
     frequency?: pulumi.Input<number>;
     /**
-     * A list of locations from which the monitor is executed. To specify a location, use its entity ID.
+     * A list of locations from which the monitor is executed.
+     *
+     * To specify a location, use its entity ID.
      */
     locations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -151,8 +156,9 @@ export interface HttpMonitorState {
      */
     script?: pulumi.Input<inputs.HttpMonitorScript>;
     /**
-     * A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
-     * source 'USER' will be added automatically.
+     * A set of tags assigned to the monitor.
+     *
+     * You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
      */
     tags?: pulumi.Input<pulumi.Input<inputs.HttpMonitorTag>[]>;
 }
@@ -174,7 +180,9 @@ export interface HttpMonitorArgs {
      */
     frequency: pulumi.Input<number>;
     /**
-     * A list of locations from which the monitor is executed. To specify a location, use its entity ID.
+     * A list of locations from which the monitor is executed.
+     *
+     * To specify a location, use its entity ID.
      */
     locations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -194,8 +202,9 @@ export interface HttpMonitorArgs {
      */
     script?: pulumi.Input<inputs.HttpMonitorScript>;
     /**
-     * A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
-     * source 'USER' will be added automatically.
+     * A set of tags assigned to the monitor.
+     *
+     * You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
      */
     tags?: pulumi.Input<pulumi.Input<inputs.HttpMonitorTag>[]>;
 }

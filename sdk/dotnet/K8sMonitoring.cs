@@ -20,8 +20,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> CloudApplicationPipelineEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-        /// [documentation](https://dt-url.net/2201p0u).
+        /// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         /// </summary>
         [Output("eventPatterns")]
         public Output<Outputs.K8sMonitoringEventPatterns?> EventPatterns { get; private set; } = null!;
@@ -45,8 +44,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> IncludeAllFdiEvents { get; private set; } = null!;
 
         /// <summary>
-        /// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-        /// this may increase the CPU/memory resource consumption of your ActiveGate.
+        /// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         /// </summary>
         [Output("openMetricsBuiltinEnabled")]
         public Output<bool> OpenMetricsBuiltinEnabled { get; private set; } = null!;
@@ -123,8 +121,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> CloudApplicationPipelineEnabled { get; set; } = null!;
 
         /// <summary>
-        /// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-        /// [documentation](https://dt-url.net/2201p0u).
+        /// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         /// </summary>
         [Input("eventPatterns")]
         public Input<Inputs.K8sMonitoringEventPatternsArgs>? EventPatterns { get; set; }
@@ -148,8 +145,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? IncludeAllFdiEvents { get; set; }
 
         /// <summary>
-        /// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-        /// this may increase the CPU/memory resource consumption of your ActiveGate.
+        /// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         /// </summary>
         [Input("openMetricsBuiltinEnabled", required: true)]
         public Input<bool> OpenMetricsBuiltinEnabled { get; set; } = null!;
@@ -187,8 +183,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? CloudApplicationPipelineEnabled { get; set; }
 
         /// <summary>
-        /// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-        /// [documentation](https://dt-url.net/2201p0u).
+        /// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         /// </summary>
         [Input("eventPatterns")]
         public Input<Inputs.K8sMonitoringEventPatternsGetArgs>? EventPatterns { get; set; }
@@ -212,8 +207,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? IncludeAllFdiEvents { get; set; }
 
         /// <summary>
-        /// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size,
-        /// this may increase the CPU/memory resource consumption of your ActiveGate.
+        /// Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         /// </summary>
         [Input("openMetricsBuiltinEnabled")]
         public Input<bool>? OpenMetricsBuiltinEnabled { get; set; }

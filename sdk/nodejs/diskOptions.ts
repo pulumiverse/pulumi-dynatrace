@@ -39,13 +39,11 @@ export class DiskOptions extends pulumi.CustomResource {
      */
     declare public readonly disableNfsDiskMonitoring: pulumi.Output<boolean | undefined>;
     /**
-     * OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
-     * disks from the monitoring list.
+     * OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
      */
     declare public readonly exclusions: pulumi.Output<outputs.DiskOptionsExclusions | undefined>;
     /**
-     * When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
-     * Requires OneAgent 1.209 or later
+     * When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
      */
     declare public readonly nfsShowAll: pulumi.Output<boolean | undefined>;
     /**
@@ -91,13 +89,11 @@ export interface DiskOptionsState {
      */
     disableNfsDiskMonitoring?: pulumi.Input<boolean>;
     /**
-     * OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
-     * disks from the monitoring list.
+     * OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
      */
     exclusions?: pulumi.Input<inputs.DiskOptionsExclusions>;
     /**
-     * When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
-     * Requires OneAgent 1.209 or later
+     * When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
      */
     nfsShowAll?: pulumi.Input<boolean>;
     /**
@@ -115,13 +111,11 @@ export interface DiskOptionsArgs {
      */
     disableNfsDiskMonitoring?: pulumi.Input<boolean>;
     /**
-     * OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
-     * disks from the monitoring list.
+     * OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
      */
     exclusions?: pulumi.Input<inputs.DiskOptionsExclusions>;
     /**
-     * When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
-     * Requires OneAgent 1.209 or later
+     * When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
      */
     nfsShowAll?: pulumi.Input<boolean>;
     /**

@@ -20,9 +20,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        /// specified during update the order will remain untouched
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Output("insertAfter")]
         public Output<string> InsertAfter { get; private set; } = null!;
@@ -40,7 +38,8 @@ namespace Pulumiverse.Dynatrace
         public Output<string> RuleName { get; private set; } = null!;
 
         /// <summary>
-        /// ## Rule testing ### 1. Paste an event sample
+        /// ## Rule testing
+        /// ### 1. Paste an event sample
         /// </summary>
         [Output("ruleTesting")]
         public Output<Outputs.BusinessEventsProcessingRuleTesting> RuleTesting { get; private set; } = null!;
@@ -111,9 +110,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        /// specified during update the order will remain untouched
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Input("insertAfter")]
         public Input<string>? InsertAfter { get; set; }
@@ -131,7 +128,8 @@ namespace Pulumiverse.Dynatrace
         public Input<string> RuleName { get; set; } = null!;
 
         /// <summary>
-        /// ## Rule testing ### 1. Paste an event sample
+        /// ## Rule testing
+        /// ### 1. Paste an event sample
         /// </summary>
         [Input("ruleTesting", required: true)]
         public Input<Inputs.BusinessEventsProcessingRuleTestingArgs> RuleTesting { get; set; } = null!;
@@ -163,9 +161,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        /// specified during update the order will remain untouched
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Input("insertAfter")]
         public Input<string>? InsertAfter { get; set; }
@@ -183,7 +179,8 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? RuleName { get; set; }
 
         /// <summary>
-        /// ## Rule testing ### 1. Paste an event sample
+        /// ## Rule testing
+        /// ### 1. Paste an event sample
         /// </summary>
         [Input("ruleTesting")]
         public Input<Inputs.BusinessEventsProcessingRuleTestingGetArgs>? RuleTesting { get; set; }

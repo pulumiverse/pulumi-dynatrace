@@ -33,9 +33,11 @@ export class ProcessGroupRum extends pulumi.CustomResource {
     }
 
     /**
-     * Allows OneAgent to: * automatically inject the RUM JavaScript tag into each page delivered by this process group *
-     * provide the necessary info to correlate RUM data with server-side PurePaths * forward beacons to the cluster * deliver
-     * the monitoring code
+     * Allows OneAgent to:
+     * * automatically inject the RUM JavaScript tag into each page delivered by this process group
+     * * provide the necessary info to correlate RUM data with server-side PurePaths
+     * * forward beacons to the cluster
+     * * deliver the monitoring code
      */
     declare public readonly enable: pulumi.Output<boolean>;
     /**
@@ -79,9 +81,11 @@ export class ProcessGroupRum extends pulumi.CustomResource {
  */
 export interface ProcessGroupRumState {
     /**
-     * Allows OneAgent to: * automatically inject the RUM JavaScript tag into each page delivered by this process group *
-     * provide the necessary info to correlate RUM data with server-side PurePaths * forward beacons to the cluster * deliver
-     * the monitoring code
+     * Allows OneAgent to:
+     * * automatically inject the RUM JavaScript tag into each page delivered by this process group
+     * * provide the necessary info to correlate RUM data with server-side PurePaths
+     * * forward beacons to the cluster
+     * * deliver the monitoring code
      */
     enable?: pulumi.Input<boolean>;
     /**
@@ -95,9 +99,11 @@ export interface ProcessGroupRumState {
  */
 export interface ProcessGroupRumArgs {
     /**
-     * Allows OneAgent to: * automatically inject the RUM JavaScript tag into each page delivered by this process group *
-     * provide the necessary info to correlate RUM data with server-side PurePaths * forward beacons to the cluster * deliver
-     * the monitoring code
+     * Allows OneAgent to:
+     * * automatically inject the RUM JavaScript tag into each page delivered by this process group
+     * * provide the necessary info to correlate RUM data with server-side PurePaths
+     * * forward beacons to the cluster
+     * * deliver the monitoring code
      */
     enable: pulumi.Input<boolean>;
     /**

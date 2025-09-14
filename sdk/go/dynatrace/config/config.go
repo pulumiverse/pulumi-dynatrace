@@ -21,16 +21,12 @@ func GetAutomationClientSecret(ctx *pulumi.Context) string {
 	return config.Get(ctx, "dynatrace:automationClientSecret")
 }
 
-// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
-// optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-// `https://#####.apps.dynatrace.com`
+// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
 func GetAutomationEnvUrl(ctx *pulumi.Context) string {
 	return config.Get(ctx, "dynatrace:automationEnvUrl")
 }
 
-// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
-// `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
-// `https://#####.apps.dynatrace.com`
+// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
 func GetAutomationTokenUrl(ctx *pulumi.Context) string {
 	return config.Get(ctx, "dynatrace:automationTokenUrl")
 }
@@ -100,8 +96,7 @@ func GetIamTokenUrl(ctx *pulumi.Context) string {
 	return config.Get(ctx, "dynatrace:iamTokenUrl")
 }
 
-// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a
-// case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
 func GetPlatformToken(ctx *pulumi.Context) string {
 	return config.Get(ctx, "dynatrace:platformToken")
 }

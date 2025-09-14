@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        /// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         /// </summary>
         [Output("rules")]
         public Output<ImmutableArray<Outputs.ManagementZoneRule>> Rules { get; private set; } = null!;
@@ -136,7 +136,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.ManagementZoneRuleArgs>? _rules;
 
         /// <summary>
-        /// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        /// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         /// </summary>
         public InputList<Inputs.ManagementZoneRuleArgs> Rules
         {
@@ -198,7 +198,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.ManagementZoneRuleGetArgs>? _rules;
 
         /// <summary>
-        /// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        /// A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         /// </summary>
         public InputList<Inputs.ManagementZoneRuleGetArgs> Rules
         {

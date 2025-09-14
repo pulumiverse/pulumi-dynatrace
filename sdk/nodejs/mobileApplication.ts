@@ -51,8 +51,9 @@ export class MobileApplication extends pulumi.CustomResource {
      */
     declare public readonly beaconEndpointType: pulumi.Output<string>;
     /**
-     * The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
-     * `INSTRUMENTED_WEB_SERVER`
+     * The URL of the beacon endpoint.
+     *
+     * Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or `INSTRUMENTED_WEB_SERVER`
      */
     declare public readonly beaconEndpointUrl: pulumi.Output<string | undefined>;
     /**
@@ -80,13 +81,13 @@ export class MobileApplication extends pulumi.CustomResource {
      */
     declare public readonly sessionReplay: pulumi.Output<boolean | undefined>;
     /**
-     * The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
-     * and **optInModeEnabled** values set to `true`.
+     * The session replay on crash is enabled (`true`) or disabled (`false`). 
+     *
+     * Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
      */
     declare public readonly sessionReplayOnCrash: pulumi.Output<boolean | undefined>;
     /**
-     * (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps)
-     * The percentage of user sessions to be analyzed
+     * (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
      */
     declare public readonly userSessionPercentage: pulumi.Output<number | undefined>;
 
@@ -164,8 +165,9 @@ export interface MobileApplicationState {
      */
     beaconEndpointType?: pulumi.Input<string>;
     /**
-     * The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
-     * `INSTRUMENTED_WEB_SERVER`
+     * The URL of the beacon endpoint.
+     *
+     * Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or `INSTRUMENTED_WEB_SERVER`
      */
     beaconEndpointUrl?: pulumi.Input<string>;
     /**
@@ -193,13 +195,13 @@ export interface MobileApplicationState {
      */
     sessionReplay?: pulumi.Input<boolean>;
     /**
-     * The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
-     * and **optInModeEnabled** values set to `true`.
+     * The session replay on crash is enabled (`true`) or disabled (`false`). 
+     *
+     * Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
      */
     sessionReplayOnCrash?: pulumi.Input<boolean>;
     /**
-     * (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps)
-     * The percentage of user sessions to be analyzed
+     * (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
      */
     userSessionPercentage?: pulumi.Input<number>;
 }
@@ -225,8 +227,9 @@ export interface MobileApplicationArgs {
      */
     beaconEndpointType: pulumi.Input<string>;
     /**
-     * The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
-     * `INSTRUMENTED_WEB_SERVER`
+     * The URL of the beacon endpoint.
+     *
+     * Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or `INSTRUMENTED_WEB_SERVER`
      */
     beaconEndpointUrl?: pulumi.Input<string>;
     /**
@@ -254,13 +257,13 @@ export interface MobileApplicationArgs {
      */
     sessionReplay?: pulumi.Input<boolean>;
     /**
-     * The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
-     * and **optInModeEnabled** values set to `true`.
+     * The session replay on crash is enabled (`true`) or disabled (`false`). 
+     *
+     * Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
      */
     sessionReplayOnCrash?: pulumi.Input<boolean>;
     /**
-     * (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps)
-     * The percentage of user sessions to be analyzed
+     * (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
      */
     userSessionPercentage?: pulumi.Input<number>;
 }

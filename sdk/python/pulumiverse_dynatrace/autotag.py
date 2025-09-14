@@ -30,10 +30,8 @@ class AutotagArgs:
         The set of arguments for constructing a Autotag resource.
         :param pulumi.Input[_builtins.str] description: The description of the auto-tag.
         :param pulumi.Input[Sequence[pulumi.Input['AutotagEntitySelectorBasedRuleArgs']]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input[_builtins.str] name: The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-               In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-               `Infrastructure:Windows` and `Infrastructure:Linux`.
-        :param pulumi.Input[Sequence[pulumi.Input['AutotagRuleArgs']]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        :param pulumi.Input[_builtins.str] name: The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
+        :param pulumi.Input[Sequence[pulumi.Input['AutotagRuleArgs']]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         if description is not None:
@@ -75,9 +73,7 @@ class AutotagArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-        In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-        `Infrastructure:Windows` and `Infrastructure:Linux`.
+        The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
         """
         return pulumi.get(self, "name")
 
@@ -89,7 +85,7 @@ class AutotagArgs:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutotagRuleArgs']]]]:
         """
-        A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         return pulumi.get(self, "rules")
 
@@ -122,10 +118,8 @@ class _AutotagState:
         Input properties used for looking up and filtering Autotag resources.
         :param pulumi.Input[_builtins.str] description: The description of the auto-tag.
         :param pulumi.Input[Sequence[pulumi.Input['AutotagEntitySelectorBasedRuleArgs']]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input[_builtins.str] name: The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-               In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-               `Infrastructure:Windows` and `Infrastructure:Linux`.
-        :param pulumi.Input[Sequence[pulumi.Input['AutotagRuleArgs']]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        :param pulumi.Input[_builtins.str] name: The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
+        :param pulumi.Input[Sequence[pulumi.Input['AutotagRuleArgs']]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         if description is not None:
@@ -167,9 +161,7 @@ class _AutotagState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-        In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-        `Infrastructure:Windows` and `Infrastructure:Linux`.
+        The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
         """
         return pulumi.get(self, "name")
 
@@ -181,7 +173,7 @@ class _AutotagState:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutotagRuleArgs']]]]:
         """
-        A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         return pulumi.get(self, "rules")
 
@@ -220,10 +212,8 @@ class Autotag(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: The description of the auto-tag.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagEntitySelectorBasedRuleArgs', 'AutotagEntitySelectorBasedRuleArgsDict']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input[_builtins.str] name: The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-               In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-               `Infrastructure:Windows` and `Infrastructure:Linux`.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict']]]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        :param pulumi.Input[_builtins.str] name: The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict']]]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         ...
@@ -292,10 +282,8 @@ class Autotag(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: The description of the auto-tag.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagEntitySelectorBasedRuleArgs', 'AutotagEntitySelectorBasedRuleArgsDict']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input[_builtins.str] name: The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-               In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-               `Infrastructure:Windows` and `Infrastructure:Linux`.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict']]]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        :param pulumi.Input[_builtins.str] name: The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict']]]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -329,9 +317,7 @@ class Autotag(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
-        In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
-        `Infrastructure:Windows` and `Infrastructure:Linux`.
+        The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
         """
         return pulumi.get(self, "name")
 
@@ -339,7 +325,7 @@ class Autotag(pulumi.CustomResource):
     @pulumi.getter
     def rules(self) -> pulumi.Output[Optional[Sequence['outputs.AutotagRule']]]:
         """
-        A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+        A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         return pulumi.get(self, "rules")
 

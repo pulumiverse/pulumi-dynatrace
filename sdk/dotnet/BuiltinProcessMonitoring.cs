@@ -44,6 +44,12 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> CfAppsmanagerjs { get; private set; } = null!;
 
         /// <summary>
+        /// Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+        /// </summary>
+        [Output("cmdForeverbinmonitor")]
+        public Output<bool?> CmdForeverbinmonitor { get; private set; } = null!;
+
+        /// <summary>
         /// Rule id: 41 - Do monitor processes if container name exists
         /// </summary>
         [Output("container")]
@@ -571,6 +577,12 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? CfAppsmanagerjs { get; set; }
 
         /// <summary>
+        /// Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+        /// </summary>
+        [Input("cmdForeverbinmonitor")]
+        public Input<bool>? CmdForeverbinmonitor { get; set; }
+
+        /// <summary>
         /// Rule id: 41 - Do monitor processes if container name exists
         /// </summary>
         [Input("container")]
@@ -1057,6 +1069,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("cfAppsmanagerjs")]
         public Input<bool>? CfAppsmanagerjs { get; set; }
+
+        /// <summary>
+        /// Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+        /// </summary>
+        [Input("cmdForeverbinmonitor")]
+        public Input<bool>? CmdForeverbinmonitor { get; set; }
 
         /// <summary>
         /// Rule id: 41 - Do monitor processes if container name exists

@@ -27,9 +27,11 @@ type RumIpLocations struct {
 	Latitude pulumi.Float64PtrOutput `pulumi:"latitude"`
 	// Longitude
 	Longitude pulumi.Float64PtrOutput `pulumi:"longitude"`
-	// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-	// use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
-	// codes](https://dt-url.net/fipscodes) without country prefix.
+	// The region code of the location.
+	//
+	//  For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix.
+	//
+	//  For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
 	RegionCode pulumi.StringPtrOutput `pulumi:"regionCode"`
 }
 
@@ -81,9 +83,11 @@ type rumIpLocationsState struct {
 	Latitude *float64 `pulumi:"latitude"`
 	// Longitude
 	Longitude *float64 `pulumi:"longitude"`
-	// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-	// use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
-	// codes](https://dt-url.net/fipscodes) without country prefix.
+	// The region code of the location.
+	//
+	//  For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix.
+	//
+	//  For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
 	RegionCode *string `pulumi:"regionCode"`
 }
 
@@ -100,9 +104,11 @@ type RumIpLocationsState struct {
 	Latitude pulumi.Float64PtrInput
 	// Longitude
 	Longitude pulumi.Float64PtrInput
-	// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-	// use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
-	// codes](https://dt-url.net/fipscodes) without country prefix.
+	// The region code of the location.
+	//
+	//  For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix.
+	//
+	//  For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
 	RegionCode pulumi.StringPtrInput
 }
 
@@ -123,9 +129,11 @@ type rumIpLocationsArgs struct {
 	Latitude *float64 `pulumi:"latitude"`
 	// Longitude
 	Longitude *float64 `pulumi:"longitude"`
-	// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-	// use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
-	// codes](https://dt-url.net/fipscodes) without country prefix.
+	// The region code of the location.
+	//
+	//  For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix.
+	//
+	//  For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
 	RegionCode *string `pulumi:"regionCode"`
 }
 
@@ -143,9 +151,11 @@ type RumIpLocationsArgs struct {
 	Latitude pulumi.Float64PtrInput
 	// Longitude
 	Longitude pulumi.Float64PtrInput
-	// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-	// use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
-	// codes](https://dt-url.net/fipscodes) without country prefix.
+	// The region code of the location.
+	//
+	//  For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix.
+	//
+	//  For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
 	RegionCode pulumi.StringPtrInput
 }
 
@@ -266,9 +276,11 @@ func (o RumIpLocationsOutput) Longitude() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *RumIpLocations) pulumi.Float64PtrOutput { return v.Longitude }).(pulumi.Float64PtrOutput)
 }
 
-// The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-// use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
-// codes](https://dt-url.net/fipscodes) without country prefix.
+// The region code of the location.
+//
+//	For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix.
+//
+//	For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
 func (o RumIpLocationsOutput) RegionCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RumIpLocations) pulumi.StringPtrOutput { return v.RegionCode }).(pulumi.StringPtrOutput)
 }

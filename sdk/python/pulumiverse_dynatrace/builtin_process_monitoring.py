@@ -24,6 +24,7 @@ class BuiltinProcessMonitoringArgs:
                  aspnetcore_agentworker: Optional[pulumi.Input[_builtins.bool]] = None,
                  cf: Optional[pulumi.Input[_builtins.bool]] = None,
                  cf_appsmanagerjs: Optional[pulumi.Input[_builtins.bool]] = None,
+                 cmd_foreverbinmonitor: Optional[pulumi.Input[_builtins.bool]] = None,
                  container: Optional[pulumi.Input[_builtins.bool]] = None,
                  docker_pauseamd64: Optional[pulumi.Input[_builtins.bool]] = None,
                  exe_adapter: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -106,6 +107,7 @@ class BuiltinProcessMonitoringArgs:
         :param pulumi.Input[_builtins.bool] aspnetcore_agentworker: Rule id: 62 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Worker'
         :param pulumi.Input[_builtins.bool] cf: Rule id: 37 - Do monitor processes if Cloud Foundry application exists
         :param pulumi.Input[_builtins.bool] cf_appsmanagerjs: Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
+        :param pulumi.Input[_builtins.bool] cmd_foreverbinmonitor: Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
         :param pulumi.Input[_builtins.bool] container: Rule id: 41 - Do monitor processes if container name exists
         :param pulumi.Input[_builtins.bool] docker_pauseamd64: Rule id: 39 - Do not monitor processes if Docker stripped image contains 'pause-amd64'
         :param pulumi.Input[_builtins.bool] exe_adapter: Rule id: 7 - Do monitor processes if EXE name equals 'adapter'
@@ -192,6 +194,8 @@ class BuiltinProcessMonitoringArgs:
             pulumi.set(__self__, "cf", cf)
         if cf_appsmanagerjs is not None:
             pulumi.set(__self__, "cf_appsmanagerjs", cf_appsmanagerjs)
+        if cmd_foreverbinmonitor is not None:
+            pulumi.set(__self__, "cmd_foreverbinmonitor", cmd_foreverbinmonitor)
         if container is not None:
             pulumi.set(__self__, "container", container)
         if docker_pauseamd64 is not None:
@@ -402,6 +406,18 @@ class BuiltinProcessMonitoringArgs:
     @cf_appsmanagerjs.setter
     def cf_appsmanagerjs(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "cf_appsmanagerjs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cmdForeverbinmonitor")
+    def cmd_foreverbinmonitor(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+        """
+        return pulumi.get(self, "cmd_foreverbinmonitor")
+
+    @cmd_foreverbinmonitor.setter
+    def cmd_foreverbinmonitor(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "cmd_foreverbinmonitor", value)
 
     @_builtins.property
     @pulumi.getter
@@ -1312,6 +1328,7 @@ class _BuiltinProcessMonitoringState:
                  aspnetcore_agentworker: Optional[pulumi.Input[_builtins.bool]] = None,
                  cf: Optional[pulumi.Input[_builtins.bool]] = None,
                  cf_appsmanagerjs: Optional[pulumi.Input[_builtins.bool]] = None,
+                 cmd_foreverbinmonitor: Optional[pulumi.Input[_builtins.bool]] = None,
                  container: Optional[pulumi.Input[_builtins.bool]] = None,
                  docker_pauseamd64: Optional[pulumi.Input[_builtins.bool]] = None,
                  exe_adapter: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -1394,6 +1411,7 @@ class _BuiltinProcessMonitoringState:
         :param pulumi.Input[_builtins.bool] aspnetcore_agentworker: Rule id: 62 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Worker'
         :param pulumi.Input[_builtins.bool] cf: Rule id: 37 - Do monitor processes if Cloud Foundry application exists
         :param pulumi.Input[_builtins.bool] cf_appsmanagerjs: Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
+        :param pulumi.Input[_builtins.bool] cmd_foreverbinmonitor: Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
         :param pulumi.Input[_builtins.bool] container: Rule id: 41 - Do monitor processes if container name exists
         :param pulumi.Input[_builtins.bool] docker_pauseamd64: Rule id: 39 - Do not monitor processes if Docker stripped image contains 'pause-amd64'
         :param pulumi.Input[_builtins.bool] exe_adapter: Rule id: 7 - Do monitor processes if EXE name equals 'adapter'
@@ -1480,6 +1498,8 @@ class _BuiltinProcessMonitoringState:
             pulumi.set(__self__, "cf", cf)
         if cf_appsmanagerjs is not None:
             pulumi.set(__self__, "cf_appsmanagerjs", cf_appsmanagerjs)
+        if cmd_foreverbinmonitor is not None:
+            pulumi.set(__self__, "cmd_foreverbinmonitor", cmd_foreverbinmonitor)
         if container is not None:
             pulumi.set(__self__, "container", container)
         if docker_pauseamd64 is not None:
@@ -1690,6 +1710,18 @@ class _BuiltinProcessMonitoringState:
     @cf_appsmanagerjs.setter
     def cf_appsmanagerjs(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "cf_appsmanagerjs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cmdForeverbinmonitor")
+    def cmd_foreverbinmonitor(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+        """
+        return pulumi.get(self, "cmd_foreverbinmonitor")
+
+    @cmd_foreverbinmonitor.setter
+    def cmd_foreverbinmonitor(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "cmd_foreverbinmonitor", value)
 
     @_builtins.property
     @pulumi.getter
@@ -2603,6 +2635,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
                  aspnetcore_agentworker: Optional[pulumi.Input[_builtins.bool]] = None,
                  cf: Optional[pulumi.Input[_builtins.bool]] = None,
                  cf_appsmanagerjs: Optional[pulumi.Input[_builtins.bool]] = None,
+                 cmd_foreverbinmonitor: Optional[pulumi.Input[_builtins.bool]] = None,
                  container: Optional[pulumi.Input[_builtins.bool]] = None,
                  docker_pauseamd64: Optional[pulumi.Input[_builtins.bool]] = None,
                  exe_adapter: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -2688,6 +2721,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] aspnetcore_agentworker: Rule id: 62 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Worker'
         :param pulumi.Input[_builtins.bool] cf: Rule id: 37 - Do monitor processes if Cloud Foundry application exists
         :param pulumi.Input[_builtins.bool] cf_appsmanagerjs: Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
+        :param pulumi.Input[_builtins.bool] cmd_foreverbinmonitor: Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
         :param pulumi.Input[_builtins.bool] container: Rule id: 41 - Do monitor processes if container name exists
         :param pulumi.Input[_builtins.bool] docker_pauseamd64: Rule id: 39 - Do not monitor processes if Docker stripped image contains 'pause-amd64'
         :param pulumi.Input[_builtins.bool] exe_adapter: Rule id: 7 - Do monitor processes if EXE name equals 'adapter'
@@ -2792,6 +2826,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
                  aspnetcore_agentworker: Optional[pulumi.Input[_builtins.bool]] = None,
                  cf: Optional[pulumi.Input[_builtins.bool]] = None,
                  cf_appsmanagerjs: Optional[pulumi.Input[_builtins.bool]] = None,
+                 cmd_foreverbinmonitor: Optional[pulumi.Input[_builtins.bool]] = None,
                  container: Optional[pulumi.Input[_builtins.bool]] = None,
                  docker_pauseamd64: Optional[pulumi.Input[_builtins.bool]] = None,
                  exe_adapter: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -2881,6 +2916,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
             __props__.__dict__["aspnetcore_agentworker"] = aspnetcore_agentworker
             __props__.__dict__["cf"] = cf
             __props__.__dict__["cf_appsmanagerjs"] = cf_appsmanagerjs
+            __props__.__dict__["cmd_foreverbinmonitor"] = cmd_foreverbinmonitor
             __props__.__dict__["container"] = container
             __props__.__dict__["docker_pauseamd64"] = docker_pauseamd64
             __props__.__dict__["exe_adapter"] = exe_adapter
@@ -2971,6 +3007,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
             aspnetcore_agentworker: Optional[pulumi.Input[_builtins.bool]] = None,
             cf: Optional[pulumi.Input[_builtins.bool]] = None,
             cf_appsmanagerjs: Optional[pulumi.Input[_builtins.bool]] = None,
+            cmd_foreverbinmonitor: Optional[pulumi.Input[_builtins.bool]] = None,
             container: Optional[pulumi.Input[_builtins.bool]] = None,
             docker_pauseamd64: Optional[pulumi.Input[_builtins.bool]] = None,
             exe_adapter: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -3058,6 +3095,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] aspnetcore_agentworker: Rule id: 62 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Worker'
         :param pulumi.Input[_builtins.bool] cf: Rule id: 37 - Do monitor processes if Cloud Foundry application exists
         :param pulumi.Input[_builtins.bool] cf_appsmanagerjs: Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
+        :param pulumi.Input[_builtins.bool] cmd_foreverbinmonitor: Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
         :param pulumi.Input[_builtins.bool] container: Rule id: 41 - Do monitor processes if container name exists
         :param pulumi.Input[_builtins.bool] docker_pauseamd64: Rule id: 39 - Do not monitor processes if Docker stripped image contains 'pause-amd64'
         :param pulumi.Input[_builtins.bool] exe_adapter: Rule id: 7 - Do monitor processes if EXE name equals 'adapter'
@@ -3143,6 +3181,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         __props__.__dict__["aspnetcore_agentworker"] = aspnetcore_agentworker
         __props__.__dict__["cf"] = cf
         __props__.__dict__["cf_appsmanagerjs"] = cf_appsmanagerjs
+        __props__.__dict__["cmd_foreverbinmonitor"] = cmd_foreverbinmonitor
         __props__.__dict__["container"] = container
         __props__.__dict__["docker_pauseamd64"] = docker_pauseamd64
         __props__.__dict__["exe_adapter"] = exe_adapter
@@ -3259,6 +3298,14 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
         """
         return pulumi.get(self, "cf_appsmanagerjs")
+
+    @_builtins.property
+    @pulumi.getter(name="cmdForeverbinmonitor")
+    def cmd_foreverbinmonitor(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+        """
+        return pulumi.get(self, "cmd_foreverbinmonitor")
 
     @_builtins.property
     @pulumi.getter

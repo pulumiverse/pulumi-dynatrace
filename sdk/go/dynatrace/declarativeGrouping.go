@@ -15,14 +15,11 @@ import (
 type DeclarativeGrouping struct {
 	pulumi.CustomResourceState
 
-	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-	// group.
+	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
 	Detection DeclarativeGroupingDetectionOutput `pulumi:"detection"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Monitored technology name
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -66,14 +63,11 @@ func GetDeclarativeGrouping(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DeclarativeGrouping resources.
 type declarativeGroupingState struct {
-	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-	// group.
+	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
 	Detection *DeclarativeGroupingDetection `pulumi:"detection"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
 	// Monitored technology name
 	Name *string `pulumi:"name"`
@@ -82,14 +76,11 @@ type declarativeGroupingState struct {
 }
 
 type DeclarativeGroupingState struct {
-	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-	// group.
+	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
 	Detection DeclarativeGroupingDetectionPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
 	// Monitored technology name
 	Name pulumi.StringPtrInput
@@ -102,14 +93,11 @@ func (DeclarativeGroupingState) ElementType() reflect.Type {
 }
 
 type declarativeGroupingArgs struct {
-	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-	// group.
+	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
 	Detection DeclarativeGroupingDetection `pulumi:"detection"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
 	// Monitored technology name
 	Name *string `pulumi:"name"`
@@ -119,14 +107,11 @@ type declarativeGroupingArgs struct {
 
 // The set of arguments for constructing a DeclarativeGrouping resource.
 type DeclarativeGroupingArgs struct {
-	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-	// group.
+	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
 	Detection DeclarativeGroupingDetectionInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-	// specified during update the order will remain untouched
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
 	// Monitored technology name
 	Name pulumi.StringPtrInput
@@ -221,8 +206,7 @@ func (o DeclarativeGroupingOutput) ToDeclarativeGroupingOutputWithContext(ctx co
 	return o
 }
 
-// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
-// group.
+// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
 func (o DeclarativeGroupingOutput) Detection() DeclarativeGroupingDetectionOutput {
 	return o.ApplyT(func(v *DeclarativeGrouping) DeclarativeGroupingDetectionOutput { return v.Detection }).(DeclarativeGroupingDetectionOutput)
 }
@@ -232,9 +216,7 @@ func (o DeclarativeGroupingOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DeclarativeGrouping) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-// specified during update the order will remain untouched
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 func (o DeclarativeGroupingOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeclarativeGrouping) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }

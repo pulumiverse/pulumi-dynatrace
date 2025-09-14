@@ -51,7 +51,7 @@ export class ManagementZone extends pulumi.CustomResource {
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+     * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      */
     declare public readonly rules: pulumi.Output<outputs.ManagementZoneRule[] | undefined>;
     /**
@@ -113,7 +113,7 @@ export interface ManagementZoneState {
      */
     name?: pulumi.Input<string>;
     /**
-     * A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+     * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      */
     rules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRule>[]>;
     /**
@@ -143,7 +143,7 @@ export interface ManagementZoneArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * A list of rules for management zone usage. Each rule is evaluated independently of all other rules
+     * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      */
     rules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRule>[]>;
     /**

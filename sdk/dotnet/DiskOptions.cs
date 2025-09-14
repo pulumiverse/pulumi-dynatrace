@@ -20,15 +20,13 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> DisableNfsDiskMonitoring { get; private set; } = null!;
 
         /// <summary>
-        /// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
-        /// disks from the monitoring list.
+        /// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
         /// </summary>
         [Output("exclusions")]
         public Output<Outputs.DiskOptionsExclusions?> Exclusions { get; private set; } = null!;
 
         /// <summary>
-        /// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
-        /// Requires OneAgent 1.209 or later
+        /// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
         /// </summary>
         [Output("nfsShowAll")]
         public Output<bool?> NfsShowAll { get; private set; } = null!;
@@ -93,15 +91,13 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? DisableNfsDiskMonitoring { get; set; }
 
         /// <summary>
-        /// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
-        /// disks from the monitoring list.
+        /// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
         /// </summary>
         [Input("exclusions")]
         public Input<Inputs.DiskOptionsExclusionsArgs>? Exclusions { get; set; }
 
         /// <summary>
-        /// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
-        /// Requires OneAgent 1.209 or later
+        /// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
         /// </summary>
         [Input("nfsShowAll")]
         public Input<bool>? NfsShowAll { get; set; }
@@ -127,15 +123,13 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? DisableNfsDiskMonitoring { get; set; }
 
         /// <summary>
-        /// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
-        /// disks from the monitoring list.
+        /// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
         /// </summary>
         [Input("exclusions")]
         public Input<Inputs.DiskOptionsExclusionsGetArgs>? Exclusions { get; set; }
 
         /// <summary>
-        /// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
-        /// Requires OneAgent 1.209 or later
+        /// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
         /// </summary>
         [Input("nfsShowAll")]
         public Input<bool>? NfsShowAll { get; set; }

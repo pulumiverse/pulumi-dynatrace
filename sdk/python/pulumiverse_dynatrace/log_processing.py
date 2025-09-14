@@ -30,14 +30,13 @@ class LogProcessingArgs:
         """
         The set of arguments for constructing a LogProcessing resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input['LogProcessingProcessorDefinitionArgs'] processor_definition: ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-               will find instructions and application [examples](https://dt-url.net/m24305t).
+        :param pulumi.Input['LogProcessingProcessorDefinitionArgs'] processor_definition: ## Processor definition
+               Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
         :param pulumi.Input[_builtins.str] query: Matcher
         :param pulumi.Input[_builtins.str] rule_name: Rule name
-        :param pulumi.Input['LogProcessingRuleTestingArgs'] rule_testing: ## Rule testing ### 1. Paste a log / JSON sample
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
+        :param pulumi.Input['LogProcessingRuleTestingArgs'] rule_testing: ## Rule testing
+               ### 1. Paste a log / JSON sample
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "processor_definition", processor_definition)
@@ -63,8 +62,8 @@ class LogProcessingArgs:
     @pulumi.getter(name="processorDefinition")
     def processor_definition(self) -> pulumi.Input['LogProcessingProcessorDefinitionArgs']:
         """
-        ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-        will find instructions and application [examples](https://dt-url.net/m24305t).
+        ## Processor definition
+        Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
         """
         return pulumi.get(self, "processor_definition")
 
@@ -100,7 +99,8 @@ class LogProcessingArgs:
     @pulumi.getter(name="ruleTesting")
     def rule_testing(self) -> pulumi.Input['LogProcessingRuleTestingArgs']:
         """
-        ## Rule testing ### 1. Paste a log / JSON sample
+        ## Rule testing
+        ### 1. Paste a log / JSON sample
         """
         return pulumi.get(self, "rule_testing")
 
@@ -112,9 +112,7 @@ class LogProcessingArgs:
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -135,14 +133,13 @@ class _LogProcessingState:
         """
         Input properties used for looking up and filtering LogProcessing resources.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
-        :param pulumi.Input['LogProcessingProcessorDefinitionArgs'] processor_definition: ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-               will find instructions and application [examples](https://dt-url.net/m24305t).
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        :param pulumi.Input['LogProcessingProcessorDefinitionArgs'] processor_definition: ## Processor definition
+               Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
         :param pulumi.Input[_builtins.str] query: Matcher
         :param pulumi.Input[_builtins.str] rule_name: Rule name
-        :param pulumi.Input['LogProcessingRuleTestingArgs'] rule_testing: ## Rule testing ### 1. Paste a log / JSON sample
+        :param pulumi.Input['LogProcessingRuleTestingArgs'] rule_testing: ## Rule testing
+               ### 1. Paste a log / JSON sample
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -173,9 +170,7 @@ class _LogProcessingState:
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -187,8 +182,8 @@ class _LogProcessingState:
     @pulumi.getter(name="processorDefinition")
     def processor_definition(self) -> Optional[pulumi.Input['LogProcessingProcessorDefinitionArgs']]:
         """
-        ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-        will find instructions and application [examples](https://dt-url.net/m24305t).
+        ## Processor definition
+        Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
         """
         return pulumi.get(self, "processor_definition")
 
@@ -224,7 +219,8 @@ class _LogProcessingState:
     @pulumi.getter(name="ruleTesting")
     def rule_testing(self) -> Optional[pulumi.Input['LogProcessingRuleTestingArgs']]:
         """
-        ## Rule testing ### 1. Paste a log / JSON sample
+        ## Rule testing
+        ### 1. Paste a log / JSON sample
         """
         return pulumi.get(self, "rule_testing")
 
@@ -251,14 +247,13 @@ class LogProcessing(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
-        :param pulumi.Input[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']] processor_definition: ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-               will find instructions and application [examples](https://dt-url.net/m24305t).
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        :param pulumi.Input[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']] processor_definition: ## Processor definition
+               Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
         :param pulumi.Input[_builtins.str] query: Matcher
         :param pulumi.Input[_builtins.str] rule_name: Rule name
-        :param pulumi.Input[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing ### 1. Paste a log / JSON sample
+        :param pulumi.Input[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing
+               ### 1. Paste a log / JSON sample
         """
         ...
     @overload
@@ -338,14 +333,13 @@ class LogProcessing(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-               specified during update the order will remain untouched
-        :param pulumi.Input[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']] processor_definition: ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-               will find instructions and application [examples](https://dt-url.net/m24305t).
+        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        :param pulumi.Input[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']] processor_definition: ## Processor definition
+               Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
         :param pulumi.Input[_builtins.str] query: Matcher
         :param pulumi.Input[_builtins.str] rule_name: Rule name
-        :param pulumi.Input[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing ### 1. Paste a log / JSON sample
+        :param pulumi.Input[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing
+               ### 1. Paste a log / JSON sample
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -371,9 +365,7 @@ class LogProcessing(pulumi.CustomResource):
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> pulumi.Output[_builtins.str]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        specified during update the order will remain untouched
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
@@ -381,8 +373,8 @@ class LogProcessing(pulumi.CustomResource):
     @pulumi.getter(name="processorDefinition")
     def processor_definition(self) -> pulumi.Output['outputs.LogProcessingProcessorDefinition']:
         """
-        ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-        will find instructions and application [examples](https://dt-url.net/m24305t).
+        ## Processor definition
+        Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
         """
         return pulumi.get(self, "processor_definition")
 
@@ -406,7 +398,8 @@ class LogProcessing(pulumi.CustomResource):
     @pulumi.getter(name="ruleTesting")
     def rule_testing(self) -> pulumi.Output['outputs.LogProcessingRuleTesting']:
         """
-        ## Rule testing ### 1. Paste a log / JSON sample
+        ## Rule testing
+        ### 1. Paste a log / JSON sample
         """
         return pulumi.get(self, "rule_testing")
 

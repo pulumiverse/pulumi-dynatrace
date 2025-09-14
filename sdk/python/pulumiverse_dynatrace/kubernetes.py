@@ -55,8 +55,7 @@ class KubernetesArgs:
         :param pulumi.Input[_builtins.bool] filter_events: Include only events specified by Events Field Selectors
         :param pulumi.Input[_builtins.bool] hostname_verification_enabled: Verify hostname in certificate against Kubernetes API URL
         :param pulumi.Input[_builtins.bool] include_all_fdi_events: For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
-        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-               may increase the CPU/memory resource consumption of your ActiveGate.
+        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[_builtins.bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         :param pulumi.Input[_builtins.bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER)
@@ -297,8 +296,7 @@ class KubernetesArgs:
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def open_metrics_builtin_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-        may increase the CPU/memory resource consumption of your ActiveGate.
+        The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         """
         return pulumi.get(self, "open_metrics_builtin_enabled")
 
@@ -382,8 +380,7 @@ class _KubernetesState:
         :param pulumi.Input[_builtins.bool] hostname_verification_enabled: Verify hostname in certificate against Kubernetes API URL
         :param pulumi.Input[_builtins.bool] include_all_fdi_events: For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         :param pulumi.Input[_builtins.str] label: Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
-        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-               may increase the CPU/memory resource consumption of your ActiveGate.
+        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[_builtins.bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         :param pulumi.Input[_builtins.bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER)
@@ -627,8 +624,7 @@ class _KubernetesState:
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def open_metrics_builtin_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-        may increase the CPU/memory resource consumption of your ActiveGate.
+        The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         """
         return pulumi.get(self, "open_metrics_builtin_enabled")
 
@@ -718,8 +714,7 @@ class Kubernetes(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] hostname_verification_enabled: Verify hostname in certificate against Kubernetes API URL
         :param pulumi.Input[_builtins.bool] include_all_fdi_events: For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         :param pulumi.Input[_builtins.str] label: Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
-        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-               may increase the CPU/memory resource consumption of your ActiveGate.
+        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[_builtins.bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         :param pulumi.Input[_builtins.bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER)
@@ -849,8 +844,7 @@ class Kubernetes(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] hostname_verification_enabled: Verify hostname in certificate against Kubernetes API URL
         :param pulumi.Input[_builtins.bool] include_all_fdi_events: For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         :param pulumi.Input[_builtins.str] label: Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
-        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-               may increase the CPU/memory resource consumption of your ActiveGate.
+        :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[_builtins.bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         :param pulumi.Input[_builtins.bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER)
@@ -1001,8 +995,7 @@ class Kubernetes(pulumi.CustomResource):
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
     def open_metrics_builtin_enabled(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-        may increase the CPU/memory resource consumption of your ActiveGate.
+        The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         """
         return pulumi.get(self, "open_metrics_builtin_enabled")
 

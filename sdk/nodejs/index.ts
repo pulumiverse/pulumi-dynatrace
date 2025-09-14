@@ -535,6 +535,16 @@ export type EmailNotification = import("./emailNotification").EmailNotification;
 export const EmailNotification: typeof import("./emailNotification").EmailNotification = null as any;
 utilities.lazyLoad(exports, ["EmailNotification"], () => require("./emailNotification"));
 
+export { EndpointDetectionRulesArgs, EndpointDetectionRulesState } from "./endpointDetectionRules";
+export type EndpointDetectionRules = import("./endpointDetectionRules").EndpointDetectionRules;
+export const EndpointDetectionRules: typeof import("./endpointDetectionRules").EndpointDetectionRules = null as any;
+utilities.lazyLoad(exports, ["EndpointDetectionRules"], () => require("./endpointDetectionRules"));
+
+export { EndpointDetectionRulesOptinArgs, EndpointDetectionRulesOptinState } from "./endpointDetectionRulesOptin";
+export type EndpointDetectionRulesOptin = import("./endpointDetectionRulesOptin").EndpointDetectionRulesOptin;
+export const EndpointDetectionRulesOptin: typeof import("./endpointDetectionRulesOptin").EndpointDetectionRulesOptin = null as any;
+utilities.lazyLoad(exports, ["EndpointDetectionRulesOptin"], () => require("./endpointDetectionRulesOptin"));
+
 export { EnvironmentArgs, EnvironmentState } from "./environment";
 export type Environment = import("./environment").Environment;
 export const Environment: typeof import("./environment").Environment = null as any;
@@ -564,6 +574,11 @@ export { FailureDetectionParametersArgs, FailureDetectionParametersState } from 
 export type FailureDetectionParameters = import("./failureDetectionParameters").FailureDetectionParameters;
 export const FailureDetectionParameters: typeof import("./failureDetectionParameters").FailureDetectionParameters = null as any;
 utilities.lazyLoad(exports, ["FailureDetectionParameters"], () => require("./failureDetectionParameters"));
+
+export { FailureDetectionRuleSetsArgs, FailureDetectionRuleSetsState } from "./failureDetectionRuleSets";
+export type FailureDetectionRuleSets = import("./failureDetectionRuleSets").FailureDetectionRuleSets;
+export const FailureDetectionRuleSets: typeof import("./failureDetectionRuleSets").FailureDetectionRuleSets = null as any;
+utilities.lazyLoad(exports, ["FailureDetectionRuleSets"], () => require("./failureDetectionRuleSets"));
 
 export { FailureDetectionRulesArgs, FailureDetectionRulesState } from "./failureDetectionRules";
 export type FailureDetectionRules = import("./failureDetectionRules").FailureDetectionRules;
@@ -1818,6 +1833,11 @@ export type SessionReplayWebPrivacy = import("./sessionReplayWebPrivacy").Sessio
 export const SessionReplayWebPrivacy: typeof import("./sessionReplayWebPrivacy").SessionReplayWebPrivacy = null as any;
 utilities.lazyLoad(exports, ["SessionReplayWebPrivacy"], () => require("./sessionReplayWebPrivacy"));
 
+export { SettingsPermissionsArgs, SettingsPermissionsState } from "./settingsPermissions";
+export type SettingsPermissions = import("./settingsPermissions").SettingsPermissions;
+export const SettingsPermissions: typeof import("./settingsPermissions").SettingsPermissions = null as any;
+utilities.lazyLoad(exports, ["SettingsPermissions"], () => require("./settingsPermissions"));
+
 export { SiteReliabilityGuardianArgs, SiteReliabilityGuardianState } from "./siteReliabilityGuardian";
 export type SiteReliabilityGuardian = import("./siteReliabilityGuardian").SiteReliabilityGuardian;
 export const SiteReliabilityGuardian: typeof import("./siteReliabilityGuardian").SiteReliabilityGuardian = null as any;
@@ -2339,6 +2359,10 @@ const _module = {
                 return new EbpfServiceDiscovery(name, <any>undefined, { urn })
             case "dynatrace:index/emailNotification:EmailNotification":
                 return new EmailNotification(name, <any>undefined, { urn })
+            case "dynatrace:index/endpointDetectionRules:EndpointDetectionRules":
+                return new EndpointDetectionRules(name, <any>undefined, { urn })
+            case "dynatrace:index/endpointDetectionRulesOptin:EndpointDetectionRulesOptin":
+                return new EndpointDetectionRulesOptin(name, <any>undefined, { urn })
             case "dynatrace:index/environment:Environment":
                 return new Environment(name, <any>undefined, { urn })
             case "dynatrace:index/eulaSettings:EulaSettings":
@@ -2351,6 +2375,8 @@ const _module = {
                 return new ExtensionExecutionRemote(name, <any>undefined, { urn })
             case "dynatrace:index/failureDetectionParameters:FailureDetectionParameters":
                 return new FailureDetectionParameters(name, <any>undefined, { urn })
+            case "dynatrace:index/failureDetectionRuleSets:FailureDetectionRuleSets":
+                return new FailureDetectionRuleSets(name, <any>undefined, { urn })
             case "dynatrace:index/failureDetectionRules:FailureDetectionRules":
                 return new FailureDetectionRules(name, <any>undefined, { urn })
             case "dynatrace:index/frequentIssues:FrequentIssues":
@@ -2745,6 +2771,8 @@ const _module = {
                 return new SessionReplayResourceCapture(name, <any>undefined, { urn })
             case "dynatrace:index/sessionReplayWebPrivacy:SessionReplayWebPrivacy":
                 return new SessionReplayWebPrivacy(name, <any>undefined, { urn })
+            case "dynatrace:index/settingsPermissions:SettingsPermissions":
+                return new SettingsPermissions(name, <any>undefined, { urn })
             case "dynatrace:index/siteReliabilityGuardian:SiteReliabilityGuardian":
                 return new SiteReliabilityGuardian(name, <any>undefined, { urn })
             case "dynatrace:index/slackNotification:SlackNotification":
@@ -2974,12 +3002,15 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/diskSpecificAnomaliesV
 pulumi.runtime.registerResourceModule("dynatrace", "index/document", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/ebpfServiceDiscovery", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/emailNotification", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/endpointDetectionRules", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/endpointDetectionRulesOptin", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/environment", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/eulaSettings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/eventDrivenAnsibleConnections", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/extensionExecutionController", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/extensionExecutionRemote", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/failureDetectionParameters", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/failureDetectionRuleSets", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/failureDetectionRules", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/frequentIssues", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/genericRelationships", _module)
@@ -3177,6 +3208,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/serviceSplitting", _mo
 pulumi.runtime.registerResourceModule("dynatrace", "index/servicenowConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/sessionReplayResourceCapture", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/sessionReplayWebPrivacy", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/settingsPermissions", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/siteReliabilityGuardian", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/slackNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/slo", _module)

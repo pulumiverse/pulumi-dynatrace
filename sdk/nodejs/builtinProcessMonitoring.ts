@@ -53,6 +53,10 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     declare public readonly cfAppsmanagerjs: pulumi.Output<boolean | undefined>;
     /**
+     * Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+     */
+    declare public readonly cmdForeverbinmonitor: pulumi.Output<boolean | undefined>;
+    /**
      * Rule id: 41 - Do monitor processes if container name exists
      */
     declare public readonly container: pulumi.Output<boolean | undefined>;
@@ -371,6 +375,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
             resourceInputs["aspnetcoreAgentworker"] = state?.aspnetcoreAgentworker;
             resourceInputs["cf"] = state?.cf;
             resourceInputs["cfAppsmanagerjs"] = state?.cfAppsmanagerjs;
+            resourceInputs["cmdForeverbinmonitor"] = state?.cmdForeverbinmonitor;
             resourceInputs["container"] = state?.container;
             resourceInputs["dockerPauseamd64"] = state?.dockerPauseamd64;
             resourceInputs["exeAdapter"] = state?.exeAdapter;
@@ -453,6 +458,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
             resourceInputs["aspnetcoreAgentworker"] = args?.aspnetcoreAgentworker;
             resourceInputs["cf"] = args?.cf;
             resourceInputs["cfAppsmanagerjs"] = args?.cfAppsmanagerjs;
+            resourceInputs["cmdForeverbinmonitor"] = args?.cmdForeverbinmonitor;
             resourceInputs["container"] = args?.container;
             resourceInputs["dockerPauseamd64"] = args?.dockerPauseamd64;
             resourceInputs["exeAdapter"] = args?.exeAdapter;
@@ -558,6 +564,10 @@ export interface BuiltinProcessMonitoringState {
      * Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
      */
     cfAppsmanagerjs?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+     */
+    cmdForeverbinmonitor?: pulumi.Input<boolean>;
     /**
      * Rule id: 41 - Do monitor processes if container name exists
      */
@@ -884,6 +894,10 @@ export interface BuiltinProcessMonitoringArgs {
      * Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
      */
     cfAppsmanagerjs?: pulumi.Input<boolean>;
+    /**
+     * Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
+     */
+    cmdForeverbinmonitor?: pulumi.Input<boolean>;
     /**
      * Rule id: 41 - Do monitor processes if container name exists
      */

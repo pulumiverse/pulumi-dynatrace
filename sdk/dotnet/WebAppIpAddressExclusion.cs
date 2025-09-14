@@ -71,7 +71,10 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> IpAddressExclusionInclude { get; private set; } = null!;
 
         /// <summary>
-        /// **Examples:** - 84.112.10.5 - fe80::10a1:c6b2:5f68:785d
+        /// **Examples:**
+        /// 
+        ///    - 84.112.10.5
+        ///    - fe80::10a1:c6b2:5f68:785d
         /// </summary>
         [Output("ipExclusionList")]
         public Output<Outputs.WebAppIpAddressExclusionIpExclusionList?> IpExclusionList { get; private set; } = null!;
@@ -136,7 +139,10 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> IpAddressExclusionInclude { get; set; } = null!;
 
         /// <summary>
-        /// **Examples:** - 84.112.10.5 - fe80::10a1:c6b2:5f68:785d
+        /// **Examples:**
+        /// 
+        ///    - 84.112.10.5
+        ///    - fe80::10a1:c6b2:5f68:785d
         /// </summary>
         [Input("ipExclusionList")]
         public Input<Inputs.WebAppIpAddressExclusionIpExclusionListArgs>? IpExclusionList { get; set; }
@@ -162,7 +168,10 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? IpAddressExclusionInclude { get; set; }
 
         /// <summary>
-        /// **Examples:** - 84.112.10.5 - fe80::10a1:c6b2:5f68:785d
+        /// **Examples:**
+        /// 
+        ///    - 84.112.10.5
+        ///    - fe80::10a1:c6b2:5f68:785d
         /// </summary>
         [Input("ipExclusionList")]
         public Input<Inputs.WebAppIpAddressExclusionIpExclusionListGetArgs>? IpExclusionList { get; set; }

@@ -15,8 +15,9 @@ import (
 type RequestNaming struct {
 	pulumi.CustomResourceState
 
-	// The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
-	// **all** the specified conditions for the rule to trigger
+	// The set of conditions for the request naming rule usage.
+	//
+	//  You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
 	Conditions RequestNamingConditionsOutput `pulumi:"conditions"`
 	// The rule is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrOutput `pulumi:"enabled"`
@@ -24,8 +25,9 @@ type RequestNaming struct {
 	ManagementZones pulumi.StringArrayOutput `pulumi:"managementZones"`
 	// The name to be assigned to matching requests
 	NamingPattern pulumi.StringOutput `pulumi:"namingPattern"`
-	// The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
-	// other request attribute and use it in the request naming pattern.
+	// The list of custom placeholders to be used in the naming pattern.
+	//
+	//  It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
 	Placeholders RequestNamingPlaceholdersPtrOutput `pulumi:"placeholders"`
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns pulumi.StringPtrOutput `pulumi:"unknowns"`
@@ -67,8 +69,9 @@ func GetRequestNaming(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering RequestNaming resources.
 type requestNamingState struct {
-	// The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
-	// **all** the specified conditions for the rule to trigger
+	// The set of conditions for the request naming rule usage.
+	//
+	//  You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
 	Conditions *RequestNamingConditions `pulumi:"conditions"`
 	// The rule is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
@@ -76,16 +79,18 @@ type requestNamingState struct {
 	ManagementZones []string `pulumi:"managementZones"`
 	// The name to be assigned to matching requests
 	NamingPattern *string `pulumi:"namingPattern"`
-	// The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
-	// other request attribute and use it in the request naming pattern.
+	// The list of custom placeholders to be used in the naming pattern.
+	//
+	//  It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
 	Placeholders *RequestNamingPlaceholders `pulumi:"placeholders"`
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns *string `pulumi:"unknowns"`
 }
 
 type RequestNamingState struct {
-	// The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
-	// **all** the specified conditions for the rule to trigger
+	// The set of conditions for the request naming rule usage.
+	//
+	//  You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
 	Conditions RequestNamingConditionsPtrInput
 	// The rule is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
@@ -93,8 +98,9 @@ type RequestNamingState struct {
 	ManagementZones pulumi.StringArrayInput
 	// The name to be assigned to matching requests
 	NamingPattern pulumi.StringPtrInput
-	// The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
-	// other request attribute and use it in the request naming pattern.
+	// The list of custom placeholders to be used in the naming pattern.
+	//
+	//  It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
 	Placeholders RequestNamingPlaceholdersPtrInput
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns pulumi.StringPtrInput
@@ -105,8 +111,9 @@ func (RequestNamingState) ElementType() reflect.Type {
 }
 
 type requestNamingArgs struct {
-	// The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
-	// **all** the specified conditions for the rule to trigger
+	// The set of conditions for the request naming rule usage.
+	//
+	//  You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
 	Conditions RequestNamingConditions `pulumi:"conditions"`
 	// The rule is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
@@ -114,8 +121,9 @@ type requestNamingArgs struct {
 	ManagementZones []string `pulumi:"managementZones"`
 	// The name to be assigned to matching requests
 	NamingPattern string `pulumi:"namingPattern"`
-	// The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
-	// other request attribute and use it in the request naming pattern.
+	// The list of custom placeholders to be used in the naming pattern.
+	//
+	//  It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
 	Placeholders *RequestNamingPlaceholders `pulumi:"placeholders"`
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns *string `pulumi:"unknowns"`
@@ -123,8 +131,9 @@ type requestNamingArgs struct {
 
 // The set of arguments for constructing a RequestNaming resource.
 type RequestNamingArgs struct {
-	// The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
-	// **all** the specified conditions for the rule to trigger
+	// The set of conditions for the request naming rule usage.
+	//
+	//  You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
 	Conditions RequestNamingConditionsInput
 	// The rule is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
@@ -132,8 +141,9 @@ type RequestNamingArgs struct {
 	ManagementZones pulumi.StringArrayInput
 	// The name to be assigned to matching requests
 	NamingPattern pulumi.StringInput
-	// The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
-	// other request attribute and use it in the request naming pattern.
+	// The list of custom placeholders to be used in the naming pattern.
+	//
+	//  It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
 	Placeholders RequestNamingPlaceholdersPtrInput
 	// allows for configuring properties that are not explicitly supported by the current version of this provider
 	Unknowns pulumi.StringPtrInput
@@ -226,8 +236,9 @@ func (o RequestNamingOutput) ToRequestNamingOutputWithContext(ctx context.Contex
 	return o
 }
 
-// The set of conditions for the request naming rule usage. You can specify several conditions. The request has to match
-// **all** the specified conditions for the rule to trigger
+// The set of conditions for the request naming rule usage.
+//
+//	You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
 func (o RequestNamingOutput) Conditions() RequestNamingConditionsOutput {
 	return o.ApplyT(func(v *RequestNaming) RequestNamingConditionsOutput { return v.Conditions }).(RequestNamingConditionsOutput)
 }
@@ -247,8 +258,9 @@ func (o RequestNamingOutput) NamingPattern() pulumi.StringOutput {
 	return o.ApplyT(func(v *RequestNaming) pulumi.StringOutput { return v.NamingPattern }).(pulumi.StringOutput)
 }
 
-// The list of custom placeholders to be used in the naming pattern. It enables you to extract a request attribute value or
-// other request attribute and use it in the request naming pattern.
+// The list of custom placeholders to be used in the naming pattern.
+//
+//	It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
 func (o RequestNamingOutput) Placeholders() RequestNamingPlaceholdersPtrOutput {
 	return o.ApplyT(func(v *RequestNaming) RequestNamingPlaceholdersPtrOutput { return v.Placeholders }).(RequestNamingPlaceholdersPtrOutput)
 }

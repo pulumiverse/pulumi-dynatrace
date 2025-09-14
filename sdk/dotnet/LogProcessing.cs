@@ -20,16 +20,14 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        /// specified during update the order will remain untouched
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Output("insertAfter")]
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-        /// will find instructions and application [examples](https://dt-url.net/m24305t).
+        /// ## Processor definition
+        /// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
         /// </summary>
         [Output("processorDefinition")]
         public Output<Outputs.LogProcessingProcessorDefinition> ProcessorDefinition { get; private set; } = null!;
@@ -47,7 +45,8 @@ namespace Pulumiverse.Dynatrace
         public Output<string> RuleName { get; private set; } = null!;
 
         /// <summary>
-        /// ## Rule testing ### 1. Paste a log / JSON sample
+        /// ## Rule testing
+        /// ### 1. Paste a log / JSON sample
         /// </summary>
         [Output("ruleTesting")]
         public Output<Outputs.LogProcessingRuleTesting> RuleTesting { get; private set; } = null!;
@@ -106,16 +105,14 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        /// specified during update the order will remain untouched
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Input("insertAfter")]
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-        /// will find instructions and application [examples](https://dt-url.net/m24305t).
+        /// ## Processor definition
+        /// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
         /// </summary>
         [Input("processorDefinition", required: true)]
         public Input<Inputs.LogProcessingProcessorDefinitionArgs> ProcessorDefinition { get; set; } = null!;
@@ -133,7 +130,8 @@ namespace Pulumiverse.Dynatrace
         public Input<string> RuleName { get; set; } = null!;
 
         /// <summary>
-        /// ## Rule testing ### 1. Paste a log / JSON sample
+        /// ## Rule testing
+        /// ### 1. Paste a log / JSON sample
         /// </summary>
         [Input("ruleTesting", required: true)]
         public Input<Inputs.LogProcessingRuleTestingArgs> RuleTesting { get; set; } = null!;
@@ -153,16 +151,14 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
-        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
-        /// specified during update the order will remain untouched
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Input("insertAfter")]
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
-        /// will find instructions and application [examples](https://dt-url.net/m24305t).
+        /// ## Processor definition
+        /// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
         /// </summary>
         [Input("processorDefinition")]
         public Input<Inputs.LogProcessingProcessorDefinitionGetArgs>? ProcessorDefinition { get; set; }
@@ -180,7 +176,8 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? RuleName { get; set; }
 
         /// <summary>
-        /// ## Rule testing ### 1. Paste a log / JSON sample
+        /// ## Rule testing
+        /// ### 1. Paste a log / JSON sample
         /// </summary>
         [Input("ruleTesting")]
         public Input<Inputs.LogProcessingRuleTestingGetArgs>? RuleTesting { get; set; }

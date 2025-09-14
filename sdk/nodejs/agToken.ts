@@ -33,13 +33,19 @@ export class AgToken extends pulumi.CustomResource {
     }
 
     /**
-     * The expiration date of the token. You can use one of the following formats: * Timestamp in UTC milliseconds. *
-     * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space
-     * character instead of the T. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The
-     * format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds
-     * all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You
-     * can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are: -
-     * m: minutes - h: hours - d: days - w: weeks - M: months - y: years
+     * The expiration date of the token.
+     *
+     *     You can use one of the following formats:
+     *
+     *     * Timestamp in UTC milliseconds.
+     *     * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
+     *     * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
+     *       - m: minutes
+     *       - h: hours
+     *       - d: days
+     *       - w: weeks
+     *       - M: months
+     *       - y: years
      */
     declare public readonly expirationDate: pulumi.Output<string | undefined>;
     /**
@@ -51,8 +57,7 @@ export class AgToken extends pulumi.CustomResource {
      */
     declare public readonly seed: pulumi.Output<boolean | undefined>;
     /**
-     * The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You
-     * require the permission `InstallerDownload` for that attribute to get populated
+     * The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You require the permission `InstallerDownload` for that attribute to get populated
      */
     declare public /*out*/ readonly tenantToken: pulumi.Output<string>;
     /**
@@ -107,13 +112,19 @@ export class AgToken extends pulumi.CustomResource {
  */
 export interface AgTokenState {
     /**
-     * The expiration date of the token. You can use one of the following formats: * Timestamp in UTC milliseconds. *
-     * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space
-     * character instead of the T. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The
-     * format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds
-     * all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You
-     * can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are: -
-     * m: minutes - h: hours - d: days - w: weeks - M: months - y: years
+     * The expiration date of the token.
+     *
+     *     You can use one of the following formats:
+     *
+     *     * Timestamp in UTC milliseconds.
+     *     * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
+     *     * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
+     *       - m: minutes
+     *       - h: hours
+     *       - d: days
+     *       - w: weeks
+     *       - M: months
+     *       - y: years
      */
     expirationDate?: pulumi.Input<string>;
     /**
@@ -125,8 +136,7 @@ export interface AgTokenState {
      */
     seed?: pulumi.Input<boolean>;
     /**
-     * The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You
-     * require the permission `InstallerDownload` for that attribute to get populated
+     * The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You require the permission `InstallerDownload` for that attribute to get populated
      */
     tenantToken?: pulumi.Input<string>;
     /**
@@ -144,13 +154,19 @@ export interface AgTokenState {
  */
 export interface AgTokenArgs {
     /**
-     * The expiration date of the token. You can use one of the following formats: * Timestamp in UTC milliseconds. *
-     * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space
-     * character instead of the T. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The
-     * format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds
-     * all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You
-     * can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are: -
-     * m: minutes - h: hours - d: days - w: weeks - M: months - y: years
+     * The expiration date of the token.
+     *
+     *     You can use one of the following formats:
+     *
+     *     * Timestamp in UTC milliseconds.
+     *     * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
+     *     * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
+     *       - m: minutes
+     *       - h: hours
+     *       - d: days
+     *       - w: weeks
+     *       - M: months
+     *       - y: years
      */
     expirationDate?: pulumi.Input<string>;
     /**

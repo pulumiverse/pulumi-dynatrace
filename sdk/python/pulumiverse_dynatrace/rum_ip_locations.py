@@ -34,9 +34,11 @@ class RumIpLocationsArgs:
         :param pulumi.Input[_builtins.str] ip_to: IP range end
         :param pulumi.Input[_builtins.float] latitude: Latitude
         :param pulumi.Input[_builtins.float] longitude: Longitude
-        :param pulumi.Input[_builtins.str] region_code: The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-               use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
-               codes](https://dt-url.net/fipscodes) without country prefix.
+        :param pulumi.Input[_builtins.str] region_code: The region code of the location. 
+               
+                For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+               
+                For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
         """
         pulumi.set(__self__, "country_code", country_code)
         pulumi.set(__self__, "ip", ip)
@@ -127,9 +129,11 @@ class RumIpLocationsArgs:
     @pulumi.getter(name="regionCode")
     def region_code(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-        use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
-        codes](https://dt-url.net/fipscodes) without country prefix.
+        The region code of the location. 
+
+         For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+
+         For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
         """
         return pulumi.get(self, "region_code")
 
@@ -156,9 +160,11 @@ class _RumIpLocationsState:
         :param pulumi.Input[_builtins.str] ip_to: IP range end
         :param pulumi.Input[_builtins.float] latitude: Latitude
         :param pulumi.Input[_builtins.float] longitude: Longitude
-        :param pulumi.Input[_builtins.str] region_code: The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-               use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
-               codes](https://dt-url.net/fipscodes) without country prefix.
+        :param pulumi.Input[_builtins.str] region_code: The region code of the location. 
+               
+                For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+               
+                For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
         """
         if city is not None:
             pulumi.set(__self__, "city", city)
@@ -251,9 +257,11 @@ class _RumIpLocationsState:
     @pulumi.getter(name="regionCode")
     def region_code(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-        use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
-        codes](https://dt-url.net/fipscodes) without country prefix.
+        The region code of the location. 
+
+         For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+
+         For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
         """
         return pulumi.get(self, "region_code")
 
@@ -286,9 +294,11 @@ class RumIpLocations(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ip_to: IP range end
         :param pulumi.Input[_builtins.float] latitude: Latitude
         :param pulumi.Input[_builtins.float] longitude: Longitude
-        :param pulumi.Input[_builtins.str] region_code: The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-               use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
-               codes](https://dt-url.net/fipscodes) without country prefix.
+        :param pulumi.Input[_builtins.str] region_code: The region code of the location. 
+               
+                For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+               
+                For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
         """
         ...
     @overload
@@ -370,9 +380,11 @@ class RumIpLocations(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ip_to: IP range end
         :param pulumi.Input[_builtins.float] latitude: Latitude
         :param pulumi.Input[_builtins.float] longitude: Longitude
-        :param pulumi.Input[_builtins.str] region_code: The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-               use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
-               codes](https://dt-url.net/fipscodes) without country prefix.
+        :param pulumi.Input[_builtins.str] region_code: The region code of the location. 
+               
+                For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+               
+                For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -439,9 +451,11 @@ class RumIpLocations(pulumi.CustomResource):
     @pulumi.getter(name="regionCode")
     def region_code(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
-        use ISO 3166-2 state codes without `US-` or `CA-` prefix. For the rest of the world use [FIPS 10-4
-        codes](https://dt-url.net/fipscodes) without country prefix.
+        The region code of the location. 
+
+         For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+
+         For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
         """
         return pulumi.get(self, "region_code")
 

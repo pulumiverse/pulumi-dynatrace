@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class AutomationWorkflowTasksTaskArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Currently known and supported values are `dynatrace.automations:http-function`, `dynatrace.automations:run-javascript` and `dynatrace.automations:execute-dql-query`
+        /// Specifies the action type for the task. Examples include `dynatrace.automations:http-function`, `dynatrace.automations:run-javascript`, and `dynatrace.automations:execute-dql-query`. Additional action types are also supported.
         /// </summary>
         [Input("action", required: true)]
         public Input<string> Action { get; set; } = null!;
