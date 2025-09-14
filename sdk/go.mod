@@ -1,6 +1,6 @@
 module github.com/pulumiverse/pulumi-dynatrace/sdk
 
-go 1.23.11
+go 1.24.0
 
 toolchain go1.24.1
 

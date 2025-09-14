@@ -31,7 +31,7 @@ jobs:
     - name: Unshallow clone for tags
       run: git fetch --prune --unshallow --tags
     - name: Install Go
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v6
       with:
         go-version: ${{matrix.goversion}}
     - name: Install pulumictl
@@ -86,7 +86,7 @@ jobs:
         dotnetversion:
         - 8.0.x
         goversion:
-        - 1.22.x
+        - 1.24.x
         language:
         - nodejs
         - python
@@ -111,7 +111,7 @@ jobs:
     - name: Unshallow clone for tags
       run: git fetch --prune --unshallow --tags
     - name: Install Go
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v6
       with:
         go-version: ${{matrix.goversion}}
     - name: Install pulumictl
@@ -159,7 +159,7 @@ jobs:
         dotnetversion:
         - 8.0.x
         goversion:
-        - 1.22.x
+        - 1.24.x
         nodeversion:
         - 20.x
         pythonversion:
@@ -297,7 +297,7 @@ jobs:
     - name: Unshallow clone for tags
       run: git fetch --prune --unshallow --tags
     - name: Install Go
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v6
       with:
         go-version: ${{matrix.goversion}}
     - name: Install pulumictl
@@ -355,7 +355,7 @@ jobs:
         dotnetversion:
         - 8.0.x
         goversion:
-        - 1.22.x
+        - 1.24.x
         language:
         - nodejs
         - python
