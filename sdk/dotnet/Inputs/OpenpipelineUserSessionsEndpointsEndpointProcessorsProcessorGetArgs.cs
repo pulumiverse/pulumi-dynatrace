@@ -43,6 +43,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("fieldsRenameProcessor")]
         public Input<Inputs.OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorGetArgs>? FieldsRenameProcessor { get; set; }
 
+        /// <summary>
+        /// Processor to apply a technology processors.
+        /// </summary>
+        [Input("technologyProcessor")]
+        public Input<Inputs.OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorTechnologyProcessorGetArgs>? TechnologyProcessor { get; set; }
+
         public OpenpipelineUserSessionsEndpointsEndpointProcessorsProcessorGetArgs()
         {
         }

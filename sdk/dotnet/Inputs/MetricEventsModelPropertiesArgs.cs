@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> AlertCondition { get; set; } = null!;
 
         /// <summary>
-        /// The ability to set an alert on missing data in a metric. When enabled, missing data samples will contribute as violating samples defined in advanced model properties. We recommend to not alert on missing data for sparse timeseries as this leads to alert spam.
+        /// The ability to set an alert on missing data in a metric. When enabled, missing data samples will be treated as violating samples defined in the advanced model properties. When disabled, missing data is not treated as a violation but will still contribute to dealerting. We recommend disabling alerting on missing data for sparse timeseries to avoid false alerts. To learn more, visit [anomaly detection configuration](https://dt-url.net/lz02mwi).
         /// </summary>
         [Input("alertOnNoData", required: true)]
         public Input<bool> AlertOnNoData { get; set; } = null!;

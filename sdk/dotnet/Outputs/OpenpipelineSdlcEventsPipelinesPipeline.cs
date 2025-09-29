@@ -15,6 +15,10 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class OpenpipelineSdlcEventsPipelinesPipeline
     {
         /// <summary>
+        /// Cost Allocation stage configuration of the pipeline
+        /// </summary>
+        public readonly Outputs.OpenpipelineSdlcEventsPipelinesPipelineCostAllocation? CostAllocation;
+        /// <summary>
         /// Data extraction stage configuration of the pipeline
         /// </summary>
         public readonly Outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtraction? DataExtraction;
@@ -39,6 +43,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessing? Processing;
         /// <summary>
+        /// Product Allocation stage configuration of the pipeline
+        /// </summary>
+        public readonly Outputs.OpenpipelineSdlcEventsPipelinesPipelineProductAllocation? ProductAllocation;
+        /// <summary>
         /// Security context stage configuration of the pipeline
         /// </summary>
         public readonly Outputs.OpenpipelineSdlcEventsPipelinesPipelineSecurityContext? SecurityContext;
@@ -49,6 +57,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private OpenpipelineSdlcEventsPipelinesPipeline(
+            Outputs.OpenpipelineSdlcEventsPipelinesPipelineCostAllocation? costAllocation,
+
             Outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtraction? dataExtraction,
 
             string displayName,
@@ -61,16 +71,20 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             Outputs.OpenpipelineSdlcEventsPipelinesPipelineProcessing? processing,
 
+            Outputs.OpenpipelineSdlcEventsPipelinesPipelineProductAllocation? productAllocation,
+
             Outputs.OpenpipelineSdlcEventsPipelinesPipelineSecurityContext? securityContext,
 
             Outputs.OpenpipelineSdlcEventsPipelinesPipelineStorage? storage)
         {
+            CostAllocation = costAllocation;
             DataExtraction = dataExtraction;
             DisplayName = displayName;
             Enabled = enabled;
             Id = id;
             MetricExtraction = metricExtraction;
             Processing = processing;
+            ProductAllocation = productAllocation;
             SecurityContext = securityContext;
             Storage = storage;
         }

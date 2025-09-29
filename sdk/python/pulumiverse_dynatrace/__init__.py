@@ -312,6 +312,45 @@ from .openpipeline_spans import *
 from .openpipeline_system_events import *
 from .openpipeline_user_events import *
 from .openpipeline_user_sessions import *
+from .openpipeline_v2_bizevents_ingestsources import *
+from .openpipeline_v2_bizevents_pipelines import *
+from .openpipeline_v2_bizevents_routing import *
+from .openpipeline_v2_davis_events_ingestsources import *
+from .openpipeline_v2_davis_events_pipelines import *
+from .openpipeline_v2_davis_events_routing import *
+from .openpipeline_v2_davis_problems_ingestsources import *
+from .openpipeline_v2_davis_problems_pipelines import *
+from .openpipeline_v2_davis_problems_routing import *
+from .openpipeline_v2_events_ingestsources import *
+from .openpipeline_v2_events_pipelines import *
+from .openpipeline_v2_events_routing import *
+from .openpipeline_v2_events_sdlc_ingestsources import *
+from .openpipeline_v2_events_sdlc_pipelines import *
+from .openpipeline_v2_events_sdlc_routing import *
+from .openpipeline_v2_events_security_ingestsources import *
+from .openpipeline_v2_events_security_pipelines import *
+from .openpipeline_v2_events_security_routing import *
+from .openpipeline_v2_logs_ingestsources import *
+from .openpipeline_v2_logs_pipelines import *
+from .openpipeline_v2_logs_routing import *
+from .openpipeline_v2_metrics_ingestsources import *
+from .openpipeline_v2_metrics_pipelines import *
+from .openpipeline_v2_metrics_routing import *
+from .openpipeline_v2_security_events_ingestsources import *
+from .openpipeline_v2_security_events_pipelines import *
+from .openpipeline_v2_security_events_routing import *
+from .openpipeline_v2_spans_ingestsources import *
+from .openpipeline_v2_spans_pipelines import *
+from .openpipeline_v2_spans_routing import *
+from .openpipeline_v2_system_events_ingestsources import *
+from .openpipeline_v2_system_events_pipelines import *
+from .openpipeline_v2_system_events_routing import *
+from .openpipeline_v2_user_events_ingestsources import *
+from .openpipeline_v2_user_events_pipelines import *
+from .openpipeline_v2_user_events_routing import *
+from .openpipeline_v2_usersessions_ingestsources import *
+from .openpipeline_v2_usersessions_pipelines import *
+from .openpipeline_v2_usersessions_routing import *
 from .opentelemetry_metrics import *
 from .ops_genie_notification import *
 from .os_services import *
@@ -2467,6 +2506,318 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/openpipelineUserSessions:OpenpipelineUserSessions": "OpenpipelineUserSessions"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2BizeventsIngestsources",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2BizeventsIngestsources:OpenpipelineV2BizeventsIngestsources": "OpenpipelineV2BizeventsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2BizeventsPipelines",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2BizeventsPipelines:OpenpipelineV2BizeventsPipelines": "OpenpipelineV2BizeventsPipelines"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2BizeventsRouting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2BizeventsRouting:OpenpipelineV2BizeventsRouting": "OpenpipelineV2BizeventsRouting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2DavisEventsIngestsources",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2DavisEventsIngestsources:OpenpipelineV2DavisEventsIngestsources": "OpenpipelineV2DavisEventsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2DavisEventsPipelines",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2DavisEventsPipelines:OpenpipelineV2DavisEventsPipelines": "OpenpipelineV2DavisEventsPipelines"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2DavisEventsRouting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2DavisEventsRouting:OpenpipelineV2DavisEventsRouting": "OpenpipelineV2DavisEventsRouting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2DavisProblemsIngestsources",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2DavisProblemsIngestsources:OpenpipelineV2DavisProblemsIngestsources": "OpenpipelineV2DavisProblemsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2DavisProblemsPipelines",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2DavisProblemsPipelines:OpenpipelineV2DavisProblemsPipelines": "OpenpipelineV2DavisProblemsPipelines"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2DavisProblemsRouting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2DavisProblemsRouting:OpenpipelineV2DavisProblemsRouting": "OpenpipelineV2DavisProblemsRouting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2EventsIngestsources",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2EventsIngestsources:OpenpipelineV2EventsIngestsources": "OpenpipelineV2EventsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2EventsPipelines",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2EventsPipelines:OpenpipelineV2EventsPipelines": "OpenpipelineV2EventsPipelines"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2EventsRouting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2EventsRouting:OpenpipelineV2EventsRouting": "OpenpipelineV2EventsRouting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2EventsSdlcIngestsources",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2EventsSdlcIngestsources:OpenpipelineV2EventsSdlcIngestsources": "OpenpipelineV2EventsSdlcIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2EventsSdlcPipelines",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2EventsSdlcPipelines:OpenpipelineV2EventsSdlcPipelines": "OpenpipelineV2EventsSdlcPipelines"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2EventsSdlcRouting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2EventsSdlcRouting:OpenpipelineV2EventsSdlcRouting": "OpenpipelineV2EventsSdlcRouting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2EventsSecurityIngestsources",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2EventsSecurityIngestsources:OpenpipelineV2EventsSecurityIngestsources": "OpenpipelineV2EventsSecurityIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2EventsSecurityPipelines",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2EventsSecurityPipelines:OpenpipelineV2EventsSecurityPipelines": "OpenpipelineV2EventsSecurityPipelines"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2EventsSecurityRouting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2EventsSecurityRouting:OpenpipelineV2EventsSecurityRouting": "OpenpipelineV2EventsSecurityRouting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2LogsIngestsources",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2LogsIngestsources:OpenpipelineV2LogsIngestsources": "OpenpipelineV2LogsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2LogsPipelines",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2LogsPipelines:OpenpipelineV2LogsPipelines": "OpenpipelineV2LogsPipelines"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2LogsRouting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2LogsRouting:OpenpipelineV2LogsRouting": "OpenpipelineV2LogsRouting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2MetricsIngestsources",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2MetricsIngestsources:OpenpipelineV2MetricsIngestsources": "OpenpipelineV2MetricsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2MetricsPipelines",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2MetricsPipelines:OpenpipelineV2MetricsPipelines": "OpenpipelineV2MetricsPipelines"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2MetricsRouting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2MetricsRouting:OpenpipelineV2MetricsRouting": "OpenpipelineV2MetricsRouting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2SecurityEventsIngestsources",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2SecurityEventsIngestsources:OpenpipelineV2SecurityEventsIngestsources": "OpenpipelineV2SecurityEventsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2SecurityEventsPipelines",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2SecurityEventsPipelines:OpenpipelineV2SecurityEventsPipelines": "OpenpipelineV2SecurityEventsPipelines"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2SecurityEventsRouting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2SecurityEventsRouting:OpenpipelineV2SecurityEventsRouting": "OpenpipelineV2SecurityEventsRouting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2SpansIngestsources",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2SpansIngestsources:OpenpipelineV2SpansIngestsources": "OpenpipelineV2SpansIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2SpansPipelines",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2SpansPipelines:OpenpipelineV2SpansPipelines": "OpenpipelineV2SpansPipelines"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2SpansRouting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2SpansRouting:OpenpipelineV2SpansRouting": "OpenpipelineV2SpansRouting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2SystemEventsIngestsources",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2SystemEventsIngestsources:OpenpipelineV2SystemEventsIngestsources": "OpenpipelineV2SystemEventsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2SystemEventsPipelines",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2SystemEventsPipelines:OpenpipelineV2SystemEventsPipelines": "OpenpipelineV2SystemEventsPipelines"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2SystemEventsRouting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2SystemEventsRouting:OpenpipelineV2SystemEventsRouting": "OpenpipelineV2SystemEventsRouting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2UserEventsIngestsources",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2UserEventsIngestsources:OpenpipelineV2UserEventsIngestsources": "OpenpipelineV2UserEventsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2UserEventsPipelines",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2UserEventsPipelines:OpenpipelineV2UserEventsPipelines": "OpenpipelineV2UserEventsPipelines"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2UserEventsRouting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2UserEventsRouting:OpenpipelineV2UserEventsRouting": "OpenpipelineV2UserEventsRouting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2UsersessionsIngestsources",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2UsersessionsIngestsources:OpenpipelineV2UsersessionsIngestsources": "OpenpipelineV2UsersessionsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2UsersessionsPipelines",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2UsersessionsPipelines:OpenpipelineV2UsersessionsPipelines": "OpenpipelineV2UsersessionsPipelines"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2UsersessionsRouting",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2UsersessionsRouting:OpenpipelineV2UsersessionsRouting": "OpenpipelineV2UsersessionsRouting"
   }
  },
  {

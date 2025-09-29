@@ -34,6 +34,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// Processor to rename fields
         /// </summary>
         public readonly Outputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsRenameProcessor? FieldsRenameProcessor;
+        /// <summary>
+        /// Processor to apply a technology processors.
+        /// </summary>
+        public readonly Outputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessorTechnologyProcessor? TechnologyProcessor;
 
         [OutputConstructor]
         private OpenpipelineSpansEndpointsEndpointProcessorsProcessor(
@@ -45,13 +49,16 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             Outputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsRemoveProcessor? fieldsRemoveProcessor,
 
-            Outputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsRenameProcessor? fieldsRenameProcessor)
+            Outputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessorFieldsRenameProcessor? fieldsRenameProcessor,
+
+            Outputs.OpenpipelineSpansEndpointsEndpointProcessorsProcessorTechnologyProcessor? technologyProcessor)
         {
             DqlProcessor = dqlProcessor;
             DropProcessor = dropProcessor;
             FieldsAddProcessor = fieldsAddProcessor;
             FieldsRemoveProcessor = fieldsRemoveProcessor;
             FieldsRenameProcessor = fieldsRenameProcessor;
+            TechnologyProcessor = technologyProcessor;
         }
     }
 }

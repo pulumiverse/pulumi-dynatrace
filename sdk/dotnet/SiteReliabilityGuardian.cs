@@ -20,6 +20,12 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
+        /// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+        /// </summary>
+        [Output("eventKind")]
+        public Output<string?> EventKind { get; private set; } = null!;
+
+        /// <summary>
         /// Name
         /// </summary>
         [Output("name")]
@@ -97,6 +103,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+        /// </summary>
+        [Input("eventKind")]
+        public Input<string>? EventKind { get; set; }
+
+        /// <summary>
         /// Name
         /// </summary>
         [Input("name")]
@@ -139,6 +151,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+        /// </summary>
+        [Input("eventKind")]
+        public Input<string>? EventKind { get; set; }
 
         /// <summary>
         /// Name

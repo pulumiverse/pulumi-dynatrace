@@ -15,6 +15,10 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class OpenpipelineMetricsPipelinesPipeline
     {
         /// <summary>
+        /// Cost Allocation stage configuration of the pipeline
+        /// </summary>
+        public readonly Outputs.OpenpipelineMetricsPipelinesPipelineCostAllocation? CostAllocation;
+        /// <summary>
         /// Data extraction stage configuration of the pipeline
         /// </summary>
         public readonly Outputs.OpenpipelineMetricsPipelinesPipelineDataExtraction? DataExtraction;
@@ -39,6 +43,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineMetricsPipelinesPipelineProcessing? Processing;
         /// <summary>
+        /// Product Allocation stage configuration of the pipeline
+        /// </summary>
+        public readonly Outputs.OpenpipelineMetricsPipelinesPipelineProductAllocation? ProductAllocation;
+        /// <summary>
         /// Security context stage configuration of the pipeline
         /// </summary>
         public readonly Outputs.OpenpipelineMetricsPipelinesPipelineSecurityContext? SecurityContext;
@@ -49,6 +57,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private OpenpipelineMetricsPipelinesPipeline(
+            Outputs.OpenpipelineMetricsPipelinesPipelineCostAllocation? costAllocation,
+
             Outputs.OpenpipelineMetricsPipelinesPipelineDataExtraction? dataExtraction,
 
             string displayName,
@@ -61,16 +71,20 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             Outputs.OpenpipelineMetricsPipelinesPipelineProcessing? processing,
 
+            Outputs.OpenpipelineMetricsPipelinesPipelineProductAllocation? productAllocation,
+
             Outputs.OpenpipelineMetricsPipelinesPipelineSecurityContext? securityContext,
 
             Outputs.OpenpipelineMetricsPipelinesPipelineStorage? storage)
         {
+            CostAllocation = costAllocation;
             DataExtraction = dataExtraction;
             DisplayName = displayName;
             Enabled = enabled;
             Id = id;
             MetricExtraction = metricExtraction;
             Processing = processing;
+            ProductAllocation = productAllocation;
             SecurityContext = securityContext;
             Storage = storage;
         }

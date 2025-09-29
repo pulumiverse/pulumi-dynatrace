@@ -19,6 +19,14 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor? CounterMetricExtractionProcessor;
         /// <summary>
+        /// Processor to write the occurrences as a metric
+        /// </summary>
+        public readonly Outputs.OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessorSamplingAwareCounterMetricExtractionProcessor? SamplingAwareCounterMetricExtractionProcessor;
+        /// <summary>
+        /// Processor to extract a value from a field as a metric.
+        /// </summary>
+        public readonly Outputs.OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessorSamplingAwareValueMetricExtractionProcessor? SamplingAwareValueMetricExtractionProcessor;
+        /// <summary>
         /// Processor to extract a value from a field as a metric
         /// </summary>
         public readonly Outputs.OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor? ValueMetricExtractionProcessor;
@@ -27,9 +35,15 @@ namespace Pulumiverse.Dynatrace.Outputs
         private OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessor(
             Outputs.OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessor? counterMetricExtractionProcessor,
 
+            Outputs.OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessorSamplingAwareCounterMetricExtractionProcessor? samplingAwareCounterMetricExtractionProcessor,
+
+            Outputs.OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessorSamplingAwareValueMetricExtractionProcessor? samplingAwareValueMetricExtractionProcessor,
+
             Outputs.OpenpipelineMetricsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessor? valueMetricExtractionProcessor)
         {
             CounterMetricExtractionProcessor = counterMetricExtractionProcessor;
+            SamplingAwareCounterMetricExtractionProcessor = samplingAwareCounterMetricExtractionProcessor;
+            SamplingAwareValueMetricExtractionProcessor = samplingAwareValueMetricExtractionProcessor;
             ValueMetricExtractionProcessor = valueMetricExtractionProcessor;
         }
     }

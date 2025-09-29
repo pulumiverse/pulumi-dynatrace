@@ -14,6 +14,12 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class OpenpipelineUserSessionsPipelinesPipelineArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Cost Allocation stage configuration of the pipeline
+        /// </summary>
+        [Input("costAllocation")]
+        public Input<Inputs.OpenpipelineUserSessionsPipelinesPipelineCostAllocationArgs>? CostAllocation { get; set; }
+
+        /// <summary>
         /// Data extraction stage configuration of the pipeline
         /// </summary>
         [Input("dataExtraction")]
@@ -48,6 +54,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// </summary>
         [Input("processing")]
         public Input<Inputs.OpenpipelineUserSessionsPipelinesPipelineProcessingArgs>? Processing { get; set; }
+
+        /// <summary>
+        /// Product Allocation stage configuration of the pipeline
+        /// </summary>
+        [Input("productAllocation")]
+        public Input<Inputs.OpenpipelineUserSessionsPipelinesPipelineProductAllocationArgs>? ProductAllocation { get; set; }
 
         /// <summary>
         /// Security context stage configuration of the pipeline

@@ -13,6 +13,17 @@ namespace Pulumiverse.Dynatrace.Inputs
 
     public sealed class OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Processor to extract a Azure log.
+        /// </summary>
+        [Input("azureLogForwardingProcessor")]
+        public Input<Inputs.OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorAzureLogForwardingProcessorArgs>? AzureLogForwardingProcessor { get; set; }
+
+        /// <summary>
+        /// Processor to extract a bizevent.
+        /// Fields event.type and event.provider can only be assigned to a constant or field value.
+        /// A multi-value constant is not supported for those fields.
+        /// </summary>
         [Input("bizeventExtractionProcessor")]
         public Input<Inputs.OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs>? BizeventExtractionProcessor { get; set; }
 
@@ -21,6 +32,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// </summary>
         [Input("davisEventExtractionProcessor")]
         public Input<Inputs.OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorArgs>? DavisEventExtractionProcessor { get; set; }
+
+        /// <summary>
+        /// Processor to extract a security event.
+        /// </summary>
+        [Input("securityEventExtractionProcessor")]
+        public Input<Inputs.OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorSecurityEventExtractionProcessorArgs>? SecurityEventExtractionProcessor { get; set; }
 
         public OpenpipelineMetricsPipelinesPipelineDataExtractionProcessorArgs()
         {
