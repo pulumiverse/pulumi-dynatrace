@@ -14,19 +14,31 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class OpenpipelineSecurityEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Strategy to assign a value
+        /// Assign a constant value. Can only be used if 'type' is set to 'constant'
         /// </summary>
         [Input("constant")]
         public Input<string>? Constant { get; set; }
 
         /// <summary>
-        /// Strategy to assign a value
+        /// Assign a value extracted from a field. Can only be used if 'type' is set to 'field'
         /// </summary>
         [Input("field")]
         public Input<string>? Field { get; set; }
 
+        [Input("multiValueConstants")]
+        private InputList<string>? _multiValueConstants;
+
         /// <summary>
-        /// Strategy to assign a value
+        /// The constant multi value to assign. Can only be used if 'type' is set to 'multiValueConstant'
+        /// </summary>
+        public InputList<string> MultiValueConstants
+        {
+            get => _multiValueConstants ?? (_multiValueConstants = new InputList<string>());
+            set => _multiValueConstants = value;
+        }
+
+        /// <summary>
+        /// Strategy to assign a value. Possible values: 'constant', 'field', 'multiValueConstant'
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

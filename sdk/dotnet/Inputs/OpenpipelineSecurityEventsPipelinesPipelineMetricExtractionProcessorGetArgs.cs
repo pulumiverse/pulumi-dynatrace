@@ -20,6 +20,18 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.OpenpipelineSecurityEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessorGetArgs>? CounterMetricExtractionProcessor { get; set; }
 
         /// <summary>
+        /// Processor to write the occurrences as a metric
+        /// </summary>
+        [Input("samplingAwareCounterMetricExtractionProcessor")]
+        public Input<Inputs.OpenpipelineSecurityEventsPipelinesPipelineMetricExtractionProcessorSamplingAwareCounterMetricExtractionProcessorGetArgs>? SamplingAwareCounterMetricExtractionProcessor { get; set; }
+
+        /// <summary>
+        /// Processor to extract a value from a field as a metric.
+        /// </summary>
+        [Input("samplingAwareValueMetricExtractionProcessor")]
+        public Input<Inputs.OpenpipelineSecurityEventsPipelinesPipelineMetricExtractionProcessorSamplingAwareValueMetricExtractionProcessorGetArgs>? SamplingAwareValueMetricExtractionProcessor { get; set; }
+
+        /// <summary>
         /// Processor to extract a value from a field as a metric
         /// </summary>
         [Input("valueMetricExtractionProcessor")]

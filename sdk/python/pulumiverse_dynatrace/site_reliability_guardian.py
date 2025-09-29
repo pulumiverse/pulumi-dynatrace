@@ -23,6 +23,7 @@ class SiteReliabilityGuardianArgs:
     def __init__(__self__, *,
                  objectives: pulumi.Input['SiteReliabilityGuardianObjectivesArgs'],
                  description: Optional[pulumi.Input[_builtins.str]] = None,
+                 event_kind: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  variables: Optional[pulumi.Input['SiteReliabilityGuardianVariablesArgs']] = None):
@@ -30,6 +31,7 @@ class SiteReliabilityGuardianArgs:
         The set of arguments for constructing a SiteReliabilityGuardian resource.
         :param pulumi.Input['SiteReliabilityGuardianObjectivesArgs'] objectives: Objectives
         :param pulumi.Input[_builtins.str] description: Description
+        :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
         :param pulumi.Input['SiteReliabilityGuardianVariablesArgs'] variables: Define variables for dynamically defining DQL queries
@@ -37,6 +39,8 @@ class SiteReliabilityGuardianArgs:
         pulumi.set(__self__, "objectives", objectives)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if event_kind is not None:
+            pulumi.set(__self__, "event_kind", event_kind)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if tags is not None:
@@ -67,6 +71,18 @@ class SiteReliabilityGuardianArgs:
     @description.setter
     def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="eventKind")
+    def event_kind(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+        """
+        return pulumi.get(self, "event_kind")
+
+    @event_kind.setter
+    def event_kind(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "event_kind", value)
 
     @_builtins.property
     @pulumi.getter
@@ -109,6 +125,7 @@ class SiteReliabilityGuardianArgs:
 class _SiteReliabilityGuardianState:
     def __init__(__self__, *,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
+                 event_kind: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  objectives: Optional[pulumi.Input['SiteReliabilityGuardianObjectivesArgs']] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -116,6 +133,7 @@ class _SiteReliabilityGuardianState:
         """
         Input properties used for looking up and filtering SiteReliabilityGuardian resources.
         :param pulumi.Input[_builtins.str] description: Description
+        :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input['SiteReliabilityGuardianObjectivesArgs'] objectives: Objectives
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
@@ -123,6 +141,8 @@ class _SiteReliabilityGuardianState:
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if event_kind is not None:
+            pulumi.set(__self__, "event_kind", event_kind)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if objectives is not None:
@@ -143,6 +163,18 @@ class _SiteReliabilityGuardianState:
     @description.setter
     def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="eventKind")
+    def event_kind(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+        """
+        return pulumi.get(self, "event_kind")
+
+    @event_kind.setter
+    def event_kind(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "event_kind", value)
 
     @_builtins.property
     @pulumi.getter
@@ -200,6 +232,7 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
+                 event_kind: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  objectives: Optional[pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -210,6 +243,7 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description
+        :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']] objectives: Objectives
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
@@ -239,6 +273,7 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
+                 event_kind: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  objectives: Optional[pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -253,6 +288,7 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
             __props__ = SiteReliabilityGuardianArgs.__new__(SiteReliabilityGuardianArgs)
 
             __props__.__dict__["description"] = description
+            __props__.__dict__["event_kind"] = event_kind
             __props__.__dict__["name"] = name
             if objectives is None and not opts.urn:
                 raise TypeError("Missing required property 'objectives'")
@@ -270,6 +306,7 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             description: Optional[pulumi.Input[_builtins.str]] = None,
+            event_kind: Optional[pulumi.Input[_builtins.str]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             objectives: Optional[pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -282,6 +319,7 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description
+        :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']] objectives: Objectives
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
@@ -292,6 +330,7 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
         __props__ = _SiteReliabilityGuardianState.__new__(_SiteReliabilityGuardianState)
 
         __props__.__dict__["description"] = description
+        __props__.__dict__["event_kind"] = event_kind
         __props__.__dict__["name"] = name
         __props__.__dict__["objectives"] = objectives
         __props__.__dict__["tags"] = tags
@@ -305,6 +344,14 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
         Description
         """
         return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="eventKind")
+    def event_kind(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+        """
+        return pulumi.get(self, "event_kind")
 
     @_builtins.property
     @pulumi.getter

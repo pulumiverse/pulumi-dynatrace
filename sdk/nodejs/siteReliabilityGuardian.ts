@@ -39,6 +39,10 @@ export class SiteReliabilityGuardian extends pulumi.CustomResource {
      */
     declare public readonly description: pulumi.Output<string | undefined>;
     /**
+     * If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+     */
+    declare public readonly eventKind: pulumi.Output<string | undefined>;
+    /**
      * Name
      */
     declare public readonly name: pulumi.Output<string>;
@@ -69,6 +73,7 @@ export class SiteReliabilityGuardian extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as SiteReliabilityGuardianState | undefined;
             resourceInputs["description"] = state?.description;
+            resourceInputs["eventKind"] = state?.eventKind;
             resourceInputs["name"] = state?.name;
             resourceInputs["objectives"] = state?.objectives;
             resourceInputs["tags"] = state?.tags;
@@ -79,6 +84,7 @@ export class SiteReliabilityGuardian extends pulumi.CustomResource {
                 throw new Error("Missing required property 'objectives'");
             }
             resourceInputs["description"] = args?.description;
+            resourceInputs["eventKind"] = args?.eventKind;
             resourceInputs["name"] = args?.name;
             resourceInputs["objectives"] = args?.objectives;
             resourceInputs["tags"] = args?.tags;
@@ -97,6 +103,10 @@ export interface SiteReliabilityGuardianState {
      * Description
      */
     description?: pulumi.Input<string>;
+    /**
+     * If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+     */
+    eventKind?: pulumi.Input<string>;
     /**
      * Name
      */
@@ -123,6 +133,10 @@ export interface SiteReliabilityGuardianArgs {
      * Description
      */
     description?: pulumi.Input<string>;
+    /**
+     * If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+     */
+    eventKind?: pulumi.Input<string>;
     /**
      * Name
      */

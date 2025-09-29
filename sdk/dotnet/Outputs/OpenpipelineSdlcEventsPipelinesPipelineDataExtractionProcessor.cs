@@ -14,20 +14,39 @@ namespace Pulumiverse.Dynatrace.Outputs
     [OutputType]
     public sealed class OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessor
     {
+        /// <summary>
+        /// Processor to extract a Azure log.
+        /// </summary>
+        public readonly Outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorAzureLogForwardingProcessor? AzureLogForwardingProcessor;
+        /// <summary>
+        /// Processor to extract a bizevent.
+        /// Fields event.type and event.provider can only be assigned to a constant or field value.
+        /// A multi-value constant is not supported for those fields.
+        /// </summary>
         public readonly Outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor? BizeventExtractionProcessor;
         /// <summary>
         /// Processor to apply a DQL script
         /// </summary>
         public readonly Outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor? DavisEventExtractionProcessor;
+        /// <summary>
+        /// Processor to extract a security event.
+        /// </summary>
+        public readonly Outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorSecurityEventExtractionProcessor? SecurityEventExtractionProcessor;
 
         [OutputConstructor]
         private OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessor(
+            Outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorAzureLogForwardingProcessor? azureLogForwardingProcessor,
+
             Outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor? bizeventExtractionProcessor,
 
-            Outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor? davisEventExtractionProcessor)
+            Outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessor? davisEventExtractionProcessor,
+
+            Outputs.OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorSecurityEventExtractionProcessor? securityEventExtractionProcessor)
         {
+            AzureLogForwardingProcessor = azureLogForwardingProcessor;
             BizeventExtractionProcessor = bizeventExtractionProcessor;
             DavisEventExtractionProcessor = davisEventExtractionProcessor;
+            SecurityEventExtractionProcessor = securityEventExtractionProcessor;
         }
     }
 }

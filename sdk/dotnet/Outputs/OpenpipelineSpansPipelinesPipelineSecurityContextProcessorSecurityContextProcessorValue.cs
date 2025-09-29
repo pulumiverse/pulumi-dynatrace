@@ -15,15 +15,19 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class OpenpipelineSpansPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValue
     {
         /// <summary>
-        /// Strategy to assign a value
+        /// Assign a constant value. Can only be used if 'type' is set to 'constant'
         /// </summary>
         public readonly string? Constant;
         /// <summary>
-        /// Strategy to assign a value
+        /// Assign a value extracted from a field. Can only be used if 'type' is set to 'field'
         /// </summary>
         public readonly string? Field;
         /// <summary>
-        /// Strategy to assign a value
+        /// The constant multi value to assign. Can only be used if 'type' is set to 'multiValueConstant'
+        /// </summary>
+        public readonly ImmutableArray<string> MultiValueConstants;
+        /// <summary>
+        /// Strategy to assign a value. Possible values: 'constant', 'field', 'multiValueConstant'
         /// </summary>
         public readonly string Type;
 
@@ -33,10 +37,13 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? field,
 
+            ImmutableArray<string> multiValueConstants,
+
             string type)
         {
             Constant = constant;
             Field = field;
+            MultiValueConstants = multiValueConstants;
             Type = type;
         }
     }

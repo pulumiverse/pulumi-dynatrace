@@ -14,10 +14,10 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class OpenpipelineSystemEventsPipelinesPipelineProcessingProcessorTechnologyProcessorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Name or description of the processor
+        /// Optional customer-defined matching condition, that is used in place of the main technology matcher.
         /// </summary>
-        [Input("description", required: true)]
-        public Input<string> Description { get; set; } = null!;
+        [Input("customMatcher")]
+        public Input<string>? CustomMatcher { get; set; }
 
         /// <summary>
         /// Indicates if the object is active
@@ -30,12 +30,6 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// </summary>
         [Input("id", required: true)]
         public Input<string> Id { get; set; } = null!;
-
-        /// <summary>
-        /// Matching condition to apply on incoming records
-        /// </summary>
-        [Input("matcher", required: true)]
-        public Input<string> Matcher { get; set; } = null!;
 
         /// <summary>
         /// Sample data related to the processor for documentation or testing

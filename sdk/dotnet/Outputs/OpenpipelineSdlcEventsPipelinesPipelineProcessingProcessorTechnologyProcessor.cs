@@ -15,9 +15,9 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorTechnologyProcessor
     {
         /// <summary>
-        /// Name or description of the processor
+        /// Optional customer-defined matching condition, that is used in place of the main technology matcher.
         /// </summary>
-        public readonly string Description;
+        public readonly string? CustomMatcher;
         /// <summary>
         /// Indicates if the object is active
         /// </summary>
@@ -26,10 +26,6 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// Identifier of the processor. Must be unique within a stage.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// Matching condition to apply on incoming records
-        /// </summary>
-        public readonly string Matcher;
         /// <summary>
         /// Sample data related to the processor for documentation or testing
         /// </summary>
@@ -41,22 +37,19 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private OpenpipelineSdlcEventsPipelinesPipelineProcessingProcessorTechnologyProcessor(
-            string description,
+            string? customMatcher,
 
             bool enabled,
 
             string id,
 
-            string matcher,
-
             string? sampleData,
 
             string technologyId)
         {
-            Description = description;
+            CustomMatcher = customMatcher;
             Enabled = enabled;
             Id = id;
-            Matcher = matcher;
             SampleData = sampleData;
             TechnologyId = technologyId;
         }
