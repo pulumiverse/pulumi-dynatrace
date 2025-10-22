@@ -48,7 +48,7 @@ jobs:
       with:
         pulumi-version: latest
     - name: Setup Node
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v6
       with:
         node-version: ${{matrix.nodeversion}}
         registry-url: https://registry.npmjs.org
@@ -225,7 +225,7 @@ jobs:
       with:
         pulumi-version: latest
     - name: Setup Node
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v6
       with:
         node-version: ${{matrix.nodeversion}}
         registry-url: https://registry.npmjs.org
@@ -326,7 +326,7 @@ jobs:
       with:
         pulumi-version: latest
     - name: Setup Node
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v6
       with:
         node-version: ${{matrix.nodeversion}}
         registry-url: https://registry.npmjs.org
