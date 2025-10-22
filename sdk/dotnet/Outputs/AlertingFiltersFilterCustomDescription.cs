@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AlertingFiltersFilterCustomDescription
     {
         /// <summary>
-        /// The condition is case sensitive (`false`) or case insensitive (`true`).   If not set, then `false` is used, making the condition case sensitive
+        /// The condition is case sensitive (`False`) or case insensitive (`True`).   If not set, then `False` is used, making the condition case sensitive
         /// </summary>
         public readonly bool? CaseSensitive;
         /// <summary>
-        /// The filter is enabled (`true`) or disabled (`false`)
+        /// The filter is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool? Enabled;
         /// <summary>
@@ -27,7 +27,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? Negate;
         /// <summary>
-        /// Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `REGEX_MATCHES`, `ENDS_WITH` and `STRING_EQUALS`
+        /// Operator of the comparison.   You can reverse it by setting **negate** to `True`. Possible values are `BEGINS_WITH`, `CONTAINS`, `REGEX_MATCHES`, `ENDS_WITH` and `STRING_EQUALS`
         /// </summary>
         public readonly string Operator;
         /// <summary>

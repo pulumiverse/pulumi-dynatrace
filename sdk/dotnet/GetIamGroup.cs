@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// The IAM group data source allows the group ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the IAM group
+        /// - `Name` (String) - The name of the IAM group
         /// 
         /// ## Example Usage
         /// 
@@ -53,7 +53,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// The IAM group data source allows the group ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the IAM group
+        /// - `Name` (String) - The name of the IAM group
         /// 
         /// ## Example Usage
         /// 
@@ -87,7 +87,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// The IAM group data source allows the group ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the IAM group
+        /// - `Name` (String) - The name of the IAM group
         /// 
         /// ## Example Usage
         /// 

@@ -17,8 +17,8 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
-        /// - `name` queries for all processes with the specified name
-        /// - `tags` (optional) refers to the tags that need to be present for the process (inclusive)
+        /// - `Name` queries for all processes with the specified name
+        /// - `Tags` (optional) refers to the tags that need to be present for the process (inclusive)
         /// 
         /// If multiple processes match the given criteria, the first result will be retrieved.
         /// 
@@ -66,8 +66,8 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
-        /// - `name` queries for all processes with the specified name
-        /// - `tags` (optional) refers to the tags that need to be present for the process (inclusive)
+        /// - `Name` queries for all processes with the specified name
+        /// - `Tags` (optional) refers to the tags that need to be present for the process (inclusive)
         /// 
         /// If multiple processes match the given criteria, the first result will be retrieved.
         /// 
@@ -115,8 +115,8 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
-        /// - `name` queries for all processes with the specified name
-        /// - `tags` (optional) refers to the tags that need to be present for the process (inclusive)
+        /// - `Name` queries for all processes with the specified name
+        /// - `Tags` (optional) refers to the tags that need to be present for the process (inclusive)
         /// 
         /// If multiple processes match the given criteria, the first result will be retrieved.
         /// 

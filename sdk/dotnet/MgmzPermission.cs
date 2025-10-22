@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Group { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the management zone the permissions are valid for. When referring to resource `dynatrace.ManagementZoneV2` or data source `dynatrace.ManagementZone` you need to refer to the attribute `legacy_id`.
+        /// The ID of the management zone the permissions are valid for. When referring to resource `dynatrace.ManagementZoneV2` or data source `dynatrace.ManagementZone` you need to refer to the attribute `LegacyId`.
         /// </summary>
         [Output("managementZone")]
         public Output<string> ManagementZone { get; private set; } = null!;
@@ -98,7 +98,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Group { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the management zone the permissions are valid for. When referring to resource `dynatrace.ManagementZoneV2` or data source `dynatrace.ManagementZone` you need to refer to the attribute `legacy_id`.
+        /// The ID of the management zone the permissions are valid for. When referring to resource `dynatrace.ManagementZoneV2` or data source `dynatrace.ManagementZone` you need to refer to the attribute `LegacyId`.
         /// </summary>
         [Input("managementZone", required: true)]
         public Input<string> ManagementZone { get; set; } = null!;
@@ -137,7 +137,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Group { get; set; }
 
         /// <summary>
-        /// The ID of the management zone the permissions are valid for. When referring to resource `dynatrace.ManagementZoneV2` or data source `dynatrace.ManagementZone` you need to refer to the attribute `legacy_id`.
+        /// The ID of the management zone the permissions are valid for. When referring to resource `dynatrace.ManagementZoneV2` or data source `dynatrace.ManagementZone` you need to refer to the attribute `LegacyId`.
         /// </summary>
         [Input("managementZone")]
         public Input<string>? ManagementZone { get; set; }

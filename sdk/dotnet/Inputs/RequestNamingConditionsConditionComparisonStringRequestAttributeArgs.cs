@@ -14,19 +14,19 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class RequestNamingConditionsConditionComparisonStringRequestAttributeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+        /// The comparison is case-sensitive (`True`) or not case-sensitive (`False`)
         /// </summary>
         [Input("caseSensitive")]
         public Input<bool>? CaseSensitive { get; set; }
 
         /// <summary>
-        /// If `true`, the request attribute is matched on child service calls. Default is `false`
+        /// If `True`, the request attribute is matched on child service calls. Default is `False`
         /// </summary>
         [Input("matchOnChildCalls")]
         public Input<bool>? MatchOnChildCalls { get; set; }
 
         /// <summary>
-        /// Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `BEGINS_WITH`, `BEGINS_WITH_ANY_OF`, `CONTAINS`, `ENDS_WITH`, `ENDS_WITH_ANY_OF`, `EQUALS`, `EQUALS_ANY_OF`, `EXISTS` and `REGEX_MATCHES`
+        /// Operator of the comparison. You can reverse it by setting `Negate` to `True`. Possible values are `BEGINS_WITH`, `BEGINS_WITH_ANY_OF`, `CONTAINS`, `ENDS_WITH`, `ENDS_WITH_ANY_OF`, `EQUALS`, `EQUALS_ANY_OF`, `EXISTS` and `REGEX_MATCHES`
         /// </summary>
         [Input("operator")]
         public Input<string>? Operator { get; set; }

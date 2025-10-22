@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class AutomationWorkflowTriggerEventConfigEventArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible values: `events` or `bizevents`. Default: `events`
+        /// Possible values: `Events` or `Bizevents`. Default: `Events`
         /// </summary>
         [Input("eventType")]
         public Input<string>? EventType { get; set; }

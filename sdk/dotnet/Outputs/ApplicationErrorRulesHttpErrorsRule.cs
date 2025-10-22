@@ -15,19 +15,19 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ApplicationErrorRulesHttpErrorsRule
     {
         /// <summary>
-        /// Capture (`true`) or ignore (`false`) the error
+        /// Capture (`True`) or ignore (`False`) the error
         /// </summary>
         public readonly bool? Capture;
         /// <summary>
-        /// If `true`, match by errors that have CSP Rule violations
+        /// If `True`, match by errors that have CSP Rule violations
         /// </summary>
         public readonly bool? ConsiderBlockedRequests;
         /// <summary>
-        /// Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysis](https://dt-url.net/a963kd2)
+        /// Include (`True`) or exclude (`False`) the error in Davis AI [problem detection and analysis](https://dt-url.net/a963kd2)
         /// </summary>
         public readonly bool? ConsiderForAi;
         /// <summary>
-        /// If `true`, match by errors that have unknown HTTP status code
+        /// If `True`, match by errors that have unknown HTTP status code
         /// </summary>
         public readonly bool? ConsiderUnknownErrorCode;
         /// <summary>
@@ -39,11 +39,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Filter;
         /// <summary>
-        /// If `true`, filter errors by URL
+        /// If `True`, filter errors by URL
         /// </summary>
         public readonly bool? FilterByUrl;
         /// <summary>
-        /// Include (`true`) or exclude (`false`) the error in Apdex calculation
+        /// Include (`True`) or exclude (`False`) the error in Apdex calculation
         /// </summary>
         public readonly bool? ImpactApdex;
         /// <summary>

@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class AutomationSchedulingRuleFixedOffsetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Every day of the scheduling rule referred to with `rule` will be offset by this amount of days
+        /// Every day of the scheduling rule referred to with `Rule` will be offset by this amount of days
         /// </summary>
         [Input("offset", required: true)]
         public Input<int> Offset { get; set; } = null!;

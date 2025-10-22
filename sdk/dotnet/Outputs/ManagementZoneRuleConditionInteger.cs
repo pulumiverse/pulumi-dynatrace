@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? Negate;
         /// <summary>
-        /// Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+        /// Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `True`
         /// </summary>
         public readonly string Operator;
         /// <summary>

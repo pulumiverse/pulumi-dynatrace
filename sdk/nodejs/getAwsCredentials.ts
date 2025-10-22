@@ -8,6 +8,8 @@ import * as utilities from "./utilities";
  * The `dynatrace.AwsCredentials` data source allows the AWS credential ID to be retrieved by its label.
  *
  * - `label` (String) - The label/name of the AWS credential
+ *
+ * ## Example Usage
  */
 export function getAwsCredentials(args: GetAwsCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetAwsCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -37,6 +39,8 @@ export interface GetAwsCredentialsResult {
  * The `dynatrace.AwsCredentials` data source allows the AWS credential ID to be retrieved by its label.
  *
  * - `label` (String) - The label/name of the AWS credential
+ *
+ * ## Example Usage
  */
 export function getAwsCredentialsOutput(args: GetAwsCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAwsCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

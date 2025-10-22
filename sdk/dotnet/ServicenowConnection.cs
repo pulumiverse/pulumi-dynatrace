@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Password { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `basic`, `client-credentials`
+        /// Possible Values: `Basic`, `client-credentials`
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -152,7 +152,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Possible Values: `basic`, `client-credentials`
+        /// Possible Values: `Basic`, `client-credentials`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -222,7 +222,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Possible Values: `basic`, `client-credentials`
+        /// Possible Values: `Basic`, `client-credentials`
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

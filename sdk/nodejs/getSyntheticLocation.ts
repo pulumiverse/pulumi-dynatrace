@@ -9,6 +9,8 @@ import * as utilities from "./utilities";
  *
  * > For Provider versions earlier than v1.80.0: This data source requires the API token scope **Read synthetic monitors, locations, and nodes** (`ReadSyntheticData`)
  * For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
+ *
+ * ## Example Usage
  */
 export function getSyntheticLocation(args?: GetSyntheticLocationArgs, opts?: pulumi.InvokeOptions): Promise<GetSyntheticLocationResult> {
     args = args || {};
@@ -67,6 +69,8 @@ export interface GetSyntheticLocationResult {
  *
  * > For Provider versions earlier than v1.80.0: This data source requires the API token scope **Read synthetic monitors, locations, and nodes** (`ReadSyntheticData`)
  * For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
+ *
+ * ## Example Usage
  */
 export function getSyntheticLocationOutput(args?: GetSyntheticLocationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSyntheticLocationResult> {
     args = args || {};

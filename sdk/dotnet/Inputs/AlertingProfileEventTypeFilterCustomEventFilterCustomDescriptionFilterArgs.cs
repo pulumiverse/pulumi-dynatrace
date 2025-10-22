@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class AlertingProfileEventTypeFilterCustomEventFilterCustomDescriptionFilterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The condition is case sensitive (`false`) or case insensitive (`true`).   If not set, then `false` is used, making the condition case sensitive
+        /// The condition is case sensitive (`False`) or case insensitive (`True`).   If not set, then `False` is used, making the condition case sensitive
         /// </summary>
         [Input("caseInsensitive")]
         public Input<bool>? CaseInsensitive { get; set; }
 
         /// <summary>
-        /// The filter is enabled (`true`) or disabled (`false`)
+        /// The filter is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? Negate { get; set; }
 
         /// <summary>
-        /// Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+        /// Operator of the comparison.   You can reverse it by setting **negate** to `True`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
         /// </summary>
         [Input("operator", required: true)]
         public Input<string> Operator { get; set; } = null!;

@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettings ContentMaskingSettings;
         /// <summary>
-        /// (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) If `true`, session recording is disabled until JavaScriptAPI `dtrum.enableSessionReplay()` is called
+        /// (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) If `True`, session recording is disabled until JavaScriptAPI `dtrum.enableSessionReplay()` is called
         /// </summary>
         public readonly bool? OptIn;
         /// <summary>

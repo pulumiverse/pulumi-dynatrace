@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? CicsTransactionCallType { get; set; }
 
         /// <summary>
-        /// The data source is enabled (`true`) or disabled (`false`)
+        /// The data source is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;

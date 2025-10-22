@@ -41,10 +41,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// 
         /// Use one of the following values as a parameter for this condition:
         /// 
-        /// - `enabled`
+        /// - `Enabled`
         /// - `enabled-runtime`
-        /// - `static`
-        /// - `disabled`
+        /// - `Static`
+        /// - `Disabled`
         /// </summary>
         public readonly string? StartupCondition;
 

@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace
     public partial class UserGroup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// If `true`, then the group has the access account rights
+        /// If `True`, then the group has the access account rights
         /// </summary>
         [Output("accessAccount")]
         public Output<bool?> AccessAccount { get; private set; } = null!;
 
         /// <summary>
-        /// If `true`, then the group has the cluster administrator rights
+        /// If `True`, then the group has the cluster administrator rights
         /// </summary>
         [Output("clusterAdmin")]
         public Output<bool?> ClusterAdmin { get; private set; } = null!;
@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace
         public Output<ImmutableArray<string>> LdapGroups { get; private set; } = null!;
 
         /// <summary>
-        /// If `true`, then the group has the manage account rights
+        /// If `True`, then the group has the manage account rights
         /// </summary>
         [Output("manageAccount")]
         public Output<bool?> ManageAccount { get; private set; } = null!;
@@ -103,13 +103,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class UserGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// If `true`, then the group has the access account rights
+        /// If `True`, then the group has the access account rights
         /// </summary>
         [Input("accessAccount")]
         public Input<bool>? AccessAccount { get; set; }
 
         /// <summary>
-        /// If `true`, then the group has the cluster administrator rights
+        /// If `True`, then the group has the cluster administrator rights
         /// </summary>
         [Input("clusterAdmin")]
         public Input<bool>? ClusterAdmin { get; set; }
@@ -127,7 +127,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// If `true`, then the group has the manage account rights
+        /// If `True`, then the group has the manage account rights
         /// </summary>
         [Input("manageAccount")]
         public Input<bool>? ManageAccount { get; set; }
@@ -165,13 +165,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class UserGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// If `true`, then the group has the access account rights
+        /// If `True`, then the group has the access account rights
         /// </summary>
         [Input("accessAccount")]
         public Input<bool>? AccessAccount { get; set; }
 
         /// <summary>
-        /// If `true`, then the group has the cluster administrator rights
+        /// If `True`, then the group has the cluster administrator rights
         /// </summary>
         [Input("clusterAdmin")]
         public Input<bool>? ClusterAdmin { get; set; }
@@ -189,7 +189,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// If `true`, then the group has the manage account rights
+        /// If `True`, then the group has the manage account rights
         /// </summary>
         [Input("manageAccount")]
         public Input<bool>? ManageAccount { get; set; }

@@ -15,8 +15,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.Dashboard` data source allows the dashboard ID to be retrieved by its name and owner.
         /// 
-        /// - `name` (String) - The name of the dashboard
-        /// - `owner` (String) - The owner of the dashboard
+        /// - `Name` (String) - The name of the dashboard
+        /// - `Owner` (String) - The owner of the dashboard
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -49,8 +49,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.Dashboard` data source allows the dashboard ID to be retrieved by its name and owner.
         /// 
-        /// - `name` (String) - The name of the dashboard
-        /// - `owner` (String) - The owner of the dashboard
+        /// - `Name` (String) - The name of the dashboard
+        /// - `Owner` (String) - The owner of the dashboard
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -83,8 +83,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.Dashboard` data source allows the dashboard ID to be retrieved by its name and owner.
         /// 
-        /// - `name` (String) - The name of the dashboard
-        /// - `owner` (String) - The owner of the dashboard
+        /// - `Name` (String) - The name of the dashboard
+        /// - `Owner` (String) - The owner of the dashboard
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 

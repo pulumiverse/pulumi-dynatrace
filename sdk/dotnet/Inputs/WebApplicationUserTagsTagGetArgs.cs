@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<int>? Id { get; set; }
 
         /// <summary>
-        /// If `true`, the value of this tag will always be stored in lower case. Defaults to `false`.
+        /// If `True`, the value of this tag will always be stored in lower case. Defaults to `False`.
         /// </summary>
         [Input("ignoreCase")]
         public Input<bool>? IgnoreCase { get; set; }

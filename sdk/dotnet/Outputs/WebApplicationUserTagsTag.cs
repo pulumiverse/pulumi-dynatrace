@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         public readonly string? CleanupRule;
         public readonly int? Id;
         /// <summary>
-        /// If `true`, the value of this tag will always be stored in lower case. Defaults to `false`.
+        /// If `True`, the value of this tag will always be stored in lower case. Defaults to `False`.
         /// </summary>
         public readonly bool? IgnoreCase;
         /// <summary>

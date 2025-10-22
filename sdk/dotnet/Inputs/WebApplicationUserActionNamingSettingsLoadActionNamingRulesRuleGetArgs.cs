@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Template { get; set; } = null!;
 
         /// <summary>
-        /// If set to `true` the conditions will be connected by logical OR instead of logical AND
+        /// If set to `True` the conditions will be connected by logical OR instead of logical AND
         /// </summary>
         [Input("useOrConditions")]
         public Input<bool>? UseOrConditions { get; set; }

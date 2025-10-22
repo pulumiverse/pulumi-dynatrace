@@ -35,11 +35,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Owner;
         /// <summary>
-        /// the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+        /// the dashboard is a preset (`True`) or not (`False`). Default is `False`.
         /// </summary>
         public readonly bool? Preset;
         /// <summary>
-        /// the dashboard is shared (`true`) or private (`false`)
+        /// the dashboard is shared (`True`) or private (`False`)
         /// </summary>
         public readonly bool? Shared;
         /// <summary>

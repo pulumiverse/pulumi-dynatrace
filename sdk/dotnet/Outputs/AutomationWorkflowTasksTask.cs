@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? Active;
         /// <summary>
-        /// Required if `with_items` is specified. By default loops execute sequentially with concurrency set to 1. You can increase how often it runs in parallel
+        /// Required if `WithItems` is specified. By default loops execute sequentially with concurrency set to 1. You can increase how often it runs in parallel
         /// </summary>
         public readonly string? Concurrency;
         /// <summary>
@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// Parameters and values for this task as JSON code. Contents depend on the kind of task - determined by the attribute `action`
+        /// Parameters and values for this task as JSON code. Contents depend on the kind of task - determined by the attribute `Action`
         /// </summary>
         public readonly string? Input;
         /// <summary>

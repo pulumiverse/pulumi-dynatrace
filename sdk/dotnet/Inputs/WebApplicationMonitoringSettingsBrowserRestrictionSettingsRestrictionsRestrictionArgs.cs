@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`and`SAFARI`
+        /// The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`And`SAFARI`
         /// </summary>
         [Input("browserType", required: true)]
         public Input<string> BrowserType { get; set; } = null!;

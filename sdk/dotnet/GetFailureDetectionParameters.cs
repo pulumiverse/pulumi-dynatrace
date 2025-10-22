@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.FailureDetectionParameters` data source allows the failure detection parameter ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the failure detection parameter
+        /// - `Name` (String) - The name of the failure detection parameter
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -47,7 +47,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.FailureDetectionParameters` data source allows the failure detection parameter ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the failure detection parameter
+        /// - `Name` (String) - The name of the failure detection parameter
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -79,7 +79,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.FailureDetectionParameters` data source allows the failure detection parameter ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the failure detection parameter
+        /// - `Name` (String) - The name of the failure detection parameter
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 

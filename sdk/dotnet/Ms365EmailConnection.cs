@@ -44,7 +44,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> TenantId { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `client_secret`
+        /// Possible Values: `ClientSecret`
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -141,7 +141,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> TenantId { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `client_secret`
+        /// Possible Values: `ClientSecret`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -195,7 +195,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? TenantId { get; set; }
 
         /// <summary>
-        /// Possible Values: `client_secret`
+        /// Possible Values: `ClientSecret`
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

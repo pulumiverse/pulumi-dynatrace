@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The entities data source allows all entities to be retrieved by its type.
         /// 
-        /// - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+        /// - `Type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
         /// 
         /// ## Example Usage
         /// 
@@ -45,7 +45,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The entities data source allows all entities to be retrieved by its type.
         /// 
-        /// - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+        /// - `Type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
         /// 
         /// ## Example Usage
         /// 
@@ -75,7 +75,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The entities data source allows all entities to be retrieved by its type.
         /// 
-        /// - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+        /// - `Type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
         /// 
         /// ## Example Usage
         /// 

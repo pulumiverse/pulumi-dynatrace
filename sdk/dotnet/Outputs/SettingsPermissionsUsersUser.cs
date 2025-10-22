@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class SettingsPermissionsUsersUser
     {
         /// <summary>
-        /// Valid values: `read`, `write`
+        /// Valid values: `Read`, `Write`
         /// </summary>
         public readonly string Access;
         /// <summary>
-        /// The UUID of the user, conveniently retrieved via the `uid` attribute provided by the data source `dynatrace.IamUser`
+        /// The UUID of the user, conveniently retrieved via the `Uid` attribute provided by the data source `dynatrace.IamUser`
         /// </summary>
         public readonly string Uid;
 

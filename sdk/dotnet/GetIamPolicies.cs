@@ -17,13 +17,13 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`).
         /// 
-        /// You can use the attributes `environments`, `accounts` and `globals` to refine which policies you want to query for.
-        /// * The attribute `global` indicates whether the results should also contain global (Dynatrace defined) policies
-        /// * The attribute `environment` is an array of environment IDs.
-        /// * The results won't contain any environment specific policies if the attribute `environments` has been omitted
-        /// * The results will contain policies for all environments reachable via the given credentials if `environments` is set to `["*"]`
-        /// * The attribute `accounts` is an array of accounts UUIDs. Set this to `["*"]` if you want to receive account specific policies.
-        /// * The results won't contain any account specific policies if the attribute `accounts` has been omitted
+        /// You can use the attributes `Environments`, `Accounts` and `Globals` to refine which policies you want to query for.
+        /// * The attribute `Global` indicates whether the results should also contain global (Dynatrace defined) policies
+        /// * The attribute `Environment` is an array of environment IDs.
+        /// * The results won't contain any environment specific policies if the attribute `Environments` has been omitted
+        /// * The results will contain policies for all environments reachable via the given credentials if `Environments` is set to `["*"]`
+        /// * The attribute `Accounts` is an array of accounts UUIDs. Set this to `["*"]` if you want to receive account specific policies.
+        /// * The results won't contain any account specific policies if the attribute `Accounts` has been omitted
         /// ## Example Usage
         /// 
         /// The following example queries for polices of all environments reachable via the given credentials, all accounts and all global policies.
@@ -50,7 +50,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// });
         /// ```
-        /// The following example queries for policies that are defined for the environment with the id `abce234`. No account specific or global policies will be included.
+        /// The following example queries for policies that are defined for the environment with the id `Abce234`. No account specific or global policies will be included.
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -142,13 +142,13 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`).
         /// 
-        /// You can use the attributes `environments`, `accounts` and `globals` to refine which policies you want to query for.
-        /// * The attribute `global` indicates whether the results should also contain global (Dynatrace defined) policies
-        /// * The attribute `environment` is an array of environment IDs.
-        /// * The results won't contain any environment specific policies if the attribute `environments` has been omitted
-        /// * The results will contain policies for all environments reachable via the given credentials if `environments` is set to `["*"]`
-        /// * The attribute `accounts` is an array of accounts UUIDs. Set this to `["*"]` if you want to receive account specific policies.
-        /// * The results won't contain any account specific policies if the attribute `accounts` has been omitted
+        /// You can use the attributes `Environments`, `Accounts` and `Globals` to refine which policies you want to query for.
+        /// * The attribute `Global` indicates whether the results should also contain global (Dynatrace defined) policies
+        /// * The attribute `Environment` is an array of environment IDs.
+        /// * The results won't contain any environment specific policies if the attribute `Environments` has been omitted
+        /// * The results will contain policies for all environments reachable via the given credentials if `Environments` is set to `["*"]`
+        /// * The attribute `Accounts` is an array of accounts UUIDs. Set this to `["*"]` if you want to receive account specific policies.
+        /// * The results won't contain any account specific policies if the attribute `Accounts` has been omitted
         /// ## Example Usage
         /// 
         /// The following example queries for polices of all environments reachable via the given credentials, all accounts and all global policies.
@@ -175,7 +175,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// });
         /// ```
-        /// The following example queries for policies that are defined for the environment with the id `abce234`. No account specific or global policies will be included.
+        /// The following example queries for policies that are defined for the environment with the id `Abce234`. No account specific or global policies will be included.
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -267,13 +267,13 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`).
         /// 
-        /// You can use the attributes `environments`, `accounts` and `globals` to refine which policies you want to query for.
-        /// * The attribute `global` indicates whether the results should also contain global (Dynatrace defined) policies
-        /// * The attribute `environment` is an array of environment IDs.
-        /// * The results won't contain any environment specific policies if the attribute `environments` has been omitted
-        /// * The results will contain policies for all environments reachable via the given credentials if `environments` is set to `["*"]`
-        /// * The attribute `accounts` is an array of accounts UUIDs. Set this to `["*"]` if you want to receive account specific policies.
-        /// * The results won't contain any account specific policies if the attribute `accounts` has been omitted
+        /// You can use the attributes `Environments`, `Accounts` and `Globals` to refine which policies you want to query for.
+        /// * The attribute `Global` indicates whether the results should also contain global (Dynatrace defined) policies
+        /// * The attribute `Environment` is an array of environment IDs.
+        /// * The results won't contain any environment specific policies if the attribute `Environments` has been omitted
+        /// * The results will contain policies for all environments reachable via the given credentials if `Environments` is set to `["*"]`
+        /// * The attribute `Accounts` is an array of accounts UUIDs. Set this to `["*"]` if you want to receive account specific policies.
+        /// * The results won't contain any account specific policies if the attribute `Accounts` has been omitted
         /// ## Example Usage
         /// 
         /// The following example queries for polices of all environments reachable via the given credentials, all accounts and all global policies.
@@ -300,7 +300,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// });
         /// ```
-        /// The following example queries for policies that are defined for the environment with the id `abce234`. No account specific or global policies will be included.
+        /// The following example queries for policies that are defined for the environment with the id `Abce234`. No account specific or global policies will be included.
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -416,7 +416,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// If `true` the results will contain global policies
+        /// If `True` the results will contain global policies
         /// </summary>
         [Input("global")]
         public bool? Global { get; set; }
@@ -466,7 +466,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// If `true` the results will contain global policies
+        /// If `True` the results will contain global policies
         /// </summary>
         [Input("global")]
         public Input<bool>? Global { get; set; }
@@ -502,7 +502,7 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public readonly ImmutableArray<string> Environments;
         /// <summary>
-        /// If `true` the results will contain global policies
+        /// If `True` the results will contain global policies
         /// </summary>
         public readonly bool? Global;
         /// <summary>

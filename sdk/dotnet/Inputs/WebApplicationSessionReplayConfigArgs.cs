@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.SessionReplayResourceCapture`) Capture (`true`) or don't capture (`false`) CSS resources from the session
+        /// (Field has overlap with `dynatrace.SessionReplayResourceCapture`) Capture (`True`) or don't capture (`False`) CSS resources from the session
         /// </summary>
         [Input("enableCssResourceCapturing")]
         public Input<bool>? EnableCssResourceCapturing { get; set; }

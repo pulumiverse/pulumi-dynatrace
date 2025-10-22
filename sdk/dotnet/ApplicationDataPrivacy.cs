@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class ApplicationDataPrivacy : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
+        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `True` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
         /// </summary>
         [Output("dataCaptureOptIn")]
         public Output<bool?> DataCaptureOptIn { get; private set; } = null!;
@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> DoNotTrackBehaviour { get; private set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
+        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `True` to set persistent cookie in order to recognize returning devices
         /// </summary>
         [Output("persistentCookieForUserTracking")]
         public Output<bool?> PersistentCookieForUserTracking { get; private set; } = null!;
@@ -91,7 +91,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class ApplicationDataPrivacyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
+        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `True` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
         /// </summary>
         [Input("dataCaptureOptIn")]
         public Input<bool>? DataCaptureOptIn { get; set; }
@@ -103,7 +103,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> DoNotTrackBehaviour { get; set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
+        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `True` to set persistent cookie in order to recognize returning devices
         /// </summary>
         [Input("persistentCookieForUserTracking")]
         public Input<bool>? PersistentCookieForUserTracking { get; set; }
@@ -129,7 +129,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class ApplicationDataPrivacyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
+        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `True` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
         /// </summary>
         [Input("dataCaptureOptIn")]
         public Input<bool>? DataCaptureOptIn { get; set; }
@@ -141,7 +141,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? DoNotTrackBehaviour { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
+        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `True` to set persistent cookie in order to recognize returning devices
         /// </summary>
         [Input("persistentCookieForUserTracking")]
         public Input<bool>? PersistentCookieForUserTracking { get; set; }

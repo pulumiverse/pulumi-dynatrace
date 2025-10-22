@@ -27,7 +27,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Event;
         /// <summary>
-        /// The execution status of the monitors to be included in the metric calculation: `true` or `false`
+        /// The execution status of the monitors to be included in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? HasError;
         /// <summary>

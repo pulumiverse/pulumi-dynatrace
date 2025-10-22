@@ -19,11 +19,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Combines;
         /// <summary>
-        /// The IDs of scheduling rules determining the days the schedule is allowed apply to. If specified, only days that are covered by `combine` and `intersect` are valid days for the schedule
+        /// The IDs of scheduling rules determining the days the schedule is allowed apply to. If specified, only days that are covered by `Combine` and `Intersect` are valid days for the schedule
         /// </summary>
         public readonly ImmutableArray<string> Intersects;
         /// <summary>
-        /// The IDs of scheduling rules determing the days the schedule must not apply. If specified it reduces down the set of days covered by `combine` and `intersect`
+        /// The IDs of scheduling rules determing the days the schedule must not apply. If specified it reduces down the set of days covered by `Combine` and `Intersect`
         /// </summary>
         public readonly ImmutableArray<string> Subtracts;
 

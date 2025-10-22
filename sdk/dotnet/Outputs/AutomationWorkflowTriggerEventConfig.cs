@@ -15,23 +15,23 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AutomationWorkflowTriggerEventConfig
     {
         /// <summary>
-        /// Contains trigger configuration based on Davis Events. Either `davis_event`, `davis_problem`, `davis_event` or `config` need to set
+        /// Contains trigger configuration based on Davis Events. Either `DavisEvent`, `DavisProblem`, `DavisEvent` or `Config` need to set
         /// </summary>
         public readonly Outputs.AutomationWorkflowTriggerEventConfigDavisEvent? DavisEvent;
         /// <summary>
-        /// Contains trigger configuration based on Davis Problems. Either `davis_event`, `davis_problem`, `davis_event` or `config` need to set
+        /// Contains trigger configuration based on Davis Problems. Either `DavisEvent`, `DavisProblem`, `DavisEvent` or `Config` need to set
         /// </summary>
         public readonly Outputs.AutomationWorkflowTriggerEventConfigDavisProblem? DavisProblem;
         /// <summary>
-        /// Contains trigger configuration based on Davis Problems. Either `davis_event`, `davis_problem`, `davis_event` or `config` need to set
+        /// Contains trigger configuration based on Davis Problems. Either `DavisEvent`, `DavisProblem`, `DavisEvent` or `Config` need to set
         /// </summary>
         public readonly Outputs.AutomationWorkflowTriggerEventConfigEvent? Event;
         /// <summary>
-        /// The type of the trigger configuration to expect within attribute `value`. Only required if `config` is set. Must not be set if `davis_event`, `davis_problem` or `event` are present
+        /// The type of the trigger configuration to expect within attribute `Value`. Only required if `Config` is set. Must not be set if `DavisEvent`, `DavisProblem` or `Event` are present
         /// </summary>
         public readonly string? Type;
         /// <summary>
-        /// Contains JSON encoded trigger configuration if the trigger type is neither `davis_event`, `davis_problem` or `event`. It requires the attribute `type` to be set in combination
+        /// Contains JSON encoded trigger configuration if the trigger type is neither `DavisEvent`, `DavisProblem` or `Event`. It requires the attribute `Type` to be set in combination
         /// </summary>
         public readonly string? Value;
 

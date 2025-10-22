@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.Slo` data source allows the SLO ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the SLO
+        /// - `Name` (String) - The name of the SLO
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -47,7 +47,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.Slo` data source allows the SLO ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the SLO
+        /// - `Name` (String) - The name of the SLO
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -79,7 +79,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.Slo` data source allows the SLO ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the SLO
+        /// - `Name` (String) - The name of the SLO
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -137,7 +137,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class GetSloResult
     {
         /// <summary>
-        /// Burn rate visualization is enabled (`true`) or disabled (`false`)
+        /// Burn rate visualization is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool BurnRateVisualizationEnabled;
         /// <summary>
@@ -145,7 +145,7 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The SLO is enabled (`true`) or disabled (`false`)
+        /// The SLO is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
         /// <summary>

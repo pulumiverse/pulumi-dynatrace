@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace
         public Output<ImmutableArray<Outputs.HttpMonitorAnomalyDetection>> AnomalyDetections { get; private set; } = null!;
 
         /// <summary>
-        /// The monitor is enabled (`true`) or disabled (`false`).
+        /// The monitor is enabled (`True`) or disabled (`False`).
         /// </summary>
         [Output("enabled")]
         public Output<bool?> Enabled { get; private set; } = null!;
@@ -131,7 +131,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The monitor is enabled (`true`) or disabled (`false`).
+        /// The monitor is enabled (`True`) or disabled (`False`).
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -221,7 +221,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The monitor is enabled (`true`) or disabled (`false`).
+        /// The monitor is enabled (`True`) or disabled (`False`).
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }

@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class CalculatedServiceMetricDimensionDefinition
     {
         /// <summary>
-        /// The dimension value pattern. You can define custom placeholders in the `placeholders` field and use them here
+        /// The dimension value pattern. You can define custom placeholders in the `Placeholders` field and use them here
         /// </summary>
         public readonly string Dimension;
         /// <summary>

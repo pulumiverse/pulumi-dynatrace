@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Domain;
         /// <summary>
-        /// The name of the cookie. The following cookie names are now allowed: `dtCookie`, `dtLatC`, `dtPC`, `rxVisitor`, `rxlatency`, `rxpc`, `rxsession` and `rxvt`
+        /// The name of the cookie. The following cookie names are now allowed: `dtCookie`, `dtLatC`, `dtPC`, `rxVisitor`, `Rxlatency`, `Rxpc`, `Rxsession` and `Rxvt`
         /// </summary>
         public readonly string Name;
         /// <summary>

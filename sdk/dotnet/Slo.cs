@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The SLO is enabled (`false`) or disabled (`true`)
+        /// The SLO is enabled (`False`) or disabled (`True`)
         /// </summary>
         [Output("disabled")]
         public Output<bool?> Disabled { get; private set; } = null!;
@@ -157,7 +157,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The SLO is enabled (`false`) or disabled (`true`)
+        /// The SLO is enabled (`False`) or disabled (`True`)
         /// </summary>
         [Input("disabled")]
         public Input<bool>? Disabled { get; set; }
@@ -249,7 +249,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The SLO is enabled (`false`) or disabled (`true`)
+        /// The SLO is enabled (`False`) or disabled (`True`)
         /// </summary>
         [Input("disabled")]
         public Input<bool>? Disabled { get; set; }

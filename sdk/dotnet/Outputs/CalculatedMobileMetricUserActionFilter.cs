@@ -55,11 +55,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Device;
         /// <summary>
-        /// The request error status of the actions to be included in the metric calculation: `true` or `false`
+        /// The request error status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? HasHttpError;
         /// <summary>
-        /// The error status of the actions to be included in the metric calculation: `true` or `false`
+        /// The error status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? HasReportedError;
         /// <summary>

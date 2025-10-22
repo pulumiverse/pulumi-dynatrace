@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Environment;
         /// <summary>
-        /// `true` if this is a global policy`
+        /// `True` if this is a global policy`
         /// </summary>
         public readonly bool? Global;
         public readonly string Id;

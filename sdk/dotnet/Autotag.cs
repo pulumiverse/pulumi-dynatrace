@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
-        /// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
+        /// A list of entity-selector based rules for management zone usage. If several rules are specified, the `Or` logic applies
         /// </summary>
         [Output("entitySelectorBasedRules")]
         public Output<ImmutableArray<Outputs.AutotagEntitySelectorBasedRule>> EntitySelectorBasedRules { get; private set; } = null!;
@@ -100,7 +100,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.AutotagEntitySelectorBasedRuleArgs>? _entitySelectorBasedRules;
 
         /// <summary>
-        /// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
+        /// A list of entity-selector based rules for management zone usage. If several rules are specified, the `Or` logic applies
         /// </summary>
         public InputList<Inputs.AutotagEntitySelectorBasedRuleArgs> EntitySelectorBasedRules
         {
@@ -150,7 +150,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.AutotagEntitySelectorBasedRuleGetArgs>? _entitySelectorBasedRules;
 
         /// <summary>
-        /// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
+        /// A list of entity-selector based rules for management zone usage. If several rules are specified, the `Or` logic applies
         /// </summary>
         public InputList<Inputs.AutotagEntitySelectorBasedRuleGetArgs> EntitySelectorBasedRules
         {

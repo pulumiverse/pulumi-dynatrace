@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Token { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `pat`
+        /// Possible Values: `Pat`
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -105,7 +105,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Possible Values: `pat`
+        /// Possible Values: `Pat`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -141,7 +141,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Possible Values: `pat`
+        /// Possible Values: `Pat`
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

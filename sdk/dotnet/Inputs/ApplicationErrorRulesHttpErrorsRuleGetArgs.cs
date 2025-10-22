@@ -14,25 +14,25 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class ApplicationErrorRulesHttpErrorsRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Capture (`true`) or ignore (`false`) the error
+        /// Capture (`True`) or ignore (`False`) the error
         /// </summary>
         [Input("capture")]
         public Input<bool>? Capture { get; set; }
 
         /// <summary>
-        /// If `true`, match by errors that have CSP Rule violations
+        /// If `True`, match by errors that have CSP Rule violations
         /// </summary>
         [Input("considerBlockedRequests")]
         public Input<bool>? ConsiderBlockedRequests { get; set; }
 
         /// <summary>
-        /// Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysis](https://dt-url.net/a963kd2)
+        /// Include (`True`) or exclude (`False`) the error in Davis AI [problem detection and analysis](https://dt-url.net/a963kd2)
         /// </summary>
         [Input("considerForAi")]
         public Input<bool>? ConsiderForAi { get; set; }
 
         /// <summary>
-        /// If `true`, match by errors that have unknown HTTP status code
+        /// If `True`, match by errors that have unknown HTTP status code
         /// </summary>
         [Input("considerUnknownErrorCode")]
         public Input<bool>? ConsiderUnknownErrorCode { get; set; }
@@ -50,13 +50,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Filter { get; set; }
 
         /// <summary>
-        /// If `true`, filter errors by URL
+        /// If `True`, filter errors by URL
         /// </summary>
         [Input("filterByUrl")]
         public Input<bool>? FilterByUrl { get; set; }
 
         /// <summary>
-        /// Include (`true`) or exclude (`false`) the error in Apdex calculation
+        /// Include (`True`) or exclude (`False`) the error in Apdex calculation
         /// </summary>
         [Input("impactApdex")]
         public Input<bool>? ImpactApdex { get; set; }

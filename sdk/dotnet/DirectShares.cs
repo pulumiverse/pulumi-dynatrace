@@ -269,7 +269,7 @@ namespace Pulumiverse.Dynatrace
     public partial class DirectShares : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Access grants. Possible values are `read` and `read-write`
+        /// Access grants. Possible values are `Read` and `read-write`
         /// </summary>
         [Output("access")]
         public Output<string?> Access { get; private set; } = null!;
@@ -334,7 +334,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class DirectSharesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Access grants. Possible values are `read` and `read-write`
+        /// Access grants. Possible values are `Read` and `read-write`
         /// </summary>
         [Input("access")]
         public Input<string>? Access { get; set; }
@@ -360,7 +360,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class DirectSharesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Access grants. Possible values are `read` and `read-write`
+        /// Access grants. Possible values are `Read` and `read-write`
         /// </summary>
         [Input("access")]
         public Input<string>? Access { get; set; }

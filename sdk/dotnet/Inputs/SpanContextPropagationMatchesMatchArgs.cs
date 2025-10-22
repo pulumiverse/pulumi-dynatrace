@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Comparison { get; set; } = null!;
 
         /// <summary>
-        /// The name of the attribute if `source` is `ATTRIBUTE`
+        /// The name of the attribute if `Source` is `ATTRIBUTE`
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Source { get; set; } = null!;
 
         /// <summary>
-        /// The value to compare against. When `source` is `SPAN_KIND` the only allowed values are `INTERNAL`, `SERVER`, `CLIENT`, `PRODUCER` and `CONSUMER`
+        /// The value to compare against. When `Source` is `SPAN_KIND` the only allowed values are `INTERNAL`, `SERVER`, `CLIENT`, `PRODUCER` and `CONSUMER`
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

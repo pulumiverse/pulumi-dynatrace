@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class RequestNamingConditionsConditionComparisonTag
     {
         /// <summary>
-        /// Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `TAG_KEY_EQUALS` and `TAG_KEY_EQUALS_ANY_OF`
+        /// Operator of the comparison. You can reverse it by setting `Negate` to `True`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `TAG_KEY_EQUALS` and `TAG_KEY_EQUALS_ANY_OF`
         /// </summary>
         public readonly string? Operator;
         /// <summary>

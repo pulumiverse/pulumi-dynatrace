@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class KubernetesEnrichmentRulesRule
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool? Enabled;
         /// <summary>
@@ -27,7 +27,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Source;
         /// <summary>
-        /// Required when `primary_grail_tag` is omitted or `false`. Possible Values: `dt.cost.costcenter``, `dt.cost.product``, `dt.security_context
+        /// Required when `PrimaryGrailTag` is omitted or `False`. Possible Values: `dt.cost.costcenter``, `dt.cost.product``, `dt.security_context
         /// </summary>
         public readonly string? Target;
         /// <summary>

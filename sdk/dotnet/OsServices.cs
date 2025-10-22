@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.OsServicesDetectionConditionsWindows?> DetectionConditionsWindows { get; private set; } = null!;
 
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
@@ -96,13 +96,13 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// Use one of the following values as a parameter for this condition:
         /// 
-        /// - `running`
-        /// - `stopped`
-        /// - `start_pending`
-        /// - `stop_pending`
-        /// - `continue_pending`
-        /// - `pause_pending`
-        /// - `paused`
+        /// - `Running`
+        /// - `Stopped`
+        /// - `StartPending`
+        /// - `StopPending`
+        /// - `ContinuePending`
+        /// - `PausePending`
+        /// - `Paused`
         /// </summary>
         [Output("statusConditionWindows")]
         public Output<string?> StatusConditionWindows { get; private set; } = null!;
@@ -185,7 +185,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.OsServicesDetectionConditionsWindowsArgs>? DetectionConditionsWindows { get; set; }
 
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
@@ -243,13 +243,13 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// Use one of the following values as a parameter for this condition:
         /// 
-        /// - `running`
-        /// - `stopped`
-        /// - `start_pending`
-        /// - `stop_pending`
-        /// - `continue_pending`
-        /// - `pause_pending`
-        /// - `paused`
+        /// - `Running`
+        /// - `Stopped`
+        /// - `StartPending`
+        /// - `StopPending`
+        /// - `ContinuePending`
+        /// - `PausePending`
+        /// - `Paused`
         /// </summary>
         [Input("statusConditionWindows")]
         public Input<string>? StatusConditionWindows { get; set; }
@@ -293,7 +293,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.OsServicesDetectionConditionsWindowsGetArgs>? DetectionConditionsWindows { get; set; }
 
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -351,13 +351,13 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// Use one of the following values as a parameter for this condition:
         /// 
-        /// - `running`
-        /// - `stopped`
-        /// - `start_pending`
-        /// - `stop_pending`
-        /// - `continue_pending`
-        /// - `pause_pending`
-        /// - `paused`
+        /// - `Running`
+        /// - `Stopped`
+        /// - `StartPending`
+        /// - `StopPending`
+        /// - `ContinuePending`
+        /// - `PausePending`
+        /// - `Paused`
         /// </summary>
         [Input("statusConditionWindows")]
         public Input<string>? StatusConditionWindows { get; set; }

@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class BrowserMonitorScriptEventsEventClickValidateValidationTargetLocatorLocator
     {
         /// <summary>
-        /// Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+        /// Defines where to look for an element. `Css` (CSS Selector) or `Dom` (Javascript code)
         /// </summary>
         public readonly string Type;
         /// <summary>

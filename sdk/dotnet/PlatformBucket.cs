@@ -32,13 +32,13 @@ namespace Pulumiverse.Dynatrace
         public Output<int> Retention { get; private set; } = null!;
 
         /// <summary>
-        /// The status of the bucket definition. Usually has the value `active` unless an update or delete is currently happening
+        /// The status of the bucket definition. Usually has the value `Active` unless an update or delete is currently happening
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// The table the bucket definition applies to. Possible values are `logs`, `spans`,	`events` and `bizevents`. Changing this attribute will result in deleting and re-creating the bucket definition
+        /// The table the bucket definition applies to. Possible values are `Logs`, `Spans`,	`Events` and `Bizevents`. Changing this attribute will result in deleting and re-creating the bucket definition
         /// </summary>
         [Output("table")]
         public Output<string> Table { get; private set; } = null!;
@@ -109,7 +109,7 @@ namespace Pulumiverse.Dynatrace
         public Input<int> Retention { get; set; } = null!;
 
         /// <summary>
-        /// The table the bucket definition applies to. Possible values are `logs`, `spans`,	`events` and `bizevents`. Changing this attribute will result in deleting and re-creating the bucket definition
+        /// The table the bucket definition applies to. Possible values are `Logs`, `Spans`,	`Events` and `Bizevents`. Changing this attribute will result in deleting and re-creating the bucket definition
         /// </summary>
         [Input("table", required: true)]
         public Input<string> Table { get; set; } = null!;
@@ -141,13 +141,13 @@ namespace Pulumiverse.Dynatrace
         public Input<int>? Retention { get; set; }
 
         /// <summary>
-        /// The status of the bucket definition. Usually has the value `active` unless an update or delete is currently happening
+        /// The status of the bucket definition. Usually has the value `Active` unless an update or delete is currently happening
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// The table the bucket definition applies to. Possible values are `logs`, `spans`,	`events` and `bizevents`. Changing this attribute will result in deleting and re-creating the bucket definition
+        /// The table the bucket definition applies to. Possible values are `Logs`, `Spans`,	`Events` and `Bizevents`. Changing this attribute will result in deleting and re-creating the bucket definition
         /// </summary>
         [Input("table")]
         public Input<string>? Table { get; set; }

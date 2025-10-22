@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class CloudfoundryCredentials : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        /// The monitoring is enabled (`True`) or disabled (`False`) for given credentials configuration.  If not set on creation, the `True` value is used.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Output("active")]
         public Output<bool?> Active { get; private set; } = null!;
@@ -107,7 +107,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class CloudfoundryCredentialsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        /// The monitoring is enabled (`True`) or disabled (`False`) for given credentials configuration.  If not set on creation, the `True` value is used.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -167,7 +167,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class CloudfoundryCredentialsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        /// The monitoring is enabled (`True`) or disabled (`False`) for given credentials configuration.  If not set on creation, the `True` value is used.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }

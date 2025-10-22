@@ -119,7 +119,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionHostTech> HostTeches;
         /// <summary>
-        /// `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+        /// `HypervisorTypeComparision` is deprecated. Use `Hypervisor` instead
         /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionHypervisorTypeComparision> HypervisorTypeComparisions;
         /// <summary>

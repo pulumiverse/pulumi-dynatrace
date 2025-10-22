@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class NotificationAnsibleTowerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        /// Accept any, including self-signed and invalid, SSL certificate (`True`) or only trusted (`False`) certificates
         /// </summary>
         [Input("acceptAnyCertificate", required: true)]
         public Input<bool> AcceptAnyCertificate { get; set; } = null!;
 
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;

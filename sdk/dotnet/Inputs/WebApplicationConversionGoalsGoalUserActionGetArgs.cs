@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? ActionType { get; set; }
 
         /// <summary>
-        /// The match is case-sensitive (`true`) or (`false`)
+        /// The match is case-sensitive (`True`) or (`False`)
         /// </summary>
         [Input("caseSensitive")]
         public Input<bool>? CaseSensitive { get; set; }

@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class BrowserMonitorScriptEventsEventNavigateTargetLocatorLocatorGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+        /// Defines where to look for an element. `Css` (CSS Selector) or `Dom` (Javascript code)
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

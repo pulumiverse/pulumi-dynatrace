@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> AlertingMode { get; private set; } = null!;
 
         /// <summary>
-        /// Enable (`true`) or disable (`false`) process group availability monitoring
+        /// Enable (`True`) or disable (`False`) process group availability monitoring
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
@@ -91,7 +91,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? AlertingMode { get; set; }
 
         /// <summary>
-        /// Enable (`true`) or disable (`false`) process group availability monitoring
+        /// Enable (`True`) or disable (`False`) process group availability monitoring
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
@@ -123,7 +123,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? AlertingMode { get; set; }
 
         /// <summary>
-        /// Enable (`true`) or disable (`false`) process group availability monitoring
+        /// Enable (`True`) or disable (`False`) process group availability monitoring
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }

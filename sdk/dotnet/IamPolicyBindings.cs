@@ -27,13 +27,13 @@ namespace Pulumiverse.Dynatrace
     public partial class IamPolicyBindings : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The UUID of the account (`urn:dtaccount:&lt;account-uuid&gt;`). The attribute `policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
+        /// The UUID of the account (`urn:dtaccount:&lt;account-uuid&gt;`). The attribute `Policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
         /// </summary>
         [Output("account")]
         public Output<string?> Account { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
+        /// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `Policies` must contain ONLY policies defined for that environment.
         /// </summary>
         [Output("environment")]
         public Output<string?> Environment { get; private set; } = null!;
@@ -45,7 +45,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Group { get; private set; } = null!;
 
         /// <summary>
-        /// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
+        /// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `Account` or `Environment`.
         /// </summary>
         [Output("policies")]
         public Output<ImmutableArray<string>> Policies { get; private set; } = null!;
@@ -98,13 +98,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class IamPolicyBindingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The UUID of the account (`urn:dtaccount:&lt;account-uuid&gt;`). The attribute `policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
+        /// The UUID of the account (`urn:dtaccount:&lt;account-uuid&gt;`). The attribute `Policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
         /// </summary>
         [Input("account")]
         public Input<string>? Account { get; set; }
 
         /// <summary>
-        /// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
+        /// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `Policies` must contain ONLY policies defined for that environment.
         /// </summary>
         [Input("environment")]
         public Input<string>? Environment { get; set; }
@@ -119,7 +119,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _policies;
 
         /// <summary>
-        /// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
+        /// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `Account` or `Environment`.
         /// </summary>
         public InputList<string> Policies
         {
@@ -136,13 +136,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class IamPolicyBindingsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The UUID of the account (`urn:dtaccount:&lt;account-uuid&gt;`). The attribute `policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
+        /// The UUID of the account (`urn:dtaccount:&lt;account-uuid&gt;`). The attribute `Policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
         /// </summary>
         [Input("account")]
         public Input<string>? Account { get; set; }
 
         /// <summary>
-        /// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
+        /// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `Policies` must contain ONLY policies defined for that environment.
         /// </summary>
         [Input("environment")]
         public Input<string>? Environment { get; set; }
@@ -157,7 +157,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _policies;
 
         /// <summary>
-        /// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
+        /// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `Account` or `Environment`.
         /// </summary>
         public InputList<string> Policies
         {

@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class AutotagRuleConditionStringGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The comparison is case-sensitive (`true`) or insensitive (`false`)
+        /// The comparison is case-sensitive (`True`) or insensitive (`False`)
         /// </summary>
         [Input("caseSensitive")]
         public Input<bool>? CaseSensitive { get; set; }
@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? Negate { get; set; }
 
         /// <summary>
-        /// Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+        /// Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `True`
         /// </summary>
         [Input("operator", required: true)]
         public Input<string> Operator { get; set; } = null!;

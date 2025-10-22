@@ -64,7 +64,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Group { get; private set; } = null!;
 
         /// <summary>
-        /// The management zone this permission is valid for. You need to use the attribute `legacy_id` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`. The attribute `environment` is required to get specified also in order to identify the management zone uniquely.
+        /// The management zone this permission is valid for. You need to use the attribute `LegacyId` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`. The attribute `Environment` is required to get specified also in order to identify the management zone uniquely.
         /// </summary>
         [Output("managementZone")]
         public Output<string?> ManagementZone { get; private set; } = null!;
@@ -141,7 +141,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Group { get; set; } = null!;
 
         /// <summary>
-        /// The management zone this permission is valid for. You need to use the attribute `legacy_id` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`. The attribute `environment` is required to get specified also in order to identify the management zone uniquely.
+        /// The management zone this permission is valid for. You need to use the attribute `LegacyId` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`. The attribute `Environment` is required to get specified also in order to identify the management zone uniquely.
         /// </summary>
         [Input("managementZone")]
         public Input<string>? ManagementZone { get; set; }
@@ -179,7 +179,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Group { get; set; }
 
         /// <summary>
-        /// The management zone this permission is valid for. You need to use the attribute `legacy_id` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`. The attribute `environment` is required to get specified also in order to identify the management zone uniquely.
+        /// The management zone this permission is valid for. You need to use the attribute `LegacyId` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`. The attribute `Environment` is required to get specified also in order to identify the management zone uniquely.
         /// </summary>
         [Input("managementZone")]
         public Input<string>? ManagementZone { get; set; }

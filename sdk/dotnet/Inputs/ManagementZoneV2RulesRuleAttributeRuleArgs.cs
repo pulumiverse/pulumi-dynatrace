@@ -44,31 +44,31 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> EntityType { get; set; } = null!;
 
         /// <summary>
-        /// Apply to processes running on matching hosts. `entity_type` must be set to `HOST`
+        /// Apply to processes running on matching hosts. `EntityType` must be set to `HOST`
         /// </summary>
         [Input("hostToPgpropagation")]
         public Input<bool>? HostToPgpropagation { get; set; }
 
         /// <summary>
-        /// Apply to underlying hosts of matching process groups. `entity_type` must be set to `PROCESS_GROUP`
+        /// Apply to underlying hosts of matching process groups. `EntityType` must be set to `PROCESS_GROUP`
         /// </summary>
         [Input("pgToHostPropagation")]
         public Input<bool>? PgToHostPropagation { get; set; }
 
         /// <summary>
-        /// Apply to all services provided by the process groups. `entity_type` must be set to `PROCESS_GROUP`
+        /// Apply to all services provided by the process groups. `EntityType` must be set to `PROCESS_GROUP`
         /// </summary>
         [Input("pgToServicePropagation")]
         public Input<bool>? PgToServicePropagation { get; set; }
 
         /// <summary>
-        /// Apply to underlying hosts of matching services. `entity_type` must be set to `SERVICE`
+        /// Apply to underlying hosts of matching services. `EntityType` must be set to `SERVICE`
         /// </summary>
         [Input("serviceToHostPropagation")]
         public Input<bool>? ServiceToHostPropagation { get; set; }
 
         /// <summary>
-        /// Apply to underlying process groups of matching services. `entity_type` must be set to `SERVICE`
+        /// Apply to underlying process groups of matching services. `EntityType` must be set to `SERVICE`
         /// </summary>
         [Input("serviceToPgpropagation")]
         public Input<bool>? ServiceToPgpropagation { get; set; }

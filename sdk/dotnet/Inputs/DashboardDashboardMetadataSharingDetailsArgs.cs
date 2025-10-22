@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class DashboardDashboardMetadataSharingDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// If `true`, the dashboard is shared via link and authenticated users with the link can view
+        /// If `True`, the dashboard is shared via link and authenticated users with the link can view
         /// </summary>
         [Input("linkShared")]
         public Input<bool>? LinkShared { get; set; }
 
         /// <summary>
-        /// If `true`, the dashboard is published to anyone on this environment
+        /// If `True`, the dashboard is published to anyone on this environment
         /// </summary>
         [Input("published")]
         public Input<bool>? Published { get; set; }

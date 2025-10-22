@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class RequestNamingConditionsConditionComparisonZosCallTypeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+        /// Operator of the comparison. You can reverse it by setting `Negate` to `True`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
         /// </summary>
         [Input("operator")]
         public Input<string>? Operator { get; set; }

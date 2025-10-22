@@ -14,55 +14,55 @@ namespace Pulumiverse.Dynatrace
     public partial class ManagedPreferences : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Default: `false`
+        /// Default: `False`
         /// </summary>
         [Output("certificateManagementEnabled")]
         public Output<bool?> CertificateManagementEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Default: `true`
+        /// Default: `True`
         /// </summary>
         [Output("certificateManagementPossible")]
         public Output<bool?> CertificateManagementPossible { get; private set; } = null!;
 
         /// <summary>
-        /// If true, each new user will get an invitation to set up a Dynatrace user account to access Dynatrace support resources user upon first login. Default: `false`
+        /// If true, each new user will get an invitation to set up a Dynatrace user account to access Dynatrace support resources user upon first login. Default: `False`
         /// </summary>
         [Output("communityCreateUser")]
         public Output<bool?> CommunityCreateUser { get; private set; } = null!;
 
         /// <summary>
-        /// If true, results from Documentation are included in platform search. Default: `false`
+        /// If true, results from Documentation are included in platform search. Default: `False`
         /// </summary>
         [Output("communityExternalSearch")]
         public Output<bool?> CommunityExternalSearch { get; private set; } = null!;
 
         /// <summary>
-        /// If true, live, in-product assistance with our Product Experts is enabled. Default: `false`
+        /// If true, live, in-product assistance with our Product Experts is enabled. Default: `False`
         /// </summary>
         [Output("helpChatEnabled")]
         public Output<bool?> HelpChatEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// If true, audited, read-only remote access to your Dynatrace configuration settings is allowed. Default: `false`
+        /// If true, audited, read-only remote access to your Dynatrace configuration settings is allowed. Default: `False`
         /// </summary>
         [Output("readOnlyRemoteAccessAllowed")]
         public Output<bool?> ReadOnlyRemoteAccessAllowed { get; private set; } = null!;
 
         /// <summary>
-        /// If true, audited access to your Dynatrace cluster is allowed by approved Dynatrace employees otherwise by privileged Dynatrace employees. Default: `false`
+        /// If true, audited access to your Dynatrace cluster is allowed by approved Dynatrace employees otherwise by privileged Dynatrace employees. Default: `False`
         /// </summary>
         [Output("remoteAccessOnDemandOnly")]
         public Output<bool?> RemoteAccessOnDemandOnly { get; private set; } = null!;
 
         /// <summary>
-        /// If true, Dynatrace OneAgent monitors Dynatrace. Default: `true`
+        /// If true, Dynatrace OneAgent monitors Dynatrace. Default: `True`
         /// </summary>
         [Output("ruxitMonitorsRuxit")]
         public Output<bool> RuxitMonitorsRuxit { get; private set; } = null!;
 
         /// <summary>
-        /// If true, audited remote-access to your Dynatrace configuration is allowed settings. Default: `true`
+        /// If true, audited remote-access to your Dynatrace configuration is allowed settings. Default: `True`
         /// </summary>
         [Output("supportAllowRemoteAccess")]
         public Output<bool?> SupportAllowRemoteAccess { get; private set; } = null!;
@@ -80,7 +80,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> SupportSendClusterHealth { get; private set; } = null!;
 
         /// <summary>
-        /// If true, Dynatrace cluster health and OneAgent events will be reported. Default: `true`
+        /// If true, Dynatrace cluster health and OneAgent events will be reported. Default: `True`
         /// </summary>
         [Output("supportSendEvents")]
         public Output<bool?> SupportSendEvents { get; private set; } = null!;
@@ -92,7 +92,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> SuppressNonBillingRelevantData { get; private set; } = null!;
 
         /// <summary>
-        /// Default: `false`
+        /// Default: `False`
         /// </summary>
         [Output("telemetrySharing")]
         public Output<bool?> TelemetrySharing { get; private set; } = null!;
@@ -145,55 +145,55 @@ namespace Pulumiverse.Dynatrace
     public sealed class ManagedPreferencesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Default: `false`
+        /// Default: `False`
         /// </summary>
         [Input("certificateManagementEnabled")]
         public Input<bool>? CertificateManagementEnabled { get; set; }
 
         /// <summary>
-        /// Default: `true`
+        /// Default: `True`
         /// </summary>
         [Input("certificateManagementPossible")]
         public Input<bool>? CertificateManagementPossible { get; set; }
 
         /// <summary>
-        /// If true, each new user will get an invitation to set up a Dynatrace user account to access Dynatrace support resources user upon first login. Default: `false`
+        /// If true, each new user will get an invitation to set up a Dynatrace user account to access Dynatrace support resources user upon first login. Default: `False`
         /// </summary>
         [Input("communityCreateUser")]
         public Input<bool>? CommunityCreateUser { get; set; }
 
         /// <summary>
-        /// If true, results from Documentation are included in platform search. Default: `false`
+        /// If true, results from Documentation are included in platform search. Default: `False`
         /// </summary>
         [Input("communityExternalSearch")]
         public Input<bool>? CommunityExternalSearch { get; set; }
 
         /// <summary>
-        /// If true, live, in-product assistance with our Product Experts is enabled. Default: `false`
+        /// If true, live, in-product assistance with our Product Experts is enabled. Default: `False`
         /// </summary>
         [Input("helpChatEnabled")]
         public Input<bool>? HelpChatEnabled { get; set; }
 
         /// <summary>
-        /// If true, audited, read-only remote access to your Dynatrace configuration settings is allowed. Default: `false`
+        /// If true, audited, read-only remote access to your Dynatrace configuration settings is allowed. Default: `False`
         /// </summary>
         [Input("readOnlyRemoteAccessAllowed")]
         public Input<bool>? ReadOnlyRemoteAccessAllowed { get; set; }
 
         /// <summary>
-        /// If true, audited access to your Dynatrace cluster is allowed by approved Dynatrace employees otherwise by privileged Dynatrace employees. Default: `false`
+        /// If true, audited access to your Dynatrace cluster is allowed by approved Dynatrace employees otherwise by privileged Dynatrace employees. Default: `False`
         /// </summary>
         [Input("remoteAccessOnDemandOnly")]
         public Input<bool>? RemoteAccessOnDemandOnly { get; set; }
 
         /// <summary>
-        /// If true, Dynatrace OneAgent monitors Dynatrace. Default: `true`
+        /// If true, Dynatrace OneAgent monitors Dynatrace. Default: `True`
         /// </summary>
         [Input("ruxitMonitorsRuxit", required: true)]
         public Input<bool> RuxitMonitorsRuxit { get; set; } = null!;
 
         /// <summary>
-        /// If true, audited remote-access to your Dynatrace configuration is allowed settings. Default: `true`
+        /// If true, audited remote-access to your Dynatrace configuration is allowed settings. Default: `True`
         /// </summary>
         [Input("supportAllowRemoteAccess")]
         public Input<bool>? SupportAllowRemoteAccess { get; set; }
@@ -211,7 +211,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> SupportSendClusterHealth { get; set; } = null!;
 
         /// <summary>
-        /// If true, Dynatrace cluster health and OneAgent events will be reported. Default: `true`
+        /// If true, Dynatrace cluster health and OneAgent events will be reported. Default: `True`
         /// </summary>
         [Input("supportSendEvents")]
         public Input<bool>? SupportSendEvents { get; set; }
@@ -223,7 +223,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> SuppressNonBillingRelevantData { get; set; } = null!;
 
         /// <summary>
-        /// Default: `false`
+        /// Default: `False`
         /// </summary>
         [Input("telemetrySharing")]
         public Input<bool>? TelemetrySharing { get; set; }
@@ -237,55 +237,55 @@ namespace Pulumiverse.Dynatrace
     public sealed class ManagedPreferencesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Default: `false`
+        /// Default: `False`
         /// </summary>
         [Input("certificateManagementEnabled")]
         public Input<bool>? CertificateManagementEnabled { get; set; }
 
         /// <summary>
-        /// Default: `true`
+        /// Default: `True`
         /// </summary>
         [Input("certificateManagementPossible")]
         public Input<bool>? CertificateManagementPossible { get; set; }
 
         /// <summary>
-        /// If true, each new user will get an invitation to set up a Dynatrace user account to access Dynatrace support resources user upon first login. Default: `false`
+        /// If true, each new user will get an invitation to set up a Dynatrace user account to access Dynatrace support resources user upon first login. Default: `False`
         /// </summary>
         [Input("communityCreateUser")]
         public Input<bool>? CommunityCreateUser { get; set; }
 
         /// <summary>
-        /// If true, results from Documentation are included in platform search. Default: `false`
+        /// If true, results from Documentation are included in platform search. Default: `False`
         /// </summary>
         [Input("communityExternalSearch")]
         public Input<bool>? CommunityExternalSearch { get; set; }
 
         /// <summary>
-        /// If true, live, in-product assistance with our Product Experts is enabled. Default: `false`
+        /// If true, live, in-product assistance with our Product Experts is enabled. Default: `False`
         /// </summary>
         [Input("helpChatEnabled")]
         public Input<bool>? HelpChatEnabled { get; set; }
 
         /// <summary>
-        /// If true, audited, read-only remote access to your Dynatrace configuration settings is allowed. Default: `false`
+        /// If true, audited, read-only remote access to your Dynatrace configuration settings is allowed. Default: `False`
         /// </summary>
         [Input("readOnlyRemoteAccessAllowed")]
         public Input<bool>? ReadOnlyRemoteAccessAllowed { get; set; }
 
         /// <summary>
-        /// If true, audited access to your Dynatrace cluster is allowed by approved Dynatrace employees otherwise by privileged Dynatrace employees. Default: `false`
+        /// If true, audited access to your Dynatrace cluster is allowed by approved Dynatrace employees otherwise by privileged Dynatrace employees. Default: `False`
         /// </summary>
         [Input("remoteAccessOnDemandOnly")]
         public Input<bool>? RemoteAccessOnDemandOnly { get; set; }
 
         /// <summary>
-        /// If true, Dynatrace OneAgent monitors Dynatrace. Default: `true`
+        /// If true, Dynatrace OneAgent monitors Dynatrace. Default: `True`
         /// </summary>
         [Input("ruxitMonitorsRuxit")]
         public Input<bool>? RuxitMonitorsRuxit { get; set; }
 
         /// <summary>
-        /// If true, audited remote-access to your Dynatrace configuration is allowed settings. Default: `true`
+        /// If true, audited remote-access to your Dynatrace configuration is allowed settings. Default: `True`
         /// </summary>
         [Input("supportAllowRemoteAccess")]
         public Input<bool>? SupportAllowRemoteAccess { get; set; }
@@ -303,7 +303,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? SupportSendClusterHealth { get; set; }
 
         /// <summary>
-        /// If true, Dynatrace cluster health and OneAgent events will be reported. Default: `true`
+        /// If true, Dynatrace cluster health and OneAgent events will be reported. Default: `True`
         /// </summary>
         [Input("supportSendEvents")]
         public Input<bool>? SupportSendEvents { get; set; }
@@ -315,7 +315,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? SuppressNonBillingRelevantData { get; set; }
 
         /// <summary>
-        /// Default: `false`
+        /// Default: `False`
         /// </summary>
         [Input("telemetrySharing")]
         public Input<bool>? TelemetrySharing { get; set; }

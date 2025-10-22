@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class HostAnomaliesNetworkUtilizationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The detection is enabled (`true`) or disabled (`false`)
+        /// The detection is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;

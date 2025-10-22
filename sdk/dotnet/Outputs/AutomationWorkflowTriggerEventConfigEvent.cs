@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AutomationWorkflowTriggerEventConfigEvent
     {
         /// <summary>
-        /// Possible values: `events` or `bizevents`. Default: `events`
+        /// Possible values: `Events` or `Bizevents`. Default: `Events`
         /// </summary>
         public readonly string? EventType;
         /// <summary>

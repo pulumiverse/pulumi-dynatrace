@@ -27,7 +27,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? CicsTransactionCallType;
         /// <summary>
-        /// The data source is enabled (`true`) or disabled (`false`)
+        /// The data source is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
         /// <summary>

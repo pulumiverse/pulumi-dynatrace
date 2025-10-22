@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneDimensionalRuleCondition> Conditions;
         /// <summary>
-        /// The rule is enabled (`true`) or disabled (`false`)
+        /// The rule is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool? Enabled;
         /// <summary>

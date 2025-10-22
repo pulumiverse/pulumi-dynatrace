@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class BrowserMonitorAnomalyDetectionOutageHandling
     {
         /// <summary>
-        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable at all configured locations
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`True`), generate a problem and send an alert when the monitor is unavailable at all configured locations
         /// </summary>
         public readonly bool? GlobalOutage;
         /// <summary>
@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy> GlobalOutagePolicies;
         /// <summary>
-        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`True`), generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
         /// </summary>
         public readonly bool? LocalOutage;
         /// <summary>

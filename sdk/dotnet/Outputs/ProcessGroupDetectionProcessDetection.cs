@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ProcessGroupDetectionProcessDetection
     {
         /// <summary>
-        /// The substring to be contained in the value `property` refers to. Case Sensitive
+        /// The substring to be contained in the value `Property` refers to. Case Sensitive
         /// </summary>
         public readonly string ContainedString;
         /// <summary>

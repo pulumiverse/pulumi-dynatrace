@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly ImmutableArray<string> AssignedEntities;
         /// <summary>
-        /// Auto Refresh is disabled (`true`)
+        /// Auto Refresh is disabled (`True`)
         /// </summary>
         public readonly bool? AutoRefreshDisabled;
         /// <summary>
@@ -28,7 +28,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         public readonly Outputs.DashboardTileBounds? Bounds;
         public readonly bool? ChartVisible;
         /// <summary>
-        /// The tile is configured and ready to use (`true`) or just placed on the dashboard (`false`)
+        /// The tile is configured and ready to use (`True`) or just placed on the dashboard (`False`)
         /// </summary>
         public readonly bool? Configured;
         /// <summary>
@@ -36,7 +36,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? CustomName;
         /// <summary>
-        /// Include (`false') or exclude (`true`) maintenance windows from availability calculations
+        /// Include (`false') or exclude (`True`) maintenance windows from availability calculations
         /// </summary>
         public readonly bool? ExcludeMaintenanceWindows;
         /// <summary>
@@ -64,7 +64,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The size of the tile name. Possible values are `small`, `medium` and `large`.
+        /// The size of the tile name. Possible values are `Small`, `Medium` and `Large`.
         /// </summary>
         public readonly string? NameSize;
         /// <summary>
@@ -80,7 +80,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? TimeFrameShift;
         /// <summary>
-        /// The attribute `type` exists for backwards compatibilty. Usage is discouraged. You should use `visualization` instead.
+        /// The attribute `Type` exists for backwards compatibilty. Usage is discouraged. You should use `Visualization` instead.
         /// </summary>
         public readonly string? Type;
         /// <summary>

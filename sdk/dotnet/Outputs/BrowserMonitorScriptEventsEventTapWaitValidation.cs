@@ -15,16 +15,16 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class BrowserMonitorScriptEventsEventTapWaitValidation
     {
         /// <summary>
-        /// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+        /// The condition of the validation. `False` means the validation succeeds if the specified content/element is found. `True` means the validation fails if the specified content/element is found
         /// </summary>
         public readonly bool? FailIfFound;
         /// <summary>
         /// The content to look for on the page.
-        /// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `content_match`, optional for `element_match`.
+        /// Regular expressions are allowed. In that case set `isRegex` as `True`. Required for `ContentMatch`, optional for `ElementMatch`.
         /// </summary>
         public readonly string? Match;
         /// <summary>
-        /// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+        /// Defines whether `Match` is plain text (`False`) or a regular expression (`True`)
         /// </summary>
         public readonly bool? Regex;
         /// <summary>
@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventTapWaitValidationTarget? Target;
         /// <summary>
-        /// The goal of the validation. `content_match` (check page for the specific content. Not allowed for validation inside of wait condition), `element_match` (check page for the specific element).
+        /// The goal of the validation. `ContentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `ElementMatch` (check page for the specific element).
         /// </summary>
         public readonly string Type;
 

@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? Negate;
         /// <summary>
-        /// Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+        /// Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `True`
         /// </summary>
         public readonly string Operator;
         /// <summary>

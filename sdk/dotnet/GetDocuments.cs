@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **View documents** (`document:documents:read`).
         /// 
-        /// - `type` (String) The type of documents to query for. Leave empty if you want to query for all kinds of documents.
+        /// - `Type` (String) The type of documents to query for. Leave empty if you want to query for all kinds of documents.
         /// 
         /// ## Example Usage
         /// 
@@ -52,7 +52,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **View documents** (`document:documents:read`).
         /// 
-        /// - `type` (String) The type of documents to query for. Leave empty if you want to query for all kinds of documents.
+        /// - `Type` (String) The type of documents to query for. Leave empty if you want to query for all kinds of documents.
         /// 
         /// ## Example Usage
         /// 
@@ -87,7 +87,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permission: **View documents** (`document:documents:read`).
         /// 
-        /// - `type` (String) The type of documents to query for. Leave empty if you want to query for all kinds of documents.
+        /// - `Type` (String) The type of documents to query for. Leave empty if you want to query for all kinds of documents.
         /// 
         /// ## Example Usage
         /// 
@@ -122,7 +122,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class GetDocumentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
+        /// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `Dashboard` or `Notebook`
         /// </summary>
         [Input("type")]
         public string? Type { get; set; }
@@ -136,7 +136,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class GetDocumentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
+        /// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `Dashboard` or `Notebook`
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
@@ -156,7 +156,7 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
+        /// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `Dashboard` or `Notebook`
         /// </summary>
         public readonly string? Type;
         public readonly ImmutableArray<Outputs.GetDocumentsValueResult> Values;

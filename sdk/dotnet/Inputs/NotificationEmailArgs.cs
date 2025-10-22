@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class NotificationEmailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;

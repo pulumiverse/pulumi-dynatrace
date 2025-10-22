@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class FrequentIssues : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
+        /// Detect frequent issues within applications, enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("detectApps")]
         public Output<bool> DetectApps { get; private set; } = null!;
@@ -26,13 +26,13 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> DetectEnv { get; private set; } = null!;
 
         /// <summary>
-        /// Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
+        /// Detect frequent issues within infrastructure, enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("detectInfra")]
         public Output<bool> DetectInfra { get; private set; } = null!;
 
         /// <summary>
-        /// Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
+        /// Detect frequent issues within transactions and services, enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("detectTxn")]
         public Output<bool> DetectTxn { get; private set; } = null!;
@@ -85,7 +85,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class FrequentIssuesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
+        /// Detect frequent issues within applications, enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("detectApps", required: true)]
         public Input<bool> DetectApps { get; set; } = null!;
@@ -97,13 +97,13 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? DetectEnv { get; set; }
 
         /// <summary>
-        /// Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
+        /// Detect frequent issues within infrastructure, enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("detectInfra", required: true)]
         public Input<bool> DetectInfra { get; set; } = null!;
 
         /// <summary>
-        /// Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
+        /// Detect frequent issues within transactions and services, enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("detectTxn", required: true)]
         public Input<bool> DetectTxn { get; set; } = null!;
@@ -117,7 +117,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class FrequentIssuesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
+        /// Detect frequent issues within applications, enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("detectApps")]
         public Input<bool>? DetectApps { get; set; }
@@ -129,13 +129,13 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? DetectEnv { get; set; }
 
         /// <summary>
-        /// Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
+        /// Detect frequent issues within infrastructure, enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("detectInfra")]
         public Input<bool>? DetectInfra { get; set; }
 
         /// <summary>
-        /// Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
+        /// Detect frequent issues within transactions and services, enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("detectTxn")]
         public Input<bool>? DetectTxn { get; set; }

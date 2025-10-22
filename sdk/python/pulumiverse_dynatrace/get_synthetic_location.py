@@ -139,6 +139,8 @@ def get_synthetic_location(cloud_platform: Optional[_builtins.str] = None,
     > For Provider versions earlier than v1.80.0: This data source requires the API token scope **Read synthetic monitors, locations, and nodes** (`ReadSyntheticData`)
     For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
 
+    ## Example Usage
+
 
     :param _builtins.str cloud_platform: The cloud provider where the location is hosted.
     """
@@ -178,6 +180,8 @@ def get_synthetic_location_output(cloud_platform: Optional[pulumi.Input[Optional
 
     > For Provider versions earlier than v1.80.0: This data source requires the API token scope **Read synthetic monitors, locations, and nodes** (`ReadSyntheticData`)
     For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
+
+    ## Example Usage
 
 
     :param _builtins.str cloud_platform: The cloud provider where the location is hosted.

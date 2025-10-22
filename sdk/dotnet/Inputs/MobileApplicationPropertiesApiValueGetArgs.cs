@@ -44,13 +44,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// If `true`, the property is stored as a session property
+        /// If `True`, the property is stored as a session property
         /// </summary>
         [Input("storeAsSessionProperty")]
         public Input<bool>? StoreAsSessionProperty { get; set; }
 
         /// <summary>
-        /// If `true`, the property is stored as a user action property
+        /// If `True`, the property is stored as a user action property
         /// </summary>
         [Input("storeAsUserActionProperty")]
         public Input<bool>? StoreAsUserActionProperty { get; set; }

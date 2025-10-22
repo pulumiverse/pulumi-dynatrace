@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class HostAnomaliesNetworkDroppedPackets
     {
         /// <summary>
-        /// The detection is enabled (`true`) or disabled (`false`)
+        /// The detection is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
         /// <summary>

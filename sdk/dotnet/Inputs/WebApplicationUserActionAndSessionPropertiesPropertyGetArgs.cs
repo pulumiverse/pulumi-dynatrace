@@ -40,7 +40,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<int> Id { get; set; } = null!;
 
         /// <summary>
-        /// If `true`, the value of this property will always be stored in lower case. Defaults to `false`.
+        /// If `True`, the value of this property will always be stored in lower case. Defaults to `False`.
         /// </summary>
         [Input("ignoreCase")]
         public Input<bool>? IgnoreCase { get; set; }
@@ -52,7 +52,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// If the `type` is `LONG_STRING`, the max length for this property. Must be a multiple of `100`. Defaults to `200`. Maximum is `1000`.
+        /// If the `Type` is `LONG_STRING`, the max length for this property. Must be a multiple of `100`. Defaults to `200`. Maximum is `1000`.
         /// </summary>
         [Input("longStringLength")]
         public Input<int>? LongStringLength { get; set; }
@@ -78,13 +78,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? ServerSideRequestAttribute { get; set; }
 
         /// <summary>
-        /// If `true`, the property is stored as a session property
+        /// If `True`, the property is stored as a session property
         /// </summary>
         [Input("storeAsSessionProperty")]
         public Input<bool>? StoreAsSessionProperty { get; set; }
 
         /// <summary>
-        /// If `true`, the property is stored as a user action property
+        /// If `True`, the property is stored as a user action property
         /// </summary>
         [Input("storeAsUserActionProperty")]
         public Input<bool>? StoreAsUserActionProperty { get; set; }

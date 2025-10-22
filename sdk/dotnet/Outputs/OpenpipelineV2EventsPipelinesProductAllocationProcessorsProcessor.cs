@@ -47,7 +47,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorDql? Dql;
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
         /// <summary>

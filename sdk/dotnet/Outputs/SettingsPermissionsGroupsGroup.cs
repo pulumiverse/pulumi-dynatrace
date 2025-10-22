@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class SettingsPermissionsGroupsGroup
     {
         /// <summary>
-        /// Valid values: `read`, `write`
+        /// Valid values: `Read`, `Write`
         /// </summary>
         public readonly string Access;
         /// <summary>
-        /// The UUID of the group, conveniently retrieved via the `id` attribute provided by the data source `dynatrace*iam*group
+        /// The UUID of the group, conveniently retrieved via the `Id` attribute provided by the data source `dynatrace*iam*group
         /// </summary>
         public readonly string Id;
 

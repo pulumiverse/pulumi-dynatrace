@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
         public Output<ImmutableArray<Outputs.CalculatedSyntheticMetricDimension>> Dimensions { get; private set; } = null!;
 
         /// <summary>
-        /// The metric is enabled (`true`) or disabled (`false`)
+        /// The metric is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
@@ -127,7 +127,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The metric is enabled (`true`) or disabled (`false`)
+        /// The metric is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
@@ -189,7 +189,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The metric is enabled (`true`) or disabled (`false`)
+        /// The metric is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }

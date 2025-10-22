@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.DashboardDashboardMetadata?> DashboardMetadata { get; private set; } = null!;
 
         /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
+        /// `Metadata` exists for backwards compatibility but shouldn't get specified anymore
         /// </summary>
         [Output("metadata")]
         public Output<Outputs.DashboardMetadata?> Metadata { get; private set; } = null!;
@@ -91,7 +91,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.DashboardDashboardMetadataArgs>? DashboardMetadata { get; set; }
 
         /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
+        /// `Metadata` exists for backwards compatibility but shouldn't get specified anymore
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.DashboardMetadataArgs>? Metadata { get; set; }
@@ -129,7 +129,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.DashboardDashboardMetadataGetArgs>? DashboardMetadata { get; set; }
 
         /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
+        /// `Metadata` exists for backwards compatibility but shouldn't get specified anymore
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.DashboardMetadataGetArgs>? Metadata { get; set; }

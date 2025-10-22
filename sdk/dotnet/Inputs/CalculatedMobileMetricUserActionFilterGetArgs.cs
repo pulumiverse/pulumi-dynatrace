@@ -74,13 +74,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Device { get; set; }
 
         /// <summary>
-        /// The request error status of the actions to be included in the metric calculation: `true` or `false`
+        /// The request error status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         [Input("hasHttpError")]
         public Input<bool>? HasHttpError { get; set; }
 
         /// <summary>
-        /// The error status of the actions to be included in the metric calculation: `true` or `false`
+        /// The error status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         [Input("hasReportedError")]
         public Input<bool>? HasReportedError { get; set; }

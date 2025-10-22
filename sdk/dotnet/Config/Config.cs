@@ -55,7 +55,7 @@ namespace Pulumiverse.Dynatrace
 
         private static readonly __Value<string?> _automationEnvUrl = new __Value<string?>(() => __config.Get("automationEnvUrl"));
         /// <summary>
-        /// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        /// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `DtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
         /// </summary>
         public static string? AutomationEnvUrl
         {
@@ -65,7 +65,7 @@ namespace Pulumiverse.Dynatrace
 
         private static readonly __Value<string?> _automationTokenUrl = new __Value<string?>(() => __config.Get("automationTokenUrl"));
         /// <summary>
-        /// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        /// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `DtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
         /// </summary>
         public static string? AutomationTokenUrl
         {
@@ -152,7 +152,7 @@ namespace Pulumiverse.Dynatrace
 
         private static readonly __Value<string?> _platformToken = new __Value<string?>(() => __config.Get("platformToken"));
         /// <summary>
-        /// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
+        /// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `AutomationClientId`, `AutomationClientSecret`, `AutomationTokenUrl` and `AutomationEnvUrl`
         /// </summary>
         public static string? PlatformToken
         {

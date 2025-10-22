@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class EmailNotification : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("active")]
         public Output<bool?> Active { get; private set; } = null!;
@@ -121,7 +121,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class EmailNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -207,7 +207,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class EmailNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }

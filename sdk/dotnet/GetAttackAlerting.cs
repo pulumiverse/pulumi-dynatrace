@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.AttackAlerting` data source allows the attack alerting profile ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the attack alerting profile
+        /// - `Name` (String) - The name of the attack alerting profile
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -47,7 +47,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.AttackAlerting` data source allows the attack alerting profile ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the attack alerting profile
+        /// - `Name` (String) - The name of the attack alerting profile
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -79,7 +79,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.AttackAlerting` data source allows the attack alerting profile ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the attack alerting profile
+        /// - `Name` (String) - The name of the attack alerting profile
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 

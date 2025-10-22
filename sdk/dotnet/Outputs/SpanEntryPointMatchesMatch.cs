@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Comparison;
         /// <summary>
-        /// The name of the attribute if `source` is `ATTRIBUTE`
+        /// The name of the attribute if `Source` is `ATTRIBUTE`
         /// </summary>
         public readonly string? Key;
         /// <summary>
@@ -31,7 +31,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Source;
         /// <summary>
-        /// The value to compare against. When `source` is `SPAN_KIND` the only allowed values are `INTERNAL`, `SERVER`, `CLIENT`, `PRODUCER` and `CONSUMER`
+        /// The value to compare against. When `Source` is `SPAN_KIND` the only allowed values are `INTERNAL`, `SERVER`, `CLIENT`, `PRODUCER` and `CONSUMER`
         /// </summary>
         public readonly string? Value;
 

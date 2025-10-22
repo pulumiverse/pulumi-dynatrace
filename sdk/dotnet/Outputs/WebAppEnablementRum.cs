@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly int CostAndTrafficControl;
         /// <summary>
-        /// (Field has overlap with `dynatrace.WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+        /// (Field has overlap with `dynatrace.WebApplication`) This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
         /// <summary>

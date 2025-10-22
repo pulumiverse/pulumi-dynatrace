@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string TimeframeFrom;
         /// <summary>
-        /// Timeframe to, example: `now`
+        /// Timeframe to, example: `Now`
         /// </summary>
         public readonly string? TimeframeTo;
         /// <summary>

@@ -21,7 +21,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         public readonly int? Height;
         /// <summary>
         /// The flag of the mobile device.
-        /// Set to `true` for mobile devices or `false` for a desktop or laptop.
+        /// Set to `True` for mobile devices or `False` for a desktop or laptop.
         /// </summary>
         public readonly bool? Mobile;
         /// <summary>
@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// The orientation of the device. Possible values are `portrait` or `landscape`. Desktop and laptop devices are not allowed to use the `portrait` orientation
+        /// The orientation of the device. Possible values are `Portrait` or `Landscape`. Desktop and laptop devices are not allowed to use the `Portrait` orientation
         /// </summary>
         public readonly string? Orientation;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         public readonly double? ScaleFactor;
         /// <summary>
         /// The flag of the touchscreen.
-        /// Set to `true` if the device uses touchscreen. In that case, use can set interaction event as `tap`.
+        /// Set to `True` if the device uses touchscreen. In that case, use can set interaction event as `Tap`.
         /// </summary>
         public readonly bool? TouchEnabled;
         /// <summary>

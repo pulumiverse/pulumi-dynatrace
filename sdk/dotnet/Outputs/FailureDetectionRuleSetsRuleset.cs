@@ -25,7 +25,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// Define failure reasons based on span and request attributes.. Failure detection result: `reason="custom_rule"`, `verdict="failure"`, `custom_rule_name`
+        /// Define failure reasons based on span and request attributes.. Failure detection result: `reason="CustomRule"`, `verdict="failure"`, `CustomRuleName`
         /// </summary>
         public readonly Outputs.FailureDetectionRuleSetsRulesetFailOnCustomRules? FailOnCustomRules;
         /// <summary>
@@ -35,19 +35,19 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Evaluated attribute: `rpc.grpc.status_code`
         /// 
-        /// Failure detection result: `reason="grpc_code"`, `verdict="failure"`
+        /// Failure detection result: `reason="GrpcCode"`, `verdict="failure"`
         /// </summary>
         public readonly Outputs.FailureDetectionRuleSetsRulesetFailOnGrpcStatusCodes FailOnGrpcStatusCodes;
         /// <summary>
         /// Evaluated attribute: `http.response.status_code`
         /// 
-        /// Failure detection result: `reason="http_code"`, `verdict="failure"`
+        /// Failure detection result: `reason="HttpCode"`, `verdict="failure"`
         /// </summary>
         public readonly Outputs.FailureDetectionRuleSetsRulesetFailOnHttpResponseStatusCodes FailOnHttpResponseStatusCodes;
         /// <summary>
         /// Evaluated attribute: `span.status_code`
         /// 
-        /// Failure detection result: `reason="span_status"`, `verdict="failure"`
+        /// Failure detection result: `reason="SpanStatus"`, `verdict="failure"`
         /// </summary>
         public readonly Outputs.FailureDetectionRuleSetsRulesetFailOnSpanStatusError FailOnSpanStatusError;
         /// <summary>

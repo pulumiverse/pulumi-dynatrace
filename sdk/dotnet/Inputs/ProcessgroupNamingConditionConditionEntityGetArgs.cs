@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? Negate { get; set; }
 
         /// <summary>
-        /// Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+        /// Currently only EQUALS is supported. You can reverse it by setting **negate** to `True`
         /// </summary>
         [Input("operator", required: true)]
         public Input<string> Operator { get; set; } = null!;

@@ -60,13 +60,13 @@ namespace Pulumiverse.Dynatrace
         public Output<ImmutableArray<Outputs.AwsCredentialsSupportingServicesToMonitor>> SupportingServicesToMonitors { get; private set; } = null!;
 
         /// <summary>
-        /// Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
+        /// Monitor only resources which have specified AWS tags (`True`) or all resources (`False`)
         /// </summary>
         [Output("taggedOnly")]
         public Output<bool> TaggedOnly { get; private set; } = null!;
 
         /// <summary>
-        /// AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
+        /// AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `True`
         /// </summary>
         [Output("tagsToMonitors")]
         public Output<ImmutableArray<Outputs.AwsCredentialsTagsToMonitor>> TagsToMonitors { get; private set; } = null!;
@@ -178,7 +178,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
+        /// Monitor only resources which have specified AWS tags (`True`) or all resources (`False`)
         /// </summary>
         [Input("taggedOnly", required: true)]
         public Input<bool> TaggedOnly { get; set; } = null!;
@@ -187,7 +187,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.AwsCredentialsTagsToMonitorArgs>? _tagsToMonitors;
 
         /// <summary>
-        /// AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
+        /// AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `True`
         /// </summary>
         public InputList<Inputs.AwsCredentialsTagsToMonitorArgs> TagsToMonitors
         {
@@ -263,7 +263,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
+        /// Monitor only resources which have specified AWS tags (`True`) or all resources (`False`)
         /// </summary>
         [Input("taggedOnly")]
         public Input<bool>? TaggedOnly { get; set; }
@@ -272,7 +272,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.AwsCredentialsTagsToMonitorGetArgs>? _tagsToMonitors;
 
         /// <summary>
-        /// AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
+        /// AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `True`
         /// </summary>
         public InputList<Inputs.AwsCredentialsTagsToMonitorGetArgs> TagsToMonitors
         {

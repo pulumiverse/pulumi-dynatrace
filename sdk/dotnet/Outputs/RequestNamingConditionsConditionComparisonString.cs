@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class RequestNamingConditionsConditionComparisonString
     {
         /// <summary>
-        /// The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+        /// The comparison is case-sensitive (`True`) or not case-sensitive (`False`)
         /// </summary>
         public readonly bool? CaseSensitive;
         /// <summary>
-        /// Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `BEGINS_WITH`, `BEGINS_WITH_ANY_OF`, `CONTAINS`, `ENDS_WITH`, `ENDS_WITH_ANY_OF`, `EQUALS`, `EQUALS_ANY_OF`, `EXISTS` and `REGEX_MATCHES`
+        /// Operator of the comparison. You can reverse it by setting `Negate` to `True`. Possible values are `BEGINS_WITH`, `BEGINS_WITH_ANY_OF`, `CONTAINS`, `ENDS_WITH`, `ENDS_WITH_ANY_OF`, `EQUALS`, `EQUALS_ANY_OF`, `EXISTS` and `REGEX_MATCHES`
         /// </summary>
         public readonly string? Operator;
         /// <summary>

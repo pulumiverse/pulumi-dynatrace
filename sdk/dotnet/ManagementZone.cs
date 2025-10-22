@@ -20,13 +20,13 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
-        /// A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
+        /// A list of dimensional data rules for management zone usage. If several rules are specified, the `Or` logic applies
         /// </summary>
         [Output("dimensionalRules")]
         public Output<ImmutableArray<Outputs.ManagementZoneDimensionalRule>> DimensionalRules { get; private set; } = null!;
 
         /// <summary>
-        /// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
+        /// A list of entity-selector based rules for management zone usage. If several rules are specified, the `Or` logic applies
         /// </summary>
         [Output("entitySelectorBasedRules")]
         public Output<ImmutableArray<Outputs.ManagementZoneEntitySelectorBasedRule>> EntitySelectorBasedRules { get; private set; } = null!;
@@ -106,7 +106,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.ManagementZoneDimensionalRuleArgs>? _dimensionalRules;
 
         /// <summary>
-        /// A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
+        /// A list of dimensional data rules for management zone usage. If several rules are specified, the `Or` logic applies
         /// </summary>
         public InputList<Inputs.ManagementZoneDimensionalRuleArgs> DimensionalRules
         {
@@ -118,7 +118,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.ManagementZoneEntitySelectorBasedRuleArgs>? _entitySelectorBasedRules;
 
         /// <summary>
-        /// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
+        /// A list of entity-selector based rules for management zone usage. If several rules are specified, the `Or` logic applies
         /// </summary>
         public InputList<Inputs.ManagementZoneEntitySelectorBasedRuleArgs> EntitySelectorBasedRules
         {
@@ -168,7 +168,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.ManagementZoneDimensionalRuleGetArgs>? _dimensionalRules;
 
         /// <summary>
-        /// A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
+        /// A list of dimensional data rules for management zone usage. If several rules are specified, the `Or` logic applies
         /// </summary>
         public InputList<Inputs.ManagementZoneDimensionalRuleGetArgs> DimensionalRules
         {
@@ -180,7 +180,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.ManagementZoneEntitySelectorBasedRuleGetArgs>? _entitySelectorBasedRules;
 
         /// <summary>
-        /// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
+        /// A list of entity-selector based rules for management zone usage. If several rules are specified, the `Or` logic applies
         /// </summary>
         public InputList<Inputs.ManagementZoneEntitySelectorBasedRuleGetArgs> EntitySelectorBasedRules
         {

@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class NetworkZones : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Network Zones are enabled (`true`) or disabled (`false`)
+        /// Network Zones are enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
@@ -67,7 +67,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class NetworkZonesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Network Zones are enabled (`true`) or disabled (`false`)
+        /// Network Zones are enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
@@ -81,7 +81,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class NetworkZonesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Network Zones are enabled (`true`) or disabled (`false`)
+        /// Network Zones are enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }

@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> HostName { get; private set; } = null!;
 
         /// <summary>
-        /// If true, a password has been configured. Default: `false`.
+        /// If true, a password has been configured. Default: `False`.
         /// </summary>
         [Output("isPasswordConfigured")]
         public Output<bool?> IsPasswordConfigured { get; private set; } = null!;
@@ -137,7 +137,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> HostName { get; set; } = null!;
 
         /// <summary>
-        /// If true, a password has been configured. Default: `false`.
+        /// If true, a password has been configured. Default: `False`.
         /// </summary>
         [Input("isPasswordConfigured")]
         public Input<bool>? IsPasswordConfigured { get; set; }
@@ -209,7 +209,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? HostName { get; set; }
 
         /// <summary>
-        /// If true, a password has been configured. Default: `false`.
+        /// If true, a password has been configured. Default: `False`.
         /// </summary>
         [Input("isPasswordConfigured")]
         public Input<bool>? IsPasswordConfigured { get; set; }

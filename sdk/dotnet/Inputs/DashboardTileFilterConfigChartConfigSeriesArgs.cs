@@ -53,13 +53,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<int>? Percentile { get; set; }
 
         /// <summary>
-        /// Sort ascending (`true`) or descending (`false`)
+        /// Sort ascending (`True`) or descending (`False`)
         /// </summary>
         [Input("sortAscending")]
         public Input<bool>? SortAscending { get; set; }
 
         /// <summary>
-        /// Sort the column (`true`) or (`false`)
+        /// Sort the column (`True`) or (`False`)
         /// </summary>
         [Input("sortColumn")]
         public Input<bool>? SortColumn { get; set; }

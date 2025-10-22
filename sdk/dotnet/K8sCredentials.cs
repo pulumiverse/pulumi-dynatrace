@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class K8sCredentials : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        /// Monitoring is enabled (`True`) or disabled (`False`) for given credentials configuration.  If not set on creation, the `True` value is used.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Output("active")]
         public Output<bool?> Active { get; private set; } = null!;
@@ -26,19 +26,19 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> ActiveGateGroup { get; private set; } = null!;
 
         /// <summary>
-        /// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
+        /// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `Null`.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Output("authToken")]
         public Output<string?> AuthToken { get; private set; } = null!;
 
         /// <summary>
-        /// The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        /// The check of SSL certificates is enabled (`True`) or disabled (`False`) for the Kubernetes cluster.  If not set on creation, the `True` value is used.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Output("certificateCheckEnabled")]
         public Output<bool?> CertificateCheckEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
+        /// Inclusion of all Davis relevant events is enabled (`True`) or disabled (`False`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
         /// </summary>
         [Output("davisEventsIntegrationEnabled")]
         public Output<bool?> DavisEventsIntegrationEnabled { get; private set; } = null!;
@@ -50,19 +50,19 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> EndpointUrl { get; private set; } = null!;
 
         /// <summary>
-        /// Event analysis and alerting is (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
+        /// Event analysis and alerting is (`True`) or disabled (`False`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Output("eventAnalysisAndAlertingEnabled")]
         public Output<bool?> EventAnalysisAndAlertingEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
+        /// Kubernetes event filters based on field-selectors. If set to `Null` on creation, no events field selectors are subscribed. If set to `Null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
         /// </summary>
         [Output("eventsFieldSelectors")]
         public Output<ImmutableArray<Outputs.K8sCredentialsEventsFieldSelector>> EventsFieldSelectors { get; private set; } = null!;
 
         /// <summary>
-        /// Monitoring of events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `false` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        /// Monitoring of events is enabled (`True`) or disabled (`False`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `False` value is used.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Output("eventsIntegrationEnabled")]
         public Output<bool?> EventsIntegrationEnabled { get; private set; } = null!;
@@ -80,7 +80,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Label { get; private set; } = null!;
 
         /// <summary>
-        /// Prometheus exporters integration is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.If the field is omitted during an update, the old value remains unaffected
+        /// Prometheus exporters integration is enabled (`True`) or disabled (`False`) for the Kubernetes cluster.If the field is omitted during an update, the old value remains unaffected
         /// </summary>
         [Output("prometheusExporters")]
         public Output<bool?> PrometheusExporters { get; private set; } = null!;
@@ -92,7 +92,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Unknowns { get; private set; } = null!;
 
         /// <summary>
-        /// Workload and cloud application processing is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
+        /// Workload and cloud application processing is enabled (`True`) or disabled (`False`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Output("workloadIntegrationEnabled")]
         public Output<bool?> WorkloadIntegrationEnabled { get; private set; } = null!;
@@ -149,7 +149,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class K8sCredentialsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        /// Monitoring is enabled (`True`) or disabled (`False`) for given credentials configuration.  If not set on creation, the `True` value is used.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -164,7 +164,7 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _authToken;
 
         /// <summary>
-        /// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
+        /// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `Null`.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         public Input<string>? AuthToken
         {
@@ -177,13 +177,13 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        /// The check of SSL certificates is enabled (`True`) or disabled (`False`) for the Kubernetes cluster.  If not set on creation, the `True` value is used.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Input("certificateCheckEnabled")]
         public Input<bool>? CertificateCheckEnabled { get; set; }
 
         /// <summary>
-        /// Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
+        /// Inclusion of all Davis relevant events is enabled (`True`) or disabled (`False`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
         /// </summary>
         [Input("davisEventsIntegrationEnabled")]
         public Input<bool>? DavisEventsIntegrationEnabled { get; set; }
@@ -195,7 +195,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? EndpointUrl { get; set; }
 
         /// <summary>
-        /// Event analysis and alerting is (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
+        /// Event analysis and alerting is (`True`) or disabled (`False`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Input("eventAnalysisAndAlertingEnabled")]
         public Input<bool>? EventAnalysisAndAlertingEnabled { get; set; }
@@ -204,7 +204,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.K8sCredentialsEventsFieldSelectorArgs>? _eventsFieldSelectors;
 
         /// <summary>
-        /// Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
+        /// Kubernetes event filters based on field-selectors. If set to `Null` on creation, no events field selectors are subscribed. If set to `Null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
         /// </summary>
         public InputList<Inputs.K8sCredentialsEventsFieldSelectorArgs> EventsFieldSelectors
         {
@@ -213,7 +213,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Monitoring of events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `false` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        /// Monitoring of events is enabled (`True`) or disabled (`False`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `False` value is used.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Input("eventsIntegrationEnabled")]
         public Input<bool>? EventsIntegrationEnabled { get; set; }
@@ -231,7 +231,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Label { get; set; } = null!;
 
         /// <summary>
-        /// Prometheus exporters integration is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.If the field is omitted during an update, the old value remains unaffected
+        /// Prometheus exporters integration is enabled (`True`) or disabled (`False`) for the Kubernetes cluster.If the field is omitted during an update, the old value remains unaffected
         /// </summary>
         [Input("prometheusExporters")]
         public Input<bool>? PrometheusExporters { get; set; }
@@ -243,7 +243,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Unknowns { get; set; }
 
         /// <summary>
-        /// Workload and cloud application processing is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
+        /// Workload and cloud application processing is enabled (`True`) or disabled (`False`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Input("workloadIntegrationEnabled")]
         public Input<bool>? WorkloadIntegrationEnabled { get; set; }
@@ -257,7 +257,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class K8sCredentialsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        /// Monitoring is enabled (`True`) or disabled (`False`) for given credentials configuration.  If not set on creation, the `True` value is used.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -272,7 +272,7 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _authToken;
 
         /// <summary>
-        /// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
+        /// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `Null`.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         public Input<string>? AuthToken
         {
@@ -285,13 +285,13 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        /// The check of SSL certificates is enabled (`True`) or disabled (`False`) for the Kubernetes cluster.  If not set on creation, the `True` value is used.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Input("certificateCheckEnabled")]
         public Input<bool>? CertificateCheckEnabled { get; set; }
 
         /// <summary>
-        /// Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
+        /// Inclusion of all Davis relevant events is enabled (`True`) or disabled (`False`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
         /// </summary>
         [Input("davisEventsIntegrationEnabled")]
         public Input<bool>? DavisEventsIntegrationEnabled { get; set; }
@@ -303,7 +303,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? EndpointUrl { get; set; }
 
         /// <summary>
-        /// Event analysis and alerting is (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
+        /// Event analysis and alerting is (`True`) or disabled (`False`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Input("eventAnalysisAndAlertingEnabled")]
         public Input<bool>? EventAnalysisAndAlertingEnabled { get; set; }
@@ -312,7 +312,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.K8sCredentialsEventsFieldSelectorGetArgs>? _eventsFieldSelectors;
 
         /// <summary>
-        /// Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
+        /// Kubernetes event filters based on field-selectors. If set to `Null` on creation, no events field selectors are subscribed. If set to `Null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
         /// </summary>
         public InputList<Inputs.K8sCredentialsEventsFieldSelectorGetArgs> EventsFieldSelectors
         {
@@ -321,7 +321,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Monitoring of events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `false` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        /// Monitoring of events is enabled (`True`) or disabled (`False`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `False` value is used.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Input("eventsIntegrationEnabled")]
         public Input<bool>? EventsIntegrationEnabled { get; set; }
@@ -339,7 +339,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Label { get; set; }
 
         /// <summary>
-        /// Prometheus exporters integration is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.If the field is omitted during an update, the old value remains unaffected
+        /// Prometheus exporters integration is enabled (`True`) or disabled (`False`) for the Kubernetes cluster.If the field is omitted during an update, the old value remains unaffected
         /// </summary>
         [Input("prometheusExporters")]
         public Input<bool>? PrometheusExporters { get; set; }
@@ -351,7 +351,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Unknowns { get; set; }
 
         /// <summary>
-        /// Workload and cloud application processing is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
+        /// Workload and cloud application processing is enabled (`True`) or disabled (`False`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Input("workloadIntegrationEnabled")]
         public Input<bool>? WorkloadIntegrationEnabled { get; set; }

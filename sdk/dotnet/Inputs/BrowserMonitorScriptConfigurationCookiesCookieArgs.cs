@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Domain { get; set; } = null!;
 
         /// <summary>
-        /// The name of the cookie. The following cookie names are now allowed: `dtCookie`, `dtLatC`, `dtPC`, `rxVisitor`, `rxlatency`, `rxpc`, `rxsession` and `rxvt`
+        /// The name of the cookie. The following cookie names are now allowed: `dtCookie`, `dtLatC`, `dtPC`, `rxVisitor`, `Rxlatency`, `Rxpc`, `Rxsession` and `Rxvt`
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

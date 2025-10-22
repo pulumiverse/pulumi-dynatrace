@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class NotificationSlackGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
@@ -50,7 +50,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Unknowns { get; set; }
 
         /// <summary>
-        /// The URL of the Slack WebHook.  This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
+        /// The URL of the Slack WebHook.  This is confidential information, therefore GET requests return this field with the `Null` value, and it is optional for PUT requests
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }

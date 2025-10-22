@@ -32,13 +32,13 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.CalculatedServiceMetricDimensionDefinition?> DimensionDefinition { get; private set; } = null!;
 
         /// <summary>
-        /// The metric is enabled (`true`) or disabled (`false`)
+        /// The metric is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
         public Output<bool?> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+        /// Restricts the metric usage to the specified service. This field is mutually exclusive with the `ManagementZones` field
         /// </summary>
         [Output("entityId")]
         public Output<string?> EntityId { get; private set; } = null!;
@@ -50,7 +50,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> IgnoreMutedRequests { get; private set; } = null!;
 
         /// <summary>
-        /// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
+        /// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `EntityId` field
         /// </summary>
         [Output("managementZones")]
         public Output<ImmutableArray<string>> ManagementZones { get; private set; } = null!;
@@ -163,13 +163,13 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.CalculatedServiceMetricDimensionDefinitionArgs>? DimensionDefinition { get; set; }
 
         /// <summary>
-        /// The metric is enabled (`true`) or disabled (`false`)
+        /// The metric is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+        /// Restricts the metric usage to the specified service. This field is mutually exclusive with the `ManagementZones` field
         /// </summary>
         [Input("entityId")]
         public Input<string>? EntityId { get; set; }
@@ -184,7 +184,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _managementZones;
 
         /// <summary>
-        /// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
+        /// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `EntityId` field
         /// </summary>
         public InputList<string> ManagementZones
         {
@@ -261,13 +261,13 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.CalculatedServiceMetricDimensionDefinitionGetArgs>? DimensionDefinition { get; set; }
 
         /// <summary>
-        /// The metric is enabled (`true`) or disabled (`false`)
+        /// The metric is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+        /// Restricts the metric usage to the specified service. This field is mutually exclusive with the `ManagementZones` field
         /// </summary>
         [Input("entityId")]
         public Input<string>? EntityId { get; set; }
@@ -282,7 +282,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _managementZones;
 
         /// <summary>
-        /// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
+        /// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `EntityId` field
         /// </summary>
         public InputList<string> ManagementZones
         {

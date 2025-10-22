@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? CodeSnippetType { get; set; }
 
         /// <summary>
-        /// Possible Values: `async`, `defer`, `none`
+        /// Possible Values: `Async`, `Defer`, `None`
         /// </summary>
         [Input("scriptExecutionAttribute")]
         public Input<string>? ScriptExecutionAttribute { get; set; }

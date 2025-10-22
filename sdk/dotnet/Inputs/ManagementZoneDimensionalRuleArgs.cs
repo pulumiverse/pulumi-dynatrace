@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// The rule is enabled (`true`) or disabled (`false`)
+        /// The rule is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }

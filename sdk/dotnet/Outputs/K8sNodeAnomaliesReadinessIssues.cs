@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.K8sNodeAnomaliesReadinessIssuesConfiguration? Configuration;
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
 

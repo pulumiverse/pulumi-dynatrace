@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> GitProvider { get; private set; } = null!;
 
         /// <summary>
-        /// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
+        /// If turned on, requests to your Gitlab server will have the `Credentials` option set to `Include`. Otherwise, it will be set to `Omit`.
         /// </summary>
         [Output("includeCredentials")]
         public Output<bool?> IncludeCredentials { get; private set; } = null!;
@@ -85,7 +85,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> GitProvider { get; set; } = null!;
 
         /// <summary>
-        /// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
+        /// If turned on, requests to your Gitlab server will have the `Credentials` option set to `Include`. Otherwise, it will be set to `Omit`.
         /// </summary>
         [Input("includeCredentials")]
         public Input<bool>? IncludeCredentials { get; set; }
@@ -111,7 +111,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? GitProvider { get; set; }
 
         /// <summary>
-        /// If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
+        /// If turned on, requests to your Gitlab server will have the `Credentials` option set to `Include`. Otherwise, it will be set to `Omit`.
         /// </summary>
         [Input("includeCredentials")]
         public Input<bool>? IncludeCredentials { get; set; }

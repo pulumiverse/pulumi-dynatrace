@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class HostAnomaliesConnections
     {
         /// <summary>
-        /// The detection is enabled (`true`) or disabled (`false`)
+        /// The detection is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// Alert (`true`) on graceful host shutdowns
+        /// Alert (`True`) on graceful host shutdowns
         /// </summary>
         public readonly bool EnabledOnGracefulShutdowns;
 

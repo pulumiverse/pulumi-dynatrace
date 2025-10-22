@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// The SLO objective template data source allows the ID to be retrieved by its name.
         /// 
-        /// - `name` (String) Name of the SLO objective template
+        /// - `Name` (String) Name of the SLO objective template
         /// 
         /// ## Example Usage
         /// 
@@ -78,7 +78,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// The SLO objective template data source allows the ID to be retrieved by its name.
         /// 
-        /// - `name` (String) Name of the SLO objective template
+        /// - `Name` (String) Name of the SLO objective template
         /// 
         /// ## Example Usage
         /// 
@@ -139,7 +139,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// The SLO objective template data source allows the ID to be retrieved by its name.
         /// 
-        /// - `name` (String) Name of the SLO objective template
+        /// - `Name` (String) Name of the SLO objective template
         /// 
         /// ## Example Usage
         /// 

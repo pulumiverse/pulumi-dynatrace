@@ -56,13 +56,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// Possible values are `YEARLY`, `MONTHLY`, `WEEKLY`, `DAILY`, `HOURLY`, `MINUTELY` and `SECONDLY`. Example: `frequency` = `DAILY` and `interval` = `2` schedules for every other day
+        /// Possible values are `YEARLY`, `MONTHLY`, `WEEKLY`, `DAILY`, `HOURLY`, `MINUTELY` and `SECONDLY`. Example: `Frequency` = `DAILY` and `Interval` = `2` schedules for every other day
         /// </summary>
         [Input("frequency", required: true)]
         public Input<string> Frequency { get; set; } = null!;
 
         /// <summary>
-        /// The interval between each iteration. Default: 1. Example: `frequency` = `DAILY` and `interval` = `2` schedules for every other day
+        /// The interval between each iteration. Default: 1. Example: `Frequency` = `DAILY` and `Interval` = `2` schedules for every other day
         /// </summary>
         [Input("interval")]
         public Input<int>? Interval { get; set; }

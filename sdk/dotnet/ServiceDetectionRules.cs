@@ -54,7 +54,7 @@ namespace Pulumiverse.Dynatrace
     public partial class ServiceDetectionRules : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
@@ -125,7 +125,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class ServiceDetectionRulesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
@@ -157,7 +157,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class ServiceDetectionRulesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }

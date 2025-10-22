@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The calculated service metric data source allows the metric ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the calculated service metric
+        /// - `Name` (String) - The name of the calculated service metric
         /// 
         /// ## Example Usage
         /// 
@@ -45,7 +45,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The calculated service metric data source allows the metric ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the calculated service metric
+        /// - `Name` (String) - The name of the calculated service metric
         /// 
         /// ## Example Usage
         /// 
@@ -75,7 +75,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The calculated service metric data source allows the metric ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the calculated service metric
+        /// - `Name` (String) - The name of the calculated service metric
         /// 
         /// ## Example Usage
         /// 

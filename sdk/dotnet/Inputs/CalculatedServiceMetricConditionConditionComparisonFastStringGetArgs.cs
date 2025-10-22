@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class CalculatedServiceMetricConditionConditionComparisonFastStringGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+        /// The comparison is case-sensitive (`True`) or not case-sensitive (`False`)
         /// </summary>
         [Input("caseSensitive")]
         public Input<bool>? CaseSensitive { get; set; }
 
         /// <summary>
-        /// Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `CONTAINS`
+        /// Operator of the comparison. You can reverse it by setting `Negate` to `True`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `CONTAINS`
         /// </summary>
         [Input("operator")]
         public Input<string>? Operator { get; set; }

@@ -342,9 +342,9 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<Inputs.HostNamingConditionConditionHypervisorTypeComparisionArgs>? _hypervisorTypeComparisions;
 
         /// <summary>
-        /// `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+        /// `HypervisorTypeComparision` is deprecated. Use `Hypervisor` instead
         /// </summary>
-        [Obsolete(@"`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead")]
+        [Obsolete(@"`HypervisorTypeComparision` is deprecated. Use `Hypervisor` instead")]
         public InputList<Inputs.HostNamingConditionConditionHypervisorTypeComparisionArgs> HypervisorTypeComparisions
         {
             get => _hypervisorTypeComparisions ?? (_hypervisorTypeComparisions = new InputList<Inputs.HostNamingConditionConditionHypervisorTypeComparisionArgs>());

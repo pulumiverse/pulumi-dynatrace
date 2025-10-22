@@ -14,6 +14,8 @@ import (
 // The `AwsCredentials` data source allows the AWS credential ID to be retrieved by its label.
 //
 // - `label` (String) - The label/name of the AWS credential
+//
+// ## Example Usage
 func LookupAwsCredentials(ctx *pulumi.Context, args *LookupAwsCredentialsArgs, opts ...pulumi.InvokeOption) (*LookupAwsCredentialsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAwsCredentialsResult

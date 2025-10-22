@@ -18,12 +18,14 @@ namespace Pulumiverse.Dynatrace
     /// - Services - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services
     /// 
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-splitting-rules`)
+    /// 
+    /// ## Resource Example Usage
     /// </summary>
     [DynatraceResourceType("dynatrace:index/serviceSplitting:ServiceSplitting")]
     public partial class ServiceSplitting : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
@@ -94,7 +96,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class ServiceSplittingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
@@ -126,7 +128,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class ServiceSplittingState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }

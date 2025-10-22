@@ -31,11 +31,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly ImmutableArray<int> Easters;
         /// <summary>
-        /// Possible values are `YEARLY`, `MONTHLY`, `WEEKLY`, `DAILY`, `HOURLY`, `MINUTELY` and `SECONDLY`. Example: `frequency` = `DAILY` and `interval` = `2` schedules for every other day
+        /// Possible values are `YEARLY`, `MONTHLY`, `WEEKLY`, `DAILY`, `HOURLY`, `MINUTELY` and `SECONDLY`. Example: `Frequency` = `DAILY` and `Interval` = `2` schedules for every other day
         /// </summary>
         public readonly string Frequency;
         /// <summary>
-        /// The interval between each iteration. Default: 1. Example: `frequency` = `DAILY` and `interval` = `2` schedules for every other day
+        /// The interval between each iteration. Default: 1. Example: `Frequency` = `DAILY` and `Interval` = `2` schedules for every other day
         /// </summary>
         public readonly int? Interval;
         /// <summary>

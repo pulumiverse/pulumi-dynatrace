@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.AutotagV2Rules?> Rules { get; private set; } = null!;
 
         /// <summary>
-        /// If `true` this resource will not
+        /// If `True` this resource will not
         /// </summary>
         [Output("rulesMaintainedExternally")]
         public Output<bool?> RulesMaintainedExternally { get; private set; } = null!;
@@ -103,7 +103,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AutotagV2RulesArgs>? Rules { get; set; }
 
         /// <summary>
-        /// If `true` this resource will not
+        /// If `True` this resource will not
         /// </summary>
         [Input("rulesMaintainedExternally")]
         public Input<bool>? RulesMaintainedExternally { get; set; }
@@ -135,7 +135,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AutotagV2RulesGetArgs>? Rules { get; set; }
 
         /// <summary>
-        /// If `true` this resource will not
+        /// If `True` this resource will not
         /// </summary>
         [Input("rulesMaintainedExternally")]
         public Input<bool>? RulesMaintainedExternally { get; set; }
