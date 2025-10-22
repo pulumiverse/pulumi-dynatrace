@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Template;
         /// <summary>
-        /// If set to `true` the conditions will be connected by logical OR instead of logical AND
+        /// If set to `True` the conditions will be connected by logical OR instead of logical AND
         /// </summary>
         public readonly bool? UseOrConditions;
 

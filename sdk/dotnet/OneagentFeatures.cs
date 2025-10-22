@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> _restore_ { get; private set; } = null!;
 
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
@@ -94,7 +94,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class OneagentFeaturesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
@@ -135,7 +135,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? _restore_ { get; set; }
 
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }

@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Unknowns { get; set; }
 
         /// <summary>
-        /// The value of the tag.   If set to `null`, then resources with any value of the tag are monitored.
+        /// The value of the tag.   If set to `Null`, then resources with any value of the tag are monitored.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

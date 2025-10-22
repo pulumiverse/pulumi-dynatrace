@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<int> Frustrated { get; set; } = null!;
 
         /// <summary>
-        /// Apdex error condition: if `true` the user session is considered frustrated when an error is reported
+        /// Apdex error condition: if `True` the user session is considered frustrated when an error is reported
         /// </summary>
         [Input("frustratedOnError")]
         public Input<bool>? FrustratedOnError { get; set; }

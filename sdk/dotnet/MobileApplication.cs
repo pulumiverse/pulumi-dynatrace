@@ -64,7 +64,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The opt-in mode is enabled (`true`) or disabled (`false`)
+        /// The opt-in mode is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("optInMode")]
         public Output<bool?> OptInMode { get; private set; } = null!;
@@ -76,15 +76,15 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.MobileApplicationProperties?> Properties { get; private set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
+        /// (Field has overlap with `dynatrace.MobileAppEnablement`) The session replay is enabled (`True`) or disabled (`False`).
         /// </summary>
         [Output("sessionReplay")]
         public Output<bool?> SessionReplay { get; private set; } = null!;
 
         /// <summary>
-        /// The session replay on crash is enabled (`true`) or disabled (`false`). 
+        /// The session replay on crash is enabled (`True`) or disabled (`False`). 
         /// 
-        /// Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
+        /// Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `True`.
         /// </summary>
         [Output("sessionReplayOnCrash")]
         public Output<bool?> SessionReplayOnCrash { get; private set; } = null!;
@@ -199,7 +199,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The opt-in mode is enabled (`true`) or disabled (`false`)
+        /// The opt-in mode is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("optInMode")]
         public Input<bool>? OptInMode { get; set; }
@@ -211,15 +211,15 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.MobileApplicationPropertiesArgs>? Properties { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
+        /// (Field has overlap with `dynatrace.MobileAppEnablement`) The session replay is enabled (`True`) or disabled (`False`).
         /// </summary>
         [Input("sessionReplay")]
         public Input<bool>? SessionReplay { get; set; }
 
         /// <summary>
-        /// The session replay on crash is enabled (`true`) or disabled (`false`). 
+        /// The session replay on crash is enabled (`True`) or disabled (`False`). 
         /// 
-        /// Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
+        /// Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `True`.
         /// </summary>
         [Input("sessionReplayOnCrash")]
         public Input<bool>? SessionReplayOnCrash { get; set; }
@@ -295,7 +295,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The opt-in mode is enabled (`true`) or disabled (`false`)
+        /// The opt-in mode is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("optInMode")]
         public Input<bool>? OptInMode { get; set; }
@@ -307,15 +307,15 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.MobileApplicationPropertiesGetArgs>? Properties { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
+        /// (Field has overlap with `dynatrace.MobileAppEnablement`) The session replay is enabled (`True`) or disabled (`False`).
         /// </summary>
         [Input("sessionReplay")]
         public Input<bool>? SessionReplay { get; set; }
 
         /// <summary>
-        /// The session replay on crash is enabled (`true`) or disabled (`false`). 
+        /// The session replay on crash is enabled (`True`) or disabled (`False`). 
         /// 
-        /// Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
+        /// Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `True`.
         /// </summary>
         [Input("sessionReplayOnCrash")]
         public Input<bool>? SessionReplayOnCrash { get; set; }

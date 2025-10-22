@@ -48,10 +48,10 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// 
         /// Use one of the following values as a parameter for this condition:
         /// 
-        /// - `enabled`
+        /// - `Enabled`
         /// - `enabled-runtime`
-        /// - `static`
-        /// - `disabled`
+        /// - `Static`
+        /// - `Disabled`
         /// </summary>
         [Input("startupCondition")]
         public Input<string>? StartupCondition { get; set; }

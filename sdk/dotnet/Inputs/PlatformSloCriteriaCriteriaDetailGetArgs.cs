@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> TimeframeFrom { get; set; } = null!;
 
         /// <summary>
-        /// Timeframe to, example: `now`
+        /// Timeframe to, example: `Now`
         /// </summary>
         [Input("timeframeTo")]
         public Input<string>? TimeframeTo { get; set; }

@@ -13,7 +13,7 @@ namespace Pulumiverse.Dynatrace
     public static class GetCredentials
     {
         /// <summary>
-        /// The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+        /// The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `Name`, `Scope` and `Type`. At least one of `Name`, `Scope` or `Type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
         /// 
         /// ## Example Usage
         /// 
@@ -104,7 +104,7 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCredentialsResult>("dynatrace:index/getCredentials:getCredentials", args ?? new GetCredentialsArgs(), options.WithDefaults());
 
         /// <summary>
-        /// The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+        /// The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `Name`, `Scope` and `Type`. At least one of `Name`, `Scope` or `Type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
         /// 
         /// ## Example Usage
         /// 
@@ -195,7 +195,7 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.Invoke<GetCredentialsResult>("dynatrace:index/getCredentials:getCredentials", args ?? new GetCredentialsInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+        /// The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `Name`, `Scope` and `Type`. At least one of `Name`, `Scope` or `Type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
         /// 
         /// ## Example Usage
         /// 

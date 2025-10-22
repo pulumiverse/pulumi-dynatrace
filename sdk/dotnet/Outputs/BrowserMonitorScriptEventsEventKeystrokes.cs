@@ -19,12 +19,12 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventKeystrokesCredential? Credential;
         /// <summary>
-        /// Indicates whether the `textValue` is encrypted (`true`) or not (`false`). Must not be specified if `credentials` from the vault are being used
+        /// Indicates whether the `textValue` is encrypted (`True`) or not (`False`). Must not be specified if `Credentials` from the vault are being used
         /// </summary>
         public readonly bool? Masked;
         /// <summary>
         /// Defines whether to blur the text field when it loses focus.
-        /// Set to `true` to trigger the blur the `textValue`
+        /// Set to `True` to trigger the blur the `textValue`
         /// </summary>
         public readonly bool? SimulateBlurEvent;
         /// <summary>
@@ -36,7 +36,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventKeystrokesTarget? Target;
         /// <summary>
-        /// The text to enter. Must not be specified if `credentials` from the vault are being used
+        /// The text to enter. Must not be specified if `Credentials` from the vault are being used
         /// </summary>
         public readonly string? Text;
         /// <summary>

@@ -22,7 +22,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// Either the attribute `id` or the attribute `uuid` of a `dynatrace.IamPolicy`. Initially just the `id` attribute was supported (which is a concatenation of several configuration settings) - and is still supported for backwards compatibility
+        /// Either the attribute `Id` or the attribute `Uuid` of a `dynatrace.IamPolicy`. Initially just the `Id` attribute was supported (which is a concatenation of several configuration settings) - and is still supported for backwards compatibility
         /// </summary>
         [Input("id", required: true)]
         public Input<string> Id { get; set; } = null!;

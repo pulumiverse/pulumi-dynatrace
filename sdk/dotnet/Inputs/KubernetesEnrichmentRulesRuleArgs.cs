@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class KubernetesEnrichmentRulesRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Source { get; set; } = null!;
 
         /// <summary>
-        /// Required when `primary_grail_tag` is omitted or `false`. Possible Values: `dt.cost.costcenter``, `dt.cost.product``, `dt.security_context
+        /// Required when `PrimaryGrailTag` is omitted or `False`. Possible Values: `dt.cost.costcenter``, `dt.cost.product``, `dt.security_context
         /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }

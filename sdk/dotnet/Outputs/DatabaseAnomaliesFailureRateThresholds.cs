@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class DatabaseAnomaliesFailureRateThresholds
     {
         /// <summary>
-        /// Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers alert
+        /// Sensitivity of the threshold.  With `Low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `High` sensitivity, no statistical confidence is used. Each violation triggers alert
         /// </summary>
         public readonly string Sensitivity;
         /// <summary>

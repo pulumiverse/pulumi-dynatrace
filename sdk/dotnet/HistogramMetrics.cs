@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class HistogramMetrics : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// When enabled, you can ingest the `le` dimension, representing explicit histogram buckets.\
+        /// When enabled, you can ingest the `Le` dimension, representing explicit histogram buckets.\
         /// Enable this if you are using OpenTelemetry histograms or Prometheus histogram metrics.\
         /// When disabled, only your histograms' sum and count metrics will be ingested.
         /// </summary>
@@ -69,7 +69,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class HistogramMetricsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// When enabled, you can ingest the `le` dimension, representing explicit histogram buckets.\
+        /// When enabled, you can ingest the `Le` dimension, representing explicit histogram buckets.\
         /// Enable this if you are using OpenTelemetry histograms or Prometheus histogram metrics.\
         /// When disabled, only your histograms' sum and count metrics will be ingested.
         /// </summary>
@@ -85,7 +85,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class HistogramMetricsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// When enabled, you can ingest the `le` dimension, representing explicit histogram buckets.\
+        /// When enabled, you can ingest the `Le` dimension, representing explicit histogram buckets.\
         /// Enable this if you are using OpenTelemetry histograms or Prometheus histogram metrics.\
         /// When disabled, only your histograms' sum and count metrics will be ingested.
         /// </summary>

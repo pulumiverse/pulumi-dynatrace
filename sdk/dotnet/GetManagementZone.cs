@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// !&gt; This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
         /// 
-        /// - `name` queries for all management zones with the specified name
+        /// - `Name` queries for all management zones with the specified name
         /// 
         /// ## Example Usage
         /// 
@@ -92,7 +92,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// !&gt; This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
         /// 
-        /// - `name` queries for all management zones with the specified name
+        /// - `Name` queries for all management zones with the specified name
         /// 
         /// ## Example Usage
         /// 
@@ -165,7 +165,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// !&gt; This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
         /// 
-        /// - `name` queries for all management zones with the specified name
+        /// - `Name` queries for all management zones with the specified name
         /// 
         /// ## Example Usage
         /// 

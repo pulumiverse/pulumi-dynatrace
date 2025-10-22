@@ -30,7 +30,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// });
         /// ```
-        /// will produce content for the `results` attribute like this:
+        /// will produce content for the `Results` attribute like this:
         /// ```
         /// [
         ///     {
@@ -91,7 +91,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// });
         /// ```
-        /// will produce content for the `results` attribute like this:
+        /// will produce content for the `Results` attribute like this:
         /// ```
         /// [
         ///     {
@@ -152,7 +152,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// });
         /// ```
-        /// will produce content for the `results` attribute like this:
+        /// will produce content for the `Results` attribute like this:
         /// ```
         /// [
         ///     {

@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class NotificationServiceNowArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
@@ -50,13 +50,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// Send events into ServiceNow ITOM (`true`)
+        /// Send events into ServiceNow ITOM (`True`)
         /// </summary>
         [Input("sendEvents", required: true)]
         public Input<bool> SendEvents { get; set; } = null!;
 
         /// <summary>
-        /// Send incidents into ServiceNow ITSM (`true`)
+        /// Send incidents into ServiceNow ITSM (`True`)
         /// </summary>
         [Input("sendIncidents", required: true)]
         public Input<bool> SendIncidents { get; set; } = null!;
@@ -74,7 +74,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Url { get; set; }
 
         /// <summary>
-        /// The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
+        /// The username of the ServiceNow account.   Make sure that your user account has the `RestService`, `WebRequestAdmin`, and `x_dynat_ruxit.Integration` roles
         /// </summary>
         [Input("username", required: true)]
         public Input<string> Username { get; set; } = null!;

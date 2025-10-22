@@ -22,7 +22,7 @@ namespace Pulumiverse.Dynatrace.Inputs
 
         /// <summary>
         /// The flag of the mobile device.
-        /// Set to `true` for mobile devices or `false` for a desktop or laptop.
+        /// Set to `True` for mobile devices or `False` for a desktop or laptop.
         /// </summary>
         [Input("mobile")]
         public Input<bool>? Mobile { get; set; }
@@ -34,7 +34,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The orientation of the device. Possible values are `portrait` or `landscape`. Desktop and laptop devices are not allowed to use the `portrait` orientation
+        /// The orientation of the device. Possible values are `Portrait` or `Landscape`. Desktop and laptop devices are not allowed to use the `Portrait` orientation
         /// </summary>
         [Input("orientation")]
         public Input<string>? Orientation { get; set; }
@@ -47,7 +47,7 @@ namespace Pulumiverse.Dynatrace.Inputs
 
         /// <summary>
         /// The flag of the touchscreen.
-        /// Set to `true` if the device uses touchscreen. In that case, use can set interaction event as `tap`.
+        /// Set to `True` if the device uses touchscreen. In that case, use can set interaction event as `Tap`.
         /// </summary>
         [Input("touchEnabled")]
         public Input<bool>? TouchEnabled { get; set; }

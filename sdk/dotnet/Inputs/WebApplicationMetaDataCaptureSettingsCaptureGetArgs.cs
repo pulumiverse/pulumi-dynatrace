@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// `true` if this metadata should be captured regardless of the privacy settings, `false` otherwise
+        /// `True` if this metadata should be captured regardless of the privacy settings, `False` otherwise
         /// </summary>
         [Input("publicMetadata")]
         public Input<bool>? PublicMetadata { get; set; }
@@ -44,7 +44,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<int>? UniqueId { get; set; }
 
         /// <summary>
-        /// `true` if the last captured value should be used for this metadata. By default the first value will be used.
+        /// `True` if the last captured value should be used for this metadata. By default the first value will be used.
         /// </summary>
         [Input("useLastValue")]
         public Input<bool>? UseLastValue { get; set; }

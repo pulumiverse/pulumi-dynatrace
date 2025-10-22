@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.getGeoRegions` data source retrieves the list of regions and their codes based on country code.
         /// 
-        /// - `country_code` (String) - The ISO code of the required country
+        /// - `CountryCode` (String) - The ISO code of the required country
         /// 
         /// Geographic regions API: GET regions of a country - https://docs.dynatrace.com/docs/shortlink/api-v2-rum-geographic-regions-get-regions-country
         /// 
@@ -47,7 +47,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.getGeoRegions` data source retrieves the list of regions and their codes based on country code.
         /// 
-        /// - `country_code` (String) - The ISO code of the required country
+        /// - `CountryCode` (String) - The ISO code of the required country
         /// 
         /// Geographic regions API: GET regions of a country - https://docs.dynatrace.com/docs/shortlink/api-v2-rum-geographic-regions-get-regions-country
         /// 
@@ -79,7 +79,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.getGeoRegions` data source retrieves the list of regions and their codes based on country code.
         /// 
-        /// - `country_code` (String) - The ISO code of the required country
+        /// - `CountryCode` (String) - The ISO code of the required country
         /// 
         /// Geographic regions API: GET regions of a country - https://docs.dynatrace.com/docs/shortlink/api-v2-rum-geographic-regions-get-regions-country
         /// 

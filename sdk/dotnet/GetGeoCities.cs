@@ -15,8 +15,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.getGeoCities` data source retrieves the list of cities and their codes based on country and region code.
         /// 
-        /// - `country_code` (String) - The ISO code of the required country
-        /// - `region_code` (String) - The code of the required region
+        /// - `CountryCode` (String) - The ISO code of the required country
+        /// - `RegionCode` (String) - The code of the required region
         /// 
         /// Geographic regions API: GET regions of a country - https://docs.dynatrace.com/docs/shortlink/api-v2-rum-geographic-regions-get-regions-country
         /// 
@@ -49,8 +49,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.getGeoCities` data source retrieves the list of cities and their codes based on country and region code.
         /// 
-        /// - `country_code` (String) - The ISO code of the required country
-        /// - `region_code` (String) - The code of the required region
+        /// - `CountryCode` (String) - The ISO code of the required country
+        /// - `RegionCode` (String) - The code of the required region
         /// 
         /// Geographic regions API: GET regions of a country - https://docs.dynatrace.com/docs/shortlink/api-v2-rum-geographic-regions-get-regions-country
         /// 
@@ -83,8 +83,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.getGeoCities` data source retrieves the list of cities and their codes based on country and region code.
         /// 
-        /// - `country_code` (String) - The ISO code of the required country
-        /// - `region_code` (String) - The code of the required region
+        /// - `CountryCode` (String) - The ISO code of the required country
+        /// - `RegionCode` (String) - The code of the required region
         /// 
         /// Geographic regions API: GET regions of a country - https://docs.dynatrace.com/docs/shortlink/api-v2-rum-geographic-regions-get-regions-country
         /// 

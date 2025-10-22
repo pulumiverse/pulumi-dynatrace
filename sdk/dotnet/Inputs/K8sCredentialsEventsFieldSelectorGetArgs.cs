@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class K8sCredentialsEventsFieldSelectorGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether subscription to this events field selector is enabled (value set to `true`). If disabled (value set to `false`), Dynatrace will stop fetching events from the Kubernetes API for this events field selector
+        /// Whether subscription to this events field selector is enabled (value set to `True`). If disabled (value set to `False`), Dynatrace will stop fetching events from the Kubernetes API for this events field selector
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;

@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// &gt; This data source requires the API token scope `hub.read`)
         /// 
-        /// - `type` (String) The type of hub item you are interested in. Possible values are `TECHNOLOGY`, `EXTENSION1` or `EXTENSION2`. If not specified, no restriction regarding type happens
+        /// - `Type` (String) The type of hub item you are interested in. Possible values are `TECHNOLOGY`, `EXTENSION1` or `EXTENSION2`. If not specified, no restriction regarding type happens
         /// 
         /// ## Example Usage
         /// 
@@ -46,7 +46,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// &gt; This data source requires the API token scope `hub.read`)
         /// 
-        /// - `type` (String) The type of hub item you are interested in. Possible values are `TECHNOLOGY`, `EXTENSION1` or `EXTENSION2`. If not specified, no restriction regarding type happens
+        /// - `Type` (String) The type of hub item you are interested in. Possible values are `TECHNOLOGY`, `EXTENSION1` or `EXTENSION2`. If not specified, no restriction regarding type happens
         /// 
         /// ## Example Usage
         /// 
@@ -77,7 +77,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// &gt; This data source requires the API token scope `hub.read`)
         /// 
-        /// - `type` (String) The type of hub item you are interested in. Possible values are `TECHNOLOGY`, `EXTENSION1` or `EXTENSION2`. If not specified, no restriction regarding type happens
+        /// - `Type` (String) The type of hub item you are interested in. Possible values are `TECHNOLOGY`, `EXTENSION1` or `EXTENSION2`. If not specified, no restriction regarding type happens
         /// 
         /// ## Example Usage
         /// 

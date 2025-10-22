@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class CalculatedServiceMetricConditionConditionComparisonEsbInputNodeType
     {
         /// <summary>
-        /// Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+        /// Operator of the comparison. You can reverse it by setting `Negate` to `True`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
         /// </summary>
         public readonly string? Operator;
         /// <summary>

@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class BrowserMonitorScriptEventsEventKeystrokesCredential
     {
         /// <summary>
-        /// Either `username` or `password`
+        /// Either `Username` or `Password`
         /// </summary>
         public readonly string Field;
         /// <summary>

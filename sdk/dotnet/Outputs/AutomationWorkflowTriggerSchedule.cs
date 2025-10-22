@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AutomationWorkflowTriggerSchedule
     {
         /// <summary>
-        /// The trigger is enabled (`true`) or not (`false`). Default is `false`
+        /// The trigger is enabled (`True`) or not (`False`). Default is `False`
         /// </summary>
         public readonly bool? Active;
         /// <summary>

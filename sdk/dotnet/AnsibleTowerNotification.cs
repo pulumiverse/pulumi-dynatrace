@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class AnsibleTowerNotification : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The notification is active (`true`) or inactive (`false`). Default is `false`.
+        /// The notification is active (`True`) or inactive (`False`). Default is `False`.
         /// </summary>
         [Output("active")]
         public Output<bool?> Active { get; private set; } = null!;
@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> CustomMessage { get; private set; } = null!;
 
         /// <summary>
-        /// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+        /// Accept any, including self-signed and invalid, SSL certificate (`True`) or only trusted (`False`) certificates. Default is `False`.
         /// </summary>
         [Output("insecure")]
         public Output<bool?> Insecure { get; private set; } = null!;
@@ -119,7 +119,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class AnsibleTowerNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The notification is active (`true`) or inactive (`false`). Default is `false`.
+        /// The notification is active (`True`) or inactive (`False`). Default is `False`.
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -131,7 +131,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> CustomMessage { get; set; } = null!;
 
         /// <summary>
-        /// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+        /// Accept any, including self-signed and invalid, SSL certificate (`True`) or only trusted (`False`) certificates. Default is `False`.
         /// </summary>
         [Input("insecure")]
         public Input<bool>? Insecure { get; set; }
@@ -191,7 +191,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class AnsibleTowerNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The notification is active (`true`) or inactive (`false`). Default is `false`.
+        /// The notification is active (`True`) or inactive (`False`). Default is `False`.
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -203,7 +203,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? CustomMessage { get; set; }
 
         /// <summary>
-        /// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+        /// Accept any, including self-signed and invalid, SSL certificate (`True`) or only trusted (`False`) certificates. Default is `False`.
         /// </summary>
         [Input("insecure")]
         public Input<bool>? Insecure { get; set; }

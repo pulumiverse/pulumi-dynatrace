@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AutomationWorkflowTriggerEventConfigDavisEventNamesName
     {
         /// <summary>
-        /// Possible values: `equals` and `contains`. The Davis event name must equal or contain the string provided in attribute `name`
+        /// Possible values: `Equals` and `Contains`. The Davis event name must equal or contain the string provided in attribute `Name`
         /// </summary>
         public readonly string Match;
         /// <summary>

@@ -64,6 +64,8 @@ def get_azure_credentials(label: Optional[_builtins.str] = None,
     The `AzureCredentials` data source allows the Azure credential ID to be retrieved by its label.
 
     - `label` (String) - The label/name of the Azure credential
+
+    ## Example Usage
     """
     __args__ = dict()
     __args__['label'] = label
@@ -79,6 +81,8 @@ def get_azure_credentials_output(label: Optional[pulumi.Input[_builtins.str]] = 
     The `AzureCredentials` data source allows the Azure credential ID to be retrieved by its label.
 
     - `label` (String) - The label/name of the Azure credential
+
+    ## Example Usage
     """
     __args__ = dict()
     __args__['label'] = label

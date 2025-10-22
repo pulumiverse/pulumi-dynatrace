@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class IssueTracking : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// Set a label to identify these issues, for example, `release_blocker` or `non-critical`
+        /// Set a label to identify these issues, for example, `ReleaseBlocker` or `non-critical`
         /// </summary>
         [Output("issuelabel")]
         public Output<string> Issuelabel { get; private set; } = null!;
@@ -125,7 +125,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class IssueTrackingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
@@ -137,7 +137,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Set a label to identify these issues, for example, `release_blocker` or `non-critical`
+        /// Set a label to identify these issues, for example, `ReleaseBlocker` or `non-critical`
         /// </summary>
         [Input("issuelabel", required: true)]
         public Input<string> Issuelabel { get; set; } = null!;
@@ -203,7 +203,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class IssueTrackingState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -215,7 +215,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Set a label to identify these issues, for example, `release_blocker` or `non-critical`
+        /// Set a label to identify these issues, for example, `ReleaseBlocker` or `non-critical`
         /// </summary>
         [Input("issuelabel")]
         public Input<string>? Issuelabel { get; set; }

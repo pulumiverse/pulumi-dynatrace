@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? Active { get; set; }
 
         /// <summary>
-        /// Required if `with_items` is specified. By default loops execute sequentially with concurrency set to 1. You can increase how often it runs in parallel
+        /// Required if `WithItems` is specified. By default loops execute sequentially with concurrency set to 1. You can increase how often it runs in parallel
         /// </summary>
         [Input("concurrency")]
         public Input<string>? Concurrency { get; set; }
@@ -44,7 +44,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Parameters and values for this task as JSON code. Contents depend on the kind of task - determined by the attribute `action`
+        /// Parameters and values for this task as JSON code. Contents depend on the kind of task - determined by the attribute `Action`
         /// </summary>
         [Input("input")]
         public Input<string>? Input { get; set; }

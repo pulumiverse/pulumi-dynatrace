@@ -33,7 +33,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly int Id;
         /// <summary>
-        /// If `true`, the value of this property will always be stored in lower case. Defaults to `false`.
+        /// If `True`, the value of this property will always be stored in lower case. Defaults to `False`.
         /// </summary>
         public readonly bool? IgnoreCase;
         /// <summary>
@@ -41,7 +41,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// If the `type` is `LONG_STRING`, the max length for this property. Must be a multiple of `100`. Defaults to `200`. Maximum is `1000`.
+        /// If the `Type` is `LONG_STRING`, the max length for this property. Must be a multiple of `100`. Defaults to `200`. Maximum is `1000`.
         /// </summary>
         public readonly int? LongStringLength;
         /// <summary>
@@ -59,11 +59,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? ServerSideRequestAttribute;
         /// <summary>
-        /// If `true`, the property is stored as a session property
+        /// If `True`, the property is stored as a session property
         /// </summary>
         public readonly bool? StoreAsSessionProperty;
         /// <summary>
-        /// If `true`, the property is stored as a user action property
+        /// If `True`, the property is stored as a user action property
         /// </summary>
         public readonly bool? StoreAsUserActionProperty;
         /// <summary>

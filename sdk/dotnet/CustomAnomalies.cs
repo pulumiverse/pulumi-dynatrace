@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> DisabledReason { get; private set; } = null!;
 
         /// <summary>
-        /// The metric event is enabled (`true`) or disabled (`false`)
+        /// The metric event is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
@@ -175,7 +175,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? DisabledReason { get; set; }
 
         /// <summary>
-        /// The metric event is enabled (`true`) or disabled (`false`)
+        /// The metric event is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
@@ -279,7 +279,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? DisabledReason { get; set; }
 
         /// <summary>
-        /// The metric event is enabled (`true`) or disabled (`false`)
+        /// The metric event is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }

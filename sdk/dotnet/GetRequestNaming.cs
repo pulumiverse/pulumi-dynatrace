@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name to be assigned to matching requests.
+        /// - `Name` (String) - The name to be assigned to matching requests.
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -47,7 +47,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name to be assigned to matching requests.
+        /// - `Name` (String) - The name to be assigned to matching requests.
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -79,7 +79,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name to be assigned to matching requests.
+        /// - `Name` (String) - The name to be assigned to matching requests.
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 

@@ -190,7 +190,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Owner { get; private set; } = null!;
 
         /// <summary>
-        /// Defines whether this workflow is private to the owner or not. Default is `true`
+        /// Defines whether this workflow is private to the owner or not. Default is `True`
         /// </summary>
         [Output("private")]
         public Output<bool?> Private { get; private set; } = null!;
@@ -285,7 +285,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Owner { get; set; }
 
         /// <summary>
-        /// Defines whether this workflow is private to the owner or not. Default is `true`
+        /// Defines whether this workflow is private to the owner or not. Default is `True`
         /// </summary>
         [Input("private")]
         public Input<bool>? Private { get; set; }
@@ -341,7 +341,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Owner { get; set; }
 
         /// <summary>
-        /// Defines whether this workflow is private to the owner or not. Default is `true`
+        /// Defines whether this workflow is private to the owner or not. Default is `True`
         /// </summary>
         [Input("private")]
         public Input<bool>? Private { get; set; }

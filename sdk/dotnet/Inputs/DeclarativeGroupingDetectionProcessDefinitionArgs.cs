@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> ProcessGroupName { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `never`, `always`, `highResourceUsage`
+        /// Possible Values: `Never`, `Always`, `highResourceUsage`
         /// </summary>
         [Input("report", required: true)]
         public Input<string> Report { get; set; } = null!;

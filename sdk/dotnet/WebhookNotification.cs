@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class WebhookNotification : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.WebhookNotificationHeaders?> Headers { get; private set; } = null!;
 
         /// <summary>
-        /// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        /// Accept any, including self-signed and invalid, SSL certificate (`True`) or only trusted (`False`) certificates
         /// </summary>
         [Output("insecure")]
         public Output<bool?> Insecure { get; private set; } = null!;
@@ -149,7 +149,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class WebhookNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
@@ -161,7 +161,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.WebhookNotificationHeadersArgs>? Headers { get; set; }
 
         /// <summary>
-        /// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        /// Accept any, including self-signed and invalid, SSL certificate (`True`) or only trusted (`False`) certificates
         /// </summary>
         [Input("insecure")]
         public Input<bool>? Insecure { get; set; }
@@ -251,7 +251,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class WebhookNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -263,7 +263,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.WebhookNotificationHeadersGetArgs>? Headers { get; set; }
 
         /// <summary>
-        /// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        /// Accept any, including self-signed and invalid, SSL certificate (`True`) or only trusted (`False`) certificates
         /// </summary>
         [Input("insecure")]
         public Input<bool>? Insecure { get; set; }

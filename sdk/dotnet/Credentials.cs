@@ -62,7 +62,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The credentials set is available to every user (`false`) or to owner only (`true`)
+        /// The credentials set is available to every user (`False`) or to owner only (`True`)
         /// </summary>
         [Output("ownerAccessOnly")]
         public Output<bool?> OwnerAccessOnly { get; private set; } = null!;
@@ -71,7 +71,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Password { get; private set; } = null!;
 
         /// <summary>
-        /// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
+        /// For certificate authentication specifies whether it's public certificate auth (`True`) or not (`False`).
         /// </summary>
         [Output("public")]
         public Output<bool?> Public { get; private set; } = null!;
@@ -177,7 +177,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The list contains summary data related to the use of credentials
         /// </summary>
-        [Obsolete(@"`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data")]
+        [Obsolete(@"`CredentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data")]
         public InputList<Inputs.CredentialsCredentialUsageSummaryArgs> CredentialUsageSummaries
         {
             get => _credentialUsageSummaries ?? (_credentialUsageSummaries = new InputList<Inputs.CredentialsCredentialUsageSummaryArgs>());
@@ -209,7 +209,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The credentials set is available to every user (`false`) or to owner only (`true`)
+        /// The credentials set is available to every user (`False`) or to owner only (`True`)
         /// </summary>
         [Input("ownerAccessOnly")]
         public Input<bool>? OwnerAccessOnly { get; set; }
@@ -227,7 +227,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
+        /// For certificate authentication specifies whether it's public certificate auth (`True`) or not (`False`).
         /// </summary>
         [Input("public")]
         public Input<bool>? Public { get; set; }
@@ -314,7 +314,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The list contains summary data related to the use of credentials
         /// </summary>
-        [Obsolete(@"`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data")]
+        [Obsolete(@"`CredentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data")]
         public InputList<Inputs.CredentialsCredentialUsageSummaryGetArgs> CredentialUsageSummaries
         {
             get => _credentialUsageSummaries ?? (_credentialUsageSummaries = new InputList<Inputs.CredentialsCredentialUsageSummaryGetArgs>());
@@ -346,7 +346,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The credentials set is available to every user (`false`) or to owner only (`true`)
+        /// The credentials set is available to every user (`False`) or to owner only (`True`)
         /// </summary>
         [Input("ownerAccessOnly")]
         public Input<bool>? OwnerAccessOnly { get; set; }
@@ -364,7 +364,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
+        /// For certificate authentication specifies whether it's public certificate auth (`True`) or not (`False`).
         /// </summary>
         [Input("public")]
         public Input<bool>? Public { get; set; }

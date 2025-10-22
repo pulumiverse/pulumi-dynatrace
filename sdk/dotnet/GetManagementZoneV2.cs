@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; This data source requires the API token scopes **Read settings** (`settings.read`)
         /// 
-        /// - `name` queries for all management zones with the specified name
+        /// - `Name` queries for all management zones with the specified name
         /// 
         /// ## Example Usage
         /// 
@@ -88,7 +88,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; This data source requires the API token scopes **Read settings** (`settings.read`)
         /// 
-        /// - `name` queries for all management zones with the specified name
+        /// - `Name` queries for all management zones with the specified name
         /// 
         /// ## Example Usage
         /// 
@@ -159,7 +159,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; This data source requires the API token scopes **Read settings** (`settings.read`)
         /// 
-        /// - `name` queries for all management zones with the specified name
+        /// - `Name` queries for all management zones with the specified name
         /// 
         /// ## Example Usage
         /// 

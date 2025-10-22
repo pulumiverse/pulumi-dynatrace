@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// `true` if this metadata should be captured regardless of the privacy settings, `false` otherwise
+        /// `True` if this metadata should be captured regardless of the privacy settings, `False` otherwise
         /// </summary>
         public readonly bool? PublicMetadata;
         /// <summary>
@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly int? UniqueId;
         /// <summary>
-        /// `true` if the last captured value should be used for this metadata. By default the first value will be used.
+        /// `True` if the last captured value should be used for this metadata. By default the first value will be used.
         /// </summary>
         public readonly bool? UseLastValue;
 

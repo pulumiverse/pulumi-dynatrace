@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputMap<string>? _states;
 
         /// <summary>
-        /// key/value pairs where the `key` is the name of another task and the value the status it needs to be for the current task to get executed. Possible values are `SUCCESS`, `ERROR`, `ANY`, `OK` (Success or Skipped) and `NOK` (Error or Cancelled)
+        /// key/value pairs where the `Key` is the name of another task and the value the status it needs to be for the current task to get executed. Possible values are `SUCCESS`, `ERROR`, `ANY`, `OK` (Success or Skipped) and `NOK` (Error or Cancelled)
         /// </summary>
         public InputMap<string> States
         {

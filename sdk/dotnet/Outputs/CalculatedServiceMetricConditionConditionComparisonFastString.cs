@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class CalculatedServiceMetricConditionConditionComparisonFastString
     {
         /// <summary>
-        /// The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+        /// The comparison is case-sensitive (`True`) or not case-sensitive (`False`)
         /// </summary>
         public readonly bool? CaseSensitive;
         /// <summary>
-        /// Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `CONTAINS`
+        /// Operator of the comparison. You can reverse it by setting `Negate` to `True`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `CONTAINS`
         /// </summary>
         public readonly string? Operator;
         /// <summary>

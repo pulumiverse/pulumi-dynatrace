@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Interactions with the element are (`true`) or are not (`false) masked
+        /// Interactions with the element are (`True`) or are not (`false) masked
         /// </summary>
         public readonly bool? UserInteractionHidden;
 

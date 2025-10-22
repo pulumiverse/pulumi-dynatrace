@@ -20,13 +20,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.BrowserMonitorScriptConfigurationGetArgs>? Configuration { get; set; }
 
         /// <summary>
-        /// Steps of the clickpath—the first step must always be of the `navigate` type
+        /// Steps of the clickpath—the first step must always be of the `Navigate` type
         /// </summary>
         [Input("events")]
         public Input<Inputs.BrowserMonitorScriptEventsGetArgs>? Events { get; set; }
 
         /// <summary>
-        /// The type of monitor. Possible values are `clickpath` for clickpath monitors and `availability` for single-URL browser monitors. These monitors are only allowed to have one event of the `navigate` type
+        /// The type of monitor. Possible values are `Clickpath` for clickpath monitors and `Availability` for single-URL browser monitors. These monitors are only allowed to have one event of the `Navigate` type
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

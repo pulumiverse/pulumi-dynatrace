@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AzureCredentialsSupportingService
     {
         /// <summary>
-        /// A list of Azure tags to be monitored.  You can specify up to 10 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
+        /// A list of Azure tags to be monitored.  You can specify up to 10 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `True`
         /// </summary>
         public readonly ImmutableArray<Outputs.AzureCredentialsSupportingServiceMonitoredMetric> MonitoredMetrics;
         /// <summary>

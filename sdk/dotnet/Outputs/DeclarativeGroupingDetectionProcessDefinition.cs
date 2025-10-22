@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string ProcessGroupName;
         /// <summary>
-        /// Possible Values: `never`, `always`, `highResourceUsage`
+        /// Possible Values: `Never`, `Always`, `highResourceUsage`
         /// </summary>
         public readonly string Report;
         /// <summary>

@@ -20,19 +20,19 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> AttackCandidateBasedAlertingProfile { get; private set; } = null!;
 
         /// <summary>
-        /// Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
+        /// Attack candidate based email payload, required when `Trigger` equals `ATTACK_CANDIDATE` and `Type` equals `EMAIL`
         /// </summary>
         [Output("attackCandidateBasedEmailPayload")]
         public Output<Outputs.AppsecNotificationAttackCandidateBasedEmailPayload?> AttackCandidateBasedEmailPayload { get; private set; } = null!;
 
         /// <summary>
-        /// Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
+        /// Attack candidate based Jira payload, required when `Trigger` equals `ATTACK_CANDIDATE` and `Type` equals `JIRA`
         /// </summary>
         [Output("attackCandidateBasedJiraPayload")]
         public Output<Outputs.AppsecNotificationAttackCandidateBasedJiraPayload?> AttackCandidateBasedJiraPayload { get; private set; } = null!;
 
         /// <summary>
-        /// Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
+        /// Attack candidate based webhook payload, required when `Trigger` equals `ATTACK_CANDIDATE` and `Type` equals `WEBHOOK`
         /// </summary>
         [Output("attackCandidateBasedWebhookPayload")]
         public Output<Outputs.AppsecNotificationAttackCandidateBasedWebhookPayload?> AttackCandidateBasedWebhookPayload { get; private set; } = null!;
@@ -44,19 +44,19 @@ namespace Pulumiverse.Dynatrace
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// Email configuration, required when `type` equals `EMAIL`
+        /// Email configuration, required when `Type` equals `EMAIL`
         /// </summary>
         [Output("emailConfiguration")]
         public Output<Outputs.AppsecNotificationEmailConfiguration?> EmailConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// Enable/Disable the security notification, enabled (`true`) or disabled (`false`)
+        /// Enable/Disable the security notification, enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Jira configuration, required when `type` equals `JIRA`
+        /// Jira configuration, required when `Type` equals `JIRA`
         /// </summary>
         [Output("jiraConfiguration")]
         public Output<Outputs.AppsecNotificationJiraConfiguration?> JiraConfiguration { get; private set; } = null!;
@@ -68,19 +68,19 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> SecurityProblemBasedAlertingProfile { get; private set; } = null!;
 
         /// <summary>
-        /// Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
+        /// Security problem based email payload, required when `Trigger` equals `SECURITY_PROBLEM` and `Type` equals `EMAIL`
         /// </summary>
         [Output("securityProblemBasedEmailPayload")]
         public Output<Outputs.AppsecNotificationSecurityProblemBasedEmailPayload?> SecurityProblemBasedEmailPayload { get; private set; } = null!;
 
         /// <summary>
-        /// Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
+        /// Security problem based Jira payload, required when `Trigger` equals `SECURITY_PROBLEM` and `Type` equals `JIRA`
         /// </summary>
         [Output("securityProblemBasedJiraPayload")]
         public Output<Outputs.AppsecNotificationSecurityProblemBasedJiraPayload?> SecurityProblemBasedJiraPayload { get; private set; } = null!;
 
         /// <summary>
-        /// Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
+        /// Security problem based webhook payload, required when `Trigger` equals `SECURITY_PROBLEM` and `Type` equals `WEBHOOK`
         /// </summary>
         [Output("securityProblemBasedWebhookPayload")]
         public Output<Outputs.AppsecNotificationSecurityProblemBasedWebhookPayload?> SecurityProblemBasedWebhookPayload { get; private set; } = null!;
@@ -98,7 +98,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// Webhook configuration, required when `type` equals `WEBHOOK`
+        /// Webhook configuration, required when `Type` equals `WEBHOOK`
         /// </summary>
         [Output("webhookConfiguration")]
         public Output<Outputs.AppsecNotificationWebhookConfiguration?> WebhookConfiguration { get; private set; } = null!;
@@ -157,19 +157,19 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? AttackCandidateBasedAlertingProfile { get; set; }
 
         /// <summary>
-        /// Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
+        /// Attack candidate based email payload, required when `Trigger` equals `ATTACK_CANDIDATE` and `Type` equals `EMAIL`
         /// </summary>
         [Input("attackCandidateBasedEmailPayload")]
         public Input<Inputs.AppsecNotificationAttackCandidateBasedEmailPayloadArgs>? AttackCandidateBasedEmailPayload { get; set; }
 
         /// <summary>
-        /// Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
+        /// Attack candidate based Jira payload, required when `Trigger` equals `ATTACK_CANDIDATE` and `Type` equals `JIRA`
         /// </summary>
         [Input("attackCandidateBasedJiraPayload")]
         public Input<Inputs.AppsecNotificationAttackCandidateBasedJiraPayloadArgs>? AttackCandidateBasedJiraPayload { get; set; }
 
         /// <summary>
-        /// Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
+        /// Attack candidate based webhook payload, required when `Trigger` equals `ATTACK_CANDIDATE` and `Type` equals `WEBHOOK`
         /// </summary>
         [Input("attackCandidateBasedWebhookPayload")]
         public Input<Inputs.AppsecNotificationAttackCandidateBasedWebhookPayloadArgs>? AttackCandidateBasedWebhookPayload { get; set; }
@@ -181,19 +181,19 @@ namespace Pulumiverse.Dynatrace
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// Email configuration, required when `type` equals `EMAIL`
+        /// Email configuration, required when `Type` equals `EMAIL`
         /// </summary>
         [Input("emailConfiguration")]
         public Input<Inputs.AppsecNotificationEmailConfigurationArgs>? EmailConfiguration { get; set; }
 
         /// <summary>
-        /// Enable/Disable the security notification, enabled (`true`) or disabled (`false`)
+        /// Enable/Disable the security notification, enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Jira configuration, required when `type` equals `JIRA`
+        /// Jira configuration, required when `Type` equals `JIRA`
         /// </summary>
         [Input("jiraConfiguration")]
         public Input<Inputs.AppsecNotificationJiraConfigurationArgs>? JiraConfiguration { get; set; }
@@ -205,19 +205,19 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? SecurityProblemBasedAlertingProfile { get; set; }
 
         /// <summary>
-        /// Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
+        /// Security problem based email payload, required when `Trigger` equals `SECURITY_PROBLEM` and `Type` equals `EMAIL`
         /// </summary>
         [Input("securityProblemBasedEmailPayload")]
         public Input<Inputs.AppsecNotificationSecurityProblemBasedEmailPayloadArgs>? SecurityProblemBasedEmailPayload { get; set; }
 
         /// <summary>
-        /// Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
+        /// Security problem based Jira payload, required when `Trigger` equals `SECURITY_PROBLEM` and `Type` equals `JIRA`
         /// </summary>
         [Input("securityProblemBasedJiraPayload")]
         public Input<Inputs.AppsecNotificationSecurityProblemBasedJiraPayloadArgs>? SecurityProblemBasedJiraPayload { get; set; }
 
         /// <summary>
-        /// Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
+        /// Security problem based webhook payload, required when `Trigger` equals `SECURITY_PROBLEM` and `Type` equals `WEBHOOK`
         /// </summary>
         [Input("securityProblemBasedWebhookPayload")]
         public Input<Inputs.AppsecNotificationSecurityProblemBasedWebhookPayloadArgs>? SecurityProblemBasedWebhookPayload { get; set; }
@@ -235,7 +235,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// Webhook configuration, required when `type` equals `WEBHOOK`
+        /// Webhook configuration, required when `Type` equals `WEBHOOK`
         /// </summary>
         [Input("webhookConfiguration")]
         public Input<Inputs.AppsecNotificationWebhookConfigurationArgs>? WebhookConfiguration { get; set; }
@@ -255,19 +255,19 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? AttackCandidateBasedAlertingProfile { get; set; }
 
         /// <summary>
-        /// Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
+        /// Attack candidate based email payload, required when `Trigger` equals `ATTACK_CANDIDATE` and `Type` equals `EMAIL`
         /// </summary>
         [Input("attackCandidateBasedEmailPayload")]
         public Input<Inputs.AppsecNotificationAttackCandidateBasedEmailPayloadGetArgs>? AttackCandidateBasedEmailPayload { get; set; }
 
         /// <summary>
-        /// Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
+        /// Attack candidate based Jira payload, required when `Trigger` equals `ATTACK_CANDIDATE` and `Type` equals `JIRA`
         /// </summary>
         [Input("attackCandidateBasedJiraPayload")]
         public Input<Inputs.AppsecNotificationAttackCandidateBasedJiraPayloadGetArgs>? AttackCandidateBasedJiraPayload { get; set; }
 
         /// <summary>
-        /// Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
+        /// Attack candidate based webhook payload, required when `Trigger` equals `ATTACK_CANDIDATE` and `Type` equals `WEBHOOK`
         /// </summary>
         [Input("attackCandidateBasedWebhookPayload")]
         public Input<Inputs.AppsecNotificationAttackCandidateBasedWebhookPayloadGetArgs>? AttackCandidateBasedWebhookPayload { get; set; }
@@ -279,19 +279,19 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Email configuration, required when `type` equals `EMAIL`
+        /// Email configuration, required when `Type` equals `EMAIL`
         /// </summary>
         [Input("emailConfiguration")]
         public Input<Inputs.AppsecNotificationEmailConfigurationGetArgs>? EmailConfiguration { get; set; }
 
         /// <summary>
-        /// Enable/Disable the security notification, enabled (`true`) or disabled (`false`)
+        /// Enable/Disable the security notification, enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Jira configuration, required when `type` equals `JIRA`
+        /// Jira configuration, required when `Type` equals `JIRA`
         /// </summary>
         [Input("jiraConfiguration")]
         public Input<Inputs.AppsecNotificationJiraConfigurationGetArgs>? JiraConfiguration { get; set; }
@@ -303,19 +303,19 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? SecurityProblemBasedAlertingProfile { get; set; }
 
         /// <summary>
-        /// Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
+        /// Security problem based email payload, required when `Trigger` equals `SECURITY_PROBLEM` and `Type` equals `EMAIL`
         /// </summary>
         [Input("securityProblemBasedEmailPayload")]
         public Input<Inputs.AppsecNotificationSecurityProblemBasedEmailPayloadGetArgs>? SecurityProblemBasedEmailPayload { get; set; }
 
         /// <summary>
-        /// Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
+        /// Security problem based Jira payload, required when `Trigger` equals `SECURITY_PROBLEM` and `Type` equals `JIRA`
         /// </summary>
         [Input("securityProblemBasedJiraPayload")]
         public Input<Inputs.AppsecNotificationSecurityProblemBasedJiraPayloadGetArgs>? SecurityProblemBasedJiraPayload { get; set; }
 
         /// <summary>
-        /// Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
+        /// Security problem based webhook payload, required when `Trigger` equals `SECURITY_PROBLEM` and `Type` equals `WEBHOOK`
         /// </summary>
         [Input("securityProblemBasedWebhookPayload")]
         public Input<Inputs.AppsecNotificationSecurityProblemBasedWebhookPayloadGetArgs>? SecurityProblemBasedWebhookPayload { get; set; }
@@ -333,7 +333,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// Webhook configuration, required when `type` equals `WEBHOOK`
+        /// Webhook configuration, required when `Type` equals `WEBHOOK`
         /// </summary>
         [Input("webhookConfiguration")]
         public Input<Inputs.AppsecNotificationWebhookConfigurationGetArgs>? WebhookConfiguration { get; set; }

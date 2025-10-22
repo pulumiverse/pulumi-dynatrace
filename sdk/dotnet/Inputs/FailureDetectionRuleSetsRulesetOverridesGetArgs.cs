@@ -16,7 +16,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Define escaped exceptions that should force success.. Evaluated expression: `iAny(`span.events`[][`span_event.name`] == "exception" and `span.events`[][`exception.escaped`] != false)`
         /// 
-        /// Failure detection result: `reason="exception"`, `verdict="success"`, `exception_ids`
+        /// Failure detection result: `reason="exception"`, `verdict="success"`, `ExceptionIds`
         /// </summary>
         [Input("forceSuccessOnExceptions")]
         public Input<Inputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnExceptionsGetArgs>? ForceSuccessOnExceptions { get; set; }
@@ -24,7 +24,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Evaluated attribute: `rpc.grpc.status_code`
         /// 
-        /// Failure detection result: `reason="grpc_code"`, `verdict="success"`
+        /// Failure detection result: `reason="GrpcCode"`, `verdict="success"`
         /// </summary>
         [Input("forceSuccessOnGrpcResponseStatusCodes")]
         public Input<Inputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnGrpcResponseStatusCodesGetArgs>? ForceSuccessOnGrpcResponseStatusCodes { get; set; }
@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Evaluated attribute: `http.response.status_code`
         /// 
-        /// Failure detection result: `reason="http_code"`, `verdict="success"`
+        /// Failure detection result: `reason="HttpCode"`, `verdict="success"`
         /// </summary>
         [Input("forceSuccessOnHttpResponseStatusCodes")]
         public Input<Inputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnHttpResponseStatusCodesGetArgs>? ForceSuccessOnHttpResponseStatusCodes { get; set; }
@@ -44,7 +44,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnSpanStatusOkGetArgs> ForceSuccessOnSpanStatusOk { get; set; } = null!;
 
         /// <summary>
-        /// Override failures based on span and request attribute conditions.. Failure detection result: `reason="custom_rule"`, `verdict="success"`, `custom_rule_name`
+        /// Override failures based on span and request attribute conditions.. Failure detection result: `reason="CustomRule"`, `verdict="success"`, `CustomRuleName`
         /// </summary>
         [Input("forceSuccessWithCustomRules")]
         public Input<Inputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessWithCustomRulesGetArgs>? ForceSuccessWithCustomRules { get; set; }

@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Aggregation { get; private set; } = null!;
 
         /// <summary>
-        /// Confidential data flag. Set `true` to treat the captured data as confidential
+        /// Confidential data flag. Set `True` to treat the captured data as confidential
         /// </summary>
         [Output("confidential")]
         public Output<bool?> Confidential { get; private set; } = null!;
@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> DataType { get; private set; } = null!;
 
         /// <summary>
-        /// The request attribute is enabled (`true`) or disabled (`false`)
+        /// The request attribute is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
         public Output<bool?> Enabled { get; private set; } = null!;
@@ -50,13 +50,13 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// String values transformation.   If the **dataType** is not `string`, set the `Original` here
+        /// String values transformation.   If the **dataType** is not `String`, set the `Original` here
         /// </summary>
         [Output("normalization")]
         public Output<string> Normalization { get; private set; } = null!;
 
         /// <summary>
-        /// Personal data masking flag. Set `true` to skip masking.   Warning: This will potentially access personalized data
+        /// Personal data masking flag. Set `True` to skip masking.   Warning: This will potentially access personalized data
         /// </summary>
         [Output("skipPersonalDataMasking")]
         public Output<bool?> SkipPersonalDataMasking { get; private set; } = null!;
@@ -121,7 +121,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Aggregation { get; set; } = null!;
 
         /// <summary>
-        /// Confidential data flag. Set `true` to treat the captured data as confidential
+        /// Confidential data flag. Set `True` to treat the captured data as confidential
         /// </summary>
         [Input("confidential")]
         public Input<bool>? Confidential { get; set; }
@@ -145,7 +145,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> DataType { get; set; } = null!;
 
         /// <summary>
-        /// The request attribute is enabled (`true`) or disabled (`false`)
+        /// The request attribute is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -157,13 +157,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// String values transformation.   If the **dataType** is not `string`, set the `Original` here
+        /// String values transformation.   If the **dataType** is not `String`, set the `Original` here
         /// </summary>
         [Input("normalization", required: true)]
         public Input<string> Normalization { get; set; } = null!;
 
         /// <summary>
-        /// Personal data masking flag. Set `true` to skip masking.   Warning: This will potentially access personalized data
+        /// Personal data masking flag. Set `True` to skip masking.   Warning: This will potentially access personalized data
         /// </summary>
         [Input("skipPersonalDataMasking")]
         public Input<bool>? SkipPersonalDataMasking { get; set; }
@@ -189,7 +189,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Aggregation { get; set; }
 
         /// <summary>
-        /// Confidential data flag. Set `true` to treat the captured data as confidential
+        /// Confidential data flag. Set `True` to treat the captured data as confidential
         /// </summary>
         [Input("confidential")]
         public Input<bool>? Confidential { get; set; }
@@ -213,7 +213,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? DataType { get; set; }
 
         /// <summary>
-        /// The request attribute is enabled (`true`) or disabled (`false`)
+        /// The request attribute is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -225,13 +225,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// String values transformation.   If the **dataType** is not `string`, set the `Original` here
+        /// String values transformation.   If the **dataType** is not `String`, set the `Original` here
         /// </summary>
         [Input("normalization")]
         public Input<string>? Normalization { get; set; }
 
         /// <summary>
-        /// Personal data masking flag. Set `true` to skip masking.   Warning: This will potentially access personalized data
+        /// Personal data masking flag. Set `True` to skip masking.   Warning: This will potentially access personalized data
         /// </summary>
         [Input("skipPersonalDataMasking")]
         public Input<bool>? SkipPersonalDataMasking { get; set; }

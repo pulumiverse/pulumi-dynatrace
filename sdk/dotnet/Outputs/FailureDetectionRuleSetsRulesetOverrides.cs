@@ -17,19 +17,19 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Define escaped exceptions that should force success.. Evaluated expression: `iAny(`span.events`[][`span_event.name`] == "exception" and `span.events`[][`exception.escaped`] != false)`
         /// 
-        /// Failure detection result: `reason="exception"`, `verdict="success"`, `exception_ids`
+        /// Failure detection result: `reason="exception"`, `verdict="success"`, `ExceptionIds`
         /// </summary>
         public readonly Outputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnExceptions? ForceSuccessOnExceptions;
         /// <summary>
         /// Evaluated attribute: `rpc.grpc.status_code`
         /// 
-        /// Failure detection result: `reason="grpc_code"`, `verdict="success"`
+        /// Failure detection result: `reason="GrpcCode"`, `verdict="success"`
         /// </summary>
         public readonly Outputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnGrpcResponseStatusCodes? ForceSuccessOnGrpcResponseStatusCodes;
         /// <summary>
         /// Evaluated attribute: `http.response.status_code`
         /// 
-        /// Failure detection result: `reason="http_code"`, `verdict="success"`
+        /// Failure detection result: `reason="HttpCode"`, `verdict="success"`
         /// </summary>
         public readonly Outputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnHttpResponseStatusCodes? ForceSuccessOnHttpResponseStatusCodes;
         /// <summary>
@@ -37,7 +37,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnSpanStatusOk ForceSuccessOnSpanStatusOk;
         /// <summary>
-        /// Override failures based on span and request attribute conditions.. Failure detection result: `reason="custom_rule"`, `verdict="success"`, `custom_rule_name`
+        /// Override failures based on span and request attribute conditions.. Failure detection result: `reason="CustomRule"`, `verdict="success"`, `CustomRuleName`
         /// </summary>
         public readonly Outputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessWithCustomRules? ForceSuccessWithCustomRules;
 

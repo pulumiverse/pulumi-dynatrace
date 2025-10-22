@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Which value of the request attribute must be used when it occurs across multiple child requests. Only applicable for the `SERVICE_REQUEST_ATTRIBUTE` attribute, when **useFromChildCalls** is `true`. For the `COUNT` aggregation, the **kind** field is not applicable. Possible values are `COUNT`, `FIRST` and `LAST`.
+        /// Which value of the request attribute must be used when it occurs across multiple child requests. Only applicable for the `SERVICE_REQUEST_ATTRIBUTE` attribute, when **useFromChildCalls** is `True`. For the `COUNT` aggregation, the **kind** field is not applicable. Possible values are `COUNT`, `FIRST` and `LAST`.
         /// </summary>
         [Input("aggregation")]
         public Input<string>? Aggregation { get; set; }
@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Attribute { get; set; } = null!;
 
         /// <summary>
-        /// Depending on the `kind` value:
+        /// Depending on the `Kind` value:
         /// 
         /// 
         /// * `REGEX_EXTRACTION`: The regular expression.
@@ -41,13 +41,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? DelimiterOrRegex { get; set; }
 
         /// <summary>
-        /// The closing delimiter string to look for. Required if the `kind` value is `BETWEEN_DELIMITER`. Not applicable otherwise
+        /// The closing delimiter string to look for. Required if the `Kind` value is `BETWEEN_DELIMITER`. Not applicable otherwise
         /// </summary>
         [Input("endDelimiter")]
         public Input<string>? EndDelimiter { get; set; }
 
         /// <summary>
-        /// The type of extraction. Defines either usage of regular expression (`regex`) or the position of request attribute value to be extracted. When the `attribute` is `SERVICE_REQUEST_ATTRIBUTE` attribute and `aggregation` is `COUNT`, needs to be set to `ORIGINAL_TEXT`. Possible values are 	`AFTER_DELIMITER`, `BEFORE_DELIMITER`, `BETWEEN_DELIMITER`, `ORIGINAL_TEXT` and `REGEX_EXTRACTION`
+        /// The type of extraction. Defines either usage of regular expression (`Regex`) or the position of request attribute value to be extracted. When the `Attribute` is `SERVICE_REQUEST_ATTRIBUTE` attribute and `Aggregation` is `COUNT`, needs to be set to `ORIGINAL_TEXT`. Possible values are 	`AFTER_DELIMITER`, `BEFORE_DELIMITER`, `BETWEEN_DELIMITER`, `ORIGINAL_TEXT` and `REGEX_EXTRACTION`
         /// </summary>
         [Input("kind", required: true)]
         public Input<string> Kind { get; set; } = null!;
@@ -71,7 +71,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? OneagentAttributeKey { get; set; }
 
         /// <summary>
-        /// The request attribute to extract from. Required if the `kind` value is `SERVICE_REQUEST_ATTRIBUTE`. Not applicable otherwise
+        /// The request attribute to extract from. Required if the `Kind` value is `SERVICE_REQUEST_ATTRIBUTE`. Not applicable otherwise
         /// </summary>
         [Input("requestAttribute")]
         public Input<string>? RequestAttribute { get; set; }
@@ -89,7 +89,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Unknowns { get; set; }
 
         /// <summary>
-        /// If `true` request attribute will be taken from a child service call. Only applicable for the `SERVICE_REQUEST_ATTRIBUTE` attribute. Defaults to `false`
+        /// If `True` request attribute will be taken from a child service call. Only applicable for the `SERVICE_REQUEST_ATTRIBUTE` attribute. Defaults to `False`
         /// </summary>
         [Input("useFromChildCalls")]
         public Input<bool>? UseFromChildCalls { get; set; }

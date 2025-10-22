@@ -24,9 +24,9 @@ namespace Pulumiverse.Dynatrace
     /// ## Resource Example Usage
     /// 
     /// This example utilizes the data source `dynatrace.getAzureSupportedServices` in order to query for a full list of all supported services.
-    /// The `for_each` loop within the resource `dynatrace.AzureService` configures each of these services to get utilized with the default metrics recommended by Dynatrace (`use_recommended_metrics`).
+    /// The `ForEach` loop within the resource `dynatrace.AzureService` configures each of these services to get utilized with the default metrics recommended by Dynatrace (`UseRecommendedMetrics`).
     /// 
-    /// If you want to configure a different set of metrics for a specific service, a separate resource `dynatrace.AzureService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
+    /// If you want to configure a different set of metrics for a specific service, a separate resource `dynatrace.AzureService` will be necessary for that. That allows you to configure the `Metric` blocks according to your wishes.
     /// Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
     /// 
     /// ```csharp
@@ -82,7 +82,7 @@ namespace Pulumiverse.Dynatrace
     public partial class AzureService : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
+        /// This attribute is automatically set to `True` if Dynatrace considers the supporting service with the given name to be a built-in service
         /// </summary>
         [Output("builtIn")]
         public Output<bool> BuiltIn { get; private set; } = null!;
@@ -187,7 +187,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class AzureServiceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
+        /// This attribute is automatically set to `True` if Dynatrace considers the supporting service with the given name to be a built-in service
         /// </summary>
         [Input("builtIn")]
         public Input<bool>? BuiltIn { get; set; }

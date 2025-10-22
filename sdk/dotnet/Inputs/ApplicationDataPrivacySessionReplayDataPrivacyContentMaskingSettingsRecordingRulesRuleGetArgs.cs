@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// Interactions with the element are (`true`) or are not (`false) masked
+        /// Interactions with the element are (`True`) or are not (`false) masked
         /// </summary>
         [Input("userInteractionHidden")]
         public Input<bool>? UserInteractionHidden { get; set; }

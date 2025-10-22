@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class BrowserMonitorAnomalyDetectionOutageHandlingGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable at all configured locations
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`True`), generate a problem and send an alert when the monitor is unavailable at all configured locations
         /// </summary>
         [Input("globalOutage")]
         public Input<bool>? GlobalOutage { get; set; }
@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`True`), generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
         /// </summary>
         [Input("localOutage")]
         public Input<bool>? LocalOutage { get; set; }

@@ -221,7 +221,7 @@ namespace Pulumiverse.Dynatrace
         public Output<ImmutableArray<Outputs.AlertingProfileEventTypeFilter>> EventTypeFilters { get; private set; } = null!;
 
         /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
+        /// `Metadata` exists for backwards compatibility but shouldn't get specified anymore
         /// </summary>
         [Output("metadata")]
         public Output<Outputs.AlertingProfileMetadata?> Metadata { get; private set; } = null!;
@@ -310,7 +310,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
+        /// `Metadata` exists for backwards compatibility but shouldn't get specified anymore
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.AlertingProfileMetadataArgs>? Metadata { get; set; }
@@ -366,7 +366,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
+        /// `Metadata` exists for backwards compatibility but shouldn't get specified anymore
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.AlertingProfileMetadataGetArgs>? Metadata { get; set; }

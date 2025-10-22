@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.UpdateWindows` data source allows the OneAgent update maintenance window ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the OneAgent update maintenance window
+        /// - `Name` (String) - The name of the OneAgent update maintenance window
         /// 
         /// ## Example Usage
         /// 
@@ -45,7 +45,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.UpdateWindows` data source allows the OneAgent update maintenance window ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the OneAgent update maintenance window
+        /// - `Name` (String) - The name of the OneAgent update maintenance window
         /// 
         /// ## Example Usage
         /// 
@@ -75,7 +75,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.UpdateWindows` data source allows the OneAgent update maintenance window ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the OneAgent update maintenance window
+        /// - `Name` (String) - The name of the OneAgent update maintenance window
         /// 
         /// ## Example Usage
         /// 

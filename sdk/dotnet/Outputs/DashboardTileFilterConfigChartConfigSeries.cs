@@ -36,11 +36,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly int? Percentile;
         /// <summary>
-        /// Sort ascending (`true`) or descending (`false`)
+        /// Sort ascending (`True`) or descending (`False`)
         /// </summary>
         public readonly bool? SortAscending;
         /// <summary>
-        /// Sort the column (`true`) or (`false`)
+        /// Sort the column (`True`) or (`False`)
         /// </summary>
         public readonly bool? SortColumn;
         /// <summary>

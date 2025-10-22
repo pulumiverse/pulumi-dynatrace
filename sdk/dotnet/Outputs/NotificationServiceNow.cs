@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class NotificationServiceNow
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Active;
         /// <summary>
@@ -39,11 +39,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Password;
         /// <summary>
-        /// Send events into ServiceNow ITOM (`true`)
+        /// Send events into ServiceNow ITOM (`True`)
         /// </summary>
         public readonly bool SendEvents;
         /// <summary>
-        /// Send incidents into ServiceNow ITSM (`true`)
+        /// Send incidents into ServiceNow ITSM (`True`)
         /// </summary>
         public readonly bool SendIncidents;
         /// <summary>
@@ -55,7 +55,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Url;
         /// <summary>
-        /// The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
+        /// The username of the ServiceNow account.   Make sure that your user account has the `RestService`, `WebRequestAdmin`, and `x_dynat_ruxit.Integration` roles
         /// </summary>
         public readonly string Username;
 

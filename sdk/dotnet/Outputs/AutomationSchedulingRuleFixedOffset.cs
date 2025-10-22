@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AutomationSchedulingRuleFixedOffset
     {
         /// <summary>
-        /// Every day of the scheduling rule referred to with `rule` will be offset by this amount of days
+        /// Every day of the scheduling rule referred to with `Rule` will be offset by this amount of days
         /// </summary>
         public readonly int Offset;
         /// <summary>

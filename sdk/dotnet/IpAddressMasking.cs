@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class IpAddressMasking : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `all`, `public`
+        /// Possible Values: `All`, `Public`
         /// </summary>
         [Output("type")]
         public Output<string?> Type { get; private set; } = null!;
@@ -79,7 +79,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class IpAddressMaskingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
@@ -91,7 +91,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// Possible Values: `all`, `public`
+        /// Possible Values: `All`, `Public`
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
@@ -105,7 +105,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class IpAddressMaskingState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -117,7 +117,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// Possible Values: `all`, `public`
+        /// Possible Values: `All`, `Public`
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

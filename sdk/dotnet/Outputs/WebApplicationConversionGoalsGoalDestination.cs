@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class WebApplicationConversionGoalsGoalDestination
     {
         /// <summary>
-        /// The match is case-sensitive (`true`) or (`false`)
+        /// The match is case-sensitive (`True`) or (`False`)
         /// </summary>
         public readonly bool? CaseSensitive;
         /// <summary>

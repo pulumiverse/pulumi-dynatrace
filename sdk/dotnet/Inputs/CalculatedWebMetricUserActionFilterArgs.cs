@@ -68,7 +68,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Country { get; set; }
 
         /// <summary>
-        /// The status of custom actions in the metric calculation: `true` or `false`
+        /// The status of custom actions in the metric calculation: `True` or `False`
         /// </summary>
         [Input("customAction")]
         public Input<bool>? CustomAction { get; set; }
@@ -92,25 +92,25 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Domain { get; set; }
 
         /// <summary>
-        /// The error status of the actions to be included in the metric calculation: `true` or `false`
+        /// The error status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         [Input("hasAnyError")]
         public Input<bool>? HasAnyError { get; set; }
 
         /// <summary>
-        /// The custom error status of the actions to be included in the metric calculation: `true` or `false`
+        /// The custom error status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         [Input("hasCustomErrors")]
         public Input<bool>? HasCustomErrors { get; set; }
 
         /// <summary>
-        /// The request error status of the actions to be included in the metric calculation: `true` or `false`
+        /// The request error status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         [Input("hasHttpErrors")]
         public Input<bool>? HasHttpErrors { get; set; }
 
         /// <summary>
-        /// The JavaScript error status of the actions to be included in the metric calculation: `true` or `false`
+        /// The JavaScript error status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         [Input("hasJavascriptErrors")]
         public Input<bool>? HasJavascriptErrors { get; set; }
@@ -140,13 +140,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Ip { get; set; }
 
         /// <summary>
-        /// The IPv6 status of the actions to be included in the metric calculation: `true` or `false`
+        /// The IPv6 status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         [Input("ipV6Traffic")]
         public Input<bool>? IpV6Traffic { get; set; }
 
         /// <summary>
-        /// The status of load actions in the metric calculation: `true` or `false`
+        /// The status of load actions in the metric calculation: `True` or `False`
         /// </summary>
         [Input("loadAction")]
         public Input<bool>? LoadAction { get; set; }
@@ -164,7 +164,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? OsVersion { get; set; }
 
         /// <summary>
-        /// The status of actions coming from real users in the metric calculation: `true` or `false`
+        /// The status of actions coming from real users in the metric calculation: `True` or `False`
         /// </summary>
         [Input("realUser")]
         public Input<bool>? RealUser { get; set; }
@@ -176,13 +176,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Region { get; set; }
 
         /// <summary>
-        /// The status of actions coming from robots in the metric calculation: `true` or `false`
+        /// The status of actions coming from robots in the metric calculation: `True` or `False`
         /// </summary>
         [Input("robot")]
         public Input<bool>? Robot { get; set; }
 
         /// <summary>
-        /// The status of actions coming from synthetic monitors in the metric calculation: `true` or `false`
+        /// The status of actions coming from synthetic monitors in the metric calculation: `True` or `False`
         /// </summary>
         [Input("synthetic")]
         public Input<bool>? Synthetic { get; set; }
@@ -230,13 +230,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// The status of xhr actions in the metric calculation: `true` or `false`
+        /// The status of xhr actions in the metric calculation: `True` or `False`
         /// </summary>
         [Input("xhrAction")]
         public Input<bool>? XhrAction { get; set; }
 
         /// <summary>
-        /// The status of route actions in the metric calculation: `true` or `false`
+        /// The status of route actions in the metric calculation: `True` or `False`
         /// </summary>
         [Input("xhrRouteChangeAction")]
         public Input<bool>? XhrRouteChangeAction { get; set; }

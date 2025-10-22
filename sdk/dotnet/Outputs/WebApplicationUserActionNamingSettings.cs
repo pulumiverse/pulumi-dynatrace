@@ -31,7 +31,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.WebApplicationUserActionNamingSettingsPlaceholders? Placeholders;
         /// <summary>
-        /// User action naming rules for custom actions. If not specified Dynatrace assumes `__sid`, `cfid`, `cftoken`, `phpsessid` and `sid`.
+        /// User action naming rules for custom actions. If not specified Dynatrace assumes `__sid`, `Cfid`, `Cftoken`, `Phpsessid` and `Sid`.
         /// </summary>
         public readonly ImmutableArray<string> QueryParameterCleanups;
         /// <summary>

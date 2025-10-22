@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class HttpMonitorScriptRequestConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// If set to `false`, then the monitor fails with invalid SSL certificates.
+        /// If set to `False`, then the monitor fails with invalid SSL certificates.
         /// </summary>
         [Input("acceptAnyCertificate")]
         public Input<bool>? AcceptAnyCertificate { get; set; }
@@ -36,9 +36,9 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// If set to `false`, redirects are reported as successful requests with response code 3xx.
+        /// If set to `False`, redirects are reported as successful requests with response code 3xx.
         /// 
-        /// If not set, the `false` option is used.
+        /// If not set, the `False` option is used.
         /// </summary>
         [Input("followRedirects")]
         public Input<bool>? FollowRedirects { get; set; }
@@ -50,7 +50,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.HttpMonitorScriptRequestConfigurationHeadersGetArgs>? Headers { get; set; }
 
         /// <summary>
-        /// Option not to store and display request and response bodies and header values in execution details, `true` or `false`. If not set, `false`.
+        /// Option not to store and display request and response bodies and header values in execution details, `True` or `False`. If not set, `False`.
         /// </summary>
         [Input("sensitiveData")]
         public Input<bool>? SensitiveData { get; set; }

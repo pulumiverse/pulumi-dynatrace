@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// If set to `true`: Returns the input if `patternBefore` or `patternAfter` cannot be found and the `type` is `SUBSTRING`. Returns the input if `regularExpression` doesn't match and `type` is `EXTRACT_BY_REGULAR_EXPRESSION`.
+        /// If set to `True`: Returns the input if `patternBefore` or `patternAfter` cannot be found and the `Type` is `SUBSTRING`. Returns the input if `regularExpression` doesn't match and `Type` is `EXTRACT_BY_REGULAR_EXPRESSION`.
         /// </summary>
         [Input("fallbackToInput")]
         public Input<bool>? FallbackToInput { get; set; }
@@ -46,13 +46,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// The pattern to be replaced. 
         /// 
-        ///  Only applicable if the `type` is `REPLACE_WITH_PATTERN`.
+        ///  Only applicable if the `Type` is `REPLACE_WITH_PATTERN`.
         /// </summary>
         [Input("patternToReplace")]
         public Input<string>? PatternToReplace { get; set; }
 
         /// <summary>
-        /// A regular expression for the string to be extracted or replaced. Only applicable if the `type` is `EXTRACT_BY_REGULAR_EXPRESSION` or `REPLACE_WITH_REGULAR_EXPRESSION`.
+        /// A regular expression for the string to be extracted or replaced. Only applicable if the `Type` is `EXTRACT_BY_REGULAR_EXPRESSION` or `REPLACE_WITH_REGULAR_EXPRESSION`.
         /// </summary>
         [Input("regularExpression")]
         public Input<string>? RegularExpression { get; set; }

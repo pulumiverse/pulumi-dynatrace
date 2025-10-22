@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; This data source requires the API token scopes **Read settings** (`settings.read`)
         /// 
-        /// - `name` queries the automatically applied tag with the specified name
+        /// - `Name` queries the automatically applied tag with the specified name
         /// 
         /// ## Example Usage
         /// 
@@ -107,7 +107,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; This data source requires the API token scopes **Read settings** (`settings.read`)
         /// 
-        /// - `name` queries the automatically applied tag with the specified name
+        /// - `Name` queries the automatically applied tag with the specified name
         /// 
         /// ## Example Usage
         /// 
@@ -197,7 +197,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; This data source requires the API token scopes **Read settings** (`settings.read`)
         /// 
-        /// - `name` queries the automatically applied tag with the specified name
+        /// - `Name` queries the automatically applied tag with the specified name
         /// 
         /// ## Example Usage
         /// 

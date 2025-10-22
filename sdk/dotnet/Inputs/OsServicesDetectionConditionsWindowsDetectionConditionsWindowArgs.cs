@@ -48,13 +48,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// 
         /// Use one of the following values as a parameter for this condition:
         /// 
-        /// - `manual` for Manual
-        /// - `manual_trigger` for Manual (Trigger Start)
-        /// - `auto` for Automatic
-        /// - `auto_delay` for Automatic (Delayed Start)
-        /// - `auto_trigger` for Automatic (Trigger Start)
-        /// - `auto_delay_trigger` for Automatic (Delayed Start, Trigger Start)
-        /// - `disabled` for Disabled
+        /// - `Manual` for Manual
+        /// - `ManualTrigger` for Manual (Trigger Start)
+        /// - `Auto` for Automatic
+        /// - `AutoDelay` for Automatic (Delayed Start)
+        /// - `AutoTrigger` for Automatic (Trigger Start)
+        /// - `AutoDelayTrigger` for Automatic (Delayed Start, Trigger Start)
+        /// - `Disabled` for Disabled
         /// </summary>
         [Input("startupCondition")]
         public Input<string>? StartupCondition { get; set; }

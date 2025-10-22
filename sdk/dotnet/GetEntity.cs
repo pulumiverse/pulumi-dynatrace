@@ -15,8 +15,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The entity data source allows the entity ID to be retrieved by its name and type.
         /// 
-        /// - `name` (String) Display name of the entity
-        /// - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+        /// - `Name` (String) Display name of the entity
+        /// - `Type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -49,8 +49,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The entity data source allows the entity ID to be retrieved by its name and type.
         /// 
-        /// - `name` (String) Display name of the entity
-        /// - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+        /// - `Name` (String) Display name of the entity
+        /// - `Type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -83,8 +83,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The entity data source allows the entity ID to be retrieved by its name and type.
         /// 
-        /// - `name` (String) Display name of the entity
-        /// - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+        /// - `Name` (String) Display name of the entity
+        /// - `Type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 

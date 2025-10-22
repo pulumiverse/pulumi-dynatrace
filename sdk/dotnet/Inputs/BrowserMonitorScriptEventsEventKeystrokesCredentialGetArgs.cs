@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class BrowserMonitorScriptEventsEventKeystrokesCredentialGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Either `username` or `password`
+        /// Either `Username` or `Password`
         /// </summary>
         [Input("field", required: true)]
         public Input<string> Field { get; set; } = null!;

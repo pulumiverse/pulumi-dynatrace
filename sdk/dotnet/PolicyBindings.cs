@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace
     public partial class PolicyBindings : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
+        /// The UUID of the cluster. The attribute `Policies` must contain ONLY policies defined for that cluster.
         /// </summary>
         [Output("cluster")]
         public Output<string?> Cluster { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the environment (https://&lt;environmentid&gt;.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
+        /// The ID of the environment (https://&lt;environmentid&gt;.live.dynatrace.com). The attribute `Policies` must contain ONLY policies defined for that environment.
         /// </summary>
         [Output("environment")]
         public Output<string?> Environment { get; private set; } = null!;
@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Group { get; private set; } = null!;
 
         /// <summary>
-        /// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+        /// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `Cluster` or `Environment`.
         /// </summary>
         [Output("policies")]
         public Output<ImmutableArray<string>> Policies { get; private set; } = null!;
@@ -85,13 +85,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class PolicyBindingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
+        /// The UUID of the cluster. The attribute `Policies` must contain ONLY policies defined for that cluster.
         /// </summary>
         [Input("cluster")]
         public Input<string>? Cluster { get; set; }
 
         /// <summary>
-        /// The ID of the environment (https://&lt;environmentid&gt;.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
+        /// The ID of the environment (https://&lt;environmentid&gt;.live.dynatrace.com). The attribute `Policies` must contain ONLY policies defined for that environment.
         /// </summary>
         [Input("environment")]
         public Input<string>? Environment { get; set; }
@@ -106,7 +106,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _policies;
 
         /// <summary>
-        /// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+        /// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `Cluster` or `Environment`.
         /// </summary>
         public InputList<string> Policies
         {
@@ -123,13 +123,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class PolicyBindingsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
+        /// The UUID of the cluster. The attribute `Policies` must contain ONLY policies defined for that cluster.
         /// </summary>
         [Input("cluster")]
         public Input<string>? Cluster { get; set; }
 
         /// <summary>
-        /// The ID of the environment (https://&lt;environmentid&gt;.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
+        /// The ID of the environment (https://&lt;environmentid&gt;.live.dynatrace.com). The attribute `Policies` must contain ONLY policies defined for that environment.
         /// </summary>
         [Input("environment")]
         public Input<string>? Environment { get; set; }
@@ -144,7 +144,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _policies;
 
         /// <summary>
-        /// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
+        /// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `Cluster` or `Environment`.
         /// </summary>
         public InputList<string> Policies
         {

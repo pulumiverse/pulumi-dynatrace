@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class SettingsPermissions : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Defines the default access level granted to all users in this environment. Allowed values are `read`, `write`, or `none`
+        /// Defines the default access level granted to all users in this environment. Allowed values are `Read`, `Write`, or `None`
         /// </summary>
         [Output("allUsers")]
         public Output<string?> AllUsers { get; private set; } = null!;
@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.SettingsPermissionsGroups?> Groups { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the settings object for which access is to be granted. Here, you can use the `id` attribute of the respective settings object resource
+        /// The ID of the settings object for which access is to be granted. Here, you can use the `Id` attribute of the respective settings object resource
         /// </summary>
         [Output("settingsObjectId")]
         public Output<string> SettingsObjectId { get; private set; } = null!;
@@ -79,7 +79,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class SettingsPermissionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Defines the default access level granted to all users in this environment. Allowed values are `read`, `write`, or `none`
+        /// Defines the default access level granted to all users in this environment. Allowed values are `Read`, `Write`, or `None`
         /// </summary>
         [Input("allUsers")]
         public Input<string>? AllUsers { get; set; }
@@ -88,7 +88,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.SettingsPermissionsGroupsArgs>? Groups { get; set; }
 
         /// <summary>
-        /// The ID of the settings object for which access is to be granted. Here, you can use the `id` attribute of the respective settings object resource
+        /// The ID of the settings object for which access is to be granted. Here, you can use the `Id` attribute of the respective settings object resource
         /// </summary>
         [Input("settingsObjectId", required: true)]
         public Input<string> SettingsObjectId { get; set; } = null!;
@@ -105,7 +105,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class SettingsPermissionsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Defines the default access level granted to all users in this environment. Allowed values are `read`, `write`, or `none`
+        /// Defines the default access level granted to all users in this environment. Allowed values are `Read`, `Write`, or `None`
         /// </summary>
         [Input("allUsers")]
         public Input<string>? AllUsers { get; set; }
@@ -114,7 +114,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.SettingsPermissionsGroupsGetArgs>? Groups { get; set; }
 
         /// <summary>
-        /// The ID of the settings object for which access is to be granted. Here, you can use the `id` attribute of the respective settings object resource
+        /// The ID of the settings object for which access is to be granted. Here, you can use the `Id` attribute of the respective settings object resource
         /// </summary>
         [Input("settingsObjectId")]
         public Input<string>? SettingsObjectId { get; set; }

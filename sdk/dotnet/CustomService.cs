@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace
         public Output<ImmutableArray<string>> ProcessGroups { get; private set; } = null!;
 
         /// <summary>
-        /// The queue entry point flag. Set to `true` for custom messaging services
+        /// The queue entry point flag. Set to `True` for custom messaging services
         /// </summary>
         [Output("queueEntryPoint")]
         public Output<bool?> QueueEntryPoint { get; private set; } = null!;
@@ -133,7 +133,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The queue entry point flag. Set to `true` for custom messaging services
+        /// The queue entry point flag. Set to `True` for custom messaging services
         /// </summary>
         [Input("queueEntryPoint")]
         public Input<bool>? QueueEntryPoint { get; set; }
@@ -201,7 +201,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The queue entry point flag. Set to `true` for custom messaging services
+        /// The queue entry point flag. Set to `True` for custom messaging services
         /// </summary>
         [Input("queueEntryPoint")]
         public Input<bool>? QueueEntryPoint { get; set; }

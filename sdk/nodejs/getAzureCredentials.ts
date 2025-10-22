@@ -8,6 +8,8 @@ import * as utilities from "./utilities";
  * The `dynatrace.AzureCredentials` data source allows the Azure credential ID to be retrieved by its label.
  *
  * - `label` (String) - The label/name of the Azure credential
+ *
+ * ## Example Usage
  */
 export function getAzureCredentials(args: GetAzureCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetAzureCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -37,6 +39,8 @@ export interface GetAzureCredentialsResult {
  * The `dynatrace.AzureCredentials` data source allows the Azure credential ID to be retrieved by its label.
  *
  * - `label` (String) - The label/name of the Azure credential
+ *
+ * ## Example Usage
  */
 export function getAzureCredentialsOutput(args: GetAzureCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAzureCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AutotagEntitySelectorBasedRule
     {
         /// <summary>
-        /// The rule is enabled (`true`) or disabled (`false`)
+        /// The rule is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool? Enabled;
         /// <summary>

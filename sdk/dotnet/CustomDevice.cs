@@ -109,7 +109,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// If `true` the custom device will be handled as if it was created via UI. It will be refreshed automatically and won't age out. This attribute is taken into consideration when creating the custom device. Changing it afterwards won't have an effect.
+        /// If `True` the custom device will be handled as if it was created via UI. It will be refreshed automatically and won't age out. This attribute is taken into consideration when creating the custom device. Changing it afterwards won't have an effect.
         /// </summary>
         [Output("uiBased")]
         public Output<bool?> UiBased { get; private set; } = null!;
@@ -230,7 +230,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The list of key-value pair properties that will be shown beneath the infographics of your custom device.
         /// </summary>
-        [Obsolete(@"Please use the attribute `props` instead")]
+        [Obsolete(@"Please use the attribute `Props` instead")]
         public InputMap<string> Properties
         {
             get => _properties ?? (_properties = new InputMap<string>());
@@ -250,7 +250,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// If `true` the custom device will be handled as if it was created via UI. It will be refreshed automatically and won't age out. This attribute is taken into consideration when creating the custom device. Changing it afterwards won't have an effect.
+        /// If `True` the custom device will be handled as if it was created via UI. It will be refreshed automatically and won't age out. This attribute is taken into consideration when creating the custom device. Changing it afterwards won't have an effect.
         /// </summary>
         [Input("uiBased")]
         public Input<bool>? UiBased { get; set; }
@@ -338,7 +338,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The list of key-value pair properties that will be shown beneath the infographics of your custom device.
         /// </summary>
-        [Obsolete(@"Please use the attribute `props` instead")]
+        [Obsolete(@"Please use the attribute `Props` instead")]
         public InputMap<string> Properties
         {
             get => _properties ?? (_properties = new InputMap<string>());
@@ -358,7 +358,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// If `true` the custom device will be handled as if it was created via UI. It will be refreshed automatically and won't age out. This attribute is taken into consideration when creating the custom device. Changing it afterwards won't have an effect.
+        /// If `True` the custom device will be handled as if it was created via UI. It will be refreshed automatically and won't age out. This attribute is taken into consideration when creating the custom device. Changing it afterwards won't have an effect.
         /// </summary>
         [Input("uiBased")]
         public Input<bool>? UiBased { get; set; }

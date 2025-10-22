@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string>? EntityTags;
         /// <summary>
-        /// Specifies whether all or just any of the configured entity tags need to match. Possible values: `all` and `any`. Omit this attribute if all entities should match
+        /// Specifies whether all or just any of the configured entity tags need to match. Possible values: `All` and `Any`. Omit this attribute if all entities should match
         /// </summary>
         public readonly string? EntityTagsMatch;
         /// <summary>
@@ -27,7 +27,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.AutomationWorkflowTriggerEventConfigDavisEventNames? Names;
         /// <summary>
-        /// If set to `true` closing a problem also is considered an event that triggers the execution
+        /// If set to `True` closing a problem also is considered an event that triggers the execution
         /// </summary>
         public readonly bool? OnProblemClose;
         /// <summary>

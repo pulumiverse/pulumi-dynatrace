@@ -28,19 +28,19 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.ApplicationErrorRulesHttpErrors?> HttpErrors { get; private set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+        /// (Field has overlap with `dynatrace.WebAppCustomErrors`) Exclude (`True`) or include (`False`) custom errors listed in **customErrorRules** in Apdex calculation
         /// </summary>
         [Output("ignoreCustomErrorsApdex")]
         public Output<bool?> IgnoreCustomErrorsApdex { get; private set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+        /// (Field has overlap with `dynatrace.WebAppRequestErrors`) Exclude (`True`) or include (`False`) HTTP errors listed in **httpErrorRules** in Apdex calculation
         /// </summary>
         [Output("ignoreHttpErrorsApdex")]
         public Output<bool?> IgnoreHttpErrorsApdex { get; private set; } = null!;
 
         /// <summary>
-        /// Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
+        /// Exclude (`True`) or include (`False`) JavaScript errors in Apdex calculation
         /// </summary>
         [Output("ignoreJsErrorsApdex")]
         public Output<bool?> IgnoreJsErrorsApdex { get; private set; } = null!;
@@ -113,19 +113,19 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.ApplicationErrorRulesHttpErrorsArgs>? HttpErrors { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+        /// (Field has overlap with `dynatrace.WebAppCustomErrors`) Exclude (`True`) or include (`False`) custom errors listed in **customErrorRules** in Apdex calculation
         /// </summary>
         [Input("ignoreCustomErrorsApdex")]
         public Input<bool>? IgnoreCustomErrorsApdex { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+        /// (Field has overlap with `dynatrace.WebAppRequestErrors`) Exclude (`True`) or include (`False`) HTTP errors listed in **httpErrorRules** in Apdex calculation
         /// </summary>
         [Input("ignoreHttpErrorsApdex")]
         public Input<bool>? IgnoreHttpErrorsApdex { get; set; }
 
         /// <summary>
-        /// Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
+        /// Exclude (`True`) or include (`False`) JavaScript errors in Apdex calculation
         /// </summary>
         [Input("ignoreJsErrorsApdex")]
         public Input<bool>? IgnoreJsErrorsApdex { get; set; }
@@ -159,19 +159,19 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.ApplicationErrorRulesHttpErrorsGetArgs>? HttpErrors { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+        /// (Field has overlap with `dynatrace.WebAppCustomErrors`) Exclude (`True`) or include (`False`) custom errors listed in **customErrorRules** in Apdex calculation
         /// </summary>
         [Input("ignoreCustomErrorsApdex")]
         public Input<bool>? IgnoreCustomErrorsApdex { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+        /// (Field has overlap with `dynatrace.WebAppRequestErrors`) Exclude (`True`) or include (`False`) HTTP errors listed in **httpErrorRules** in Apdex calculation
         /// </summary>
         [Input("ignoreHttpErrorsApdex")]
         public Input<bool>? IgnoreHttpErrorsApdex { get; set; }
 
         /// <summary>
-        /// Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
+        /// Exclude (`True`) or include (`False`) JavaScript errors in Apdex calculation
         /// </summary>
         [Input("ignoreJsErrorsApdex")]
         public Input<bool>? IgnoreJsErrorsApdex { get; set; }

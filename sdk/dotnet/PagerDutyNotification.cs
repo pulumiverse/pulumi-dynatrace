@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Account { get; private set; } = null!;
 
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
@@ -113,7 +113,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Account { get; set; } = null!;
 
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
@@ -173,7 +173,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Account { get; set; }
 
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }

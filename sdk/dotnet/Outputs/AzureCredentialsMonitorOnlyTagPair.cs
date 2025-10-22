@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Unknowns;
         /// <summary>
-        /// The value of the tag.   If set to `null`, then resources with any value of the tag are monitored.
+        /// The value of the tag.   If set to `Null`, then resources with any value of the tag are monitored.
         /// </summary>
         public readonly string? Value;
 

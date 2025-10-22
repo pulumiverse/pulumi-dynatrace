@@ -51,7 +51,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Country;
         /// <summary>
-        /// The status of custom actions in the metric calculation: `true` or `false`
+        /// The status of custom actions in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? CustomAction;
         /// <summary>
@@ -67,19 +67,19 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Domain;
         /// <summary>
-        /// The error status of the actions to be included in the metric calculation: `true` or `false`
+        /// The error status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? HasAnyError;
         /// <summary>
-        /// The custom error status of the actions to be included in the metric calculation: `true` or `false`
+        /// The custom error status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? HasCustomErrors;
         /// <summary>
-        /// The request error status of the actions to be included in the metric calculation: `true` or `false`
+        /// The request error status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? HasHttpErrors;
         /// <summary>
-        /// The JavaScript error status of the actions to be included in the metric calculation: `true` or `false`
+        /// The JavaScript error status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? HasJavascriptErrors;
         /// <summary>
@@ -99,11 +99,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Ip;
         /// <summary>
-        /// The IPv6 status of the actions to be included in the metric calculation: `true` or `false`
+        /// The IPv6 status of the actions to be included in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? IpV6Traffic;
         /// <summary>
-        /// The status of load actions in the metric calculation: `true` or `false`
+        /// The status of load actions in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? LoadAction;
         /// <summary>
@@ -115,7 +115,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? OsVersion;
         /// <summary>
-        /// The status of actions coming from real users in the metric calculation: `true` or `false`
+        /// The status of actions coming from real users in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? RealUser;
         /// <summary>
@@ -123,11 +123,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Region;
         /// <summary>
-        /// The status of actions coming from robots in the metric calculation: `true` or `false`
+        /// The status of actions coming from robots in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? Robot;
         /// <summary>
-        /// The status of actions coming from synthetic monitors in the metric calculation: `true` or `false`
+        /// The status of actions coming from synthetic monitors in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? Synthetic;
         /// <summary>
@@ -155,11 +155,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.CalculatedWebMetricUserActionFilterUserActionProperty> UserActionProperties;
         /// <summary>
-        /// The status of xhr actions in the metric calculation: `true` or `false`
+        /// The status of xhr actions in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? XhrAction;
         /// <summary>
-        /// The status of route actions in the metric calculation: `true` or `false`
+        /// The status of route actions in the metric calculation: `True` or `False`
         /// </summary>
         public readonly bool? XhrRouteChangeAction;
 

@@ -277,7 +277,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> Private { get; private set; } = null!;
 
         /// <summary>
-        /// Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
+        /// Type of the document. Possible Values are `Dashboard`, `Launchpad` and `Notebook`
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -366,7 +366,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Private { get; set; }
 
         /// <summary>
-        /// Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
+        /// Type of the document. Possible Values are `Dashboard`, `Launchpad` and `Notebook`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -410,7 +410,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Private { get; set; }
 
         /// <summary>
-        /// Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
+        /// Type of the document. Possible Values are `Dashboard`, `Launchpad` and `Notebook`
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

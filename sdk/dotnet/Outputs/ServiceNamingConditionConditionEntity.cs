@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? Negate;
         /// <summary>
-        /// Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+        /// Currently only EQUALS is supported. You can reverse it by setting **negate** to `True`
         /// </summary>
         public readonly string Operator;
         /// <summary>

@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class ProcessGroupDetectionProcessDetectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The substring to be contained in the value `property` refers to. Case Sensitive
+        /// The substring to be contained in the value `Property` refers to. Case Sensitive
         /// </summary>
         [Input("containedString", required: true)]
         public Input<string> ContainedString { get; set; } = null!;

@@ -14,6 +14,8 @@ import (
 // The `AzureCredentials` data source allows the Azure credential ID to be retrieved by its label.
 //
 // - `label` (String) - The label/name of the Azure credential
+//
+// ## Example Usage
 func LookupAzureCredentials(ctx *pulumi.Context, args *LookupAzureCredentialsArgs, opts ...pulumi.InvokeOption) (*LookupAzureCredentialsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAzureCredentialsResult

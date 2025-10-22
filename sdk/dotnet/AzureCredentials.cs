@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class AzureCredentials : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The monitoring is enabled (`true`) or disabled (`false`).  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected
+        /// The monitoring is enabled (`True`) or disabled (`False`).  If not set on creation, the `True` value is used.  If the field is omitted during an update, the old value remains unaffected
         /// </summary>
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> AppId { get; private set; } = null!;
 
         /// <summary>
-        /// The automatic capture of Azure tags is on (`true`) or off (`false`)
+        /// The automatic capture of Azure tags is on (`True`) or off (`False`)
         /// </summary>
         [Output("autoTagging")]
         public Output<bool?> AutoTagging { get; private set; } = null!;
@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> DirectoryId { get; private set; } = null!;
 
         /// <summary>
-        /// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+        /// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `Null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Output("key")]
         public Output<string?> Key { get; private set; } = null!;
@@ -50,19 +50,19 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Label { get; private set; } = null!;
 
         /// <summary>
-        /// A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
+        /// A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `True`.
         /// </summary>
         [Output("monitorOnlyExcludingTagPairs")]
         public Output<ImmutableArray<Outputs.AzureCredentialsMonitorOnlyExcludingTagPair>> MonitorOnlyExcludingTagPairs { get; private set; } = null!;
 
         /// <summary>
-        /// A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
+        /// A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `True`
         /// </summary>
         [Output("monitorOnlyTagPairs")]
         public Output<ImmutableArray<Outputs.AzureCredentialsMonitorOnlyTagPair>> MonitorOnlyTagPairs { get; private set; } = null!;
 
         /// <summary>
-        /// Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
+        /// Monitor only resources that have specified Azure tags (`True`) or all resources (`False`).
         /// </summary>
         [Output("monitorOnlyTaggedEntities")]
         public Output<bool> MonitorOnlyTaggedEntities { get; private set; } = null!;
@@ -140,7 +140,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class AzureCredentialsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The monitoring is enabled (`true`) or disabled (`false`).  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected
+        /// The monitoring is enabled (`True`) or disabled (`False`).  If not set on creation, the `True` value is used.  If the field is omitted during an update, the old value remains unaffected
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
@@ -152,7 +152,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? AppId { get; set; }
 
         /// <summary>
-        /// The automatic capture of Azure tags is on (`true`) or off (`false`)
+        /// The automatic capture of Azure tags is on (`True`) or off (`False`)
         /// </summary>
         [Input("autoTagging")]
         public Input<bool>? AutoTagging { get; set; }
@@ -167,7 +167,7 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _key;
 
         /// <summary>
-        /// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+        /// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `Null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         public Input<string>? Key
         {
@@ -189,7 +189,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.AzureCredentialsMonitorOnlyExcludingTagPairArgs>? _monitorOnlyExcludingTagPairs;
 
         /// <summary>
-        /// A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
+        /// A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `True`.
         /// </summary>
         public InputList<Inputs.AzureCredentialsMonitorOnlyExcludingTagPairArgs> MonitorOnlyExcludingTagPairs
         {
@@ -201,7 +201,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.AzureCredentialsMonitorOnlyTagPairArgs>? _monitorOnlyTagPairs;
 
         /// <summary>
-        /// A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
+        /// A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `True`
         /// </summary>
         public InputList<Inputs.AzureCredentialsMonitorOnlyTagPairArgs> MonitorOnlyTagPairs
         {
@@ -210,7 +210,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
+        /// Monitor only resources that have specified Azure tags (`True`) or all resources (`False`).
         /// </summary>
         [Input("monitorOnlyTaggedEntities", required: true)]
         public Input<bool> MonitorOnlyTaggedEntities { get; set; } = null!;
@@ -252,7 +252,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class AzureCredentialsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The monitoring is enabled (`true`) or disabled (`false`).  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected
+        /// The monitoring is enabled (`True`) or disabled (`False`).  If not set on creation, the `True` value is used.  If the field is omitted during an update, the old value remains unaffected
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -264,7 +264,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? AppId { get; set; }
 
         /// <summary>
-        /// The automatic capture of Azure tags is on (`true`) or off (`false`)
+        /// The automatic capture of Azure tags is on (`True`) or off (`False`)
         /// </summary>
         [Input("autoTagging")]
         public Input<bool>? AutoTagging { get; set; }
@@ -279,7 +279,7 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _key;
 
         /// <summary>
-        /// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+        /// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `Null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         public Input<string>? Key
         {
@@ -301,7 +301,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.AzureCredentialsMonitorOnlyExcludingTagPairGetArgs>? _monitorOnlyExcludingTagPairs;
 
         /// <summary>
-        /// A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
+        /// A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `True`.
         /// </summary>
         public InputList<Inputs.AzureCredentialsMonitorOnlyExcludingTagPairGetArgs> MonitorOnlyExcludingTagPairs
         {
@@ -313,7 +313,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<Inputs.AzureCredentialsMonitorOnlyTagPairGetArgs>? _monitorOnlyTagPairs;
 
         /// <summary>
-        /// A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
+        /// A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `True`
         /// </summary>
         public InputList<Inputs.AzureCredentialsMonitorOnlyTagPairGetArgs> MonitorOnlyTagPairs
         {
@@ -322,7 +322,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
+        /// Monitor only resources that have specified Azure tags (`True`) or all resources (`False`).
         /// </summary>
         [Input("monitorOnlyTaggedEntities")]
         public Input<bool>? MonitorOnlyTaggedEntities { get; set; }

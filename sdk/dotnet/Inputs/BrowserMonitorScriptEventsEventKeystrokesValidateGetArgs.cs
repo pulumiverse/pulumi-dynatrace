@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<Inputs.BrowserMonitorScriptEventsEventKeystrokesValidateValidationGetArgs>? _validations;
 
         /// <summary>
-        /// The element to wait for. Required for the `validation` type, not applicable otherwise.
+        /// The element to wait for. Required for the `Validation` type, not applicable otherwise.
         /// </summary>
         public InputList<Inputs.BrowserMonitorScriptEventsEventKeystrokesValidateValidationGetArgs> Validations
         {

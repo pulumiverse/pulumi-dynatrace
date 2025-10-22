@@ -17,8 +17,8 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
-        /// - `name` queries for all services with the specified name
-        /// - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+        /// - `Name` queries for all services with the specified name
+        /// - `Tags` (optional) refers to the tags that need to be present for the service (inclusive)
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -59,8 +59,8 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
-        /// - `name` queries for all services with the specified name
-        /// - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+        /// - `Name` queries for all services with the specified name
+        /// - `Tags` (optional) refers to the tags that need to be present for the service (inclusive)
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
@@ -101,8 +101,8 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
-        /// - `name` queries for all services with the specified name
-        /// - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+        /// - `Name` queries for all services with the specified name
+        /// - `Tags` (optional) refers to the tags that need to be present for the service (inclusive)
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 

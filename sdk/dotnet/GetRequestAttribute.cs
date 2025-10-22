@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the request attribute
+        /// - `Name` (String) - The name of the request attribute
         /// 
         /// ## Example Usage
         /// 
@@ -45,7 +45,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the request attribute
+        /// - `Name` (String) - The name of the request attribute
         /// 
         /// ## Example Usage
         /// 
@@ -75,7 +75,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The `dynatrace.RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the request attribute
+        /// - `Name` (String) - The name of the request attribute
         /// 
         /// ## Example Usage
         /// 

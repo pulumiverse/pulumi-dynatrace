@@ -14,25 +14,25 @@ namespace Pulumiverse.Dynatrace
     public partial class SyntheticLocation : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Auto upgrade of Chromium is enabled (`true`) or disabled (`false`)
+        /// Auto upgrade of Chromium is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("autoUpdateChromium")]
         public Output<bool?> AutoUpdateChromium { get; private set; } = null!;
 
         /// <summary>
-        /// The alerting of location outage is enabled (`true`) or disabled (`false`)
+        /// The alerting of location outage is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("availabilityLocationOutage")]
         public Output<bool?> AvailabilityLocationOutage { get; private set; } = null!;
 
         /// <summary>
-        /// The alerting of node outage is enabled (`true`) or disabled (`false`).
+        /// The alerting of node outage is enabled (`True`) or disabled (`False`).
         /// </summary>
         [Output("availabilityNodeOutage")]
         public Output<bool?> AvailabilityNodeOutage { get; private set; } = null!;
 
         /// <summary>
-        /// The notifications of location and node outage is enabled (`true`) or disabled (`false`)
+        /// The notifications of location and node outage is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("availabilityNotificationsEnabled")]
         public Output<bool?> AvailabilityNotificationsEnabled { get; private set; } = null!;
@@ -69,7 +69,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// Alert if the location or node outage lasts longer than *X* minutes. 
         /// 
-        ///  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
+        ///  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `True`
         /// </summary>
         [Output("locationNodeOutageDelayInMinutes")]
         public Output<int?> LocationNodeOutageDelayInMinutes { get; private set; } = null!;
@@ -81,13 +81,13 @@ namespace Pulumiverse.Dynatrace
         public Output<double> Longitude { get; private set; } = null!;
 
         /// <summary>
-        /// The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        /// The maximum number of Active Gates required for that location. Not required when `DeploymentType` is set to `STANDARD`
         /// </summary>
         [Output("maxActiveGateCount")]
         public Output<int?> MaxActiveGateCount { get; private set; } = null!;
 
         /// <summary>
-        /// The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        /// The minimum number of Active Gates required for that location. Not required when `DeploymentType` is set to `STANDARD`
         /// </summary>
         [Output("minActiveGateCount")]
         public Output<int?> MinActiveGateCount { get; private set; } = null!;
@@ -105,7 +105,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
+        /// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `DeploymentType` is set to `STANDARD`.
         /// </summary>
         [Output("nodeSize")]
         public Output<string?> NodeSize { get; private set; } = null!;
@@ -180,25 +180,25 @@ namespace Pulumiverse.Dynatrace
     public sealed class SyntheticLocationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Auto upgrade of Chromium is enabled (`true`) or disabled (`false`)
+        /// Auto upgrade of Chromium is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("autoUpdateChromium")]
         public Input<bool>? AutoUpdateChromium { get; set; }
 
         /// <summary>
-        /// The alerting of location outage is enabled (`true`) or disabled (`false`)
+        /// The alerting of location outage is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("availabilityLocationOutage")]
         public Input<bool>? AvailabilityLocationOutage { get; set; }
 
         /// <summary>
-        /// The alerting of node outage is enabled (`true`) or disabled (`false`).
+        /// The alerting of node outage is enabled (`True`) or disabled (`False`).
         /// </summary>
         [Input("availabilityNodeOutage")]
         public Input<bool>? AvailabilityNodeOutage { get; set; }
 
         /// <summary>
-        /// The notifications of location and node outage is enabled (`true`) or disabled (`false`)
+        /// The notifications of location and node outage is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("availabilityNotificationsEnabled")]
         public Input<bool>? AvailabilityNotificationsEnabled { get; set; }
@@ -235,7 +235,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// Alert if the location or node outage lasts longer than *X* minutes. 
         /// 
-        ///  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
+        ///  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `True`
         /// </summary>
         [Input("locationNodeOutageDelayInMinutes")]
         public Input<int>? LocationNodeOutageDelayInMinutes { get; set; }
@@ -247,13 +247,13 @@ namespace Pulumiverse.Dynatrace
         public Input<double> Longitude { get; set; } = null!;
 
         /// <summary>
-        /// The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        /// The maximum number of Active Gates required for that location. Not required when `DeploymentType` is set to `STANDARD`
         /// </summary>
         [Input("maxActiveGateCount")]
         public Input<int>? MaxActiveGateCount { get; set; }
 
         /// <summary>
-        /// The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        /// The minimum number of Active Gates required for that location. Not required when `DeploymentType` is set to `STANDARD`
         /// </summary>
         [Input("minActiveGateCount")]
         public Input<int>? MinActiveGateCount { get; set; }
@@ -271,7 +271,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
+        /// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `DeploymentType` is set to `STANDARD`.
         /// </summary>
         [Input("nodeSize")]
         public Input<string>? NodeSize { get; set; }
@@ -313,25 +313,25 @@ namespace Pulumiverse.Dynatrace
     public sealed class SyntheticLocationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Auto upgrade of Chromium is enabled (`true`) or disabled (`false`)
+        /// Auto upgrade of Chromium is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("autoUpdateChromium")]
         public Input<bool>? AutoUpdateChromium { get; set; }
 
         /// <summary>
-        /// The alerting of location outage is enabled (`true`) or disabled (`false`)
+        /// The alerting of location outage is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("availabilityLocationOutage")]
         public Input<bool>? AvailabilityLocationOutage { get; set; }
 
         /// <summary>
-        /// The alerting of node outage is enabled (`true`) or disabled (`false`).
+        /// The alerting of node outage is enabled (`True`) or disabled (`False`).
         /// </summary>
         [Input("availabilityNodeOutage")]
         public Input<bool>? AvailabilityNodeOutage { get; set; }
 
         /// <summary>
-        /// The notifications of location and node outage is enabled (`true`) or disabled (`false`)
+        /// The notifications of location and node outage is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("availabilityNotificationsEnabled")]
         public Input<bool>? AvailabilityNotificationsEnabled { get; set; }
@@ -368,7 +368,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// Alert if the location or node outage lasts longer than *X* minutes. 
         /// 
-        ///  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
+        ///  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `True`
         /// </summary>
         [Input("locationNodeOutageDelayInMinutes")]
         public Input<int>? LocationNodeOutageDelayInMinutes { get; set; }
@@ -380,13 +380,13 @@ namespace Pulumiverse.Dynatrace
         public Input<double>? Longitude { get; set; }
 
         /// <summary>
-        /// The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        /// The maximum number of Active Gates required for that location. Not required when `DeploymentType` is set to `STANDARD`
         /// </summary>
         [Input("maxActiveGateCount")]
         public Input<int>? MaxActiveGateCount { get; set; }
 
         /// <summary>
-        /// The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        /// The minimum number of Active Gates required for that location. Not required when `DeploymentType` is set to `STANDARD`
         /// </summary>
         [Input("minActiveGateCount")]
         public Input<int>? MinActiveGateCount { get; set; }
@@ -404,7 +404,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
+        /// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `DeploymentType` is set to `STANDARD`.
         /// </summary>
         [Input("nodeSize")]
         public Input<string>? NodeSize { get; set; }

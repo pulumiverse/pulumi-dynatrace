@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.MetricEventsQueryDefinitionEntityFilterGetArgs>? EntityFilter { get; set; }
 
         /// <summary>
-        /// The `legacy_id` of a Management Zone (as provided by the resource `dynatrace.ManagementZoneV2` or the data source `dynatrace.ManagementZone`)
+        /// The `LegacyId` of a Management Zone (as provided by the resource `dynatrace.ManagementZoneV2` or the data source `dynatrace.ManagementZone`)
         /// </summary>
         [Input("managementZone")]
         public Input<string>? ManagementZone { get; set; }

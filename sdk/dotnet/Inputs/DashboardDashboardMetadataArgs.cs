@@ -44,13 +44,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Owner { get; set; } = null!;
 
         /// <summary>
-        /// the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+        /// the dashboard is a preset (`True`) or not (`False`). Default is `False`.
         /// </summary>
         [Input("preset")]
         public Input<bool>? Preset { get; set; }
 
         /// <summary>
-        /// the dashboard is shared (`true`) or private (`false`)
+        /// the dashboard is shared (`True`) or private (`False`)
         /// </summary>
         [Input("shared")]
         public Input<bool>? Shared { get; set; }

@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class ServiceNowNotification : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
@@ -80,7 +80,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Url { get; private set; } = null!;
 
         /// <summary>
-        /// The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
+        /// The username of the ServiceNow account.   Make sure that your user account has the `RestService`, `WebRequestAdmin`, and `x_dynat_ruxit.Integration` roles
         /// </summary>
         [Output("username")]
         public Output<string> Username { get; private set; } = null!;
@@ -137,7 +137,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class ServiceNowNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
@@ -213,7 +213,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Url { get; set; }
 
         /// <summary>
-        /// The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
+        /// The username of the ServiceNow account.   Make sure that your user account has the `RestService`, `WebRequestAdmin`, and `x_dynat_ruxit.Integration` roles
         /// </summary>
         [Input("username", required: true)]
         public Input<string> Username { get; set; } = null!;
@@ -227,7 +227,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class ServiceNowNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -303,7 +303,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Url { get; set; }
 
         /// <summary>
-        /// The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
+        /// The username of the ServiceNow account.   Make sure that your user account has the `RestService`, `WebRequestAdmin`, and `x_dynat_ruxit.Integration` roles
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }

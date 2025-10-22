@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// Auto Refresh is disabled (`true`)
+        /// Auto Refresh is disabled (`True`)
         /// </summary>
         [Input("autoRefreshDisabled")]
         public Input<bool>? AutoRefreshDisabled { get; set; }
@@ -41,7 +41,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? ChartVisible { get; set; }
 
         /// <summary>
-        /// The tile is configured and ready to use (`true`) or just placed on the dashboard (`false`)
+        /// The tile is configured and ready to use (`True`) or just placed on the dashboard (`False`)
         /// </summary>
         [Input("configured")]
         public Input<bool>? Configured { get; set; }
@@ -53,7 +53,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? CustomName { get; set; }
 
         /// <summary>
-        /// Include (`false') or exclude (`true`) maintenance windows from availability calculations
+        /// Include (`false') or exclude (`True`) maintenance windows from availability calculations
         /// </summary>
         [Input("excludeMaintenanceWindows")]
         public Input<bool>? ExcludeMaintenanceWindows { get; set; }
@@ -95,7 +95,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// The size of the tile name. Possible values are `small`, `medium` and `large`.
+        /// The size of the tile name. Possible values are `Small`, `Medium` and `Large`.
         /// </summary>
         [Input("nameSize")]
         public Input<string>? NameSize { get; set; }
@@ -119,7 +119,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? TimeFrameShift { get; set; }
 
         /// <summary>
-        /// The attribute `type` exists for backwards compatibilty. Usage is discouraged. You should use `visualization` instead.
+        /// The attribute `Type` exists for backwards compatibilty. Usage is discouraged. You should use `Visualization` instead.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

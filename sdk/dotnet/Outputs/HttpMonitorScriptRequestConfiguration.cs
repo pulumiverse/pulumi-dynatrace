@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class HttpMonitorScriptRequestConfiguration
     {
         /// <summary>
-        /// If set to `false`, then the monitor fails with invalid SSL certificates.
+        /// If set to `False`, then the monitor fails with invalid SSL certificates.
         /// </summary>
         public readonly bool? AcceptAnyCertificate;
         /// <summary>
@@ -23,9 +23,9 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? ClientCertificate;
         /// <summary>
-        /// If set to `false`, redirects are reported as successful requests with response code 3xx.
+        /// If set to `False`, redirects are reported as successful requests with response code 3xx.
         /// 
-        /// If not set, the `false` option is used.
+        /// If not set, the `False` option is used.
         /// </summary>
         public readonly bool? FollowRedirects;
         /// <summary>
@@ -33,7 +33,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.HttpMonitorScriptRequestConfigurationHeaders? Headers;
         /// <summary>
-        /// Option not to store and display request and response bodies and header values in execution details, `true` or `false`. If not set, `false`.
+        /// Option not to store and display request and response bodies and header values in execution details, `True` or `False`. If not set, `False`.
         /// </summary>
         public readonly bool? SensitiveData;
         /// <summary>

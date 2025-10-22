@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly int Frustrated;
         /// <summary>
-        /// Apdex error condition: if `true` the user session is considered frustrated when an error is reported
+        /// Apdex error condition: if `True` the user session is considered frustrated when an error is reported
         /// </summary>
         public readonly bool? FrustratedOnError;
         /// <summary>

@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class SettingsPermissionsGroupsGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Valid values: `read`, `write`
+        /// Valid values: `Read`, `Write`
         /// </summary>
         [Input("access", required: true)]
         public Input<string> Access { get; set; } = null!;
 
         /// <summary>
-        /// The UUID of the group, conveniently retrieved via the `id` attribute provided by the data source `dynatrace*iam*group
+        /// The UUID of the group, conveniently retrieved via the `Id` attribute provided by the data source `dynatrace*iam*group
         /// </summary>
         [Input("id", required: true)]
         public Input<string> Id { get; set; } = null!;

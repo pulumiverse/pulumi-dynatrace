@@ -35,11 +35,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// If `true`, the property is stored as a session property
+        /// If `True`, the property is stored as a session property
         /// </summary>
         public readonly bool? StoreAsSessionProperty;
         /// <summary>
-        /// If `true`, the property is stored as a user action property
+        /// If `True`, the property is stored as a user action property
         /// </summary>
         public readonly bool? StoreAsUserActionProperty;
         /// <summary>

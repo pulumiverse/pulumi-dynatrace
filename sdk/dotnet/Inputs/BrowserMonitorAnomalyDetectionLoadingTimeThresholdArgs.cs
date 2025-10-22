@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class BrowserMonitorAnomalyDetectionLoadingTimeThresholdArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Performance threshold is enabled (`true`) or disabled (`false`)
+        /// Performance threshold is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }

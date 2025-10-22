@@ -28,7 +28,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Define failure reasons based on span and request attributes.. Failure detection result: `reason="custom_rule"`, `verdict="failure"`, `custom_rule_name`
+        /// Define failure reasons based on span and request attributes.. Failure detection result: `reason="CustomRule"`, `verdict="failure"`, `CustomRuleName`
         /// </summary>
         [Input("failOnCustomRules")]
         public Input<Inputs.FailureDetectionRuleSetsRulesetFailOnCustomRulesGetArgs>? FailOnCustomRules { get; set; }
@@ -42,7 +42,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Evaluated attribute: `rpc.grpc.status_code`
         /// 
-        /// Failure detection result: `reason="grpc_code"`, `verdict="failure"`
+        /// Failure detection result: `reason="GrpcCode"`, `verdict="failure"`
         /// </summary>
         [Input("failOnGrpcStatusCodes", required: true)]
         public Input<Inputs.FailureDetectionRuleSetsRulesetFailOnGrpcStatusCodesGetArgs> FailOnGrpcStatusCodes { get; set; } = null!;
@@ -50,7 +50,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Evaluated attribute: `http.response.status_code`
         /// 
-        /// Failure detection result: `reason="http_code"`, `verdict="failure"`
+        /// Failure detection result: `reason="HttpCode"`, `verdict="failure"`
         /// </summary>
         [Input("failOnHttpResponseStatusCodes", required: true)]
         public Input<Inputs.FailureDetectionRuleSetsRulesetFailOnHttpResponseStatusCodesGetArgs> FailOnHttpResponseStatusCodes { get; set; } = null!;
@@ -58,7 +58,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Evaluated attribute: `span.status_code`
         /// 
-        /// Failure detection result: `reason="span_status"`, `verdict="failure"`
+        /// Failure detection result: `reason="SpanStatus"`, `verdict="failure"`
         /// </summary>
         [Input("failOnSpanStatusError", required: true)]
         public Input<Inputs.FailureDetectionRuleSetsRulesetFailOnSpanStatusErrorGetArgs> FailOnSpanStatusError { get; set; } = null!;

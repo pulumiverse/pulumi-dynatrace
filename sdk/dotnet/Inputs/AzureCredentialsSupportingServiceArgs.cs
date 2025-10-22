@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<Inputs.AzureCredentialsSupportingServiceMonitoredMetricArgs>? _monitoredMetrics;
 
         /// <summary>
-        /// A list of Azure tags to be monitored.  You can specify up to 10 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
+        /// A list of Azure tags to be monitored.  You can specify up to 10 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `True`
         /// </summary>
         public InputList<Inputs.AzureCredentialsSupportingServiceMonitoredMetricArgs> MonitoredMetrics
         {

@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Expression;
         /// <summary>
-        /// The string to replace the masked expression with. Irrelevant if `type` is `SHA1`.
+        /// The string to replace the masked expression with. Irrelevant if `Type` is `SHA1`.
         /// </summary>
         public readonly string? Replacement;
         /// <summary>

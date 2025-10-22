@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class DashboardDashboardMetadataSharingDetails
     {
         /// <summary>
-        /// If `true`, the dashboard is shared via link and authenticated users with the link can view
+        /// If `True`, the dashboard is shared via link and authenticated users with the link can view
         /// </summary>
         public readonly bool? LinkShared;
         /// <summary>
-        /// If `true`, the dashboard is published to anyone on this environment
+        /// If `True`, the dashboard is published to anyone on this environment
         /// </summary>
         public readonly bool? Published;
         /// <summary>

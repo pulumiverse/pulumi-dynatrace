@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class NotificationSlack
     {
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Active;
         /// <summary>
@@ -39,7 +39,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Unknowns;
         /// <summary>
-        /// The URL of the Slack WebHook.  This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
+        /// The URL of the Slack WebHook.  This is confidential information, therefore GET requests return this field with the `Null` value, and it is optional for PUT requests
         /// </summary>
         public readonly string? Url;
 

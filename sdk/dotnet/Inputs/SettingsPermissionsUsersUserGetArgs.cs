@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class SettingsPermissionsUsersUserGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Valid values: `read`, `write`
+        /// Valid values: `Read`, `Write`
         /// </summary>
         [Input("access", required: true)]
         public Input<string> Access { get; set; } = null!;
 
         /// <summary>
-        /// The UUID of the user, conveniently retrieved via the `uid` attribute provided by the data source `dynatrace.IamUser`
+        /// The UUID of the user, conveniently retrieved via the `Uid` attribute provided by the data source `dynatrace.IamUser`
         /// </summary>
         [Input("uid", required: true)]
         public Input<string> Uid { get; set; } = null!;

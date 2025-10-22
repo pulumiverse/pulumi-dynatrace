@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The application data source allows the application ID to be retrieved by its name.
         /// 
-        /// - `name` queries for all applications with the specified name
+        /// - `Name` queries for all applications with the specified name
         /// 
         /// ## Example Usage
         /// 
@@ -53,7 +53,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The application data source allows the application ID to be retrieved by its name.
         /// 
-        /// - `name` queries for all applications with the specified name
+        /// - `Name` queries for all applications with the specified name
         /// 
         /// ## Example Usage
         /// 
@@ -91,7 +91,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The application data source allows the application ID to be retrieved by its name.
         /// 
-        /// - `name` queries for all applications with the specified name
+        /// - `Name` queries for all applications with the specified name
         /// 
         /// ## Example Usage
         /// 

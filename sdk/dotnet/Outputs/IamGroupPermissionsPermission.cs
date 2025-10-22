@@ -19,11 +19,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// If `type` is `account` this attribute should hold the UUID of the account. If `type` is 'tenant`this attribute should hold the ID of the environment (`https://\n\n.live.dynatrace.com`). If`type`is`management-zone`this attribute should hold a value like`\n\n:\n\n. You need to use the attribute `legacy_id` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`.
+        /// If `Type` is `Account` this attribute should hold the UUID of the account. If `Type` is 'tenant`this attribute should hold the ID of the environment (`https://\n\n.live.dynatrace.com`). If`Type`is`management-zone`this attribute should hold a value like`\n\n:\n\n. You need to use the attribute `LegacyId` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`.
         /// </summary>
         public readonly string Scope;
         /// <summary>
-        /// The type of this permission. Possible values are `account`, `tenant`, `management-zone`
+        /// The type of this permission. Possible values are `Account`, `Tenant`, `management-zone`
         /// </summary>
         public readonly string Type;
 

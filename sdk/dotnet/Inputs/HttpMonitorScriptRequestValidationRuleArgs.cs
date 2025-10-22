@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class HttpMonitorScriptRequestValidationRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The validation condition. `true` means validation succeeds if the specified content/element is found. `false` means validation fails if the specified content/element is found. Always specify `false` for `certificateExpiryDateConstraint` to fail the monitor if SSL certificate expiry is within the specified number of days
+        /// The validation condition. `True` means validation succeeds if the specified content/element is found. `False` means validation fails if the specified content/element is found. Always specify `False` for `certificateExpiryDateConstraint` to fail the monitor if SSL certificate expiry is within the specified number of days
         /// </summary>
         [Input("passIfFound")]
         public Input<bool>? PassIfFound { get; set; }

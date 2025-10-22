@@ -21,15 +21,15 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// This string has to match a required format.
         /// 
-        /// - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
-        /// - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
-        /// - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
-        /// - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+        /// - `$contains(production)` – Matches if `Production` appears anywhere in the host metadata value.
+        /// - `$eq(production)` – Matches if `Production` matches the host metadata value exactly.
+        /// - `$prefix(production)` – Matches if `Production` matches the prefix of the host metadata value.
+        /// - `$suffix(production)` – Matches if `Production` matches the suffix of the host metadata value.
         /// 
         /// Available logic operations:
-        /// - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
-        /// - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
-        /// - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+        /// - `$not($eq(production))` – Matches if the host metadata value is different from `Production`.
+        /// - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `Production` and ends with `Main`.
+        /// - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `Production` or ends with `Main`.
         /// 
         /// Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
         /// </summary>

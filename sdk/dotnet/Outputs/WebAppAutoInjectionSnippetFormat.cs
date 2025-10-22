@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? CodeSnippetType;
         /// <summary>
-        /// Possible Values: `async`, `defer`, `none`
+        /// Possible Values: `Async`, `Defer`, `None`
         /// </summary>
         public readonly string? ScriptExecutionAttribute;
         /// <summary>

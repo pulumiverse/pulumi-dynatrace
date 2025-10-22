@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class NotificationAnsibleTower
     {
         /// <summary>
-        /// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        /// Accept any, including self-signed and invalid, SSL certificate (`True`) or only trusted (`False`) certificates
         /// </summary>
         public readonly bool AcceptAnyCertificate;
         /// <summary>
-        /// The configuration is enabled (`true`) or disabled (`false`)
+        /// The configuration is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Active;
         /// <summary>

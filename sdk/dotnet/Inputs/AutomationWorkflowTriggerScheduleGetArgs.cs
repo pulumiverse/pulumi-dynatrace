@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class AutomationWorkflowTriggerScheduleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The trigger is enabled (`true`) or not (`false`). Default is `false`
+        /// The trigger is enabled (`True`) or not (`False`). Default is `False`
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }

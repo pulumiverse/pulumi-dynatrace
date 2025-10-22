@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class HostAnomaliesConnectionsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The detection is enabled (`true`) or disabled (`false`)
+        /// The detection is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Alert (`true`) on graceful host shutdowns
+        /// Alert (`True`) on graceful host shutdowns
         /// </summary>
         [Input("enabledOnGracefulShutdowns", required: true)]
         public Input<bool> EnabledOnGracefulShutdowns { get; set; } = null!;

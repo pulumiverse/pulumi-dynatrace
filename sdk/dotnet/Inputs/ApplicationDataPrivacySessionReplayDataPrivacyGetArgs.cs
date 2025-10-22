@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsGetArgs> ContentMaskingSettings { get; set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) If `true`, session recording is disabled until JavaScriptAPI `dtrum.enableSessionReplay()` is called
+        /// (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) If `True`, session recording is disabled until JavaScriptAPI `dtrum.enableSessionReplay()` is called
         /// </summary>
         [Input("optIn")]
         public Input<bool>? OptIn { get; set; }

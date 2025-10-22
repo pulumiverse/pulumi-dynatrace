@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class AutomationWorkflowTriggerEventConfigDavisEventNamesNameGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible values: `equals` and `contains`. The Davis event name must equal or contain the string provided in attribute `name`
+        /// Possible values: `Equals` and `Contains`. The Davis event name must equal or contain the string provided in attribute `Name`
         /// </summary>
         [Input("match", required: true)]
         public Input<string> Match { get; set; } = null!;

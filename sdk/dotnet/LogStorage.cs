@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace
     public partial class LogStorage : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
@@ -44,7 +44,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
-        /// If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
+        /// If `True` matching logs will be included in storage. If `False` matching logs will be excluded from storage.
         /// </summary>
         [Output("sendToStorage")]
         public Output<bool> SendToStorage { get; private set; } = null!;
@@ -97,7 +97,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class LogStorageArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
@@ -127,7 +127,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
+        /// If `True` matching logs will be included in storage. If `False` matching logs will be excluded from storage.
         /// </summary>
         [Input("sendToStorage", required: true)]
         public Input<bool> SendToStorage { get; set; } = null!;
@@ -141,7 +141,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class LogStorageState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This setting is enabled (`true`) or disabled (`false`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -171,7 +171,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
+        /// If `True` matching logs will be included in storage. If `False` matching logs will be excluded from storage.
         /// </summary>
         [Input("sendToStorage")]
         public Input<bool>? SendToStorage { get; set; }

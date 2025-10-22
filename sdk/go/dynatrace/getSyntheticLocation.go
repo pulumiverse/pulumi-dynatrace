@@ -15,6 +15,8 @@ import (
 //
 // > For Provider versions earlier than v1.80.0: This data source requires the API token scope **Read synthetic monitors, locations, and nodes** (`ReadSyntheticData`)
 // For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
+//
+// ## Example Usage
 func LookupSyntheticLocation(ctx *pulumi.Context, args *LookupSyntheticLocationArgs, opts ...pulumi.InvokeOption) (*LookupSyntheticLocationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSyntheticLocationResult

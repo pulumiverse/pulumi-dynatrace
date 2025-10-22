@@ -19,11 +19,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string AppId;
         /// <summary>
-        /// Possible Values: `debug`, `error`, `info`, `off`, `useDefault`, `warn`
+        /// Possible Values: `Debug`, `Error`, `Info`, `Off`, `useDefault`, `Warn`
         /// </summary>
         public readonly string CustomLogLevel;
         /// <summary>
-        /// Possible Values: `off`, `on`, `useDefault`
+        /// Possible Values: `Off`, `On`, `useDefault`
         /// </summary>
         public readonly string? CustomTraceLevel;
 

@@ -27,7 +27,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.MetricEventsQueryDefinitionEntityFilter? EntityFilter;
         /// <summary>
-        /// The `legacy_id` of a Management Zone (as provided by the resource `dynatrace.ManagementZoneV2` or the data source `dynatrace.ManagementZone`)
+        /// The `LegacyId` of a Management Zone (as provided by the resource `dynatrace.ManagementZoneV2` or the data source `dynatrace.ManagementZone`)
         /// </summary>
         public readonly string? ManagementZone;
         /// <summary>
