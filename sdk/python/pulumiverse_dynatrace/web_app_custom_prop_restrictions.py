@@ -148,40 +148,6 @@ class WebAppCustomPropRestrictions(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.capture-custom-properties`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.WebAppCustomPropRestrictions("#name#",
-            application_id="APPLICATION-1234567890000000",
-            custom_event_properties_allow_list={
-                "custom_session_properties_allows": [
-                    {
-                        "field_data_type": "STRING",
-                        "field_name": "ExampleEvent",
-                    },
-                    {
-                        "field_data_type": "BOOLEAN",
-                        "field_name": "ExampleEvent2",
-                    },
-                ],
-            },
-            custom_session_properties_allow_list={
-                "custom_session_properties_allows": [
-                    {
-                        "field_data_type": "STRING",
-                        "field_name": "ExampleSession",
-                    },
-                    {
-                        "field_data_type": "BOOLEAN",
-                        "field_name": "ExampleSession2",
-                    },
-                ],
-            })
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -202,40 +168,6 @@ class WebAppCustomPropRestrictions(pulumi.CustomResource):
         - Web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.capture-custom-properties`)
-
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.WebAppCustomPropRestrictions("#name#",
-            application_id="APPLICATION-1234567890000000",
-            custom_event_properties_allow_list={
-                "custom_session_properties_allows": [
-                    {
-                        "field_data_type": "STRING",
-                        "field_name": "ExampleEvent",
-                    },
-                    {
-                        "field_data_type": "BOOLEAN",
-                        "field_name": "ExampleEvent2",
-                    },
-                ],
-            },
-            custom_session_properties_allow_list={
-                "custom_session_properties_allows": [
-                    {
-                        "field_data_type": "STRING",
-                        "field_name": "ExampleSession",
-                    },
-                    {
-                        "field_data_type": "BOOLEAN",
-                        "field_name": "ExampleSession2",
-                    },
-                ],
-            })
-        ```
 
         :param str resource_name: The name of the resource.
         :param WebAppCustomPropRestrictionsArgs args: The arguments to use to populate this resource's properties.

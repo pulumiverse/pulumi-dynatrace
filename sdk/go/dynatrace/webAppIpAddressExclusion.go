@@ -21,44 +21,6 @@ import (
 // - Exclude IP addresses, browsers, bots, and spiders from monitoring for web applications - https://docs.dynatrace.com/docs/shortlink/rum-exclude-bots
 //
 // - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.ipaddress-exclusion`)
-//
-// ## Resource Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewWebAppIpAddressExclusion(ctx, "#name#", &dynatrace.WebAppIpAddressExclusionArgs{
-//				ApplicationId:             pulumi.String("APPLICATION-1234567890000000"),
-//				IpAddressExclusionInclude: pulumi.Bool(false),
-//				IpExclusionList: &dynatrace.WebAppIpAddressExclusionIpExclusionListArgs{
-//					IpExclusions: dynatrace.WebAppIpAddressExclusionIpExclusionListIpExclusionArray{
-//						&dynatrace.WebAppIpAddressExclusionIpExclusionListIpExclusionArgs{
-//							Ip: pulumi.String("192.168.1.5"),
-//						},
-//						&dynatrace.WebAppIpAddressExclusionIpExclusionListIpExclusionArgs{
-//							Ip:   pulumi.String("10.0.0.1"),
-//							IpTo: pulumi.String("10.0.0.5"),
-//						},
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type WebAppIpAddressExclusion struct {
 	pulumi.CustomResourceState
 

@@ -71,8 +71,8 @@ def get_platform_slo_templates(opts: Optional[pulumi.InvokeOptions] = None) -> A
     import pulumi
     import pulumi_dynatrace as dynatrace
 
-    test_platform_slo_templates = dynatrace.get_platform_slo_templates()
-    pulumi.export("test", test_platform_slo_templates)
+    test = dynatrace.get_platform_slo_templates()
+    pulumi.export("test", test)
     ```
     """
     __args__ = dict()
@@ -94,8 +94,8 @@ def get_platform_slo_templates_output(opts: Optional[Union[pulumi.InvokeOptions,
     import pulumi
     import pulumi_dynatrace as dynatrace
 
-    test_platform_slo_templates = dynatrace.get_platform_slo_templates()
-    pulumi.export("test", test_platform_slo_templates)
+    test = dynatrace.get_platform_slo_templates()
+    pulumi.export("test", test)
     ```
     """
     __args__ = dict()

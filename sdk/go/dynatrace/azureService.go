@@ -20,15 +20,14 @@ import (
 //
 // - Microsoft Azure monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/cloud-platform-monitoring/microsoft-azure-services-monitoring
 //
+// - The dimensions for metrics for individual services - https://docs.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics
+//
 // - Azure credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/azure-credentials-api
 //
 // ## Resource Example Usage
 //
 // This example utilizes the data source `getAzureSupportedServices` in order to query for a full list of all supported services.
 // The `forEach` loop within the resource `AzureService` configures each of these services to get utilized with the default metrics recommended by Dynatrace (`useRecommendedMetrics`).
-//
-// If you want to configure a different set of metrics for a specific service, a separate resource `AzureService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
-// Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
 //
 // ```go
 // package main
@@ -42,7 +41,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			tERRAFORMSAMPLE, err := dynatrace.NewAzureCredentials(ctx, "tERRAFORMSAMPLE", &dynatrace.AzureCredentialsArgs{
+//			TERRAFORM_SAMPLE, err := dynatrace.NewAzureCredentials(ctx, "TERRAFORM_SAMPLE", &dynatrace.AzureCredentialsArgs{
 //				Active:                    pulumi.Bool(false),
 //				AppId:                     pulumi.String("ABCDE"),
 //				AutoTagging:               pulumi.Bool(true),
@@ -70,9 +69,10 @@ import (
 //			}
 //			var tERRAFORMSAMPLEServices []*dynatrace.AzureService
 //			for key0, _ := range supportedServices.Services {
-//				__res, err := dynatrace.NewAzureService(ctx, fmt.Sprintf("tERRAFORMSAMPLEServices-%v", key0), &dynatrace.AzureServiceArgs{
-//					CredentialsId:         tERRAFORMSAMPLE.ID(),
+//				__res, err := dynatrace.NewAzureService(ctx, fmt.Sprintf("TERRAFORM_SAMPLE_services-%v", key0), &dynatrace.AzureServiceArgs{
+//					CredentialsId:         TERRAFORM_SAMPLE.ID(),
 //					UseRecommendedMetrics: pulumi.Bool(true),
+//					Name:                  pulumi.String(key0),
 //				})
 //				if err != nil {
 //					return err
@@ -84,12 +84,73 @@ import (
 //	}
 //
 // ```
+//
+// If you want to configure a different set of metrics for a specific service, a separate resource `AzureService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
+// Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			example, err := dynatrace.NewAzureCredentials(ctx, "Example", &dynatrace.AzureCredentialsArgs{
+//				Active:                    pulumi.Bool(true),
+//				AppId:                     pulumi.String("123456789"),
+//				AutoTagging:               pulumi.Bool(true),
+//				DirectoryId:               pulumi.String("123456789"),
+//				Key:                       pulumi.String("123456789"),
+//				Label:                     pulumi.String("#name#"),
+//				MonitorOnlyTaggedEntities: pulumi.Bool(false),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewAzureService(ctx, "ContainerService", &dynatrace.AzureServiceArgs{
+//				Name:          pulumi.String("cloud:azure:containerservice:managedcluster"),
+//				CredentialsId: example.ID(),
+//				Metrics: dynatrace.AzureServiceMetricArray{
+//					&dynatrace.AzureServiceMetricArgs{
+//						Name:       pulumi.String("kube_pod_status_ready"),
+//						Dimensions: pulumi.StringArray{},
+//					},
+//					&dynatrace.AzureServiceMetricArgs{
+//						Name: pulumi.String("kube_node_status_condition"),
+//						Dimensions: pulumi.StringArray{
+//							pulumi.String("condition"),
+//							pulumi.String("status"),
+//							pulumi.String("node"),
+//						},
+//					},
+//					&dynatrace.AzureServiceMetricArgs{
+//						Name: pulumi.String("kube_pod_status_phase"),
+//						Dimensions: pulumi.StringArray{
+//							pulumi.String("phase"),
+//							pulumi.String("namespace"),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AzureService struct {
 	pulumi.CustomResourceState
 
 	// This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
 	BuiltIn pulumi.BoolOutput `pulumi:"builtIn"`
-	// the ID of the azure credentials this supported service belongs to
+	// the ID of the Azure credentials this supported service belongs to
 	CredentialsId pulumi.StringOutput           `pulumi:"credentialsId"`
 	Metrics       AzureServiceMetricArrayOutput `pulumi:"metrics"`
 	// The name of the supporting service.
@@ -133,7 +194,7 @@ func GetAzureService(ctx *pulumi.Context,
 type azureServiceState struct {
 	// This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
 	BuiltIn *bool `pulumi:"builtIn"`
-	// the ID of the azure credentials this supported service belongs to
+	// the ID of the Azure credentials this supported service belongs to
 	CredentialsId *string              `pulumi:"credentialsId"`
 	Metrics       []AzureServiceMetric `pulumi:"metrics"`
 	// The name of the supporting service.
@@ -145,7 +206,7 @@ type azureServiceState struct {
 type AzureServiceState struct {
 	// This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
 	BuiltIn pulumi.BoolPtrInput
-	// the ID of the azure credentials this supported service belongs to
+	// the ID of the Azure credentials this supported service belongs to
 	CredentialsId pulumi.StringPtrInput
 	Metrics       AzureServiceMetricArrayInput
 	// The name of the supporting service.
@@ -159,7 +220,7 @@ func (AzureServiceState) ElementType() reflect.Type {
 }
 
 type azureServiceArgs struct {
-	// the ID of the azure credentials this supported service belongs to
+	// the ID of the Azure credentials this supported service belongs to
 	CredentialsId string               `pulumi:"credentialsId"`
 	Metrics       []AzureServiceMetric `pulumi:"metrics"`
 	// The name of the supporting service.
@@ -169,7 +230,7 @@ type azureServiceArgs struct {
 
 // The set of arguments for constructing a AzureService resource.
 type AzureServiceArgs struct {
-	// the ID of the azure credentials this supported service belongs to
+	// the ID of the Azure credentials this supported service belongs to
 	CredentialsId pulumi.StringInput
 	Metrics       AzureServiceMetricArrayInput
 	// The name of the supporting service.
@@ -269,7 +330,7 @@ func (o AzureServiceOutput) BuiltIn() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AzureService) pulumi.BoolOutput { return v.BuiltIn }).(pulumi.BoolOutput)
 }
 
-// the ID of the azure credentials this supported service belongs to
+// the ID of the Azure credentials this supported service belongs to
 func (o AzureServiceOutput) CredentialsId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AzureService) pulumi.StringOutput { return v.CredentialsId }).(pulumi.StringOutput)
 }

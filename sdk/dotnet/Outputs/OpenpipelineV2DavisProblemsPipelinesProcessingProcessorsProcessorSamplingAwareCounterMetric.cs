@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric
     {
         /// <summary>
-        /// Possible Values: `Disabled`, `Enabled`
+        /// Possible Values: `Disabled`, `Enabled`.
         /// </summary>
         public readonly string? Aggregation;
         /// <summary>
@@ -27,7 +27,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string MetricKey;
         /// <summary>
-        /// Possible Values: `Disabled`, `Enabled`
+        /// Possible Values: `Disabled`, `Enabled`.
         /// </summary>
         public readonly string? Sampling;
 

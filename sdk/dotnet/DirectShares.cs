@@ -32,9 +32,10 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var thisDocument = new Dynatrace.Document("thisDocument", new()
+    ///     var thisDocument = new Dynatrace.Document("this", new()
     ///     {
     ///         Type = "dashboard",
+    ///         Name = "#name#",
     ///         Content = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
     ///         {
     ///             ["version"] = 13,
@@ -240,7 +241,7 @@ namespace Pulumiverse.Dynatrace
     ///         }),
     ///     });
     /// 
-    ///     var thisDirectShares = new Dynatrace.DirectShares("thisDirectShares", new()
+    ///     var @this = new Dynatrace.DirectShares("this", new()
     ///     {
     ///         DocumentId = thisDocument.Id,
     ///         Access = "read-write",

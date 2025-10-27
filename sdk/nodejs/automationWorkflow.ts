@@ -23,7 +23,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const sampleWorklowTF = new dynatrace.AutomationWorkflow("sampleWorklowTF", {
+ * const sampleWorklowTF = new dynatrace.AutomationWorkflow("Sample_Worklow_TF", {
  *     description: "Desc",
  *     actor: "########-####-####-####-############",
  *     title: "Sample Worklow TF1",

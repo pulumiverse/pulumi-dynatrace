@@ -17,33 +17,6 @@ import (
 // ## Dynatrace Documentation
 //
 // - Monitored entities API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2
-//
-// ## Resource Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewCustomDevice(ctx, "#name#", &dynatrace.CustomDeviceArgs{
-//				CustomDeviceId: pulumi.String("customDeviceId"),
-//				DisplayName:    pulumi.String("customDevicename"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type CustomDevice struct {
 	pulumi.CustomResourceState
 

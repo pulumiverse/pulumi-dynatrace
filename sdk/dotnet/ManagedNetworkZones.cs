@@ -29,13 +29,14 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Dynatrace.ManagedNetworkZones("test", new()
+    ///     var test = new Dynatrace.ManagedNetworkZones("Test", new()
     ///     {
+    ///         Name = "terraformtest",
+    ///         Description = "This is an example network zone",
     ///         AlternativeZones = new[]
     ///         {
     ///             "alternativeexample",
     ///         },
-    ///         Description = "This is an example network zone",
     ///         FallbackMode = "ANY_ACTIVE_GATE",
     ///     });
     /// 

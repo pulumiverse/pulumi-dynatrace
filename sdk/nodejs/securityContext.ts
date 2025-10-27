@@ -4,6 +4,9 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This setting has been deprecated by Dynatrace. Trying to apply this resource will produce an error message. It won't have an effect on your Dynatrace Environment anymore.
+ */
 export class SecurityContext extends pulumi.CustomResource {
     /**
      * Get an existing SecurityContext resource's state with the given name, ID, and optional extra

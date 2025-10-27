@@ -27,7 +27,7 @@ class AzureServiceArgs:
                  use_recommended_metrics: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AzureService resource.
-        :param pulumi.Input[_builtins.str] credentials_id: the ID of the azure credentials this supported service belongs to
+        :param pulumi.Input[_builtins.str] credentials_id: the ID of the Azure credentials this supported service belongs to
         :param pulumi.Input[_builtins.str] name: The name of the supporting service.
         """
         pulumi.set(__self__, "credentials_id", credentials_id)
@@ -42,7 +42,7 @@ class AzureServiceArgs:
     @pulumi.getter(name="credentialsId")
     def credentials_id(self) -> pulumi.Input[_builtins.str]:
         """
-        the ID of the azure credentials this supported service belongs to
+        the ID of the Azure credentials this supported service belongs to
         """
         return pulumi.get(self, "credentials_id")
 
@@ -93,7 +93,7 @@ class _AzureServiceState:
         """
         Input properties used for looking up and filtering AzureService resources.
         :param pulumi.Input[_builtins.bool] built_in: This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
-        :param pulumi.Input[_builtins.str] credentials_id: the ID of the azure credentials this supported service belongs to
+        :param pulumi.Input[_builtins.str] credentials_id: the ID of the Azure credentials this supported service belongs to
         :param pulumi.Input[_builtins.str] name: The name of the supporting service.
         """
         if built_in is not None:
@@ -125,7 +125,7 @@ class _AzureServiceState:
     @pulumi.getter(name="credentialsId")
     def credentials_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        the ID of the azure credentials this supported service belongs to
+        the ID of the Azure credentials this supported service belongs to
         """
         return pulumi.get(self, "credentials_id")
 
@@ -193,6 +193,8 @@ class AzureService(pulumi.CustomResource):
 
         - Microsoft Azure monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/cloud-platform-monitoring/microsoft-azure-services-monitoring
 
+        - The dimensions for metrics for individual services - https://docs.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics
+
         - Azure credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/azure-credentials-api
 
         ## Resource Example Usage
@@ -200,15 +202,12 @@ class AzureService(pulumi.CustomResource):
         This example utilizes the data source `get_azure_supported_services` in order to query for a full list of all supported services.
         The `for_each` loop within the resource `AzureService` configures each of these services to get utilized with the default metrics recommended by Dynatrace (`use_recommended_metrics`).
 
-        If you want to configure a different set of metrics for a specific service, a separate resource `AzureService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
-        Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
-
         ```python
         import pulumi
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        t_erraformsample = dynatrace.AzureCredentials("tERRAFORMSAMPLE",
+        terrafor_m__sample = dynatrace.AzureCredentials("TERRAFORM_SAMPLE",
             active=False,
             app_id="ABCDE",
             auto_tagging=True,
@@ -223,14 +222,56 @@ class AzureService(pulumi.CustomResource):
         supported_services = dynatrace.get_azure_supported_services(excepts=["AZURE_STORAGE_ACCOUNT"])
         t_erraformsample_services = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AzureService(f"tERRAFORMSAMPLEServices-{range['key']}",
-                credentials_id=t_erraformsample.id,
-                use_recommended_metrics=True))
+            t_erraformsample_services.append(dynatrace.AzureService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+                credentials_id=terrafor_m__sample.id,
+                use_recommended_metrics=True,
+                name=range["key"]))
+        ```
+
+        If you want to configure a different set of metrics for a specific service, a separate resource `AzureService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
+        Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example = dynatrace.AzureCredentials("Example",
+            active=True,
+            app_id="123456789",
+            auto_tagging=True,
+            directory_id="123456789",
+            key="123456789",
+            label="#name#",
+            monitor_only_tagged_entities=False)
+        container_service = dynatrace.AzureService("ContainerService",
+            name="cloud:azure:containerservice:managedcluster",
+            credentials_id=example.id,
+            metrics=[
+                {
+                    "name": "kube_pod_status_ready",
+                    "dimensions": [],
+                },
+                {
+                    "name": "kube_node_status_condition",
+                    "dimensions": [
+                        "condition",
+                        "status",
+                        "node",
+                    ],
+                },
+                {
+                    "name": "kube_pod_status_phase",
+                    "dimensions": [
+                        "phase",
+                        "namespace",
+                    ],
+                },
+            ])
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] credentials_id: the ID of the azure credentials this supported service belongs to
+        :param pulumi.Input[_builtins.str] credentials_id: the ID of the Azure credentials this supported service belongs to
         :param pulumi.Input[_builtins.str] name: The name of the supporting service.
         """
         ...
@@ -248,6 +289,8 @@ class AzureService(pulumi.CustomResource):
 
         - Microsoft Azure monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/cloud-platform-monitoring/microsoft-azure-services-monitoring
 
+        - The dimensions for metrics for individual services - https://docs.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics
+
         - Azure credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/azure-credentials-api
 
         ## Resource Example Usage
@@ -255,15 +298,12 @@ class AzureService(pulumi.CustomResource):
         This example utilizes the data source `get_azure_supported_services` in order to query for a full list of all supported services.
         The `for_each` loop within the resource `AzureService` configures each of these services to get utilized with the default metrics recommended by Dynatrace (`use_recommended_metrics`).
 
-        If you want to configure a different set of metrics for a specific service, a separate resource `AzureService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
-        Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
-
         ```python
         import pulumi
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        t_erraformsample = dynatrace.AzureCredentials("tERRAFORMSAMPLE",
+        terrafor_m__sample = dynatrace.AzureCredentials("TERRAFORM_SAMPLE",
             active=False,
             app_id="ABCDE",
             auto_tagging=True,
@@ -278,9 +318,51 @@ class AzureService(pulumi.CustomResource):
         supported_services = dynatrace.get_azure_supported_services(excepts=["AZURE_STORAGE_ACCOUNT"])
         t_erraformsample_services = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AzureService(f"tERRAFORMSAMPLEServices-{range['key']}",
-                credentials_id=t_erraformsample.id,
-                use_recommended_metrics=True))
+            t_erraformsample_services.append(dynatrace.AzureService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+                credentials_id=terrafor_m__sample.id,
+                use_recommended_metrics=True,
+                name=range["key"]))
+        ```
+
+        If you want to configure a different set of metrics for a specific service, a separate resource `AzureService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
+        Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example = dynatrace.AzureCredentials("Example",
+            active=True,
+            app_id="123456789",
+            auto_tagging=True,
+            directory_id="123456789",
+            key="123456789",
+            label="#name#",
+            monitor_only_tagged_entities=False)
+        container_service = dynatrace.AzureService("ContainerService",
+            name="cloud:azure:containerservice:managedcluster",
+            credentials_id=example.id,
+            metrics=[
+                {
+                    "name": "kube_pod_status_ready",
+                    "dimensions": [],
+                },
+                {
+                    "name": "kube_node_status_condition",
+                    "dimensions": [
+                        "condition",
+                        "status",
+                        "node",
+                    ],
+                },
+                {
+                    "name": "kube_pod_status_phase",
+                    "dimensions": [
+                        "phase",
+                        "namespace",
+                    ],
+                },
+            ])
         ```
 
         :param str resource_name: The name of the resource.
@@ -343,7 +425,7 @@ class AzureService(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] built_in: This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
-        :param pulumi.Input[_builtins.str] credentials_id: the ID of the azure credentials this supported service belongs to
+        :param pulumi.Input[_builtins.str] credentials_id: the ID of the Azure credentials this supported service belongs to
         :param pulumi.Input[_builtins.str] name: The name of the supporting service.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -370,7 +452,7 @@ class AzureService(pulumi.CustomResource):
     @pulumi.getter(name="credentialsId")
     def credentials_id(self) -> pulumi.Output[_builtins.str]:
         """
-        the ID of the azure credentials this supported service belongs to
+        the ID of the Azure credentials this supported service belongs to
         """
         return pulumi.get(self, "credentials_id")
 

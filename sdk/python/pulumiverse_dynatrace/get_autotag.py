@@ -74,9 +74,9 @@ def get_autotag(name: Optional[_builtins.str] = None,
     import pulumi_dynatrace as dynatrace
     import pulumiverse_dynatrace as dynatrace
 
-    example_autotag = dynatrace.get_autotag(name="Terraform Example")
-    example_autotag_rules = dynatrace.AutotagRules("exampleAutotagRules",
-        auto_tag_id=example_autotag.id,
+    example = dynatrace.get_autotag(name="Terraform Example")
+    example_autotag_rules = dynatrace.AutotagRules("Example",
+        auto_tag_id=example.id,
         rules={
             "rules": [
                 {
@@ -143,9 +143,9 @@ def get_autotag_output(name: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi_dynatrace as dynatrace
     import pulumiverse_dynatrace as dynatrace
 
-    example_autotag = dynatrace.get_autotag(name="Terraform Example")
-    example_autotag_rules = dynatrace.AutotagRules("exampleAutotagRules",
-        auto_tag_id=example_autotag.id,
+    example = dynatrace.get_autotag(name="Terraform Example")
+    example_autotag_rules = dynatrace.AutotagRules("Example",
+        auto_tag_id=example.id,
         rules={
             "rules": [
                 {

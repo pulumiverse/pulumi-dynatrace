@@ -33,10 +33,11 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var permA = new Dynatrace.IamPermission("permA", new()
+    ///     var permA = new Dynatrace.IamPermission("perm_a", new()
     ///     {
-    ///         Account = "023733f0-86d8-47d1-88bd-7f5cc2e22eb8",
+    ///         Name = "tenant-viewer",
     ///         Group = "74ec0a82-8010-4f11-8579-b29a5ba865f0",
+    ///         Account = "023733f0-86d8-47d1-88bd-7f5cc2e22eb8",
     ///     });
     /// 
     /// });

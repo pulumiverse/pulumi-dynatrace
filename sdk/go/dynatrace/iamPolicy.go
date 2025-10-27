@@ -39,6 +39,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := dynatrace.NewIamPolicy(ctx, "policy", &dynatrace.IamPolicyArgs{
+//				Name:           pulumi.String("my_policy_valid_for_environment_siz654##"),
 //				Environment:    pulumi.String("siz654##"),
 //				StatementQuery: pulumi.String("ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";"),
 //			})
@@ -64,6 +65,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := dynatrace.NewIamPolicy(ctx, "policy", &dynatrace.IamPolicyArgs{
+//				Name:           pulumi.String("my_policy_valid_for_all_environments_in_this_account"),
 //				Account:        pulumi.String("########-####-####-####-############"),
 //				StatementQuery: pulumi.String("ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";"),
 //			})

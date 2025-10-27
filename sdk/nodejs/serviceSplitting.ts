@@ -14,8 +14,6 @@ import * as utilities from "./utilities";
  * - Services - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services
  *
  * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-splitting-rules`)
- *
- * ## Resource Example Usage
  */
 export class ServiceSplitting extends pulumi.CustomResource {
     /**

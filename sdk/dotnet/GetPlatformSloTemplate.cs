@@ -18,57 +18,6 @@ namespace Pulumiverse.Dynatrace
         /// The SLO objective template data source allows the ID to be retrieved by its name.
         /// 
         /// - `Name` (String) Name of the SLO objective template
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// using Dynatrace = Pulumiverse.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var hostCPU = Dynatrace.GetPlatformSloTemplate.Invoke(new()
-        ///     {
-        ///         Name = "Host CPU usage utilization",
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.PlatformSlo("#name#", new()
-        ///     {
-        ///         Description = "Measures the CPU usage of selected hosts over time.",
-        ///         Criteria = new Dynatrace.Inputs.PlatformSloCriteriaArgs
-        ///         {
-        ///             CriteriaDetails = new[]
-        ///             {
-        ///                 new Dynatrace.Inputs.PlatformSloCriteriaCriteriaDetailArgs
-        ///                 {
-        ///                     Target = 95,
-        ///                     TimeframeFrom = "now-7d",
-        ///                     TimeframeTo = "now",
-        ///                 },
-        ///             },
-        ///         },
-        ///         SliReference = new Dynatrace.Inputs.PlatformSloSliReferenceArgs
-        ///         {
-        ///             TemplateId = hostCPU.Apply(getPlatformSloTemplateResult =&gt; getPlatformSloTemplateResult.Id),
-        ///             Variables = new Dynatrace.Inputs.PlatformSloSliReferenceVariablesArgs
-        ///             {
-        ///                 SliReferenceVariables = new[]
-        ///                 {
-        ///                     new Dynatrace.Inputs.PlatformSloSliReferenceVariablesSliReferenceVariableArgs
-        ///                     {
-        ///                         Name = "hosts",
-        ///                         Value = "\"HOST-1234567890000000\"",
-        ///                     },
-        ///                 },
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Task<GetPlatformSloTemplateResult> InvokeAsync(GetPlatformSloTemplateArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPlatformSloTemplateResult>("dynatrace:index/getPlatformSloTemplate:getPlatformSloTemplate", args ?? new GetPlatformSloTemplateArgs(), options.WithDefaults());
@@ -79,57 +28,6 @@ namespace Pulumiverse.Dynatrace
         /// The SLO objective template data source allows the ID to be retrieved by its name.
         /// 
         /// - `Name` (String) Name of the SLO objective template
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// using Dynatrace = Pulumiverse.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var hostCPU = Dynatrace.GetPlatformSloTemplate.Invoke(new()
-        ///     {
-        ///         Name = "Host CPU usage utilization",
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.PlatformSlo("#name#", new()
-        ///     {
-        ///         Description = "Measures the CPU usage of selected hosts over time.",
-        ///         Criteria = new Dynatrace.Inputs.PlatformSloCriteriaArgs
-        ///         {
-        ///             CriteriaDetails = new[]
-        ///             {
-        ///                 new Dynatrace.Inputs.PlatformSloCriteriaCriteriaDetailArgs
-        ///                 {
-        ///                     Target = 95,
-        ///                     TimeframeFrom = "now-7d",
-        ///                     TimeframeTo = "now",
-        ///                 },
-        ///             },
-        ///         },
-        ///         SliReference = new Dynatrace.Inputs.PlatformSloSliReferenceArgs
-        ///         {
-        ///             TemplateId = hostCPU.Apply(getPlatformSloTemplateResult =&gt; getPlatformSloTemplateResult.Id),
-        ///             Variables = new Dynatrace.Inputs.PlatformSloSliReferenceVariablesArgs
-        ///             {
-        ///                 SliReferenceVariables = new[]
-        ///                 {
-        ///                     new Dynatrace.Inputs.PlatformSloSliReferenceVariablesSliReferenceVariableArgs
-        ///                     {
-        ///                         Name = "hosts",
-        ///                         Value = "\"HOST-1234567890000000\"",
-        ///                     },
-        ///                 },
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetPlatformSloTemplateResult> Invoke(GetPlatformSloTemplateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPlatformSloTemplateResult>("dynatrace:index/getPlatformSloTemplate:getPlatformSloTemplate", args ?? new GetPlatformSloTemplateInvokeArgs(), options.WithDefaults());
@@ -140,57 +38,6 @@ namespace Pulumiverse.Dynatrace
         /// The SLO objective template data source allows the ID to be retrieved by its name.
         /// 
         /// - `Name` (String) Name of the SLO objective template
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// using Dynatrace = Pulumiverse.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var hostCPU = Dynatrace.GetPlatformSloTemplate.Invoke(new()
-        ///     {
-        ///         Name = "Host CPU usage utilization",
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.PlatformSlo("#name#", new()
-        ///     {
-        ///         Description = "Measures the CPU usage of selected hosts over time.",
-        ///         Criteria = new Dynatrace.Inputs.PlatformSloCriteriaArgs
-        ///         {
-        ///             CriteriaDetails = new[]
-        ///             {
-        ///                 new Dynatrace.Inputs.PlatformSloCriteriaCriteriaDetailArgs
-        ///                 {
-        ///                     Target = 95,
-        ///                     TimeframeFrom = "now-7d",
-        ///                     TimeframeTo = "now",
-        ///                 },
-        ///             },
-        ///         },
-        ///         SliReference = new Dynatrace.Inputs.PlatformSloSliReferenceArgs
-        ///         {
-        ///             TemplateId = hostCPU.Apply(getPlatformSloTemplateResult =&gt; getPlatformSloTemplateResult.Id),
-        ///             Variables = new Dynatrace.Inputs.PlatformSloSliReferenceVariablesArgs
-        ///             {
-        ///                 SliReferenceVariables = new[]
-        ///                 {
-        ///                     new Dynatrace.Inputs.PlatformSloSliReferenceVariablesSliReferenceVariableArgs
-        ///                     {
-        ///                         Name = "hosts",
-        ///                         Value = "\"HOST-1234567890000000\"",
-        ///                     },
-        ///                 },
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetPlatformSloTemplateResult> Invoke(GetPlatformSloTemplateInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPlatformSloTemplateResult>("dynatrace:index/getPlatformSloTemplate:getPlatformSloTemplate", args ?? new GetPlatformSloTemplateInvokeArgs(), options.WithDefaults());

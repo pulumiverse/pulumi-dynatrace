@@ -19,15 +19,14 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// - Microsoft Azure monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/cloud-platform-monitoring/microsoft-azure-services-monitoring
     /// 
+    /// - The dimensions for metrics for individual services - https://docs.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics
+    /// 
     /// - Azure credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/azure-credentials-api
     /// 
     /// ## Resource Example Usage
     /// 
     /// This example utilizes the data source `dynatrace.getAzureSupportedServices` in order to query for a full list of all supported services.
     /// The `ForEach` loop within the resource `dynatrace.AzureService` configures each of these services to get utilized with the default metrics recommended by Dynatrace (`UseRecommendedMetrics`).
-    /// 
-    /// If you want to configure a different set of metrics for a specific service, a separate resource `dynatrace.AzureService` will be necessary for that. That allows you to configure the `Metric` blocks according to your wishes.
-    /// Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
@@ -39,7 +38,7 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(async() =&gt; 
     /// {
-    ///     var tERRAFORMSAMPLE = new Dynatrace.AzureCredentials("tERRAFORMSAMPLE", new()
+    ///     var TERRAFORM_SAMPLE = new Dynatrace.AzureCredentials("TERRAFORM_SAMPLE", new()
     ///     {
     ///         Active = false,
     ///         AppId = "ABCDE",
@@ -69,12 +68,71 @@ namespace Pulumiverse.Dynatrace
     ///     var tERRAFORMSAMPLEServices = new List&lt;Dynatrace.AzureService&gt;();
     ///     foreach (var range in )
     ///     {
-    ///         tERRAFORMSAMPLEServices.Add(new Dynatrace.AzureService($"tERRAFORMSAMPLEServices-{range.Key}", new()
+    ///         tERRAFORMSAMPLEServices.Add(new Dynatrace.AzureService($"TERRAFORM_SAMPLE_services-{range.Key}", new()
     ///         {
-    ///             CredentialsId = tERRAFORMSAMPLE.Id,
+    ///             CredentialsId = TERRAFORM_SAMPLE.Id,
     ///             UseRecommendedMetrics = true,
+    ///             Name = range.Key,
     ///         }));
     ///     }
+    /// });
+    /// ```
+    /// 
+    /// If you want to configure a different set of metrics for a specific service, a separate resource `dynatrace.AzureService` will be necessary for that. That allows you to configure the `Metric` blocks according to your wishes.
+    /// Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var example = new Dynatrace.AzureCredentials("Example", new()
+    ///     {
+    ///         Active = true,
+    ///         AppId = "123456789",
+    ///         AutoTagging = true,
+    ///         DirectoryId = "123456789",
+    ///         Key = "123456789",
+    ///         Label = "#name#",
+    ///         MonitorOnlyTaggedEntities = false,
+    ///     });
+    /// 
+    ///     var containerService = new Dynatrace.AzureService("ContainerService", new()
+    ///     {
+    ///         Name = "cloud:azure:containerservice:managedcluster",
+    ///         CredentialsId = example.Id,
+    ///         Metrics = new[]
+    ///         {
+    ///             new Dynatrace.Inputs.AzureServiceMetricArgs
+    ///             {
+    ///                 Name = "kube_pod_status_ready",
+    ///                 Dimensions = new() { },
+    ///             },
+    ///             new Dynatrace.Inputs.AzureServiceMetricArgs
+    ///             {
+    ///                 Name = "kube_node_status_condition",
+    ///                 Dimensions = new[]
+    ///                 {
+    ///                     "condition",
+    ///                     "status",
+    ///                     "node",
+    ///                 },
+    ///             },
+    ///             new Dynatrace.Inputs.AzureServiceMetricArgs
+    ///             {
+    ///                 Name = "kube_pod_status_phase",
+    ///                 Dimensions = new[]
+    ///                 {
+    ///                     "phase",
+    ///                     "namespace",
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
     /// });
     /// ```
     /// </summary>
@@ -88,7 +146,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> BuiltIn { get; private set; } = null!;
 
         /// <summary>
-        /// the ID of the azure credentials this supported service belongs to
+        /// the ID of the Azure credentials this supported service belongs to
         /// </summary>
         [Output("credentialsId")]
         public Output<string> CredentialsId { get; private set; } = null!;
@@ -156,7 +214,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class AzureServiceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// the ID of the azure credentials this supported service belongs to
+        /// the ID of the Azure credentials this supported service belongs to
         /// </summary>
         [Input("credentialsId", required: true)]
         public Input<string> CredentialsId { get; set; } = null!;
@@ -193,7 +251,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? BuiltIn { get; set; }
 
         /// <summary>
-        /// the ID of the azure credentials this supported service belongs to
+        /// the ID of the Azure credentials this supported service belongs to
         /// </summary>
         [Input("credentialsId")]
         public Input<string>? CredentialsId { get; set; }

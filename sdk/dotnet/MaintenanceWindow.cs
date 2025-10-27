@@ -20,56 +20,6 @@ namespace Pulumiverse.Dynatrace
     /// - Maintenance windows - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/notifications-and-alerting/maintenance-windows
     /// 
     /// - Maintenance windows API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/maintenance-windows-api
-    /// 
-    /// ## Resource Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var _name_ = new Dynatrace.MaintenanceWindow("#name#", new()
-    ///     {
-    ///         Schedule = new Dynatrace.Inputs.MaintenanceWindowScheduleArgs
-    ///         {
-    ///             End = "2021-05-11 14:41",
-    ///             RecurrenceType = "ONCE",
-    ///             Start = "2021-05-11 13:41",
-    ///             ZoneId = "Europe/Vienna",
-    ///         },
-    ///         Scope = new Dynatrace.Inputs.MaintenanceWindowScopeArgs
-    ///         {
-    ///             Matches = new[]
-    ///             {
-    ///                 new Dynatrace.Inputs.MaintenanceWindowScopeMatchArgs
-    ///                 {
-    ///                     TagCombination = "AND",
-    ///                     Tags = new[]
-    ///                     {
-    ///                         new Dynatrace.Inputs.MaintenanceWindowScopeMatchTagArgs
-    ///                         {
-    ///                             Context = "CONTEXTLESS",
-    ///                             Key = "bggtedgxen",
-    ///                         },
-    ///                         new Dynatrace.Inputs.MaintenanceWindowScopeMatchTagArgs
-    ///                         {
-    ///                             Context = "CONTEXTLESS",
-    ///                             Key = "deldel1",
-    ///                         },
-    ///                     },
-    ///                 },
-    ///             },
-    ///         },
-    ///         SuppressSynthMonExec = true,
-    ///         Suppression = "DONT_DETECT_PROBLEMS",
-    ///         Type = "PLANNED",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/maintenanceWindow:MaintenanceWindow")]
     public partial class MaintenanceWindow : global::Pulumi.CustomResource

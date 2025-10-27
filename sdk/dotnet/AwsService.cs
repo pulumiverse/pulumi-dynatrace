@@ -19,15 +19,14 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// - Amazon Web Services - https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/amazon-web-services/amazon-web-services-integrations/aws-service-metrics
     /// 
+    /// - The dimensions and statistics for metrics for individual services - https://docs.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services
+    /// 
     /// - AWS credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/aws-credentials-api
     /// 
     /// ## Resource Example Usage
     /// 
     /// This example utilizes the data source `dynatrace.getAwsSupportedServices` in order to query for a full list of all supported services.
     /// The `ForEach` loop within the resource `dynatrace.AwsService` configures each of these services to get utilized with the default metrics recommended by Dynatrace (`UseRecommendedMetrics`).
-    /// 
-    /// If you want to configure a different set of metrics for a specific service, a separate resource `dynatrace.AwsService` will be necessary for that. That allows you to configure the `Metric` blocks according to your wishes.
-    /// Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
@@ -39,7 +38,7 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(async() =&gt; 
     /// {
-    ///     var tERRAFORMSAMPLE = new Dynatrace.AwsCredentials("tERRAFORMSAMPLE", new()
+    ///     var TERRAFORM_SAMPLE = new Dynatrace.AwsCredentials("TERRAFORM_SAMPLE", new()
     ///     {
     ///         Label = "TERRAFORM-TEST-001",
     ///         PartitionType = "AWS_DEFAULT",
@@ -57,12 +56,66 @@ namespace Pulumiverse.Dynatrace
     ///     var tERRAFORMSAMPLEServices = new List&lt;Dynatrace.AwsService&gt;();
     ///     foreach (var range in )
     ///     {
-    ///         tERRAFORMSAMPLEServices.Add(new Dynatrace.AwsService($"tERRAFORMSAMPLEServices-{range.Key}", new()
+    ///         tERRAFORMSAMPLEServices.Add(new Dynatrace.AwsService($"TERRAFORM_SAMPLE_services-{range.Key}", new()
     ///         {
-    ///             CredentialsId = tERRAFORMSAMPLE.Id,
+    ///             CredentialsId = TERRAFORM_SAMPLE.Id,
     ///             UseRecommendedMetrics = true,
+    ///             Name = range.Key,
     ///         }));
     ///     }
+    /// });
+    /// ```
+    /// 
+    /// If you want to configure a different set of metrics for a specific service, a separate resource `dynatrace.AwsService` will be necessary for that. That allows you to configure the `Metric` blocks according to your wishes.
+    /// Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var example = new Dynatrace.AwsCredentials("Example", new()
+    ///     {
+    ///         Label = "#name#",
+    ///         PartitionType = "AWS_DEFAULT",
+    ///         TaggedOnly = false,
+    ///         AuthenticationData = new Dynatrace.Inputs.AwsCredentialsAuthenticationDataArgs
+    ///         {
+    ///             AccountId = "123456789",
+    ///             IamRole = "aws-monitoring-role",
+    ///         },
+    ///     });
+    /// 
+    ///     var elastiCache = new Dynatrace.AwsService("ElastiCache", new()
+    ///     {
+    ///         Name = "ElastiCache",
+    ///         CredentialsId = example.Id,
+    ///         Metrics = new[]
+    ///         {
+    ///             new Dynatrace.Inputs.AwsServiceMetricArgs
+    ///             {
+    ///                 Name = "NetworkBandwidthOutAllowanceExceeded",
+    ///                 Dimensions = new[]
+    ///                 {
+    ///                     "CacheClusterId",
+    ///                 },
+    ///                 Statistic = "SUM",
+    ///             },
+    ///             new Dynatrace.Inputs.AwsServiceMetricArgs
+    ///             {
+    ///                 Name = "CPUUtilization",
+    ///                 Dimensions = new[]
+    ///                 {
+    ///                     "CacheClusterId",
+    ///                 },
+    ///                 Statistic = "AVG_MIN_MAX",
+    ///             },
+    ///         },
+    ///     });
+    /// 
     /// });
     /// ```
     /// </summary>
@@ -76,7 +129,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> BuiltIn { get; private set; } = null!;
 
         /// <summary>
-        /// the ID of the azure credentials this supported service belongs to
+        /// the ID of the AWS credentials this supported service belongs to
         /// </summary>
         [Output("credentialsId")]
         public Output<string> CredentialsId { get; private set; } = null!;
@@ -144,7 +197,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class AwsServiceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// the ID of the azure credentials this supported service belongs to
+        /// the ID of the AWS credentials this supported service belongs to
         /// </summary>
         [Input("credentialsId", required: true)]
         public Input<string> CredentialsId { get; set; } = null!;
@@ -181,7 +234,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? BuiltIn { get; set; }
 
         /// <summary>
-        /// the ID of the azure credentials this supported service belongs to
+        /// the ID of the AWS credentials this supported service belongs to
         /// </summary>
         [Input("credentialsId")]
         public Input<string>? CredentialsId { get; set; }

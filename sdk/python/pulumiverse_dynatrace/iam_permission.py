@@ -222,9 +222,10 @@ class IamPermission(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        perm_a = dynatrace.IamPermission("permA",
-            account="023733f0-86d8-47d1-88bd-7f5cc2e22eb8",
-            group="74ec0a82-8010-4f11-8579-b29a5ba865f0")
+        perm_a = dynatrace.IamPermission("perm_a",
+            name="tenant-viewer",
+            group="74ec0a82-8010-4f11-8579-b29a5ba865f0",
+            account="023733f0-86d8-47d1-88bd-7f5cc2e22eb8")
         ```
 
         :param str resource_name: The name of the resource.
@@ -260,9 +261,10 @@ class IamPermission(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        perm_a = dynatrace.IamPermission("permA",
-            account="023733f0-86d8-47d1-88bd-7f5cc2e22eb8",
-            group="74ec0a82-8010-4f11-8579-b29a5ba865f0")
+        perm_a = dynatrace.IamPermission("perm_a",
+            name="tenant-viewer",
+            group="74ec0a82-8010-4f11-8579-b29a5ba865f0",
+            account="023733f0-86d8-47d1-88bd-7f5cc2e22eb8")
         ```
 
         :param str resource_name: The name of the resource.

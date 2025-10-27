@@ -15,6 +15,8 @@ import * as utilities from "./utilities";
  *
  * - Amazon Web Services - https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/amazon-web-services/amazon-web-services-integrations/aws-service-metrics
  *
+ * - The dimensions and statistics for metrics for individual services - https://docs.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services
+ *
  * - AWS credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/aws-credentials-api
  *
  * ## Resource Example Usage
@@ -22,15 +24,12 @@ import * as utilities from "./utilities";
  * This example utilizes the data source `dynatrace.getAwsSupportedServices` in order to query for a full list of all supported services.
  * The `forEach` loop within the resource `dynatrace.AwsService` configures each of these services to get utilized with the default metrics recommended by Dynatrace (`useRecommendedMetrics`).
  *
- * If you want to configure a different set of metrics for a specific service, a separate resource `dynatrace.AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
- * Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
- *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * export = async () => {
- *     const tERRAFORMSAMPLE = new dynatrace.AwsCredentials("tERRAFORMSAMPLE", {
+ *     const TERRAFORM_SAMPLE = new dynatrace.AwsCredentials("TERRAFORM_SAMPLE", {
  *         label: "TERRAFORM-TEST-001",
  *         partitionType: "AWS_DEFAULT",
  *         taggedOnly: false,
@@ -43,12 +42,47 @@ import * as utilities from "./utilities";
  *     const supportedServices = await dynatrace.getAwsSupportedServices({});
  *     const tERRAFORMSAMPLEServices: dynatrace.AwsService[] = [];
  *     for (const range of Object.entries(supportedServices.services).map(([k, v]) => ({key: k, value: v}))) {
- *         tERRAFORMSAMPLEServices.push(new dynatrace.AwsService(`tERRAFORMSAMPLEServices-${range.key}`, {
- *             credentialsId: tERRAFORMSAMPLE.id,
+ *         tERRAFORMSAMPLEServices.push(new dynatrace.AwsService(`TERRAFORM_SAMPLE_services-${range.key}`, {
+ *             credentialsId: TERRAFORM_SAMPLE.id,
  *             useRecommendedMetrics: true,
+ *             name: range.key,
  *         }));
  *     }
  * }
+ * ```
+ *
+ * If you want to configure a different set of metrics for a specific service, a separate resource `dynatrace.AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
+ * Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const example = new dynatrace.AwsCredentials("Example", {
+ *     label: "#name#",
+ *     partitionType: "AWS_DEFAULT",
+ *     taggedOnly: false,
+ *     authenticationData: {
+ *         accountId: "123456789",
+ *         iamRole: "aws-monitoring-role",
+ *     },
+ * });
+ * const elastiCache = new dynatrace.AwsService("ElastiCache", {
+ *     name: "ElastiCache",
+ *     credentialsId: example.id,
+ *     metrics: [
+ *         {
+ *             name: "NetworkBandwidthOutAllowanceExceeded",
+ *             dimensions: ["CacheClusterId"],
+ *             statistic: "SUM",
+ *         },
+ *         {
+ *             name: "CPUUtilization",
+ *             dimensions: ["CacheClusterId"],
+ *             statistic: "AVG_MIN_MAX",
+ *         },
+ *     ],
+ * });
  * ```
  */
 export class AwsService extends pulumi.CustomResource {
@@ -84,7 +118,7 @@ export class AwsService extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly builtIn: pulumi.Output<boolean>;
     /**
-     * the ID of the azure credentials this supported service belongs to
+     * the ID of the AWS credentials this supported service belongs to
      */
     declare public readonly credentialsId: pulumi.Output<string>;
     declare public readonly metrics: pulumi.Output<outputs.AwsServiceMetric[] | undefined>;
@@ -140,7 +174,7 @@ export interface AwsServiceState {
      */
     builtIn?: pulumi.Input<boolean>;
     /**
-     * the ID of the azure credentials this supported service belongs to
+     * the ID of the AWS credentials this supported service belongs to
      */
     credentialsId?: pulumi.Input<string>;
     metrics?: pulumi.Input<pulumi.Input<inputs.AwsServiceMetric>[]>;
@@ -157,7 +191,7 @@ export interface AwsServiceState {
  */
 export interface AwsServiceArgs {
     /**
-     * the ID of the azure credentials this supported service belongs to
+     * the ID of the AWS credentials this supported service belongs to
      */
     credentialsId: pulumi.Input<string>;
     metrics?: pulumi.Input<pulumi.Input<inputs.AwsServiceMetric>[]>;

@@ -16,36 +16,6 @@ namespace Pulumiverse.Dynatrace
         /// The application data source allows the application ID to be retrieved by its name.
         /// 
         /// - `Name` queries for all applications with the specified name
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// using Dynatrace = Pulumiverse.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Dynatrace.GetApplication.Invoke(new()
-        ///     {
-        ///         Name = "Example",
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.ApplicationDetectionRule("#name#", new()
-        ///     {
-        ///         ApplicationIdentifier = test.Apply(getApplicationResult =&gt; getApplicationResult.Id),
-        ///         FilterConfig = new Dynatrace.Inputs.ApplicationDetectionRuleFilterConfigArgs
-        ///         {
-        ///             ApplicationMatchTarget = "DOMAIN",
-        ///             ApplicationMatchType = "MATCHES",
-        ///             Pattern = "www.google.com",
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Task<GetApplicationResult> InvokeAsync(GetApplicationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetApplicationResult>("dynatrace:index/getApplication:getApplication", args ?? new GetApplicationArgs(), options.WithDefaults());
@@ -54,36 +24,6 @@ namespace Pulumiverse.Dynatrace
         /// The application data source allows the application ID to be retrieved by its name.
         /// 
         /// - `Name` queries for all applications with the specified name
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// using Dynatrace = Pulumiverse.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Dynatrace.GetApplication.Invoke(new()
-        ///     {
-        ///         Name = "Example",
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.ApplicationDetectionRule("#name#", new()
-        ///     {
-        ///         ApplicationIdentifier = test.Apply(getApplicationResult =&gt; getApplicationResult.Id),
-        ///         FilterConfig = new Dynatrace.Inputs.ApplicationDetectionRuleFilterConfigArgs
-        ///         {
-        ///             ApplicationMatchTarget = "DOMAIN",
-        ///             ApplicationMatchType = "MATCHES",
-        ///             Pattern = "www.google.com",
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetApplicationResult> Invoke(GetApplicationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApplicationResult>("dynatrace:index/getApplication:getApplication", args ?? new GetApplicationInvokeArgs(), options.WithDefaults());
@@ -92,36 +32,6 @@ namespace Pulumiverse.Dynatrace
         /// The application data source allows the application ID to be retrieved by its name.
         /// 
         /// - `Name` queries for all applications with the specified name
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// using Dynatrace = Pulumiverse.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Dynatrace.GetApplication.Invoke(new()
-        ///     {
-        ///         Name = "Example",
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.ApplicationDetectionRule("#name#", new()
-        ///     {
-        ///         ApplicationIdentifier = test.Apply(getApplicationResult =&gt; getApplicationResult.Id),
-        ///         FilterConfig = new Dynatrace.Inputs.ApplicationDetectionRuleFilterConfigArgs
-        ///         {
-        ///             ApplicationMatchTarget = "DOMAIN",
-        ///             ApplicationMatchType = "MATCHES",
-        ///             Pattern = "www.google.com",
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetApplicationResult> Invoke(GetApplicationInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetApplicationResult>("dynatrace:index/getApplication:getApplication", args ?? new GetApplicationInvokeArgs(), options.WithDefaults());

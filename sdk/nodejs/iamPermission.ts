@@ -23,9 +23,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const permA = new dynatrace.IamPermission("permA", {
- *     account: "023733f0-86d8-47d1-88bd-7f5cc2e22eb8",
+ * const permA = new dynatrace.IamPermission("perm_a", {
+ *     name: "tenant-viewer",
  *     group: "74ec0a82-8010-4f11-8579-b29a5ba865f0",
+ *     account: "023733f0-86d8-47d1-88bd-7f5cc2e22eb8",
  * });
  * ```
  */

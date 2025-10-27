@@ -83,24 +83,6 @@ def get_process_group(name: Optional[_builtins.str] = None,
 
     If multiple process groups match the given criteria, the first result will be retrieved.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    test = dynatrace.get_process_group(name="Example",
-        tags=[
-            "TerraformKeyTest",
-            "TerraformKeyValueTest=TestValue",
-        ])
-    _name_ = dynatrace.ManagementZone("#name#", entity_selector_based_rules=[{
-        "enabled": True,
-        "selector": f"type(\\"process_group\\"),entityId(\\"{test.id}\\")",
-    }])
-    ```
-
 
     :param Sequence[_builtins.str] tags: Required tags of the process group to find
     """
@@ -126,24 +108,6 @@ def get_process_group_output(name: Optional[pulumi.Input[_builtins.str]] = None,
     - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
 
     If multiple process groups match the given criteria, the first result will be retrieved.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    test = dynatrace.get_process_group(name="Example",
-        tags=[
-            "TerraformKeyTest",
-            "TerraformKeyValueTest=TestValue",
-        ])
-    _name_ = dynatrace.ManagementZone("#name#", entity_selector_based_rules=[{
-        "enabled": True,
-        "selector": f"type(\\"process_group\\"),entityId(\\"{test.id}\\")",
-    }])
-    ```
 
 
     :param Sequence[_builtins.str] tags: Required tags of the process group to find

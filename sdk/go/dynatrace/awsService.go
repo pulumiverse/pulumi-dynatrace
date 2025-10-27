@@ -20,15 +20,14 @@ import (
 //
 // - Amazon Web Services - https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/amazon-web-services/amazon-web-services-integrations/aws-service-metrics
 //
+// - The dimensions and statistics for metrics for individual services - https://docs.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services
+//
 // - AWS credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/aws-credentials-api
 //
 // ## Resource Example Usage
 //
 // This example utilizes the data source `getAwsSupportedServices` in order to query for a full list of all supported services.
 // The `forEach` loop within the resource `AwsService` configures each of these services to get utilized with the default metrics recommended by Dynatrace (`useRecommendedMetrics`).
-//
-// If you want to configure a different set of metrics for a specific service, a separate resource `AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
-// Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
 //
 // ```go
 // package main
@@ -42,7 +41,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			tERRAFORMSAMPLE, err := dynatrace.NewAwsCredentials(ctx, "tERRAFORMSAMPLE", &dynatrace.AwsCredentialsArgs{
+//			TERRAFORM_SAMPLE, err := dynatrace.NewAwsCredentials(ctx, "TERRAFORM_SAMPLE", &dynatrace.AwsCredentialsArgs{
 //				Label:         pulumi.String("TERRAFORM-TEST-001"),
 //				PartitionType: pulumi.String("AWS_DEFAULT"),
 //				TaggedOnly:    pulumi.Bool(false),
@@ -61,9 +60,10 @@ import (
 //			}
 //			var tERRAFORMSAMPLEServices []*dynatrace.AwsService
 //			for key0, _ := range supportedServices.Services {
-//				__res, err := dynatrace.NewAwsService(ctx, fmt.Sprintf("tERRAFORMSAMPLEServices-%v", key0), &dynatrace.AwsServiceArgs{
-//					CredentialsId:         tERRAFORMSAMPLE.ID(),
+//				__res, err := dynatrace.NewAwsService(ctx, fmt.Sprintf("TERRAFORM_SAMPLE_services-%v", key0), &dynatrace.AwsServiceArgs{
+//					CredentialsId:         TERRAFORM_SAMPLE.ID(),
 //					UseRecommendedMetrics: pulumi.Bool(true),
+//					Name:                  pulumi.String(key0),
 //				})
 //				if err != nil {
 //					return err
@@ -75,12 +75,68 @@ import (
 //	}
 //
 // ```
+//
+// If you want to configure a different set of metrics for a specific service, a separate resource `AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
+// Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			example, err := dynatrace.NewAwsCredentials(ctx, "Example", &dynatrace.AwsCredentialsArgs{
+//				Label:         pulumi.String("#name#"),
+//				PartitionType: pulumi.String("AWS_DEFAULT"),
+//				TaggedOnly:    pulumi.Bool(false),
+//				AuthenticationData: &dynatrace.AwsCredentialsAuthenticationDataArgs{
+//					AccountId: pulumi.String("123456789"),
+//					IamRole:   pulumi.String("aws-monitoring-role"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewAwsService(ctx, "ElastiCache", &dynatrace.AwsServiceArgs{
+//				Name:          pulumi.String("ElastiCache"),
+//				CredentialsId: example.ID(),
+//				Metrics: dynatrace.AwsServiceMetricArray{
+//					&dynatrace.AwsServiceMetricArgs{
+//						Name: pulumi.String("NetworkBandwidthOutAllowanceExceeded"),
+//						Dimensions: pulumi.StringArray{
+//							pulumi.String("CacheClusterId"),
+//						},
+//						Statistic: pulumi.String("SUM"),
+//					},
+//					&dynatrace.AwsServiceMetricArgs{
+//						Name: pulumi.String("CPUUtilization"),
+//						Dimensions: pulumi.StringArray{
+//							pulumi.String("CacheClusterId"),
+//						},
+//						Statistic: pulumi.String("AVG_MIN_MAX"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AwsService struct {
 	pulumi.CustomResourceState
 
 	// This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
 	BuiltIn pulumi.BoolOutput `pulumi:"builtIn"`
-	// the ID of the azure credentials this supported service belongs to
+	// the ID of the AWS credentials this supported service belongs to
 	CredentialsId pulumi.StringOutput         `pulumi:"credentialsId"`
 	Metrics       AwsServiceMetricArrayOutput `pulumi:"metrics"`
 	// The name of the supporting service.
@@ -124,7 +180,7 @@ func GetAwsService(ctx *pulumi.Context,
 type awsServiceState struct {
 	// This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
 	BuiltIn *bool `pulumi:"builtIn"`
-	// the ID of the azure credentials this supported service belongs to
+	// the ID of the AWS credentials this supported service belongs to
 	CredentialsId *string            `pulumi:"credentialsId"`
 	Metrics       []AwsServiceMetric `pulumi:"metrics"`
 	// The name of the supporting service.
@@ -136,7 +192,7 @@ type awsServiceState struct {
 type AwsServiceState struct {
 	// This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
 	BuiltIn pulumi.BoolPtrInput
-	// the ID of the azure credentials this supported service belongs to
+	// the ID of the AWS credentials this supported service belongs to
 	CredentialsId pulumi.StringPtrInput
 	Metrics       AwsServiceMetricArrayInput
 	// The name of the supporting service.
@@ -150,7 +206,7 @@ func (AwsServiceState) ElementType() reflect.Type {
 }
 
 type awsServiceArgs struct {
-	// the ID of the azure credentials this supported service belongs to
+	// the ID of the AWS credentials this supported service belongs to
 	CredentialsId string             `pulumi:"credentialsId"`
 	Metrics       []AwsServiceMetric `pulumi:"metrics"`
 	// The name of the supporting service.
@@ -160,7 +216,7 @@ type awsServiceArgs struct {
 
 // The set of arguments for constructing a AwsService resource.
 type AwsServiceArgs struct {
-	// the ID of the azure credentials this supported service belongs to
+	// the ID of the AWS credentials this supported service belongs to
 	CredentialsId pulumi.StringInput
 	Metrics       AwsServiceMetricArrayInput
 	// The name of the supporting service.
@@ -260,7 +316,7 @@ func (o AwsServiceOutput) BuiltIn() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AwsService) pulumi.BoolOutput { return v.BuiltIn }).(pulumi.BoolOutput)
 }
 
-// the ID of the azure credentials this supported service belongs to
+// the ID of the AWS credentials this supported service belongs to
 func (o AwsServiceOutput) CredentialsId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AwsService) pulumi.StringOutput { return v.CredentialsId }).(pulumi.StringOutput)
 }

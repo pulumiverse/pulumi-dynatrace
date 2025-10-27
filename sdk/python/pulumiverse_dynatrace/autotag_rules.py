@@ -158,12 +158,14 @@ class AutotagRules(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        sample_autotag_v2 = dynatrace.AutotagV2("sampleAutotagV2", rules_maintained_externally=True)
+        sample = dynatrace.AutotagV2("sample",
+            name="sample",
+            rules_maintained_externally=True)
         #Be careful when maintaining `dynatrace_autotag_rules` in separate modules.
         #Do not execute `pulumi up` in parallel when several modules contain 
         #`dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
-        sample_autotag_rules = dynatrace.AutotagRules("sampleAutotagRules",
-            auto_tag_id=sample_autotag_v2.id,
+        sample_autotag_rules = dynatrace.AutotagRules("sample",
+            auto_tag_id=sample.id,
             rules={
                 "rules": [{
                     "type": "SELECTOR",
@@ -206,12 +208,14 @@ class AutotagRules(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        sample_autotag_v2 = dynatrace.AutotagV2("sampleAutotagV2", rules_maintained_externally=True)
+        sample = dynatrace.AutotagV2("sample",
+            name="sample",
+            rules_maintained_externally=True)
         #Be careful when maintaining `dynatrace_autotag_rules` in separate modules.
         #Do not execute `pulumi up` in parallel when several modules contain 
         #`dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
-        sample_autotag_rules = dynatrace.AutotagRules("sampleAutotagRules",
-            auto_tag_id=sample_autotag_v2.id,
+        sample_autotag_rules = dynatrace.AutotagRules("sample",
+            auto_tag_id=sample.id,
             rules={
                 "rules": [{
                     "type": "SELECTOR",

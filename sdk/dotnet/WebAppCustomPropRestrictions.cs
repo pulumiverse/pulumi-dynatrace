@@ -18,56 +18,6 @@ namespace Pulumiverse.Dynatrace
     /// - Web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications
     /// 
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.capture-custom-properties`)
-    /// 
-    /// ## Resource Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var _name_ = new Dynatrace.WebAppCustomPropRestrictions("#name#", new()
-    ///     {
-    ///         ApplicationId = "APPLICATION-1234567890000000",
-    ///         CustomEventPropertiesAllowList = new Dynatrace.Inputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs
-    ///         {
-    ///             CustomSessionPropertiesAllows = new[]
-    ///             {
-    ///                 new Dynatrace.Inputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs
-    ///                 {
-    ///                     FieldDataType = "STRING",
-    ///                     FieldName = "ExampleEvent",
-    ///                 },
-    ///                 new Dynatrace.Inputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs
-    ///                 {
-    ///                     FieldDataType = "BOOLEAN",
-    ///                     FieldName = "ExampleEvent2",
-    ///                 },
-    ///             },
-    ///         },
-    ///         CustomSessionPropertiesAllowList = new Dynatrace.Inputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs
-    ///         {
-    ///             CustomSessionPropertiesAllows = new[]
-    ///             {
-    ///                 new Dynatrace.Inputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs
-    ///                 {
-    ///                     FieldDataType = "STRING",
-    ///                     FieldName = "ExampleSession",
-    ///                 },
-    ///                 new Dynatrace.Inputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs
-    ///                 {
-    ///                     FieldDataType = "BOOLEAN",
-    ///                     FieldName = "ExampleSession2",
-    ///                 },
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/webAppCustomPropRestrictions:WebAppCustomPropRestrictions")]
     public partial class WebAppCustomPropRestrictions : global::Pulumi.CustomResource

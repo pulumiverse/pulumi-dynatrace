@@ -13,25 +13,6 @@ import * as utilities from "./utilities";
  * - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
  *
  * If multiple process groups match the given criteria, the first result will be retrieved.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getProcessGroup({
- *     name: "Example",
- *     tags: [
- *         "TerraformKeyTest",
- *         "TerraformKeyValueTest=TestValue",
- *     ],
- * });
- * const _name_ = new dynatrace.ManagementZone("#name#", {entitySelectorBasedRules: [{
- *     enabled: true,
- *     selector: test.then(test => `type("process_group"),entityId("${test.id}")`),
- * }]});
- * ```
  */
 export function getProcessGroup(args: GetProcessGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetProcessGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -75,25 +56,6 @@ export interface GetProcessGroupResult {
  * - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
  *
  * If multiple process groups match the given criteria, the first result will be retrieved.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getProcessGroup({
- *     name: "Example",
- *     tags: [
- *         "TerraformKeyTest",
- *         "TerraformKeyValueTest=TestValue",
- *     ],
- * });
- * const _name_ = new dynatrace.ManagementZone("#name#", {entitySelectorBasedRules: [{
- *     enabled: true,
- *     selector: test.then(test => `type("process_group"),entityId("${test.id}")`),
- * }]});
- * ```
  */
 export function getProcessGroupOutput(args: GetProcessGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProcessGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

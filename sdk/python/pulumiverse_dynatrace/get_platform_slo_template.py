@@ -70,34 +70,6 @@ def get_platform_slo_template(name: Optional[_builtins.str] = None,
 
     - `name` (String) Name of the SLO objective template
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    host_cpu = dynatrace.get_platform_slo_template(name="Host CPU usage utilization")
-    _name_ = dynatrace.PlatformSlo("#name#",
-        description="Measures the CPU usage of selected hosts over time.",
-        criteria={
-            "criteria_details": [{
-                "target": 95,
-                "timeframe_from": "now-7d",
-                "timeframe_to": "now",
-            }],
-        },
-        sli_reference={
-            "template_id": host_cpu.id,
-            "variables": {
-                "sli_reference_variables": [{
-                    "name": "hosts",
-                    "value": "\\"HOST-1234567890000000\\"",
-                }],
-            },
-        })
-    ```
-
 
     :param _builtins.str name: Name of the SLO objective template
     """
@@ -117,34 +89,6 @@ def get_platform_slo_template_output(name: Optional[pulumi.Input[_builtins.str]]
     The SLO objective template data source allows the ID to be retrieved by its name.
 
     - `name` (String) Name of the SLO objective template
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    host_cpu = dynatrace.get_platform_slo_template(name="Host CPU usage utilization")
-    _name_ = dynatrace.PlatformSlo("#name#",
-        description="Measures the CPU usage of selected hosts over time.",
-        criteria={
-            "criteria_details": [{
-                "target": 95,
-                "timeframe_from": "now-7d",
-                "timeframe_to": "now",
-            }],
-        },
-        sli_reference={
-            "template_id": host_cpu.id,
-            "variables": {
-                "sli_reference_variables": [{
-                    "name": "hosts",
-                    "value": "\\"HOST-1234567890000000\\"",
-                }],
-            },
-        })
-    ```
 
 
     :param _builtins.str name: Name of the SLO objective template

@@ -14,28 +14,6 @@ import * as utilities from "./utilities";
  * - Services - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services
  *
  * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-detection-rules`)
- *
- * ## Resource Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const _name_ = new dynatrace.ServiceDetectionRules("#name#", {
- *     enabled: false,
- *     rule: {
- *         additionalRequiredAttributes: [
- *             "attribute-1",
- *             "attribute-2",
- *         ],
- *         condition: "matchesValue(k8s.cluster.name,\"terraform\")",
- *         description: "Example description",
- *         ruleName: "#name#",
- *         serviceNameTemplate: "{k8s.workload.name}",
- *     },
- *     scope: "environment",
- * });
- * ```
  */
 export class ServiceDetectionRules extends pulumi.CustomResource {
     /**

@@ -61,6 +61,12 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> DeploymentType { get; private set; } = null!;
 
         /// <summary>
+        /// Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+        /// </summary>
+        [Output("fipsMode")]
+        public Output<string?> FipsMode { get; private set; } = null!;
+
+        /// <summary>
         /// The latitude of the location in `DDD.dddd` format
         /// </summary>
         [Output("latitude")]
@@ -227,6 +233,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? DeploymentType { get; set; }
 
         /// <summary>
+        /// Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+        /// </summary>
+        [Input("fipsMode")]
+        public Input<string>? FipsMode { get; set; }
+
+        /// <summary>
         /// The latitude of the location in `DDD.dddd` format
         /// </summary>
         [Input("latitude", required: true)]
@@ -358,6 +370,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("deploymentType")]
         public Input<string>? DeploymentType { get; set; }
+
+        /// <summary>
+        /// Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+        /// </summary>
+        [Input("fipsMode")]
+        public Input<string>? FipsMode { get; set; }
 
         /// <summary>
         /// The latitude of the location in `DDD.dddd` format

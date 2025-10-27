@@ -31,6 +31,7 @@ from .attribute_block_list import *
 from .attribute_masking import *
 from .attributes_preferences import *
 from .audit_log import *
+from .automation_approval import *
 from .automation_business_calendar import *
 from .automation_controller_connections import *
 from .automation_scheduling_rule import *
@@ -682,6 +683,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/auditLog:AuditLog": "AuditLog"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/automationApproval",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/automationApproval:AutomationApproval": "AutomationApproval"
   }
  },
  {

@@ -21,27 +21,23 @@ class DocumentArgs:
     def __init__(__self__, *,
                  content: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 actor: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_id: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
                  private: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Document resource.
         :param pulumi.Input[_builtins.str] content: Document content as JSON
         :param pulumi.Input[_builtins.str] type: Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
-        :param pulumi.Input[_builtins.str] actor: The user context the executions of the document will happen with
+        :param pulumi.Input[_builtins.str] custom_id: If provided, this will be the id of the document. If not provided, a system-generated id is used.
         :param pulumi.Input[_builtins.str] name: The name/name of the document
-        :param pulumi.Input[_builtins.str] owner: The ID of the owner of this document
         :param pulumi.Input[_builtins.bool] private: Specifies whether the document is private or readable by everybody
         """
         pulumi.set(__self__, "content", content)
         pulumi.set(__self__, "type", type)
-        if actor is not None:
-            pulumi.set(__self__, "actor", actor)
+        if custom_id is not None:
+            pulumi.set(__self__, "custom_id", custom_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
-        if owner is not None:
-            pulumi.set(__self__, "owner", owner)
         if private is not None:
             pulumi.set(__self__, "private", private)
 
@@ -70,16 +66,16 @@ class DocumentArgs:
         pulumi.set(self, "type", value)
 
     @_builtins.property
-    @pulumi.getter
-    def actor(self) -> Optional[pulumi.Input[_builtins.str]]:
+    @pulumi.getter(name="customId")
+    def custom_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The user context the executions of the document will happen with
+        If provided, this will be the id of the document. If not provided, a system-generated id is used.
         """
-        return pulumi.get(self, "actor")
+        return pulumi.get(self, "custom_id")
 
-    @actor.setter
-    def actor(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "actor", value)
+    @custom_id.setter
+    def custom_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "custom_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -92,18 +88,6 @@ class DocumentArgs:
     @name.setter
     def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The ID of the owner of this document
-        """
-        return pulumi.get(self, "owner")
-
-    @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter
@@ -121,8 +105,8 @@ class DocumentArgs:
 @pulumi.input_type
 class _DocumentState:
     def __init__(__self__, *,
-                 actor: Optional[pulumi.Input[_builtins.str]] = None,
                  content: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_id: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  owner: Optional[pulumi.Input[_builtins.str]] = None,
                  private: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -130,18 +114,18 @@ class _DocumentState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Document resources.
-        :param pulumi.Input[_builtins.str] actor: The user context the executions of the document will happen with
         :param pulumi.Input[_builtins.str] content: Document content as JSON
+        :param pulumi.Input[_builtins.str] custom_id: If provided, this will be the id of the document. If not provided, a system-generated id is used.
         :param pulumi.Input[_builtins.str] name: The name/name of the document
         :param pulumi.Input[_builtins.str] owner: The ID of the owner of this document
         :param pulumi.Input[_builtins.bool] private: Specifies whether the document is private or readable by everybody
         :param pulumi.Input[_builtins.str] type: Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
         :param pulumi.Input[_builtins.int] version: The version of the document
         """
-        if actor is not None:
-            pulumi.set(__self__, "actor", actor)
         if content is not None:
             pulumi.set(__self__, "content", content)
+        if custom_id is not None:
+            pulumi.set(__self__, "custom_id", custom_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if owner is not None:
@@ -155,18 +139,6 @@ class _DocumentState:
 
     @_builtins.property
     @pulumi.getter
-    def actor(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The user context the executions of the document will happen with
-        """
-        return pulumi.get(self, "actor")
-
-    @actor.setter
-    def actor(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "actor", value)
-
-    @_builtins.property
-    @pulumi.getter
     def content(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Document content as JSON
@@ -176,6 +148,18 @@ class _DocumentState:
     @content.setter
     def content(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "content", value)
+
+    @_builtins.property
+    @pulumi.getter(name="customId")
+    def custom_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        If provided, this will be the id of the document. If not provided, a system-generated id is used.
+        """
+        return pulumi.get(self, "custom_id")
+
+    @custom_id.setter
+    def custom_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "custom_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -244,10 +228,9 @@ class Document(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actor: Optional[pulumi.Input[_builtins.str]] = None,
                  content: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_id: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
                  private: Optional[pulumi.Input[_builtins.bool]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
@@ -271,6 +254,8 @@ class Document(pulumi.CustomResource):
 
         this = dynatrace.Document("this",
             type="dashboard",
+            name="Example Dashboard",
+            custom_id="#name#",
             content=json.dumps({
                 "version": 13,
                 "variables": [],
@@ -405,10 +390,9 @@ class Document(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] actor: The user context the executions of the document will happen with
         :param pulumi.Input[_builtins.str] content: Document content as JSON
+        :param pulumi.Input[_builtins.str] custom_id: If provided, this will be the id of the document. If not provided, a system-generated id is used.
         :param pulumi.Input[_builtins.str] name: The name/name of the document
-        :param pulumi.Input[_builtins.str] owner: The ID of the owner of this document
         :param pulumi.Input[_builtins.bool] private: Specifies whether the document is private or readable by everybody
         :param pulumi.Input[_builtins.str] type: Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
         """
@@ -438,6 +422,8 @@ class Document(pulumi.CustomResource):
 
         this = dynatrace.Document("this",
             type="dashboard",
+            name="Example Dashboard",
+            custom_id="#name#",
             content=json.dumps({
                 "version": 13,
                 "variables": [],
@@ -585,10 +571,9 @@ class Document(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actor: Optional[pulumi.Input[_builtins.str]] = None,
                  content: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_id: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
                  private: Optional[pulumi.Input[_builtins.bool]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
@@ -600,16 +585,16 @@ class Document(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DocumentArgs.__new__(DocumentArgs)
 
-            __props__.__dict__["actor"] = actor
             if content is None and not opts.urn:
                 raise TypeError("Missing required property 'content'")
             __props__.__dict__["content"] = content
+            __props__.__dict__["custom_id"] = custom_id
             __props__.__dict__["name"] = name
-            __props__.__dict__["owner"] = owner
             __props__.__dict__["private"] = private
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
+            __props__.__dict__["owner"] = None
             __props__.__dict__["version"] = None
         super(Document, __self__).__init__(
             'dynatrace:index/document:Document',
@@ -621,8 +606,8 @@ class Document(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actor: Optional[pulumi.Input[_builtins.str]] = None,
             content: Optional[pulumi.Input[_builtins.str]] = None,
+            custom_id: Optional[pulumi.Input[_builtins.str]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             owner: Optional[pulumi.Input[_builtins.str]] = None,
             private: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -635,8 +620,8 @@ class Document(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] actor: The user context the executions of the document will happen with
         :param pulumi.Input[_builtins.str] content: Document content as JSON
+        :param pulumi.Input[_builtins.str] custom_id: If provided, this will be the id of the document. If not provided, a system-generated id is used.
         :param pulumi.Input[_builtins.str] name: The name/name of the document
         :param pulumi.Input[_builtins.str] owner: The ID of the owner of this document
         :param pulumi.Input[_builtins.bool] private: Specifies whether the document is private or readable by everybody
@@ -647,8 +632,8 @@ class Document(pulumi.CustomResource):
 
         __props__ = _DocumentState.__new__(_DocumentState)
 
-        __props__.__dict__["actor"] = actor
         __props__.__dict__["content"] = content
+        __props__.__dict__["custom_id"] = custom_id
         __props__.__dict__["name"] = name
         __props__.__dict__["owner"] = owner
         __props__.__dict__["private"] = private
@@ -658,19 +643,19 @@ class Document(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def actor(self) -> pulumi.Output[_builtins.str]:
-        """
-        The user context the executions of the document will happen with
-        """
-        return pulumi.get(self, "actor")
-
-    @_builtins.property
-    @pulumi.getter
     def content(self) -> pulumi.Output[_builtins.str]:
         """
         Document content as JSON
         """
         return pulumi.get(self, "content")
+
+    @_builtins.property
+    @pulumi.getter(name="customId")
+    def custom_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        If provided, this will be the id of the document. If not provided, a system-generated id is used.
+        """
+        return pulumi.get(self, "custom_id")
 
     @_builtins.property
     @pulumi.getter

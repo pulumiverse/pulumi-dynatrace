@@ -18,24 +18,6 @@ namespace Pulumiverse.Dynatrace
     /// - Customize endpoint detection in Service Detection v2 - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services/service-detection-v2/endpoint-detection-v2
     /// 
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:endpoint-detection-rules-opt-in`)
-    /// 
-    /// ## Resource Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var _name_ = new Dynatrace.EndpointDetectionRulesOptin("#name#", new()
-    ///     {
-    ///         Enabled = true,
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/endpointDetectionRulesOptin:EndpointDetectionRulesOptin")]
     public partial class EndpointDetectionRulesOptin : global::Pulumi.CustomResource

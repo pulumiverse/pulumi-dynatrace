@@ -83,24 +83,6 @@ def get_host(name: Optional[_builtins.str] = None,
 
     If multiple hosts match the given criteria, the first result will be retrieved.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    test = dynatrace.get_host(name="Example",
-        tags=[
-            "TerraformKeyTest",
-            "TerraformKeyValueTest=TestValue",
-        ])
-    _name_ = dynatrace.ManagementZone("#name#", entity_selector_based_rules=[{
-        "enabled": True,
-        "selector": f"type(\\"host\\"),entityId(\\"{test.id}\\")",
-    }])
-    ```
-
 
     :param Sequence[_builtins.str] tags: Required tags of the host to find
     """
@@ -126,24 +108,6 @@ def get_host_output(name: Optional[pulumi.Input[_builtins.str]] = None,
     - `tags` (optional) refers to the tags that need to be present for the host (inclusive)
 
     If multiple hosts match the given criteria, the first result will be retrieved.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    test = dynatrace.get_host(name="Example",
-        tags=[
-            "TerraformKeyTest",
-            "TerraformKeyValueTest=TestValue",
-        ])
-    _name_ = dynatrace.ManagementZone("#name#", entity_selector_based_rules=[{
-        "enabled": True,
-        "selector": f"type(\\"host\\"),entityId(\\"{test.id}\\")",
-    }])
-    ```
 
 
     :param Sequence[_builtins.str] tags: Required tags of the host to find

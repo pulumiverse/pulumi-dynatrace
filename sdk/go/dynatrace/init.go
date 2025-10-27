@@ -71,6 +71,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AttributesPreferences{}
 	case "dynatrace:index/auditLog:AuditLog":
 		r = &AuditLog{}
+	case "dynatrace:index/automationApproval:AutomationApproval":
+		r = &AutomationApproval{}
 	case "dynatrace:index/automationBusinessCalendar:AutomationBusinessCalendar":
 		r = &AutomationBusinessCalendar{}
 	case "dynatrace:index/automationControllerConnections:AutomationControllerConnections":
@@ -997,6 +999,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/auditLog",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/automationApproval",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

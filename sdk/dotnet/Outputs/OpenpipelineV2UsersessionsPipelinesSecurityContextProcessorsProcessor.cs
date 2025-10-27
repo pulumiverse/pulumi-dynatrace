@@ -103,7 +103,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorTechnology? Technology;
         /// <summary>
-        /// Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+        /// Processor type. Possible Values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `Technology`, `valueMetric`.
         /// </summary>
         public readonly string Type;
         /// <summary>

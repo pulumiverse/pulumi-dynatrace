@@ -16,25 +16,6 @@ namespace Pulumiverse.Dynatrace
     /// ## Dynatrace Documentation
     /// 
     /// - Monitored entities API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2
-    /// 
-    /// ## Resource Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var _name_ = new Dynatrace.CustomDevice("#name#", new()
-    ///     {
-    ///         CustomDeviceId = "customDeviceId",
-    ///         DisplayName = "customDevicename",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/customDevice:CustomDevice")]
     public partial class CustomDevice : global::Pulumi.CustomResource

@@ -29,11 +29,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			testPlatformSloTemplates, err := dynatrace.GetPlatformSloTemplates(ctx, map[string]interface{}{}, nil)
+//			test, err := dynatrace.GetPlatformSloTemplates(ctx, map[string]interface{}{}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			ctx.Export("test", testPlatformSloTemplates)
+//			ctx.Export("test", test)
 //			return nil
 //		})
 //	}

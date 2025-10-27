@@ -6,54 +6,6 @@ import * as utilities from "./utilities";
 
 /**
  * The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const creds = dynatrace.getCredentials({
- *     name: "Office365 Access Token",
- * });
- * const _name_ = new dynatrace.HttpMonitor("#name#", {
- *     enabled: true,
- *     frequency: 60,
- *     locations: ["SYNTHETIC_LOCATION-781752216580B1BC"],
- *     anomalyDetections: [{
- *         loadingTimeThresholds: [{
- *             enabled: true,
- *         }],
- *         outageHandlings: [{
- *             globalOutage: true,
- *             localOutage: false,
- *             retryOnError: false,
- *         }],
- *     }],
- *     script: {
- *         requests: [{
- *             description: "google.com",
- *             method: "GET",
- *             url: "https://www.google.com",
- *             authentication: {
- *                 type: "BASIC_AUTHENTICATION",
- *                 credentials: creds.then(creds => creds.id),
- *             },
- *             configuration: {
- *                 acceptAnyCertificate: true,
- *                 followRedirects: true,
- *             },
- *             validation: {
- *                 rules: [{
- *                     type: "httpStatusesList",
- *                     passIfFound: false,
- *                     value: ">=400",
- *                 }],
- *             },
- *         }],
- *     },
- * });
- * ```
  */
 export function getCredentials(args?: GetCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetCredentialsResult> {
     args = args || {};
@@ -106,54 +58,6 @@ export interface GetCredentialsResult {
 }
 /**
  * The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const creds = dynatrace.getCredentials({
- *     name: "Office365 Access Token",
- * });
- * const _name_ = new dynatrace.HttpMonitor("#name#", {
- *     enabled: true,
- *     frequency: 60,
- *     locations: ["SYNTHETIC_LOCATION-781752216580B1BC"],
- *     anomalyDetections: [{
- *         loadingTimeThresholds: [{
- *             enabled: true,
- *         }],
- *         outageHandlings: [{
- *             globalOutage: true,
- *             localOutage: false,
- *             retryOnError: false,
- *         }],
- *     }],
- *     script: {
- *         requests: [{
- *             description: "google.com",
- *             method: "GET",
- *             url: "https://www.google.com",
- *             authentication: {
- *                 type: "BASIC_AUTHENTICATION",
- *                 credentials: creds.then(creds => creds.id),
- *             },
- *             configuration: {
- *                 acceptAnyCertificate: true,
- *                 followRedirects: true,
- *             },
- *             validation: {
- *                 rules: [{
- *                     type: "httpStatusesList",
- *                     passIfFound: false,
- *                     value: ">=400",
- *                 }],
- *             },
- *         }],
- *     },
- * });
- * ```
  */
 export function getCredentialsOutput(args?: GetCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCredentialsResult> {
     args = args || {};

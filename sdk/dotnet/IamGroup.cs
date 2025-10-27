@@ -33,8 +33,9 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var restricted = new Dynatrace.IamGroup("restricted", new()
+    ///     var restricted = new Dynatrace.IamGroup("Restricted", new()
     ///     {
+    ///         Name = "Restricted",
     ///         Permissions = new Dynatrace.Inputs.IamGroupPermissionsArgs
     ///         {
     ///             Permissions = new[]
@@ -42,8 +43,8 @@ namespace Pulumiverse.Dynatrace
     ///                 new Dynatrace.Inputs.IamGroupPermissionsPermissionArgs
     ///                 {
     ///                     Name = "tenant-viewer",
-    ///                     Scope = "&lt;environment-id&gt;:&lt;managementzone-id&gt;",
     ///                     Type = "management-zone",
+    ///                     Scope = "&lt;environment-id&gt;:&lt;managementzone-id&gt;",
     ///                 },
     ///             },
     ///         },

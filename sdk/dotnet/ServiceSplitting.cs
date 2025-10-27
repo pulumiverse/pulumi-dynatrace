@@ -18,8 +18,6 @@ namespace Pulumiverse.Dynatrace
     /// - Services - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services
     /// 
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-splitting-rules`)
-    /// 
-    /// ## Resource Example Usage
     /// </summary>
     [DynatraceResourceType("dynatrace:index/serviceSplitting:ServiceSplitting")]
     public partial class ServiceSplitting : global::Pulumi.CustomResource

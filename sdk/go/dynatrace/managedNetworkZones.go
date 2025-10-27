@@ -33,11 +33,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewManagedNetworkZones(ctx, "test", &dynatrace.ManagedNetworkZonesArgs{
+//			_, err := dynatrace.NewManagedNetworkZones(ctx, "Test", &dynatrace.ManagedNetworkZonesArgs{
+//				Name:        pulumi.String("terraformtest"),
+//				Description: pulumi.String("This is an example network zone"),
 //				AlternativeZones: pulumi.StringArray{
 //					pulumi.String("alternativeexample"),
 //				},
-//				Description:  pulumi.String("This is an example network zone"),
 //				FallbackMode: pulumi.String("ANY_ACTIVE_GATE"),
 //			})
 //			if err != nil {

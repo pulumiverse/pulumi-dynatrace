@@ -19,56 +19,6 @@ import (
 // - Web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications
 //
 // - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.capture-custom-properties`)
-//
-// ## Resource Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewWebAppCustomPropRestrictions(ctx, "#name#", &dynatrace.WebAppCustomPropRestrictionsArgs{
-//				ApplicationId: pulumi.String("APPLICATION-1234567890000000"),
-//				CustomEventPropertiesAllowList: &dynatrace.WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs{
-//					CustomSessionPropertiesAllows: dynatrace.WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray{
-//						&dynatrace.WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs{
-//							FieldDataType: pulumi.String("STRING"),
-//							FieldName:     pulumi.String("ExampleEvent"),
-//						},
-//						&dynatrace.WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs{
-//							FieldDataType: pulumi.String("BOOLEAN"),
-//							FieldName:     pulumi.String("ExampleEvent2"),
-//						},
-//					},
-//				},
-//				CustomSessionPropertiesAllowList: &dynatrace.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs{
-//					CustomSessionPropertiesAllows: dynatrace.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray{
-//						&dynatrace.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs{
-//							FieldDataType: pulumi.String("STRING"),
-//							FieldName:     pulumi.String("ExampleSession"),
-//						},
-//						&dynatrace.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs{
-//							FieldDataType: pulumi.String("BOOLEAN"),
-//							FieldName:     pulumi.String("ExampleSession2"),
-//						},
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type WebAppCustomPropRestrictions struct {
 	pulumi.CustomResourceState
 

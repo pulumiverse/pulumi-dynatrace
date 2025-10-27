@@ -35,6 +35,7 @@ namespace Pulumiverse.Dynatrace
     /// {
     ///     var policy = new Dynatrace.IamPolicy("policy", new()
     ///     {
+    ///         Name = "my_policy_valid_for_environment_siz654##",
     ///         Environment = "siz654##",
     ///         StatementQuery = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
     ///     });
@@ -52,6 +53,7 @@ namespace Pulumiverse.Dynatrace
     /// {
     ///     var policy = new Dynatrace.IamPolicy("policy", new()
     ///     {
+    ///         Name = "my_policy_valid_for_all_environments_in_this_account",
     ///         Account = "########-####-####-####-############",
     ///         StatementQuery = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
     ///     });

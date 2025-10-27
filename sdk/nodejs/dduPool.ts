@@ -16,41 +16,6 @@ import * as utilities from "./utilities";
  * - DDU Pools - https://www.dynatrace.com/support/help/monitoring-consumption/davis-data-units#ddu-pools
  *
  * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:accounting.ddu.limit`)
- *
- * ## Resource Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const _name_ = new dynatrace.DduPool("#name#", {
- *     events: {
- *         enabled: true,
- *         type: "MONTHLY",
- *         value: 125,
- *     },
- *     logMonitoring: {
- *         enabled: true,
- *         type: "MONTHLY",
- *         value: 124,
- *     },
- *     metrics: {
- *         enabled: true,
- *         type: "MONTHLY",
- *         value: 123,
- *     },
- *     serverless: {
- *         enabled: true,
- *         type: "MONTHLY",
- *         value: 126,
- *     },
- *     traces: {
- *         enabled: true,
- *         type: "MONTHLY",
- *         value: 127,
- *     },
- * });
- * ```
  */
 export class DduPool extends pulumi.CustomResource {
     /**
