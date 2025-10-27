@@ -34,15 +34,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewManagedInternetProxy(ctx, "test", &dynatrace.ManagedInternetProxyArgs{
+//			_, err := dynatrace.NewManagedInternetProxy(ctx, "Test", &dynatrace.ManagedInternetProxyArgs{
+//				Scheme:   pulumi.String("http"),
+//				Server:   pulumi.String("zAOE-GV81/65oVgaIlPYTCADGSPFJ9ZqXYNGbxn97dbq:flAI2E8e8bfOvlmaGu"),
+//				Port:     pulumi.Int(65535),
+//				User:     pulumi.String("string"),
+//				Password: pulumi.String("string"),
 //				NonProxyHosts: pulumi.StringArray{
 //					pulumi.String("string"),
 //				},
-//				Password: pulumi.String("string"),
-//				Port:     pulumi.Int(65535),
-//				Scheme:   pulumi.String("http"),
-//				Server:   pulumi.String("zAOE-GV81/65oVgaIlPYTCADGSPFJ9ZqXYNGbxn97dbq:flAI2E8e8bfOvlmaGu"),
-//				User:     pulumi.String("string"),
 //			})
 //			if err != nil {
 //				return err

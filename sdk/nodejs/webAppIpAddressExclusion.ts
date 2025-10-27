@@ -16,29 +16,6 @@ import * as utilities from "./utilities";
  * - Exclude IP addresses, browsers, bots, and spiders from monitoring for web applications - https://docs.dynatrace.com/docs/shortlink/rum-exclude-bots
  *
  * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.ipaddress-exclusion`)
- *
- * ## Resource Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const _name_ = new dynatrace.WebAppIpAddressExclusion("#name#", {
- *     applicationId: "APPLICATION-1234567890000000",
- *     ipAddressExclusionInclude: false,
- *     ipExclusionList: {
- *         ipExclusions: [
- *             {
- *                 ip: "192.168.1.5",
- *             },
- *             {
- *                 ip: "10.0.0.1",
- *                 ipTo: "10.0.0.5",
- *             },
- *         ],
- *     },
- * });
- * ```
  */
 export class WebAppIpAddressExclusion extends pulumi.CustomResource {
     /**

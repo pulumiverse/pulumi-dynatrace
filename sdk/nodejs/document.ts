@@ -23,6 +23,7 @@ import * as utilities from "./utilities";
  *
  * const _this = new dynatrace.Document("this", {
  *     type: "dashboard",
+ *     name: "Example Dashboard",
  *     content: JSON.stringify({
  *         version: 13,
  *         variables: [],

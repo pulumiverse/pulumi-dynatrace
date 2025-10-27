@@ -80,15 +80,6 @@ class EndpointDetectionRulesOptin(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:endpoint-detection-rules-opt-in`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.EndpointDetectionRulesOptin("#name#", enabled=True)
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -107,15 +98,6 @@ class EndpointDetectionRulesOptin(pulumi.CustomResource):
         - Customize endpoint detection in Service Detection v2 - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services/service-detection-v2/endpoint-detection-v2
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:endpoint-detection-rules-opt-in`)
-
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.EndpointDetectionRulesOptin("#name#", enabled=True)
-        ```
 
         :param str resource_name: The name of the resource.
         :param EndpointDetectionRulesOptinArgs args: The arguments to use to populate this resource's properties.

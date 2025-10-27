@@ -14,24 +14,6 @@ import * as utilities from "./utilities";
  * - Select a snippet format - https://docs.dynatrace.com/docs/shortlink/snippet-formats
  *
  * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.manual-insertion`)
- *
- * ## Resource Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const _name_ = new dynatrace.WebAppManualInsertion("#name#", {
- *     applicationId: "APPLICATION-1234567890000000",
- *     codeSnippet: {
- *         codeSnippetType: "SYNCHRONOUSLY",
- *     },
- *     javascriptTag: {
- *         cacheDuration: "1",
- *         crossoriginAnonymous: true,
- *     },
- * });
- * ```
  */
 export class WebAppManualInsertion extends pulumi.CustomResource {
     /**

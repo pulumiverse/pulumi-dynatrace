@@ -12,15 +12,6 @@ import * as utilities from "./utilities";
  * - Web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications
  *
  * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.rum-javascript-file-name`)
- *
- * ## Resource Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const _name_ = new dynatrace.WebAppJavascriptFilename("#name#", {filename: "tf"});
- * ```
  */
 export class WebAppJavascriptFilename extends pulumi.CustomResource {
     /**

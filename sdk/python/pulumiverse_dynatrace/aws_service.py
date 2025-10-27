@@ -208,7 +208,7 @@ class AwsService(pulumi.CustomResource):
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        t_erraformsample = dynatrace.AwsCredentials("tERRAFORMSAMPLE",
+        terrafor_m__sample = dynatrace.AwsCredentials("TERRAFORM_SAMPLE",
             label="TERRAFORM-TEST-001",
             partition_type="AWS_DEFAULT",
             tagged_only=False,
@@ -220,9 +220,10 @@ class AwsService(pulumi.CustomResource):
         supported_services = dynatrace.get_aws_supported_services()
         t_erraformsample_services = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AwsService(f"tERRAFORMSAMPLEServices-{range['key']}",
-                credentials_id=t_erraformsample.id,
-                use_recommended_metrics=True))
+            t_erraformsample_services.append(dynatrace.AwsService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+                credentials_id=terrafor_m__sample.id,
+                use_recommended_metrics=True,
+                name=range["key"]))
         ```
 
         :param str resource_name: The name of the resource.
@@ -260,7 +261,7 @@ class AwsService(pulumi.CustomResource):
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        t_erraformsample = dynatrace.AwsCredentials("tERRAFORMSAMPLE",
+        terrafor_m__sample = dynatrace.AwsCredentials("TERRAFORM_SAMPLE",
             label="TERRAFORM-TEST-001",
             partition_type="AWS_DEFAULT",
             tagged_only=False,
@@ -272,9 +273,10 @@ class AwsService(pulumi.CustomResource):
         supported_services = dynatrace.get_aws_supported_services()
         t_erraformsample_services = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AwsService(f"tERRAFORMSAMPLEServices-{range['key']}",
-                credentials_id=t_erraformsample.id,
-                use_recommended_metrics=True))
+            t_erraformsample_services.append(dynatrace.AwsService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+                credentials_id=terrafor_m__sample.id,
+                use_recommended_metrics=True,
+                name=range["key"]))
         ```
 
         :param str resource_name: The name of the resource.

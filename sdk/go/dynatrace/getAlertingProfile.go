@@ -34,8 +34,9 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			_, err = dynatrace.NewWebhookNotification(ctx, "myWebhookNotification", &dynatrace.WebhookNotificationArgs{
+//			_, err = dynatrace.NewWebhookNotification(ctx, "my_webhook_notification", &dynatrace.WebhookNotificationArgs{
 //				Active:               pulumi.Bool(false),
+//				Name:                 pulumi.String("my_webhook_notification"),
 //				Profile:              pulumi.String(_default.Id),
 //				Url:                  pulumi.String("https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e"),
 //				Insecure:             pulumi.Bool(true),

@@ -178,6 +178,7 @@ import (
 //			json0 := string(tmpJSON0)
 //			_, err = dynatrace.NewDocument(ctx, "this", &dynatrace.DocumentArgs{
 //				Type:    pulumi.String("dashboard"),
+//				Name:    pulumi.String("Example Dashboard"),
 //				Content: pulumi.String(json0),
 //			})
 //			if err != nil {

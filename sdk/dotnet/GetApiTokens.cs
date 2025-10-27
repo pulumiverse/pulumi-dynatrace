@@ -25,11 +25,11 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleApiTokens = Dynatrace.GetApiTokens.Invoke();
+        ///     var example = Dynatrace.GetApiTokens.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["example"] = exampleApiTokens,
+        ///         ["example"] = example,
         ///     };
         /// });
         /// ```
@@ -50,11 +50,11 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleApiTokens = Dynatrace.GetApiTokens.Invoke();
+        ///     var example = Dynatrace.GetApiTokens.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["example"] = exampleApiTokens,
+        ///         ["example"] = example,
         ///     };
         /// });
         /// ```
@@ -75,11 +75,11 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleApiTokens = Dynatrace.GetApiTokens.Invoke();
+        ///     var example = Dynatrace.GetApiTokens.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["example"] = exampleApiTokens,
+        ///         ["example"] = example,
         ///     };
         /// });
         /// ```

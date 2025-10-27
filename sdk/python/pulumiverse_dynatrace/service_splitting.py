@@ -180,8 +180,6 @@ class ServiceSplitting(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-splitting-rules`)
 
-        ## Resource Example Usage
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -203,8 +201,6 @@ class ServiceSplitting(pulumi.CustomResource):
         - Services - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-splitting-rules`)
-
-        ## Resource Example Usage
 
         :param str resource_name: The name of the resource.
         :param ServiceSplittingArgs args: The arguments to use to populate this resource's properties.

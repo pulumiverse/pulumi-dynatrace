@@ -14,40 +14,6 @@ import * as utilities from "./utilities";
  * - Customize failure detection in Service Detection v2 - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services/service-detection-v2/failure-detection-v2
  *
  * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:failure-detection-rulesets`)
- *
- * ## Resource Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const _name_ = new dynatrace.FailureDetectionRuleSets("#name#", {
- *     enabled: false,
- *     ruleset: {
- *         condition: "matchesValue(k8s.cluster.name,\"#name#\")",
- *         description: "This is a sample description",
- *         failOnExceptions: {
- *             enabled: true,
- *         },
- *         failOnGrpcStatusCodes: {
- *             statusCodes: "2,4,12,13,14,15",
- *         },
- *         failOnHttpResponseStatusCodes: {
- *             statusCodes: "500-599",
- *         },
- *         failOnSpanStatusError: {
- *             enabled: true,
- *         },
- *         overrides: {
- *             forceSuccessOnSpanStatusOk: {
- *                 enabled: false,
- *             },
- *         },
- *         rulesetName: "#name#",
- *     },
- *     scope: "environment",
- * });
- * ```
  */
 export class FailureDetectionRuleSets extends pulumi.CustomResource {
     /**

@@ -271,6 +271,7 @@ class Document(pulumi.CustomResource):
 
         this = dynatrace.Document("this",
             type="dashboard",
+            name="Example Dashboard",
             content=json.dumps({
                 "version": 13,
                 "variables": [],
@@ -438,6 +439,7 @@ class Document(pulumi.CustomResource):
 
         this = dynatrace.Document("this",
             type="dashboard",
+            name="Example Dashboard",
             content=json.dumps({
                 "version": 13,
                 "variables": [],

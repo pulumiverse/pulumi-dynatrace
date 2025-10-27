@@ -143,8 +143,8 @@ def get_api_token(name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_dynatrace as dynatrace
 
-    example_api_token = dynatrace.get_api_token(name="Terraform")
-    pulumi.export("example", example_api_token)
+    example = dynatrace.get_api_token(name="Terraform")
+    pulumi.export("example", example)
     ```
     """
     __args__ = dict()
@@ -174,8 +174,8 @@ def get_api_token_output(name: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_dynatrace as dynatrace
 
-    example_api_token = dynatrace.get_api_token(name="Terraform")
-    pulumi.export("example", example_api_token)
+    example = dynatrace.get_api_token(name="Terraform")
+    pulumi.export("example", example)
     ```
     """
     __args__ = dict()

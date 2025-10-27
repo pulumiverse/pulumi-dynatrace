@@ -18,67 +18,6 @@ namespace Pulumiverse.Dynatrace
         /// &gt; This data source requires the API token scopes **Read settings** (`settings.read`)
         /// 
         /// - `Name` queries for all management zones with the specified name
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// using Dynatrace = Pulumiverse.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Dynatrace.GetManagementZoneV2.Invoke(new()
-        ///     {
-        ///         Name = "Example",
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.CalculatedServiceMetric("#name#", new()
-        ///     {
-        ///         Conditions = new[]
-        ///         {
-        ///             new Dynatrace.Inputs.CalculatedServiceMetricConditionArgs
-        ///             {
-        ///                 Conditions = new[]
-        ///                 {
-        ///                     new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionArgs
-        ///                     {
-        ///                         Attribute = "HTTP_REQUEST_METHOD",
-        ///                         Comparison = new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionComparisonArgs
-        ///                         {
-        ///                             HttpMethod = new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs
-        ///                             {
-        ///                                 Operator = "EQUALS_ANY_OF",
-        ///                                 Values = new[]
-        ///                                 {
-        ///                                     "POST",
-        ///                                     "GET",
-        ///                                 },
-        ///                             },
-        ///                             Negate = false,
-        ///                         },
-        ///                     },
-        ///                 },
-        ///             },
-        ///         },
-        ///         Enabled = true,
-        ///         ManagementZones = new[]
-        ///         {
-        ///             test.Apply(getManagementZoneV2Result =&gt; getManagementZoneV2Result.LegacyId),
-        ///         },
-        ///         MetricDefinition = new Dynatrace.Inputs.CalculatedServiceMetricMetricDefinitionArgs
-        ///         {
-        ///             Metric = "REQUEST_ATTRIBUTE",
-        ///             RequestAttribute = "foo",
-        ///         },
-        ///         MetricKey = "calc:service.#name#",
-        ///         Unit = "MILLI_SECOND_PER_MINUTE",
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Task<GetManagementZoneV2Result> InvokeAsync(GetManagementZoneV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementZoneV2Result>("dynatrace:index/getManagementZoneV2:getManagementZoneV2", args ?? new GetManagementZoneV2Args(), options.WithDefaults());
@@ -89,67 +28,6 @@ namespace Pulumiverse.Dynatrace
         /// &gt; This data source requires the API token scopes **Read settings** (`settings.read`)
         /// 
         /// - `Name` queries for all management zones with the specified name
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// using Dynatrace = Pulumiverse.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Dynatrace.GetManagementZoneV2.Invoke(new()
-        ///     {
-        ///         Name = "Example",
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.CalculatedServiceMetric("#name#", new()
-        ///     {
-        ///         Conditions = new[]
-        ///         {
-        ///             new Dynatrace.Inputs.CalculatedServiceMetricConditionArgs
-        ///             {
-        ///                 Conditions = new[]
-        ///                 {
-        ///                     new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionArgs
-        ///                     {
-        ///                         Attribute = "HTTP_REQUEST_METHOD",
-        ///                         Comparison = new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionComparisonArgs
-        ///                         {
-        ///                             HttpMethod = new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs
-        ///                             {
-        ///                                 Operator = "EQUALS_ANY_OF",
-        ///                                 Values = new[]
-        ///                                 {
-        ///                                     "POST",
-        ///                                     "GET",
-        ///                                 },
-        ///                             },
-        ///                             Negate = false,
-        ///                         },
-        ///                     },
-        ///                 },
-        ///             },
-        ///         },
-        ///         Enabled = true,
-        ///         ManagementZones = new[]
-        ///         {
-        ///             test.Apply(getManagementZoneV2Result =&gt; getManagementZoneV2Result.LegacyId),
-        ///         },
-        ///         MetricDefinition = new Dynatrace.Inputs.CalculatedServiceMetricMetricDefinitionArgs
-        ///         {
-        ///             Metric = "REQUEST_ATTRIBUTE",
-        ///             RequestAttribute = "foo",
-        ///         },
-        ///         MetricKey = "calc:service.#name#",
-        ///         Unit = "MILLI_SECOND_PER_MINUTE",
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetManagementZoneV2Result> Invoke(GetManagementZoneV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementZoneV2Result>("dynatrace:index/getManagementZoneV2:getManagementZoneV2", args ?? new GetManagementZoneV2InvokeArgs(), options.WithDefaults());
@@ -160,67 +38,6 @@ namespace Pulumiverse.Dynatrace
         /// &gt; This data source requires the API token scopes **Read settings** (`settings.read`)
         /// 
         /// - `Name` queries for all management zones with the specified name
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// using Dynatrace = Pulumiverse.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Dynatrace.GetManagementZoneV2.Invoke(new()
-        ///     {
-        ///         Name = "Example",
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.CalculatedServiceMetric("#name#", new()
-        ///     {
-        ///         Conditions = new[]
-        ///         {
-        ///             new Dynatrace.Inputs.CalculatedServiceMetricConditionArgs
-        ///             {
-        ///                 Conditions = new[]
-        ///                 {
-        ///                     new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionArgs
-        ///                     {
-        ///                         Attribute = "HTTP_REQUEST_METHOD",
-        ///                         Comparison = new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionComparisonArgs
-        ///                         {
-        ///                             HttpMethod = new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs
-        ///                             {
-        ///                                 Operator = "EQUALS_ANY_OF",
-        ///                                 Values = new[]
-        ///                                 {
-        ///                                     "POST",
-        ///                                     "GET",
-        ///                                 },
-        ///                             },
-        ///                             Negate = false,
-        ///                         },
-        ///                     },
-        ///                 },
-        ///             },
-        ///         },
-        ///         Enabled = true,
-        ///         ManagementZones = new[]
-        ///         {
-        ///             test.Apply(getManagementZoneV2Result =&gt; getManagementZoneV2Result.LegacyId),
-        ///         },
-        ///         MetricDefinition = new Dynatrace.Inputs.CalculatedServiceMetricMetricDefinitionArgs
-        ///         {
-        ///             Metric = "REQUEST_ATTRIBUTE",
-        ///             RequestAttribute = "foo",
-        ///         },
-        ///         MetricKey = "calc:service.#name#",
-        ///         Unit = "MILLI_SECOND_PER_MINUTE",
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetManagementZoneV2Result> Invoke(GetManagementZoneV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementZoneV2Result>("dynatrace:index/getManagementZoneV2:getManagementZoneV2", args ?? new GetManagementZoneV2InvokeArgs(), options.WithDefaults());

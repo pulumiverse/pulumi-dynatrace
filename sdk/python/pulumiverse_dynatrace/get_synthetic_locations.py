@@ -79,48 +79,6 @@ def get_synthetic_locations(id: Optional[_builtins.str] = None,
     > For Provider versions earlier than v1.80.0: This data source requires the API token scope **Read synthetic monitors, locations, and nodes** (`ReadSyntheticData`)
     For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    test = dynatrace.get_synthetic_locations(name="Sydney")
-    _name_ = dynatrace.HttpMonitor("#name#",
-        enabled=True,
-        frequency=60,
-        locations=[test.locations.entity_id],
-        anomaly_detections=[{
-            "loading_time_thresholds": [{
-                "enabled": True,
-            }],
-            "outage_handlings": [{
-                "global_outage": True,
-                "local_outage": False,
-                "retry_on_error": False,
-            }],
-        }],
-        script={
-            "requests": [{
-                "description": "google.com",
-                "method": "GET",
-                "url": "https://www.google.com",
-                "configuration": {
-                    "accept_any_certificate": True,
-                    "follow_redirects": True,
-                },
-                "validation": {
-                    "rules": [{
-                        "type": "httpStatusesList",
-                        "pass_if_found": False,
-                        "value": ">=400",
-                    }],
-                },
-            }],
-        })
-    ```
-
 
     :param _builtins.str id: The ID of this resource.
     """
@@ -144,48 +102,6 @@ def get_synthetic_locations_output(id: Optional[pulumi.Input[Optional[_builtins.
 
     > For Provider versions earlier than v1.80.0: This data source requires the API token scope **Read synthetic monitors, locations, and nodes** (`ReadSyntheticData`)
     For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    test = dynatrace.get_synthetic_locations(name="Sydney")
-    _name_ = dynatrace.HttpMonitor("#name#",
-        enabled=True,
-        frequency=60,
-        locations=[test.locations.entity_id],
-        anomaly_detections=[{
-            "loading_time_thresholds": [{
-                "enabled": True,
-            }],
-            "outage_handlings": [{
-                "global_outage": True,
-                "local_outage": False,
-                "retry_on_error": False,
-            }],
-        }],
-        script={
-            "requests": [{
-                "description": "google.com",
-                "method": "GET",
-                "url": "https://www.google.com",
-                "configuration": {
-                    "accept_any_certificate": True,
-                    "follow_redirects": True,
-                },
-                "validation": {
-                    "rules": [{
-                        "type": "httpStatusesList",
-                        "pass_if_found": False,
-                        "value": ">=400",
-                    }],
-                },
-            }],
-        })
-    ```
 
 
     :param _builtins.str id: The ID of this resource.

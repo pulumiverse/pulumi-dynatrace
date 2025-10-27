@@ -24,6 +24,7 @@ import * as utilities from "./utilities";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * const policy = new dynatrace.IamPolicy("policy", {
+ *     name: "my_policy_valid_for_environment_siz654##",
  *     environment: "siz654##",
  *     statementQuery: "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
  * });
@@ -34,6 +35,7 @@ import * as utilities from "./utilities";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * const policy = new dynatrace.IamPolicy("policy", {
+ *     name: "my_policy_valid_for_all_environments_in_this_account",
  *     account: "########-####-####-####-############",
  *     statementQuery: "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
  * });

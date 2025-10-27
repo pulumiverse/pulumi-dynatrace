@@ -156,8 +156,9 @@ class DirectShares(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
-        this_document = dynatrace.Document("thisDocument",
+        this_document = dynatrace.Document("this",
             type="dashboard",
+            name="#name#",
             content=json.dumps({
                 "version": 13,
                 "variables": [],
@@ -288,7 +289,7 @@ class DirectShares(pulumi.CustomResource):
                     },
                 },
             }))
-        this_direct_shares = dynatrace.DirectShares("thisDirectShares",
+        this = dynatrace.DirectShares("this",
             document_id=this_document.id,
             access="read-write",
             recipients={
@@ -335,8 +336,9 @@ class DirectShares(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
-        this_document = dynatrace.Document("thisDocument",
+        this_document = dynatrace.Document("this",
             type="dashboard",
+            name="#name#",
             content=json.dumps({
                 "version": 13,
                 "variables": [],
@@ -467,7 +469,7 @@ class DirectShares(pulumi.CustomResource):
                     },
                 },
             }))
-        this_direct_shares = dynatrace.DirectShares("thisDirectShares",
+        this = dynatrace.DirectShares("this",
             document_id=this_document.id,
             access="read-write",
             recipients={

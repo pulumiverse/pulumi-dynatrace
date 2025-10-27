@@ -13,25 +13,6 @@ import * as utilities from "./utilities";
  * - `tags` (optional) refers to the tags that need to be present for the host (inclusive)
  *
  * If multiple hosts match the given criteria, the first result will be retrieved.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getHost({
- *     name: "Example",
- *     tags: [
- *         "TerraformKeyTest",
- *         "TerraformKeyValueTest=TestValue",
- *     ],
- * });
- * const _name_ = new dynatrace.ManagementZone("#name#", {entitySelectorBasedRules: [{
- *     enabled: true,
- *     selector: test.then(test => `type("host"),entityId("${test.id}")`),
- * }]});
- * ```
  */
 export function getHost(args: GetHostArgs, opts?: pulumi.InvokeOptions): Promise<GetHostResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -75,25 +56,6 @@ export interface GetHostResult {
  * - `tags` (optional) refers to the tags that need to be present for the host (inclusive)
  *
  * If multiple hosts match the given criteria, the first result will be retrieved.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getHost({
- *     name: "Example",
- *     tags: [
- *         "TerraformKeyTest",
- *         "TerraformKeyValueTest=TestValue",
- *     ],
- * });
- * const _name_ = new dynatrace.ManagementZone("#name#", {entitySelectorBasedRules: [{
- *     enabled: true,
- *     selector: test.then(test => `type("host"),entityId("${test.id}")`),
- * }]});
- * ```
  */
 export function getHostOutput(args: GetHostOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHostResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

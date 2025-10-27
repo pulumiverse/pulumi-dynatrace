@@ -38,9 +38,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewIamPermission(ctx, "permA", &dynatrace.IamPermissionArgs{
-//				Account: pulumi.String("023733f0-86d8-47d1-88bd-7f5cc2e22eb8"),
+//			_, err := dynatrace.NewIamPermission(ctx, "perm_a", &dynatrace.IamPermissionArgs{
+//				Name:    pulumi.String("tenant-viewer"),
 //				Group:   pulumi.String("74ec0a82-8010-4f11-8579-b29a5ba865f0"),
+//				Account: pulumi.String("023733f0-86d8-47d1-88bd-7f5cc2e22eb8"),
 //			})
 //			if err != nil {
 //				return err

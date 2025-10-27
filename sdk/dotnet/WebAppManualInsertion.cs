@@ -18,33 +18,6 @@ namespace Pulumiverse.Dynatrace
     /// - Select a snippet format - https://docs.dynatrace.com/docs/shortlink/snippet-formats
     /// 
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.manual-insertion`)
-    /// 
-    /// ## Resource Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var _name_ = new Dynatrace.WebAppManualInsertion("#name#", new()
-    ///     {
-    ///         ApplicationId = "APPLICATION-1234567890000000",
-    ///         CodeSnippet = new Dynatrace.Inputs.WebAppManualInsertionCodeSnippetArgs
-    ///         {
-    ///             CodeSnippetType = "SYNCHRONOUSLY",
-    ///         },
-    ///         JavascriptTag = new Dynatrace.Inputs.WebAppManualInsertionJavascriptTagArgs
-    ///         {
-    ///             CacheDuration = "1",
-    ///             CrossoriginAnonymous = true,
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/webAppManualInsertion:WebAppManualInsertion")]
     public partial class WebAppManualInsertion : global::Pulumi.CustomResource

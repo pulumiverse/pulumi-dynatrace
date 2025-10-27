@@ -18,54 +18,6 @@ namespace Pulumiverse.Dynatrace
     /// - Customize failure detection in Service Detection v2 - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services/service-detection-v2/failure-detection-v2
     /// 
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:failure-detection-rulesets`)
-    /// 
-    /// ## Resource Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var _name_ = new Dynatrace.FailureDetectionRuleSets("#name#", new()
-    ///     {
-    ///         Enabled = false,
-    ///         Ruleset = new Dynatrace.Inputs.FailureDetectionRuleSetsRulesetArgs
-    ///         {
-    ///             Condition = "matchesValue(k8s.cluster.name,\"#name#\")",
-    ///             Description = "This is a sample description",
-    ///             FailOnExceptions = new Dynatrace.Inputs.FailureDetectionRuleSetsRulesetFailOnExceptionsArgs
-    ///             {
-    ///                 Enabled = true,
-    ///             },
-    ///             FailOnGrpcStatusCodes = new Dynatrace.Inputs.FailureDetectionRuleSetsRulesetFailOnGrpcStatusCodesArgs
-    ///             {
-    ///                 StatusCodes = "2,4,12,13,14,15",
-    ///             },
-    ///             FailOnHttpResponseStatusCodes = new Dynatrace.Inputs.FailureDetectionRuleSetsRulesetFailOnHttpResponseStatusCodesArgs
-    ///             {
-    ///                 StatusCodes = "500-599",
-    ///             },
-    ///             FailOnSpanStatusError = new Dynatrace.Inputs.FailureDetectionRuleSetsRulesetFailOnSpanStatusErrorArgs
-    ///             {
-    ///                 Enabled = true,
-    ///             },
-    ///             Overrides = new Dynatrace.Inputs.FailureDetectionRuleSetsRulesetOverridesArgs
-    ///             {
-    ///                 ForceSuccessOnSpanStatusOk = new Dynatrace.Inputs.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnSpanStatusOkArgs
-    ///                 {
-    ///                     Enabled = false,
-    ///                 },
-    ///             },
-    ///             RulesetName = "#name#",
-    ///         },
-    ///         Scope = "environment",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/failureDetectionRuleSets:FailureDetectionRuleSets")]
     public partial class FailureDetectionRuleSets : global::Pulumi.CustomResource

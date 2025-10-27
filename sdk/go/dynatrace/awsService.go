@@ -42,7 +42,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			tERRAFORMSAMPLE, err := dynatrace.NewAwsCredentials(ctx, "tERRAFORMSAMPLE", &dynatrace.AwsCredentialsArgs{
+//			TERRAFORM_SAMPLE, err := dynatrace.NewAwsCredentials(ctx, "TERRAFORM_SAMPLE", &dynatrace.AwsCredentialsArgs{
 //				Label:         pulumi.String("TERRAFORM-TEST-001"),
 //				PartitionType: pulumi.String("AWS_DEFAULT"),
 //				TaggedOnly:    pulumi.Bool(false),
@@ -61,9 +61,10 @@ import (
 //			}
 //			var tERRAFORMSAMPLEServices []*dynatrace.AwsService
 //			for key0, _ := range supportedServices.Services {
-//				__res, err := dynatrace.NewAwsService(ctx, fmt.Sprintf("tERRAFORMSAMPLEServices-%v", key0), &dynatrace.AwsServiceArgs{
-//					CredentialsId:         tERRAFORMSAMPLE.ID(),
+//				__res, err := dynatrace.NewAwsService(ctx, fmt.Sprintf("TERRAFORM_SAMPLE_services-%v", key0), &dynatrace.AwsServiceArgs{
+//					CredentialsId:         TERRAFORM_SAMPLE.ID(),
 //					UseRecommendedMetrics: pulumi.Bool(true),
+//					Name:                  pulumi.String(key0),
 //				})
 //				if err != nil {
 //					return err

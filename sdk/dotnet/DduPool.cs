@@ -20,53 +20,6 @@ namespace Pulumiverse.Dynatrace
     /// - DDU Pools - https://www.dynatrace.com/support/help/monitoring-consumption/davis-data-units#ddu-pools
     /// 
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:accounting.ddu.limit`)
-    /// 
-    /// ## Resource Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var _name_ = new Dynatrace.DduPool("#name#", new()
-    ///     {
-    ///         Events = new Dynatrace.Inputs.DduPoolEventsArgs
-    ///         {
-    ///             Enabled = true,
-    ///             Type = "MONTHLY",
-    ///             Value = 125,
-    ///         },
-    ///         LogMonitoring = new Dynatrace.Inputs.DduPoolLogMonitoringArgs
-    ///         {
-    ///             Enabled = true,
-    ///             Type = "MONTHLY",
-    ///             Value = 124,
-    ///         },
-    ///         Metrics = new Dynatrace.Inputs.DduPoolMetricsArgs
-    ///         {
-    ///             Enabled = true,
-    ///             Type = "MONTHLY",
-    ///             Value = 123,
-    ///         },
-    ///         Serverless = new Dynatrace.Inputs.DduPoolServerlessArgs
-    ///         {
-    ///             Enabled = true,
-    ///             Type = "MONTHLY",
-    ///             Value = 126,
-    ///         },
-    ///         Traces = new Dynatrace.Inputs.DduPoolTracesArgs
-    ///         {
-    ///             Enabled = true,
-    ///             Type = "MONTHLY",
-    ///             Value = 127,
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/dduPool:DduPool")]
     public partial class DduPool : global::Pulumi.CustomResource

@@ -22,52 +22,6 @@ namespace Pulumiverse.Dynatrace
     /// - Service-Level Objectives overview - hhttps://docs.dynatrace.com/docs/deliver/service-level-objectives
     /// 
     /// - SLO Service Public API - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Service-Level+Objectives
-    /// 
-    /// ## Resource Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var _name_ = new Dynatrace.PlatformSlo("#name#", new()
-    ///     {
-    ///         Criteria = new Dynatrace.Inputs.PlatformSloCriteriaArgs
-    ///         {
-    ///             CriteriaDetails = new[]
-    ///             {
-    ///                 new Dynatrace.Inputs.PlatformSloCriteriaCriteriaDetailArgs
-    ///                 {
-    ///                     Target = 96,
-    ///                     TimeframeFrom = "now-30d",
-    ///                     TimeframeTo = "now",
-    ///                     Warning = 99,
-    ///                 },
-    ///             },
-    ///         },
-    ///         CustomSli = new Dynatrace.Inputs.PlatformSloCustomSliArgs
-    ///         {
-    ///             Indicator = @"  timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }, by: { dt.entity.service }
-    ///   | fieldsAdd tags=entityAttr(dt.entity.service, ""tags"")
-    ///   | filter in(tags, ""criticality:Gold"")
-    ///   | fieldsAdd entityName = entityName(dt.entity.service)
-    ///   | fieldsAdd sli=(((total[]-failures[])/total[])*(100))
-    ///   | fieldsRemove total, failures, tags
-    /// 
-    /// ",
-    ///         },
-    ///         Description = "Sample custom SLO",
-    ///         Tags = new[]
-    ///         {
-    ///             "ExampleKey:ExampleValue",
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/platformSlo:PlatformSlo")]
     public partial class PlatformSlo : global::Pulumi.CustomResource

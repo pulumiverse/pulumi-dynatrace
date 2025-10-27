@@ -19,43 +19,6 @@ import (
 // - Services - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services
 //
 // - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-detection-rules`)
-//
-// ## Resource Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewServiceDetectionRules(ctx, "#name#", &dynatrace.ServiceDetectionRulesArgs{
-//				Enabled: pulumi.Bool(false),
-//				Rule: &dynatrace.ServiceDetectionRulesRuleArgs{
-//					AdditionalRequiredAttributes: pulumi.StringArray{
-//						pulumi.String("attribute-1"),
-//						pulumi.String("attribute-2"),
-//					},
-//					Condition:           pulumi.String("matchesValue(k8s.cluster.name,\"terraform\")"),
-//					Description:         pulumi.String("Example description"),
-//					RuleName:            pulumi.String("#name#"),
-//					ServiceNameTemplate: pulumi.String("{k8s.workload.name}"),
-//				},
-//				Scope: pulumi.String("environment"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type ServiceDetectionRules struct {
 	pulumi.CustomResourceState
 

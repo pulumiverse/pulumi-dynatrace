@@ -62,40 +62,6 @@ class AwaitableGetManagementZonesResult(GetManagementZonesResult):
 def get_management_zones(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementZonesResult:
     """
     The management zones data source allows retrieval of all management zones.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    test = dynatrace.get_management_zones()
-    _name_ = dynatrace.CalculatedServiceMetric("#name#",
-        enabled=True,
-        management_zones=[test.values[0].id],
-        metric_key="calc:service.#name#",
-        unit="MILLI_SECOND_PER_MINUTE",
-        conditions=[{
-            "conditions": [{
-                "attribute": "HTTP_REQUEST_METHOD",
-                "comparison": {
-                    "negate": False,
-                    "http_method": {
-                        "operator": "EQUALS_ANY_OF",
-                        "values": [
-                            "POST",
-                            "GET",
-                        ],
-                    },
-                },
-            }],
-        }],
-        metric_definition={
-            "metric": "REQUEST_ATTRIBUTE",
-            "request_attribute": "foo",
-        })
-    ```
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -107,40 +73,6 @@ def get_management_zones(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitab
 def get_management_zones_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementZonesResult]:
     """
     The management zones data source allows retrieval of all management zones.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    test = dynatrace.get_management_zones()
-    _name_ = dynatrace.CalculatedServiceMetric("#name#",
-        enabled=True,
-        management_zones=[test.values[0].id],
-        metric_key="calc:service.#name#",
-        unit="MILLI_SECOND_PER_MINUTE",
-        conditions=[{
-            "conditions": [{
-                "attribute": "HTTP_REQUEST_METHOD",
-                "comparison": {
-                    "negate": False,
-                    "http_method": {
-                        "operator": "EQUALS_ANY_OF",
-                        "values": [
-                            "POST",
-                            "GET",
-                        ],
-                    },
-                },
-            }],
-        }],
-        metric_definition={
-            "metric": "REQUEST_ATTRIBUTE",
-            "request_attribute": "foo",
-        })
-    ```
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

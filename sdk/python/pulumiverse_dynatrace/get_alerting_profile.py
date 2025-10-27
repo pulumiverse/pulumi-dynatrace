@@ -81,8 +81,9 @@ def get_alerting_profile(name: Optional[_builtins.str] = None,
     import pulumiverse_dynatrace as dynatrace
 
     default = dynatrace.get_alerting_profile(name="Default")
-    my_webhook_notification = dynatrace.WebhookNotification("myWebhookNotification",
+    my_webhook_notification = dynatrace.WebhookNotification("my_webhook_notification",
         active=False,
+        name="my_webhook_notification",
         profile=default.id,
         url="https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e",
         insecure=True,
@@ -114,8 +115,9 @@ def get_alerting_profile_output(name: Optional[pulumi.Input[_builtins.str]] = No
     import pulumiverse_dynatrace as dynatrace
 
     default = dynatrace.get_alerting_profile(name="Default")
-    my_webhook_notification = dynatrace.WebhookNotification("myWebhookNotification",
+    my_webhook_notification = dynatrace.WebhookNotification("my_webhook_notification",
         active=False,
+        name="my_webhook_notification",
         profile=default.id,
         url="https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e",
         insecure=True,

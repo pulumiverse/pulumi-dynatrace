@@ -630,25 +630,6 @@ class RpcBasedSampling(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rpc-based-sampling`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.RpcBasedSampling("#name#",
-            enabled=False,
-            endpoint_name="#name#-endpoint",
-            endpoint_name_comparison_type="DOES_NOT_END_WITH",
-            ignore=True,
-            remote_operation_name="#name#-operation",
-            remote_operation_name_comparison_type="CONTAINS",
-            remote_service_name="#name#-service",
-            remote_service_name_comparison_type="STARTS_WITH",
-            scope="environment",
-            wire_protocol_type="8")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -726,25 +707,6 @@ class RpcBasedSampling(pulumi.CustomResource):
         - Trace sampling - https://docs.dynatrace.com/docs/shortlink/url-sampling
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rpc-based-sampling`)
-
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.RpcBasedSampling("#name#",
-            enabled=False,
-            endpoint_name="#name#-endpoint",
-            endpoint_name_comparison_type="DOES_NOT_END_WITH",
-            ignore=True,
-            remote_operation_name="#name#-operation",
-            remote_operation_name_comparison_type="CONTAINS",
-            remote_service_name="#name#-service",
-            remote_service_name_comparison_type="STARTS_WITH",
-            scope="environment",
-            wire_protocol_type="8")
-        ```
 
         :param str resource_name: The name of the resource.
         :param RpcBasedSamplingArgs args: The arguments to use to populate this resource's properties.

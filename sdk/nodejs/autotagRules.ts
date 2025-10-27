@@ -25,12 +25,15 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const sampleAutotagV2 = new dynatrace.AutotagV2("sampleAutotagV2", {rulesMaintainedExternally: true});
+ * const sample = new dynatrace.AutotagV2("sample", {
+ *     name: "sample",
+ *     rulesMaintainedExternally: true,
+ * });
  * //Be careful when maintaining `dynatrace_autotag_rules` in separate modules.
  * //Do not execute `pulumi up` in parallel when several modules contain 
  * //`dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
- * const sampleAutotagRules = new dynatrace.AutotagRules("sampleAutotagRules", {
- *     autoTagId: sampleAutotagV2.id,
+ * const sampleAutotagRules = new dynatrace.AutotagRules("sample", {
+ *     autoTagId: sample.id,
  *     rules: {
  *         rules: [{
  *             type: "SELECTOR",

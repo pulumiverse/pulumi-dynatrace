@@ -92,52 +92,6 @@ def get_credentials(name: Optional[_builtins.str] = None,
     """
     The `Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    creds = dynatrace.get_credentials(name="Office365 Access Token")
-    _name_ = dynatrace.HttpMonitor("#name#",
-        enabled=True,
-        frequency=60,
-        locations=["SYNTHETIC_LOCATION-781752216580B1BC"],
-        anomaly_detections=[{
-            "loading_time_thresholds": [{
-                "enabled": True,
-            }],
-            "outage_handlings": [{
-                "global_outage": True,
-                "local_outage": False,
-                "retry_on_error": False,
-            }],
-        }],
-        script={
-            "requests": [{
-                "description": "google.com",
-                "method": "GET",
-                "url": "https://www.google.com",
-                "authentication": {
-                    "type": "BASIC_AUTHENTICATION",
-                    "credentials": creds.id,
-                },
-                "configuration": {
-                    "accept_any_certificate": True,
-                    "follow_redirects": True,
-                },
-                "validation": {
-                    "rules": [{
-                        "type": "httpStatusesList",
-                        "pass_if_found": False,
-                        "value": ">=400",
-                    }],
-                },
-            }],
-        })
-    ```
-
 
     :param _builtins.str name: The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match
     :param _builtins.str scope: The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.
@@ -161,52 +115,6 @@ def get_credentials_output(name: Optional[pulumi.Input[Optional[_builtins.str]]]
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCredentialsResult]:
     """
     The `Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    creds = dynatrace.get_credentials(name="Office365 Access Token")
-    _name_ = dynatrace.HttpMonitor("#name#",
-        enabled=True,
-        frequency=60,
-        locations=["SYNTHETIC_LOCATION-781752216580B1BC"],
-        anomaly_detections=[{
-            "loading_time_thresholds": [{
-                "enabled": True,
-            }],
-            "outage_handlings": [{
-                "global_outage": True,
-                "local_outage": False,
-                "retry_on_error": False,
-            }],
-        }],
-        script={
-            "requests": [{
-                "description": "google.com",
-                "method": "GET",
-                "url": "https://www.google.com",
-                "authentication": {
-                    "type": "BASIC_AUTHENTICATION",
-                    "credentials": creds.id,
-                },
-                "configuration": {
-                    "accept_any_certificate": True,
-                    "follow_redirects": True,
-                },
-                "validation": {
-                    "rules": [{
-                        "type": "httpStatusesList",
-                        "pass_if_found": False,
-                        "value": ">=400",
-                    }],
-                },
-            }],
-        })
-    ```
 
 
     :param _builtins.str name: The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match

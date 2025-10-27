@@ -13,22 +13,6 @@ import * as utilities from "./utilities";
  * - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
  *
  * If multiple services match the given criteria, the first result will be retrieved.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getService({
- *     name: "Example",
- *     tags: [
- *         "TerraformKeyTest",
- *         "TerraformKeyValueTest=TestValue",
- *     ],
- * });
- * const _name_ = new dynatrace.KeyRequests("#name#", {service: test.then(test => test.id)});
- * ```
  */
 export function getService(args: GetServiceArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -75,22 +59,6 @@ export interface GetServiceResult {
  * - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
  *
  * If multiple services match the given criteria, the first result will be retrieved.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getService({
- *     name: "Example",
- *     tags: [
- *         "TerraformKeyTest",
- *         "TerraformKeyValueTest=TestValue",
- *     ],
- * });
- * const _name_ = new dynatrace.KeyRequests("#name#", {service: test.then(test => test.id)});
- * ```
  */
 export function getServiceOutput(args: GetServiceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServiceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

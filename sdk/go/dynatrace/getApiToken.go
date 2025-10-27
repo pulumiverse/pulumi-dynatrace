@@ -29,13 +29,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			exampleApiToken, err := dynatrace.LookupApiToken(ctx, &dynatrace.LookupApiTokenArgs{
+//			example, err := dynatrace.LookupApiToken(ctx, &dynatrace.LookupApiTokenArgs{
 //				Name: "Terraform",
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			ctx.Export("example", exampleApiToken)
+//			ctx.Export("example", example)
 //			return nil
 //		})
 //	}

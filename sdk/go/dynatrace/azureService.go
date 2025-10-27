@@ -42,7 +42,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			tERRAFORMSAMPLE, err := dynatrace.NewAzureCredentials(ctx, "tERRAFORMSAMPLE", &dynatrace.AzureCredentialsArgs{
+//			TERRAFORM_SAMPLE, err := dynatrace.NewAzureCredentials(ctx, "TERRAFORM_SAMPLE", &dynatrace.AzureCredentialsArgs{
 //				Active:                    pulumi.Bool(false),
 //				AppId:                     pulumi.String("ABCDE"),
 //				AutoTagging:               pulumi.Bool(true),
@@ -70,9 +70,10 @@ import (
 //			}
 //			var tERRAFORMSAMPLEServices []*dynatrace.AzureService
 //			for key0, _ := range supportedServices.Services {
-//				__res, err := dynatrace.NewAzureService(ctx, fmt.Sprintf("tERRAFORMSAMPLEServices-%v", key0), &dynatrace.AzureServiceArgs{
-//					CredentialsId:         tERRAFORMSAMPLE.ID(),
+//				__res, err := dynatrace.NewAzureService(ctx, fmt.Sprintf("TERRAFORM_SAMPLE_services-%v", key0), &dynatrace.AzureServiceArgs{
+//					CredentialsId:         TERRAFORM_SAMPLE.ID(),
 //					UseRecommendedMetrics: pulumi.Bool(true),
+//					Name:                  pulumi.String(key0),
 //				})
 //				if err != nil {
 //					return err

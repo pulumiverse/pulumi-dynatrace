@@ -35,6 +35,7 @@ namespace Pulumiverse.Dynatrace
     ///     var @this = new Dynatrace.Document("this", new()
     ///     {
     ///         Type = "dashboard",
+    ///         Name = "Example Dashboard",
     ///         Content = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
     ///         {
     ///             ["version"] = 13,

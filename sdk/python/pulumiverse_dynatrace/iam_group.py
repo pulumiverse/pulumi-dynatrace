@@ -160,13 +160,15 @@ class IamGroup(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        restricted = dynatrace.IamGroup("restricted", permissions={
-            "permissions": [{
-                "name": "tenant-viewer",
-                "scope": "<environment-id>:<managementzone-id>",
-                "type": "management-zone",
-            }],
-        })
+        restricted = dynatrace.IamGroup("Restricted",
+            name="Restricted",
+            permissions={
+                "permissions": [{
+                    "name": "tenant-viewer",
+                    "type": "management-zone",
+                    "scope": "<environment-id>:<managementzone-id>",
+                }],
+            })
         ```
 
         :param str resource_name: The name of the resource.
@@ -197,13 +199,15 @@ class IamGroup(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        restricted = dynatrace.IamGroup("restricted", permissions={
-            "permissions": [{
-                "name": "tenant-viewer",
-                "scope": "<environment-id>:<managementzone-id>",
-                "type": "management-zone",
-            }],
-        })
+        restricted = dynatrace.IamGroup("Restricted",
+            name="Restricted",
+            permissions={
+                "permissions": [{
+                    "name": "tenant-viewer",
+                    "type": "management-zone",
+                    "scope": "<environment-id>:<managementzone-id>",
+                }],
+            })
         ```
 
         :param str resource_name: The name of the resource.

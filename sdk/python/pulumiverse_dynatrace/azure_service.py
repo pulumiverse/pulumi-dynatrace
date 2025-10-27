@@ -208,7 +208,7 @@ class AzureService(pulumi.CustomResource):
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        t_erraformsample = dynatrace.AzureCredentials("tERRAFORMSAMPLE",
+        terrafor_m__sample = dynatrace.AzureCredentials("TERRAFORM_SAMPLE",
             active=False,
             app_id="ABCDE",
             auto_tagging=True,
@@ -223,9 +223,10 @@ class AzureService(pulumi.CustomResource):
         supported_services = dynatrace.get_azure_supported_services(excepts=["AZURE_STORAGE_ACCOUNT"])
         t_erraformsample_services = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AzureService(f"tERRAFORMSAMPLEServices-{range['key']}",
-                credentials_id=t_erraformsample.id,
-                use_recommended_metrics=True))
+            t_erraformsample_services.append(dynatrace.AzureService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+                credentials_id=terrafor_m__sample.id,
+                use_recommended_metrics=True,
+                name=range["key"]))
         ```
 
         :param str resource_name: The name of the resource.
@@ -263,7 +264,7 @@ class AzureService(pulumi.CustomResource):
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        t_erraformsample = dynatrace.AzureCredentials("tERRAFORMSAMPLE",
+        terrafor_m__sample = dynatrace.AzureCredentials("TERRAFORM_SAMPLE",
             active=False,
             app_id="ABCDE",
             auto_tagging=True,
@@ -278,9 +279,10 @@ class AzureService(pulumi.CustomResource):
         supported_services = dynatrace.get_azure_supported_services(excepts=["AZURE_STORAGE_ACCOUNT"])
         t_erraformsample_services = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AzureService(f"tERRAFORMSAMPLEServices-{range['key']}",
-                credentials_id=t_erraformsample.id,
-                use_recommended_metrics=True))
+            t_erraformsample_services.append(dynatrace.AzureService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+                credentials_id=terrafor_m__sample.id,
+                use_recommended_metrics=True,
+                name=range["key"]))
         ```
 
         :param str resource_name: The name of the resource.

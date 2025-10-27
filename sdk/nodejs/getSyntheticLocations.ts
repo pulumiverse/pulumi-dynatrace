@@ -11,50 +11,6 @@ import * as utilities from "./utilities";
  *
  * > For Provider versions earlier than v1.80.0: This data source requires the API token scope **Read synthetic monitors, locations, and nodes** (`ReadSyntheticData`)
  * For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getSyntheticLocations({
- *     name: "Sydney",
- * });
- * const _name_ = new dynatrace.HttpMonitor("#name#", {
- *     enabled: true,
- *     frequency: 60,
- *     locations: [test.then(test => test.locations?.entityId)],
- *     anomalyDetections: [{
- *         loadingTimeThresholds: [{
- *             enabled: true,
- *         }],
- *         outageHandlings: [{
- *             globalOutage: true,
- *             localOutage: false,
- *             retryOnError: false,
- *         }],
- *     }],
- *     script: {
- *         requests: [{
- *             description: "google.com",
- *             method: "GET",
- *             url: "https://www.google.com",
- *             configuration: {
- *                 acceptAnyCertificate: true,
- *                 followRedirects: true,
- *             },
- *             validation: {
- *                 rules: [{
- *                     type: "httpStatusesList",
- *                     passIfFound: false,
- *                     value: ">=400",
- *                 }],
- *             },
- *         }],
- *     },
- * });
- * ```
  */
 export function getSyntheticLocations(args?: GetSyntheticLocationsArgs, opts?: pulumi.InvokeOptions): Promise<GetSyntheticLocationsResult> {
     args = args || {};
@@ -94,50 +50,6 @@ export interface GetSyntheticLocationsResult {
  *
  * > For Provider versions earlier than v1.80.0: This data source requires the API token scope **Read synthetic monitors, locations, and nodes** (`ReadSyntheticData`)
  * For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getSyntheticLocations({
- *     name: "Sydney",
- * });
- * const _name_ = new dynatrace.HttpMonitor("#name#", {
- *     enabled: true,
- *     frequency: 60,
- *     locations: [test.then(test => test.locations?.entityId)],
- *     anomalyDetections: [{
- *         loadingTimeThresholds: [{
- *             enabled: true,
- *         }],
- *         outageHandlings: [{
- *             globalOutage: true,
- *             localOutage: false,
- *             retryOnError: false,
- *         }],
- *     }],
- *     script: {
- *         requests: [{
- *             description: "google.com",
- *             method: "GET",
- *             url: "https://www.google.com",
- *             configuration: {
- *                 acceptAnyCertificate: true,
- *                 followRedirects: true,
- *             },
- *             validation: {
- *                 rules: [{
- *                     type: "httpStatusesList",
- *                     passIfFound: false,
- *                     value: ">=400",
- *                 }],
- *             },
- *         }],
- *     },
- * });
- * ```
  */
 export function getSyntheticLocationsOutput(args?: GetSyntheticLocationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSyntheticLocationsResult> {
     args = args || {};

@@ -38,31 +38,35 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			thisIamPolicyBoundary, err := dynatrace.NewIamPolicyBoundary(ctx, "thisIamPolicyBoundary", &dynatrace.IamPolicyBoundaryArgs{
+//			this, err := dynatrace.NewIamPolicyBoundary(ctx, "this", &dynatrace.IamPolicyBoundaryArgs{
+//				Name:  pulumi.String("Foo"),
 //				Query: pulumi.String("environment:management-zone startsWith \"[Foo]\";"),
 //			})
 //			if err != nil {
 //				return err
 //			}
-//			thisIamGroup, err := dynatrace.NewIamGroup(ctx, "thisIamGroup", nil)
+//			thisIamGroup, err := dynatrace.NewIamGroup(ctx, "this", &dynatrace.IamGroupArgs{
+//				Name: pulumi.String("my-group-name"),
+//			})
 //			if err != nil {
 //				return err
 //			}
-//			thisIamPolicy, err := dynatrace.NewIamPolicy(ctx, "thisIamPolicy", &dynatrace.IamPolicyArgs{
+//			thisIamPolicy, err := dynatrace.NewIamPolicy(ctx, "this", &dynatrace.IamPolicyArgs{
+//				Name:           pulumi.String("this"),
 //				Account:        pulumi.String("########-####-####-####-############"),
 //				StatementQuery: pulumi.String("ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"#########\";"),
 //			})
 //			if err != nil {
 //				return err
 //			}
-//			_, err = dynatrace.NewIamPolicyBindingsV2(ctx, "thisIamPolicyBindingsV2", &dynatrace.IamPolicyBindingsV2Args{
+//			_, err = dynatrace.NewIamPolicyBindingsV2(ctx, "this", &dynatrace.IamPolicyBindingsV2Args{
 //				Environment: pulumi.String("########"),
 //				Group:       thisIamGroup.ID(),
 //				Policies: dynatrace.IamPolicyBindingsV2PolicyArray{
 //					&dynatrace.IamPolicyBindingsV2PolicyArgs{
 //						Id: thisIamPolicy.ID(),
 //						Boundaries: pulumi.StringArray{
-//							thisIamPolicyBoundary.ID(),
+//							this.ID(),
 //						},
 //					},
 //				},

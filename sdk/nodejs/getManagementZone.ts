@@ -12,42 +12,6 @@ import * as utilities from "./utilities";
  * !> This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
  *
  * - `name` queries for all management zones with the specified name
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getManagementZone({
- *     name: "Example",
- * });
- * const _name_ = new dynatrace.CalculatedServiceMetric("#name#", {
- *     conditions: [{
- *         conditions: [{
- *             attribute: "HTTP_REQUEST_METHOD",
- *             comparison: {
- *                 httpMethod: {
- *                     operator: "EQUALS_ANY_OF",
- *                     values: [
- *                         "POST",
- *                         "GET",
- *                     ],
- *                 },
- *                 negate: false,
- *             },
- *         }],
- *     }],
- *     enabled: true,
- *     managementZones: [test.then(test => test.id)],
- *     metricDefinition: {
- *         metric: "REQUEST_ATTRIBUTE",
- *         requestAttribute: "foo",
- *     },
- *     metricKey: "calc:service.#name#",
- *     unit: "MILLI_SECOND_PER_MINUTE",
- * });
- * ```
  */
 export function getManagementZone(args: GetManagementZoneArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementZoneResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -83,42 +47,6 @@ export interface GetManagementZoneResult {
  * !> This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
  *
  * - `name` queries for all management zones with the specified name
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getManagementZone({
- *     name: "Example",
- * });
- * const _name_ = new dynatrace.CalculatedServiceMetric("#name#", {
- *     conditions: [{
- *         conditions: [{
- *             attribute: "HTTP_REQUEST_METHOD",
- *             comparison: {
- *                 httpMethod: {
- *                     operator: "EQUALS_ANY_OF",
- *                     values: [
- *                         "POST",
- *                         "GET",
- *                     ],
- *                 },
- *                 negate: false,
- *             },
- *         }],
- *     }],
- *     enabled: true,
- *     managementZones: [test.then(test => test.id)],
- *     metricDefinition: {
- *         metric: "REQUEST_ATTRIBUTE",
- *         requestAttribute: "foo",
- *     },
- *     metricKey: "calc:service.#name#",
- *     unit: "MILLI_SECOND_PER_MINUTE",
- * });
- * ```
  */
 export function getManagementZoneOutput(args: GetManagementZoneOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementZoneResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

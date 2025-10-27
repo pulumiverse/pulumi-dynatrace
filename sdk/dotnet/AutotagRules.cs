@@ -33,17 +33,18 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var sampleAutotagV2 = new Dynatrace.AutotagV2("sampleAutotagV2", new()
+    ///     var sample = new Dynatrace.AutotagV2("sample", new()
     ///     {
+    ///         Name = "sample",
     ///         RulesMaintainedExternally = true,
     ///     });
     /// 
     ///     //Be careful when maintaining `dynatrace_autotag_rules` in separate modules.
     ///     //Do not execute `pulumi up` in parallel when several modules contain 
     ///     //`dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
-    ///     var sampleAutotagRules = new Dynatrace.AutotagRules("sampleAutotagRules", new()
+    ///     var sampleAutotagRules = new Dynatrace.AutotagRules("sample", new()
     ///     {
-    ///         AutoTagId = sampleAutotagV2.Id,
+    ///         AutoTagId = sample.Id,
     ///         Rules = new Dynatrace.Inputs.AutotagRulesRulesArgs
     ///         {
     ///             Rules = new[]

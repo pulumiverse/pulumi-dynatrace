@@ -21,42 +21,6 @@ namespace Pulumiverse.Dynatrace
         /// - `Tags` (optional) refers to the tags that need to be present for the process (inclusive)
         /// 
         /// If multiple processes match the given criteria, the first result will be retrieved.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// using Dynatrace = Pulumiverse.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Dynatrace.GetProcess.Invoke(new()
-        ///     {
-        ///         Name = "Example",
-        ///         Tags = new[]
-        ///         {
-        ///             "TerraformKeyTest",
-        ///             "TerraformKeyValueTest=TestValue",
-        ///         },
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.ManagementZone("#name#", new()
-        ///     {
-        ///         EntitySelectorBasedRules = new[]
-        ///         {
-        ///             new Dynatrace.Inputs.ManagementZoneEntitySelectorBasedRuleArgs
-        ///             {
-        ///                 Enabled = true,
-        ///                 Selector = $"type(\"process_group_instance\"),entityId(\"{test.Apply(getProcessResult =&gt; getProcessResult.Id)}\")",
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Task<GetProcessResult> InvokeAsync(GetProcessArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProcessResult>("dynatrace:index/getProcess:getProcess", args ?? new GetProcessArgs(), options.WithDefaults());
@@ -70,42 +34,6 @@ namespace Pulumiverse.Dynatrace
         /// - `Tags` (optional) refers to the tags that need to be present for the process (inclusive)
         /// 
         /// If multiple processes match the given criteria, the first result will be retrieved.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// using Dynatrace = Pulumiverse.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Dynatrace.GetProcess.Invoke(new()
-        ///     {
-        ///         Name = "Example",
-        ///         Tags = new[]
-        ///         {
-        ///             "TerraformKeyTest",
-        ///             "TerraformKeyValueTest=TestValue",
-        ///         },
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.ManagementZone("#name#", new()
-        ///     {
-        ///         EntitySelectorBasedRules = new[]
-        ///         {
-        ///             new Dynatrace.Inputs.ManagementZoneEntitySelectorBasedRuleArgs
-        ///             {
-        ///                 Enabled = true,
-        ///                 Selector = $"type(\"process_group_instance\"),entityId(\"{test.Apply(getProcessResult =&gt; getProcessResult.Id)}\")",
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetProcessResult> Invoke(GetProcessInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProcessResult>("dynatrace:index/getProcess:getProcess", args ?? new GetProcessInvokeArgs(), options.WithDefaults());
@@ -119,42 +47,6 @@ namespace Pulumiverse.Dynatrace
         /// - `Tags` (optional) refers to the tags that need to be present for the process (inclusive)
         /// 
         /// If multiple processes match the given criteria, the first result will be retrieved.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// using Dynatrace = Pulumiverse.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Dynatrace.GetProcess.Invoke(new()
-        ///     {
-        ///         Name = "Example",
-        ///         Tags = new[]
-        ///         {
-        ///             "TerraformKeyTest",
-        ///             "TerraformKeyValueTest=TestValue",
-        ///         },
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.ManagementZone("#name#", new()
-        ///     {
-        ///         EntitySelectorBasedRules = new[]
-        ///         {
-        ///             new Dynatrace.Inputs.ManagementZoneEntitySelectorBasedRuleArgs
-        ///             {
-        ///                 Enabled = true,
-        ///                 Selector = $"type(\"process_group_instance\"),entityId(\"{test.Apply(getProcessResult =&gt; getProcessResult.Id)}\")",
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetProcessResult> Invoke(GetProcessInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetProcessResult>("dynatrace:index/getProcess:getProcess", args ?? new GetProcessInvokeArgs(), options.WithDefaults());

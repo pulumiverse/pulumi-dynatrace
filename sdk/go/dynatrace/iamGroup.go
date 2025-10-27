@@ -37,13 +37,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewIamGroup(ctx, "restricted", &dynatrace.IamGroupArgs{
+//			_, err := dynatrace.NewIamGroup(ctx, "Restricted", &dynatrace.IamGroupArgs{
+//				Name: pulumi.String("Restricted"),
 //				Permissions: &dynatrace.IamGroupPermissionsArgs{
 //					Permissions: dynatrace.IamGroupPermissionsPermissionArray{
 //						&dynatrace.IamGroupPermissionsPermissionArgs{
 //							Name:  pulumi.String("tenant-viewer"),
-//							Scope: pulumi.String("<environment-id>:<managementzone-id>"),
 //							Type:  pulumi.String("management-zone"),
+//							Scope: pulumi.String("<environment-id>:<managementzone-id>"),
 //						},
 //					},
 //				},

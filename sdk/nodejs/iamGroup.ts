@@ -25,13 +25,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const restricted = new dynatrace.IamGroup("restricted", {permissions: {
- *     permissions: [{
- *         name: "tenant-viewer",
- *         scope: "<environment-id>:<managementzone-id>",
- *         type: "management-zone",
- *     }],
- * }});
+ * const restricted = new dynatrace.IamGroup("Restricted", {
+ *     name: "Restricted",
+ *     permissions: {
+ *         permissions: [{
+ *             name: "tenant-viewer",
+ *             type: "management-zone",
+ *             scope: "<environment-id>:<managementzone-id>",
+ *         }],
+ *     },
+ * });
  * ```
  */
 export class IamGroup extends pulumi.CustomResource {

@@ -84,40 +84,6 @@ def get_management_zone_v2(name: Optional[_builtins.str] = None,
     > This data source requires the API token scopes **Read settings** (`settings.read`)
 
     - `name` queries for all management zones with the specified name
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    test = dynatrace.get_management_zone_v2(name="Example")
-    _name_ = dynatrace.CalculatedServiceMetric("#name#",
-        conditions=[{
-            "conditions": [{
-                "attribute": "HTTP_REQUEST_METHOD",
-                "comparison": {
-                    "http_method": {
-                        "operator": "EQUALS_ANY_OF",
-                        "values": [
-                            "POST",
-                            "GET",
-                        ],
-                    },
-                    "negate": False,
-                },
-            }],
-        }],
-        enabled=True,
-        management_zones=[test.legacy_id],
-        metric_definition={
-            "metric": "REQUEST_ATTRIBUTE",
-            "request_attribute": "foo",
-        },
-        metric_key="calc:service.#name#",
-        unit="MILLI_SECOND_PER_MINUTE")
-    ```
     """
     __args__ = dict()
     __args__['name'] = name
@@ -137,40 +103,6 @@ def get_management_zone_v2_output(name: Optional[pulumi.Input[_builtins.str]] = 
     > This data source requires the API token scopes **Read settings** (`settings.read`)
 
     - `name` queries for all management zones with the specified name
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    test = dynatrace.get_management_zone_v2(name="Example")
-    _name_ = dynatrace.CalculatedServiceMetric("#name#",
-        conditions=[{
-            "conditions": [{
-                "attribute": "HTTP_REQUEST_METHOD",
-                "comparison": {
-                    "http_method": {
-                        "operator": "EQUALS_ANY_OF",
-                        "values": [
-                            "POST",
-                            "GET",
-                        ],
-                    },
-                    "negate": False,
-                },
-            }],
-        }],
-        enabled=True,
-        management_zones=[test.legacy_id],
-        metric_definition={
-            "metric": "REQUEST_ATTRIBUTE",
-            "request_attribute": "foo",
-        },
-        metric_key="calc:service.#name#",
-        unit="MILLI_SECOND_PER_MINUTE")
-    ```
     """
     __args__ = dict()
     __args__['name'] = name

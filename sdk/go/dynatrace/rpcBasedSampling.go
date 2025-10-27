@@ -19,41 +19,6 @@ import (
 // - Trace sampling - https://docs.dynatrace.com/docs/shortlink/url-sampling
 //
 // - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rpc-based-sampling`)
-//
-// ## Resource Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewRpcBasedSampling(ctx, "#name#", &dynatrace.RpcBasedSamplingArgs{
-//				Enabled:                           pulumi.Bool(false),
-//				EndpointName:                      pulumi.String("#name#-endpoint"),
-//				EndpointNameComparisonType:        pulumi.String("DOES_NOT_END_WITH"),
-//				Ignore:                            pulumi.Bool(true),
-//				RemoteOperationName:               pulumi.String("#name#-operation"),
-//				RemoteOperationNameComparisonType: pulumi.String("CONTAINS"),
-//				RemoteServiceName:                 pulumi.String("#name#-service"),
-//				RemoteServiceNameComparisonType:   pulumi.String("STARTS_WITH"),
-//				Scope:                             pulumi.String("environment"),
-//				WireProtocolType:                  pulumi.String("8"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type RpcBasedSampling struct {
 	pulumi.CustomResourceState
 

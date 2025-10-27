@@ -29,17 +29,17 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Dynatrace.ManagedInternetProxy("test", new()
+    ///     var test = new Dynatrace.ManagedInternetProxy("Test", new()
     ///     {
+    ///         Scheme = "http",
+    ///         Server = "zAOE-GV81/65oVgaIlPYTCADGSPFJ9ZqXYNGbxn97dbq:flAI2E8e8bfOvlmaGu",
+    ///         Port = 65535,
+    ///         User = "string",
+    ///         Password = "string",
     ///         NonProxyHosts = new[]
     ///         {
     ///             "string",
     ///         },
-    ///         Password = "string",
-    ///         Port = 65535,
-    ///         Scheme = "http",
-    ///         Server = "zAOE-GV81/65oVgaIlPYTCADGSPFJ9ZqXYNGbxn97dbq:flAI2E8e8bfOvlmaGu",
-    ///         User = "string",
     ///     });
     /// 
     /// });

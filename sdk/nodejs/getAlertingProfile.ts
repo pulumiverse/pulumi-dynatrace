@@ -17,8 +17,9 @@ import * as utilities from "./utilities";
  * const _default = dynatrace.getAlertingProfile({
  *     name: "Default",
  * });
- * const myWebhookNotification = new dynatrace.WebhookNotification("myWebhookNotification", {
+ * const myWebhookNotification = new dynatrace.WebhookNotification("my_webhook_notification", {
  *     active: false,
+ *     name: "my_webhook_notification",
  *     profile: _default.then(_default => _default.id),
  *     url: "https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e",
  *     insecure: true,
@@ -66,8 +67,9 @@ export interface GetAlertingProfileResult {
  * const _default = dynatrace.getAlertingProfile({
  *     name: "Default",
  * });
- * const myWebhookNotification = new dynatrace.WebhookNotification("myWebhookNotification", {
+ * const myWebhookNotification = new dynatrace.WebhookNotification("my_webhook_notification", {
  *     active: false,
+ *     name: "my_webhook_notification",
  *     profile: _default.then(_default => _default.id),
  *     url: "https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e",
  *     insecure: true,
