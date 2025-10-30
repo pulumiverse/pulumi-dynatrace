@@ -38,6 +38,7 @@
         "attributeMasking.ts",
         "attributesPreferences.ts",
         "auditLog.ts",
+        "automationApproval.ts",
         "automationBusinessCalendar.ts",
         "automationControllerConnections.ts",
         "automationSchedulingRule.ts",

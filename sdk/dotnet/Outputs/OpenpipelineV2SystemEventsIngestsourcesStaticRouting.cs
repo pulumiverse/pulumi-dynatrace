@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? PipelineId;
         /// <summary>
-        /// Possible Values: `Builtin`, `Custom`
+        /// Pipeline Type. Possible Values: `Builtin`, `Custom`.
         /// </summary>
         public readonly string PipelineType;
 

@@ -34,6 +34,8 @@ type SyntheticLocation struct {
 	// * `STANDARD`: The location is deployed on Windows or Linux.
 	// * `KUBERNETES`: The location is deployed on Kubernetes
 	DeploymentType pulumi.StringPtrOutput `pulumi:"deploymentType"`
+	// Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+	FipsMode pulumi.StringPtrOutput `pulumi:"fipsMode"`
 	// The latitude of the location in `DDD.dddd` format
 	Latitude pulumi.Float64Output `pulumi:"latitude"`
 	// Alert if the location or node outage lasts longer than *X* minutes.
@@ -119,6 +121,8 @@ type syntheticLocationState struct {
 	// * `STANDARD`: The location is deployed on Windows or Linux.
 	// * `KUBERNETES`: The location is deployed on Kubernetes
 	DeploymentType *string `pulumi:"deploymentType"`
+	// Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+	FipsMode *string `pulumi:"fipsMode"`
 	// The latitude of the location in `DDD.dddd` format
 	Latitude *float64 `pulumi:"latitude"`
 	// Alert if the location or node outage lasts longer than *X* minutes.
@@ -169,6 +173,8 @@ type SyntheticLocationState struct {
 	// * `STANDARD`: The location is deployed on Windows or Linux.
 	// * `KUBERNETES`: The location is deployed on Kubernetes
 	DeploymentType pulumi.StringPtrInput
+	// Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+	FipsMode pulumi.StringPtrInput
 	// The latitude of the location in `DDD.dddd` format
 	Latitude pulumi.Float64PtrInput
 	// Alert if the location or node outage lasts longer than *X* minutes.
@@ -223,6 +229,8 @@ type syntheticLocationArgs struct {
 	// * `STANDARD`: The location is deployed on Windows or Linux.
 	// * `KUBERNETES`: The location is deployed on Kubernetes
 	DeploymentType *string `pulumi:"deploymentType"`
+	// Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+	FipsMode *string `pulumi:"fipsMode"`
 	// The latitude of the location in `DDD.dddd` format
 	Latitude float64 `pulumi:"latitude"`
 	// Alert if the location or node outage lasts longer than *X* minutes.
@@ -274,6 +282,8 @@ type SyntheticLocationArgs struct {
 	// * `STANDARD`: The location is deployed on Windows or Linux.
 	// * `KUBERNETES`: The location is deployed on Kubernetes
 	DeploymentType pulumi.StringPtrInput
+	// Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+	FipsMode pulumi.StringPtrInput
 	// The latitude of the location in `DDD.dddd` format
 	Latitude pulumi.Float64Input
 	// Alert if the location or node outage lasts longer than *X* minutes.
@@ -429,6 +439,11 @@ func (o SyntheticLocationOutput) CountryCode() pulumi.StringPtrOutput {
 // * `KUBERNETES`: The location is deployed on Kubernetes
 func (o SyntheticLocationOutput) DeploymentType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringPtrOutput { return v.DeploymentType }).(pulumi.StringPtrOutput)
+}
+
+// Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+func (o SyntheticLocationOutput) FipsMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringPtrOutput { return v.FipsMode }).(pulumi.StringPtrOutput)
 }
 
 // The latitude of the location in `DDD.dddd` format

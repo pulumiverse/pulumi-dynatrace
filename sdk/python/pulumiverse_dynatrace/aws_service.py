@@ -27,7 +27,7 @@ class AwsServiceArgs:
                  use_recommended_metrics: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AwsService resource.
-        :param pulumi.Input[_builtins.str] credentials_id: the ID of the azure credentials this supported service belongs to
+        :param pulumi.Input[_builtins.str] credentials_id: the ID of the AWS credentials this supported service belongs to
         :param pulumi.Input[_builtins.str] name: The name of the supporting service.
         """
         pulumi.set(__self__, "credentials_id", credentials_id)
@@ -42,7 +42,7 @@ class AwsServiceArgs:
     @pulumi.getter(name="credentialsId")
     def credentials_id(self) -> pulumi.Input[_builtins.str]:
         """
-        the ID of the azure credentials this supported service belongs to
+        the ID of the AWS credentials this supported service belongs to
         """
         return pulumi.get(self, "credentials_id")
 
@@ -93,7 +93,7 @@ class _AwsServiceState:
         """
         Input properties used for looking up and filtering AwsService resources.
         :param pulumi.Input[_builtins.bool] built_in: This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
-        :param pulumi.Input[_builtins.str] credentials_id: the ID of the azure credentials this supported service belongs to
+        :param pulumi.Input[_builtins.str] credentials_id: the ID of the AWS credentials this supported service belongs to
         :param pulumi.Input[_builtins.str] name: The name of the supporting service.
         """
         if built_in is not None:
@@ -125,7 +125,7 @@ class _AwsServiceState:
     @pulumi.getter(name="credentialsId")
     def credentials_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        the ID of the azure credentials this supported service belongs to
+        the ID of the AWS credentials this supported service belongs to
         """
         return pulumi.get(self, "credentials_id")
 
@@ -193,15 +193,14 @@ class AwsService(pulumi.CustomResource):
 
         - Amazon Web Services - https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/amazon-web-services/amazon-web-services-integrations/aws-service-metrics
 
+        - The dimensions and statistics for metrics for individual services - https://docs.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services
+
         - AWS credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/aws-credentials-api
 
         ## Resource Example Usage
 
         This example utilizes the data source `get_aws_supported_services` in order to query for a full list of all supported services.
         The `for_each` loop within the resource `AwsService` configures each of these services to get utilized with the default metrics recommended by Dynatrace (`use_recommended_metrics`).
-
-        If you want to configure a different set of metrics for a specific service, a separate resource `AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
-        Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
 
         ```python
         import pulumi
@@ -225,9 +224,40 @@ class AwsService(pulumi.CustomResource):
                 use_recommended_metrics=True))
         ```
 
+        If you want to configure a different set of metrics for a specific service, a separate resource `AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
+        Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example = dynatrace.AwsCredentials("example",
+            label="#name#",
+            partition_type="AWS_DEFAULT",
+            tagged_only=False,
+            authentication_data={
+                "account_id": "123456789",
+                "iam_role": "aws-monitoring-role",
+            })
+        elasti_cache = dynatrace.AwsService("elastiCache",
+            credentials_id=example.id,
+            metrics=[
+                {
+                    "name": "NetworkBandwidthOutAllowanceExceeded",
+                    "dimensions": ["CacheClusterId"],
+                    "statistic": "SUM",
+                },
+                {
+                    "name": "CPUUtilization",
+                    "dimensions": ["CacheClusterId"],
+                    "statistic": "AVG_MIN_MAX",
+                },
+            ])
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] credentials_id: the ID of the azure credentials this supported service belongs to
+        :param pulumi.Input[_builtins.str] credentials_id: the ID of the AWS credentials this supported service belongs to
         :param pulumi.Input[_builtins.str] name: The name of the supporting service.
         """
         ...
@@ -245,15 +275,14 @@ class AwsService(pulumi.CustomResource):
 
         - Amazon Web Services - https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/amazon-web-services/amazon-web-services-integrations/aws-service-metrics
 
+        - The dimensions and statistics for metrics for individual services - https://docs.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services
+
         - AWS credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/aws-credentials-api
 
         ## Resource Example Usage
 
         This example utilizes the data source `get_aws_supported_services` in order to query for a full list of all supported services.
         The `for_each` loop within the resource `AwsService` configures each of these services to get utilized with the default metrics recommended by Dynatrace (`use_recommended_metrics`).
-
-        If you want to configure a different set of metrics for a specific service, a separate resource `AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
-        Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
 
         ```python
         import pulumi
@@ -275,6 +304,37 @@ class AwsService(pulumi.CustomResource):
             t_erraformsample_services.append(dynatrace.AwsService(f"tERRAFORMSAMPLEServices-{range['key']}",
                 credentials_id=t_erraformsample.id,
                 use_recommended_metrics=True))
+        ```
+
+        If you want to configure a different set of metrics for a specific service, a separate resource `AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
+        Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example = dynatrace.AwsCredentials("example",
+            label="#name#",
+            partition_type="AWS_DEFAULT",
+            tagged_only=False,
+            authentication_data={
+                "account_id": "123456789",
+                "iam_role": "aws-monitoring-role",
+            })
+        elasti_cache = dynatrace.AwsService("elastiCache",
+            credentials_id=example.id,
+            metrics=[
+                {
+                    "name": "NetworkBandwidthOutAllowanceExceeded",
+                    "dimensions": ["CacheClusterId"],
+                    "statistic": "SUM",
+                },
+                {
+                    "name": "CPUUtilization",
+                    "dimensions": ["CacheClusterId"],
+                    "statistic": "AVG_MIN_MAX",
+                },
+            ])
         ```
 
         :param str resource_name: The name of the resource.
@@ -337,7 +397,7 @@ class AwsService(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] built_in: This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
-        :param pulumi.Input[_builtins.str] credentials_id: the ID of the azure credentials this supported service belongs to
+        :param pulumi.Input[_builtins.str] credentials_id: the ID of the AWS credentials this supported service belongs to
         :param pulumi.Input[_builtins.str] name: The name of the supporting service.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -364,7 +424,7 @@ class AwsService(pulumi.CustomResource):
     @pulumi.getter(name="credentialsId")
     def credentials_id(self) -> pulumi.Output[_builtins.str]:
         """
-        the ID of the azure credentials this supported service belongs to
+        the ID of the AWS credentials this supported service belongs to
         """
         return pulumi.get(self, "credentials_id")
 

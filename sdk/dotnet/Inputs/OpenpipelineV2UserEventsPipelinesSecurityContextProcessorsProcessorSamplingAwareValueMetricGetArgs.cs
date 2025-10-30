@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetricGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `Disabled`, `Enabled`
+        /// Possible Values: `Disabled`, `Enabled`.
         /// </summary>
         [Input("aggregation")]
         public Input<string>? Aggregation { get; set; }
@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Field { get; set; }
 
         /// <summary>
-        /// Possible Values: `Duration`, `Field`
+        /// Possible Values: `Duration`, `Field`.
         /// </summary>
         [Input("measurement", required: true)]
         public Input<string> Measurement { get; set; } = null!;
@@ -50,7 +50,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> MetricKey { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Disabled`, `Enabled`
+        /// Possible Values: `Disabled`, `Enabled`.
         /// </summary>
         [Input("sampling")]
         public Input<string>? Sampling { get; set; }

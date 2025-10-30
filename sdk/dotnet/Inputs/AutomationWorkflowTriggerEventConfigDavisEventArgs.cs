@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputMap<string>? _entityTags;
 
         /// <summary>
-        /// key/value pairs for entity tags to match for. For tags that don't require a value, just specify an empty string as value. Omit this attribute if all entities should match
+        /// key/value pairs for entity tags to match for. For tags that don't require a value, just specify an empty string as value. Multiple values can be provided separated by whitespace (e.g. "val1 val2") and will be parsed as multiple tag values. Omit this attribute if all entities should match
         /// </summary>
         public InputMap<string> EntityTags
         {
