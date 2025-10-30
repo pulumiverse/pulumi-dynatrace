@@ -23,6 +23,7 @@ import * as utilities from "./utilities";
  *
  * const _this = new dynatrace.Document("this", {
  *     type: "dashboard",
+ *     customId: "#name#",
  *     content: JSON.stringify({
  *         version: 13,
  *         variables: [],
@@ -185,13 +186,13 @@ export class Document extends pulumi.CustomResource {
     }
 
     /**
-     * The user context the executions of the document will happen with
-     */
-    declare public readonly actor: pulumi.Output<string>;
-    /**
      * Document content as JSON
      */
     declare public readonly content: pulumi.Output<string>;
+    /**
+     * If provided, this will be the id of the document. If not provided, a system-generated id is used.
+     */
+    declare public readonly customId: pulumi.Output<string>;
     /**
      * The name/name of the document
      */
@@ -199,7 +200,7 @@ export class Document extends pulumi.CustomResource {
     /**
      * The ID of the owner of this document
      */
-    declare public readonly owner: pulumi.Output<string>;
+    declare public /*out*/ readonly owner: pulumi.Output<string>;
     /**
      * Specifies whether the document is private or readable by everybody
      */
@@ -226,8 +227,8 @@ export class Document extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DocumentState | undefined;
-            resourceInputs["actor"] = state?.actor;
             resourceInputs["content"] = state?.content;
+            resourceInputs["customId"] = state?.customId;
             resourceInputs["name"] = state?.name;
             resourceInputs["owner"] = state?.owner;
             resourceInputs["private"] = state?.private;
@@ -241,12 +242,12 @@ export class Document extends pulumi.CustomResource {
             if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["actor"] = args?.actor;
             resourceInputs["content"] = args?.content;
+            resourceInputs["customId"] = args?.customId;
             resourceInputs["name"] = args?.name;
-            resourceInputs["owner"] = args?.owner;
             resourceInputs["private"] = args?.private;
             resourceInputs["type"] = args?.type;
+            resourceInputs["owner"] = undefined /*out*/;
             resourceInputs["version"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -259,13 +260,13 @@ export class Document extends pulumi.CustomResource {
  */
 export interface DocumentState {
     /**
-     * The user context the executions of the document will happen with
-     */
-    actor?: pulumi.Input<string>;
-    /**
      * Document content as JSON
      */
     content?: pulumi.Input<string>;
+    /**
+     * If provided, this will be the id of the document. If not provided, a system-generated id is used.
+     */
+    customId?: pulumi.Input<string>;
     /**
      * The name/name of the document
      */
@@ -293,21 +294,17 @@ export interface DocumentState {
  */
 export interface DocumentArgs {
     /**
-     * The user context the executions of the document will happen with
-     */
-    actor?: pulumi.Input<string>;
-    /**
      * Document content as JSON
      */
     content: pulumi.Input<string>;
     /**
+     * If provided, this will be the id of the document. If not provided, a system-generated id is used.
+     */
+    customId?: pulumi.Input<string>;
+    /**
      * The name/name of the document
      */
     name?: pulumi.Input<string>;
-    /**
-     * The ID of the owner of this document
-     */
-    owner?: pulumi.Input<string>;
     /**
      * Specifies whether the document is private or readable by everybody
      */

@@ -130,6 +130,11 @@ export type AuditLog = import("./auditLog").AuditLog;
 export const AuditLog: typeof import("./auditLog").AuditLog = null as any;
 utilities.lazyLoad(exports, ["AuditLog"], () => require("./auditLog"));
 
+export { AutomationApprovalArgs, AutomationApprovalState } from "./automationApproval";
+export type AutomationApproval = import("./automationApproval").AutomationApproval;
+export const AutomationApproval: typeof import("./automationApproval").AutomationApproval = null as any;
+utilities.lazyLoad(exports, ["AutomationApproval"], () => require("./automationApproval"));
+
 export { AutomationBusinessCalendarArgs, AutomationBusinessCalendarState } from "./automationBusinessCalendar";
 export type AutomationBusinessCalendar = import("./automationBusinessCalendar").AutomationBusinessCalendar;
 export const AutomationBusinessCalendar: typeof import("./automationBusinessCalendar").AutomationBusinessCalendar = null as any;
@@ -2392,6 +2397,8 @@ const _module = {
                 return new AttributesPreferences(name, <any>undefined, { urn })
             case "dynatrace:index/auditLog:AuditLog":
                 return new AuditLog(name, <any>undefined, { urn })
+            case "dynatrace:index/automationApproval:AutomationApproval":
+                return new AutomationApproval(name, <any>undefined, { urn })
             case "dynatrace:index/automationBusinessCalendar:AutomationBusinessCalendar":
                 return new AutomationBusinessCalendar(name, <any>undefined, { urn })
             case "dynatrace:index/automationControllerConnections:AutomationControllerConnections":
@@ -3194,6 +3201,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/attributeBlockList", _
 pulumi.runtime.registerResourceModule("dynatrace", "index/attributeMasking", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/attributesPreferences", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/auditLog", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/automationApproval", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationBusinessCalendar", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationControllerConnections", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/automationSchedulingRule", _module)

@@ -177,8 +177,9 @@ import (
 //			}
 //			json0 := string(tmpJSON0)
 //			_, err = dynatrace.NewDocument(ctx, "this", &dynatrace.DocumentArgs{
-//				Type:    pulumi.String("dashboard"),
-//				Content: pulumi.String(json0),
+//				Type:     pulumi.String("dashboard"),
+//				CustomId: pulumi.String("#name#"),
+//				Content:  pulumi.String(json0),
 //			})
 //			if err != nil {
 //				return err
@@ -191,10 +192,10 @@ import (
 type Document struct {
 	pulumi.CustomResourceState
 
-	// The user context the executions of the document will happen with
-	Actor pulumi.StringOutput `pulumi:"actor"`
 	// Document content as JSON
 	Content pulumi.StringOutput `pulumi:"content"`
+	// If provided, this will be the id of the document. If not provided, a system-generated id is used.
+	CustomId pulumi.StringOutput `pulumi:"customId"`
 	// The name/name of the document
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The ID of the owner of this document
@@ -243,10 +244,10 @@ func GetDocument(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Document resources.
 type documentState struct {
-	// The user context the executions of the document will happen with
-	Actor *string `pulumi:"actor"`
 	// Document content as JSON
 	Content *string `pulumi:"content"`
+	// If provided, this will be the id of the document. If not provided, a system-generated id is used.
+	CustomId *string `pulumi:"customId"`
 	// The name/name of the document
 	Name *string `pulumi:"name"`
 	// The ID of the owner of this document
@@ -260,10 +261,10 @@ type documentState struct {
 }
 
 type DocumentState struct {
-	// The user context the executions of the document will happen with
-	Actor pulumi.StringPtrInput
 	// Document content as JSON
 	Content pulumi.StringPtrInput
+	// If provided, this will be the id of the document. If not provided, a system-generated id is used.
+	CustomId pulumi.StringPtrInput
 	// The name/name of the document
 	Name pulumi.StringPtrInput
 	// The ID of the owner of this document
@@ -281,14 +282,12 @@ func (DocumentState) ElementType() reflect.Type {
 }
 
 type documentArgs struct {
-	// The user context the executions of the document will happen with
-	Actor *string `pulumi:"actor"`
 	// Document content as JSON
 	Content string `pulumi:"content"`
+	// If provided, this will be the id of the document. If not provided, a system-generated id is used.
+	CustomId *string `pulumi:"customId"`
 	// The name/name of the document
 	Name *string `pulumi:"name"`
-	// The ID of the owner of this document
-	Owner *string `pulumi:"owner"`
 	// Specifies whether the document is private or readable by everybody
 	Private *bool `pulumi:"private"`
 	// Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
@@ -297,14 +296,12 @@ type documentArgs struct {
 
 // The set of arguments for constructing a Document resource.
 type DocumentArgs struct {
-	// The user context the executions of the document will happen with
-	Actor pulumi.StringPtrInput
 	// Document content as JSON
 	Content pulumi.StringInput
+	// If provided, this will be the id of the document. If not provided, a system-generated id is used.
+	CustomId pulumi.StringPtrInput
 	// The name/name of the document
 	Name pulumi.StringPtrInput
-	// The ID of the owner of this document
-	Owner pulumi.StringPtrInput
 	// Specifies whether the document is private or readable by everybody
 	Private pulumi.BoolPtrInput
 	// Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
@@ -398,14 +395,14 @@ func (o DocumentOutput) ToDocumentOutputWithContext(ctx context.Context) Documen
 	return o
 }
 
-// The user context the executions of the document will happen with
-func (o DocumentOutput) Actor() pulumi.StringOutput {
-	return o.ApplyT(func(v *Document) pulumi.StringOutput { return v.Actor }).(pulumi.StringOutput)
-}
-
 // Document content as JSON
 func (o DocumentOutput) Content() pulumi.StringOutput {
 	return o.ApplyT(func(v *Document) pulumi.StringOutput { return v.Content }).(pulumi.StringOutput)
+}
+
+// If provided, this will be the id of the document. If not provided, a system-generated id is used.
+func (o DocumentOutput) CustomId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Document) pulumi.StringOutput { return v.CustomId }).(pulumi.StringOutput)
 }
 
 // The name/name of the document

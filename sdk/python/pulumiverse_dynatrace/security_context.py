@@ -72,7 +72,8 @@ class SecurityContext(pulumi.CustomResource):
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a SecurityContext resource with the given unique name, props, and options.
+        > This setting has been deprecated by Dynatrace. Trying to apply this resource will produce an error message. It won't have an effect on your Dynatrace Environment anymore.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -84,7 +85,8 @@ class SecurityContext(pulumi.CustomResource):
                  args: SecurityContextArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SecurityContext resource with the given unique name, props, and options.
+        > This setting has been deprecated by Dynatrace. Trying to apply this resource will produce an error message. It won't have an effect on your Dynatrace Environment anymore.
+
         :param str resource_name: The name of the resource.
         :param SecurityContextArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

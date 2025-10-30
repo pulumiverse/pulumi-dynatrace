@@ -44,7 +44,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? PipelineId { get; set; }
 
         /// <summary>
-        /// Possible Values: `Builtin`, `Custom`
+        /// Pipeline Type. Possible Values: `Builtin`, `Custom`.
         /// </summary>
         [Input("pipelineType", required: true)]
         public Input<string> PipelineType { get; set; } = null!;

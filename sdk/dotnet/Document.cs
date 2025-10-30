@@ -35,6 +35,7 @@ namespace Pulumiverse.Dynatrace
     ///     var @this = new Dynatrace.Document("this", new()
     ///     {
     ///         Type = "dashboard",
+    ///         CustomId = "#name#",
     ///         Content = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
     ///         {
     ///             ["version"] = 13,
@@ -247,16 +248,16 @@ namespace Pulumiverse.Dynatrace
     public partial class Document : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The user context the executions of the document will happen with
-        /// </summary>
-        [Output("actor")]
-        public Output<string> Actor { get; private set; } = null!;
-
-        /// <summary>
         /// Document content as JSON
         /// </summary>
         [Output("content")]
         public Output<string> Content { get; private set; } = null!;
+
+        /// <summary>
+        /// If provided, this will be the id of the document. If not provided, a system-generated id is used.
+        /// </summary>
+        [Output("customId")]
+        public Output<string> CustomId { get; private set; } = null!;
 
         /// <summary>
         /// The name/name of the document
@@ -336,28 +337,22 @@ namespace Pulumiverse.Dynatrace
     public sealed class DocumentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The user context the executions of the document will happen with
-        /// </summary>
-        [Input("actor")]
-        public Input<string>? Actor { get; set; }
-
-        /// <summary>
         /// Document content as JSON
         /// </summary>
         [Input("content", required: true)]
         public Input<string> Content { get; set; } = null!;
 
         /// <summary>
+        /// If provided, this will be the id of the document. If not provided, a system-generated id is used.
+        /// </summary>
+        [Input("customId")]
+        public Input<string>? CustomId { get; set; }
+
+        /// <summary>
         /// The name/name of the document
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
-
-        /// <summary>
-        /// The ID of the owner of this document
-        /// </summary>
-        [Input("owner")]
-        public Input<string>? Owner { get; set; }
 
         /// <summary>
         /// Specifies whether the document is private or readable by everybody
@@ -380,16 +375,16 @@ namespace Pulumiverse.Dynatrace
     public sealed class DocumentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The user context the executions of the document will happen with
-        /// </summary>
-        [Input("actor")]
-        public Input<string>? Actor { get; set; }
-
-        /// <summary>
         /// Document content as JSON
         /// </summary>
         [Input("content")]
         public Input<string>? Content { get; set; }
+
+        /// <summary>
+        /// If provided, this will be the id of the document. If not provided, a system-generated id is used.
+        /// </summary>
+        [Input("customId")]
+        public Input<string>? CustomId { get; set; }
 
         /// <summary>
         /// The name/name of the document

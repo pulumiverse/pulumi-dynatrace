@@ -15,15 +15,14 @@ import * as utilities from "./utilities";
  *
  * - Microsoft Azure monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/cloud-platform-monitoring/microsoft-azure-services-monitoring
  *
+ * - The dimensions for metrics for individual services - https://docs.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics
+ *
  * - Azure credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/azure-credentials-api
  *
  * ## Resource Example Usage
  *
  * This example utilizes the data source `dynatrace.getAzureSupportedServices` in order to query for a full list of all supported services.
  * The `forEach` loop within the resource `dynatrace.AzureService` configures each of these services to get utilized with the default metrics recommended by Dynatrace (`useRecommendedMetrics`).
- *
- * If you want to configure a different set of metrics for a specific service, a separate resource `dynatrace.AzureService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
- * Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
@@ -54,6 +53,48 @@ import * as utilities from "./utilities";
  *         }));
  *     }
  * }
+ * ```
+ *
+ * If you want to configure a different set of metrics for a specific service, a separate resource `dynatrace.AzureService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
+ * Just be aware of the fact, that Dynatrace enforces for most services a recommended set of metrics. All of them need to be part of your configuration in order to end up with a non-empty plan.
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const example = new dynatrace.AzureCredentials("example", {
+ *     active: true,
+ *     appId: "123456789",
+ *     autoTagging: true,
+ *     directoryId: "123456789",
+ *     key: "123456789",
+ *     label: "#name#",
+ *     monitorOnlyTaggedEntities: false,
+ * });
+ * const containerService = new dynatrace.AzureService("containerService", {
+ *     credentialsId: example.id,
+ *     metrics: [
+ *         {
+ *             name: "kube_pod_status_ready",
+ *             dimensions: [],
+ *         },
+ *         {
+ *             name: "kube_node_status_condition",
+ *             dimensions: [
+ *                 "condition",
+ *                 "status",
+ *                 "node",
+ *             ],
+ *         },
+ *         {
+ *             name: "kube_pod_status_phase",
+ *             dimensions: [
+ *                 "phase",
+ *                 "namespace",
+ *             ],
+ *         },
+ *     ],
+ * });
  * ```
  */
 export class AzureService extends pulumi.CustomResource {
@@ -89,7 +130,7 @@ export class AzureService extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly builtIn: pulumi.Output<boolean>;
     /**
-     * the ID of the azure credentials this supported service belongs to
+     * the ID of the Azure credentials this supported service belongs to
      */
     declare public readonly credentialsId: pulumi.Output<string>;
     declare public readonly metrics: pulumi.Output<outputs.AzureServiceMetric[] | undefined>;
@@ -145,7 +186,7 @@ export interface AzureServiceState {
      */
     builtIn?: pulumi.Input<boolean>;
     /**
-     * the ID of the azure credentials this supported service belongs to
+     * the ID of the Azure credentials this supported service belongs to
      */
     credentialsId?: pulumi.Input<string>;
     metrics?: pulumi.Input<pulumi.Input<inputs.AzureServiceMetric>[]>;
@@ -162,7 +203,7 @@ export interface AzureServiceState {
  */
 export interface AzureServiceArgs {
     /**
-     * the ID of the azure credentials this supported service belongs to
+     * the ID of the Azure credentials this supported service belongs to
      */
     credentialsId: pulumi.Input<string>;
     metrics?: pulumi.Input<pulumi.Input<inputs.AzureServiceMetric>[]>;

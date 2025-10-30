@@ -13,7 +13,7 @@ namespace Pulumiverse.Dynatrace.Inputs
 
     public sealed class AwsServiceMetricArgs : global::Pulumi.ResourceArgs
     {
-        [Input("dimensions")]
+        [Input("dimensions", required: true)]
         private InputList<string>? _dimensions;
 
         /// <summary>

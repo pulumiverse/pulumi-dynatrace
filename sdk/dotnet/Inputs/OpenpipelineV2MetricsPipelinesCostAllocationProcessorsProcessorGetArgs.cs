@@ -146,7 +146,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorTechnologyGetArgs>? Technology { get; set; }
 
         /// <summary>
-        /// Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+        /// Processor type. Possible Values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `Technology`, `valueMetric`.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

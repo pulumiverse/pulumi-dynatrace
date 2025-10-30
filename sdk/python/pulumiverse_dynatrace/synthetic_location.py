@@ -28,6 +28,7 @@ class SyntheticLocationArgs:
                  city: Optional[pulumi.Input[_builtins.str]] = None,
                  country_code: Optional[pulumi.Input[_builtins.str]] = None,
                  deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 fips_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  location_node_outage_delay_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
                  max_active_gate_count: Optional[pulumi.Input[_builtins.int]] = None,
                  min_active_gate_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -53,6 +54,7 @@ class SyntheticLocationArgs:
                
                * `STANDARD`: The location is deployed on Windows or Linux.
                * `KUBERNETES`: The location is deployed on Kubernetes
+        :param pulumi.Input[_builtins.str] fips_mode: Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
         :param pulumi.Input[_builtins.int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes. 
                
                 Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
@@ -85,6 +87,8 @@ class SyntheticLocationArgs:
             pulumi.set(__self__, "country_code", country_code)
         if deployment_type is not None:
             pulumi.set(__self__, "deployment_type", deployment_type)
+        if fips_mode is not None:
+            pulumi.set(__self__, "fips_mode", fips_mode)
         if location_node_outage_delay_in_minutes is not None:
             pulumi.set(__self__, "location_node_outage_delay_in_minutes", location_node_outage_delay_in_minutes)
         if max_active_gate_count is not None:
@@ -218,6 +222,18 @@ class SyntheticLocationArgs:
         pulumi.set(self, "deployment_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="fipsMode")
+    def fips_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+        """
+        return pulumi.get(self, "fips_mode")
+
+    @fips_mode.setter
+    def fips_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "fips_mode", value)
+
+    @_builtins.property
     @pulumi.getter(name="locationNodeOutageDelayInMinutes")
     def location_node_outage_delay_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -342,6 +358,7 @@ class _SyntheticLocationState:
                  city: Optional[pulumi.Input[_builtins.str]] = None,
                  country_code: Optional[pulumi.Input[_builtins.str]] = None,
                  deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 fips_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  latitude: Optional[pulumi.Input[_builtins.float]] = None,
                  location_node_outage_delay_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
                  longitude: Optional[pulumi.Input[_builtins.float]] = None,
@@ -367,6 +384,7 @@ class _SyntheticLocationState:
                
                * `STANDARD`: The location is deployed on Windows or Linux.
                * `KUBERNETES`: The location is deployed on Kubernetes
+        :param pulumi.Input[_builtins.str] fips_mode: Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
         :param pulumi.Input[_builtins.float] latitude: The latitude of the location in `DDD.dddd` format
         :param pulumi.Input[_builtins.int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes. 
                
@@ -399,6 +417,8 @@ class _SyntheticLocationState:
             pulumi.set(__self__, "country_code", country_code)
         if deployment_type is not None:
             pulumi.set(__self__, "deployment_type", deployment_type)
+        if fips_mode is not None:
+            pulumi.set(__self__, "fips_mode", fips_mode)
         if latitude is not None:
             pulumi.set(__self__, "latitude", latitude)
         if location_node_outage_delay_in_minutes is not None:
@@ -510,6 +530,18 @@ class _SyntheticLocationState:
     @deployment_type.setter
     def deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "deployment_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fipsMode")
+    def fips_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+        """
+        return pulumi.get(self, "fips_mode")
+
+    @fips_mode.setter
+    def fips_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "fips_mode", value)
 
     @_builtins.property
     @pulumi.getter
@@ -663,6 +695,7 @@ class SyntheticLocation(pulumi.CustomResource):
                  city: Optional[pulumi.Input[_builtins.str]] = None,
                  country_code: Optional[pulumi.Input[_builtins.str]] = None,
                  deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 fips_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  latitude: Optional[pulumi.Input[_builtins.float]] = None,
                  location_node_outage_delay_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
                  longitude: Optional[pulumi.Input[_builtins.float]] = None,
@@ -691,6 +724,7 @@ class SyntheticLocation(pulumi.CustomResource):
                
                * `STANDARD`: The location is deployed on Windows or Linux.
                * `KUBERNETES`: The location is deployed on Kubernetes
+        :param pulumi.Input[_builtins.str] fips_mode: Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
         :param pulumi.Input[_builtins.float] latitude: The latitude of the location in `DDD.dddd` format
         :param pulumi.Input[_builtins.int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes. 
                
@@ -739,6 +773,7 @@ class SyntheticLocation(pulumi.CustomResource):
                  city: Optional[pulumi.Input[_builtins.str]] = None,
                  country_code: Optional[pulumi.Input[_builtins.str]] = None,
                  deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 fips_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  latitude: Optional[pulumi.Input[_builtins.float]] = None,
                  location_node_outage_delay_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
                  longitude: Optional[pulumi.Input[_builtins.float]] = None,
@@ -766,6 +801,7 @@ class SyntheticLocation(pulumi.CustomResource):
             __props__.__dict__["city"] = city
             __props__.__dict__["country_code"] = country_code
             __props__.__dict__["deployment_type"] = deployment_type
+            __props__.__dict__["fips_mode"] = fips_mode
             if latitude is None and not opts.urn:
                 raise TypeError("Missing required property 'latitude'")
             __props__.__dict__["latitude"] = latitude
@@ -798,6 +834,7 @@ class SyntheticLocation(pulumi.CustomResource):
             city: Optional[pulumi.Input[_builtins.str]] = None,
             country_code: Optional[pulumi.Input[_builtins.str]] = None,
             deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
+            fips_mode: Optional[pulumi.Input[_builtins.str]] = None,
             latitude: Optional[pulumi.Input[_builtins.float]] = None,
             location_node_outage_delay_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
             longitude: Optional[pulumi.Input[_builtins.float]] = None,
@@ -828,6 +865,7 @@ class SyntheticLocation(pulumi.CustomResource):
                
                * `STANDARD`: The location is deployed on Windows or Linux.
                * `KUBERNETES`: The location is deployed on Kubernetes
+        :param pulumi.Input[_builtins.str] fips_mode: Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
         :param pulumi.Input[_builtins.float] latitude: The latitude of the location in `DDD.dddd` format
         :param pulumi.Input[_builtins.int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes. 
                
@@ -857,6 +895,7 @@ class SyntheticLocation(pulumi.CustomResource):
         __props__.__dict__["city"] = city
         __props__.__dict__["country_code"] = country_code
         __props__.__dict__["deployment_type"] = deployment_type
+        __props__.__dict__["fips_mode"] = fips_mode
         __props__.__dict__["latitude"] = latitude
         __props__.__dict__["location_node_outage_delay_in_minutes"] = location_node_outage_delay_in_minutes
         __props__.__dict__["longitude"] = longitude
@@ -930,6 +969,14 @@ class SyntheticLocation(pulumi.CustomResource):
         * `KUBERNETES`: The location is deployed on Kubernetes
         """
         return pulumi.get(self, "deployment_type")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsMode")
+    def fips_mode(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+        """
+        return pulumi.get(self, "fips_mode")
 
     @_builtins.property
     @pulumi.getter

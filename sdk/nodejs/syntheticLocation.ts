@@ -66,6 +66,10 @@ export class SyntheticLocation extends pulumi.CustomResource {
      */
     declare public readonly deploymentType: pulumi.Output<string | undefined>;
     /**
+     * Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+     */
+    declare public readonly fipsMode: pulumi.Output<string | undefined>;
+    /**
      * The latitude of the location in `DDD.dddd` format
      */
     declare public readonly latitude: pulumi.Output<number>;
@@ -136,6 +140,7 @@ export class SyntheticLocation extends pulumi.CustomResource {
             resourceInputs["city"] = state?.city;
             resourceInputs["countryCode"] = state?.countryCode;
             resourceInputs["deploymentType"] = state?.deploymentType;
+            resourceInputs["fipsMode"] = state?.fipsMode;
             resourceInputs["latitude"] = state?.latitude;
             resourceInputs["locationNodeOutageDelayInMinutes"] = state?.locationNodeOutageDelayInMinutes;
             resourceInputs["longitude"] = state?.longitude;
@@ -162,6 +167,7 @@ export class SyntheticLocation extends pulumi.CustomResource {
             resourceInputs["city"] = args?.city;
             resourceInputs["countryCode"] = args?.countryCode;
             resourceInputs["deploymentType"] = args?.deploymentType;
+            resourceInputs["fipsMode"] = args?.fipsMode;
             resourceInputs["latitude"] = args?.latitude;
             resourceInputs["locationNodeOutageDelayInMinutes"] = args?.locationNodeOutageDelayInMinutes;
             resourceInputs["longitude"] = args?.longitude;
@@ -216,6 +222,10 @@ export interface SyntheticLocationState {
      * * `KUBERNETES`: The location is deployed on Kubernetes
      */
     deploymentType?: pulumi.Input<string>;
+    /**
+     * Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+     */
+    fipsMode?: pulumi.Input<string>;
     /**
      * The latitude of the location in `DDD.dddd` format
      */
@@ -305,6 +315,10 @@ export interface SyntheticLocationArgs {
      * * `KUBERNETES`: The location is deployed on Kubernetes
      */
     deploymentType?: pulumi.Input<string>;
+    /**
+     * Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
+     */
+    fipsMode?: pulumi.Input<string>;
     /**
      * The latitude of the location in `DDD.dddd` format
      */

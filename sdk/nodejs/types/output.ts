@@ -1314,7 +1314,7 @@ export interface AutomationWorkflowTriggerEventConfig {
 
 export interface AutomationWorkflowTriggerEventConfigDavisEvent {
     /**
-     * key/value pairs for entity tags to match for. For tags that don't require a value, just specify an empty string as value. Omit this attribute if all entities should match
+     * key/value pairs for entity tags to match for. For tags that don't require a value, just specify an empty string as value. Multiple values can be provided separated by whitespace (e.g. "val1 val2") and will be parsed as multiple tag values. Omit this attribute if all entities should match
      */
     entityTags?: {[key: string]: string};
     /**
@@ -1357,7 +1357,7 @@ export interface AutomationWorkflowTriggerEventConfigDavisProblem {
     categories: outputs.AutomationWorkflowTriggerEventConfigDavisProblemCategory[];
     customFilter?: string;
     /**
-     * key/value pairs for entity tags to match for. For tags that don't require a value, just specify an empty string as value. Omit this attribute if all entities should match
+     * key/value pairs for entity tags to match for. For tags that don't require a value, just specify an empty string as value. Multiple values can be provided separated by whitespace (e.g. "val1 val2") and will be parsed as multiple tag values. Omit this attribute if all entities should match
      */
     entityTags?: {[key: string]: string};
     /**
@@ -4089,7 +4089,7 @@ export interface AwsServiceMetric {
     /**
      * a list of metric's dimensions names
      */
-    dimensions?: string[];
+    dimensions: string[];
     /**
      * the name of the metric of the supporting service
      */
@@ -33882,7 +33882,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     technology?: outputs.OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -33912,7 +33912,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     include?: outputs.OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -33965,7 +33965,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -33995,7 +33995,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -34021,7 +34021,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     include?: outputs.OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -34073,7 +34073,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -34254,7 +34254,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -34272,7 +34272,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
 
 export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -34284,7 +34284,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -34310,7 +34310,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
 
 export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -34326,7 +34326,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -34334,7 +34334,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -34379,7 +34379,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -34412,7 +34412,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     include?: outputs.OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -34495,7 +34495,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesStaticRouting {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -34601,7 +34601,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -34631,7 +34631,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -34684,7 +34684,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -34714,7 +34714,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -34740,7 +34740,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -34792,7 +34792,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -34973,7 +34973,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -34991,7 +34991,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
 
 export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -35003,7 +35003,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -35029,7 +35029,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
 
 export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -35045,7 +35045,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -35053,7 +35053,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -35098,7 +35098,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -35131,7 +35131,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -35305,7 +35305,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -35335,7 +35335,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -35388,7 +35388,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -35418,7 +35418,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -35444,7 +35444,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -35496,7 +35496,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -35677,7 +35677,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -35695,7 +35695,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
 
 export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -35707,7 +35707,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -35733,7 +35733,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
 
 export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -35749,7 +35749,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -35757,7 +35757,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -35802,7 +35802,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -35835,7 +35835,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -36009,7 +36009,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -36039,7 +36039,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorAzureLo
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -36092,7 +36092,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorBizeven
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -36122,7 +36122,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorBizeven
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -36148,7 +36148,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorBizeven
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -36200,7 +36200,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorCostAll
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -36381,7 +36381,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProduct
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -36399,7 +36399,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProduct
 
 export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -36411,7 +36411,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorSamplin
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -36437,7 +36437,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorSamplin
 
 export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -36453,7 +36453,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorSamplin
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -36461,7 +36461,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorSamplin
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -36506,7 +36506,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorSecurit
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -36539,7 +36539,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorSecurit
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -36713,7 +36713,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -36743,7 +36743,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -36796,7 +36796,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -36826,7 +36826,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -36852,7 +36852,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -36904,7 +36904,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -37085,7 +37085,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -37103,7 +37103,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
 
 export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -37115,7 +37115,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -37141,7 +37141,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
 
 export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -37157,7 +37157,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -37165,7 +37165,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -37210,7 +37210,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -37243,7 +37243,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -37417,7 +37417,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -37447,7 +37447,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorAz
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -37500,7 +37500,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -37530,7 +37530,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -37556,7 +37556,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorBi
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -37608,7 +37608,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorCo
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -37789,7 +37789,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -37807,7 +37807,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorPr
 
 export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -37819,7 +37819,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -37845,7 +37845,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorSa
 
 export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -37861,7 +37861,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorSa
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -37869,7 +37869,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -37914,7 +37914,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorSe
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -37947,7 +37947,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorSe
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -38121,7 +38121,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -38151,7 +38151,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -38204,7 +38204,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -38234,7 +38234,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -38260,7 +38260,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -38312,7 +38312,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -38493,7 +38493,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -38511,7 +38511,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
 
 export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -38523,7 +38523,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -38549,7 +38549,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
 
 export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -38565,7 +38565,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -38573,7 +38573,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -38618,7 +38618,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -38651,7 +38651,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -38825,7 +38825,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -38855,7 +38855,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -38908,7 +38908,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -38938,7 +38938,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -38964,7 +38964,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -39016,7 +39016,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -39197,7 +39197,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -39215,7 +39215,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
 
 export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -39227,7 +39227,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -39253,7 +39253,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
 
 export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -39269,7 +39269,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -39277,7 +39277,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -39322,7 +39322,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -39355,7 +39355,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -39529,7 +39529,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -39559,7 +39559,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorAzure
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -39612,7 +39612,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorBizev
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -39642,7 +39642,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorBizev
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -39668,7 +39668,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorBizev
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -39720,7 +39720,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorCostA
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -39901,7 +39901,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorProdu
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -39919,7 +39919,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorProdu
 
 export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -39931,7 +39931,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorSampl
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -39957,7 +39957,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorSampl
 
 export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -39973,7 +39973,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorSampl
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -39981,7 +39981,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorSampl
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -40026,7 +40026,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorSecur
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -40059,7 +40059,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorSecur
      */
     include?: outputs.OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -40158,7 +40158,7 @@ export interface OpenpipelineV2BizeventsRoutingRoutingEntriesRoutingEntry {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -40264,7 +40264,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     technology?: outputs.OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -40294,7 +40294,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     include?: outputs.OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -40347,7 +40347,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -40377,7 +40377,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -40403,7 +40403,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     include?: outputs.OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -40455,7 +40455,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -40636,7 +40636,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -40654,7 +40654,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
 
 export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -40666,7 +40666,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -40692,7 +40692,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
 
 export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -40708,7 +40708,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -40716,7 +40716,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -40761,7 +40761,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -40794,7 +40794,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     include?: outputs.OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -40877,7 +40877,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesStaticRouting {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -40983,7 +40983,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -41013,7 +41013,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -41066,7 +41066,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -41096,7 +41096,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -41122,7 +41122,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -41174,7 +41174,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -41355,7 +41355,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -41373,7 +41373,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
 
 export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -41385,7 +41385,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -41411,7 +41411,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
 
 export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -41427,7 +41427,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -41435,7 +41435,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -41480,7 +41480,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -41513,7 +41513,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -41687,7 +41687,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -41717,7 +41717,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -41770,7 +41770,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -41800,7 +41800,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -41826,7 +41826,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -41878,7 +41878,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -42059,7 +42059,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -42077,7 +42077,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
 
 export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -42089,7 +42089,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -42115,7 +42115,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
 
 export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -42131,7 +42131,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -42139,7 +42139,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -42184,7 +42184,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -42217,7 +42217,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -42391,7 +42391,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -42421,7 +42421,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorAzure
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -42474,7 +42474,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorBizev
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -42504,7 +42504,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorBizev
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -42530,7 +42530,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorBizev
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -42582,7 +42582,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorCostA
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -42763,7 +42763,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorProdu
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -42781,7 +42781,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorProdu
 
 export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -42793,7 +42793,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorSampl
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -42819,7 +42819,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorSampl
 
 export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -42835,7 +42835,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorSampl
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -42843,7 +42843,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorSampl
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -42888,7 +42888,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorSecur
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -42921,7 +42921,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorSecur
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -43095,7 +43095,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -43125,7 +43125,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -43178,7 +43178,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -43208,7 +43208,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -43234,7 +43234,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -43286,7 +43286,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -43467,7 +43467,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -43485,7 +43485,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
 
 export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -43497,7 +43497,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -43523,7 +43523,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
 
 export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -43539,7 +43539,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -43547,7 +43547,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -43592,7 +43592,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -43625,7 +43625,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -43799,7 +43799,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -43829,7 +43829,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -43882,7 +43882,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -43912,7 +43912,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -43938,7 +43938,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -43990,7 +43990,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -44171,7 +44171,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -44189,7 +44189,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
 
 export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -44201,7 +44201,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -44227,7 +44227,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
 
 export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -44243,7 +44243,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -44251,7 +44251,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -44296,7 +44296,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -44329,7 +44329,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -44503,7 +44503,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -44533,7 +44533,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -44586,7 +44586,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -44616,7 +44616,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -44642,7 +44642,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -44694,7 +44694,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -44875,7 +44875,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -44893,7 +44893,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
 
 export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -44905,7 +44905,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -44931,7 +44931,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
 
 export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -44947,7 +44947,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -44955,7 +44955,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -45000,7 +45000,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -45033,7 +45033,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -45207,7 +45207,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -45237,7 +45237,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -45290,7 +45290,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -45320,7 +45320,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -45346,7 +45346,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -45398,7 +45398,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -45579,7 +45579,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -45597,7 +45597,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
 
 export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -45609,7 +45609,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -45635,7 +45635,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
 
 export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -45651,7 +45651,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -45659,7 +45659,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -45704,7 +45704,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -45737,7 +45737,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -45911,7 +45911,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -45941,7 +45941,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorAzu
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -45994,7 +45994,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorBiz
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -46024,7 +46024,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorBiz
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -46050,7 +46050,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorBiz
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -46102,7 +46102,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorCos
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -46283,7 +46283,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -46301,7 +46301,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorPro
 
 export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -46313,7 +46313,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorSam
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -46339,7 +46339,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorSam
 
 export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -46355,7 +46355,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorSam
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -46363,7 +46363,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorSam
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -46408,7 +46408,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorSec
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -46441,7 +46441,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorSec
      */
     include?: outputs.OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -46540,7 +46540,7 @@ export interface OpenpipelineV2DavisEventsRoutingRoutingEntriesRoutingEntry {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -46646,7 +46646,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     technology?: outputs.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -46676,7 +46676,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     include?: outputs.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -46729,7 +46729,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -46759,7 +46759,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -46785,7 +46785,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     include?: outputs.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -46837,7 +46837,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -47018,7 +47018,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -47036,7 +47036,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
 
 export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -47048,7 +47048,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -47074,7 +47074,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
 
 export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -47090,7 +47090,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -47098,7 +47098,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -47143,7 +47143,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -47176,7 +47176,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     include?: outputs.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -47259,7 +47259,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesStaticRouting {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -47365,7 +47365,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -47395,7 +47395,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -47448,7 +47448,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -47478,7 +47478,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -47504,7 +47504,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -47556,7 +47556,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -47737,7 +47737,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -47755,7 +47755,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
 
 export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -47767,7 +47767,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -47793,7 +47793,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
 
 export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -47809,7 +47809,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -47817,7 +47817,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -47862,7 +47862,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -47895,7 +47895,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -48069,7 +48069,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -48099,7 +48099,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -48152,7 +48152,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -48182,7 +48182,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -48208,7 +48208,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -48260,7 +48260,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -48441,7 +48441,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -48459,7 +48459,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
 
 export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -48471,7 +48471,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -48497,7 +48497,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
 
 export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -48513,7 +48513,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -48521,7 +48521,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -48566,7 +48566,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -48599,7 +48599,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -48773,7 +48773,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -48803,7 +48803,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorAzu
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -48856,7 +48856,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorBiz
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -48886,7 +48886,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorBiz
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -48912,7 +48912,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorBiz
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -48964,7 +48964,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorCos
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -49145,7 +49145,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -49163,7 +49163,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorPro
 
 export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -49175,7 +49175,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorSam
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -49201,7 +49201,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorSam
 
 export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -49217,7 +49217,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorSam
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -49225,7 +49225,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorSam
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -49270,7 +49270,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorSec
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -49303,7 +49303,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorSec
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -49477,7 +49477,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -49507,7 +49507,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -49560,7 +49560,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -49590,7 +49590,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -49616,7 +49616,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -49668,7 +49668,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -49849,7 +49849,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -49867,7 +49867,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
 
 export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -49879,7 +49879,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -49905,7 +49905,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
 
 export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -49921,7 +49921,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -49929,7 +49929,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -49974,7 +49974,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -50007,7 +50007,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -50181,7 +50181,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -50211,7 +50211,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -50264,7 +50264,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -50294,7 +50294,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -50320,7 +50320,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -50372,7 +50372,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -50553,7 +50553,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -50571,7 +50571,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
 
 export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -50583,7 +50583,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -50609,7 +50609,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
 
 export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -50625,7 +50625,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -50633,7 +50633,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -50678,7 +50678,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -50711,7 +50711,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -50885,7 +50885,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -50915,7 +50915,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -50968,7 +50968,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -50998,7 +50998,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -51024,7 +51024,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -51076,7 +51076,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -51257,7 +51257,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -51275,7 +51275,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
 
 export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -51287,7 +51287,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -51313,7 +51313,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
 
 export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -51329,7 +51329,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -51337,7 +51337,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -51382,7 +51382,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -51415,7 +51415,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -51589,7 +51589,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -51619,7 +51619,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -51672,7 +51672,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -51702,7 +51702,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -51728,7 +51728,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -51780,7 +51780,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -51961,7 +51961,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -51979,7 +51979,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
 
 export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -51991,7 +51991,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -52017,7 +52017,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
 
 export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -52033,7 +52033,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -52041,7 +52041,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -52086,7 +52086,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -52119,7 +52119,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -52293,7 +52293,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -52323,7 +52323,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorA
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -52376,7 +52376,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -52406,7 +52406,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -52432,7 +52432,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorB
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -52484,7 +52484,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorC
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -52665,7 +52665,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -52683,7 +52683,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorP
 
 export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -52695,7 +52695,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -52721,7 +52721,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorS
 
 export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -52737,7 +52737,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorS
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -52745,7 +52745,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -52790,7 +52790,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorS
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -52823,7 +52823,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorS
      */
     include?: outputs.OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -52922,7 +52922,7 @@ export interface OpenpipelineV2DavisProblemsRoutingRoutingEntriesRoutingEntry {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -53028,7 +53028,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -53058,7 +53058,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorA
      */
     include?: outputs.OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -53111,7 +53111,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -53141,7 +53141,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -53167,7 +53167,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorB
      */
     include?: outputs.OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -53219,7 +53219,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorC
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -53400,7 +53400,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -53418,7 +53418,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorP
 
 export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -53430,7 +53430,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -53456,7 +53456,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorS
 
 export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -53472,7 +53472,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorS
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -53480,7 +53480,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -53525,7 +53525,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorS
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -53558,7 +53558,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorS
      */
     include?: outputs.OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -53641,7 +53641,7 @@ export interface OpenpipelineV2EventsIngestsourcesStaticRouting {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -53747,7 +53747,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -53777,7 +53777,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorA
      */
     include?: outputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -53830,7 +53830,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -53860,7 +53860,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -53886,7 +53886,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorB
      */
     include?: outputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -53938,7 +53938,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorC
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -54119,7 +54119,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -54137,7 +54137,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorP
 
 export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -54149,7 +54149,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -54175,7 +54175,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorS
 
 export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -54191,7 +54191,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorS
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -54199,7 +54199,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -54244,7 +54244,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorS
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -54277,7 +54277,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorS
      */
     include?: outputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -54451,7 +54451,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -54481,7 +54481,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorA
      */
     include?: outputs.OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -54534,7 +54534,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -54564,7 +54564,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -54590,7 +54590,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorB
      */
     include?: outputs.OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -54642,7 +54642,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorC
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -54823,7 +54823,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -54841,7 +54841,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorP
 
 export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -54853,7 +54853,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -54879,7 +54879,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorS
 
 export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -54895,7 +54895,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorS
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -54903,7 +54903,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -54948,7 +54948,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorS
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -54981,7 +54981,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorS
      */
     include?: outputs.OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -55155,7 +55155,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -55185,7 +55185,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorAzureLogFo
      */
     include?: outputs.OpenpipelineV2EventsPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -55238,7 +55238,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorBizeventEv
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -55268,7 +55268,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorBizeventEv
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -55294,7 +55294,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorBizeventFi
      */
     include?: outputs.OpenpipelineV2EventsPipelinesDavisProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -55346,7 +55346,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorCostAlloca
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -55527,7 +55527,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorProductAll
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -55545,7 +55545,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorProductAll
 
 export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -55557,7 +55557,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorSamplingAw
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -55583,7 +55583,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorSamplingAw
 
 export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -55599,7 +55599,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorSamplingAw
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -55607,7 +55607,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorSamplingAw
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -55652,7 +55652,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorSecurityCo
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -55685,7 +55685,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorSecurityEv
      */
     include?: outputs.OpenpipelineV2EventsPipelinesDavisProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -55859,7 +55859,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -55889,7 +55889,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -55942,7 +55942,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -55972,7 +55972,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -55998,7 +55998,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -56050,7 +56050,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -56231,7 +56231,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -56249,7 +56249,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
 
 export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -56261,7 +56261,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -56287,7 +56287,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
 
 export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -56303,7 +56303,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -56311,7 +56311,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -56356,7 +56356,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -56389,7 +56389,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -56563,7 +56563,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -56593,7 +56593,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorAzure
      */
     include?: outputs.OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -56646,7 +56646,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorBizev
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -56676,7 +56676,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorBizev
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -56702,7 +56702,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorBizev
      */
     include?: outputs.OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -56754,7 +56754,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorCostA
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -56935,7 +56935,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorProdu
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -56953,7 +56953,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorProdu
 
 export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -56965,7 +56965,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorSampl
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -56991,7 +56991,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorSampl
 
 export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -57007,7 +57007,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorSampl
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -57015,7 +57015,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorSampl
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -57060,7 +57060,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorSecur
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -57093,7 +57093,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorSecur
      */
     include?: outputs.OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -57267,7 +57267,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -57297,7 +57297,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     include?: outputs.OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -57350,7 +57350,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -57380,7 +57380,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -57406,7 +57406,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     include?: outputs.OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -57458,7 +57458,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -57639,7 +57639,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -57657,7 +57657,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
 
 export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -57669,7 +57669,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -57695,7 +57695,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
 
 export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -57711,7 +57711,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -57719,7 +57719,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -57764,7 +57764,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -57797,7 +57797,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     include?: outputs.OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -57971,7 +57971,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -58001,7 +58001,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -58054,7 +58054,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -58084,7 +58084,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -58110,7 +58110,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -58162,7 +58162,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -58343,7 +58343,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -58361,7 +58361,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
 
 export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -58373,7 +58373,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -58399,7 +58399,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
 
 export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -58415,7 +58415,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -58423,7 +58423,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -58468,7 +58468,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -58501,7 +58501,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -58675,7 +58675,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -58705,7 +58705,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorAzureLog
      */
     include?: outputs.OpenpipelineV2EventsPipelinesStorageProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -58758,7 +58758,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorBizevent
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -58788,7 +58788,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorBizevent
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -58814,7 +58814,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorBizevent
      */
     include?: outputs.OpenpipelineV2EventsPipelinesStorageProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -58866,7 +58866,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorCostAllo
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -59047,7 +59047,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorProductA
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -59065,7 +59065,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorProductA
 
 export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -59077,7 +59077,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorSampling
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -59103,7 +59103,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorSampling
 
 export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -59119,7 +59119,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorSampling
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -59127,7 +59127,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorSampling
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -59172,7 +59172,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorSecurity
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -59205,7 +59205,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorSecurity
      */
     include?: outputs.OpenpipelineV2EventsPipelinesStorageProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -59304,7 +59304,7 @@ export interface OpenpipelineV2EventsRoutingRoutingEntriesRoutingEntry {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -59410,7 +59410,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     technology?: outputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -59440,7 +59440,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     include?: outputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -59493,7 +59493,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -59523,7 +59523,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -59549,7 +59549,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     include?: outputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -59601,7 +59601,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -59782,7 +59782,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -59800,7 +59800,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
 
 export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -59812,7 +59812,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -59838,7 +59838,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
 
 export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -59854,7 +59854,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -59862,7 +59862,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -59907,7 +59907,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -59940,7 +59940,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     include?: outputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -60023,7 +60023,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesStaticRouting {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -60129,7 +60129,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -60159,7 +60159,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -60212,7 +60212,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -60242,7 +60242,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -60268,7 +60268,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -60320,7 +60320,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -60501,7 +60501,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -60519,7 +60519,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
 
 export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -60531,7 +60531,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -60557,7 +60557,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
 
 export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -60573,7 +60573,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -60581,7 +60581,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -60626,7 +60626,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -60659,7 +60659,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -60833,7 +60833,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -60863,7 +60863,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -60916,7 +60916,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -60946,7 +60946,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -60972,7 +60972,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -61024,7 +61024,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -61205,7 +61205,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -61223,7 +61223,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
 
 export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -61235,7 +61235,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -61261,7 +61261,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
 
 export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -61277,7 +61277,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -61285,7 +61285,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -61330,7 +61330,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -61363,7 +61363,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -61537,7 +61537,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -61567,7 +61567,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorAzureL
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -61620,7 +61620,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorBizeve
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -61650,7 +61650,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorBizeve
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -61676,7 +61676,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorBizeve
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -61728,7 +61728,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorCostAl
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -61909,7 +61909,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorProduc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -61927,7 +61927,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorProduc
 
 export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -61939,7 +61939,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorSampli
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -61965,7 +61965,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorSampli
 
 export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -61981,7 +61981,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorSampli
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -61989,7 +61989,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorSampli
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -62034,7 +62034,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorSecuri
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -62067,7 +62067,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorSecuri
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -62241,7 +62241,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -62271,7 +62271,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -62324,7 +62324,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -62354,7 +62354,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -62380,7 +62380,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -62432,7 +62432,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -62613,7 +62613,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -62631,7 +62631,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
 
 export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -62643,7 +62643,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -62669,7 +62669,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
 
 export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -62685,7 +62685,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -62693,7 +62693,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -62738,7 +62738,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -62771,7 +62771,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -62945,7 +62945,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -62975,7 +62975,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorA
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -63028,7 +63028,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -63058,7 +63058,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -63084,7 +63084,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorB
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -63136,7 +63136,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorC
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -63317,7 +63317,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -63335,7 +63335,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorP
 
 export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -63347,7 +63347,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -63373,7 +63373,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorS
 
 export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -63389,7 +63389,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorS
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -63397,7 +63397,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -63442,7 +63442,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorS
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -63475,7 +63475,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorS
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -63649,7 +63649,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -63679,7 +63679,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -63732,7 +63732,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -63762,7 +63762,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -63788,7 +63788,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -63840,7 +63840,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -64021,7 +64021,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -64039,7 +64039,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
 
 export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -64051,7 +64051,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -64077,7 +64077,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
 
 export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -64093,7 +64093,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -64101,7 +64101,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -64146,7 +64146,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -64179,7 +64179,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -64353,7 +64353,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -64383,7 +64383,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -64436,7 +64436,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -64466,7 +64466,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -64492,7 +64492,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -64544,7 +64544,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -64725,7 +64725,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -64743,7 +64743,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
 
 export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -64755,7 +64755,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -64781,7 +64781,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
 
 export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -64797,7 +64797,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -64805,7 +64805,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -64850,7 +64850,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -64883,7 +64883,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -65057,7 +65057,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -65087,7 +65087,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorAzur
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -65140,7 +65140,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorBize
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -65170,7 +65170,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorBize
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -65196,7 +65196,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorBize
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -65248,7 +65248,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorCost
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -65429,7 +65429,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorProd
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -65447,7 +65447,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorProd
 
 export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -65459,7 +65459,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorSamp
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -65485,7 +65485,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorSamp
 
 export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -65501,7 +65501,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorSamp
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -65509,7 +65509,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorSamp
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -65554,7 +65554,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorSecu
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -65587,7 +65587,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorSecu
      */
     include?: outputs.OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -65686,7 +65686,7 @@ export interface OpenpipelineV2EventsSdlcRoutingRoutingEntriesRoutingEntry {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -65792,7 +65792,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     technology?: outputs.OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -65822,7 +65822,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     include?: outputs.OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -65875,7 +65875,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -65905,7 +65905,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -65931,7 +65931,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     include?: outputs.OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -65983,7 +65983,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -66164,7 +66164,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -66182,7 +66182,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
 
 export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -66194,7 +66194,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -66220,7 +66220,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
 
 export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -66236,7 +66236,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -66244,7 +66244,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -66289,7 +66289,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -66322,7 +66322,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     include?: outputs.OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -66405,7 +66405,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesStaticRouting {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -66511,7 +66511,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -66541,7 +66541,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -66594,7 +66594,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -66624,7 +66624,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -66650,7 +66650,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -66702,7 +66702,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -66883,7 +66883,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -66901,7 +66901,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
 
 export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -66913,7 +66913,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -66939,7 +66939,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
 
 export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -66955,7 +66955,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -66963,7 +66963,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -67008,7 +67008,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -67041,7 +67041,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -67215,7 +67215,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -67245,7 +67245,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -67298,7 +67298,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -67328,7 +67328,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -67354,7 +67354,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -67406,7 +67406,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -67587,7 +67587,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -67605,7 +67605,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
 
 export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -67617,7 +67617,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -67643,7 +67643,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
 
 export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -67659,7 +67659,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -67667,7 +67667,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -67712,7 +67712,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -67745,7 +67745,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -67919,7 +67919,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -67949,7 +67949,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorAz
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -68002,7 +68002,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -68032,7 +68032,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -68058,7 +68058,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorBi
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -68110,7 +68110,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorCo
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -68291,7 +68291,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -68309,7 +68309,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorPr
 
 export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -68321,7 +68321,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -68347,7 +68347,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorSa
 
 export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -68363,7 +68363,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorSa
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -68371,7 +68371,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -68416,7 +68416,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorSe
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -68449,7 +68449,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorSe
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -68623,7 +68623,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -68653,7 +68653,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -68706,7 +68706,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -68736,7 +68736,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -68762,7 +68762,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -68814,7 +68814,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -68995,7 +68995,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -69013,7 +69013,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
 
 export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -69025,7 +69025,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -69051,7 +69051,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
 
 export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -69067,7 +69067,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -69075,7 +69075,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -69120,7 +69120,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -69153,7 +69153,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -69327,7 +69327,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -69357,7 +69357,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -69410,7 +69410,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -69440,7 +69440,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -69466,7 +69466,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -69518,7 +69518,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -69699,7 +69699,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -69717,7 +69717,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
 
 export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -69729,7 +69729,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -69755,7 +69755,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
 
 export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -69771,7 +69771,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -69779,7 +69779,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -69824,7 +69824,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -69857,7 +69857,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -70031,7 +70031,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -70061,7 +70061,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -70114,7 +70114,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -70144,7 +70144,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -70170,7 +70170,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -70222,7 +70222,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -70403,7 +70403,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -70421,7 +70421,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
 
 export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -70433,7 +70433,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -70459,7 +70459,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
 
 export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -70475,7 +70475,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -70483,7 +70483,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -70528,7 +70528,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -70561,7 +70561,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -70735,7 +70735,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -70765,7 +70765,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -70818,7 +70818,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -70848,7 +70848,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -70874,7 +70874,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -70926,7 +70926,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -71107,7 +71107,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -71125,7 +71125,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
 
 export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -71137,7 +71137,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -71163,7 +71163,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
 
 export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -71179,7 +71179,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -71187,7 +71187,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -71232,7 +71232,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -71265,7 +71265,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -71439,7 +71439,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -71469,7 +71469,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -71522,7 +71522,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -71552,7 +71552,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -71578,7 +71578,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -71630,7 +71630,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -71811,7 +71811,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -71829,7 +71829,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
 
 export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -71841,7 +71841,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -71867,7 +71867,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
 
 export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -71883,7 +71883,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -71891,7 +71891,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -71936,7 +71936,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -71969,7 +71969,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -72068,7 +72068,7 @@ export interface OpenpipelineV2EventsSecurityRoutingRoutingEntriesRoutingEntry {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -72174,7 +72174,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -72204,7 +72204,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorAzu
      */
     include?: outputs.OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -72257,7 +72257,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorBiz
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -72287,7 +72287,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorBiz
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -72313,7 +72313,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorBiz
      */
     include?: outputs.OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -72365,7 +72365,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorCos
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -72546,7 +72546,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -72564,7 +72564,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorPro
 
 export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -72576,7 +72576,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorSam
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -72602,7 +72602,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorSam
 
 export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -72618,7 +72618,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorSam
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -72626,7 +72626,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorSam
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -72671,7 +72671,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorSec
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -72704,7 +72704,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorSec
      */
     include?: outputs.OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -72787,7 +72787,7 @@ export interface OpenpipelineV2LogsIngestsourcesStaticRouting {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -72893,7 +72893,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -72923,7 +72923,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorAzu
      */
     include?: outputs.OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -72976,7 +72976,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorBiz
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -73006,7 +73006,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorBiz
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -73032,7 +73032,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorBiz
      */
     include?: outputs.OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -73084,7 +73084,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorCos
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -73265,7 +73265,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -73283,7 +73283,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorPro
 
 export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -73295,7 +73295,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorSam
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -73321,7 +73321,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorSam
 
 export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -73337,7 +73337,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorSam
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -73345,7 +73345,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorSam
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -73390,7 +73390,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorSec
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -73423,7 +73423,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorSec
      */
     include?: outputs.OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -73597,7 +73597,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -73627,7 +73627,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorAzu
      */
     include?: outputs.OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -73680,7 +73680,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorBiz
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -73710,7 +73710,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorBiz
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -73736,7 +73736,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorBiz
      */
     include?: outputs.OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -73788,7 +73788,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorCos
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -73969,7 +73969,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -73987,7 +73987,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorPro
 
 export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -73999,7 +73999,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorSam
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -74025,7 +74025,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorSam
 
 export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -74041,7 +74041,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorSam
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -74049,7 +74049,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorSam
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -74094,7 +74094,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorSec
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -74127,7 +74127,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorSec
      */
     include?: outputs.OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -74301,7 +74301,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -74331,7 +74331,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorAzureLogForw
      */
     include?: outputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -74384,7 +74384,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorBizeventEven
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -74414,7 +74414,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorBizeventEven
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -74440,7 +74440,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorBizeventFiel
      */
     include?: outputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -74492,7 +74492,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorCostAllocati
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -74673,7 +74673,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorProductAlloc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -74691,7 +74691,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorProductAlloc
 
 export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -74703,7 +74703,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSamplingAwar
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -74729,7 +74729,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSamplingAwar
 
 export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -74745,7 +74745,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSamplingAwar
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -74753,7 +74753,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSamplingAwar
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -74798,7 +74798,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSecurityCont
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -74831,7 +74831,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSecurityEven
      */
     include?: outputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -75005,7 +75005,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -75035,7 +75035,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorA
      */
     include?: outputs.OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -75088,7 +75088,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -75118,7 +75118,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -75144,7 +75144,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorB
      */
     include?: outputs.OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -75196,7 +75196,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorC
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -75377,7 +75377,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -75395,7 +75395,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorP
 
 export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -75407,7 +75407,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -75433,7 +75433,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorS
 
 export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -75449,7 +75449,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorS
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -75457,7 +75457,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -75502,7 +75502,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorS
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -75535,7 +75535,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorS
      */
     include?: outputs.OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -75709,7 +75709,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -75739,7 +75739,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorAzureLo
      */
     include?: outputs.OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -75792,7 +75792,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorBizeven
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -75822,7 +75822,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorBizeven
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -75848,7 +75848,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorBizeven
      */
     include?: outputs.OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -75900,7 +75900,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorCostAll
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -76081,7 +76081,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorProduct
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -76099,7 +76099,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorProduct
 
 export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -76111,7 +76111,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorSamplin
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -76137,7 +76137,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorSamplin
 
 export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -76153,7 +76153,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorSamplin
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -76161,7 +76161,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorSamplin
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -76206,7 +76206,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorSecurit
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -76239,7 +76239,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorSecurit
      */
     include?: outputs.OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -76413,7 +76413,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -76443,7 +76443,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -76496,7 +76496,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -76526,7 +76526,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -76552,7 +76552,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -76604,7 +76604,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -76785,7 +76785,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -76803,7 +76803,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
 
 export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -76815,7 +76815,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -76841,7 +76841,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
 
 export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -76857,7 +76857,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -76865,7 +76865,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -76910,7 +76910,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -76943,7 +76943,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -77117,7 +77117,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -77147,7 +77147,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorAz
      */
     include?: outputs.OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -77200,7 +77200,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -77230,7 +77230,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -77256,7 +77256,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorBi
      */
     include?: outputs.OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -77308,7 +77308,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorCo
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -77489,7 +77489,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -77507,7 +77507,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorPr
 
 export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -77519,7 +77519,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -77545,7 +77545,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorSa
 
 export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -77561,7 +77561,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorSa
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -77569,7 +77569,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -77614,7 +77614,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorSe
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -77647,7 +77647,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorSe
      */
     include?: outputs.OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -77821,7 +77821,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -77851,7 +77851,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorAzureLogFo
      */
     include?: outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -77904,7 +77904,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorBizeventEv
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -77934,7 +77934,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorBizeventEv
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -77960,7 +77960,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorBizeventFi
      */
     include?: outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -78012,7 +78012,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorCostAlloca
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -78193,7 +78193,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorProductAll
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -78211,7 +78211,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorProductAll
 
 export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -78223,7 +78223,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSamplingAw
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -78249,7 +78249,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSamplingAw
 
 export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -78265,7 +78265,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSamplingAw
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -78273,7 +78273,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSamplingAw
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -78318,7 +78318,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSecurityCo
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -78351,7 +78351,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSecurityEv
      */
     include?: outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -78450,7 +78450,7 @@ export interface OpenpipelineV2LogsRoutingRoutingEntriesRoutingEntry {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -78556,7 +78556,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -78586,7 +78586,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -78639,7 +78639,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -78669,7 +78669,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -78695,7 +78695,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -78747,7 +78747,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -78928,7 +78928,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -78946,7 +78946,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
 
 export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -78958,7 +78958,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -78984,7 +78984,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
 
 export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -79000,7 +79000,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -79008,7 +79008,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -79053,7 +79053,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -79086,7 +79086,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -79169,7 +79169,7 @@ export interface OpenpipelineV2MetricsIngestsourcesStaticRouting {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -79275,7 +79275,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -79305,7 +79305,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -79358,7 +79358,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -79388,7 +79388,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -79414,7 +79414,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -79466,7 +79466,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -79647,7 +79647,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -79665,7 +79665,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
 
 export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -79677,7 +79677,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -79703,7 +79703,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
 
 export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -79719,7 +79719,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -79727,7 +79727,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -79772,7 +79772,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -79805,7 +79805,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -79979,7 +79979,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -80009,7 +80009,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -80062,7 +80062,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -80092,7 +80092,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -80118,7 +80118,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -80170,7 +80170,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -80351,7 +80351,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -80369,7 +80369,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
 
 export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -80381,7 +80381,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -80407,7 +80407,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
 
 export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -80423,7 +80423,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -80431,7 +80431,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -80476,7 +80476,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -80509,7 +80509,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -80683,7 +80683,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -80713,7 +80713,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorAzureLogF
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -80766,7 +80766,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorBizeventE
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -80796,7 +80796,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorBizeventE
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -80822,7 +80822,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorBizeventF
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -80874,7 +80874,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorCostAlloc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -81055,7 +81055,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorProductAl
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -81073,7 +81073,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorProductAl
 
 export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -81085,7 +81085,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorSamplingA
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -81111,7 +81111,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorSamplingA
 
 export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -81127,7 +81127,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorSamplingA
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -81135,7 +81135,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorSamplingA
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -81180,7 +81180,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorSecurityC
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -81213,7 +81213,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorSecurityE
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -81387,7 +81387,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -81417,7 +81417,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -81470,7 +81470,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -81500,7 +81500,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -81526,7 +81526,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -81578,7 +81578,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -81759,7 +81759,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -81777,7 +81777,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
 
 export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -81789,7 +81789,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -81815,7 +81815,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
 
 export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -81831,7 +81831,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -81839,7 +81839,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -81884,7 +81884,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -81917,7 +81917,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -82091,7 +82091,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -82121,7 +82121,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorAzur
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -82174,7 +82174,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorBize
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -82204,7 +82204,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorBize
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -82230,7 +82230,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorBize
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -82282,7 +82282,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorCost
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -82463,7 +82463,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorProd
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -82481,7 +82481,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorProd
 
 export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -82493,7 +82493,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorSamp
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -82519,7 +82519,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorSamp
 
 export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -82535,7 +82535,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorSamp
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -82543,7 +82543,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorSamp
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -82588,7 +82588,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorSecu
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -82621,7 +82621,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorSecu
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -82795,7 +82795,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -82825,7 +82825,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -82878,7 +82878,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -82908,7 +82908,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -82934,7 +82934,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -82986,7 +82986,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -83167,7 +83167,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -83185,7 +83185,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
 
 export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -83197,7 +83197,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -83223,7 +83223,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
 
 export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -83239,7 +83239,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -83247,7 +83247,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -83292,7 +83292,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -83325,7 +83325,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -83499,7 +83499,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -83529,7 +83529,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -83582,7 +83582,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -83612,7 +83612,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -83638,7 +83638,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -83690,7 +83690,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -83871,7 +83871,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -83889,7 +83889,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
 
 export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -83901,7 +83901,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -83927,7 +83927,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
 
 export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -83943,7 +83943,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -83951,7 +83951,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -83996,7 +83996,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -84029,7 +84029,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -84203,7 +84203,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -84233,7 +84233,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorAzureLo
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -84286,7 +84286,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorBizeven
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -84316,7 +84316,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorBizeven
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -84342,7 +84342,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorBizeven
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -84394,7 +84394,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorCostAll
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -84575,7 +84575,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorProduct
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -84593,7 +84593,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorProduct
 
 export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -84605,7 +84605,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorSamplin
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -84631,7 +84631,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorSamplin
 
 export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -84647,7 +84647,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorSamplin
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -84655,7 +84655,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorSamplin
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -84700,7 +84700,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorSecurit
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -84733,7 +84733,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorSecurit
      */
     include?: outputs.OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -84832,7 +84832,7 @@ export interface OpenpipelineV2MetricsRoutingRoutingEntriesRoutingEntry {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -84938,7 +84938,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     technology?: outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -84968,7 +84968,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     include?: outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -85021,7 +85021,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -85051,7 +85051,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -85077,7 +85077,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     include?: outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -85129,7 +85129,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -85310,7 +85310,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -85328,7 +85328,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
 
 export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -85340,7 +85340,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -85366,7 +85366,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
 
 export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -85382,7 +85382,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -85390,7 +85390,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -85435,7 +85435,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -85468,7 +85468,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     include?: outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -85551,7 +85551,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesStaticRouting {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -85657,7 +85657,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -85687,7 +85687,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -85740,7 +85740,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -85770,7 +85770,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -85796,7 +85796,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -85848,7 +85848,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -86029,7 +86029,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -86047,7 +86047,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
 
 export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -86059,7 +86059,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -86085,7 +86085,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
 
 export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -86101,7 +86101,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -86109,7 +86109,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -86154,7 +86154,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -86187,7 +86187,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -86361,7 +86361,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -86391,7 +86391,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -86444,7 +86444,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -86474,7 +86474,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -86500,7 +86500,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -86552,7 +86552,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -86733,7 +86733,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -86751,7 +86751,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
 
 export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -86763,7 +86763,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -86789,7 +86789,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
 
 export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -86805,7 +86805,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -86813,7 +86813,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -86858,7 +86858,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -86891,7 +86891,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -87065,7 +87065,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -87095,7 +87095,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorAz
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -87148,7 +87148,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -87178,7 +87178,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -87204,7 +87204,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorBi
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -87256,7 +87256,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorCo
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -87437,7 +87437,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -87455,7 +87455,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorPr
 
 export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -87467,7 +87467,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -87493,7 +87493,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorSa
 
 export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -87509,7 +87509,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorSa
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -87517,7 +87517,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -87562,7 +87562,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorSe
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -87595,7 +87595,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorSe
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -87769,7 +87769,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -87799,7 +87799,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -87852,7 +87852,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -87882,7 +87882,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -87908,7 +87908,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -87960,7 +87960,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -88141,7 +88141,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -88159,7 +88159,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
 
 export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -88171,7 +88171,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -88197,7 +88197,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
 
 export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -88213,7 +88213,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -88221,7 +88221,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -88266,7 +88266,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -88299,7 +88299,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -88473,7 +88473,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -88503,7 +88503,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -88556,7 +88556,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -88586,7 +88586,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -88612,7 +88612,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -88664,7 +88664,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -88845,7 +88845,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -88863,7 +88863,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
 
 export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -88875,7 +88875,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -88901,7 +88901,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
 
 export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -88917,7 +88917,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -88925,7 +88925,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -88970,7 +88970,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -89003,7 +89003,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -89177,7 +89177,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -89207,7 +89207,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -89260,7 +89260,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -89290,7 +89290,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -89316,7 +89316,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -89368,7 +89368,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -89549,7 +89549,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -89567,7 +89567,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
 
 export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -89579,7 +89579,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -89605,7 +89605,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
 
 export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -89621,7 +89621,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -89629,7 +89629,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -89674,7 +89674,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -89707,7 +89707,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -89881,7 +89881,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -89911,7 +89911,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -89964,7 +89964,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -89994,7 +89994,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -90020,7 +90020,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -90072,7 +90072,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -90253,7 +90253,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -90271,7 +90271,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
 
 export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -90283,7 +90283,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -90309,7 +90309,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
 
 export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -90325,7 +90325,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -90333,7 +90333,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -90378,7 +90378,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -90411,7 +90411,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -90585,7 +90585,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -90615,7 +90615,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -90668,7 +90668,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -90698,7 +90698,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -90724,7 +90724,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -90776,7 +90776,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -90957,7 +90957,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -90975,7 +90975,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
 
 export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -90987,7 +90987,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -91013,7 +91013,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
 
 export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -91029,7 +91029,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -91037,7 +91037,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -91082,7 +91082,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -91115,7 +91115,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -91214,7 +91214,7 @@ export interface OpenpipelineV2SecurityEventsRoutingRoutingEntriesRoutingEntry {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -91320,7 +91320,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -91350,7 +91350,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorAz
      */
     include?: outputs.OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -91403,7 +91403,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -91433,7 +91433,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -91459,7 +91459,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorBi
      */
     include?: outputs.OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -91511,7 +91511,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorCo
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -91692,7 +91692,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -91710,7 +91710,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorPr
 
 export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -91722,7 +91722,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -91748,7 +91748,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorSa
 
 export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -91764,7 +91764,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorSa
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -91772,7 +91772,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -91817,7 +91817,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorSe
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -91850,7 +91850,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorSe
      */
     include?: outputs.OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -91933,7 +91933,7 @@ export interface OpenpipelineV2SpansIngestsourcesStaticRouting {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -92039,7 +92039,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -92069,7 +92069,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorAz
      */
     include?: outputs.OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -92122,7 +92122,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -92152,7 +92152,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -92178,7 +92178,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorBi
      */
     include?: outputs.OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -92230,7 +92230,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorCo
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -92411,7 +92411,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -92429,7 +92429,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorPr
 
 export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -92441,7 +92441,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -92467,7 +92467,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorSa
 
 export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -92483,7 +92483,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorSa
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -92491,7 +92491,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -92536,7 +92536,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorSe
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -92569,7 +92569,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorSe
      */
     include?: outputs.OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -92743,7 +92743,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -92773,7 +92773,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorAz
      */
     include?: outputs.OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -92826,7 +92826,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -92856,7 +92856,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -92882,7 +92882,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorBi
      */
     include?: outputs.OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -92934,7 +92934,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorCo
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -93115,7 +93115,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -93133,7 +93133,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorPr
 
 export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -93145,7 +93145,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -93171,7 +93171,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorSa
 
 export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -93187,7 +93187,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorSa
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -93195,7 +93195,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -93240,7 +93240,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorSe
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -93273,7 +93273,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorSe
      */
     include?: outputs.OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -93447,7 +93447,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -93477,7 +93477,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorAzureLogFor
      */
     include?: outputs.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -93530,7 +93530,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorBizeventEve
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -93560,7 +93560,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorBizeventEve
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -93586,7 +93586,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorBizeventFie
      */
     include?: outputs.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -93638,7 +93638,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorCostAllocat
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -93819,7 +93819,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorProductAllo
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -93837,7 +93837,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorProductAllo
 
 export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -93849,7 +93849,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorSamplingAwa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -93875,7 +93875,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorSamplingAwa
 
 export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -93891,7 +93891,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorSamplingAwa
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -93899,7 +93899,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorSamplingAwa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -93944,7 +93944,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorSecurityCon
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -93977,7 +93977,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorSecurityEve
      */
     include?: outputs.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -94151,7 +94151,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -94181,7 +94181,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -94234,7 +94234,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -94264,7 +94264,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -94290,7 +94290,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -94342,7 +94342,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -94523,7 +94523,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -94541,7 +94541,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
 
 export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -94553,7 +94553,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -94579,7 +94579,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
 
 export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -94595,7 +94595,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -94603,7 +94603,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -94648,7 +94648,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -94681,7 +94681,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     include?: outputs.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -94855,7 +94855,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -94885,7 +94885,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorAzureL
      */
     include?: outputs.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -94938,7 +94938,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorBizeve
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -94968,7 +94968,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorBizeve
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -94994,7 +94994,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorBizeve
      */
     include?: outputs.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -95046,7 +95046,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorCostAl
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -95227,7 +95227,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorProduc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -95245,7 +95245,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorProduc
 
 export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -95257,7 +95257,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorSampli
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -95283,7 +95283,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorSampli
 
 export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -95299,7 +95299,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorSampli
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -95307,7 +95307,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorSampli
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -95352,7 +95352,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorSecuri
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -95385,7 +95385,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorSecuri
      */
     include?: outputs.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -95559,7 +95559,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -95589,7 +95589,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -95642,7 +95642,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -95672,7 +95672,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -95698,7 +95698,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -95750,7 +95750,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -95931,7 +95931,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -95949,7 +95949,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
 
 export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -95961,7 +95961,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -95987,7 +95987,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
 
 export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -96003,7 +96003,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -96011,7 +96011,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -96056,7 +96056,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -96089,7 +96089,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -96263,7 +96263,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -96293,7 +96293,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorA
      */
     include?: outputs.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -96346,7 +96346,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -96376,7 +96376,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -96402,7 +96402,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorB
      */
     include?: outputs.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -96454,7 +96454,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorC
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -96635,7 +96635,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -96653,7 +96653,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorP
 
 export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -96665,7 +96665,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -96691,7 +96691,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorS
 
 export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -96707,7 +96707,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorS
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -96715,7 +96715,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -96760,7 +96760,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorS
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -96793,7 +96793,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorS
      */
     include?: outputs.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -96967,7 +96967,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -96997,7 +96997,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorAzureLogF
      */
     include?: outputs.OpenpipelineV2SpansPipelinesStorageProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -97050,7 +97050,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorBizeventE
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -97080,7 +97080,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorBizeventE
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -97106,7 +97106,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorBizeventF
      */
     include?: outputs.OpenpipelineV2SpansPipelinesStorageProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -97158,7 +97158,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorCostAlloc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -97339,7 +97339,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorProductAl
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -97357,7 +97357,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorProductAl
 
 export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -97369,7 +97369,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorSamplingA
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -97395,7 +97395,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorSamplingA
 
 export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -97411,7 +97411,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorSamplingA
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -97419,7 +97419,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorSamplingA
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -97464,7 +97464,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorSecurityC
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -97497,7 +97497,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorSecurityE
      */
     include?: outputs.OpenpipelineV2SpansPipelinesStorageProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -97596,7 +97596,7 @@ export interface OpenpipelineV2SpansRoutingRoutingEntriesRoutingEntry {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -97702,7 +97702,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     technology?: outputs.OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -97732,7 +97732,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     include?: outputs.OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -97785,7 +97785,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -97815,7 +97815,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -97841,7 +97841,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     include?: outputs.OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -97893,7 +97893,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -98074,7 +98074,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -98092,7 +98092,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
 
 export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -98104,7 +98104,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -98130,7 +98130,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
 
 export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -98146,7 +98146,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -98154,7 +98154,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -98199,7 +98199,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -98232,7 +98232,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     include?: outputs.OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -98315,7 +98315,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesStaticRouting {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -98421,7 +98421,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -98451,7 +98451,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -98504,7 +98504,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -98534,7 +98534,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -98560,7 +98560,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -98612,7 +98612,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -98793,7 +98793,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -98811,7 +98811,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
 
 export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -98823,7 +98823,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -98849,7 +98849,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
 
 export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -98865,7 +98865,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -98873,7 +98873,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -98918,7 +98918,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -98951,7 +98951,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -99125,7 +99125,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -99155,7 +99155,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -99208,7 +99208,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -99238,7 +99238,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -99264,7 +99264,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -99316,7 +99316,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -99497,7 +99497,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -99515,7 +99515,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
 
 export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -99527,7 +99527,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -99553,7 +99553,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
 
 export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -99569,7 +99569,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -99577,7 +99577,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -99622,7 +99622,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -99655,7 +99655,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -99829,7 +99829,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -99859,7 +99859,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorAzur
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -99912,7 +99912,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorBize
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -99942,7 +99942,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorBize
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -99968,7 +99968,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorBize
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -100020,7 +100020,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorCost
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -100201,7 +100201,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorProd
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -100219,7 +100219,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorProd
 
 export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -100231,7 +100231,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorSamp
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -100257,7 +100257,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorSamp
 
 export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -100273,7 +100273,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorSamp
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -100281,7 +100281,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorSamp
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -100326,7 +100326,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorSecu
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -100359,7 +100359,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorSecu
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -100533,7 +100533,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -100563,7 +100563,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -100616,7 +100616,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -100646,7 +100646,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -100672,7 +100672,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -100724,7 +100724,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -100905,7 +100905,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -100923,7 +100923,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
 
 export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -100935,7 +100935,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -100961,7 +100961,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
 
 export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -100977,7 +100977,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -100985,7 +100985,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -101030,7 +101030,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -101063,7 +101063,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -101237,7 +101237,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -101267,7 +101267,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -101320,7 +101320,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -101350,7 +101350,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -101376,7 +101376,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -101428,7 +101428,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -101609,7 +101609,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -101627,7 +101627,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
 
 export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -101639,7 +101639,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -101665,7 +101665,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
 
 export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -101681,7 +101681,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -101689,7 +101689,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -101734,7 +101734,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -101767,7 +101767,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -101941,7 +101941,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -101971,7 +101971,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -102024,7 +102024,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -102054,7 +102054,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -102080,7 +102080,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -102132,7 +102132,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -102313,7 +102313,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -102331,7 +102331,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
 
 export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -102343,7 +102343,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -102369,7 +102369,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
 
 export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -102385,7 +102385,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -102393,7 +102393,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -102438,7 +102438,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -102471,7 +102471,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -102645,7 +102645,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -102675,7 +102675,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -102728,7 +102728,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -102758,7 +102758,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -102784,7 +102784,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -102836,7 +102836,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -103017,7 +103017,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -103035,7 +103035,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
 
 export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -103047,7 +103047,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -103073,7 +103073,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
 
 export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -103089,7 +103089,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -103097,7 +103097,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -103142,7 +103142,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -103175,7 +103175,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -103349,7 +103349,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -103379,7 +103379,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorAz
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -103432,7 +103432,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -103462,7 +103462,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -103488,7 +103488,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorBi
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -103540,7 +103540,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorCo
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -103721,7 +103721,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -103739,7 +103739,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorPr
 
 export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -103751,7 +103751,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -103777,7 +103777,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorSa
 
 export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -103793,7 +103793,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorSa
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -103801,7 +103801,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -103846,7 +103846,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorSe
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -103879,7 +103879,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorSe
      */
     include?: outputs.OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -103978,7 +103978,7 @@ export interface OpenpipelineV2SystemEventsRoutingRoutingEntriesRoutingEntry {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -104084,7 +104084,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     technology?: outputs.OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -104114,7 +104114,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     include?: outputs.OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -104167,7 +104167,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -104197,7 +104197,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -104223,7 +104223,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     include?: outputs.OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -104275,7 +104275,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -104456,7 +104456,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -104474,7 +104474,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
 
 export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -104486,7 +104486,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -104512,7 +104512,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
 
 export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -104528,7 +104528,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -104536,7 +104536,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -104581,7 +104581,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -104614,7 +104614,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     include?: outputs.OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -104697,7 +104697,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesStaticRouting {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -104803,7 +104803,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -104833,7 +104833,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -104886,7 +104886,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -104916,7 +104916,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -104942,7 +104942,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -104994,7 +104994,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -105175,7 +105175,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -105193,7 +105193,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
 
 export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -105205,7 +105205,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -105231,7 +105231,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
 
 export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -105247,7 +105247,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -105255,7 +105255,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -105300,7 +105300,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -105333,7 +105333,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -105507,7 +105507,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -105537,7 +105537,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -105590,7 +105590,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -105620,7 +105620,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -105646,7 +105646,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -105698,7 +105698,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -105879,7 +105879,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -105897,7 +105897,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
 
 export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -105909,7 +105909,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -105935,7 +105935,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
 
 export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -105951,7 +105951,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -105959,7 +105959,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -106004,7 +106004,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -106037,7 +106037,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -106211,7 +106211,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -106241,7 +106241,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorAzureL
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -106294,7 +106294,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorBizeve
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -106324,7 +106324,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorBizeve
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -106350,7 +106350,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorBizeve
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -106402,7 +106402,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorCostAl
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -106583,7 +106583,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorProduc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -106601,7 +106601,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorProduc
 
 export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -106613,7 +106613,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorSampli
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -106639,7 +106639,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorSampli
 
 export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -106655,7 +106655,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorSampli
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -106663,7 +106663,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorSampli
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -106708,7 +106708,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorSecuri
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -106741,7 +106741,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorSecuri
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -106915,7 +106915,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -106945,7 +106945,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -106998,7 +106998,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -107028,7 +107028,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -107054,7 +107054,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -107106,7 +107106,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -107287,7 +107287,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -107305,7 +107305,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
 
 export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -107317,7 +107317,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -107343,7 +107343,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
 
 export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -107359,7 +107359,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -107367,7 +107367,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -107412,7 +107412,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -107445,7 +107445,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -107619,7 +107619,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -107649,7 +107649,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorA
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -107702,7 +107702,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -107732,7 +107732,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorB
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -107758,7 +107758,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorB
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -107810,7 +107810,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorC
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -107991,7 +107991,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -108009,7 +108009,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorP
 
 export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -108021,7 +108021,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -108047,7 +108047,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorS
 
 export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -108063,7 +108063,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorS
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -108071,7 +108071,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorS
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -108116,7 +108116,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorS
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -108149,7 +108149,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorS
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -108323,7 +108323,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -108353,7 +108353,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -108406,7 +108406,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -108436,7 +108436,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -108462,7 +108462,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -108514,7 +108514,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -108695,7 +108695,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -108713,7 +108713,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
 
 export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -108725,7 +108725,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -108751,7 +108751,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
 
 export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -108767,7 +108767,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -108775,7 +108775,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -108820,7 +108820,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -108853,7 +108853,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -109027,7 +109027,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -109057,7 +109057,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -109110,7 +109110,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -109140,7 +109140,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -109166,7 +109166,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -109218,7 +109218,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -109399,7 +109399,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -109417,7 +109417,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
 
 export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -109429,7 +109429,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -109455,7 +109455,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
 
 export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -109471,7 +109471,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -109479,7 +109479,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -109524,7 +109524,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -109557,7 +109557,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -109731,7 +109731,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -109761,7 +109761,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorAzur
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -109814,7 +109814,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorBize
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -109844,7 +109844,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorBize
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -109870,7 +109870,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorBize
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -109922,7 +109922,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorCost
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -110103,7 +110103,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorProd
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -110121,7 +110121,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorProd
 
 export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -110133,7 +110133,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorSamp
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -110159,7 +110159,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorSamp
 
 export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -110175,7 +110175,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorSamp
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -110183,7 +110183,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorSamp
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -110228,7 +110228,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorSecu
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -110261,7 +110261,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorSecu
      */
     include?: outputs.OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -110360,7 +110360,7 @@ export interface OpenpipelineV2UserEventsRoutingRoutingEntriesRoutingEntry {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -110466,7 +110466,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     technology?: outputs.OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -110496,7 +110496,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     include?: outputs.OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -110549,7 +110549,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -110579,7 +110579,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -110605,7 +110605,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     include?: outputs.OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -110657,7 +110657,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -110838,7 +110838,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -110856,7 +110856,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
 
 export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -110868,7 +110868,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -110894,7 +110894,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
 
 export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -110910,7 +110910,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -110918,7 +110918,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -110963,7 +110963,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -110996,7 +110996,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     include?: outputs.OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -111079,7 +111079,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesStaticRouting {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }
@@ -111185,7 +111185,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -111215,7 +111215,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -111268,7 +111268,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -111298,7 +111298,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -111324,7 +111324,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -111376,7 +111376,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -111557,7 +111557,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -111575,7 +111575,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
 
 export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -111587,7 +111587,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -111613,7 +111613,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
 
 export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -111629,7 +111629,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -111637,7 +111637,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -111682,7 +111682,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -111715,7 +111715,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -111889,7 +111889,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -111919,7 +111919,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -111972,7 +111972,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -112002,7 +112002,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -112028,7 +112028,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -112080,7 +112080,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -112261,7 +112261,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -112279,7 +112279,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
 
 export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -112291,7 +112291,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -112317,7 +112317,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
 
 export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -112333,7 +112333,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -112341,7 +112341,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -112386,7 +112386,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -112419,7 +112419,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -112593,7 +112593,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -112623,7 +112623,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorAzur
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -112676,7 +112676,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorBize
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -112706,7 +112706,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorBize
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -112732,7 +112732,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorBize
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -112784,7 +112784,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorCost
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -112965,7 +112965,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorProd
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -112983,7 +112983,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorProd
 
 export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -112995,7 +112995,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorSamp
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -113021,7 +113021,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorSamp
 
 export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -113037,7 +113037,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorSamp
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -113045,7 +113045,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorSamp
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -113090,7 +113090,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorSecu
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -113123,7 +113123,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorSecu
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -113297,7 +113297,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -113327,7 +113327,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -113380,7 +113380,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -113410,7 +113410,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -113436,7 +113436,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -113488,7 +113488,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -113669,7 +113669,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -113687,7 +113687,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
 
 export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -113699,7 +113699,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -113725,7 +113725,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
 
 export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -113741,7 +113741,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -113749,7 +113749,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -113794,7 +113794,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -113827,7 +113827,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -114001,7 +114001,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -114031,7 +114031,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -114084,7 +114084,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -114114,7 +114114,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -114140,7 +114140,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -114192,7 +114192,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -114373,7 +114373,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -114391,7 +114391,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
 
 export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -114403,7 +114403,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -114429,7 +114429,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
 
 export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -114445,7 +114445,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -114453,7 +114453,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -114498,7 +114498,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -114531,7 +114531,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -114705,7 +114705,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -114735,7 +114735,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -114788,7 +114788,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -114818,7 +114818,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -114844,7 +114844,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -114896,7 +114896,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -115077,7 +115077,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -115095,7 +115095,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
 
 export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -115107,7 +115107,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -115133,7 +115133,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
 
 export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -115149,7 +115149,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -115157,7 +115157,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -115202,7 +115202,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -115235,7 +115235,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -115409,7 +115409,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -115439,7 +115439,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -115492,7 +115492,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -115522,7 +115522,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -115548,7 +115548,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -115600,7 +115600,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -115781,7 +115781,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -115799,7 +115799,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
 
 export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -115811,7 +115811,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -115837,7 +115837,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
 
 export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -115853,7 +115853,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -115861,7 +115861,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -115906,7 +115906,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -115939,7 +115939,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -116113,7 +116113,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Possible Values: `AzureLogForwarding`, `Bizevent`, `BucketAssignment`, `CostAllocation`, `CounterMetric`, `Davis`, `Dql`, `Drop`, `FieldsAdd`, `FieldsRemove`, `FieldsRename`, `HistogramMetric`, `NoStorage`, `ProductAllocation`, `SamplingAwareCounterMetric`, `SamplingAwareValueMetric`, `SecurityContext`, `SecurityEvent`, `Technology`, `ValueMetric`
+     * Processor type. Possible Values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `technology`, `valueMetric`.
      */
     type: string;
     /**
@@ -116143,7 +116143,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorAz
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorAzureLogForwardingFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -116196,7 +116196,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -116226,7 +116226,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorBi
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -116252,7 +116252,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorBi
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorBizeventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -116304,7 +116304,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorCo
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -116485,7 +116485,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorPr
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -116503,7 +116503,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorPr
 
 export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorSamplingAwareCounterMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -116515,7 +116515,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -116541,7 +116541,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorSa
 
 export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorSamplingAwareValueMetric {
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     aggregation?: string;
     /**
@@ -116557,7 +116557,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorSa
      */
     field?: string;
     /**
-     * Possible Values: `Duration`, `Field`
+     * Possible Values: `duration`, `field`.
      */
     measurement: string;
     /**
@@ -116565,7 +116565,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorSa
      */
     metricKey: string;
     /**
-     * Possible Values: `Disabled`, `Enabled`
+     * Possible Values: `disabled`, `enabled`.
      */
     sampling?: string;
 }
@@ -116610,7 +116610,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorSe
      */
     multiValueConstants?: string[];
     /**
-     * Possible Values: `Constant`, `Field`, `MultiValueConstant`
+     * Type of value assignment. Possible Values: `constant`, `field`, `multiValueConstant`.
      */
     type: string;
 }
@@ -116643,7 +116643,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorSe
      */
     include?: outputs.OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorSecurityEventFieldExtractionInclude;
     /**
-     * Possible Values: `Exclude`, `Include`, `IncludeAll`
+     * Fields Extraction type. Possible Values: `exclude`, `include`, `includeAll`.
      */
     type: string;
 }
@@ -116742,7 +116742,7 @@ export interface OpenpipelineV2UsersessionsRoutingRoutingEntriesRoutingEntry {
      */
     pipelineId?: string;
     /**
-     * Possible Values: `Builtin`, `Custom`
+     * Pipeline Type. Possible Values: `builtin`, `custom`.
      */
     pipelineType: string;
 }

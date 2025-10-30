@@ -10,6 +10,9 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This setting has been deprecated by Dynatrace. Trying to apply this resource will produce an error message. It won't have an effect on your Dynatrace Environment anymore.
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/securityContext:SecurityContext")]
     public partial class SecurityContext : global::Pulumi.CustomResource
     {
