@@ -18,36 +18,6 @@ import * as utilities from "./utilities";
  * - Service-Level Objectives overview - hhttps://docs.dynatrace.com/docs/deliver/service-level-objectives
  *
  * - SLO Service Public API - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Service-Level+Objectives
- *
- * ## Resource Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const _name_ = new dynatrace.PlatformSlo("#name#", {
- *     criteria: {
- *         criteriaDetails: [{
- *             target: 96,
- *             timeframeFrom: "now-30d",
- *             timeframeTo: "now",
- *             warning: 99,
- *         }],
- *     },
- *     customSli: {
- *         indicator: `  timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }, by: { dt.entity.service }
- *   | fieldsAdd tags=entityAttr(dt.entity.service, "tags")
- *   | filter in(tags, "criticality:Gold")
- *   | fieldsAdd entityName = entityName(dt.entity.service)
- *   | fieldsAdd sli=(((total[]-failures[])/total[])*(100))
- *   | fieldsRemove total, failures, tags
- *
- * `,
- *     },
- *     description: "Sample custom SLO",
- *     tags: ["ExampleKey:ExampleValue"],
- * });
- * ```
  */
 export class PlatformSlo extends pulumi.CustomResource {
     /**

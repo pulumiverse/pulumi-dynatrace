@@ -10,18 +10,6 @@ import * as utilities from "./utilities";
  * ## Dynatrace Documentation
  *
  * - Monitored entities API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2
- *
- * ## Resource Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const _name_ = new dynatrace.CustomDevice("#name#", {
- *     customDeviceId: "customDeviceId",
- *     displayName: "customDevicename",
- * });
- * ```
  */
 export class CustomDevice extends pulumi.CustomResource {
     /**

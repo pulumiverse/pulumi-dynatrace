@@ -11,6 +11,18 @@ import * as utilities from "./utilities";
  *
  * > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
  *
+ * ## Conflicts
+ *
+ * > **Warning** If this resource is used in combination with `dynatrace.IamGroup`, there is a potential for conflicts when both resources attempt to manage group permissions.
+ * It is recommended to manage group permissions with the `dynatrace.IamPermission` resource.
+ * To avoid conflicts when using the `dynatrace.IamPermission` resource, ensure to add the following lifecycle block to the `dynatrace.IamGroup` resource:
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const restricted = new dynatrace.IamGroup("Restricted", {name: "Restricted"});
+ * ```
+ *
  * ## Dynatrace Documentation
  *
  * - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -23,9 +35,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const permA = new dynatrace.IamPermission("permA", {
- *     account: "023733f0-86d8-47d1-88bd-7f5cc2e22eb8",
+ * const permA = new dynatrace.IamPermission("perm_a", {
+ *     name: "tenant-viewer",
  *     group: "74ec0a82-8010-4f11-8579-b29a5ba865f0",
+ *     account: "023733f0-86d8-47d1-88bd-7f5cc2e22eb8",
  * });
  * ```
  */

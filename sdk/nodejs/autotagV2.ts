@@ -47,7 +47,7 @@ export class AutotagV2 extends pulumi.CustomResource {
      */
     declare public readonly rules: pulumi.Output<outputs.AutotagV2Rules | undefined>;
     /**
-     * If `true` this resource will not
+     * If `true` the specified rules are ignored with the assumption that they're maintained externally or via `dynatrace.AutotagRules`
      */
     declare public readonly rulesMaintainedExternally: pulumi.Output<boolean | undefined>;
 
@@ -97,7 +97,7 @@ export interface AutotagV2State {
      */
     rules?: pulumi.Input<inputs.AutotagV2Rules>;
     /**
-     * If `true` this resource will not
+     * If `true` the specified rules are ignored with the assumption that they're maintained externally or via `dynatrace.AutotagRules`
      */
     rulesMaintainedExternally?: pulumi.Input<boolean>;
 }
@@ -119,7 +119,7 @@ export interface AutotagV2Args {
      */
     rules?: pulumi.Input<inputs.AutotagV2Rules>;
     /**
-     * If `true` this resource will not
+     * If `true` the specified rules are ignored with the assumption that they're maintained externally or via `dynatrace.AutotagRules`
      */
     rulesMaintainedExternally?: pulumi.Input<boolean>;
 }

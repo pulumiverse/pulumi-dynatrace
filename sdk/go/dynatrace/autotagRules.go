@@ -38,14 +38,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			sampleAutotagV2, err := dynatrace.NewAutotagV2(ctx, "sampleAutotagV2", &dynatrace.AutotagV2Args{
+//			sample, err := dynatrace.NewAutotagV2(ctx, "sample", &dynatrace.AutotagV2Args{
+//				Name:                      pulumi.String("sample"),
 //				RulesMaintainedExternally: pulumi.Bool(true),
 //			})
 //			if err != nil {
 //				return err
 //			}
-//			_, err = dynatrace.NewAutotagRules(ctx, "sampleAutotagRules", &dynatrace.AutotagRulesArgs{
-//				AutoTagId: sampleAutotagV2.ID(),
+//			// Be careful when maintaining `dynatrace_autotag_rules` in separate modules.
+//			// Do not execute `pulumi up` in parallel when several modules contain
+//			// `dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
+//			_, err = dynatrace.NewAutotagRules(ctx, "sample", &dynatrace.AutotagRulesArgs{
+//				AutoTagId: sample.ID(),
 //				Rules: &dynatrace.AutotagRulesRulesArgs{
 //					Rules: dynatrace.AutotagRulesRulesRuleArray{
 //						&dynatrace.AutotagRulesRulesRuleArgs{

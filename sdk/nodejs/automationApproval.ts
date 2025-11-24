@@ -12,15 +12,6 @@ import * as utilities from "./utilities";
  * - Dynatrace Workflows - https://www.dynatrace.com/support/help/platform-modules/cloud-automation/workflows
  *
  * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:automation.approval)
- *
- * ## Resource Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const _name_ = new dynatrace.AutomationApproval("#name#", {workflowAppAccessApprovalEnabled: true});
- * ```
  */
 export class AutomationApproval extends pulumi.CustomResource {
     /**

@@ -35,13 +35,25 @@ namespace Pulumiverse.Dynatrace
         /// Endpoint segment
         /// </summary>
         [Output("pathSegment")]
-        public Output<string> PathSegment { get; private set; } = null!;
+        public Output<string?> PathSegment { get; private set; } = null!;
 
         /// <summary>
         /// Processing stage
         /// </summary>
         [Output("processing")]
-        public Output<Outputs.OpenpipelineV2UsersessionsIngestsourcesProcessing> Processing { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2UsersessionsIngestsourcesProcessing?> Processing { get; private set; } = null!;
+
+        /// <summary>
+        /// Source
+        /// </summary>
+        [Output("source")]
+        public Output<string?> Source { get; private set; } = null!;
+
+        /// <summary>
+        /// Source Type. Possible Values: `Extension`, `Http`
+        /// </summary>
+        [Output("sourceType")]
+        public Output<string?> SourceType { get; private set; } = null!;
 
         /// <summary>
         /// Static routing of endpoint
@@ -117,14 +129,26 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// Endpoint segment
         /// </summary>
-        [Input("pathSegment", required: true)]
-        public Input<string> PathSegment { get; set; } = null!;
+        [Input("pathSegment")]
+        public Input<string>? PathSegment { get; set; }
 
         /// <summary>
         /// Processing stage
         /// </summary>
-        [Input("processing", required: true)]
-        public Input<Inputs.OpenpipelineV2UsersessionsIngestsourcesProcessingArgs> Processing { get; set; } = null!;
+        [Input("processing")]
+        public Input<Inputs.OpenpipelineV2UsersessionsIngestsourcesProcessingArgs>? Processing { get; set; }
+
+        /// <summary>
+        /// Source
+        /// </summary>
+        [Input("source")]
+        public Input<string>? Source { get; set; }
+
+        /// <summary>
+        /// Source Type. Possible Values: `Extension`, `Http`
+        /// </summary>
+        [Input("sourceType")]
+        public Input<string>? SourceType { get; set; }
 
         /// <summary>
         /// Static routing of endpoint
@@ -169,6 +193,18 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("processing")]
         public Input<Inputs.OpenpipelineV2UsersessionsIngestsourcesProcessingGetArgs>? Processing { get; set; }
+
+        /// <summary>
+        /// Source
+        /// </summary>
+        [Input("source")]
+        public Input<string>? Source { get; set; }
+
+        /// <summary>
+        /// Source Type. Possible Values: `Extension`, `Http`
+        /// </summary>
+        [Input("sourceType")]
+        public Input<string>? SourceType { get; set; }
 
         /// <summary>
         /// Static routing of endpoint

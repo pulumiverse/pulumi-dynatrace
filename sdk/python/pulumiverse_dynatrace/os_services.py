@@ -45,7 +45,7 @@ class OsServicesArgs:
         :param pulumi.Input['OsServicesDetectionConditionsLinuxArgs'] detection_conditions_linux: Detection rules
         :param pulumi.Input['OsServicesDetectionConditionsWindowsArgs'] detection_conditions_windows: Detection rules
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input['OsServicesMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input['OsServicesMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.str] name: Rule name
         :param pulumi.Input[_builtins.bool] not_installed_alerting: By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -193,7 +193,7 @@ class OsServicesArgs:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['OsServicesMetadataArgs']]:
         """
-        Set of additional key-value properties to be attached to the triggered event.
+        Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         """
         return pulumi.get(self, "metadata")
 
@@ -303,7 +303,7 @@ class _OsServicesState:
         :param pulumi.Input['OsServicesDetectionConditionsWindowsArgs'] detection_conditions_windows: Detection rules
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input['OsServicesMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input['OsServicesMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.bool] monitoring: Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
         :param pulumi.Input[_builtins.str] name: Rule name
         :param pulumi.Input[_builtins.bool] not_installed_alerting: By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
@@ -433,7 +433,7 @@ class _OsServicesState:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['OsServicesMetadataArgs']]:
         """
-        Set of additional key-value properties to be attached to the triggered event.
+        Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         """
         return pulumi.get(self, "metadata")
 
@@ -573,7 +573,7 @@ class OsServices(pulumi.CustomResource):
         :param pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']] detection_conditions_windows: Detection rules
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.bool] monitoring: Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
         :param pulumi.Input[_builtins.str] name: Rule name
         :param pulumi.Input[_builtins.bool] not_installed_alerting: By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
@@ -703,7 +703,7 @@ class OsServices(pulumi.CustomResource):
         :param pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']] detection_conditions_windows: Detection rules
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.bool] monitoring: Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
         :param pulumi.Input[_builtins.str] name: Rule name
         :param pulumi.Input[_builtins.bool] not_installed_alerting: By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
@@ -800,7 +800,7 @@ class OsServices(pulumi.CustomResource):
     @pulumi.getter
     def metadata(self) -> pulumi.Output[Optional['outputs.OsServicesMetadata']]:
         """
-        Set of additional key-value properties to be attached to the triggered event.
+        Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         """
         return pulumi.get(self, "metadata")
 

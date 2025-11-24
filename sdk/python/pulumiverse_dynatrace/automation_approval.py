@@ -80,15 +80,6 @@ class AutomationApproval(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:automation.approval)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.AutomationApproval("#name#", workflow_app_access_approval_enabled=True)
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] workflow_app_access_approval_enabled: Allow on tenant level anyone with access to the app can respond to requests via an approval link.
@@ -107,15 +98,6 @@ class AutomationApproval(pulumi.CustomResource):
         - Dynatrace Workflows - https://www.dynatrace.com/support/help/platform-modules/cloud-automation/workflows
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:automation.approval)
-
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.AutomationApproval("#name#", workflow_app_access_approval_enabled=True)
-        ```
 
         :param str resource_name: The name of the resource.
         :param AutomationApprovalArgs args: The arguments to use to populate this resource's properties.

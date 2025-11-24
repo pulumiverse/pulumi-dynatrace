@@ -20,56 +20,6 @@ import (
 // - DDU Pools - https://www.dynatrace.com/support/help/monitoring-consumption/davis-data-units#ddu-pools
 //
 // - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:accounting.ddu.limit`)
-//
-// ## Resource Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewDduPool(ctx, "#name#", &dynatrace.DduPoolArgs{
-//				Events: &dynatrace.DduPoolEventsArgs{
-//					Enabled: pulumi.Bool(true),
-//					Type:    pulumi.String("MONTHLY"),
-//					Value:   pulumi.Int(125),
-//				},
-//				LogMonitoring: &dynatrace.DduPoolLogMonitoringArgs{
-//					Enabled: pulumi.Bool(true),
-//					Type:    pulumi.String("MONTHLY"),
-//					Value:   pulumi.Int(124),
-//				},
-//				Metrics: &dynatrace.DduPoolMetricsArgs{
-//					Enabled: pulumi.Bool(true),
-//					Type:    pulumi.String("MONTHLY"),
-//					Value:   pulumi.Int(123),
-//				},
-//				Serverless: &dynatrace.DduPoolServerlessArgs{
-//					Enabled: pulumi.Bool(true),
-//					Type:    pulumi.String("MONTHLY"),
-//					Value:   pulumi.Int(126),
-//				},
-//				Traces: &dynatrace.DduPoolTracesArgs{
-//					Enabled: pulumi.Bool(true),
-//					Type:    pulumi.String("MONTHLY"),
-//					Value:   pulumi.Int(127),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type DduPool struct {
 	pulumi.CustomResourceState
 

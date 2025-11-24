@@ -14,7 +14,19 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class MobileAppEnablementSessionReplayArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Percentage of user sessions recorded with Session Replay. For example, if you have 50% for RUM and 50% for Session Replay, it results in 25% of sessions recorded with Session Replay.
+        /// </summary>
+        [Input("costAndTrafficControl")]
+        public Input<int>? CostAndTrafficControl { get; set; }
+
+        /// <summary>
         /// Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay](https://dt-url.net/t23s0ppi).
+        /// </summary>
+        [Input("fullSessionReplay")]
+        public Input<bool>? FullSessionReplay { get; set; }
+
+        /// <summary>
+        /// Capture screen recordings that replay the user actions preceding all detected crashes. Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay](https://dt-url.net/t23s0ppi).
         /// </summary>
         [Input("onCrash", required: true)]
         public Input<bool> OnCrash { get; set; } = null!;

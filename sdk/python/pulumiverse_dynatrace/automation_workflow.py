@@ -321,7 +321,7 @@ class AutomationWorkflow(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
-        sample_worklow_tf = dynatrace.AutomationWorkflow("sampleWorklowTF",
+        sample_worklow_tf = dynatrace.AutomationWorkflow("Sample_Worklow_TF",
             description="Desc",
             actor="########-####-####-####-############",
             title="Sample Worklow TF1",
@@ -462,7 +462,7 @@ class AutomationWorkflow(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
-        sample_worklow_tf = dynatrace.AutomationWorkflow("sampleWorklowTF",
+        sample_worklow_tf = dynatrace.AutomationWorkflow("Sample_Worklow_TF",
             description="Desc",
             actor="########-####-####-####-############",
             title="Sample Worklow TF1",

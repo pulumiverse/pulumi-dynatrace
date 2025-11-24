@@ -251,35 +251,6 @@ class PlatformSlo(pulumi.CustomResource):
 
         - SLO Service Public API - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Service-Level+Objectives
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.PlatformSlo("#name#",
-            criteria={
-                "criteria_details": [{
-                    "target": 96,
-                    "timeframe_from": "now-30d",
-                    "timeframe_to": "now",
-                    "warning": 99,
-                }],
-            },
-            custom_sli={
-                "indicator": \"\"\"  timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }, by: { dt.entity.service }
-          | fieldsAdd tags=entityAttr(dt.entity.service, "tags")
-          | filter in(tags, "criticality:Gold")
-          | fieldsAdd entityName = entityName(dt.entity.service)
-          | fieldsAdd sli=(((total[]-failures[])/total[])*(100))
-          | fieldsRemove total, failures, tags
-
-        \"\"\",
-            },
-            description="Sample custom SLO",
-            tags=["ExampleKey:ExampleValue"])
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict']] criteria: Criteria of the SLO
@@ -307,35 +278,6 @@ class PlatformSlo(pulumi.CustomResource):
         - Service-Level Objectives overview - hhttps://docs.dynatrace.com/docs/deliver/service-level-objectives
 
         - SLO Service Public API - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Service-Level+Objectives
-
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.PlatformSlo("#name#",
-            criteria={
-                "criteria_details": [{
-                    "target": 96,
-                    "timeframe_from": "now-30d",
-                    "timeframe_to": "now",
-                    "warning": 99,
-                }],
-            },
-            custom_sli={
-                "indicator": \"\"\"  timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }, by: { dt.entity.service }
-          | fieldsAdd tags=entityAttr(dt.entity.service, "tags")
-          | filter in(tags, "criticality:Gold")
-          | fieldsAdd entityName = entityName(dt.entity.service)
-          | fieldsAdd sli=(((total[]-failures[])/total[])*(100))
-          | fieldsRemove total, failures, tags
-
-        \"\"\",
-            },
-            description="Sample custom SLO",
-            tags=["ExampleKey:ExampleValue"])
-        ```
 
         :param str resource_name: The name of the resource.
         :param PlatformSloArgs args: The arguments to use to populate this resource's properties.
