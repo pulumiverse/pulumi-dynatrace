@@ -10,6 +10,9 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource API endpoint has been deprecated.
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/oneagentDefaultVersion:OneagentDefaultVersion")]
     public partial class OneagentDefaultVersion : global::Pulumi.CustomResource
     {

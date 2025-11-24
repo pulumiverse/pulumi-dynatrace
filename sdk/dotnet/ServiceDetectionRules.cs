@@ -18,37 +18,6 @@ namespace Pulumiverse.Dynatrace
     /// - Services - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services
     /// 
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-detection-rules`)
-    /// 
-    /// ## Resource Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var _name_ = new Dynatrace.ServiceDetectionRules("#name#", new()
-    ///     {
-    ///         Enabled = false,
-    ///         Rule = new Dynatrace.Inputs.ServiceDetectionRulesRuleArgs
-    ///         {
-    ///             AdditionalRequiredAttributes = new[]
-    ///             {
-    ///                 "attribute-1",
-    ///                 "attribute-2",
-    ///             },
-    ///             Condition = "matchesValue(k8s.cluster.name,\"terraform\")",
-    ///             Description = "Example description",
-    ///             RuleName = "#name#",
-    ///             ServiceNameTemplate = "{k8s.workload.name}",
-    ///         },
-    ///         Scope = "environment",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/serviceDetectionRules:ServiceDetectionRules")]
     public partial class ServiceDetectionRules : global::Pulumi.CustomResource

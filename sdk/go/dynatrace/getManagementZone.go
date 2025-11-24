@@ -18,66 +18,6 @@ import (
 // !> This data source is utilizing an older API endpoint, please use ManagementZoneV2 instead.
 //
 // - `name` queries for all management zones with the specified name
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			test, err := dynatrace.LookupManagementZone(ctx, &dynatrace.LookupManagementZoneArgs{
-//				Name: "Example",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = dynatrace.NewCalculatedServiceMetric(ctx, "#name#", &dynatrace.CalculatedServiceMetricArgs{
-//				Conditions: dynatrace.CalculatedServiceMetricConditionArray{
-//					&dynatrace.CalculatedServiceMetricConditionArgs{
-//						Conditions: dynatrace.CalculatedServiceMetricConditionConditionArray{
-//							&dynatrace.CalculatedServiceMetricConditionConditionArgs{
-//								Attribute: pulumi.String("HTTP_REQUEST_METHOD"),
-//								Comparison: &dynatrace.CalculatedServiceMetricConditionConditionComparisonArgs{
-//									HttpMethod: &dynatrace.CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs{
-//										Operator: pulumi.String("EQUALS_ANY_OF"),
-//										Values: pulumi.StringArray{
-//											pulumi.String("POST"),
-//											pulumi.String("GET"),
-//										},
-//									},
-//									Negate: pulumi.Bool(false),
-//								},
-//							},
-//						},
-//					},
-//				},
-//				Enabled: pulumi.Bool(true),
-//				ManagementZones: pulumi.StringArray{
-//					pulumi.String(test.Id),
-//				},
-//				MetricDefinition: &dynatrace.CalculatedServiceMetricMetricDefinitionArgs{
-//					Metric:           pulumi.String("REQUEST_ATTRIBUTE"),
-//					RequestAttribute: pulumi.String("foo"),
-//				},
-//				MetricKey: pulumi.String("calc:service.#name#"),
-//				Unit:      pulumi.String("MILLI_SECOND_PER_MINUTE"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func LookupManagementZone(ctx *pulumi.Context, args *LookupManagementZoneArgs, opts ...pulumi.InvokeOption) (*LookupManagementZoneResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupManagementZoneResult

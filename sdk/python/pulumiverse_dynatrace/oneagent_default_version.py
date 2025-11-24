@@ -105,7 +105,8 @@ class OneagentDefaultVersion(pulumi.CustomResource):
                  revision: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a OneagentDefaultVersion resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] default_version: Default version
@@ -118,7 +119,8 @@ class OneagentDefaultVersion(pulumi.CustomResource):
                  args: OneagentDefaultVersionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OneagentDefaultVersion resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated.
+
         :param str resource_name: The name of the resource.
         :param OneagentDefaultVersionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

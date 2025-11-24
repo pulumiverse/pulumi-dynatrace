@@ -49,11 +49,19 @@ export class OpenpipelineV2SecurityEventsIngestsources extends pulumi.CustomReso
     /**
      * Endpoint segment
      */
-    declare public readonly pathSegment: pulumi.Output<string>;
+    declare public readonly pathSegment: pulumi.Output<string | undefined>;
     /**
      * Processing stage
      */
-    declare public readonly processing: pulumi.Output<outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessing>;
+    declare public readonly processing: pulumi.Output<outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessing | undefined>;
+    /**
+     * Source
+     */
+    declare public readonly source: pulumi.Output<string | undefined>;
+    /**
+     * Source Type. Possible Values: `extension`, `http`
+     */
+    declare public readonly sourceType: pulumi.Output<string | undefined>;
     /**
      * Static routing of endpoint
      */
@@ -77,6 +85,8 @@ export class OpenpipelineV2SecurityEventsIngestsources extends pulumi.CustomReso
             resourceInputs["enabled"] = state?.enabled;
             resourceInputs["pathSegment"] = state?.pathSegment;
             resourceInputs["processing"] = state?.processing;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["sourceType"] = state?.sourceType;
             resourceInputs["staticRouting"] = state?.staticRouting;
         } else {
             const args = argsOrState as OpenpipelineV2SecurityEventsIngestsourcesArgs | undefined;
@@ -86,17 +96,13 @@ export class OpenpipelineV2SecurityEventsIngestsources extends pulumi.CustomReso
             if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if (args?.pathSegment === undefined && !opts.urn) {
-                throw new Error("Missing required property 'pathSegment'");
-            }
-            if (args?.processing === undefined && !opts.urn) {
-                throw new Error("Missing required property 'processing'");
-            }
             resourceInputs["defaultBucket"] = args?.defaultBucket;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["enabled"] = args?.enabled;
             resourceInputs["pathSegment"] = args?.pathSegment;
             resourceInputs["processing"] = args?.processing;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["sourceType"] = args?.sourceType;
             resourceInputs["staticRouting"] = args?.staticRouting;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -129,6 +135,14 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesState {
      */
     processing?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsIngestsourcesProcessing>;
     /**
+     * Source
+     */
+    source?: pulumi.Input<string>;
+    /**
+     * Source Type. Possible Values: `extension`, `http`
+     */
+    sourceType?: pulumi.Input<string>;
+    /**
      * Static routing of endpoint
      */
     staticRouting?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsIngestsourcesStaticRouting>;
@@ -153,11 +167,19 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesArgs {
     /**
      * Endpoint segment
      */
-    pathSegment: pulumi.Input<string>;
+    pathSegment?: pulumi.Input<string>;
     /**
      * Processing stage
      */
-    processing: pulumi.Input<inputs.OpenpipelineV2SecurityEventsIngestsourcesProcessing>;
+    processing?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsIngestsourcesProcessing>;
+    /**
+     * Source
+     */
+    source?: pulumi.Input<string>;
+    /**
+     * Source Type. Possible Values: `extension`, `http`
+     */
+    sourceType?: pulumi.Input<string>;
     /**
      * Static routing of endpoint
      */

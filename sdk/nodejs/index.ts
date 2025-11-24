@@ -195,6 +195,16 @@ export type AwsAnomalies = import("./awsAnomalies").AwsAnomalies;
 export const AwsAnomalies: typeof import("./awsAnomalies").AwsAnomalies = null as any;
 utilities.lazyLoad(exports, ["AwsAnomalies"], () => require("./awsAnomalies"));
 
+export { AwsConnectionArgs, AwsConnectionState } from "./awsConnection";
+export type AwsConnection = import("./awsConnection").AwsConnection;
+export const AwsConnection: typeof import("./awsConnection").AwsConnection = null as any;
+utilities.lazyLoad(exports, ["AwsConnection"], () => require("./awsConnection"));
+
+export { AwsConnectionRoleArnArgs, AwsConnectionRoleArnState } from "./awsConnectionRoleArn";
+export type AwsConnectionRoleArn = import("./awsConnectionRoleArn").AwsConnectionRoleArn;
+export const AwsConnectionRoleArn: typeof import("./awsConnectionRoleArn").AwsConnectionRoleArn = null as any;
+utilities.lazyLoad(exports, ["AwsConnectionRoleArn"], () => require("./awsConnectionRoleArn"));
+
 export { AwsCredentialsArgs, AwsCredentialsState } from "./awsCredentials";
 export type AwsCredentials = import("./awsCredentials").AwsCredentials;
 export const AwsCredentials: typeof import("./awsCredentials").AwsCredentials = null as any;
@@ -2423,6 +2433,10 @@ const _module = {
                 return new AutotagV2(name, <any>undefined, { urn })
             case "dynatrace:index/awsAnomalies:AwsAnomalies":
                 return new AwsAnomalies(name, <any>undefined, { urn })
+            case "dynatrace:index/awsConnection:AwsConnection":
+                return new AwsConnection(name, <any>undefined, { urn })
+            case "dynatrace:index/awsConnectionRoleArn:AwsConnectionRoleArn":
+                return new AwsConnectionRoleArn(name, <any>undefined, { urn })
             case "dynatrace:index/awsCredentials:AwsCredentials":
                 return new AwsCredentials(name, <any>undefined, { urn })
             case "dynatrace:index/awsService:AwsService":
@@ -3214,6 +3228,8 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/autotag", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/autotagRules", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/autotagV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/awsAnomalies", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/awsConnection", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/awsConnectionRoleArn", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/awsCredentials", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/awsService", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/azureCredentials", _module)

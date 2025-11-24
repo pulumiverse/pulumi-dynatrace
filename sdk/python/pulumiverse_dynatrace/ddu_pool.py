@@ -217,40 +217,6 @@ class DduPool(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:accounting.ddu.limit`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.DduPool("#name#",
-            events={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 125,
-            },
-            log_monitoring={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 124,
-            },
-            metrics={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 123,
-            },
-            serverless={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 126,
-            },
-            traces={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 127,
-            })
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DduPoolEventsArgs', 'DduPoolEventsArgsDict']] events: DDU pool settings for Events
@@ -275,40 +241,6 @@ class DduPool(pulumi.CustomResource):
         - DDU Pools - https://www.dynatrace.com/support/help/monitoring-consumption/davis-data-units#ddu-pools
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:accounting.ddu.limit`)
-
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.DduPool("#name#",
-            events={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 125,
-            },
-            log_monitoring={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 124,
-            },
-            metrics={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 123,
-            },
-            serverless={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 126,
-            },
-            traces={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 127,
-            })
-        ```
 
         :param str resource_name: The name of the resource.
         :param DduPoolArgs args: The arguments to use to populate this resource's properties.

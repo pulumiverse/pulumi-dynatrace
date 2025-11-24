@@ -210,6 +210,18 @@ class IamPermission(pulumi.CustomResource):
 
         > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
 
+        ## Conflicts
+
+        > **Warning** If this resource is used in combination with `IamGroup`, there is a potential for conflicts when both resources attempt to manage group permissions.
+        It is recommended to manage group permissions with the `IamPermission` resource.
+        To avoid conflicts when using the `IamPermission` resource, ensure to add the following lifecycle block to the `IamGroup` resource:
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        restricted = dynatrace.IamGroup("Restricted", name="Restricted")
+        ```
+
         ## Dynatrace Documentation
 
         - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -222,9 +234,10 @@ class IamPermission(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        perm_a = dynatrace.IamPermission("permA",
-            account="023733f0-86d8-47d1-88bd-7f5cc2e22eb8",
-            group="74ec0a82-8010-4f11-8579-b29a5ba865f0")
+        perm_a = dynatrace.IamPermission("perm_a",
+            name="tenant-viewer",
+            group="74ec0a82-8010-4f11-8579-b29a5ba865f0",
+            account="023733f0-86d8-47d1-88bd-7f5cc2e22eb8")
         ```
 
         :param str resource_name: The name of the resource.
@@ -248,6 +261,18 @@ class IamPermission(pulumi.CustomResource):
 
         > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
 
+        ## Conflicts
+
+        > **Warning** If this resource is used in combination with `IamGroup`, there is a potential for conflicts when both resources attempt to manage group permissions.
+        It is recommended to manage group permissions with the `IamPermission` resource.
+        To avoid conflicts when using the `IamPermission` resource, ensure to add the following lifecycle block to the `IamGroup` resource:
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        restricted = dynatrace.IamGroup("Restricted", name="Restricted")
+        ```
+
         ## Dynatrace Documentation
 
         - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -260,9 +285,10 @@ class IamPermission(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        perm_a = dynatrace.IamPermission("permA",
-            account="023733f0-86d8-47d1-88bd-7f5cc2e22eb8",
-            group="74ec0a82-8010-4f11-8579-b29a5ba865f0")
+        perm_a = dynatrace.IamPermission("perm_a",
+            name="tenant-viewer",
+            group="74ec0a82-8010-4f11-8579-b29a5ba865f0",
+            account="023733f0-86d8-47d1-88bd-7f5cc2e22eb8")
         ```
 
         :param str resource_name: The name of the resource.

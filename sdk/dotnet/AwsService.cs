@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(async() =&gt; 
     /// {
-    ///     var tERRAFORMSAMPLE = new Dynatrace.AwsCredentials("tERRAFORMSAMPLE", new()
+    ///     var TERRAFORM_SAMPLE = new Dynatrace.AwsCredentials("TERRAFORM_SAMPLE", new()
     ///     {
     ///         Label = "TERRAFORM-TEST-001",
     ///         PartitionType = "AWS_DEFAULT",
@@ -56,10 +56,11 @@ namespace Pulumiverse.Dynatrace
     ///     var tERRAFORMSAMPLEServices = new List&lt;Dynatrace.AwsService&gt;();
     ///     foreach (var range in )
     ///     {
-    ///         tERRAFORMSAMPLEServices.Add(new Dynatrace.AwsService($"tERRAFORMSAMPLEServices-{range.Key}", new()
+    ///         tERRAFORMSAMPLEServices.Add(new Dynatrace.AwsService($"TERRAFORM_SAMPLE_services-{range.Key}", new()
     ///         {
-    ///             CredentialsId = tERRAFORMSAMPLE.Id,
+    ///             CredentialsId = TERRAFORM_SAMPLE.Id,
     ///             UseRecommendedMetrics = true,
+    ///             Name = range.Key,
     ///         }));
     ///     }
     /// });
@@ -76,7 +77,7 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Dynatrace.AwsCredentials("example", new()
+    ///     var example = new Dynatrace.AwsCredentials("Example", new()
     ///     {
     ///         Label = "#name#",
     ///         PartitionType = "AWS_DEFAULT",
@@ -88,8 +89,9 @@ namespace Pulumiverse.Dynatrace
     ///         },
     ///     });
     /// 
-    ///     var elastiCache = new Dynatrace.AwsService("elastiCache", new()
+    ///     var elastiCache = new Dynatrace.AwsService("ElastiCache", new()
     ///     {
+    ///         Name = "ElastiCache",
     ///         CredentialsId = example.Id,
     ///         Metrics = new[]
     ///         {

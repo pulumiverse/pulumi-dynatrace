@@ -21,7 +21,7 @@ type DiskEdgeAnomalyDetectors struct {
 	DiskNameFilters pulumi.StringArrayOutput `pulumi:"diskNameFilters"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
 	EventProperties DiskEdgeAnomalyDetectorsEventPropertiesPtrOutput `pulumi:"eventProperties"`
 	// The policy will be enabled if **all** conditions are met
 	HostMetadataConditions DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrOutput `pulumi:"hostMetadataConditions"`
@@ -77,7 +77,7 @@ type diskEdgeAnomalyDetectorsState struct {
 	DiskNameFilters []string `pulumi:"diskNameFilters"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
 	EventProperties *DiskEdgeAnomalyDetectorsEventProperties `pulumi:"eventProperties"`
 	// The policy will be enabled if **all** conditions are met
 	HostMetadataConditions *DiskEdgeAnomalyDetectorsHostMetadataConditions `pulumi:"hostMetadataConditions"`
@@ -98,7 +98,7 @@ type DiskEdgeAnomalyDetectorsState struct {
 	DiskNameFilters pulumi.StringArrayInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
 	EventProperties DiskEdgeAnomalyDetectorsEventPropertiesPtrInput
 	// The policy will be enabled if **all** conditions are met
 	HostMetadataConditions DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrInput
@@ -123,7 +123,7 @@ type diskEdgeAnomalyDetectorsArgs struct {
 	DiskNameFilters []string `pulumi:"diskNameFilters"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
 	EventProperties *DiskEdgeAnomalyDetectorsEventProperties `pulumi:"eventProperties"`
 	// The policy will be enabled if **all** conditions are met
 	HostMetadataConditions *DiskEdgeAnomalyDetectorsHostMetadataConditions `pulumi:"hostMetadataConditions"`
@@ -145,7 +145,7 @@ type DiskEdgeAnomalyDetectorsArgs struct {
 	DiskNameFilters pulumi.StringArrayInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
 	EventProperties DiskEdgeAnomalyDetectorsEventPropertiesPtrInput
 	// The policy will be enabled if **all** conditions are met
 	HostMetadataConditions DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrInput
@@ -261,7 +261,7 @@ func (o DiskEdgeAnomalyDetectorsOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DiskEdgeAnomalyDetectors) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Set of additional key-value properties to be attached to the triggered event.
+// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
 func (o DiskEdgeAnomalyDetectorsOutput) EventProperties() DiskEdgeAnomalyDetectorsEventPropertiesPtrOutput {
 	return o.ApplyT(func(v *DiskEdgeAnomalyDetectors) DiskEdgeAnomalyDetectorsEventPropertiesPtrOutput {
 		return v.EventProperties

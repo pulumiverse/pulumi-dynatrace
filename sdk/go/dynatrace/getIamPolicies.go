@@ -38,10 +38,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := dynatrace.GetIamPolicies(ctx, &dynatrace.GetIamPoliciesArgs{
-//				Accounts: []string{
+//				Environments: []string{
 //					"*",
 //				},
-//				Environments: []string{
+//				Accounts: []string{
 //					"*",
 //				},
 //				Global: pulumi.BoolRef(true),

@@ -19,9 +19,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const test = new dynatrace.ManagedNetworkZones("test", {
- *     alternativeZones: ["alternativeexample"],
+ * const test = new dynatrace.ManagedNetworkZones("Test", {
+ *     name: "terraformtest",
  *     description: "This is an example network zone",
+ *     alternativeZones: ["alternativeexample"],
  *     fallbackMode: "ANY_ACTIVE_GATE",
  * });
  * ```

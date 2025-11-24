@@ -67,6 +67,10 @@ export class LogTimestamp extends pulumi.CustomResource {
      */
     declare public readonly scope: pulumi.Output<string | undefined>;
     /**
+     * Don't parse timestamps in lines starting with white character
+     */
+    declare public readonly skipIndentedLines: pulumi.Output<boolean | undefined>;
+    /**
      * Timezone
      */
     declare public readonly timezone: pulumi.Output<string>;
@@ -92,6 +96,7 @@ export class LogTimestamp extends pulumi.CustomResource {
             resourceInputs["insertAfter"] = state?.insertAfter;
             resourceInputs["matchers"] = state?.matchers;
             resourceInputs["scope"] = state?.scope;
+            resourceInputs["skipIndentedLines"] = state?.skipIndentedLines;
             resourceInputs["timezone"] = state?.timezone;
         } else {
             const args = argsOrState as LogTimestampArgs | undefined;
@@ -115,6 +120,7 @@ export class LogTimestamp extends pulumi.CustomResource {
             resourceInputs["insertAfter"] = args?.insertAfter;
             resourceInputs["matchers"] = args?.matchers;
             resourceInputs["scope"] = args?.scope;
+            resourceInputs["skipIndentedLines"] = args?.skipIndentedLines;
             resourceInputs["timezone"] = args?.timezone;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -159,6 +165,10 @@ export interface LogTimestampState {
      */
     scope?: pulumi.Input<string>;
     /**
+     * Don't parse timestamps in lines starting with white character
+     */
+    skipIndentedLines?: pulumi.Input<boolean>;
+    /**
      * Timezone
      */
     timezone?: pulumi.Input<string>;
@@ -200,6 +210,10 @@ export interface LogTimestampArgs {
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string>;
+    /**
+     * Don't parse timestamps in lines starting with white character
+     */
+    skipIndentedLines?: pulumi.Input<boolean>;
     /**
      * Timezone
      */

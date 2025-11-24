@@ -23,25 +23,35 @@ class OpenpipelineV2DavisEventsIngestsourcesArgs:
     def __init__(__self__, *,
                  display_name: pulumi.Input[_builtins.str],
                  enabled: pulumi.Input[_builtins.bool],
-                 path_segment: pulumi.Input[_builtins.str],
-                 processing: pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs'],
                  default_bucket: Optional[pulumi.Input[_builtins.str]] = None,
+                 path_segment: Optional[pulumi.Input[_builtins.str]] = None,
+                 processing: Optional[pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs']] = None,
+                 source: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
                  static_routing: Optional[pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineV2DavisEventsIngestsources resource.
         :param pulumi.Input[_builtins.str] display_name: Endpoint display name
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] default_bucket: Default Bucket
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
         :param pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs'] processing: Processing stage
-        :param pulumi.Input[_builtins.str] default_bucket: Default Bucket
+        :param pulumi.Input[_builtins.str] source: Source
+        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible Values: `extension`, `http`
         :param pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgs'] static_routing: Static routing of endpoint
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "enabled", enabled)
-        pulumi.set(__self__, "path_segment", path_segment)
-        pulumi.set(__self__, "processing", processing)
         if default_bucket is not None:
             pulumi.set(__self__, "default_bucket", default_bucket)
+        if path_segment is not None:
+            pulumi.set(__self__, "path_segment", path_segment)
+        if processing is not None:
+            pulumi.set(__self__, "processing", processing)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if source_type is not None:
+            pulumi.set(__self__, "source_type", source_type)
         if static_routing is not None:
             pulumi.set(__self__, "static_routing", static_routing)
 
@@ -70,30 +80,6 @@ class OpenpipelineV2DavisEventsIngestsourcesArgs:
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
-    @pulumi.getter(name="pathSegment")
-    def path_segment(self) -> pulumi.Input[_builtins.str]:
-        """
-        Endpoint segment
-        """
-        return pulumi.get(self, "path_segment")
-
-    @path_segment.setter
-    def path_segment(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "path_segment", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def processing(self) -> pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs']:
-        """
-        Processing stage
-        """
-        return pulumi.get(self, "processing")
-
-    @processing.setter
-    def processing(self, value: pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs']):
-        pulumi.set(self, "processing", value)
-
-    @_builtins.property
     @pulumi.getter(name="defaultBucket")
     def default_bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -104,6 +90,54 @@ class OpenpipelineV2DavisEventsIngestsourcesArgs:
     @default_bucket.setter
     def default_bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "default_bucket", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pathSegment")
+    def path_segment(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Endpoint segment
+        """
+        return pulumi.get(self, "path_segment")
+
+    @path_segment.setter
+    def path_segment(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "path_segment", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def processing(self) -> Optional[pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs']]:
+        """
+        Processing stage
+        """
+        return pulumi.get(self, "processing")
+
+    @processing.setter
+    def processing(self, value: Optional[pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs']]):
+        pulumi.set(self, "processing", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Source
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Source Type. Possible Values: `extension`, `http`
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source_type", value)
 
     @_builtins.property
     @pulumi.getter(name="staticRouting")
@@ -126,6 +160,8 @@ class _OpenpipelineV2DavisEventsIngestsourcesState:
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  path_segment: Optional[pulumi.Input[_builtins.str]] = None,
                  processing: Optional[pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs']] = None,
+                 source: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
                  static_routing: Optional[pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineV2DavisEventsIngestsources resources.
@@ -134,6 +170,8 @@ class _OpenpipelineV2DavisEventsIngestsourcesState:
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
         :param pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs'] processing: Processing stage
+        :param pulumi.Input[_builtins.str] source: Source
+        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible Values: `extension`, `http`
         :param pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgs'] static_routing: Static routing of endpoint
         """
         if default_bucket is not None:
@@ -146,6 +184,10 @@ class _OpenpipelineV2DavisEventsIngestsourcesState:
             pulumi.set(__self__, "path_segment", path_segment)
         if processing is not None:
             pulumi.set(__self__, "processing", processing)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if source_type is not None:
+            pulumi.set(__self__, "source_type", source_type)
         if static_routing is not None:
             pulumi.set(__self__, "static_routing", static_routing)
 
@@ -210,6 +252,30 @@ class _OpenpipelineV2DavisEventsIngestsourcesState:
         pulumi.set(self, "processing", value)
 
     @_builtins.property
+    @pulumi.getter
+    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Source
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Source Type. Possible Values: `extension`, `http`
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="staticRouting")
     def static_routing(self) -> Optional[pulumi.Input['OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgs']]:
         """
@@ -233,6 +299,8 @@ class OpenpipelineV2DavisEventsIngestsources(pulumi.CustomResource):
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  path_segment: Optional[pulumi.Input[_builtins.str]] = None,
                  processing: Optional[pulumi.Input[Union['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisEventsIngestsourcesProcessingArgsDict']]] = None,
+                 source: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
                  static_routing: Optional[pulumi.Input[Union['OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgsDict']]] = None,
                  __props__=None):
         """
@@ -244,6 +312,8 @@ class OpenpipelineV2DavisEventsIngestsources(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
         :param pulumi.Input[Union['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisEventsIngestsourcesProcessingArgsDict']] processing: Processing stage
+        :param pulumi.Input[_builtins.str] source: Source
+        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible Values: `extension`, `http`
         :param pulumi.Input[Union['OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgsDict']] static_routing: Static routing of endpoint
         """
         ...
@@ -274,6 +344,8 @@ class OpenpipelineV2DavisEventsIngestsources(pulumi.CustomResource):
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  path_segment: Optional[pulumi.Input[_builtins.str]] = None,
                  processing: Optional[pulumi.Input[Union['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisEventsIngestsourcesProcessingArgsDict']]] = None,
+                 source: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
                  static_routing: Optional[pulumi.Input[Union['OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -291,12 +363,10 @@ class OpenpipelineV2DavisEventsIngestsources(pulumi.CustomResource):
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
-            if path_segment is None and not opts.urn:
-                raise TypeError("Missing required property 'path_segment'")
             __props__.__dict__["path_segment"] = path_segment
-            if processing is None and not opts.urn:
-                raise TypeError("Missing required property 'processing'")
             __props__.__dict__["processing"] = processing
+            __props__.__dict__["source"] = source
+            __props__.__dict__["source_type"] = source_type
             __props__.__dict__["static_routing"] = static_routing
         super(OpenpipelineV2DavisEventsIngestsources, __self__).__init__(
             'dynatrace:index/openpipelineV2DavisEventsIngestsources:OpenpipelineV2DavisEventsIngestsources',
@@ -313,6 +383,8 @@ class OpenpipelineV2DavisEventsIngestsources(pulumi.CustomResource):
             enabled: Optional[pulumi.Input[_builtins.bool]] = None,
             path_segment: Optional[pulumi.Input[_builtins.str]] = None,
             processing: Optional[pulumi.Input[Union['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisEventsIngestsourcesProcessingArgsDict']]] = None,
+            source: Optional[pulumi.Input[_builtins.str]] = None,
+            source_type: Optional[pulumi.Input[_builtins.str]] = None,
             static_routing: Optional[pulumi.Input[Union['OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgsDict']]] = None) -> 'OpenpipelineV2DavisEventsIngestsources':
         """
         Get an existing OpenpipelineV2DavisEventsIngestsources resource's state with the given name, id, and optional extra
@@ -326,6 +398,8 @@ class OpenpipelineV2DavisEventsIngestsources(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
         :param pulumi.Input[Union['OpenpipelineV2DavisEventsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisEventsIngestsourcesProcessingArgsDict']] processing: Processing stage
+        :param pulumi.Input[_builtins.str] source: Source
+        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible Values: `extension`, `http`
         :param pulumi.Input[Union['OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisEventsIngestsourcesStaticRoutingArgsDict']] static_routing: Static routing of endpoint
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -337,6 +411,8 @@ class OpenpipelineV2DavisEventsIngestsources(pulumi.CustomResource):
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["path_segment"] = path_segment
         __props__.__dict__["processing"] = processing
+        __props__.__dict__["source"] = source
+        __props__.__dict__["source_type"] = source_type
         __props__.__dict__["static_routing"] = static_routing
         return OpenpipelineV2DavisEventsIngestsources(resource_name, opts=opts, __props__=__props__)
 
@@ -366,7 +442,7 @@ class OpenpipelineV2DavisEventsIngestsources(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="pathSegment")
-    def path_segment(self) -> pulumi.Output[_builtins.str]:
+    def path_segment(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         Endpoint segment
         """
@@ -374,11 +450,27 @@ class OpenpipelineV2DavisEventsIngestsources(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def processing(self) -> pulumi.Output['outputs.OpenpipelineV2DavisEventsIngestsourcesProcessing']:
+    def processing(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2DavisEventsIngestsourcesProcessing']]:
         """
         Processing stage
         """
         return pulumi.get(self, "processing")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Source
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Source Type. Possible Values: `extension`, `http`
+        """
+        return pulumi.get(self, "source_type")
 
     @_builtins.property
     @pulumi.getter(name="staticRouting")

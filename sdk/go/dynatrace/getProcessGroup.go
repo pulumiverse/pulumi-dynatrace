@@ -19,49 +19,6 @@ import (
 // - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
 //
 // If multiple process groups match the given criteria, the first result will be retrieved.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			test, err := dynatrace.GetProcessGroup(ctx, &dynatrace.GetProcessGroupArgs{
-//				Name: "Example",
-//				Tags: []string{
-//					"TerraformKeyTest",
-//					"TerraformKeyValueTest=TestValue",
-//				},
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = dynatrace.NewManagementZone(ctx, "#name#", &dynatrace.ManagementZoneArgs{
-//				EntitySelectorBasedRules: dynatrace.ManagementZoneEntitySelectorBasedRuleArray{
-//					&dynatrace.ManagementZoneEntitySelectorBasedRuleArgs{
-//						Enabled:  pulumi.Bool(true),
-//						Selector: pulumi.Sprintf("type(\"process_group\"),entityId(\"%v\")", test.Id),
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetProcessGroup(ctx *pulumi.Context, args *GetProcessGroupArgs, opts ...pulumi.InvokeOption) (*GetProcessGroupResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProcessGroupResult

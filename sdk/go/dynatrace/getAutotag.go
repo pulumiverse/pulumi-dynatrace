@@ -31,14 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			exampleAutotag, err := dynatrace.LookupAutotag(ctx, &dynatrace.LookupAutotagArgs{
+//			example, err := dynatrace.LookupAutotag(ctx, &dynatrace.LookupAutotagArgs{
 //				Name: "Terraform Example",
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			_, err = dynatrace.NewAutotagRules(ctx, "exampleAutotagRules", &dynatrace.AutotagRulesArgs{
-//				AutoTagId: pulumi.String(exampleAutotag.Id),
+//			_, err = dynatrace.NewAutotagRules(ctx, "Example", &dynatrace.AutotagRulesArgs{
+//				AutoTagId: pulumi.String(example.Id),
 //				Rules: &dynatrace.AutotagRulesRulesArgs{
 //					Rules: dynatrace.AutotagRulesRulesRuleArray{
 //						&dynatrace.AutotagRulesRulesRuleArgs{

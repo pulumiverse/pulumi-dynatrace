@@ -27,11 +27,11 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testPlatformSloTemplates = Dynatrace.GetPlatformSloTemplates.Invoke();
+        ///     var test = Dynatrace.GetPlatformSloTemplates.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["test"] = testPlatformSloTemplates,
+        ///         ["test"] = test,
         ///     };
         /// });
         /// ```
@@ -54,11 +54,11 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testPlatformSloTemplates = Dynatrace.GetPlatformSloTemplates.Invoke();
+        ///     var test = Dynatrace.GetPlatformSloTemplates.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["test"] = testPlatformSloTemplates,
+        ///         ["test"] = test,
         ///     };
         /// });
         /// ```
@@ -81,11 +81,11 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testPlatformSloTemplates = Dynatrace.GetPlatformSloTemplates.Invoke();
+        ///     var test = Dynatrace.GetPlatformSloTemplates.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["test"] = testPlatformSloTemplates,
+        ///         ["test"] = test,
         ///     };
         /// });
         /// ```

@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> Active { get; private set; } = null!;
 
         /// <summary>
-        /// The API key for the target VictorOps account
+        /// The API key for the target Splunk On-Call account
         /// </summary>
         [Output("apiKey")]
         public Output<string?> ApiKey { get; private set; } = null!;
@@ -116,7 +116,7 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _apiKey;
 
         /// <summary>
-        /// The API key for the target VictorOps account
+        /// The API key for the target Splunk On-Call account
         /// </summary>
         public Input<string>? ApiKey
         {
@@ -176,7 +176,7 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _apiKey;
 
         /// <summary>
-        /// The API key for the target VictorOps account
+        /// The API key for the target Splunk On-Call account
         /// </summary>
         public Input<string>? ApiKey
         {

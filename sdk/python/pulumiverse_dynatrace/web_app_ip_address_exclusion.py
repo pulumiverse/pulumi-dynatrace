@@ -161,28 +161,6 @@ class WebAppIpAddressExclusion(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.ipaddress-exclusion`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.WebAppIpAddressExclusion("#name#",
-            application_id="APPLICATION-1234567890000000",
-            ip_address_exclusion_include=False,
-            ip_exclusion_list={
-                "ip_exclusions": [
-                    {
-                        "ip": "192.168.1.5",
-                    },
-                    {
-                        "ip": "10.0.0.1",
-                        "ip_to": "10.0.0.5",
-                    },
-                ],
-            })
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -208,28 +186,6 @@ class WebAppIpAddressExclusion(pulumi.CustomResource):
         - Exclude IP addresses, browsers, bots, and spiders from monitoring for web applications - https://docs.dynatrace.com/docs/shortlink/rum-exclude-bots
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.ipaddress-exclusion`)
-
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.WebAppIpAddressExclusion("#name#",
-            application_id="APPLICATION-1234567890000000",
-            ip_address_exclusion_include=False,
-            ip_exclusion_list={
-                "ip_exclusions": [
-                    {
-                        "ip": "192.168.1.5",
-                    },
-                    {
-                        "ip": "10.0.0.1",
-                        "ip_to": "10.0.0.5",
-                    },
-                ],
-            })
-        ```
 
         :param str resource_name: The name of the resource.
         :param WebAppIpAddressExclusionArgs args: The arguments to use to populate this resource's properties.

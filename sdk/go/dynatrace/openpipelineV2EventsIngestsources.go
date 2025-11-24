@@ -22,9 +22,13 @@ type OpenpipelineV2EventsIngestsources struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Endpoint segment
-	PathSegment pulumi.StringOutput `pulumi:"pathSegment"`
+	PathSegment pulumi.StringPtrOutput `pulumi:"pathSegment"`
 	// Processing stage
-	Processing OpenpipelineV2EventsIngestsourcesProcessingOutput `pulumi:"processing"`
+	Processing OpenpipelineV2EventsIngestsourcesProcessingPtrOutput `pulumi:"processing"`
+	// Source
+	Source pulumi.StringPtrOutput `pulumi:"source"`
+	// Source Type. Possible Values: `extension`, `http`
+	SourceType pulumi.StringPtrOutput `pulumi:"sourceType"`
 	// Static routing of endpoint
 	StaticRouting OpenpipelineV2EventsIngestsourcesStaticRoutingPtrOutput `pulumi:"staticRouting"`
 }
@@ -41,12 +45,6 @@ func NewOpenpipelineV2EventsIngestsources(ctx *pulumi.Context,
 	}
 	if args.Enabled == nil {
 		return nil, errors.New("invalid value for required argument 'Enabled'")
-	}
-	if args.PathSegment == nil {
-		return nil, errors.New("invalid value for required argument 'PathSegment'")
-	}
-	if args.Processing == nil {
-		return nil, errors.New("invalid value for required argument 'Processing'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OpenpipelineV2EventsIngestsources
@@ -81,6 +79,10 @@ type openpipelineV2EventsIngestsourcesState struct {
 	PathSegment *string `pulumi:"pathSegment"`
 	// Processing stage
 	Processing *OpenpipelineV2EventsIngestsourcesProcessing `pulumi:"processing"`
+	// Source
+	Source *string `pulumi:"source"`
+	// Source Type. Possible Values: `extension`, `http`
+	SourceType *string `pulumi:"sourceType"`
 	// Static routing of endpoint
 	StaticRouting *OpenpipelineV2EventsIngestsourcesStaticRouting `pulumi:"staticRouting"`
 }
@@ -96,6 +98,10 @@ type OpenpipelineV2EventsIngestsourcesState struct {
 	PathSegment pulumi.StringPtrInput
 	// Processing stage
 	Processing OpenpipelineV2EventsIngestsourcesProcessingPtrInput
+	// Source
+	Source pulumi.StringPtrInput
+	// Source Type. Possible Values: `extension`, `http`
+	SourceType pulumi.StringPtrInput
 	// Static routing of endpoint
 	StaticRouting OpenpipelineV2EventsIngestsourcesStaticRoutingPtrInput
 }
@@ -112,9 +118,13 @@ type openpipelineV2EventsIngestsourcesArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
 	// Endpoint segment
-	PathSegment string `pulumi:"pathSegment"`
+	PathSegment *string `pulumi:"pathSegment"`
 	// Processing stage
-	Processing OpenpipelineV2EventsIngestsourcesProcessing `pulumi:"processing"`
+	Processing *OpenpipelineV2EventsIngestsourcesProcessing `pulumi:"processing"`
+	// Source
+	Source *string `pulumi:"source"`
+	// Source Type. Possible Values: `extension`, `http`
+	SourceType *string `pulumi:"sourceType"`
 	// Static routing of endpoint
 	StaticRouting *OpenpipelineV2EventsIngestsourcesStaticRouting `pulumi:"staticRouting"`
 }
@@ -128,9 +138,13 @@ type OpenpipelineV2EventsIngestsourcesArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
 	// Endpoint segment
-	PathSegment pulumi.StringInput
+	PathSegment pulumi.StringPtrInput
 	// Processing stage
-	Processing OpenpipelineV2EventsIngestsourcesProcessingInput
+	Processing OpenpipelineV2EventsIngestsourcesProcessingPtrInput
+	// Source
+	Source pulumi.StringPtrInput
+	// Source Type. Possible Values: `extension`, `http`
+	SourceType pulumi.StringPtrInput
 	// Static routing of endpoint
 	StaticRouting OpenpipelineV2EventsIngestsourcesStaticRoutingPtrInput
 }
@@ -238,15 +252,25 @@ func (o OpenpipelineV2EventsIngestsourcesOutput) Enabled() pulumi.BoolOutput {
 }
 
 // Endpoint segment
-func (o OpenpipelineV2EventsIngestsourcesOutput) PathSegment() pulumi.StringOutput {
-	return o.ApplyT(func(v *OpenpipelineV2EventsIngestsources) pulumi.StringOutput { return v.PathSegment }).(pulumi.StringOutput)
+func (o OpenpipelineV2EventsIngestsourcesOutput) PathSegment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2EventsIngestsources) pulumi.StringPtrOutput { return v.PathSegment }).(pulumi.StringPtrOutput)
 }
 
 // Processing stage
-func (o OpenpipelineV2EventsIngestsourcesOutput) Processing() OpenpipelineV2EventsIngestsourcesProcessingOutput {
-	return o.ApplyT(func(v *OpenpipelineV2EventsIngestsources) OpenpipelineV2EventsIngestsourcesProcessingOutput {
+func (o OpenpipelineV2EventsIngestsourcesOutput) Processing() OpenpipelineV2EventsIngestsourcesProcessingPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2EventsIngestsources) OpenpipelineV2EventsIngestsourcesProcessingPtrOutput {
 		return v.Processing
-	}).(OpenpipelineV2EventsIngestsourcesProcessingOutput)
+	}).(OpenpipelineV2EventsIngestsourcesProcessingPtrOutput)
+}
+
+// Source
+func (o OpenpipelineV2EventsIngestsourcesOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2EventsIngestsources) pulumi.StringPtrOutput { return v.Source }).(pulumi.StringPtrOutput)
+}
+
+// Source Type. Possible Values: `extension`, `http`
+func (o OpenpipelineV2EventsIngestsourcesOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2EventsIngestsources) pulumi.StringPtrOutput { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // Static routing of endpoint

@@ -318,9 +318,10 @@ class ManagedNetworkZones(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        test = dynatrace.ManagedNetworkZones("test",
-            alternative_zones=["alternativeexample"],
+        test = dynatrace.ManagedNetworkZones("Test",
+            name="terraformtest",
             description="This is an example network zone",
+            alternative_zones=["alternativeexample"],
             fallback_mode="ANY_ACTIVE_GATE")
         ```
 
@@ -356,9 +357,10 @@ class ManagedNetworkZones(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        test = dynatrace.ManagedNetworkZones("test",
-            alternative_zones=["alternativeexample"],
+        test = dynatrace.ManagedNetworkZones("Test",
+            name="terraformtest",
             description="This is an example network zone",
+            alternative_zones=["alternativeexample"],
             fallback_mode="ANY_ACTIVE_GATE")
         ```
 

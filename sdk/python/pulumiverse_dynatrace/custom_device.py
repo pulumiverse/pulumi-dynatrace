@@ -457,17 +457,6 @@ class CustomDevice(pulumi.CustomResource):
 
         - Monitored entities API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.CustomDevice("#name#",
-            custom_device_id="customDeviceId",
-            display_name="customDevicename")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] config_url: The URL of a configuration web page for the custom device, such as a login page for a firewall or router.
@@ -494,17 +483,6 @@ class CustomDevice(pulumi.CustomResource):
         ## Dynatrace Documentation
 
         - Monitored entities API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2
-
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.CustomDevice("#name#",
-            custom_device_id="customDeviceId",
-            display_name="customDevicename")
-        ```
 
         :param str resource_name: The name of the resource.
         :param CustomDeviceArgs args: The arguments to use to populate this resource's properties.

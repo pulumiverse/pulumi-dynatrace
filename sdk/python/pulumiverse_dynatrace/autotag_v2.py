@@ -30,7 +30,7 @@ class AutotagV2Args:
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] name: Tag name
         :param pulumi.Input['AutotagV2RulesArgs'] rules: Rules
-        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` this resource will not
+        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -81,7 +81,7 @@ class AutotagV2Args:
     @pulumi.getter(name="rulesMaintainedExternally")
     def rules_maintained_externally(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        If `true` this resource will not
+        If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         return pulumi.get(self, "rules_maintained_externally")
 
@@ -102,7 +102,7 @@ class _AutotagV2State:
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] name: Tag name
         :param pulumi.Input['AutotagV2RulesArgs'] rules: Rules
-        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` this resource will not
+        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -153,7 +153,7 @@ class _AutotagV2State:
     @pulumi.getter(name="rulesMaintainedExternally")
     def rules_maintained_externally(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        If `true` this resource will not
+        If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         return pulumi.get(self, "rules_maintained_externally")
 
@@ -180,7 +180,7 @@ class AutotagV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] name: Tag name
         :param pulumi.Input[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']] rules: Rules
-        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` this resource will not
+        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         ...
     @overload
@@ -246,7 +246,7 @@ class AutotagV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] name: Tag name
         :param pulumi.Input[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']] rules: Rules
-        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` this resource will not
+        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -286,7 +286,7 @@ class AutotagV2(pulumi.CustomResource):
     @pulumi.getter(name="rulesMaintainedExternally")
     def rules_maintained_externally(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        If `true` this resource will not
+        If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         return pulumi.get(self, "rules_maintained_externally")
 

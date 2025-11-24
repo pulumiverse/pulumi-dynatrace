@@ -15,6 +15,10 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorHistogramMetric
     {
         /// <summary>
+        /// Default value with metric value
+        /// </summary>
+        public readonly string? DefaultValue;
+        /// <summary>
         /// List of dimensions
         /// </summary>
         public readonly Outputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorHistogramMetricDimensions? Dimensions;
@@ -29,12 +33,15 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorHistogramMetric(
+            string? defaultValue,
+
             Outputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorHistogramMetricDimensions? dimensions,
 
             string field,
 
             string metricKey)
         {
+            DefaultValue = defaultValue;
             Dimensions = dimensions;
             Field = field;
             MetricKey = metricKey;

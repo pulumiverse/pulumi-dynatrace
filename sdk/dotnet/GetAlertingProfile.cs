@@ -32,9 +32,10 @@ namespace Pulumiverse.Dynatrace
         ///         Name = "Default",
         ///     });
         /// 
-        ///     var myWebhookNotification = new Dynatrace.WebhookNotification("myWebhookNotification", new()
+        ///     var myWebhookNotification = new Dynatrace.WebhookNotification("my_webhook_notification", new()
         ///     {
         ///         Active = false,
+        ///         Name = "my_webhook_notification",
         ///         Profile = @default.Apply(@default =&gt; @default.Apply(getAlertingProfileResult =&gt; getAlertingProfileResult.Id)),
         ///         Url = "https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e",
         ///         Insecure = true,
@@ -69,9 +70,10 @@ namespace Pulumiverse.Dynatrace
         ///         Name = "Default",
         ///     });
         /// 
-        ///     var myWebhookNotification = new Dynatrace.WebhookNotification("myWebhookNotification", new()
+        ///     var myWebhookNotification = new Dynatrace.WebhookNotification("my_webhook_notification", new()
         ///     {
         ///         Active = false,
+        ///         Name = "my_webhook_notification",
         ///         Profile = @default.Apply(@default =&gt; @default.Apply(getAlertingProfileResult =&gt; getAlertingProfileResult.Id)),
         ///         Url = "https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e",
         ///         Insecure = true,
@@ -106,9 +108,10 @@ namespace Pulumiverse.Dynatrace
         ///         Name = "Default",
         ///     });
         /// 
-        ///     var myWebhookNotification = new Dynatrace.WebhookNotification("myWebhookNotification", new()
+        ///     var myWebhookNotification = new Dynatrace.WebhookNotification("my_webhook_notification", new()
         ///     {
         ///         Active = false,
+        ///         Name = "my_webhook_notification",
         ///         Profile = @default.Apply(@default =&gt; @default.Apply(getAlertingProfileResult =&gt; getAlertingProfileResult.Id)),
         ///         Url = "https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e",
         ///         Insecure = true,

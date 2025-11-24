@@ -16,58 +16,6 @@ import (
 // The SLO objective template data source allows the ID to be retrieved by its name.
 //
 // - `name` (String) Name of the SLO objective template
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			hostCPU, err := dynatrace.GetPlatformSloTemplate(ctx, &dynatrace.GetPlatformSloTemplateArgs{
-//				Name: "Host CPU usage utilization",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = dynatrace.NewPlatformSlo(ctx, "#name#", &dynatrace.PlatformSloArgs{
-//				Description: pulumi.String("Measures the CPU usage of selected hosts over time."),
-//				Criteria: &dynatrace.PlatformSloCriteriaArgs{
-//					CriteriaDetails: dynatrace.PlatformSloCriteriaCriteriaDetailArray{
-//						&dynatrace.PlatformSloCriteriaCriteriaDetailArgs{
-//							Target:        pulumi.Float64(95),
-//							TimeframeFrom: pulumi.String("now-7d"),
-//							TimeframeTo:   pulumi.String("now"),
-//						},
-//					},
-//				},
-//				SliReference: &dynatrace.PlatformSloSliReferenceArgs{
-//					TemplateId: pulumi.String(hostCPU.Id),
-//					Variables: &dynatrace.PlatformSloSliReferenceVariablesArgs{
-//						SliReferenceVariables: dynatrace.PlatformSloSliReferenceVariablesSliReferenceVariableArray{
-//							&dynatrace.PlatformSloSliReferenceVariablesSliReferenceVariableArgs{
-//								Name:  pulumi.String("hosts"),
-//								Value: pulumi.String("\"HOST-1234567890000000\""),
-//							},
-//						},
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetPlatformSloTemplate(ctx *pulumi.Context, args *GetPlatformSloTemplateArgs, opts ...pulumi.InvokeOption) (*GetPlatformSloTemplateResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPlatformSloTemplateResult

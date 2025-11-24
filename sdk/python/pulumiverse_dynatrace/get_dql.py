@@ -211,7 +211,6 @@ def get_dql(default_sampling_ratio: Optional[_builtins.float] = None,
         fields timestamp, davis.title, davis.underMaintenance, davis.status |
         sort timestamp |
         limit 10  
-
     \"\"\")
     ```
 
@@ -287,7 +286,6 @@ def get_dql_output(default_sampling_ratio: Optional[pulumi.Input[Optional[_built
         fields timestamp, davis.title, davis.underMaintenance, davis.status |
         sort timestamp |
         limit 10  
-
     \"\"\")
     ```
 

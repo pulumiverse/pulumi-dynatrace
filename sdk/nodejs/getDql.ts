@@ -29,7 +29,6 @@ import * as utilities from "./utilities";
  *     fields timestamp, davis.title, davis.underMaintenance, davis.status |
  *     sort timestamp |
  *     limit 10  
- *
  * `,
  * });
  * ```
@@ -171,7 +170,6 @@ export interface GetDqlResult {
  *     fields timestamp, davis.title, davis.underMaintenance, davis.status |
  *     sort timestamp |
  *     limit 10  
- *
  * `,
  * });
  * ```
