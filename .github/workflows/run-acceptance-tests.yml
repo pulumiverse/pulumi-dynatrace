@@ -24,11 +24,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: ${{ env.PR_COMMIT_SHA }}
       - name: Checkout Scripts Repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           path: ci-scripts
           repository: jaxxstorm/scripts
@@ -132,11 +132,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: ${{ env.PR_COMMIT_SHA }}
       - name: Checkout Scripts Repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           path: ci-scripts
           repository: jaxxstorm/scripts
@@ -207,11 +207,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: ${{ env.PR_COMMIT_SHA }}
       - name: Checkout Scripts Repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           path: ci-scripts
           repository: jaxxstorm/scripts
