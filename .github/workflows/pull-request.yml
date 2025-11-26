@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
     - name: Comment PR
       uses: thollander/actions-comment-pull-request@v3.0.1
       with:
