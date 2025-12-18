@@ -33,20 +33,25 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var thisIamPolicyBoundary = new Dynatrace.IamPolicyBoundary("thisIamPolicyBoundary", new()
+    ///     var @this = new Dynatrace.IamPolicyBoundary("this", new()
     ///     {
+    ///         Name = "Foo",
     ///         Query = "environment:management-zone startsWith \"[Foo]\";",
     ///     });
     /// 
-    ///     var thisIamGroup = new Dynatrace.IamGroup("thisIamGroup");
-    /// 
-    ///     var thisIamPolicy = new Dynatrace.IamPolicy("thisIamPolicy", new()
+    ///     var thisIamGroup = new Dynatrace.IamGroup("this", new()
     ///     {
+    ///         Name = "my-group-name",
+    ///     });
+    /// 
+    ///     var thisIamPolicy = new Dynatrace.IamPolicy("this", new()
+    ///     {
+    ///         Name = "this",
     ///         Account = "########-####-####-####-############",
     ///         StatementQuery = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"#########\";",
     ///     });
     /// 
-    ///     var thisIamPolicyBindingsV2 = new Dynatrace.IamPolicyBindingsV2("thisIamPolicyBindingsV2", new()
+    ///     var thisIamPolicyBindingsV2 = new Dynatrace.IamPolicyBindingsV2("this", new()
     ///     {
     ///         Environment = "########",
     ///         Group = thisIamGroup.Id,
@@ -57,7 +62,7 @@ namespace Pulumiverse.Dynatrace
     ///                 Id = thisIamPolicy.Id,
     ///                 Boundaries = new[]
     ///                 {
-    ///                     thisIamPolicyBoundary.Id,
+    ///                     @this.Id,
     ///                 },
     ///             },
     ///         },

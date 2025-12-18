@@ -180,27 +180,6 @@ class ServiceDetectionRules(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-detection-rules`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.ServiceDetectionRules("#name#",
-            enabled=False,
-            rule={
-                "additional_required_attributes": [
-                    "attribute-1",
-                    "attribute-2",
-                ],
-                "condition": "matchesValue(k8s.cluster.name,\\"terraform\\")",
-                "description": "Example description",
-                "rule_name": "#name#",
-                "service_name_template": "{k8s.workload.name}",
-            },
-            scope="environment")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -222,27 +201,6 @@ class ServiceDetectionRules(pulumi.CustomResource):
         - Services - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-detection-rules`)
-
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.ServiceDetectionRules("#name#",
-            enabled=False,
-            rule={
-                "additional_required_attributes": [
-                    "attribute-1",
-                    "attribute-2",
-                ],
-                "condition": "matchesValue(k8s.cluster.name,\\"terraform\\")",
-                "description": "Example description",
-                "rule_name": "#name#",
-                "service_name_template": "{k8s.workload.name}",
-            },
-            scope="environment")
-        ```
 
         :param str resource_name: The name of the resource.
         :param ServiceDetectionRulesArgs args: The arguments to use to populate this resource's properties.

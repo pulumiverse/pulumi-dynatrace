@@ -13,6 +13,18 @@ import * as utilities from "./utilities";
  *
  * > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
  *
+ * ## Conflicts
+ *
+ * > **Warning** If this resource is used in combination with `dynatrace.IamPermission`, there is a potential for conflicts when both resources attempt to manage group permissions.
+ * It is recommended to manage group permissions with the `dynatrace.IamPermission` resource.
+ * To avoid conflicts when using the `dynatrace.IamPermission` resource, ensure to add the following lifecycle block to the `dynatrace.IamGroup` resource:
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const restricted = new dynatrace.IamGroup("Restricted", {name: "Restricted"});
+ * ```
+ *
  * ## Dynatrace Documentation
  *
  * - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -25,13 +37,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const restricted = new dynatrace.IamGroup("restricted", {permissions: {
- *     permissions: [{
- *         name: "tenant-viewer",
- *         scope: "<environment-id>:<managementzone-id>",
- *         type: "management-zone",
- *     }],
- * }});
+ * const restricted = new dynatrace.IamGroup("Restricted", {
+ *     name: "Restricted",
+ *     permissions: {
+ *         permissions: [{
+ *             name: "tenant-viewer",
+ *             type: "management-zone",
+ *             scope: "<environment-id>:<managementzone-id>",
+ *         }],
+ *     },
+ * });
  * ```
  */
 export class IamGroup extends pulumi.CustomResource {
@@ -65,6 +80,9 @@ export class IamGroup extends pulumi.CustomResource {
     declare public readonly description: pulumi.Output<string | undefined>;
     declare public readonly federatedAttributeValues: pulumi.Output<string[] | undefined>;
     declare public readonly name: pulumi.Output<string>;
+    /**
+     * @deprecated Assigning permissions directly when creating a group is deprecated. Use the resource `dynatrace.IamPermission` instead.
+     */
     declare public readonly permissions: pulumi.Output<outputs.IamGroupPermissions | undefined>;
 
     /**
@@ -103,6 +121,9 @@ export interface IamGroupState {
     description?: pulumi.Input<string>;
     federatedAttributeValues?: pulumi.Input<pulumi.Input<string>[]>;
     name?: pulumi.Input<string>;
+    /**
+     * @deprecated Assigning permissions directly when creating a group is deprecated. Use the resource `dynatrace.IamPermission` instead.
+     */
     permissions?: pulumi.Input<inputs.IamGroupPermissions>;
 }
 
@@ -113,5 +134,8 @@ export interface IamGroupArgs {
     description?: pulumi.Input<string>;
     federatedAttributeValues?: pulumi.Input<pulumi.Input<string>[]>;
     name?: pulumi.Input<string>;
+    /**
+     * @deprecated Assigning permissions directly when creating a group is deprecated. Use the resource `dynatrace.IamPermission` instead.
+     */
     permissions?: pulumi.Input<inputs.IamGroupPermissions>;
 }

@@ -23,8 +23,9 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const thisDocument = new dynatrace.Document("thisDocument", {
+ * const thisDocument = new dynatrace.Document("this", {
  *     type: "dashboard",
+ *     name: "#name#",
  *     content: JSON.stringify({
  *         version: 13,
  *         variables: [],
@@ -156,7 +157,7 @@ import * as utilities from "./utilities";
  *         },
  *     }),
  * });
- * const thisDirectShares = new dynatrace.DirectShares("thisDirectShares", {
+ * const _this = new dynatrace.DirectShares("this", {
  *     documentId: thisDocument.id,
  *     access: "read-write",
  *     recipients: {

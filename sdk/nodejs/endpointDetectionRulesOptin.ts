@@ -12,15 +12,6 @@ import * as utilities from "./utilities";
  * - Customize endpoint detection in Service Detection v2 - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services/service-detection-v2/endpoint-detection-v2
  *
  * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:endpoint-detection-rules-opt-in`)
- *
- * ## Resource Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const _name_ = new dynatrace.EndpointDetectionRulesOptin("#name#", {enabled: true});
- * ```
  */
 export class EndpointDetectionRulesOptin extends pulumi.CustomResource {
     /**

@@ -347,39 +347,6 @@ class MaintenanceWindow(pulumi.CustomResource):
 
         - Maintenance windows API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/maintenance-windows-api
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.MaintenanceWindow("#name#",
-            schedule={
-                "end": "2021-05-11 14:41",
-                "recurrence_type": "ONCE",
-                "start": "2021-05-11 13:41",
-                "zone_id": "Europe/Vienna",
-            },
-            scope={
-                "matches": [{
-                    "tag_combination": "AND",
-                    "tags": [
-                        {
-                            "context": "CONTEXTLESS",
-                            "key": "bggtedgxen",
-                        },
-                        {
-                            "context": "CONTEXTLESS",
-                            "key": "deldel1",
-                        },
-                    ],
-                }],
-            },
-            suppress_synth_mon_exec=True,
-            suppression="DONT_DETECT_PROBLEMS",
-            type="PLANNED")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: A short description of the maintenance purpose
@@ -408,39 +375,6 @@ class MaintenanceWindow(pulumi.CustomResource):
         - Maintenance windows - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/notifications-and-alerting/maintenance-windows
 
         - Maintenance windows API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/maintenance-windows-api
-
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.MaintenanceWindow("#name#",
-            schedule={
-                "end": "2021-05-11 14:41",
-                "recurrence_type": "ONCE",
-                "start": "2021-05-11 13:41",
-                "zone_id": "Europe/Vienna",
-            },
-            scope={
-                "matches": [{
-                    "tag_combination": "AND",
-                    "tags": [
-                        {
-                            "context": "CONTEXTLESS",
-                            "key": "bggtedgxen",
-                        },
-                        {
-                            "context": "CONTEXTLESS",
-                            "key": "deldel1",
-                        },
-                    ],
-                }],
-            },
-            suppress_synth_mon_exec=True,
-            suppression="DONT_DETECT_PROBLEMS",
-            type="PLANNED")
-        ```
 
         :param str resource_name: The name of the resource.
         :param MaintenanceWindowArgs args: The arguments to use to populate this resource's properties.

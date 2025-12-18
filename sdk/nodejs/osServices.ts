@@ -59,7 +59,7 @@ export class OsServices extends pulumi.CustomResource {
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
-     * Set of additional key-value properties to be attached to the triggered event.
+     * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
      */
     declare public readonly metadata: pulumi.Output<outputs.OsServicesMetadata | undefined>;
     /**
@@ -197,7 +197,7 @@ export interface OsServicesState {
      */
     insertAfter?: pulumi.Input<string>;
     /**
-     * Set of additional key-value properties to be attached to the triggered event.
+     * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
      */
     metadata?: pulumi.Input<inputs.OsServicesMetadata>;
     /**
@@ -275,7 +275,7 @@ export interface OsServicesArgs {
      */
     insertAfter?: pulumi.Input<string>;
     /**
-     * Set of additional key-value properties to be attached to the triggered event.
+     * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
      */
     metadata?: pulumi.Input<inputs.OsServicesMetadata>;
     /**

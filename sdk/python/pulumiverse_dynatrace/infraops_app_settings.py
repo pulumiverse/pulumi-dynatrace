@@ -29,8 +29,8 @@ class InfraopsAppSettingsArgs:
         :param pulumi.Input[_builtins.bool] show_monitoring_candidates: When set to true, the app will display monitoring candidates in the Hosts table
         :param pulumi.Input[_builtins.bool] show_standalone_hosts: When set to true, the app will display app only hosts in the Hosts table
         :param pulumi.Input[_builtins.float] interface_saturation_threshold: The threshold at which a network device interface is deemed to be saturated.
-        :param pulumi.Input[_builtins.int] invex_dql_query_limit: Limit the number of results returned from Grail for Data center, Host, and Network device entities.
-        :param pulumi.Input[_builtins.int] invex_dql_sort_limit: Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        :param pulumi.Input[_builtins.int] invex_dql_query_limit: Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
+        :param pulumi.Input[_builtins.int] invex_dql_sort_limit: Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
         """
         pulumi.set(__self__, "show_monitoring_candidates", show_monitoring_candidates)
         pulumi.set(__self__, "show_standalone_hosts", show_standalone_hosts)
@@ -81,7 +81,7 @@ class InfraopsAppSettingsArgs:
     @pulumi.getter(name="invexDqlQueryLimit")
     def invex_dql_query_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+        Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
         """
         return pulumi.get(self, "invex_dql_query_limit")
 
@@ -93,7 +93,7 @@ class InfraopsAppSettingsArgs:
     @pulumi.getter(name="invexDqlSortLimit")
     def invex_dql_sort_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
         """
         return pulumi.get(self, "invex_dql_sort_limit")
 
@@ -113,8 +113,8 @@ class _InfraopsAppSettingsState:
         """
         Input properties used for looking up and filtering InfraopsAppSettings resources.
         :param pulumi.Input[_builtins.float] interface_saturation_threshold: The threshold at which a network device interface is deemed to be saturated.
-        :param pulumi.Input[_builtins.int] invex_dql_query_limit: Limit the number of results returned from Grail for Data center, Host, and Network device entities.
-        :param pulumi.Input[_builtins.int] invex_dql_sort_limit: Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        :param pulumi.Input[_builtins.int] invex_dql_query_limit: Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
+        :param pulumi.Input[_builtins.int] invex_dql_sort_limit: Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
         :param pulumi.Input[_builtins.bool] show_monitoring_candidates: When set to true, the app will display monitoring candidates in the Hosts table
         :param pulumi.Input[_builtins.bool] show_standalone_hosts: When set to true, the app will display app only hosts in the Hosts table
         """
@@ -145,7 +145,7 @@ class _InfraopsAppSettingsState:
     @pulumi.getter(name="invexDqlQueryLimit")
     def invex_dql_query_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+        Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
         """
         return pulumi.get(self, "invex_dql_query_limit")
 
@@ -157,7 +157,7 @@ class _InfraopsAppSettingsState:
     @pulumi.getter(name="invexDqlSortLimit")
     def invex_dql_sort_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
         """
         return pulumi.get(self, "invex_dql_sort_limit")
 
@@ -207,8 +207,8 @@ class InfraopsAppSettings(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.float] interface_saturation_threshold: The threshold at which a network device interface is deemed to be saturated.
-        :param pulumi.Input[_builtins.int] invex_dql_query_limit: Limit the number of results returned from Grail for Data center, Host, and Network device entities.
-        :param pulumi.Input[_builtins.int] invex_dql_sort_limit: Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        :param pulumi.Input[_builtins.int] invex_dql_query_limit: Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
+        :param pulumi.Input[_builtins.int] invex_dql_sort_limit: Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
         :param pulumi.Input[_builtins.bool] show_monitoring_candidates: When set to true, the app will display monitoring candidates in the Hosts table
         :param pulumi.Input[_builtins.bool] show_standalone_hosts: When set to true, the app will display app only hosts in the Hosts table
         """
@@ -281,8 +281,8 @@ class InfraopsAppSettings(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.float] interface_saturation_threshold: The threshold at which a network device interface is deemed to be saturated.
-        :param pulumi.Input[_builtins.int] invex_dql_query_limit: Limit the number of results returned from Grail for Data center, Host, and Network device entities.
-        :param pulumi.Input[_builtins.int] invex_dql_sort_limit: Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        :param pulumi.Input[_builtins.int] invex_dql_query_limit: Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
+        :param pulumi.Input[_builtins.int] invex_dql_sort_limit: Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
         :param pulumi.Input[_builtins.bool] show_monitoring_candidates: When set to true, the app will display monitoring candidates in the Hosts table
         :param pulumi.Input[_builtins.bool] show_standalone_hosts: When set to true, the app will display app only hosts in the Hosts table
         """
@@ -309,7 +309,7 @@ class InfraopsAppSettings(pulumi.CustomResource):
     @pulumi.getter(name="invexDqlQueryLimit")
     def invex_dql_query_limit(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
-        Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+        Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
         """
         return pulumi.get(self, "invex_dql_query_limit")
 
@@ -317,7 +317,7 @@ class InfraopsAppSettings(pulumi.CustomResource):
     @pulumi.getter(name="invexDqlSortLimit")
     def invex_dql_sort_limit(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
-        Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
         """
         return pulumi.get(self, "invex_dql_sort_limit")
 

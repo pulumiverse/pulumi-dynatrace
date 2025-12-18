@@ -30,14 +30,14 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleAutotag = Dynatrace.GetAutotag.Invoke(new()
+        ///     var example = Dynatrace.GetAutotag.Invoke(new()
         ///     {
         ///         Name = "Terraform Example",
         ///     });
         /// 
-        ///     var exampleAutotagRules = new Dynatrace.AutotagRules("exampleAutotagRules", new()
+        ///     var exampleAutotagRules = new Dynatrace.AutotagRules("Example", new()
         ///     {
-        ///         AutoTagId = exampleAutotag.Apply(getAutotagResult =&gt; getAutotagResult.Id),
+        ///         AutoTagId = example.Apply(getAutotagResult =&gt; getAutotagResult.Id),
         ///         Rules = new Dynatrace.Inputs.AutotagRulesRulesArgs
         ///         {
         ///             Rules = new[]
@@ -120,14 +120,14 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleAutotag = Dynatrace.GetAutotag.Invoke(new()
+        ///     var example = Dynatrace.GetAutotag.Invoke(new()
         ///     {
         ///         Name = "Terraform Example",
         ///     });
         /// 
-        ///     var exampleAutotagRules = new Dynatrace.AutotagRules("exampleAutotagRules", new()
+        ///     var exampleAutotagRules = new Dynatrace.AutotagRules("Example", new()
         ///     {
-        ///         AutoTagId = exampleAutotag.Apply(getAutotagResult =&gt; getAutotagResult.Id),
+        ///         AutoTagId = example.Apply(getAutotagResult =&gt; getAutotagResult.Id),
         ///         Rules = new Dynatrace.Inputs.AutotagRulesRulesArgs
         ///         {
         ///             Rules = new[]
@@ -210,14 +210,14 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleAutotag = Dynatrace.GetAutotag.Invoke(new()
+        ///     var example = Dynatrace.GetAutotag.Invoke(new()
         ///     {
         ///         Name = "Terraform Example",
         ///     });
         /// 
-        ///     var exampleAutotagRules = new Dynatrace.AutotagRules("exampleAutotagRules", new()
+        ///     var exampleAutotagRules = new Dynatrace.AutotagRules("Example", new()
         ///     {
-        ///         AutoTagId = exampleAutotag.Apply(getAutotagResult =&gt; getAutotagResult.Id),
+        ///         AutoTagId = example.Apply(getAutotagResult =&gt; getAutotagResult.Id),
         ///         Rules = new Dynatrace.Inputs.AutotagRulesRulesArgs
         ///         {
         ///             Rules = new[]

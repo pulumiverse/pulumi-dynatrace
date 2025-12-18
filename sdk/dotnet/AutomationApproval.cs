@@ -18,24 +18,6 @@ namespace Pulumiverse.Dynatrace
     /// - Dynatrace Workflows - https://www.dynatrace.com/support/help/platform-modules/cloud-automation/workflows
     /// 
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:automation.approval)
-    /// 
-    /// ## Resource Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var _name_ = new Dynatrace.AutomationApproval("#name#", new()
-    ///     {
-    ///         WorkflowAppAccessApprovalEnabled = true,
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/automationApproval:AutomationApproval")]
     public partial class AutomationApproval : global::Pulumi.CustomResource

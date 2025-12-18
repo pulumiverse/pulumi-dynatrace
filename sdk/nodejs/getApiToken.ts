@@ -15,10 +15,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const exampleApiToken = dynatrace.getApiToken({
- *     name: "Terraform",
- * });
- * export const example = exampleApiToken;
+ * export = async () => {
+ *     const example = await dynatrace.getApiToken({
+ *         name: "Terraform",
+ *     });
+ *     return {
+ *         example: example,
+ *     };
+ * }
  * ```
  */
 export function getApiToken(args: GetApiTokenArgs, opts?: pulumi.InvokeOptions): Promise<GetApiTokenResult> {
@@ -80,10 +84,14 @@ export interface GetApiTokenResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const exampleApiToken = dynatrace.getApiToken({
- *     name: "Terraform",
- * });
- * export const example = exampleApiToken;
+ * export = async () => {
+ *     const example = await dynatrace.getApiToken({
+ *         name: "Terraform",
+ *     });
+ *     return {
+ *         example: example,
+ *     };
+ * }
  * ```
  */
 export function getApiTokenOutput(args: GetApiTokenOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApiTokenResult> {

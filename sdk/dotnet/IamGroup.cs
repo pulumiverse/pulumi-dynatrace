@@ -17,6 +17,27 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// &gt; This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
     /// 
+    /// ## Conflicts
+    /// 
+    /// &gt; **Warning** If this resource is used in combination with `dynatrace.IamPermission`, there is a potential for conflicts when both resources attempt to manage group permissions.
+    /// It is recommended to manage group permissions with the `dynatrace.IamPermission` resource.
+    /// To avoid conflicts when using the `dynatrace.IamPermission` resource, ensure to add the following lifecycle block to the `dynatrace.IamGroup` resource:
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var restricted = new Dynatrace.IamGroup("Restricted", new()
+    ///     {
+    ///         Name = "Restricted",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Dynatrace Documentation
     /// 
     /// - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -33,8 +54,9 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var restricted = new Dynatrace.IamGroup("restricted", new()
+    ///     var restricted = new Dynatrace.IamGroup("Restricted", new()
     ///     {
+    ///         Name = "Restricted",
     ///         Permissions = new Dynatrace.Inputs.IamGroupPermissionsArgs
     ///         {
     ///             Permissions = new[]
@@ -42,8 +64,8 @@ namespace Pulumiverse.Dynatrace
     ///                 new Dynatrace.Inputs.IamGroupPermissionsPermissionArgs
     ///                 {
     ///                     Name = "tenant-viewer",
-    ///                     Scope = "&lt;environment-id&gt;:&lt;managementzone-id&gt;",
     ///                     Type = "management-zone",
+    ///                     Scope = "&lt;environment-id&gt;:&lt;managementzone-id&gt;",
     ///                 },
     ///             },
     ///         },

@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// Type of value assignment. Possible Values: `Constant`, `Field`, `multiValueConstant`.
+        /// Type of value assignment. Possible Values: `Constant`, `Field`, `multiValueConstant`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

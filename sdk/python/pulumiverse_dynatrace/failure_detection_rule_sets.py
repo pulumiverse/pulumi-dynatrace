@@ -180,39 +180,6 @@ class FailureDetectionRuleSets(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:failure-detection-rulesets`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.FailureDetectionRuleSets("#name#",
-            enabled=False,
-            ruleset={
-                "condition": "matchesValue(k8s.cluster.name,\\"#name#\\")",
-                "description": "This is a sample description",
-                "fail_on_exceptions": {
-                    "enabled": True,
-                },
-                "fail_on_grpc_status_codes": {
-                    "status_codes": "2,4,12,13,14,15",
-                },
-                "fail_on_http_response_status_codes": {
-                    "status_codes": "500-599",
-                },
-                "fail_on_span_status_error": {
-                    "enabled": True,
-                },
-                "overrides": {
-                    "force_success_on_span_status_ok": {
-                        "enabled": False,
-                    },
-                },
-                "ruleset_name": "#name#",
-            },
-            scope="environment")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -234,39 +201,6 @@ class FailureDetectionRuleSets(pulumi.CustomResource):
         - Customize failure detection in Service Detection v2 - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services/service-detection-v2/failure-detection-v2
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:failure-detection-rulesets`)
-
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.FailureDetectionRuleSets("#name#",
-            enabled=False,
-            ruleset={
-                "condition": "matchesValue(k8s.cluster.name,\\"#name#\\")",
-                "description": "This is a sample description",
-                "fail_on_exceptions": {
-                    "enabled": True,
-                },
-                "fail_on_grpc_status_codes": {
-                    "status_codes": "2,4,12,13,14,15",
-                },
-                "fail_on_http_response_status_codes": {
-                    "status_codes": "500-599",
-                },
-                "fail_on_span_status_error": {
-                    "enabled": True,
-                },
-                "overrides": {
-                    "force_success_on_span_status_ok": {
-                        "enabled": False,
-                    },
-                },
-                "ruleset_name": "#name#",
-            },
-            scope="environment")
-        ```
 
         :param str resource_name: The name of the resource.
         :param FailureDetectionRuleSetsArgs args: The arguments to use to populate this resource's properties.

@@ -23,9 +23,9 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const johnDoeGmailCom = new dynatrace.IamUser("johnDoeGmailCom", {
+ * const johnDoeGmailCom = new dynatrace.IamUser("john_doe_gmail_com", {
  *     email: "john.doe@gmail.com",
- *     groups: [data.dynatrace_iam_group.Restricted.id],
+ *     groups: [restricted.id],
  * });
  * ```
  */

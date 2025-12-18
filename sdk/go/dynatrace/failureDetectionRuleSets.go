@@ -19,55 +19,6 @@ import (
 // - Customize failure detection in Service Detection v2 - https://docs.dynatrace.com/docs/observe/applications-and-microservices/services/service-detection-v2/failure-detection-v2
 //
 // - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:failure-detection-rulesets`)
-//
-// ## Resource Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewFailureDetectionRuleSets(ctx, "#name#", &dynatrace.FailureDetectionRuleSetsArgs{
-//				Enabled: pulumi.Bool(false),
-//				Ruleset: &dynatrace.FailureDetectionRuleSetsRulesetArgs{
-//					Condition:   pulumi.String("matchesValue(k8s.cluster.name,\"#name#\")"),
-//					Description: pulumi.String("This is a sample description"),
-//					FailOnExceptions: &dynatrace.FailureDetectionRuleSetsRulesetFailOnExceptionsArgs{
-//						Enabled: pulumi.Bool(true),
-//					},
-//					FailOnGrpcStatusCodes: &dynatrace.FailureDetectionRuleSetsRulesetFailOnGrpcStatusCodesArgs{
-//						StatusCodes: pulumi.String("2,4,12,13,14,15"),
-//					},
-//					FailOnHttpResponseStatusCodes: &dynatrace.FailureDetectionRuleSetsRulesetFailOnHttpResponseStatusCodesArgs{
-//						StatusCodes: pulumi.String("500-599"),
-//					},
-//					FailOnSpanStatusError: &dynatrace.FailureDetectionRuleSetsRulesetFailOnSpanStatusErrorArgs{
-//						Enabled: pulumi.Bool(true),
-//					},
-//					Overrides: &dynatrace.FailureDetectionRuleSetsRulesetOverridesArgs{
-//						ForceSuccessOnSpanStatusOk: &dynatrace.FailureDetectionRuleSetsRulesetOverridesForceSuccessOnSpanStatusOkArgs{
-//							Enabled: pulumi.Bool(false),
-//						},
-//					},
-//					RulesetName: pulumi.String("#name#"),
-//				},
-//				Scope: pulumi.String("environment"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type FailureDetectionRuleSets struct {
 	pulumi.CustomResourceState
 

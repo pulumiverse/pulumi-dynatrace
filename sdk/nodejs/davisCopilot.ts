@@ -35,7 +35,7 @@ export class DavisCopilot extends pulumi.CustomResource {
     }
 
     /**
-     * You can exclude specific data buckets and tables from the Davis CoPilot semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
+     * You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
      */
     declare public readonly blocklistEntries: pulumi.Output<outputs.DavisCopilotBlocklistEntries | undefined>;
     /**
@@ -43,7 +43,11 @@ export class DavisCopilot extends pulumi.CustomResource {
      */
     declare public readonly enableCopilot: pulumi.Output<boolean>;
     /**
-     * You can enrich Davis CoPilot with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Davis CoPilot periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+     * By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+     */
+    declare public readonly enableDocumentSuggestion: pulumi.Output<boolean | undefined>;
+    /**
+     * You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
      */
     declare public readonly enableTenantAwareDataMining: pulumi.Output<boolean | undefined>;
 
@@ -62,6 +66,7 @@ export class DavisCopilot extends pulumi.CustomResource {
             const state = argsOrState as DavisCopilotState | undefined;
             resourceInputs["blocklistEntries"] = state?.blocklistEntries;
             resourceInputs["enableCopilot"] = state?.enableCopilot;
+            resourceInputs["enableDocumentSuggestion"] = state?.enableDocumentSuggestion;
             resourceInputs["enableTenantAwareDataMining"] = state?.enableTenantAwareDataMining;
         } else {
             const args = argsOrState as DavisCopilotArgs | undefined;
@@ -70,6 +75,7 @@ export class DavisCopilot extends pulumi.CustomResource {
             }
             resourceInputs["blocklistEntries"] = args?.blocklistEntries;
             resourceInputs["enableCopilot"] = args?.enableCopilot;
+            resourceInputs["enableDocumentSuggestion"] = args?.enableDocumentSuggestion;
             resourceInputs["enableTenantAwareDataMining"] = args?.enableTenantAwareDataMining;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -82,7 +88,7 @@ export class DavisCopilot extends pulumi.CustomResource {
  */
 export interface DavisCopilotState {
     /**
-     * You can exclude specific data buckets and tables from the Davis CoPilot semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
+     * You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
      */
     blocklistEntries?: pulumi.Input<inputs.DavisCopilotBlocklistEntries>;
     /**
@@ -90,7 +96,11 @@ export interface DavisCopilotState {
      */
     enableCopilot?: pulumi.Input<boolean>;
     /**
-     * You can enrich Davis CoPilot with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Davis CoPilot periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+     * By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+     */
+    enableDocumentSuggestion?: pulumi.Input<boolean>;
+    /**
+     * You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
      */
     enableTenantAwareDataMining?: pulumi.Input<boolean>;
 }
@@ -100,7 +110,7 @@ export interface DavisCopilotState {
  */
 export interface DavisCopilotArgs {
     /**
-     * You can exclude specific data buckets and tables from the Davis CoPilot semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
+     * You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
      */
     blocklistEntries?: pulumi.Input<inputs.DavisCopilotBlocklistEntries>;
     /**
@@ -108,7 +118,11 @@ export interface DavisCopilotArgs {
      */
     enableCopilot: pulumi.Input<boolean>;
     /**
-     * You can enrich Davis CoPilot with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Davis CoPilot periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+     * By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+     */
+    enableDocumentSuggestion?: pulumi.Input<boolean>;
+    /**
+     * You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
      */
     enableTenantAwareDataMining?: pulumi.Input<boolean>;
 }

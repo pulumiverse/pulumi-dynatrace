@@ -37,7 +37,7 @@ export class VictorOpsNotification extends pulumi.CustomResource {
      */
     declare public readonly active: pulumi.Output<boolean>;
     /**
-     * The API key for the target VictorOps account
+     * The API key for the target Splunk On-Call account
      */
     declare public readonly apiKey: pulumi.Output<string | undefined>;
     /**
@@ -119,7 +119,7 @@ export interface VictorOpsNotificationState {
      */
     active?: pulumi.Input<boolean>;
     /**
-     * The API key for the target VictorOps account
+     * The API key for the target Splunk On-Call account
      */
     apiKey?: pulumi.Input<string>;
     /**
@@ -153,7 +153,7 @@ export interface VictorOpsNotificationArgs {
      */
     active: pulumi.Input<boolean>;
     /**
-     * The API key for the target VictorOps account
+     * The API key for the target Splunk On-Call account
      */
     apiKey?: pulumi.Input<string>;
     /**
