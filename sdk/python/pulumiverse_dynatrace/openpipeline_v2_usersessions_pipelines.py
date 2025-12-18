@@ -21,51 +21,55 @@ __all__ = ['OpenpipelineV2UsersessionsPipelinesArgs', 'OpenpipelineV2Usersession
 @pulumi.input_type
 class OpenpipelineV2UsersessionsPipelinesArgs:
     def __init__(__self__, *,
-                 cost_allocation: pulumi.Input['OpenpipelineV2UsersessionsPipelinesCostAllocationArgs'],
                  custom_id: pulumi.Input[_builtins.str],
-                 data_extraction: pulumi.Input['OpenpipelineV2UsersessionsPipelinesDataExtractionArgs'],
-                 davis: pulumi.Input['OpenpipelineV2UsersessionsPipelinesDavisArgs'],
                  display_name: pulumi.Input[_builtins.str],
-                 metric_extraction: pulumi.Input['OpenpipelineV2UsersessionsPipelinesMetricExtractionArgs'],
-                 processing: pulumi.Input['OpenpipelineV2UsersessionsPipelinesProcessingArgs'],
-                 product_allocation: pulumi.Input['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs'],
-                 security_context: pulumi.Input['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs'],
-                 storage: pulumi.Input['OpenpipelineV2UsersessionsPipelinesStorageArgs']):
+                 cost_allocation: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesCostAllocationArgs']] = None,
+                 data_extraction: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesDataExtractionArgs']] = None,
+                 davis: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesDavisArgs']] = None,
+                 metric_extraction: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesMetricExtractionArgs']] = None,
+                 processing: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesProcessingArgs']] = None,
+                 product_allocation: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs']] = None,
+                 security_context: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs']] = None,
+                 smartscape_edge_extraction: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgs']] = None,
+                 smartscape_node_extraction: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgs']] = None,
+                 storage: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesStorageArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineV2UsersessionsPipelines resource.
-        :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesCostAllocationArgs'] cost_allocation: Cost allocation stage
         :param pulumi.Input[_builtins.str] custom_id: Custom pipeline id
+        :param pulumi.Input[_builtins.str] display_name: Display name
+        :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesCostAllocationArgs'] cost_allocation: Cost allocation stage
         :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesDataExtractionArgs'] data_extraction: Data extraction stage
         :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesDavisArgs'] davis: Davis event extraction stage
-        :param pulumi.Input[_builtins.str] display_name: Display name
         :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesMetricExtractionArgs'] metric_extraction: Metrics extraction stage
         :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesProcessingArgs'] processing: Processing stage
         :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs'] product_allocation: Product allocation stage
         :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs'] security_context: Security context stage
+        :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgs'] smartscape_edge_extraction: Smartscape edge extraction stage
+        :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgs'] smartscape_node_extraction: Smartscape node extraction stage
         :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesStorageArgs'] storage: Storage stage
         """
-        pulumi.set(__self__, "cost_allocation", cost_allocation)
         pulumi.set(__self__, "custom_id", custom_id)
-        pulumi.set(__self__, "data_extraction", data_extraction)
-        pulumi.set(__self__, "davis", davis)
         pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "metric_extraction", metric_extraction)
-        pulumi.set(__self__, "processing", processing)
-        pulumi.set(__self__, "product_allocation", product_allocation)
-        pulumi.set(__self__, "security_context", security_context)
-        pulumi.set(__self__, "storage", storage)
-
-    @_builtins.property
-    @pulumi.getter(name="costAllocation")
-    def cost_allocation(self) -> pulumi.Input['OpenpipelineV2UsersessionsPipelinesCostAllocationArgs']:
-        """
-        Cost allocation stage
-        """
-        return pulumi.get(self, "cost_allocation")
-
-    @cost_allocation.setter
-    def cost_allocation(self, value: pulumi.Input['OpenpipelineV2UsersessionsPipelinesCostAllocationArgs']):
-        pulumi.set(self, "cost_allocation", value)
+        if cost_allocation is not None:
+            pulumi.set(__self__, "cost_allocation", cost_allocation)
+        if data_extraction is not None:
+            pulumi.set(__self__, "data_extraction", data_extraction)
+        if davis is not None:
+            pulumi.set(__self__, "davis", davis)
+        if metric_extraction is not None:
+            pulumi.set(__self__, "metric_extraction", metric_extraction)
+        if processing is not None:
+            pulumi.set(__self__, "processing", processing)
+        if product_allocation is not None:
+            pulumi.set(__self__, "product_allocation", product_allocation)
+        if security_context is not None:
+            pulumi.set(__self__, "security_context", security_context)
+        if smartscape_edge_extraction is not None:
+            pulumi.set(__self__, "smartscape_edge_extraction", smartscape_edge_extraction)
+        if smartscape_node_extraction is not None:
+            pulumi.set(__self__, "smartscape_node_extraction", smartscape_node_extraction)
+        if storage is not None:
+            pulumi.set(__self__, "storage", storage)
 
     @_builtins.property
     @pulumi.getter(name="customId")
@@ -80,30 +84,6 @@ class OpenpipelineV2UsersessionsPipelinesArgs:
         pulumi.set(self, "custom_id", value)
 
     @_builtins.property
-    @pulumi.getter(name="dataExtraction")
-    def data_extraction(self) -> pulumi.Input['OpenpipelineV2UsersessionsPipelinesDataExtractionArgs']:
-        """
-        Data extraction stage
-        """
-        return pulumi.get(self, "data_extraction")
-
-    @data_extraction.setter
-    def data_extraction(self, value: pulumi.Input['OpenpipelineV2UsersessionsPipelinesDataExtractionArgs']):
-        pulumi.set(self, "data_extraction", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def davis(self) -> pulumi.Input['OpenpipelineV2UsersessionsPipelinesDavisArgs']:
-        """
-        Davis event extraction stage
-        """
-        return pulumi.get(self, "davis")
-
-    @davis.setter
-    def davis(self, value: pulumi.Input['OpenpipelineV2UsersessionsPipelinesDavisArgs']):
-        pulumi.set(self, "davis", value)
-
-    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[_builtins.str]:
         """
@@ -116,63 +96,123 @@ class OpenpipelineV2UsersessionsPipelinesArgs:
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="costAllocation")
+    def cost_allocation(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesCostAllocationArgs']]:
+        """
+        Cost allocation stage
+        """
+        return pulumi.get(self, "cost_allocation")
+
+    @cost_allocation.setter
+    def cost_allocation(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesCostAllocationArgs']]):
+        pulumi.set(self, "cost_allocation", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataExtraction")
+    def data_extraction(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesDataExtractionArgs']]:
+        """
+        Data extraction stage
+        """
+        return pulumi.get(self, "data_extraction")
+
+    @data_extraction.setter
+    def data_extraction(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesDataExtractionArgs']]):
+        pulumi.set(self, "data_extraction", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def davis(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesDavisArgs']]:
+        """
+        Davis event extraction stage
+        """
+        return pulumi.get(self, "davis")
+
+    @davis.setter
+    def davis(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesDavisArgs']]):
+        pulumi.set(self, "davis", value)
+
+    @_builtins.property
     @pulumi.getter(name="metricExtraction")
-    def metric_extraction(self) -> pulumi.Input['OpenpipelineV2UsersessionsPipelinesMetricExtractionArgs']:
+    def metric_extraction(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesMetricExtractionArgs']]:
         """
         Metrics extraction stage
         """
         return pulumi.get(self, "metric_extraction")
 
     @metric_extraction.setter
-    def metric_extraction(self, value: pulumi.Input['OpenpipelineV2UsersessionsPipelinesMetricExtractionArgs']):
+    def metric_extraction(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesMetricExtractionArgs']]):
         pulumi.set(self, "metric_extraction", value)
 
     @_builtins.property
     @pulumi.getter
-    def processing(self) -> pulumi.Input['OpenpipelineV2UsersessionsPipelinesProcessingArgs']:
+    def processing(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesProcessingArgs']]:
         """
         Processing stage
         """
         return pulumi.get(self, "processing")
 
     @processing.setter
-    def processing(self, value: pulumi.Input['OpenpipelineV2UsersessionsPipelinesProcessingArgs']):
+    def processing(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesProcessingArgs']]):
         pulumi.set(self, "processing", value)
 
     @_builtins.property
     @pulumi.getter(name="productAllocation")
-    def product_allocation(self) -> pulumi.Input['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs']:
+    def product_allocation(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs']]:
         """
         Product allocation stage
         """
         return pulumi.get(self, "product_allocation")
 
     @product_allocation.setter
-    def product_allocation(self, value: pulumi.Input['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs']):
+    def product_allocation(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs']]):
         pulumi.set(self, "product_allocation", value)
 
     @_builtins.property
     @pulumi.getter(name="securityContext")
-    def security_context(self) -> pulumi.Input['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs']:
+    def security_context(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs']]:
         """
         Security context stage
         """
         return pulumi.get(self, "security_context")
 
     @security_context.setter
-    def security_context(self, value: pulumi.Input['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs']):
+    def security_context(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs']]):
         pulumi.set(self, "security_context", value)
 
     @_builtins.property
+    @pulumi.getter(name="smartscapeEdgeExtraction")
+    def smartscape_edge_extraction(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgs']]:
+        """
+        Smartscape edge extraction stage
+        """
+        return pulumi.get(self, "smartscape_edge_extraction")
+
+    @smartscape_edge_extraction.setter
+    def smartscape_edge_extraction(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgs']]):
+        pulumi.set(self, "smartscape_edge_extraction", value)
+
+    @_builtins.property
+    @pulumi.getter(name="smartscapeNodeExtraction")
+    def smartscape_node_extraction(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgs']]:
+        """
+        Smartscape node extraction stage
+        """
+        return pulumi.get(self, "smartscape_node_extraction")
+
+    @smartscape_node_extraction.setter
+    def smartscape_node_extraction(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgs']]):
+        pulumi.set(self, "smartscape_node_extraction", value)
+
+    @_builtins.property
     @pulumi.getter
-    def storage(self) -> pulumi.Input['OpenpipelineV2UsersessionsPipelinesStorageArgs']:
+    def storage(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesStorageArgs']]:
         """
         Storage stage
         """
         return pulumi.get(self, "storage")
 
     @storage.setter
-    def storage(self, value: pulumi.Input['OpenpipelineV2UsersessionsPipelinesStorageArgs']):
+    def storage(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesStorageArgs']]):
         pulumi.set(self, "storage", value)
 
 
@@ -188,6 +228,8 @@ class _OpenpipelineV2UsersessionsPipelinesState:
                  processing: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesProcessingArgs']] = None,
                  product_allocation: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs']] = None,
                  security_context: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs']] = None,
+                 smartscape_edge_extraction: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgs']] = None,
+                 smartscape_node_extraction: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgs']] = None,
                  storage: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesStorageArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineV2UsersessionsPipelines resources.
@@ -200,6 +242,8 @@ class _OpenpipelineV2UsersessionsPipelinesState:
         :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesProcessingArgs'] processing: Processing stage
         :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs'] product_allocation: Product allocation stage
         :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs'] security_context: Security context stage
+        :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgs'] smartscape_edge_extraction: Smartscape edge extraction stage
+        :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgs'] smartscape_node_extraction: Smartscape node extraction stage
         :param pulumi.Input['OpenpipelineV2UsersessionsPipelinesStorageArgs'] storage: Storage stage
         """
         if cost_allocation is not None:
@@ -220,6 +264,10 @@ class _OpenpipelineV2UsersessionsPipelinesState:
             pulumi.set(__self__, "product_allocation", product_allocation)
         if security_context is not None:
             pulumi.set(__self__, "security_context", security_context)
+        if smartscape_edge_extraction is not None:
+            pulumi.set(__self__, "smartscape_edge_extraction", smartscape_edge_extraction)
+        if smartscape_node_extraction is not None:
+            pulumi.set(__self__, "smartscape_node_extraction", smartscape_node_extraction)
         if storage is not None:
             pulumi.set(__self__, "storage", storage)
 
@@ -332,6 +380,30 @@ class _OpenpipelineV2UsersessionsPipelinesState:
         pulumi.set(self, "security_context", value)
 
     @_builtins.property
+    @pulumi.getter(name="smartscapeEdgeExtraction")
+    def smartscape_edge_extraction(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgs']]:
+        """
+        Smartscape edge extraction stage
+        """
+        return pulumi.get(self, "smartscape_edge_extraction")
+
+    @smartscape_edge_extraction.setter
+    def smartscape_edge_extraction(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgs']]):
+        pulumi.set(self, "smartscape_edge_extraction", value)
+
+    @_builtins.property
+    @pulumi.getter(name="smartscapeNodeExtraction")
+    def smartscape_node_extraction(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgs']]:
+        """
+        Smartscape node extraction stage
+        """
+        return pulumi.get(self, "smartscape_node_extraction")
+
+    @smartscape_node_extraction.setter
+    def smartscape_node_extraction(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgs']]):
+        pulumi.set(self, "smartscape_node_extraction", value)
+
+    @_builtins.property
     @pulumi.getter
     def storage(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsPipelinesStorageArgs']]:
         """
@@ -359,6 +431,8 @@ class OpenpipelineV2UsersessionsPipelines(pulumi.CustomResource):
                  processing: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesProcessingArgs', 'OpenpipelineV2UsersessionsPipelinesProcessingArgsDict']]] = None,
                  product_allocation: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs', 'OpenpipelineV2UsersessionsPipelinesProductAllocationArgsDict']]] = None,
                  security_context: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs', 'OpenpipelineV2UsersessionsPipelinesSecurityContextArgsDict']]] = None,
+                 smartscape_edge_extraction: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgsDict']]] = None,
+                 smartscape_node_extraction: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgsDict']]] = None,
                  storage: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesStorageArgs', 'OpenpipelineV2UsersessionsPipelinesStorageArgsDict']]] = None,
                  __props__=None):
         """
@@ -374,6 +448,8 @@ class OpenpipelineV2UsersessionsPipelines(pulumi.CustomResource):
         :param pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesProcessingArgs', 'OpenpipelineV2UsersessionsPipelinesProcessingArgsDict']] processing: Processing stage
         :param pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs', 'OpenpipelineV2UsersessionsPipelinesProductAllocationArgsDict']] product_allocation: Product allocation stage
         :param pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs', 'OpenpipelineV2UsersessionsPipelinesSecurityContextArgsDict']] security_context: Security context stage
+        :param pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgsDict']] smartscape_edge_extraction: Smartscape edge extraction stage
+        :param pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgsDict']] smartscape_node_extraction: Smartscape node extraction stage
         :param pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesStorageArgs', 'OpenpipelineV2UsersessionsPipelinesStorageArgsDict']] storage: Storage stage
         """
         ...
@@ -408,6 +484,8 @@ class OpenpipelineV2UsersessionsPipelines(pulumi.CustomResource):
                  processing: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesProcessingArgs', 'OpenpipelineV2UsersessionsPipelinesProcessingArgsDict']]] = None,
                  product_allocation: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs', 'OpenpipelineV2UsersessionsPipelinesProductAllocationArgsDict']]] = None,
                  security_context: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs', 'OpenpipelineV2UsersessionsPipelinesSecurityContextArgsDict']]] = None,
+                 smartscape_edge_extraction: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgsDict']]] = None,
+                 smartscape_node_extraction: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgsDict']]] = None,
                  storage: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesStorageArgs', 'OpenpipelineV2UsersessionsPipelinesStorageArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -418,35 +496,21 @@ class OpenpipelineV2UsersessionsPipelines(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = OpenpipelineV2UsersessionsPipelinesArgs.__new__(OpenpipelineV2UsersessionsPipelinesArgs)
 
-            if cost_allocation is None and not opts.urn:
-                raise TypeError("Missing required property 'cost_allocation'")
             __props__.__dict__["cost_allocation"] = cost_allocation
             if custom_id is None and not opts.urn:
                 raise TypeError("Missing required property 'custom_id'")
             __props__.__dict__["custom_id"] = custom_id
-            if data_extraction is None and not opts.urn:
-                raise TypeError("Missing required property 'data_extraction'")
             __props__.__dict__["data_extraction"] = data_extraction
-            if davis is None and not opts.urn:
-                raise TypeError("Missing required property 'davis'")
             __props__.__dict__["davis"] = davis
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
-            if metric_extraction is None and not opts.urn:
-                raise TypeError("Missing required property 'metric_extraction'")
             __props__.__dict__["metric_extraction"] = metric_extraction
-            if processing is None and not opts.urn:
-                raise TypeError("Missing required property 'processing'")
             __props__.__dict__["processing"] = processing
-            if product_allocation is None and not opts.urn:
-                raise TypeError("Missing required property 'product_allocation'")
             __props__.__dict__["product_allocation"] = product_allocation
-            if security_context is None and not opts.urn:
-                raise TypeError("Missing required property 'security_context'")
             __props__.__dict__["security_context"] = security_context
-            if storage is None and not opts.urn:
-                raise TypeError("Missing required property 'storage'")
+            __props__.__dict__["smartscape_edge_extraction"] = smartscape_edge_extraction
+            __props__.__dict__["smartscape_node_extraction"] = smartscape_node_extraction
             __props__.__dict__["storage"] = storage
         super(OpenpipelineV2UsersessionsPipelines, __self__).__init__(
             'dynatrace:index/openpipelineV2UsersessionsPipelines:OpenpipelineV2UsersessionsPipelines',
@@ -467,6 +531,8 @@ class OpenpipelineV2UsersessionsPipelines(pulumi.CustomResource):
             processing: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesProcessingArgs', 'OpenpipelineV2UsersessionsPipelinesProcessingArgsDict']]] = None,
             product_allocation: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs', 'OpenpipelineV2UsersessionsPipelinesProductAllocationArgsDict']]] = None,
             security_context: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs', 'OpenpipelineV2UsersessionsPipelinesSecurityContextArgsDict']]] = None,
+            smartscape_edge_extraction: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgsDict']]] = None,
+            smartscape_node_extraction: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgsDict']]] = None,
             storage: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesStorageArgs', 'OpenpipelineV2UsersessionsPipelinesStorageArgsDict']]] = None) -> 'OpenpipelineV2UsersessionsPipelines':
         """
         Get an existing OpenpipelineV2UsersessionsPipelines resource's state with the given name, id, and optional extra
@@ -484,6 +550,8 @@ class OpenpipelineV2UsersessionsPipelines(pulumi.CustomResource):
         :param pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesProcessingArgs', 'OpenpipelineV2UsersessionsPipelinesProcessingArgsDict']] processing: Processing stage
         :param pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesProductAllocationArgs', 'OpenpipelineV2UsersessionsPipelinesProductAllocationArgsDict']] product_allocation: Product allocation stage
         :param pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSecurityContextArgs', 'OpenpipelineV2UsersessionsPipelinesSecurityContextArgsDict']] security_context: Security context stage
+        :param pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionArgsDict']] smartscape_edge_extraction: Smartscape edge extraction stage
+        :param pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionArgsDict']] smartscape_node_extraction: Smartscape node extraction stage
         :param pulumi.Input[Union['OpenpipelineV2UsersessionsPipelinesStorageArgs', 'OpenpipelineV2UsersessionsPipelinesStorageArgsDict']] storage: Storage stage
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -499,12 +567,14 @@ class OpenpipelineV2UsersessionsPipelines(pulumi.CustomResource):
         __props__.__dict__["processing"] = processing
         __props__.__dict__["product_allocation"] = product_allocation
         __props__.__dict__["security_context"] = security_context
+        __props__.__dict__["smartscape_edge_extraction"] = smartscape_edge_extraction
+        __props__.__dict__["smartscape_node_extraction"] = smartscape_node_extraction
         __props__.__dict__["storage"] = storage
         return OpenpipelineV2UsersessionsPipelines(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
     @pulumi.getter(name="costAllocation")
-    def cost_allocation(self) -> pulumi.Output['outputs.OpenpipelineV2UsersessionsPipelinesCostAllocation']:
+    def cost_allocation(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2UsersessionsPipelinesCostAllocation']]:
         """
         Cost allocation stage
         """
@@ -520,7 +590,7 @@ class OpenpipelineV2UsersessionsPipelines(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="dataExtraction")
-    def data_extraction(self) -> pulumi.Output['outputs.OpenpipelineV2UsersessionsPipelinesDataExtraction']:
+    def data_extraction(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2UsersessionsPipelinesDataExtraction']]:
         """
         Data extraction stage
         """
@@ -528,7 +598,7 @@ class OpenpipelineV2UsersessionsPipelines(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def davis(self) -> pulumi.Output['outputs.OpenpipelineV2UsersessionsPipelinesDavis']:
+    def davis(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2UsersessionsPipelinesDavis']]:
         """
         Davis event extraction stage
         """
@@ -544,7 +614,7 @@ class OpenpipelineV2UsersessionsPipelines(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="metricExtraction")
-    def metric_extraction(self) -> pulumi.Output['outputs.OpenpipelineV2UsersessionsPipelinesMetricExtraction']:
+    def metric_extraction(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2UsersessionsPipelinesMetricExtraction']]:
         """
         Metrics extraction stage
         """
@@ -552,7 +622,7 @@ class OpenpipelineV2UsersessionsPipelines(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def processing(self) -> pulumi.Output['outputs.OpenpipelineV2UsersessionsPipelinesProcessing']:
+    def processing(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2UsersessionsPipelinesProcessing']]:
         """
         Processing stage
         """
@@ -560,7 +630,7 @@ class OpenpipelineV2UsersessionsPipelines(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="productAllocation")
-    def product_allocation(self) -> pulumi.Output['outputs.OpenpipelineV2UsersessionsPipelinesProductAllocation']:
+    def product_allocation(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2UsersessionsPipelinesProductAllocation']]:
         """
         Product allocation stage
         """
@@ -568,15 +638,31 @@ class OpenpipelineV2UsersessionsPipelines(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="securityContext")
-    def security_context(self) -> pulumi.Output['outputs.OpenpipelineV2UsersessionsPipelinesSecurityContext']:
+    def security_context(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2UsersessionsPipelinesSecurityContext']]:
         """
         Security context stage
         """
         return pulumi.get(self, "security_context")
 
     @_builtins.property
+    @pulumi.getter(name="smartscapeEdgeExtraction")
+    def smartscape_edge_extraction(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtraction']]:
+        """
+        Smartscape edge extraction stage
+        """
+        return pulumi.get(self, "smartscape_edge_extraction")
+
+    @_builtins.property
+    @pulumi.getter(name="smartscapeNodeExtraction")
+    def smartscape_node_extraction(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtraction']]:
+        """
+        Smartscape node extraction stage
+        """
+        return pulumi.get(self, "smartscape_node_extraction")
+
+    @_builtins.property
     @pulumi.getter
-    def storage(self) -> pulumi.Output['outputs.OpenpipelineV2UsersessionsPipelinesStorage']:
+    def storage(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2UsersessionsPipelinesStorage']]:
         """
         Storage stage
         """

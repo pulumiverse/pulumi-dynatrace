@@ -37,7 +37,7 @@ export class OpenpipelineV2DavisEventsPipelines extends pulumi.CustomResource {
     /**
      * Cost allocation stage
      */
-    declare public readonly costAllocation: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesCostAllocation>;
+    declare public readonly costAllocation: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesCostAllocation | undefined>;
     /**
      * Custom pipeline id
      */
@@ -45,11 +45,11 @@ export class OpenpipelineV2DavisEventsPipelines extends pulumi.CustomResource {
     /**
      * Data extraction stage
      */
-    declare public readonly dataExtraction: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesDataExtraction>;
+    declare public readonly dataExtraction: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesDataExtraction | undefined>;
     /**
      * Davis event extraction stage
      */
-    declare public readonly davis: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesDavis>;
+    declare public readonly davis: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesDavis | undefined>;
     /**
      * Display name
      */
@@ -57,23 +57,31 @@ export class OpenpipelineV2DavisEventsPipelines extends pulumi.CustomResource {
     /**
      * Metrics extraction stage
      */
-    declare public readonly metricExtraction: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesMetricExtraction>;
+    declare public readonly metricExtraction: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesMetricExtraction | undefined>;
     /**
      * Processing stage
      */
-    declare public readonly processing: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesProcessing>;
+    declare public readonly processing: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesProcessing | undefined>;
     /**
      * Product allocation stage
      */
-    declare public readonly productAllocation: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesProductAllocation>;
+    declare public readonly productAllocation: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesProductAllocation | undefined>;
     /**
      * Security context stage
      */
-    declare public readonly securityContext: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesSecurityContext>;
+    declare public readonly securityContext: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesSecurityContext | undefined>;
+    /**
+     * Smartscape edge extraction stage
+     */
+    declare public readonly smartscapeEdgeExtraction: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtraction | undefined>;
+    /**
+     * Smartscape node extraction stage
+     */
+    declare public readonly smartscapeNodeExtraction: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtraction | undefined>;
     /**
      * Storage stage
      */
-    declare public readonly storage: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesStorage>;
+    declare public readonly storage: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesStorage | undefined>;
 
     /**
      * Create a OpenpipelineV2DavisEventsPipelines resource with the given unique name, arguments, and options.
@@ -97,38 +105,16 @@ export class OpenpipelineV2DavisEventsPipelines extends pulumi.CustomResource {
             resourceInputs["processing"] = state?.processing;
             resourceInputs["productAllocation"] = state?.productAllocation;
             resourceInputs["securityContext"] = state?.securityContext;
+            resourceInputs["smartscapeEdgeExtraction"] = state?.smartscapeEdgeExtraction;
+            resourceInputs["smartscapeNodeExtraction"] = state?.smartscapeNodeExtraction;
             resourceInputs["storage"] = state?.storage;
         } else {
             const args = argsOrState as OpenpipelineV2DavisEventsPipelinesArgs | undefined;
-            if (args?.costAllocation === undefined && !opts.urn) {
-                throw new Error("Missing required property 'costAllocation'");
-            }
             if (args?.customId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customId'");
             }
-            if (args?.dataExtraction === undefined && !opts.urn) {
-                throw new Error("Missing required property 'dataExtraction'");
-            }
-            if (args?.davis === undefined && !opts.urn) {
-                throw new Error("Missing required property 'davis'");
-            }
             if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
-            }
-            if (args?.metricExtraction === undefined && !opts.urn) {
-                throw new Error("Missing required property 'metricExtraction'");
-            }
-            if (args?.processing === undefined && !opts.urn) {
-                throw new Error("Missing required property 'processing'");
-            }
-            if (args?.productAllocation === undefined && !opts.urn) {
-                throw new Error("Missing required property 'productAllocation'");
-            }
-            if (args?.securityContext === undefined && !opts.urn) {
-                throw new Error("Missing required property 'securityContext'");
-            }
-            if (args?.storage === undefined && !opts.urn) {
-                throw new Error("Missing required property 'storage'");
             }
             resourceInputs["costAllocation"] = args?.costAllocation;
             resourceInputs["customId"] = args?.customId;
@@ -139,6 +125,8 @@ export class OpenpipelineV2DavisEventsPipelines extends pulumi.CustomResource {
             resourceInputs["processing"] = args?.processing;
             resourceInputs["productAllocation"] = args?.productAllocation;
             resourceInputs["securityContext"] = args?.securityContext;
+            resourceInputs["smartscapeEdgeExtraction"] = args?.smartscapeEdgeExtraction;
+            resourceInputs["smartscapeNodeExtraction"] = args?.smartscapeNodeExtraction;
             resourceInputs["storage"] = args?.storage;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -187,6 +175,14 @@ export interface OpenpipelineV2DavisEventsPipelinesState {
      */
     securityContext?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSecurityContext>;
     /**
+     * Smartscape edge extraction stage
+     */
+    smartscapeEdgeExtraction?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtraction>;
+    /**
+     * Smartscape node extraction stage
+     */
+    smartscapeNodeExtraction?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtraction>;
+    /**
      * Storage stage
      */
     storage?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesStorage>;
@@ -199,7 +195,7 @@ export interface OpenpipelineV2DavisEventsPipelinesArgs {
     /**
      * Cost allocation stage
      */
-    costAllocation: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesCostAllocation>;
+    costAllocation?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesCostAllocation>;
     /**
      * Custom pipeline id
      */
@@ -207,11 +203,11 @@ export interface OpenpipelineV2DavisEventsPipelinesArgs {
     /**
      * Data extraction stage
      */
-    dataExtraction: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesDataExtraction>;
+    dataExtraction?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesDataExtraction>;
     /**
      * Davis event extraction stage
      */
-    davis: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesDavis>;
+    davis?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesDavis>;
     /**
      * Display name
      */
@@ -219,21 +215,29 @@ export interface OpenpipelineV2DavisEventsPipelinesArgs {
     /**
      * Metrics extraction stage
      */
-    metricExtraction: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesMetricExtraction>;
+    metricExtraction?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesMetricExtraction>;
     /**
      * Processing stage
      */
-    processing: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesProcessing>;
+    processing?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesProcessing>;
     /**
      * Product allocation stage
      */
-    productAllocation: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesProductAllocation>;
+    productAllocation?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesProductAllocation>;
     /**
      * Security context stage
      */
-    securityContext: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSecurityContext>;
+    securityContext?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSecurityContext>;
+    /**
+     * Smartscape edge extraction stage
+     */
+    smartscapeEdgeExtraction?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtraction>;
+    /**
+     * Smartscape node extraction stage
+     */
+    smartscapeNodeExtraction?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtraction>;
     /**
      * Storage stage
      */
-    storage: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesStorage>;
+    storage?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesStorage>;
 }

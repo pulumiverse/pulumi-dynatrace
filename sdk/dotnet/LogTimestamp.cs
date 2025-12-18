@@ -62,6 +62,12 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
+        /// Don't parse timestamps in lines starting with white character
+        /// </summary>
+        [Output("skipIndentedLines")]
+        public Output<bool?> SkipIndentedLines { get; private set; } = null!;
+
+        /// <summary>
         /// Timezone
         /// </summary>
         [Output("timezone")]
@@ -163,6 +169,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
+        /// Don't parse timestamps in lines starting with white character
+        /// </summary>
+        [Input("skipIndentedLines")]
+        public Input<bool>? SkipIndentedLines { get; set; }
+
+        /// <summary>
         /// Timezone
         /// </summary>
         [Input("timezone", required: true)]
@@ -223,6 +235,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
+
+        /// <summary>
+        /// Don't parse timestamps in lines starting with white character
+        /// </summary>
+        [Input("skipIndentedLines")]
+        public Input<bool>? SkipIndentedLines { get; set; }
 
         /// <summary>
         /// Timezone

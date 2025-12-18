@@ -18,24 +18,6 @@ namespace Pulumiverse.Dynatrace
     /// - Web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications
     /// 
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.rum-javascript-file-name`)
-    /// 
-    /// ## Resource Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var _name_ = new Dynatrace.WebAppJavascriptFilename("#name#", new()
-    ///     {
-    ///         Filename = "tf",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/webAppJavascriptFilename:WebAppJavascriptFilename")]
     public partial class WebAppJavascriptFilename : global::Pulumi.CustomResource

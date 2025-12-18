@@ -212,23 +212,6 @@ class WebAppManualInsertion(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.manual-insertion`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.WebAppManualInsertion("#name#",
-            application_id="APPLICATION-1234567890000000",
-            code_snippet={
-                "code_snippet_type": "SYNCHRONOUSLY",
-            },
-            javascript_tag={
-                "cache_duration": "1",
-                "crossorigin_anonymous": True,
-            })
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -251,23 +234,6 @@ class WebAppManualInsertion(pulumi.CustomResource):
         - Select a snippet format - https://docs.dynatrace.com/docs/shortlink/snippet-formats
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.manual-insertion`)
-
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.WebAppManualInsertion("#name#",
-            application_id="APPLICATION-1234567890000000",
-            code_snippet={
-                "code_snippet_type": "SYNCHRONOUSLY",
-            },
-            javascript_tag={
-                "cache_duration": "1",
-                "crossorigin_anonymous": True,
-            })
-        ```
 
         :param str resource_name: The name of the resource.
         :param WebAppManualInsertionArgs args: The arguments to use to populate this resource's properties.

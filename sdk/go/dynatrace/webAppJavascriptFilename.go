@@ -19,32 +19,6 @@ import (
 // - Web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications
 //
 // - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.rum-javascript-file-name`)
-//
-// ## Resource Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewWebAppJavascriptFilename(ctx, "#name#", &dynatrace.WebAppJavascriptFilenameArgs{
-//				Filename: pulumi.String("tf"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type WebAppJavascriptFilename struct {
 	pulumi.CustomResourceState
 

@@ -27,7 +27,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly ImmutableArray<string> MultiValueConstants;
         /// <summary>
-        /// Type of value assignment. Possible Values: `Constant`, `Field`, `multiValueConstant`.
+        /// Type of value assignment. Possible Values: `Constant`, `Field`, `multiValueConstant`
         /// </summary>
         public readonly string Type;
 

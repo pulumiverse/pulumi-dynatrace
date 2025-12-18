@@ -37,11 +37,11 @@ namespace Pulumiverse.Dynatrace
         /// {
         ///     var all = Dynatrace.GetIamPolicies.Invoke(new()
         ///     {
-        ///         Accounts = new[]
+        ///         Environments = new[]
         ///         {
         ///             "*",
         ///         },
-        ///         Environments = new[]
+        ///         Accounts = new[]
         ///         {
         ///             "*",
         ///         },
@@ -162,11 +162,11 @@ namespace Pulumiverse.Dynatrace
         /// {
         ///     var all = Dynatrace.GetIamPolicies.Invoke(new()
         ///     {
-        ///         Accounts = new[]
+        ///         Environments = new[]
         ///         {
         ///             "*",
         ///         },
-        ///         Environments = new[]
+        ///         Accounts = new[]
         ///         {
         ///             "*",
         ///         },
@@ -287,11 +287,11 @@ namespace Pulumiverse.Dynatrace
         /// {
         ///     var all = Dynatrace.GetIamPolicies.Invoke(new()
         ///     {
-        ///         Accounts = new[]
+        ///         Environments = new[]
         ///         {
         ///             "*",
         ///         },
-        ///         Environments = new[]
+        ///         Accounts = new[]
         ///         {
         ///             "*",
         ///         },

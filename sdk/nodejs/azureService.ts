@@ -29,7 +29,7 @@ import * as utilities from "./utilities";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * export = async () => {
- *     const tERRAFORMSAMPLE = new dynatrace.AzureCredentials("tERRAFORMSAMPLE", {
+ *     const TERRAFORM_SAMPLE = new dynatrace.AzureCredentials("TERRAFORM_SAMPLE", {
  *         active: false,
  *         appId: "ABCDE",
  *         autoTagging: true,
@@ -47,9 +47,10 @@ import * as utilities from "./utilities";
  *     });
  *     const tERRAFORMSAMPLEServices: dynatrace.AzureService[] = [];
  *     for (const range of Object.entries(supportedServices.services).map(([k, v]) => ({key: k, value: v}))) {
- *         tERRAFORMSAMPLEServices.push(new dynatrace.AzureService(`tERRAFORMSAMPLEServices-${range.key}`, {
- *             credentialsId: tERRAFORMSAMPLE.id,
+ *         tERRAFORMSAMPLEServices.push(new dynatrace.AzureService(`TERRAFORM_SAMPLE_services-${range.key}`, {
+ *             credentialsId: TERRAFORM_SAMPLE.id,
  *             useRecommendedMetrics: true,
+ *             name: range.key,
  *         }));
  *     }
  * }
@@ -62,7 +63,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const example = new dynatrace.AzureCredentials("example", {
+ * const example = new dynatrace.AzureCredentials("Example", {
  *     active: true,
  *     appId: "123456789",
  *     autoTagging: true,
@@ -71,7 +72,8 @@ import * as utilities from "./utilities";
  *     label: "#name#",
  *     monitorOnlyTaggedEntities: false,
  * });
- * const containerService = new dynatrace.AzureService("containerService", {
+ * const containerService = new dynatrace.AzureService("ContainerService", {
+ *     name: "cloud:azure:containerservice:managedcluster",
  *     credentialsId: example.id,
  *     metrics: [
  *         {

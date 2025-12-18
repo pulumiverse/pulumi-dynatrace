@@ -122,10 +122,22 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSamplingAwareCounterMetricGetArgs>? SamplingAwareCounterMetric { get; set; }
 
         /// <summary>
+        /// Sampling aware histogram metric processor attributes
+        /// </summary>
+        [Input("samplingAwareHistogramMetric")]
+        public Input<Inputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSamplingAwareHistogramMetricGetArgs>? SamplingAwareHistogramMetric { get; set; }
+
+        /// <summary>
         /// Sampling aware value metric processor attributes
         /// </summary>
         [Input("samplingAwareValueMetric")]
         public Input<Inputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSamplingAwareValueMetricGetArgs>? SamplingAwareValueMetric { get; set; }
+
+        /// <summary>
+        /// SdlcEvent extraction processor attributes
+        /// </summary>
+        [Input("sdlcEvent")]
+        public Input<Inputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSdlcEventGetArgs>? SdlcEvent { get; set; }
 
         /// <summary>
         /// Security context processor attributes
@@ -140,13 +152,25 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSecurityEventGetArgs>? SecurityEvent { get; set; }
 
         /// <summary>
+        /// Smartscape edge extraction processor attributes
+        /// </summary>
+        [Input("smartscapeEdge")]
+        public Input<Inputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSmartscapeEdgeGetArgs>? SmartscapeEdge { get; set; }
+
+        /// <summary>
+        /// Smartscape node extraction processor attributes
+        /// </summary>
+        [Input("smartscapeNode")]
+        public Input<Inputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorSmartscapeNodeGetArgs>? SmartscapeNode { get; set; }
+
+        /// <summary>
         /// Technology processor attributes
         /// </summary>
         [Input("technology")]
         public Input<Inputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorTechnologyGetArgs>? Technology { get; set; }
 
         /// <summary>
-        /// Processor type. Possible Values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `Technology`, `valueMetric`.
+        /// Processor type. Possible Values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

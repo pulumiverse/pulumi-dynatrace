@@ -15,22 +15,43 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class BrowserMonitorPerformanceThresholdsThreshold
     {
         /// <summary>
+        /// Number of most recent non-violating executions that closes the problem
+        /// </summary>
+        public readonly int? DealertingSamples;
+        /// <summary>
         /// Synthetic event
         /// </summary>
         public readonly string Event;
         /// <summary>
+        /// Number of executions in analyzed sliding window (sliding window size)
+        /// </summary>
+        public readonly int? Samples;
+        /// <summary>
         /// Threshold (in seconds)
         /// </summary>
         public readonly double Threshold;
+        /// <summary>
+        /// Number of violating executions in analyzed sliding window
+        /// </summary>
+        public readonly int? ViolatingSamples;
 
         [OutputConstructor]
         private BrowserMonitorPerformanceThresholdsThreshold(
+            int? dealertingSamples,
+
             string @event,
 
-            double threshold)
+            int? samples,
+
+            double threshold,
+
+            int? violatingSamples)
         {
+            DealertingSamples = dealertingSamples;
             Event = @event;
+            Samples = samples;
             Threshold = threshold;
+            ViolatingSamples = violatingSamples;
         }
     }
 }

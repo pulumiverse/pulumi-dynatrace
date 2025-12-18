@@ -27,11 +27,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			exampleApiTokens, err := dynatrace.GetApiTokens(ctx, map[string]interface{}{}, nil)
+//			example, err := dynatrace.GetApiTokens(ctx, map[string]interface{}{}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			ctx.Export("example", exampleApiTokens)
+//			ctx.Export("example", example)
 //			return nil
 //		})
 //	}

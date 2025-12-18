@@ -51,6 +51,8 @@
         "autotagRules.ts",
         "autotagV2.ts",
         "awsAnomalies.ts",
+        "awsConnection.ts",
+        "awsConnectionRoleArn.ts",
         "awsCredentials.ts",
         "awsService.ts",
         "azureCredentials.ts",

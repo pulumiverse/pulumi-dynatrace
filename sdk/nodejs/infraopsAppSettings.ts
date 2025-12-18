@@ -37,11 +37,11 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
      */
     declare public readonly interfaceSaturationThreshold: pulumi.Output<number | undefined>;
     /**
-     * Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+     * Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
      */
     declare public readonly invexDqlQueryLimit: pulumi.Output<number | undefined>;
     /**
-     * Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+     * Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
      */
     declare public readonly invexDqlSortLimit: pulumi.Output<number | undefined>;
     /**
@@ -99,11 +99,11 @@ export interface InfraopsAppSettingsState {
      */
     interfaceSaturationThreshold?: pulumi.Input<number>;
     /**
-     * Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+     * Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
      */
     invexDqlQueryLimit?: pulumi.Input<number>;
     /**
-     * Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+     * Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
      */
     invexDqlSortLimit?: pulumi.Input<number>;
     /**
@@ -125,11 +125,11 @@ export interface InfraopsAppSettingsArgs {
      */
     interfaceSaturationThreshold?: pulumi.Input<number>;
     /**
-     * Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+     * Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
      */
     invexDqlQueryLimit?: pulumi.Input<number>;
     /**
-     * Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+     * Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
      */
     invexDqlSortLimit?: pulumi.Input<number>;
     /**

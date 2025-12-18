@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// Set of additional key-value properties to be attached to the triggered event.
+        /// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         /// </summary>
         [Output("metadata")]
         public Output<Outputs.ProcessAvailabilityMetadata?> Metadata { get; private set; } = null!;
@@ -121,7 +121,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Set of additional key-value properties to be attached to the triggered event.
+        /// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.ProcessAvailabilityMetadataArgs>? Metadata { get; set; }
@@ -183,7 +183,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Set of additional key-value properties to be attached to the triggered event.
+        /// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.ProcessAvailabilityMetadataGetArgs>? Metadata { get; set; }

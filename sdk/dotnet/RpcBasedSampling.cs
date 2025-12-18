@@ -18,33 +18,6 @@ namespace Pulumiverse.Dynatrace
     /// - Trace sampling - https://docs.dynatrace.com/docs/shortlink/url-sampling
     /// 
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rpc-based-sampling`)
-    /// 
-    /// ## Resource Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var _name_ = new Dynatrace.RpcBasedSampling("#name#", new()
-    ///     {
-    ///         Enabled = false,
-    ///         EndpointName = "#name#-endpoint",
-    ///         EndpointNameComparisonType = "DOES_NOT_END_WITH",
-    ///         Ignore = true,
-    ///         RemoteOperationName = "#name#-operation",
-    ///         RemoteOperationNameComparisonType = "CONTAINS",
-    ///         RemoteServiceName = "#name#-service",
-    ///         RemoteServiceNameComparisonType = "STARTS_WITH",
-    ///         Scope = "environment",
-    ///         WireProtocolType = "8",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/rpcBasedSampling:RpcBasedSampling")]
     public partial class RpcBasedSampling : global::Pulumi.CustomResource

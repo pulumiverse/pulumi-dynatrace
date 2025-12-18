@@ -34,8 +34,8 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Possible values are `AVERAGE`, `AVG_MIN_MAX`, `MAXIMUM`, `MINIMUM`, `SAMPLE_COUNT` and `SUM`
         /// </summary>
-        [Input("statistic")]
-        public Input<string>? Statistic { get; set; }
+        [Input("statistic", required: true)]
+        public Input<string> Statistic { get; set; } = null!;
 
         public AwsServiceMetricArgs()
         {

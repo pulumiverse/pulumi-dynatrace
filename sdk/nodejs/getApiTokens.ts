@@ -15,8 +15,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const exampleApiTokens = dynatrace.getApiTokens({});
- * export const example = exampleApiTokens;
+ * export = async () => {
+ *     const example = await dynatrace.getApiTokens({});
+ *     return {
+ *         example: example,
+ *     };
+ * }
  * ```
  */
 export function getApiTokens(opts?: pulumi.InvokeOptions): Promise<GetApiTokensResult> {
@@ -44,8 +48,12 @@ export interface GetApiTokensResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const exampleApiTokens = dynatrace.getApiTokens({});
- * export const example = exampleApiTokens;
+ * export = async () => {
+ *     const example = await dynatrace.getApiTokens({});
+ *     return {
+ *         example: example,
+ *     };
+ * }
  * ```
  */
 export function getApiTokensOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApiTokensResult> {

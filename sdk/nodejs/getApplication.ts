@@ -8,25 +8,6 @@ import * as utilities from "./utilities";
  * The application data source allows the application ID to be retrieved by its name.
  *
  * - `name` queries for all applications with the specified name
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getApplication({
- *     name: "Example",
- * });
- * const _name_ = new dynatrace.ApplicationDetectionRule("#name#", {
- *     applicationIdentifier: test.then(test => test.id),
- *     filterConfig: {
- *         applicationMatchTarget: "DOMAIN",
- *         applicationMatchType: "MATCHES",
- *         pattern: "www.google.com",
- *     },
- * });
- * ```
  */
 export function getApplication(args: GetApplicationArgs, opts?: pulumi.InvokeOptions): Promise<GetApplicationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -56,25 +37,6 @@ export interface GetApplicationResult {
  * The application data source allows the application ID to be retrieved by its name.
  *
  * - `name` queries for all applications with the specified name
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getApplication({
- *     name: "Example",
- * });
- * const _name_ = new dynatrace.ApplicationDetectionRule("#name#", {
- *     applicationIdentifier: test.then(test => test.id),
- *     filterConfig: {
- *         applicationMatchTarget: "DOMAIN",
- *         applicationMatchType: "MATCHES",
- *         pattern: "www.google.com",
- *     },
- * });
- * ```
  */
 export function getApplicationOutput(args: GetApplicationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApplicationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

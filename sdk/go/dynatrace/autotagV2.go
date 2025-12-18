@@ -20,7 +20,7 @@ type AutotagV2 struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Rules
 	Rules AutotagV2RulesPtrOutput `pulumi:"rules"`
-	// If `true` this resource will not
+	// If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
 	RulesMaintainedExternally pulumi.BoolPtrOutput `pulumi:"rulesMaintainedExternally"`
 }
 
@@ -60,7 +60,7 @@ type autotagV2State struct {
 	Name *string `pulumi:"name"`
 	// Rules
 	Rules *AutotagV2Rules `pulumi:"rules"`
-	// If `true` this resource will not
+	// If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
 	RulesMaintainedExternally *bool `pulumi:"rulesMaintainedExternally"`
 }
 
@@ -71,7 +71,7 @@ type AutotagV2State struct {
 	Name pulumi.StringPtrInput
 	// Rules
 	Rules AutotagV2RulesPtrInput
-	// If `true` this resource will not
+	// If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
 	RulesMaintainedExternally pulumi.BoolPtrInput
 }
 
@@ -86,7 +86,7 @@ type autotagV2Args struct {
 	Name *string `pulumi:"name"`
 	// Rules
 	Rules *AutotagV2Rules `pulumi:"rules"`
-	// If `true` this resource will not
+	// If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
 	RulesMaintainedExternally *bool `pulumi:"rulesMaintainedExternally"`
 }
 
@@ -98,7 +98,7 @@ type AutotagV2Args struct {
 	Name pulumi.StringPtrInput
 	// Rules
 	Rules AutotagV2RulesPtrInput
-	// If `true` this resource will not
+	// If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
 	RulesMaintainedExternally pulumi.BoolPtrInput
 }
 
@@ -204,7 +204,7 @@ func (o AutotagV2Output) Rules() AutotagV2RulesPtrOutput {
 	return o.ApplyT(func(v *AutotagV2) AutotagV2RulesPtrOutput { return v.Rules }).(AutotagV2RulesPtrOutput)
 }
 
-// If `true` this resource will not
+// If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
 func (o AutotagV2Output) RulesMaintainedExternally() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AutotagV2) pulumi.BoolPtrOutput { return v.RulesMaintainedExternally }).(pulumi.BoolPtrOutput)
 }

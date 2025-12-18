@@ -16,25 +16,29 @@ type OpenpipelineV2SystemEventsPipelines struct {
 	pulumi.CustomResourceState
 
 	// Cost allocation stage
-	CostAllocation OpenpipelineV2SystemEventsPipelinesCostAllocationOutput `pulumi:"costAllocation"`
+	CostAllocation OpenpipelineV2SystemEventsPipelinesCostAllocationPtrOutput `pulumi:"costAllocation"`
 	// Custom pipeline id
 	CustomId pulumi.StringOutput `pulumi:"customId"`
 	// Data extraction stage
-	DataExtraction OpenpipelineV2SystemEventsPipelinesDataExtractionOutput `pulumi:"dataExtraction"`
+	DataExtraction OpenpipelineV2SystemEventsPipelinesDataExtractionPtrOutput `pulumi:"dataExtraction"`
 	// Davis event extraction stage
-	Davis OpenpipelineV2SystemEventsPipelinesDavisOutput `pulumi:"davis"`
+	Davis OpenpipelineV2SystemEventsPipelinesDavisPtrOutput `pulumi:"davis"`
 	// Display name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Metrics extraction stage
-	MetricExtraction OpenpipelineV2SystemEventsPipelinesMetricExtractionOutput `pulumi:"metricExtraction"`
+	MetricExtraction OpenpipelineV2SystemEventsPipelinesMetricExtractionPtrOutput `pulumi:"metricExtraction"`
 	// Processing stage
-	Processing OpenpipelineV2SystemEventsPipelinesProcessingOutput `pulumi:"processing"`
+	Processing OpenpipelineV2SystemEventsPipelinesProcessingPtrOutput `pulumi:"processing"`
 	// Product allocation stage
-	ProductAllocation OpenpipelineV2SystemEventsPipelinesProductAllocationOutput `pulumi:"productAllocation"`
+	ProductAllocation OpenpipelineV2SystemEventsPipelinesProductAllocationPtrOutput `pulumi:"productAllocation"`
 	// Security context stage
-	SecurityContext OpenpipelineV2SystemEventsPipelinesSecurityContextOutput `pulumi:"securityContext"`
+	SecurityContext OpenpipelineV2SystemEventsPipelinesSecurityContextPtrOutput `pulumi:"securityContext"`
+	// Smartscape edge extraction stage
+	SmartscapeEdgeExtraction OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionPtrOutput `pulumi:"smartscapeEdgeExtraction"`
+	// Smartscape node extraction stage
+	SmartscapeNodeExtraction OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionPtrOutput `pulumi:"smartscapeNodeExtraction"`
 	// Storage stage
-	Storage OpenpipelineV2SystemEventsPipelinesStorageOutput `pulumi:"storage"`
+	Storage OpenpipelineV2SystemEventsPipelinesStoragePtrOutput `pulumi:"storage"`
 }
 
 // NewOpenpipelineV2SystemEventsPipelines registers a new resource with the given unique name, arguments, and options.
@@ -44,35 +48,11 @@ func NewOpenpipelineV2SystemEventsPipelines(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.CostAllocation == nil {
-		return nil, errors.New("invalid value for required argument 'CostAllocation'")
-	}
 	if args.CustomId == nil {
 		return nil, errors.New("invalid value for required argument 'CustomId'")
 	}
-	if args.DataExtraction == nil {
-		return nil, errors.New("invalid value for required argument 'DataExtraction'")
-	}
-	if args.Davis == nil {
-		return nil, errors.New("invalid value for required argument 'Davis'")
-	}
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
-	}
-	if args.MetricExtraction == nil {
-		return nil, errors.New("invalid value for required argument 'MetricExtraction'")
-	}
-	if args.Processing == nil {
-		return nil, errors.New("invalid value for required argument 'Processing'")
-	}
-	if args.ProductAllocation == nil {
-		return nil, errors.New("invalid value for required argument 'ProductAllocation'")
-	}
-	if args.SecurityContext == nil {
-		return nil, errors.New("invalid value for required argument 'SecurityContext'")
-	}
-	if args.Storage == nil {
-		return nil, errors.New("invalid value for required argument 'Storage'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OpenpipelineV2SystemEventsPipelines
@@ -115,6 +95,10 @@ type openpipelineV2SystemEventsPipelinesState struct {
 	ProductAllocation *OpenpipelineV2SystemEventsPipelinesProductAllocation `pulumi:"productAllocation"`
 	// Security context stage
 	SecurityContext *OpenpipelineV2SystemEventsPipelinesSecurityContext `pulumi:"securityContext"`
+	// Smartscape edge extraction stage
+	SmartscapeEdgeExtraction *OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtraction `pulumi:"smartscapeEdgeExtraction"`
+	// Smartscape node extraction stage
+	SmartscapeNodeExtraction *OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtraction `pulumi:"smartscapeNodeExtraction"`
 	// Storage stage
 	Storage *OpenpipelineV2SystemEventsPipelinesStorage `pulumi:"storage"`
 }
@@ -138,6 +122,10 @@ type OpenpipelineV2SystemEventsPipelinesState struct {
 	ProductAllocation OpenpipelineV2SystemEventsPipelinesProductAllocationPtrInput
 	// Security context stage
 	SecurityContext OpenpipelineV2SystemEventsPipelinesSecurityContextPtrInput
+	// Smartscape edge extraction stage
+	SmartscapeEdgeExtraction OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionPtrInput
+	// Smartscape node extraction stage
+	SmartscapeNodeExtraction OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionPtrInput
 	// Storage stage
 	Storage OpenpipelineV2SystemEventsPipelinesStoragePtrInput
 }
@@ -148,49 +136,57 @@ func (OpenpipelineV2SystemEventsPipelinesState) ElementType() reflect.Type {
 
 type openpipelineV2SystemEventsPipelinesArgs struct {
 	// Cost allocation stage
-	CostAllocation OpenpipelineV2SystemEventsPipelinesCostAllocation `pulumi:"costAllocation"`
+	CostAllocation *OpenpipelineV2SystemEventsPipelinesCostAllocation `pulumi:"costAllocation"`
 	// Custom pipeline id
 	CustomId string `pulumi:"customId"`
 	// Data extraction stage
-	DataExtraction OpenpipelineV2SystemEventsPipelinesDataExtraction `pulumi:"dataExtraction"`
+	DataExtraction *OpenpipelineV2SystemEventsPipelinesDataExtraction `pulumi:"dataExtraction"`
 	// Davis event extraction stage
-	Davis OpenpipelineV2SystemEventsPipelinesDavis `pulumi:"davis"`
+	Davis *OpenpipelineV2SystemEventsPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName string `pulumi:"displayName"`
 	// Metrics extraction stage
-	MetricExtraction OpenpipelineV2SystemEventsPipelinesMetricExtraction `pulumi:"metricExtraction"`
+	MetricExtraction *OpenpipelineV2SystemEventsPipelinesMetricExtraction `pulumi:"metricExtraction"`
 	// Processing stage
-	Processing OpenpipelineV2SystemEventsPipelinesProcessing `pulumi:"processing"`
+	Processing *OpenpipelineV2SystemEventsPipelinesProcessing `pulumi:"processing"`
 	// Product allocation stage
-	ProductAllocation OpenpipelineV2SystemEventsPipelinesProductAllocation `pulumi:"productAllocation"`
+	ProductAllocation *OpenpipelineV2SystemEventsPipelinesProductAllocation `pulumi:"productAllocation"`
 	// Security context stage
-	SecurityContext OpenpipelineV2SystemEventsPipelinesSecurityContext `pulumi:"securityContext"`
+	SecurityContext *OpenpipelineV2SystemEventsPipelinesSecurityContext `pulumi:"securityContext"`
+	// Smartscape edge extraction stage
+	SmartscapeEdgeExtraction *OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtraction `pulumi:"smartscapeEdgeExtraction"`
+	// Smartscape node extraction stage
+	SmartscapeNodeExtraction *OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtraction `pulumi:"smartscapeNodeExtraction"`
 	// Storage stage
-	Storage OpenpipelineV2SystemEventsPipelinesStorage `pulumi:"storage"`
+	Storage *OpenpipelineV2SystemEventsPipelinesStorage `pulumi:"storage"`
 }
 
 // The set of arguments for constructing a OpenpipelineV2SystemEventsPipelines resource.
 type OpenpipelineV2SystemEventsPipelinesArgs struct {
 	// Cost allocation stage
-	CostAllocation OpenpipelineV2SystemEventsPipelinesCostAllocationInput
+	CostAllocation OpenpipelineV2SystemEventsPipelinesCostAllocationPtrInput
 	// Custom pipeline id
 	CustomId pulumi.StringInput
 	// Data extraction stage
-	DataExtraction OpenpipelineV2SystemEventsPipelinesDataExtractionInput
+	DataExtraction OpenpipelineV2SystemEventsPipelinesDataExtractionPtrInput
 	// Davis event extraction stage
-	Davis OpenpipelineV2SystemEventsPipelinesDavisInput
+	Davis OpenpipelineV2SystemEventsPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringInput
 	// Metrics extraction stage
-	MetricExtraction OpenpipelineV2SystemEventsPipelinesMetricExtractionInput
+	MetricExtraction OpenpipelineV2SystemEventsPipelinesMetricExtractionPtrInput
 	// Processing stage
-	Processing OpenpipelineV2SystemEventsPipelinesProcessingInput
+	Processing OpenpipelineV2SystemEventsPipelinesProcessingPtrInput
 	// Product allocation stage
-	ProductAllocation OpenpipelineV2SystemEventsPipelinesProductAllocationInput
+	ProductAllocation OpenpipelineV2SystemEventsPipelinesProductAllocationPtrInput
 	// Security context stage
-	SecurityContext OpenpipelineV2SystemEventsPipelinesSecurityContextInput
+	SecurityContext OpenpipelineV2SystemEventsPipelinesSecurityContextPtrInput
+	// Smartscape edge extraction stage
+	SmartscapeEdgeExtraction OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionPtrInput
+	// Smartscape node extraction stage
+	SmartscapeNodeExtraction OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionPtrInput
 	// Storage stage
-	Storage OpenpipelineV2SystemEventsPipelinesStorageInput
+	Storage OpenpipelineV2SystemEventsPipelinesStoragePtrInput
 }
 
 func (OpenpipelineV2SystemEventsPipelinesArgs) ElementType() reflect.Type {
@@ -281,10 +277,10 @@ func (o OpenpipelineV2SystemEventsPipelinesOutput) ToOpenpipelineV2SystemEventsP
 }
 
 // Cost allocation stage
-func (o OpenpipelineV2SystemEventsPipelinesOutput) CostAllocation() OpenpipelineV2SystemEventsPipelinesCostAllocationOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesCostAllocationOutput {
+func (o OpenpipelineV2SystemEventsPipelinesOutput) CostAllocation() OpenpipelineV2SystemEventsPipelinesCostAllocationPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesCostAllocationPtrOutput {
 		return v.CostAllocation
-	}).(OpenpipelineV2SystemEventsPipelinesCostAllocationOutput)
+	}).(OpenpipelineV2SystemEventsPipelinesCostAllocationPtrOutput)
 }
 
 // Custom pipeline id
@@ -293,17 +289,17 @@ func (o OpenpipelineV2SystemEventsPipelinesOutput) CustomId() pulumi.StringOutpu
 }
 
 // Data extraction stage
-func (o OpenpipelineV2SystemEventsPipelinesOutput) DataExtraction() OpenpipelineV2SystemEventsPipelinesDataExtractionOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesDataExtractionOutput {
+func (o OpenpipelineV2SystemEventsPipelinesOutput) DataExtraction() OpenpipelineV2SystemEventsPipelinesDataExtractionPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesDataExtractionPtrOutput {
 		return v.DataExtraction
-	}).(OpenpipelineV2SystemEventsPipelinesDataExtractionOutput)
+	}).(OpenpipelineV2SystemEventsPipelinesDataExtractionPtrOutput)
 }
 
 // Davis event extraction stage
-func (o OpenpipelineV2SystemEventsPipelinesOutput) Davis() OpenpipelineV2SystemEventsPipelinesDavisOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesDavisOutput {
+func (o OpenpipelineV2SystemEventsPipelinesOutput) Davis() OpenpipelineV2SystemEventsPipelinesDavisPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesDavisPtrOutput {
 		return v.Davis
-	}).(OpenpipelineV2SystemEventsPipelinesDavisOutput)
+	}).(OpenpipelineV2SystemEventsPipelinesDavisPtrOutput)
 }
 
 // Display name
@@ -312,38 +308,52 @@ func (o OpenpipelineV2SystemEventsPipelinesOutput) DisplayName() pulumi.StringOu
 }
 
 // Metrics extraction stage
-func (o OpenpipelineV2SystemEventsPipelinesOutput) MetricExtraction() OpenpipelineV2SystemEventsPipelinesMetricExtractionOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesMetricExtractionOutput {
+func (o OpenpipelineV2SystemEventsPipelinesOutput) MetricExtraction() OpenpipelineV2SystemEventsPipelinesMetricExtractionPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesMetricExtractionPtrOutput {
 		return v.MetricExtraction
-	}).(OpenpipelineV2SystemEventsPipelinesMetricExtractionOutput)
+	}).(OpenpipelineV2SystemEventsPipelinesMetricExtractionPtrOutput)
 }
 
 // Processing stage
-func (o OpenpipelineV2SystemEventsPipelinesOutput) Processing() OpenpipelineV2SystemEventsPipelinesProcessingOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesProcessingOutput {
+func (o OpenpipelineV2SystemEventsPipelinesOutput) Processing() OpenpipelineV2SystemEventsPipelinesProcessingPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesProcessingPtrOutput {
 		return v.Processing
-	}).(OpenpipelineV2SystemEventsPipelinesProcessingOutput)
+	}).(OpenpipelineV2SystemEventsPipelinesProcessingPtrOutput)
 }
 
 // Product allocation stage
-func (o OpenpipelineV2SystemEventsPipelinesOutput) ProductAllocation() OpenpipelineV2SystemEventsPipelinesProductAllocationOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesProductAllocationOutput {
+func (o OpenpipelineV2SystemEventsPipelinesOutput) ProductAllocation() OpenpipelineV2SystemEventsPipelinesProductAllocationPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesProductAllocationPtrOutput {
 		return v.ProductAllocation
-	}).(OpenpipelineV2SystemEventsPipelinesProductAllocationOutput)
+	}).(OpenpipelineV2SystemEventsPipelinesProductAllocationPtrOutput)
 }
 
 // Security context stage
-func (o OpenpipelineV2SystemEventsPipelinesOutput) SecurityContext() OpenpipelineV2SystemEventsPipelinesSecurityContextOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesSecurityContextOutput {
+func (o OpenpipelineV2SystemEventsPipelinesOutput) SecurityContext() OpenpipelineV2SystemEventsPipelinesSecurityContextPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesSecurityContextPtrOutput {
 		return v.SecurityContext
-	}).(OpenpipelineV2SystemEventsPipelinesSecurityContextOutput)
+	}).(OpenpipelineV2SystemEventsPipelinesSecurityContextPtrOutput)
+}
+
+// Smartscape edge extraction stage
+func (o OpenpipelineV2SystemEventsPipelinesOutput) SmartscapeEdgeExtraction() OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionPtrOutput {
+		return v.SmartscapeEdgeExtraction
+	}).(OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionPtrOutput)
+}
+
+// Smartscape node extraction stage
+func (o OpenpipelineV2SystemEventsPipelinesOutput) SmartscapeNodeExtraction() OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionPtrOutput {
+		return v.SmartscapeNodeExtraction
+	}).(OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionPtrOutput)
 }
 
 // Storage stage
-func (o OpenpipelineV2SystemEventsPipelinesOutput) Storage() OpenpipelineV2SystemEventsPipelinesStorageOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesStorageOutput {
+func (o OpenpipelineV2SystemEventsPipelinesOutput) Storage() OpenpipelineV2SystemEventsPipelinesStoragePtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SystemEventsPipelines) OpenpipelineV2SystemEventsPipelinesStoragePtrOutput {
 		return v.Storage
-	}).(OpenpipelineV2SystemEventsPipelinesStorageOutput)
+	}).(OpenpipelineV2SystemEventsPipelinesStoragePtrOutput)
 }
 
 type OpenpipelineV2SystemEventsPipelinesArrayOutput struct{ *pulumi.OutputState }

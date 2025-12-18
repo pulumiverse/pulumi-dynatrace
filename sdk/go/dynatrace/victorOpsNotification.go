@@ -17,7 +17,7 @@ type VictorOpsNotification struct {
 
 	// The configuration is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolOutput `pulumi:"active"`
-	// The API key for the target VictorOps account
+	// The API key for the target Splunk On-Call account
 	ApiKey pulumi.StringPtrOutput `pulumi:"apiKey"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
@@ -82,7 +82,7 @@ func GetVictorOpsNotification(ctx *pulumi.Context,
 type victorOpsNotificationState struct {
 	// The configuration is enabled (`true`) or disabled (`false`)
 	Active *bool `pulumi:"active"`
-	// The API key for the target VictorOps account
+	// The API key for the target Splunk On-Call account
 	ApiKey *string `pulumi:"apiKey"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
@@ -99,7 +99,7 @@ type victorOpsNotificationState struct {
 type VictorOpsNotificationState struct {
 	// The configuration is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolPtrInput
-	// The API key for the target VictorOps account
+	// The API key for the target Splunk On-Call account
 	ApiKey pulumi.StringPtrInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
@@ -120,7 +120,7 @@ func (VictorOpsNotificationState) ElementType() reflect.Type {
 type victorOpsNotificationArgs struct {
 	// The configuration is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`
-	// The API key for the target VictorOps account
+	// The API key for the target Splunk On-Call account
 	ApiKey *string `pulumi:"apiKey"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
@@ -138,7 +138,7 @@ type victorOpsNotificationArgs struct {
 type VictorOpsNotificationArgs struct {
 	// The configuration is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolInput
-	// The API key for the target VictorOps account
+	// The API key for the target Splunk On-Call account
 	ApiKey pulumi.StringPtrInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
@@ -244,7 +244,7 @@ func (o VictorOpsNotificationOutput) Active() pulumi.BoolOutput {
 	return o.ApplyT(func(v *VictorOpsNotification) pulumi.BoolOutput { return v.Active }).(pulumi.BoolOutput)
 }
 
-// The API key for the target VictorOps account
+// The API key for the target Splunk On-Call account
 func (o VictorOpsNotificationOutput) ApiKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VictorOpsNotification) pulumi.StringPtrOutput { return v.ApiKey }).(pulumi.StringPtrOutput)
 }

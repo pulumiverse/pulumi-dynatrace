@@ -69,8 +69,8 @@ def get_api_tokens(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetA
     import pulumi
     import pulumi_dynatrace as dynatrace
 
-    example_api_tokens = dynatrace.get_api_tokens()
-    pulumi.export("example", example_api_tokens)
+    example = dynatrace.get_api_tokens()
+    pulumi.export("example", example)
     ```
     """
     __args__ = dict()
@@ -90,8 +90,8 @@ def get_api_tokens_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.Invo
     import pulumi
     import pulumi_dynatrace as dynatrace
 
-    example_api_tokens = dynatrace.get_api_tokens()
-    pulumi.export("example", example_api_tokens)
+    example = dynatrace.get_api_tokens()
+    pulumi.export("example", example)
     ```
     """
     __args__ = dict()
