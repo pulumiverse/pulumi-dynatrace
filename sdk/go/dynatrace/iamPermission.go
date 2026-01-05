@@ -18,6 +18,35 @@ import (
 //
 // > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
 //
+// ## Conflicts
+//
+// > **Warning** If this resource is used in combination with `IamGroup`, there is a potential for conflicts when both resources attempt to manage group permissions.
+// It is recommended to manage group permissions with the `IamPermission` resource.
+// To avoid conflicts when using the `IamPermission` resource, ensure to add the following lifecycle block to the `IamGroup` resource:
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewIamGroup(ctx, "Restricted", &dynatrace.IamGroupArgs{
+//				Name: pulumi.String("Restricted"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Dynatrace Documentation
 //
 // - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -38,9 +67,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewIamPermission(ctx, "permA", &dynatrace.IamPermissionArgs{
-//				Account: pulumi.String("023733f0-86d8-47d1-88bd-7f5cc2e22eb8"),
+//			_, err := dynatrace.NewIamPermission(ctx, "perm_a", &dynatrace.IamPermissionArgs{
+//				Name:    pulumi.String("tenant-viewer"),
 //				Group:   pulumi.String("74ec0a82-8010-4f11-8579-b29a5ba865f0"),
+//				Account: pulumi.String("023733f0-86d8-47d1-88bd-7f5cc2e22eb8"),
 //			})
 //			if err != nil {
 //				return err

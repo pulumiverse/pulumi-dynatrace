@@ -249,13 +249,13 @@ class ManagedInternetProxy(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        test = dynatrace.ManagedInternetProxy("test",
-            non_proxy_hosts=["string"],
-            password="string",
-            port=65535,
+        test = dynatrace.ManagedInternetProxy("Test",
             scheme="http",
             server="zAOE-GV81/65oVgaIlPYTCADGSPFJ9ZqXYNGbxn97dbq:flAI2E8e8bfOvlmaGu",
-            user="string")
+            port=65535,
+            user="string",
+            password="string",
+            non_proxy_hosts=["string"])
         ```
 
         :param str resource_name: The name of the resource.
@@ -288,13 +288,13 @@ class ManagedInternetProxy(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        test = dynatrace.ManagedInternetProxy("test",
-            non_proxy_hosts=["string"],
-            password="string",
-            port=65535,
+        test = dynatrace.ManagedInternetProxy("Test",
             scheme="http",
             server="zAOE-GV81/65oVgaIlPYTCADGSPFJ9ZqXYNGbxn97dbq:flAI2E8e8bfOvlmaGu",
-            user="string")
+            port=65535,
+            user="string",
+            password="string",
+            non_proxy_hosts=["string"])
         ```
 
         :param str resource_name: The name of the resource.

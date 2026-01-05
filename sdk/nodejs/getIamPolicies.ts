@@ -26,8 +26,8 @@ import * as utilities from "./utilities";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * const all = dynatrace.getIamPolicies({
- *     accounts: ["*"],
  *     environments: ["*"],
+ *     accounts: ["*"],
  *     global: true,
  * });
  * ```
@@ -135,8 +135,8 @@ export interface GetIamPoliciesResult {
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * const all = dynatrace.getIamPolicies({
- *     accounts: ["*"],
  *     environments: ["*"],
+ *     accounts: ["*"],
  *     global: true,
  * });
  * ```

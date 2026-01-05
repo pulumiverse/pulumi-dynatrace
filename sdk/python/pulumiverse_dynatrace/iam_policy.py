@@ -280,6 +280,7 @@ class IamPolicy(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         policy = dynatrace.IamPolicy("policy",
+            name="my_policy_valid_for_environment_siz654##",
             environment="siz654##",
             statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
         ```
@@ -289,6 +290,7 @@ class IamPolicy(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         policy = dynatrace.IamPolicy("policy",
+            name="my_policy_valid_for_all_environments_in_this_account",
             account="########-####-####-####-############",
             statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
         ```
@@ -328,6 +330,7 @@ class IamPolicy(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         policy = dynatrace.IamPolicy("policy",
+            name="my_policy_valid_for_environment_siz654##",
             environment="siz654##",
             statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
         ```
@@ -337,6 +340,7 @@ class IamPolicy(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         policy = dynatrace.IamPolicy("policy",
+            name="my_policy_valid_for_all_environments_in_this_account",
             account="########-####-####-####-############",
             statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
         ```

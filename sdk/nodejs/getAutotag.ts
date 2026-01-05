@@ -17,11 +17,11 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const exampleAutotag = dynatrace.getAutotag({
+ * const example = dynatrace.getAutotag({
  *     name: "Terraform Example",
  * });
- * const exampleAutotagRules = new dynatrace.AutotagRules("exampleAutotagRules", {
- *     autoTagId: exampleAutotag.then(exampleAutotag => exampleAutotag.id),
+ * const exampleAutotagRules = new dynatrace.AutotagRules("Example", {
+ *     autoTagId: example.then(example => example.id),
  *     rules: {
  *         rules: [
  *             {
@@ -102,11 +102,11 @@ export interface GetAutotagResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const exampleAutotag = dynatrace.getAutotag({
+ * const example = dynatrace.getAutotag({
  *     name: "Terraform Example",
  * });
- * const exampleAutotagRules = new dynatrace.AutotagRules("exampleAutotagRules", {
- *     autoTagId: exampleAutotag.then(exampleAutotag => exampleAutotag.id),
+ * const exampleAutotagRules = new dynatrace.AutotagRules("Example", {
+ *     autoTagId: example.then(example => example.id),
  *     rules: {
  *         rules: [
  *             {

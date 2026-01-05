@@ -63,7 +63,6 @@ namespace Pulumiverse.Dynatrace
         ///     fields timestamp, davis.title, davis.underMaintenance, davis.status |
         ///     sort timestamp |
         ///     limit 10  
-        /// 
         /// ",
         ///     });
         /// 
@@ -124,7 +123,6 @@ namespace Pulumiverse.Dynatrace
         ///     fields timestamp, davis.title, davis.underMaintenance, davis.status |
         ///     sort timestamp |
         ///     limit 10  
-        /// 
         /// ",
         ///     });
         /// 
@@ -185,7 +183,6 @@ namespace Pulumiverse.Dynatrace
         ///     fields timestamp, davis.title, davis.underMaintenance, davis.status |
         ///     sort timestamp |
         ///     limit 10  
-        /// 
         /// ",
         ///     });
         /// 

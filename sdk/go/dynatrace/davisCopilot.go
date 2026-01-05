@@ -15,11 +15,13 @@ import (
 type DavisCopilot struct {
 	pulumi.CustomResourceState
 
-	// You can exclude specific data buckets and tables from the Davis CoPilot semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
+	// You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
 	BlocklistEntries DavisCopilotBlocklistEntriesPtrOutput `pulumi:"blocklistEntries"`
 	// Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
 	EnableCopilot pulumi.BoolOutput `pulumi:"enableCopilot"`
-	// You can enrich Davis CoPilot with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Davis CoPilot periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+	// By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+	EnableDocumentSuggestion pulumi.BoolPtrOutput `pulumi:"enableDocumentSuggestion"`
+	// You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
 	EnableTenantAwareDataMining pulumi.BoolPtrOutput `pulumi:"enableTenantAwareDataMining"`
 }
 
@@ -56,20 +58,24 @@ func GetDavisCopilot(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DavisCopilot resources.
 type davisCopilotState struct {
-	// You can exclude specific data buckets and tables from the Davis CoPilot semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
+	// You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
 	BlocklistEntries *DavisCopilotBlocklistEntries `pulumi:"blocklistEntries"`
 	// Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
 	EnableCopilot *bool `pulumi:"enableCopilot"`
-	// You can enrich Davis CoPilot with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Davis CoPilot periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+	// By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+	EnableDocumentSuggestion *bool `pulumi:"enableDocumentSuggestion"`
+	// You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
 	EnableTenantAwareDataMining *bool `pulumi:"enableTenantAwareDataMining"`
 }
 
 type DavisCopilotState struct {
-	// You can exclude specific data buckets and tables from the Davis CoPilot semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
+	// You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
 	BlocklistEntries DavisCopilotBlocklistEntriesPtrInput
 	// Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
 	EnableCopilot pulumi.BoolPtrInput
-	// You can enrich Davis CoPilot with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Davis CoPilot periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+	// By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+	EnableDocumentSuggestion pulumi.BoolPtrInput
+	// You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
 	EnableTenantAwareDataMining pulumi.BoolPtrInput
 }
 
@@ -78,21 +84,25 @@ func (DavisCopilotState) ElementType() reflect.Type {
 }
 
 type davisCopilotArgs struct {
-	// You can exclude specific data buckets and tables from the Davis CoPilot semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
+	// You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
 	BlocklistEntries *DavisCopilotBlocklistEntries `pulumi:"blocklistEntries"`
 	// Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
 	EnableCopilot bool `pulumi:"enableCopilot"`
-	// You can enrich Davis CoPilot with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Davis CoPilot periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+	// By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+	EnableDocumentSuggestion *bool `pulumi:"enableDocumentSuggestion"`
+	// You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
 	EnableTenantAwareDataMining *bool `pulumi:"enableTenantAwareDataMining"`
 }
 
 // The set of arguments for constructing a DavisCopilot resource.
 type DavisCopilotArgs struct {
-	// You can exclude specific data buckets and tables from the Davis CoPilot semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
+	// You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
 	BlocklistEntries DavisCopilotBlocklistEntriesPtrInput
 	// Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
 	EnableCopilot pulumi.BoolInput
-	// You can enrich Davis CoPilot with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Davis CoPilot periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+	// By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+	EnableDocumentSuggestion pulumi.BoolPtrInput
+	// You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
 	EnableTenantAwareDataMining pulumi.BoolPtrInput
 }
 
@@ -183,7 +193,7 @@ func (o DavisCopilotOutput) ToDavisCopilotOutputWithContext(ctx context.Context)
 	return o
 }
 
-// You can exclude specific data buckets and tables from the Davis CoPilot semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
+// You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
 func (o DavisCopilotOutput) BlocklistEntries() DavisCopilotBlocklistEntriesPtrOutput {
 	return o.ApplyT(func(v *DavisCopilot) DavisCopilotBlocklistEntriesPtrOutput { return v.BlocklistEntries }).(DavisCopilotBlocklistEntriesPtrOutput)
 }
@@ -193,7 +203,12 @@ func (o DavisCopilotOutput) EnableCopilot() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DavisCopilot) pulumi.BoolOutput { return v.EnableCopilot }).(pulumi.BoolOutput)
 }
 
-// You can enrich Davis CoPilot with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Davis CoPilot periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+// By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+func (o DavisCopilotOutput) EnableDocumentSuggestion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DavisCopilot) pulumi.BoolPtrOutput { return v.EnableDocumentSuggestion }).(pulumi.BoolPtrOutput)
+}
+
+// You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
 func (o DavisCopilotOutput) EnableTenantAwareDataMining() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DavisCopilot) pulumi.BoolPtrOutput { return v.EnableTenantAwareDataMining }).(pulumi.BoolPtrOutput)
 }

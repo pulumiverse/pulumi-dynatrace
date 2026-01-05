@@ -33,7 +33,7 @@ class ProcessAvailabilityArgs:
         The set of arguments for constructing a ProcessAvailability resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input['ProcessAvailabilityMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input['ProcessAvailabilityMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
@@ -84,7 +84,7 @@ class ProcessAvailabilityArgs:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['ProcessAvailabilityMetadataArgs']]:
         """
-        Set of additional key-value properties to be attached to the triggered event.
+        Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         """
         return pulumi.get(self, "metadata")
 
@@ -168,7 +168,7 @@ class _ProcessAvailabilityState:
         Input properties used for looking up and filtering ProcessAvailability resources.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input['ProcessAvailabilityMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input['ProcessAvailabilityMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
@@ -220,7 +220,7 @@ class _ProcessAvailabilityState:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['ProcessAvailabilityMetadataArgs']]:
         """
-        Set of additional key-value properties to be attached to the triggered event.
+        Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         """
         return pulumi.get(self, "metadata")
 
@@ -310,7 +310,7 @@ class ProcessAvailability(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
@@ -394,7 +394,7 @@ class ProcessAvailability(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
@@ -435,7 +435,7 @@ class ProcessAvailability(pulumi.CustomResource):
     @pulumi.getter
     def metadata(self) -> pulumi.Output[Optional['outputs.ProcessAvailabilityMetadata']]:
         """
-        Set of additional key-value properties to be attached to the triggered event.
+        Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         """
         return pulumi.get(self, "metadata")
 

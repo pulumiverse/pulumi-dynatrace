@@ -27,7 +27,7 @@ type OsServices struct {
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata OsServicesMetadataPtrOutput `pulumi:"metadata"`
 	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
 	Monitoring pulumi.BoolOutput `pulumi:"monitoring"`
@@ -115,7 +115,7 @@ type osServicesState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata *OsServicesMetadata `pulumi:"metadata"`
 	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
 	Monitoring *bool `pulumi:"monitoring"`
@@ -162,7 +162,7 @@ type OsServicesState struct {
 	Enabled pulumi.BoolPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata OsServicesMetadataPtrInput
 	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
 	Monitoring pulumi.BoolPtrInput
@@ -213,7 +213,7 @@ type osServicesArgs struct {
 	Enabled bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata *OsServicesMetadata `pulumi:"metadata"`
 	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
 	Monitoring bool `pulumi:"monitoring"`
@@ -261,7 +261,7 @@ type OsServicesArgs struct {
 	Enabled pulumi.BoolInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata OsServicesMetadataPtrInput
 	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
 	Monitoring pulumi.BoolInput
@@ -412,7 +412,7 @@ func (o OsServicesOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *OsServices) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// Set of additional key-value properties to be attached to the triggered event.
+// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 func (o OsServicesOutput) Metadata() OsServicesMetadataPtrOutput {
 	return o.ApplyT(func(v *OsServices) OsServicesMetadataPtrOutput { return v.Metadata }).(OsServicesMetadataPtrOutput)
 }

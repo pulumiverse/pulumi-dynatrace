@@ -97,6 +97,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AutotagV2{}
 	case "dynatrace:index/awsAnomalies:AwsAnomalies":
 		r = &AwsAnomalies{}
+	case "dynatrace:index/awsConnection:AwsConnection":
+		r = &AwsConnection{}
+	case "dynatrace:index/awsConnectionRoleArn:AwsConnectionRoleArn":
+		r = &AwsConnectionRoleArn{}
 	case "dynatrace:index/awsCredentials:AwsCredentials":
 		r = &AwsCredentials{}
 	case "dynatrace:index/awsService:AwsService":
@@ -1064,6 +1068,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/awsAnomalies",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/awsConnection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/awsConnectionRoleArn",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

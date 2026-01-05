@@ -47,7 +47,7 @@ export class DiskEdgeAnomalyDetectors extends pulumi.CustomResource {
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
-     * Set of additional key-value properties to be attached to the triggered event.
+     * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
      */
     declare public readonly eventProperties: pulumi.Output<outputs.DiskEdgeAnomalyDetectorsEventProperties | undefined>;
     /**
@@ -133,7 +133,7 @@ export interface DiskEdgeAnomalyDetectorsState {
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * Set of additional key-value properties to be attached to the triggered event.
+     * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
      */
     eventProperties?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsEventProperties>;
     /**
@@ -175,7 +175,7 @@ export interface DiskEdgeAnomalyDetectorsArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * Set of additional key-value properties to be attached to the triggered event.
+     * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
      */
     eventProperties?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsEventProperties>;
     /**

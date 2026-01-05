@@ -29,7 +29,7 @@ import * as utilities from "./utilities";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * export = async () => {
- *     const tERRAFORMSAMPLE = new dynatrace.AwsCredentials("tERRAFORMSAMPLE", {
+ *     const TERRAFORM_SAMPLE = new dynatrace.AwsCredentials("TERRAFORM_SAMPLE", {
  *         label: "TERRAFORM-TEST-001",
  *         partitionType: "AWS_DEFAULT",
  *         taggedOnly: false,
@@ -42,9 +42,10 @@ import * as utilities from "./utilities";
  *     const supportedServices = await dynatrace.getAwsSupportedServices({});
  *     const tERRAFORMSAMPLEServices: dynatrace.AwsService[] = [];
  *     for (const range of Object.entries(supportedServices.services).map(([k, v]) => ({key: k, value: v}))) {
- *         tERRAFORMSAMPLEServices.push(new dynatrace.AwsService(`tERRAFORMSAMPLEServices-${range.key}`, {
- *             credentialsId: tERRAFORMSAMPLE.id,
+ *         tERRAFORMSAMPLEServices.push(new dynatrace.AwsService(`TERRAFORM_SAMPLE_services-${range.key}`, {
+ *             credentialsId: TERRAFORM_SAMPLE.id,
  *             useRecommendedMetrics: true,
+ *             name: range.key,
  *         }));
  *     }
  * }
@@ -57,7 +58,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const example = new dynatrace.AwsCredentials("example", {
+ * const example = new dynatrace.AwsCredentials("Example", {
  *     label: "#name#",
  *     partitionType: "AWS_DEFAULT",
  *     taggedOnly: false,
@@ -66,7 +67,8 @@ import * as utilities from "./utilities";
  *         iamRole: "aws-monitoring-role",
  *     },
  * });
- * const elastiCache = new dynatrace.AwsService("elastiCache", {
+ * const elastiCache = new dynatrace.AwsService("ElastiCache", {
+ *     name: "ElastiCache",
  *     credentialsId: example.id,
  *     metrics: [
  *         {

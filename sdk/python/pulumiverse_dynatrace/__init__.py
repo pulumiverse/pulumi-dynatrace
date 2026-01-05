@@ -44,6 +44,8 @@ from .autotag import *
 from .autotag_rules import *
 from .autotag_v2 import *
 from .aws_anomalies import *
+from .aws_connection import *
+from .aws_connection_role_arn import *
 from .aws_credentials import *
 from .aws_service import *
 from .azure_credentials import *
@@ -787,6 +789,22 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/awsAnomalies:AwsAnomalies": "AwsAnomalies"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/awsConnection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/awsConnection:AwsConnection": "AwsConnection"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/awsConnectionRoleArn",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/awsConnectionRoleArn:AwsConnectionRoleArn": "AwsConnectionRoleArn"
   }
  },
  {

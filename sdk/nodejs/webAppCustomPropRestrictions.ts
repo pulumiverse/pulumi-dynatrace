@@ -14,41 +14,6 @@ import * as utilities from "./utilities";
  * - Web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications
  *
  * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.capture-custom-properties`)
- *
- * ## Resource Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const _name_ = new dynatrace.WebAppCustomPropRestrictions("#name#", {
- *     applicationId: "APPLICATION-1234567890000000",
- *     customEventPropertiesAllowList: {
- *         customSessionPropertiesAllows: [
- *             {
- *                 fieldDataType: "STRING",
- *                 fieldName: "ExampleEvent",
- *             },
- *             {
- *                 fieldDataType: "BOOLEAN",
- *                 fieldName: "ExampleEvent2",
- *             },
- *         ],
- *     },
- *     customSessionPropertiesAllowList: {
- *         customSessionPropertiesAllows: [
- *             {
- *                 fieldDataType: "STRING",
- *                 fieldName: "ExampleSession",
- *             },
- *             {
- *                 fieldDataType: "BOOLEAN",
- *                 fieldName: "ExampleSession2",
- *             },
- *         ],
- *     },
- * });
- * ```
  */
 export class WebAppCustomPropRestrictions extends pulumi.CustomResource {
     /**

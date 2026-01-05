@@ -123,17 +123,20 @@ class IamPolicyBoundary(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        this_iam_policy_boundary = dynatrace.IamPolicyBoundary("thisIamPolicyBoundary", query="environment:management-zone startsWith \\"[Foo]\\";")
-        this_iam_group = dynatrace.IamGroup("thisIamGroup")
-        this_iam_policy = dynatrace.IamPolicy("thisIamPolicy",
+        this = dynatrace.IamPolicyBoundary("this",
+            name="Foo",
+            query="environment:management-zone startsWith \\"[Foo]\\";")
+        this_iam_group = dynatrace.IamGroup("this", name="my-group-name")
+        this_iam_policy = dynatrace.IamPolicy("this",
+            name="this",
             account="########-####-####-####-############",
             statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"#########\\";")
-        this_iam_policy_bindings_v2 = dynatrace.IamPolicyBindingsV2("thisIamPolicyBindingsV2",
+        this_iam_policy_bindings_v2 = dynatrace.IamPolicyBindingsV2("this",
             environment="########",
             group=this_iam_group.id,
             policies=[{
                 "id": this_iam_policy.id,
-                "boundaries": [this_iam_policy_boundary.id],
+                "boundaries": [this.id],
             }])
         ```
 
@@ -167,17 +170,20 @@ class IamPolicyBoundary(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        this_iam_policy_boundary = dynatrace.IamPolicyBoundary("thisIamPolicyBoundary", query="environment:management-zone startsWith \\"[Foo]\\";")
-        this_iam_group = dynatrace.IamGroup("thisIamGroup")
-        this_iam_policy = dynatrace.IamPolicy("thisIamPolicy",
+        this = dynatrace.IamPolicyBoundary("this",
+            name="Foo",
+            query="environment:management-zone startsWith \\"[Foo]\\";")
+        this_iam_group = dynatrace.IamGroup("this", name="my-group-name")
+        this_iam_policy = dynatrace.IamPolicy("this",
+            name="this",
             account="########-####-####-####-############",
             statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"#########\\";")
-        this_iam_policy_bindings_v2 = dynatrace.IamPolicyBindingsV2("thisIamPolicyBindingsV2",
+        this_iam_policy_bindings_v2 = dynatrace.IamPolicyBindingsV2("this",
             environment="########",
             group=this_iam_group.id,
             policies=[{
                 "id": this_iam_policy.id,
-                "boundaries": [this_iam_policy_boundary.id],
+                "boundaries": [this.id],
             }])
         ```
 

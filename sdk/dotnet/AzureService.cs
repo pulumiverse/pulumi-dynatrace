@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(async() =&gt; 
     /// {
-    ///     var tERRAFORMSAMPLE = new Dynatrace.AzureCredentials("tERRAFORMSAMPLE", new()
+    ///     var TERRAFORM_SAMPLE = new Dynatrace.AzureCredentials("TERRAFORM_SAMPLE", new()
     ///     {
     ///         Active = false,
     ///         AppId = "ABCDE",
@@ -68,10 +68,11 @@ namespace Pulumiverse.Dynatrace
     ///     var tERRAFORMSAMPLEServices = new List&lt;Dynatrace.AzureService&gt;();
     ///     foreach (var range in )
     ///     {
-    ///         tERRAFORMSAMPLEServices.Add(new Dynatrace.AzureService($"tERRAFORMSAMPLEServices-{range.Key}", new()
+    ///         tERRAFORMSAMPLEServices.Add(new Dynatrace.AzureService($"TERRAFORM_SAMPLE_services-{range.Key}", new()
     ///         {
-    ///             CredentialsId = tERRAFORMSAMPLE.Id,
+    ///             CredentialsId = TERRAFORM_SAMPLE.Id,
     ///             UseRecommendedMetrics = true,
+    ///             Name = range.Key,
     ///         }));
     ///     }
     /// });
@@ -88,7 +89,7 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Dynatrace.AzureCredentials("example", new()
+    ///     var example = new Dynatrace.AzureCredentials("Example", new()
     ///     {
     ///         Active = true,
     ///         AppId = "123456789",
@@ -99,8 +100,9 @@ namespace Pulumiverse.Dynatrace
     ///         MonitorOnlyTaggedEntities = false,
     ///     });
     /// 
-    ///     var containerService = new Dynatrace.AzureService("containerService", new()
+    ///     var containerService = new Dynatrace.AzureService("ContainerService", new()
     ///     {
+    ///         Name = "cloud:azure:containerservice:managedcluster",
     ///         CredentialsId = example.Id,
     ///         Metrics = new[]
     ///         {

@@ -25,7 +25,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Possible values are `AVERAGE`, `AVG_MIN_MAX`, `MAXIMUM`, `MINIMUM`, `SAMPLE_COUNT` and `SUM`
         /// </summary>
-        public readonly string? Statistic;
+        public readonly string Statistic;
 
         [OutputConstructor]
         private AwsServiceMetric(
@@ -33,7 +33,7 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string name,
 
-            string? statistic)
+            string statistic)
         {
             Dimensions = dimensions;
             Name = name;

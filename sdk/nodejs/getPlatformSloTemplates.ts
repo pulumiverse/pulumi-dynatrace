@@ -17,8 +17,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const testPlatformSloTemplates = dynatrace.getPlatformSloTemplates({});
- * export const test = testPlatformSloTemplates;
+ * export = async () => {
+ *     const test = await dynatrace.getPlatformSloTemplates({});
+ *     return {
+ *         test: test,
+ *     };
+ * }
  * ```
  */
 export function getPlatformSloTemplates(opts?: pulumi.InvokeOptions): Promise<GetPlatformSloTemplatesResult> {
@@ -48,8 +52,12 @@ export interface GetPlatformSloTemplatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const testPlatformSloTemplates = dynatrace.getPlatformSloTemplates({});
- * export const test = testPlatformSloTemplates;
+ * export = async () => {
+ *     const test = await dynatrace.getPlatformSloTemplates({});
+ *     return {
+ *         test: test,
+ *     };
+ * }
  * ```
  */
 export function getPlatformSloTemplatesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPlatformSloTemplatesResult> {

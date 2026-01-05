@@ -207,7 +207,7 @@ class AwsService(pulumi.CustomResource):
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        t_erraformsample = dynatrace.AwsCredentials("tERRAFORMSAMPLE",
+        terrafor_m__sample = dynatrace.AwsCredentials("TERRAFORM_SAMPLE",
             label="TERRAFORM-TEST-001",
             partition_type="AWS_DEFAULT",
             tagged_only=False,
@@ -219,9 +219,10 @@ class AwsService(pulumi.CustomResource):
         supported_services = dynatrace.get_aws_supported_services()
         t_erraformsample_services = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AwsService(f"tERRAFORMSAMPLEServices-{range['key']}",
-                credentials_id=t_erraformsample.id,
-                use_recommended_metrics=True))
+            t_erraformsample_services.append(dynatrace.AwsService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+                credentials_id=terrafor_m__sample.id,
+                use_recommended_metrics=True,
+                name=range["key"]))
         ```
 
         If you want to configure a different set of metrics for a specific service, a separate resource `AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
@@ -231,7 +232,7 @@ class AwsService(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        example = dynatrace.AwsCredentials("example",
+        example = dynatrace.AwsCredentials("Example",
             label="#name#",
             partition_type="AWS_DEFAULT",
             tagged_only=False,
@@ -239,7 +240,8 @@ class AwsService(pulumi.CustomResource):
                 "account_id": "123456789",
                 "iam_role": "aws-monitoring-role",
             })
-        elasti_cache = dynatrace.AwsService("elastiCache",
+        elasti_cache = dynatrace.AwsService("ElastiCache",
+            name="ElastiCache",
             credentials_id=example.id,
             metrics=[
                 {
@@ -289,7 +291,7 @@ class AwsService(pulumi.CustomResource):
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        t_erraformsample = dynatrace.AwsCredentials("tERRAFORMSAMPLE",
+        terrafor_m__sample = dynatrace.AwsCredentials("TERRAFORM_SAMPLE",
             label="TERRAFORM-TEST-001",
             partition_type="AWS_DEFAULT",
             tagged_only=False,
@@ -301,9 +303,10 @@ class AwsService(pulumi.CustomResource):
         supported_services = dynatrace.get_aws_supported_services()
         t_erraformsample_services = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AwsService(f"tERRAFORMSAMPLEServices-{range['key']}",
-                credentials_id=t_erraformsample.id,
-                use_recommended_metrics=True))
+            t_erraformsample_services.append(dynatrace.AwsService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+                credentials_id=terrafor_m__sample.id,
+                use_recommended_metrics=True,
+                name=range["key"]))
         ```
 
         If you want to configure a different set of metrics for a specific service, a separate resource `AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
@@ -313,7 +316,7 @@ class AwsService(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        example = dynatrace.AwsCredentials("example",
+        example = dynatrace.AwsCredentials("Example",
             label="#name#",
             partition_type="AWS_DEFAULT",
             tagged_only=False,
@@ -321,7 +324,8 @@ class AwsService(pulumi.CustomResource):
                 "account_id": "123456789",
                 "iam_role": "aws-monitoring-role",
             })
-        elasti_cache = dynatrace.AwsService("elastiCache",
+        elasti_cache = dynatrace.AwsService("ElastiCache",
+            name="ElastiCache",
             credentials_id=example.id,
             metrics=[
                 {

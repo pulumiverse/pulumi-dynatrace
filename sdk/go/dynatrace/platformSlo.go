@@ -23,56 +23,6 @@ import (
 // - Service-Level Objectives overview - hhttps://docs.dynatrace.com/docs/deliver/service-level-objectives
 //
 // - SLO Service Public API - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Service-Level+Objectives
-//
-// ## Resource Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewPlatformSlo(ctx, "#name#", &dynatrace.PlatformSloArgs{
-//				Criteria: &dynatrace.PlatformSloCriteriaArgs{
-//					CriteriaDetails: dynatrace.PlatformSloCriteriaCriteriaDetailArray{
-//						&dynatrace.PlatformSloCriteriaCriteriaDetailArgs{
-//							Target:        pulumi.Float64(96),
-//							TimeframeFrom: pulumi.String("now-30d"),
-//							TimeframeTo:   pulumi.String("now"),
-//							Warning:       pulumi.Float64(99),
-//						},
-//					},
-//				},
-//				CustomSli: &dynatrace.PlatformSloCustomSliArgs{
-//					Indicator: pulumi.String(`  timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }, by: { dt.entity.service }
-//	  | fieldsAdd tags=entityAttr(dt.entity.service, "tags")
-//	  | filter in(tags, "criticality:Gold")
-//	  | fieldsAdd entityName = entityName(dt.entity.service)
-//	  | fieldsAdd sli=(((total[]-failures[])/total[])*(100))
-//	  | fieldsRemove total, failures, tags
-//
-// `),
-//
-//				},
-//				Description: pulumi.String("Sample custom SLO"),
-//				Tags: pulumi.StringArray{
-//					pulumi.String("ExampleKey:ExampleValue"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type PlatformSlo struct {
 	pulumi.CustomResourceState
 

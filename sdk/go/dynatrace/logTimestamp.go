@@ -31,6 +31,8 @@ type LogTimestamp struct {
 	Matchers LogTimestampMatchersPtrOutput `pulumi:"matchers"`
 	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
+	// Don't parse timestamps in lines starting with white character
+	SkipIndentedLines pulumi.BoolPtrOutput `pulumi:"skipIndentedLines"`
 	// Timezone
 	Timezone pulumi.StringOutput `pulumi:"timezone"`
 }
@@ -93,6 +95,8 @@ type logTimestampState struct {
 	Matchers *LogTimestampMatchers `pulumi:"matchers"`
 	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
+	// Don't parse timestamps in lines starting with white character
+	SkipIndentedLines *bool `pulumi:"skipIndentedLines"`
 	// Timezone
 	Timezone *string `pulumi:"timezone"`
 }
@@ -114,6 +118,8 @@ type LogTimestampState struct {
 	Matchers LogTimestampMatchersPtrInput
 	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
+	// Don't parse timestamps in lines starting with white character
+	SkipIndentedLines pulumi.BoolPtrInput
 	// Timezone
 	Timezone pulumi.StringPtrInput
 }
@@ -139,6 +145,8 @@ type logTimestampArgs struct {
 	Matchers *LogTimestampMatchers `pulumi:"matchers"`
 	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
+	// Don't parse timestamps in lines starting with white character
+	SkipIndentedLines *bool `pulumi:"skipIndentedLines"`
 	// Timezone
 	Timezone string `pulumi:"timezone"`
 }
@@ -161,6 +169,8 @@ type LogTimestampArgs struct {
 	Matchers LogTimestampMatchersPtrInput
 	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
+	// Don't parse timestamps in lines starting with white character
+	SkipIndentedLines pulumi.BoolPtrInput
 	// Timezone
 	Timezone pulumi.StringInput
 }
@@ -290,6 +300,11 @@ func (o LogTimestampOutput) Matchers() LogTimestampMatchersPtrOutput {
 // The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 func (o LogTimestampOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LogTimestamp) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
+}
+
+// Don't parse timestamps in lines starting with white character
+func (o LogTimestampOutput) SkipIndentedLines() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LogTimestamp) pulumi.BoolPtrOutput { return v.SkipIndentedLines }).(pulumi.BoolPtrOutput)
 }
 
 // Timezone

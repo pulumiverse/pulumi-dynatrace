@@ -17,6 +17,35 @@ import (
 //
 // > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
 //
+// ## Conflicts
+//
+// > **Warning** If this resource is used in combination with `IamPermission`, there is a potential for conflicts when both resources attempt to manage group permissions.
+// It is recommended to manage group permissions with the `IamPermission` resource.
+// To avoid conflicts when using the `IamPermission` resource, ensure to add the following lifecycle block to the `IamGroup` resource:
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewIamGroup(ctx, "Restricted", &dynatrace.IamGroupArgs{
+//				Name: pulumi.String("Restricted"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Dynatrace Documentation
 //
 // - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -37,13 +66,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewIamGroup(ctx, "restricted", &dynatrace.IamGroupArgs{
+//			_, err := dynatrace.NewIamGroup(ctx, "Restricted", &dynatrace.IamGroupArgs{
+//				Name: pulumi.String("Restricted"),
 //				Permissions: &dynatrace.IamGroupPermissionsArgs{
 //					Permissions: dynatrace.IamGroupPermissionsPermissionArray{
 //						&dynatrace.IamGroupPermissionsPermissionArgs{
 //							Name:  pulumi.String("tenant-viewer"),
-//							Scope: pulumi.String("<environment-id>:<managementzone-id>"),
 //							Type:  pulumi.String("management-zone"),
+//							Scope: pulumi.String("<environment-id>:<managementzone-id>"),
 //						},
 //					},
 //				},
@@ -59,10 +89,11 @@ import (
 type IamGroup struct {
 	pulumi.CustomResourceState
 
-	Description              pulumi.StringPtrOutput       `pulumi:"description"`
-	FederatedAttributeValues pulumi.StringArrayOutput     `pulumi:"federatedAttributeValues"`
-	Name                     pulumi.StringOutput          `pulumi:"name"`
-	Permissions              IamGroupPermissionsPtrOutput `pulumi:"permissions"`
+	Description              pulumi.StringPtrOutput   `pulumi:"description"`
+	FederatedAttributeValues pulumi.StringArrayOutput `pulumi:"federatedAttributeValues"`
+	Name                     pulumi.StringOutput      `pulumi:"name"`
+	// Deprecated: Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.
+	Permissions IamGroupPermissionsPtrOutput `pulumi:"permissions"`
 }
 
 // NewIamGroup registers a new resource with the given unique name, arguments, and options.
@@ -95,17 +126,19 @@ func GetIamGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering IamGroup resources.
 type iamGroupState struct {
-	Description              *string              `pulumi:"description"`
-	FederatedAttributeValues []string             `pulumi:"federatedAttributeValues"`
-	Name                     *string              `pulumi:"name"`
-	Permissions              *IamGroupPermissions `pulumi:"permissions"`
+	Description              *string  `pulumi:"description"`
+	FederatedAttributeValues []string `pulumi:"federatedAttributeValues"`
+	Name                     *string  `pulumi:"name"`
+	// Deprecated: Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.
+	Permissions *IamGroupPermissions `pulumi:"permissions"`
 }
 
 type IamGroupState struct {
 	Description              pulumi.StringPtrInput
 	FederatedAttributeValues pulumi.StringArrayInput
 	Name                     pulumi.StringPtrInput
-	Permissions              IamGroupPermissionsPtrInput
+	// Deprecated: Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.
+	Permissions IamGroupPermissionsPtrInput
 }
 
 func (IamGroupState) ElementType() reflect.Type {
@@ -113,10 +146,11 @@ func (IamGroupState) ElementType() reflect.Type {
 }
 
 type iamGroupArgs struct {
-	Description              *string              `pulumi:"description"`
-	FederatedAttributeValues []string             `pulumi:"federatedAttributeValues"`
-	Name                     *string              `pulumi:"name"`
-	Permissions              *IamGroupPermissions `pulumi:"permissions"`
+	Description              *string  `pulumi:"description"`
+	FederatedAttributeValues []string `pulumi:"federatedAttributeValues"`
+	Name                     *string  `pulumi:"name"`
+	// Deprecated: Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.
+	Permissions *IamGroupPermissions `pulumi:"permissions"`
 }
 
 // The set of arguments for constructing a IamGroup resource.
@@ -124,7 +158,8 @@ type IamGroupArgs struct {
 	Description              pulumi.StringPtrInput
 	FederatedAttributeValues pulumi.StringArrayInput
 	Name                     pulumi.StringPtrInput
-	Permissions              IamGroupPermissionsPtrInput
+	// Deprecated: Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.
+	Permissions IamGroupPermissionsPtrInput
 }
 
 func (IamGroupArgs) ElementType() reflect.Type {
@@ -226,6 +261,7 @@ func (o IamGroupOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamGroup) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// Deprecated: Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.
 func (o IamGroupOutput) Permissions() IamGroupPermissionsPtrOutput {
 	return o.ApplyT(func(v *IamGroup) IamGroupPermissionsPtrOutput { return v.Permissions }).(IamGroupPermissionsPtrOutput)
 }
